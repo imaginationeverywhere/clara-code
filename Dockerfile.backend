@@ -16,11 +16,8 @@ RUN npm ci
 RUN npm run build
 
 FROM base AS runner
+RUN apk add --no-cache curl
 COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/packages/ai/node_modules ./packages/ai/node_modules
-COPY --from=deps /app/packages/agent/node_modules ./packages/agent/node_modules
-COPY --from=deps /app/packages/coding-agent/node_modules ./packages/coding-agent/node_modules
-COPY --from=deps /app/packages/mom/node_modules ./packages/mom/node_modules
 COPY --from=builder /app/packages/ai/dist ./packages/ai/dist
 COPY --from=builder /app/packages/agent/dist ./packages/agent/dist
 COPY --from=builder /app/packages/coding-agent/dist ./packages/coding-agent/dist
@@ -34,5 +31,8 @@ COPY packages/mom/package.json ./packages/mom/
 ENV NODE_ENV=production
 ENV PORT=3001
 EXPOSE 3001
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
+  CMD curl -sf http://localhost:3001/health || exit 1
 
 CMD ["node", "packages/mom/dist/main.js"]
