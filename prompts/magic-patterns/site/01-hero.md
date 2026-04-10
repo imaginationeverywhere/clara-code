@@ -5,6 +5,17 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**Clara Code is a DESKTOP/TERMINAL APPLICATION** — a voice-first AI coding assistant
+similar to VS Code or Cursor, but you speak instead of type. This is the MARKETING SITE
+for that product. The design should feel like a premium developer tool landing page —
+think Vercel, Linear, Cursor, or Warp's marketing site. NOT a SaaS app or consumer product.
+- Dense. Dark. Developer-grade. No gradients on body text.
+- The demo preview in the hero should look like a real desktop app window.
+- Typography is tight. Spacing is intentional. Nothing is fluffy.
+
+---
+
 ## Prompt
 
 ```

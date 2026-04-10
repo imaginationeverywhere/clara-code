@@ -5,6 +5,17 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**This is a DESKTOP APPLICATION, not a web page or mobile app.**
+Design like VS Code or Cursor's code editor panel — NOT a web code block.
+- 13px monospace font. 1.7 line height. Line numbers flush left.
+- Active line background highlight spans the full panel width.
+- Tabs at top are compact (36px tall). No large headers.
+- This panel fills the remaining center space between two fixed-width sidebars.
+- Dark terminal aesthetic (#0D1117). No rounded corners on the main editor area.
+
+---
+
 ## Prompt
 
 ```

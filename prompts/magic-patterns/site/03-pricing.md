@@ -5,6 +5,14 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**Clara Code is a DESKTOP/TERMINAL APPLICATION** — a voice-first AI coding assistant.
+This is the pricing section of its developer tool marketing site. Aesthetic: Vercel/Linear/Cursor
+pricing pages. Clean. Dark. No gradients on text. Cards are precise, not playful.
+Developers are the audience — no fluff, just what's included and what it costs.
+
+---
+
 ## Prompt
 
 ```

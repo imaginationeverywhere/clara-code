@@ -5,6 +5,18 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**This is a DESKTOP APPLICATION, not a web page or mobile app.**
+Design like VS Code, Cursor, Warp Terminal, or Linear — NOT like a website.
+- Dense information layout. No generous mobile padding.
+- Full-screen, no scroll. Every pixel is intentional.
+- Dark terminal aesthetic (#0D1117 base). No light mode.
+- Monospace fonts for all code and transcripts.
+- Keyboard shortcuts expected. Desktop-first interactions.
+- Panels are fixed-width. Layouts are rigid grids, not fluid stacks.
+
+---
+
 ## CRITICAL DESIGN PRINCIPLE
 **Voice is the PRIMARY interface. Text input is a TOGGLE.** The default state shows NO text input
 field. A small toggle button (keyboard icon) switches to text mode. When text mode is active, a

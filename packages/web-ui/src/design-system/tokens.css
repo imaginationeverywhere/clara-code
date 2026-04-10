@@ -1,87 +1,72 @@
 /**
- * Clara Code — Design System Tokens
- * Shared root tokens for both surfaces (site + app)
+ * Clara Code — Single Design System
+ * Used across both the marketing site (claracode.ai) and the desktop app interface.
  *
- * Usage: imported in globals.css
+ * This is a DESKTOP/TERMINAL APPLICATION aesthetic — not a web app, not mobile.
+ * Think VS Code, Cursor, Warp, Linear. Dense. Dark. Precise.
+ * Import in globals.css.
  */
 
 :root {
-  /* ━━━ Brand Colors ━━━ */
-  --color-purple:        #7C3AED;
-  --color-purple-light:  #9F67F7;
-  --color-purple-dim:    rgba(124, 58, 237, 0.15);
-  --color-purple-border: rgba(124, 58, 237, 0.30);
+  /* ━━━ Brand ━━━ */
+  --purple:        #7C3AED;
+  --purple-light:  #9F67F7;
+  --blue:          #4F8EF7;
+  --green:         #10B981;
 
-  --color-blue:          #4F8EF7;
-  --color-blue-dim:      rgba(79, 142, 247, 0.15);
-
-  --color-green:         #10B981;
-  --color-green-dim:     rgba(16, 185, 129, 0.15);
-  --color-green-border:  rgba(16, 185, 129, 0.30);
-
-  /* ━━━ Backgrounds ━━━ */
-  --bg-base:       #0D1117;   /* hero, page bg */
-  --bg-raised:     #0F1318;   /* cards, panels */
-  --bg-overlay:    #0A0E14;   /* sidebars, headers */
-  --bg-sunken:     #070A0F;   /* inputs, code blocks */
+  /* ━━━ Backgrounds (dark terminal stack) ━━━ */
+  --bg-base:    #0D1117;   /* page / code editor */
+  --bg-raised:  #0F1318;   /* floating cards */
+  --bg-overlay: #0A0E14;   /* sidebars, top bar, voice bar */
+  --bg-sunken:  #070A0F;   /* inputs, code blocks, search */
 
   /* ━━━ Text ━━━ */
-  --text-primary:   rgba(255, 255, 255, 0.90);
-  --text-secondary: rgba(255, 255, 255, 0.60);
-  --text-muted:     rgba(255, 255, 255, 0.35);
-  --text-ghost:     rgba(255, 255, 255, 0.18);
+  --text-1: rgba(255,255,255,0.90);   /* primary */
+  --text-2: rgba(255,255,255,0.60);   /* secondary */
+  --text-3: rgba(255,255,255,0.35);   /* muted */
+  --text-4: rgba(255,255,255,0.18);   /* ghost / line numbers */
 
   /* ━━━ Borders ━━━ */
-  --border-subtle:  rgba(255, 255, 255, 0.06);
-  --border-faint:   rgba(255, 255, 255, 0.10);
-  --border-mid:     rgba(255, 255, 255, 0.15);
+  --border-1: rgba(255,255,255,0.06);  /* panel dividers */
+  --border-2: rgba(255,255,255,0.10);  /* subtle elements */
+  --border-3: rgba(255,255,255,0.15);  /* hover states */
+
+  /* ━━━ Syntax highlighting ━━━ */
+  --syn-keyword:   #7C3AED;
+  --syn-type:      #4F8EF7;
+  --syn-string:    #10B981;
+  --syn-jsx:       #F87171;
+  --syn-attribute: #FBBF24;
+  --syn-comment:   rgba(255,255,255,0.28);
+  --syn-plain:     rgba(255,255,255,0.85);
+  --syn-number:    #FB923C;
 
   /* ━━━ Typography ━━━ */
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* ━━━ Radius ━━━ */
+  /* ━━━ Spacing ━━━ */
   --radius-sm:   6px;
   --radius-md:   10px;
   --radius-lg:   14px;
   --radius-xl:   18px;
   --radius-pill: 9999px;
 
-  /* ━━━ Shadows / Glows ━━━ */
-  --glow-purple: 0 0 32px rgba(124, 58, 237, 0.40);
-  --glow-purple-sm: 0 0 16px rgba(124, 58, 237, 0.30);
-  --glow-blue:   0 0 24px rgba(79, 142, 247, 0.30);
+  /* ━━━ App layout (desktop panels) ━━━ */
+  --sidebar-w:    13rem;    /* file tree */
+  --ai-panel-w:   18rem;    /* AI response panel */
+  --topbar-h:     2.75rem;  /* top bar */
+  --voicebar-h:   5rem;     /* bottom voice bar */
+  --tabbar-h:     2.25rem;  /* code panel tabs */
+
+  /* ━━━ Shadows / glows ━━━ */
+  --glow-purple:    0 0 32px rgba(124,58,237,0.40);
+  --glow-purple-sm: 0 0 16px rgba(124,58,237,0.30);
+  --glow-mic:       0 0 24px rgba(124,58,237,0.60);
+  --shadow-card:    0 40px 80px rgba(0,0,0,0.50);
+  --shadow-cta:     0 0 30px rgba(124,58,237,0.35);
 
   /* ━━━ Transitions ━━━ */
-  --transition-fast: 120ms ease;
-  --transition-base: 200ms ease;
-  --transition-slow: 350ms ease;
-
-  /* ━━━ Z-index scale ━━━ */
-  --z-base:    0;
-  --z-raised:  10;
-  --z-overlay: 100;
-  --z-modal:   200;
-  --z-toast:   300;
-  --z-sticky:  400;
-}
-
-/* ━━━ SITE SURFACE overrides ━━━ */
-/* Applied at the (marketing) route group level */
-[data-surface="site"] {
-  --spacing-section-y: 7rem;      /* py-28 equivalent */
-  --max-content-width: 80rem;     /* max-w-5xl */
-  --card-padding: 2rem;           /* p-8 */
-}
-
-/* ━━━ APP SURFACE overrides ━━━ */
-/* Applied at the (app) route group level */
-[data-surface="app"] {
-  --panel-sidebar-width:  13rem;  /* w-52 file tree */
-  --panel-ai-width:       18rem;  /* w-72 AI panel */
-  --panel-topbar-height:  2.75rem; /* h-11 */
-  --panel-voicebar-height: 5rem;  /* h-20 */
-  --code-font-size:       0.8125rem; /* 13px */
-  --code-line-height:     1.7;
-  --tab-height:           2.25rem; /* h-9 */
+  --t-fast: 120ms ease;
+  --t-base: 200ms ease;
 }

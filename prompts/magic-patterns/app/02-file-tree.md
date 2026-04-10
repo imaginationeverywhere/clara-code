@@ -5,6 +5,16 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**This is a DESKTOP APPLICATION, not a web page or mobile app.**
+Design like VS Code or Cursor's file explorer — NOT a web sidebar.
+- Dense row height (28px per item). No card padding. No rounded-xl cards.
+- Tiny fonts (12px monospace). Tight spacing.
+- Full-height panel, no scrolling page — the tree itself scrolls internally.
+- Dark terminal aesthetic (#090D12 sidebar). No light mode.
+
+---
+
 ## Prompt
 
 ```

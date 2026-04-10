@@ -5,6 +5,15 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**Clara Code is a DESKTOP/TERMINAL APPLICATION** — a voice-first AI coding assistant.
+This is the features section of its marketing site. Aesthetic: premium developer tool,
+like Vercel, Cursor, or Warp. Dense bento grid layout. No mobile-first stacks.
+Developer-grade language. The mini file tree and code snippet inside cards should look
+like actual terminal/IDE output — not decorative illustrations.
+
+---
+
 ## Prompt
 
 ```

@@ -5,6 +5,17 @@
 
 ---
 
+## CONTEXT FOR MAGIC PATTERNS — READ FIRST
+**This is a DESKTOP APPLICATION, not a web page or mobile app.**
+Design like a Cursor AI chat panel or GitHub Copilot chat — NOT a full-page chat app.
+- Fixed 18rem width sidebar. No full-screen modals.
+- Dense message bubbles. 12px body text in the panel.
+- Code blocks inside chat are compact (11px monospace). No large padding.
+- The panel is always visible alongside the code editor — not a modal or overlay.
+- Dark terminal aesthetic (#090D12). Compact quick-action pills at bottom.
+
+---
+
 ## Prompt
 
 ```
