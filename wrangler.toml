@@ -1,0 +1,14 @@
+name = "clara-code"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "clara-code"
+
+[env.develop]
+name = "clara-code-dev"
+
+# Cloudflare Pages config
+# Project: clara-code
+# Custom domain: claracode.ai
+# Account: 4682eae9d50da54644c8f895ddad984f
+# Zone: c85d0ebc12b64c6dedfb303596e7defe
