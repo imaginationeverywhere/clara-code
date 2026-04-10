@@ -1,0 +1,115 @@
+{
+  "reports": [
+    {
+      "sessionId": "a6f232966a49eb2d",
+      "sessionStart": "2025-08-08T18:17:45.698Z",
+      "sessionStartupTime": 1,
+      "projectId": "3bd85b54a1bf42fb",
+      "projectType": "full-monorepo",
+      "workspaces": [
+        "frontend",
+        "backend",
+        "mobile"
+      ],
+      "boilerplateVersion": "1.1.0",
+      "sessionCount": 1,
+      "lastUpdateCheck": null,
+      "commandUsagePatterns": {
+        "totalCommands": 0,
+        "topCommands": {},
+        "lastUsed": null
+      },
+      "featureAdoption": {
+        "jiraIntegration": true,
+        "todoSystem": true,
+        "prpFramework": true,
+        "agentSystem": true,
+        "sessionHooks": true,
+        "telemetryEnabled": true,
+        "deploymentCommands": true,
+        "mockupTemplates": "retail"
+      },
+      "performanceMetrics": {
+        "memoryUsage": {
+          "rss": 32825344,
+          "heapTotal": 5840896,
+          "heapUsed": 5064008,
+          "external": 1851891,
+          "arrayBuffers": 16667
+        },
+        "cpuUsage": {
+          "user": 45799,
+          "system": 10584
+        },
+        "uptime": 0.031017014,
+        "loadAverage": [
+          3.06689453125,
+          3.42333984375,
+          3.3876953125
+        ]
+      },
+      "systemInfo": {
+        "nodeVersion": "v22.17.1",
+        "platform": "darwin",
+        "arch": "x64",
+        "osRelease": "24.6.0",
+        "totalMemory": 34359738368,
+        "freeMemory": 5531230208,
+        "cpuCount": 12
+      },
+      "deploymentPatterns": {
+        "hasDockerfile": false,
+        "hasDockerCompose": true,
+        "hasAWSCDK": true,
+        "hasAmplify": false,
+        "hasGitHubActions": true,
+        "hasVercel": false,
+        "hasHeroku": false
+      },
+      "infrastructureUsage": {
+        "aws": {
+          "amplify": false,
+          "cdk": true,
+          "ec2": true,
+          "rds": false
+        },
+        "databases": {
+          "postgresql": false,
+          "mongodb": false,
+          "redis": false
+        },
+        "services": {
+          "stripe": true,
+          "clerk": true,
+          "twilio": true,
+          "shippo": true,
+          "googleAnalytics": true
+        }
+      },
+      "errorPatterns": {
+        "totalErrors": 0,
+        "recentErrors": [],
+        "lastError": null
+      },
+      "updateBehavior": {
+        "lastUpdateCheck": null,
+        "lastUpdateApplied": "2025-07-10T15:21:26.814Z",
+        "updateFrequency": "session-start",
+        "autoUpdateEnabled": {
+          "safeUpdates": true,
+          "commandUpdates": true,
+          "docUpdates": false,
+          "infrastructureUpdates": false
+        },
+        "updateHistory": 2
+      },
+      "dataVersion": "1.0.0",
+      "anonymized": true,
+      "consentTimestamp": "2025-08-08T00:00:00Z",
+      "reportedAt": "2025-08-08T18:17:45.704Z",
+      "reporterVersion": "1.0.0",
+      "cached": true,
+      "cacheTimestamp": "2025-08-08T18:17:45.704Z"
+    }
+  ]
+}

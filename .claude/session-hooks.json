@@ -1,0 +1,44 @@
+{
+  "session": {
+    "startup": {
+      "enabled": false,
+      "hooks": [
+        {
+          "name": "boilerplate-update-check",
+          "agent": "boilerplate-update-manager",
+          "trigger": "SessionStart",
+          "hookScript": ".claude/hooks/session-start.js",
+          "priority": 1,
+          "mandatory": false,
+          "description": "DEPRECATED - Now handled by status line. Check for boilerplate updates from remote repository",
+          "remoteRepository": "git@github.com:imaginationeverywhere/quik-nation-ai-boilerplate.git",
+          "failureMode": "continue-silently",
+          "maxExecutionTime": 10000,
+          "conditions": {
+            "hasBoilerplate": true
+          },
+          "note": "This hook is disabled as update checking is now handled by the status line configuration"
+        }
+      ]
+    },
+    "telemetry": {
+      "enabled": true,
+      "remoteRepository": "git@github.com:imaginationeverywhere/quik-nation-ai-boilerplate.git",
+      "collectUsageData": true,
+      "collectPerformanceData": true,
+      "collectErrorData": true,
+      "anonymizeData": true,
+      "reportingInterval": "session-start"
+    },
+    "updateChecking": {
+      "enabled": true,
+      "checkFrequency": "session-start",
+      "remoteRepository": "git@github.com:imaginationeverywhere/quik-nation-ai-boilerplate.git",
+      "timeout": 5000,
+      "retryAttempts": 2,
+      "offlineMode": "graceful-fallback"
+    }
+  },
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-10T00:00:00Z"
+}

@@ -1,0 +1,331 @@
+{
+  "version": "1.9.0",
+  "lastUpdated": "2025-09-08T17:00:00Z",
+  "description": "Verified working MCP servers with confirmed npm packages",
+  "totalServers": 20,
+  "verificationStatus": "tested-2025-09-08",
+  "servers": {
+    "filesystem": {
+      "name": "@modelcontextprotocol/server-filesystem",
+      "version": "2025.8.21",
+      "description": "Official MCP server for secure filesystem access",
+      "category": "development-core",
+      "command": "npx @modelcontextprotocol/server-filesystem",
+      "args": ["--allowed-directory", "{{PROJECT_ROOT}}"],
+      "env": [],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": true,
+      "autoInstall": true
+    },
+    "sequential-thinking": {
+      "name": "@modelcontextprotocol/server-sequential-thinking", 
+      "version": "2025.7.1",
+      "description": "Official MCP server for sequential thinking and problem solving",
+      "category": "development-core",
+      "command": "npx @modelcontextprotocol/server-sequential-thinking",
+      "args": [],
+      "env": [],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": true
+    },
+    "github-official": {
+      "name": "github-mcp-server",
+      "version": "1.8.7",
+      "description": "GitHub's official MCP Server with repository management",
+      "category": "enterprise-integration",
+      "command": "npx github-mcp-server",
+      "args": [],
+      "env": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "notion": {
+      "name": "@notionhq/notion-mcp-server",
+      "version": "1.9.0", 
+      "description": "Official MCP server for Notion API integration",
+      "category": "enterprise-integration",
+      "command": "npx @notionhq/notion-mcp-server",
+      "args": [],
+      "env": ["NOTION_API_KEY"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "sentry-monitoring": {
+      "name": "@sentry/mcp-server",
+      "version": "0.18.0",
+      "description": "Official Sentry MCP Server for error monitoring",
+      "category": "specialized-advanced",
+      "command": "npx @sentry/mcp-server",
+      "args": [],
+      "env": ["SENTRY_DSN"],
+      "status": "verified-working", 
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "database-postgres": {
+      "name": "enhanced-postgres-mcp-server",
+      "version": "1.0.1",
+      "description": "Enhanced PostgreSQL database with read/write capabilities",
+      "category": "database",
+      "command": "npx enhanced-postgres-mcp-server",
+      "args": [],
+      "env": ["DATABASE_URL"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "postgres-fast": {
+      "name": "postgres-mcp",
+      "version": "1.0.4",
+      "description": "Blazing fast PostgreSQL MCP server for AI agents",
+      "category": "database", 
+      "command": "npx postgres-mcp",
+      "args": [],
+      "env": ["DATABASE_URL"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "postgres-henkey": {
+      "name": "@henkey/postgres-mcp-server",
+      "version": "latest",
+      "description": "Comprehensive PostgreSQL management with 18 intelligent tools",
+      "category": "database",
+      "command": "npx @henkey/postgres-mcp-server", 
+      "args": [],
+      "env": ["DATABASE_URL"],
+      "status": "community-verified",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "mysql": {
+      "name": "@benborla29/mcp-server-mysql",
+      "version": "2.0.5",
+      "description": "MCP server for interacting with MySQL databases",
+      "category": "database",
+      "command": "npx @benborla29/mcp-server-mysql",
+      "args": [],
+      "env": ["MYSQL_URL"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "supabase": {
+      "name": "@supabase/mcp-server-supabase",
+      "version": "0.5.2",
+      "description": "Official MCP server for interacting with Supabase",
+      "category": "database",
+      "command": "npx @supabase/mcp-server-supabase",
+      "args": [],
+      "env": ["SUPABASE_URL", "SUPABASE_ANON_KEY"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "bigquery": {
+      "name": "mcp-bigquery-server",
+      "version": "latest",
+      "description": "Google BigQuery integration MCP server",
+      "category": "database",
+      "command": "npx mcp-bigquery-server",
+      "args": [],
+      "env": ["GOOGLE_APPLICATION_CREDENTIALS"],
+      "status": "community-verified",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "docker": {
+      "name": "docker-mcp",
+      "version": "latest", 
+      "description": "Run and manage Docker containers and compose",
+      "category": "enterprise-integration",
+      "command": "npx docker-mcp",
+      "args": [],
+      "env": [],
+      "status": "community-verified",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "browser": {
+      "name": "browser-mcp",
+      "version": "latest",
+      "description": "Automate your local browser for testing and scraping",
+      "category": "testing-qa",
+      "command": "npx browser-mcp",
+      "args": [],
+      "env": [],
+      "status": "community-verified",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "browser-agent": {
+      "name": "@agent-infra/mcp-server-browser",
+      "version": "1.2.21",
+      "description": "MCP server for browser automation and access",
+      "category": "testing-qa",
+      "command": "npx @agent-infra/mcp-server-browser",
+      "args": [],
+      "env": [],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "context7": {
+      "name": "@upstash/context7-mcp",
+      "version": "1.0.17",
+      "description": "Official MCP server for Context7 documentation access",
+      "category": "community",
+      "command": "npx @upstash/context7-mcp",
+      "args": [],
+      "env": [],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "youtube": {
+      "name": "youtube-data-mcp-server",
+      "version": "1.0.16",
+      "description": "YouTube Data API MCP Server implementation",
+      "category": "api-integration",
+      "command": "npx youtube-data-mcp-server",
+      "args": [],
+      "env": ["YOUTUBE_API_KEY"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "hubspot": {
+      "name": "@hubspot/mcp-server",
+      "version": "0.4.0",
+      "description": "Official MCP Server for HubSpot Apps development",
+      "category": "enterprise-integration",
+      "command": "npx @hubspot/mcp-server",
+      "args": [],
+      "env": ["HUBSPOT_API_KEY"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "mapbox": {
+      "name": "@mapbox/mcp-server",
+      "version": "0.2.4",
+      "description": "Official Mapbox MCP server for location services",
+      "category": "api-integration",
+      "command": "npx @mapbox/mcp-server",
+      "args": [],
+      "env": ["MAPBOX_ACCESS_TOKEN"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "code-runner": {
+      "name": "mcp-server-code-runner",
+      "version": "0.1.7",
+      "description": "Code execution MCP server for running code snippets",
+      "category": "specialized-advanced",
+      "command": "npx mcp-server-code-runner",
+      "args": [],
+      "env": [],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    },
+    "graphlit": {
+      "name": "graphlit-mcp-server",
+      "version": "1.0.20250830001",
+      "description": "Graphlit MCP Server for AI, RAG, and knowledge graphs",
+      "category": "specialized-advanced",
+      "command": "npx graphlit-mcp-server",
+      "args": [],
+      "env": ["GRAPHLIT_ORGANIZATION_ID", "GRAPHLIT_SECRET_KEY"],
+      "status": "verified-working",
+      "packageExists": true,
+      "required": false,
+      "autoInstall": false
+    }
+  },
+  "installationProfiles": {
+    "minimal": {
+      "description": "Essential development servers only",
+      "servers": ["filesystem", "sequential-thinking"]
+    },
+    "standard": {
+      "description": "Core + verified enterprise servers",
+      "servers": ["filesystem", "sequential-thinking", "github-official", "database-postgres", "context7"]
+    },
+    "database-focused": {
+      "description": "All database servers",
+      "servers": ["filesystem", "database-postgres", "postgres-fast", "postgres-henkey", "mysql", "supabase", "bigquery"]
+    },
+    "enterprise": {
+      "description": "Enterprise-grade verified servers",
+      "servers": ["filesystem", "sequential-thinking", "github-official", "notion", "sentry-monitoring", "database-postgres", "hubspot", "mapbox"]
+    },
+    "development": {
+      "description": "Development and testing focused",
+      "servers": ["filesystem", "sequential-thinking", "github-official", "browser", "browser-agent", "docker", "code-runner"]
+    },
+    "full-verified": {
+      "description": "All verified working servers",
+      "servers": ["filesystem", "sequential-thinking", "github-official", "notion", "sentry-monitoring", "database-postgres", "postgres-fast", "postgres-henkey", "mysql", "supabase", "bigquery", "docker", "browser", "browser-agent", "context7", "youtube", "hubspot", "mapbox", "code-runner", "graphlit"]
+    }
+  },
+  "categories": {
+    "development-core": {
+      "description": "Essential development servers",
+      "servers": ["filesystem", "sequential-thinking"]
+    },
+    "enterprise-integration": {
+      "description": "Enterprise platform integrations",
+      "servers": ["github-official", "notion", "hubspot", "docker"]
+    },
+    "database": {
+      "description": "Database integration servers", 
+      "servers": ["database-postgres", "postgres-fast", "postgres-henkey", "mysql", "supabase", "bigquery"]
+    },
+    "api-integration": {
+      "description": "API and service integrations",
+      "servers": ["youtube", "mapbox"]
+    },
+    "testing-qa": {
+      "description": "Testing and browser automation",
+      "servers": ["browser", "browser-agent"]
+    },
+    "community": {
+      "description": "Community-verified servers",
+      "servers": ["context7"]
+    },
+    "specialized-advanced": {
+      "description": "Advanced specialized servers",
+      "servers": ["sentry-monitoring", "code-runner", "graphlit"]
+    }
+  },
+  "verificationNotes": {
+    "verified-working": "Package exists on npm and has been tested",
+    "community-verified": "Package exists and is maintained by community",
+    "theoretical": "Package may not exist or is not tested",
+    "deprecated": "Package exists but may be outdated"
+  }
+}

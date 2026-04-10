@@ -1,0 +1,25 @@
+YouTube transcript export — 2026-03-27
+
+Each video has:
+  - <VIDEO_ID>.en.srt — English subtitles (SubRip)
+  - <VIDEO_ID>.txt   — plain text (merged cues)
+  - 47hVathUUXs also has 47hVathUUXs.es.txt (Spanish) and 47hVathUUXs.en-orig.srt
+
+Source URLs:
+  6lxC487hYdI  https://youtu.be/6lxC487hYdI
+  DISIsErRej0   https://youtu.be/DISIsErRej0
+  _gV7qDhRiNk   https://youtu.be/_gV7qDhRiNk
+  fIRq5sW9ZC0   https://youtu.be/fIRq5sW9ZC0
+  PXq6awYzfT8   https://youtu.be/PXq6awYzfT8   (see PXq6awYzfT8.NOTES.txt — not fetched)
+  81FbpXpfxTc   https://youtu.be/81FbpXpfxTc
+  I-4cJgqF_JY   https://youtu.be/I-4cJgqF_JY
+  6JasHZ2Njnc   https://youtu.be/6JasHZ2Njnc
+  50y0N1vnH0Y   https://youtu.be/50y0N1vnH0Y
+  O6NCXqzkuOc   https://youtu.be/O6NCXqzkuOc
+  ok3ICuivyKE   https://youtu.be/ok3ICuivyKE
+  CEvIs9y1uog   https://youtu.be/CEvIs9y1uog
+  47hVathUUXs   https://youtu.be/47hVathUUXs   (audio EN; 47hVathUUXs.txt + 47hVathUUXs.es.txt; also 47hVathUUXs.en-orig.srt)
+
+Fetch notes:
+  - yt-dlp with default web client hit “Sign in to confirm you’re not a bot” for some IDs; retries used player_client=android.
+  - PXq6awYzfT8: Android API reported no English subtitle tracks; iOS/web retries were slow or blocked (429). Re-run locally after a delay or with --cookies-from-browser (see yt-dlp FAQ).

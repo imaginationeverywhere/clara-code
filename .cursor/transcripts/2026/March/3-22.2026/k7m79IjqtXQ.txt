@@ -1,0 +1,128 @@
+Title: Claude Code Channels is Openclaw killer! |  Full setup , tutorial and fixes!
+Video ID: k7m79IjqtXQ
+URL: https://www.youtube.com/watch?v=k7m79IjqtXQ
+
+Note: YouTube caption/subtitle APIs were unavailable when this file was generated; text below is from offline ASR and may differ slightly from official captions.
+
+Source: Local speech-to-text (faster-whisper, model=base, language=en, probability=1.00)
+
+--- Timestamps ---
+[00:00] Andthropic has just released Cloud channels which allows you to control Cloud code through
+[00:05] Telegram and Discord.
+[00:06] The community has been saying this brings it closer to OpenClaw like setup.
+[00:11] As you may know you cannot use Cloud subscription with OpenClaw and API prices of these models
+[00:16] will soon skyrocket.
+[00:18] So this update was very much needed to all who have Cloud subscription and wanted OpenClaw
+[00:23] like setup.
+[00:24] But it's not fully like OpenClaw, for example, you need an active session running in Terminal.
+[00:29] To use Cloud code which kind of loses the purpose.
+[00:34] So I was able to find some fix to it.
+[00:36] In this video we will setup Cloud code with channels and also I will tell you about the
+[00:40] fix I did which brings it very close to OpenClaw like functionality.
+[00:44] Let's first start with installing Cloud code and then we'll see the further steps.
+[00:48] I am using a Linux device here which is a remote server.
+[00:52] You can ask any AI model if you are using any other operating system.
+[00:56] The steps shouldn't be that different.
+[00:59] We first start by installing Tmux.
+[01:02] This will allow us to run Cloud code headlessly and you won't need an active terminal open.
+[01:07] Then you need to run this command to install one because one is required for the MCP plugin
+[01:13] which allows us to connect Telegram and Cloud code.
+[01:17] Next using this command we install Cloud code.
+[01:22] Next you can run this command to check if Tmux, one and Cloud code are installed.
+[01:26] If they are then they will show up with their version numbers like this.
+[01:32] Now to start up Cloud code just type Cloud and that should show up like the way it is here.
+[01:38] Next we need to hit forward slash login to login with our Cloud subscription.
+[01:44] And after that you can choose your preferred option.
+[01:46] I am going to use a Cloud subscription.
+[01:50] If you are going to use API let me tell you it's better that you use the official OpenClaw
+[01:55] because it has more integration and it is going to feel more seamless.
+[01:59] Anyways let's move ahead.
+[02:02] If you have a desktop environment Cloud will try to open a browser to sign in.
+[02:07] In my case there is no desktop environment so it gives a URL which I need to copy and paste
+[02:12] in a browser.
+[02:13] After that I need to authorize.
+[02:15] It will then give a code which we need to copy and paste in the terminal and hit enter.
+[02:20] You can see it says login successful.
+[02:23] Nice.
+[02:24] Now we need to set up a telegram bot.
+[02:26] To do that we need to search botfather in telegram.
+[02:31] And you know we can see an open button next to him.
+[02:34] Just click that and we can see all previous bots that were created.
+[02:38] And we also see an option to create a new bot.
+[02:41] Let's hit create new bot.
+[02:43] Now we have to select name for a bot.
+[02:45] Then we also have to select a user name for the bot which ends with bot in its name.
+[02:52] Once you are done you will get a bot token.
+[02:54] And this is important because this acts as the bridge between cloud code and telegram.
+[02:59] Keep this token.
+[03:00] Now let's install the plugin.
+[03:01] Now if you directly try to install the telegram plugin it may not work.
+[03:06] So here what you do is install the official marketplace first.
+[03:10] Do this.
+[03:12] Hit forward slash plugin and then go to marketplace.
+[03:16] Then click add marketplace.
+[03:18] And then type this exact link.
+[03:21] This will install the marketplace and as you can see you can discover plugins.
+[03:26] We don't need this now so we'll do escape and escape again.
+[03:29] Next we type this exact link and now it will work.
+[03:33] Now you can select at what level you want to install it.
+[03:36] I will select install for you which is the default.
+[03:39] Now you can see the plugin is installed.
+[03:42] Next you need to share the bot token.
+[03:44] In this way as it is shown in front of you.
+[03:47] Now it may work or may not work for you.
+[03:50] It didn't work for me so I had to manually add it.
+[03:54] For that we make a directory using the link as it is shown on the screen.
+[03:59] And using this link we save the token.
+[04:02] And then after that you can run this command and it should return the bot token which would
+[04:06] mean it is saved.
+[04:09] And now you need to use this link to open cloud code with the telegram plugin enabled.
+[04:15] Now you have to open up a chat with telegram bot you created previously.
+[04:20] Send start and then some message.
+[04:22] It will return a pairing code to you.
+[04:24] Now you have to enter this pairing code to cloud in the way I am showing you here.
+[04:29] After it's done you will see a message in telegram, pad and say hi to cloud.
+[04:34] And now you can see we are getting a response and I'm able to have a back and forth conversation.
+[04:38] Remember to run this command which will not send a pairing code to whoever sends a message
+[04:44] to this bot.
+[04:45] Instead it will only work with you because you are already pad and are in the allow list.
+[04:51] And as you can see it really feels like open cloud isn't it?
+[04:55] But there are some issues.
+[04:57] Firstly, you may have observed when I sent a hi it didn't get a response because there was
+[05:03] an interactive prompt that is present in cloud code which interrupts the conversation.
+[05:08] So you have to select the option in the active terminal.
+[05:12] There is nothing you can do from telegram as the time of recording this video.
+[05:16] Also you can only have a conversation as long as this terminal is active.
+[05:20] If it's closed then you can't have a back and forth conversation as there is no cloud
+[05:24] code session running.
+[05:26] We need to fix all of this.
+[05:29] So I actually with the help of opus made a GitHub repo where all the fixes are documented.
+[05:34] You can read it and share this to your cloud for itself so that it can implement these
+[05:38] fixes for you.
+[05:40] Let me tell you about all these fixes.
+[05:42] First is auto approval of cloud core permission prompts.
+[05:46] As you can see here the permission prompt now comes through in telegram and also it is
+[05:50] auto approved as it is automatically selecting the first option or the default option.
+[05:57] Next is automatic in activity timeout.
+[05:59] If you had a conversation and you are done with it then the cloud course session waits for
+[06:03] one hour and after that it summarizes anything that was discussed in the session and then
+[06:09] it auto exits.
+[06:11] You can change the default time from one hour to whatever you want.
+[06:15] Next is automatic session spawning.
+[06:18] You don't need a terminal just when you send a high to the bot in telegram it will start
+[06:24] a new session.
+[06:26] Adless operation is something that I've already talked about.
+[06:29] Next is telegram initiated exit.
+[06:32] If you hit forward slash exit then it waits for a while and then ends the session and just
+[06:37] so that your aware that session is ended it will send a response session ended send a message
+[06:43] to start a new one.
+[06:46] So these are the fixes I would highly suggest you to work with a chatbot so that you can verify
+[06:50] each code that I shared with you and understand what each one does and pick and select which
+[06:55] feature you want or you don't want and there might be a bug where you send a prompt and
+[07:00] a new system may have started but you don't see a response in this case you just have to
+[07:05] recent the prompt and it will work.
+[07:07] I hope this video was of some use if that's the case please do it like button and subscribe
+[07:12] for more such videos and I'll catch you guys in the next one.
+
+--- Plain text ---
+Andthropic has just released Cloud channels which allows you to control Cloud code through Telegram and Discord. The community has been saying this brings it closer to OpenClaw like setup. As you may know you cannot use Cloud subscription with OpenClaw and API prices of these models will soon skyrocket. So this update was very much needed to all who have Cloud subscription and wanted OpenClaw like setup. But it's not fully like OpenClaw, for example, you need an active session running in Terminal. To use Cloud code which kind of loses the purpose. So I was able to find some fix to it. In this video we will setup Cloud code with channels and also I will tell you about the fix I did which brings it very close to OpenClaw like functionality. Let's first start with installing Cloud code and then we'll see the further steps. I am using a Linux device here which is a remote server. You can ask any AI model if you are using any other operating system. The steps shouldn't be that different. We first start by installing Tmux. This will allow us to run Cloud code headlessly and you won't need an active terminal open. Then you need to run this command to install one because one is required for the MCP plugin which allows us to connect Telegram and Cloud code. Next using this command we install Cloud code. Next you can run this command to check if Tmux, one and Cloud code are installed. If they are then they will show up with their version numbers like this. Now to start up Cloud code just type Cloud and that should show up like the way it is here. Next we need to hit forward slash login to login with our Cloud subscription. And after that you can choose your preferred option. I am going to use a Cloud subscription. If you are going to use API let me tell you it's better that you use the official OpenClaw because it has more integration and it is going to feel more seamless. Anyways let's move ahead. If you have a desktop environment Cloud will try to open a browser to sign in. In my case there is no desktop environment so it gives a URL which I need to copy and paste in a browser. After that I need to authorize. It will then give a code which we need to copy and paste in the terminal and hit enter. You can see it says login successful. Nice. Now we need to set up a telegram bot. To do that we need to search botfather in telegram. And you know we can see an open button next to him. Just click that and we can see all previous bots that were created. And we also see an option to create a new bot. Let's hit create new bot. Now we have to select name for a bot. Then we also have to select a user name for the bot which ends with bot in its name. Once you are done you will get a bot token. And this is important because this acts as the bridge between cloud code and telegram. Keep this token. Now let's install the plugin. Now if you directly try to install the telegram plugin it may not work. So here what you do is install the official marketplace first. Do this. Hit forward slash plugin and then go to marketplace. Then click add marketplace. And then type this exact link. This will install the marketplace and as you can see you can discover plugins. We don't need this now so we'll do escape and escape again. Next we type this exact link and now it will work. Now you can select at what level you want to install it. I will select install for you which is the default. Now you can see the plugin is installed. Next you need to share the bot token. In this way as it is shown in front of you. Now it may work or may not work for you. It didn't work for me so I had to manually add it. For that we make a directory using the link as it is shown on the screen. And using this link we save the token. And then after that you can run this command and it should return the bot token which would mean it is saved. And now you need to use this link to open cloud code with the telegram plugin enabled. Now you have to open up a chat with telegram bot you created previously. Send start and then some message. It will return a pairing code to you. Now you have to enter this pairing code to cloud in the way I am showing you here. After it's done you will see a message in telegram, pad and say hi to cloud. And now you can see we are getting a response and I'm able to have a back and forth conversation. Remember to run this command which will not send a pairing code to whoever sends a message to this bot. Instead it will only work with you because you are already pad and are in the allow list. And as you can see it really feels like open cloud isn't it? But there are some issues. Firstly, you may have observed when I sent a hi it didn't get a response because there was an interactive prompt that is present in cloud code which interrupts the conversation. So you have to select the option in the active terminal. There is nothing you can do from telegram as the time of recording this video. Also you can only have a conversation as long as this terminal is active. If it's closed then you can't have a back and forth conversation as there is no cloud code session running. We need to fix all of this. So I actually with the help of opus made a GitHub repo where all the fixes are documented. You can read it and share this to your cloud for itself so that it can implement these fixes for you. Let me tell you about all these fixes. First is auto approval of cloud core permission prompts. As you can see here the permission prompt now comes through in telegram and also it is auto approved as it is automatically selecting the first option or the default option. Next is automatic in activity timeout. If you had a conversation and you are done with it then the cloud course session waits for one hour and after that it summarizes anything that was discussed in the session and then it auto exits. You can change the default time from one hour to whatever you want. Next is automatic session spawning. You don't need a terminal just when you send a high to the bot in telegram it will start a new session. Adless operation is something that I've already talked about. Next is telegram initiated exit. If you hit forward slash exit then it waits for a while and then ends the session and just so that your aware that session is ended it will send a response session ended send a message to start a new one. So these are the fixes I would highly suggest you to work with a chatbot so that you can verify each code that I shared with you and understand what each one does and pick and select which feature you want or you don't want and there might be a bug where you send a prompt and a new system may have started but you don't see a response in this case you just have to recent the prompt and it will work. I hope this video was of some use if that's the case please do it like button and subscribe for more such videos and I'll catch you guys in the next one.

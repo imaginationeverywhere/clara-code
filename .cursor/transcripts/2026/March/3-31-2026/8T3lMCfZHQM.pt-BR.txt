@@ -1,0 +1,15 @@
+**Andrej Karpathy** open-sourçou o **Auto Research** — projeto que, na visão do autor, muda como negócios usam IA: loop de **tentativa e erro automatizado** com **métrica** (score) para o agente saber se melhorou. Karpathy é figura central em IA (OpenAI, Tesla, “vibe coding”). O repo já tinha dezenas de milhares de stars; mídia e **CEO da Shopify** usaram.
+
+Em linguagem simples: otimizar à mão (email frio, landing, etc.) é **lento** (poucos testes/semana, humano no meio). A ideia: o **agente** propõe mudança → **testa** → se a métrica **sobe**, **mantém** (commit); se não, **reverte** e tenta de novo — **à noite inteira**, sem humano. “Never stop — the human might be asleep.”
+
+**Repo (essência):** `prepare.py` (setup/tokenizer, roda uma vez), **`train.py`** (~630 linhas — código que o agente **edita**), **`PROGRAM.md`** — instruções/prompt do loop (modificar, treinar, checar resultado, commit ou revert, repetir). Karpathy rodou ~2 dias em modelo pequeno; dezenas de melhorias empilhadas — inclusive bug humano (multiplicador faltando na atenção). **Shopify:** ~120 experimentos em Liquid (~2 dias) → **~53% mais rápido**, **~61% menos alocações de memória** em código otimizado manualmente há ~20 anos (com ressalva de possível overfit, mas com ideias excelentes).
+
+**O loop visualmente:** ler o alvo → **uma** mudança → teste → score melhorou? sim → commit + log → volta ao início; não → reverte → outra tentativa. O segredo não é “mais inteligente que você por decisão”, é **volume** (50, 100, 500 rodadas).
+
+**Três ingredientes** para generalizar além de ML: (1) algo **mutável**; (2) **número** mensurável; (3) forma de **testar** (souvent API). Casos: **cold email** (copy, taxa de resposta, APIs tipo Instantly/Smartlead — relatos de 2%→8–12%); **landing** (headline/CTA/layout + API do builder); **ads** (Meta/Google); **performance de código** (Shopify); **otimização de prompt** com **suite de testes** — demo do vídeo.
+
+**Demo (Claude Code):** clonar repo do Karpathy como referência; pedir o **mesmo padrão** aplicado a **prompt de extração** de dados de emails — `program.md`, `prompt.md` medíocre de propósito, `eval.py` (15 casos, score tipo 8/15), log de experimentos. Rodar eval baseline (~7/15), depois **loop autônomo** até 15/15 ou interrupção — hipóteses, keep/revert, log. Custo citado: **~24 centavos** na sessão/interface do **Claude Code**. 
+
+**Requisitos realistas:** feedback **rápido** (testes de segundos/minutos → centenas de experimentos/noite); se cada teste leva **semana**, o loop existe mas não “milagre overnight”. Precisa **número real**, não “achismo”. O agente não substitui **estratégia de alto nível**, mas **execução** que compõe (copy, targeting, prompts).
+
+CTAs: comunidade gratuita, newsletter, auditoria, links para repo e demo na descrição.

@@ -1,0 +1,108 @@
+{
+  "mcpServers": {
+    "ultrathink-knowledge-graph": {
+      "command": "npx",
+      "args": ["-y", "@shaneholloman/mcp-knowledge-graph"],
+      "env": {
+        "PROJECT_ROOT": "${PROJECT_ROOT}",
+        "GRAPH_STORAGE_PATH": "${PROJECT_ROOT}/.claude/mcp/data/knowledge-graph",
+        "GRAPH_AUTO_PERSIST": "true",
+        "GRAPH_CACHE_ENABLED": "true"
+      },
+      "metadata": {
+        "name": "UltraThink Knowledge Graph",
+        "description": "Advanced knowledge graph system with entity extraction, relationship mapping, and reasoning capabilities",
+        "version": "latest",
+        "category": "specialized-knowledge",
+        "features": [
+          "Entity extraction and relationship mapping",
+          "Knowledge graph construction and visualization",
+          "Semantic reasoning and inference",
+          "Cross-reference analysis and pattern detection",
+          "Context-aware entity disambiguation",
+          "Multi-hop relationship queries",
+          "Knowledge base integration",
+          "Temporal knowledge tracking",
+          "Graph-based search and discovery"
+        ],
+        "useCases": [
+          "Complex codebase analysis and understanding",
+          "Architectural decision tracking and reasoning",
+          "Dependency relationship mapping",
+          "Technical documentation knowledge extraction",
+          "Code pattern detection and reuse",
+          "API integration relationship mapping",
+          "Business logic flow understanding",
+          "Cross-project knowledge synthesis"
+        ],
+        "integration": {
+          "commands": [
+            "process-todos",
+            "spec-workflow",
+            "advanced-git",
+            "create-plan-todo",
+            "git-commit-docs-command"
+          ],
+          "documentation": [
+            "docs/",
+            "README.md",
+            "technical/",
+            "CHANGELOG.md"
+          ]
+        }
+      },
+      "alwaysAllow": [
+        "create_entities",
+        "create_relations",
+        "read_graph",
+        "search_nodes",
+        "add_observations",
+        "open_nodes",
+        "search_nodes",
+        "delete_entities",
+        "delete_observations",
+        "delete_relations"
+      ]
+    }
+  },
+  "instructions": {
+    "setup": [
+      "The knowledge graph server automatically creates a persistent graph database",
+      "All entities and relationships are stored in .claude/mcp/data/knowledge-graph/",
+      "The graph persists across sessions for continuous knowledge building",
+      "No additional configuration required - works out of the box"
+    ],
+    "usage": [
+      "Use natural language to extract entities from code or documentation",
+      "Ask questions about relationships between components",
+      "Query the graph to understand complex architectural decisions",
+      "Track dependencies and their evolution over time",
+      "Synthesize knowledge across multiple files and contexts"
+    ],
+    "examples": [
+      "Extract entities from this authentication flow",
+      "Show me the relationships between these components",
+      "What are the dependencies of the payment processing system?",
+      "Track how the user authentication logic has evolved",
+      "Find all components that interact with the database layer"
+    ],
+    "integration": {
+      "process-todos": "Knowledge graph enhances todo planning with architectural context",
+      "spec-workflow": "Specifications can reference existing knowledge graph entities",
+      "advanced-git": "Commit analysis can build knowledge graphs of code changes",
+      "create-plan-todo": "Plans can leverage relationship mapping for dependencies",
+      "git-commit-docs-command": "Documentation updates can update the knowledge graph"
+    }
+  },
+  "performance": {
+    "caching": true,
+    "incrementalUpdates": true,
+    "indexedSearch": true,
+    "persistence": "disk"
+  },
+  "privacy": {
+    "dataLocation": "local",
+    "noRemoteStorage": true,
+    "projectScoped": true
+  }
+}

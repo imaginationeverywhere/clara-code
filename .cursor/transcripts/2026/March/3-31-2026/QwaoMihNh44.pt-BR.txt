@@ -1,0 +1,25 @@
+Tour pelo **Hermes AI Agent** (“Hermes AI Gym”): instalação rápida (comandos no terminal), uso para **automatizar** fluxos — o autor diz ter testado muitos agentes e considera este dos mais **práticos e autônomos**. É **open source**, ligado ao laboratório **Nous Research** (legendas dizem “News” — no vídeo: Nous), com narrativa de **autoaperfeiçoamento**: quanto mais usa, mais refina prompts/skills.
+
+**Exemplos:** conta no **X/Twitter** postando sozinha (headline, texto, imagem) — “melhor que eu faria”; engajamento rápido em conta nova. Também **Instagram**, **TikTok**, marketing amplo, **SEO**, automações diversas.
+
+**Hermes vs OpenClaw:** Hermes pode operar **sem terminal aberto** (ex.: respostas no **Telegram** 24/7 após setup local); OpenClaw no exemplo cai se o **gateway/terminal** não está rodando — diferença de **sempre ligado** vs dependência da máquina local acordada.
+
+**Tom do agente:** foco em **soluções**; atualiza **skills** (arquivos tipo skill.md), propõe próximos passos (“em 30 min mando o link”). **Backup de API keys** (novidade): se um modelo/API falha, tenta outro — ex. **MiniMax** + fallback; ou **OpenRouter** com dezenas de modelos; modelos **Hermes** da Nous no OpenRouter.
+
+**Qwen 3.6 Plus (Alibaba)** em preview no OpenRouter — **grátis**, **1M tokens**, voltado a tarefas **agentic**; pode plugar no Hermes/OpenClaw/Claude Code. Estatísticas de uso citadas no vídeo (apps populares com Qwen).
+
+**Migração:** comando tipo **`hermes claw migrate`** para trazer setup do OpenClaw para Hermes (mencionado no vídeo).
+
+**Setup:** one-liner install, reload shell, wizard; **Telegram** opcional; funciona Linux/macOS/Windows; se travar, colar **link do GitHub no Claude Code**. Comandos: setup, trocar LLM, ferramentas, gateway, **`hermes update`**, **`hermes doctor`**, **perfis** (v0.6): vários agentes com personalidades/skills/APIs diferentes — `hermes profile create <nome>`.
+
+**Blueprint em 6 passos (simplificado no vídeo):** (1) **gatilho** (ex.: a cada 30 min: trends → rascunho → imagem → post X → confirmação Telegram); (2) **fontes de dados** (APIs que o próprio Hermes pede); (3) **ação** cotidiana; testar uma vez; (4) **agendar**. Automações citadas: **auto-poster** X, **monitor de inteligência de concorrentes**, **scanner de notícias de IA** (várias vezes/dia, deduplica/formata), **analytics diários** (screenshot de dashboard no Telegram).
+
+**Pipeline em 4 camadas:** tarefas agendadas → agente Hermes → dados/ações (APIs) → entrega (Telegram/WhatsApp/terminal). **Imagens:** exemplo conectando API **Nano Banana 2** (nome na legenda) para thumbnails.
+
+**“Cérebro”** = qualquer modelo você plugar (ex. MiniMax 2.7). Infra Nous para **self-improving**. Ideias futuras: SEO on-page, LinkedIn, relatórios semanais, inbox/newsletters, comunidades.
+
+**Paperclip** (open source) — orquestração visual de times de agentes; integração Hermes+Paperclip no GitHub. Hermes **grátis** + API Alibaba grátis para testar.
+
+CTA: **AI Profit Boardroom** — roadmap 30 dias, prompts, comunidade, calls — link na descrição/comentários.
+
+**Nota de limpeza:** legendas misturam marcas (“Miniax”, “Quen”, “open rout”, “paperclipip”, “klein”) — no uso real confira nomes oficiais (**MiniMax**, **Qwen**, **OpenRouter**, **Kilo Code**/etc.).

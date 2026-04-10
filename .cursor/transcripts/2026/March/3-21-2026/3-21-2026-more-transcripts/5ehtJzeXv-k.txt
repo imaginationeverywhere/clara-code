@@ -1,0 +1,558 @@
+Title: NEW Claude Code Feature Destroys OpenClaw (Channels + Cloud)
+Video ID: 5ehtJzeXv-k
+URL: https://www.youtube.com/watch?v=5ehtJzeXv-k
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Cloud Code can now automate tasks from
+[00:02] the cloud, which basically means that
+[00:03] not only does it work for you whilst you
+[00:05] asleep, it never fails and runs exactly
+[00:08] when you want it to, even if your laptop
+[00:10] is closed down, but only if you know how
+[00:13] to set it up correctly. In addition to
+[00:15] that, we also had the brand new update
+[00:17] of Claude channels that essentially let
+[00:19] you use your CL Cha Pro plan or your
+[00:22] Claude Max plan to chat with it. On top
+[00:24] of that, you can even drop it voice
+[00:25] notes that sound a little bit like this.
+[00:27] I'm going to show you a live demo right
+[00:28] now. I could say, "Hey there, it's Jack.
+[00:30] Could you do me a favor? Could you just
+[00:31] confirm what day it is, please?" You
+[00:33] could ask it any questions about any
+[00:35] repos you've got on your entire
+[00:36] computer. And we'll also cover exactly
+[00:38] why some people think this is the Open
+[00:40] Claw 2.0, Open Claw Killer, and what our
+[00:43] thoughts are on that. And just like
+[00:44] that, it's come back. And that is Claude
+[00:46] running on my desktop. That's how
+[00:48] freaking cool this thing is. And I'm
+[00:49] going to show you exactly how you set
+[00:50] this entire thing up step by step in
+[00:53] this video. So, but first of all, let's
+[00:54] talk about the brand new update and what
+[00:57] that looks like. So, as you know, you
+[00:59] can actually now code in the cloud.
+[01:01] You've been able to do this for a little
+[01:03] while, and you can do this by coming
+[01:04] over to claw.ai/code/draft.
+[01:08] And the idea with this is that you could
+[01:09] actually select any of your repos that
+[01:11] you've got and actually code not on your
+[01:13] laptop, but on a server. For example, if
+[01:15] I'm in a skull teddy, I might say, "Hey
+[01:17] there, could you update the number of
+[01:19] YouTube subscribers on the website to
+[01:21] be, I don't know, 167,000, something
+[01:24] like that." that and what this will do
+[01:25] is then update that in the repo and work
+[01:27] for us automatically. We can pick
+[01:29] whatever the you know uh rep repository
+[01:31] is and it'll do that for us. That's
+[01:33] always existed and that is really really
+[01:35] cool. Not a lot of people know that for
+[01:36] example but this has always been a
+[01:37] feature but you can now actually do this
+[01:39] to schedule tasks. So it's very similar
+[01:43] to local in the sense that on our claude
+[01:45] app we can schedule a task in claude
+[01:48] code to do something like a daily code
+[01:50] review or we could do this in claude
+[01:52] co-work which is interesting. So, we're
+[01:54] familiar with the concept, but the
+[01:55] difference here is this runs 24/7 and
+[01:58] you don't necessarily need your laptop
+[02:00] open for this to run, which basically
+[02:02] means it's way more reliable. It will
+[02:04] fire off at the exact time that you give
+[02:07] it, not necessarily when it reboots back
+[02:10] up and it kind of feels like sort of
+[02:11] doing it maybe. It doesn't need you. Why
+[02:14] overload loads of cats in this image?
+[02:16] I'll come and start very shortly. But
+[02:17] the point is, what is the main benefit?
+[02:19] The main benefit is the fact that Claude
+[02:21] code schedules the tasks and also for
+[02:23] anything that's time critical that you
+[02:25] need to make sure happens at a specific
+[02:28] time or just kind of want it to happen
+[02:30] at a specific time and you don't want to
+[02:31] have to be thinking about do I need to
+[02:33] leave my laptop open. It's a massive
+[02:34] benefit. It's more reliable because you
+[02:36] know that it's going on. And if you
+[02:38] think about with your teams as well, you
+[02:39] know, maybe you've got it running on one
+[02:41] of your teammates laptops. What if his
+[02:42] laptop breaks or something's not
+[02:44] happening? We now have this running in
+[02:45] the cloud for us which makes life a lot
+[02:48] easier. And there are two new features
+[02:49] we're going to cover. One is this Claude
+[02:52] cloud tasks and then we're also going to
+[02:54] cover the Claude channels that lets you
+[02:55] use Claude code from your mobile even in
+[02:58] your Claude ProClan. And again, the
+[02:59] features that I've not seen anybody talk
+[03:01] about on the channel's point of view,
+[03:02] we're going to dive into in this video.
+[03:04] Now, to create one of these scheduled
+[03:06] code tasks, we're going to head over to
+[03:07] claw.ai/code.
+[03:10] Now, you can't do this at the moment in
+[03:12] the application. If you do this in the
+[03:13] application, one of the things that
+[03:15] you'll see is it let you schedule tasks,
+[03:17] but it's on the computer. So, you have
+[03:19] to be in the online version for this.
+[03:21] Now, if you wanted to do a schedule task
+[03:23] to go and do some research on your
+[03:25] competitors and compose an email report
+[03:28] and a document, we would use Claude
+[03:29] Co-work for that. Claude code in the
+[03:32] cloud, the schedule tasks are things are
+[03:35] actions that you want it to do on a
+[03:38] repeatable basis for one of your
+[03:39] projects. What is a great example of
+[03:41] that? Okay, if you take out this
+[03:43] software that I built for my community,
+[03:44] ajack.com, right, where you can ask
+[03:46] questions to me, homozybot, you can
+[03:48] check out AI news, you've got loads of
+[03:51] cool and interesting stuff, right? This
+[03:53] scrapes on a daily basis cuz I want to
+[03:55] make sure people have got all the
+[03:56] accurate stuff, right? They've got all
+[03:57] the posts in the community. They can see
+[03:59] highlights. They can do all this kind of
+[04:00] different cool stuff. Well, in order to
+[04:02] do that, one of the things that I need
+[04:03] to make sure is that it's actually
+[04:05] running as a scraper every single day.
+[04:07] And I don't want people having to
+[04:09] message say, "Hey, dude. uh my my latest
+[04:11] post isn't here or I can't create an
+[04:12] account because of XYZ. So what I might
+[04:14] do is go ahead and create a schedule
+[04:16] task in the cloud because maybe guys my
+[04:19] laptop's down, I'm at the gym, I'm I'm
+[04:21] doing chess press and it overlaps so I
+[04:22] don't have to think about that anymore.
+[04:24] So what I might do first of all is come
+[04:25] down and pick a school sprint and
+[04:26] they're going to give it a prompt. I'm
+[04:27] going to say something like this. Hey
+[04:28] there, I would like you every day at
+[04:30] 8:00 a.m. and midday Dubai time to go
+[04:33] ahead and just confirm that all the
+[04:36] requisite files have been updated. So,
+[04:38] we're talking about YouTube um every all
+[04:41] the different posts in the school, all
+[04:42] the different YouTube videos. I just
+[04:44] want you to validate and ensure that
+[04:46] everything that needs to be refreshed
+[04:47] within the codebase is actually
+[04:49] happening at a daily basis. Just confirm
+[04:51] for me that that has happened and set
+[04:53] this to run autonomously for me in the
+[04:54] cloud. One example, so this can now do
+[04:57] it. This is a checking function. So,
+[04:59] this is actually checking for me whether
+[05:01] or not the thing has happened. I could
+[05:03] also just set up a, hey, go and activate
+[05:05] the scraping function for me. There's
+[05:06] many different ways you could do this.
+[05:07] So essentially what you're looking for
+[05:09] is anything that needs to happen on a
+[05:12] replicable basis over any time frame
+[05:14] that we can now set these scheduled
+[05:15] tasks up to work for us. And if you can
+[05:17] set the schedule task in clawed code on
+[05:20] your desktop, you may as well set them
+[05:22] up in the cloud so it can run for you
+[05:23] whenever you're not even thinking about
+[05:24] it. And just like that, it's now
+[05:26] officially created it. But
+[05:27] interestingly, it hasn't done it within
+[05:28] the environment. And I suspect this is a
+[05:30] new little feature because it's recently
+[05:32] live. So what you need to do is on
+[05:34] scheduled I'm going to open this up in a
+[05:36] new window so you can see if I click on
+[05:37] scheduled tasks here. What we need to do
+[05:40] is create the scheduled task ourselves
+[05:42] manually because it's not letting us do
+[05:43] that within the environment. So here we
+[05:45] can cover something like daily code
+[05:47] review and effectively we come down and
+[05:48] select the repo ourselves because the
+[05:50] online chat is not working right now and
+[05:51] again just pick the one that we want
+[05:53] which is fantastic. frequency. We select
+[05:55] this ourself and then anything that we
+[05:57] want to do as connectors is already
+[06:00] going to be there that we've set up
+[06:01] within the claude app itself. So if part
+[06:03] of that is sending you an email report
+[06:05] or sending it to the team on Slack, we
+[06:07] can actually set that up. So what we're
+[06:08] going to do now is come back over here
+[06:10] and basically say, hey, knowing what my
+[06:12] stated intention is, I'd like to write
+[06:13] for me a description that I can feed
+[06:15] myself into the schedule task creator.
+[06:18] And what I'd like is a bit of an email
+[06:21] debrief explaining what has been done
+[06:23] and if the check has been successful and
+[06:24] send that to Jack at ai automations
+[06:26] withjack.com. So when we come down here,
+[06:28] we're going to copy the instructions.
+[06:30] Come over to the claude code schedule
+[06:32] task and put that one in right there,
+[06:33] which is fantastic. Come down to the
+[06:34] bottom and then click on create. Now, as
+[06:36] you can see, that's all fully active
+[06:38] now. It's got the repo. It's got the
+[06:40] connectors that are just part and built
+[06:42] into my cloud code ecosystem. It's got
+[06:44] exactly when it's happening. And then
+[06:45] it's got the actual instruction itself.
+[06:46] And if I want to, I can run that anytime
+[06:48] I want to. Now, the cool thing is
+[06:50] whether I'm on the beach or laying down
+[06:51] or at the gym, this will run for us 24/7
+[06:55] without us having to think or worry
+[06:56] about it. And down below, I'll also put
+[06:58] a link to these three documents. The
+[07:00] post deploy watchdog, the cloud task
+[07:02] prompt, which is your overnight security
+[07:04] scan, and then in addition to that, also
+[07:05] your cloud task prompt, SLA, end up time
+[07:09] monitor. These are based on what people
+[07:10] are finding basically most useful for
+[07:13] this particular use case. So you can
+[07:14] just add that to your repos and sleep a
+[07:16] little bit easier at night. So now let's
+[07:17] talk about how clawed channels work. So
+[07:19] the way that it works is you have
+[07:21] Telegram or Discord. It's going to send
+[07:23] the bot's going to receive a message.
+[07:25] It's going to use an MCP and then with
+[07:27] that it's going to basically go to
+[07:28] Claude code which is going to be running
+[07:29] on your machine, your laptop and then
+[07:31] the response is sent back to Telegram.
+[07:33] So essentially what it enables us to do
+[07:35] now is send messages on Telegram. It's
+[07:37] kind of like you know how like Claude
+[07:38] remote control works where we had to
+[07:40] like scan the screen and click on a link
+[07:42] and it works. it this but actually now
+[07:44] it exists within telegram which is
+[07:46] interface that you may prefer to use. So
+[07:47] to set this up it's a really
+[07:49] straightforward process on telegram.
+[07:50] First thing you can do is come to this
+[07:51] document I'll put down below and copy
+[07:53] this. So we need to make sure you're
+[07:54] running the latest version of claude. To
+[07:56] do that come over to either your
+[07:58] terminal or you could do it in
+[07:58] anti-gravity. I like anti-gravity. If
+[08:01] you're familiar not familiar with
+[08:02] anti-gravity I'll put a link on screen
+[08:04] so you can watch my master class that
+[08:06] breaks all that down for you. I'm going
+[08:07] to click on terminal and click on new
+[08:09] terminal. And at the bottom of the
+[08:10] screen, you'll see here, I'm going to
+[08:11] bring this up. And I'm just going to
+[08:13] align this to the right hand side so we
+[08:15] can have um a bit of an easier viewing
+[08:16] experience. And then command and L will
+[08:19] vanquish the anti-gravity terminal from
+[08:21] the right. Cool. So going to enter in.
+[08:23] First of all, make sure that we've got
+[08:24] an updated Claude. So this will validate
+[08:26] it. And it is. It's checking it out now,
+[08:28] which is cool. So basically, it's fully
+[08:30] up to date. Then once that's done, the
+[08:31] next thing to do is install the Telegram
+[08:33] plugin. So copy this. Come straight back
+[08:35] over. And what we want to do basically
+[08:36] is go over to Claude. So let's just fire
+[08:37] claude up which we can do by entering in
+[08:40] his name and he will appear for us
+[08:41] there. Great. And then here what we can
+[08:43] do is come on to dark mode's fine and we
+[08:45] need to connect my account. So this is
+[08:46] one of the cool features is that you can
+[08:48] use your pro account or your max account
+[08:50] to chat with on telegram which is great.
+[08:51] So I'm going to connect with a
+[08:52] subscription. This will open up a new
+[08:54] tab. I'll just basically authenticate
+[08:56] like so once that's all authorized it's
+[08:58] great. Now the cool thing no one's
+[08:59] really touching on is the fact you're
+[09:00] talking to Opus 4.6 remotely which I
+[09:04] think is cool. So we're all connected
+[09:05] which is great. Now, let's make sure
+[09:07] that we can actually go ahead and um
+[09:09] basically install Telegram. So, let's go
+[09:10] ahead. That's fine. Yes, I trust a
+[09:12] folder. Cool. So, for/plugin. The fact
+[09:14] that changes color means that you're
+[09:16] actually running a command. And we just
+[09:17] make sure that that Telegram plugin is
+[09:19] uh installed. You're going to click on
+[09:21] install for you user scope. And there
+[09:23] you go. It is going ahead and it is
+[09:24] installed Telegram, which is wonderful.
+[09:26] Now, the next thing we need to do is
+[09:27] create our Telegram bot. So, we're going
+[09:28] to go over to Telegram. You can download
+[09:30] this on your desktop if you like, or you
+[09:32] can do it on your mobile. So, we're
+[09:33] going to go over to Bot Father and
+[09:34] create a new bot. So, let's go ahead and
+[09:36] do that. So, here we are. Botfather. You
+[09:38] can just literally search for him, by
+[09:39] the way, by for/botfather. Then, he will
+[09:41] appear. So, all we're going to do is
+[09:42] for/newbot, and it'll ask for a name.
+[09:45] So, I'm going to give it a random name.
+[09:46] Uh, and you can do either underscorebot
+[09:48] or just end it in bot. Then, hit enter.
+[09:50] Now, the botfather in all his magnanmity
+[09:53] will give you a token that you can
+[09:54] implement. Then, all you're going to do
+[09:56] now is grab this telegram/configure and
+[09:59] then your bot token. So, you're going to
+[10:00] copy this, come back over to
+[10:01] anti-gravity or claude. But before we
+[10:03] can do that, we just need to clear the
+[10:04] whole chat window. Let's come down and
+[10:06] clear everything. And then I'm going to
+[10:08] actually shut this down and open up a
+[10:09] brand new one, which is awesome. And
+[10:11] let's just close these guys down as
+[10:12] well. So we've got a brand new fresh
+[10:14] window. Cool. Then let's load up Claude.
+[10:17] Like so. Yeah, we trust this folder.
+[10:20] That's wonderful. And then we can come
+[10:21] and enter in the command, which is
+[10:23] great. And here we're going to enter in
+[10:24] the bot token that we got from the bot
+[10:26] father. And once that's complete, I've
+[10:28] opened up a brand new terminal, which
+[10:29] you can do by clicking on this plus. I'm
+[10:30] going to type in Claude. And we just
+[10:32] need to restart the plugins. So yeah, we
+[10:34] trust the folder and let's go for
+[10:35] for/reload
+[10:36] plugins. Now before we can launch a
+[10:38] message telegram, there's one other step
+[10:40] I just wanted to add in here as well,
+[10:41] which is whit listing, which means that
+[10:43] your telegram account is going to be the
+[10:45] only one that can actually send that.
+[10:47] Now to do that, we have to know what
+[10:49] your specific user ID is. This is your
+[10:51] key if you like where basically cloud
+[10:53] code's only going to work if it messages
+[10:55] from your firm. So to do that, you need
+[10:57] to go over to Telegram and you're going
+[11:00] to drop a message to this at user
+[11:01] infobot. And when you do that, and you
+[11:03] just send any message, it will come back
+[11:05] with essentially what your Telegram user
+[11:08] ID is. You're going to copy that. Then
+[11:10] you're going to come over here and
+[11:11] you're going to copy this code like so.
+[11:13] You're going to come straight back over
+[11:14] to anti-gravity or cloud code. We're
+[11:16] going click on terminal. Click on new
+[11:18] terminal. And then we're going to load
+[11:19] up Claude like so. And effectively,
+[11:21] we're going to trust the folder. That's
+[11:22] fine. And then you're going to enter in
+[11:24] this here which is for/telegram access
+[11:27] allow. And then this will actually then
+[11:29] whitelist and allow you to send a
+[11:31] message from your telegram account. And
+[11:33] then the final step is to copy this
+[11:35] launch code here. Now quick call out is
+[11:37] that I found that if you don't have it
+[11:38] skip permissions sometimes it will get
+[11:40] stuck asking for you to approve things
+[11:42] on your desktop which for me defeats the
+[11:44] purpose of it being mobile. So just be
+[11:46] aware that if you want to use this, I'll
+[11:48] put the version for it down below, which
+[11:50] does not include dangerously skip
+[11:51] permissions. And the other thing that
+[11:52] I've included in this is one of the
+[11:54] biggest reasons why this will fail for
+[11:56] some people. If two different session
+[11:58] polling IDs exist simultaneously, it
+[12:01] won't work. What this does is shuts down
+[12:03] and terminates everything else and opens
+[12:05] it up. So all we're going to do now is
+[12:06] copy this. We are going to head over to
+[12:09] claw and we're going to paste in the
+[12:10] command like so. And once we've done
+[12:12] that, we say yes, we trust the folder.
+[12:14] And now we should be able to communicate
+[12:16] with it. So let me send a message on my
+[12:17] phone so we get the full experience of
+[12:20] seeing this work live and it will feel
+[12:22] very Claudebot I would say. So if I come
+[12:24] down here and I just say hi on my keypad
+[12:26] real quick and we'll see superjack says
+[12:28] hi. So it's all live and ready to rock
+[12:30] and roll. Now this is where it's really
+[12:31] cool. So let's do something where we can
+[12:33] actually take actions for us on our
+[12:35] laptop. I could say hey dude do me a
+[12:36] favor. create a jack.md file on my
+[12:39] desktop and within it just say, "Hey,
+[12:41] Jack is a very cool guy with a beautiful
+[12:43] white cabin." Okay, so you can see how
+[12:46] this is going to work in practice now.
+[12:47] So look, it's got the information. It's
+[12:49] having a little think about it. And now
+[12:51] you can see the far right, Jack. MD has
+[12:53] happened. Cool. Now, why don't we send a
+[12:56] voice message? So, hey there. Test test
+[12:58] 123. Who is the tallest man to ever live
+[13:00] in the world? Okay, now check this out.
+[13:02] I've sent that off, but it's not going
+[13:04] to fully understand the voice message
+[13:06] yet because we haven't given it that
+[13:08] capability. So, look, I've sent it a
+[13:10] voice message. It's trying to download
+[13:11] the attachment from Telegram. We'll see
+[13:13] if this can do it for us automatically.
+[13:15] I'm going to bring this over to the
+[13:16] right a little bit just so you can get a
+[13:18] little bit of a clearer view. So, as you
+[13:20] can see, it's basically come back and
+[13:21] said, "Sorry, I can't listen to voice
+[13:23] messages. I can only view text." So,
+[13:24] what we're going to say is, "Awesome.
+[13:26] I'd like you to download any plugins or
+[13:28] capabilities that will enable you to
+[13:30] when I send you a voice message,
+[13:31] download that, transcribe that, and then
+[13:33] respond to me. Download whatever you
+[13:34] need to. Okay? And then we're going to
+[13:37] send that off. And then literally now
+[13:39] we're actually it's going to be able to
+[13:41] self-improve itself. So it can actually
+[13:42] take voice messages from us, which is
+[13:44] cool. And I actually bought a MacBook
+[13:46] rec um it's like a mini MacBook like way
+[13:48] bigger and a bit more powerful. This is
+[13:49] on my my desktop here. So this is going
+[13:51] to be running for me 24/7. He can do
+[13:53] really cool stuff like this and just
+[13:54] elevate the entire experience. And he's
+[13:57] just come back and confirmed he's going
+[13:58] to do homebrew Mac OS package manager.
+[14:00] He's got this one. And then open AI
+[14:02] whisper. This may take a few minutes.
+[14:03] I'll let you know when it's ready, guys.
+[14:05] And just like that, it's come back. And
+[14:06] as you can see, the voice transcription
+[14:08] is set up and working. Here's what you
+[14:09] said. Test test. Who is the tallest man
+[14:11] to ever live? And it's Rob Wllo, which
+[14:12] is correct. So now we can combine those
+[14:14] two things together and do anything we
+[14:15] want to. So I could say something like,
+[14:17] "Hey there, dude. I want you to go into
+[14:19] my schooler scraper project. Um, and
+[14:22] could you just confirm to me the last
+[14:23] time that we did a full scrape on all
+[14:25] the resources um for, you know, the
+[14:27] YouTube videos, that kind of thing. I
+[14:29] just want to know the last data. So, now
+[14:30] I'm asking a question about a project
+[14:33] that I'm working on. And I could be out
+[14:34] and about, I could be drinking coffee, I
+[14:36] could be doing anything. It can reach
+[14:37] over now, check this information, and
+[14:39] let me know the specifics, which I think
+[14:40] is so freaking cool. And just like that,
+[14:42] it's gone ahead, grabbed it, and it can
+[14:43] tell us the last data capture that
+[14:45] happened, which was yesterday. Now, a
+[14:46] couple of things I want you to know as
+[14:47] well about claw channels. Five
+[14:49] limitations just to call out. Number
+[14:50] one, it is fresh every time. So there is
+[14:53] no message history. It starts from zero.
+[14:56] One of the ways around this is to create
+[14:58] a kind of memory a pseudo memory on your
+[15:01] computer to capture it. So you may say,
+[15:03] for example, before you finish every
+[15:04] session, hey, I want to store this on my
+[15:06] desktop as you know, Telegram memory MD
+[15:09] and have this as a kind of like a quasi
+[15:12] memory that accesses. But in terms of
+[15:13] the actual memory itself, it's going to
+[15:15] be session based. Second one, you're
+[15:17] limited if you're using Telegram. Of
+[15:19] course, you can use um Discord if you
+[15:21] want to to 4,096 characters, but guys,
+[15:24] if we can't say what we need to say that
+[15:25] many characters, some say we need to be
+[15:27] more succinct. It's a 20 megaby download
+[15:28] cap. So, you're doing file transfers.
+[15:30] Other thing is that you can't search.
+[15:32] So, you can message Claude, you can't
+[15:33] brow, it cannot search in Telegram. And
+[15:35] finally, your machine has to stay on. If
+[15:37] you close the terminal, the Mac sleeps,
+[15:39] it kills the process. The channel is
+[15:40] dead. It is not running on the cloud.
+[15:42] And one hack for you as well, if you
+[15:44] come over to system settings, you type
+[15:45] in battery. One of the things I'd want
+[15:46] you to take on here is prevent automatic
+[15:48] sleeping when the display is off. That's
+[15:51] really cool. Then if you come down here
+[15:52] on the left to turn off display when
+[15:54] active, you can essentially just change
+[15:56] the settings that dictate when this does
+[15:58] and doesn't turn off due to periods of
+[16:00] inactivity, meaning that it can just
+[16:01] basically run for you in the background.
+[16:02] I believe it's this setting right here.
+[16:04] So you can set that to be for however
+[16:05] long that you want it to run, assuming
+[16:07] that your laptop's in a very secure
+[16:08] place. And the other thing you can do is
+[16:10] do command space bar, open up a
+[16:11] terminal, and if you enter in caffeinate
+[16:14] space like colon d, this will actually
+[16:16] then keep the MacBook awake and won't
+[16:18] let it go to sleep until you shut down
+[16:20] this terminal. You can also add some
+[16:22] specific seconds if you want to. And so
+[16:23] now you've learned exactly how to
+[16:24] connect Claude code via channels and how
+[16:26] to set up these automated schedule tasks
+[16:28] in the cloud. The next thing that we
+[16:30] need to do is learn how to leverage
+[16:31] Claude to build state-of-the-art apps,
+[16:33] which you can learn by watching this
+[16:35] video right
+
+--- Plain text ---
+Cloud Code can now automate tasks from the cloud, which basically means that not only does it work for you whilst you asleep, it never fails and runs exactly when you want it to, even if your laptop is closed down, but only if you know how to set it up correctly. In addition to that, we also had the brand new update of Claude channels that essentially let you use your CL Cha Pro plan or your Claude Max plan to chat with it. On top of that, you can even drop it voice notes that sound a little bit like this. I'm going to show you a live demo right now. I could say, "Hey there, it's Jack. Could you do me a favor? Could you just confirm what day it is, please?" You could ask it any questions about any repos you've got on your entire computer. And we'll also cover exactly why some people think this is the Open Claw 2.0, Open Claw Killer, and what our thoughts are on that. And just like that, it's come back. And that is Claude running on my desktop. That's how freaking cool this thing is. And I'm going to show you exactly how you set this entire thing up step by step in this video. So, but first of all, let's talk about the brand new update and what that looks like. So, as you know, you can actually now code in the cloud. You've been able to do this for a little while, and you can do this by coming over to claw.ai/code/draft. And the idea with this is that you could actually select any of your repos that you've got and actually code not on your laptop, but on a server. For example, if I'm in a skull teddy, I might say, "Hey there, could you update the number of YouTube subscribers on the website to be, I don't know, 167,000, something like that." that and what this will do is then update that in the repo and work for us automatically. We can pick whatever the you know uh rep repository is and it'll do that for us. That's always existed and that is really really cool. Not a lot of people know that for example but this has always been a feature but you can now actually do this to schedule tasks. So it's very similar to local in the sense that on our claude app we can schedule a task in claude code to do something like a daily code review or we could do this in claude co-work which is interesting. So, we're familiar with the concept, but the difference here is this runs 24/7 and you don't necessarily need your laptop open for this to run, which basically means it's way more reliable. It will fire off at the exact time that you give it, not necessarily when it reboots back up and it kind of feels like sort of doing it maybe. It doesn't need you. Why overload loads of cats in this image? I'll come and start very shortly. But the point is, what is the main benefit? The main benefit is the fact that Claude code schedules the tasks and also for anything that's time critical that you need to make sure happens at a specific time or just kind of want it to happen at a specific time and you don't want to have to be thinking about do I need to leave my laptop open. It's a massive benefit. It's more reliable because you know that it's going on. And if you think about with your teams as well, you know, maybe you've got it running on one of your teammates laptops. What if his laptop breaks or something's not happening? We now have this running in the cloud for us which makes life a lot easier. And there are two new features we're going to cover. One is this Claude cloud tasks and then we're also going to cover the Claude channels that lets you use Claude code from your mobile even in your Claude ProClan. And again, the features that I've not seen anybody talk about on the channel's point of view, we're going to dive into in this video. Now, to create one of these scheduled code tasks, we're going to head over to claw.ai/code. Now, you can't do this at the moment in the application. If you do this in the application, one of the things that you'll see is it let you schedule tasks, but it's on the computer. So, you have to be in the online version for this. Now, if you wanted to do a schedule task to go and do some research on your competitors and compose an email report and a document, we would use Claude Co-work for that. Claude code in the cloud, the schedule tasks are things are actions that you want it to do on a repeatable basis for one of your projects. What is a great example of that? Okay, if you take out this software that I built for my community, ajack.com, right, where you can ask questions to me, homozybot, you can check out AI news, you've got loads of cool and interesting stuff, right? This scrapes on a daily basis cuz I want to make sure people have got all the accurate stuff, right? They've got all the posts in the community. They can see highlights. They can do all this kind of different cool stuff. Well, in order to do that, one of the things that I need to make sure is that it's actually running as a scraper every single day. And I don't want people having to message say, "Hey, dude. uh my my latest post isn't here or I can't create an account because of XYZ. So what I might do is go ahead and create a schedule task in the cloud because maybe guys my laptop's down, I'm at the gym, I'm I'm doing chess press and it overlaps so I don't have to think about that anymore. So what I might do first of all is come down and pick a school sprint and they're going to give it a prompt. I'm going to say something like this. Hey there, I would like you every day at 8:00 a.m. and midday Dubai time to go ahead and just confirm that all the requisite files have been updated. So, we're talking about YouTube um every all the different posts in the school, all the different YouTube videos. I just want you to validate and ensure that everything that needs to be refreshed within the codebase is actually happening at a daily basis. Just confirm for me that that has happened and set this to run autonomously for me in the cloud. One example, so this can now do it. This is a checking function. So, this is actually checking for me whether or not the thing has happened. I could also just set up a, hey, go and activate the scraping function for me. There's many different ways you could do this. So essentially what you're looking for is anything that needs to happen on a replicable basis over any time frame that we can now set these scheduled tasks up to work for us. And if you can set the schedule task in clawed code on your desktop, you may as well set them up in the cloud so it can run for you whenever you're not even thinking about it. And just like that, it's now officially created it. But interestingly, it hasn't done it within the environment. And I suspect this is a new little feature because it's recently live. So what you need to do is on scheduled I'm going to open this up in a new window so you can see if I click on scheduled tasks here. What we need to do is create the scheduled task ourselves manually because it's not letting us do that within the environment. So here we can cover something like daily code review and effectively we come down and select the repo ourselves because the online chat is not working right now and again just pick the one that we want which is fantastic. frequency. We select this ourself and then anything that we want to do as connectors is already going to be there that we've set up within the claude app itself. So if part of that is sending you an email report or sending it to the team on Slack, we can actually set that up. So what we're going to do now is come back over here and basically say, hey, knowing what my stated intention is, I'd like to write for me a description that I can feed myself into the schedule task creator. And what I'd like is a bit of an email debrief explaining what has been done and if the check has been successful and send that to Jack at ai automations withjack.com. So when we come down here, we're going to copy the instructions. Come over to the claude code schedule task and put that one in right there, which is fantastic. Come down to the bottom and then click on create. Now, as you can see, that's all fully active now. It's got the repo. It's got the connectors that are just part and built into my cloud code ecosystem. It's got exactly when it's happening. And then it's got the actual instruction itself. And if I want to, I can run that anytime I want to. Now, the cool thing is whether I'm on the beach or laying down or at the gym, this will run for us 24/7 without us having to think or worry about it. And down below, I'll also put a link to these three documents. The post deploy watchdog, the cloud task prompt, which is your overnight security scan, and then in addition to that, also your cloud task prompt, SLA, end up time monitor. These are based on what people are finding basically most useful for this particular use case. So you can just add that to your repos and sleep a little bit easier at night. So now let's talk about how clawed channels work. So the way that it works is you have Telegram or Discord. It's going to send the bot's going to receive a message. It's going to use an MCP and then with that it's going to basically go to Claude code which is going to be running on your machine, your laptop and then the response is sent back to Telegram. So essentially what it enables us to do now is send messages on Telegram. It's kind of like you know how like Claude remote control works where we had to like scan the screen and click on a link and it works. it this but actually now it exists within telegram which is interface that you may prefer to use. So to set this up it's a really straightforward process on telegram. First thing you can do is come to this document I'll put down below and copy this. So we need to make sure you're running the latest version of claude. To do that come over to either your terminal or you could do it in anti-gravity. I like anti-gravity. If you're familiar not familiar with anti-gravity I'll put a link on screen so you can watch my master class that breaks all that down for you. I'm going to click on terminal and click on new terminal. And at the bottom of the screen, you'll see here, I'm going to bring this up. And I'm just going to align this to the right hand side so we can have um a bit of an easier viewing experience. And then command and L will vanquish the anti-gravity terminal from the right. Cool. So going to enter in. First of all, make sure that we've got an updated Claude. So this will validate it. And it is. It's checking it out now, which is cool. So basically, it's fully up to date. Then once that's done, the next thing to do is install the Telegram plugin. So copy this. Come straight back over. And what we want to do basically is go over to Claude. So let's just fire claude up which we can do by entering in his name and he will appear for us there. Great. And then here what we can do is come on to dark mode's fine and we need to connect my account. So this is one of the cool features is that you can use your pro account or your max account to chat with on telegram which is great. So I'm going to connect with a subscription. This will open up a new tab. I'll just basically authenticate like so once that's all authorized it's great. Now the cool thing no one's really touching on is the fact you're talking to Opus 4.6 remotely which I think is cool. So we're all connected which is great. Now, let's make sure that we can actually go ahead and um basically install Telegram. So, let's go ahead. That's fine. Yes, I trust a folder. Cool. So, for/plugin. The fact that changes color means that you're actually running a command. And we just make sure that that Telegram plugin is uh installed. You're going to click on install for you user scope. And there you go. It is going ahead and it is installed Telegram, which is wonderful. Now, the next thing we need to do is create our Telegram bot. So, we're going to go over to Telegram. You can download this on your desktop if you like, or you can do it on your mobile. So, we're going to go over to Bot Father and create a new bot. So, let's go ahead and do that. So, here we are. Botfather. You can just literally search for him, by the way, by for/botfather. Then, he will appear. So, all we're going to do is for/newbot, and it'll ask for a name. So, I'm going to give it a random name. Uh, and you can do either underscorebot or just end it in bot. Then, hit enter. Now, the botfather in all his magnanmity will give you a token that you can implement. Then, all you're going to do now is grab this telegram/configure and then your bot token. So, you're going to copy this, come back over to anti-gravity or claude. But before we can do that, we just need to clear the whole chat window. Let's come down and clear everything. And then I'm going to actually shut this down and open up a brand new one, which is awesome. And let's just close these guys down as well. So we've got a brand new fresh window. Cool. Then let's load up Claude. Like so. Yeah, we trust this folder. That's wonderful. And then we can come and enter in the command, which is great. And here we're going to enter in the bot token that we got from the bot father. And once that's complete, I've opened up a brand new terminal, which you can do by clicking on this plus. I'm going to type in Claude. And we just need to restart the plugins. So yeah, we trust the folder and let's go for for/reload plugins. Now before we can launch a message telegram, there's one other step I just wanted to add in here as well, which is whit listing, which means that your telegram account is going to be the only one that can actually send that. Now to do that, we have to know what your specific user ID is. This is your key if you like where basically cloud code's only going to work if it messages from your firm. So to do that, you need to go over to Telegram and you're going to drop a message to this at user infobot. And when you do that, and you just send any message, it will come back with essentially what your Telegram user ID is. You're going to copy that. Then you're going to come over here and you're going to copy this code like so. You're going to come straight back over to anti-gravity or cloud code. We're going click on terminal. Click on new terminal. And then we're going to load up Claude like so. And effectively, we're going to trust the folder. That's fine. And then you're going to enter in this here which is for/telegram access allow. And then this will actually then whitelist and allow you to send a message from your telegram account. And then the final step is to copy this launch code here. Now quick call out is that I found that if you don't have it skip permissions sometimes it will get stuck asking for you to approve things on your desktop which for me defeats the purpose of it being mobile. So just be aware that if you want to use this, I'll put the version for it down below, which does not include dangerously skip permissions. And the other thing that I've included in this is one of the biggest reasons why this will fail for some people. If two different session polling IDs exist simultaneously, it won't work. What this does is shuts down and terminates everything else and opens it up. So all we're going to do now is copy this. We are going to head over to claw and we're going to paste in the command like so. And once we've done that, we say yes, we trust the folder. And now we should be able to communicate with it. So let me send a message on my phone so we get the full experience of seeing this work live and it will feel very Claudebot I would say. So if I come down here and I just say hi on my keypad real quick and we'll see superjack says hi. So it's all live and ready to rock and roll. Now this is where it's really cool. So let's do something where we can actually take actions for us on our laptop. I could say hey dude do me a favor. create a jack.md file on my desktop and within it just say, "Hey, Jack is a very cool guy with a beautiful white cabin." Okay, so you can see how this is going to work in practice now. So look, it's got the information. It's having a little think about it. And now you can see the far right, Jack. MD has happened. Cool. Now, why don't we send a voice message? So, hey there. Test test 123. Who is the tallest man to ever live in the world? Okay, now check this out. I've sent that off, but it's not going to fully understand the voice message yet because we haven't given it that capability. So, look, I've sent it a voice message. It's trying to download the attachment from Telegram. We'll see if this can do it for us automatically. I'm going to bring this over to the right a little bit just so you can get a little bit of a clearer view. So, as you can see, it's basically come back and said, "Sorry, I can't listen to voice messages. I can only view text." So, what we're going to say is, "Awesome. I'd like you to download any plugins or capabilities that will enable you to when I send you a voice message, download that, transcribe that, and then respond to me. Download whatever you need to. Okay? And then we're going to send that off. And then literally now we're actually it's going to be able to self-improve itself. So it can actually take voice messages from us, which is cool. And I actually bought a MacBook rec um it's like a mini MacBook like way bigger and a bit more powerful. This is on my my desktop here. So this is going to be running for me 24/7. He can do really cool stuff like this and just elevate the entire experience. And he's just come back and confirmed he's going to do homebrew Mac OS package manager. He's got this one. And then open AI whisper. This may take a few minutes. I'll let you know when it's ready, guys. And just like that, it's come back. And as you can see, the voice transcription is set up and working. Here's what you said. Test test. Who is the tallest man to ever live? And it's Rob Wllo, which is correct. So now we can combine those two things together and do anything we want to. So I could say something like, "Hey there, dude. I want you to go into my schooler scraper project. Um, and could you just confirm to me the last time that we did a full scrape on all the resources um for, you know, the YouTube videos, that kind of thing. I just want to know the last data. So, now I'm asking a question about a project that I'm working on. And I could be out and about, I could be drinking coffee, I could be doing anything. It can reach over now, check this information, and let me know the specifics, which I think is so freaking cool. And just like that, it's gone ahead, grabbed it, and it can tell us the last data capture that happened, which was yesterday. Now, a couple of things I want you to know as well about claw channels. Five limitations just to call out. Number one, it is fresh every time. So there is no message history. It starts from zero. One of the ways around this is to create a kind of memory a pseudo memory on your computer to capture it. So you may say, for example, before you finish every session, hey, I want to store this on my desktop as you know, Telegram memory MD and have this as a kind of like a quasi memory that accesses. But in terms of the actual memory itself, it's going to be session based. Second one, you're limited if you're using Telegram. Of course, you can use um Discord if you want to to 4,096 characters, but guys, if we can't say what we need to say that many characters, some say we need to be more succinct. It's a 20 megaby download cap. So, you're doing file transfers. Other thing is that you can't search. So, you can message Claude, you can't brow, it cannot search in Telegram. And finally, your machine has to stay on. If you close the terminal, the Mac sleeps, it kills the process. The channel is dead. It is not running on the cloud. And one hack for you as well, if you come over to system settings, you type in battery. One of the things I'd want you to take on here is prevent automatic sleeping when the display is off. That's really cool. Then if you come down here on the left to turn off display when active, you can essentially just change the settings that dictate when this does and doesn't turn off due to periods of inactivity, meaning that it can just basically run for you in the background. I believe it's this setting right here. So you can set that to be for however long that you want it to run, assuming that your laptop's in a very secure place. And the other thing you can do is do command space bar, open up a terminal, and if you enter in caffeinate space like colon d, this will actually then keep the MacBook awake and won't let it go to sleep until you shut down this terminal. You can also add some specific seconds if you want to. And so now you've learned exactly how to connect Claude code via channels and how to set up these automated schedule tasks in the cloud. The next thing that we need to do is learn how to leverage Claude to build state-of-the-art apps, which you can learn by watching this video right

@@ -1,0 +1,3975 @@
+1
+00:00:00,000 --> 00:00:01,750
+
+In 20 years of working in enterprise
+
+2
+00:00:01,750 --> 00:00:01,760
+In 20 years of working in enterprise
+ 
+
+3
+00:00:01,760 --> 00:00:04,150
+In 20 years of working in enterprise
+tech, I've never seen a shift happen so
+
+4
+00:00:04,150 --> 00:00:04,160
+tech, I've never seen a shift happen so
+ 
+
+5
+00:00:04,160 --> 00:00:06,710
+tech, I've never seen a shift happen so
+fast. It's very much been a slowly
+
+6
+00:00:06,710 --> 00:00:06,720
+fast. It's very much been a slowly
+ 
+
+7
+00:00:06,720 --> 00:00:09,110
+fast. It's very much been a slowly
+slowly then all at once kind of feeling.
+
+8
+00:00:09,110 --> 00:00:09,120
+slowly then all at once kind of feeling.
+ 
+
+9
+00:00:09,120 --> 00:00:11,110
+slowly then all at once kind of feeling.
+Agents like OpenClaw and Claude Co-work
+
+10
+00:00:11,110 --> 00:00:11,120
+Agents like OpenClaw and Claude Co-work
+ 
+
+11
+00:00:11,120 --> 00:00:13,270
+Agents like OpenClaw and Claude Co-work
+are showing us the near future of how
+
+12
+00:00:13,270 --> 00:00:13,280
+are showing us the near future of how
+ 
+
+13
+00:00:13,280 --> 00:00:15,749
+are showing us the near future of how
+the internet will work. Agent first and
+
+14
+00:00:15,749 --> 00:00:15,759
+the internet will work. Agent first and
+ 
+
+15
+00:00:15,759 --> 00:00:18,470
+the internet will work. Agent first and
+human second. And every SAS CEO is
+
+16
+00:00:18,470 --> 00:00:18,480
+human second. And every SAS CEO is
+ 
+
+17
+00:00:18,480 --> 00:00:20,470
+human second. And every SAS CEO is
+pivoting hard to catch up. There's some
+
+18
+00:00:20,470 --> 00:00:20,480
+pivoting hard to catch up. There's some
+ 
+
+19
+00:00:20,480 --> 00:00:22,150
+pivoting hard to catch up. There's some
+big opportunities happening if you're
+
+20
+00:00:22,150 --> 00:00:22,160
+big opportunities happening if you're
+ 
+
+21
+00:00:22,160 --> 00:00:23,750
+big opportunities happening if you're
+paying attention to the right things.
+
+22
+00:00:23,750 --> 00:00:23,760
+paying attention to the right things.
+ 
+
+23
+00:00:23,760 --> 00:00:25,990
+paying attention to the right things.
+All new technology shifts start with
+
+24
+00:00:25,990 --> 00:00:26,000
+All new technology shifts start with
+ 
+
+25
+00:00:26,000 --> 00:00:28,230
+All new technology shifts start with
+developers. They are the early adopters,
+
+26
+00:00:28,230 --> 00:00:28,240
+developers. They are the early adopters,
+ 
+
+27
+00:00:28,240 --> 00:00:29,669
+developers. They are the early adopters,
+the builders, the creatives playing at
+
+28
+00:00:29,669 --> 00:00:29,679
+the builders, the creatives playing at
+ 
+
+29
+00:00:29,679 --> 00:00:31,109
+the builders, the creatives playing at
+the edge of what's coming next. And
+
+30
+00:00:31,109 --> 00:00:31,119
+the edge of what's coming next. And
+ 
+
+31
+00:00:31,119 --> 00:00:32,310
+the edge of what's coming next. And
+we've seen that with the likes of
+
+32
+00:00:32,310 --> 00:00:32,320
+we've seen that with the likes of
+ 
+
+33
+00:00:32,320 --> 00:00:35,270
+we've seen that with the likes of
+OpenClaw and Claw Code. Next comes the
+
+34
+00:00:35,270 --> 00:00:35,280
+OpenClaw and Claw Code. Next comes the
+ 
+
+35
+00:00:35,280 --> 00:00:36,950
+OpenClaw and Claw Code. Next comes the
+companies that serve the developers. The
+
+36
+00:00:36,950 --> 00:00:36,960
+companies that serve the developers. The
+ 
+
+37
+00:00:36,960 --> 00:00:39,990
+companies that serve the developers. The
+likes of Stripe, Verscell, AWS, and then
+
+38
+00:00:39,990 --> 00:00:40,000
+likes of Stripe, Verscell, AWS, and then
+ 
+
+39
+00:00:40,000 --> 00:00:43,030
+likes of Stripe, Verscell, AWS, and then
+the entire consumer and B2B market comes
+
+40
+00:00:43,030 --> 00:00:43,040
+the entire consumer and B2B market comes
+ 
+
+41
+00:00:43,040 --> 00:00:45,030
+the entire consumer and B2B market comes
+afterwards. So, right now, we're at
+
+42
+00:00:45,030 --> 00:00:45,040
+afterwards. So, right now, we're at
+ 
+
+43
+00:00:45,040 --> 00:00:46,709
+afterwards. So, right now, we're at
+stage two. And there are some new
+
+44
+00:00:46,709 --> 00:00:46,719
+stage two. And there are some new
+ 
+
+45
+00:00:46,719 --> 00:00:48,709
+stage two. And there are some new
+releases in the last 24 hours that we're
+
+46
+00:00:48,709 --> 00:00:48,719
+releases in the last 24 hours that we're
+ 
+
+47
+00:00:48,719 --> 00:00:50,069
+releases in the last 24 hours that we're
+going to talk about to help you
+
+48
+00:00:50,069 --> 00:00:50,079
+going to talk about to help you
+ 
+
+49
+00:00:50,079 --> 00:00:52,549
+going to talk about to help you
+understand that. So stay with me on this
+
+50
+00:00:52,549 --> 00:00:52,559
+understand that. So stay with me on this
+ 
+
+51
+00:00:52,559 --> 00:00:53,990
+understand that. So stay with me on this
+one because by the end of the video
+
+52
+00:00:53,990 --> 00:00:54,000
+one because by the end of the video
+ 
+
+53
+00:00:54,000 --> 00:00:55,350
+one because by the end of the video
+you'll have a completely different
+
+54
+00:00:55,350 --> 00:00:55,360
+you'll have a completely different
+ 
+
+55
+00:00:55,360 --> 00:00:57,510
+you'll have a completely different
+picture of where agent power development
+
+56
+00:00:57,510 --> 00:00:57,520
+picture of where agent power development
+ 
+
+57
+00:00:57,520 --> 00:00:59,910
+picture of where agent power development
+is heading and I'll show you exactly how
+
+58
+00:00:59,910 --> 00:00:59,920
+is heading and I'll show you exactly how
+ 
+
+59
+00:00:59,920 --> 00:01:02,069
+is heading and I'll show you exactly how
+I'm setting up my own projects to take
+
+60
+00:01:02,069 --> 00:01:02,079
+I'm setting up my own projects to take
+ 
+
+61
+00:01:02,079 --> 00:01:04,310
+I'm setting up my own projects to take
+advantage of all of this right now. So
+
+62
+00:01:04,310 --> 00:01:04,320
+advantage of all of this right now. So
+ 
+
+63
+00:01:04,320 --> 00:01:06,950
+advantage of all of this right now. So
+Andre Karpathy coined the term agentic
+
+64
+00:01:06,950 --> 00:01:06,960
+Andre Karpathy coined the term agentic
+ 
+
+65
+00:01:06,960 --> 00:01:08,870
+Andre Karpathy coined the term agentic
+engineering. It's the idea is that human
+
+66
+00:01:08,870 --> 00:01:08,880
+engineering. It's the idea is that human
+ 
+
+67
+00:01:08,880 --> 00:01:10,870
+engineering. It's the idea is that human
+don't need to write most of the code
+
+68
+00:01:10,870 --> 00:01:10,880
+don't need to write most of the code
+ 
+
+69
+00:01:10,880 --> 00:01:12,789
+don't need to write most of the code
+anymore. But here's the part that most
+
+70
+00:01:12,789 --> 00:01:12,799
+anymore. But here's the part that most
+ 
+
+71
+00:01:12,799 --> 00:01:14,390
+anymore. But here's the part that most
+people are missing. Coding was actually
+
+72
+00:01:14,390 --> 00:01:14,400
+people are missing. Coding was actually
+ 
+
+73
+00:01:14,400 --> 00:01:16,230
+people are missing. Coding was actually
+the easy bit to automate. The hard part
+
+74
+00:01:16,230 --> 00:01:16,240
+the easy bit to automate. The hard part
+ 
+
+75
+00:01:16,240 --> 00:01:18,710
+the easy bit to automate. The hard part
+was always the infrastructure around the
+
+76
+00:01:18,710 --> 00:01:18,720
+was always the infrastructure around the
+ 
+
+77
+00:01:18,720 --> 00:01:21,270
+was always the infrastructure around the
+code. So the other 70% is provisioning,
+
+78
+00:01:21,270 --> 00:01:21,280
+code. So the other 70% is provisioning,
+ 
+
+79
+00:01:21,280 --> 00:01:22,950
+code. So the other 70% is provisioning,
+setting up databases, configuring
+
+80
+00:01:22,950 --> 00:01:22,960
+setting up databases, configuring
+ 
+
+81
+00:01:22,960 --> 00:01:24,789
+setting up databases, configuring
+authentication, integrating pay
+
+82
+00:01:24,789 --> 00:01:24,799
+authentication, integrating pay
+ 
+
+83
+00:01:24,799 --> 00:01:26,950
+authentication, integrating pay
+payments, managing hosting, dealing with
+
+84
+00:01:26,950 --> 00:01:26,960
+payments, managing hosting, dealing with
+ 
+
+85
+00:01:26,960 --> 00:01:29,270
+payments, managing hosting, dealing with
+environment variables and juggling API
+
+86
+00:01:29,270 --> 00:01:29,280
+environment variables and juggling API
+ 
+
+87
+00:01:29,280 --> 00:01:31,990
+environment variables and juggling API
+keys across a dozen different services.
+
+88
+00:01:31,990 --> 00:01:32,000
+keys across a dozen different services.
+ 
+
+89
+00:01:32,000 --> 00:01:33,590
+keys across a dozen different services.
+So just to get your head around why this
+
+90
+00:01:33,590 --> 00:01:33,600
+So just to get your head around why this
+ 
+
+91
+00:01:33,600 --> 00:01:36,390
+So just to get your head around why this
+is such a big deal, this article here is
+
+92
+00:01:36,390 --> 00:01:36,400
+is such a big deal, this article here is
+ 
+
+93
+00:01:36,400 --> 00:01:38,310
+is such a big deal, this article here is
+probably just over a year old at this
+
+94
+00:01:38,310 --> 00:01:38,320
+probably just over a year old at this
+ 
+
+95
+00:01:38,320 --> 00:01:40,390
+probably just over a year old at this
+stage, but Andre Kaparthi talks about
+
+96
+00:01:40,390 --> 00:01:40,400
+stage, but Andre Kaparthi talks about
+ 
+
+97
+00:01:40,400 --> 00:01:43,590
+stage, but Andre Kaparthi talks about
+how he's trying to set up a simple menu
+
+98
+00:01:43,590 --> 00:01:43,600
+how he's trying to set up a simple menu
+ 
+
+99
+00:01:43,600 --> 00:01:45,510
+how he's trying to set up a simple menu
+generator application. Now the code
+
+100
+00:01:45,510 --> 00:01:45,520
+generator application. Now the code
+ 
+
+101
+00:01:45,520 --> 00:01:47,429
+generator application. Now the code
+generation is the easy part but then you
+
+102
+00:01:47,429 --> 00:01:47,439
+generation is the easy part but then you
+ 
+
+103
+00:01:47,439 --> 00:01:49,429
+generation is the easy part but then you
+have to go and connect to the open AI
+
+104
+00:01:49,429 --> 00:01:49,439
+have to go and connect to the open AI
+ 
+
+105
+00:01:49,439 --> 00:01:52,230
+have to go and connect to the open AI
+API replicate AI for image generation
+
+106
+00:01:52,230 --> 00:01:52,240
+API replicate AI for image generation
+ 
+
+107
+00:01:52,240 --> 00:01:53,670
+API replicate AI for image generation
+you need to actually deploy this app
+
+108
+00:01:53,670 --> 00:01:53,680
+you need to actually deploy this app
+ 
+
+109
+00:01:53,680 --> 00:01:55,830
+you need to actually deploy this app
+somewhere via versel you have to manage
+
+110
+00:01:55,830 --> 00:01:55,840
+somewhere via versel you have to manage
+ 
+
+111
+00:01:55,840 --> 00:01:57,990
+somewhere via versel you have to manage
+bills etc then you need to have clerk
+
+112
+00:01:57,990 --> 00:01:58,000
+bills etc then you need to have clerk
+ 
+
+113
+00:01:58,000 --> 00:01:59,350
+bills etc then you need to have clerk
+authentication in place so you can
+
+114
+00:01:59,350 --> 00:01:59,360
+authentication in place so you can
+ 
+
+115
+00:01:59,360 --> 00:02:00,789
+authentication in place so you can
+actually secure it and of course you
+
+116
+00:02:00,789 --> 00:02:00,799
+actually secure it and of course you
+ 
+
+117
+00:02:00,799 --> 00:02:02,469
+actually secure it and of course you
+want to manage payments and that would
+
+118
+00:02:02,469 --> 00:02:02,479
+want to manage payments and that would
+ 
+
+119
+00:02:02,479 --> 00:02:05,270
+want to manage payments and that would
+be via stripe so in that context let me
+
+120
+00:02:05,270 --> 00:02:05,280
+be via stripe so in that context let me
+ 
+
+121
+00:02:05,280 --> 00:02:08,229
+be via stripe so in that context let me
+show you what stripe just did stripe
+
+122
+00:02:08,229 --> 00:02:08,239
+show you what stripe just did stripe
+ 
+
+123
+00:02:08,239 --> 00:02:10,949
+show you what stripe just did stripe
+projects it's at projects.dev dev and
+
+124
+00:02:10,949 --> 00:02:10,959
+projects it's at projects.dev dev and
+ 
+
+125
+00:02:10,959 --> 00:02:13,430
+projects it's at projects.dev dev and
+the pitch is dead simple. Provision and
+
+126
+00:02:13,430 --> 00:02:13,440
+the pitch is dead simple. Provision and
+ 
+
+127
+00:02:13,440 --> 00:02:15,589
+the pitch is dead simple. Provision and
+manage your entire application stack
+
+128
+00:02:15,589 --> 00:02:15,599
+manage your entire application stack
+ 
+
+129
+00:02:15,599 --> 00:02:17,830
+manage your entire application stack
+from the CLI. So how does all this work
+
+130
+00:02:17,830 --> 00:02:17,840
+from the CLI. So how does all this work
+ 
+
+131
+00:02:17,840 --> 00:02:19,589
+from the CLI. So how does all this work
+practically? Well, you basically just
+
+132
+00:02:19,589 --> 00:02:19,599
+practically? Well, you basically just
+ 
+
+133
+00:02:19,599 --> 00:02:22,869
+practically? Well, you basically just
+install and initialize the Stripe CLI.
+
+134
+00:02:22,869 --> 00:02:22,879
+install and initialize the Stripe CLI.
+ 
+
+135
+00:02:22,879 --> 00:02:24,630
+install and initialize the Stripe CLI.
+You add in whatever services you want.
+
+136
+00:02:24,630 --> 00:02:24,640
+You add in whatever services you want.
+ 
+
+137
+00:02:24,640 --> 00:02:26,790
+You add in whatever services you want.
+So that might be Neon DB, Postgres,
+
+138
+00:02:26,790 --> 00:02:26,800
+So that might be Neon DB, Postgres,
+ 
+
+139
+00:02:26,800 --> 00:02:28,630
+So that might be Neon DB, Postgres,
+Payments, and then Stripe will manage
+
+140
+00:02:28,630 --> 00:02:28,640
+Payments, and then Stripe will manage
+ 
+
+141
+00:02:28,640 --> 00:02:30,630
+Payments, and then Stripe will manage
+your tokens, your credentials, and your
+
+142
+00:02:30,630 --> 00:02:30,640
+your tokens, your credentials, and your
+ 
+
+143
+00:02:30,640 --> 00:02:32,390
+your tokens, your credentials, and your
+payments and upgrades to any of those
+
+144
+00:02:32,390 --> 00:02:32,400
+payments and upgrades to any of those
+ 
+
+145
+00:02:32,400 --> 00:02:34,309
+payments and upgrades to any of those
+different services. And from a security
+
+146
+00:02:34,309 --> 00:02:34,319
+different services. And from a security
+ 
+
+147
+00:02:34,319 --> 00:02:36,309
+different services. And from a security
+perspective, have all your ENV variables
+
+148
+00:02:36,309 --> 00:02:36,319
+perspective, have all your ENV variables
+ 
+
+149
+00:02:36,319 --> 00:02:37,750
+perspective, have all your ENV variables
+brought down from the cloud and synced
+
+150
+00:02:37,750 --> 00:02:37,760
+brought down from the cloud and synced
+ 
+
+151
+00:02:37,760 --> 00:02:39,670
+brought down from the cloud and synced
+into your projects safely so you can
+
+152
+00:02:39,670 --> 00:02:39,680
+into your projects safely so you can
+ 
+
+153
+00:02:39,680 --> 00:02:41,509
+into your projects safely so you can
+work across multiple different projects
+
+154
+00:02:41,509 --> 00:02:41,519
+work across multiple different projects
+ 
+
+155
+00:02:41,519 --> 00:02:43,670
+work across multiple different projects
+and teams. You can see already the value
+
+156
+00:02:43,670 --> 00:02:43,680
+and teams. You can see already the value
+ 
+
+157
+00:02:43,680 --> 00:02:45,990
+and teams. You can see already the value
+of this. If your agent has access to
+
+158
+00:02:45,990 --> 00:02:46,000
+of this. If your agent has access to
+ 
+
+159
+00:02:46,000 --> 00:02:47,990
+of this. If your agent has access to
+hosting and provisioning like Verscell
+
+160
+00:02:47,990 --> 00:02:48,000
+hosting and provisioning like Verscell
+ 
+
+161
+00:02:48,000 --> 00:02:50,390
+hosting and provisioning like Verscell
+and Railway databases via Neon and
+
+162
+00:02:50,390 --> 00:02:50,400
+and Railway databases via Neon and
+ 
+
+163
+00:02:50,400 --> 00:02:52,869
+and Railway databases via Neon and
+Superbase, analytics and authentication,
+
+164
+00:02:52,869 --> 00:02:52,879
+Superbase, analytics and authentication,
+ 
+
+165
+00:02:52,879 --> 00:02:54,470
+Superbase, analytics and authentication,
+this is going to be a big speed increase
+
+166
+00:02:54,470 --> 00:02:54,480
+this is going to be a big speed increase
+ 
+
+167
+00:02:54,480 --> 00:02:56,309
+this is going to be a big speed increase
+for developing your projects, improving
+
+168
+00:02:56,309 --> 00:02:56,319
+for developing your projects, improving
+ 
+
+169
+00:02:56,319 --> 00:02:58,790
+for developing your projects, improving
+your safety, and allowing agents to do a
+
+170
+00:02:58,790 --> 00:02:58,800
+your safety, and allowing agents to do a
+ 
+
+171
+00:02:58,800 --> 00:03:01,110
+your safety, and allowing agents to do a
+lot more work for us. So, if you want
+
+172
+00:03:01,110 --> 00:03:01,120
+lot more work for us. So, if you want
+ 
+
+173
+00:03:01,120 --> 00:03:02,790
+lot more work for us. So, if you want
+access to this, it's in early alpha.
+
+174
+00:03:02,790 --> 00:03:02,800
+access to this, it's in early alpha.
+ 
+
+175
+00:03:02,800 --> 00:03:04,309
+access to this, it's in early alpha.
+Everyone is going to have to sign up to
+
+176
+00:03:04,309 --> 00:03:04,319
+Everyone is going to have to sign up to
+ 
+
+177
+00:03:04,319 --> 00:03:05,910
+Everyone is going to have to sign up to
+the waiting list, but hopefully we'll
+
+178
+00:03:05,910 --> 00:03:05,920
+the waiting list, but hopefully we'll
+ 
+
+179
+00:03:05,920 --> 00:03:07,350
+the waiting list, but hopefully we'll
+see this rolled out in the next couple
+
+180
+00:03:07,350 --> 00:03:07,360
+see this rolled out in the next couple
+ 
+
+181
+00:03:07,360 --> 00:03:08,949
+see this rolled out in the next couple
+of weeks. Don't worry, I'm going to talk
+
+182
+00:03:08,949 --> 00:03:08,959
+of weeks. Don't worry, I'm going to talk
+ 
+
+183
+00:03:08,959 --> 00:03:10,869
+of weeks. Don't worry, I'm going to talk
+about another project you can use right
+
+184
+00:03:10,869 --> 00:03:10,879
+about another project you can use right
+ 
+
+185
+00:03:10,879 --> 00:03:12,869
+about another project you can use right
+now and later on the video, how I
+
+186
+00:03:12,869 --> 00:03:12,879
+now and later on the video, how I
+ 
+
+187
+00:03:12,879 --> 00:03:14,309
+now and later on the video, how I
+personally have approached this workflow
+
+188
+00:03:14,309 --> 00:03:14,319
+personally have approached this workflow
+ 
+
+189
+00:03:14,319 --> 00:03:15,750
+personally have approached this workflow
+for building out my projects over the
+
+190
+00:03:15,750 --> 00:03:15,760
+for building out my projects over the
+ 
+
+191
+00:03:15,760 --> 00:03:17,589
+for building out my projects over the
+last couple of weeks. So, I'm fascinated
+
+192
+00:03:17,589 --> 00:03:17,599
+last couple of weeks. So, I'm fascinated
+ 
+
+193
+00:03:17,599 --> 00:03:19,830
+last couple of weeks. So, I'm fascinated
+by this idea of an autonomous company
+
+194
+00:03:19,830 --> 00:03:19,840
+by this idea of an autonomous company
+ 
+
+195
+00:03:19,840 --> 00:03:21,990
+by this idea of an autonomous company
+where all of your company data becomes a
+
+196
+00:03:21,990 --> 00:03:22,000
+where all of your company data becomes a
+ 
+
+197
+00:03:22,000 --> 00:03:24,309
+where all of your company data becomes a
+single source of truth that AI agents
+
+198
+00:03:24,309 --> 00:03:24,319
+single source of truth that AI agents
+ 
+
+199
+00:03:24,319 --> 00:03:27,190
+single source of truth that AI agents
+can then operate on. So, our sponsor
+
+200
+00:03:27,190 --> 00:03:27,200
+can then operate on. So, our sponsor
+ 
+
+201
+00:03:27,200 --> 00:03:29,750
+can then operate on. So, our sponsor
+today, monday.com, is headed exactly in
+
+202
+00:03:29,750 --> 00:03:29,760
+today, monday.com, is headed exactly in
+ 
+
+203
+00:03:29,760 --> 00:03:31,270
+today, monday.com, is headed exactly in
+that direction. It's not just a
+
+204
+00:03:31,270 --> 00:03:31,280
+that direction. It's not just a
+ 
+
+205
+00:03:31,280 --> 00:03:33,190
+that direction. It's not just a
+productivity tool anymore. It's morphing
+
+206
+00:03:33,190 --> 00:03:33,200
+productivity tool anymore. It's morphing
+ 
+
+207
+00:03:33,200 --> 00:03:36,550
+productivity tool anymore. It's morphing
+into an entire company operating system
+
+208
+00:03:36,550 --> 00:03:36,560
+into an entire company operating system
+ 
+
+209
+00:03:36,560 --> 00:03:38,550
+into an entire company operating system
+augmented by agents and driven by
+
+210
+00:03:38,550 --> 00:03:38,560
+augmented by agents and driven by
+ 
+
+211
+00:03:38,560 --> 00:03:40,710
+augmented by agents and driven by
+humans. It can be timeconuming to set up
+
+212
+00:03:40,710 --> 00:03:40,720
+humans. It can be timeconuming to set up
+ 
+
+213
+00:03:40,720 --> 00:03:42,470
+humans. It can be timeconuming to set up
+a new workspace and put in all your
+
+214
+00:03:42,470 --> 00:03:42,480
+a new workspace and put in all your
+ 
+
+215
+00:03:42,480 --> 00:03:44,550
+a new workspace and put in all your
+project trackers etc. But Monday will
+
+216
+00:03:44,550 --> 00:03:44,560
+project trackers etc. But Monday will
+ 
+
+217
+00:03:44,560 --> 00:03:46,630
+project trackers etc. But Monday will
+actually build out your workspaces for
+
+218
+00:03:46,630 --> 00:03:46,640
+actually build out your workspaces for
+ 
+
+219
+00:03:46,640 --> 00:03:49,670
+actually build out your workspaces for
+you based on your customized prompt. So
+
+220
+00:03:49,670 --> 00:03:49,680
+you based on your customized prompt. So
+ 
+
+221
+00:03:49,680 --> 00:03:51,750
+you based on your customized prompt. So
+for instance here I got it to set up a
+
+222
+00:03:51,750 --> 00:03:51,760
+for instance here I got it to set up a
+ 
+
+223
+00:03:51,760 --> 00:03:53,830
+for instance here I got it to set up a
+client management tracker. Based on my
+
+224
+00:03:53,830 --> 00:03:53,840
+client management tracker. Based on my
+ 
+
+225
+00:03:53,840 --> 00:03:55,990
+client management tracker. Based on my
+prompt, it filled out projects, tasks,
+
+226
+00:03:55,990 --> 00:03:56,000
+prompt, it filled out projects, tasks,
+ 
+
+227
+00:03:56,000 --> 00:03:57,910
+prompt, it filled out projects, tasks,
+registration forms, but I don't even
+
+228
+00:03:57,910 --> 00:03:57,920
+registration forms, but I don't even
+ 
+
+229
+00:03:57,920 --> 00:03:59,509
+registration forms, but I don't even
+have to get down into the weeds in
+
+230
+00:03:59,509 --> 00:03:59,519
+have to get down into the weeds in
+ 
+
+231
+00:03:59,519 --> 00:04:01,509
+have to get down into the weeds in
+editing everything manually. I can now
+
+232
+00:04:01,509 --> 00:04:01,519
+editing everything manually. I can now
+ 
+
+233
+00:04:01,519 --> 00:04:04,229
+editing everything manually. I can now
+use Sidekick to have a conversation with
+
+234
+00:04:04,229 --> 00:04:04,239
+use Sidekick to have a conversation with
+ 
+
+235
+00:04:04,239 --> 00:04:06,390
+use Sidekick to have a conversation with
+the data that's in here, change it, ask
+
+236
+00:04:06,390 --> 00:04:06,400
+the data that's in here, change it, ask
+ 
+
+237
+00:04:06,400 --> 00:04:08,630
+the data that's in here, change it, ask
+for reports, manipulate it in any way
+
+238
+00:04:08,630 --> 00:04:08,640
+for reports, manipulate it in any way
+ 
+
+239
+00:04:08,640 --> 00:04:10,949
+for reports, manipulate it in any way
+that I want. I can plug in automations
+
+240
+00:04:10,949 --> 00:04:10,959
+that I want. I can plug in automations
+ 
+
+241
+00:04:10,959 --> 00:04:13,429
+that I want. I can plug in automations
+and use Monday's powerful API. So, I can
+
+242
+00:04:13,429 --> 00:04:13,439
+and use Monday's powerful API. So, I can
+ 
+
+243
+00:04:13,439 --> 00:04:15,589
+and use Monday's powerful API. So, I can
+use it alongside co-work claw or even
+
+244
+00:04:15,589 --> 00:04:15,599
+use it alongside co-work claw or even
+ 
+
+245
+00:04:15,599 --> 00:04:17,590
+use it alongside co-work claw or even
+open claw. And of course, I saved the
+
+246
+00:04:17,590 --> 00:04:17,600
+open claw. And of course, I saved the
+ 
+
+247
+00:04:17,600 --> 00:04:19,990
+open claw. And of course, I saved the
+best for last. We have a brand new vibe
+
+248
+00:04:19,990 --> 00:04:20,000
+best for last. We have a brand new vibe
+ 
+
+249
+00:04:20,000 --> 00:04:22,390
+best for last. We have a brand new vibe
+tool. So, I could do things like build a
+
+250
+00:04:22,390 --> 00:04:22,400
+tool. So, I could do things like build a
+ 
+
+251
+00:04:22,400 --> 00:04:24,310
+tool. So, I could do things like build a
+roadmap planner, feature tracker. So,
+
+252
+00:04:24,310 --> 00:04:24,320
+roadmap planner, feature tracker. So,
+ 
+
+253
+00:04:24,320 --> 00:04:25,830
+roadmap planner, feature tracker. So,
+here's a quick content calendar app that
+
+254
+00:04:25,830 --> 00:04:25,840
+here's a quick content calendar app that
+ 
+
+255
+00:04:25,840 --> 00:04:27,830
+here's a quick content calendar app that
+I vibe coded with just one prompt. We've
+
+256
+00:04:27,830 --> 00:04:27,840
+I vibe coded with just one prompt. We've
+ 
+
+257
+00:04:27,840 --> 00:04:30,310
+I vibe coded with just one prompt. We've
+got timelines, matrix, view, and I can
+
+258
+00:04:30,310 --> 00:04:30,320
+got timelines, matrix, view, and I can
+ 
+
+259
+00:04:30,320 --> 00:04:31,909
+got timelines, matrix, view, and I can
+add in any new objectives that I have.
+
+260
+00:04:31,909 --> 00:04:31,919
+add in any new objectives that I have.
+ 
+
+261
+00:04:31,919 --> 00:04:33,830
+add in any new objectives that I have.
+Thanks to monday.com for sponsoring this
+
+262
+00:04:33,830 --> 00:04:33,840
+Thanks to monday.com for sponsoring this
+ 
+
+263
+00:04:33,840 --> 00:04:35,110
+Thanks to monday.com for sponsoring this
+video. Check out the link in the
+
+264
+00:04:35,110 --> 00:04:35,120
+video. Check out the link in the
+ 
+
+265
+00:04:35,120 --> 00:04:37,189
+video. Check out the link in the
+description down below. Now, Stripe
+
+266
+00:04:37,189 --> 00:04:37,199
+description down below. Now, Stripe
+ 
+
+267
+00:04:37,199 --> 00:04:39,030
+description down below. Now, Stripe
+Projects solves the provisioning problem
+
+268
+00:04:39,030 --> 00:04:39,040
+Projects solves the provisioning problem
+ 
+
+269
+00:04:39,040 --> 00:04:40,550
+Projects solves the provisioning problem
+beautifully for the services it
+
+270
+00:04:40,550 --> 00:04:40,560
+beautifully for the services it
+ 
+
+271
+00:04:40,560 --> 00:04:42,150
+beautifully for the services it
+supports. But your agents like Claw
+
+272
+00:04:42,150 --> 00:04:42,160
+supports. But your agents like Claw
+ 
+
+273
+00:04:42,160 --> 00:04:44,469
+supports. But your agents like Claw
+Code, Cursor, and OpenClaw need access
+
+274
+00:04:44,469 --> 00:04:44,479
+Code, Cursor, and OpenClaw need access
+ 
+
+275
+00:04:44,479 --> 00:04:47,189
+Code, Cursor, and OpenClaw need access
+to way more than just that list. They
+
+276
+00:04:47,189 --> 00:04:47,199
+to way more than just that list. They
+ 
+
+277
+00:04:47,199 --> 00:04:49,110
+to way more than just that list. They
+need to be able to call Slack APIs, hit
+
+278
+00:04:49,110 --> 00:04:49,120
+need to be able to call Slack APIs, hit
+ 
+
+279
+00:04:49,120 --> 00:04:51,189
+need to be able to call Slack APIs, hit
+GitHub, interact with your CMS, talk to
+
+280
+00:04:51,189 --> 00:04:51,199
+GitHub, interact with your CMS, talk to
+ 
+
+281
+00:04:51,199 --> 00:04:53,110
+GitHub, interact with your CMS, talk to
+monitoring tools, potentially hundreds
+
+282
+00:04:53,110 --> 00:04:53,120
+monitoring tools, potentially hundreds
+ 
+
+283
+00:04:53,120 --> 00:04:55,110
+monitoring tools, potentially hundreds
+of different types of services,
+
+284
+00:04:55,110 --> 00:04:55,120
+of different types of services,
+ 
+
+285
+00:04:55,120 --> 00:04:56,550
+of different types of services,
+including anything you would need to run
+
+286
+00:04:56,550 --> 00:04:56,560
+including anything you would need to run
+ 
+
+287
+00:04:56,560 --> 00:04:58,950
+including anything you would need to run
+a business like Gmail, Google Drive,
+
+288
+00:04:58,950 --> 00:04:58,960
+a business like Gmail, Google Drive,
+ 
+
+289
+00:04:58,960 --> 00:05:01,590
+a business like Gmail, Google Drive,
+etc. And that's where Gent comes in. It
+
+290
+00:05:01,590 --> 00:05:01,600
+etc. And that's where Gent comes in. It
+ 
+
+291
+00:05:01,600 --> 00:05:03,590
+etc. And that's where Gent comes in. It
+sits between your agents and all the
+
+292
+00:05:03,590 --> 00:05:03,600
+sits between your agents and all the
+ 
+
+293
+00:05:03,600 --> 00:05:06,390
+sits between your agents and all the
+different APIs, MCPs, and tools that are
+
+294
+00:05:06,390 --> 00:05:06,400
+different APIs, MCPs, and tools that are
+ 
+
+295
+00:05:06,400 --> 00:05:08,230
+different APIs, MCPs, and tools that are
+out there. So, one of the biggest
+
+296
+00:05:08,230 --> 00:05:08,240
+out there. So, one of the biggest
+ 
+
+297
+00:05:08,240 --> 00:05:10,150
+out there. So, one of the biggest
+problems with having agents run the web
+
+298
+00:05:10,150 --> 00:05:10,160
+problems with having agents run the web
+ 
+
+299
+00:05:10,160 --> 00:05:12,790
+problems with having agents run the web
+for us is they're going to need security
+
+300
+00:05:12,790 --> 00:05:12,800
+for us is they're going to need security
+ 
+
+301
+00:05:12,800 --> 00:05:14,150
+for us is they're going to need security
+credentials and they're going to need
+
+302
+00:05:14,150 --> 00:05:14,160
+credentials and they're going to need
+ 
+
+303
+00:05:14,160 --> 00:05:16,469
+credentials and they're going to need
+various levels of permissions to use
+
+304
+00:05:16,469 --> 00:05:16,479
+various levels of permissions to use
+ 
+
+305
+00:05:16,479 --> 00:05:18,390
+various levels of permissions to use
+those credentials. Already I've got 20
+
+306
+00:05:18,390 --> 00:05:18,400
+those credentials. Already I've got 20
+ 
+
+307
+00:05:18,400 --> 00:05:21,189
+those credentials. Already I've got 20
+of them connected in co-work to help run
+
+308
+00:05:21,189 --> 00:05:21,199
+of them connected in co-work to help run
+ 
+
+309
+00:05:21,199 --> 00:05:23,430
+of them connected in co-work to help run
+my project, the self-driving business.
+
+310
+00:05:23,430 --> 00:05:23,440
+my project, the self-driving business.
+ 
+
+311
+00:05:23,440 --> 00:05:24,790
+my project, the self-driving business.
+And already it's become a bit of a
+
+312
+00:05:24,790 --> 00:05:24,800
+And already it's become a bit of a
+ 
+
+313
+00:05:24,800 --> 00:05:26,230
+And already it's become a bit of a
+security nightmare and a pain to
+
+314
+00:05:26,230 --> 00:05:26,240
+security nightmare and a pain to
+ 
+
+315
+00:05:26,240 --> 00:05:28,150
+security nightmare and a pain to
+provision each one. And that's what Gent
+
+316
+00:05:28,150 --> 00:05:28,160
+provision each one. And that's what Gent
+ 
+
+317
+00:05:28,160 --> 00:05:29,830
+provision each one. And that's what Gent
+is really setting out to solve. So,
+
+318
+00:05:29,830 --> 00:05:29,840
+is really setting out to solve. So,
+ 
+
+319
+00:05:29,840 --> 00:05:32,070
+is really setting out to solve. So,
+Gentic runs in its own Docker container.
+
+320
+00:05:32,070 --> 00:05:32,080
+Gentic runs in its own Docker container.
+ 
+
+321
+00:05:32,080 --> 00:05:33,830
+Gentic runs in its own Docker container.
+You can spin that up locally on your
+
+322
+00:05:33,830 --> 00:05:33,840
+You can spin that up locally on your
+ 
+
+323
+00:05:33,840 --> 00:05:35,189
+You can spin that up locally on your
+machine. You can put it on a railway,
+
+324
+00:05:35,189 --> 00:05:35,199
+machine. You can put it on a railway,
+ 
+
+325
+00:05:35,199 --> 00:05:37,189
+machine. You can put it on a railway,
+AWS, wherever you want. and that's where
+
+326
+00:05:37,189 --> 00:05:37,199
+AWS, wherever you want. and that's where
+ 
+
+327
+00:05:37,199 --> 00:05:38,950
+AWS, wherever you want. and that's where
+you're going to store all your
+
+328
+00:05:38,950 --> 00:05:38,960
+you're going to store all your
+ 
+
+329
+00:05:38,960 --> 00:05:41,189
+you're going to store all your
+credentials and all your connection
+
+330
+00:05:41,189 --> 00:05:41,199
+credentials and all your connection
+ 
+
+331
+00:05:41,199 --> 00:05:43,189
+credentials and all your connection
+information for your agent. Very simple
+
+332
+00:05:43,189 --> 00:05:43,199
+information for your agent. Very simple
+ 
+
+333
+00:05:43,199 --> 00:05:44,710
+information for your agent. Very simple
+to set up. You just need Docker running
+
+334
+00:05:44,710 --> 00:05:44,720
+to set up. You just need Docker running
+ 
+
+335
+00:05:44,720 --> 00:05:46,629
+to set up. You just need Docker running
+in the background. So basically just get
+
+336
+00:05:46,629 --> 00:05:46,639
+in the background. So basically just get
+ 
+
+337
+00:05:46,639 --> 00:05:48,629
+in the background. So basically just get
+clone the project, change into the
+
+338
+00:05:48,629 --> 00:05:48,639
+clone the project, change into the
+ 
+
+339
+00:05:48,639 --> 00:05:50,870
+clone the project, change into the
+directory and then run docker compose.
+
+340
+00:05:50,870 --> 00:05:50,880
+directory and then run docker compose.
+ 
+
+341
+00:05:50,880 --> 00:05:52,390
+directory and then run docker compose.
+So once that's installed, you just need
+
+342
+00:05:52,390 --> 00:05:52,400
+So once that's installed, you just need
+ 
+
+343
+00:05:52,400 --> 00:05:54,550
+So once that's installed, you just need
+to open in your browser local host on
+
+344
+00:05:54,550 --> 00:05:54,560
+to open in your browser local host on
+ 
+
+345
+00:05:54,560 --> 00:05:56,550
+to open in your browser local host on
+port 8,900.
+
+346
+00:05:56,550 --> 00:05:56,560
+port 8,900.
+ 
+
+347
+00:05:56,560 --> 00:05:58,150
+port 8,900.
+So what it does then is it helps
+
+348
+00:05:58,150 --> 00:05:58,160
+So what it does then is it helps
+ 
+
+349
+00:05:58,160 --> 00:05:59,909
+So what it does then is it helps
+generate a key that you're going to give
+
+350
+00:05:59,909 --> 00:05:59,919
+generate a key that you're going to give
+ 
+
+351
+00:05:59,919 --> 00:06:02,390
+generate a key that you're going to give
+to your open claw or claw coworker,
+
+352
+00:06:02,390 --> 00:06:02,400
+to your open claw or claw coworker,
+ 
+
+353
+00:06:02,400 --> 00:06:04,230
+to your open claw or claw coworker,
+whatever agent that you're using. So
+
+354
+00:06:04,230 --> 00:06:04,240
+whatever agent that you're using. So
+ 
+
+355
+00:06:04,240 --> 00:06:05,749
+whatever agent that you're using. So
+this is where it gets really cool. when
+
+356
+00:06:05,749 --> 00:06:05,759
+this is where it gets really cool. when
+ 
+
+357
+00:06:05,759 --> 00:06:07,270
+this is where it gets really cool. when
+you're actually inside in the API
+
+358
+00:06:07,270 --> 00:06:07,280
+you're actually inside in the API
+ 
+
+359
+00:06:07,280 --> 00:06:09,189
+you're actually inside in the API
+catalog here, you can see the number of
+
+360
+00:06:09,189 --> 00:06:09,199
+catalog here, you can see the number of
+ 
+
+361
+00:06:09,199 --> 00:06:12,390
+catalog here, you can see the number of
+APIs that Gentic has access to. So, what
+
+362
+00:06:12,390 --> 00:06:12,400
+APIs that Gentic has access to. So, what
+ 
+
+363
+00:06:12,400 --> 00:06:13,909
+APIs that Gentic has access to. So, what
+you do then is essentially search for
+
+364
+00:06:13,909 --> 00:06:13,919
+you do then is essentially search for
+ 
+
+365
+00:06:13,919 --> 00:06:16,230
+you do then is essentially search for
+any API that you want to be able to
+
+366
+00:06:16,230 --> 00:06:16,240
+any API that you want to be able to
+ 
+
+367
+00:06:16,240 --> 00:06:17,510
+any API that you want to be able to
+interact with or that you want your
+
+368
+00:06:17,510 --> 00:06:17,520
+interact with or that you want your
+ 
+
+369
+00:06:17,520 --> 00:06:19,430
+interact with or that you want your
+agent to be able to interact with. So,
+
+370
+00:06:19,430 --> 00:06:19,440
+agent to be able to interact with. So,
+ 
+
+371
+00:06:19,440 --> 00:06:21,350
+agent to be able to interact with. So,
+pretty much anything you can do with the
+
+372
+00:06:21,350 --> 00:06:21,360
+pretty much anything you can do with the
+ 
+
+373
+00:06:21,360 --> 00:06:24,150
+pretty much anything you can do with the
+Google Gmail API, you can enable here.
+
+374
+00:06:24,150 --> 00:06:24,160
+Google Gmail API, you can enable here.
+ 
+
+375
+00:06:24,160 --> 00:06:25,430
+Google Gmail API, you can enable here.
+The next cool thing that's interesting
+
+376
+00:06:25,430 --> 00:06:25,440
+The next cool thing that's interesting
+ 
+
+377
+00:06:25,440 --> 00:06:27,189
+The next cool thing that's interesting
+about Gentic is how it manages
+
+378
+00:06:27,189 --> 00:06:27,199
+about Gentic is how it manages
+ 
+
+379
+00:06:27,199 --> 00:06:29,270
+about Gentic is how it manages
+workflows. Every time our agent is going
+
+380
+00:06:29,270 --> 00:06:29,280
+workflows. Every time our agent is going
+ 
+
+381
+00:06:29,280 --> 00:06:30,550
+workflows. Every time our agent is going
+to do things for us in a
+
+382
+00:06:30,550 --> 00:06:30,560
+to do things for us in a
+ 
+
+383
+00:06:30,560 --> 00:06:32,150
+to do things for us in a
+non-deterministic way, it's going to be
+
+384
+00:06:32,150 --> 00:06:32,160
+non-deterministic way, it's going to be
+ 
+
+385
+00:06:32,160 --> 00:06:34,469
+non-deterministic way, it's going to be
+burning a ton of tokens. So, Gentic
+
+386
+00:06:34,469 --> 00:06:34,479
+burning a ton of tokens. So, Gentic
+ 
+
+387
+00:06:34,479 --> 00:06:36,309
+burning a ton of tokens. So, Gentic
+takes this a step further with the idea
+
+388
+00:06:36,309 --> 00:06:36,319
+takes this a step further with the idea
+ 
+
+389
+00:06:36,319 --> 00:06:39,110
+takes this a step further with the idea
+of workflows and using a protocol called
+
+390
+00:06:39,110 --> 00:06:39,120
+of workflows and using a protocol called
+ 
+
+391
+00:06:39,120 --> 00:06:41,590
+of workflows and using a protocol called
+Arzo basically figures out how a task is
+
+392
+00:06:41,590 --> 00:06:41,600
+Arzo basically figures out how a task is
+ 
+
+393
+00:06:41,600 --> 00:06:44,070
+Arzo basically figures out how a task is
+commonly done, codifies that in JSON so
+
+394
+00:06:44,070 --> 00:06:44,080
+commonly done, codifies that in JSON so
+ 
+
+395
+00:06:44,080 --> 00:06:46,230
+commonly done, codifies that in JSON so
+it can be replicated over and over. You
+
+396
+00:06:46,230 --> 00:06:46,240
+it can be replicated over and over. You
+ 
+
+397
+00:06:46,240 --> 00:06:48,309
+it can be replicated over and over. You
+can imagine over time as we start to use
+
+398
+00:06:48,309 --> 00:06:48,319
+can imagine over time as we start to use
+ 
+
+399
+00:06:48,319 --> 00:06:49,830
+can imagine over time as we start to use
+agents for everything. This is going to
+
+400
+00:06:49,830 --> 00:06:49,840
+agents for everything. This is going to
+ 
+
+401
+00:06:49,840 --> 00:06:51,990
+agents for everything. This is going to
+be a huge economic saving. Okay. So,
+
+402
+00:06:51,990 --> 00:06:52,000
+be a huge economic saving. Okay. So,
+ 
+
+403
+00:06:52,000 --> 00:06:54,150
+be a huge economic saving. Okay. So,
+let's say I want to set up uh notion.
+
+404
+00:06:54,150 --> 00:06:54,160
+let's say I want to set up uh notion.
+ 
+
+405
+00:06:54,160 --> 00:06:55,830
+let's say I want to set up uh notion.
+So, add credential. Let's just search if
+
+406
+00:06:55,830 --> 00:06:55,840
+So, add credential. Let's just search if
+ 
+
+407
+00:06:55,840 --> 00:06:58,469
+So, add credential. Let's just search if
+it's in the list. Yes, it is. Uh we need
+
+408
+00:06:58,469 --> 00:06:58,479
+it's in the list. Yes, it is. Uh we need
+ 
+
+409
+00:06:58,479 --> 00:07:00,469
+it's in the list. Yes, it is. Uh we need
+to put in our API key here and then it
+
+410
+00:07:00,469 --> 00:07:00,479
+to put in our API key here and then it
+ 
+
+411
+00:07:00,479 --> 00:07:02,070
+to put in our API key here and then it
+gets saved. So you can find the
+
+412
+00:07:02,070 --> 00:07:02,080
+gets saved. So you can find the
+ 
+
+413
+00:07:02,080 --> 00:07:04,469
+gets saved. So you can find the
+integrations in your profile and then go
+
+414
+00:07:04,469 --> 00:07:04,479
+integrations in your profile and then go
+ 
+
+415
+00:07:04,479 --> 00:07:06,150
+integrations in your profile and then go
+to connections and then develop or
+
+416
+00:07:06,150 --> 00:07:06,160
+to connections and then develop or
+ 
+
+417
+00:07:06,160 --> 00:07:08,230
+to connections and then develop or
+manage integrations. So in notion just
+
+418
+00:07:08,230 --> 00:07:08,240
+manage integrations. So in notion just
+ 
+
+419
+00:07:08,240 --> 00:07:10,629
+manage integrations. So in notion just
+go to your internal integrations create
+
+420
+00:07:10,629 --> 00:07:10,639
+go to your internal integrations create
+ 
+
+421
+00:07:10,639 --> 00:07:12,390
+go to your internal integrations create
+new integration. So that gives me a
+
+422
+00:07:12,390 --> 00:07:12,400
+new integration. So that gives me a
+ 
+
+423
+00:07:12,400 --> 00:07:14,629
+new integration. So that gives me a
+token so that my agent open cloud claw
+
+424
+00:07:14,629 --> 00:07:14,639
+token so that my agent open cloud claw
+ 
+
+425
+00:07:14,639 --> 00:07:16,710
+token so that my agent open cloud claw
+code whatever you want can now talk to
+
+426
+00:07:16,710 --> 00:07:16,720
+code whatever you want can now talk to
+ 
+
+427
+00:07:16,720 --> 00:07:18,550
+code whatever you want can now talk to
+everything that I have in notion and I
+
+428
+00:07:18,550 --> 00:07:18,560
+everything that I have in notion and I
+ 
+
+429
+00:07:18,560 --> 00:07:20,629
+everything that I have in notion and I
+can set the level of access there as
+
+430
+00:07:20,629 --> 00:07:20,639
+can set the level of access there as
+ 
+
+431
+00:07:20,639 --> 00:07:22,230
+can set the level of access there as
+well. Now once you've got it set up you
+
+432
+00:07:22,230 --> 00:07:22,240
+well. Now once you've got it set up you
+ 
+
+433
+00:07:22,240 --> 00:07:23,990
+well. Now once you've got it set up you
+can see here's all the operations that
+
+434
+00:07:23,990 --> 00:07:24,000
+can see here's all the operations that
+ 
+
+435
+00:07:24,000 --> 00:07:26,150
+can see here's all the operations that
+the API allows because what Gentic has
+
+436
+00:07:26,150 --> 00:07:26,160
+the API allows because what Gentic has
+ 
+
+437
+00:07:26,160 --> 00:07:27,670
+the API allows because what Gentic has
+done is basically pulled in all the
+
+438
+00:07:27,670 --> 00:07:27,680
+done is basically pulled in all the
+ 
+
+439
+00:07:27,680 --> 00:07:29,430
+done is basically pulled in all the
+different operations. my instance of
+
+440
+00:07:29,430 --> 00:07:29,440
+different operations. my instance of
+ 
+
+441
+00:07:29,440 --> 00:07:31,029
+different operations. my instance of
+claw code successfully connected but
+
+442
+00:07:31,029 --> 00:07:31,039
+claw code successfully connected but
+ 
+
+443
+00:07:31,039 --> 00:07:32,150
+claw code successfully connected but
+then it said hey you don't have
+
+444
+00:07:32,150 --> 00:07:32,160
+then it said hey you don't have
+ 
+
+445
+00:07:32,160 --> 00:07:33,749
+then it said hey you don't have
+permissions set up and this is so
+
+446
+00:07:33,749 --> 00:07:33,759
+permissions set up and this is so
+ 
+
+447
+00:07:33,759 --> 00:07:35,430
+permissions set up and this is so
+important for agents and particularly
+
+448
+00:07:35,430 --> 00:07:35,440
+important for agents and particularly
+ 
+
+449
+00:07:35,440 --> 00:07:37,430
+important for agents and particularly
+for businesses that want to be AI first
+
+450
+00:07:37,430 --> 00:07:37,440
+for businesses that want to be AI first
+ 
+
+451
+00:07:37,440 --> 00:07:39,110
+for businesses that want to be AI first
+you can give access to your agent but
+
+452
+00:07:39,110 --> 00:07:39,120
+you can give access to your agent but
+ 
+
+453
+00:07:39,120 --> 00:07:40,309
+you can give access to your agent but
+what is it allowed to do what
+
+454
+00:07:40,309 --> 00:07:40,319
+what is it allowed to do what
+ 
+
+455
+00:07:40,319 --> 00:07:42,150
+what is it allowed to do what
+permissions does it have so you can set
+
+456
+00:07:42,150 --> 00:07:42,160
+permissions does it have so you can set
+ 
+
+457
+00:07:42,160 --> 00:07:43,749
+permissions does it have so you can set
+that up through toolkits you can have
+
+458
+00:07:43,749 --> 00:07:43,759
+that up through toolkits you can have
+ 
+
+459
+00:07:43,759 --> 00:07:45,189
+that up through toolkits you can have
+different toolkits and credentials set
+
+460
+00:07:45,189 --> 00:07:45,199
+different toolkits and credentials set
+ 
+
+461
+00:07:45,199 --> 00:07:47,270
+different toolkits and credentials set
+up depending on who's accessing it step
+
+462
+00:07:47,270 --> 00:07:47,280
+up depending on who's accessing it step
+ 
+
+463
+00:07:47,280 --> 00:07:48,710
+up depending on who's accessing it step
+through getting access it hit a
+
+464
+00:07:48,710 --> 00:07:48,720
+through getting access it hit a
+ 
+
+465
+00:07:48,720 --> 00:07:50,309
+through getting access it hit a
+permissions problem it asked me to sort
+
+466
+00:07:50,309 --> 00:07:50,319
+permissions problem it asked me to sort
+ 
+
+467
+00:07:50,319 --> 00:07:51,990
+permissions problem it asked me to sort
+out and then boom it went and created
+
+468
+00:07:51,990 --> 00:07:52,000
+out and then boom it went and created
+ 
+
+469
+00:07:52,000 --> 00:07:53,909
+out and then boom it went and created
+this page within notion so essentially
+
+470
+00:07:53,909 --> 00:07:53,919
+this page within notion so essentially
+ 
+
+471
+00:07:53,919 --> 00:07:55,270
+this page within notion so essentially
+this is kind of the next level of
+
+472
+00:07:55,270 --> 00:07:55,280
+this is kind of the next level of
+ 
+
+473
+00:07:55,280 --> 00:07:57,189
+this is kind of the next level of
+infrastructure we need for working
+
+474
+00:07:57,189 --> 00:07:57,199
+infrastructure we need for working
+ 
+
+475
+00:07:57,199 --> 00:07:59,270
+infrastructure we need for working
+securely with agents We've had all these
+
+476
+00:07:59,270 --> 00:07:59,280
+securely with agents We've had all these
+ 
+
+477
+00:07:59,280 --> 00:08:01,350
+securely with agents We've had all these
+novel applications like OpenClaw which
+
+478
+00:08:01,350 --> 00:08:01,360
+novel applications like OpenClaw which
+ 
+
+479
+00:08:01,360 --> 00:08:04,469
+novel applications like OpenClaw which
+is powerful but hugely insecure. Gentic
+
+480
+00:08:04,469 --> 00:08:04,479
+is powerful but hugely insecure. Gentic
+ 
+
+481
+00:08:04,479 --> 00:08:06,070
+is powerful but hugely insecure. Gentic
+and the likes of Stripe and other
+
+482
+00:08:06,070 --> 00:08:06,080
+and the likes of Stripe and other
+ 
+
+483
+00:08:06,080 --> 00:08:07,909
+and the likes of Stripe and other
+providers are stepping in now to solve
+
+484
+00:08:07,909 --> 00:08:07,919
+providers are stepping in now to solve
+ 
+
+485
+00:08:07,919 --> 00:08:09,749
+providers are stepping in now to solve
+those infrastructural problems which I'm
+
+486
+00:08:09,749 --> 00:08:09,759
+those infrastructural problems which I'm
+ 
+
+487
+00:08:09,759 --> 00:08:11,909
+those infrastructural problems which I'm
+here for. Okay, so it's very clear how
+
+488
+00:08:11,909 --> 00:08:11,919
+here for. Okay, so it's very clear how
+ 
+
+489
+00:08:11,919 --> 00:08:13,749
+here for. Okay, so it's very clear how
+this is going. Agents are going to
+
+490
+00:08:13,749 --> 00:08:13,759
+this is going. Agents are going to
+ 
+
+491
+00:08:13,759 --> 00:08:16,869
+this is going. Agents are going to
+outpace humans as the main operators on
+
+492
+00:08:16,869 --> 00:08:16,879
+outpace humans as the main operators on
+ 
+
+493
+00:08:16,879 --> 00:08:18,950
+outpace humans as the main operators on
+the web. It is going to become primarily
+
+494
+00:08:18,950 --> 00:08:18,960
+the web. It is going to become primarily
+ 
+
+495
+00:08:18,960 --> 00:08:20,869
+the web. It is going to become primarily
+an agentic web and we are going to
+
+496
+00:08:20,869 --> 00:08:20,879
+an agentic web and we are going to
+ 
+
+497
+00:08:20,879 --> 00:08:23,510
+an agentic web and we are going to
+become secondary users. We need to start
+
+498
+00:08:23,510 --> 00:08:23,520
+become secondary users. We need to start
+ 
+
+499
+00:08:23,520 --> 00:08:25,589
+become secondary users. We need to start
+addressing what all that looks like.
+
+500
+00:08:25,589 --> 00:08:25,599
+addressing what all that looks like.
+ 
+
+501
+00:08:25,599 --> 00:08:26,629
+addressing what all that looks like.
+First thing I would do is if you're
+
+502
+00:08:26,629 --> 00:08:26,639
+First thing I would do is if you're
+ 
+
+503
+00:08:26,639 --> 00:08:29,029
+First thing I would do is if you're
+building any kind of company in 2026, it
+
+504
+00:08:29,029 --> 00:08:29,039
+building any kind of company in 2026, it
+ 
+
+505
+00:08:29,039 --> 00:08:30,790
+building any kind of company in 2026, it
+needs to be agent first. It needs to
+
+506
+00:08:30,790 --> 00:08:30,800
+needs to be agent first. It needs to
+ 
+
+507
+00:08:30,800 --> 00:08:34,550
+needs to be agent first. It needs to
+have great APIs, MCPs, even a CLI and
+
+508
+00:08:34,550 --> 00:08:34,560
+have great APIs, MCPs, even a CLI and
+ 
+
+509
+00:08:34,560 --> 00:08:36,709
+have great APIs, MCPs, even a CLI and
+very clear markdown driven documentation
+
+510
+00:08:36,709 --> 00:08:36,719
+very clear markdown driven documentation
+ 
+
+511
+00:08:36,719 --> 00:08:38,709
+very clear markdown driven documentation
+on how an agent should interact with
+
+512
+00:08:38,709 --> 00:08:38,719
+on how an agent should interact with
+ 
+
+513
+00:08:38,719 --> 00:08:41,110
+on how an agent should interact with
+your services. If you want to know how I
+
+514
+00:08:41,110 --> 00:08:41,120
+your services. If you want to know how I
+ 
+
+515
+00:08:41,120 --> 00:08:42,630
+your services. If you want to know how I
+personally developed with an AI
+
+516
+00:08:42,630 --> 00:08:42,640
+personally developed with an AI
+ 
+
+517
+00:08:42,640 --> 00:08:45,269
+personally developed with an AI
+infrastructure and CLI first mentality,
+
+518
+00:08:45,269 --> 00:08:45,279
+infrastructure and CLI first mentality,
+ 
+
+519
+00:08:45,279 --> 00:08:47,030
+infrastructure and CLI first mentality,
+here's the stack I'm currently using and
+
+520
+00:08:47,030 --> 00:08:47,040
+here's the stack I'm currently using and
+ 
+
+521
+00:08:47,040 --> 00:08:48,870
+here's the stack I'm currently using and
+I teach via my course and community at
+
+522
+00:08:48,870 --> 00:08:48,880
+I teach via my course and community at
+ 
+
+523
+00:08:48,880 --> 00:08:50,470
+I teach via my course and community at
+switchdimension.com.
+
+524
+00:08:50,470 --> 00:08:50,480
+switchdimension.com.
+ 
+
+525
+00:08:50,480 --> 00:08:52,710
+switchdimension.com.
+So number one, GitHub. I have stopped
+
+526
+00:08:52,710 --> 00:08:52,720
+So number one, GitHub. I have stopped
+ 
+
+527
+00:08:52,720 --> 00:08:55,590
+So number one, GitHub. I have stopped
+visiting github.com. I'm using the CLI
+
+528
+00:08:55,590 --> 00:08:55,600
+visiting github.com. I'm using the CLI
+ 
+
+529
+00:08:55,600 --> 00:08:57,750
+visiting github.com. I'm using the CLI
+for everything. Just using that simple
+
+530
+00:08:57,750 --> 00:08:57,760
+for everything. Just using that simple
+ 
+
+531
+00:08:57,760 --> 00:08:59,990
+for everything. Just using that simple
+gh command. I'm doing all my version
+
+532
+00:08:59,990 --> 00:09:00,000
+gh command. I'm doing all my version
+ 
+
+533
+00:09:00,000 --> 00:09:03,269
+gh command. I'm doing all my version
+control, pull requests, uh, CI/CD,
+
+534
+00:09:03,269 --> 00:09:03,279
+control, pull requests, uh, CI/CD,
+ 
+
+535
+00:09:03,279 --> 00:09:04,790
+control, pull requests, uh, CI/CD,
+everything now happens from the command
+
+536
+00:09:04,790 --> 00:09:04,800
+everything now happens from the command
+ 
+
+537
+00:09:04,800 --> 00:09:06,949
+everything now happens from the command
+line and the agent is running this for
+
+538
+00:09:06,949 --> 00:09:06,959
+line and the agent is running this for
+ 
+
+539
+00:09:06,959 --> 00:09:09,750
+line and the agent is running this for
+me. Second of all, databases. Before you
+
+540
+00:09:09,750 --> 00:09:09,760
+me. Second of all, databases. Before you
+ 
+
+541
+00:09:09,760 --> 00:09:11,670
+me. Second of all, databases. Before you
+used to have to go to Superbase or Neon
+
+542
+00:09:11,670 --> 00:09:11,680
+used to have to go to Superbase or Neon
+ 
+
+543
+00:09:11,680 --> 00:09:13,110
+used to have to go to Superbase or Neon
+and get the credentials, set it up in
+
+544
+00:09:13,110 --> 00:09:13,120
+and get the credentials, set it up in
+ 
+
+545
+00:09:13,120 --> 00:09:15,509
+and get the credentials, set it up in
+your environment files. No, just plug in
+
+546
+00:09:15,509 --> 00:09:15,519
+your environment files. No, just plug in
+ 
+
+547
+00:09:15,519 --> 00:09:18,949
+your environment files. No, just plug in
+the Neon DB CLI as an example and it
+
+548
+00:09:18,949 --> 00:09:18,959
+the Neon DB CLI as an example and it
+ 
+
+549
+00:09:18,959 --> 00:09:20,470
+the Neon DB CLI as an example and it
+will actually do all that for you. So
+
+550
+00:09:20,470 --> 00:09:20,480
+will actually do all that for you. So
+ 
+
+551
+00:09:20,480 --> 00:09:22,070
+will actually do all that for you. So
+when I say, "Hey, we probably need a
+
+552
+00:09:22,070 --> 00:09:22,080
+when I say, "Hey, we probably need a
+ 
+
+553
+00:09:22,080 --> 00:09:23,590
+when I say, "Hey, we probably need a
+Postgres database in the background
+
+554
+00:09:23,590 --> 00:09:23,600
+Postgres database in the background
+ 
+
+555
+00:09:23,600 --> 00:09:25,030
+Postgres database in the background
+here." Instead of me going and setting
+
+556
+00:09:25,030 --> 00:09:25,040
+here." Instead of me going and setting
+ 
+
+557
+00:09:25,040 --> 00:09:26,870
+here." Instead of me going and setting
+that up via the dashboard, via the Neon
+
+558
+00:09:26,870 --> 00:09:26,880
+that up via the dashboard, via the Neon
+ 
+
+559
+00:09:26,880 --> 00:09:28,790
+that up via the dashboard, via the Neon
+CLI, it just goes and provisions one,
+
+560
+00:09:28,790 --> 00:09:28,800
+CLI, it just goes and provisions one,
+ 
+
+561
+00:09:28,800 --> 00:09:30,790
+CLI, it just goes and provisions one,
+sets it up, spins it down as needed.
+
+562
+00:09:30,790 --> 00:09:30,800
+sets it up, spins it down as needed.
+ 
+
+563
+00:09:30,800 --> 00:09:33,750
+sets it up, spins it down as needed.
+Huge timesaver. Use Versell deployment.
+
+564
+00:09:33,750 --> 00:09:33,760
+Huge timesaver. Use Versell deployment.
+ 
+
+565
+00:09:33,760 --> 00:09:35,990
+Huge timesaver. Use Versell deployment.
+Use the Verscell CLI. It will basically
+
+566
+00:09:35,990 --> 00:09:36,000
+Use the Verscell CLI. It will basically
+ 
+
+567
+00:09:36,000 --> 00:09:37,750
+Use the Verscell CLI. It will basically
+go and check the build logs. It will
+
+568
+00:09:37,750 --> 00:09:37,760
+go and check the build logs. It will
+ 
+
+569
+00:09:37,760 --> 00:09:39,750
+go and check the build logs. It will
+deploy for you. It'll provision any
+
+570
+00:09:39,750 --> 00:09:39,760
+deploy for you. It'll provision any
+ 
+
+571
+00:09:39,760 --> 00:09:41,670
+deploy for you. It'll provision any
+instances that you need. All managed
+
+572
+00:09:41,670 --> 00:09:41,680
+instances that you need. All managed
+ 
+
+573
+00:09:41,680 --> 00:09:43,829
+instances that you need. All managed
+again by the agent and getting you out
+
+574
+00:09:43,829 --> 00:09:43,839
+again by the agent and getting you out
+ 
+
+575
+00:09:43,839 --> 00:09:46,550
+again by the agent and getting you out
+of the way. Clerk for authentication. So
+
+576
+00:09:46,550 --> 00:09:46,560
+of the way. Clerk for authentication. So
+ 
+
+577
+00:09:46,560 --> 00:09:48,630
+of the way. Clerk for authentication. So
+in terms of using test users, setting up
+
+578
+00:09:48,630 --> 00:09:48,640
+in terms of using test users, setting up
+ 
+
+579
+00:09:48,640 --> 00:09:50,710
+in terms of using test users, setting up
+users, managing users, all done via
+
+580
+00:09:50,710 --> 00:09:50,720
+users, managing users, all done via
+ 
+
+581
+00:09:50,720 --> 00:09:53,030
+users, managing users, all done via
+clerk off and the clerk CLI. And then of
+
+582
+00:09:53,030 --> 00:09:53,040
+clerk off and the clerk CLI. And then of
+ 
+
+583
+00:09:53,040 --> 00:09:54,550
+clerk off and the clerk CLI. And then of
+course for managing payments, you've got
+
+584
+00:09:54,550 --> 00:09:54,560
+course for managing payments, you've got
+ 
+
+585
+00:09:54,560 --> 00:09:57,030
+course for managing payments, you've got
+the Stripe API which is going to become
+
+586
+00:09:57,030 --> 00:09:57,040
+the Stripe API which is going to become
+ 
+
+587
+00:09:57,040 --> 00:09:59,030
+the Stripe API which is going to become
+hugely important in the coming years.
+
+588
+00:09:59,030 --> 00:09:59,040
+hugely important in the coming years.
+ 
+
+589
+00:09:59,040 --> 00:10:01,670
+hugely important in the coming years.
+And you can use Post Hog for analytics.
+
+590
+00:10:01,670 --> 00:10:01,680
+And you can use Post Hog for analytics.
+ 
+
+591
+00:10:01,680 --> 00:10:04,070
+And you can use Post Hog for analytics.
+Get your agent to check on processes to
+
+592
+00:10:04,070 --> 00:10:04,080
+Get your agent to check on processes to
+ 
+
+593
+00:10:04,080 --> 00:10:05,750
+Get your agent to check on processes to
+make sure everything is up and running,
+
+594
+00:10:05,750 --> 00:10:05,760
+make sure everything is up and running,
+ 
+
+595
+00:10:05,760 --> 00:10:07,590
+make sure everything is up and running,
+if there's any errors, and to make sure
+
+596
+00:10:07,590 --> 00:10:07,600
+if there's any errors, and to make sure
+ 
+
+597
+00:10:07,600 --> 00:10:09,110
+if there's any errors, and to make sure
+that all your system and all your
+
+598
+00:10:09,110 --> 00:10:09,120
+that all your system and all your
+ 
+
+599
+00:10:09,120 --> 00:10:10,870
+that all your system and all your
+systems are in good health. You can do
+
+600
+00:10:10,870 --> 00:10:10,880
+systems are in good health. You can do
+ 
+
+601
+00:10:10,880 --> 00:10:12,310
+systems are in good health. You can do
+pretty much everything you want via
+
+602
+00:10:12,310 --> 00:10:12,320
+pretty much everything you want via
+ 
+
+603
+00:10:12,320 --> 00:10:14,630
+pretty much everything you want via
+CLIs. Now, in terms of development, in
+
+604
+00:10:14,630 --> 00:10:14,640
+CLIs. Now, in terms of development, in
+ 
+
+605
+00:10:14,640 --> 00:10:16,310
+CLIs. Now, in terms of development, in
+just the last two weeks alone, I've seen
+
+606
+00:10:16,310 --> 00:10:16,320
+just the last two weeks alone, I've seen
+ 
+
+607
+00:10:16,320 --> 00:10:18,790
+just the last two weeks alone, I've seen
+a huge shift in how companies are
+
+608
+00:10:18,790 --> 00:10:18,800
+a huge shift in how companies are
+ 
+
+609
+00:10:18,800 --> 00:10:20,470
+a huge shift in how companies are
+thinking about this. Absolutely. think
+
+610
+00:10:20,470 --> 00:10:20,480
+thinking about this. Absolutely. think
+ 
+
+611
+00:10:20,480 --> 00:10:24,150
+thinking about this. Absolutely. think
+about a CLI MCP and API first approach
+
+612
+00:10:24,150 --> 00:10:24,160
+about a CLI MCP and API first approach
+ 
+
+613
+00:10:24,160 --> 00:10:27,190
+about a CLI MCP and API first approach
+for the agent web going forward in 2026.
+
+614
+00:10:27,190 --> 00:10:27,200
+for the agent web going forward in 2026.
+ 
+
+615
+00:10:27,200 --> 00:10:28,470
+for the agent web going forward in 2026.
+So the other thing I've been using to
+
+616
+00:10:28,470 --> 00:10:28,480
+So the other thing I've been using to
+ 
+
+617
+00:10:28,480 --> 00:10:30,230
+So the other thing I've been using to
+speed up my development and also secure
+
+618
+00:10:30,230 --> 00:10:30,240
+speed up my development and also secure
+ 
+
+619
+00:10:30,240 --> 00:10:32,790
+speed up my development and also secure
+my development is by using one password
+
+620
+00:10:32,790 --> 00:10:32,800
+my development is by using one password
+ 
+
+621
+00:10:32,800 --> 00:10:35,350
+my development is by using one password
+to manage all my environment variables.
+
+622
+00:10:35,350 --> 00:10:35,360
+to manage all my environment variables.
+ 
+
+623
+00:10:35,360 --> 00:10:37,269
+to manage all my environment variables.
+So in a nutshell, you set up a new
+
+624
+00:10:37,269 --> 00:10:37,279
+So in a nutshell, you set up a new
+ 
+
+625
+00:10:37,279 --> 00:10:39,269
+So in a nutshell, you set up a new
+environment in one password for whatever
+
+626
+00:10:39,269 --> 00:10:39,279
+environment in one password for whatever
+ 
+
+627
+00:10:39,279 --> 00:10:41,030
+environment in one password for whatever
+project you're working on. And in there
+
+628
+00:10:41,030 --> 00:10:41,040
+project you're working on. And in there
+ 
+
+629
+00:10:41,040 --> 00:10:43,190
+project you're working on. And in there
+you store all the critical environment
+
+630
+00:10:43,190 --> 00:10:43,200
+you store all the critical environment
+ 
+
+631
+00:10:43,200 --> 00:10:45,030
+you store all the critical environment
+variables. And then what one password
+
+632
+00:10:45,030 --> 00:10:45,040
+variables. And then what one password
+ 
+
+633
+00:10:45,040 --> 00:10:47,829
+variables. And then what one password
+can do is actually mount those variables
+
+634
+00:10:47,829 --> 00:10:47,839
+can do is actually mount those variables
+ 
+
+635
+00:10:47,839 --> 00:10:49,829
+can do is actually mount those variables
+into whatever project folder that you're
+
+636
+00:10:49,829 --> 00:10:49,839
+into whatever project folder that you're
+ 
+
+637
+00:10:49,839 --> 00:10:52,310
+into whatever project folder that you're
+using so that your agent doesn't get to
+
+638
+00:10:52,310 --> 00:10:52,320
+using so that your agent doesn't get to
+ 
+
+639
+00:10:52,320 --> 00:10:53,990
+using so that your agent doesn't get to
+see them or nobody else gets to see them
+
+640
+00:10:53,990 --> 00:10:54,000
+see them or nobody else gets to see them
+ 
+
+641
+00:10:54,000 --> 00:10:55,670
+see them or nobody else gets to see them
+and they're kept safe. And if you've got
+
+642
+00:10:55,670 --> 00:10:55,680
+and they're kept safe. And if you've got
+ 
+
+643
+00:10:55,680 --> 00:10:57,590
+and they're kept safe. And if you've got
+multiple different projects running and
+
+644
+00:10:57,590 --> 00:10:57,600
+multiple different projects running and
+ 
+
+645
+00:10:57,600 --> 00:10:59,509
+multiple different projects running and
+you suddenly learn that your project is
+
+646
+00:10:59,509 --> 00:10:59,519
+you suddenly learn that your project is
+ 
+
+647
+00:10:59,519 --> 00:11:01,190
+you suddenly learn that your project is
+compromised in some way, you can
+
+648
+00:11:01,190 --> 00:11:01,200
+compromised in some way, you can
+ 
+
+649
+00:11:01,200 --> 00:11:02,710
+compromised in some way, you can
+actually edit them all from one password
+
+650
+00:11:02,710 --> 00:11:02,720
+actually edit them all from one password
+ 
+
+651
+00:11:02,720 --> 00:11:04,230
+actually edit them all from one password
+if you need to rotate the keys or
+
+652
+00:11:04,230 --> 00:11:04,240
+if you need to rotate the keys or
+ 
+
+653
+00:11:04,240 --> 00:11:05,829
+if you need to rotate the keys or
+anything else like that. And what's more
+
+654
+00:11:05,829 --> 00:11:05,839
+anything else like that. And what's more
+ 
+
+655
+00:11:05,839 --> 00:11:07,350
+anything else like that. And what's more
+than that, it's just a great time saver.
+
+656
+00:11:07,350 --> 00:11:07,360
+than that, it's just a great time saver.
+ 
+
+657
+00:11:07,360 --> 00:11:08,870
+than that, it's just a great time saver.
+I'm constantly spinning up new projects
+
+658
+00:11:08,870 --> 00:11:08,880
+I'm constantly spinning up new projects
+ 
+
+659
+00:11:08,880 --> 00:11:10,949
+I'm constantly spinning up new projects
+that need entropic or open AI keys. I
+
+660
+00:11:10,949 --> 00:11:10,959
+that need entropic or open AI keys. I
+ 
+
+661
+00:11:10,959 --> 00:11:11,990
+that need entropic or open AI keys. I
+have them stored in a temporary
+
+662
+00:11:11,990 --> 00:11:12,000
+have them stored in a temporary
+ 
+
+663
+00:11:12,000 --> 00:11:13,509
+have them stored in a temporary
+environment container I can give to the
+
+664
+00:11:13,509 --> 00:11:13,519
+environment container I can give to the
+ 
+
+665
+00:11:13,519 --> 00:11:15,030
+environment container I can give to the
+agent to drop in. I don't need to go
+
+666
+00:11:15,030 --> 00:11:15,040
+agent to drop in. I don't need to go
+ 
+
+667
+00:11:15,040 --> 00:11:16,710
+agent to drop in. I don't need to go
+provisioning new API keys or anything
+
+668
+00:11:16,710 --> 00:11:16,720
+provisioning new API keys or anything
+ 
+
+669
+00:11:16,720 --> 00:11:18,389
+provisioning new API keys or anything
+else like that. Let me leave you with
+
+670
+00:11:18,389 --> 00:11:18,399
+else like that. Let me leave you with
+ 
+
+671
+00:11:18,399 --> 00:11:19,829
+else like that. Let me leave you with
+the bigger picture. What we're seeing
+
+672
+00:11:19,829 --> 00:11:19,839
+the bigger picture. What we're seeing
+ 
+
+673
+00:11:19,839 --> 00:11:21,750
+the bigger picture. What we're seeing
+right now is the early phase of a
+
+674
+00:11:21,750 --> 00:11:21,760
+right now is the early phase of a
+ 
+
+675
+00:11:21,760 --> 00:11:23,670
+right now is the early phase of a
+platform shift. Just like when we went
+
+676
+00:11:23,670 --> 00:11:23,680
+platform shift. Just like when we went
+ 
+
+677
+00:11:23,680 --> 00:11:26,150
+platform shift. Just like when we went
+from desktop to web, web to mobile,
+
+678
+00:11:26,150 --> 00:11:26,160
+from desktop to web, web to mobile,
+ 
+
+679
+00:11:26,160 --> 00:11:28,310
+from desktop to web, web to mobile,
+we're going from a human first interface
+
+680
+00:11:28,310 --> 00:11:28,320
+we're going from a human first interface
+ 
+
+681
+00:11:28,320 --> 00:11:31,110
+we're going from a human first interface
+to an agent first interface. So
+
+682
+00:11:31,110 --> 00:11:31,120
+to an agent first interface. So
+ 
+
+683
+00:11:31,120 --> 00:11:33,350
+to an agent first interface. So
+companies that get this, Stripe, Neon,
+
+684
+00:11:33,350 --> 00:11:33,360
+companies that get this, Stripe, Neon,
+ 
+
+685
+00:11:33,360 --> 00:11:35,750
+companies that get this, Stripe, Neon,
+Railway, Gent, Clerk, they're going to
+
+686
+00:11:35,750 --> 00:11:35,760
+Railway, Gent, Clerk, they're going to
+ 
+
+687
+00:11:35,760 --> 00:11:38,150
+Railway, Gent, Clerk, they're going to
+win the next era. The tools that are
+
+688
+00:11:38,150 --> 00:11:38,160
+win the next era. The tools that are
+ 
+
+689
+00:11:38,160 --> 00:11:40,230
+win the next era. The tools that are
+easiest for agents to use will get
+
+690
+00:11:40,230 --> 00:11:40,240
+easiest for agents to use will get
+ 
+
+691
+00:11:40,240 --> 00:11:43,030
+easiest for agents to use will get
+chosen first. So we've come from the
+
+692
+00:11:43,030 --> 00:11:43,040
+chosen first. So we've come from the
+ 
+
+693
+00:11:43,040 --> 00:11:45,430
+chosen first. So we've come from the
+concept of page rank with Google. So
+
+694
+00:11:45,430 --> 00:11:45,440
+concept of page rank with Google. So
+ 
+
+695
+00:11:45,440 --> 00:11:47,750
+concept of page rank with Google. So
+basically, if your content is popular,
+
+696
+00:11:47,750 --> 00:11:47,760
+basically, if your content is popular,
+ 
+
+697
+00:11:47,760 --> 00:11:49,430
+basically, if your content is popular,
+lots of people click on it and they link
+
+698
+00:11:49,430 --> 00:11:49,440
+lots of people click on it and they link
+ 
+
+699
+00:11:49,440 --> 00:11:51,430
+lots of people click on it and they link
+back to it. It rises up and up and up,
+
+700
+00:11:51,430 --> 00:11:51,440
+back to it. It rises up and up and up,
+ 
+
+701
+00:11:51,440 --> 00:11:52,949
+back to it. It rises up and up and up,
+gets higher in the search results.
+
+702
+00:11:52,949 --> 00:11:52,959
+gets higher in the search results.
+ 
+
+703
+00:11:52,959 --> 00:11:54,630
+gets higher in the search results.
+That's how you get to number one. I
+
+704
+00:11:54,630 --> 00:11:54,640
+That's how you get to number one. I
+ 
+
+705
+00:11:54,640 --> 00:11:56,550
+That's how you get to number one. I
+think we're entering a new era of the
+
+706
+00:11:56,550 --> 00:11:56,560
+think we're entering a new era of the
+ 
+
+707
+00:11:56,560 --> 00:11:59,430
+think we're entering a new era of the
+agent rank. So, basically, your service,
+
+708
+00:11:59,430 --> 00:11:59,440
+agent rank. So, basically, your service,
+ 
+
+709
+00:11:59,440 --> 00:12:01,269
+agent rank. So, basically, your service,
+your company, whatever it is, is going
+
+710
+00:12:01,269 --> 00:12:01,279
+your company, whatever it is, is going
+ 
+
+711
+00:12:01,279 --> 00:12:03,350
+your company, whatever it is, is going
+to be ranked by agents. Now, it's not
+
+712
+00:12:03,350 --> 00:12:03,360
+to be ranked by agents. Now, it's not
+ 
+
+713
+00:12:03,360 --> 00:12:05,110
+to be ranked by agents. Now, it's not
+going to be reading your emotional copy
+
+714
+00:12:05,110 --> 00:12:05,120
+going to be reading your emotional copy
+ 
+
+715
+00:12:05,120 --> 00:12:06,629
+going to be reading your emotional copy
+on a homepage. It's going to be
+
+716
+00:12:06,629 --> 00:12:06,639
+on a homepage. It's going to be
+ 
+
+717
+00:12:06,639 --> 00:12:08,710
+on a homepage. It's going to be
+realizing, does it have a CLI? Does it
+
+718
+00:12:08,710 --> 00:12:08,720
+realizing, does it have a CLI? Does it
+ 
+
+719
+00:12:08,720 --> 00:12:11,110
+realizing, does it have a CLI? Does it
+have a good MCP? Has it got great API
+
+720
+00:12:11,110 --> 00:12:11,120
+have a good MCP? Has it got great API
+ 
+
+721
+00:12:11,120 --> 00:12:12,870
+have a good MCP? Has it got great API
+with good documentation? What's the
+
+722
+00:12:12,870 --> 00:12:12,880
+with good documentation? What's the
+ 
+
+723
+00:12:12,880 --> 00:12:14,470
+with good documentation? What's the
+performance like? What is the cost of
+
+724
+00:12:14,470 --> 00:12:14,480
+performance like? What is the cost of
+ 
+
+725
+00:12:14,480 --> 00:12:15,829
+performance like? What is the cost of
+this service? and what other trust
+
+726
+00:12:15,829 --> 00:12:15,839
+this service? and what other trust
+ 
+
+727
+00:12:15,839 --> 00:12:17,829
+this service? and what other trust
+variables do I need to ensure this is a
+
+728
+00:12:17,829 --> 00:12:17,839
+variables do I need to ensure this is a
+ 
+
+729
+00:12:17,839 --> 00:12:19,910
+variables do I need to ensure this is a
+good choice for the process I'm about to
+
+730
+00:12:19,910 --> 00:12:19,920
+good choice for the process I'm about to
+ 
+
+731
+00:12:19,920 --> 00:12:21,670
+good choice for the process I'm about to
+do as companies we need to think about
+
+732
+00:12:21,670 --> 00:12:21,680
+do as companies we need to think about
+ 
+
+733
+00:12:21,680 --> 00:12:23,430
+do as companies we need to think about
+how we manage around this and as
+
+734
+00:12:23,430 --> 00:12:23,440
+how we manage around this and as
+ 
+
+735
+00:12:23,440 --> 00:12:25,269
+how we manage around this and as
+builders we need to think about what we
+
+736
+00:12:25,269 --> 00:12:25,279
+builders we need to think about what we
+ 
+
+737
+00:12:25,279 --> 00:12:27,110
+builders we need to think about what we
+build and how we build in this agent
+
+738
+00:12:27,110 --> 00:12:27,120
+build and how we build in this agent
+ 
+
+739
+00:12:27,120 --> 00:12:29,030
+build and how we build in this agent
+first world personally I think the best
+
+740
+00:12:29,030 --> 00:12:29,040
+first world personally I think the best
+ 
+
+741
+00:12:29,040 --> 00:12:30,710
+first world personally I think the best
+way to understand and take advantage of
+
+742
+00:12:30,710 --> 00:12:30,720
+way to understand and take advantage of
+ 
+
+743
+00:12:30,720 --> 00:12:32,870
+way to understand and take advantage of
+this new shift is to become a builder
+
+744
+00:12:32,870 --> 00:12:32,880
+this new shift is to become a builder
+ 
+
+745
+00:12:32,880 --> 00:12:34,949
+this new shift is to become a builder
+yourself right now we're in the phase
+
+746
+00:12:34,949 --> 00:12:34,959
+yourself right now we're in the phase
+ 
+
+747
+00:12:34,959 --> 00:12:37,110
+yourself right now we're in the phase
+where developers are using these kind of
+
+748
+00:12:37,110 --> 00:12:37,120
+where developers are using these kind of
+ 
+
+749
+00:12:37,120 --> 00:12:40,150
+where developers are using these kind of
+CLI to build out applications and move a
+
+750
+00:12:40,150 --> 00:12:40,160
+CLI to build out applications and move a
+ 
+
+751
+00:12:40,160 --> 00:12:41,990
+CLI to build out applications and move a
+whole lot faster it's at the cutting
+
+752
+00:12:41,990 --> 00:12:42,000
+whole lot faster it's at the cutting
+ 
+
+753
+00:12:42,000 --> 00:12:44,150
+whole lot faster it's at the cutting
+edge of what's possible it will be quite
+
+754
+00:12:44,150 --> 00:12:44,160
+edge of what's possible it will be quite
+ 
+
+755
+00:12:44,160 --> 00:12:46,790
+edge of what's possible it will be quite
+some time before the rest of the market,
+
+756
+00:12:46,790 --> 00:12:46,800
+some time before the rest of the market,
+ 
+
+757
+00:12:46,800 --> 00:12:49,190
+some time before the rest of the market,
+e-commerce consumers, the rest of B2B
+
+758
+00:12:49,190 --> 00:12:49,200
+e-commerce consumers, the rest of B2B
+ 
+
+759
+00:12:49,200 --> 00:12:51,110
+e-commerce consumers, the rest of B2B
+catches up with this. If you understand
+
+760
+00:12:51,110 --> 00:12:51,120
+catches up with this. If you understand
+ 
+
+761
+00:12:51,120 --> 00:12:52,949
+catches up with this. If you understand
+how agents are starting to interact and
+
+762
+00:12:52,949 --> 00:12:52,959
+how agents are starting to interact and
+ 
+
+763
+00:12:52,959 --> 00:12:54,710
+how agents are starting to interact and
+what developers are building now to
+
+764
+00:12:54,710 --> 00:12:54,720
+what developers are building now to
+ 
+
+765
+00:12:54,720 --> 00:12:56,150
+what developers are building now to
+solve their problems, you can
+
+766
+00:12:56,150 --> 00:12:56,160
+solve their problems, you can
+ 
+
+767
+00:12:56,160 --> 00:12:57,910
+solve their problems, you can
+extrapolate those and start to apply
+
+768
+00:12:57,910 --> 00:12:57,920
+extrapolate those and start to apply
+ 
+
+769
+00:12:57,920 --> 00:13:00,230
+extrapolate those and start to apply
+them to any domain you are interested
+
+770
+00:13:00,230 --> 00:13:00,240
+them to any domain you are interested
+ 
+
+771
+00:13:00,240 --> 00:13:01,990
+them to any domain you are interested
+in. If you want to go deeper on building
+
+772
+00:13:01,990 --> 00:13:02,000
+in. If you want to go deeper on building
+ 
+
+773
+00:13:02,000 --> 00:13:03,509
+in. If you want to go deeper on building
+this kind of autonomous workflow, check
+
+774
+00:13:03,509 --> 00:13:03,519
+this kind of autonomous workflow, check
+ 
+
+775
+00:13:03,519 --> 00:13:05,110
+this kind of autonomous workflow, check
+out the switch dimension course. The
+
+776
+00:13:05,110 --> 00:13:05,120
+out the switch dimension course. The
+ 
+
+777
+00:13:05,120 --> 00:13:06,629
+out the switch dimension course. The
+link is in the description down below.
+
+778
+00:13:06,629 --> 00:13:06,639
+link is in the description down below.
+ 
+
+779
+00:13:06,639 --> 00:13:08,710
+link is in the description down below.
+We cover exactly this kind of stuff step
+
+780
+00:13:08,710 --> 00:13:08,720
+We cover exactly this kind of stuff step
+ 
+
+781
+00:13:08,720 --> 00:13:10,790
+We cover exactly this kind of stuff step
+by step. Also, drop me a comment. What's
+
+782
+00:13:10,790 --> 00:13:10,800
+by step. Also, drop me a comment. What's
+ 
+
+783
+00:13:10,800 --> 00:13:12,629
+by step. Also, drop me a comment. What's
+the one service you wish your agent
+
+784
+00:13:12,629 --> 00:13:12,639
+the one service you wish your agent
+ 
+
+785
+00:13:12,639 --> 00:13:14,310
+the one service you wish your agent
+could set up for you right now? I'm
+
+786
+00:13:14,310 --> 00:13:14,320
+could set up for you right now? I'm
+ 
+
+787
+00:13:14,320 --> 00:13:15,750
+could set up for you right now? I'm
+building a list and I want to know what
+
+788
+00:13:15,750 --> 00:13:15,760
+building a list and I want to know what
+ 
+
+789
+00:13:15,760 --> 00:13:17,509
+building a list and I want to know what
+is blocking people. And if this was
+
+790
+00:13:17,509 --> 00:13:17,519
+is blocking people. And if this was
+ 
+
+791
+00:13:17,519 --> 00:13:19,269
+is blocking people. And if this was
+useful, hit subscribe. I'm covering the
+
+792
+00:13:19,269 --> 00:13:19,279
+useful, hit subscribe. I'm covering the
+ 
+
+793
+00:13:19,279 --> 00:13:21,190
+useful, hit subscribe. I'm covering the
+agent first shift every week and it's
+
+794
+00:13:21,190 --> 00:13:21,200
+agent first shift every week and it's
+ 
+
+795
+00:13:21,200 --> 00:13:23,680
+agent first shift every week and it's
+moving fast.
+

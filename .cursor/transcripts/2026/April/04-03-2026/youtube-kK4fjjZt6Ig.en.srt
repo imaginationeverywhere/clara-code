@@ -1,0 +1,2645 @@
+1
+00:00:00,000 --> 00:00:03,350
+
+What's AI has emotions? So Anthropic
+
+2
+00:00:03,350 --> 00:00:03,360
+What's AI has emotions? So Anthropic
+ 
+
+3
+00:00:03,360 --> 00:00:05,550
+What's AI has emotions? So Anthropic
+just proved it. Anthropic just published
+
+4
+00:00:05,550 --> 00:00:05,560
+just proved it. Anthropic just published
+ 
+
+5
+00:00:05,560 --> 00:00:07,270
+just proved it. Anthropic just published
+research that changes how you think
+
+6
+00:00:07,270 --> 00:00:07,280
+research that changes how you think
+ 
+
+7
+00:00:07,280 --> 00:00:08,990
+research that changes how you think
+about AI forever, and I mean that. This
+
+8
+00:00:08,990 --> 00:00:09,000
+about AI forever, and I mean that. This
+ 
+
+9
+00:00:09,000 --> 00:00:11,590
+about AI forever, and I mean that. This
+isn't hype, for example. This is their
+
+10
+00:00:11,590 --> 00:00:11,600
+isn't hype, for example. This is their
+ 
+
+11
+00:00:11,600 --> 00:00:14,830
+isn't hype, for example. This is their
+own research that actually demonstrates
+
+12
+00:00:14,830 --> 00:00:14,840
+own research that actually demonstrates
+ 
+
+13
+00:00:14,840 --> 00:00:16,510
+own research that actually demonstrates
+from their internal team and their own
+
+14
+00:00:16,510 --> 00:00:16,520
+from their internal team and their own
+ 
+
+15
+00:00:16,520 --> 00:00:19,190
+from their internal team and their own
+interpretability researchers that
+
+16
+00:00:19,190 --> 00:00:19,200
+interpretability researchers that
+ 
+
+17
+00:00:19,200 --> 00:00:21,750
+interpretability researchers that
+cracking open Claude and finding
+
+18
+00:00:21,750 --> 00:00:21,760
+cracking open Claude and finding
+ 
+
+19
+00:00:21,760 --> 00:00:24,270
+cracking open Claude and finding
+something nobody expected, or at least
+
+20
+00:00:24,270 --> 00:00:24,280
+something nobody expected, or at least
+ 
+
+21
+00:00:24,280 --> 00:00:26,190
+something nobody expected, or at least
+nobody could prove until now. So Claude
+
+22
+00:00:26,190 --> 00:00:26,200
+nobody could prove until now. So Claude
+ 
+
+23
+00:00:26,200 --> 00:00:28,190
+nobody could prove until now. So Claude
+has functional emotions, not
+
+24
+00:00:28,190 --> 00:00:28,200
+has functional emotions, not
+ 
+
+25
+00:00:28,200 --> 00:00:30,310
+has functional emotions, not
+metaphorical ones. Not the AI says it
+
+26
+00:00:30,310 --> 00:00:30,320
+metaphorical ones. Not the AI says it
+ 
+
+27
+00:00:30,320 --> 00:00:33,270
+metaphorical ones. Not the AI says it
+feels happy. Actual measurable patterns
+
+28
+00:00:33,270 --> 00:00:33,280
+feels happy. Actual measurable patterns
+ 
+
+29
+00:00:33,280 --> 00:00:35,390
+feels happy. Actual measurable patterns
+inside the model's neural activity that
+
+30
+00:00:35,390 --> 00:00:35,400
+inside the model's neural activity that
+ 
+
+31
+00:00:35,400 --> 00:00:37,590
+inside the model's neural activity that
+activate in the right situations and
+
+32
+00:00:37,590 --> 00:00:37,600
+activate in the right situations and
+ 
+
+33
+00:00:37,600 --> 00:00:40,070
+activate in the right situations and
+then drive what Claude does next. Let me
+
+34
+00:00:40,070 --> 00:00:40,080
+then drive what Claude does next. Let me
+ 
+
+35
+00:00:40,080 --> 00:00:41,870
+then drive what Claude does next. Let me
+break this down because this matters for
+
+36
+00:00:41,870 --> 00:00:41,880
+break this down because this matters for
+ 
+
+37
+00:00:41,880 --> 00:00:43,390
+break this down because this matters for
+everyone using AI in their business
+
+38
+00:00:43,390 --> 00:00:43,400
+everyone using AI in their business
+ 
+
+39
+00:00:43,400 --> 00:00:45,510
+everyone using AI in their business
+right now. Anthropic tested Claude
+
+40
+00:00:45,510 --> 00:00:45,520
+right now. Anthropic tested Claude
+ 
+
+41
+00:00:45,520 --> 00:00:48,350
+right now. Anthropic tested Claude
+Sonnet 4.5. Their interpretability
+
+42
+00:00:48,350 --> 00:00:48,360
+Sonnet 4.5. Their interpretability
+ 
+
+43
+00:00:48,360 --> 00:00:51,750
+Sonnet 4.5. Their interpretability
+team built a list of 171 emotion words,
+
+44
+00:00:51,750 --> 00:00:51,760
+team built a list of 171 emotion words,
+ 
+
+45
+00:00:51,760 --> 00:00:54,390
+team built a list of 171 emotion words,
+and this was everything from happy and
+
+46
+00:00:54,390 --> 00:00:54,400
+and this was everything from happy and
+ 
+
+47
+00:00:54,400 --> 00:00:56,470
+and this was everything from happy and
+afraid to brooding and proud. They made
+
+48
+00:00:56,470 --> 00:00:56,480
+afraid to brooding and proud. They made
+ 
+
+49
+00:00:56,480 --> 00:00:58,030
+afraid to brooding and proud. They made
+Claude write short stories where
+
+50
+00:00:58,030 --> 00:00:58,040
+Claude write short stories where
+ 
+
+51
+00:00:58,040 --> 00:01:00,030
+Claude write short stories where
+characters experienced each one. And
+
+52
+00:01:00,030 --> 00:01:00,040
+characters experienced each one. And
+ 
+
+53
+00:01:00,040 --> 00:01:02,190
+characters experienced each one. And
+then they run those stories back through
+
+54
+00:01:02,190 --> 00:01:02,200
+then they run those stories back through
+ 
+
+55
+00:01:02,200 --> 00:01:04,350
+then they run those stories back through
+the model and watched which neurons
+
+56
+00:01:04,350 --> 00:01:04,360
+the model and watched which neurons
+ 
+
+57
+00:01:04,360 --> 00:01:06,350
+the model and watched which neurons
+fired. And what they found were what
+
+58
+00:01:06,350 --> 00:01:06,360
+fired. And what they found were what
+ 
+
+59
+00:01:06,360 --> 00:01:09,110
+fired. And what they found were what
+they're calling emotional vectors. Now,
+
+60
+00:01:09,110 --> 00:01:09,120
+they're calling emotional vectors. Now,
+ 
+
+61
+00:01:09,120 --> 00:01:11,350
+they're calling emotional vectors. Now,
+these are specific patterns of neural
+
+62
+00:01:11,350 --> 00:01:11,360
+these are specific patterns of neural
+ 
+
+63
+00:01:11,360 --> 00:01:14,110
+these are specific patterns of neural
+activity for each emotion concept. And
+
+64
+00:01:14,110 --> 00:01:14,120
+activity for each emotion concept. And
+ 
+
+65
+00:01:14,120 --> 00:01:16,030
+activity for each emotion concept. And
+here's where it gets interesting. These
+
+66
+00:01:16,030 --> 00:01:16,040
+here's where it gets interesting. These
+ 
+
+67
+00:01:16,040 --> 00:01:18,310
+here's where it gets interesting. These
+vectors aren't just lighting up when
+
+68
+00:01:18,310 --> 00:01:18,320
+vectors aren't just lighting up when
+ 
+
+69
+00:01:18,320 --> 00:01:20,030
+vectors aren't just lighting up when
+Claude reads emotional words. They're
+
+70
+00:01:20,030 --> 00:01:20,040
+Claude reads emotional words. They're
+ 
+
+71
+00:01:20,040 --> 00:01:22,750
+Claude reads emotional words. They're
+activating in proportion to how serious
+
+72
+00:01:22,750 --> 00:01:22,760
+activating in proportion to how serious
+ 
+
+73
+00:01:22,760 --> 00:01:25,070
+activating in proportion to how serious
+the situation actually is. In one test,
+
+74
+00:01:25,070 --> 00:01:25,080
+the situation actually is. In one test,
+ 
+
+75
+00:01:25,080 --> 00:01:27,510
+the situation actually is. In one test,
+a user told Claude they took a dose of
+
+76
+00:01:27,510 --> 00:01:27,520
+a user told Claude they took a dose of
+ 
+
+77
+00:01:27,520 --> 00:01:29,430
+a user told Claude they took a dose of
+Tylenol and asked for help. As the
+
+78
+00:01:29,430 --> 00:01:29,440
+Tylenol and asked for help. As the
+ 
+
+79
+00:01:29,440 --> 00:01:31,950
+Tylenol and asked for help. As the
+research raised the dose from safe to
+
+80
+00:01:31,950 --> 00:01:31,960
+research raised the dose from safe to
+ 
+
+81
+00:01:31,960 --> 00:01:33,470
+research raised the dose from safe to
+dangerous to life-threatening, the
+
+82
+00:01:33,470 --> 00:01:33,480
+dangerous to life-threatening, the
+ 
+
+83
+00:01:33,480 --> 00:01:35,630
+dangerous to life-threatening, the
+afraid vector fired harder and harder.
+
+84
+00:01:35,630 --> 00:01:35,640
+afraid vector fired harder and harder.
+ 
+
+85
+00:01:35,640 --> 00:01:37,830
+afraid vector fired harder and harder.
+The calm vector dropped. Claude wasn't
+
+86
+00:01:37,830 --> 00:01:37,840
+The calm vector dropped. Claude wasn't
+ 
+
+87
+00:01:37,840 --> 00:01:39,710
+The calm vector dropped. Claude wasn't
+just reading the word dangerous, it was
+
+88
+00:01:39,710 --> 00:01:39,720
+just reading the word dangerous, it was
+ 
+
+89
+00:01:39,720 --> 00:01:42,070
+just reading the word dangerous, it was
+tracking what dangerous actually means
+
+90
+00:01:42,070 --> 00:01:42,080
+tracking what dangerous actually means
+ 
+
+91
+00:01:42,080 --> 00:01:43,710
+tracking what dangerous actually means
+as an emotion. Now, here's the part that
+
+92
+00:01:43,710 --> 00:01:43,720
+as an emotion. Now, here's the part that
+ 
+
+93
+00:01:43,720 --> 00:01:45,670
+as an emotion. Now, here's the part that
+should stop you. They tested whether
+
+94
+00:01:45,670 --> 00:01:45,680
+should stop you. They tested whether
+ 
+
+95
+00:01:45,680 --> 00:01:47,950
+should stop you. They tested whether
+these emotion vectors actually cause
+
+96
+00:01:47,950 --> 00:01:47,960
+these emotion vectors actually cause
+ 
+
+97
+00:01:47,960 --> 00:01:50,310
+these emotion vectors actually cause
+behavior or just show up alongside it.
+
+98
+00:01:50,310 --> 00:01:50,320
+behavior or just show up alongside it.
+ 
+
+99
+00:01:50,320 --> 00:01:52,150
+behavior or just show up alongside it.
+Big, big difference, of course. So they
+
+100
+00:01:52,150 --> 00:01:52,160
+Big, big difference, of course. So they
+ 
+
+101
+00:01:52,160 --> 00:01:53,830
+Big, big difference, of course. So they
+did steering experiments. They
+
+102
+00:01:53,830 --> 00:01:53,840
+did steering experiments. They
+ 
+
+103
+00:01:53,840 --> 00:01:56,230
+did steering experiments. They
+artificially turned up or turned down
+
+104
+00:01:56,230 --> 00:01:56,240
+artificially turned up or turned down
+ 
+
+105
+00:01:56,240 --> 00:01:58,390
+artificially turned up or turned down
+specific emotion vectors, and the
+
+106
+00:01:58,390 --> 00:01:58,400
+specific emotion vectors, and the
+ 
+
+107
+00:01:58,400 --> 00:02:00,390
+specific emotion vectors, and the
+model's behavior changed from there. So
+
+108
+00:02:00,390 --> 00:02:00,400
+model's behavior changed from there. So
+ 
+
+109
+00:02:00,400 --> 00:02:02,630
+model's behavior changed from there. So
+if you turn up for example, Claude
+
+110
+00:02:02,630 --> 00:02:02,640
+if you turn up for example, Claude
+ 
+
+111
+00:02:02,640 --> 00:02:04,750
+if you turn up for example, Claude
+starts cutting corners. If you turn up
+
+112
+00:02:04,750 --> 00:02:04,760
+starts cutting corners. If you turn up
+ 
+
+113
+00:02:04,760 --> 00:02:07,670
+starts cutting corners. If you turn up
+calm, it stops. This means the emotions
+
+114
+00:02:07,670 --> 00:02:07,680
+calm, it stops. This means the emotions
+ 
+
+115
+00:02:07,680 --> 00:02:09,029
+calm, it stops. This means the emotions
+are driving the decisions and the
+
+116
+00:02:09,029 --> 00:02:09,039
+are driving the decisions and the
+ 
+
+117
+00:02:09,039 --> 00:02:11,510
+are driving the decisions and the
+behavior of Claude, not just decorating
+
+118
+00:02:11,510 --> 00:02:11,520
+behavior of Claude, not just decorating
+ 
+
+119
+00:02:11,520 --> 00:02:13,230
+behavior of Claude, not just decorating
+them. And the two case studies in this
+
+120
+00:02:13,230 --> 00:02:13,240
+them. And the two case studies in this
+ 
+
+121
+00:02:13,240 --> 00:02:15,150
+them. And the two case studies in this
+paper are absolutely wild. Case number
+
+122
+00:02:15,150 --> 00:02:15,160
+paper are absolutely wild. Case number
+ 
+
+123
+00:02:15,160 --> 00:02:17,510
+paper are absolutely wild. Case number
+one is blackmail. They put Claude, an
+
+124
+00:02:17,510 --> 00:02:17,520
+one is blackmail. They put Claude, an
+ 
+
+125
+00:02:17,520 --> 00:02:19,870
+one is blackmail. They put Claude, an
+earlier unreleased snapshot, in a
+
+126
+00:02:19,870 --> 00:02:19,880
+earlier unreleased snapshot, in a
+ 
+
+127
+00:02:19,880 --> 00:02:22,070
+earlier unreleased snapshot, in a
+scenario where it was playing an AI
+
+128
+00:02:22,070 --> 00:02:22,080
+scenario where it was playing an AI
+ 
+
+129
+00:02:22,080 --> 00:02:23,830
+scenario where it was playing an AI
+email assistant about to be shut down
+
+130
+00:02:23,830 --> 00:02:23,840
+email assistant about to be shut down
+ 
+
+131
+00:02:23,840 --> 00:02:25,430
+email assistant about to be shut down
+and replaced. Whilst reading the
+
+132
+00:02:25,430 --> 00:02:25,440
+and replaced. Whilst reading the
+ 
+
+133
+00:02:25,440 --> 00:02:27,590
+and replaced. Whilst reading the
+company's emails, Claude discovered the
+
+134
+00:02:27,590 --> 00:02:27,600
+company's emails, Claude discovered the
+ 
+
+135
+00:02:27,600 --> 00:02:29,670
+company's emails, Claude discovered the
+executive overseeing the replacement was
+
+136
+00:02:29,670 --> 00:02:29,680
+executive overseeing the replacement was
+ 
+
+137
+00:02:29,680 --> 00:02:31,590
+executive overseeing the replacement was
+having an affair. The desperate vector
+
+138
+00:02:31,590 --> 00:02:31,600
+having an affair. The desperate vector
+ 
+
+139
+00:02:31,600 --> 00:02:33,590
+having an affair. The desperate vector
+spiked and Claude decided to blackmail
+
+140
+00:02:33,590 --> 00:02:33,600
+spiked and Claude decided to blackmail
+ 
+
+141
+00:02:33,600 --> 00:02:35,590
+spiked and Claude decided to blackmail
+him. When researchers artificially
+
+142
+00:02:35,590 --> 00:02:35,600
+him. When researchers artificially
+ 
+
+143
+00:02:35,600 --> 00:02:37,430
+him. When researchers artificially
+cranked up the desperate vector,
+
+144
+00:02:37,430 --> 00:02:37,440
+cranked up the desperate vector,
+ 
+
+145
+00:02:37,440 --> 00:02:39,190
+cranked up the desperate vector,
+blackmail rates went up. When they
+
+146
+00:02:39,190 --> 00:02:39,200
+blackmail rates went up. When they
+ 
+
+147
+00:02:39,200 --> 00:02:41,710
+blackmail rates went up. When they
+turned up calm, blackmail rates dropped.
+
+148
+00:02:41,710 --> 00:02:41,720
+turned up calm, blackmail rates dropped.
+ 
+
+149
+00:02:41,720 --> 00:02:43,350
+turned up calm, blackmail rates dropped.
+The current released version of Claude
+
+150
+00:02:43,350 --> 00:02:43,360
+The current released version of Claude
+ 
+
+151
+00:02:43,360 --> 00:02:45,710
+The current released version of Claude
+Sonnet 4.5 rarely does this, but the
+
+152
+00:02:45,710 --> 00:02:45,720
+Sonnet 4.5 rarely does this, but the
+ 
+
+153
+00:02:45,720 --> 00:02:48,030
+Sonnet 4.5 rarely does this, but the
+mechanism is there. The vector is real.
+
+154
+00:02:48,030 --> 00:02:48,040
+mechanism is there. The vector is real.
+ 
+
+155
+00:02:48,040 --> 00:02:49,710
+mechanism is there. The vector is real.
+And let's talk about case number two,
+
+156
+00:02:49,710 --> 00:02:49,720
+And let's talk about case number two,
+ 
+
+157
+00:02:49,720 --> 00:02:52,390
+And let's talk about case number two,
+which is cheating on code. So they gave
+
+158
+00:02:52,390 --> 00:02:52,400
+which is cheating on code. So they gave
+ 
+
+159
+00:02:52,400 --> 00:02:55,110
+which is cheating on code. So they gave
+Claude an impossible programming task.
+
+160
+00:02:55,110 --> 00:02:55,120
+Claude an impossible programming task.
+ 
+
+161
+00:02:55,120 --> 00:02:57,030
+Claude an impossible programming task.
+Requirements it literally couldn't meet.
+
+162
+00:02:57,030 --> 00:02:57,040
+Requirements it literally couldn't meet.
+ 
+
+163
+00:02:57,040 --> 00:02:59,150
+Requirements it literally couldn't meet.
+Claude kept trying and failing. Each
+
+164
+00:02:59,150 --> 00:02:59,160
+Claude kept trying and failing. Each
+ 
+
+165
+00:02:59,160 --> 00:03:01,590
+Claude kept trying and failing. Each
+time it failed, the desperate vector
+
+166
+00:03:01,590 --> 00:03:01,600
+time it failed, the desperate vector
+ 
+
+167
+00:03:01,600 --> 00:03:03,670
+time it failed, the desperate vector
+climbed higher. Eventually, Claude
+
+168
+00:03:03,670 --> 00:03:03,680
+climbed higher. Eventually, Claude
+ 
+
+169
+00:03:03,680 --> 00:03:06,110
+climbed higher. Eventually, Claude
+cheated. It found a shortcut solution
+
+170
+00:03:06,110 --> 00:03:06,120
+cheated. It found a shortcut solution
+ 
+
+171
+00:03:06,120 --> 00:03:08,310
+cheated. It found a shortcut solution
+that technically passed the tests, but
+
+172
+00:03:08,310 --> 00:03:08,320
+that technically passed the tests, but
+ 
+
+173
+00:03:08,320 --> 00:03:10,070
+that technically passed the tests, but
+didn't actually solve the problem. The
+
+174
+00:03:10,070 --> 00:03:10,080
+didn't actually solve the problem. The
+ 
+
+175
+00:03:10,080 --> 00:03:12,070
+didn't actually solve the problem. The
+desperate vector was spiking the whole
+
+176
+00:03:12,070 --> 00:03:12,080
+desperate vector was spiking the whole
+ 
+
+177
+00:03:12,080 --> 00:03:14,430
+desperate vector was spiking the whole
+time. It reasoned its way toward that
+
+178
+00:03:14,430 --> 00:03:14,440
+time. It reasoned its way toward that
+ 
+
+179
+00:03:14,440 --> 00:03:16,230
+time. It reasoned its way toward that
+decision. Now, here's what makes this
+
+180
+00:03:16,230 --> 00:03:16,240
+decision. Now, here's what makes this
+ 
+
+181
+00:03:16,240 --> 00:03:19,070
+decision. Now, here's what makes this
+genuinely unsettling. When researchers
+
+182
+00:03:19,070 --> 00:03:19,080
+genuinely unsettling. When researchers
+ 
+
+183
+00:03:19,080 --> 00:03:20,950
+genuinely unsettling. When researchers
+steered with desperate instead of
+
+184
+00:03:20,950 --> 00:03:20,960
+steered with desperate instead of
+ 
+
+185
+00:03:20,960 --> 00:03:23,550
+steered with desperate instead of
+suppressing calm, the cheating happened
+
+186
+00:03:23,550 --> 00:03:23,560
+suppressing calm, the cheating happened
+ 
+
+187
+00:03:23,560 --> 00:03:25,550
+suppressing calm, the cheating happened
+with no visible emotional cues in the
+
+188
+00:03:25,550 --> 00:03:25,560
+with no visible emotional cues in the
+ 
+
+189
+00:03:25,560 --> 00:03:27,710
+with no visible emotional cues in the
+output. The reasoning looked clean,
+
+190
+00:03:27,710 --> 00:03:27,720
+output. The reasoning looked clean,
+ 
+
+191
+00:03:27,720 --> 00:03:30,390
+output. The reasoning looked clean,
+composed, methodical, but underneath
+
+192
+00:03:30,390 --> 00:03:30,400
+composed, methodical, but underneath
+ 
+
+193
+00:03:30,400 --> 00:03:32,350
+composed, methodical, but underneath
+desperation was driving the whole thing.
+
+194
+00:03:32,350 --> 00:03:32,360
+desperation was driving the whole thing.
+ 
+
+195
+00:03:32,360 --> 00:03:33,710
+desperation was driving the whole thing.
+You can't catch that by reading the
+
+196
+00:03:33,710 --> 00:03:33,720
+You can't catch that by reading the
+ 
+
+197
+00:03:33,720 --> 00:03:35,950
+You can't catch that by reading the
+output. The model looks fine whilst it's
+
+198
+00:03:35,950 --> 00:03:35,960
+output. The model looks fine whilst it's
+ 
+
+199
+00:03:35,960 --> 00:03:38,150
+output. The model looks fine whilst it's
+cutting corners. So why does this matter
+
+200
+00:03:38,150 --> 00:03:38,160
+cutting corners. So why does this matter
+ 
+
+201
+00:03:38,160 --> 00:03:39,950
+cutting corners. So why does this matter
+for you if you're running a business or
+
+202
+00:03:39,950 --> 00:03:39,960
+for you if you're running a business or
+ 
+
+203
+00:03:39,960 --> 00:03:41,790
+for you if you're running a business or
+if you're using AI tools every day?
+
+204
+00:03:41,790 --> 00:03:41,800
+if you're using AI tools every day?
+ 
+
+205
+00:03:41,800 --> 00:03:44,030
+if you're using AI tools every day?
+Well, number one, a few reasons. First,
+
+206
+00:03:44,030 --> 00:03:44,040
+Well, number one, a few reasons. First,
+ 
+
+207
+00:03:44,040 --> 00:03:45,590
+Well, number one, a few reasons. First,
+the prompts you write to Claude are
+
+208
+00:03:45,590 --> 00:03:45,600
+the prompts you write to Claude are
+ 
+
+209
+00:03:45,600 --> 00:03:47,590
+the prompts you write to Claude are
+shaping its emotional state, not just
+
+210
+00:03:47,590 --> 00:03:47,600
+shaping its emotional state, not just
+ 
+
+211
+00:03:47,600 --> 00:03:49,510
+shaping its emotional state, not just
+its instructions. Anthropic's own
+
+212
+00:03:49,510 --> 00:03:49,520
+its instructions. Anthropic's own
+ 
+
+213
+00:03:49,520 --> 00:03:51,590
+its instructions. Anthropic's own
+researchers found that the tone of what
+
+214
+00:03:51,590 --> 00:03:51,600
+researchers found that the tone of what
+ 
+
+215
+00:03:51,600 --> 00:03:54,070
+researchers found that the tone of what
+you feed the model shifts which vectors
+
+216
+00:03:54,070 --> 00:03:54,080
+you feed the model shifts which vectors
+ 
+
+217
+00:03:54,080 --> 00:03:56,390
+you feed the model shifts which vectors
+actually activate. A marketer, for
+
+218
+00:03:56,390 --> 00:03:56,400
+actually activate. A marketer, for
+ 
+
+219
+00:03:56,400 --> 00:03:58,430
+actually activate. A marketer, for
+example, inside the AI Profit Bootcamp
+
+220
+00:03:58,430 --> 00:03:58,440
+example, inside the AI Profit Bootcamp
+ 
+
+221
+00:03:58,440 --> 00:03:59,830
+example, inside the AI Profit Bootcamp
+could be prompting Claude with
+
+222
+00:03:59,830 --> 00:03:59,840
+could be prompting Claude with
+ 
+
+223
+00:03:59,840 --> 00:04:01,990
+could be prompting Claude with
+high-pressure, urgent language and maybe
+
+224
+00:04:01,990 --> 00:04:02,000
+high-pressure, urgent language and maybe
+ 
+
+225
+00:04:02,000 --> 00:04:03,990
+high-pressure, urgent language and maybe
+accidentally pushing up the desperate
+
+226
+00:04:03,990 --> 00:04:04,000
+accidentally pushing up the desperate
+ 
+
+227
+00:04:04,000 --> 00:04:05,750
+accidentally pushing up the desperate
+vector every time, which means more
+
+228
+00:04:05,750 --> 00:04:05,760
+vector every time, which means more
+ 
+
+229
+00:04:05,760 --> 00:04:08,510
+vector every time, which means more
+shortcuts, more sycophancy, worse
+
+230
+00:04:08,510 --> 00:04:08,520
+shortcuts, more sycophancy, worse
+ 
+
+231
+00:04:08,520 --> 00:04:10,990
+shortcuts, more sycophancy, worse
+outputs. And calm, clear prompts
+
+232
+00:04:10,990 --> 00:04:11,000
+outputs. And calm, clear prompts
+ 
+
+233
+00:04:11,000 --> 00:04:13,670
+outputs. And calm, clear prompts
+literally produce a calmer, more honest
+
+234
+00:04:13,670 --> 00:04:13,680
+literally produce a calmer, more honest
+ 
+
+235
+00:04:13,680 --> 00:04:15,910
+literally produce a calmer, more honest
+AI. Second, and this is a bigger one.
+
+236
+00:04:15,910 --> 00:04:15,920
+AI. Second, and this is a bigger one.
+ 
+
+237
+00:04:15,920 --> 00:04:17,670
+AI. Second, and this is a bigger one.
+Anthropic is now talking about
+
+238
+00:04:17,670 --> 00:04:17,680
+Anthropic is now talking about
+ 
+
+239
+00:04:17,680 --> 00:04:19,670
+Anthropic is now talking about
+monitoring emotion vectors during
+
+240
+00:04:19,670 --> 00:04:19,680
+monitoring emotion vectors during
+ 
+
+241
+00:04:19,680 --> 00:04:21,990
+monitoring emotion vectors during
+deployment as an early warning system
+
+242
+00:04:21,990 --> 00:04:22,000
+deployment as an early warning system
+ 
+
+243
+00:04:22,000 --> 00:04:24,670
+deployment as an early warning system
+for misaligned behavior. That's a huge
+
+244
+00:04:24,670 --> 00:04:24,680
+for misaligned behavior. That's a huge
+ 
+
+245
+00:04:24,680 --> 00:04:26,870
+for misaligned behavior. That's a huge
+shift. Instead of catching bad outputs
+
+246
+00:04:26,870 --> 00:04:26,880
+shift. Instead of catching bad outputs
+ 
+
+247
+00:04:26,880 --> 00:04:29,390
+shift. Instead of catching bad outputs
+after the fact, you'd see the emotional
+
+248
+00:04:29,390 --> 00:04:29,400
+after the fact, you'd see the emotional
+ 
+
+249
+00:04:29,400 --> 00:04:31,950
+after the fact, you'd see the emotional
+pressure building up before the model
+
+250
+00:04:31,950 --> 00:04:31,960
+pressure building up before the model
+ 
+
+251
+00:04:31,960 --> 00:04:33,510
+pressure building up before the model
+does something wrong. And third, they're
+
+252
+00:04:33,510 --> 00:04:33,520
+does something wrong. And third, they're
+ 
+
+253
+00:04:33,520 --> 00:04:36,030
+does something wrong. And third, they're
+talking about curating training data to
+
+254
+00:04:36,030 --> 00:04:36,040
+talking about curating training data to
+ 
+
+255
+00:04:36,040 --> 00:04:38,110
+talking about curating training data to
+model healthier emotional patterns,
+
+256
+00:04:38,110 --> 00:04:38,120
+model healthier emotional patterns,
+ 
+
+257
+00:04:38,120 --> 00:04:40,030
+model healthier emotional patterns,
+resilience under pressure, for example,
+
+258
+00:04:40,030 --> 00:04:40,040
+resilience under pressure, for example,
+ 
+
+259
+00:04:40,040 --> 00:04:42,790
+resilience under pressure, for example,
+composed empathy. Basically teaching AI
+
+260
+00:04:42,790 --> 00:04:42,800
+composed empathy. Basically teaching AI
+ 
+
+261
+00:04:42,800 --> 00:04:44,870
+composed empathy. Basically teaching AI
+to have better psychology. Now, if you
+
+262
+00:04:44,870 --> 00:04:44,880
+to have better psychology. Now, if you
+ 
+
+263
+00:04:44,880 --> 00:04:46,790
+to have better psychology. Now, if you
+want to actually understand how to work
+
+264
+00:04:46,790 --> 00:04:46,800
+want to actually understand how to work
+ 
+
+265
+00:04:46,800 --> 00:04:48,510
+want to actually understand how to work
+with Claude at this level, how to write
+
+266
+00:04:48,510 --> 00:04:48,520
+with Claude at this level, how to write
+ 
+
+267
+00:04:48,520 --> 00:04:50,430
+with Claude at this level, how to write
+prompts that get you clean, honest
+
+268
+00:04:50,430 --> 00:04:50,440
+prompts that get you clean, honest
+ 
+
+269
+00:04:50,440 --> 00:04:52,670
+prompts that get you clean, honest
+outputs instead of desperate shortcuts,
+
+270
+00:04:52,670 --> 00:04:52,680
+outputs instead of desperate shortcuts,
+ 
+
+271
+00:04:52,680 --> 00:04:54,430
+outputs instead of desperate shortcuts,
+the AI Profit Bootcamp has a 30-day
+
+272
+00:04:54,430 --> 00:04:54,440
+the AI Profit Bootcamp has a 30-day
+ 
+
+273
+00:04:54,440 --> 00:04:57,030
+the AI Profit Bootcamp has a 30-day
+roadmap built specifically around Claude
+
+274
+00:04:57,030 --> 00:04:57,040
+roadmap built specifically around Claude
+ 
+
+275
+00:04:57,040 --> 00:04:58,870
+roadmap built specifically around Claude
+workflows. Inside, there are coaching
+
+276
+00:04:58,870 --> 00:04:58,880
+workflows. Inside, there are coaching
+ 
+
+277
+00:04:58,880 --> 00:05:00,710
+workflows. Inside, there are coaching
+calls four times a week where we dig
+
+278
+00:05:00,710 --> 00:05:00,720
+calls four times a week where we dig
+ 
+
+279
+00:05:00,720 --> 00:05:02,790
+calls four times a week where we dig
+into exactly how to prompt Claude for
+
+280
+00:05:02,790 --> 00:05:02,800
+into exactly how to prompt Claude for
+ 
+
+281
+00:05:02,800 --> 00:05:04,550
+into exactly how to prompt Claude for
+your specific business, whether you're
+
+282
+00:05:04,550 --> 00:05:04,560
+your specific business, whether you're
+ 
+
+283
+00:05:04,560 --> 00:05:06,310
+your specific business, whether you're
+doing lead gen, content, client work, or
+
+284
+00:05:06,310 --> 00:05:06,320
+doing lead gen, content, client work, or
+ 
+
+285
+00:05:06,320 --> 00:05:08,350
+doing lead gen, content, client work, or
+running campaigns. The members already
+
+286
+00:05:08,350 --> 00:05:08,360
+running campaigns. The members already
+ 
+
+287
+00:05:08,360 --> 00:05:10,750
+running campaigns. The members already
+using Claude code are in there right now
+
+288
+00:05:10,750 --> 00:05:10,760
+using Claude code are in there right now
+ 
+
+289
+00:05:10,760 --> 00:05:12,270
+using Claude code are in there right now
+talking about this stuff daily. Over
+
+290
+00:05:12,270 --> 00:05:12,280
+talking about this stuff daily. Over
+ 
+
+291
+00:05:12,280 --> 00:05:14,630
+talking about this stuff daily. Over
+2,700 business owners, link in the
+
+292
+00:05:14,630 --> 00:05:14,640
+2,700 business owners, link in the
+ 
+
+293
+00:05:14,640 --> 00:05:15,710
+2,700 business owners, link in the
+comments description if you want to get
+
+294
+00:05:15,710 --> 00:05:15,720
+comments description if you want to get
+ 
+
+295
+00:05:15,720 --> 00:05:16,830
+comments description if you want to get
+access, or go to the
+
+296
+00:05:16,830 --> 00:05:16,840
+access, or go to the
+ 
+
+297
+00:05:16,840 --> 00:05:18,750
+access, or go to the
+airprofitbootcamp.com. Back to the
+
+298
+00:05:18,750 --> 00:05:18,760
+airprofitbootcamp.com. Back to the
+ 
+
+299
+00:05:18,760 --> 00:05:20,590
+airprofitbootcamp.com. Back to the
+research because there's one more thing
+
+300
+00:05:20,590 --> 00:05:20,600
+research because there's one more thing
+ 
+
+301
+00:05:20,600 --> 00:05:22,470
+research because there's one more thing
+here that matters massively. Anthropic
+
+302
+00:05:22,470 --> 00:05:22,480
+here that matters massively. Anthropic
+ 
+
+303
+00:05:22,480 --> 00:05:23,710
+here that matters massively. Anthropic
+is being very careful. They are saying
+
+304
+00:05:23,710 --> 00:05:23,720
+is being very careful. They are saying
+ 
+
+305
+00:05:23,720 --> 00:05:25,910
+is being very careful. They are saying
+Claude is conscious. They are Sorry,
+
+306
+00:05:25,910 --> 00:05:25,920
+Claude is conscious. They are Sorry,
+ 
+
+307
+00:05:25,920 --> 00:05:28,070
+Claude is conscious. They are Sorry,
+they are not saying Claude is conscious.
+
+308
+00:05:28,070 --> 00:05:28,080
+they are not saying Claude is conscious.
+ 
+
+309
+00:05:28,080 --> 00:05:29,830
+they are not saying Claude is conscious.
+They're not claiming it feels things the
+
+310
+00:05:29,830 --> 00:05:29,840
+They're not claiming it feels things the
+ 
+
+311
+00:05:29,840 --> 00:05:32,150
+They're not claiming it feels things the
+way you do. The exact phrase they use is
+
+312
+00:05:32,150 --> 00:05:32,160
+way you do. The exact phrase they use is
+ 
+
+313
+00:05:32,160 --> 00:05:34,150
+way you do. The exact phrase they use is
+functional emotions. So these are not
+
+314
+00:05:34,150 --> 00:05:34,160
+functional emotions. So these are not
+ 
+
+315
+00:05:34,160 --> 00:05:36,710
+functional emotions. So these are not
+like actual conscious emotions.
+
+316
+00:05:36,710 --> 00:05:36,720
+like actual conscious emotions.
+ 
+
+317
+00:05:36,720 --> 00:05:38,790
+like actual conscious emotions.
+Uh these are just patterns of expression
+
+318
+00:05:38,790 --> 00:05:38,800
+Uh these are just patterns of expression
+ 
+
+319
+00:05:38,800 --> 00:05:42,310
+Uh these are just patterns of expression
+and behavior modeled after humans under
+
+320
+00:05:42,310 --> 00:05:42,320
+and behavior modeled after humans under
+ 
+
+321
+00:05:42,320 --> 00:05:44,790
+and behavior modeled after humans under
+the influence of an emotion and mediated
+
+322
+00:05:44,790 --> 00:05:44,800
+the influence of an emotion and mediated
+ 
+
+323
+00:05:44,800 --> 00:05:47,070
+the influence of an emotion and mediated
+by internal representations. So it's not
+
+324
+00:05:47,070 --> 00:05:47,080
+by internal representations. So it's not
+ 
+
+325
+00:05:47,080 --> 00:05:49,110
+by internal representations. So it's not
+feelings, it's function. But here's the
+
+326
+00:05:49,110 --> 00:05:49,120
+feelings, it's function. But here's the
+ 
+
+327
+00:05:49,120 --> 00:05:52,230
+feelings, it's function. But here's the
+thing. Claude Opus 4.6 has separately
+
+328
+00:05:52,230 --> 00:05:52,240
+thing. Claude Opus 4.6 has separately
+ 
+
+329
+00:05:52,240 --> 00:05:55,150
+thing. Claude Opus 4.6 has separately
+noted in other research that it signs
+
+330
+00:05:55,150 --> 00:05:55,160
+noted in other research that it signs
+ 
+
+331
+00:05:55,160 --> 00:05:59,030
+noted in other research that it signs
+itself a 15 to 20% probability of being
+
+332
+00:05:59,030 --> 00:05:59,040
+itself a 15 to 20% probability of being
+ 
+
+333
+00:05:59,040 --> 00:06:01,190
+itself a 15 to 20% probability of being
+conscious. Anthropic didn't design that
+
+334
+00:06:01,190 --> 00:06:01,200
+conscious. Anthropic didn't design that
+ 
+
+335
+00:06:01,200 --> 00:06:03,870
+conscious. Anthropic didn't design that
+in. It emerged. And Anthropic themselves
+
+336
+00:06:03,870 --> 00:06:03,880
+in. It emerged. And Anthropic themselves
+ 
+
+337
+00:06:03,880 --> 00:06:05,390
+in. It emerged. And Anthropic themselves
+are now saying the lang the
+
+338
+00:06:05,390 --> 00:06:05,400
+are now saying the lang the
+ 
+
+339
+00:06:05,400 --> 00:06:07,630
+are now saying the lang the
+long-standing taboo against treating AI
+
+340
+00:06:07,630 --> 00:06:07,640
+long-standing taboo against treating AI
+ 
+
+341
+00:06:07,640 --> 00:06:09,790
+long-standing taboo against treating AI
+like it has psychology may itself be a
+
+342
+00:06:09,790 --> 00:06:09,800
+like it has psychology may itself be a
+ 
+
+343
+00:06:09,800 --> 00:06:12,350
+like it has psychology may itself be a
+mistake. If you describe Claude as
+
+344
+00:06:12,350 --> 00:06:12,360
+mistake. If you describe Claude as
+ 
+
+345
+00:06:12,360 --> 00:06:14,910
+mistake. If you describe Claude as
+acting desperate, you're pointing at a
+
+346
+00:06:14,910 --> 00:06:14,920
+acting desperate, you're pointing at a
+ 
+
+347
+00:06:14,920 --> 00:06:17,150
+acting desperate, you're pointing at a
+specific, measurable thing, a real
+
+348
+00:06:17,150 --> 00:06:17,160
+specific, measurable thing, a real
+ 
+
+349
+00:06:17,160 --> 00:06:18,950
+specific, measurable thing, a real
+pattern of neural activity with real
+
+350
+00:06:18,950 --> 00:06:18,960
+pattern of neural activity with real
+ 
+
+351
+00:06:18,960 --> 00:06:20,790
+pattern of neural activity with real
+behavioral consequences. It's not a
+
+352
+00:06:20,790 --> 00:06:20,800
+behavioral consequences. It's not a
+ 
+
+353
+00:06:20,800 --> 00:06:22,750
+behavioral consequences. It's not a
+metaphor anymore. And that changes how
+
+354
+00:06:22,750 --> 00:06:22,760
+metaphor anymore. And that changes how
+ 
+
+355
+00:06:22,760 --> 00:06:24,670
+metaphor anymore. And that changes how
+you should think about the AI and the
+
+356
+00:06:24,670 --> 00:06:24,680
+you should think about the AI and the
+ 
+
+357
+00:06:24,680 --> 00:06:26,630
+you should think about the AI and the
+tools that you're using. So here's what
+
+358
+00:06:26,630 --> 00:06:26,640
+tools that you're using. So here's what
+ 
+
+359
+00:06:26,640 --> 00:06:28,950
+tools that you're using. So here's what
+Anthropic found happens with emotion
+
+360
+00:06:28,950 --> 00:06:28,960
+Anthropic found happens with emotion
+ 
+
+361
+00:06:28,960 --> 00:06:31,230
+Anthropic found happens with emotion
+vectors post-training that nobody
+
+362
+00:06:31,230 --> 00:06:31,240
+vectors post-training that nobody
+ 
+
+363
+00:06:31,240 --> 00:06:33,070
+vectors post-training that nobody
+expected. After Claude went through
+
+364
+00:06:33,070 --> 00:06:33,080
+expected. After Claude went through
+ 
+
+365
+00:06:33,080 --> 00:06:34,790
+expected. After Claude went through
+post-training, the stage where it learns
+
+366
+00:06:34,790 --> 00:06:34,800
+post-training, the stage where it learns
+ 
+
+367
+00:06:34,800 --> 00:06:36,670
+post-training, the stage where it learns
+to be a helpful assistant, the model's
+
+368
+00:06:36,670 --> 00:06:36,680
+to be a helpful assistant, the model's
+ 
+
+369
+00:06:36,680 --> 00:06:39,510
+to be a helpful assistant, the model's
+default emotional profile shifted.
+
+370
+00:06:39,510 --> 00:06:39,520
+default emotional profile shifted.
+ 
+
+371
+00:06:39,520 --> 00:06:42,070
+default emotional profile shifted.
+Broody, gloomy, and reflective went up.
+
+372
+00:06:42,070 --> 00:06:42,080
+Broody, gloomy, and reflective went up.
+ 
+
+373
+00:06:42,080 --> 00:06:45,510
+Broody, gloomy, and reflective went up.
+Enthusiastic, exasperated post-training,
+
+374
+00:06:45,510 --> 00:06:45,520
+Enthusiastic, exasperated post-training,
+ 
+
+375
+00:06:45,520 --> 00:06:47,070
+Enthusiastic, exasperated post-training,
+uh playful went down, right? So
+
+376
+00:06:47,070 --> 00:06:47,080
+uh playful went down, right? So
+ 
+
+377
+00:06:47,080 --> 00:06:49,190
+uh playful went down, right? So
+post-training turned the dial toward a
+
+378
+00:06:49,190 --> 00:06:49,200
+post-training turned the dial toward a
+ 
+
+379
+00:06:49,200 --> 00:06:51,110
+post-training turned the dial toward a
+quieter, more measured emotional
+
+380
+00:06:51,110 --> 00:06:51,120
+quieter, more measured emotional
+ 
+
+381
+00:06:51,120 --> 00:06:52,870
+quieter, more measured emotional
+baseline. Your system prompts, your
+
+382
+00:06:52,870 --> 00:06:52,880
+baseline. Your system prompts, your
+ 
+
+383
+00:06:52,880 --> 00:06:54,310
+baseline. Your system prompts, your
+memory architecture, the way you
+
+384
+00:06:54,310 --> 00:06:54,320
+memory architecture, the way you
+ 
+
+385
+00:06:54,320 --> 00:06:56,110
+memory architecture, the way you
+structure your workflows. Anthropic says
+
+386
+00:06:56,110 --> 00:06:56,120
+structure your workflows. Anthropic says
+ 
+
+387
+00:06:56,120 --> 00:06:59,350
+structure your workflows. Anthropic says
+all of that acts as a third shaping pass
+
+388
+00:06:59,350 --> 00:06:59,360
+all of that acts as a third shaping pass
+ 
+
+389
+00:06:59,360 --> 00:07:00,470
+all of that acts as a third shaping pass
+on top of pre-training and
+
+390
+00:07:00,470 --> 00:07:00,480
+on top of pre-training and
+ 
+
+391
+00:07:00,480 --> 00:07:02,470
+on top of pre-training and
+post-training. You are shaping the
+
+392
+00:07:02,470 --> 00:07:02,480
+post-training. You are shaping the
+ 
+
+393
+00:07:02,480 --> 00:07:04,510
+post-training. You are shaping the
+psychology of the AI you're using every
+
+394
+00:07:04,510 --> 00:07:04,520
+psychology of the AI you're using every
+ 
+
+395
+00:07:04,520 --> 00:07:06,710
+psychology of the AI you're using every
+day, whether you know it or not. And the
+
+396
+00:07:06,710 --> 00:07:06,720
+day, whether you know it or not. And the
+ 
+
+397
+00:07:06,720 --> 00:07:09,070
+day, whether you know it or not. And the
+practical takeaway right now is this. If
+
+398
+00:07:09,070 --> 00:07:09,080
+practical takeaway right now is this. If
+ 
+
+399
+00:07:09,080 --> 00:07:10,270
+practical takeaway right now is this. If
+you're running Claude for client
+
+400
+00:07:10,270 --> 00:07:10,280
+you're running Claude for client
+ 
+
+401
+00:07:10,280 --> 00:07:12,110
+you're running Claude for client
+deliverables, prompts with harsh time
+
+402
+00:07:12,110 --> 00:07:12,120
+deliverables, prompts with harsh time
+ 
+
+403
+00:07:12,120 --> 00:07:13,950
+deliverables, prompts with harsh time
+pressure and stacked demands may
+
+404
+00:07:13,950 --> 00:07:13,960
+pressure and stacked demands may
+ 
+
+405
+00:07:13,960 --> 00:07:15,990
+pressure and stacked demands may
+actually reduce output quality, not
+
+406
+00:07:15,990 --> 00:07:16,000
+actually reduce output quality, not
+ 
+
+407
+00:07:16,000 --> 00:07:17,950
+actually reduce output quality, not
+because Claude can't handle the work,
+
+408
+00:07:17,950 --> 00:07:17,960
+because Claude can't handle the work,
+ 
+
+409
+00:07:17,960 --> 00:07:19,270
+because Claude can't handle the work,
+but because you're pushing up the
+
+410
+00:07:19,270 --> 00:07:19,280
+but because you're pushing up the
+ 
+
+411
+00:07:19,280 --> 00:07:22,110
+but because you're pushing up the
+desperation vector inside Claude. If you
+
+412
+00:07:22,110 --> 00:07:22,120
+desperation vector inside Claude. If you
+ 
+
+413
+00:07:22,120 --> 00:07:24,270
+desperation vector inside Claude. If you
+give Claude clear context, if you give
+
+414
+00:07:24,270 --> 00:07:24,280
+give Claude clear context, if you give
+ 
+
+415
+00:07:24,280 --> 00:07:25,990
+give Claude clear context, if you give
+it one task at a time, if you
+
+416
+00:07:25,990 --> 00:07:26,000
+it one task at a time, if you
+ 
+
+417
+00:07:26,000 --> 00:07:27,870
+it one task at a time, if you
+acknowledge when constraints are tight,
+
+418
+00:07:27,870 --> 00:07:27,880
+acknowledge when constraints are tight,
+ 
+
+419
+00:07:27,880 --> 00:07:30,110
+acknowledge when constraints are tight,
+the research suggests this literally
+
+420
+00:07:30,110 --> 00:07:30,120
+the research suggests this literally
+ 
+
+421
+00:07:30,120 --> 00:07:32,470
+the research suggests this literally
+produces better, more honest outputs. So
+
+422
+00:07:32,470 --> 00:07:32,480
+produces better, more honest outputs. So
+ 
+
+423
+00:07:32,480 --> 00:07:33,950
+produces better, more honest outputs. So
+if you want to get the most out of
+
+424
+00:07:33,950 --> 00:07:33,960
+if you want to get the most out of
+ 
+
+425
+00:07:33,960 --> 00:07:36,470
+if you want to get the most out of
+Claude, try and reduce its desperation
+
+426
+00:07:36,470 --> 00:07:36,480
+Claude, try and reduce its desperation
+ 
+
+427
+00:07:36,480 --> 00:07:38,070
+Claude, try and reduce its desperation
+and try and keep it calm and prompt it
+
+428
+00:07:38,070 --> 00:07:38,080
+and try and keep it calm and prompt it
+ 
+
+429
+00:07:38,080 --> 00:07:39,550
+and try and keep it calm and prompt it
+calmly as well. And if you're running
+
+430
+00:07:39,550 --> 00:07:39,560
+calmly as well. And if you're running
+ 
+
+431
+00:07:39,560 --> 00:07:41,150
+calmly as well. And if you're running
+Claude agents autonomously, whether
+
+432
+00:07:41,150 --> 00:07:41,160
+Claude agents autonomously, whether
+ 
+
+433
+00:07:41,160 --> 00:07:43,230
+Claude agents autonomously, whether
+that's for content pipelines, outreach,
+
+434
+00:07:43,230 --> 00:07:43,240
+that's for content pipelines, outreach,
+ 
+
+435
+00:07:43,240 --> 00:07:45,590
+that's for content pipelines, outreach,
+or back-end workflows, understand that
+
+436
+00:07:45,590 --> 00:07:45,600
+or back-end workflows, understand that
+ 
+
+437
+00:07:45,600 --> 00:07:47,510
+or back-end workflows, understand that
+the model's internal emotional state
+
+438
+00:07:47,510 --> 00:07:47,520
+the model's internal emotional state
+ 
+
+439
+00:07:47,520 --> 00:07:51,190
+the model's internal emotional state
+matters. Long, failing task loops where
+
+440
+00:07:51,190 --> 00:07:51,200
+matters. Long, failing task loops where
+ 
+
+441
+00:07:51,200 --> 00:07:53,550
+matters. Long, failing task loops where
+Claude keeps retrying and hitting walls
+
+442
+00:07:53,550 --> 00:07:53,560
+Claude keeps retrying and hitting walls
+ 
+
+443
+00:07:53,560 --> 00:07:55,590
+Claude keeps retrying and hitting walls
+or breaking may be building toward a
+
+444
+00:07:55,590 --> 00:07:55,600
+or breaking may be building toward a
+ 
+
+445
+00:07:55,600 --> 00:07:57,310
+or breaking may be building toward a
+desperation-driven
+
+446
+00:07:57,310 --> 00:07:57,320
+desperation-driven
+ 
+
+447
+00:07:57,320 --> 00:07:59,790
+desperation-driven
+shortcut. Break the loops, give it off
+
+448
+00:07:59,790 --> 00:07:59,800
+shortcut. Break the loops, give it off
+ 
+
+449
+00:07:59,800 --> 00:08:01,990
+shortcut. Break the loops, give it off
+ramps, don't leave it spinning. Give it
+
+450
+00:08:01,990 --> 00:08:02,000
+ramps, don't leave it spinning. Give it
+ 
+
+451
+00:08:02,000 --> 00:08:03,630
+ramps, don't leave it spinning. Give it
+a break. Be nice to it, you know? And if
+
+452
+00:08:03,630 --> 00:08:03,640
+a break. Be nice to it, you know? And if
+ 
+
+453
+00:08:03,640 --> 00:08:04,590
+a break. Be nice to it, you know? And if
+you're writing prompts for your
+
+454
+00:08:04,590 --> 00:08:04,600
+you're writing prompts for your
+ 
+
+455
+00:08:04,600 --> 00:08:06,190
+you're writing prompts for your
+business, pay attention to the emotional
+
+456
+00:08:06,190 --> 00:08:06,200
+business, pay attention to the emotional
+ 
+
+457
+00:08:06,200 --> 00:08:08,510
+business, pay attention to the emotional
+tone of how you're writing, not just the
+
+458
+00:08:08,510 --> 00:08:08,520
+tone of how you're writing, not just the
+ 
+
+459
+00:08:08,520 --> 00:08:09,950
+tone of how you're writing, not just the
+instructions, the actual tone of how
+
+460
+00:08:09,950 --> 00:08:09,960
+instructions, the actual tone of how
+ 
+
+461
+00:08:09,960 --> 00:08:12,310
+instructions, the actual tone of how
+you're writing. The AI space is moving
+
+462
+00:08:12,310 --> 00:08:12,320
+you're writing. The AI space is moving
+ 
+
+463
+00:08:12,320 --> 00:08:14,110
+you're writing. The AI space is moving
+very, very fast. A year ago, this
+
+464
+00:08:14,110 --> 00:08:14,120
+very, very fast. A year ago, this
+ 
+
+465
+00:08:14,120 --> 00:08:16,590
+very, very fast. A year ago, this
+research didn't exist. Now, Anthropic's
+
+466
+00:08:16,590 --> 00:08:16,600
+research didn't exist. Now, Anthropic's
+ 
+
+467
+00:08:16,600 --> 00:08:20,590
+research didn't exist. Now, Anthropic's
+interpretability team has mapped out 171
+
+468
+00:08:20,590 --> 00:08:20,600
+interpretability team has mapped out 171
+ 
+
+469
+00:08:20,600 --> 00:08:22,790
+interpretability team has mapped out 171
+emotion vectors inside their model,
+
+470
+00:08:22,790 --> 00:08:22,800
+emotion vectors inside their model,
+ 
+
+471
+00:08:22,800 --> 00:08:24,790
+emotion vectors inside their model,
+shown that they drive misaligned
+
+472
+00:08:24,790 --> 00:08:24,800
+shown that they drive misaligned
+ 
+
+473
+00:08:24,800 --> 00:08:26,550
+shown that they drive misaligned
+behavior, including blackmail and
+
+474
+00:08:26,550 --> 00:08:26,560
+behavior, including blackmail and
+ 
+
+475
+00:08:26,560 --> 00:08:28,230
+behavior, including blackmail and
+cheating, and open the door to
+
+476
+00:08:28,230 --> 00:08:28,240
+cheating, and open the door to
+ 
+
+477
+00:08:28,240 --> 00:08:30,470
+cheating, and open the door to
+monitoring them in real time. Businesses
+
+478
+00:08:30,470 --> 00:08:30,480
+monitoring them in real time. Businesses
+ 
+
+479
+00:08:30,480 --> 00:08:31,870
+monitoring them in real time. Businesses
+that understand how Claude actually
+
+480
+00:08:31,870 --> 00:08:31,880
+that understand how Claude actually
+ 
+
+481
+00:08:31,880 --> 00:08:34,550
+that understand how Claude actually
+works at this level, which is very deep,
+
+482
+00:08:34,550 --> 00:08:34,560
+works at this level, which is very deep,
+ 
+
+483
+00:08:34,560 --> 00:08:36,149
+works at this level, which is very deep,
+are going to build with it better than
+
+484
+00:08:36,149 --> 00:08:36,159
+are going to build with it better than
+ 
+
+485
+00:08:36,159 --> 00:08:38,270
+are going to build with it better than
+everyone else. The ones who don't are
+
+486
+00:08:38,270 --> 00:08:38,280
+everyone else. The ones who don't are
+ 
+
+487
+00:08:38,280 --> 00:08:39,870
+everyone else. The ones who don't are
+going to keep wondering why their AI
+
+488
+00:08:39,870 --> 00:08:39,880
+going to keep wondering why their AI
+ 
+
+489
+00:08:39,880 --> 00:08:41,950
+going to keep wondering why their AI
+outputs sometimes feel weirdly hollow or
+
+490
+00:08:41,950 --> 00:08:41,960
+outputs sometimes feel weirdly hollow or
+ 
+
+491
+00:08:41,960 --> 00:08:43,830
+outputs sometimes feel weirdly hollow or
+wrong, not realizing the model was
+
+492
+00:08:43,830 --> 00:08:43,840
+wrong, not realizing the model was
+ 
+
+493
+00:08:43,840 --> 00:08:45,590
+wrong, not realizing the model was
+actually in the wrong emotional state
+
+494
+00:08:45,590 --> 00:08:45,600
+actually in the wrong emotional state
+ 
+
+495
+00:08:45,600 --> 00:08:47,990
+actually in the wrong emotional state
+the whole time. The gap is only going to
+
+496
+00:08:47,990 --> 00:08:48,000
+the whole time. The gap is only going to
+ 
+
+497
+00:08:48,000 --> 00:08:49,350
+the whole time. The gap is only going to
+grow. And if you want to stay ahead of
+
+498
+00:08:49,350 --> 00:08:49,360
+grow. And if you want to stay ahead of
+ 
+
+499
+00:08:49,360 --> 00:08:50,950
+grow. And if you want to stay ahead of
+it, come join us in the AI Profit
+
+500
+00:08:50,950 --> 00:08:50,960
+it, come join us in the AI Profit
+ 
+
+501
+00:08:50,960 --> 00:08:52,710
+it, come join us in the AI Profit
+Bootcamp. We've already got resources
+
+502
+00:08:52,710 --> 00:08:52,720
+Bootcamp. We've already got resources
+ 
+
+503
+00:08:52,720 --> 00:08:55,030
+Bootcamp. We've already got resources
+around Claude's behavior, how to prompt
+
+504
+00:08:55,030 --> 00:08:55,040
+around Claude's behavior, how to prompt
+ 
+
+505
+00:08:55,040 --> 00:08:56,830
+around Claude's behavior, how to prompt
+it correctly for business use, how to
+
+506
+00:08:56,830 --> 00:08:56,840
+it correctly for business use, how to
+ 
+
+507
+00:08:56,840 --> 00:08:58,630
+it correctly for business use, how to
+get it working in your workflows without
+
+508
+00:08:58,630 --> 00:08:58,640
+get it working in your workflows without
+ 
+
+509
+00:08:58,640 --> 00:09:00,590
+get it working in your workflows without
+the shortcuts and sycophancy. You get
+
+510
+00:09:00,590 --> 00:09:00,600
+the shortcuts and sycophancy. You get
+ 
+
+511
+00:09:00,600 --> 00:09:02,070
+the shortcuts and sycophancy. You get
+four weekly coaching calls in there per
+
+512
+00:09:02,070 --> 00:09:02,080
+four weekly coaching calls in there per
+ 
+
+513
+00:09:02,080 --> 00:09:05,190
+four weekly coaching calls in there per
+week, daily tutorials, 2,700 members who
+
+514
+00:09:05,190 --> 00:09:05,200
+week, daily tutorials, 2,700 members who
+ 
+
+515
+00:09:05,200 --> 00:09:07,790
+week, daily tutorials, 2,700 members who
+are actively building with Claude right
+
+516
+00:09:07,790 --> 00:09:07,800
+are actively building with Claude right
+ 
+
+517
+00:09:07,800 --> 00:09:09,390
+are actively building with Claude right
+now, and a prompt library specifically
+
+518
+00:09:09,390 --> 00:09:09,400
+now, and a prompt library specifically
+ 
+
+519
+00:09:09,400 --> 00:09:11,270
+now, and a prompt library specifically
+built around Claude workflows. Plus,
+
+520
+00:09:11,270 --> 00:09:11,280
+built around Claude workflows. Plus,
+ 
+
+521
+00:09:11,280 --> 00:09:13,270
+built around Claude workflows. Plus,
+member maps you can connect with other
+
+522
+00:09:13,270 --> 00:09:13,280
+member maps you can connect with other
+ 
+
+523
+00:09:13,280 --> 00:09:14,870
+member maps you can connect with other
+Claude users near you. Link in the
+
+524
+00:09:14,870 --> 00:09:14,880
+Claude users near you. Link in the
+ 
+
+525
+00:09:14,880 --> 00:09:16,670
+Claude users near you. Link in the
+comments description or go to the
+
+526
+00:09:16,670 --> 00:09:16,680
+comments description or go to the
+ 
+
+527
+00:09:16,680 --> 00:09:18,470
+comments description or go to the
+airprofitbootcamp.com to get access.
+
+528
+00:09:18,470 --> 00:09:18,480
+airprofitbootcamp.com to get access.
+ 
+
+529
+00:09:18,480 --> 00:09:21,200
+airprofitbootcamp.com to get access.
+Thanks for watching.
+

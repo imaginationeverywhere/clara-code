@@ -1,0 +1,1360 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.160 --> 00:00:01.910 align:start position:0%
+ 
+Cloud<00:00:00.480><c> code</c><00:00:00.719><c> just</c><00:00:00.880><c> got</c><00:00:01.040><c> a</c><00:00:01.199><c> live</c><00:00:01.439><c> connection</c><00:00:01.760><c> to</c>
+
+00:00:01.910 --> 00:00:01.920 align:start position:0%
+Cloud code just got a live connection to
+ 
+
+00:00:01.920 --> 00:00:04.390 align:start position:0%
+Cloud code just got a live connection to
+the<00:00:02.159><c> outside</c><00:00:02.560><c> world.</c><00:00:03.280><c> Channels</c><00:00:04.000><c> released</c>
+
+00:00:04.390 --> 00:00:04.400 align:start position:0%
+the outside world. Channels released
+ 
+
+00:00:04.400 --> 00:00:06.550 align:start position:0%
+the outside world. Channels released
+today<00:00:04.560><c> in</c><00:00:04.799><c> v2.1.80</c>
+
+00:00:06.550 --> 00:00:06.560 align:start position:0%
+today in v2.1.80
+ 
+
+00:00:06.560 --> 00:00:08.470 align:start position:0%
+today in v2.1.80
+lets<00:00:06.799><c> external</c><00:00:07.279><c> services</c><00:00:07.839><c> push</c><00:00:08.080><c> events</c>
+
+00:00:08.470 --> 00:00:08.480 align:start position:0%
+lets external services push events
+ 
+
+00:00:08.480 --> 00:00:10.070 align:start position:0%
+lets external services push events
+directly<00:00:08.800><c> into</c><00:00:09.040><c> a</c><00:00:09.200><c> running</c><00:00:09.440><c> cloud</c><00:00:09.840><c> code</c>
+
+00:00:10.070 --> 00:00:10.080 align:start position:0%
+directly into a running cloud code
+ 
+
+00:00:10.080 --> 00:00:13.190 align:start position:0%
+directly into a running cloud code
+session.<00:00:10.880><c> Telegram,</c><00:00:11.599><c> Discord,</c><00:00:12.240><c> CI/CD,</c><00:00:12.960><c> web</c>
+
+00:00:13.190 --> 00:00:13.200 align:start position:0%
+session. Telegram, Discord, CI/CD, web
+ 
+
+00:00:13.200 --> 00:00:15.669 align:start position:0%
+session. Telegram, Discord, CI/CD, web
+hooks,<00:00:13.759><c> production</c><00:00:14.160><c> alerts.</c><00:00:15.040><c> Claude</c><00:00:15.440><c> reads</c>
+
+00:00:15.669 --> 00:00:15.679 align:start position:0%
+hooks, production alerts. Claude reads
+ 
+
+00:00:15.679 --> 00:00:18.390 align:start position:0%
+hooks, production alerts. Claude reads
+the<00:00:15.839><c> event,</c><00:00:16.320><c> acts</c><00:00:16.640><c> on</c><00:00:16.800><c> it,</c><00:00:17.039><c> and</c><00:00:17.279><c> replies</c><00:00:17.680><c> back.</c>
+
+00:00:18.390 --> 00:00:18.400 align:start position:0%
+the event, acts on it, and replies back.
+ 
+
+00:00:18.400 --> 00:00:20.150 align:start position:0%
+the event, acts on it, and replies back.
+Here's<00:00:18.640><c> what</c><00:00:18.800><c> that</c><00:00:19.039><c> means</c><00:00:19.199><c> in</c><00:00:19.520><c> practice.</c>
+
+00:00:20.150 --> 00:00:20.160 align:start position:0%
+Here's what that means in practice.
+ 
+
+00:00:20.160 --> 00:00:22.230 align:start position:0%
+Here's what that means in practice.
+You're<00:00:20.400><c> on</c><00:00:20.560><c> the</c><00:00:20.720><c> train.</c><00:00:21.279><c> Your</c><00:00:21.439><c> build</c><00:00:21.760><c> fails</c><00:00:22.000><c> on</c>
+
+00:00:22.230 --> 00:00:22.240 align:start position:0%
+You're on the train. Your build fails on
+ 
+
+00:00:22.240 --> 00:00:25.109 align:start position:0%
+You're on the train. Your build fails on
+main.<00:00:22.720><c> Your</c><00:00:22.960><c> CI</c><00:00:23.279><c> posts</c><00:00:23.600><c> to</c><00:00:23.760><c> a</c><00:00:23.920><c> local</c><00:00:24.160><c> web</c><00:00:24.400><c> hook.</c>
+
+00:00:25.109 --> 00:00:25.119 align:start position:0%
+main. Your CI posts to a local web hook.
+ 
+
+00:00:25.119 --> 00:00:27.109 align:start position:0%
+main. Your CI posts to a local web hook.
+Claude<00:00:25.439><c> sees</c><00:00:25.680><c> the</c><00:00:25.840><c> build</c><00:00:26.160><c> failure,</c><00:00:26.560><c> pulls</c><00:00:26.880><c> the</c>
+
+00:00:27.109 --> 00:00:27.119 align:start position:0%
+Claude sees the build failure, pulls the
+ 
+
+00:00:27.119 --> 00:00:29.429 align:start position:0%
+Claude sees the build failure, pulls the
+logs,<00:00:27.599><c> finds</c><00:00:27.920><c> the</c><00:00:28.080><c> bug,</c><00:00:28.560><c> fixes</c><00:00:28.880><c> it,</c><00:00:29.199><c> and</c>
+
+00:00:29.429 --> 00:00:29.439 align:start position:0%
+logs, finds the bug, fixes it, and
+ 
+
+00:00:29.439 --> 00:00:31.029 align:start position:0%
+logs, finds the bug, fixes it, and
+pushes<00:00:29.760><c> a</c><00:00:29.920><c> commit.</c><00:00:30.320><c> And</c><00:00:30.480><c> while</c><00:00:30.720><c> you're</c><00:00:30.880><c> still</c>
+
+00:00:31.029 --> 00:00:31.039 align:start position:0%
+pushes a commit. And while you're still
+ 
+
+00:00:31.039 --> 00:00:33.270 align:start position:0%
+pushes a commit. And while you're still
+on<00:00:31.199><c> the</c><00:00:31.359><c> train,</c><00:00:32.000><c> or</c><00:00:32.160><c> you</c><00:00:32.320><c> open</c><00:00:32.640><c> Telegram</c><00:00:33.040><c> on</c>
+
+00:00:33.270 --> 00:00:33.280 align:start position:0%
+on the train, or you open Telegram on
+ 
+
+00:00:33.280 --> 00:00:35.270 align:start position:0%
+on the train, or you open Telegram on
+your<00:00:33.440><c> phone,</c><00:00:33.680><c> and</c><00:00:33.920><c> message</c><00:00:34.160><c> your</c><00:00:34.320><c> Claude</c><00:00:34.719><c> bot,</c>
+
+00:00:35.270 --> 00:00:35.280 align:start position:0%
+your phone, and message your Claude bot,
+ 
+
+00:00:35.280 --> 00:00:37.430 align:start position:0%
+your phone, and message your Claude bot,
+add<00:00:35.600><c> dark</c><00:00:35.840><c> mode</c><00:00:36.079><c> to</c><00:00:36.239><c> the</c><00:00:36.399><c> settings</c><00:00:36.800><c> page.</c>
+
+00:00:37.430 --> 00:00:37.440 align:start position:0%
+add dark mode to the settings page.
+ 
+
+00:00:37.440 --> 00:00:39.510 align:start position:0%
+add dark mode to the settings page.
+Claude<00:00:37.840><c> receives</c><00:00:38.160><c> it,</c><00:00:38.480><c> writes</c><00:00:38.800><c> the</c><00:00:39.040><c> code,</c><00:00:39.280><c> and</c>
+
+00:00:39.510 --> 00:00:39.520 align:start position:0%
+Claude receives it, writes the code, and
+ 
+
+00:00:39.520 --> 00:00:41.750 align:start position:0%
+Claude receives it, writes the code, and
+replies<00:00:39.920><c> when</c><00:00:40.079><c> it's</c><00:00:40.320><c> done.</c><00:00:41.120><c> One</c><00:00:41.360><c> command</c>
+
+00:00:41.750 --> 00:00:41.760 align:start position:0%
+replies when it's done. One command
+ 
+
+00:00:41.760 --> 00:00:44.630 align:start position:0%
+replies when it's done. One command
+activates<00:00:42.239><c> it.</c><00:00:42.559><c> Claude-</c><00:00:43.600><c> channels.</c><00:00:44.160><c> Link</c><00:00:44.399><c> in</c>
+
+00:00:44.630 --> 00:00:44.640 align:start position:0%
+activates it. Claude- channels. Link in
+ 
+
+00:00:44.640 --> 00:00:46.470 align:start position:0%
+activates it. Claude- channels. Link in
+description.
+
+00:00:46.470 --> 00:00:46.480 align:start position:0%
+description.
+ 
+
+00:00:46.480 --> 00:00:48.389 align:start position:0%
+description.
+Claude<00:00:46.879><c> Code</c><00:00:47.200><c> now</c><00:00:47.360><c> has</c><00:00:47.600><c> two</c><00:00:47.760><c> ways</c><00:00:47.920><c> to</c><00:00:48.160><c> bridge</c>
+
+00:00:48.389 --> 00:00:48.399 align:start position:0%
+Claude Code now has two ways to bridge
+ 
+
+00:00:48.399 --> 00:00:49.990 align:start position:0%
+Claude Code now has two ways to bridge
+the<00:00:48.559><c> gap</c><00:00:48.879><c> between</c><00:00:49.120><c> you</c><00:00:49.280><c> and</c><00:00:49.440><c> a</c><00:00:49.680><c> running</c>
+
+00:00:49.990 --> 00:00:50.000 align:start position:0%
+the gap between you and a running
+ 
+
+00:00:50.000 --> 00:00:52.389 align:start position:0%
+the gap between you and a running
+session.<00:00:50.960><c> Remote</c><00:00:51.360><c> control,</c><00:00:51.840><c> which</c><00:00:52.079><c> shipped</c>
+
+00:00:52.389 --> 00:00:52.399 align:start position:0%
+session. Remote control, which shipped
+ 
+
+00:00:52.399 --> 00:00:54.150 align:start position:0%
+session. Remote control, which shipped
+last<00:00:52.640><c> week,</c><00:00:53.039><c> lets</c><00:00:53.360><c> you</c><00:00:53.520><c> drive</c><00:00:53.680><c> the</c><00:00:53.920><c> session</c>
+
+00:00:54.150 --> 00:00:54.160 align:start position:0%
+last week, lets you drive the session
+ 
+
+00:00:54.160 --> 00:00:56.389 align:start position:0%
+last week, lets you drive the session
+from<00:00:54.399><c> your</c><00:00:54.640><c> phone</c><00:00:54.800><c> or</c><00:00:55.120><c> browser.</c><00:00:55.920><c> You</c><00:00:56.160><c> send</c>
+
+00:00:56.389 --> 00:00:56.399 align:start position:0%
+from your phone or browser. You send
+ 
+
+00:00:56.399 --> 00:00:58.709 align:start position:0%
+from your phone or browser. You send
+messages.<00:00:57.120><c> Claude</c><00:00:57.520><c> responds.</c><00:00:58.160><c> You</c><00:00:58.399><c> stay</c><00:00:58.559><c> in</c>
+
+00:00:58.709 --> 00:00:58.719 align:start position:0%
+messages. Claude responds. You stay in
+ 
+
+00:00:58.719 --> 00:01:00.950 align:start position:0%
+messages. Claude responds. You stay in
+control.<00:00:59.600><c> Channels</c><00:01:00.079><c> is</c><00:01:00.320><c> different.</c><00:01:00.719><c> With</c>
+
+00:01:00.950 --> 00:01:00.960 align:start position:0%
+control. Channels is different. With
+ 
+
+00:01:00.960 --> 00:01:02.630 align:start position:0%
+control. Channels is different. With
+channels,<00:01:01.520><c> you</c><00:01:01.680><c> are</c><00:01:01.840><c> not</c><00:01:01.920><c> the</c><00:01:02.160><c> one</c><00:01:02.320><c> sending</c>
+
+00:01:02.630 --> 00:01:02.640 align:start position:0%
+channels, you are not the one sending
+ 
+
+00:01:02.640 --> 00:01:05.670 align:start position:0%
+channels, you are not the one sending
+the<00:01:02.879><c> messages.</c><00:01:03.680><c> External</c><00:01:04.239><c> services</c><00:01:04.799><c> are</c><00:01:05.519><c> a</c>
+
+00:01:05.670 --> 00:01:05.680 align:start position:0%
+the messages. External services are a
+ 
+
+00:01:05.680 --> 00:01:07.590 align:start position:0%
+the messages. External services are a
+Telegram<00:01:06.080><c> bot</c><00:01:06.400><c> pushes</c><00:01:06.720><c> a</c><00:01:06.960><c> message</c><00:01:07.200><c> you</c><00:01:07.439><c> sent</c>
+
+00:01:07.590 --> 00:01:07.600 align:start position:0%
+Telegram bot pushes a message you sent
+ 
+
+00:01:07.600 --> 00:01:10.230 align:start position:0%
+Telegram bot pushes a message you sent
+on<00:01:07.840><c> your</c><00:01:08.000><c> phone.</c><00:01:08.640><c> A</c><00:01:08.880><c> CI</c><00:01:09.200><c> web</c><00:01:09.439><c> hook</c><00:01:09.760><c> pushes</c><00:01:10.080><c> a</c>
+
+00:01:10.230 --> 00:01:10.240 align:start position:0%
+on your phone. A CI web hook pushes a
+ 
+
+00:01:10.240 --> 00:01:12.550 align:start position:0%
+on your phone. A CI web hook pushes a
+build<00:01:10.479><c> failure</c><00:01:10.880><c> notification.</c><00:01:12.000><c> A</c><00:01:12.159><c> Discord</c>
+
+00:01:12.550 --> 00:01:12.560 align:start position:0%
+build failure notification. A Discord
+ 
+
+00:01:12.560 --> 00:01:14.469 align:start position:0%
+build failure notification. A Discord
+bot<00:01:12.880><c> forwards</c><00:01:13.280><c> a</c><00:01:13.520><c> message</c><00:01:13.760><c> from</c><00:01:14.000><c> your</c><00:01:14.159><c> team</c>
+
+00:01:14.469 --> 00:01:14.479 align:start position:0%
+bot forwards a message from your team
+ 
+
+00:01:14.479 --> 00:01:16.390 align:start position:0%
+bot forwards a message from your team
+channel.<00:01:14.960><c> Claude</c><00:01:15.360><c> receives</c><00:01:15.680><c> the</c><00:01:15.920><c> event,</c>
+
+00:01:16.390 --> 00:01:16.400 align:start position:0%
+channel. Claude receives the event,
+ 
+
+00:01:16.400 --> 00:01:19.030 align:start position:0%
+channel. Claude receives the event,
+decides<00:01:16.799><c> what</c><00:01:16.960><c> to</c><00:01:17.200><c> do,</c><00:01:17.439><c> and</c><00:01:17.680><c> acts</c><00:01:18.479><c> without</c><00:01:18.799><c> you</c>
+
+00:01:19.030 --> 00:01:19.040 align:start position:0%
+decides what to do, and acts without you
+ 
+
+00:01:19.040 --> 00:01:21.429 align:start position:0%
+decides what to do, and acts without you
+watching.<00:01:19.680><c> The</c><00:01:19.920><c> mental</c><00:01:20.240><c> model</c><00:01:20.479><c> is</c><00:01:21.040><c> remote</c>
+
+00:01:21.429 --> 00:01:21.439 align:start position:0%
+watching. The mental model is remote
+ 
+
+00:01:21.439 --> 00:01:23.109 align:start position:0%
+watching. The mental model is remote
+control<00:01:21.759><c> means</c><00:01:22.000><c> you're</c><00:01:22.240><c> still</c><00:01:22.400><c> at</c><00:01:22.560><c> the</c><00:01:22.720><c> wheel</c>
+
+00:01:23.109 --> 00:01:23.119 align:start position:0%
+control means you're still at the wheel
+ 
+
+00:01:23.119 --> 00:01:25.109 align:start position:0%
+control means you're still at the wheel
+just<00:01:23.360><c> using</c><00:01:23.600><c> a</c><00:01:23.840><c> different</c><00:01:24.080><c> interface.</c>
+
+00:01:25.109 --> 00:01:25.119 align:start position:0%
+just using a different interface.
+ 
+
+00:01:25.119 --> 00:01:26.950 align:start position:0%
+just using a different interface.
+Channels<00:01:25.600><c> means</c><00:01:25.840><c> Claude</c><00:01:26.240><c> is</c><00:01:26.400><c> parked</c><00:01:26.640><c> in</c><00:01:26.799><c> a</c>
+
+00:01:26.950 --> 00:01:26.960 align:start position:0%
+Channels means Claude is parked in a
+ 
+
+00:01:26.960 --> 00:01:29.109 align:start position:0%
+Channels means Claude is parked in a
+session<00:01:27.200><c> with</c><00:01:27.360><c> its</c><00:01:27.600><c> ears</c><00:01:27.920><c> open</c><00:01:28.479><c> reacting</c><00:01:28.880><c> to</c>
+
+00:01:29.109 --> 00:01:29.119 align:start position:0%
+session with its ears open reacting to
+ 
+
+00:01:29.119 --> 00:01:30.950 align:start position:0%
+session with its ears open reacting to
+whatever<00:01:29.439><c> the</c><00:01:29.600><c> world</c><00:01:29.840><c> sends</c><00:01:30.080><c> it.</c><00:01:30.479><c> Both</c><00:01:30.720><c> are</c>
+
+00:01:30.950 --> 00:01:30.960 align:start position:0%
+whatever the world sends it. Both are
+ 
+
+00:01:30.960 --> 00:01:33.270 align:start position:0%
+whatever the world sends it. Both are
+useful.<00:01:31.439><c> They</c><00:01:31.680><c> solve</c><00:01:32.000><c> different</c><00:01:32.320><c> problems.</c>
+
+00:01:33.270 --> 00:01:33.280 align:start position:0%
+useful. They solve different problems.
+ 
+
+00:01:33.280 --> 00:01:34.950 align:start position:0%
+useful. They solve different problems.
+Remote<00:01:33.680><c> control</c><00:01:34.000><c> is</c><00:01:34.159><c> for</c><00:01:34.400><c> deliberate</c>
+
+00:01:34.950 --> 00:01:34.960 align:start position:0%
+Remote control is for deliberate
+ 
+
+00:01:34.960 --> 00:01:36.630 align:start position:0%
+Remote control is for deliberate
+interactive<00:01:35.520><c> use</c><00:01:35.840><c> when</c><00:01:36.000><c> you're</c><00:01:36.240><c> away</c><00:01:36.479><c> from</c>
+
+00:01:36.630 --> 00:01:36.640 align:start position:0%
+interactive use when you're away from
+ 
+
+00:01:36.640 --> 00:01:38.950 align:start position:0%
+interactive use when you're away from
+the<00:01:36.799><c> terminal.</c><00:01:37.520><c> Channels</c><00:01:37.920><c> is</c><00:01:38.159><c> for</c><00:01:38.320><c> autonomous</c>
+
+00:01:38.950 --> 00:01:38.960 align:start position:0%
+the terminal. Channels is for autonomous
+ 
+
+00:01:38.960 --> 00:01:41.270 align:start position:0%
+the terminal. Channels is for autonomous
+reaction.<00:01:39.680><c> Events</c><00:01:40.000><c> arrive.</c><00:01:40.479><c> Claude</c><00:01:40.880><c> handles</c>
+
+00:01:41.270 --> 00:01:41.280 align:start position:0%
+reaction. Events arrive. Claude handles
+ 
+
+00:01:41.280 --> 00:01:44.390 align:start position:0%
+reaction. Events arrive. Claude handles
+them.<00:01:42.720><c> In</c><00:01:42.960><c> the</c><00:01:43.119><c> research</c><00:01:43.520><c> preview,</c><00:01:44.079><c> three</c>
+
+00:01:44.390 --> 00:01:44.400 align:start position:0%
+them. In the research preview, three
+ 
+
+00:01:44.400 --> 00:01:46.069 align:start position:0%
+them. In the research preview, three
+official<00:01:44.799><c> channel</c><00:01:45.119><c> plugins</c><00:01:45.600><c> are</c><00:01:45.759><c> available</c>
+
+00:01:46.069 --> 00:01:46.079 align:start position:0%
+official channel plugins are available
+ 
+
+00:01:46.079 --> 00:01:48.710 align:start position:0%
+official channel plugins are available
+from<00:01:46.320><c> Anthropics</c><00:01:47.040><c> plug-in</c><00:01:47.439><c> marketplace.</c>
+
+00:01:48.710 --> 00:01:48.720 align:start position:0%
+from Anthropics plug-in marketplace.
+ 
+
+00:01:48.720 --> 00:01:51.109 align:start position:0%
+from Anthropics plug-in marketplace.
+First,<00:01:49.200><c> Telegram.</c><00:01:50.000><c> Install</c><00:01:50.399><c> the</c><00:01:50.560><c> plugin.</c>
+
+00:01:51.109 --> 00:01:51.119 align:start position:0%
+First, Telegram. Install the plugin.
+ 
+
+00:01:51.119 --> 00:01:52.630 align:start position:0%
+First, Telegram. Install the plugin.
+Configure<00:01:51.439><c> it</c><00:01:51.600><c> with</c><00:01:51.759><c> your</c><00:01:51.920><c> Telegram</c><00:01:52.320><c> bot</c>
+
+00:01:52.630 --> 00:01:52.640 align:start position:0%
+Configure it with your Telegram bot
+ 
+
+00:01:52.640 --> 00:01:54.789 align:start position:0%
+Configure it with your Telegram bot
+token<00:01:52.960><c> from</c><00:01:53.119><c> bot</c><00:01:53.520><c> father.</c><00:01:54.079><c> Run</c><00:01:54.240><c> the</c><00:01:54.399><c> pairing</c>
+
+00:01:54.789 --> 00:01:54.799 align:start position:0%
+token from bot father. Run the pairing
+ 
+
+00:01:54.799 --> 00:01:57.030 align:start position:0%
+token from bot father. Run the pairing
+flow.<00:01:55.280><c> You</c><00:01:55.520><c> DM</c><00:01:55.840><c> the</c><00:01:56.000><c> bot.</c><00:01:56.320><c> It</c><00:01:56.560><c> gives</c><00:01:56.720><c> you</c><00:01:56.799><c> a</c>
+
+00:01:57.030 --> 00:01:57.040 align:start position:0%
+flow. You DM the bot. It gives you a
+ 
+
+00:01:57.040 --> 00:01:58.870 align:start position:0%
+flow. You DM the bot. It gives you a
+code.<00:01:57.360><c> You</c><00:01:57.520><c> approve</c><00:01:57.840><c> it</c><00:01:57.920><c> in</c><00:01:58.079><c> your</c><00:01:58.240><c> Claude</c><00:01:58.560><c> code</c>
+
+00:01:58.870 --> 00:01:58.880 align:start position:0%
+code. You approve it in your Claude code
+ 
+
+00:01:58.880 --> 00:02:01.190 align:start position:0%
+code. You approve it in your Claude code
+session<00:01:59.600><c> and</c><00:01:59.840><c> your</c><00:02:00.000><c> Telegram</c><00:02:00.479><c> ID</c><00:02:00.719><c> is</c><00:02:00.880><c> on</c><00:02:01.040><c> the</c>
+
+00:02:01.190 --> 00:02:01.200 align:start position:0%
+session and your Telegram ID is on the
+ 
+
+00:02:01.200 --> 00:02:03.590 align:start position:0%
+session and your Telegram ID is on the
+allow<00:02:01.520><c> list.</c><00:02:02.479><c> From</c><00:02:02.719><c> that</c><00:02:02.960><c> point,</c><00:02:03.360><c> every</c>
+
+00:02:03.590 --> 00:02:03.600 align:start position:0%
+allow list. From that point, every
+ 
+
+00:02:03.600 --> 00:02:05.429 align:start position:0%
+allow list. From that point, every
+message<00:02:03.920><c> you</c><00:02:04.079><c> send</c><00:02:04.240><c> to</c><00:02:04.399><c> the</c><00:02:04.560><c> bot</c><00:02:04.799><c> arrives</c><00:02:05.119><c> as</c><00:02:05.280><c> a</c>
+
+00:02:05.429 --> 00:02:05.439 align:start position:0%
+message you send to the bot arrives as a
+ 
+
+00:02:05.439 --> 00:02:06.950 align:start position:0%
+message you send to the bot arrives as a
+channel<00:02:05.759><c> event</c><00:02:06.000><c> in</c><00:02:06.159><c> your</c><00:02:06.320><c> Claude</c><00:02:06.719><c> code</c>
+
+00:02:06.950 --> 00:02:06.960 align:start position:0%
+channel event in your Claude code
+ 
+
+00:02:06.960 --> 00:02:09.270 align:start position:0%
+channel event in your Claude code
+session<00:02:07.600><c> and</c><00:02:07.920><c> Claude's</c><00:02:08.319><c> reply</c><00:02:08.640><c> comes</c><00:02:08.879><c> back</c><00:02:09.039><c> to</c>
+
+00:02:09.270 --> 00:02:09.280 align:start position:0%
+session and Claude's reply comes back to
+ 
+
+00:02:09.280 --> 00:02:11.510 align:start position:0%
+session and Claude's reply comes back to
+your<00:02:09.440><c> Telegram</c><00:02:09.920><c> chat</c><00:02:10.399><c> fully</c><00:02:10.800><c> two-way.</c>
+
+00:02:11.510 --> 00:02:11.520 align:start position:0%
+your Telegram chat fully two-way.
+ 
+
+00:02:11.520 --> 00:02:14.150 align:start position:0%
+your Telegram chat fully two-way.
+Second,<00:02:12.080><c> Discord.</c><00:02:12.800><c> Same</c><00:02:13.120><c> pattern.</c><00:02:13.680><c> Bot</c><00:02:14.000><c> from</c>
+
+00:02:14.150 --> 00:02:14.160 align:start position:0%
+Second, Discord. Same pattern. Bot from
+ 
+
+00:02:14.160 --> 00:02:16.229 align:start position:0%
+Second, Discord. Same pattern. Bot from
+the<00:02:14.319><c> Discord</c><00:02:14.720><c> developer</c><00:02:15.200><c> portal.</c><00:02:15.840><c> Message</c>
+
+00:02:16.229 --> 00:02:16.239 align:start position:0%
+the Discord developer portal. Message
+ 
+
+00:02:16.239 --> 00:02:18.869 align:start position:0%
+the Discord developer portal. Message
+content<00:02:16.640><c> intent</c><00:02:17.040><c> enabled.</c><00:02:17.760><c> Configure,</c><00:02:18.319><c> pair,</c>
+
+00:02:18.869 --> 00:02:18.879 align:start position:0%
+content intent enabled. Configure, pair,
+ 
+
+00:02:18.879 --> 00:02:21.430 align:start position:0%
+content intent enabled. Configure, pair,
+done.<00:02:19.440><c> Third,</c><00:02:19.920><c> fake</c><00:02:20.239><c> chat,</c><00:02:20.560><c> the</c><00:02:20.800><c> demo</c><00:02:21.120><c> plugin</c>
+
+00:02:21.430 --> 00:02:21.440 align:start position:0%
+done. Third, fake chat, the demo plugin
+ 
+
+00:02:21.440 --> 00:02:23.910 align:start position:0%
+done. Third, fake chat, the demo plugin
+that<00:02:21.680><c> requires</c><00:02:22.160><c> nothing.</c><00:02:22.959><c> Install</c><00:02:23.360><c> it.</c><00:02:23.680><c> Start</c>
+
+00:02:23.910 --> 00:02:23.920 align:start position:0%
+that requires nothing. Install it. Start
+ 
+
+00:02:23.920 --> 00:02:26.070 align:start position:0%
+that requires nothing. Install it. Start
+Claude<00:02:24.239><c> with</c><00:02:24.400><c> it</c><00:02:24.560><c> enabled.</c><00:02:25.200><c> And</c><00:02:25.360><c> a</c><00:02:25.599><c> local</c><00:02:25.840><c> host</c>
+
+00:02:26.070 --> 00:02:26.080 align:start position:0%
+Claude with it enabled. And a local host
+ 
+
+00:02:26.080 --> 00:02:29.990 align:start position:0%
+Claude with it enabled. And a local host
+UI<00:02:26.480><c> opens</c><00:02:26.800><c> in</c><00:02:26.959><c> your</c><00:02:27.120><c> browser</c><00:02:27.520><c> on</c><00:02:27.760><c> port</c><00:02:28.160><c> 8787.</c>
+
+00:02:29.990 --> 00:02:30.000 align:start position:0%
+UI opens in your browser on port 8787.
+ 
+
+00:02:30.000 --> 00:02:31.910 align:start position:0%
+UI opens in your browser on port 8787.
+Type<00:02:30.239><c> a</c><00:02:30.480><c> message</c><00:02:30.720><c> in</c><00:02:30.879><c> the</c><00:02:31.040><c> browser.</c><00:02:31.520><c> It</c><00:02:31.680><c> lands</c>
+
+00:02:31.910 --> 00:02:31.920 align:start position:0%
+Type a message in the browser. It lands
+ 
+
+00:02:31.920 --> 00:02:34.470 align:start position:0%
+Type a message in the browser. It lands
+in<00:02:32.080><c> Claude</c><00:02:32.480><c> session.</c><00:02:33.280><c> Claude</c><00:02:33.680><c> replies.</c><00:02:34.239><c> It</c>
+
+00:02:34.470 --> 00:02:34.480 align:start position:0%
+in Claude session. Claude replies. It
+ 
+
+00:02:34.480 --> 00:02:36.710 align:start position:0%
+in Claude session. Claude replies. It
+appears<00:02:34.800><c> in</c><00:02:34.959><c> the</c><00:02:35.120><c> browser.</c><00:02:35.760><c> Zero</c><00:02:36.160><c> setup.</c>
+
+00:02:36.710 --> 00:02:36.720 align:start position:0%
+appears in the browser. Zero setup.
+ 
+
+00:02:36.720 --> 00:02:38.309 align:start position:0%
+appears in the browser. Zero setup.
+Great<00:02:36.959><c> for</c><00:02:37.200><c> understanding</c><00:02:37.680><c> how</c><00:02:37.920><c> the</c><00:02:38.080><c> whole</c>
+
+00:02:38.309 --> 00:02:38.319 align:start position:0%
+Great for understanding how the whole
+ 
+
+00:02:38.319 --> 00:02:40.150 align:start position:0%
+Great for understanding how the whole
+system<00:02:38.640><c> works</c><00:02:39.040><c> before</c><00:02:39.280><c> you</c><00:02:39.440><c> hook</c><00:02:39.599><c> up</c><00:02:39.760><c> a</c><00:02:39.920><c> real</c>
+
+00:02:40.150 --> 00:02:40.160 align:start position:0%
+system works before you hook up a real
+ 
+
+00:02:40.160 --> 00:02:42.470 align:start position:0%
+system works before you hook up a real
+messaging<00:02:40.640><c> service.</c><00:02:41.760><c> All</c><00:02:42.000><c> three</c><00:02:42.239><c> are</c>
+
+00:02:42.470 --> 00:02:42.480 align:start position:0%
+messaging service. All three are
+ 
+
+00:02:42.480 --> 00:02:44.550 align:start position:0%
+messaging service. All three are
+two-way.<00:02:43.200><c> Claude</c><00:02:43.519><c> can</c><00:02:43.680><c> read</c><00:02:43.920><c> events</c><00:02:44.319><c> and</c>
+
+00:02:44.550 --> 00:02:44.560 align:start position:0%
+two-way. Claude can read events and
+ 
+
+00:02:44.560 --> 00:02:47.430 align:start position:0%
+two-way. Claude can read events and
+reply<00:02:44.959><c> back</c><00:02:45.120><c> through</c><00:02:45.360><c> the</c><00:02:45.599><c> same</c><00:02:45.760><c> channel.</c>
+
+00:02:47.430 --> 00:02:47.440 align:start position:0%
+reply back through the same channel.
+ 
+
+00:02:47.440 --> 00:02:49.350 align:start position:0%
+reply back through the same channel.
+The<00:02:47.680><c> most</c><00:02:47.840><c> powerful</c><00:02:48.239><c> use</c><00:02:48.480><c> case</c><00:02:48.720><c> for</c><00:02:48.959><c> channels</c>
+
+00:02:49.350 --> 00:02:49.360 align:start position:0%
+The most powerful use case for channels
+ 
+
+00:02:49.360 --> 00:02:51.350 align:start position:0%
+The most powerful use case for channels
+isn't<00:02:49.680><c> the</c><00:02:49.840><c> chat</c><00:02:50.080><c> bridges.</c><00:02:50.800><c> It's</c><00:02:50.959><c> the</c><00:02:51.120><c> web</c>
+
+00:02:51.350 --> 00:02:51.360 align:start position:0%
+isn't the chat bridges. It's the web
+ 
+
+00:02:51.360 --> 00:02:53.509 align:start position:0%
+isn't the chat bridges. It's the web
+hook<00:02:51.680><c> receiver.</c><00:02:52.480><c> Here's</c><00:02:52.720><c> the</c><00:02:52.959><c> setup.</c><00:02:53.360><c> You</c>
+
+00:02:53.509 --> 00:02:53.519 align:start position:0%
+hook receiver. Here's the setup. You
+ 
+
+00:02:53.519 --> 00:02:55.589 align:start position:0%
+hook receiver. Here's the setup. You
+write<00:02:53.680><c> a</c><00:02:53.840><c> tiny</c><00:02:54.080><c> web</c><00:02:54.319><c> hook</c><00:02:54.560><c> server.</c><00:02:55.200><c> It's</c><00:02:55.360><c> about</c>
+
+00:02:55.589 --> 00:02:55.599 align:start position:0%
+write a tiny web hook server. It's about
+ 
+
+00:02:55.599 --> 00:02:57.910 align:start position:0%
+write a tiny web hook server. It's about
+20<00:02:55.840><c> lines</c><00:02:56.160><c> of</c><00:02:56.239><c> TypeScript</c><00:02:56.879><c> using</c><00:02:57.120><c> the</c><00:02:57.360><c> MCP</c>
+
+00:02:57.910 --> 00:02:57.920 align:start position:0%
+20 lines of TypeScript using the MCP
+ 
+
+00:02:57.920 --> 00:03:01.110 align:start position:0%
+20 lines of TypeScript using the MCP
+SDK.<00:02:58.879><c> It</c><00:02:59.120><c> listens</c><00:02:59.440><c> on</c><00:02:59.599><c> a</c><00:02:59.760><c> local</c><00:03:00.000><c> host</c><00:03:00.400><c> port.</c>
+
+00:03:01.110 --> 00:03:01.120 align:start position:0%
+SDK. It listens on a local host port.
+ 
+
+00:03:01.120 --> 00:03:03.430 align:start position:0%
+SDK. It listens on a local host port.
+When<00:03:01.280><c> your</c><00:03:01.440><c> CI</c><00:03:01.840><c> pipeline</c><00:03:02.319><c> finishes,</c><00:03:02.959><c> it</c><00:03:03.120><c> posts</c>
+
+00:03:03.430 --> 00:03:03.440 align:start position:0%
+When your CI pipeline finishes, it posts
+ 
+
+00:03:03.440 --> 00:03:05.430 align:start position:0%
+When your CI pipeline finishes, it posts
+the<00:03:03.599><c> result</c><00:03:03.840><c> to</c><00:03:04.000><c> that</c><00:03:04.239><c> port.</c><00:03:04.720><c> The</c><00:03:04.959><c> web</c><00:03:05.120><c> hook</c>
+
+00:03:05.430 --> 00:03:05.440 align:start position:0%
+the result to that port. The web hook
+ 
+
+00:03:05.440 --> 00:03:07.670 align:start position:0%
+the result to that port. The web hook
+server<00:03:05.760><c> emits</c><00:03:06.080><c> a</c><00:03:06.239><c> channel</c><00:03:06.560><c> event.</c><00:03:07.360><c> Claude</c>
+
+00:03:07.670 --> 00:03:07.680 align:start position:0%
+server emits a channel event. Claude
+ 
+
+00:03:07.680 --> 00:03:09.830 align:start position:0%
+server emits a channel event. Claude
+reads<00:03:08.000><c> it.</c><00:03:08.319><c> If</c><00:03:08.560><c> the</c><00:03:08.720><c> build</c><00:03:08.959><c> passed,</c><00:03:09.519><c> nothing</c>
+
+00:03:09.830 --> 00:03:09.840 align:start position:0%
+reads it. If the build passed, nothing
+ 
+
+00:03:09.840 --> 00:03:11.910 align:start position:0%
+reads it. If the build passed, nothing
+happens.<00:03:10.480><c> If</c><00:03:10.640><c> the</c><00:03:10.800><c> build</c><00:03:11.040><c> failed,</c><00:03:11.519><c> Claude</c>
+
+00:03:11.910 --> 00:03:11.920 align:start position:0%
+happens. If the build failed, Claude
+ 
+
+00:03:11.920 --> 00:03:13.589 align:start position:0%
+happens. If the build failed, Claude
+sees<00:03:12.159><c> the</c><00:03:12.400><c> error,</c><00:03:12.720><c> pulls</c><00:03:13.040><c> the</c><00:03:13.200><c> relevant</c>
+
+00:03:13.589 --> 00:03:13.599 align:start position:0%
+sees the error, pulls the relevant
+ 
+
+00:03:13.599 --> 00:03:16.149 align:start position:0%
+sees the error, pulls the relevant
+files,<00:03:14.239><c> reads</c><00:03:14.560><c> the</c><00:03:14.720><c> stack</c><00:03:15.040><c> trace,</c><00:03:15.680><c> writes</c><00:03:15.920><c> a</c>
+
+00:03:16.149 --> 00:03:16.159 align:start position:0%
+files, reads the stack trace, writes a
+ 
+
+00:03:16.159 --> 00:03:19.110 align:start position:0%
+files, reads the stack trace, writes a
+fix,<00:03:16.720><c> runs</c><00:03:16.959><c> the</c><00:03:17.200><c> tests,</c><00:03:17.760><c> and</c><00:03:18.000><c> commits.</c><00:03:18.959><c> You</c>
+
+00:03:19.110 --> 00:03:19.120 align:start position:0%
+fix, runs the tests, and commits. You
+ 
+
+00:03:19.120 --> 00:03:21.270 align:start position:0%
+fix, runs the tests, and commits. You
+wake<00:03:19.360><c> up</c><00:03:19.440><c> in</c><00:03:19.680><c> the</c><00:03:19.840><c> morning</c><00:03:20.000><c> to</c><00:03:20.159><c> a</c><00:03:20.400><c> fixed</c><00:03:20.720><c> build.</c>
+
+00:03:21.270 --> 00:03:21.280 align:start position:0%
+wake up in the morning to a fixed build.
+ 
+
+00:03:21.280 --> 00:03:23.030 align:start position:0%
+wake up in the morning to a fixed build.
+The<00:03:21.519><c> same</c><00:03:21.680><c> pattern</c><00:03:22.080><c> works</c><00:03:22.319><c> for</c><00:03:22.560><c> production</c>
+
+00:03:23.030 --> 00:03:23.040 align:start position:0%
+The same pattern works for production
+ 
+
+00:03:23.040 --> 00:03:25.670 align:start position:0%
+The same pattern works for production
+monitoring.<00:03:24.080><c> Your</c><00:03:24.319><c> alerting</c><00:03:24.720><c> system,</c><00:03:25.280><c> Data</c>
+
+00:03:25.670 --> 00:03:25.680 align:start position:0%
+monitoring. Your alerting system, Data
+ 
+
+00:03:25.680 --> 00:03:28.149 align:start position:0%
+monitoring. Your alerting system, Data
+Dog,<00:03:26.000><c> Pager</c><00:03:26.400><c> Duty,</c><00:03:26.800><c> whatever</c><00:03:27.120><c> you</c><00:03:27.360><c> use,</c><00:03:27.840><c> posts</c>
+
+00:03:28.149 --> 00:03:28.159 align:start position:0%
+Dog, Pager Duty, whatever you use, posts
+ 
+
+00:03:28.159 --> 00:03:30.550 align:start position:0%
+Dog, Pager Duty, whatever you use, posts
+to<00:03:28.239><c> the</c><00:03:28.400><c> web</c><00:03:28.560><c> hook</c><00:03:28.800><c> when</c><00:03:28.959><c> an</c><00:03:29.120><c> anomaly</c><00:03:29.680><c> fires.</c>
+
+00:03:30.550 --> 00:03:30.560 align:start position:0%
+to the web hook when an anomaly fires.
+ 
+
+00:03:30.560 --> 00:03:32.789 align:start position:0%
+to the web hook when an anomaly fires.
+Claude<00:03:30.879><c> investigates,</c><00:03:31.760><c> reads</c><00:03:32.080><c> the</c><00:03:32.239><c> logs,</c>
+
+00:03:32.789 --> 00:03:32.799 align:start position:0%
+Claude investigates, reads the logs,
+ 
+
+00:03:32.799 --> 00:03:34.710 align:start position:0%
+Claude investigates, reads the logs,
+checks<00:03:33.040><c> if</c><00:03:33.280><c> there's</c><00:03:33.440><c> a</c><00:03:33.599><c> known</c><00:03:33.840><c> pattern,</c><00:03:34.480><c> and</c>
+
+00:03:34.710 --> 00:03:34.720 align:start position:0%
+checks if there's a known pattern, and
+ 
+
+00:03:34.720 --> 00:03:36.630 align:start position:0%
+checks if there's a known pattern, and
+either<00:03:35.040><c> fixes</c><00:03:35.360><c> it,</c><00:03:35.599><c> or</c><00:03:35.760><c> writes</c><00:03:36.000><c> up</c><00:03:36.159><c> a</c><00:03:36.319><c> summary</c>
+
+00:03:36.630 --> 00:03:36.640 align:start position:0%
+either fixes it, or writes up a summary
+ 
+
+00:03:36.640 --> 00:03:39.110 align:start position:0%
+either fixes it, or writes up a summary
+for<00:03:36.799><c> you</c><00:03:36.959><c> to</c><00:03:37.200><c> review.</c><00:03:37.920><c> The</c><00:03:38.159><c> security</c><00:03:38.560><c> model</c><00:03:38.879><c> is</c>
+
+00:03:39.110 --> 00:03:39.120 align:start position:0%
+for you to review. The security model is
+ 
+
+00:03:39.120 --> 00:03:40.949 align:start position:0%
+for you to review. The security model is
+careful.<00:03:39.680><c> You're</c><00:03:39.920><c> running</c><00:03:40.080><c> the</c><00:03:40.319><c> web</c><00:03:40.480><c> hook</c><00:03:40.720><c> on</c>
+
+00:03:40.949 --> 00:03:40.959 align:start position:0%
+careful. You're running the web hook on
+ 
+
+00:03:40.959 --> 00:03:43.110 align:start position:0%
+careful. You're running the web hook on
+local<00:03:41.200><c> host,</c><00:03:41.680><c> so</c><00:03:41.920><c> only</c><00:03:42.159><c> your</c><00:03:42.319><c> own</c><00:03:42.560><c> CI</c><00:03:42.879><c> and</c>
+
+00:03:43.110 --> 00:03:43.120 align:start position:0%
+local host, so only your own CI and
+ 
+
+00:03:43.120 --> 00:03:45.190 align:start position:0%
+local host, so only your own CI and
+monitoring<00:03:43.519><c> tools</c><00:03:43.840><c> can</c><00:03:44.000><c> reach</c><00:03:44.239><c> it,</c><00:03:44.799><c> and</c><00:03:45.040><c> you</c>
+
+00:03:45.190 --> 00:03:45.200 align:start position:0%
+monitoring tools can reach it, and you
+ 
+
+00:03:45.200 --> 00:03:46.710 align:start position:0%
+monitoring tools can reach it, and you
+can<00:03:45.360><c> control</c><00:03:45.680><c> exactly</c><00:03:46.000><c> what</c><00:03:46.239><c> Claude</c><00:03:46.560><c> is</c>
+
+00:03:46.710 --> 00:03:46.720 align:start position:0%
+can control exactly what Claude is
+ 
+
+00:03:46.720 --> 00:03:48.550 align:start position:0%
+can control exactly what Claude is
+allowed<00:03:46.959><c> to</c><00:03:47.120><c> do</c><00:03:47.280><c> in</c><00:03:47.519><c> response</c><00:03:47.840><c> to</c><00:03:48.000><c> each</c><00:03:48.239><c> event</c>
+
+00:03:48.550 --> 00:03:48.560 align:start position:0%
+allowed to do in response to each event
+ 
+
+00:03:48.560 --> 00:03:51.190 align:start position:0%
+allowed to do in response to each event
+type.<00:03:49.599><c> This</c><00:03:49.840><c> is</c><00:03:49.920><c> what</c><00:03:50.159><c> autonomous</c><00:03:50.640><c> agentic</c>
+
+00:03:51.190 --> 00:03:51.200 align:start position:0%
+type. This is what autonomous agentic
+ 
+
+00:03:51.200 --> 00:03:52.789 align:start position:0%
+type. This is what autonomous agentic
+development<00:03:51.760><c> actually</c><00:03:52.080><c> looks</c><00:03:52.319><c> like</c><00:03:52.560><c> in</c>
+
+00:03:52.789 --> 00:03:52.799 align:start position:0%
+development actually looks like in
+ 
+
+00:03:52.799 --> 00:03:54.630 align:start position:0%
+development actually looks like in
+practice.
+
+00:03:54.630 --> 00:03:54.640 align:start position:0%
+practice.
+ 
+
+00:03:54.640 --> 00:03:56.309 align:start position:0%
+practice.
+Channels<00:03:55.120><c> has</c><00:03:55.280><c> a</c><00:03:55.440><c> thoughtful</c><00:03:55.920><c> security</c>
+
+00:03:56.309 --> 00:03:56.319 align:start position:0%
+Channels has a thoughtful security
+ 
+
+00:03:56.319 --> 00:03:58.070 align:start position:0%
+Channels has a thoughtful security
+model,<00:03:56.799><c> and</c><00:03:57.040><c> it's</c><00:03:57.280><c> worth</c><00:03:57.519><c> understanding</c>
+
+00:03:58.070 --> 00:03:58.080 align:start position:0%
+model, and it's worth understanding
+ 
+
+00:03:58.080 --> 00:03:59.670 align:start position:0%
+model, and it's worth understanding
+before<00:03:58.319><c> you</c><00:03:58.480><c> set</c><00:03:58.640><c> it</c><00:03:58.799><c> up.</c><00:03:59.200><c> The</c><00:03:59.439><c> core</c>
+
+00:03:59.670 --> 00:03:59.680 align:start position:0%
+before you set it up. The core
+ 
+
+00:03:59.680 --> 00:04:01.350 align:start position:0%
+before you set it up. The core
+principle,<00:04:00.319><c> every</c><00:04:00.640><c> channel</c><00:04:00.959><c> plug-in</c>
+
+00:04:01.350 --> 00:04:01.360 align:start position:0%
+principle, every channel plug-in
+ 
+
+00:04:01.360 --> 00:04:03.990 align:start position:0%
+principle, every channel plug-in
+maintains<00:04:01.680><c> a</c><00:04:01.920><c> sender</c><00:04:02.239><c> allow</c><00:04:02.560><c> list.</c><00:04:03.280><c> Only</c><00:04:03.599><c> IDs</c>
+
+00:04:03.990 --> 00:04:04.000 align:start position:0%
+maintains a sender allow list. Only IDs
+ 
+
+00:04:04.000 --> 00:04:05.830 align:start position:0%
+maintains a sender allow list. Only IDs
+you've<00:04:04.239><c> explicitly</c><00:04:04.799><c> approved</c><00:04:05.360><c> can</c><00:04:05.599><c> push</c>
+
+00:04:05.830 --> 00:04:05.840 align:start position:0%
+you've explicitly approved can push
+ 
+
+00:04:05.840 --> 00:04:08.070 align:start position:0%
+you've explicitly approved can push
+events<00:04:06.159><c> into</c><00:04:06.400><c> Claude's</c><00:04:06.879><c> session.</c><00:04:07.680><c> Everyone</c>
+
+00:04:08.070 --> 00:04:08.080 align:start position:0%
+events into Claude's session. Everyone
+ 
+
+00:04:08.080 --> 00:04:10.630 align:start position:0%
+events into Claude's session. Everyone
+else<00:04:08.319><c> is</c><00:04:08.480><c> silently</c><00:04:09.040><c> dropped.</c><00:04:09.920><c> For</c><00:04:10.239><c> Telegram</c>
+
+00:04:10.630 --> 00:04:10.640 align:start position:0%
+else is silently dropped. For Telegram
+ 
+
+00:04:10.640 --> 00:04:13.030 align:start position:0%
+else is silently dropped. For Telegram
+and<00:04:10.879><c> Discord,</c><00:04:11.519><c> the</c><00:04:11.680><c> allow</c><00:04:12.000><c> list</c><00:04:12.319><c> is</c><00:04:12.480><c> populated</c>
+
+00:04:13.030 --> 00:04:13.040 align:start position:0%
+and Discord, the allow list is populated
+ 
+
+00:04:13.040 --> 00:04:15.110 align:start position:0%
+and Discord, the allow list is populated
+through<00:04:13.200><c> a</c><00:04:13.360><c> pairing</c><00:04:13.680><c> flow.</c><00:04:14.400><c> You</c><00:04:14.640><c> initiate</c>
+
+00:04:15.110 --> 00:04:15.120 align:start position:0%
+through a pairing flow. You initiate
+ 
+
+00:04:15.120 --> 00:04:17.349 align:start position:0%
+through a pairing flow. You initiate
+contact<00:04:15.599><c> from</c><00:04:15.840><c> your</c><00:04:16.079><c> account.</c><00:04:16.639><c> The</c><00:04:16.880><c> bot</c><00:04:17.120><c> gives</c>
+
+00:04:17.349 --> 00:04:17.359 align:start position:0%
+contact from your account. The bot gives
+ 
+
+00:04:17.359 --> 00:04:19.430 align:start position:0%
+contact from your account. The bot gives
+you<00:04:17.440><c> a</c><00:04:17.680><c> code.</c><00:04:18.239><c> You</c><00:04:18.400><c> approve</c><00:04:18.720><c> it</c><00:04:18.880><c> in</c><00:04:19.040><c> clawed</c>
+
+00:04:19.430 --> 00:04:19.440 align:start position:0%
+you a code. You approve it in clawed
+ 
+
+00:04:19.440 --> 00:04:22.230 align:start position:0%
+you a code. You approve it in clawed
+code.<00:04:20.160><c> Your</c><00:04:20.320><c> user</c><00:04:20.720><c> ID</c><00:04:20.959><c> is</c><00:04:21.199><c> added.</c><00:04:21.759><c> For</c><00:04:22.000><c> web</c>
+
+00:04:22.230 --> 00:04:22.240 align:start position:0%
+code. Your user ID is added. For web
+ 
+
+00:04:22.240 --> 00:04:24.070 align:start position:0%
+code. Your user ID is added. For web
+hooks,<00:04:22.720><c> you</c><00:04:22.880><c> control</c><00:04:23.120><c> the</c><00:04:23.360><c> allow</c><00:04:23.680><c> list</c><00:04:23.919><c> in</c>
+
+00:04:24.070 --> 00:04:24.080 align:start position:0%
+hooks, you control the allow list in
+ 
+
+00:04:24.080 --> 00:04:26.150 align:start position:0%
+hooks, you control the allow list in
+your<00:04:24.240><c> server</c><00:04:24.560><c> code.</c><00:04:25.280><c> You</c><00:04:25.520><c> check</c><00:04:25.680><c> the</c><00:04:25.919><c> source</c>
+
+00:04:26.150 --> 00:04:26.160 align:start position:0%
+your server code. You check the source
+ 
+
+00:04:26.160 --> 00:04:28.230 align:start position:0%
+your server code. You check the source
+of<00:04:26.320><c> each</c><00:04:26.560><c> incoming</c><00:04:27.040><c> request</c><00:04:27.600><c> before</c><00:04:27.919><c> emitting</c>
+
+00:04:28.230 --> 00:04:28.240 align:start position:0%
+of each incoming request before emitting
+ 
+
+00:04:28.240 --> 00:04:30.790 align:start position:0%
+of each incoming request before emitting
+a<00:04:28.479><c> channel</c><00:04:28.800><c> event.</c><00:04:29.520><c> The</c><00:04:29.759><c> docs</c><00:04:30.160><c> are</c><00:04:30.320><c> explicit</c>
+
+00:04:30.790 --> 00:04:30.800 align:start position:0%
+a channel event. The docs are explicit
+ 
+
+00:04:30.800 --> 00:04:33.270 align:start position:0%
+a channel event. The docs are explicit
+about<00:04:31.040><c> the</c><00:04:31.280><c> risk.</c><00:04:31.919><c> An</c><00:04:32.160><c> ungated</c><00:04:32.720><c> channel</c><00:04:32.960><c> is</c><00:04:33.120><c> a</c>
+
+00:04:33.270 --> 00:04:33.280 align:start position:0%
+about the risk. An ungated channel is a
+ 
+
+00:04:33.280 --> 00:04:35.990 align:start position:0%
+about the risk. An ungated channel is a
+prompt<00:04:33.600><c> injection</c><00:04:34.160><c> vector.</c><00:04:34.880><c> Anyone</c><00:04:35.600><c> who</c><00:04:35.840><c> can</c>
+
+00:04:35.990 --> 00:04:36.000 align:start position:0%
+prompt injection vector. Anyone who can
+ 
+
+00:04:36.000 --> 00:04:37.749 align:start position:0%
+prompt injection vector. Anyone who can
+reach<00:04:36.160><c> your</c><00:04:36.400><c> endpoint</c><00:04:36.800><c> can</c><00:04:36.960><c> put</c><00:04:37.199><c> arbitrary</c>
+
+00:04:37.749 --> 00:04:37.759 align:start position:0%
+reach your endpoint can put arbitrary
+ 
+
+00:04:37.759 --> 00:04:39.990 align:start position:0%
+reach your endpoint can put arbitrary
+text<00:04:38.000><c> in</c><00:04:38.240><c> front</c><00:04:38.400><c> of</c><00:04:38.560><c> Claude.</c><00:04:39.360><c> The</c><00:04:39.600><c> protection</c>
+
+00:04:39.990 --> 00:04:40.000 align:start position:0%
+text in front of Claude. The protection
+ 
+
+00:04:40.000 --> 00:04:41.830 align:start position:0%
+text in front of Claude. The protection
+comes<00:04:40.240><c> from</c><00:04:40.400><c> being</c><00:04:40.560><c> on</c><00:04:40.800><c> localhost</c><00:04:41.440><c> and</c><00:04:41.680><c> from</c>
+
+00:04:41.830 --> 00:04:41.840 align:start position:0%
+comes from being on localhost and from
+ 
+
+00:04:41.840 --> 00:04:44.070 align:start position:0%
+comes from being on localhost and from
+your<00:04:42.000><c> allow</c><00:04:42.240><c> list</c><00:04:42.560><c> code</c><00:04:43.199><c> during</c><00:04:43.440><c> the</c><00:04:43.600><c> research</c>
+
+00:04:44.070 --> 00:04:44.080 align:start position:0%
+your allow list code during the research
+ 
+
+00:04:44.080 --> 00:04:46.550 align:start position:0%
+your allow list code during the research
+preview.<00:04:44.639><c> The</c><00:04:44.800><c> dash-</c><00:04:45.520><c> channels</c><00:04:45.919><c> flag</c><00:04:46.320><c> only</c>
+
+00:04:46.550 --> 00:04:46.560 align:start position:0%
+preview. The dash- channels flag only
+ 
+
+00:04:46.560 --> 00:04:48.310 align:start position:0%
+preview. The dash- channels flag only
+accepts<00:04:46.960><c> plugins</c><00:04:47.360><c> from</c><00:04:47.680><c> anthropics</c>
+
+00:04:48.310 --> 00:04:48.320 align:start position:0%
+accepts plugins from anthropics
+ 
+
+00:04:48.320 --> 00:04:50.230 align:start position:0%
+accepts plugins from anthropics
+maintained<00:04:48.800><c> allow</c><00:04:49.120><c> list.</c><00:04:49.759><c> The</c><00:04:49.919><c> claude</c>
+
+00:04:50.230 --> 00:04:50.240 align:start position:0%
+maintained allow list. The claude
+ 
+
+00:04:50.240 --> 00:04:52.550 align:start position:0%
+maintained allow list. The claude
+plugins<00:04:50.720><c> official</c><00:04:51.120><c> marketplace</c><00:04:52.160><c> to</c><00:04:52.320><c> test</c>
+
+00:04:52.550 --> 00:04:52.560 align:start position:0%
+plugins official marketplace to test
+ 
+
+00:04:52.560 --> 00:04:53.990 align:start position:0%
+plugins official marketplace to test
+your<00:04:52.800><c> own</c><00:04:52.960><c> custom</c><00:04:53.360><c> channel</c><00:04:53.680><c> during</c>
+
+00:04:53.990 --> 00:04:54.000 align:start position:0%
+your own custom channel during
+ 
+
+00:04:54.000 --> 00:04:56.550 align:start position:0%
+your own custom channel during
+development.<00:04:54.720><c> Use</c><00:04:54.960><c> d-dangerously</c><00:04:56.240><c> load</c>
+
+00:04:56.550 --> 00:04:56.560 align:start position:0%
+development. Use d-dangerously load
+ 
+
+00:04:56.560 --> 00:04:58.550 align:start position:0%
+development. Use d-dangerously load
+development<00:04:57.040><c> channels.</c><00:04:57.840><c> For</c><00:04:58.000><c> team</c><00:04:58.320><c> and</c>
+
+00:04:58.550 --> 00:04:58.560 align:start position:0%
+development channels. For team and
+ 
+
+00:04:58.560 --> 00:05:00.150 align:start position:0%
+development channels. For team and
+enterprise<00:04:59.040><c> accounts,</c><00:04:59.520><c> channels</c><00:04:59.919><c> is</c>
+
+00:05:00.150 --> 00:05:00.160 align:start position:0%
+enterprise accounts, channels is
+ 
+
+00:05:00.160 --> 00:05:02.550 align:start position:0%
+enterprise accounts, channels is
+disabled<00:05:00.560><c> by</c><00:05:00.800><c> default.</c><00:05:01.680><c> Admins</c><00:05:02.080><c> enable</c><00:05:02.400><c> it</c>
+
+00:05:02.550 --> 00:05:02.560 align:start position:0%
+disabled by default. Admins enable it
+ 
+
+00:05:02.560 --> 00:05:03.990 align:start position:0%
+disabled by default. Admins enable it
+from<00:05:02.639><c> the</c><00:05:02.800><c> cloud</c><00:05:03.120><c> code</c><00:05:03.440><c> settings</c><00:05:03.680><c> in</c><00:05:03.919><c> the</c>
+
+00:05:03.990 --> 00:05:04.000 align:start position:0%
+from the cloud code settings in the
+ 
+
+00:05:04.000 --> 00:05:06.230 align:start position:0%
+from the cloud code settings in the
+admin<00:05:04.400><c> panel.</c>
+
+00:05:06.230 --> 00:05:06.240 align:start position:0%
+admin panel.
+ 
+
+00:05:06.240 --> 00:05:08.230 align:start position:0%
+admin panel.
+Cloud<00:05:06.560><c> code</c><00:05:06.880><c> started</c><00:05:07.199><c> as</c><00:05:07.360><c> a</c><00:05:07.520><c> coding</c><00:05:07.840><c> assistant</c>
+
+00:05:08.230 --> 00:05:08.240 align:start position:0%
+Cloud code started as a coding assistant
+ 
+
+00:05:08.240 --> 00:05:10.230 align:start position:0%
+Cloud code started as a coding assistant
+you<00:05:08.479><c> talk</c><00:05:08.560><c> to</c><00:05:08.720><c> at</c><00:05:08.960><c> the</c><00:05:09.039><c> terminal.</c><00:05:09.840><c> Remote</c>
+
+00:05:10.230 --> 00:05:10.240 align:start position:0%
+you talk to at the terminal. Remote
+ 
+
+00:05:10.240 --> 00:05:11.749 align:start position:0%
+you talk to at the terminal. Remote
+control<00:05:10.560><c> made</c><00:05:10.800><c> it</c><00:05:10.960><c> something</c><00:05:11.199><c> you</c><00:05:11.360><c> can</c><00:05:11.520><c> drive</c>
+
+00:05:11.749 --> 00:05:11.759 align:start position:0%
+control made it something you can drive
+ 
+
+00:05:11.759 --> 00:05:13.670 align:start position:0%
+control made it something you can drive
+from<00:05:12.000><c> anywhere.</c><00:05:12.800><c> Channels</c><00:05:13.280><c> makes</c><00:05:13.440><c> it</c>
+
+00:05:13.670 --> 00:05:13.680 align:start position:0%
+from anywhere. Channels makes it
+ 
+
+00:05:13.680 --> 00:05:15.189 align:start position:0%
+from anywhere. Channels makes it
+something<00:05:13.840><c> that</c><00:05:14.000><c> acts</c><00:05:14.320><c> without</c><00:05:14.639><c> being</c><00:05:14.880><c> driven</c>
+
+00:05:15.189 --> 00:05:15.199 align:start position:0%
+something that acts without being driven
+ 
+
+00:05:15.199 --> 00:05:17.350 align:start position:0%
+something that acts without being driven
+at<00:05:15.440><c> all.</c><00:05:15.919><c> A</c><00:05:16.160><c> session</c><00:05:16.400><c> that</c><00:05:16.639><c> listens</c><00:05:17.039><c> to</c><00:05:17.120><c> the</c>
+
+00:05:17.350 --> 00:05:17.360 align:start position:0%
+at all. A session that listens to the
+ 
+
+00:05:17.360 --> 00:05:19.670 align:start position:0%
+at all. A session that listens to the
+world<00:05:17.600><c> and</c><00:05:17.919><c> responds.</c><00:05:18.880><c> That's</c><00:05:19.039><c> a</c><00:05:19.280><c> meaningful</c>
+
+00:05:19.670 --> 00:05:19.680 align:start position:0%
+world and responds. That's a meaningful
+ 
+
+00:05:19.680 --> 00:05:22.390 align:start position:0%
+world and responds. That's a meaningful
+shift.<00:05:20.479><c> Most</c><00:05:20.800><c> agentic</c><00:05:21.280><c> AI</c><00:05:21.600><c> tools</c><00:05:21.919><c> today</c><00:05:22.160><c> are</c>
+
+00:05:22.390 --> 00:05:22.400 align:start position:0%
+shift. Most agentic AI tools today are
+ 
+
+00:05:22.400 --> 00:05:25.430 align:start position:0%
+shift. Most agentic AI tools today are
+request<00:05:22.880><c> response.</c><00:05:23.759><c> You</c><00:05:23.919><c> ask,</c><00:05:24.400><c> it</c><00:05:24.639><c> answers</c>
+
+00:05:25.430 --> 00:05:25.440 align:start position:0%
+request response. You ask, it answers
+ 
+
+00:05:25.440 --> 00:05:28.230 align:start position:0%
+request response. You ask, it answers
+loop.<00:05:26.240><c> Channels</c><00:05:26.720><c> breaks</c><00:05:26.960><c> that</c><00:05:27.199><c> loop.</c><00:05:27.840><c> Claude</c>
+
+00:05:28.230 --> 00:05:28.240 align:start position:0%
+loop. Channels breaks that loop. Claude
+ 
+
+00:05:28.240 --> 00:05:29.749 align:start position:0%
+loop. Channels breaks that loop. Claude
+can<00:05:28.400><c> now</c><00:05:28.560><c> be</c><00:05:28.720><c> the</c><00:05:28.880><c> one</c><00:05:28.960><c> that</c><00:05:29.199><c> initiates</c>
+
+00:05:29.749 --> 00:05:29.759 align:start position:0%
+can now be the one that initiates
+ 
+
+00:05:29.759 --> 00:05:32.150 align:start position:0%
+can now be the one that initiates
+action.<00:05:30.560><c> Not</c><00:05:30.800><c> because</c><00:05:31.039><c> you</c><00:05:31.199><c> sent</c><00:05:31.440><c> a</c><00:05:31.680><c> message,</c>
+
+00:05:32.150 --> 00:05:32.160 align:start position:0%
+action. Not because you sent a message,
+ 
+
+00:05:32.160 --> 00:05:34.390 align:start position:0%
+action. Not because you sent a message,
+but<00:05:32.479><c> because</c><00:05:32.800><c> something</c><00:05:33.199><c> happened.</c><00:05:34.000><c> A</c><00:05:34.160><c> build</c>
+
+00:05:34.390 --> 00:05:34.400 align:start position:0%
+but because something happened. A build
+ 
+
+00:05:34.400 --> 00:05:37.270 align:start position:0%
+but because something happened. A build
+broke,<00:05:34.880><c> an</c><00:05:35.120><c> alert</c><00:05:35.520><c> fired,</c><00:05:36.240><c> a</c><00:05:36.400><c> teammate</c><00:05:36.880><c> sent</c><00:05:37.120><c> a</c>
+
+00:05:37.270 --> 00:05:37.280 align:start position:0%
+broke, an alert fired, a teammate sent a
+ 
+
+00:05:37.280 --> 00:05:39.830 align:start position:0%
+broke, an alert fired, a teammate sent a
+message.<00:05:38.240><c> This</c><00:05:38.400><c> is</c><00:05:38.560><c> what</c><00:05:38.800><c> always</c><00:05:39.039><c> on</c><00:05:39.280><c> agentic</c>
+
+00:05:39.830 --> 00:05:39.840 align:start position:0%
+message. This is what always on agentic
+ 
+
+00:05:39.840 --> 00:05:40.870 align:start position:0%
+message. This is what always on agentic
+development<00:05:40.240><c> looks</c><00:05:40.400><c> like</c><00:05:40.560><c> at</c><00:05:40.800><c> the</c>
+
+00:05:40.870 --> 00:05:40.880 align:start position:0%
+development looks like at the
+ 
+
+00:05:40.880 --> 00:05:43.110 align:start position:0%
+development looks like at the
+infrastructure<00:05:41.520><c> level.</c><00:05:42.240><c> It's</c><00:05:42.479><c> in</c><00:05:42.720><c> research</c>
+
+00:05:43.110 --> 00:05:43.120 align:start position:0%
+infrastructure level. It's in research
+ 
+
+00:05:43.120 --> 00:05:45.189 align:start position:0%
+infrastructure level. It's in research
+preview,<00:05:43.600><c> which</c><00:05:43.840><c> means</c><00:05:44.000><c> the</c><00:05:44.240><c> API</c><00:05:44.639><c> will</c><00:05:44.880><c> change</c>
+
+00:05:45.189 --> 00:05:45.199 align:start position:0%
+preview, which means the API will change
+ 
+
+00:05:45.199 --> 00:05:47.110 align:start position:0%
+preview, which means the API will change
+and<00:05:45.440><c> there</c><00:05:45.600><c> are</c><00:05:45.759><c> rough</c><00:05:46.000><c> edges,</c><00:05:46.639><c> but</c><00:05:46.880><c> the</c>
+
+00:05:47.110 --> 00:05:47.120 align:start position:0%
+and there are rough edges, but the
+ 
+
+00:05:47.120 --> 00:05:49.909 align:start position:0%
+and there are rough edges, but the
+pattern<00:05:47.360><c> is</c><00:05:47.600><c> established.</c><00:05:48.639><c> MCP</c><00:05:49.280><c> servers</c><00:05:49.759><c> can</c>
+
+00:05:49.909 --> 00:05:49.919 align:start position:0%
+pattern is established. MCP servers can
+ 
+
+00:05:49.919 --> 00:05:52.390 align:start position:0%
+pattern is established. MCP servers can
+now<00:05:50.160><c> push</c><00:05:50.400><c> events</c><00:05:50.720><c> into</c><00:05:51.039><c> Claude's</c><00:05:51.520><c> context.</c>
+
+00:05:52.390 --> 00:05:52.400 align:start position:0%
+now push events into Claude's context.
+ 
+
+00:05:52.400 --> 00:05:54.390 align:start position:0%
+now push events into Claude's context.
+That<00:05:52.639><c> capability</c><00:05:53.199><c> will</c><00:05:53.520><c> only</c><00:05:53.759><c> expand</c><00:05:54.160><c> from</c>
+
+00:05:54.390 --> 00:05:54.400 align:start position:0%
+That capability will only expand from
+ 
+
+00:05:54.400 --> 00:05:56.230 align:start position:0%
+That capability will only expand from
+here.<00:05:55.039><c> If</c><00:05:55.280><c> you're</c><00:05:55.440><c> building</c><00:05:55.759><c> developer</c>
+
+00:05:56.230 --> 00:05:56.240 align:start position:0%
+here. If you're building developer
+ 
+
+00:05:56.240 --> 00:05:58.629 align:start position:0%
+here. If you're building developer
+tooling,<00:05:56.960><c> CI</c><00:05:57.360><c> systems,</c><00:05:58.080><c> monitoring</c>
+
+00:05:58.629 --> 00:05:58.639 align:start position:0%
+tooling, CI systems, monitoring
+ 
+
+00:05:58.639 --> 00:06:00.629 align:start position:0%
+tooling, CI systems, monitoring
+pipelines,<00:05:59.520><c> or</c><00:05:59.759><c> anything</c><00:06:00.000><c> that</c><00:06:00.240><c> generates</c>
+
+00:06:00.629 --> 00:06:00.639 align:start position:0%
+pipelines, or anything that generates
+ 
+
+00:06:00.639 --> 00:06:02.230 align:start position:0%
+pipelines, or anything that generates
+events<00:06:01.039><c> you</c><00:06:01.199><c> currently</c><00:06:01.520><c> have</c><00:06:01.680><c> to</c><00:06:01.840><c> manually</c>
+
+00:06:02.230 --> 00:06:02.240 align:start position:0%
+events you currently have to manually
+ 
+
+00:06:02.240 --> 00:06:04.790 align:start position:0%
+events you currently have to manually
+respond<00:06:02.639><c> to,</c><00:06:03.440><c> channels</c><00:06:03.919><c> is</c><00:06:04.080><c> worth</c><00:06:04.319><c> setting</c><00:06:04.560><c> up</c>
+
+00:06:04.790 --> 00:06:04.800 align:start position:0%
+respond to, channels is worth setting up
+ 
+
+00:06:04.800 --> 00:06:06.710 align:start position:0%
+respond to, channels is worth setting up
+today.<00:06:05.360><c> Link</c><00:06:05.600><c> in</c><00:06:05.840><c> the</c><00:06:06.000><c> description</c><00:06:06.319><c> for</c><00:06:06.479><c> the</c>
+
+00:06:06.710 --> 00:06:06.720 align:start position:0%
+today. Link in the description for the
+ 
+
+00:06:06.720 --> 00:06:11.120 align:start position:0%
+today. Link in the description for the
+docs<00:06:07.039><c> and</c><00:06:07.280><c> official</c><00:06:07.680><c> plug-in</c><00:06:08.080><c> source</c><00:06:08.400><c> code.</c>
+

@@ -1,0 +1,666 @@
+Source: https://youtu.be/wZB5fpm8oUA
+Title: How to Use Claude's Massive New Upgrades
+Fetched: 2026-03-25T20:03:56.115Z
+Segments: 656
+
+--- Plain text ---
+Boy, it sure seems like Anthropic did not like everyone talking about Open Claw instead of Claude Code because over the last month they have shipped an absolute boatload of features. All of which we are talking about here. Welcome back to the AI daily brief. Every other day or so for the last month, there has been some part of the headlines where Claude launched some new feature or upgrade for Claude code or co-worker some other part of the Claude ecosystem. And at this point, it has officially gotten to the point where we needed to do a full-on retrospective of everything that has launched over the last month or so to help you guys map out and figure out how to use all of these big new upgrades. Now, of course, this comes in a specific lineage of updates. Step one was the models. The Opus 45, GPT52 generation of models that came about at the end of last year catapulted us into a new capability era that Opus 46, GPT53 codec, and GPT54 have continued. Step two, of course, was the unlock that OpenClaw represented. It was a harness that brought with it a whole bunch of concepts and user interaction patterns and behavior sets that made building your own agents and agent teams all of a sudden more viable and more realistic. Step three has been the absolute race ever since OpenClaw blew up to bring those types of features to all the other AI products. This clawification trend has been one of the big themes ever since OpenClaw launched. Now, when OpenClaw's founder Peter Steinberger was hired by OpenAI, some people jumped in to say that Anthropic had made a big goof by not bringing him over there. Others response was a little bit closer to I don't know, man. Let's let him cook and see what happens. And certainly, you have to think that the people saying, "Let them cook are feeling pretty vindicated right now." The clawification of Claude, maybe we'll call it the Claudification, kicked off at the end of February with remote control. Remote control was a way to bring claw code specifically to your mobile experience. Both the mobile capabilities of OpenClaw as well as its ability to bridge between different types of devices were some of the parts of that system that people were most excited about. And so it wasn't all that surprising to see Claude code jump on that first. What's more, even outside of OpenClaw, this is such a natural extension of the product that you got to imagine that this would have happened anyway. The way that remote control works is that you start your task in your Claude code terminal session and then you can pick it up and continue working from your phone. Now, there's nothing happening in the cloud here. Basically, when you've started that remote control session on your machine, Claude is going to continue to run locally that entire time. That gives remote control the ability to use your full environment, including your file system, MCP servers, tools, and product configurations, and you can go back and forth interchangeably. In the docs, they write, "Unlike cloud code on the web, which runs on cloud infrastructure, remote control sessions run directly on your machine and interact with your local file system. The web and mobile interfaces are just a window into that local session. There are three ways to start a remote control session. You can start a dedicated remote control server by navigating to the specific project directory you want to work on and running the cloud remote control command. From there, Claude will display a session URL that you can use to connect from another device. You can also press your spacebar to get a QR code that you can access from your phone. An interactive session basically means that you have your option of going back between using terminal as you normally would with cloud code or using the remote session. So basically the difference with server mode is that on server mode you're just using your mobile device to control cloud code whereas interactive you can go back and forth. Finally, if you are already in a cloud code session and you want to move to remote, you can use the / remote control command or SLRC. And this is going to once again display either a URL or QR code that you can use to connect from another device. First impressions were positive. Prominent solopreneur Peter Levels wrote, "Cloud remote control is extremely nice. Can edit on Mac OS or iOS and cloud app on my production server from anywhere." He basically compared it favorably to an SSH session, which would be another more technically complex way to log into your local device to control it while on the go. Roman Mirzoan writes, "Yesterday, I fixed two bugs and then released an app update to the app store without touching my laptop and having a walk for half a day. Now, as time has gone on, people started to realize that this was a bigger shift than they might have originally thought." Gage Saluda writes, "Cloud code remote control just clicked for me. You kick off a task in the terminal, then pick it up from your phone on a walk. That's not a productivity feature. That's a relationship shift. You stop thinking of it as a tool you operate and start thinking of it as something you delegate to and check in with. Different mental model entirely. I think that that's right. And I think that most people are still just slowly coming to that realization because it's one you kind of have to live, not just hear about. Next up, a couple weeks later, we got a different way to interact with Claude from afar. This feature was for Claude Cowork and called Dispatch. Anthropics Felix Reeseberg writes, "We're shipping a new feature in Claude Co-work as a research preview that I'm excited about. Dispatch, one persistent conversation with Claude that runs on your computer. Message it from your phone. Come back to finished work." Felix then went on to explain a little bit further. Because it's co-work, he writes, "Claude runs code in a sandbox on your machine. Your files stay local. You approve what Claude touches before it acts. It feels pretty magical to give Claude a mission on my computer and get occasional updates like creating reports from internal dashboards or finding me a better seat on my next flight. Everything Claude can do on your computer, files, browsers, tools are reachable from wherever you are. Now, one constraint Felix writes is that your desktop has to be running. Claude Code PM Noah Zebin also talked about dispatch. Coolest abilities he writes. One, send files from local machines so you can work on PowerPoints on the go. Two, spawn subessions on desktop that you can drill down on. Three, chat about any local co-work session. In the docs, they explain a little bit more about how this works. Enthropic writes, "Instead of starting a new session for each task, you have a single persistent thread with Claude. This thread doesn't reset. Claude retains context from previous tasks, so you can pick up where you left off. Message Claude from your phone on the way to work, then follow up from your desktop when you sit down. It's the same conversation, same context wherever you reach it. When you assign a task, Claude figures out what kind of work is needed and spins up the right session. Development tasks run in Claude code. Knowledge work runs in co-work. These sessions appear in their respective sidebars. You can click into any session for details or wait for the result in the thread. Claude messages you the outcome, a spreadsheet, a memo, a comparison table, a pull request rather than showing you every step of the process. You'll get a push notification on your phone when a task is done or when Claude needs your go-ahad. Now, like with remote control, the power users who really started to dig into dispatch found that it was not just a shift in scale but a shift in kind. Paval Huran writes, "Dispatch didn't fill my dead time. It changed how I structured my day. I went to the jump arena with my kid because I could direct work async from the sidelines. The model isn't grind during gaps. It's design your day differently because the work runs without you sitting in front of it." He also wrote an article after 48 hours of experimenting. And one thing that he points out is that dispatch is not clawed chat on your phone. Dispatch, he writes, is an orchestrator. From a single conversation on your phone, you spawn and manage multiple co-work task sessions running simultaneously on your desktop. Each session runs independently. Its own context, its own file access, its own connectors. Your phone is the command chair. Your desktop does the heavy lifting. Think of the difference between texting someone a request and sitting in a control room with multiple screens. Each screen is a task session running on your desktop. Your phone directs them all from one conversation thread. So, what are the types of tasks he did? During morning coffee at home, Pavle started with pull the latest competitor updates and summarize changes since last week as well as draft the sponsor collaboration page using notion database. While he was walking the dog, he checked task one, the competitor summary. He followed up with add a comparison table against our current road map. The redirect he points out took 10 seconds one-handed. While in the passenger seat with his wife driving, he reviewed the new sponsor notion page. Too formal, he said. Pull the engagement metrics from the last campaign and make the value proposition sharper. He also started task three gap analysis on the article draft. While at the jump arena with his kids, he started working on infographic iterations. Move the icons left, changed the color of the third section. Finally, when back at his desk, everything was waiting and he reviewed, adjusted, and shipped. Ultimately, he writes the actual direction time across all of these gaps was maybe 25 minutes total. The clawed execution running in parallel was 3 plus hours of work. Ethan Mollik also had a positive experience with dispatch. He writes, "After using it a bit, Claude Co-work Dispatch covers 90% of what I was trying to use OpenClaw for, but feels far less likely to upload my entire drive to a malware site. What I like better," he writes, "Easy, much more stable, and safe. Existing connectors mean better integration with Gmail, browsers, etc. Very good tool use. What's missing for me? The ability to invite Claude to any channel, the heartbeat and proactivity, and the multiple sessions." Now, if that was all, that would already be a huge amount of new interactive modalities to ingest and change how we were interacting with Claude Co-work and Claude Code. But we are not done yet. Next up, we got Claude Code channels, which is basically Claude Code's answer to the OpenClaw interaction of talking to it via Telegram. Anthropics Tariq writes, "We just released Claude Code channels, which allows you to control your Claude code session through select MCPs, starting with Telegram and Discord." In the docs, they write, "A channel is an MCP server that pushes events into your running Claude code session, so Claude can react to things that happen while you're not at the terminal. Channels can be two-way. Claude reads the event and replies back through the same channel, like a chat bridge. Unlike integrations that spawn a fresh cloud session or wait to be pulled, the event arrives in the session you already have open. When Larry Vez asked, "How is this better than Dispatch or it's just an alternative to dispatch?" Tariq writes, "We want to give you a lot of different options on how you talk to Claude remotely. Channels is more focused on devs who want something hackable." Now, just to add a little bit of clarity here, we see Telegram and we just think about ourselves chatting with Claude code. But the whole idea of channels is that it's not just chats from you. Yes, that is one type of interaction, but you can also connect other services like for example Sentry Monitoring directly to Claude code via those channels in Telegram or Discord so that Claude can react even while you're not there. Damen Galarza writes, "Instead of Claude pulling data via tool calls, channels push events into the session from the outside. CI failures, web hook payloads, monitoring alerts, chat messages from Telegram or Discord, anything that can send and post can now reach your running session. And it definitely seems like of these channels is on the farthest end of the technical spectrum. Dario on Twitter writes, "If you missed it, channels are essentially MCP servers that push events into a Cloud Code session, letting Claude react to the outside world beyond the terminal. This was the exact missing piece I needed for an idea I've been brewing. My goal was twofold. Build a custom orchestration system to spawn Claude Code sessions anywhere, Docker, VMs, Pods, or locally on my MacBook. And then create a custom app across Mac OS, iOS, and iPad OS to control these agents on the go. Fast forward to today, just 4 days after channels dropped and the iOS app is already up and running. I have so many more ideas on how to tweak and expand this to fit my exact workflow. Now, at this point, you'd be forgiven for getting a little confused cuz we're talking about all these new ways to use Cloud Co-work and Cloud Code remotely, all with slight variations on the theme. This is kind of why you're going to want to go hack at all of these to understand how they fit your own use cases. But I think one big takeaway is an aggregate massive shift in how Anthropic is imagining how you're going to be working with Claude in the future. And effectively the idea is an always on contextmaintaining persistent interactive orchestration experience where work is happening all the time even when you're not doing it with the right way to interact with that work from wherever you are and whatever your use case is. In addition to those features, we also saw Enthropic go after parody with OpenClaw when it came to scheduling tasks. At the end of February, co-work got scheduled tasks. Think a morning briefing, weekly spreadsheet updates, or Friday team presentations. Then about a week and a half later, we got local scheduled tasks in Claude Code Desktop. Tariq said that his favorite use case is to ask it to check error logs every few hours and create PRs for any actionable errors. Now, because these tasks are local, they run as long as your computer is awake. But then a couple weeks after that, we got recurring cloud-based tasks. Noah's Webin again writes, "Set a repo or repos, a schedule, and a prompt. Claude runs it via Cloud Infra on your schedule, so you don't need to keep cloud code running on your local machine." He said that so far the Cloud Code team had found it useful for things like sweeping through Open PRs, building features from approved issues, analyzing CI failures overnight, and syncing docs based on newly merged PRs. And if you're wondering if this had to do with OpenClaw, in another tweet, Noah said, "Some might say I built this because I couldn't figure out how to set up my Mac Mini." And yet, in terms of sheer consumer excitement, all of these were just prelude to what was announced on Monday night. The official Claude account on Twitter writes, "You can now enable Claude to use your computer to complete tasks. It opens your app, navigates your browser, fills in spreadsheets, anything you do sitting at your desk." About 16 hours after that tweet went live, 40 million people have viewed it. 62,000 people have bookmarked it, and the chatter is overwhelming. Anthropics Felix Reeseberg writes, "Today, we're releasing a feature that allows Claude to control your computer, mouse, keyboard, and screen, giving it the ability to use any app. Now, he also points out that these features shouldn't be viewed in isolation." Felix writes, "I believe this is especially useful if used with Dispatch, which allows you to remotely control Claude on your computer while you're away." In their announcement blog, Anthropic writes, "When Claude doesn't have access to the tools it needs, it will point, click, and navigate what's on your screen to perform the task itself. It can open files, use the browser, and run dev tools automatically with no setup required. When using your computer, they say, Claude will reach for the most precise tool first, starting with existing connectors to services like Slack or Google Calendar. However, when Claude finds that there is not a connector set up, it can control browser, mouse, keyboard, and screen to complete different tasks." Now, as you might be thinking right now, this kind of supercharges those features like dispatch. Anthropic agrees, writing, "With dispatch, you can tell Claude to automatically check your emails every morning or pull some metrics every week or spin up a Claude co-worker Claude code session for a report or a pull request. Claude's new computer use capability makes dispatch even more helpful. Now, Claude can use your computer on your behalf while you're away. for example, to create a morning briefing while you're on the train, make changes in your IDE, run tests, and put up a PR or keep your 3D printing project moving according to your initial plan. A lot of the initial response was fairly breathless. Sui Berabo writes, "Claude can now control your entire computer with one prompt forever. You tell it, scan my email every morning once, and it just does it forever. It can also open apps, edit spreadsheets, move files, batch process 150 photos in Photoshop, export PDFs, all of it." You can also start a task from your phone. go to dinner, come back to finish work like nothing happened. Enthropic is giving us the full desktop agent that uses the actual screen, mouse, and keyboard. Not a sandbox, not a simulation. You're real Jarvis. This is absolutely insane. The LLM era is over. Gagan again, who we heard from earlier, writes, "Been testing it in co-work mode. The thing that gets me isn't the automation. It's that it figures out what you actually meant when you said handle this for me. That's the shift." Mila writes, "Claude is no longer just a tool that uses the computer. It operates inside it as a true execution layer. It can replicate everything a human does. Mouse movements, keyboard input, screen interaction. It can open any application, navigate through it, and produce the exact output you want. This goes beyond APIs. This is full real world system control, which means from anywhere you can control your devices and automate workflows end to end. In terms of examples, a lot of people started fairly simply. Gavin PCEL writes, "Okay, this is pretty cool. Just had to grab a photo off my desktop from afar. Dumb and simple, yes, but done in natural language with no weird setup. Daniel Son writes, "I don't like posting about anything I haven't tried myself. So, I saw the announcement that Claude dispatch now controls your computer and I simply asked it to open Twitter and like a Claude post." Done. This is getting more interesting and more dangerous by the minute. Adichth writes, "This is the first time a mainstream AI product actually behaves like a junior ops hire that lives on your laptop." And Peter Gustv points out that this could be especially valuable for corporates stuck in legacy software that isn't going to port into AI ecosystems natively. He writes, "This is another domino to fall. Computer use of arbitrary apps, not just your browser. This is a big deal for a lot of corporates who have custom crappy apps from 20 or 30 years ago." And summing it all up, Box's Aaron Levy argues that this is, to put it simply, a big deal. In a long post on Twitter, he writes, "Computer use and the ability to write and run code on the fly are the ultimate primitives for agents to be able to take on more and more tasks and knowledge work. Most work requires hopping between multiple applications and working with broad sets of data in a workflow. And agents will need to be able to traverse these systems to be able to effectively automate any real work in the enterprise. Now, we will have agents that are the equivalent of having an expert programmer or any number of them that can write code or use any API to automate whatever work you're doing. Agents will have access to either a user's computer and resources or their own sandbox to operate in and be able to pull together the tools necessary to perform the task at hand. This opens up the broadest set of agentic use cases. To be sure, there are going to be various hurdles around security, permissions and access control, identity challenges, and more. For instance, should the agent always act on behalf of the user or should they have their own identity and limited set of access rights? How do you triage security events when historically volume of activity on a system is no longer a reliable signal of a security issue? How do you ensure the agent isn't going rogue or getting prompt injected to do something risky? All problems that need to get figured out. Then there's also lots of work needed to ensure software is set up to enable agents to operate with their tools in a headless fashion. This will be an uncomfortable reality for some incumbents and equally a welcome one for tools that historically have operated seamlessly via APIs and have business models to support this. Lots of change coming in the world of work agents and it's going to get pretty wild. Now, we're already going pretty long, but I want to point out that this is not the end of what has been pushed over the last month. Running quickly through some of the second tier and quality of life type of announcements. One big complaint that lots of folks have had about co-work that there wasn't a conception of a project. Now there is, which will make a huge difference for day-to-day functionality. Also in March, the Claude code team launched code review where, as they put it, Claude dispatches a team of agents to hunt for bugs. This past month, the 1 million token context window actually became available generally for both Claude Opus and Claude Sonnet. Why cominators Carrie Tan wrote, "I underestimated how powerful Opus 4.6 with 1 million tokens is. Even last year, we were absolutely hitting context limit problems constantly. 1 million tokens mean you can do much more complex analysis entirely in context. Claude code is so much better." Meanwhile, over in the main Cloud app, Claude can now build interactive charts and diagrams. And we also got upgrades for Claude for Excel and Claude for PowerPoint, including the ability to integrate them together. They write, "When you've got more than one file open, Claude shares the full context of your conversation between them. Pull data from spreadsheets, build out tables, and update a deck without reexplaining a step. Skills are also now available inside the Excel and PowerPoint add-ins. Meaning that when your team has some standard workflow, like running a variance analysis or building a client deck, you can save that as a skill. Other people in your organization can then run it in one click from their own sidebar. For my free users out there, memory and connectors are now both available on the free plan. And we also got a whole plug-in marketplace for enterprise customers. One implication of this is that it's pushing a lot of people to think differently about just how productive a small team can be. Ethan Mollik again writes, "The ability of the Claude team to learn from things like OpenClaw and implement features like this on a daily basis is a very strong argument that for AI powered coding teams, a very different software development process is possible with large strategic implications. Meanwhile, for others, I think for most of us though, it's just a big old checklist of things we need to try. So to quickly sum up, we've got computer use, which allows Claude to control your computer doing things even in non-native apps. Dispatch, which allows you to initiate sessions and orchestrate tasks from cloud co-work from your phone. Remote control, which allows you to interact with cloud code while on the go. Channels, which allow you to port events impacting your software automatically into cloud code via channels like Telegram and Discord. And scheduled tasks, which allow you to have things happening in Co-work or Cloud Code on a scheduled basis, either locally or in the cloud. Now, for those of you who want to keep track of this simply, you can go find this checklist with links to information about all these features at play.brief.com. Ideally brief.ai. So many episodes now have these little companion experiences that I'm going to just be putting them there. Again, that's play.brief.ai. For now, however, that is going to do it for this episode of the AI Daily Brief. Appreciate you listening or watching as always and go have some fun with Claude. Peace.
+
+--- With timestamps ---
+
+[00:00] Boy, it sure seems like Anthropic did
+[00:02] not like everyone talking about Open
+[00:04] Claw instead of Claude Code because over
+[00:06] the last month they have shipped an
+[00:07] absolute boatload of features. All of
+[00:09] which we are talking about here. Welcome
+[00:12] back to the AI daily brief. Every other
+[00:14] day or so for the last month, there has
+[00:16] been some part of the headlines where
+[00:18] Claude launched some new feature or
+[00:20] upgrade for Claude code or co-worker
+[00:22] some other part of the Claude ecosystem.
+[00:24] And at this point, it has officially
+[00:25] gotten to the point where we needed to
+[00:26] do a full-on retrospective of everything
+[00:28] that has launched over the last month or
+[00:30] so to help you guys map out and figure
+[00:32] out how to use all of these big new
+[00:33] upgrades. Now, of course, this comes in
+[00:36] a specific lineage of updates. Step one
+[00:38] was the models. The Opus 45, GPT52
+[00:41] generation of models that came about at
+[00:43] the end of last year catapulted us into
+[00:45] a new capability era that Opus 46, GPT53
+[00:48] codec, and GPT54 have continued. Step
+[00:51] two, of course, was the unlock that
+[00:53] OpenClaw represented. It was a harness
+[00:55] that brought with it a whole bunch of
+[00:56] concepts and user interaction patterns
+[00:58] and behavior sets that made building
+[01:00] your own agents and agent teams all of a
+[01:02] sudden more viable and more realistic.
+[01:04] Step three has been the absolute race
+[01:06] ever since OpenClaw blew up to bring
+[01:08] those types of features to all the other
+[01:10] AI products. This clawification trend
+[01:12] has been one of the big themes ever
+[01:14] since OpenClaw launched. Now, when
+[01:16] OpenClaw's founder Peter Steinberger was
+[01:18] hired by OpenAI, some people jumped in
+[01:20] to say that Anthropic had made a big
+[01:22] goof by not bringing him over there.
+[01:24] Others response was a little bit closer
+[01:26] to I don't know, man. Let's let him cook
+[01:28] and see what happens. And certainly, you
+[01:30] have to think that the people saying,
+[01:31] "Let them cook are feeling pretty
+[01:33] vindicated right now." The clawification
+[01:36] of Claude, maybe we'll call it the
+[01:38] Claudification, kicked off at the end of
+[01:39] February with remote control. Remote
+[01:42] control was a way to bring claw code
+[01:43] specifically to your mobile experience.
+[01:46] Both the mobile capabilities of OpenClaw
+[01:48] as well as its ability to bridge between
+[01:50] different types of devices were some of
+[01:52] the parts of that system that people
+[01:53] were most excited about. And so it
+[01:54] wasn't all that surprising to see Claude
+[01:56] code jump on that first. What's more,
+[01:58] even outside of OpenClaw, this is such a
+[02:00] natural extension of the product that
+[02:01] you got to imagine that this would have
+[02:03] happened anyway. The way that remote
+[02:04] control works is that you start your
+[02:06] task in your Claude code terminal
+[02:08] session and then you can pick it up and
+[02:09] continue working from your phone. Now,
+[02:11] there's nothing happening in the cloud
+[02:13] here. Basically, when you've started
+[02:14] that remote control session on your
+[02:16] machine, Claude is going to continue to
+[02:18] run locally that entire time. That gives
+[02:20] remote control the ability to use your
+[02:22] full environment, including your file
+[02:24] system, MCP servers, tools, and product
+[02:26] configurations, and you can go back and
+[02:28] forth interchangeably. In the docs, they
+[02:29] write, "Unlike cloud code on the web,
+[02:32] which runs on cloud infrastructure,
+[02:34] remote control sessions run directly on
+[02:35] your machine and interact with your
+[02:37] local file system. The web and mobile
+[02:39] interfaces are just a window into that
+[02:41] local session. There are three ways to
+[02:43] start a remote control session. You can
+[02:45] start a dedicated remote control server
+[02:47] by navigating to the specific project
+[02:49] directory you want to work on and
+[02:51] running the cloud remote control
+[02:52] command. From there, Claude will display
+[02:54] a session URL that you can use to
+[02:55] connect from another device. You can
+[02:57] also press your spacebar to get a QR
+[02:59] code that you can access from your
+[03:00] phone. An interactive session basically
+[03:03] means that you have your option of going
+[03:04] back between using terminal as you
+[03:06] normally would with cloud code or using
+[03:07] the remote session. So basically the
+[03:09] difference with server mode is that on
+[03:11] server mode you're just using your
+[03:12] mobile device to control cloud code
+[03:14] whereas interactive you can go back and
+[03:16] forth. Finally, if you are already in a
+[03:18] cloud code session and you want to move
+[03:20] to remote, you can use the / remote
+[03:22] control command or SLRC. And this is
+[03:24] going to once again display either a URL
+[03:26] or QR code that you can use to connect
+[03:27] from another device. First impressions
+[03:29] were positive. Prominent solopreneur
+[03:31] Peter Levels wrote, "Cloud remote
+[03:33] control is extremely nice. Can edit on
+[03:35] Mac OS or iOS and cloud app on my
+[03:37] production server from anywhere." He
+[03:39] basically compared it favorably to an
+[03:40] SSH session, which would be another more
+[03:43] technically complex way to log into your
+[03:44] local device to control it while on the
+[03:46] go. Roman Mirzoan writes, "Yesterday, I
+[03:49] fixed two bugs and then released an app
+[03:50] update to the app store without touching
+[03:52] my laptop and having a walk for half a
+[03:53] day. Now, as time has gone on, people
+[03:55] started to realize that this was a
+[03:57] bigger shift than they might have
+[03:58] originally thought." Gage Saluda writes,
+[04:00] "Cloud code remote control just clicked
+[04:02] for me. You kick off a task in the
+[04:04] terminal, then pick it up from your
+[04:05] phone on a walk. That's not a
+[04:07] productivity feature. That's a
+[04:09] relationship shift. You stop thinking of
+[04:11] it as a tool you operate and start
+[04:12] thinking of it as something you delegate
+[04:14] to and check in with. Different mental
+[04:16] model entirely. I think that that's
+[04:18] right. And I think that most people are
+[04:20] still just slowly coming to that
+[04:22] realization because it's one you kind of
+[04:23] have to live, not just hear about. Next
+[04:26] up, a couple weeks later, we got a
+[04:27] different way to interact with Claude
+[04:29] from afar. This feature was for Claude
+[04:31] Cowork and called Dispatch. Anthropics
+[04:34] Felix Reeseberg writes, "We're shipping
+[04:36] a new feature in Claude Co-work as a
+[04:38] research preview that I'm excited about.
+[04:39] Dispatch, one persistent conversation
+[04:42] with Claude that runs on your computer.
+[04:44] Message it from your phone. Come back to
+[04:45] finished work." Felix then went on to
+[04:47] explain a little bit further. Because
+[04:49] it's co-work, he writes, "Claude runs
+[04:50] code in a sandbox on your machine. Your
+[04:52] files stay local. You approve what
+[04:54] Claude touches before it acts. It feels
+[04:56] pretty magical to give Claude a mission
+[04:58] on my computer and get occasional
+[04:59] updates like creating reports from
+[05:01] internal dashboards or finding me a
+[05:02] better seat on my next flight.
+[05:03] Everything Claude can do on your
+[05:05] computer, files, browsers, tools are
+[05:07] reachable from wherever you are. Now,
+[05:09] one constraint Felix writes is that your
+[05:10] desktop has to be running. Claude Code
+[05:12] PM Noah Zebin also talked about
+[05:14] dispatch. Coolest abilities he writes.
+[05:17] One, send files from local machines so
+[05:19] you can work on PowerPoints on the go.
+[05:20] Two, spawn subessions on desktop that
+[05:22] you can drill down on. Three, chat about
+[05:24] any local co-work session. In the docs,
+[05:27] they explain a little bit more about how
+[05:28] this works. Enthropic writes, "Instead
+[05:30] of starting a new session for each task,
+[05:32] you have a single persistent thread with
+[05:34] Claude. This thread doesn't reset.
+[05:36] Claude retains context from previous
+[05:38] tasks, so you can pick up where you left
+[05:39] off. Message Claude from your phone on
+[05:41] the way to work, then follow up from
+[05:43] your desktop when you sit down. It's the
+[05:44] same conversation, same context wherever
+[05:46] you reach it. When you assign a task,
+[05:48] Claude figures out what kind of work is
+[05:50] needed and spins up the right session.
+[05:52] Development tasks run in Claude code.
+[05:54] Knowledge work runs in co-work. These
+[05:56] sessions appear in their respective
+[05:57] sidebars. You can click into any session
+[05:59] for details or wait for the result in
+[06:00] the thread. Claude messages you the
+[06:02] outcome, a spreadsheet, a memo, a
+[06:04] comparison table, a pull request rather
+[06:06] than showing you every step of the
+[06:07] process. You'll get a push notification
+[06:09] on your phone when a task is done or
+[06:11] when Claude needs your go-ahad. Now,
+[06:13] like with remote control, the power
+[06:15] users who really started to dig into
+[06:16] dispatch found that it was not just a
+[06:18] shift in scale but a shift in kind.
+[06:20] Paval Huran writes, "Dispatch didn't
+[06:22] fill my dead time. It changed how I
+[06:25] structured my day. I went to the jump
+[06:26] arena with my kid because I could direct
+[06:28] work async from the sidelines. The model
+[06:30] isn't grind during gaps. It's design
+[06:32] your day differently because the work
+[06:34] runs without you sitting in front of
+[06:35] it." He also wrote an article after 48
+[06:37] hours of experimenting. And one thing
+[06:39] that he points out is that dispatch is
+[06:41] not clawed chat on your phone. Dispatch,
+[06:43] he writes, is an orchestrator. From a
+[06:45] single conversation on your phone, you
+[06:47] spawn and manage multiple co-work task
+[06:49] sessions running simultaneously on your
+[06:50] desktop. Each session runs
+[06:52] independently. Its own context, its own
+[06:54] file access, its own connectors. Your
+[06:56] phone is the command chair. Your desktop
+[06:58] does the heavy lifting. Think of the
+[07:00] difference between texting someone a
+[07:01] request and sitting in a control room
+[07:03] with multiple screens. Each screen is a
+[07:05] task session running on your desktop.
+[07:07] Your phone directs them all from one
+[07:08] conversation thread. So, what are the
+[07:10] types of tasks he did? During morning
+[07:12] coffee at home, Pavle started with pull
+[07:14] the latest competitor updates and
+[07:15] summarize changes since last week as
+[07:17] well as draft the sponsor collaboration
+[07:19] page using notion database. While he was
+[07:21] walking the dog, he checked task one,
+[07:23] the competitor summary. He followed up
+[07:25] with add a comparison table against our
+[07:27] current road map. The redirect he points
+[07:29] out took 10 seconds one-handed. While in
+[07:31] the passenger seat with his wife
+[07:32] driving, he reviewed the new sponsor
+[07:34] notion page. Too formal, he said. Pull
+[07:36] the engagement metrics from the last
+[07:38] campaign and make the value proposition
+[07:39] sharper. He also started task three gap
+[07:42] analysis on the article draft. While at
+[07:44] the jump arena with his kids, he started
+[07:46] working on infographic iterations. Move
+[07:48] the icons left, changed the color of the
+[07:50] third section. Finally, when back at his
+[07:52] desk, everything was waiting and he
+[07:54] reviewed, adjusted, and shipped.
+[07:55] Ultimately, he writes the actual
+[07:57] direction time across all of these gaps
+[07:58] was maybe 25 minutes total. The clawed
+[08:01] execution running in parallel was 3 plus
+[08:02] hours of work. Ethan Mollik also had a
+[08:05] positive experience with dispatch. He
+[08:06] writes, "After using it a bit, Claude
+[08:08] Co-work Dispatch covers 90% of what I
+[08:10] was trying to use OpenClaw for, but
+[08:12] feels far less likely to upload my
+[08:14] entire drive to a malware site. What I
+[08:16] like better," he writes, "Easy, much
+[08:18] more stable, and safe. Existing
+[08:19] connectors mean better integration with
+[08:20] Gmail, browsers, etc. Very good tool
+[08:22] use. What's missing for me? The ability
+[08:25] to invite Claude to any channel, the
+[08:26] heartbeat and proactivity, and the
+[08:28] multiple sessions." Now, if that was
+[08:30] all, that would already be a huge amount
+[08:32] of new interactive modalities to ingest
+[08:35] and change how we were interacting with
+[08:36] Claude Co-work and Claude Code. But we
+[08:38] are not done yet. Next up, we got Claude
+[08:41] Code channels, which is basically Claude
+[08:43] Code's answer to the OpenClaw
+[08:44] interaction of talking to it via
+[08:46] Telegram. Anthropics Tariq writes, "We
+[08:49] just released Claude Code channels,
+[08:50] which allows you to control your Claude
+[08:51] code session through select MCPs,
+[08:53] starting with Telegram and Discord." In
+[08:55] the docs, they write, "A channel is an
+[08:58] MCP server that pushes events into your
+[09:00] running Claude code session, so Claude
+[09:02] can react to things that happen while
+[09:04] you're not at the terminal. Channels can
+[09:06] be two-way. Claude reads the event and
+[09:08] replies back through the same channel,
+[09:10] like a chat bridge. Unlike integrations
+[09:12] that spawn a fresh cloud session or wait
+[09:14] to be pulled, the event arrives in the
+[09:15] session you already have open. When
+[09:17] Larry Vez asked, "How is this better
+[09:20] than Dispatch or it's just an
+[09:21] alternative to dispatch?" Tariq writes,
+[09:24] "We want to give you a lot of different
+[09:25] options on how you talk to Claude
+[09:26] remotely. Channels is more focused on
+[09:28] devs who want something hackable." Now,
+[09:30] just to add a little bit of clarity
+[09:32] here, we see Telegram and we just think
+[09:34] about ourselves chatting with Claude
+[09:35] code. But the whole idea of channels is
+[09:37] that it's not just chats from you. Yes,
+[09:40] that is one type of interaction, but you
+[09:42] can also connect other services like for
+[09:44] example Sentry Monitoring directly to
+[09:46] Claude code via those channels in
+[09:48] Telegram or Discord so that Claude can
+[09:50] react even while you're not there. Damen
+[09:53] Galarza writes, "Instead of Claude
+[09:55] pulling data via tool calls, channels
+[09:57] push events into the session from the
+[09:58] outside. CI failures, web hook payloads,
+[10:01] monitoring alerts, chat messages from
+[10:02] Telegram or Discord, anything that can
+[10:04] send and post can now reach your running
+[10:06] session. And it definitely seems like of
+[10:08] these channels is on the farthest end of
+[10:10] the technical spectrum. Dario on Twitter
+[10:12] writes, "If you missed it, channels are
+[10:14] essentially MCP servers that push events
+[10:16] into a Cloud Code session, letting
+[10:18] Claude react to the outside world beyond
+[10:19] the terminal. This was the exact missing
+[10:21] piece I needed for an idea I've been
+[10:23] brewing. My goal was twofold. Build a
+[10:25] custom orchestration system to spawn
+[10:27] Claude Code sessions anywhere, Docker,
+[10:29] VMs, Pods, or locally on my MacBook. And
+[10:31] then create a custom app across Mac OS,
+[10:33] iOS, and iPad OS to control these agents
+[10:35] on the go. Fast forward to today, just 4
+[10:38] days after channels dropped and the iOS
+[10:40] app is already up and running. I have so
+[10:42] many more ideas on how to tweak and
+[10:43] expand this to fit my exact workflow.
+[10:46] Now, at this point, you'd be forgiven
+[10:47] for getting a little confused cuz we're
+[10:48] talking about all these new ways to use
+[10:50] Cloud Co-work and Cloud Code remotely,
+[10:52] all with slight variations on the theme.
+[10:54] This is kind of why you're going to want
+[10:55] to go hack at all of these to understand
+[10:57] how they fit your own use cases. But I
+[10:59] think one big takeaway is an aggregate
+[11:02] massive shift in how Anthropic is
+[11:04] imagining how you're going to be working
+[11:06] with Claude in the future. And
+[11:08] effectively the idea is an always on
+[11:10] contextmaintaining
+[11:12] persistent interactive orchestration
+[11:14] experience where work is happening all
+[11:16] the time even when you're not doing it
+[11:18] with the right way to interact with that
+[11:20] work from wherever you are and whatever
+[11:22] your use case is. In addition to those
+[11:24] features, we also saw Enthropic go after
+[11:26] parody with OpenClaw when it came to
+[11:28] scheduling tasks. At the end of
+[11:30] February, co-work got scheduled tasks.
+[11:32] Think a morning briefing, weekly
+[11:33] spreadsheet updates, or Friday team
+[11:35] presentations. Then about a week and a
+[11:37] half later, we got local scheduled tasks
+[11:39] in Claude Code Desktop. Tariq said that
+[11:41] his favorite use case is to ask it to
+[11:42] check error logs every few hours and
+[11:44] create PRs for any actionable errors.
+[11:46] Now, because these tasks are local, they
+[11:48] run as long as your computer is awake.
+[11:50] But then a couple weeks after that, we
+[11:52] got recurring cloud-based tasks. Noah's
+[11:55] Webin again writes, "Set a repo or
+[11:57] repos, a schedule, and a prompt. Claude
+[11:59] runs it via Cloud Infra on your
+[12:01] schedule, so you don't need to keep
+[12:02] cloud code running on your local
+[12:04] machine." He said that so far the Cloud
+[12:06] Code team had found it useful for things
+[12:07] like sweeping through Open PRs, building
+[12:09] features from approved issues, analyzing
+[12:12] CI failures overnight, and syncing docs
+[12:14] based on newly merged PRs. And if you're
+[12:16] wondering if this had to do with
+[12:17] OpenClaw, in another tweet, Noah said,
+[12:20] "Some might say I built this because I
+[12:22] couldn't figure out how to set up my Mac
+[12:23] Mini." And yet, in terms of sheer
+[12:26] consumer excitement, all of these were
+[12:28] just prelude to what was announced on
+[12:30] Monday night. The official Claude
+[12:31] account on Twitter writes, "You can now
+[12:33] enable Claude to use your computer to
+[12:35] complete tasks. It opens your app,
+[12:38] navigates your browser, fills in
+[12:40] spreadsheets, anything you do sitting at
+[12:41] your desk." About 16 hours after that
+[12:44] tweet went live, 40 million people have
+[12:47] viewed it. 62,000 people have bookmarked
+[12:50] it, and the chatter is overwhelming.
+[12:52] Anthropics Felix Reeseberg writes,
+[12:54] "Today, we're releasing a feature that
+[12:56] allows Claude to control your computer,
+[12:57] mouse, keyboard, and screen, giving it
+[12:59] the ability to use any app. Now, he also
+[13:01] points out that these features shouldn't
+[13:03] be viewed in isolation." Felix writes,
+[13:05] "I believe this is especially useful if
+[13:06] used with Dispatch, which allows you to
+[13:08] remotely control Claude on your computer
+[13:10] while you're away." In their
+[13:11] announcement blog, Anthropic writes,
+[13:13] "When Claude doesn't have access to the
+[13:15] tools it needs, it will point, click,
+[13:16] and navigate what's on your screen to
+[13:17] perform the task itself. It can open
+[13:20] files, use the browser, and run dev
+[13:21] tools automatically with no setup
+[13:23] required. When using your computer, they
+[13:25] say, Claude will reach for the most
+[13:26] precise tool first, starting with
+[13:28] existing connectors to services like
+[13:30] Slack or Google Calendar. However, when
+[13:32] Claude finds that there is not a
+[13:33] connector set up, it can control
+[13:35] browser, mouse, keyboard, and screen to
+[13:36] complete different tasks." Now, as you
+[13:38] might be thinking right now, this kind
+[13:40] of supercharges those features like
+[13:41] dispatch. Anthropic agrees, writing,
+[13:44] "With dispatch, you can tell Claude to
+[13:46] automatically check your emails every
+[13:47] morning or pull some metrics every week
+[13:49] or spin up a Claude co-worker Claude
+[13:51] code session for a report or a pull
+[13:52] request. Claude's new computer use
+[13:54] capability makes dispatch even more
+[13:55] helpful. Now, Claude can use your
+[13:57] computer on your behalf while you're
+[13:58] away. for example, to create a morning
+[14:00] briefing while you're on the train, make
+[14:02] changes in your IDE, run tests, and put
+[14:04] up a PR or keep your 3D printing project
+[14:07] moving according to your initial plan. A
+[14:10] lot of the initial response was fairly
+[14:12] breathless. Sui Berabo writes, "Claude
+[14:15] can now control your entire computer
+[14:16] with one prompt forever. You tell it,
+[14:18] scan my email every morning once, and it
+[14:20] just does it forever. It can also open
+[14:22] apps, edit spreadsheets, move files,
+[14:24] batch process 150 photos in Photoshop,
+[14:26] export PDFs, all of it." You can also
+[14:28] start a task from your phone. go to
+[14:29] dinner, come back to finish work like
+[14:30] nothing happened. Enthropic is giving us
+[14:32] the full desktop agent that uses the
+[14:34] actual screen, mouse, and keyboard. Not
+[14:36] a sandbox, not a simulation. You're real
+[14:38] Jarvis. This is absolutely insane. The
+[14:41] LLM era is over. Gagan again, who we
+[14:44] heard from earlier, writes, "Been
+[14:45] testing it in co-work mode. The thing
+[14:47] that gets me isn't the automation. It's
+[14:49] that it figures out what you actually
+[14:51] meant when you said handle this for me.
+[14:53] That's the shift." Mila writes, "Claude
+[14:55] is no longer just a tool that uses the
+[14:57] computer. It operates inside it as a
+[14:59] true execution layer. It can replicate
+[15:01] everything a human does. Mouse
+[15:03] movements, keyboard input, screen
+[15:04] interaction. It can open any
+[15:06] application, navigate through it, and
+[15:07] produce the exact output you want. This
+[15:09] goes beyond APIs. This is full real
+[15:11] world system control, which means from
+[15:13] anywhere you can control your devices
+[15:15] and automate workflows end to end. In
+[15:17] terms of examples, a lot of people
+[15:18] started fairly simply. Gavin PCEL
+[15:20] writes, "Okay, this is pretty cool. Just
+[15:22] had to grab a photo off my desktop from
+[15:24] afar. Dumb and simple, yes, but done in
+[15:26] natural language with no weird setup.
+[15:28] Daniel Son writes, "I don't like posting
+[15:30] about anything I haven't tried myself.
+[15:32] So, I saw the announcement that Claude
+[15:33] dispatch now controls your computer and
+[15:35] I simply asked it to open Twitter and
+[15:37] like a Claude post." Done. This is
+[15:39] getting more interesting and more
+[15:40] dangerous by the minute. Adichth writes,
+[15:43] "This is the first time a mainstream AI
+[15:45] product actually behaves like a junior
+[15:46] ops hire that lives on your laptop." And
+[15:49] Peter Gustv points out that this could
+[15:51] be especially valuable for corporates
+[15:53] stuck in legacy software that isn't
+[15:55] going to port into AI ecosystems
+[15:56] natively. He writes, "This is another
+[15:59] domino to fall. Computer use of
+[16:01] arbitrary apps, not just your browser.
+[16:03] This is a big deal for a lot of
+[16:04] corporates who have custom crappy apps
+[16:06] from 20 or 30 years ago." And summing it
+[16:08] all up, Box's Aaron Levy argues that
+[16:10] this is, to put it simply, a big deal.
+[16:12] In a long post on Twitter, he writes,
+[16:15] "Computer use and the ability to write
+[16:16] and run code on the fly are the ultimate
+[16:18] primitives for agents to be able to take
+[16:20] on more and more tasks and knowledge
+[16:21] work. Most work requires hopping between
+[16:23] multiple applications and working with
+[16:25] broad sets of data in a workflow. And
+[16:27] agents will need to be able to traverse
+[16:29] these systems to be able to effectively
+[16:30] automate any real work in the
+[16:31] enterprise. Now, we will have agents
+[16:33] that are the equivalent of having an
+[16:35] expert programmer or any number of them
+[16:37] that can write code or use any API to
+[16:39] automate whatever work you're doing.
+[16:41] Agents will have access to either a
+[16:42] user's computer and resources or their
+[16:44] own sandbox to operate in and be able to
+[16:46] pull together the tools necessary to
+[16:48] perform the task at hand. This opens up
+[16:50] the broadest set of agentic use cases.
+[16:52] To be sure, there are going to be
+[16:54] various hurdles around security,
+[16:55] permissions and access control, identity
+[16:57] challenges, and more. For instance,
+[16:59] should the agent always act on behalf of
+[17:00] the user or should they have their own
+[17:02] identity and limited set of access
+[17:03] rights? How do you triage security
+[17:05] events when historically volume of
+[17:07] activity on a system is no longer a
+[17:09] reliable signal of a security issue? How
+[17:11] do you ensure the agent isn't going
+[17:12] rogue or getting prompt injected to do
+[17:14] something risky? All problems that need
+[17:16] to get figured out. Then there's also
+[17:17] lots of work needed to ensure software
+[17:19] is set up to enable agents to operate
+[17:21] with their tools in a headless fashion.
+[17:22] This will be an uncomfortable reality
+[17:24] for some incumbents and equally a
+[17:26] welcome one for tools that historically
+[17:27] have operated seamlessly via APIs and
+[17:29] have business models to support this.
+[17:31] Lots of change coming in the world of
+[17:33] work agents and it's going to get pretty
+[17:35] wild. Now, we're already going pretty
+[17:37] long, but I want to point out that this
+[17:39] is not the end of what has been pushed
+[17:41] over the last month. Running quickly
+[17:42] through some of the second tier and
+[17:44] quality of life type of announcements.
+[17:46] One big complaint that lots of folks
+[17:47] have had about co-work that there wasn't
+[17:49] a conception of a project. Now there is,
+[17:52] which will make a huge difference for
+[17:53] day-to-day functionality. Also in March,
+[17:56] the Claude code team launched code
+[17:57] review where, as they put it, Claude
+[17:59] dispatches a team of agents to hunt for
+[18:01] bugs. This past month, the 1 million
+[18:02] token context window actually became
+[18:04] available generally for both Claude Opus
+[18:06] and Claude Sonnet. Why cominators Carrie
+[18:08] Tan wrote, "I underestimated how
+[18:10] powerful Opus 4.6 with 1 million tokens
+[18:12] is. Even last year, we were absolutely
+[18:15] hitting context limit problems
+[18:16] constantly. 1 million tokens mean you
+[18:18] can do much more complex analysis
+[18:19] entirely in context. Claude code is so
+[18:22] much better." Meanwhile, over in the
+[18:24] main Cloud app, Claude can now build
+[18:26] interactive charts and diagrams. And we
+[18:28] also got upgrades for Claude for Excel
+[18:30] and Claude for PowerPoint, including the
+[18:32] ability to integrate them together. They
+[18:34] write, "When you've got more than one
+[18:36] file open, Claude shares the full
+[18:37] context of your conversation between
+[18:39] them. Pull data from spreadsheets, build
+[18:40] out tables, and update a deck without
+[18:42] reexplaining a step. Skills are also now
+[18:44] available inside the Excel and
+[18:46] PowerPoint add-ins. Meaning that when
+[18:48] your team has some standard workflow,
+[18:50] like running a variance analysis or
+[18:52] building a client deck, you can save
+[18:53] that as a skill. Other people in your
+[18:55] organization can then run it in one
+[18:57] click from their own sidebar. For my
+[18:59] free users out there, memory and
+[19:00] connectors are now both available on the
+[19:02] free plan. And we also got a whole
+[19:04] plug-in marketplace for enterprise
+[19:05] customers. One implication of this is
+[19:08] that it's pushing a lot of people to
+[19:09] think differently about just how
+[19:10] productive a small team can be. Ethan
+[19:13] Mollik again writes, "The ability of the
+[19:15] Claude team to learn from things like
+[19:16] OpenClaw and implement features like
+[19:18] this on a daily basis is a very strong
+[19:20] argument that for AI powered coding
+[19:22] teams, a very different software
+[19:24] development process is possible with
+[19:26] large strategic implications. Meanwhile,
+[19:28] for others, I think for most of us
+[19:30] though, it's just a big old checklist of
+[19:32] things we need to try. So to quickly sum
+[19:35] up, we've got computer use, which allows
+[19:36] Claude to control your computer doing
+[19:38] things even in non-native apps.
+[19:40] Dispatch, which allows you to initiate
+[19:42] sessions and orchestrate tasks from
+[19:43] cloud co-work from your phone. Remote
+[19:45] control, which allows you to interact
+[19:47] with cloud code while on the go.
+[19:48] Channels, which allow you to port events
+[19:50] impacting your software automatically
+[19:52] into cloud code via channels like
+[19:53] Telegram and Discord. And scheduled
+[19:55] tasks, which allow you to have things
+[19:57] happening in Co-work or Cloud Code on a
+[19:59] scheduled basis, either locally or in
+[20:01] the cloud. Now, for those of you who
+[20:03] want to keep track of this simply, you
+[20:04] can go find this checklist with links to
+[20:07] information about all these features at
+[20:08] play.brief.com. Ideally brief.ai. So
+[20:11] many episodes now have these little
+[20:12] companion experiences that I'm going to
+[20:14] just be putting them there. Again,
+[20:15] that's play.brief.ai.
+[20:17] For now, however, that is going to do it
+[20:19] for this episode of the AI Daily Brief.
+[20:21] Appreciate you listening or watching as
+[20:22] always and go have some fun with Claude.
+[20:24] Peace.

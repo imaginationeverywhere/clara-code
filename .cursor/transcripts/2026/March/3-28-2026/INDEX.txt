@@ -1,0 +1,23 @@
+YouTube transcript export — 2026-03-28
+
+Each video has:
+  - <VIDEO_ID>.en.srt — English auto-captions (SubRip)
+  - <VIDEO_ID>.txt   — plain text (merged cues)
+  - yJlP9iqStSE: also yJlP9iqStSE.en-orig.srt (same as .en.srt), yJlP9iqStSE.es.txt (Spanish translation of cleaned English)
+
+Source URLs:
+  -73ERRlbDn0  https://youtu.be/-73ERRlbDn0
+  6pjETAf2XhU  https://youtu.be/6pjETAf2XhU
+  vizgFWixquE  https://youtu.be/vizgFWixquE
+  Qt3zMBH-FNg  https://youtu.be/Qt3zMBH-FNg
+  yJlP9iqStSE  https://youtu.be/yJlP9iqStSE
+  bjWPni3LbEk  https://youtu.be/bjWPni3LbEk
+  eRS7w-L-ypQ  https://youtu.be/eRS7w-L-ypQ
+  Oz895snZVrg  https://youtu.be/Oz895snZVrg
+
+Fetch: yt-dlp with youtube:player_client=android, --write-auto-sub --sub-lang en --convert-subs srt.
+
+Notes (yJlP9iqStSE):
+  - Spoken track is English; en-orig captions = English. yJlP9iqStSE.txt is lightly edited (brand names, duplicate CTA, ending).
+  - Spanish in yJlP9iqStSE.es.txt is a human translation/summary-style rendition (not timed subtitles).
+  - YouTube returned HTTP 429 when fetching ja / zh-Hans auto-caps the same session; re-run yt-dlp later for other languages if needed.

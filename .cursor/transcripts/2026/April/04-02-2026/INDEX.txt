@@ -1,0 +1,15 @@
+YouTube transcripts — 2026-04-02
+
+Note: The fourth link you shared is the same video as uhMCy25NBfw (duplicate URL with different share params).
+
+- Claude Code + GoHighLevel MCP Setup in 10 Minutes
+  https://youtu.be/Yu50M9al2JY
+  Files: Yu50M9al2JY.en.srt (timed), Yu50M9al2JY.transcript.txt (plain text)
+
+- Anthropic's New Claude CONWAY Is Unlike Any AI Before
+  https://youtu.be/x2l7W9aTc5k
+  Files: x2l7W9aTc5k.en.srt (timed), x2l7W9aTc5k.transcript.txt (plain text)
+
+- Stop Using Claude Code in Terminal (It's Holding You Back)
+  https://youtu.be/uhMCy25NBfw
+  Files: uhMCy25NBfw.en.srt (timed), uhMCy25NBfw.transcript.txt (plain text)

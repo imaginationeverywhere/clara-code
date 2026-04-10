@@ -1,0 +1,304 @@
+Source: https://youtu.be/LrgfmZkl3nc
+Title: Claude Code Just Dropped Memory 2.0
+Fetched: 2026-03-25T20:03:56.459Z
+Segments: 294
+
+--- Plain text ---
+So, Enthropic just silently released this feature called AutoDream. And based on people's discussions, it basically runs a sub agent periodically that consolidates Claude's memory files for better long-term storage. And I saw this tweet from Anthony here that said, "It's pretty crazy because that's basically how humans actually store long-term memories is by sleeping." So, you can see right here in this project, I was playing around with the autodream. And so, because this is still being rolled out and it's like an experimental feature, I tried running this right here in my project and it is working. As you can see, it's dreaming because right here in my status line, you can see that it says dreaming. And then I basically go down and I enter it to view the tasks. And you can see what it's doing. It starts off by saying, "Let me search for more user feedback, preferences, and new project relevant information across recent sessions. And it's basically looked through all of our messages and all of our different things that we've asked it to do." And then it gets to phase three where it's consolidating stuff. So here are all of the key findings that it needs to update the memory files with since the last time it ran. And you can see that this is a pretty comprehensive task. It's running for almost 10 minutes now. It's reviewed 13 sessions and it's touching different memory files. And basically the whole point of this is to be an automatic background cleanup and organization system for your cloud memories so that each time you start up a new session, it feels sharp instead of kind of fuzzy or cluttered. Now cloud code does already have automemory which lets it remember things about your project in a memory.mmd file. And that usually gets injected at the beginning of your sessions and your conversations. And that's what allows Cloud Code currently to feel like it understands a little bit more contextually about what's going on. But the Autodream is a little bit different because rather than just kind of like flooding in some information, it's consistently compacting and pruning and making that file better and better. It's keeping everything feeling a lot more fresh because it basically takes all of this different information that goes into your memory MD file. When it does its Audream, it merges them, it prunes them, it refreshes them, and it compacts things. And then all of the different memory files are a lot cleaner. So, if I switch back into this project, you can see that it improved five memories. That took about 10 minutes. It improved all of these different MD files, which the project will now be able to use, and they're a lot more clean and up-to-date. And so, the way that you get here is you go to /memory. You can see right here we have edit clawed memory files. And when you open that up, you'll notice right here we see Autream on. This was last ran 11 minutes ago, as you guys just saw. And we can use /dream to run it. Now, when you open this up, this will be off. All you have to do is hover over it, hit enter, and it will change to being on. And by default, your auto memory for your claude will probably already be on as well. And what you'll notice about the memory is that it's turned on globally across all of your different projects, but each autodream has its own files that it plays with. So in this other session, you can see that autodream is on. It last ran 11 minutes ago. And now if I go over to my Herk 2 project, which I've never turned on the Autodream feature, and I go ahead and do memory, the Autodream feature is already turned on, but you can see that it says that it has never been ran yet. And of course, the memory files are different because in here I've got all these different files. And then back in this other project, which was kind of more of a demo, you can see that we only have these main three, which are project, user, and the automemory folder. So now, if I'm in my Herk 2 project, and I know that my autodream has been turned on, it says that I can use /dream to run. So if I come in here and I do /dream, what's going to happen? It basically just says unknown skill and we don't see anything going on. So right now you can kind of invoke this using natural language even though claude code itself might be a little confused about what you're trying to do. So I'm just going to say run your autodream and we'll see what it does with that information. So right now it says I don't have the autodutream skill and it's kind of confused but right here you can see in the status line we do see that it's dreaming. And if I go down here and I enter the tasks we can see that it's running this stream consolidation. It's going to orient itself with the environment and then we're going to see the list of I'm grabbing this file. I'm looking at these sessions and right now because this is a bigger project for me. You can see that it's reviewing 285 sessions. So this will probably take longer than 8 to 10 minutes. So while we're letting this run, let's talk a little bit more about why this matters. So obviously this just came out and I haven't had time to really really test it and see if it's worth it or not. But based on what I'm seeing, I definitely think it is. And let's talk about why that is. So the first big point is that you have less repetition. Even with auto memory, I still feel like sometimes I'm reexplaining things or I'm trying to, you know, carry over context from one session to another. And less repetition is obviously a good thing. Another thing that we have that kind of floats behind the scenes is less bloat because part of the system is that it's compacting and pruning stuff. Pruning basically just meaning like eliminating things that are unnecessary, trimming the fat. And when we're getting rid of all of that excess fat and excess tokens, it obviously helps us with our bloat and helps us with our context management. We also have better recall because it's getting rid of things that we don't actually need. It's easier to find things. So, just picture an example of like, you know, you've got a 100 different balls in a ball pit and you're looking for one pink one out of all the blue. Well, what if we take away half of the blue? It's going to be easier to find that pink. And then what I think is really cool is it's basically just like sleep. So, whatever cadence that this runs on, which we'll talk about a little bit later, when it hits that point, it basically just resets. So, it's like a checkpoint. Every time you get to a new checkpoint, you're basically saving yourself. So, before it would have all of these different files, right? you'd have these huge bloated context files, MD files, but now Autodream takes all of that and just keeps the important information that you need, which may only be, you know, a couple different bullet points rather than having hundreds of lines. So, the way that it actually works is step one, once it's activated, it will gather session info. After that, it will read the current existing memory files and then it will load it into a sub agent which does the actual dream prompt. So, I don't know for certain, but I'm imagining that the dream prompt is something like this. You are performing a dream, a reflective pass over your memory files. Synthesize what you've learned recently into durable, wellorganized memories so future sessions can orient quickly. Keep memory MD under a line limit. It's an index, not a dump. Link to memory files with oneline descriptions. Do not copy full memory into it. After it's ran that prompt, it goes through the consolidation and pruning, which like I said is just cleaning things up. And then it goes ahead and it stores all of the results. And then whenever it wakes up the next time to do a dream, it basically just repeats that process every time. So once you have automemory turned on and autodream turned on, how does the autodreaming actually take place besides you invoking it with /dream or telling it to? Well, basically two different types of triggers or both. It could be based on hours, which means like, hey, every 12 hours I'm just going to do my autodream. Or it could be based off of sessions. So maybe once you hit 300 sessions, it automatically does uh a dream. Now this isn't confirmed with official documentation. This is just basically what it seems like after some X discussions and some Reddit discussions, but just keep that in mind. That is likely how this works, but I don't know for certain. Now, once that's running, you'll basically be able to see a couple different statuses. You can either see that it's running, you can see that it's never ran before, you can see when it was last ran, or you can see basically just nothing and it will be idle. And what's important to know here is that it's only going to touch memory files. As you guys saw in that first example, it said I updated five files, those were all context files. So all of these right here that said I improved five memories all of these are MDs none of these are code or scripts or anything like that. So how do we think about the different layers between these different types of you know systems within cloud code. So for normal sessions we basically just have the ability to code to debug to refactor to you know talk to cloud code. Then in the middle we have that automemory which records decisions patterns important things about the actual project or about you. But there's not a great method for cleaning that up consistently unless you Frankenstein your own solution to do that. So basically what Autodream does is in the background without you having to manually go in there and prompt it to looks through everything, cleans everything up and fixes a lot of stuff. And so that's why having these three layers work together, it creates a really powerful system that likely is going to help you scale better and keep all of your sessions feeling cleaner and way more like a human who can remember things about you rather than, you know, a chatbot. So this has been running now for over 6 minutes. I'll just check in with you guys when this is done and we can see what memory files it went ahead and updated. So, this one actually only took 8 minutes, which was interesting, even though it had to look through way more sessions, 285 compared to about 13, but it was able to update these three different memory files. And you can now see that there are no background tasks currently running. And if you want a little bit more visibility, you can see what it actually did explicitly. So, it added these couple entries and it removed these sections. And now, if I wanted to restore those or add some more insights, I could. And I could also go view the file, of course, if I wanted to make sure that it was all accurate. And the cool thing about this is as you use the AutoDream more and more, it's going to get better and better at understanding what type of context is important to you and what is not. But anyways, that is going to do it for today. So, if you guys enjoyed the video or learned something new, please give a like. Helps me out a ton. And as always, I appreciate you guys making it to the end of the video. I'll see you on the next one. Thanks everyone.
+
+--- With timestamps ---
+
+[00:00] So, Enthropic just silently released
+[00:01] this feature called AutoDream. And based
+[00:03] on people's discussions, it basically
+[00:05] runs a sub agent periodically that
+[00:07] consolidates Claude's memory files for
+[00:09] better long-term storage. And I saw this
+[00:11] tweet from Anthony here that said, "It's
+[00:12] pretty crazy because that's basically
+[00:13] how humans actually store long-term
+[00:15] memories is by sleeping." So, you can
+[00:18] see right here in this project, I was
+[00:19] playing around with the autodream. And
+[00:20] so, because this is still being rolled
+[00:22] out and it's like an experimental
+[00:23] feature, I tried running this right here
+[00:25] in my project and it is working. As you
+[00:26] can see, it's dreaming because right
+[00:28] here in my status line, you can see that
+[00:30] it says dreaming. And then I basically
+[00:31] go down and I enter it to view the
+[00:33] tasks. And you can see what it's doing.
+[00:34] It starts off by saying, "Let me search
+[00:36] for more user feedback, preferences, and
+[00:38] new project relevant information across
+[00:40] recent sessions. And it's basically
+[00:42] looked through all of our messages and
+[00:43] all of our different things that we've
+[00:44] asked it to do." And then it gets to
+[00:45] phase three where it's consolidating
+[00:47] stuff. So here are all of the key
+[00:48] findings that it needs to update the
+[00:50] memory files with since the last time it
+[00:52] ran. And you can see that this is a
+[00:54] pretty comprehensive task. It's running
+[00:56] for almost 10 minutes now. It's reviewed
+[00:58] 13 sessions and it's touching different
+[01:00] memory files. And basically the whole
+[01:02] point of this is to be an automatic
+[01:03] background cleanup and organization
+[01:05] system for your cloud memories so that
+[01:07] each time you start up a new session, it
+[01:09] feels sharp instead of kind of fuzzy or
+[01:11] cluttered. Now cloud code does already
+[01:12] have automemory which lets it remember
+[01:14] things about your project in a
+[01:16] memory.mmd file. And that usually gets
+[01:18] injected at the beginning of your
+[01:19] sessions and your conversations. And
+[01:21] that's what allows Cloud Code currently
+[01:22] to feel like it understands a little bit
+[01:24] more contextually about what's going on.
+[01:26] But the Autodream is a little bit
+[01:27] different because rather than just kind
+[01:28] of like flooding in some information,
+[01:30] it's consistently compacting and pruning
+[01:33] and making that file better and better.
+[01:35] It's keeping everything feeling a lot
+[01:36] more fresh because it basically takes
+[01:38] all of this different information that
+[01:40] goes into your memory MD file. When it
+[01:42] does its Audream, it merges them, it
+[01:44] prunes them, it refreshes them, and it
+[01:46] compacts things. And then all of the
+[01:48] different memory files are a lot
+[01:50] cleaner. So, if I switch back into this
+[01:51] project, you can see that it improved
+[01:53] five memories. That took about 10
+[01:54] minutes. It improved all of these
+[01:56] different MD files, which the project
+[01:58] will now be able to use, and they're a
+[01:59] lot more clean and up-to-date. And so,
+[02:01] the way that you get here is you go to
+[02:02] /memory. You can see right here we have
+[02:04] edit clawed memory files. And when you
+[02:06] open that up, you'll notice right here
+[02:07] we see Autream on. This was last ran 11
+[02:10] minutes ago, as you guys just saw. And
+[02:12] we can use /dream to run it. Now, when
+[02:14] you open this up, this will be off. All
+[02:16] you have to do is hover over it, hit
+[02:17] enter, and it will change to being on.
+[02:19] And by default, your auto memory for
+[02:21] your claude will probably already be on
+[02:23] as well. And what you'll notice about
+[02:25] the memory is that it's turned on
+[02:27] globally across all of your different
+[02:28] projects, but each autodream has its own
+[02:30] files that it plays with. So in this
+[02:32] other session, you can see that
+[02:33] autodream is on. It last ran 11 minutes
+[02:35] ago. And now if I go over to my Herk 2
+[02:37] project, which I've never turned on the
+[02:39] Autodream feature, and I go ahead and do
+[02:40] memory, the Autodream feature is already
+[02:42] turned on, but you can see that it says
+[02:44] that it has never been ran yet. And of
+[02:47] course, the memory files are different
+[02:48] because in here I've got all these
+[02:49] different files. And then back in this
+[02:51] other project, which was kind of more of
+[02:52] a demo, you can see that we only have
+[02:54] these main three, which are project,
+[02:56] user, and the automemory folder. So now,
+[02:59] if I'm in my Herk 2 project, and I know
+[03:01] that my autodream has been turned on, it
+[03:03] says that I can use /dream to run. So if
+[03:05] I come in here and I do /dream, what's
+[03:07] going to happen? It basically just says
+[03:08] unknown skill and we don't see anything
+[03:10] going on. So right now you can kind of
+[03:12] invoke this using natural language even
+[03:14] though claude code itself might be a
+[03:15] little confused about what you're trying
+[03:16] to do. So I'm just going to say run your
+[03:19] autodream and we'll see what it does
+[03:21] with that information. So right now it
+[03:23] says I don't have the autodutream skill
+[03:24] and it's kind of confused but right here
+[03:26] you can see in the status line we do see
+[03:28] that it's dreaming. And if I go down
+[03:29] here and I enter the tasks we can see
+[03:31] that it's running this stream
+[03:32] consolidation. It's going to orient
+[03:34] itself with the environment and then
+[03:35] we're going to see the list of I'm
+[03:36] grabbing this file. I'm looking at these
+[03:38] sessions and right now because this is a
+[03:40] bigger project for me. You can see that
+[03:41] it's reviewing 285 sessions. So this
+[03:44] will probably take longer than 8 to 10
+[03:46] minutes. So while we're letting this
+[03:48] run, let's talk a little bit more about
+[03:49] why this matters. So obviously this just
+[03:51] came out and I haven't had time to
+[03:52] really really test it and see if it's
+[03:54] worth it or not. But based on what I'm
+[03:56] seeing, I definitely think it is. And
+[03:57] let's talk about why that is. So the
+[03:59] first big point is that you have less
+[04:00] repetition. Even with auto memory, I
+[04:02] still feel like sometimes I'm
+[04:04] reexplaining things or I'm trying to,
+[04:05] you know, carry over context from one
+[04:07] session to another. And less repetition
+[04:09] is obviously a good thing. Another thing
+[04:11] that we have that kind of floats behind
+[04:12] the scenes is less bloat because part of
+[04:15] the system is that it's compacting and
+[04:17] pruning stuff. Pruning basically just
+[04:18] meaning like eliminating things that are
+[04:20] unnecessary, trimming the fat. And when
+[04:22] we're getting rid of all of that excess
+[04:23] fat and excess tokens, it obviously
+[04:25] helps us with our bloat and helps us
+[04:27] with our context management. We also
+[04:29] have better recall because it's getting
+[04:30] rid of things that we don't actually
+[04:31] need. It's easier to find things. So,
+[04:33] just picture an example of like, you
+[04:35] know, you've got a 100 different balls
+[04:36] in a ball pit and you're looking for one
+[04:38] pink one out of all the blue. Well, what
+[04:39] if we take away half of the blue? It's
+[04:41] going to be easier to find that pink.
+[04:43] And then what I think is really cool is
+[04:44] it's basically just like sleep. So,
+[04:46] whatever cadence that this runs on,
+[04:47] which we'll talk about a little bit
+[04:48] later, when it hits that point, it
+[04:50] basically just resets. So, it's like a
+[04:52] checkpoint. Every time you get to a new
+[04:53] checkpoint, you're basically saving
+[04:55] yourself. So, before it would have all
+[04:57] of these different files, right? you'd
+[04:58] have these huge bloated context files,
+[05:00] MD files, but now Autodream takes all of
+[05:02] that and just keeps the important
+[05:04] information that you need, which may
+[05:06] only be, you know, a couple different
+[05:07] bullet points rather than having
+[05:08] hundreds of lines. So, the way that it
+[05:10] actually works is step one, once it's
+[05:12] activated, it will gather session info.
+[05:15] After that, it will read the current
+[05:16] existing memory files and then it will
+[05:18] load it into a sub agent which does the
+[05:21] actual dream prompt. So, I don't know
+[05:22] for certain, but I'm imagining that the
+[05:24] dream prompt is something like this. You
+[05:26] are performing a dream, a reflective
+[05:27] pass over your memory files. Synthesize
+[05:29] what you've learned recently into
+[05:30] durable, wellorganized memories so
+[05:32] future sessions can orient quickly. Keep
+[05:34] memory MD under a line limit. It's an
+[05:37] index, not a dump. Link to memory files
+[05:39] with oneline descriptions. Do not copy
+[05:41] full memory into it. After it's ran that
+[05:43] prompt, it goes through the
+[05:44] consolidation and pruning, which like I
+[05:46] said is just cleaning things up. And
+[05:48] then it goes ahead and it stores all of
+[05:50] the results. And then whenever it wakes
+[05:52] up the next time to do a dream, it
+[05:54] basically just repeats that process
+[05:55] every time. So once you have automemory
+[05:57] turned on and autodream turned on, how
+[06:00] does the autodreaming actually take
+[06:01] place besides you invoking it with
+[06:02] /dream or telling it to? Well, basically
+[06:05] two different types of triggers or both.
+[06:08] It could be based on hours, which means
+[06:09] like, hey, every 12 hours I'm just going
+[06:11] to do my autodream. Or it could be based
+[06:13] off of sessions. So maybe once you hit
+[06:15] 300 sessions, it automatically does uh a
+[06:17] dream. Now this isn't confirmed with
+[06:19] official documentation. This is just
+[06:21] basically what it seems like after some
+[06:23] X discussions and some Reddit
+[06:24] discussions, but just keep that in mind.
+[06:26] That is likely how this works, but I
+[06:28] don't know for certain. Now, once that's
+[06:29] running, you'll basically be able to see
+[06:31] a couple different statuses. You can
+[06:32] either see that it's running, you can
+[06:33] see that it's never ran before, you can
+[06:35] see when it was last ran, or you can see
+[06:37] basically just nothing and it will be
+[06:38] idle. And what's important to know here
+[06:39] is that it's only going to touch memory
+[06:41] files. As you guys saw in that first
+[06:43] example, it said I updated five files,
+[06:45] those were all context files. So all of
+[06:47] these right here that said I improved
+[06:48] five memories all of these are MDs none
+[06:50] of these are code or scripts or anything
+[06:52] like that. So how do we think about the
+[06:54] different layers between these different
+[06:56] types of you know systems within cloud
+[06:58] code. So for normal sessions we
+[07:00] basically just have the ability to code
+[07:02] to debug to refactor to you know talk to
+[07:04] cloud code. Then in the middle we have
+[07:06] that automemory which records decisions
+[07:09] patterns important things about the
+[07:11] actual project or about you. But there's
+[07:13] not a great method for cleaning that up
+[07:15] consistently unless you Frankenstein
+[07:17] your own solution to do that. So
+[07:18] basically what Autodream does is in the
+[07:20] background without you having to
+[07:22] manually go in there and prompt it to
+[07:23] looks through everything, cleans
+[07:25] everything up and fixes a lot of stuff.
+[07:27] And so that's why having these three
+[07:28] layers work together, it creates a
+[07:30] really powerful system that likely is
+[07:32] going to help you scale better and keep
+[07:33] all of your sessions feeling cleaner and
+[07:35] way more like a human who can remember
+[07:37] things about you rather than, you know,
+[07:38] a chatbot. So this has been running now
+[07:40] for over 6 minutes. I'll just check in
+[07:42] with you guys when this is done and we
+[07:43] can see what memory files it went ahead
+[07:44] and updated. So, this one actually only
+[07:46] took 8 minutes, which was interesting,
+[07:48] even though it had to look through way
+[07:50] more sessions, 285 compared to about 13,
+[07:53] but it was able to update these three
+[07:54] different memory files. And you can now
+[07:56] see that there are no background tasks
+[07:58] currently running. And if you want a
+[08:00] little bit more visibility, you can see
+[08:01] what it actually did explicitly. So, it
+[08:03] added these couple entries and it
+[08:04] removed these sections. And now, if I
+[08:06] wanted to restore those or add some more
+[08:07] insights, I could. And I could also go
+[08:09] view the file, of course, if I wanted to
+[08:11] make sure that it was all accurate. And
+[08:12] the cool thing about this is as you use
+[08:14] the AutoDream more and more, it's going
+[08:15] to get better and better at
+[08:16] understanding what type of context is
+[08:18] important to you and what is not. But
+[08:20] anyways, that is going to do it for
+[08:21] today. So, if you guys enjoyed the video
+[08:22] or learned something new, please give a
+[08:24] like. Helps me out a ton. And as always,
+[08:26] I appreciate you guys making it to the
+[08:27] end of the video. I'll see you on the
+[08:28] next one. Thanks everyone.

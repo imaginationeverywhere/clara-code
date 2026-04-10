@@ -1,0 +1,90 @@
+{
+  "version": "1.6.0",
+  "autoInstallOnSetup": true,
+  "autoActivateOnDetection": true,
+  "healthCheckInterval": 30,
+  "retryAttempts": 3,
+  "activationRules": {
+    "prdAnalysis": {
+      "enabled": true,
+      "filePath": "docs/PRD.md",
+      "keywords": {
+        "database": ["PostgreSQL", "Database", "SQL", "Sequelize"],
+        "aws": ["AWS", "Amplify", "EC2", "S3", "Lambda"],
+        "api": ["API", "REST", "GraphQL", "HTTP"],
+        "docker": ["Docker", "Container", "Kubernetes"],
+        "github": ["GitHub", "Git", "Repository"],
+        "ui-components": ["shadcn", "components", "UI", "design system"],
+        "design": ["Design", "Mockup", "prototyp"],
+        "testing": ["Playwright", "E2E", "Testing", "Browser", "automation"],
+        "memory": ["memory", "context", "session", "persist"],
+        "documentation": ["documentation", "docs", "API reference", "library"],
+        "enterprise-auth": ["Clerk", "Authentication", "Auth", "User Management", "RBAC"],
+        "enterprise-communications": ["Twilio", "SMS", "Voice", "Messaging", "Communication", "WhatsApp"],
+        "enterprise-email": ["SES", "Amazon SES", "Email", "Mail", "Newsletter", "transactional"],
+        "enterprise-cloud": ["AWS", "Cloud", "Infrastructure", "CloudFormation", "CDK"],
+        "enterprise-graphql": ["GraphQL", "Apollo", "Federation", "Schema"],
+        "enterprise-github": ["GitHub", "Git", "Repository", "Actions", "CI/CD"],
+        "specialized-planning": ["project management", "documentation", "planning", "workflow", "BMAD"],
+        "specialized-history": ["history", "conversation", "session", "context", "tracking"],
+        "specialized-monitoring": ["Sentry", "Error monitoring", "Debugging", "Performance", "monitoring"]
+      }
+    },
+    "fileSystemAnalysis": {
+      "enabled": true,
+      "checkFiles": [
+        ".git",
+        "Dockerfile",
+        "docker-compose.yml",
+        "amplify.yml",
+        "package.json",
+        ".github/",
+        "infrastructure/",
+        "tests/"
+      ]
+    },
+    "packageJsonAnalysis": {
+      "enabled": true,
+      "dependencies": {
+        "database": ["sequelize", "prisma", "pg", "mysql2", "mongodb"],
+        "aws": ["@aws-sdk", "aws-amplify", "@aws-cdk"],
+        "api": ["axios", "node-fetch", "apollo-server", "graphql"],
+        "testing": ["jest", "vitest", "playwright", "cypress", "mocha"],
+        "ui-components": ["@shadcn/ui", "shadcn-ui", "lucide-react", "@radix-ui", "tailwindcss"],
+        "design": ["design-tokens"],
+        "browser-automation": ["@playwright/test", "playwright", "puppeteer", "selenium"],
+        "memory": ["mem0", "memory-store", "context-store"],
+        "documentation": ["typedoc", "@types", "documentation"],
+        "enterprise-auth": ["@clerk/nextjs", "@clerk/clerk-sdk-node", "@clerk/backend"],
+        "enterprise-communications": ["twilio"],
+        "enterprise-email": ["@aws-sdk/client-ses", "@aws-sdk/client-sesv2"],
+        "enterprise-cloud": ["@aws-sdk", "aws-cdk", "@aws-cdk", "aws-cloudformation"],
+        "enterprise-graphql": ["apollo-server", "@apollo/server", "apollo-server-express", "@apollo/gateway"],
+        "enterprise-github": ["@octokit/rest", "github-webhook-handler"],
+        "specialized-planning": ["project-manager", "documentation-generator", "workflow-automation"],
+        "specialized-history": ["conversation-history", "session-tracker", "context-manager"],
+        "specialized-monitoring": ["@sentry/nextjs", "@sentry/node", "@sentry/react", "sentry"]
+      }
+    }
+  },
+  "security": {
+    "allowedPaths": ["${PROJECT_ROOT}"],
+    "deniedPaths": [
+      "node_modules",
+      ".git/objects",
+      ".env*",
+      "*.key",
+      "*.pem",
+      "secrets/",
+      ".claude/.session*",
+      ".claude/.telemetry*"
+    ],
+    "requireEnvValidation": true,
+    "sandboxCodeExecution": true
+  },
+  "logging": {
+    "level": "info",
+    "retention": "7d",
+    "maxFileSize": "10MB"
+  }
+}

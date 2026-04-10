@@ -1,0 +1,236 @@
+{
+  "name": "Modern Tech",
+  "version": "1.0.0",
+  "description": "Bold, modern styling for tech companies and startups",
+
+  "global": {
+    "primaryColor": "#FF3366",
+    "secondaryColor": "#00D9FF",
+    "accentColor": "#FFCC00",
+    "fontFamily": "Inter",
+    "fontSize": 11,
+    "lineSpacing": 1.6
+  },
+
+  "images": {
+    "logo": {
+      "position": "header-left",
+      "width": 140,
+      "height": 45
+    },
+    "defaults": {
+      "maxWidth": 800,
+      "quality": 90,
+      "format": "png"
+    }
+  },
+
+  "presentation": {
+    "theme": "bold-tech",
+    "slideWidth": 10,
+    "slideHeight": 5.625,
+    "colors": {
+      "background": "#1a1a2e",
+      "title": "#FFFFFF",
+      "subtitle": "#00D9FF",
+      "body": "#E0E0E0",
+      "accent": "#FF3366",
+      "bullet": "#00D9FF"
+    },
+    "fonts": {
+      "title": "Impact",
+      "subtitle": "Arial",
+      "body": "Arial",
+      "code": "Fira Code"
+    },
+    "sizes": {
+      "title": 52,
+      "subtitle": 28,
+      "sectionHeader": 44,
+      "body": 22,
+      "bullet": 20,
+      "footer": 10
+    },
+    "master": {
+      "titleSlide": {
+        "titleY": "35%",
+        "subtitleY": "55%",
+        "logoPosition": "top-left",
+        "gradient": {
+          "enabled": true,
+          "colors": ["#1a1a2e", "#16213e", "#0f3460"]
+        }
+      },
+      "contentSlide": {
+        "headerY": 0.4,
+        "contentY": 1.4,
+        "footerY": 5.25,
+        "accentBar": {
+          "enabled": true,
+          "color": "#FF3366",
+          "height": 4
+        }
+      }
+    },
+    "charts": {
+      "colors": ["#FF3366", "#00D9FF", "#FFCC00", "#00FF88", "#FF6B6B", "#845EF7"],
+      "gridLines": false,
+      "legendPosition": "right",
+      "style": "neon"
+    },
+    "tables": {
+      "headerBg": "#FF3366",
+      "headerColor": "#FFFFFF",
+      "borderColor": "#00D9FF",
+      "alternateRow": "#16213e"
+    }
+  },
+
+  "document": {
+    "style": "modern",
+    "pageSize": "letter",
+    "orientation": "portrait",
+    "margins": {
+      "top": "0.75in",
+      "bottom": "0.75in",
+      "left": "1in",
+      "right": "1in"
+    },
+    "colors": {
+      "heading": "#FF3366",
+      "body": "#333333",
+      "link": "#00D9FF",
+      "code": "#FF3366",
+      "codeBg": "#1a1a2e"
+    },
+    "fonts": {
+      "heading": "Inter",
+      "body": "Inter",
+      "code": "Fira Code"
+    },
+    "sizes": {
+      "title": 32,
+      "h1": 28,
+      "h2": 22,
+      "h3": 16,
+      "h4": 14,
+      "body": 11,
+      "code": 10,
+      "caption": 9
+    },
+    "spacing": {
+      "beforeH1": 28,
+      "afterH1": 14,
+      "beforeH2": 22,
+      "afterH2": 10,
+      "beforePara": 0,
+      "afterPara": 10,
+      "lineHeight": 1.6
+    },
+    "header": {
+      "enabled": true,
+      "text": "",
+      "alignment": "left",
+      "fontSize": 10,
+      "accentLine": {
+        "enabled": true,
+        "color": "#FF3366"
+      }
+    },
+    "footer": {
+      "enabled": true,
+      "text": "{PAGE}",
+      "alignment": "right",
+      "fontSize": 10
+    }
+  },
+
+  "spreadsheet": {
+    "style": "modern",
+    "defaultFont": {
+      "name": "Inter",
+      "size": 11
+    },
+    "colors": {
+      "input": "#00D9FF",
+      "formula": "#333333",
+      "crossRef": "#00FF88",
+      "external": "#FF3366",
+      "attention": "#FFCC00"
+    },
+    "header": {
+      "font": {
+        "bold": true,
+        "color": "#FFFFFF",
+        "size": 11
+      },
+      "fill": "#FF3366",
+      "border": {
+        "style": "thin",
+        "color": "#FF3366"
+      },
+      "alignment": "center"
+    },
+    "data": {
+      "border": {
+        "style": "thin",
+        "color": "#E0E0E0"
+      },
+      "alternateRow": "#F8F9FA"
+    },
+    "formats": {
+      "currency": "$#,##0;($#,##0);-",
+      "percentage": "0.0%",
+      "number": "#,##0",
+      "date": "YYYY-MM-DD"
+    }
+  },
+
+  "pdf": {
+    "pageSize": "letter",
+    "orientation": "portrait",
+    "margins": {
+      "top": 60,
+      "bottom": 60,
+      "left": 72,
+      "right": 72
+    },
+    "colors": {
+      "title": [255, 51, 102],
+      "heading": [255, 51, 102],
+      "body": [51, 51, 51],
+      "link": [0, 217, 255],
+      "code": [255, 51, 102],
+      "codeBg": [26, 26, 46]
+    },
+    "fonts": {
+      "title": "Helvetica-Bold",
+      "heading": "Helvetica-Bold",
+      "body": "Helvetica",
+      "code": "Courier"
+    },
+    "sizes": {
+      "title": 28,
+      "h1": 22,
+      "h2": 16,
+      "h3": 13,
+      "body": 11,
+      "code": 10
+    },
+    "header": {
+      "enabled": true,
+      "height": 35,
+      "accentLine": {
+        "enabled": true,
+        "color": [255, 51, 102],
+        "thickness": 2
+      }
+    },
+    "footer": {
+      "enabled": true,
+      "height": 25,
+      "text": "{page}",
+      "alignment": "right"
+    }
+  }
+}

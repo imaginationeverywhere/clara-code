@@ -1,0 +1,893 @@
+# Code Review Command
+
+**Version:** 2.0.0
+**Agent:** code-quality-reviewer
+**Output:** `docs/review/{timestamp}-code-review.md`
+
+## Purpose
+
+Automated code review that analyzes recent changes, identifies issues, and generates a comprehensive review document. **ENFORCES 80% MINIMUM TEST COVERAGE REQUIREMENT** - all code being reviewed must have passing unit tests with at least 80% coverage. Optimized for token efficiency by producing reusable review artifacts.
+
+## ⚠️ CRITICAL REQUIREMENT: Test Coverage
+
+**All code submitted for review MUST:**
+1. ✅ Have unit tests that cover the changed code
+2. ✅ All tests must pass (zero failures)
+3. ✅ Minimum 80% code coverage for changed files
+4. ❌ Review will FAIL and BLOCK if coverage < 80%
+
+**This is a HARD REQUIREMENT - no exceptions.**
+
+## Usage
+
+```bash
+# Review current changes (git diff) - includes test execution
+review-code
+
+# Review specific files with coverage check
+review-code path/to/file.ts path/to/another.ts
+
+# Review with focus area (still requires 80% coverage)
+review-code --focus=security
+review-code --focus=performance
+review-code --focus=accessibility
+
+# Skip test execution (NOT RECOMMENDED - for edge cases only)
+review-code --skip-tests
+
+# Review pull request with full test suite
+review-code --pr=123
+
+# Review specific commit range
+review-code --since=HEAD~5
+```
+
+## What Gets Reviewed
+
+**Automatic Detection:**
+- Git staged changes (`git diff --cached`)
+- Unstaged changes (`git diff`)
+- Recent commits if no changes (`git log -1`)
+
+**Code Quality Dimensions (Priority Order):**
+1. **Testing** - ⚠️ **CRITICAL** - 80% minimum coverage, all tests pass, test quality
+2. **Security** - OWASP Top 10, auth patterns, data validation
+3. **Performance** - N+1 queries, memory leaks, bundle size
+4. **Type Safety** - TypeScript patterns, type coverage
+5. **Maintainability** - Code smells, complexity, documentation
+6. **Best Practices** - Framework patterns, enterprise standards
+7. **Accessibility** - WCAG 2.1 AA compliance
+
+**Testing is the #1 priority and a BLOCKING requirement.**
+
+## Review Document Structure
+
+```markdown
+# Code Review - {Timestamp}
+
+## ⚠️ COVERAGE REQUIREMENT CHECK
+
+**Status:** ✅ PASS / ❌ FAIL (blocks review if FAIL)
+
+- **Tests Run:** 145
+- **Tests Passed:** 145
+- **Tests Failed:** 0
+- **Overall Coverage:** 87.3%
+- **Changed Files Coverage:** 89.1%
+- **Minimum Required:** 80.0%
+
+### Per-File Coverage
+| File | Coverage | Status |
+|------|----------|--------|
+| backend/src/routes/user.ts | 92.5% | ✅ PASS |
+| backend/src/services/UserService.ts | 88.2% | ✅ PASS |
+| frontend/src/components/UserProfile.tsx | 85.0% | ✅ PASS |
+
+---
+
+## Executive Summary
+- **Files Reviewed:** 12
+- **Test Coverage:** 89.1% (✅ above 80% threshold)
+- **Tests Status:** ✅ All 145 tests passing
+- **Issues Found:** 8 (3 critical, 2 high, 3 medium)
+- **Lines Changed:** +234 -156
+- **Overall Grade:** B+
+- **Review Status:** ✅ APPROVED (coverage requirement met)
+
+## Critical Issues
+1. **[SECURITY]** SQL Injection vulnerability in search endpoint
+   - File: `backend/src/routes/search.ts:45`
+   - Impact: High - Allows arbitrary SQL execution
+   - Fix: Use parameterized queries with Sequelize
+
+## High Priority Issues
+...
+
+## Medium Priority Issues
+...
+
+## Test Quality Assessment
+- **Coverage:** ✅ Exceeds 80% requirement (89.1%)
+- **Test Organization:** Good - tests follow project structure
+- **Assertions:** Strong - comprehensive assertions
+- **Edge Cases:** Most edge cases covered
+- **Mocking:** Proper use of mocks and stubs
+
+## Best Practices Recommendations
+...
+
+## Positive Findings
+...
+```
+
+**Example of FAILED review (coverage < 80%):**
+
+```markdown
+# Code Review - {Timestamp}
+
+## ❌ COVERAGE REQUIREMENT CHECK - REVIEW BLOCKED
+
+**Status:** ❌ FAIL - Code review CANNOT proceed
+
+- **Tests Run:** 45
+- **Tests Passed:** 43
+- **Tests Failed:** 2
+- **Overall Coverage:** 62.1%
+- **Changed Files Coverage:** 58.7%
+- **Minimum Required:** 80.0%
+- **Deficit:** -21.3% (BLOCKING)
+
+### Per-File Coverage (INSUFFICIENT)
+| File | Coverage | Status |
+|------|----------|--------|
+| backend/src/routes/user.ts | 45.2% | ❌ FAIL (-34.8%) |
+| backend/src/services/UserService.ts | 68.9% | ❌ FAIL (-11.1%) |
+| frontend/src/components/UserProfile.tsx | 72.3% | ❌ FAIL (-7.7%) |
+
+### Failing Tests
+1. ❌ User.test.ts - "should handle invalid email format"
+2. ❌ UserService.test.ts - "should throw error on duplicate user"
+
+---
+
+## 🚫 REVIEW BLOCKED
+
+**This code review cannot proceed until:**
+
+1. ✅ All tests are passing (currently 2 failures)
+2. ✅ Test coverage reaches minimum 80% (currently 62.1%)
+3. ✅ Each changed file has ≥80% coverage
+
+**Required Actions:**
+
+1. **Fix failing tests:**
+   - User.test.ts - "should handle invalid email format"
+   - UserService.test.ts - "should throw error on duplicate user"
+
+2. **Add tests to increase coverage:**
+   - backend/src/routes/user.ts needs +34.8% coverage (+~45 lines)
+   - backend/src/services/UserService.ts needs +11.1% coverage (~15 lines)
+   - frontend/src/components/UserProfile.tsx needs +7.7% coverage (~10 lines)
+
+3. **Re-run review after fixes:**
+   ```bash
+   # Fix tests and add coverage
+   npm test
+
+   # Verify coverage
+   npm run test:coverage
+
+   # Re-run review
+   review-code
+   ```
+
+**NO CODE REVIEW WILL BE PERFORMED UNTIL THESE REQUIREMENTS ARE MET.**
+```
+
+## Command Implementation
+
+When this command is invoked, Claude Code should:
+
+### Phase 1: Collect Code Changes
+
+```bash
+# Get current git status
+git status --porcelain
+
+# Get staged changes
+git diff --cached --name-only
+
+# Get unstaged changes
+git diff --name-only
+
+# If specific files provided, use those instead
+```
+
+### Phase 2: Execute Tests and Validate Coverage (CRITICAL)
+
+**This phase is MANDATORY unless --skip-tests is specified.**
+
+```bash
+echo "🧪 Running tests and checking coverage..."
+echo ""
+
+# Determine test command based on project structure
+if [ -f "package.json" ]; then
+  # Check if test:coverage script exists
+  if grep -q '"test:coverage"' package.json; then
+    TEST_CMD="npm run test:coverage"
+  elif grep -q '"test"' package.json; then
+    TEST_CMD="npm test -- --coverage"
+  else
+    echo "❌ No test script found in package.json"
+    exit 1
+  fi
+elif [ -f "pytest.ini" ] || [ -f "setup.py" ]; then
+  TEST_CMD="pytest --cov --cov-report=term --cov-report=json"
+else
+  echo "❌ Unable to determine test framework"
+  exit 1
+fi
+
+# Run tests with coverage
+echo "Running: $TEST_CMD"
+$TEST_CMD > test-output.txt 2>&1
+TEST_EXIT_CODE=$?
+
+# Parse test results
+TESTS_RUN=$(grep -oE "[0-9]+ (tests?|passed)" test-output.txt | head -1 | grep -oE "[0-9]+")
+TESTS_FAILED=$(grep -oE "[0-9]+ failed" test-output.txt | grep -oE "[0-9]+" || echo "0")
+TESTS_PASSED=$((TESTS_RUN - TESTS_FAILED))
+
+# Parse coverage from coverage report
+if [ -f "coverage/coverage-summary.json" ]; then
+  # JavaScript/TypeScript (Jest, Vitest)
+  OVERALL_COVERAGE=$(jq '.total.lines.pct' coverage/coverage-summary.json)
+elif [ -f "coverage.json" ]; then
+  # Python (pytest-cov)
+  OVERALL_COVERAGE=$(jq '.totals.percent_covered' coverage.json)
+else
+  echo "⚠️  Coverage report not found, parsing from terminal output"
+  OVERALL_COVERAGE=$(grep -oE "[0-9]+\.[0-9]+%" test-output.txt | tail -1 | tr -d '%')
+fi
+
+# Get per-file coverage for changed files
+declare -A FILE_COVERAGE
+
+for file in $(git diff --cached --name-only); do
+  # Skip non-source files
+  if [[ ! "$file" =~ \.(ts|tsx|js|jsx|py)$ ]]; then
+    continue
+  fi
+
+  # Get coverage for this specific file
+  if [ -f "coverage/coverage-summary.json" ]; then
+    COVERAGE=$(jq -r ".[\"$file\"].lines.pct // 0" coverage/coverage-summary.json)
+  else
+    COVERAGE="0"
+  fi
+
+  FILE_COVERAGE["$file"]=$COVERAGE
+done
+
+# Calculate average coverage for changed files
+TOTAL=0
+COUNT=0
+for file in "${!FILE_COVERAGE[@]}"; do
+  TOTAL=$(echo "$TOTAL + ${FILE_COVERAGE[$file]}" | bc)
+  ((COUNT++))
+done
+
+if [ $COUNT -gt 0 ]; then
+  CHANGED_FILES_COVERAGE=$(echo "scale=1; $TOTAL / $COUNT" | bc)
+else
+  CHANGED_FILES_COVERAGE=$OVERALL_COVERAGE
+fi
+
+echo ""
+echo "📊 Test Results:"
+echo "   Tests Run: $TESTS_RUN"
+echo "   Tests Passed: $TESTS_PASSED"
+echo "   Tests Failed: $TESTS_FAILED"
+echo "   Overall Coverage: ${OVERALL_COVERAGE}%"
+echo "   Changed Files Coverage: ${CHANGED_FILES_COVERAGE}%"
+echo ""
+
+# Validate coverage requirement
+COVERAGE_THRESHOLD=80
+
+if (( $(echo "$TESTS_FAILED > 0" | bc -l) )); then
+  echo "❌ REVIEW BLOCKED: Tests are failing"
+  echo ""
+  echo "🚫 Fix the following failing tests before review:"
+  grep -A 5 "FAIL" test-output.txt
+  exit 1
+fi
+
+if (( $(echo "$CHANGED_FILES_COVERAGE < $COVERAGE_THRESHOLD" | bc -l) )); then
+  echo "❌ REVIEW BLOCKED: Coverage below 80% threshold"
+  echo ""
+  echo "Current Coverage: ${CHANGED_FILES_COVERAGE}%"
+  echo "Required Coverage: ${COVERAGE_THRESHOLD}%"
+  echo "Deficit: $(echo "$COVERAGE_THRESHOLD - $CHANGED_FILES_COVERAGE" | bc)%"
+  echo ""
+  echo "📝 Files needing more tests:"
+
+  for file in "${!FILE_COVERAGE[@]}"; do
+    COV=${FILE_COVERAGE[$file]}
+    if (( $(echo "$COV < $COVERAGE_THRESHOLD" | bc -l) )); then
+      DEFICIT=$(echo "$COVERAGE_THRESHOLD - $COV" | bc)
+      echo "   ❌ $file: ${COV}% (needs +${DEFICIT}%)"
+    fi
+  done
+
+  echo ""
+  echo "💡 Add tests to cover untested code paths, then run:"
+  echo "   npm run test:coverage"
+  echo "   review-code"
+  exit 1
+fi
+
+echo "✅ Coverage requirement met: ${CHANGED_FILES_COVERAGE}% (≥80%)"
+echo "✅ All tests passing: $TESTS_PASSED/$TESTS_RUN"
+echo ""
+
+# Store results for review document
+export TEST_RESULTS_JSON=$(cat <<EOF
+{
+  "tests_run": $TESTS_RUN,
+  "tests_passed": $TESTS_PASSED,
+  "tests_failed": $TESTS_FAILED,
+  "overall_coverage": $OVERALL_COVERAGE,
+  "changed_files_coverage": $CHANGED_FILES_COVERAGE,
+  "file_coverage": $(echo "${!FILE_COVERAGE[@]}" | jq -R 'split(" ") | map({(.): FILE_COVERAGE[.]}) | add')
+}
+EOF
+)
+```
+
+**Coverage Validation Logic:**
+
+1. **Test Execution** - All tests must pass (zero failures)
+2. **Coverage Calculation** - Calculate coverage for changed files only
+3. **Threshold Validation** - Changed files must have ≥80% coverage
+4. **Blocking** - If coverage < 80% or tests fail, BLOCK review and exit
+5. **Reporting** - Store results for inclusion in review document
+
+### Phase 3: Invoke Code Quality Reviewer Agent
+
+Use the **Task tool** with `subagent_type='code-quality-reviewer'`:
+
+```markdown
+Please perform a comprehensive code review of the following changes:
+
+**Context:**
+- Project: {project_name from docs/PRD.md}
+- Branch: {current_branch}
+- Review Scope: {files_or_commits}
+
+**Test Coverage Status (MANDATORY VALIDATION):**
+- Tests Run: {tests_run}
+- Tests Passed: {tests_passed}
+- Tests Failed: {tests_failed}
+- Overall Coverage: {overall_coverage}%
+- Changed Files Coverage: {changed_files_coverage}%
+- Coverage Requirement: ✅ MET (≥80%)
+
+**Per-File Coverage:**
+{table of file coverage for changed files}
+
+**Focus Areas:**
+{--focus parameter or "all areas"}
+
+**Files to Review:**
+{list of changed files with diff snippets}
+
+**Requirements:**
+1. **TEST COVERAGE** - ✅ Already validated: {changed_files_coverage}% (≥80%)
+   - Assess test quality, edge cases, mocking patterns
+   - Verify test organization and maintainability
+   - Check for flaky tests or brittle assertions
+2. **Security** - Identify vulnerabilities (OWASP Top 10, auth patterns, data validation)
+3. **Performance** - Check for issues (N+1 queries, memory leaks, bundle size)
+4. **Type Safety** - Validate TypeScript patterns and type coverage
+5. **Maintainability** - Assess code smells, complexity, documentation
+6. **Best Practices** - Check framework patterns and enterprise standards
+7. **Accessibility** - Validate WCAG 2.1 AA compliance (if UI code)
+
+**Output Format:**
+Generate a structured review document with:
+- Coverage requirement check (MUST BE FIRST SECTION)
+- Executive summary with metrics including test coverage
+- Test quality assessment
+- Issues grouped by severity (critical/high/medium/low)
+- Specific file locations and line numbers
+- Actionable fix recommendations
+- Positive findings to reinforce good patterns
+```
+
+### Phase 4: Generate Review Document
+
+1. **Create review directory** if it doesn't exist:
+   ```bash
+   mkdir -p docs/review
+   ```
+
+2. **Generate filename** with timestamp:
+   ```bash
+   TIMESTAMP=$(date +"%Y%m%d-%H%M%S")
+   REVIEW_FILE="docs/review/${TIMESTAMP}-code-review.md"
+   ```
+
+3. **Write review document** using the agent's output
+
+4. **Add to git** (optional):
+   ```bash
+   git add docs/review/${TIMESTAMP}-code-review.md
+   ```
+
+### Phase 5: Display Summary
+
+Show concise summary to user:
+```
+✅ Code Review Complete
+
+🧪 Test Coverage Status:
+   Tests Run: 145
+   Tests Passed: 145 ✅
+   Tests Failed: 0
+   Overall Coverage: 87.3% ✅
+   Changed Files Coverage: 89.1% ✅ (exceeds 80% requirement)
+
+📊 Code Quality Summary:
+   Files Reviewed: 12
+   Issues Found: 8 (3 critical, 2 high, 3 medium)
+   Overall Grade: B+
+   Review Status: ✅ APPROVED (coverage requirement met)
+
+📝 Review Document: docs/review/20251120-143022-code-review.md
+
+🔴 Critical Issues:
+   1. SQL Injection vulnerability in backend/src/routes/search.ts:45
+   2. Missing authentication check in backend/src/routes/admin.ts:23
+   3. XSS vulnerability in frontend/src/components/UserProfile.tsx:67
+
+💡 Next Steps:
+   1. Fix critical security issues immediately
+   2. Run security tests: npm run test:security
+   3. Re-run review after fixes: review-code
+```
+
+**Example of BLOCKED review (coverage < 80%):**
+
+```
+❌ Code Review BLOCKED
+
+🧪 Test Coverage Status:
+   Tests Run: 45
+   Tests Passed: 43
+   Tests Failed: 2 ❌
+   Overall Coverage: 62.1%
+   Changed Files Coverage: 58.7% ❌ (below 80% requirement)
+   Deficit: -21.3%
+
+🚫 Review Cannot Proceed:
+   ❌ 2 tests failing
+   ❌ Coverage below 80% threshold
+
+📝 Files Needing Tests:
+   ❌ backend/src/routes/user.ts: 45.2% (needs +34.8%)
+   ❌ backend/src/services/UserService.ts: 68.9% (needs +11.1%)
+   ❌ frontend/src/components/UserProfile.tsx: 72.3% (needs +7.7%)
+
+💡 Required Actions:
+   1. Fix failing tests:
+      - User.test.ts - "should handle invalid email format"
+      - UserService.test.ts - "should throw error on duplicate user"
+
+   2. Add tests to reach 80% coverage:
+      npm run test:coverage
+
+   3. Re-run review when ready:
+      review-code
+
+⚠️  NO CODE REVIEW WILL BE PERFORMED UNTIL REQUIREMENTS ARE MET
+```
+
+## Integration with UltraThink
+
+After generating review document, optionally update UltraThink knowledge graph:
+
+```bash
+# Add review to knowledge graph
+ultrathink add-review docs/review/${TIMESTAMP}-code-review.md
+
+# Extract code quality insights
+ultrathink extract-insights --type=code-review
+```
+
+## Token Optimization Benefits
+
+**Why This Saves Tokens:**
+
+1. **Persistent Review Artifacts** - Review once, reference many times
+2. **Async Review Process** - No need to re-review in main conversation
+3. **Structured Output** - Predictable format, easy to parse
+4. **Historical Context** - Track quality trends over time
+5. **Shareable Reviews** - Team members can read without AI assistance
+
+**Estimated Savings:**
+- Without command: ~50,000 tokens per review discussion
+- With command: ~10,000 tokens (review generation) + 0 tokens (future references)
+- **80% token reduction** when referencing reviews
+
+## Examples
+
+### Example 1: Test-First Pre-Commit Review (Recommended Workflow)
+```bash
+# 1. Write code
+# backend/src/routes/user.ts
+
+# 2. Write tests FIRST
+# backend/src/routes/user.test.ts
+
+# 3. Run tests to verify 80% coverage
+npm run test:coverage
+
+# 4. Stage changes
+git add .
+
+# 5. Review before committing (includes automatic test execution)
+review-code
+
+# Output:
+# ✅ Code Review Complete
+# 🧪 Test Coverage Status:
+#    Tests Run: 145
+#    Tests Passed: 145 ✅
+#    Changed Files Coverage: 89.1% ✅
+
+# 6. Fix any issues found, then commit
+git commit -m "feat: add user authentication with 89% test coverage"
+```
+
+### Example 2: Failed Coverage (Learning from Mistakes)
+```bash
+# Stage changes without sufficient tests
+git add backend/src/routes/order.ts
+
+# Try to review
+review-code
+
+# Output:
+# ❌ Code Review BLOCKED
+# 🧪 Test Coverage Status:
+#    Changed Files Coverage: 45.2% ❌ (below 80% requirement)
+#    Deficit: -34.8%
+#
+# 📝 Files Needing Tests:
+#    ❌ backend/src/routes/order.ts: 45.2% (needs +34.8%)
+
+# Fix by adding tests
+# Create backend/src/routes/order.test.ts
+
+# Re-run tests
+npm run test:coverage
+
+# Verify coverage
+# Coverage: 87.3% ✅
+
+# Re-run review
+review-code
+
+# Output:
+# ✅ Code Review Complete
+# 🧪 Test Coverage Status:
+#    Changed Files Coverage: 87.3% ✅
+```
+
+### Example 3: Security-Focused Review (Still Requires Tests)
+```bash
+# Review with security focus
+review-code --focus=security
+
+# Even with --focus=security, tests still run first:
+# 🧪 Running tests and checking coverage...
+# ✅ Coverage requirement met: 89.1% (≥80%)
+#
+# Then performs security review:
+# Generates docs/review/20251120-143022-code-review.md
+# with emphasis on:
+# - Auth patterns
+# - Data validation
+# - SQL injection prevention
+# - XSS prevention
+# - CSRF protection
+```
+
+### Example 4: Performance Review with Full Test Suite
+```bash
+# Review specific performance-critical files
+review-code backend/src/graphql/resolvers/*.ts --focus=performance
+
+# First validates tests:
+# ✅ All 145 tests passing
+# ✅ Coverage: 89.1%
+#
+# Then checks for performance issues:
+# - N+1 query patterns
+# - DataLoader usage
+# - Database query optimization
+# - Memory leaks
+# - Bundle size impact
+```
+
+### Example 5: Complete Development Workflow
+```bash
+# 1. Create feature branch
+git checkout -b feature/user-profile
+
+# 2. Write implementation
+# frontend/src/components/UserProfile.tsx
+
+# 3. Write comprehensive tests (TDD approach)
+# frontend/src/components/UserProfile.test.tsx
+
+# 4. Run tests locally
+npm test UserProfile.test.tsx
+
+# 5. Check coverage
+npm run test:coverage
+
+# Output: UserProfile.tsx - 92.5% coverage ✅
+
+# 6. Stage all changes
+git add .
+
+# 7. Run review-code (includes test execution)
+review-code
+
+# Output:
+# ✅ Code Review Complete
+# 🧪 Test Coverage: 92.5% ✅
+# 📊 Issues Found: 2 (1 medium, 1 low)
+#
+# Medium Priority:
+# - Consider memoizing expensive calculations in UserProfile.tsx:45
+
+# 8. Fix medium priority issue
+# Add useMemo to expensive calculation
+
+# 9. Re-test
+npm test
+
+# 10. Re-review
+review-code
+
+# Output:
+# ✅ Code Review Complete
+# 🧪 Test Coverage: 92.5% ✅
+# 📊 Issues Found: 0
+# Overall Grade: A
+
+# 11. Commit
+git commit -m "feat: add user profile component with 92.5% test coverage"
+
+# 12. Push
+git push origin feature/user-profile
+```
+
+## Configuration
+
+Add to `.claude/commands/config.json`:
+
+```json
+{
+  "review-code": {
+    "enabled": true,
+    "default_focus": "all",
+    "min_severity": "medium",
+    "auto_ultrathink": true,
+    "test_coverage": {
+      "enabled": true,
+      "minimum_coverage": 80,
+      "require_passing_tests": true,
+      "block_on_failure": true,
+      "coverage_scope": "changed_files",
+      "test_frameworks": {
+        "jest": true,
+        "vitest": true,
+        "pytest": true,
+        "playwright": true
+      }
+    },
+    "exclude_patterns": [
+      "*.test.ts",
+      "*.spec.ts",
+      "*.test.js",
+      "*.spec.js",
+      "__tests__/**",
+      "node_modules/**",
+      "dist/**",
+      "build/**",
+      "coverage/**"
+    ]
+  }
+}
+```
+
+**Configuration Options:**
+
+- `test_coverage.enabled` - Enable/disable coverage enforcement (default: `true`)
+- `test_coverage.minimum_coverage` - Minimum coverage percentage (default: `80`)
+- `test_coverage.require_passing_tests` - Block if tests fail (default: `true`)
+- `test_coverage.block_on_failure` - Block review on coverage failure (default: `true`)
+- `test_coverage.coverage_scope` - `changed_files` or `overall` (default: `changed_files`)
+
+**Adjusting Coverage Threshold:**
+
+To set a different threshold (e.g., 90%):
+```json
+{
+  "review-code": {
+    "test_coverage": {
+      "minimum_coverage": 90
+    }
+  }
+}
+```
+
+**Disabling Coverage Enforcement (NOT RECOMMENDED):**
+```json
+{
+  "review-code": {
+    "test_coverage": {
+      "enabled": false
+    }
+  }
+}
+```
+
+## Related Commands
+
+- `/debug-fix` - Fix issues found in reviews
+- `/test-automation` - Generate tests for reviewed code
+- `/git-commit-docs` - Commit with review documentation
+- `/organize-docs` - Organize review documents
+
+## Test Coverage Best Practices
+
+### Writing Tests for 80% Coverage
+
+**1. Test Structure**
+```typescript
+// user.test.ts
+describe('User Routes', () => {
+  describe('POST /api/users', () => {
+    it('should create user with valid data', async () => {
+      // Happy path - covers main flow
+    });
+
+    it('should reject invalid email format', async () => {
+      // Error handling - covers validation
+    });
+
+    it('should reject duplicate email', async () => {
+      // Error handling - covers uniqueness constraint
+    });
+
+    it('should hash password before saving', async () => {
+      // Security - covers critical functionality
+    });
+  });
+
+  describe('GET /api/users/:id', () => {
+    it('should return user by ID', async () => {
+      // Happy path
+    });
+
+    it('should return 404 for non-existent user', async () => {
+      // Error handling
+    });
+
+    it('should require authentication', async () => {
+      // Security
+    });
+  });
+});
+```
+
+**2. Coverage Goals**
+- **Happy Paths:** Cover main success scenarios (30%)
+- **Error Handling:** Cover validation and error cases (30%)
+- **Edge Cases:** Cover boundary conditions (20%)
+- **Security:** Cover auth, validation, sanitization (20%)
+
+**3. What 80% Means**
+- 80% of **statements** executed
+- 80% of **branches** covered (if/else, switch)
+- 80% of **functions** called
+- 80% of **lines** executed
+
+**4. Excluded from Coverage**
+- Test files themselves
+- Configuration files
+- Type definitions
+- Generated code
+
+### Common Coverage Mistakes
+
+❌ **Insufficient Error Handling Tests**
+```typescript
+// Only tests happy path - 50% coverage
+it('should create user', async () => {
+  const user = await createUser({ email: 'test@test.com' });
+  expect(user).toBeDefined();
+});
+```
+
+✅ **Comprehensive Error Testing**
+```typescript
+// Tests happy path + errors - 90% coverage
+it('should create user with valid data', async () => {
+  const user = await createUser({ email: 'test@test.com' });
+  expect(user).toBeDefined();
+});
+
+it('should reject invalid email', async () => {
+  await expect(createUser({ email: 'invalid' }))
+    .rejects.toThrow('Invalid email');
+});
+
+it('should reject missing fields', async () => {
+  await expect(createUser({}))
+    .rejects.toThrow('Email required');
+});
+```
+
+## Notes for Claude Code
+
+When executing this command:
+
+1. **CRITICAL: Execute tests FIRST** - Coverage validation is mandatory
+2. **BLOCK if coverage < 80%** - Do not proceed with code review
+3. **BLOCK if tests fail** - All tests must pass before review
+4. **Always use code-quality-reviewer agent** via Task tool
+5. **Include test coverage metrics** in review document
+6. **Generate timestamp-based filenames** for uniqueness
+7. **Create docs/review/ directory** if missing
+8. **Show concise summary** including test status
+9. **Reference review document** for detailed findings
+10. **Suggest fixes** but don't auto-apply (user decision)
+11. **Enforce test-first culture** - Emphasize testing in all reviews
+
+### Test Enforcement Checklist
+
+Before invoking code-quality-reviewer agent:
+
+- ✅ Tests executed successfully
+- ✅ Zero test failures
+- ✅ Changed files coverage ≥ 80%
+- ✅ Test results stored in environment variables
+- ✅ Per-file coverage calculated
+- ❌ If any check fails → BLOCK and exit
+
+## Command Metadata
+
+```yaml
+name: review-code
+category: code-quality
+agent: code-quality-reviewer
+output_type: markdown_document
+output_location: docs/review/
+token_cost: ~15,000 (includes test execution)
+token_savings: ~40,000 (per future reference)
+version: 2.0.0
+test_coverage_required: true
+minimum_coverage: 80%
+blocks_on_failure: true
+author: Quik Nation AI
+changelog:
+  - v2.0.0: Added mandatory 80% test coverage requirement
+  - v1.0.0: Initial release with code quality review
+```

@@ -1,0 +1,23 @@
+O **Claude Code** tem tantos recursos que é difícil acompanhar — e o **Q1/2026** piorou (no bom sentido): a Anthropic entregou mais em um trimestre do que muitas ferramentas em um ano. O vídeo separa o que **vale para o dia a dia** do que não compensa.
+
+**“Claude de qualquer lugar”** — Antes era quase só **terminal**: você saía, a sessão morria. O **OpenClaw** viralizou (Telegram, WhatsApp, celular, até Mac Mini dedicado 24/7) e destacou **“phone use”**. A Anthropic respondeu com várias frentes em semanas:
+
+1. **Remote control** (fim de fev.): sessão no **seu** computador; celular/navegador só “enxergam” a sessão (URL/QR). Simples (~30s), porém **uma sessão**, aprovações manuais (sem “skip perigoso” automático).
+
+2. **Dispatch** (co-work): não é só controle remoto — é **orquestrador**: thread persistente; tarefas de código vão ao Claude Code, trabalho de conhecimento ao **Claude Cowork**; notificações push; **desktop precisa ficar acordado** (app aberto). Exemplo: ~25 min dando direção no celular → **>3 h** de trabalho paralelo em segundo plano.
+
+3. **Channels** (20 de mar.): mensagens ao Claude Code por **Telegram, Discord, iMessage**; ida e volta; máquina ainda precisa rodar. **Eventos** de negócio (lead, formulário, pagamento) podem **empurrar** atualizações para a sessão — caminho parecido com OpenClaw (proativo).
+
+4. **Computer use** (23 de mar.): controle do **Mac** (cliques, apps, browser, planilhas); combina com Dispatch; ainda **preview**, só Mac, planos Pro/Max; mais lento que API direta — útil para apps **sem MCP** (legado).
+
+**Permissões** — O incômodo clássico: Claude para em todo arquivo/comando. Opções antigas: babá eletrônica ou `--dangerously-skip-permissions`. Novidades: **Auto mode** (24 mar.): classificador decide o que é seguro; rotina “criar arquivo / npm / testes” flui; ações arriscadas (deletar em massa, push na main, exfiltrar dados) **bloqueiam**. **Só plano Team por enquanto**. Para Pro/Max: **regras allow/deny** em `settings.json` (ler/editar `src`, rodar dev server, etc.; bloquear install agressivo, segredos) — não é tão “inteligente” quanto o classificador, mas cobre ~80%.
+
+**Loops e tarefas agendadas** — Loops repetem prompts na sessão (até ~3 dias). Agendamento evoluiu: **tarefas recorrentes na nuvem** (diário/semanal/mensal) **sem** depender do PC ligado. Combinação típica: agendamento de manhã + auto mode + checagem pelo celular via Channels.
+
+**Memória** — `automemory` acumula contradições após muitas sessões. **Autodream** (nome intencional): entre sessões, um subagente **consolida** memórias — datas relativas → absolutas, remove fatos contraditórios, funde duplicatas, poda notas obsoletas; mantém índice enxuto (**<~200 linhas**) porque memória consome tokens no startup. Dispara após **24 h e 5 sessões**. Comando `/stream` nem sempre funciona — dizer em linguagem natural: **“consolide meus arquivos de memória”**.
+
+**Além do terminal** — Tendência: **camadas** em cima do Claude Code (UI visual, Kanban, “mission control”, times de agentes com mailbox, Cowork para não devs). Claude Code vira **plataforma**; terminal continua forte mas não é o único interface. Donos de negócio: importa a **camada certa**, não precisam amar CLI.
+
+**Outras novidades (rápido)** — CLI do **Google Workspace** (Drive, Gmail, Calendar, Docs; muitas “receitas”). **Skills 2.0** com avaliação/A-B. **Modo voz** (`/voice`, várias línguias). **Opus 4.6** com janela de **1M tokens** — aviso: encher 1M degrada performance.
+
+Fechamento: ecossistema acelerando; CTA de curso/comunidade do autor.

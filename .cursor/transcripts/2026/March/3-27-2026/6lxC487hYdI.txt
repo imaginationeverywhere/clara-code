@@ -1,0 +1,1287 @@
+Claw just changed how we use the
+Claw just changed how we use the
+Claw just changed how we use the
+internet forever. And it's all because
+internet forever. And it's all because
+internet forever. And it's all because
+of this new skill it got called
+of this new skill it got called
+of this new skill it got called
+firecrol. And you see browsers were
+firecrol. And you see browsers were
+firecrol. And you see browsers were
+originally built for people. So every
+originally built for people. So every
+originally built for people. So every
+login screen, capture, or are you a
+login screen, capture, or are you a
+login screen, capture, or are you a
+robot checkbox was initially designed
+robot checkbox was initially designed
+robot checkbox was initially designed
+assuming a person was on the other side.
+assuming a person was on the other side.
+assuming a person was on the other side.
+So when an AI agent tried to use the
+So when an AI agent tried to use the
+So when an AI agent tried to use the
+web, it was fighting a system that it
+web, it was fighting a system that it
+web, it was fighting a system that it
+was never built for. And this new
+was never built for. And this new
+was never built for. And this new
+firecall skill changes that. It makes
+firecall skill changes that. It makes
+firecall skill changes that. It makes
+the web agentic, meaning Claude can now
+the web agentic, meaning Claude can now
+the web agentic, meaning Claude can now
+log in and stay logged in into your
+log in and stay logged in into your
+log in and stay logged in into your
+accounts, access apps and dashboards it
+accounts, access apps and dashboards it
+accounts, access apps and dashboards it
+could not touch before and run dozens of
+could not touch before and run dozens of
+could not touch before and run dozens of
+browsers in parallel. So everything it
+browsers in parallel. So everything it
+browsers in parallel. So everything it
+does on the web is finally fast,
+does on the web is finally fast,
+does on the web is finally fast,
+reliable, and actually works. I've been
+reliable, and actually works. I've been
+reliable, and actually works. I've been
+actually using this for the past few
+actually using this for the past few
+actually using this for the past few
+weeks, and it's literally changed how I
+weeks, and it's literally changed how I
+weeks, and it's literally changed how I
+work. So in this video, I'm going to
+work. So in this video, I'm going to
+work. So in this video, I'm going to
+break it down in three levels so you can
+break it down in three levels so you can
+break it down in three levels so you can
+do the same. First, we're going to get
+do the same. First, we're going to get
+do the same. First, we're going to get
+set up. We're going to install
+set up. We're going to install
+set up. We're going to install
+Firecrawl, connect it to Claude, and
+Firecrawl, connect it to Claude, and
+Firecrawl, connect it to Claude, and
+I'll show you what it can do. Then we're
+I'll show you what it can do. Then we're
+I'll show you what it can do. Then we're
+going to give Claw the ability to log
+going to give Claw the ability to log
+going to give Claw the ability to log
+into your apps and access sites that
+into your apps and access sites that
+into your apps and access sites that
+blocks every other tool. And level
+blocks every other tool. And level
+blocks every other tool. And level
+three, we're going to give Claude the
+three, we're going to give Claude the
+three, we're going to give Claude the
+ability to run multiple browsers in
+ability to run multiple browsers in
+ability to run multiple browsers in
+parallel so that everything it does on
+parallel so that everything it does on
+parallel so that everything it does on
+the web is fast, reliable, and most
+the web is fast, reliable, and most
+the web is fast, reliable, and most
+importantly actually remembers what
+importantly actually remembers what
+importantly actually remembers what
+you're working on and keeps that context
+you're working on and keeps that context
+you're working on and keeps that context
+of what you're trying to accomplish over
+of what you're trying to accomplish over
+of what you're trying to accomplish over
+time. And even if you have zero
+time. And even if you have zero
+time. And even if you have zero
+technical background, you'll be able to
+technical background, you'll be able to
+technical background, you'll be able to
+do this because all we're doing is
+do this because all we're doing is
+do this because all we're doing is
+simply speaking to Claude. Let's get
+simply speaking to Claude. Let's get
+simply speaking to Claude. Let's get
+into it.
+into it.
+into it.
+Okay, before we set anything up, let me
+Okay, before we set anything up, let me
+Okay, before we set anything up, let me
+quickly explain why what we're doing is
+quickly explain why what we're doing is
+quickly explain why what we're doing is
+so important. Cuz right now, if you
+so important. Cuz right now, if you
+so important. Cuz right now, if you
+wanted to give Claude browser access,
+wanted to give Claude browser access,
+wanted to give Claude browser access,
+you'd basically be handing it the keys
+you'd basically be handing it the keys
+you'd basically be handing it the keys
+to your actual browser, the one you use
+to your actual browser, the one you use
+to your actual browser, the one you use
+every day. So, your Gmail, your banking,
+every day. So, your Gmail, your banking,
+every day. So, your Gmail, your banking,
+your passwords, everything. And sure,
+your passwords, everything. And sure,
+your passwords, everything. And sure,
+Claude has good intentions. But do you
+Claude has good intentions. But do you
+Claude has good intentions. But do you
+really want an AI agent roaming freely
+really want an AI agent roaming freely
+really want an AI agent roaming freely
+through your personal browser with
+through your personal browser with
+through your personal browser with
+access to everything on your machine?
+access to everything on your machine?
+access to everything on your machine?
+One wrong move. And it's potentially
+One wrong move. And it's potentially
+One wrong move. And it's potentially
+touching stuff you'd never want it near.
+touching stuff you'd never want it near.
+touching stuff you'd never want it near.
+So, we're going to be using Firecrawl to
+So, we're going to be using Firecrawl to
+So, we're going to be using Firecrawl to
+solve this by giving Claude its own
+solve this by giving Claude its own
+solve this by giving Claude its own
+dedicated browser completely separate
+dedicated browser completely separate
+dedicated browser completely separate
+from yours. So, Claude gets a sandboxed
+from yours. So, Claude gets a sandboxed
+from yours. So, Claude gets a sandboxed
+environment that's isolated, private,
+environment that's isolated, private,
+environment that's isolated, private,
+and controlled. And my personal favorite
+and controlled. And my personal favorite
+and controlled. And my personal favorite
+part about this is that this cloud
+part about this is that this cloud
+part about this is that this cloud
+browser stays logged in. So, once Claude
+browser stays logged in. So, once Claude
+browser stays logged in. So, once Claude
+authenticates to a service you need,
+authenticates to a service you need,
+authenticates to a service you need,
+that session is saved and persisted. So,
+that session is saved and persisted. So,
+that session is saved and persisted. So,
+next time you need it, Firecrawl lets it
+next time you need it, Firecrawl lets it
+next time you need it, Firecrawl lets it
+remember. So, you can control whatever
+remember. So, you can control whatever
+remember. So, you can control whatever
+access you give Claude. That's the
+access you give Claude. That's the
+access you give Claude. That's the
+difference between giving your AI agent
+difference between giving your AI agent
+difference between giving your AI agent
+your card versus giving it its own cars.
+your card versus giving it its own cars.
+your card versus giving it its own cars.
+And that's how we should stay safe and
+And that's how we should stay safe and
+And that's how we should stay safe and
+use tech like this
+use tech like this
+use tech like this
+to set it up. First things first, we
+to set it up. First things first, we
+to set it up. First things first, we
+want to make sure we have claude desktop
+want to make sure we have claude desktop
+want to make sure we have claude desktop
+enabled. Okay, cloud desktop download.
+enabled. Okay, cloud desktop download.
+enabled. Okay, cloud desktop download.
+I'm just going to Google that really
+I'm just going to Google that really
+I'm just going to Google that really
+quick. And then scroll down and then you
+quick. And then scroll down and then you
+quick. And then scroll down and then you
+want to install
+want to install
+want to install
+one of the cloud desktop for Mac or
+one of the cloud desktop for Mac or
+one of the cloud desktop for Mac or
+Windows. Okay, and then you want to open
+Windows. Okay, and then you want to open
+Windows. Okay, and then you want to open
+up Cloud. So here I have Cloud up and
+up Cloud. So here I have Cloud up and
+up Cloud. So here I have Cloud up and
+now I'm going to show you the next step.
+now I'm going to show you the next step.
+now I'm going to show you the next step.
+So next what we want to do is head over
+So next what we want to do is head over
+So next what we want to do is head over
+to firecrawl.dev dev and it's also in
+to firecrawl.dev dev and it's also in
+to firecrawl.dev dev and it's also in
+the link in the description if you just
+the link in the description if you just
+the link in the description if you just
+want to follow that. So I'm going to
+want to follow that. So I'm going to
+want to follow that. So I'm going to
+Google firecrawl.dev
+and right here you just want to log in
+and right here you just want to log in
+and right here you just want to log in
+here dashboard and you see you have a
+here dashboard and you see you have a
+here dashboard and you see you have a
+couple different things and notice how
+couple different things and notice how
+couple different things and notice how
+there's this new browser that's
+there's this new browser that's
+there's this new browser that's
+available and to give you a quick peak
+available and to give you a quick peak
+available and to give you a quick peak
+of what is inside. If I click browser
+of what is inside. If I click browser
+of what is inside. If I click browser
+uh you see I already have two agents
+uh you see I already have two agents
+uh you see I already have two agents
+that are working for me doing stuff in
+that are working for me doing stuff in
+that are working for me doing stuff in
+their own browsers and I'm going to show
+their own browsers and I'm going to show
+their own browsers and I'm going to show
+you how to set that up. So your agents
+you how to set that up. So your agents
+you how to set that up. So your agents
+have their own browser, their own login,
+have their own browser, their own login,
+have their own browser, their own login,
+all of that. Okay. So what you want to
+all of that. Okay. So what you want to
+all of that. Okay. So what you want to
+do is first you want to go back to
+do is first you want to go back to
+do is first you want to go back to
+overview and then what we want to do is
+overview and then what we want to do is
+overview and then what we want to do is
+notice this API key. We want to use that
+notice this API key. We want to use that
+notice this API key. We want to use that
+API key and this data over here. So
+API key and this data over here. So
+API key and this data over here. So
+we're going to need to give Claude
+we're going to need to give Claude
+we're going to need to give Claude
+access to the stuff by copying and
+access to the stuff by copying and
+access to the stuff by copying and
+pasting it to do the setup. Okay. So let
+pasting it to do the setup. Okay. So let
+pasting it to do the setup. Okay. So let
+me show you how to do that. Okay. To do
+me show you how to do that. Okay. To do
+me show you how to do that. Okay. To do
+that, what we're going to do is we're
+that, what we're going to do is we're
+that, what we're going to do is we're
+going to go back to Claude and then
+going to go back to Claude and then
+going to go back to Claude and then
+we're going to hit this plus button
+we're going to hit this plus button
+we're going to hit this plus button
+right here and we're going to hit
+right here and we're going to hit
+right here and we're going to hit
+connectors. And what a connector is is
+connectors. And what a connector is is
+connectors. And what a connector is is
+basically we're giving our cloud access
+basically we're giving our cloud access
+basically we're giving our cloud access
+to use firecrawl, right? So we're going
+to use firecrawl, right? So we're going
+to use firecrawl, right? So we're going
+to hit manage connectors. So what you do
+to hit manage connectors. So what you do
+to hit manage connectors. So what you do
+is you go here, you hit this plus, you
+is you go here, you hit this plus, you
+is you go here, you hit this plus, you
+hit add custom connector and then you
+hit add custom connector and then you
+hit add custom connector and then you
+let's name this firecrawl
+let's name this firecrawl
+let's name this firecrawl
+and then you paste this in and this will
+and then you paste this in and this will
+and then you paste this in and this will
+be in the link in the description or the
+be in the link in the description or the
+be in the link in the description or the
+guide if you want, but it's just
+guide if you want, but it's just
+guide if you want, but it's just
+https/mcp.firecrawl.dev
+and then your API key where you just
+and then your API key where you just
+and then your API key where you just
+take it from here and then you paste it
+take it from here and then you paste it
+take it from here and then you paste it
+here. Okay, so I just pasted mine and
+here. Okay, so I just pasted mine and
+here. Okay, so I just pasted mine and
+then I'm going to hit add. Okay, so
+then I'm going to hit add. Okay, so
+then I'm going to hit add. Okay, so
+after you add it, you should see there
+after you add it, you should see there
+after you add it, you should see there
+should be a fire crawl right here. And
+should be a fire crawl right here. And
+should be a fire crawl right here. And
+if you hit that fire crawl, you can see
+if you hit that fire crawl, you can see
+if you hit that fire crawl, you can see
+it's going to ask need approval. So I'm
+it's going to ask need approval. So I'm
+it's going to ask need approval. So I'm
+just going to hit always allow. And now
+just going to hit always allow. And now
+just going to hit always allow. And now
+I don't have to keep pressing go. It's
+I don't have to keep pressing go. It's
+I don't have to keep pressing go. It's
+actually going to do it for me. Okay,
+actually going to do it for me. Okay,
+actually going to do it for me. Okay,
+great. So now we have our connectors
+great. So now we have our connectors
+great. So now we have our connectors
+enabled. Now what we want to do is go
+enabled. Now what we want to do is go
+enabled. Now what we want to do is go
+back to our chat. So let me just do
+back to our chat. So let me just do
+back to our chat. So let me just do
+that.
+that.
+that.
+So now right here, if you hit plus and
+So now right here, if you hit plus and
+So now right here, if you hit plus and
+you can see if you go to connectors,
+you can see if you go to connectors,
+you can see if you go to connectors,
+you'll have this fire crawl enabled.
+you'll have this fire crawl enabled.
+you'll have this fire crawl enabled.
+Make sure you check this. And now we're
+Make sure you check this. And now we're
+Make sure you check this. And now we're
+ready to use our firecrawl. Okay, so
+ready to use our firecrawl. Okay, so
+ready to use our firecrawl. Okay, so
+that's level one. Now, let's go to level
+that's level one. Now, let's go to level
+that's level one. Now, let's go to level
+two. And I'm going to be showing you
+two. And I'm going to be showing you
+two. And I'm going to be showing you
+what you're going to be building now
+what you're going to be building now
+what you're going to be building now
+that you have firecrawl set up.
+that you have firecrawl set up.
+that you have firecrawl set up.
+But first, I need to explain how Claude
+But first, I need to explain how Claude
+But first, I need to explain how Claude
+plus firecrawl actually works. Because
+plus firecrawl actually works. Because
+plus firecrawl actually works. Because
+once you get this, everything else is
+once you get this, everything else is
+once you get this, everything else is
+going to click. So, think about a really
+going to click. So, think about a really
+going to click. So, think about a really
+talented new employee. First day on the
+talented new employee. First day on the
+talented new employee. First day on the
+job, you sit them down, walk them
+job, you sit them down, walk them
+job, you sit them down, walk them
+through everything, and they're sharp,
+through everything, and they're sharp,
+through everything, and they're sharp,
+so they do a great job. But they go home
+so they do a great job. But they go home
+so they do a great job. But they go home
+and come back the next day and remember
+and come back the next day and remember
+and come back the next day and remember
+absolutely nothing. not because they're
+absolutely nothing. not because they're
+absolutely nothing. not because they're
+bad at their job, but because every
+bad at their job, but because every
+bad at their job, but because every
+single day they wake up with a blank new
+single day they wake up with a blank new
+single day they wake up with a blank new
+complete memory. And that's Claude. It's
+complete memory. And that's Claude. It's
+complete memory. And that's Claude. It's
+incredibly capable within a session. But
+incredibly capable within a session. But
+incredibly capable within a session. But
+the moment you close it, the context is
+the moment you close it, the context is
+the moment you close it, the context is
+gone and you're starting from scratch.
+gone and you're starting from scratch.
+gone and you're starting from scratch.
+Furthermore, because browsers were
+Furthermore, because browsers were
+Furthermore, because browsers were
+designed for people, which means it's
+designed for people, which means it's
+designed for people, which means it's
+going to run into issues like hitting
+going to run into issues like hitting
+going to run into issues like hitting
+buttons, solving captures, doing the are
+buttons, solving captures, doing the are
+buttons, solving captures, doing the are
+you a robot checks, all of them were
+you a robot checks, all of them were
+you a robot checks, all of them were
+built with a person in mind, and that
+built with a person in mind, and that
+built with a person in mind, and that
+fills up Claude's context, and it starts
+fills up Claude's context, and it starts
+fills up Claude's context, and it starts
+degrading over time. So when an AI agent
+degrading over time. So when an AI agent
+degrading over time. So when an AI agent
+tries to browse the web the same way you
+tries to browse the web the same way you
+tries to browse the web the same way you
+do, it keeps constantly hitting walls.
+do, it keeps constantly hitting walls.
+do, it keeps constantly hitting walls.
+You can do this, but it's slow and
+You can do this, but it's slow and
+You can do this, but it's slow and
+unreliable. Why we're using a fire crawl
+unreliable. Why we're using a fire crawl
+unreliable. Why we're using a fire crawl
+is because firecrawl flips [snorts] this
+is because firecrawl flips [snorts] this
+is because firecrawl flips [snorts] this
+whole thing on its head. It makes the
+whole thing on its head. It makes the
+whole thing on its head. It makes the
+whole web agentic. Meaning instead of
+whole web agentic. Meaning instead of
+whole web agentic. Meaning instead of
+claw trying to fight through a human
+claw trying to fight through a human
+claw trying to fight through a human
+first interface, it's going to get a
+first interface, it's going to get a
+first interface, it's going to get a
+clean structured access to the data
+clean structured access to the data
+clean structured access to the data
+directly, which means the reliability
+directly, which means the reliability
+directly, which means the reliability
+goes up and the speed goes up and the
+goes up and the speed goes up and the
+goes up and the speed goes up and the
+amount of failures you have drops
+amount of failures you have drops
+amount of failures you have drops
+dramatically, which means you have to
+dramatically, which means you have to
+dramatically, which means you have to
+use less tokens and everything is way
+use less tokens and everything is way
+use less tokens and everything is way
+more efficient. So, let me show you how
+more efficient. So, let me show you how
+more efficient. So, let me show you how
+I've been using this so you have a clear
+I've been using this so you have a clear
+I've been using this so you have a clear
+use case in mind. All right, so the
+use case in mind. All right, so the
+use case in mind. All right, so the
+first thing I'm going to be showing you
+first thing I'm going to be showing you
+first thing I'm going to be showing you
+how to build is this thing. You see how
+how to build is this thing. You see how
+how to build is this thing. You see how
+there's like a little cat right here?
+there's like a little cat right here?
+there's like a little cat right here?
+And this cat is responsible to make
+And this cat is responsible to make
+And this cat is responsible to make
+daily posts in my school community and
+daily posts in my school community and
+daily posts in my school community and
+also help out members with if they have
+also help out members with if they have
+also help out members with if they have
+Claude type questions. So, for example,
+Claude type questions. So, for example,
+Claude type questions. So, for example,
+it's doing a bunch of stuff like right
+it's doing a bunch of stuff like right
+it's doing a bunch of stuff like right
+here, I made a little trading bot with
+here, I made a little trading bot with
+here, I made a little trading bot with
+Claude and uh you can see right here,
+Claude and uh you can see right here,
+Claude and uh you can see right here,
+it's also interacting with members.
+it's also interacting with members.
+it's also interacting with members.
+It's uh helping them out with questions
+It's uh helping them out with questions
+It's uh helping them out with questions
+like look, this guy loves it. [snorts]
+like look, this guy loves it. [snorts]
+like look, this guy loves it. [snorts]
+And it's also like, you know, explaining
+And it's also like, you know, explaining
+And it's also like, you know, explaining
+how this stuff is happening as an
+how this stuff is happening as an
+how this stuff is happening as an
+assistant. that's also technical because
+assistant. that's also technical because
+assistant. that's also technical because
+it has all that brain behind it and you
+it has all that brain behind it and you
+it has all that brain behind it and you
+can see how it's talking about the
+can see how it's talking about the
+can see how it's talking about the
+skills and heartbeat, MD, etc. So, it's
+skills and heartbeat, MD, etc. So, it's
+skills and heartbeat, MD, etc. So, it's
+a pretty cool agentic assistant in my
+a pretty cool agentic assistant in my
+a pretty cool agentic assistant in my
+school community that I'll show you how
+school community that I'll show you how
+school community that I'll show you how
+to build right now. All right, so to do
+to build right now. All right, so to do
+to build right now. All right, so to do
+our build, what we're going to be using
+our build, what we're going to be using
+our build, what we're going to be using
+is Claude Co-work. So, I'm going to hit
+is Claude Co-work. So, I'm going to hit
+is Claude Co-work. So, I'm going to hit
+co-work right here. And right here, I'm
+co-work right here. And right here, I'm
+co-work right here. And right here, I'm
+going to make a new folder. So, right
+going to make a new folder. So, right
+going to make a new folder. So, right
+here, let me just call this fire crawl.
+here, let me just call this fire crawl.
+here, let me just call this fire crawl.
+Um, I'm going to open it always allow.
+Um, I'm going to open it always allow.
+Um, I'm going to open it always allow.
+Great. And I'm going to check if this
+Great. And I'm going to check if this
+Great. And I'm going to check if this
+has access to the connector. Cool. Right
+has access to the connector. Cool. Right
+has access to the connector. Cool. Right
+here. Okay. Now I want to be like, "Hey,
+here. Okay. Now I want to be like, "Hey,
+here. Okay. Now I want to be like, "Hey,
+can you use Firecrawl to spin up a
+can you use Firecrawl to spin up a
+can you use Firecrawl to spin up a
+persistent browser?" And in that
+persistent browser?" And in that
+persistent browser?" And in that
+persistent browser, I would like you to
+persistent browser, I would like you to
+persistent browser, I would like you to
+go to school.com and log in with this
+go to school.com and log in with this
+go to school.com and log in with this
+credentials. Make sure you don't forget
+credentials. Make sure you don't forget
+credentials. Make sure you don't forget
+and you're always logged in. So, we're
+and you're always logged in. So, we're
+and you're always logged in. So, we're
+going to be running a lot of tasks there
+going to be running a lot of tasks there
+going to be running a lot of tasks there
+later. Okay,
+later. Okay,
+later. Okay,
+great. Now, I'm just going to give it my
+great. Now, I'm just going to give it my
+great. Now, I'm just going to give it my
+school username and password. So,
+school username and password. So,
+school username and password. So,
+username. And again, this is for a bot
+username. And again, this is for a bot
+username. And again, this is for a bot
+that you just make on your own. So you
+that you just make on your own. So you
+that you just make on your own. So you
+can give it the email. I'm going to hide
+can give it the email. I'm going to hide
+can give it the email. I'm going to hide
+this for now. And password.
+this for now. And password.
+this for now. And password.
+And I'm going to hide this one, too. And
+And I'm going to hide this one, too. And
+And I'm going to hide this one, too. And
+then you just hit go. Okay. So I'm going
+then you just hit go. Okay. So I'm going
+then you just hit go. Okay. So I'm going
+to fill in my username and password for
+to fill in my username and password for
+to fill in my username and password for
+my bot in school. And then I'm going to
+my bot in school. And then I'm going to
+my bot in school. And then I'm going to
+hit go. Okay, great. So now it's saying
+hit go. Okay, great. So now it's saying
+hit go. Okay, great. So now it's saying
+login was done. And this is really cool.
+login was done. And this is really cool.
+login was done. And this is really cool.
+Let me show you. If I go back to
+Let me show you. If I go back to
+Let me show you. If I go back to
+firecraw and if I go to browser
+and you see this is kind of cool that it
+and you see this is kind of cool that it
+and you see this is kind of cool that it
+I can see it uh being active and logged
+I can see it uh being active and logged
+I can see it uh being active and logged
+into school.
+into school.
+into school.
+Normally you can't do this with co-work
+Normally you can't do this with co-work
+Normally you can't do this with co-work
+but now I have a persistent login. Now I
+but now I have a persistent login. Now I
+but now I have a persistent login. Now I
+can get my bot to be doing stuff. So for
+can get my bot to be doing stuff. So for
+can get my bot to be doing stuff. So for
+example, now I can go back and I can be
+example, now I can go back and I can be
+example, now I can go back and I can be
+like, "Hey, every morning can you make a
+like, "Hey, every morning can you make a
+like, "Hey, every morning can you make a
+schedule task to do research on uh
+schedule task to do research on uh
+schedule task to do research on uh
+Reddit or something?" and then see
+Reddit or something?" and then see
+Reddit or something?" and then see
+what's the new trending topic that's
+what's the new trending topic that's
+what's the new trending topic that's
+brewing in Claude or make some
+brewing in Claude or make some
+brewing in Claude or make some
+actionable user insight and then make a
+actionable user insight and then make a
+actionable user insight and then make a
+post with that so we can help users
+and then also if you see someone
+and then also if you see someone
+and then also if you see someone
+struggling or asking a question make
+struggling or asking a question make
+struggling or asking a question make
+sure to set up a schedule task so every
+sure to set up a schedule task so every
+sure to set up a schedule task so every
+day at one time you can answer these
+day at one time you can answer these
+day at one time you can answer these
+questions.
+So, this is really cool. And notice how
+So, this is really cool. And notice how
+So, this is really cool. And notice how
+I said schedule task because what we're
+I said schedule task because what we're
+I said schedule task because what we're
+going to be doing is we're going to be
+going to be doing is we're going to be
+going to be doing is we're going to be
+taking advantage of Cloud Co-work's
+taking advantage of Cloud Co-work's
+taking advantage of Cloud Co-work's
+schedule tasks. Okay, so you see right
+schedule tasks. Okay, so you see right
+schedule tasks. Okay, so you see right
+here, Cloud Co-Work has the ability to
+here, Cloud Co-Work has the ability to
+here, Cloud Co-Work has the ability to
+do schedule tasks. So, if I hit the
+do schedule tasks. So, if I hit the
+do schedule tasks. So, if I hit the
+schedule, you can see normally Cloud
+schedule, you can see normally Cloud
+schedule, you can see normally Cloud
+Co-Work won't have access to a browser.
+Co-Work won't have access to a browser.
+Co-Work won't have access to a browser.
+So, what Firecrol lets it do is have its
+So, what Firecrol lets it do is have its
+So, what Firecrol lets it do is have its
+own persistent login and background on
+own persistent login and background on
+own persistent login and background on
+its own. And it's going to be creating
+its own. And it's going to be creating
+its own. And it's going to be creating
+these things and creating these
+these things and creating these
+these things and creating these
+scheduled tasks. So, I don't have to
+scheduled tasks. So, I don't have to
+scheduled tasks. So, I don't have to
+touch everything. And we already made an
+touch everything. And we already made an
+touch everything. And we already made an
+agentic assistant inside our school.
+agentic assistant inside our school.
+agentic assistant inside our school.
+Okay, let me hit schedule. And you see
+Okay, let me hit schedule. And you see
+Okay, let me hit schedule. And you see
+every morning it's going to do this. If
+every morning it's going to do this. If
+every morning it's going to do this. If
+I go back to my scheduled and you see
+I go back to my scheduled and you see
+I go back to my scheduled and you see
+right here, see that's pretty cool,
+right here, see that's pretty cool,
+right here, see that's pretty cool,
+right? And I can run it now if I would
+right? And I can run it now if I would
+right? And I can run it now if I would
+like to. Let's actually do that and test
+like to. Let's actually do that and test
+like to. Let's actually do that and test
+it out. Okay, great. So, it's done doing
+it out. Okay, great. So, it's done doing
+it out. Okay, great. So, it's done doing
+the scheduled tasks. So, it says every
+the scheduled tasks. So, it says every
+the scheduled tasks. So, it says every
+day at 9:05 is going to make these
+day at 9:05 is going to make these
+day at 9:05 is going to make these
+morning insights and 12 it's going to,
+morning insights and 12 it's going to,
+morning insights and 12 it's going to,
+you know, respond to any questions or
+you know, respond to any questions or
+you know, respond to any questions or
+anything like that. And if we go back to
+anything like that. And if we go back to
+anything like that. And if we go back to
+the scheduled task, you can see these
+the scheduled task, you can see these
+the scheduled task, you can see these
+are already up. And I can see that it's
+are already up. And I can see that it's
+are already up. And I can see that it's
+built a skill. It's running a new little
+built a skill. It's running a new little
+built a skill. It's running a new little
+thing. And I want to see this happen.
+thing. And I want to see this happen.
+thing. And I want to see this happen.
+And if I go into that, I can see that,
+And if I go into that, I can see that,
+And if I go into that, I can see that,
+hey, there's an existing school post.
+hey, there's an existing school post.
+hey, there's an existing school post.
+It's crafting an insight. It's loading
+It's crafting an insight. It's loading
+It's crafting an insight. It's loading
+these tools to the browser, and it's
+these tools to the browser, and it's
+these tools to the browser, and it's
+going to actually make this post. This
+going to actually make this post. This
+going to actually make this post. This
+is pretty interesting. So, I just went
+is pretty interesting. So, I just went
+is pretty interesting. So, I just went
+back uh right here uh just to see and
+back uh right here uh just to see and
+back uh right here uh just to see and
+it's actually like typing it in which is
+it's actually like typing it in which is
+it's actually like typing it in which is
+um pretty interesting to see. So, now in
+um pretty interesting to see. So, now in
+um pretty interesting to see. So, now in
+my browser sessions, I can actually see
+my browser sessions, I can actually see
+my browser sessions, I can actually see
+my agents working live. And the nice
+my agents working live. And the nice
+my agents working live. And the nice
+part about what we're doing here with
+part about what we're doing here with
+part about what we're doing here with
+Firecrawl is you can spin up multiple
+Firecrawl is you can spin up multiple
+Firecrawl is you can spin up multiple
+sessions. So, you can work on many
+sessions. So, you can work on many
+sessions. So, you can work on many
+different things each with its own login
+different things each with its own login
+different things each with its own login
+actually doing the stuff in real time.
+actually doing the stuff in real time.
+actually doing the stuff in real time.
+Okay, cool. So, it actually just made
+Okay, cool. So, it actually just made
+Okay, cool. So, it actually just made
+its first post and we can see right here
+its first post and we can see right here
+its first post and we can see right here
+we can say, "Hey, uh, it researched
+we can say, "Hey, uh, it researched
+we can say, "Hey, uh, it researched
+because this literally happened like
+because this literally happened like
+because this literally happened like
+today that the claude gave us 1 million
+today that the claude gave us 1 million
+today that the claude gave us 1 million
+context window for everyone for free or
+context window for everyone for free or
+context window for everyone for free or
+with the max plan. You can see it just
+with the max plan. You can see it just
+with the max plan. You can see it just
+posted right here. If I go to my actual
+posted right here. If I go to my actual
+posted right here. If I go to my actual
+account in school, I can see uh, one
+account in school, I can see uh, one
+account in school, I can see uh, one
+load one new post and there we go.
+load one new post and there we go.
+load one new post and there we go.
+Awesome. All right. So, we have our
+Awesome. All right. So, we have our
+Awesome. All right. So, we have our
+Aentic Assistant now. It's going to be
+Aentic Assistant now. It's going to be
+Aentic Assistant now. It's going to be
+looking out. It's going to be responding
+looking out. It's going to be responding
+looking out. It's going to be responding
+to other people over time. And you can
+to other people over time. And you can
+to other people over time. And you can
+set it in any schedule you'd like.
+set it in any schedule you'd like.
+set it in any schedule you'd like.
+Great. Now that we've built this, now
+Great. Now that we've built this, now
+Great. Now that we've built this, now
+let's take it a next step further.
+let's take it a next step further.
+let's take it a next step further.
+All right, so level three, I'm going to
+All right, so level three, I'm going to
+All right, so level three, I'm going to
+show you this with a real use case I've
+show you this with a real use case I've
+show you this with a real use case I've
+actually been using a lot. So I run this
+actually been using a lot. So I run this
+actually been using a lot. So I run this
+company called Booked AI. We build voice
+company called Booked AI. We build voice
+company called Booked AI. We build voice
+agents that qualify leads for a lot of
+agents that qualify leads for a lot of
+agents that qualify leads for a lot of
+businesses. And one of the best fits we
+businesses. And one of the best fits we
+businesses. And one of the best fits we
+found is real estate wholesalers. These
+found is real estate wholesalers. These
+found is real estate wholesalers. These
+wholesalers tend to run a lot of ads and
+wholesalers tend to run a lot of ads and
+wholesalers tend to run a lot of ads and
+then they get flooded with a lot of
+then they get flooded with a lot of
+then they get flooded with a lot of
+inbound leads. And those voice agents
+inbound leads. And those voice agents
+inbound leads. And those voice agents
+whenever they fill that form, they call
+whenever they fill that form, they call
+whenever they fill that form, they call
+those leads, they qualify them before
+those leads, they qualify them before
+those leads, they qualify them before
+anyone has to pick up the phone, then
+anyone has to pick up the phone, then
+anyone has to pick up the phone, then
+set an appointment with people that are
+set an appointment with people that are
+set an appointment with people that are
+qualified. and the results have been
+qualified. and the results have been
+qualified. and the results have been
+really strong. So, naturally, I wanted
+really strong. So, naturally, I wanted
+really strong. So, naturally, I wanted
+to find more real estate wholesalers who
+to find more real estate wholesalers who
+to find more real estate wholesalers who
+are actively running ads and show them
+are actively running ads and show them
+are actively running ads and show them
+what kind of results we're getting for
+what kind of results we're getting for
+what kind of results we're getting for
+them. The problem is that finding them
+them. The problem is that finding them
+them. The problem is that finding them
+in the US is a nightmare. You'd have to
+in the US is a nightmare. You'd have to
+in the US is a nightmare. You'd have to
+manually dig through Google or Facebook
+manually dig through Google or Facebook
+manually dig through Google or Facebook
+ads or websites one by one. And that's
+ads or websites one by one. And that's
+ads or websites one by one. And that's
+exactly the kind of problems Parallel
+exactly the kind of problems Parallel
+exactly the kind of problems Parallel
+Agents was built for. So, here's what
+Agents was built for. So, here's what
+Agents was built for. So, here's what
+we're going to do. We're going to get
+we're going to do. We're going to get
+we're going to do. We're going to get
+Claude to help us find a lot of
+Claude to help us find a lot of
+Claude to help us find a lot of
+qualified real estate wholesalers in the
+qualified real estate wholesalers in the
+qualified real estate wholesalers in the
+US who are actively running ads and grab
+US who are actively running ads and grab
+US who are actively running ads and grab
+their company name, their website, what
+their company name, their website, what
+their company name, their website, what
+market they're in, and their contact
+market they're in, and their contact
+market they're in, and their contact
+information. And then once I have the
+information. And then once I have the
+information. And then once I have the
+list, I'm going to get Claude to draft a
+list, I'm going to get Claude to draft a
+list, I'm going to get Claude to draft a
+personalized outreach message for each
+personalized outreach message for each
+personalized outreach message for each
+one based on what it found. So watch
+one based on what it found. So watch
+one based on what it found. So watch
+this. Okay, so I'm back on Claude. I
+this. Okay, so I'm back on Claude. I
+this. Okay, so I'm back on Claude. I
+just opened up a new tab. And now I'm
+just opened up a new tab. And now I'm
+just opened up a new tab. And now I'm
+just going to be speaking to it. So hey,
+just going to be speaking to it. So hey,
+just going to be speaking to it. So hey,
+um, I need you to find me real estate
+um, I need you to find me real estate
+um, I need you to find me real estate
+wholesalers across the US who are
+wholesalers across the US who are
+wholesalers across the US who are
+actively running ads. Use Firecrawl to
+actively running ads. Use Firecrawl to
+actively running ads. Use Firecrawl to
+search 10 major markets in parallel.
+search 10 major markets in parallel.
+search 10 major markets in parallel.
+Maybe Atlanta, Dallas, Phoenix, Houston,
+Maybe Atlanta, Dallas, Phoenix, Houston,
+Maybe Atlanta, Dallas, Phoenix, Houston,
+Tampa, Charlotte, uh, and a couple more.
+Tampa, Charlotte, uh, and a couple more.
+Tampa, Charlotte, uh, and a couple more.
+Find each one. Scrape their website.
+Find each one. Scrape their website.
+Find each one. Scrape their website.
+Grab their company name, their website,
+Grab their company name, their website,
+Grab their company name, their website,
+their market, phone number, and email.
+their market, phone number, and email.
+their market, phone number, and email.
+Then I want you to draft a personalized
+Then I want you to draft a personalized
+Then I want you to draft a personalized
+outreach message for each one. Here's
+outreach message for each one. Here's
+outreach message for each one. Here's
+the context you need. We are Booked in
+the context you need. We are Booked in
+the context you need. We are Booked in
+AI. We build AI voice agents that
+AI. We build AI voice agents that
+AI. We build AI voice agents that
+instantly call and qualify inbound leads
+instantly call and qualify inbound leads
+instantly call and qualify inbound leads
+for real estate wholesalers. The agent
+for real estate wholesalers. The agent
+for real estate wholesalers. The agent
+will call every lead within 60 seconds,
+will call every lead within 60 seconds,
+will call every lead within 60 seconds,
+ask qualifying questions, and only
+ask qualifying questions, and only
+ask qualifying questions, and only
+passes the warm leads to your human
+passes the warm leads to your human
+passes the warm leads to your human
+closer when they're qualified. So
+closer when they're qualified. So
+closer when they're qualified. So
+wholesalers running paid ads are
+wholesalers running paid ads are
+wholesalers running paid ads are
+probably our best fit and are always
+probably our best fit and are always
+probably our best fit and are always
+losing deals on the time their closers
+losing deals on the time their closers
+losing deals on the time their closers
+are spending qualifying these people and
+are spending qualifying these people and
+are spending qualifying these people and
+you know we've seen strong results in
+you know we've seen strong results in
+you know we've seen strong results in
+the space. So for each message mention
+the space. So for each message mention
+the space. So for each message mention
+their specific market reference to the
+their specific market reference to the
+their specific market reference to the
+fact that they're running ads and
+fact that they're running ads and
+fact that they're running ads and
+explain where that speed to lead system
+explain where that speed to lead system
+explain where that speed to lead system
+is one of the biggest factors. Maybe
+is one of the biggest factors. Maybe
+is one of the biggest factors. Maybe
+tease what our voice agents do as well.
+tease what our voice agents do as well.
+tease what our voice agents do as well.
+I think I have uh some demos on my
+I think I have uh some demos on my
+I think I have uh some demos on my
+website. Keep it short conversational
+website. Keep it short conversational
+website. Keep it short conversational
+not salesy and maybe a soft ask with a
+not salesy and maybe a soft ask with a
+not salesy and maybe a soft ask with a
+quick quick call. give me a table first.
+quick quick call. give me a table first.
+quick quick call. give me a table first.
+Um, the company, website, the market,
+Um, the company, website, the market,
+Um, the company, website, the market,
+the phone, email, then outreach messages
+the phone, email, then outreach messages
+the phone, email, then outreach messages
+to match inside the table.
+to match inside the table.
+to match inside the table.
+So, I just word dumped whatever was on
+So, I just word dumped whatever was on
+So, I just word dumped whatever was on
+my mind. And right now, since I already
+my mind. And right now, since I already
+my mind. And right now, since I already
+have access to it, I'm just going to hit
+have access to it, I'm just going to hit
+have access to it, I'm just going to hit
+go and then watch it work. Okay, so
+go and then watch it work. Okay, so
+go and then watch it work. Okay, so
+right here you can see Firecrawl is
+right here you can see Firecrawl is
+right here you can see Firecrawl is
+really quickly searching for these
+really quickly searching for these
+really quickly searching for these
+people and it's getting structured data
+people and it's getting structured data
+people and it's getting structured data
+really fast without me having to burn a
+really fast without me having to burn a
+really fast without me having to burn a
+lot of tokens doing one by one by one.
+lot of tokens doing one by one by one.
+lot of tokens doing one by one by one.
+It's everything is happening in
+It's everything is happening in
+It's everything is happening in
+parallel. And look how fast it is. It's
+parallel. And look how fast it is. It's
+parallel. And look how fast it is. It's
+kind of cool.
+kind of cool.
+kind of cool.
+All right. Awesome. So, it looks like
+All right. Awesome. So, it looks like
+All right. Awesome. So, it looks like
+it's done. So, it got me a couple
+it's done. So, it got me a couple
+it's done. So, it got me a couple
+contact data. And this is pretty cool.
+contact data. And this is pretty cool.
+contact data. And this is pretty cool.
+And you see it's drafted me the messages
+And you see it's drafted me the messages
+And you see it's drafted me the messages
+as well. [snorts]
+as well. [snorts]
+as well. [snorts]
+Okay. Now, I can just connect this to my
+Okay. Now, I can just connect this to my
+Okay. Now, I can just connect this to my
+cold email service and then make this go
+cold email service and then make this go
+cold email service and then make this go
+out as well. But this is one cool way
+out as well. But this is one cool way
+out as well. But this is one cool way
+where all I would have to do is just use
+where all I would have to do is just use
+where all I would have to do is just use
+firecrawl to spin up these instances and
+firecrawl to spin up these instances and
+firecrawl to spin up these instances and
+it's doing all the verifying, all the
+it's doing all the verifying, all the
+it's doing all the verifying, all the
+scraping, whatnot. And it makes my life
+scraping, whatnot. And it makes my life
+scraping, whatnot. And it makes my life
+a lot easier where I can just chill and
+a lot easier where I can just chill and
+a lot easier where I can just chill and
+it's doing the stuff. You see, this is
+it's doing the stuff. You see, this is
+it's doing the stuff. You see, this is
+all cool, but it's all useless if you
+all cool, but it's all useless if you
+all cool, but it's all useless if you
+don't use these abilities properly and
+don't use these abilities properly and
+don't use these abilities properly and
+manage it with the right skills. So,
+manage it with the right skills. So,
+manage it with the right skills. So,
+watch this video next to learn about how
+watch this video next to learn about how
+watch this video next to learn about how
+I get Clawed Asian Teams to do my
+I get Clawed Asian Teams to do my
+I get Clawed Asian Teams to do my
+bidding on its

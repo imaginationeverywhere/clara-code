@@ -1,0 +1,877 @@
+Title: Every Level of Claude Code Skills in 27 mins
+Video ID: -u_igSQHAIo
+URL: https://www.youtube.com/watch?v=-u_igSQHAIo
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] So, you've probably started building
+[00:01] Claw Code skills, and at first they seem
+[00:03] super simple. You write some
+[00:04] instructions, add context, and suddenly
+[00:06] Claw can produce work that normally
+[00:08] takes a specialist. But then things
+[00:10] start breaking. Skills don't trigger
+[00:11] when they should. Your context window
+[00:13] starts to fill up, and the outputs
+[00:15] aren't getting better. And here's what
+[00:16] most people don't realize. They're still
+[00:18] stuck at level two or three of skill
+[00:21] building. This video is going to show
+[00:22] you what's beyond that. So, I spent
+[00:24] hundreds of hours now in Cyclog Code
+[00:26] studying Anthropic's complete skill
+[00:27] building guide and building over 20
+[00:29] production skills that now run parts of
+[00:31] my marketing strategy and operations
+[00:34] every day in my business. I'm going to
+[00:35] walk you through each level from simple
+[00:37] setups to self-improving systems that
+[00:40] work together as your AI workforce. So,
+[00:42] let's start with level one. Level one is
+[00:44] all about understanding what a skill
+[00:45] actually is. And it's not what people
+[00:47] have been telling you skills are. So, at
+[00:49] its core, a skill is just a folder of
+[00:51] knowledge. That's it. But it's how you
+[00:53] build the files inside of the folder and
+[00:55] the relationship between those files
+[00:57] that actually determines how successful
+[00:59] your skills are. So, let me break it
+[01:00] down with a real example skill that I
+[01:02] found online that I love. So, this is
+[01:04] called the last 30-day skill in this
+[01:06] Ronny Nutrition GitHub repo. And the
+[01:08] idea is it goes out and does trending
+[01:10] research on topics of your choice on
+[01:13] Reddit and X. So, it's able to go and
+[01:14] collect from Reddit and X where our
+[01:16] traditional search cannot do that. It
+[01:17] can bring back information like up
+[01:19] votes, number of likes, retweets, etc.
+[01:21] Now, every skill has one required file,
+[01:24] the skill.md. So, this is the brain of
+[01:26] the skill. It's a markdown file that
+[01:28] tells Claude what to do, when to do it,
+[01:30] and how to do it well. So, you can think
+[01:31] of this as an SOP or standard operating
+[01:34] procedure. So, for example, in our
+[01:35] adapted trending research skill inside
+[01:37] the skill to MD, you can see we've got
+[01:39] step one, pass the request, which
+[01:41] understands the user's intent. Step two,
+[01:43] run the research, which goes out and
+[01:45] collects information from the Reddit and
+[01:46] X APIs. And then you've got three
+[01:48] optional folders. You've got scripts
+[01:50] folder for executable code like if it
+[01:53] needs to grab some data from an API call
+[01:54] like in the trending research skill.
+[01:56] Step two actually goes and grabs the
+[01:58] scripts folder down here and runs the
+[02:00] last 30 days.py which uses external APIs
+[02:03] to go and grab information from those
+[02:04] Reddit and X threads. You've got a
+[02:06] references folder for documentation that
+[02:08] Claw can pull in when it needs it only
+[02:10] like examples of what good looks like.
+[02:12] So in the trending research skill we've
+[02:13] got the references folder and we've got
+[02:15] this brief template. And the brief
+[02:16] template just says this is how you
+[02:18] should return outputs of the research
+[02:20] reports. So notice these aren't in the
+[02:22] skill.md file. And then you've got an
+[02:23] assets folder for things like templates,
+[02:26] fonts or icons, but ultimately they're
+[02:28] all just additional files of deep
+[02:30] knowledge or knowledge that your process
+[02:32] document, the skill.md can and should
+[02:34] reference in its instructions, but
+[02:36] they're only pulled in as and when
+[02:38] needed. And that's the really important
+[02:39] part that anthropic explains in their
+[02:41] full skill building guide. Skills use
+[02:43] what they call progressive disclosure.
+[02:45] And this is a concept you need to
+[02:46] understand because it comes up again and
+[02:48] again. So there are three tiers of
+[02:50] information loading when it comes to
+[02:51] skills. So tier one is the YAML front
+[02:54] matter at the top of your skill.md file.
+[02:56] So this is always loaded into your claw
+[02:58] context. Every time you have a skill in
+[03:00] your folder, this is loaded in. So you
+[03:01] can think of this as just the name and
+[03:03] description of the skill and it's how
+[03:04] Claude decides whether to use this skill
+[03:06] for a given task or not load the full
+[03:08] skill skill.md file in. So for the
+[03:10] trending research, we've got what it
+[03:12] does. Research what's trending in the
+[03:13] last 30 days. the words it's triggered
+[03:15] by, research what's trending, and the
+[03:17] words it is not triggered by. But what
+[03:18] many people don't know is the limit
+[03:20] Claude accepts into its context for
+[03:22] skill descriptions is only 15,000
+[03:24] characters, which is around five pages
+[03:25] of text. So don't install too many
+[03:28] skills or you'll run out of space and
+[03:29] actually bloat your context right off
+[03:31] the start. Now, tier two is the body of
+[03:33] your skill. MD, exactly what we just
+[03:35] saw, the process step, step one, step
+[03:37] two, etc. This only gets loaded when the
+[03:39] skill is actually activated by Claude.
+[03:41] And tier three is everything else. The
+[03:43] reference files, the scripts, the
+[03:44] assets. Claude only pulls these in when
+[03:46] it actually needs them for a specific
+[03:48] step which is deemed necessary by the
+[03:49] instructions in the skilled MD file. So
+[03:51] for example, in the run the research
+[03:53] where it says the script/last 30day
+[03:55] script should be run. It then runs that
+[03:57] script and pulls that from the reference
+[03:59] file only when it's necessary. And that
+[04:01] three tier system is really really
+[04:02] important because it means Claude isn't
+[04:04] loading everything all at once. It's
+[04:06] being smart about what information it
+[04:07] brings in and when. So to use a skill,
+[04:09] all you need to do is drop that folder
+[04:12] directly into your doc. Claude folder
+[04:14] and a skills folder underneath. Each
+[04:15] skill has their own folder. As long as
+[04:18] it has a skill.md, it's considered a
+[04:20] skill and Claude can see and use it. So
+[04:21] at level one, you can take a skill that
+[04:23] somebody else has built. You can install
+[04:25] it and Claude follows those instructions
+[04:27] to produce better work than it would on
+[04:29] its own. Okay, so you can install and
+[04:31] use a skill and that's great. But here's
+[04:33] where most people hit a wall. they start
+[04:35] building their own skills and they think
+[04:36] that more information equals a better
+[04:38] output and that's exactly what level two
+[04:41] is about solving. So I found a really
+[04:42] popular Reddit post called I was wrong
+[04:44] about agent skills and how I refactor
+[04:46] them and the story is so common that I
+[04:48] had to share it. So, this developer
+[04:50] started building skills the day they
+[04:52] dropped. And within 2 weeks, they had a
+[04:54] CloudFare skill at 1,131 lines, a Shaden
+[04:57] UI skill at 850 lines, and an Nex.js
+[05:00] skill at 900 lines. And then every time
+[05:03] Claw Code activated multiple related
+[05:05] skills, the context window exploded as
+[05:07] it was loading 5,000 to 7,000 lines in
+[05:10] every single time into the context
+[05:12] window. And that's because he put
+[05:13] everything in one giant skill.md file so
+[05:14] that Claw could access all that
+[05:16] information up front. But that is
+[05:18] completely wrong. The problem isn't lack
+[05:20] of information, it's actually having too
+[05:22] much irrelevant information. So skills
+[05:24] share the context window with your
+[05:25] conversation. So uncontrolled loading of
+[05:27] unnecessary information is basically a
+[05:30] direct performance tax on your
+[05:32] conversation. So if you built skills in
+[05:33] this way, you'd probably see slowness,
+[05:35] drifting from instructions, and Claude
+[05:37] ignoring the obvious parts of your
+[05:38] instructions. So here's the fix, and
+[05:40] this is the golden rule of skill
+[05:42] building. Keep your skill.md under 200
+[05:45] lines max. And that 200 line limit is
+[05:47] not arbitrary. It's effectively based on
+[05:49] how much context an LLM can efficiently
+[05:52] scan through to decide what to load
+[05:53] next. So we're trying to keep the entry
+[05:55] point for Claude under 200 lines so that
+[05:57] Claude can understand what the skill
+[05:58] offers, decide which reference file it
+[06:00] needs to read and load just that file,
+[06:03] i.e. another file with 200 to 300 lines
+[06:05] only. And that massively reduces the
+[06:07] amount of information you're handing to
+[06:09] Claude immediately and therefore will
+[06:11] improve performance. So you can
+[06:12] effectively think of the skilled.md as a
+[06:13] table of contents that tells Claude
+[06:15] where to look if it needs more
+[06:17] information. So the actual detailed
+[06:18] documentation goes into your references
+[06:20] folder and Claude should only be pulling
+[06:22] it when it needs it and bit by bit. So
+[06:24] it won't overload your context window.
+[06:26] Now the second massive mistake people
+[06:28] make is in the description field. So
+[06:30] this is in your YAML front matter that
+[06:31] we mentioned before. And if you remember
+[06:33] this is how Claude decides whether to
+[06:34] load your skill in the first place. So
+[06:36] if it's too vague the skill will never
+[06:38] trigger and if it's too broad it
+[06:39] triggers on everything. So studies
+[06:41] apparently suggest that skill activation
+[06:43] sits around 20% for skills that you
+[06:46] download from a marketplace. So they'd
+[06:47] activate only one in five times which
+[06:49] kind of begs the question like what's
+[06:51] the point in even installing them if
+[06:52] they're not going to activate. So here's
+[06:53] a simple three-step framework on how to
+[06:55] write it well. Firstly we're going to
+[06:57] write the trigger. So what is the event
+[06:59] or situation in which this skill gets
+[07:01] used? So we can say something like
+[07:03] triggers on these keywords research
+[07:04] what's trending research topic. What are
+[07:06] the things that should not trigger it?
+[07:08] So it does not trigger for general web
+[07:10] browsing or simple URL fing and what is
+[07:12] the outcome that's going to be produced
+[07:14] and effectively what the skill does. So
+[07:15] it produces a research brief that other
+[07:17] skills can consume and it research
+[07:19] what's trending in the last 30 days. And
+[07:21] I'd highly recommend going and checking
+[07:23] any marketplace skill that you've got
+[07:24] installed already. If it doesn't have
+[07:26] these three things, it can be improved
+[07:28] massively. So at level two then you know
+[07:30] how to build skills that are lean,
+[07:32] properly structured, and actually
+[07:33] trigger when they should. And that is a
+[07:35] huge competitive advantage over most
+[07:37] people building skills right now. Now,
+[07:38] you know how to build skills that work,
+[07:40] but you don't have to build everything
+[07:42] from scratch. There's a whole world of
+[07:43] skills out there that you can grab,
+[07:45] install, and make your own. But there is
+[07:47] a catch, and this is something that
+[07:48] caught me off guard when I first started
+[07:50] looking at marketplace skills because a
+[07:52] lot of them are badly built. So, I'm
+[07:54] talking 1,000 lines, skill.md files with
+[07:56] no progressive disclosure, everything
+[07:58] dumped into one massive markdown
+[08:00] document, no references folder, no
+[08:02] scripts like we saw before, just a wall
+[08:04] of text that's going to load into your
+[08:05] context window as soon as the skill is
+[08:07] activated. And the most frustrating part
+[08:09] of that is the actual content is often
+[08:11] really good. The business logic is
+[08:13] solid. The step-by-step processes are
+[08:15] valuable. It's just the structure that's
+[08:17] the problem. So, here's what you can do.
+[08:19] You can grab the skill. You can look at
+[08:20] what's inside it. And you can apply
+[08:22] everything you learned in level two by
+[08:24] refactoring it using anthropics skill
+[08:27] creator skill. So the skill creator
+[08:28] skill effectively as it sounds creates
+[08:31] new skills, modifies and improves
+[08:33] existing skills and measures skill
+[08:35] performance. So this even applies to
+[08:37] skill descriptions and improving
+[08:39] activation of skills. So we're
+[08:40] effectively taking that 1,000 line
+[08:42] skill.md and asking ourselves what does
+[08:44] Claude actually need to see immediately
+[08:46] to know when and how to use this skill
+[08:48] that goes in the skill.md. Everything
+[08:50] else gets moved into the references
+[08:52] folders. I want to show you an example
+[08:53] for this because I want to create a
+[08:55] skill that can help my website be cited
+[08:57] by AI answers like Chachi, Gemini,
+[09:00] Claude. And I found this really popular
+[09:01] one by a guy called Cory Haynes who's
+[09:03] got a sequence of marketing skills that
+[09:06] all have brilliant content. It's got
+[09:08] about 13,000 stars. It does have some
+[09:10] references and even an evals folder. But
+[09:12] when I look through the skill.md file, I
+[09:15] can see it's around 400 lines at the
+[09:17] moment. So although it's packed with
+[09:19] really useful information, we're
+[09:20] probably loading too much into the
+[09:22] context of Claude right away and can
+[09:24] abstract some of this out. So what we're
+[09:25] going to do is just grab the
+[09:27] installation line from here. We're going
+[09:28] to go to our terminal and we're going to
+[09:29] install it like this and we're going to
+[09:31] install it locally into our local
+[09:32] folder. So we'll go through the steps of
+[09:34] installing the skill. We can select AIO
+[09:37] and install it locally. Now what we're
+[09:39] going to do here is just ask our meta
+[09:41] skill creator skill which is an adapted
+[09:43] version of anthropic skill creator
+[09:45] skill. It's going to build all the
+[09:46] context for us and also understand that
+[09:48] actually we want it to be less than 200
+[09:50] lines. So we're going to refactor and
+[09:52] add some more references folder that can
+[09:53] be pointed to and not loaded immediately
+[09:55] into our context window to improve the
+[09:57] performance. It's also going to take a
+[09:58] look at the description and improve
+[10:00] that. So we said take the new AI SEO
+[10:02] skill and use the skill creator skill to
+[10:03] refactor it. I want the skill.m to be
+[10:05] max 200 lines and we want to put all of
+[10:07] the reference info inside the references
+[10:09] folder. There's already a few references
+[10:11] but right now the file is around 400
+[10:13] lines. So, it's gone through and it's
+[10:15] basically worked out what information we
+[10:17] can abstract to different references
+[10:19] files and it's told us exactly what's
+[10:21] changed. So, the skill.md was 400 lines
+[10:23] and now it's 148 lines. So, that's a 60%
+[10:26] reduction in the number of lines that
+[10:27] we're loading in every time we activate
+[10:29] this skill. And it's created four new
+[10:31] reference files. So, authority signals,
+[10:33] AI visibility audits, content type
+[10:35] optimization, and you can see those
+[10:36] inside the references file. So, we've
+[10:38] got more things that we're pointing to
+[10:39] but less information loaded in at any
+[10:41] one point. If we go into the skill.md,
+[10:43] we can see for example in step two where
+[10:45] we've got the AI visibility audit, we've
+[10:48] now abstracted a lot of that information
+[10:49] and put it inside this references file
+[10:51] which Claude code can refer to when it's
+[10:53] at step two only. So the important bit
+[10:55] about the references file and pointing
+[10:57] to other files is that claude code can
+[11:00] load and unload information out of its
+[11:02] context. So during step two, it doesn't
+[11:04] have a huge amount of information from
+[11:05] the other references files. it's just
+[11:07] focusing on step two and it can load in
+[11:09] the AI visibility audit at that point
+[11:11] which is an extra 50 or so lines. As
+[11:13] soon as it's finished with step two, it
+[11:14] can offload it and therefore save our
+[11:16] token usage but also improve the
+[11:18] accuracy of the results we're getting.
+[11:20] So when you think about it like this,
+[11:21] you've now got this incredible ability
+[11:23] to take someone else's domain expertise,
+[11:25] clean it up, structure it properly, and
+[11:27] have it working in your system in an
+[11:29] afternoon. So at level three, you're not
+[11:31] limited to what you can build yourself.
+[11:32] You can pull in expertise from anywhere
+[11:34] and refactor it into a proper skill
+[11:36] format. So that Claude is basically a
+[11:38] specialist running workflows that didn't
+[11:40] even exist in your business in the
+[11:41] morning. So you can build skills, you
+[11:43] can import and fix skills, but up until
+[11:45] now everything has been pretty generic.
+[11:46] And this is where it gets really really
+[11:48] interesting because a skill without your
+[11:49] business context is basically not worth
+[11:51] having at all. And this brings us to the
+[11:53] next level which stops skills giving
+[11:55] generic outputs and starts making them
+[11:57] actually sound like you. And this is a
+[11:59] massive jump in value. If you had a
+[12:01] generic rank my site in AI search tools,
+[12:04] kind of like this one, AI SEO, I imagine
+[12:06] that skill would actually produce decent
+[12:07] content. But an AI SEO skill that knows
+[12:10] your brand voice, your product offering,
+[12:11] your audience, your content pillars,
+[12:13] your competitors, and your positioning
+[12:15] that will produce content that will both
+[12:17] rank and bring you traffic for relevant
+[12:19] queries. So, it's the difference between
+[12:20] ranking for a high volume keyword that
+[12:23] gets you traffic that you can't do
+[12:24] anything with versus ranking for a query
+[12:26] where the person typing has that
+[12:28] commercial intent or intent to buy
+[12:30] already. So, the way you do this is by
+[12:32] adding your business context to all your
+[12:34] skills, giving them all access. So, your
+[12:36] brand guidelines go into that references
+[12:38] folder. Your audience personas, your
+[12:39] tone of voice examples, all should go
+[12:42] into the references file. So, as good as
+[12:43] anthropic skill creator skill is, it can
+[12:45] give you the structure, but you must
+[12:47] also supply the context. So for my own
+[12:49] business, I've built what I call the
+[12:51] Agentic operating system or Aentic OS.
+[12:53] And it's a set of production skills
+[12:55] across marketing, strategy, operations,
+[12:58] and visuals. And every single one of
+[13:00] those skills has my business context
+[13:02] baked in. So we have a separate shared
+[13:04] brand context folder, which has all of
+[13:07] my assets, my ICP, my positioning, my
+[13:10] voice profile. So my marketing skills
+[13:11] know my audience. They know I'm talking
+[13:13] to business owners who want to automate
+[13:14] their ops and aspiring entrepreneurs.
+[13:17] They know my tone of voice. They know my
+[13:18] content pillars. They know the specific
+[13:20] examples and case studies that I
+[13:22] reference again and again. And this is
+[13:24] what makes them so powerful because
+[13:25] Claude isn't just following a generic
+[13:27] process. It's following my process with
+[13:29] my context. So the skill.md for the AI
+[13:32] SEO, we should actually reference to all
+[13:34] of our contextualized information. And
+[13:36] we do that through a context needs chart
+[13:38] where we say inside the positioning in
+[13:40] the brand context shared folder. You
+[13:42] should load in the summary of that
+[13:43] because it helps you understand what
+[13:44] differentiates the brand for citation
+[13:46] worthy framing. So, it feeds directly
+[13:48] into why this skill becomes more
+[13:50] powerful. Then, we also feed in the
+[13:52] ideal customer profile because we need
+[13:54] to know who we're trying to reach in the
+[13:56] AI answers so that everything we're
+[13:57] writing about is directly relevant to
+[13:59] our existing audience. It's basically
+[14:01] only pulling in the right context when
+[14:03] it's necessary to not bloat context.
+[14:05] Exactly what we spoke about so far. And
+[14:07] by the way, you can download this exact
+[14:08] Aentic OS as part of our Aentic Academy
+[14:11] in the description if you want it. We
+[14:13] also have a full skill building course
+[14:15] that we just launched. So, here's how
+[14:17] you actually do it for yourself step by
+[14:19] step. Well, first you identify the skill
+[14:20] that you actually want to build or
+[14:22] improve on. Maybe it's like this AI SEO
+[14:24] optimization one. Secondly, you use the
+[14:26] skill creator skill to generate the base
+[14:28] structure. Get the skill.md formatted
+[14:30] properly with a good description. And
+[14:31] then third, you add your business
+[14:33] context into the references folder. So,
+[14:35] you don't need a separate brand context
+[14:36] folder like this. You just add it into
+[14:38] the AI SEO references folder and make
+[14:42] sure that you have all of that
+[14:43] information and reference it inside the
+[14:45] skill.md. Fourth, you're able to then
+[14:47] test it. You're running it against real
+[14:48] tasks and seeing if the output matches
+[14:50] what you'd produce if you'd done the
+[14:52] task yourself because it should be
+[14:53] totally contextualized to your brand and
+[14:55] business. So, at level four, your skills
+[14:57] are not generic anymore. They're
+[14:58] customized to your business, your voice,
+[15:00] your audience. And that means Claude is
+[15:02] producing work that actually sounds like
+[15:04] you, not just AI generated slot. Okay.
+[15:06] So, now you've got personalized skills
+[15:08] that produce really good outputs. But
+[15:10] here's the question that nobody's asked
+[15:11] yet. How do you know they're actually
+[15:13] producing good outputs? How do you know
+[15:15] that version two that you've made is
+[15:16] better than version one? So, this is
+[15:18] where we move from building to
+[15:19] measuring. So, Anthropic just released
+[15:21] evaluation and benchmarking built right
+[15:24] into that skill creator skill. And this
+[15:25] is awesome because up until now it was
+[15:27] completely vibes based whether it was
+[15:29] giving us high quality output or not.
+[15:31] You had no way to actually measure
+[15:32] whether your changes made things better
+[15:34] or worse. So, say we removed a reference
+[15:36] file. We wouldn't know if that was
+[15:38] actually affecting the quality apart
+[15:39] from reviewing every single output and
+[15:42] making a judgment call on that. And most
+[15:43] good skills go through many iterations
+[15:45] before they really start to solve your
+[15:46] problems in an automated fashion. And
+[15:48] that's exactly what the eval function is
+[15:51] designed for to speed up that learning
+[15:53] cycle. So let's continue with the AI SEO
+[15:55] skill to demo this. So instead of saying
+[15:57] run some tests on my SEO skill, we're
+[15:59] going to say run a new test using the
+[16:00] skill creator evals optimize for making
+[16:02] sure my content follows the content type
+[16:05] optimization pattern. So, I specifically
+[16:07] looked through the reference files and
+[16:09] figured out actually I want to optimize
+[16:11] the results of this test for this
+[16:13] specific reference file. So, is it even
+[16:15] loading in the reference file in the
+[16:16] first place when it reads through the
+[16:18] instructions? And if it is, we're going
+[16:19] to give it a blog content page. Is it
+[16:21] optimizing for a few of these things?
+[16:23] So, the criteria are, does it have one
+[16:25] clear target query per post? Does it
+[16:27] have author bio with relevant
+[16:28] credentials? Does it have internal links
+[16:30] that relate to product or feature pages?
+[16:32] Those are some of the things that are
+[16:34] going to help us rank in AI search
+[16:36] because it shows that we have authority
+[16:38] and it shows that we are a content
+[16:40] pillar for this specific content. So we
+[16:42] said let's test it on this task and this
+[16:44] is the task that we would conventionally
+[16:45] give to the AI SEO skill in the first
+[16:47] place. So assess the chances of ranking
+[16:49] highly using AI SEO rankings for this
+[16:51] page and I've given it a blog page from
+[16:53] automate.io which was my AI agency and
+[16:56] to be honest this was written before I
+[16:57] did any work on optimizing content. You
+[16:59] can see the article is not very long at
+[17:01] all. So, I don't expect this to come
+[17:02] back with stunning results, but what I
+[17:04] want to see is a step-by-step comparison
+[17:06] against the criteria and how we could
+[17:08] actually improve this. But it's going to
+[17:10] run this through five times and test it
+[17:12] against that criteria. So, we can really
+[17:13] see the results of this skill and how it
+[17:16] performs using those reference files.
+[17:17] The evals feature, by the way, also has
+[17:19] a great other feature, which is AB
+[17:21] testing. So if I wanted to actually AB
+[17:24] test instead of test against specific
+[17:25] criteria, I could AB test, for example,
+[17:27] by taking out the content type
+[17:28] optimization reference file and saying
+[17:30] run this same task five times, once with
+[17:33] the content type optimization and once
+[17:35] without it, which ranks better? And it
+[17:38] will come back with a thorough review on
+[17:40] before and after and help me effectively
+[17:42] optimize this skill by saying, does this
+[17:44] even feed into it in the first place or
+[17:46] does this help enhance the quality of
+[17:48] the results? So, I could do that for
+[17:49] every single reference file and
+[17:51] therefore have a really good evaluation
+[17:52] of whether my reference files are
+[17:54] actually benefiting my skill or just
+[17:56] costing me token usage. And you'll have
+[17:58] noticed that we were only trying to
+[17:59] optimize there for three criteria. So,
+[18:01] I'd highly recommend when you run these
+[18:03] emails doing three to five criteria at a
+[18:05] time. So, you're not giving it too much
+[18:06] to think about and therefore it comes
+[18:08] back with a more thorough review of the
+[18:10] different assertions. So, it's creating
+[18:11] an assertions file. Does the output
+[18:14] assess whether there's one clear target
+[18:16] query per post? Does the output assess
+[18:17] whether there's an author bio? Does the
+[18:19] output assess whether there are internal
+[18:21] links related to a product? So, it
+[18:22] spawns all 10 runs, five with the skill,
+[18:25] five without the skill. This is what it
+[18:26] would do in AB testing. But in this
+[18:28] case, we're just doing five with the
+[18:29] skill because we're doing a direct
+[18:30] comparison of the skill to itself. And
+[18:33] it's going to run those in parallel and
+[18:34] then grade those against the three
+[18:36] criteria. And what we get is a really
+[18:38] nice overview of the different
+[18:39] assertions here. What a pass looks like.
+[18:42] And then basically it's saying I'll
+[18:43] grade and aggregate the results once the
+[18:45] run's complete. So, it's going to run
+[18:46] all 10 agents in parallel, score each
+[18:48] against your criteria, and give you a
+[18:50] structured report at the end of it. You
+[18:52] can read the full output from each
+[18:54] variation, see exactly where it passed
+[18:55] and failed, and give feedback directly
+[18:57] into the report, which then feeds back
+[18:59] into improving the skill, and it will
+[19:01] retest that to make sure the
+[19:03] improvements that we've made have
+[19:04] actually fixed the results. And you can
+[19:06] see some of those agents are coming back
+[19:07] now. And then the results get hosted on
+[19:09] your local environment. So you can see
+[19:11] this they we get this really nice report
+[19:13] that is basically the prompt that we put
+[19:16] in. So assess the chances of ranking
+[19:17] highly using AI SEO rankings. It comes
+[19:20] back with the actual output of the
+[19:22] skill. So the skill is basically saying
+[19:24] in this audit.md that it's pretty poor.
+[19:26] The website page does not rank very
+[19:29] well. So it's got three out of 10 for
+[19:31] content extractability. It does not have
+[19:33] a robots.ext. It's weak on the authority
+[19:37] or the citation worthiness. But don't
+[19:39] forget, we're not actually ranking how
+[19:41] the page performed at this point. We're
+[19:43] actually ranking how the assessment of
+[19:46] certain criteria that we put inside the
+[19:48] skill.md is being adhered to. So what
+[19:50] we're actually assessing is does the
+[19:52] output explicitly assess whether the
+[19:54] page has one clear target query in which
+[19:57] it did pass here. Does it assess whether
+[19:59] the page has an author bio with relevant
+[20:01] credentials visible? It did assess that.
+[20:02] And in the first one, the output did not
+[20:04] explicitly assess whether the page has
+[20:06] internal links to related product or
+[20:08] feature pages. And then in the
+[20:10] benchmark, we have an overview of all of
+[20:12] the different runs. So with the skill,
+[20:14] which is the only one important here
+[20:16] because we were testing just with the
+[20:17] skill, it had a pass rate of those three
+[20:19] criteria, 93%. So that's pretty good. It
+[20:22] took 184 seconds to run with the skill,
+[20:24] with the reference files, and took this
+[20:26] many tokens. You can see that without
+[20:28] some of the reference files, it again
+[20:30] had 93% success rate, but actually the
+[20:32] time taken and the tokens was
+[20:34] significantly lower. So actually what
+[20:35] this starts to tell me is can we take
+[20:38] away some of the reference files without
+[20:40] actually compromising the quality of the
+[20:42] output. And that is where we'd run the
+[20:43] AB test to see exactly which files are
+[20:46] improving quality and which files don't
+[20:48] even matter for the quality of the
+[20:49] outputs. We can then also go back to the
+[20:51] individual output feedback and submit
+[20:53] specific reviews to say actually we want
+[20:55] to make sure that in this case the page
+[20:58] it should always check for internal
+[20:59] links. So can we add anything to the
+[21:01] skill.md to make sure that that always
+[21:03] happens. What that will then do is
+[21:05] retest that with the new skill.md and
+[21:08] come back with a whole new set of
+[21:10] results based on the before and after.
+[21:12] Or you can come back here and directly
+[21:14] let it know your thoughts here. So at
+[21:15] level five then you stop guessing
+[21:17] whether your skills actually work. You
+[21:18] can test them, score them, measure them,
+[21:21] and improve them. And that's how you go
+[21:23] from a skill that kind of ranks to one
+[21:24] that consistently can find your content
+[21:26] and produce content that your ideal
+[21:29] customer will actually find through AI
+[21:31] SEO, for example. So now you can measure
+[21:33] and improve your skills, but you're
+[21:34] still the one doing all the manual tests
+[21:36] for improvements. So what if skills
+[21:38] could actually improve themselves, which
+[21:40] takes us on to level six. So things get
+[21:42] really, really cool now. And this is
+[21:44] something that I've been using for my
+[21:45] own Aentic OS that makes a massive
+[21:47] difference. And the concept is super
+[21:49] simple. Your skills should learn from
+[21:51] every interaction and get better over
+[21:53] time. But to do this, you need one
+[21:55] critical piece that most people are
+[21:57] missing. A feedback loop. So let's stick
+[22:00] with our AI SEO skill. Every time you
+[22:02] run it and notice something, that
+[22:03] observation gets captured in a learnings
+[22:06] andor rules file inside the skill.md. So
+[22:08] you'll see that my meta skill creator
+[22:10] has added a rules section when I've
+[22:13] asked it to create that that say
+[22:14] whatever feedback we add will be added
+[22:16] to these rules and the rules will always
+[22:18] be read when the skill.md is read. So
+[22:20] maybe you're running the skill and the
+[22:21] article it produces ranks on page one
+[22:23] within a week. You can go back and note
+[22:25] exactly what worked. So articles that
+[22:27] open with a direct answer to the search
+[22:29] query in the first paragraph seem to get
+[22:31] picked up in AI search more quickly. Or
+[22:33] we had a comparison table in the middle
+[22:35] of this article which increased time on
+[22:37] page. So all of that can actually go
+[22:39] into the rules file and or you can have
+[22:41] a separate learnings file that sits
+[22:43] within your context that on a skill
+[22:45] bykll basis documents what works and
+[22:48] what doesn't work and that then feeds
+[22:50] from your claw.md into every skill that
+[22:52] you use. So for the trending research
+[22:54] skill we'd have specific feedback on
+[22:56] what worked and what didn't work. And
+[22:58] the way this gets updated is we have a
+[23:00] wrap-up skill. So, at the end of every
+[23:01] session, we close the session and any
+[23:03] skill we've used and any feedback we've
+[23:04] been given will be generated and input
+[23:06] directly into this learnings.mmd file on
+[23:09] a skillbyskll basis. And it's just a
+[23:11] line that says something like after
+[23:12] completing a task, review the output
+[23:15] against these criteria, and if you
+[23:17] identify specific patterns or
+[23:19] improvements, then we're going to add
+[23:20] them back to the learnings file. So now,
+[23:22] every time you run a skill, it's
+[23:23] actually checking back its own work. Did
+[23:25] the article actually answer the search
+[23:27] query in the first 100 words? Did it
+[23:29] include structured data patterns from
+[23:30] the reference file? And if it doesn't do
+[23:32] any of that, it logs it automatically.
+[23:34] And this connects us straight back to
+[23:35] level five because you can use your
+[23:37] evals to validate the learnings that are
+[23:39] actually improving our output quality.
+[23:41] So you can run the same eval before and
+[23:43] after the learnings are applied. And
+[23:45] you'll see the difference in your
+[23:46] benchmark scores. They'll start
+[23:48] improving without you actively having to
+[23:50] run these evals. But the key thing here
+[23:52] is keeping the learnings file under
+[23:53] control. So you can't just dump random
+[23:55] notes in there forever or it becomes its
+[23:57] own context window problem. It's feeding
+[23:59] in too much every single time. So the
+[24:01] idea is to keep it structured and prune
+[24:03] the obvious stuff every so often. So
+[24:05] every week we go through the learnings
+[24:06] file and strip out any surplus
+[24:07] information that won't contribute to
+[24:09] quality. So at level six, your skills
+[24:11] are not static anymore. They're actually
+[24:13] learning from every piece of content
+[24:14] they produce, accumulating knowledge
+[24:16] over time, and getting better the more
+[24:18] you use them. So your skill in 3 months
+[24:20] from now will be dramatically better
+[24:22] than the one you built on day one. And
+[24:24] you didn't even have to manually run
+[24:25] evaluations for it. So now that your
+[24:27] individual skills are learning and
+[24:28] improving on their own, there's only one
+[24:30] thing left to solve. They're still
+[24:31] operating independently. So what happens
+[24:33] if they start working together? Now
+[24:35] before we hit the final level, my
+[24:37] YouTube analytics tells me that 94% of
+[24:39] you are not subscribed but still
+[24:42] watching the content. So if that's you,
+[24:43] then head down below, subscribe to the
+[24:45] channel so you can get more value from
+[24:47] the videos that I create. So this is
+[24:48] level seven, the final level where
+[24:50] everything connects. So we're going to
+[24:52] use a copywriting skill now as an
+[24:53] example inside the Aentic OS. Let's say
+[24:56] I want to write a piece of copy for a
+[24:58] landing page. Not only do we have the
+[25:01] context needs that we spoke about
+[25:02] earlier, so it's pulling in all of my
+[25:04] voice profile, the angles that to target
+[25:06] from the positioning, my full ICP, so it
+[25:08] can tailor the copy towards that. Not
+[25:10] only is it doing that, it is connecting
+[25:12] with my other skills to make more
+[25:14] powerful workflows. So here in step
+[25:16] eight, the humanizer gate, before saving
+[25:18] all copy, we pass everything through the
+[25:20] tool humanizer, which basically is its
+[25:22] own set of production instructions to
+[25:24] help apply pattern detection to every
+[25:26] bit of written content to make it more
+[25:28] human written and less AI slop-like. or
+[25:31] inside the content repurposing skill. If
+[25:33] we can't get our transcripts from
+[25:35] YouTube, then we can leverage another
+[25:36] skill tool-you only when it's necessary
+[25:39] to actually collaborate and work
+[25:41] together as one unit to complete a
+[25:43] entire workflow rather than specific
+[25:46] isolated jobs. So, it pulls in info from
+[25:47] my positioning doc. It knows how to
+[25:49] differentiate us from competitors. And
+[25:51] when it writes actual content, the
+[25:53] humanizer runs it through my voice
+[25:54] profile to make sure it sounds like me
+[25:57] and not like AI slot. Now, I want to be
+[25:59] straight with you. This all takes time
+[26:00] to build. So you're not setting this up
+[26:02] in one afternoon, the foundation skills
+[26:04] alone, your voice profile, the
+[26:05] positioning, the ICP, those need to be
+[26:07] built properly first. But once they're
+[26:08] in place, every new skill you add
+[26:10] immediately benefits from that shared
+[26:12] context. Because think about what you've
+[26:14] actually got here. You've got specialist
+[26:15] knowledge encoded into skills
+[26:17] personalized to your business through
+[26:18] shared brand context. Self- testing with
+[26:20] evaluations, self-improving through a
+[26:23] learning process, and coordinating
+[26:25] skills between each other with full
+[26:26] workflows to make sure that nothing
+[26:28] loads more than it needs to at any one
+[26:30] point. And that's not an AI tool. That
+[26:32] is an AI workforce. And the best part is
+[26:34] you don't need to be technical to build
+[26:35] this. Everything I've shown you today,
+[26:37] every single level, can be done by a
+[26:39] business owner who knows their own
+[26:40] processes. The skills handle the
+[26:42] complexity. you bring the context and
+[26:44] the feedback. So, at level seven, your
+[26:46] skills aren't separate tools anymore.
+[26:47] They're a complete system. So, there you
+[26:49] have it. Every level of Claw Code skill
+[26:51] building. And if you want to see how
+[26:53] I've built my own Aentic OS using these
+[26:55] exact principles with 20 plus production
+[26:57] skills running across my entire
+[26:59] business, then check out the Aentic
+[27:01] Academy in the description where you can
+[27:02] download it and set it up today. And if
+[27:04] you want to see more Claw Code content
+[27:06] like this, hit subscribe and give this
+[27:08] video a like. See you in the next one.
+
+--- Plain text ---
+So, you've probably started building Claw Code skills, and at first they seem super simple. You write some instructions, add context, and suddenly Claw can produce work that normally takes a specialist. But then things start breaking. Skills don't trigger when they should. Your context window starts to fill up, and the outputs aren't getting better. And here's what most people don't realize. They're still stuck at level two or three of skill building. This video is going to show you what's beyond that. So, I spent hundreds of hours now in Cyclog Code studying Anthropic's complete skill building guide and building over 20 production skills that now run parts of my marketing strategy and operations every day in my business. I'm going to walk you through each level from simple setups to self-improving systems that work together as your AI workforce. So, let's start with level one. Level one is all about understanding what a skill actually is. And it's not what people have been telling you skills are. So, at its core, a skill is just a folder of knowledge. That's it. But it's how you build the files inside of the folder and the relationship between those files that actually determines how successful your skills are. So, let me break it down with a real example skill that I found online that I love. So, this is called the last 30-day skill in this Ronny Nutrition GitHub repo. And the idea is it goes out and does trending research on topics of your choice on Reddit and X. So, it's able to go and collect from Reddit and X where our traditional search cannot do that. It can bring back information like up votes, number of likes, retweets, etc. Now, every skill has one required file, the skill.md. So, this is the brain of the skill. It's a markdown file that tells Claude what to do, when to do it, and how to do it well. So, you can think of this as an SOP or standard operating procedure. So, for example, in our adapted trending research skill inside the skill to MD, you can see we've got step one, pass the request, which understands the user's intent. Step two, run the research, which goes out and collects information from the Reddit and X APIs. And then you've got three optional folders. You've got scripts folder for executable code like if it needs to grab some data from an API call like in the trending research skill. Step two actually goes and grabs the scripts folder down here and runs the last 30 days.py which uses external APIs to go and grab information from those Reddit and X threads. You've got a references folder for documentation that Claw can pull in when it needs it only like examples of what good looks like. So in the trending research skill we've got the references folder and we've got this brief template. And the brief template just says this is how you should return outputs of the research reports. So notice these aren't in the skill.md file. And then you've got an assets folder for things like templates, fonts or icons, but ultimately they're all just additional files of deep knowledge or knowledge that your process document, the skill.md can and should reference in its instructions, but they're only pulled in as and when needed. And that's the really important part that anthropic explains in their full skill building guide. Skills use what they call progressive disclosure. And this is a concept you need to understand because it comes up again and again. So there are three tiers of information loading when it comes to skills. So tier one is the YAML front matter at the top of your skill.md file. So this is always loaded into your claw context. Every time you have a skill in your folder, this is loaded in. So you can think of this as just the name and description of the skill and it's how Claude decides whether to use this skill for a given task or not load the full skill skill.md file in. So for the trending research, we've got what it does. Research what's trending in the last 30 days. the words it's triggered by, research what's trending, and the words it is not triggered by. But what many people don't know is the limit Claude accepts into its context for skill descriptions is only 15,000 characters, which is around five pages of text. So don't install too many skills or you'll run out of space and actually bloat your context right off the start. Now, tier two is the body of your skill. MD, exactly what we just saw, the process step, step one, step two, etc. This only gets loaded when the skill is actually activated by Claude. And tier three is everything else. The reference files, the scripts, the assets. Claude only pulls these in when it actually needs them for a specific step which is deemed necessary by the instructions in the skilled MD file. So for example, in the run the research where it says the script/last 30day script should be run. It then runs that script and pulls that from the reference file only when it's necessary. And that three tier system is really really important because it means Claude isn't loading everything all at once. It's being smart about what information it brings in and when. So to use a skill, all you need to do is drop that folder directly into your doc. Claude folder and a skills folder underneath. Each skill has their own folder. As long as it has a skill.md, it's considered a skill and Claude can see and use it. So at level one, you can take a skill that somebody else has built. You can install it and Claude follows those instructions to produce better work than it would on its own. Okay, so you can install and use a skill and that's great. But here's where most people hit a wall. they start building their own skills and they think that more information equals a better output and that's exactly what level two is about solving. So I found a really popular Reddit post called I was wrong about agent skills and how I refactor them and the story is so common that I had to share it. So, this developer started building skills the day they dropped. And within 2 weeks, they had a CloudFare skill at 1,131 lines, a Shaden UI skill at 850 lines, and an Nex.js skill at 900 lines. And then every time Claw Code activated multiple related skills, the context window exploded as it was loading 5,000 to 7,000 lines in every single time into the context window. And that's because he put everything in one giant skill.md file so that Claw could access all that information up front. But that is completely wrong. The problem isn't lack of information, it's actually having too much irrelevant information. So skills share the context window with your conversation. So uncontrolled loading of unnecessary information is basically a direct performance tax on your conversation. So if you built skills in this way, you'd probably see slowness, drifting from instructions, and Claude ignoring the obvious parts of your instructions. So here's the fix, and this is the golden rule of skill building. Keep your skill.md under 200 lines max. And that 200 line limit is not arbitrary. It's effectively based on how much context an LLM can efficiently scan through to decide what to load next. So we're trying to keep the entry point for Claude under 200 lines so that Claude can understand what the skill offers, decide which reference file it needs to read and load just that file, i.e. another file with 200 to 300 lines only. And that massively reduces the amount of information you're handing to Claude immediately and therefore will improve performance. So you can effectively think of the skilled.md as a table of contents that tells Claude where to look if it needs more information. So the actual detailed documentation goes into your references folder and Claude should only be pulling it when it needs it and bit by bit. So it won't overload your context window. Now the second massive mistake people make is in the description field. So this is in your YAML front matter that we mentioned before. And if you remember this is how Claude decides whether to load your skill in the first place. So if it's too vague the skill will never trigger and if it's too broad it triggers on everything. So studies apparently suggest that skill activation sits around 20% for skills that you download from a marketplace. So they'd activate only one in five times which kind of begs the question like what's the point in even installing them if they're not going to activate. So here's a simple three-step framework on how to write it well. Firstly we're going to write the trigger. So what is the event or situation in which this skill gets used? So we can say something like triggers on these keywords research what's trending research topic. What are the things that should not trigger it? So it does not trigger for general web browsing or simple URL fing and what is the outcome that's going to be produced and effectively what the skill does. So it produces a research brief that other skills can consume and it research what's trending in the last 30 days. And I'd highly recommend going and checking any marketplace skill that you've got installed already. If it doesn't have these three things, it can be improved massively. So at level two then you know how to build skills that are lean, properly structured, and actually trigger when they should. And that is a huge competitive advantage over most people building skills right now. Now, you know how to build skills that work, but you don't have to build everything from scratch. There's a whole world of skills out there that you can grab, install, and make your own. But there is a catch, and this is something that caught me off guard when I first started looking at marketplace skills because a lot of them are badly built. So, I'm talking 1,000 lines, skill.md files with no progressive disclosure, everything dumped into one massive markdown document, no references folder, no scripts like we saw before, just a wall of text that's going to load into your context window as soon as the skill is activated. And the most frustrating part of that is the actual content is often really good. The business logic is solid. The step-by-step processes are valuable. It's just the structure that's the problem. So, here's what you can do. You can grab the skill. You can look at what's inside it. And you can apply everything you learned in level two by refactoring it using anthropics skill creator skill. So the skill creator skill effectively as it sounds creates new skills, modifies and improves existing skills and measures skill performance. So this even applies to skill descriptions and improving activation of skills. So we're effectively taking that 1,000 line skill.md and asking ourselves what does Claude actually need to see immediately to know when and how to use this skill that goes in the skill.md. Everything else gets moved into the references folders. I want to show you an example for this because I want to create a skill that can help my website be cited by AI answers like Chachi, Gemini, Claude. And I found this really popular one by a guy called Cory Haynes who's got a sequence of marketing skills that all have brilliant content. It's got about 13,000 stars. It does have some references and even an evals folder. But when I look through the skill.md file, I can see it's around 400 lines at the moment. So although it's packed with really useful information, we're probably loading too much into the context of Claude right away and can abstract some of this out. So what we're going to do is just grab the installation line from here. We're going to go to our terminal and we're going to install it like this and we're going to install it locally into our local folder. So we'll go through the steps of installing the skill. We can select AIO and install it locally. Now what we're going to do here is just ask our meta skill creator skill which is an adapted version of anthropic skill creator skill. It's going to build all the context for us and also understand that actually we want it to be less than 200 lines. So we're going to refactor and add some more references folder that can be pointed to and not loaded immediately into our context window to improve the performance. It's also going to take a look at the description and improve that. So we said take the new AI SEO skill and use the skill creator skill to refactor it. I want the skill.m to be max 200 lines and we want to put all of the reference info inside the references folder. There's already a few references but right now the file is around 400 lines. So, it's gone through and it's basically worked out what information we can abstract to different references files and it's told us exactly what's changed. So, the skill.md was 400 lines and now it's 148 lines. So, that's a 60% reduction in the number of lines that we're loading in every time we activate this skill. And it's created four new reference files. So, authority signals, AI visibility audits, content type optimization, and you can see those inside the references file. So, we've got more things that we're pointing to but less information loaded in at any one point. If we go into the skill.md, we can see for example in step two where we've got the AI visibility audit, we've now abstracted a lot of that information and put it inside this references file which Claude code can refer to when it's at step two only. So the important bit about the references file and pointing to other files is that claude code can load and unload information out of its context. So during step two, it doesn't have a huge amount of information from the other references files. it's just focusing on step two and it can load in the AI visibility audit at that point which is an extra 50 or so lines. As soon as it's finished with step two, it can offload it and therefore save our token usage but also improve the accuracy of the results we're getting. So when you think about it like this, you've now got this incredible ability to take someone else's domain expertise, clean it up, structure it properly, and have it working in your system in an afternoon. So at level three, you're not limited to what you can build yourself. You can pull in expertise from anywhere and refactor it into a proper skill format. So that Claude is basically a specialist running workflows that didn't even exist in your business in the morning. So you can build skills, you can import and fix skills, but up until now everything has been pretty generic. And this is where it gets really really interesting because a skill without your business context is basically not worth having at all. And this brings us to the next level which stops skills giving generic outputs and starts making them actually sound like you. And this is a massive jump in value. If you had a generic rank my site in AI search tools, kind of like this one, AI SEO, I imagine that skill would actually produce decent content. But an AI SEO skill that knows your brand voice, your product offering, your audience, your content pillars, your competitors, and your positioning that will produce content that will both rank and bring you traffic for relevant queries. So, it's the difference between ranking for a high volume keyword that gets you traffic that you can't do anything with versus ranking for a query where the person typing has that commercial intent or intent to buy already. So, the way you do this is by adding your business context to all your skills, giving them all access. So, your brand guidelines go into that references folder. Your audience personas, your tone of voice examples, all should go into the references file. So, as good as anthropic skill creator skill is, it can give you the structure, but you must also supply the context. So for my own business, I've built what I call the Agentic operating system or Aentic OS. And it's a set of production skills across marketing, strategy, operations, and visuals. And every single one of those skills has my business context baked in. So we have a separate shared brand context folder, which has all of my assets, my ICP, my positioning, my voice profile. So my marketing skills know my audience. They know I'm talking to business owners who want to automate their ops and aspiring entrepreneurs. They know my tone of voice. They know my content pillars. They know the specific examples and case studies that I reference again and again. And this is what makes them so powerful because Claude isn't just following a generic process. It's following my process with my context. So the skill.md for the AI SEO, we should actually reference to all of our contextualized information. And we do that through a context needs chart where we say inside the positioning in the brand context shared folder. You should load in the summary of that because it helps you understand what differentiates the brand for citation worthy framing. So, it feeds directly into why this skill becomes more powerful. Then, we also feed in the ideal customer profile because we need to know who we're trying to reach in the AI answers so that everything we're writing about is directly relevant to our existing audience. It's basically only pulling in the right context when it's necessary to not bloat context. Exactly what we spoke about so far. And by the way, you can download this exact Aentic OS as part of our Aentic Academy in the description if you want it. We also have a full skill building course that we just launched. So, here's how you actually do it for yourself step by step. Well, first you identify the skill that you actually want to build or improve on. Maybe it's like this AI SEO optimization one. Secondly, you use the skill creator skill to generate the base structure. Get the skill.md formatted properly with a good description. And then third, you add your business context into the references folder. So, you don't need a separate brand context folder like this. You just add it into the AI SEO references folder and make sure that you have all of that information and reference it inside the skill.md. Fourth, you're able to then test it. You're running it against real tasks and seeing if the output matches what you'd produce if you'd done the task yourself because it should be totally contextualized to your brand and business. So, at level four, your skills are not generic anymore. They're customized to your business, your voice, your audience. And that means Claude is producing work that actually sounds like you, not just AI generated slot. Okay. So, now you've got personalized skills that produce really good outputs. But here's the question that nobody's asked yet. How do you know they're actually producing good outputs? How do you know that version two that you've made is better than version one? So, this is where we move from building to measuring. So, Anthropic just released evaluation and benchmarking built right into that skill creator skill. And this is awesome because up until now it was completely vibes based whether it was giving us high quality output or not. You had no way to actually measure whether your changes made things better or worse. So, say we removed a reference file. We wouldn't know if that was actually affecting the quality apart from reviewing every single output and making a judgment call on that. And most good skills go through many iterations before they really start to solve your problems in an automated fashion. And that's exactly what the eval function is designed for to speed up that learning cycle. So let's continue with the AI SEO skill to demo this. So instead of saying run some tests on my SEO skill, we're going to say run a new test using the skill creator evals optimize for making sure my content follows the content type optimization pattern. So, I specifically looked through the reference files and figured out actually I want to optimize the results of this test for this specific reference file. So, is it even loading in the reference file in the first place when it reads through the instructions? And if it is, we're going to give it a blog content page. Is it optimizing for a few of these things? So, the criteria are, does it have one clear target query per post? Does it have author bio with relevant credentials? Does it have internal links that relate to product or feature pages? Those are some of the things that are going to help us rank in AI search because it shows that we have authority and it shows that we are a content pillar for this specific content. So we said let's test it on this task and this is the task that we would conventionally give to the AI SEO skill in the first place. So assess the chances of ranking highly using AI SEO rankings for this page and I've given it a blog page from automate.io which was my AI agency and to be honest this was written before I did any work on optimizing content. You can see the article is not very long at all. So, I don't expect this to come back with stunning results, but what I want to see is a step-by-step comparison against the criteria and how we could actually improve this. But it's going to run this through five times and test it against that criteria. So, we can really see the results of this skill and how it performs using those reference files. The evals feature, by the way, also has a great other feature, which is AB testing. So if I wanted to actually AB test instead of test against specific criteria, I could AB test, for example, by taking out the content type optimization reference file and saying run this same task five times, once with the content type optimization and once without it, which ranks better? And it will come back with a thorough review on before and after and help me effectively optimize this skill by saying, does this even feed into it in the first place or does this help enhance the quality of the results? So, I could do that for every single reference file and therefore have a really good evaluation of whether my reference files are actually benefiting my skill or just costing me token usage. And you'll have noticed that we were only trying to optimize there for three criteria. So, I'd highly recommend when you run these emails doing three to five criteria at a time. So, you're not giving it too much to think about and therefore it comes back with a more thorough review of the different assertions. So, it's creating an assertions file. Does the output assess whether there's one clear target query per post? Does the output assess whether there's an author bio? Does the output assess whether there are internal links related to a product? So, it spawns all 10 runs, five with the skill, five without the skill. This is what it would do in AB testing. But in this case, we're just doing five with the skill because we're doing a direct comparison of the skill to itself. And it's going to run those in parallel and then grade those against the three criteria. And what we get is a really nice overview of the different assertions here. What a pass looks like. And then basically it's saying I'll grade and aggregate the results once the run's complete. So, it's going to run all 10 agents in parallel, score each against your criteria, and give you a structured report at the end of it. You can read the full output from each variation, see exactly where it passed and failed, and give feedback directly into the report, which then feeds back into improving the skill, and it will retest that to make sure the improvements that we've made have actually fixed the results. And you can see some of those agents are coming back now. And then the results get hosted on your local environment. So you can see this they we get this really nice report that is basically the prompt that we put in. So assess the chances of ranking highly using AI SEO rankings. It comes back with the actual output of the skill. So the skill is basically saying in this audit.md that it's pretty poor. The website page does not rank very well. So it's got three out of 10 for content extractability. It does not have a robots.ext. It's weak on the authority or the citation worthiness. But don't forget, we're not actually ranking how the page performed at this point. We're actually ranking how the assessment of certain criteria that we put inside the skill.md is being adhered to. So what we're actually assessing is does the output explicitly assess whether the page has one clear target query in which it did pass here. Does it assess whether the page has an author bio with relevant credentials visible? It did assess that. And in the first one, the output did not explicitly assess whether the page has internal links to related product or feature pages. And then in the benchmark, we have an overview of all of the different runs. So with the skill, which is the only one important here because we were testing just with the skill, it had a pass rate of those three criteria, 93%. So that's pretty good. It took 184 seconds to run with the skill, with the reference files, and took this many tokens. You can see that without some of the reference files, it again had 93% success rate, but actually the time taken and the tokens was significantly lower. So actually what this starts to tell me is can we take away some of the reference files without actually compromising the quality of the output. And that is where we'd run the AB test to see exactly which files are improving quality and which files don't even matter for the quality of the outputs. We can then also go back to the individual output feedback and submit specific reviews to say actually we want to make sure that in this case the page it should always check for internal links. So can we add anything to the skill.md to make sure that that always happens. What that will then do is retest that with the new skill.md and come back with a whole new set of results based on the before and after. Or you can come back here and directly let it know your thoughts here. So at level five then you stop guessing whether your skills actually work. You can test them, score them, measure them, and improve them. And that's how you go from a skill that kind of ranks to one that consistently can find your content and produce content that your ideal customer will actually find through AI SEO, for example. So now you can measure and improve your skills, but you're still the one doing all the manual tests for improvements. So what if skills could actually improve themselves, which takes us on to level six. So things get really, really cool now. And this is something that I've been using for my own Aentic OS that makes a massive difference. And the concept is super simple. Your skills should learn from every interaction and get better over time. But to do this, you need one critical piece that most people are missing. A feedback loop. So let's stick with our AI SEO skill. Every time you run it and notice something, that observation gets captured in a learnings andor rules file inside the skill.md. So you'll see that my meta skill creator has added a rules section when I've asked it to create that that say whatever feedback we add will be added to these rules and the rules will always be read when the skill.md is read. So maybe you're running the skill and the article it produces ranks on page one within a week. You can go back and note exactly what worked. So articles that open with a direct answer to the search query in the first paragraph seem to get picked up in AI search more quickly. Or we had a comparison table in the middle of this article which increased time on page. So all of that can actually go into the rules file and or you can have a separate learnings file that sits within your context that on a skill bykll basis documents what works and what doesn't work and that then feeds from your claw.md into every skill that you use. So for the trending research skill we'd have specific feedback on what worked and what didn't work. And the way this gets updated is we have a wrap-up skill. So, at the end of every session, we close the session and any skill we've used and any feedback we've been given will be generated and input directly into this learnings.mmd file on a skillbyskll basis. And it's just a line that says something like after completing a task, review the output against these criteria, and if you identify specific patterns or improvements, then we're going to add them back to the learnings file. So now, every time you run a skill, it's actually checking back its own work. Did the article actually answer the search query in the first 100 words? Did it include structured data patterns from the reference file? And if it doesn't do any of that, it logs it automatically. And this connects us straight back to level five because you can use your evals to validate the learnings that are actually improving our output quality. So you can run the same eval before and after the learnings are applied. And you'll see the difference in your benchmark scores. They'll start improving without you actively having to run these evals. But the key thing here is keeping the learnings file under control. So you can't just dump random notes in there forever or it becomes its own context window problem. It's feeding in too much every single time. So the idea is to keep it structured and prune the obvious stuff every so often. So every week we go through the learnings file and strip out any surplus information that won't contribute to quality. So at level six, your skills are not static anymore. They're actually learning from every piece of content they produce, accumulating knowledge over time, and getting better the more you use them. So your skill in 3 months from now will be dramatically better than the one you built on day one. And you didn't even have to manually run evaluations for it. So now that your individual skills are learning and improving on their own, there's only one thing left to solve. They're still operating independently. So what happens if they start working together? Now before we hit the final level, my YouTube analytics tells me that 94% of you are not subscribed but still watching the content. So if that's you, then head down below, subscribe to the channel so you can get more value from the videos that I create. So this is level seven, the final level where everything connects. So we're going to use a copywriting skill now as an example inside the Aentic OS. Let's say I want to write a piece of copy for a landing page. Not only do we have the context needs that we spoke about earlier, so it's pulling in all of my voice profile, the angles that to target from the positioning, my full ICP, so it can tailor the copy towards that. Not only is it doing that, it is connecting with my other skills to make more powerful workflows. So here in step eight, the humanizer gate, before saving all copy, we pass everything through the tool humanizer, which basically is its own set of production instructions to help apply pattern detection to every bit of written content to make it more human written and less AI slop-like. or inside the content repurposing skill. If we can't get our transcripts from YouTube, then we can leverage another skill tool-you only when it's necessary to actually collaborate and work together as one unit to complete a entire workflow rather than specific isolated jobs. So, it pulls in info from my positioning doc. It knows how to differentiate us from competitors. And when it writes actual content, the humanizer runs it through my voice profile to make sure it sounds like me and not like AI slot. Now, I want to be straight with you. This all takes time to build. So you're not setting this up in one afternoon, the foundation skills alone, your voice profile, the positioning, the ICP, those need to be built properly first. But once they're in place, every new skill you add immediately benefits from that shared context. Because think about what you've actually got here. You've got specialist knowledge encoded into skills personalized to your business through shared brand context. Self- testing with evaluations, self-improving through a learning process, and coordinating skills between each other with full workflows to make sure that nothing loads more than it needs to at any one point. And that's not an AI tool. That is an AI workforce. And the best part is you don't need to be technical to build this. Everything I've shown you today, every single level, can be done by a business owner who knows their own processes. The skills handle the complexity. you bring the context and the feedback. So, at level seven, your skills aren't separate tools anymore. They're a complete system. So, there you have it. Every level of Claw Code skill building. And if you want to see how I've built my own Aentic OS using these exact principles with 20 plus production skills running across my entire business, then check out the Aentic Academy in the description where you can download it and set it up today. And if you want to see more Claw Code content like this, hit subscribe and give this video a like. See you in the next one.

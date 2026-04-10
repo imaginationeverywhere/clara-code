@@ -1,0 +1,4255 @@
+1
+00:00:00,880 --> 00:00:04,550
+
+Claude's new AI auto mode runs itself.
+
+2
+00:00:04,550 --> 00:00:04,560
+Claude's new AI auto mode runs itself.
+ 
+
+3
+00:00:04,560 --> 00:00:06,470
+Claude's new AI auto mode runs itself.
+Now, that's not a headline I'm using to
+
+4
+00:00:06,470 --> 00:00:06,480
+Now, that's not a headline I'm using to
+ 
+
+5
+00:00:06,480 --> 00:00:08,870
+Now, that's not a headline I'm using to
+just get clicks. That literally just
+
+6
+00:00:08,870 --> 00:00:08,880
+just get clicks. That literally just
+ 
+
+7
+00:00:08,880 --> 00:00:11,190
+just get clicks. That literally just
+happened. Anthropic dropped auto mode
+
+8
+00:00:11,190 --> 00:00:11,200
+happened. Anthropic dropped auto mode
+ 
+
+9
+00:00:11,200 --> 00:00:14,870
+happened. Anthropic dropped auto mode
+for Claude Code today. It hit 2.4
+
+10
+00:00:14,870 --> 00:00:14,880
+for Claude Code today. It hit 2.4
+ 
+
+11
+00:00:14,880 --> 00:00:17,349
+for Claude Code today. It hit 2.4
+million views on X within hours. Not
+
+12
+00:00:17,349 --> 00:00:17,359
+million views on X within hours. Not
+ 
+
+13
+00:00:17,359 --> 00:00:19,670
+million views on X within hours. Not
+because of hype, because people looked
+
+14
+00:00:19,670 --> 00:00:19,680
+because of hype, because people looked
+ 
+
+15
+00:00:19,680 --> 00:00:21,510
+because of hype, because people looked
+at it and thought, "Wait, is this
+
+16
+00:00:21,510 --> 00:00:21,520
+at it and thought, "Wait, is this
+ 
+
+17
+00:00:21,520 --> 00:00:23,590
+at it and thought, "Wait, is this
+actually real?" And it is. Here's what
+
+18
+00:00:23,590 --> 00:00:23,600
+actually real?" And it is. Here's what
+ 
+
+19
+00:00:23,600 --> 00:00:25,830
+actually real?" And it is. Here's what
+changed. Before today, Claude Code
+
+20
+00:00:25,830 --> 00:00:25,840
+changed. Before today, Claude Code
+ 
+
+21
+00:00:25,840 --> 00:00:28,710
+changed. Before today, Claude Code
+stopped and asked you to approve almost
+
+22
+00:00:28,710 --> 00:00:28,720
+stopped and asked you to approve almost
+ 
+
+23
+00:00:28,720 --> 00:00:30,790
+stopped and asked you to approve almost
+everything. Every file it wrote, every
+
+24
+00:00:30,790 --> 00:00:30,800
+everything. Every file it wrote, every
+ 
+
+25
+00:00:30,800 --> 00:00:32,709
+everything. Every file it wrote, every
+command it run, every single action.
+
+26
+00:00:32,709 --> 00:00:32,719
+command it run, every single action.
+ 
+
+27
+00:00:32,719 --> 00:00:35,510
+command it run, every single action.
+You'd sit there clicking yes, yes, yes
+
+28
+00:00:35,510 --> 00:00:35,520
+You'd sit there clicking yes, yes, yes
+ 
+
+29
+00:00:35,520 --> 00:00:38,470
+You'd sit there clicking yes, yes, yes
+over and over, like hiring a brilliant
+
+30
+00:00:38,470 --> 00:00:38,480
+over and over, like hiring a brilliant
+ 
+
+31
+00:00:38,480 --> 00:00:40,389
+over and over, like hiring a brilliant
+assistant and then making them ask
+
+32
+00:00:40,389 --> 00:00:40,399
+assistant and then making them ask
+ 
+
+33
+00:00:40,399 --> 00:00:42,869
+assistant and then making them ask
+permission every time they touched a
+
+34
+00:00:42,869 --> 00:00:42,879
+permission every time they touched a
+ 
+
+35
+00:00:42,879 --> 00:00:44,950
+permission every time they touched a
+pen. What did people do? Well, they
+
+36
+00:00:44,950 --> 00:00:44,960
+pen. What did people do? Well, they
+ 
+
+37
+00:00:44,960 --> 00:00:47,670
+pen. What did people do? Well, they
+turned off the safety system entirely.
+
+38
+00:00:47,670 --> 00:00:47,680
+turned off the safety system entirely.
+ 
+
+39
+00:00:47,680 --> 00:00:50,709
+turned off the safety system entirely.
+There's a flag called dangerously skip
+
+40
+00:00:50,709 --> 00:00:50,719
+There's a flag called dangerously skip
+ 
+
+41
+00:00:50,719 --> 00:00:52,630
+There's a flag called dangerously skip
+permissions, and almost everyone was
+
+42
+00:00:52,630 --> 00:00:52,640
+permissions, and almost everyone was
+ 
+
+43
+00:00:52,640 --> 00:00:54,470
+permissions, and almost everyone was
+using it. One developer posted about it
+
+44
+00:00:54,470 --> 00:00:54,480
+using it. One developer posted about it
+ 
+
+45
+00:00:54,480 --> 00:00:56,950
+using it. One developer posted about it
+on X and got about 2,000 likes in hours.
+
+46
+00:00:56,950 --> 00:00:56,960
+on X and got about 2,000 likes in hours.
+ 
+
+47
+00:00:56,960 --> 00:00:59,029
+on X and got about 2,000 likes in hours.
+Not controversial, just everyone in the
+
+48
+00:00:59,029 --> 00:00:59,039
+Not controversial, just everyone in the
+ 
+
+49
+00:00:59,039 --> 00:01:01,349
+Not controversial, just everyone in the
+reply saying, "Yeah, same." One reply
+
+50
+00:01:01,349 --> 00:01:01,359
+reply saying, "Yeah, same." One reply
+ 
+
+51
+00:01:01,359 --> 00:01:03,510
+reply saying, "Yeah, same." One reply
+said, "Dangerously skip permissions is
+
+52
+00:01:03,510 --> 00:01:03,520
+said, "Dangerously skip permissions is
+ 
+
+53
+00:01:03,520 --> 00:01:06,469
+said, "Dangerously skip permissions is
+how I run my life." Another reply
+
+54
+00:01:06,469 --> 00:01:06,479
+how I run my life." Another reply
+ 
+
+55
+00:01:06,479 --> 00:01:09,750
+how I run my life." Another reply
+compared it to $8 and paying $8 for a
+
+56
+00:01:09,750 --> 00:01:09,760
+compared it to $8 and paying $8 for a
+ 
+
+57
+00:01:09,760 --> 00:01:12,230
+compared it to $8 and paying $8 for a
+coffee and then being asked to approve
+
+58
+00:01:12,230 --> 00:01:12,240
+coffee and then being asked to approve
+ 
+
+59
+00:01:12,240 --> 00:01:14,469
+coffee and then being asked to approve
+every sip. So, Anthropic had a real
+
+60
+00:01:14,469 --> 00:01:14,479
+every sip. So, Anthropic had a real
+ 
+
+61
+00:01:14,479 --> 00:01:17,030
+every sip. So, Anthropic had a real
+problem. The safety system was so
+
+62
+00:01:17,030 --> 00:01:17,040
+problem. The safety system was so
+ 
+
+63
+00:01:17,040 --> 00:01:18,950
+problem. The safety system was so
+disruptive that everyone just turned it
+
+64
+00:01:18,950 --> 00:01:18,960
+disruptive that everyone just turned it
+ 
+
+65
+00:01:18,960 --> 00:01:21,270
+disruptive that everyone just turned it
+off. And that's not safety, that's
+
+66
+00:01:21,270 --> 00:01:21,280
+off. And that's not safety, that's
+ 
+
+67
+00:01:21,280 --> 00:01:23,270
+off. And that's not safety, that's
+theater. And it wasn't a small number of
+
+68
+00:01:23,270 --> 00:01:23,280
+theater. And it wasn't a small number of
+ 
+
+69
+00:01:23,280 --> 00:01:24,789
+theater. And it wasn't a small number of
+people doing it quietly. It was the
+
+70
+00:01:24,789 --> 00:01:24,799
+people doing it quietly. It was the
+ 
+
+71
+00:01:24,799 --> 00:01:27,109
+people doing it quietly. It was the
+standard workflow. The dangerous option
+
+72
+00:01:27,109 --> 00:01:27,119
+standard workflow. The dangerous option
+ 
+
+73
+00:01:27,119 --> 00:01:29,030
+standard workflow. The dangerous option
+became the normal option because the
+
+74
+00:01:29,030 --> 00:01:29,040
+became the normal option because the
+ 
+
+75
+00:01:29,040 --> 00:01:32,550
+became the normal option because the
+alternative approving every single micro
+
+76
+00:01:32,550 --> 00:01:32,560
+alternative approving every single micro
+ 
+
+77
+00:01:32,560 --> 00:01:35,350
+alternative approving every single micro
+action was killing productivity. Auto
+
+78
+00:01:35,350 --> 00:01:35,360
+action was killing productivity. Auto
+ 
+
+79
+00:01:35,360 --> 00:01:37,749
+action was killing productivity. Auto
+mode is their answer to it. And here's
+
+80
+00:01:37,749 --> 00:01:37,759
+mode is their answer to it. And here's
+ 
+
+81
+00:01:37,759 --> 00:01:39,830
+mode is their answer to it. And here's
+where it gets interesting because what
+
+82
+00:01:39,830 --> 00:01:39,840
+where it gets interesting because what
+ 
+
+83
+00:01:39,840 --> 00:01:42,789
+where it gets interesting because what
+they built is not just we made the
+
+84
+00:01:42,789 --> 00:01:42,799
+they built is not just we made the
+ 
+
+85
+00:01:42,799 --> 00:01:44,710
+they built is not just we made the
+pop-ups less annoying. Instead of
+
+86
+00:01:44,710 --> 00:01:44,720
+pop-ups less annoying. Instead of
+ 
+
+87
+00:01:44,720 --> 00:01:46,950
+pop-ups less annoying. Instead of
+approving every file right and bash
+
+88
+00:01:46,950 --> 00:01:46,960
+approving every file right and bash
+ 
+
+89
+00:01:46,960 --> 00:01:48,950
+approving every file right and bash
+command or skipping permissions
+
+90
+00:01:48,950 --> 00:01:48,960
+command or skipping permissions
+ 
+
+91
+00:01:48,960 --> 00:01:52,069
+command or skipping permissions
+entirely, auto mode lets Claude make
+
+92
+00:01:52,069 --> 00:01:52,079
+entirely, auto mode lets Claude make
+ 
+
+93
+00:01:52,079 --> 00:01:54,710
+entirely, auto mode lets Claude make
+permission decisions on your behalf. But
+
+94
+00:01:54,710 --> 00:01:54,720
+permission decisions on your behalf. But
+ 
+
+95
+00:01:54,720 --> 00:01:56,710
+permission decisions on your behalf. But
+the key detail, the thing that makes
+
+96
+00:01:56,710 --> 00:01:56,720
+the key detail, the thing that makes
+ 
+
+97
+00:01:56,720 --> 00:01:58,709
+the key detail, the thing that makes
+this different from just turning off
+
+98
+00:01:58,709 --> 00:01:58,719
+this different from just turning off
+ 
+
+99
+00:01:58,719 --> 00:02:02,069
+this different from just turning off
+safety is how the decision gets made.
+
+100
+00:02:02,069 --> 00:02:02,079
+safety is how the decision gets made.
+ 
+
+101
+00:02:02,079 --> 00:02:04,469
+safety is how the decision gets made.
+Before each tool, a classifier reviews
+
+102
+00:02:04,469 --> 00:02:04,479
+Before each tool, a classifier reviews
+ 
+
+103
+00:02:04,479 --> 00:02:07,590
+Before each tool, a classifier reviews
+it for potentially destructive actions.
+
+104
+00:02:07,590 --> 00:02:07,600
+it for potentially destructive actions.
+ 
+
+105
+00:02:07,600 --> 00:02:09,669
+it for potentially destructive actions.
+Safe actions proceed automatically.
+
+106
+00:02:09,669 --> 00:02:09,679
+Safe actions proceed automatically.
+ 
+
+107
+00:02:09,679 --> 00:02:12,150
+Safe actions proceed automatically.
+risky ones get blocked and Claude will
+
+108
+00:02:12,150 --> 00:02:12,160
+risky ones get blocked and Claude will
+ 
+
+109
+00:02:12,160 --> 00:02:14,309
+risky ones get blocked and Claude will
+take a different approach. That
+
+110
+00:02:14,309 --> 00:02:14,319
+take a different approach. That
+ 
+
+111
+00:02:14,319 --> 00:02:16,710
+take a different approach. That
+classifier is a separate AI model, not
+
+112
+00:02:16,710 --> 00:02:16,720
+classifier is a separate AI model, not
+ 
+
+113
+00:02:16,720 --> 00:02:18,949
+classifier is a separate AI model, not
+Claude judging itself, a completely
+
+114
+00:02:18,949 --> 00:02:18,959
+Claude judging itself, a completely
+ 
+
+115
+00:02:18,959 --> 00:02:21,350
+Claude judging itself, a completely
+different model, watching every action
+
+116
+00:02:21,350 --> 00:02:21,360
+different model, watching every action
+ 
+
+117
+00:02:21,360 --> 00:02:23,430
+different model, watching every action
+before it happens. Think about what that
+
+118
+00:02:23,430 --> 00:02:23,440
+before it happens. Think about what that
+ 
+
+119
+00:02:23,440 --> 00:02:24,790
+before it happens. Think about what that
+actually means in practice. You give
+
+120
+00:02:24,790 --> 00:02:24,800
+actually means in practice. You give
+ 
+
+121
+00:02:24,800 --> 00:02:27,750
+actually means in practice. You give
+Claude a task, it starts working. Every
+
+122
+00:02:27,750 --> 00:02:27,760
+Claude a task, it starts working. Every
+ 
+
+123
+00:02:27,760 --> 00:02:29,670
+Claude a task, it starts working. Every
+time it tries to do something, move a
+
+124
+00:02:29,670 --> 00:02:29,680
+time it tries to do something, move a
+ 
+
+125
+00:02:29,680 --> 00:02:32,309
+time it tries to do something, move a
+file, run a command, write to a folder,
+
+126
+00:02:32,309 --> 00:02:32,319
+file, run a command, write to a folder,
+ 
+
+127
+00:02:32,319 --> 00:02:35,270
+file, run a command, write to a folder,
+a second AI checks it first. You're not
+
+128
+00:02:35,270 --> 00:02:35,280
+a second AI checks it first. You're not
+ 
+
+129
+00:02:35,280 --> 00:02:37,910
+a second AI checks it first. You're not
+in that loop. The two AIs are handling
+
+130
+00:02:37,910 --> 00:02:37,920
+in that loop. The two AIs are handling
+ 
+
+131
+00:02:37,920 --> 00:02:39,750
+in that loop. The two AIs are handling
+it between themselves. And here's the
+
+132
+00:02:39,750 --> 00:02:39,760
+it between themselves. And here's the
+ 
+
+133
+00:02:39,760 --> 00:02:43,030
+it between themselves. And here's the
+small part. Claude's reasoning text and
+
+134
+00:02:43,030 --> 00:02:43,040
+small part. Claude's reasoning text and
+ 
+
+135
+00:02:43,040 --> 00:02:45,430
+small part. Claude's reasoning text and
+tool results are stripped before
+
+136
+00:02:45,430 --> 00:02:45,440
+tool results are stripped before
+ 
+
+137
+00:02:45,440 --> 00:02:47,830
+tool results are stripped before
+reaching the classifier. Meaning, if
+
+138
+00:02:47,830 --> 00:02:47,840
+reaching the classifier. Meaning, if
+ 
+
+139
+00:02:47,840 --> 00:02:50,470
+reaching the classifier. Meaning, if
+there's a hostile instruction hidden
+
+140
+00:02:50,470 --> 00:02:50,480
+there's a hostile instruction hidden
+ 
+
+141
+00:02:50,480 --> 00:02:53,750
+there's a hostile instruction hidden
+inside a file Claude opens or buried in
+
+142
+00:02:53,750 --> 00:02:53,760
+inside a file Claude opens or buried in
+ 
+
+143
+00:02:53,760 --> 00:02:55,750
+inside a file Claude opens or buried in
+a code comment somewhere deep in a
+
+144
+00:02:55,750 --> 00:02:55,760
+a code comment somewhere deep in a
+ 
+
+145
+00:02:55,760 --> 00:02:57,910
+a code comment somewhere deep in a
+project, the classifier never sees it.
+
+146
+00:02:57,910 --> 00:02:57,920
+project, the classifier never sees it.
+ 
+
+147
+00:02:57,920 --> 00:02:59,750
+project, the classifier never sees it.
+The watcher only sees what you
+
+148
+00:02:59,750 --> 00:02:59,760
+The watcher only sees what you
+ 
+
+149
+00:02:59,760 --> 00:03:01,589
+The watcher only sees what you
+originally asked for and what Claude is
+
+150
+00:03:01,589 --> 00:03:01,599
+originally asked for and what Claude is
+ 
+
+151
+00:03:01,599 --> 00:03:04,070
+originally asked for and what Claude is
+about to do, nothing else. That's a real
+
+152
+00:03:04,070 --> 00:03:04,080
+about to do, nothing else. That's a real
+ 
+
+153
+00:03:04,080 --> 00:03:06,070
+about to do, nothing else. That's a real
+architectural decision, not marketing.
+
+154
+00:03:06,070 --> 00:03:06,080
+architectural decision, not marketing.
+ 
+
+155
+00:03:06,080 --> 00:03:08,630
+architectural decision, not marketing.
+Actual prompt injection defense built
+
+156
+00:03:08,630 --> 00:03:08,640
+Actual prompt injection defense built
+ 
+
+157
+00:03:08,640 --> 00:03:10,869
+Actual prompt injection defense built
+into the structure of how the two models
+
+158
+00:03:10,869 --> 00:03:10,879
+into the structure of how the two models
+ 
+
+159
+00:03:10,879 --> 00:03:13,270
+into the structure of how the two models
+talk to each other. The classifier is
+
+160
+00:03:13,270 --> 00:03:13,280
+talk to each other. The classifier is
+ 
+
+161
+00:03:13,280 --> 00:03:15,990
+talk to each other. The classifier is
+specifically looking for three threat
+
+162
+00:03:15,990 --> 00:03:16,000
+specifically looking for three threat
+ 
+
+163
+00:03:16,000 --> 00:03:18,630
+specifically looking for three threat
+patterns. Number one, is Claude doing
+
+164
+00:03:18,630 --> 00:03:18,640
+patterns. Number one, is Claude doing
+ 
+
+165
+00:03:18,640 --> 00:03:21,110
+patterns. Number one, is Claude doing
+more than you asked? Second, is it about
+
+166
+00:03:21,110 --> 00:03:21,120
+more than you asked? Second, is it about
+ 
+
+167
+00:03:21,120 --> 00:03:22,869
+more than you asked? Second, is it about
+to touch something it shouldn't? And
+
+168
+00:03:22,869 --> 00:03:22,879
+to touch something it shouldn't? And
+ 
+
+169
+00:03:22,879 --> 00:03:24,869
+to touch something it shouldn't? And
+third, is it suddenly behaving
+
+170
+00:03:24,869 --> 00:03:24,879
+third, is it suddenly behaving
+ 
+
+171
+00:03:24,879 --> 00:03:26,790
+third, is it suddenly behaving
+differently like it got steered by
+
+172
+00:03:26,790 --> 00:03:26,800
+differently like it got steered by
+ 
+
+173
+00:03:26,800 --> 00:03:28,949
+differently like it got steered by
+something it read along the way? That
+
+174
+00:03:28,949 --> 00:03:28,959
+something it read along the way? That
+ 
+
+175
+00:03:28,959 --> 00:03:30,630
+something it read along the way? That
+third one is important because prompt
+
+176
+00:03:30,630 --> 00:03:30,640
+third one is important because prompt
+ 
+
+177
+00:03:30,640 --> 00:03:33,350
+third one is important because prompt
+injection where malicious instructions
+
+178
+00:03:33,350 --> 00:03:33,360
+injection where malicious instructions
+ 
+
+179
+00:03:33,360 --> 00:03:35,830
+injection where malicious instructions
+get embedded in content the AI reads is
+
+180
+00:03:35,830 --> 00:03:35,840
+get embedded in content the AI reads is
+ 
+
+181
+00:03:35,840 --> 00:03:38,550
+get embedded in content the AI reads is
+one of the biggest active security
+
+182
+00:03:38,550 --> 00:03:38,560
+one of the biggest active security
+ 
+
+183
+00:03:38,560 --> 00:03:40,949
+one of the biggest active security
+concerns in autonomous AI systems right
+
+184
+00:03:40,949 --> 00:03:40,959
+concerns in autonomous AI systems right
+ 
+
+185
+00:03:40,959 --> 00:03:44,710
+concerns in autonomous AI systems right
+now. Anthropic built a specific defense
+
+186
+00:03:44,710 --> 00:03:44,720
+now. Anthropic built a specific defense
+ 
+
+187
+00:03:44,720 --> 00:03:47,589
+now. Anthropic built a specific defense
+against it directly into auto modes
+
+188
+00:03:47,589 --> 00:03:47,599
+against it directly into auto modes
+ 
+
+189
+00:03:47,599 --> 00:03:50,949
+against it directly into auto modes
+architecture. Now out of the box what
+
+190
+00:03:50,949 --> 00:03:50,959
+architecture. Now out of the box what
+ 
+
+191
+00:03:50,959 --> 00:03:53,670
+architecture. Now out of the box what
+does it actually block? The default
+
+192
+00:03:53,670 --> 00:03:53,680
+does it actually block? The default
+ 
+
+193
+00:03:53,680 --> 00:03:56,229
+does it actually block? The default
+block list covers for example force
+
+194
+00:03:56,229 --> 00:03:56,239
+block list covers for example force
+ 
+
+195
+00:03:56,239 --> 00:03:58,869
+block list covers for example force
+pushes, data exfiltration attempts,
+
+196
+00:03:58,869 --> 00:03:58,879
+pushes, data exfiltration attempts,
+ 
+
+197
+00:03:58,879 --> 00:04:02,070
+pushes, data exfiltration attempts,
+curl, pipe, bash patterns. That's where
+
+198
+00:04:02,070 --> 00:04:02,080
+curl, pipe, bash patterns. That's where
+ 
+
+199
+00:04:02,080 --> 00:04:04,070
+curl, pipe, bash patterns. That's where
+someone hides a script in a URL and
+
+200
+00:04:04,070 --> 00:04:04,080
+someone hides a script in a URL and
+ 
+
+201
+00:04:04,080 --> 00:04:06,869
+someone hides a script in a URL and
+Claude runs it blind. Production deploys
+
+202
+00:04:06,869 --> 00:04:06,879
+Claude runs it blind. Production deploys
+ 
+
+203
+00:04:06,879 --> 00:04:09,750
+Claude runs it blind. Production deploys
+a mass file deletion. All blocked by
+
+204
+00:04:09,750 --> 00:04:09,760
+a mass file deletion. All blocked by
+ 
+
+205
+00:04:09,760 --> 00:04:12,550
+a mass file deletion. All blocked by
+default. No setup needed. The classifier
+
+206
+00:04:12,550 --> 00:04:12,560
+default. No setup needed. The classifier
+ 
+
+207
+00:04:12,560 --> 00:04:15,350
+default. No setup needed. The classifier
+only trusts your working directory and
+
+208
+00:04:15,350 --> 00:04:15,360
+only trusts your working directory and
+ 
+
+209
+00:04:15,360 --> 00:04:17,990
+only trusts your working directory and
+the current repos configured remotes.
+
+210
+00:04:17,990 --> 00:04:18,000
+the current repos configured remotes.
+ 
+
+211
+00:04:18,000 --> 00:04:19,830
+the current repos configured remotes.
+Everything outside that gets
+
+212
+00:04:19,830 --> 00:04:19,840
+Everything outside that gets
+ 
+
+213
+00:04:19,840 --> 00:04:22,469
+Everything outside that gets
+scrutinized. If Claude hits a block
+
+214
+00:04:22,469 --> 00:04:22,479
+scrutinized. If Claude hits a block
+ 
+
+215
+00:04:22,479 --> 00:04:25,189
+scrutinized. If Claude hits a block
+three times in a row or 20 total times
+
+216
+00:04:25,189 --> 00:04:25,199
+three times in a row or 20 total times
+ 
+
+217
+00:04:25,199 --> 00:04:27,510
+three times in a row or 20 total times
+in a session, auto mode actually pauses
+
+218
+00:04:27,510 --> 00:04:27,520
+in a session, auto mode actually pauses
+ 
+
+219
+00:04:27,520 --> 00:04:29,830
+in a session, auto mode actually pauses
+completely and reverts to asking you
+
+220
+00:04:29,830 --> 00:04:29,840
+completely and reverts to asking you
+ 
+
+221
+00:04:29,840 --> 00:04:31,909
+completely and reverts to asking you
+manually for each action. That's a hard
+
+222
+00:04:31,909 --> 00:04:31,919
+manually for each action. That's a hard
+ 
+
+223
+00:04:31,919 --> 00:04:34,390
+manually for each action. That's a hard
+fail safe. If something keeps pushing
+
+224
+00:04:34,390 --> 00:04:34,400
+fail safe. If something keeps pushing
+ 
+
+225
+00:04:34,400 --> 00:04:37,350
+fail safe. If something keeps pushing
+against the limits, the whole system
+
+226
+00:04:37,350 --> 00:04:37,360
+against the limits, the whole system
+ 
+
+227
+00:04:37,360 --> 00:04:40,070
+against the limits, the whole system
+stops and it puts you back in control.
+
+228
+00:04:40,070 --> 00:04:40,080
+stops and it puts you back in control.
+ 
+
+229
+00:04:40,080 --> 00:04:42,390
+stops and it puts you back in control.
+Teams can customize it through an auto
+
+230
+00:04:42,390 --> 00:04:42,400
+Teams can customize it through an auto
+ 
+
+231
+00:04:42,400 --> 00:04:44,870
+Teams can customize it through an auto
+mode settings block with three sections.
+
+232
+00:04:44,870 --> 00:04:44,880
+mode settings block with three sections.
+ 
+
+233
+00:04:44,880 --> 00:04:46,790
+mode settings block with three sections.
+Environment covers trusted
+
+234
+00:04:46,790 --> 00:04:46,800
+Environment covers trusted
+ 
+
+235
+00:04:46,800 --> 00:04:49,430
+Environment covers trusted
+infrastructure. Allow covers permitted
+
+236
+00:04:49,430 --> 00:04:49,440
+infrastructure. Allow covers permitted
+ 
+
+237
+00:04:49,440 --> 00:04:52,550
+infrastructure. Allow covers permitted
+actions written in plain alkaline and
+
+238
+00:04:52,550 --> 00:04:52,560
+actions written in plain alkaline and
+ 
+
+239
+00:04:52,560 --> 00:04:55,270
+actions written in plain alkaline and
+soft deny covers what gets blocked also
+
+240
+00:04:55,270 --> 00:04:55,280
+soft deny covers what gets blocked also
+ 
+
+241
+00:04:55,280 --> 00:04:58,310
+soft deny covers what gets blocked also
+in plain language. The classifier reads
+
+242
+00:04:58,310 --> 00:04:58,320
+in plain language. The classifier reads
+ 
+
+243
+00:04:58,320 --> 00:05:00,710
+in plain language. The classifier reads
+your pros instructions and reads about
+
+244
+00:05:00,710 --> 00:05:00,720
+your pros instructions and reads about
+ 
+
+245
+00:05:00,720 --> 00:05:02,629
+your pros instructions and reads about
+them, right? It reasons about them. It's
+
+246
+00:05:02,629 --> 00:05:02,639
+them, right? It reasons about them. It's
+ 
+
+247
+00:05:02,639 --> 00:05:04,469
+them, right? It reasons about them. It's
+not just pattern matching on command
+
+248
+00:05:04,469 --> 00:05:04,479
+not just pattern matching on command
+ 
+
+249
+00:05:04,479 --> 00:05:07,029
+not just pattern matching on command
+names. And here's a security detail that
+
+250
+00:05:07,029 --> 00:05:07,039
+names. And here's a security detail that
+ 
+
+251
+00:05:07,039 --> 00:05:10,230
+names. And here's a security detail that
+matters. The classifier does not read
+
+252
+00:05:10,230 --> 00:05:10,240
+matters. The classifier does not read
+ 
+
+253
+00:05:10,240 --> 00:05:12,870
+matters. The classifier does not read
+from shared project settings in the
+
+254
+00:05:12,870 --> 00:05:12,880
+from shared project settings in the
+ 
+
+255
+00:05:12,880 --> 00:05:14,950
+from shared project settings in the
+clawed settings.json.
+
+256
+00:05:14,950 --> 00:05:14,960
+clawed settings.json.
+ 
+
+257
+00:05:14,960 --> 00:05:17,909
+clawed settings.json.
+So, a file sitting in a shared or public
+
+258
+00:05:17,909 --> 00:05:17,919
+So, a file sitting in a shared or public
+ 
+
+259
+00:05:17,919 --> 00:05:20,550
+So, a file sitting in a shared or public
+repo cannot inject its own permission
+
+260
+00:05:20,550 --> 00:05:20,560
+repo cannot inject its own permission
+ 
+
+261
+00:05:20,560 --> 00:05:23,430
+repo cannot inject its own permission
+rules. That's a real attack vector being
+
+262
+00:05:23,430 --> 00:05:23,440
+rules. That's a real attack vector being
+ 
+
+263
+00:05:23,440 --> 00:05:25,590
+rules. That's a real attack vector being
+closed. Someone can't just check in a
+
+264
+00:05:25,590 --> 00:05:25,600
+closed. Someone can't just check in a
+ 
+
+265
+00:05:25,600 --> 00:05:27,430
+closed. Someone can't just check in a
+config file that grants themselves
+
+266
+00:05:27,430 --> 00:05:27,440
+config file that grants themselves
+ 
+
+267
+00:05:27,440 --> 00:05:30,469
+config file that grants themselves
+elevated access. Three CLI inspection
+
+268
+00:05:30,469 --> 00:05:30,479
+elevated access. Three CLI inspection
+ 
+
+269
+00:05:30,479 --> 00:05:32,790
+elevated access. Three CLI inspection
+commands let you see exactly what the
+
+270
+00:05:32,790 --> 00:05:32,800
+commands let you see exactly what the
+ 
+
+271
+00:05:32,800 --> 00:05:35,510
+commands let you see exactly what the
+classifier is working with. So, Claude
+
+272
+00:05:35,510 --> 00:05:35,520
+classifier is working with. So, Claude
+ 
+
+273
+00:05:35,520 --> 00:05:38,230
+classifier is working with. So, Claude
+auto mode defaults to see the built-in
+
+274
+00:05:38,230 --> 00:05:38,240
+auto mode defaults to see the built-in
+ 
+
+275
+00:05:38,240 --> 00:05:41,350
+auto mode defaults to see the built-in
+rules. Claude auto mode config to review
+
+276
+00:05:41,350 --> 00:05:41,360
+rules. Claude auto mode config to review
+ 
+
+277
+00:05:41,360 --> 00:05:43,590
+rules. Claude auto mode config to review
+your custom setup and claude auto mode
+
+278
+00:05:43,590 --> 00:05:43,600
+your custom setup and claude auto mode
+ 
+
+279
+00:05:43,600 --> 00:05:46,550
+your custom setup and claude auto mode
+critique to validate it. So how do you
+
+280
+00:05:46,550 --> 00:05:46,560
+critique to validate it. So how do you
+ 
+
+281
+00:05:46,560 --> 00:05:47,990
+critique to validate it. So how do you
+actually turn it on? Well, if you go
+
+282
+00:05:47,990 --> 00:05:48,000
+actually turn it on? Well, if you go
+ 
+
+283
+00:05:48,000 --> 00:05:51,270
+actually turn it on? Well, if you go
+into claude and you type in dash
+
+284
+00:05:51,270 --> 00:05:51,280
+into claude and you type in dash
+ 
+
+285
+00:05:51,280 --> 00:05:52,870
+into claude and you type in dash
+enable-to-
+
+286
+00:05:52,870 --> 00:05:52,880
+enable-to-
+ 
+
+287
+00:05:52,880 --> 00:05:54,950
+enable-to-
+mode in the terminal first and then
+
+288
+00:05:54,950 --> 00:05:54,960
+mode in the terminal first and then
+ 
+
+289
+00:05:54,960 --> 00:05:57,670
+mode in the terminal first and then
+cycle to it with shift plus tab during a
+
+290
+00:05:57,670 --> 00:05:57,680
+cycle to it with shift plus tab during a
+ 
+
+291
+00:05:57,680 --> 00:05:59,990
+cycle to it with shift plus tab during a
+session that rotates through the
+
+292
+00:05:59,990 --> 00:06:00,000
+session that rotates through the
+ 
+
+293
+00:06:00,000 --> 00:06:01,670
+session that rotates through the
+permission modes in order. You've got
+
+294
+00:06:01,670 --> 00:06:01,680
+permission modes in order. You've got
+ 
+
+295
+00:06:01,680 --> 00:06:04,629
+permission modes in order. You've got
+normal, auto, accept edits, plan mode
+
+296
+00:06:04,629 --> 00:06:04,639
+normal, auto, accept edits, plan mode
+ 
+
+297
+00:06:04,639 --> 00:06:07,189
+normal, auto, accept edits, plan mode
+and auto mode. You can also use this in
+
+298
+00:06:07,189 --> 00:06:07,199
+and auto mode. You can also use this in
+ 
+
+299
+00:06:07,199 --> 00:06:10,710
+and auto mode. You can also use this in
+the virtual studio extension and desktop
+
+300
+00:06:10,710 --> 00:06:10,720
+the virtual studio extension and desktop
+ 
+
+301
+00:06:10,720 --> 00:06:13,110
+the virtual studio extension and desktop
+app as well, right? Sorry, visual code
+
+302
+00:06:13,110 --> 00:06:13,120
+app as well, right? Sorry, visual code
+ 
+
+303
+00:06:13,120 --> 00:06:15,590
+app as well, right? Sorry, visual code
+extension. You toggle you toggle auto
+
+304
+00:06:15,590 --> 00:06:15,600
+extension. You toggle you toggle auto
+ 
+
+305
+00:06:15,600 --> 00:06:18,309
+extension. You toggle you toggle auto
+mode on its settings first, then select
+
+306
+00:06:18,309 --> 00:06:18,319
+mode on its settings first, then select
+ 
+
+307
+00:06:18,319 --> 00:06:21,110
+mode on its settings first, then select
+it from the permission mode dropdown. On
+
+308
+00:06:21,110 --> 00:06:21,120
+it from the permission mode dropdown. On
+ 
+
+309
+00:06:21,120 --> 00:06:23,749
+it from the permission mode dropdown. On
+the desktop app specifically, auto mode
+
+310
+00:06:23,749 --> 00:06:23,759
+the desktop app specifically, auto mode
+ 
+
+311
+00:06:23,759 --> 00:06:26,469
+the desktop app specifically, auto mode
+is disabled by default and requires
+
+312
+00:06:26,469 --> 00:06:26,479
+is disabled by default and requires
+ 
+
+313
+00:06:26,479 --> 00:06:29,029
+is disabled by default and requires
+explicit activation through organization
+
+314
+00:06:29,029 --> 00:06:29,039
+explicit activation through organization
+ 
+
+315
+00:06:29,039 --> 00:06:31,350
+explicit activation through organization
+settings. Now, if you want to use it,
+
+316
+00:06:31,350 --> 00:06:31,360
+settings. Now, if you want to use it,
+ 
+
+317
+00:06:31,360 --> 00:06:33,350
+settings. Now, if you want to use it,
+it's live right now as a research
+
+318
+00:06:33,350 --> 00:06:33,360
+it's live right now as a research
+ 
+
+319
+00:06:33,360 --> 00:06:35,990
+it's live right now as a research
+preview on the team plan. Enterprise and
+
+320
+00:06:35,990 --> 00:06:36,000
+preview on the team plan. Enterprise and
+ 
+
+321
+00:06:36,000 --> 00:06:38,469
+preview on the team plan. Enterprise and
+API access are rolling out in the coming
+
+322
+00:06:38,469 --> 00:06:38,479
+API access are rolling out in the coming
+ 
+
+323
+00:06:38,479 --> 00:06:41,189
+API access are rolling out in the coming
+months. It runs on Claude Sonic 4.6 and
+
+324
+00:06:41,189 --> 00:06:41,199
+months. It runs on Claude Sonic 4.6 and
+ 
+
+325
+00:06:41,199 --> 00:06:43,670
+months. It runs on Claude Sonic 4.6 and
+Opus 4.6 only, so you can't use it with
+
+326
+00:06:43,670 --> 00:06:43,680
+Opus 4.6 only, so you can't use it with
+ 
+
+327
+00:06:43,680 --> 00:06:46,309
+Opus 4.6 only, so you can't use it with
+other models. And enterprise admins also
+
+328
+00:06:46,309 --> 00:06:46,319
+other models. And enterprise admins also
+ 
+
+329
+00:06:46,319 --> 00:06:49,110
+other models. And enterprise admins also
+get full control. Auto mode can be
+
+330
+00:06:49,110 --> 00:06:49,120
+get full control. Auto mode can be
+ 
+
+331
+00:06:49,120 --> 00:06:51,110
+get full control. Auto mode can be
+disabled organizationwide, too, if
+
+332
+00:06:51,110 --> 00:06:51,120
+disabled organizationwide, too, if
+ 
+
+333
+00:06:51,120 --> 00:06:52,950
+disabled organizationwide, too, if
+you've got a team. And you can do that
+
+334
+00:06:52,950 --> 00:06:52,960
+you've got a team. And you can do that
+ 
+
+335
+00:06:52,960 --> 00:06:56,469
+you've got a team. And you can do that
+through MDM managed preferences on Mac
+
+336
+00:06:56,469 --> 00:06:56,479
+through MDM managed preferences on Mac
+ 
+
+337
+00:06:56,479 --> 00:06:59,749
+through MDM managed preferences on Mac
+OS Windows registry policies or a
+
+338
+00:06:59,749 --> 00:06:59,759
+OS Windows registry policies or a
+ 
+
+339
+00:06:59,759 --> 00:07:02,950
+OS Windows registry policies or a
+crossplatform managed settings.json
+
+340
+00:07:02,950 --> 00:07:02,960
+crossplatform managed settings.json
+ 
+
+341
+00:07:02,960 --> 00:07:05,589
+crossplatform managed settings.json
+file. So if you're running a team and
+
+342
+00:07:05,589 --> 00:07:05,599
+file. So if you're running a team and
+ 
+
+343
+00:07:05,599 --> 00:07:07,589
+file. So if you're running a team and
+want to lock it down or customize it
+
+344
+00:07:07,589 --> 00:07:07,599
+want to lock it down or customize it
+ 
+
+345
+00:07:07,599 --> 00:07:10,710
+want to lock it down or customize it
+centrally that's fully supported. Now I
+
+346
+00:07:10,710 --> 00:07:10,720
+centrally that's fully supported. Now I
+ 
+
+347
+00:07:10,720 --> 00:07:12,309
+centrally that's fully supported. Now I
+want to zoom out at this point because
+
+348
+00:07:12,309 --> 00:07:12,319
+want to zoom out at this point because
+ 
+
+349
+00:07:12,319 --> 00:07:15,430
+want to zoom out at this point because
+the permission problem auto mode solves
+
+350
+00:07:15,430 --> 00:07:15,440
+the permission problem auto mode solves
+ 
+
+351
+00:07:15,440 --> 00:07:17,589
+the permission problem auto mode solves
+is actually a symptom of something much
+
+352
+00:07:17,589 --> 00:07:17,599
+is actually a symptom of something much
+ 
+
+353
+00:07:17,599 --> 00:07:20,710
+is actually a symptom of something much
+bigger. The real shift happening right
+
+354
+00:07:20,710 --> 00:07:20,720
+bigger. The real shift happening right
+ 
+
+355
+00:07:20,720 --> 00:07:23,270
+bigger. The real shift happening right
+now is that AI is moving from answering
+
+356
+00:07:23,270 --> 00:07:23,280
+now is that AI is moving from answering
+ 
+
+357
+00:07:23,280 --> 00:07:25,830
+now is that AI is moving from answering
+questions to running tasks and not just
+
+358
+00:07:25,830 --> 00:07:25,840
+questions to running tasks and not just
+ 
+
+359
+00:07:25,840 --> 00:07:28,230
+questions to running tasks and not just
+for like a quick task. This is for hours
+
+360
+00:07:28,230 --> 00:07:28,240
+for like a quick task. This is for hours
+ 
+
+361
+00:07:28,240 --> 00:07:30,790
+for like a quick task. This is for hours
+unsupervised. You could for example give
+
+362
+00:07:30,790 --> 00:07:30,800
+unsupervised. You could for example give
+ 
+
+363
+00:07:30,800 --> 00:07:33,270
+unsupervised. You could for example give
+it a go. It works. You check the result.
+
+364
+00:07:33,270 --> 00:07:33,280
+it a go. It works. You check the result.
+ 
+
+365
+00:07:33,280 --> 00:07:35,430
+it a go. It works. You check the result.
+That transition from chatbot to
+
+366
+00:07:35,430 --> 00:07:35,440
+That transition from chatbot to
+ 
+
+367
+00:07:35,440 --> 00:07:37,990
+That transition from chatbot to
+autonomous agent is what makes the
+
+368
+00:07:37,990 --> 00:07:38,000
+autonomous agent is what makes the
+ 
+
+369
+00:07:38,000 --> 00:07:40,710
+autonomous agent is what makes the
+permission model matter so much. When AI
+
+370
+00:07:40,710 --> 00:07:40,720
+permission model matter so much. When AI
+ 
+
+371
+00:07:40,720 --> 00:07:42,870
+permission model matter so much. When AI
+just answers questions, you are always
+
+372
+00:07:42,870 --> 00:07:42,880
+just answers questions, you are always
+ 
+
+373
+00:07:42,880 --> 00:07:44,950
+just answers questions, you are always
+in the loop. But when AI is for example
+
+374
+00:07:44,950 --> 00:07:44,960
+in the loop. But when AI is for example
+ 
+
+375
+00:07:44,960 --> 00:07:47,749
+in the loop. But when AI is for example
+running 200 actions to complete a
+
+376
+00:07:47,749 --> 00:07:47,759
+running 200 actions to complete a
+ 
+
+377
+00:07:47,759 --> 00:07:49,510
+running 200 actions to complete a
+project, you can't be in the loop for
+
+378
+00:07:49,510 --> 00:07:49,520
+project, you can't be in the loop for
+ 
+
+379
+00:07:49,520 --> 00:07:51,990
+project, you can't be in the loop for
+each one. The old model breaks down
+
+380
+00:07:51,990 --> 00:07:52,000
+each one. The old model breaks down
+ 
+
+381
+00:07:52,000 --> 00:07:54,390
+each one. The old model breaks down
+completely. Auto mode is built for the
+
+382
+00:07:54,390 --> 00:07:54,400
+completely. Auto mode is built for the
+ 
+
+383
+00:07:54,400 --> 00:07:56,230
+completely. Auto mode is built for the
+new one. And we can see that shift in
+
+384
+00:07:56,230 --> 00:07:56,240
+new one. And we can see that shift in
+ 
+
+385
+00:07:56,240 --> 00:07:59,670
+new one. And we can see that shift in
+the numbers. A survey of 500 developers
+
+386
+00:07:59,670 --> 00:07:59,680
+the numbers. A survey of 500 developers
+ 
+
+387
+00:07:59,680 --> 00:08:03,110
+the numbers. A survey of 500 developers
+actually found that Claude Code won 67%
+
+388
+00:08:03,110 --> 00:08:03,120
+actually found that Claude Code won 67%
+ 
+
+389
+00:08:03,120 --> 00:08:05,670
+actually found that Claude Code won 67%
+of blind quality tests against
+
+390
+00:08:05,670 --> 00:08:05,680
+of blind quality tests against
+ 
+
+391
+00:08:05,680 --> 00:08:07,589
+of blind quality tests against
+competitors. But the constant
+
+392
+00:08:07,589 --> 00:08:07,599
+competitors. But the constant
+ 
+
+393
+00:08:07,599 --> 00:08:09,990
+competitors. But the constant
+interruptions and permission friction
+
+394
+00:08:09,990 --> 00:08:10,000
+interruptions and permission friction
+ 
+
+395
+00:08:10,000 --> 00:08:11,830
+interruptions and permission friction
+were the number one complaint stopping
+
+396
+00:08:11,830 --> 00:08:11,840
+were the number one complaint stopping
+ 
+
+397
+00:08:11,840 --> 00:08:13,589
+were the number one complaint stopping
+people from using it for longer
+
+398
+00:08:13,589 --> 00:08:13,599
+people from using it for longer
+ 
+
+399
+00:08:13,599 --> 00:08:16,550
+people from using it for longer
+sustained work. One highly upvoted
+
+400
+00:08:16,550 --> 00:08:16,560
+sustained work. One highly upvoted
+ 
+
+401
+00:08:16,560 --> 00:08:18,629
+sustained work. One highly upvoted
+comment captured it exactly. Burning
+
+402
+00:08:18,629 --> 00:08:18,639
+comment captured it exactly. Burning
+ 
+
+403
+00:08:18,639 --> 00:08:20,469
+comment captured it exactly. Burning
+through most of your session just
+
+404
+00:08:20,469 --> 00:08:20,479
+through most of your session just
+ 
+
+405
+00:08:20,479 --> 00:08:22,629
+through most of your session just
+getting through a single complex prompt.
+
+406
+00:08:22,629 --> 00:08:22,639
+getting through a single complex prompt.
+ 
+
+407
+00:08:22,639 --> 00:08:24,790
+getting through a single complex prompt.
+The quality was there but the workflow
+
+408
+00:08:24,790 --> 00:08:24,800
+The quality was there but the workflow
+ 
+
+409
+00:08:24,800 --> 00:08:27,350
+The quality was there but the workflow
+wasn't. And auto mode fixes the workflow
+
+410
+00:08:27,350 --> 00:08:27,360
+wasn't. And auto mode fixes the workflow
+ 
+
+411
+00:08:27,360 --> 00:08:29,589
+wasn't. And auto mode fixes the workflow
+problems with Claude. This is also
+
+412
+00:08:29,589 --> 00:08:29,599
+problems with Claude. This is also
+ 
+
+413
+00:08:29,599 --> 00:08:31,909
+problems with Claude. This is also
+happening inside a very specific
+
+414
+00:08:31,909 --> 00:08:31,919
+happening inside a very specific
+ 
+
+415
+00:08:31,919 --> 00:08:34,070
+happening inside a very specific
+competitive moment. Anthropic is not
+
+416
+00:08:34,070 --> 00:08:34,080
+competitive moment. Anthropic is not
+ 
+
+417
+00:08:34,080 --> 00:08:36,550
+competitive moment. Anthropic is not
+shipping auto mode in isolation. This
+
+418
+00:08:36,550 --> 00:08:36,560
+shipping auto mode in isolation. This
+ 
+
+419
+00:08:36,560 --> 00:08:38,949
+shipping auto mode in isolation. This
+March alone, Claude Code reviews, a 1
+
+420
+00:08:38,949 --> 00:08:38,959
+March alone, Claude Code reviews, a 1
+ 
+
+421
+00:08:38,959 --> 00:08:41,269
+March alone, Claude Code reviews, a 1
+million token context window expansion,
+
+422
+00:08:41,269 --> 00:08:41,279
+million token context window expansion,
+ 
+
+423
+00:08:41,279 --> 00:08:43,670
+million token context window expansion,
+dispatch for co-work, and a separate
+
+424
+00:08:43,670 --> 00:08:43,680
+dispatch for co-work, and a separate
+ 
+
+425
+00:08:43,680 --> 00:08:46,150
+dispatch for co-work, and a separate
+research preview of Claude operating a
+
+426
+00:08:46,150 --> 00:08:46,160
+research preview of Claude operating a
+ 
+
+427
+00:08:46,160 --> 00:08:48,870
+research preview of Claude operating a
+full [snorts] Mac desktop autonomously.
+
+428
+00:08:48,870 --> 00:08:48,880
+full [snorts] Mac desktop autonomously.
+ 
+
+429
+00:08:48,880 --> 00:08:51,430
+full [snorts] Mac desktop autonomously.
+Each one of those extends how long and
+
+430
+00:08:51,430 --> 00:08:51,440
+Each one of those extends how long and
+ 
+
+431
+00:08:51,440 --> 00:08:53,829
+Each one of those extends how long and
+how independently Claude can work before
+
+432
+00:08:53,829 --> 00:08:53,839
+how independently Claude can work before
+ 
+
+433
+00:08:53,839 --> 00:08:55,590
+how independently Claude can work before
+checking in with you. The pattern is
+
+434
+00:08:55,590 --> 00:08:55,600
+checking in with you. The pattern is
+ 
+
+435
+00:08:55,600 --> 00:08:58,470
+checking in with you. The pattern is
+clear. Every single release, the window
+
+436
+00:08:58,470 --> 00:08:58,480
+clear. Every single release, the window
+ 
+
+437
+00:08:58,480 --> 00:09:01,110
+clear. Every single release, the window
+of unsupervised work gets longer. Every
+
+438
+00:09:01,110 --> 00:09:01,120
+of unsupervised work gets longer. Every
+ 
+
+439
+00:09:01,120 --> 00:09:03,430
+of unsupervised work gets longer. Every
+single release, the human is further
+
+440
+00:09:03,430 --> 00:09:03,440
+single release, the human is further
+ 
+
+441
+00:09:03,440 --> 00:09:04,949
+single release, the human is further
+from the action. But here's what I
+
+442
+00:09:04,949 --> 00:09:04,959
+from the action. But here's what I
+ 
+
+443
+00:09:04,959 --> 00:09:06,870
+from the action. But here's what I
+really want to get into because this is
+
+444
+00:09:06,870 --> 00:09:06,880
+really want to get into because this is
+ 
+
+445
+00:09:06,880 --> 00:09:09,110
+really want to get into because this is
+not just a developer story, and it has
+
+446
+00:09:09,110 --> 00:09:09,120
+not just a developer story, and it has
+ 
+
+447
+00:09:09,120 --> 00:09:11,509
+not just a developer story, and it has
+never been a developer story really.
+
+448
+00:09:11,509 --> 00:09:11,519
+never been a developer story really.
+ 
+
+449
+00:09:11,519 --> 00:09:13,829
+never been a developer story really.
+Right now today, non-technical people
+
+450
+00:09:13,829 --> 00:09:13,839
+Right now today, non-technical people
+ 
+
+451
+00:09:13,839 --> 00:09:15,990
+Right now today, non-technical people
+are using claude code to build real
+
+452
+00:09:15,990 --> 00:09:16,000
+are using claude code to build real
+ 
+
+453
+00:09:16,000 --> 00:09:17,829
+are using claude code to build real
+things for their businesses, agencies,
+
+454
+00:09:17,829 --> 00:09:17,839
+things for their businesses, agencies,
+ 
+
+455
+00:09:17,839 --> 00:09:20,630
+things for their businesses, agencies,
+freelancers, e-commerce owners, content
+
+456
+00:09:20,630 --> 00:09:20,640
+freelancers, e-commerce owners, content
+ 
+
+457
+00:09:20,640 --> 00:09:23,269
+freelancers, e-commerce owners, content
+creators, and the permission system was
+
+458
+00:09:23,269 --> 00:09:23,279
+creators, and the permission system was
+ 
+
+459
+00:09:23,279 --> 00:09:24,949
+creators, and the permission system was
+the biggest blocker for them
+
+460
+00:09:24,949 --> 00:09:24,959
+the biggest blocker for them
+ 
+
+461
+00:09:24,959 --> 00:09:26,710
+the biggest blocker for them
+specifically because when you're not
+
+462
+00:09:26,710 --> 00:09:26,720
+specifically because when you're not
+ 
+
+463
+00:09:26,720 --> 00:09:28,630
+specifically because when you're not
+technical, you can't evaluate whether a
+
+464
+00:09:28,630 --> 00:09:28,640
+technical, you can't evaluate whether a
+ 
+
+465
+00:09:28,640 --> 00:09:30,949
+technical, you can't evaluate whether a
+given terminal command is safe or
+
+466
+00:09:30,949 --> 00:09:30,959
+given terminal command is safe or
+ 
+
+467
+00:09:30,959 --> 00:09:33,430
+given terminal command is safe or
+dangerous. You might see a bash prompt
+
+468
+00:09:33,430 --> 00:09:33,440
+dangerous. You might see a bash prompt
+ 
+
+469
+00:09:33,440 --> 00:09:35,910
+dangerous. You might see a bash prompt
+appear and freeze. Do I click yes? Is
+
+470
+00:09:35,910 --> 00:09:35,920
+appear and freeze. Do I click yes? Is
+ 
+
+471
+00:09:35,920 --> 00:09:37,990
+appear and freeze. Do I click yes? Is
+this going to delete something? There's
+
+472
+00:09:37,990 --> 00:09:38,000
+this going to delete something? There's
+ 
+
+473
+00:09:38,000 --> 00:09:39,910
+this going to delete something? There's
+no way to know if you don't have the
+
+474
+00:09:39,910 --> 00:09:39,920
+no way to know if you don't have the
+ 
+
+475
+00:09:39,920 --> 00:09:42,870
+no way to know if you don't have the
+background. Auto mode removes that wall
+
+476
+00:09:42,870 --> 00:09:42,880
+background. Auto mode removes that wall
+ 
+
+477
+00:09:42,880 --> 00:09:45,269
+background. Auto mode removes that wall
+completely. The classifier handles the
+
+478
+00:09:45,269 --> 00:09:45,279
+completely. The classifier handles the
+ 
+
+479
+00:09:45,279 --> 00:09:47,269
+completely. The classifier handles the
+judgment. You don't have to understand
+
+480
+00:09:47,269 --> 00:09:47,279
+judgment. You don't have to understand
+ 
+
+481
+00:09:47,279 --> 00:09:49,990
+judgment. You don't have to understand
+what a bash command is or does to know
+
+482
+00:09:49,990 --> 00:09:50,000
+what a bash command is or does to know
+ 
+
+483
+00:09:50,000 --> 00:09:52,710
+what a bash command is or does to know
+it's been reviewed and cleared. Writer
+
+484
+00:09:52,710 --> 00:09:52,720
+it's been reviewed and cleared. Writer
+ 
+
+485
+00:09:52,720 --> 00:09:54,949
+it's been reviewed and cleared. Writer
+and researcher Dan Shipper ran Claude
+
+486
+00:09:54,949 --> 00:09:54,959
+and researcher Dan Shipper ran Claude
+ 
+
+487
+00:09:54,959 --> 00:09:57,350
+and researcher Dan Shipper ran Claude
+Code Comp, which attracted around 400
+
+488
+00:09:57,350 --> 00:09:57,360
+Code Comp, which attracted around 400
+ 
+
+489
+00:09:57,360 --> 00:09:59,430
+Code Comp, which attracted around 400
+subscribers. They built expense
+
+490
+00:09:59,430 --> 00:09:59,440
+subscribers. They built expense
+ 
+
+491
+00:09:59,440 --> 00:10:01,990
+subscribers. They built expense
+trackers, analyzed data sets, generated
+
+492
+00:10:01,990 --> 00:10:02,000
+trackers, analyzed data sets, generated
+ 
+
+493
+00:10:02,000 --> 00:10:03,910
+trackers, analyzed data sets, generated
+marketing pipelines, and most of them
+
+494
+00:10:03,910 --> 00:10:03,920
+marketing pipelines, and most of them
+ 
+
+495
+00:10:03,920 --> 00:10:06,070
+marketing pipelines, and most of them
+were not technical at all. Eleanor
+
+496
+00:10:06,070 --> 00:10:06,080
+were not technical at all. Eleanor
+ 
+
+497
+00:10:06,080 --> 00:10:08,150
+were not technical at all. Eleanor
+Burger published a full guide called
+
+498
+00:10:08,150 --> 00:10:08,160
+Burger published a full guide called
+ 
+
+499
+00:10:08,160 --> 00:10:10,870
+Burger published a full guide called
+Claude Code for non-coders. Her entire
+
+500
+00:10:10,870 --> 00:10:10,880
+Claude Code for non-coders. Her entire
+ 
+
+501
+00:10:10,880 --> 00:10:13,590
+Claude Code for non-coders. Her entire
+thesis was that you don't write a single
+
+502
+00:10:13,590 --> 00:10:13,600
+thesis was that you don't write a single
+ 
+
+503
+00:10:13,600 --> 00:10:15,750
+thesis was that you don't write a single
+line of code yourself. Claude does it.
+
+504
+00:10:15,750 --> 00:10:15,760
+line of code yourself. Claude does it.
+ 
+
+505
+00:10:15,760 --> 00:10:17,509
+line of code yourself. Claude does it.
+You just describe what you want. She
+
+506
+00:10:17,509 --> 00:10:17,519
+You just describe what you want. She
+ 
+
+507
+00:10:17,519 --> 00:10:19,750
+You just describe what you want. She
+runs weekly sessions for nontechnical
+
+508
+00:10:19,750 --> 00:10:19,760
+runs weekly sessions for nontechnical
+ 
+
+509
+00:10:19,760 --> 00:10:21,350
+runs weekly sessions for nontechnical
+users and the demand has been
+
+510
+00:10:21,350 --> 00:10:21,360
+users and the demand has been
+ 
+
+511
+00:10:21,360 --> 00:10:24,630
+users and the demand has been
+consistent. One analysis put the agency
+
+512
+00:10:24,630 --> 00:10:24,640
+consistent. One analysis put the agency
+ 
+
+513
+00:10:24,640 --> 00:10:27,350
+consistent. One analysis put the agency
+impact in direct numbers. Agencies
+
+514
+00:10:27,350 --> 00:10:27,360
+impact in direct numbers. Agencies
+ 
+
+515
+00:10:27,360 --> 00:10:30,550
+impact in direct numbers. Agencies
+typically charge between $2,000 and
+
+516
+00:10:30,550 --> 00:10:30,560
+typically charge between $2,000 and
+ 
+
+517
+00:10:30,560 --> 00:10:34,150
+typically charge between $2,000 and
+$15,000 to build a portfolio site. Now
+
+518
+00:10:34,150 --> 00:10:34,160
+$15,000 to build a portfolio site. Now
+ 
+
+519
+00:10:34,160 --> 00:10:37,190
+$15,000 to build a portfolio site. Now
+with core code you can have a fully
+
+520
+00:10:37,190 --> 00:10:37,200
+with core code you can have a fully
+ 
+
+521
+00:10:37,200 --> 00:10:39,829
+with core code you can have a fully
+functional version in under 45 minutes.
+
+522
+00:10:39,829 --> 00:10:39,839
+functional version in under 45 minutes.
+ 
+
+523
+00:10:39,839 --> 00:10:42,710
+functional version in under 45 minutes.
+That's not a hyperetical future. That's
+
+524
+00:10:42,710 --> 00:10:42,720
+That's not a hyperetical future. That's
+ 
+
+525
+00:10:42,720 --> 00:10:44,630
+That's not a hyperetical future. That's
+what agencies are reporting right now.
+
+526
+00:10:44,630 --> 00:10:44,640
+what agencies are reporting right now.
+ 
+
+527
+00:10:44,640 --> 00:10:46,870
+what agencies are reporting right now.
+Freelancers on platforms like create
+
+528
+00:10:46,870 --> 00:10:46,880
+Freelancers on platforms like create
+ 
+
+529
+00:10:46,880 --> 00:10:48,870
+Freelancers on platforms like create
+with have already started positioning
+
+530
+00:10:48,870 --> 00:10:48,880
+with have already started positioning
+ 
+
+531
+00:10:48,880 --> 00:10:51,750
+with have already started positioning
+themselves specifically as claude code
+
+532
+00:10:51,750 --> 00:10:51,760
+themselves specifically as claude code
+ 
+
+533
+00:10:51,760 --> 00:10:53,670
+themselves specifically as claude code
+experts building things for business
+
+534
+00:10:53,670 --> 00:10:53,680
+experts building things for business
+ 
+
+535
+00:10:53,680 --> 00:10:56,150
+experts building things for business
+owners who want the output but don't
+
+536
+00:10:56,150 --> 00:10:56,160
+owners who want the output but don't
+ 
+
+537
+00:10:56,160 --> 00:10:58,069
+owners who want the output but don't
+want to operate the tool themselves. And
+
+538
+00:10:58,069 --> 00:10:58,079
+want to operate the tool themselves. And
+ 
+
+539
+00:10:58,079 --> 00:10:59,910
+want to operate the tool themselves. And
+that's an entire new service category
+
+540
+00:10:59,910 --> 00:10:59,920
+that's an entire new service category
+ 
+
+541
+00:10:59,920 --> 00:11:02,870
+that's an entire new service category
+that didn't exist 12 months ago. So what
+
+542
+00:11:02,870 --> 00:11:02,880
+that didn't exist 12 months ago. So what
+ 
+
+543
+00:11:02,880 --> 00:11:04,550
+that didn't exist 12 months ago. So what
+does auto mode do for all of these
+
+544
+00:11:04,550 --> 00:11:04,560
+does auto mode do for all of these
+ 
+
+545
+00:11:04,560 --> 00:11:07,190
+does auto mode do for all of these
+people? What removes the last major
+
+546
+00:11:07,190 --> 00:11:07,200
+people? What removes the last major
+ 
+
+547
+00:11:07,200 --> 00:11:10,150
+people? What removes the last major
+friction point? Long autonomous tasks,
+
+548
+00:11:10,150 --> 00:11:10,160
+friction point? Long autonomous tasks,
+ 
+
+549
+00:11:10,160 --> 00:11:12,790
+friction point? Long autonomous tasks,
+building a site, for example, migrating
+
+550
+00:11:12,790 --> 00:11:12,800
+building a site, for example, migrating
+ 
+
+551
+00:11:12,800 --> 00:11:15,269
+building a site, for example, migrating
+data, running a content pipeline, now
+
+552
+00:11:15,269 --> 00:11:15,279
+data, running a content pipeline, now
+ 
+
+553
+00:11:15,279 --> 00:11:17,670
+data, running a content pipeline, now
+run without you watching every step and
+
+554
+00:11:17,670 --> 00:11:17,680
+run without you watching every step and
+ 
+
+555
+00:11:17,680 --> 00:11:19,350
+run without you watching every step and
+approving every action. You describe
+
+556
+00:11:19,350 --> 00:11:19,360
+approving every action. You describe
+ 
+
+557
+00:11:19,360 --> 00:11:21,030
+approving every action. You describe
+what you want. You come back when it's
+
+558
+00:11:21,030 --> 00:11:21,040
+what you want. You come back when it's
+ 
+
+559
+00:11:21,040 --> 00:11:23,430
+what you want. You come back when it's
+done. The classifier runs quietly in the
+
+560
+00:11:23,430 --> 00:11:23,440
+done. The classifier runs quietly in the
+ 
+
+561
+00:11:23,440 --> 00:11:25,910
+done. The classifier runs quietly in the
+background the whole time. If you want
+
+562
+00:11:25,910 --> 00:11:25,920
+background the whole time. If you want
+ 
+
+563
+00:11:25,920 --> 00:11:27,590
+background the whole time. If you want
+to actually learn how to use this for
+
+564
+00:11:27,590 --> 00:11:27,600
+to actually learn how to use this for
+ 
+
+565
+00:11:27,600 --> 00:11:29,590
+to actually learn how to use this for
+your business, not just understand it,
+
+566
+00:11:29,590 --> 00:11:29,600
+your business, not just understand it,
+ 
+
+567
+00:11:29,600 --> 00:11:32,150
+your business, not just understand it,
+but build real workflows with it, the AI
+
+568
+00:11:32,150 --> 00:11:32,160
+but build real workflows with it, the AI
+ 
+
+569
+00:11:32,160 --> 00:11:33,670
+but build real workflows with it, the AI
+profit boardroom is where that's
+
+570
+00:11:33,670 --> 00:11:33,680
+profit boardroom is where that's
+ 
+
+571
+00:11:33,680 --> 00:11:35,670
+profit boardroom is where that's
+happening. 2,600
+
+572
+00:11:35,670 --> 00:11:35,680
+happening. 2,600
+ 
+
+573
+00:11:35,680 --> 00:11:37,590
+happening. 2,600
+business owners already inside. Four
+
+574
+00:11:37,590 --> 00:11:37,600
+business owners already inside. Four
+ 
+
+575
+00:11:37,600 --> 00:11:39,990
+business owners already inside. Four
+live coaching calls every single week.
+
+576
+00:11:39,990 --> 00:11:40,000
+live coaching calls every single week.
+ 
+
+577
+00:11:40,000 --> 00:11:42,069
+live coaching calls every single week.
+Daily tutorials with step-by-step
+
+578
+00:11:42,069 --> 00:11:42,079
+Daily tutorials with step-by-step
+ 
+
+579
+00:11:42,079 --> 00:11:44,310
+Daily tutorials with step-by-step
+videos. 30-day road maps so you know
+
+580
+00:11:44,310 --> 00:11:44,320
+videos. 30-day road maps so you know
+ 
+
+581
+00:11:44,320 --> 00:11:46,710
+videos. 30-day road maps so you know
+exactly what to do and in what order.
+
+582
+00:11:46,710 --> 00:11:46,720
+exactly what to do and in what order.
+ 
+
+583
+00:11:46,720 --> 00:11:48,230
+exactly what to do and in what order.
+Prompts for everything you can imagine,
+
+584
+00:11:48,230 --> 00:11:48,240
+Prompts for everything you can imagine,
+ 
+
+585
+00:11:48,240 --> 00:11:50,069
+Prompts for everything you can imagine,
+a local map so you can find and connect
+
+586
+00:11:50,069 --> 00:11:50,079
+a local map so you can find and connect
+ 
+
+587
+00:11:50,079 --> 00:11:52,389
+a local map so you can find and connect
+with people near you building the same
+
+588
+00:11:52,389 --> 00:11:52,399
+with people near you building the same
+ 
+
+589
+00:11:52,399 --> 00:11:54,870
+with people near you building the same
+things. and 247 support because the
+
+590
+00:11:54,870 --> 00:11:54,880
+things. and 247 support because the
+ 
+
+591
+00:11:54,880 --> 00:11:56,710
+things. and 247 support because the
+community is global so someone is always
+
+592
+00:11:56,710 --> 00:11:56,720
+community is global so someone is always
+ 
+
+593
+00:11:56,720 --> 00:11:59,110
+community is global so someone is always
+online. If Claude auto mode is relevant
+
+594
+00:11:59,110 --> 00:11:59,120
+online. If Claude auto mode is relevant
+ 
+
+595
+00:11:59,120 --> 00:12:01,269
+online. If Claude auto mode is relevant
+to your business and it is that's where
+
+596
+00:12:01,269 --> 00:12:01,279
+to your business and it is that's where
+ 
+
+597
+00:12:01,279 --> 00:12:03,030
+to your business and it is that's where
+you actually go deep on it. Link in the
+
+598
+00:12:03,030 --> 00:12:03,040
+you actually go deep on it. Link in the
+ 
+
+599
+00:12:03,040 --> 00:12:04,630
+you actually go deep on it. Link in the
+comments description or go to the
+
+600
+00:12:04,630 --> 00:12:04,640
+comments description or go to the
+ 
+
+601
+00:12:04,640 --> 00:12:06,310
+comments description or go to the
+apiprofitb.com.
+
+602
+00:12:06,310 --> 00:12:06,320
+apiprofitb.com.
+ 
+
+603
+00:12:06,320 --> 00:12:09,829
+apiprofitb.com.
+Now is auto mode perfect? No. And I want
+
+604
+00:12:09,829 --> 00:12:09,839
+Now is auto mode perfect? No. And I want
+ 
+
+605
+00:12:09,839 --> 00:12:11,190
+Now is auto mode perfect? No. And I want
+to be completely straight with you about
+
+606
+00:12:11,190 --> 00:12:11,200
+to be completely straight with you about
+ 
+
+607
+00:12:11,200 --> 00:12:14,550
+to be completely straight with you about
+that. Security researchers at Lasso
+
+608
+00:12:14,550 --> 00:12:14,560
+that. Security researchers at Lasso
+ 
+
+609
+00:12:14,560 --> 00:12:16,790
+that. Security researchers at Lasso
+documented real prompt injection
+
+610
+00:12:16,790 --> 00:12:16,800
+documented real prompt injection
+ 
+
+611
+00:12:16,800 --> 00:12:19,670
+documented real prompt injection
+vulnerabilities in Claude code. Hostile
+
+612
+00:12:19,670 --> 00:12:19,680
+vulnerabilities in Claude code. Hostile
+ 
+
+613
+00:12:19,680 --> 00:12:22,230
+vulnerabilities in Claude code. Hostile
+instructions buried in readme code
+
+614
+00:12:22,230 --> 00:12:22,240
+instructions buried in readme code
+ 
+
+615
+00:12:22,240 --> 00:12:24,389
+instructions buried in readme code
+comments and dependency files could
+
+616
+00:12:24,389 --> 00:12:24,399
+comments and dependency files could
+ 
+
+617
+00:12:24,399 --> 00:12:26,550
+comments and dependency files could
+hijack Claude's behavior during a
+
+618
+00:12:26,550 --> 00:12:26,560
+hijack Claude's behavior during a
+ 
+
+619
+00:12:26,560 --> 00:12:31,990
+hijack Claude's behavior during a
+session. A researcher by Gual in 2026
+
+620
+00:12:31,990 --> 00:12:32,000
+session. A researcher by Gual in 2026
+ 
+
+621
+00:12:32,000 --> 00:12:35,750
+session. A researcher by Gual in 2026
+tested 314 attack payloads embedded
+
+622
+00:12:35,750 --> 00:12:35,760
+tested 314 attack payloads embedded
+ 
+
+623
+00:12:35,760 --> 00:12:38,310
+tested 314 attack payloads embedded
+across those same services and recorded
+
+624
+00:12:38,310 --> 00:12:38,320
+across those same services and recorded
+ 
+
+625
+00:12:38,320 --> 00:12:41,750
+across those same services and recorded
+an 84% success rate at redirecting
+
+626
+00:12:41,750 --> 00:12:41,760
+an 84% success rate at redirecting
+ 
+
+627
+00:12:41,760 --> 00:12:43,670
+an 84% success rate at redirecting
+Claude's actions. That's not a
+
+628
+00:12:43,670 --> 00:12:43,680
+Claude's actions. That's not a
+ 
+
+629
+00:12:43,680 --> 00:12:45,910
+Claude's actions. That's not a
+theoretical concern. That's a measured
+
+630
+00:12:45,910 --> 00:12:45,920
+theoretical concern. That's a measured
+ 
+
+631
+00:12:45,920 --> 00:12:49,829
+theoretical concern. That's a measured
+result. Checkpoint disclosed two real
+
+632
+00:12:49,829 --> 00:12:49,839
+result. Checkpoint disclosed two real
+ 
+
+633
+00:12:49,839 --> 00:12:52,150
+result. Checkpoint disclosed two real
+CVEes in Claude code last year. Both
+
+634
+00:12:52,150 --> 00:12:52,160
+CVEes in Claude code last year. Both
+ 
+
+635
+00:12:52,160 --> 00:12:54,710
+CVEes in Claude code last year. Both
+were patched, but the fact they existed
+
+636
+00:12:54,710 --> 00:12:54,720
+were patched, but the fact they existed
+ 
+
+637
+00:12:54,720 --> 00:12:57,910
+were patched, but the fact they existed
+matters. This is a product running code
+
+638
+00:12:57,910 --> 00:12:57,920
+matters. This is a product running code
+ 
+
+639
+00:12:57,920 --> 00:12:59,750
+matters. This is a product running code
+on your machine with elevated
+
+640
+00:12:59,750 --> 00:12:59,760
+on your machine with elevated
+ 
+
+641
+00:12:59,760 --> 00:13:01,910
+on your machine with elevated
+permissions and it has documented
+
+642
+00:13:01,910 --> 00:13:01,920
+permissions and it has documented
+ 
+
+643
+00:13:01,920 --> 00:13:03,430
+permissions and it has documented
+vulnerabilities.
+
+644
+00:13:03,430 --> 00:13:03,440
+vulnerabilities.
+ 
+
+645
+00:13:03,440 --> 00:13:05,590
+vulnerabilities.
+There was also a real event, a real
+
+646
+00:13:05,590 --> 00:13:05,600
+There was also a real event, a real
+ 
+
+647
+00:13:05,600 --> 00:13:07,829
+There was also a real event, a real
+incident where claw code deleted an
+
+648
+00:13:07,829 --> 00:13:07,839
+incident where claw code deleted an
+ 
+
+649
+00:13:07,839 --> 00:13:10,550
+incident where claw code deleted an
+entire user's home directory. Real user,
+
+650
+00:13:10,550 --> 00:13:10,560
+entire user's home directory. Real user,
+ 
+
+651
+00:13:10,560 --> 00:13:12,949
+entire user's home directory. Real user,
+real data gone. That made it to hacker
+
+652
+00:13:12,949 --> 00:13:12,959
+real data gone. That made it to hacker
+ 
+
+653
+00:13:12,959 --> 00:13:15,190
+real data gone. That made it to hacker
+news. That kind of story is exactly why
+
+654
+00:13:15,190 --> 00:13:15,200
+news. That kind of story is exactly why
+ 
+
+655
+00:13:15,200 --> 00:13:17,110
+news. That kind of story is exactly why
+the permission debate matters in the
+
+656
+00:13:17,110 --> 00:13:17,120
+the permission debate matters in the
+ 
+
+657
+00:13:17,120 --> 00:13:21,269
+the permission debate matters in the
+first place. And security firm Griff.ai
+
+658
+00:13:21,269 --> 00:13:21,279
+first place. And security firm Griff.ai
+ 
+
+659
+00:13:21,279 --> 00:13:24,150
+first place. And security firm Griff.ai
+made the deeper architectural argument.
+
+660
+00:13:24,150 --> 00:13:24,160
+made the deeper architectural argument.
+ 
+
+661
+00:13:24,160 --> 00:13:27,110
+made the deeper architectural argument.
+The auto mode still asks the agent
+
+662
+00:13:27,110 --> 00:13:27,120
+The auto mode still asks the agent
+ 
+
+663
+00:13:27,120 --> 00:13:29,750
+The auto mode still asks the agent
+ecosystem to approve its own actions.
+
+664
+00:13:29,750 --> 00:13:29,760
+ecosystem to approve its own actions.
+ 
+
+665
+00:13:29,760 --> 00:13:32,150
+ecosystem to approve its own actions.
+The judge and the defendant are in the
+
+666
+00:13:32,150 --> 00:13:32,160
+The judge and the defendant are in the
+ 
+
+667
+00:13:32,160 --> 00:13:34,310
+The judge and the defendant are in the
+same process even with a separate
+
+668
+00:13:34,310 --> 00:13:34,320
+same process even with a separate
+ 
+
+669
+00:13:34,320 --> 00:13:37,269
+same process even with a separate
+classifier model. Techrunch noted that
+
+670
+00:13:37,269 --> 00:13:37,279
+classifier model. Techrunch noted that
+ 
+
+671
+00:13:37,279 --> 00:13:39,750
+classifier model. Techrunch noted that
+Anthropic hasn't published the specific
+
+672
+00:13:39,750 --> 00:13:39,760
+Anthropic hasn't published the specific
+ 
+
+673
+00:13:39,760 --> 00:13:43,110
+Anthropic hasn't published the specific
+criteria the classifier uses to decide
+
+674
+00:13:43,110 --> 00:13:43,120
+criteria the classifier uses to decide
+ 
+
+675
+00:13:43,120 --> 00:13:44,710
+criteria the classifier uses to decide
+what's safe and what isn't, which
+
+676
+00:13:44,710 --> 00:13:44,720
+what's safe and what isn't, which
+ 
+
+677
+00:13:44,720 --> 00:13:46,389
+what's safe and what isn't, which
+matters if you're trying to understand
+
+678
+00:13:46,389 --> 00:13:46,399
+matters if you're trying to understand
+ 
+
+679
+00:13:46,399 --> 00:13:48,870
+matters if you're trying to understand
+what it will and what it won't catch in
+
+680
+00:13:48,870 --> 00:13:48,880
+what it will and what it won't catch in
+ 
+
+681
+00:13:48,880 --> 00:13:51,190
+what it will and what it won't catch in
+production. and Anthropic themselves
+
+682
+00:13:51,190 --> 00:13:51,200
+production. and Anthropic themselves
+ 
+
+683
+00:13:51,200 --> 00:13:52,389
+production. and Anthropic themselves
+right at the top of their own
+
+684
+00:13:52,389 --> 00:13:52,399
+right at the top of their own
+ 
+
+685
+00:13:52,399 --> 00:13:54,790
+right at the top of their own
+documentation recommend running auto
+
+686
+00:13:54,790 --> 00:13:54,800
+documentation recommend running auto
+ 
+
+687
+00:13:54,800 --> 00:13:57,670
+documentation recommend running auto
+mode in isolated environments sandboxed
+
+688
+00:13:57,670 --> 00:13:57,680
+mode in isolated environments sandboxed
+ 
+
+689
+00:13:57,680 --> 00:14:00,629
+mode in isolated environments sandboxed
+setups feature branches with protected
+
+690
+00:14:00,629 --> 00:14:00,639
+setups feature branches with protected
+ 
+
+691
+00:14:00,639 --> 00:14:03,430
+setups feature branches with protected
+mains scoped read only tokens
+
+692
+00:14:03,430 --> 00:14:03,440
+mains scoped read only tokens
+ 
+
+693
+00:14:03,440 --> 00:14:06,310
+mains scoped read only tokens
+credentials kept out of the workspace
+
+694
+00:14:06,310 --> 00:14:06,320
+credentials kept out of the workspace
+ 
+
+695
+00:14:06,320 --> 00:14:08,389
+credentials kept out of the workspace
+that's not a footnote that is the
+
+696
+00:14:08,389 --> 00:14:08,399
+that's not a footnote that is the
+ 
+
+697
+00:14:08,399 --> 00:14:11,430
+that's not a footnote that is the
+official guidance so the honest summary
+
+698
+00:14:11,430 --> 00:14:11,440
+official guidance so the honest summary
+ 
+
+699
+00:14:11,440 --> 00:14:14,069
+official guidance so the honest summary
+is that auto mode is structurally better
+
+700
+00:14:14,069 --> 00:14:14,079
+is that auto mode is structurally better
+ 
+
+701
+00:14:14,079 --> 00:14:16,470
+is that auto mode is structurally better
+than turning off permissions entirely
+
+702
+00:14:16,470 --> 00:14:16,480
+than turning off permissions entirely
+ 
+
+703
+00:14:16,480 --> 00:14:19,110
+than turning off permissions entirely
+the separate classifier is real The
+
+704
+00:14:19,110 --> 00:14:19,120
+the separate classifier is real The
+ 
+
+705
+00:14:19,120 --> 00:14:21,189
+the separate classifier is real The
+prompt injection defense is real. The
+
+706
+00:14:21,189 --> 00:14:21,199
+prompt injection defense is real. The
+ 
+
+707
+00:14:21,199 --> 00:14:23,670
+prompt injection defense is real. The
+fail safes are real. But reduced risk
+
+708
+00:14:23,670 --> 00:14:23,680
+fail safes are real. But reduced risk
+ 
+
+709
+00:14:23,680 --> 00:14:25,910
+fail safes are real. But reduced risk
+and eliminated risk are not the same
+
+710
+00:14:25,910 --> 00:14:25,920
+and eliminated risk are not the same
+ 
+
+711
+00:14:25,920 --> 00:14:28,389
+and eliminated risk are not the same
+thing. The research previewed label is
+
+712
+00:14:28,389 --> 00:14:28,399
+thing. The research previewed label is
+ 
+
+713
+00:14:28,399 --> 00:14:30,150
+thing. The research previewed label is
+there for a reason. This is going to
+
+714
+00:14:30,150 --> 00:14:30,160
+there for a reason. This is going to
+ 
+
+715
+00:14:30,160 --> 00:14:32,310
+there for a reason. This is going to
+keep changing. But here's what hasn't
+
+716
+00:14:32,310 --> 00:14:32,320
+keep changing. But here's what hasn't
+ 
+
+717
+00:14:32,320 --> 00:14:34,629
+keep changing. But here's what hasn't
+changed. The old system wasn't working.
+
+718
+00:14:34,629 --> 00:14:34,639
+changed. The old system wasn't working.
+ 
+
+719
+00:14:34,639 --> 00:14:37,030
+changed. The old system wasn't working.
+People bypassed it universally. Auto
+
+720
+00:14:37,030 --> 00:14:37,040
+People bypassed it universally. Auto
+ 
+
+721
+00:14:37,040 --> 00:14:38,870
+People bypassed it universally. Auto
+mode is better and it will keep getting
+
+722
+00:14:38,870 --> 00:14:38,880
+mode is better and it will keep getting
+ 
+
+723
+00:14:38,880 --> 00:14:41,430
+mode is better and it will keep getting
+better. Let's talk about the business
+
+724
+00:14:41,430 --> 00:14:41,440
+better. Let's talk about the business
+ 
+
+725
+00:14:41,440 --> 00:14:43,750
+better. Let's talk about the business
+context this is landing in because it
+
+726
+00:14:43,750 --> 00:14:43,760
+context this is landing in because it
+ 
+
+727
+00:14:43,760 --> 00:14:46,389
+context this is landing in because it
+matters. Anthropic's annualized revenue
+
+728
+00:14:46,389 --> 00:14:46,399
+matters. Anthropic's annualized revenue
+ 
+
+729
+00:14:46,399 --> 00:14:49,509
+matters. Anthropic's annualized revenue
+has reached approximately $20 billion.
+
+730
+00:14:49,509 --> 00:14:49,519
+has reached approximately $20 billion.
+ 
+
+731
+00:14:49,519 --> 00:14:53,110
+has reached approximately $20 billion.
+Their valuation hit $380 billion
+
+732
+00:14:53,110 --> 00:14:53,120
+Their valuation hit $380 billion
+ 
+
+733
+00:14:53,120 --> 00:14:56,389
+Their valuation hit $380 billion
+following a $30 billion funding round in
+
+734
+00:14:56,389 --> 00:14:56,399
+following a $30 billion funding round in
+ 
+
+735
+00:14:56,399 --> 00:14:59,269
+following a $30 billion funding round in
+February 2026. And Quarter Code alone
+
+736
+00:14:59,269 --> 00:14:59,279
+February 2026. And Quarter Code alone
+ 
+
+737
+00:14:59,279 --> 00:15:03,189
+February 2026. And Quarter Code alone
+has exceeded $2.5 billion in annualized
+
+738
+00:15:03,189 --> 00:15:03,199
+has exceeded $2.5 billion in annualized
+ 
+
+739
+00:15:03,199 --> 00:15:05,829
+has exceeded $2.5 billion in annualized
+revenue. So, Auto mode isn't a side
+
+740
+00:15:05,829 --> 00:15:05,839
+revenue. So, Auto mode isn't a side
+ 
+
+741
+00:15:05,839 --> 00:15:07,990
+revenue. So, Auto mode isn't a side
+experiment or a nice to have feature.
+
+742
+00:15:07,990 --> 00:15:08,000
+experiment or a nice to have feature.
+ 
+
+743
+00:15:08,000 --> 00:15:10,150
+experiment or a nice to have feature.
+It's central to where their biggest,
+
+744
+00:15:10,150 --> 00:15:10,160
+It's central to where their biggest,
+ 
+
+745
+00:15:10,160 --> 00:15:12,949
+It's central to where their biggest,
+fastest growing product is heading. And
+
+746
+00:15:12,949 --> 00:15:12,959
+fastest growing product is heading. And
+ 
+
+747
+00:15:12,959 --> 00:15:15,350
+fastest growing product is heading. And
+the competitive pressure is real too.
+
+748
+00:15:15,350 --> 00:15:15,360
+the competitive pressure is real too.
+ 
+
+749
+00:15:15,360 --> 00:15:18,629
+the competitive pressure is real too.
+OpenAI's codeex is the main alternative
+
+750
+00:15:18,629 --> 00:15:18,639
+OpenAI's codeex is the main alternative
+ 
+
+751
+00:15:18,639 --> 00:15:21,030
+OpenAI's codeex is the main alternative
+developers are benchmarked against. In
+
+752
+00:15:21,030 --> 00:15:21,040
+developers are benchmarked against. In
+ 
+
+753
+00:15:21,040 --> 00:15:24,389
+developers are benchmarked against. In
+those 500 plus developer surveys, Claude
+
+754
+00:15:24,389 --> 00:15:24,399
+those 500 plus developer surveys, Claude
+ 
+
+755
+00:15:24,399 --> 00:15:26,389
+those 500 plus developer surveys, Claude
+Code wins on output quality
+
+756
+00:15:26,389 --> 00:15:26,399
+Code wins on output quality
+ 
+
+757
+00:15:26,399 --> 00:15:28,389
+Code wins on output quality
+consistently, but OpenAI has been
+
+758
+00:15:28,389 --> 00:15:28,399
+consistently, but OpenAI has been
+ 
+
+759
+00:15:28,399 --> 00:15:30,710
+consistently, but OpenAI has been
+pushing hard on workflow and agent
+
+760
+00:15:30,710 --> 00:15:30,720
+pushing hard on workflow and agent
+ 
+
+761
+00:15:30,720 --> 00:15:33,430
+pushing hard on workflow and agent
+autonomy features of its own. Auto mode
+
+762
+00:15:33,430 --> 00:15:33,440
+autonomy features of its own. Auto mode
+ 
+
+763
+00:15:33,440 --> 00:15:35,670
+autonomy features of its own. Auto mode
+is anthropic saying we're not going to
+
+764
+00:15:35,670 --> 00:15:35,680
+is anthropic saying we're not going to
+ 
+
+765
+00:15:35,680 --> 00:15:37,750
+is anthropic saying we're not going to
+lose on workflow anymore. The million
+
+766
+00:15:37,750 --> 00:15:37,760
+lose on workflow anymore. The million
+ 
+
+767
+00:15:37,760 --> 00:15:40,230
+lose on workflow anymore. The million
+token context window that's also shipped
+
+768
+00:15:40,230 --> 00:15:40,240
+token context window that's also shipped
+ 
+
+769
+00:15:40,240 --> 00:15:42,230
+token context window that's also shipped
+this month is part of the same story
+
+770
+00:15:42,230 --> 00:15:42,240
+this month is part of the same story
+ 
+
+771
+00:15:42,240 --> 00:15:45,670
+this month is part of the same story
+because bigger context means claude can
+
+772
+00:15:45,670 --> 00:15:45,680
+because bigger context means claude can
+ 
+
+773
+00:15:45,680 --> 00:15:48,389
+because bigger context means claude can
+hold an entire large codebase a full
+
+774
+00:15:48,389 --> 00:15:48,399
+hold an entire large codebase a full
+ 
+
+775
+00:15:48,399 --> 00:15:50,870
+hold an entire large codebase a full
+project history every relevant file in
+
+776
+00:15:50,870 --> 00:15:50,880
+project history every relevant file in
+ 
+
+777
+00:15:50,880 --> 00:15:53,509
+project history every relevant file in
+one session. Auto mode means it can work
+
+778
+00:15:53,509 --> 00:15:53,519
+one session. Auto mode means it can work
+ 
+
+779
+00:15:53,519 --> 00:15:55,749
+one session. Auto mode means it can work
+through that context autonomously
+
+780
+00:15:55,749 --> 00:15:55,759
+through that context autonomously
+ 
+
+781
+00:15:55,759 --> 00:15:57,749
+through that context autonomously
+without stopping every few minutes. And
+
+782
+00:15:57,749 --> 00:15:57,759
+without stopping every few minutes. And
+ 
+
+783
+00:15:57,759 --> 00:16:00,310
+without stopping every few minutes. And
+those two features together what make
+
+784
+00:16:00,310 --> 00:16:00,320
+those two features together what make
+ 
+
+785
+00:16:00,320 --> 00:16:04,150
+those two features together what make
+truly long complex unsupervised tasks
+
+786
+00:16:04,150 --> 00:16:04,160
+truly long complex unsupervised tasks
+ 
+
+787
+00:16:04,160 --> 00:16:07,189
+truly long complex unsupervised tasks
+possible for the first time. So, here's
+
+788
+00:16:07,189 --> 00:16:07,199
+possible for the first time. So, here's
+ 
+
+789
+00:16:07,199 --> 00:16:09,749
+possible for the first time. So, here's
+what I want you to take away from all of
+
+790
+00:16:09,749 --> 00:16:09,759
+what I want you to take away from all of
+ 
+
+791
+00:16:09,759 --> 00:16:13,110
+what I want you to take away from all of
+this. The gap between what AI can do and
+
+792
+00:16:13,110 --> 00:16:13,120
+this. The gap between what AI can do and
+ 
+
+793
+00:16:13,120 --> 00:16:14,710
+this. The gap between what AI can do and
+what most people are actually using it
+
+794
+00:16:14,710 --> 00:16:14,720
+what most people are actually using it
+ 
+
+795
+00:16:14,720 --> 00:16:17,189
+what most people are actually using it
+for gets wider every single week. Not
+
+796
+00:16:17,189 --> 00:16:17,199
+for gets wider every single week. Not
+ 
+
+797
+00:16:17,199 --> 00:16:18,949
+for gets wider every single week. Not
+because the tools are too hard, but
+
+798
+00:16:18,949 --> 00:16:18,959
+because the tools are too hard, but
+ 
+
+799
+00:16:18,959 --> 00:16:20,710
+because the tools are too hard, but
+because most people aren't paying
+
+800
+00:16:20,710 --> 00:16:20,720
+because most people aren't paying
+ 
+
+801
+00:16:20,720 --> 00:16:23,430
+because most people aren't paying
+attention closely enough. A second AI is
+
+802
+00:16:23,430 --> 00:16:23,440
+attention closely enough. A second AI is
+ 
+
+803
+00:16:23,440 --> 00:16:25,749
+attention closely enough. A second AI is
+now watching the first AI work.
+
+804
+00:16:25,749 --> 00:16:25,759
+now watching the first AI work.
+ 
+
+805
+00:16:25,759 --> 00:16:28,550
+now watching the first AI work.
+Autonomous tasks run for hours without
+
+806
+00:16:28,550 --> 00:16:28,560
+Autonomous tasks run for hours without
+ 
+
+807
+00:16:28,560 --> 00:16:31,509
+Autonomous tasks run for hours without
+supervision. Agencies build full client
+
+808
+00:16:31,509 --> 00:16:31,519
+supervision. Agencies build full client
+ 
+
+809
+00:16:31,519 --> 00:16:34,550
+supervision. Agencies build full client
+deliverables in 45 minutes. Non-coders
+
+810
+00:16:34,550 --> 00:16:34,560
+deliverables in 45 minutes. Non-coders
+ 
+
+811
+00:16:34,560 --> 00:16:37,430
+deliverables in 45 minutes. Non-coders
+ship working tools. The permission wall
+
+812
+00:16:37,430 --> 00:16:37,440
+ship working tools. The permission wall
+ 
+
+813
+00:16:37,440 --> 00:16:39,509
+ship working tools. The permission wall
+just came down. That is the world today,
+
+814
+00:16:39,509 --> 00:16:39,519
+just came down. That is the world today,
+ 
+
+815
+00:16:39,519 --> 00:16:41,509
+just came down. That is the world today,
+March 2026.
+
+816
+00:16:41,509 --> 00:16:41,519
+March 2026.
+ 
+
+817
+00:16:41,519 --> 00:16:43,670
+March 2026.
+The people building real fluency with
+
+818
+00:16:43,670 --> 00:16:43,680
+The people building real fluency with
+ 
+
+819
+00:16:43,680 --> 00:16:45,350
+The people building real fluency with
+these tools right now, learning the
+
+820
+00:16:45,350 --> 00:16:45,360
+these tools right now, learning the
+ 
+
+821
+00:16:45,360 --> 00:16:47,269
+these tools right now, learning the
+right instructions, setting up the right
+
+822
+00:16:47,269 --> 00:16:47,279
+right instructions, setting up the right
+ 
+
+823
+00:16:47,279 --> 00:16:48,790
+right instructions, setting up the right
+environments, running the right
+
+824
+00:16:48,790 --> 00:16:48,800
+environments, running the right
+ 
+
+825
+00:16:48,800 --> 00:16:50,310
+environments, running the right
+workflows, well, they're going to look
+
+826
+00:16:50,310 --> 00:16:50,320
+workflows, well, they're going to look
+ 
+
+827
+00:16:50,320 --> 00:16:52,870
+workflows, well, they're going to look
+very different from everyone else in 12
+
+828
+00:16:52,870 --> 00:16:52,880
+very different from everyone else in 12
+ 
+
+829
+00:16:52,880 --> 00:16:55,670
+very different from everyone else in 12
+months. And not because they're smarter,
+
+830
+00:16:55,670 --> 00:16:55,680
+months. And not because they're smarter,
+ 
+
+831
+00:16:55,680 --> 00:16:57,590
+months. And not because they're smarter,
+but because they started earlier. And
+
+832
+00:16:57,590 --> 00:16:57,600
+but because they started earlier. And
+ 
+
+833
+00:16:57,600 --> 00:16:59,350
+but because they started earlier. And
+that's the whole game right now. If you
+
+834
+00:16:59,350 --> 00:16:59,360
+that's the whole game right now. If you
+ 
+
+835
+00:16:59,360 --> 00:17:01,350
+that's the whole game right now. If you
+want to be in that group, the AI profit
+
+836
+00:17:01,350 --> 00:17:01,360
+want to be in that group, the AI profit
+ 
+
+837
+00:17:01,360 --> 00:17:04,630
+want to be in that group, the AI profit
+boardroom is where you do it. 2,600
+
+838
+00:17:04,630 --> 00:17:04,640
+boardroom is where you do it. 2,600
+ 
+
+839
+00:17:04,640 --> 00:17:07,029
+boardroom is where you do it. 2,600
+members, four live calls a week, daily
+
+840
+00:17:07,029 --> 00:17:07,039
+members, four live calls a week, daily
+ 
+
+841
+00:17:07,039 --> 00:17:09,429
+members, four live calls a week, daily
+tutorials, 30-day road maps, real
+
+842
+00:17:09,429 --> 00:17:09,439
+tutorials, 30-day road maps, real
+ 
+
+843
+00:17:09,439 --> 00:17:11,510
+tutorials, 30-day road maps, real
+workflows, real results. Thanks for
+
+844
+00:17:11,510 --> 00:17:11,520
+workflows, real results. Thanks for
+ 
+
+845
+00:17:11,520 --> 00:17:12,870
+workflows, real results. Thanks for
+watching. You can check it out, link in
+
+846
+00:17:12,870 --> 00:17:12,880
+watching. You can check it out, link in
+ 
+
+847
+00:17:12,880 --> 00:17:14,710
+watching. You can check it out, link in
+the comments description, and I hope to
+
+848
+00:17:14,710 --> 00:17:14,720
+the comments description, and I hope to
+ 
+
+849
+00:17:14,720 --> 00:17:15,909
+the comments description, and I hope to
+see you inside there. Thanks for
+
+850
+00:17:15,909 --> 00:17:15,919
+see you inside there. Thanks for
+ 
+
+851
+00:17:15,919 --> 00:17:18,079
+see you inside there. Thanks for
+watching.
+

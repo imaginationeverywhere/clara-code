@@ -1,0 +1,272 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.160 --> 00:00:05.120
+Okay, so we have a brand new slash command added&nbsp;
+to Claude Code, which is likely preparing us for&nbsp;&nbsp;
+
+00:00:05.120 --> 00:00:11.920
+when Claude Myphos releases. So it's /advisor.&nbsp;
+So when you do /advisor, you can configure the&nbsp;&nbsp;
+
+00:00:11.920 --> 00:00:16.560
+advisor tool and it should take you to something&nbsp;
+like this. And essentially this is a tool that's&nbsp;&nbsp;
+
+00:00:16.560 --> 00:00:20.800
+built into Claude Code for when it requires&nbsp;
+stronger judgment about a particular problem.&nbsp;&nbsp;
+
+00:00:20.800 --> 00:00:26.160
+Now you can see right now we only have Sonnet and&nbsp;
+Opus. So if you're on Opus, ideally you want your&nbsp;&nbsp;
+
+00:00:26.160 --> 00:00:31.200
+main model in Claude Code to be on Sonnet. So you&nbsp;
+do /model and then pick Sonnet. And essentially&nbsp;&nbsp;
+
+00:00:31.200 --> 00:00:34.960
+when you're coding with the Sonnet model and&nbsp;
+it ends up getting stuck, then it would call&nbsp;&nbsp;
+
+00:00:34.960 --> 00:00:43.280
+the advisor tool to ask Opus a question. This is&nbsp;
+kind of similar to /model opusplan whereby Sonnet&nbsp;&nbsp;
+
+00:00:43.280 --> 00:00:49.040
+is used all the time except for when you're in&nbsp;
+planning mode, in which case Opus is used. So if&nbsp;&nbsp;
+
+00:00:49.040 --> 00:00:53.040
+you were to combine the two together, you would&nbsp;
+have a really good plan at the very beginning,&nbsp;&nbsp;
+
+00:00:53.040 --> 00:00:57.600
+then it would switch over to Sonnet for the actual&nbsp;
+execution. And if Sonnet ends up getting stuck&nbsp;&nbsp;
+
+00:00:57.600 --> 00:01:01.920
+with something, then it would call the advisor&nbsp;
+tool to ask Opus what the deal is here. Now&nbsp;&nbsp;
+
+00:01:01.920 --> 00:01:07.920
+right now with /advisor, you can only see that&nbsp;
+we have Opus 4.6 and Sonnet 4.6. So if you're&nbsp;&nbsp;
+
+00:01:07.920 --> 00:01:12.480
+already on Opus and you're using Opus as advisor,&nbsp;
+you'd probably not see much benefit to doing that&nbsp;&nbsp;
+
+00:01:12.480 --> 00:01:17.680
+over using a subagent of sorts. And if you're&nbsp;
+in Haiku, then you may want to use Sonnet 4.6.&nbsp;&nbsp;
+
+00:01:17.680 --> 00:01:23.120
+Now what they will likely be adding here in the&nbsp;
+future is like Myphos for their upcoming model,&nbsp;&nbsp;
+
+00:01:23.120 --> 00:01:27.840
+because chances are since it's so expensive, we&nbsp;
+won't be able to afford it most of the time. Until&nbsp;&nbsp;
+
+00:01:27.840 --> 00:01:31.760
+like prices come down and stuff in the future.&nbsp;
+So I imagine what many people will be doing in&nbsp;&nbsp;
+
+00:01:31.760 --> 00:01:38.000
+Claude Code is sticking to Opus and then having&nbsp;
+the advisor call Myphos with the entire like chat&nbsp;&nbsp;
+
+00:01:38.000 --> 00:01:42.560
+history and log to help it work around like a&nbsp;
+particularly hard problem. Now the way that it&nbsp;&nbsp;
+
+00:01:42.560 --> 00:01:47.360
+works behind the scenes is that essentially the&nbsp;
+tool description consults a stronger reviewer&nbsp;&nbsp;
+
+00:01:47.360 --> 00:01:52.480
+who sees your full conversation transcript. There&nbsp;
+are no parameters. When you call advisor(), your&nbsp;&nbsp;
+
+00:01:52.480 --> 00:01:57.680
+entire history — task, every tool call and result,&nbsp;
+your reasoning — is automatically forwarded. The&nbsp;&nbsp;
+
+00:01:57.680 --> 00:02:02.480
+advisor sees exactly what you've done. Now, of&nbsp;
+course, you can tell Claude Code to call this tool&nbsp;&nbsp;
+
+00:02:02.480 --> 00:02:08.640
+when you're stuck, but it says it will be called&nbsp;
+before any substantive work. So before writing,&nbsp;&nbsp;
+
+00:02:08.640 --> 00:02:12.880
+before committing to an interpretation, before&nbsp;
+building an assumption. And it's also called when&nbsp;&nbsp;
+
+00:02:12.880 --> 00:02:19.040
+the model believes the task is complete. So it's&nbsp;
+told to first make deliverable durable first and&nbsp;&nbsp;
+
+00:02:19.040 --> 00:02:23.040
+then actually call the advisor. When stuck,&nbsp;
+errors recurring, approaches not converging,&nbsp;&nbsp;
+
+00:02:23.040 --> 00:02:28.480
+results don't fit, or when considering a change&nbsp;
+of approach. Now guidance on frequency says,&nbsp;&nbsp;
+
+00:02:28.480 --> 00:02:32.640
+on tasks longer than a few steps, call it at&nbsp;
+least once before committing to an approach,&nbsp;&nbsp;
+
+00:02:32.640 --> 00:02:37.520
+and once declaring done. On short reactive tasks,&nbsp;
+skip it. Which means that if you ask Claude Code&nbsp;&nbsp;
+
+00:02:37.520 --> 00:02:41.440
+to change some colors around, then it will not&nbsp;
+call the advisor because it's too simple of a&nbsp;&nbsp;
+
+00:02:41.440 --> 00:02:46.000
+task. Now this is a part that's interesting. So&nbsp;
+how to weigh the advice. Give it serious weight,&nbsp;&nbsp;
+
+00:02:46.000 --> 00:02:52.560
+as you would expect. And if the empirical results&nbsp;
+contradict advisor advice, surface the conflict&nbsp;&nbsp;
+
+00:02:52.560 --> 00:02:56.880
+with another advisor call rather than silently&nbsp;
+switching. So I find this part particularly&nbsp;&nbsp;
+
+00:02:56.880 --> 00:03:00.800
+interesting. I'd like to see that in action.&nbsp;
+And now it's like a passing self-test is not&nbsp;&nbsp;
+
+00:03:00.800 --> 00:03:05.120
+evidence that the advice is wrong. Now this is a&nbsp;
+summary of the tool description. If you want to&nbsp;&nbsp;
+
+00:03:05.120 --> 00:03:09.520
+read the full one, then it will be down below in&nbsp;
+the pinned comment. Now let's see this in action.&nbsp;&nbsp;
+
+00:03:09.520 --> 00:03:14.400
+If I go to previous session and this is some bug&nbsp;
+that Claude Code found with the billing logic,&nbsp;&nbsp;
+
+00:03:14.400 --> 00:03:18.640
+if I wanted to call the advisor, I could either&nbsp;
+like tell it directly or Claude Code during the&nbsp;&nbsp;
+
+00:03:18.640 --> 00:03:23.360
+execution may realize that it needs to call&nbsp;
+the advisor. So we already have it set over&nbsp;&nbsp;
+
+00:03:23.360 --> 00:03:28.000
+here with Opus. And I will just say, hey, can&nbsp;
+you call the advisor to check that this will&nbsp;&nbsp;
+
+00:03:28.000 --> 00:03:34.480
+be the solution here? And then pressing enter, it&nbsp;
+now says advising using Opus 4.6. And the advisor&nbsp;&nbsp;
+
+00:03:34.480 --> 00:03:39.120
+basically flagged two things over here that&nbsp;
+we would want our Sonnet model to consider.&nbsp;&nbsp;
+
+00:03:39.120 --> 00:03:42.560
+Now it seems that there are some things&nbsp;
+to bear in mind when doing this. Firstly,&nbsp;&nbsp;
+
+00:03:42.560 --> 00:03:46.800
+it seems that the advisor like can't actually&nbsp;
+consult extra files on your machine. The entire&nbsp;&nbsp;
+
+00:03:46.800 --> 00:03:51.280
+chat history is being passed to the advisor. And&nbsp;
+then that result is being passed back into your&nbsp;&nbsp;
+
+00:03:51.280 --> 00:03:55.600
+session. So as they showed on Twitter, this is&nbsp;
+what it looks like. You have the main executor&nbsp;&nbsp;
+
+00:03:55.600 --> 00:04:00.240
+being Sonnet. You have the shared context that&nbsp;
+has been accumulated so far in the history,&nbsp;&nbsp;
+
+00:04:00.240 --> 00:04:05.280
+which is a conversation, tools, and so forth. And&nbsp;
+then the executor can call the advisor on demand.&nbsp;&nbsp;
+
+00:04:05.280 --> 00:04:09.200
+That advisor would send feedback and that would&nbsp;
+be added to shared context, which likely means&nbsp;&nbsp;
+
+00:04:09.200 --> 00:04:13.280
+that any future advisor can see any previous&nbsp;
+advice that previous advisors have given. Now,&nbsp;&nbsp;
+
+00:04:13.280 --> 00:04:17.600
+when it comes to benchmarking, they found that&nbsp;
+using this approach is slightly cheaper if you&nbsp;&nbsp;
+
+00:04:17.600 --> 00:04:22.400
+were paying for raw API tokens, but it would mean&nbsp;
+that it consumes less usage limits on your Claude&nbsp;&nbsp;
+
+00:04:22.400 --> 00:04:27.040
+Code plan as well. And you also do get slightly&nbsp;
+better performance on some of these benchmarks.&nbsp;&nbsp;
+
+00:04:27.040 --> 00:04:31.600
+Now I will personally not be using this that much&nbsp;
+because I use Opus all the time and I don't see&nbsp;&nbsp;
+
+00:04:31.600 --> 00:04:38.000
+any benefit in getting another Opus advisor with&nbsp;
+the same chat history so far to give advice. I'd&nbsp;&nbsp;
+
+00:04:38.000 --> 00:04:42.800
+rather get advice from a subagent that has an&nbsp;
+independent context. But I would see myself&nbsp;&nbsp;
+
+00:04:42.800 --> 00:04:47.760
+using this in the future whereby if Myphos is&nbsp;
+released, basically swapping this all around,&nbsp;&nbsp;
+
+00:04:47.760 --> 00:04:52.480
+I would have the main executor being Opus because&nbsp;
+it's still a very capable model. And then getting&nbsp;&nbsp;
+
+00:04:52.480 --> 00:04:56.800
+advice from Myphos instead. And this is probably&nbsp;
+one of the ways they're planning on making Myphos&nbsp;&nbsp;
+
+00:04:56.800 --> 00:05:01.360
+accessible to us once it is released, because&nbsp;
+apparently it will be really expensive. Now, if&nbsp;&nbsp;
+
+00:05:01.360 --> 00:05:04.800
+you do like this kind of stuff, then do subscribe&nbsp;
+to the channel because I do make the most&nbsp;&nbsp;
+
+00:05:04.800 --> 00:05:08.560
+comprehensive Claude Code videos here on YouTube.&nbsp;
+And if you want to stay ahead of the curve,&nbsp;&nbsp;
+
+00:05:08.560 --> 00:05:13.680
+then I also have a Claude Code newsletter whereby&nbsp;
+I share some of my own strategies and techniques&nbsp;&nbsp;
+
+00:05:13.680 --> 00:05:18.560
+like on a regular basis. Signing up will give&nbsp;
+you access to some free videos in my masterclass&nbsp;&nbsp;
+
+00:05:18.560 --> 00:05:21.760
+that you may find helpful as well. There will&nbsp;
+be a link down below if you are interested.
+

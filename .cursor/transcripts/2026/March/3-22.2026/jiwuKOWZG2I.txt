@@ -1,0 +1,126 @@
+Title: Claude Code Channels: Setup & What You Should Know
+Video ID: jiwuKOWZG2I
+URL: https://www.youtube.com/watch?v=jiwuKOWZG2I
+
+Note: YouTube caption/subtitle APIs were unavailable when this file was generated; text below is from offline ASR and may differ slightly from official captions.
+
+Source: Local speech-to-text (faster-whisper, model=base, language=en, probability=1.00)
+
+--- Timestamps ---
+[00:00] So now we have a really easy way to have cloud code use tools user mcp's use our CLI and
+[00:05] send us messages proactively to telegram and this code video we're going to look at cloud
+[00:09] code channels a new feature released by anthropic to make it even closer to open clock.
+[00:12] I've been playing with it for the last few hours and I'm going to tell you how it compares
+[00:15] to remote.
+[00:16] And I'll just show you how to set it up really quickly.
+[00:18] So channels is yet another way for you to interact with cloud code away from your computer.
+[00:21] A few weeks ago I did a video on the remote control feature for cloud code which allows you
+[00:25] to talk to cloud code from the cloud app on your phone.
+[00:27] A few days ago anthropic released dispatch for cloud code work which is actually a better
+[00:31] implementation of their remote control feature.
+[00:33] And then today they released channels which is in research preview which essentially means
+[00:37] is in beta.
+[00:38] But what's different about channels is a lot of you talk to cloud code outside of the cloud
+[00:41] app in familiar messaging apps like telegram like discord these are the two chat apps
+[00:46] that are supported right now.
+[00:47] I'm sure more will be added in the near future.
+[00:49] And this is very similar to what open cloud was doing allowing you to talk to an agent via
+[00:52] a chat app but it's not as built out as open quiet and I'll tell you why.
+[00:55] So let's just send it up really quickly and see how it works.
+[00:57] Here's the documentation.
+[00:58] It needs cloud code version 2.1.8.
+[01:00] The main external dependency for this is having fun installed but if you're using cloud
+[01:04] code I'm guessing you already have fun installed on your computer.
+[01:06] If not just run this code command in your terminal.
+[01:08] Now we're going to follow instructions together to set it up for telegram.
+[01:11] The way this works is essentially connecting MCV servers for your chat apps like telegram
+[01:15] to cloud code and we install it via plugins.
+[01:18] So we're going to do that part first so we're just going to copy this command and then open
+[01:22] up a terminal.
+[01:23] I'm just going to start a clock.
+[01:24] Now this plugin comes from throughout with themselves, cloud plugins official so you
+[01:28] can just run this command.
+[01:29] But if you prefer the UI you can just do slash plugin where the market place is go to cloud
+[01:33] plugins official browse plugins and just scroll all the way down to two telegram and it's
+[01:37] at the bottom and install for you.
+[01:39] So the next thing you want to do is open up telegram and search for the bot father and if you've
+[01:42] created any telegram bot over the last three years you know this process already it's
+[01:45] very simple.
+[01:46] You do slash new bot.
+[01:47] I'll call this one Cisco and now we have to give it a username so we should call mine
+[01:51] Cisco vibe underscore bot and then it's going to give you a token.
+[01:54] My tokens right here it's going to be blurred out.
+[01:56] So all you want to do right now is copy this token.
+[01:58] There we're going to quit cloud and then we're going to run the command and telegram configure
+[02:01] and paste in our token and what that's doing is saving the token to our environment file.
+[02:05] So we're just going to say yes now that it's token we want to pair with cloud code and we
+[02:08] do this by adding it to an allow list and it's very simple.
+[02:11] The first thing we do is we close down the session completely but now when we restart cloud
+[02:15] we want to give the flag dash dash channels and the name of the plugin and for now this is
+[02:20] going to be the most annoying part about this whole feature but there are plenty of quick
+[02:23] ways to get around this and I'm sure it'll be improved soon.
+[02:25] So we're just going to copy this command, go back to our terminal, show our press enter.
+[02:30] Now you'll see up top listening for channel messages from the telegram plugin and which
+[02:35] ironic is below it says remote control is active which they released like two weeks ago.
+[02:39] Anyways, what we have to do now is go back to that message where bot father gave you the
+[02:43] token you could click on bot so you're just going to press start and right away it's going
+[02:46] to give you a message pairing required run this in cloud code so it's giving you the slash
+[02:50] command to finish the process so we're going to copy it and paste it in and press yes.
+[02:55] Now it's going to update the allow list in the access.json, go back to telegram says paired
+[02:59] I'm going to say tell me at this repo if you look here at the terminal we see the message
+[03:04] telegram and the message I sent it here's an interesting part the reply is an mcp tool
+[03:10] call.
+[03:11] So once you use a telegram reply tool to answer my question and right here you could probably
+[03:16] already see a problem it's an mcp tool call and it needs to be approved and here within
+[03:21] telegram it's not asking me for permission it's happening here in the terminal now I'm
+[03:26] at the computer right now so I'm just going to say yes and then we get a response but that's
+[03:30] the first thing you should know you can't approve permissions within this telegram bot.
+[03:34] So it makes the most sense to run this in yellow mode so in this current state for this
+[03:37] feature to be useful we have to start it with two really long flags claw dash dash dangerously
+[03:42] skip permissions and dash dash channels with the name of the channel again there's very
+[03:47] creative ways to get past this but I'm just saying right now the slash remote feature is probably
+[03:51] better because within the clawed app able to allow or denied permissions whereas here in telegram
+[03:56] if you're doing something away from your computer you won't even know if there's a permission
+[03:59] that you need to approve in remote control you'll see it in the clawed app if you're using
+[04:03] the teamux method you'll see it in the terminal on your phone but in telegram you won't see
+[04:06] it.
+[04:07] Now one of the features I was most excited about this integration is because with open
+[04:10] claw I would send a lot of voice notes I do a lot of dictation and with open claw it would
+[04:14] convert it transcribe it and respond back to me in text or an audio but right now that doesn't
+[04:19] work a who won the world-based bot class so you see that voice now for phone showed up in
+[04:23] the telegram chat but nothing happened here we didn't see a telegram message here and I looked
+[04:27] into it right now only looks at text and images but it's trying to be too hard to integrate
+[04:32] voice and pretty much replicate what was happening with the open claw which is converting transcribing
+[04:37] with whisper and then responding maybe even using something like 11 knobs to respond with
+[04:42] voice but by the way we can do it even cheaper now just like with the remote control you need
+[04:46] to have your computer on and accessible and you have to have a terminal with clawed and the
+[04:51] channel's flag open for it to be aware of your messages.
+[04:54] Now the next question we'll be asking is it able to proactively send me messages and
+[04:58] the answer here is nuance because of the way this connects to an mcb server it can only
+[05:02] maintain one connection so on my computer I made this work around where it would send me
+[05:06] a message because we know the tool name is reply and we know a number and if you see here
+[05:11] the plug in that we added shows up also in clock code desktop so for example we do something
+[05:15] like slash schedule use the telegram reply tool because that's the tool that we know it uses
+[05:20] to send a message to put the number every hour with the latest important email from the
+[05:24] gmail connector we're just going to send it off and it's going to build the whole thing
+[05:27] for us so I'm just going to go into press run now and just open up telegram as well and
+[05:32] so done no important messages we could see here and telegram said no new important emails
+[05:36] in the last hour now the one caveat here is I just sent a message back cool did you see the
+[05:40] new Louis documentary and we have two instances of cloud code running right here with access
+[05:45] to the telegram mcp we have the original cloud code session in the CLI that's running this
+[05:49] is where we saw the last message we sent come in and then it where it replied to me this
+[05:53] is where it's listening and then we have a cloud code desktop session where we have it proactively
+[05:58] send us messages using the reply tool it's kind of taken over the mcp server because it's not
+[06:03] listening it doesn't see our message so then we get into this loop of listening we're sending
+[06:06] and it's not perfect it's in research preview I'm sure it's going to get better so now we have
+[06:11] a really easy way to have cloud code use tools user mcp's user CLI and then send us messages
+[06:16] proactively to telegram again it's not perfect I think it's pretty funny and throw it it's releasing
+[06:21] features every day some of these features are just variations of each other like the remote control
+[06:26] and the channel feature the cloud code work dispatch feature which in my opinion right now is the
+[06:30] best implementation but it's in its own cloud code work sandbox so it's less capable from a coding
+[06:35] and permissions perspective in any case hope you found this video helpful or insightful if you have
+[06:39] any questions drop in the comments below if you haven't and so already subscribe to the channel
+[06:43] it really helps me grow thank you guys for watching and have a great day
+
+--- Plain text ---
+So now we have a really easy way to have cloud code use tools user mcp's use our CLI and send us messages proactively to telegram and this code video we're going to look at cloud code channels a new feature released by anthropic to make it even closer to open clock. I've been playing with it for the last few hours and I'm going to tell you how it compares to remote. And I'll just show you how to set it up really quickly. So channels is yet another way for you to interact with cloud code away from your computer. A few weeks ago I did a video on the remote control feature for cloud code which allows you to talk to cloud code from the cloud app on your phone. A few days ago anthropic released dispatch for cloud code work which is actually a better implementation of their remote control feature. And then today they released channels which is in research preview which essentially means is in beta. But what's different about channels is a lot of you talk to cloud code outside of the cloud app in familiar messaging apps like telegram like discord these are the two chat apps that are supported right now. I'm sure more will be added in the near future. And this is very similar to what open cloud was doing allowing you to talk to an agent via a chat app but it's not as built out as open quiet and I'll tell you why. So let's just send it up really quickly and see how it works. Here's the documentation. It needs cloud code version 2.1.8. The main external dependency for this is having fun installed but if you're using cloud code I'm guessing you already have fun installed on your computer. If not just run this code command in your terminal. Now we're going to follow instructions together to set it up for telegram. The way this works is essentially connecting MCV servers for your chat apps like telegram to cloud code and we install it via plugins. So we're going to do that part first so we're just going to copy this command and then open up a terminal. I'm just going to start a clock. Now this plugin comes from throughout with themselves, cloud plugins official so you can just run this command. But if you prefer the UI you can just do slash plugin where the market place is go to cloud plugins official browse plugins and just scroll all the way down to two telegram and it's at the bottom and install for you. So the next thing you want to do is open up telegram and search for the bot father and if you've created any telegram bot over the last three years you know this process already it's very simple. You do slash new bot. I'll call this one Cisco and now we have to give it a username so we should call mine Cisco vibe underscore bot and then it's going to give you a token. My tokens right here it's going to be blurred out. So all you want to do right now is copy this token. There we're going to quit cloud and then we're going to run the command and telegram configure and paste in our token and what that's doing is saving the token to our environment file. So we're just going to say yes now that it's token we want to pair with cloud code and we do this by adding it to an allow list and it's very simple. The first thing we do is we close down the session completely but now when we restart cloud we want to give the flag dash dash channels and the name of the plugin and for now this is going to be the most annoying part about this whole feature but there are plenty of quick ways to get around this and I'm sure it'll be improved soon. So we're just going to copy this command, go back to our terminal, show our press enter. Now you'll see up top listening for channel messages from the telegram plugin and which ironic is below it says remote control is active which they released like two weeks ago. Anyways, what we have to do now is go back to that message where bot father gave you the token you could click on bot so you're just going to press start and right away it's going to give you a message pairing required run this in cloud code so it's giving you the slash command to finish the process so we're going to copy it and paste it in and press yes. Now it's going to update the allow list in the access.json, go back to telegram says paired I'm going to say tell me at this repo if you look here at the terminal we see the message telegram and the message I sent it here's an interesting part the reply is an mcp tool call. So once you use a telegram reply tool to answer my question and right here you could probably already see a problem it's an mcp tool call and it needs to be approved and here within telegram it's not asking me for permission it's happening here in the terminal now I'm at the computer right now so I'm just going to say yes and then we get a response but that's the first thing you should know you can't approve permissions within this telegram bot. So it makes the most sense to run this in yellow mode so in this current state for this feature to be useful we have to start it with two really long flags claw dash dash dangerously skip permissions and dash dash channels with the name of the channel again there's very creative ways to get past this but I'm just saying right now the slash remote feature is probably better because within the clawed app able to allow or denied permissions whereas here in telegram if you're doing something away from your computer you won't even know if there's a permission that you need to approve in remote control you'll see it in the clawed app if you're using the teamux method you'll see it in the terminal on your phone but in telegram you won't see it. Now one of the features I was most excited about this integration is because with open claw I would send a lot of voice notes I do a lot of dictation and with open claw it would convert it transcribe it and respond back to me in text or an audio but right now that doesn't work a who won the world-based bot class so you see that voice now for phone showed up in the telegram chat but nothing happened here we didn't see a telegram message here and I looked into it right now only looks at text and images but it's trying to be too hard to integrate voice and pretty much replicate what was happening with the open claw which is converting transcribing with whisper and then responding maybe even using something like 11 knobs to respond with voice but by the way we can do it even cheaper now just like with the remote control you need to have your computer on and accessible and you have to have a terminal with clawed and the channel's flag open for it to be aware of your messages. Now the next question we'll be asking is it able to proactively send me messages and the answer here is nuance because of the way this connects to an mcb server it can only maintain one connection so on my computer I made this work around where it would send me a message because we know the tool name is reply and we know a number and if you see here the plug in that we added shows up also in clock code desktop so for example we do something like slash schedule use the telegram reply tool because that's the tool that we know it uses to send a message to put the number every hour with the latest important email from the gmail connector we're just going to send it off and it's going to build the whole thing for us so I'm just going to go into press run now and just open up telegram as well and so done no important messages we could see here and telegram said no new important emails in the last hour now the one caveat here is I just sent a message back cool did you see the new Louis documentary and we have two instances of cloud code running right here with access to the telegram mcp we have the original cloud code session in the CLI that's running this is where we saw the last message we sent come in and then it where it replied to me this is where it's listening and then we have a cloud code desktop session where we have it proactively send us messages using the reply tool it's kind of taken over the mcp server because it's not listening it doesn't see our message so then we get into this loop of listening we're sending and it's not perfect it's in research preview I'm sure it's going to get better so now we have a really easy way to have cloud code use tools user mcp's user CLI and then send us messages proactively to telegram again it's not perfect I think it's pretty funny and throw it it's releasing features every day some of these features are just variations of each other like the remote control and the channel feature the cloud code work dispatch feature which in my opinion right now is the best implementation but it's in its own cloud code work sandbox so it's less capable from a coding and permissions perspective in any case hope you found this video helpful or insightful if you have any questions drop in the comments below if you haven't and so already subscribe to the channel it really helps me grow thank you guys for watching and have a great day

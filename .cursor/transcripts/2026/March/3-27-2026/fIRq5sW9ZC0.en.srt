@@ -1,0 +1,2045 @@
+1
+00:00:00,160 --> 00:00:02,869
+
+Claude Code AutoDream was secretly just
+
+2
+00:00:02,869 --> 00:00:02,879
+Claude Code AutoDream was secretly just
+ 
+
+3
+00:00:02,879 --> 00:00:04,470
+Claude Code AutoDream was secretly just
+released and it is here to be the
+
+4
+00:00:04,470 --> 00:00:04,480
+released and it is here to be the
+ 
+
+5
+00:00:04,480 --> 00:00:06,630
+released and it is here to be the
+superhero we all need to save the world
+
+6
+00:00:06,630 --> 00:00:06,640
+superhero we all need to save the world
+ 
+
+7
+00:00:06,640 --> 00:00:09,270
+superhero we all need to save the world
+from the tsunami of AI slop. And if you
+
+8
+00:00:09,270 --> 00:00:09,280
+from the tsunami of AI slop. And if you
+ 
+
+9
+00:00:09,280 --> 00:00:11,110
+from the tsunami of AI slop. And if you
+haven't seen this before, it has quietly
+
+10
+00:00:11,110 --> 00:00:11,120
+haven't seen this before, it has quietly
+ 
+
+11
+00:00:11,120 --> 00:00:13,110
+haven't seen this before, it has quietly
+popped up inside of Cloud Code. So
+
+12
+00:00:13,110 --> 00:00:13,120
+popped up inside of Cloud Code. So
+ 
+
+13
+00:00:13,120 --> 00:00:14,470
+popped up inside of Cloud Code. So
+today, I just want to talk about what
+
+14
+00:00:14,470 --> 00:00:14,480
+today, I just want to talk about what
+ 
+
+15
+00:00:14,480 --> 00:00:16,950
+today, I just want to talk about what
+Autodream is and the big problem that it
+
+16
+00:00:16,950 --> 00:00:16,960
+Autodream is and the big problem that it
+ 
+
+17
+00:00:16,960 --> 00:00:18,390
+Autodream is and the big problem that it
+solves. I'm going to show you how you
+
+18
+00:00:18,390 --> 00:00:18,400
+solves. I'm going to show you how you
+ 
+
+19
+00:00:18,400 --> 00:00:20,310
+solves. I'm going to show you how you
+can turn it on and actually manually
+
+20
+00:00:20,310 --> 00:00:20,320
+can turn it on and actually manually
+ 
+
+21
+00:00:20,320 --> 00:00:21,830
+can turn it on and actually manually
+trigger it live. And then I'm just going
+
+22
+00:00:21,830 --> 00:00:21,840
+trigger it live. And then I'm just going
+ 
+
+23
+00:00:21,840 --> 00:00:23,509
+trigger it live. And then I'm just going
+to tell you why this changes everything
+
+24
+00:00:23,509 --> 00:00:23,519
+to tell you why this changes everything
+ 
+
+25
+00:00:23,519 --> 00:00:25,429
+to tell you why this changes everything
+for every Cloud Code user moving
+
+26
+00:00:25,429 --> 00:00:25,439
+for every Cloud Code user moving
+ 
+
+27
+00:00:25,439 --> 00:00:26,710
+for every Cloud Code user moving
+forward. You like building cool things
+
+28
+00:00:26,710 --> 00:00:26,720
+forward. You like building cool things
+ 
+
+29
+00:00:26,720 --> 00:00:28,390
+forward. You like building cool things
+with AI and want to start making some
+
+30
+00:00:28,390 --> 00:00:28,400
+with AI and want to start making some
+ 
+
+31
+00:00:28,400 --> 00:00:30,070
+with AI and want to start making some
+money? All of my templates, workflows,
+
+32
+00:00:30,070 --> 00:00:30,080
+money? All of my templates, workflows,
+ 
+
+33
+00:00:30,080 --> 00:00:31,750
+money? All of my templates, workflows,
+and challenges are available. The link's
+
+34
+00:00:31,750 --> 00:00:31,760
+and challenges are available. The link's
+ 
+
+35
+00:00:31,760 --> 00:00:34,069
+and challenges are available. The link's
+in the description. It's only $9. So,
+
+36
+00:00:34,069 --> 00:00:34,079
+in the description. It's only $9. So,
+ 
+
+37
+00:00:34,079 --> 00:00:36,310
+in the description. It's only $9. So,
+Claude Code has always had a memory
+
+38
+00:00:36,310 --> 00:00:36,320
+Claude Code has always had a memory
+ 
+
+39
+00:00:36,320 --> 00:00:38,549
+Claude Code has always had a memory
+system in the form of these Claude MD
+
+40
+00:00:38,549 --> 00:00:38,559
+system in the form of these Claude MD
+ 
+
+41
+00:00:38,559 --> 00:00:40,709
+system in the form of these Claude MD
+files. And a Claude MD file is a
+
+42
+00:00:40,709 --> 00:00:40,719
+files. And a Claude MD file is a
+ 
+
+43
+00:00:40,719 --> 00:00:42,950
+files. And a Claude MD file is a
+usercreated file that basically tells
+
+44
+00:00:42,950 --> 00:00:42,960
+usercreated file that basically tells
+ 
+
+45
+00:00:42,960 --> 00:00:44,869
+usercreated file that basically tells
+the system how you want it to behave.
+
+46
+00:00:44,869 --> 00:00:44,879
+the system how you want it to behave.
+ 
+
+47
+00:00:44,879 --> 00:00:46,470
+the system how you want it to behave.
+And a couple months ago, Claude Code
+
+48
+00:00:46,470 --> 00:00:46,480
+And a couple months ago, Claude Code
+ 
+
+49
+00:00:46,480 --> 00:00:48,470
+And a couple months ago, Claude Code
+released automemory, which is a memory
+
+50
+00:00:48,470 --> 00:00:48,480
+released automemory, which is a memory
+ 
+
+51
+00:00:48,480 --> 00:00:50,869
+released automemory, which is a memory
+file that Claude Code writes itself and
+
+52
+00:00:50,869 --> 00:00:50,879
+file that Claude Code writes itself and
+ 
+
+53
+00:00:50,879 --> 00:00:53,110
+file that Claude Code writes itself and
+automatically keeps up to date for you.
+
+54
+00:00:53,110 --> 00:00:53,120
+automatically keeps up to date for you.
+ 
+
+55
+00:00:53,120 --> 00:00:54,310
+automatically keeps up to date for you.
+If you don't know, there are actually
+
+56
+00:00:54,310 --> 00:00:54,320
+If you don't know, there are actually
+ 
+
+57
+00:00:54,320 --> 00:00:56,470
+If you don't know, there are actually
+two types of Claude MD files. one that
+
+58
+00:00:56,470 --> 00:00:56,480
+two types of Claude MD files. one that
+ 
+
+59
+00:00:56,480 --> 00:00:58,310
+two types of Claude MD files. one that
+lives at the global level that is
+
+60
+00:00:58,310 --> 00:00:58,320
+lives at the global level that is
+ 
+
+61
+00:00:58,320 --> 00:01:00,549
+lives at the global level that is
+accessed with everything that you do and
+
+62
+00:01:00,549 --> 00:01:00,559
+accessed with everything that you do and
+ 
+
+63
+00:01:00,559 --> 00:01:02,470
+accessed with everything that you do and
+the other one lives at the project level
+
+64
+00:01:02,470 --> 00:01:02,480
+the other one lives at the project level
+ 
+
+65
+00:01:02,480 --> 00:01:04,070
+the other one lives at the project level
+which is accessed individually per
+
+66
+00:01:04,070 --> 00:01:04,080
+which is accessed individually per
+ 
+
+67
+00:01:04,080 --> 00:01:06,630
+which is accessed individually per
+project. So the two user created files
+
+68
+00:01:06,630 --> 00:01:06,640
+project. So the two user created files
+ 
+
+69
+00:01:06,640 --> 00:01:08,710
+project. So the two user created files
+plus the cloud created memory file
+
+70
+00:01:08,710 --> 00:01:08,720
+plus the cloud created memory file
+ 
+
+71
+00:01:08,720 --> 00:01:10,630
+plus the cloud created memory file
+creates the problem. So what is
+
+72
+00:01:10,630 --> 00:01:10,640
+creates the problem. So what is
+ 
+
+73
+00:01:10,640 --> 00:01:12,230
+creates the problem. So what is
+happening is that automemory is
+
+74
+00:01:12,230 --> 00:01:12,240
+happening is that automemory is
+ 
+
+75
+00:01:12,240 --> 00:01:13,990
+happening is that automemory is
+basically constantly firing keeping
+
+76
+00:01:13,990 --> 00:01:14,000
+basically constantly firing keeping
+ 
+
+77
+00:01:14,000 --> 00:01:15,670
+basically constantly firing keeping
+track of all of the conversations you
+
+78
+00:01:15,670 --> 00:01:15,680
+track of all of the conversations you
+ 
+
+79
+00:01:15,680 --> 00:01:17,350
+track of all of the conversations you
+had all of the projects that you are
+
+80
+00:01:17,350 --> 00:01:17,360
+had all of the projects that you are
+ 
+
+81
+00:01:17,360 --> 00:01:19,190
+had all of the projects that you are
+doing. It is remembering everything and
+
+82
+00:01:19,190 --> 00:01:19,200
+doing. It is remembering everything and
+ 
+
+83
+00:01:19,200 --> 00:01:20,950
+doing. It is remembering everything and
+learning from you as it goes, which
+
+84
+00:01:20,950 --> 00:01:20,960
+learning from you as it goes, which
+ 
+
+85
+00:01:20,960 --> 00:01:22,310
+learning from you as it goes, which
+sounds really great because you would
+
+86
+00:01:22,310 --> 00:01:22,320
+sounds really great because you would
+ 
+
+87
+00:01:22,320 --> 00:01:24,149
+sounds really great because you would
+think that this would improve itself
+
+88
+00:01:24,149 --> 00:01:24,159
+think that this would improve itself
+ 
+
+89
+00:01:24,159 --> 00:01:26,310
+think that this would improve itself
+automatically over time without you
+
+90
+00:01:26,310 --> 00:01:26,320
+automatically over time without you
+ 
+
+91
+00:01:26,320 --> 00:01:28,149
+automatically over time without you
+having to do anything. And so this
+
+92
+00:01:28,149 --> 00:01:28,159
+having to do anything. And so this
+ 
+
+93
+00:01:28,159 --> 00:01:29,830
+having to do anything. And so this
+sounds all good and well and this is
+
+94
+00:01:29,830 --> 00:01:29,840
+sounds all good and well and this is
+ 
+
+95
+00:01:29,840 --> 00:01:31,910
+sounds all good and well and this is
+great to an extent. When you first get
+
+96
+00:01:31,910 --> 00:01:31,920
+great to an extent. When you first get
+ 
+
+97
+00:01:31,920 --> 00:01:33,590
+great to an extent. When you first get
+started, like you feel like things are
+
+98
+00:01:33,590 --> 00:01:33,600
+started, like you feel like things are
+ 
+
+99
+00:01:33,600 --> 00:01:35,030
+started, like you feel like things are
+working and the system is remembering
+
+100
+00:01:35,030 --> 00:01:35,040
+working and the system is remembering
+ 
+
+101
+00:01:35,040 --> 00:01:37,030
+working and the system is remembering
+things about you, but the more sessions
+
+102
+00:01:37,030 --> 00:01:37,040
+things about you, but the more sessions
+ 
+
+103
+00:01:37,040 --> 00:01:39,350
+things about you, but the more sessions
+you have, by session 20, you have
+
+104
+00:01:39,350 --> 00:01:39,360
+you have, by session 20, you have
+ 
+
+105
+00:01:39,360 --> 00:01:41,510
+you have, by session 20, you have
+overload. And this is a big problem with
+
+106
+00:01:41,510 --> 00:01:41,520
+overload. And this is a big problem with
+ 
+
+107
+00:01:41,520 --> 00:01:43,749
+overload. And this is a big problem with
+all of these AI coding tools right now.
+
+108
+00:01:43,749 --> 00:01:43,759
+all of these AI coding tools right now.
+ 
+
+109
+00:01:43,759 --> 00:01:46,149
+all of these AI coding tools right now.
+It's this idea of context rot. when you
+
+110
+00:01:46,149 --> 00:01:46,159
+It's this idea of context rot. when you
+ 
+
+111
+00:01:46,159 --> 00:01:47,910
+It's this idea of context rot. when you
+have too much information for the
+
+112
+00:01:47,910 --> 00:01:47,920
+have too much information for the
+ 
+
+113
+00:01:47,920 --> 00:01:49,510
+have too much information for the
+system, it doesn't know how to process
+
+114
+00:01:49,510 --> 00:01:49,520
+system, it doesn't know how to process
+ 
+
+115
+00:01:49,520 --> 00:01:51,670
+system, it doesn't know how to process
+it. And it actually does a worse job
+
+116
+00:01:51,670 --> 00:01:51,680
+it. And it actually does a worse job
+ 
+
+117
+00:01:51,680 --> 00:01:53,510
+it. And it actually does a worse job
+than if you had given it less. And so,
+
+118
+00:01:53,510 --> 00:01:53,520
+than if you had given it less. And so,
+ 
+
+119
+00:01:53,520 --> 00:01:55,510
+than if you had given it less. And so,
+if you don't know, inside of this hidden
+
+120
+00:01:55,510 --> 00:01:55,520
+if you don't know, inside of this hidden
+ 
+
+121
+00:01:55,520 --> 00:01:57,429
+if you don't know, inside of this hidden
+clawed folder inside of projects is
+
+122
+00:01:57,429 --> 00:01:57,439
+clawed folder inside of projects is
+ 
+
+123
+00:01:57,439 --> 00:01:59,350
+clawed folder inside of projects is
+basically all of your memory files. And
+
+124
+00:01:59,350 --> 00:01:59,360
+basically all of your memory files. And
+ 
+
+125
+00:01:59,360 --> 00:02:01,109
+basically all of your memory files. And
+this is a lot. If you go through here,
+
+126
+00:02:01,109 --> 00:02:01,119
+this is a lot. If you go through here,
+ 
+
+127
+00:02:01,119 --> 00:02:03,429
+this is a lot. If you go through here,
+you can see how many memories and
+
+128
+00:02:03,429 --> 00:02:03,439
+you can see how many memories and
+ 
+
+129
+00:02:03,439 --> 00:02:05,270
+you can see how many memories and
+transcripts and conversations and things
+
+130
+00:02:05,270 --> 00:02:05,280
+transcripts and conversations and things
+ 
+
+131
+00:02:05,280 --> 00:02:07,350
+transcripts and conversations and things
+that the system is storing. So, all of
+
+132
+00:02:07,350 --> 00:02:07,360
+that the system is storing. So, all of
+ 
+
+133
+00:02:07,360 --> 00:02:09,270
+that the system is storing. So, all of
+those files are everything that Claude
+
+134
+00:02:09,270 --> 00:02:09,280
+those files are everything that Claude
+ 
+
+135
+00:02:09,280 --> 00:02:10,949
+those files are everything that Claude
+remembers about you and the interactions
+
+136
+00:02:10,949 --> 00:02:10,959
+remembers about you and the interactions
+ 
+
+137
+00:02:10,959 --> 00:02:12,630
+remembers about you and the interactions
+you've had. So, who you are, what your
+
+138
+00:02:12,630 --> 00:02:12,640
+you've had. So, who you are, what your
+ 
+
+139
+00:02:12,640 --> 00:02:14,470
+you've had. So, who you are, what your
+role is, what your preferences are, any
+
+140
+00:02:14,470 --> 00:02:14,480
+role is, what your preferences are, any
+ 
+
+141
+00:02:14,480 --> 00:02:15,990
+role is, what your preferences are, any
+feedback or corrections that you've
+
+142
+00:02:15,990 --> 00:02:16,000
+feedback or corrections that you've
+ 
+
+143
+00:02:16,000 --> 00:02:17,670
+feedback or corrections that you've
+given it, any projects that you've
+
+144
+00:02:17,670 --> 00:02:17,680
+given it, any projects that you've
+ 
+
+145
+00:02:17,680 --> 00:02:19,270
+given it, any projects that you've
+worked on like goals, decisions,
+
+146
+00:02:19,270 --> 00:02:19,280
+worked on like goals, decisions,
+ 
+
+147
+00:02:19,280 --> 00:02:20,949
+worked on like goals, decisions,
+deadlines, things like that, and any
+
+148
+00:02:20,949 --> 00:02:20,959
+deadlines, things like that, and any
+ 
+
+149
+00:02:20,959 --> 00:02:22,470
+deadlines, things like that, and any
+references on where it should be looking
+
+150
+00:02:22,470 --> 00:02:22,480
+references on where it should be looking
+ 
+
+151
+00:02:22,480 --> 00:02:24,229
+references on where it should be looking
+for other things. And each one of these
+
+152
+00:02:24,229 --> 00:02:24,239
+for other things. And each one of these
+ 
+
+153
+00:02:24,239 --> 00:02:26,229
+for other things. And each one of these
+is stored in its own file, which is why
+
+154
+00:02:26,229 --> 00:02:26,239
+is stored in its own file, which is why
+ 
+
+155
+00:02:26,239 --> 00:02:28,470
+is stored in its own file, which is why
+it gets so overwhelming. So, in walks
+
+156
+00:02:28,470 --> 00:02:28,480
+it gets so overwhelming. So, in walks
+ 
+
+157
+00:02:28,480 --> 00:02:30,229
+it gets so overwhelming. So, in walks
+autodream to save the day. So, you can
+
+158
+00:02:30,229 --> 00:02:30,239
+autodream to save the day. So, you can
+ 
+
+159
+00:02:30,239 --> 00:02:32,309
+autodream to save the day. So, you can
+basically think of AutoDream as this
+
+160
+00:02:32,309 --> 00:02:32,319
+basically think of AutoDream as this
+ 
+
+161
+00:02:32,319 --> 00:02:34,229
+basically think of AutoDream as this
+little helper robot that sits between
+
+162
+00:02:34,229 --> 00:02:34,239
+little helper robot that sits between
+ 
+
+163
+00:02:34,239 --> 00:02:36,309
+little helper robot that sits between
+all of your memory files and like the
+
+164
+00:02:36,309 --> 00:02:36,319
+all of your memory files and like the
+ 
+
+165
+00:02:36,319 --> 00:02:38,630
+all of your memory files and like the
+ideal state. and its job is to go
+
+166
+00:02:38,630 --> 00:02:38,640
+ideal state. and its job is to go
+ 
+
+167
+00:02:38,640 --> 00:02:40,229
+ideal state. and its job is to go
+through all of your conversations and
+
+168
+00:02:40,229 --> 00:02:40,239
+through all of your conversations and
+ 
+
+169
+00:02:40,239 --> 00:02:41,670
+through all of your conversations and
+transcripts and keep the stuff that
+
+170
+00:02:41,670 --> 00:02:41,680
+transcripts and keep the stuff that
+ 
+
+171
+00:02:41,680 --> 00:02:43,190
+transcripts and keep the stuff that
+matters and get rid of the stuff that
+
+172
+00:02:43,190 --> 00:02:43,200
+matters and get rid of the stuff that
+ 
+
+173
+00:02:43,200 --> 00:02:44,470
+matters and get rid of the stuff that
+doesn't. So, in order to access
+
+174
+00:02:44,470 --> 00:02:44,480
+doesn't. So, in order to access
+ 
+
+175
+00:02:44,480 --> 00:02:46,229
+doesn't. So, in order to access
+autodream, all you have to do is type
+
+176
+00:02:46,229 --> 00:02:46,239
+autodream, all you have to do is type
+ 
+
+177
+00:02:46,239 --> 00:02:47,910
+autodream, all you have to do is type
+slashmemory when you're inside of the
+
+178
+00:02:47,910 --> 00:02:47,920
+slashmemory when you're inside of the
+ 
+
+179
+00:02:47,920 --> 00:02:50,150
+slashmemory when you're inside of the
+terminal working with cloud code. So,
+
+180
+00:02:50,150 --> 00:02:50,160
+terminal working with cloud code. So,
+ 
+
+181
+00:02:50,160 --> 00:02:52,630
+terminal working with cloud code. So,
+here you can see if I type /memory, now
+
+182
+00:02:52,630 --> 00:02:52,640
+here you can see if I type /memory, now
+ 
+
+183
+00:02:52,640 --> 00:02:54,309
+here you can see if I type /memory, now
+we have this autodream feature. And
+
+184
+00:02:54,309 --> 00:02:54,319
+we have this autodream feature. And
+ 
+
+185
+00:02:54,319 --> 00:02:55,990
+we have this autodream feature. And
+right now, it is set to never. So,
+
+186
+00:02:55,990 --> 00:02:56,000
+right now, it is set to never. So,
+ 
+
+187
+00:02:56,000 --> 00:02:57,750
+right now, it is set to never. So,
+automemory is set to on, which means
+
+188
+00:02:57,750 --> 00:02:57,760
+automemory is set to on, which means
+ 
+
+189
+00:02:57,760 --> 00:02:59,030
+automemory is set to on, which means
+it's going to keep track of all of our
+
+190
+00:02:59,030 --> 00:02:59,040
+it's going to keep track of all of our
+ 
+
+191
+00:02:59,040 --> 00:03:00,550
+it's going to keep track of all of our
+conversations. And autodream is
+
+192
+00:03:00,550 --> 00:03:00,560
+conversations. And autodream is
+ 
+
+193
+00:03:00,560 --> 00:03:02,070
+conversations. And autodream is
+currently set to off. So, what I'm going
+
+194
+00:03:02,070 --> 00:03:02,080
+currently set to off. So, what I'm going
+ 
+
+195
+00:03:02,080 --> 00:03:03,670
+currently set to off. So, what I'm going
+to do is I'll just hit enter to turn
+
+196
+00:03:03,670 --> 00:03:03,680
+to do is I'll just hit enter to turn
+ 
+
+197
+00:03:03,680 --> 00:03:05,750
+to do is I'll just hit enter to turn
+this on. But if you notice, they haven't
+
+198
+00:03:05,750 --> 00:03:05,760
+this on. But if you notice, they haven't
+ 
+
+199
+00:03:05,760 --> 00:03:07,350
+this on. But if you notice, they haven't
+actually rolled out this feature here.
+
+200
+00:03:07,350 --> 00:03:07,360
+actually rolled out this feature here.
+ 
+
+201
+00:03:07,360 --> 00:03:08,869
+actually rolled out this feature here.
+It says all you have to do is type
+
+202
+00:03:08,869 --> 00:03:08,879
+It says all you have to do is type
+ 
+
+203
+00:03:08,879 --> 00:03:11,910
+It says all you have to do is type
+slashdream to run. But if you come in
+
+204
+00:03:11,910 --> 00:03:11,920
+slashdream to run. But if you come in
+ 
+
+205
+00:03:11,920 --> 00:03:14,070
+slashdream to run. But if you come in
+here and type /dream, like you don't
+
+206
+00:03:14,070 --> 00:03:14,080
+here and type /dream, like you don't
+ 
+
+207
+00:03:14,080 --> 00:03:15,830
+here and type /dream, like you don't
+have access to it. But what's cool is
+
+208
+00:03:15,830 --> 00:03:15,840
+have access to it. But what's cool is
+ 
+
+209
+00:03:15,840 --> 00:03:17,270
+have access to it. But what's cool is
+that even though we don't have access to
+
+210
+00:03:17,270 --> 00:03:17,280
+that even though we don't have access to
+ 
+
+211
+00:03:17,280 --> 00:03:19,110
+that even though we don't have access to
+the slash command, you can actually just
+
+212
+00:03:19,110 --> 00:03:19,120
+the slash command, you can actually just
+ 
+
+213
+00:03:19,120 --> 00:03:21,830
+the slash command, you can actually just
+tell cloud code to use autodream. And so
+
+214
+00:03:21,830 --> 00:03:21,840
+tell cloud code to use autodream. And so
+ 
+
+215
+00:03:21,840 --> 00:03:23,270
+tell cloud code to use autodream. And so
+you can see here that this is starting
+
+216
+00:03:23,270 --> 00:03:23,280
+you can see here that this is starting
+ 
+
+217
+00:03:23,280 --> 00:03:25,509
+you can see here that this is starting
+to go through all of my files. And if
+
+218
+00:03:25,509 --> 00:03:25,519
+to go through all of my files. And if
+ 
+
+219
+00:03:25,519 --> 00:03:26,869
+to go through all of my files. And if
+you want to see it in action, all you
+
+220
+00:03:26,869 --> 00:03:26,879
+you want to see it in action, all you
+ 
+
+221
+00:03:26,879 --> 00:03:29,509
+you want to see it in action, all you
+have to do is type /tasks. So how does
+
+222
+00:03:29,509 --> 00:03:29,519
+have to do is type /tasks. So how does
+ 
+
+223
+00:03:29,519 --> 00:03:31,430
+have to do is type /tasks. So how does
+it work? So to make the comparison, you
+
+224
+00:03:31,430 --> 00:03:31,440
+it work? So to make the comparison, you
+ 
+
+225
+00:03:31,440 --> 00:03:33,110
+it work? So to make the comparison, you
+can basically think of cloud code like
+
+226
+00:03:33,110 --> 00:03:33,120
+can basically think of cloud code like
+ 
+
+227
+00:03:33,120 --> 00:03:35,110
+can basically think of cloud code like
+humans. like we go about our day
+
+228
+00:03:35,110 --> 00:03:35,120
+humans. like we go about our day
+ 
+
+229
+00:03:35,120 --> 00:03:36,710
+humans. like we go about our day
+committing things to short-term memory
+
+230
+00:03:36,710 --> 00:03:36,720
+committing things to short-term memory
+ 
+
+231
+00:03:36,720 --> 00:03:38,869
+committing things to short-term memory
+and then at night a bunch of things get
+
+232
+00:03:38,869 --> 00:03:38,879
+and then at night a bunch of things get
+ 
+
+233
+00:03:38,879 --> 00:03:41,110
+and then at night a bunch of things get
+dumped into long-term memory and all the
+
+234
+00:03:41,110 --> 00:03:41,120
+dumped into long-term memory and all the
+ 
+
+235
+00:03:41,120 --> 00:03:42,710
+dumped into long-term memory and all the
+waste gets removed which is pretty much
+
+236
+00:03:42,710 --> 00:03:42,720
+waste gets removed which is pretty much
+ 
+
+237
+00:03:42,720 --> 00:03:44,309
+waste gets removed which is pretty much
+why I can't remember what I had for
+
+238
+00:03:44,309 --> 00:03:44,319
+why I can't remember what I had for
+ 
+
+239
+00:03:44,319 --> 00:03:46,229
+why I can't remember what I had for
+lunch yesterday. And so this is funny.
+
+240
+00:03:46,229 --> 00:03:46,239
+lunch yesterday. And so this is funny.
+ 
+
+241
+00:03:46,239 --> 00:03:47,990
+lunch yesterday. And so this is funny.
+This actually says I'm not finding an
+
+242
+00:03:47,990 --> 00:03:48,000
+This actually says I'm not finding an
+ 
+
+243
+00:03:48,000 --> 00:03:50,070
+This actually says I'm not finding an
+autodream posting method anywhere. But
+
+244
+00:03:50,070 --> 00:03:50,080
+autodream posting method anywhere. But
+ 
+
+245
+00:03:50,080 --> 00:03:51,670
+autodream posting method anywhere. But
+if you look down here, this actually
+
+246
+00:03:51,670 --> 00:03:51,680
+if you look down here, this actually
+ 
+
+247
+00:03:51,680 --> 00:03:53,509
+if you look down here, this actually
+says that we are currently dreaming. So
+
+248
+00:03:53,509 --> 00:03:53,519
+says that we are currently dreaming. So
+ 
+
+249
+00:03:53,519 --> 00:03:55,430
+says that we are currently dreaming. So
+if I hit the down arrow and just hit
+
+250
+00:03:55,430 --> 00:03:55,440
+if I hit the down arrow and just hit
+ 
+
+251
+00:03:55,440 --> 00:03:57,670
+if I hit the down arrow and just hit
+enter to view the task, you can see that
+
+252
+00:03:57,670 --> 00:03:57,680
+enter to view the task, you can see that
+ 
+
+253
+00:03:57,680 --> 00:03:59,830
+enter to view the task, you can see that
+this memory consolidation is currently
+
+254
+00:03:59,830 --> 00:03:59,840
+this memory consolidation is currently
+ 
+
+255
+00:03:59,840 --> 00:04:01,670
+this memory consolidation is currently
+running. What it is doing, it is
+
+256
+00:04:01,670 --> 00:04:01,680
+running. What it is doing, it is
+ 
+
+257
+00:04:01,680 --> 00:04:04,470
+running. What it is doing, it is
+reviewing 97 sessions right now. And so
+
+258
+00:04:04,470 --> 00:04:04,480
+reviewing 97 sessions right now. And so
+ 
+
+259
+00:04:04,480 --> 00:04:06,869
+reviewing 97 sessions right now. And so
+Autodream works in four phases. First,
+
+260
+00:04:06,869 --> 00:04:06,879
+Autodream works in four phases. First,
+ 
+
+261
+00:04:06,879 --> 00:04:09,030
+Autodream works in four phases. First,
+it orients itself. Then it gathers
+
+262
+00:04:09,030 --> 00:04:09,040
+it orients itself. Then it gathers
+ 
+
+263
+00:04:09,040 --> 00:04:10,789
+it orients itself. Then it gathers
+signal. It consolidates everything. And
+
+264
+00:04:10,789 --> 00:04:10,799
+signal. It consolidates everything. And
+ 
+
+265
+00:04:10,799 --> 00:04:12,229
+signal. It consolidates everything. And
+then it prunes what's not needed and
+
+266
+00:04:12,229 --> 00:04:12,239
+then it prunes what's not needed and
+ 
+
+267
+00:04:12,239 --> 00:04:13,830
+then it prunes what's not needed and
+indexes everything so that it can
+
+268
+00:04:13,830 --> 00:04:13,840
+indexes everything so that it can
+ 
+
+269
+00:04:13,840 --> 00:04:15,589
+indexes everything so that it can
+retrieve it more easily later on. So
+
+270
+00:04:15,589 --> 00:04:15,599
+retrieve it more easily later on. So
+ 
+
+271
+00:04:15,599 --> 00:04:17,189
+retrieve it more easily later on. So
+when it's orienting, it's literally
+
+272
+00:04:17,189 --> 00:04:17,199
+when it's orienting, it's literally
+ 
+
+273
+00:04:17,199 --> 00:04:18,870
+when it's orienting, it's literally
+looking at everything. It's reading the
+
+274
+00:04:18,870 --> 00:04:18,880
+looking at everything. It's reading the
+ 
+
+275
+00:04:18,880 --> 00:04:20,789
+looking at everything. It's reading the
+entire index of all of those memory
+
+276
+00:04:20,789 --> 00:04:20,799
+entire index of all of those memory
+ 
+
+277
+00:04:20,799 --> 00:04:22,550
+entire index of all of those memory
+files that I showed you. It's skimming
+
+278
+00:04:22,550 --> 00:04:22,560
+files that I showed you. It's skimming
+ 
+
+279
+00:04:22,560 --> 00:04:24,390
+files that I showed you. It's skimming
+the existing topics. Basically, it's
+
+280
+00:04:24,390 --> 00:04:24,400
+the existing topics. Basically, it's
+ 
+
+281
+00:04:24,400 --> 00:04:26,469
+the existing topics. Basically, it's
+figuring out what it already knows. From
+
+282
+00:04:26,469 --> 00:04:26,479
+figuring out what it already knows. From
+ 
+
+283
+00:04:26,479 --> 00:04:28,629
+figuring out what it already knows. From
+there, it's going to drill down a level
+
+284
+00:04:28,629 --> 00:04:28,639
+there, it's going to drill down a level
+ 
+
+285
+00:04:28,639 --> 00:04:30,629
+there, it's going to drill down a level
+deeper. It's going to gather everything.
+
+286
+00:04:30,629 --> 00:04:30,639
+deeper. It's going to gather everything.
+ 
+
+287
+00:04:30,639 --> 00:04:31,990
+deeper. It's going to gather everything.
+It's going to look at all of your recent
+
+288
+00:04:31,990 --> 00:04:32,000
+It's going to look at all of your recent
+ 
+
+289
+00:04:32,000 --> 00:04:33,909
+It's going to look at all of your recent
+transcripts. It's going to identify any
+
+290
+00:04:33,909 --> 00:04:33,919
+transcripts. It's going to identify any
+ 
+
+291
+00:04:33,919 --> 00:04:35,830
+transcripts. It's going to identify any
+drifted or like stale memories that are
+
+292
+00:04:35,830 --> 00:04:35,840
+drifted or like stale memories that are
+ 
+
+293
+00:04:35,840 --> 00:04:37,510
+drifted or like stale memories that are
+just like not needed. It's going to
+
+294
+00:04:37,510 --> 00:04:37,520
+just like not needed. It's going to
+ 
+
+295
+00:04:37,520 --> 00:04:39,189
+just like not needed. It's going to
+figure out what's new, what's old, and
+
+296
+00:04:39,189 --> 00:04:39,199
+figure out what's new, what's old, and
+ 
+
+297
+00:04:39,199 --> 00:04:40,950
+figure out what's new, what's old, and
+any patterns across sessions so that
+
+298
+00:04:40,950 --> 00:04:40,960
+any patterns across sessions so that
+ 
+
+299
+00:04:40,960 --> 00:04:42,710
+any patterns across sessions so that
+we're removing redundancy. From there,
+
+300
+00:04:42,710 --> 00:04:42,720
+we're removing redundancy. From there,
+ 
+
+301
+00:04:42,720 --> 00:04:44,550
+we're removing redundancy. From there,
+it's going to consolidate everything.
+
+302
+00:04:44,550 --> 00:04:44,560
+it's going to consolidate everything.
+ 
+
+303
+00:04:44,560 --> 00:04:46,550
+it's going to consolidate everything.
+It's going to merge new information into
+
+304
+00:04:46,550 --> 00:04:46,560
+It's going to merge new information into
+ 
+
+305
+00:04:46,560 --> 00:04:48,390
+It's going to merge new information into
+existing topics and remove any
+
+306
+00:04:48,390 --> 00:04:48,400
+existing topics and remove any
+ 
+
+307
+00:04:48,400 --> 00:04:50,310
+existing topics and remove any
+contradictions or anything that is
+
+308
+00:04:50,310 --> 00:04:50,320
+contradictions or anything that is
+ 
+
+309
+00:04:50,320 --> 00:04:51,990
+contradictions or anything that is
+redundant and not needed. And then it's
+
+310
+00:04:51,990 --> 00:04:52,000
+redundant and not needed. And then it's
+ 
+
+311
+00:04:52,000 --> 00:04:53,990
+redundant and not needed. And then it's
+actively going to write and update your
+
+312
+00:04:53,990 --> 00:04:54,000
+actively going to write and update your
+ 
+
+313
+00:04:54,000 --> 00:04:55,830
+actively going to write and update your
+memory files. And the last thing it does
+
+314
+00:04:55,830 --> 00:04:55,840
+memory files. And the last thing it does
+ 
+
+315
+00:04:55,840 --> 00:04:57,749
+memory files. And the last thing it does
+is just going to remove all of the old
+
+316
+00:04:57,749 --> 00:04:57,759
+is just going to remove all of the old
+ 
+
+317
+00:04:57,759 --> 00:04:59,670
+is just going to remove all of the old
+entries that are no longer needed. It's
+
+318
+00:04:59,670 --> 00:04:59,680
+entries that are no longer needed. It's
+ 
+
+319
+00:04:59,680 --> 00:05:02,150
+entries that are no longer needed. It's
+going to keep the memory.md file like
+
+320
+00:05:02,150 --> 00:05:02,160
+going to keep the memory.md file like
+ 
+
+321
+00:05:02,160 --> 00:05:04,070
+going to keep the memory.md file like
+super concisely as an index that
+
+322
+00:05:04,070 --> 00:05:04,080
+super concisely as an index that
+ 
+
+323
+00:05:04,080 --> 00:05:06,070
+super concisely as an index that
+references everything else and it's just
+
+324
+00:05:06,070 --> 00:05:06,080
+references everything else and it's just
+ 
+
+325
+00:05:06,080 --> 00:05:07,510
+references everything else and it's just
+going to delete stuff that you don't
+
+326
+00:05:07,510 --> 00:05:07,520
+going to delete stuff that you don't
+ 
+
+327
+00:05:07,520 --> 00:05:09,270
+going to delete stuff that you don't
+need. For all of you security people out
+
+328
+00:05:09,270 --> 00:05:09,280
+need. For all of you security people out
+ 
+
+329
+00:05:09,280 --> 00:05:11,189
+need. For all of you security people out
+there, don't worry. Autodream only has
+
+330
+00:05:11,189 --> 00:05:11,199
+there, don't worry. Autodream only has
+ 
+
+331
+00:05:11,199 --> 00:05:13,110
+there, don't worry. Autodream only has
+read only access to your project code.
+
+332
+00:05:13,110 --> 00:05:13,120
+read only access to your project code.
+ 
+
+333
+00:05:13,120 --> 00:05:15,110
+read only access to your project code.
+So your project code is never actually
+
+334
+00:05:15,110 --> 00:05:15,120
+So your project code is never actually
+ 
+
+335
+00:05:15,120 --> 00:05:16,629
+So your project code is never actually
+touched. It can only read it just to
+
+336
+00:05:16,629 --> 00:05:16,639
+touched. It can only read it just to
+ 
+
+337
+00:05:16,639 --> 00:05:18,469
+touched. It can only read it just to
+kind of understand what's going on. It
+
+338
+00:05:18,469 --> 00:05:18,479
+kind of understand what's going on. It
+ 
+
+339
+00:05:18,479 --> 00:05:20,710
+kind of understand what's going on. It
+does have write access, but only to your
+
+340
+00:05:20,710 --> 00:05:20,720
+does have write access, but only to your
+ 
+
+341
+00:05:20,720 --> 00:05:23,110
+does have write access, but only to your
+memory files and nothing else. and it
+
+342
+00:05:23,110 --> 00:05:23,120
+memory files and nothing else. and it
+ 
+
+343
+00:05:23,120 --> 00:05:24,870
+memory files and nothing else. and it
+does operate in a locked file. So if
+
+344
+00:05:24,870 --> 00:05:24,880
+does operate in a locked file. So if
+ 
+
+345
+00:05:24,880 --> 00:05:26,390
+does operate in a locked file. So if
+you're operating like multiple cloud
+
+346
+00:05:26,390 --> 00:05:26,400
+you're operating like multiple cloud
+ 
+
+347
+00:05:26,400 --> 00:05:28,070
+you're operating like multiple cloud
+code sessions, AutoDream is only going
+
+348
+00:05:28,070 --> 00:05:28,080
+code sessions, AutoDream is only going
+ 
+
+349
+00:05:28,080 --> 00:05:29,830
+code sessions, AutoDream is only going
+to be running in one of those instances.
+
+350
+00:05:29,830 --> 00:05:29,840
+to be running in one of those instances.
+ 
+
+351
+00:05:29,840 --> 00:05:31,430
+to be running in one of those instances.
+So there isn't any conflicts. What's
+
+352
+00:05:31,430 --> 00:05:31,440
+So there isn't any conflicts. What's
+ 
+
+353
+00:05:31,440 --> 00:05:33,189
+So there isn't any conflicts. What's
+also cool is that this runs in the
+
+354
+00:05:33,189 --> 00:05:33,199
+also cool is that this runs in the
+ 
+
+355
+00:05:33,199 --> 00:05:34,469
+also cool is that this runs in the
+background. So you can actually continue
+
+356
+00:05:34,469 --> 00:05:34,479
+background. So you can actually continue
+ 
+
+357
+00:05:34,479 --> 00:05:36,150
+background. So you can actually continue
+your coding sessions without getting
+
+358
+00:05:36,150 --> 00:05:36,160
+your coding sessions without getting
+ 
+
+359
+00:05:36,160 --> 00:05:38,390
+your coding sessions without getting
+interrupted by Autodream. Autodream runs
+
+360
+00:05:38,390 --> 00:05:38,400
+interrupted by Autodream. Autodream runs
+ 
+
+361
+00:05:38,400 --> 00:05:40,469
+interrupted by Autodream. Autodream runs
+if it's been 24 hours since it last ran.
+
+362
+00:05:40,469 --> 00:05:40,479
+if it's been 24 hours since it last ran.
+ 
+
+363
+00:05:40,479 --> 00:05:41,990
+if it's been 24 hours since it last ran.
+And if you've completed five sessions
+
+364
+00:05:41,990 --> 00:05:42,000
+And if you've completed five sessions
+ 
+
+365
+00:05:42,000 --> 00:05:43,430
+And if you've completed five sessions
+since then, it's just going to happen
+
+366
+00:05:43,430 --> 00:05:43,440
+since then, it's just going to happen
+ 
+
+367
+00:05:43,440 --> 00:05:44,950
+since then, it's just going to happen
+automatically and totally run in the
+
+368
+00:05:44,950 --> 00:05:44,960
+automatically and totally run in the
+ 
+
+369
+00:05:44,960 --> 00:05:46,390
+automatically and totally run in the
+background. So you can now kind of think
+
+370
+00:05:46,390 --> 00:05:46,400
+background. So you can now kind of think
+ 
+
+371
+00:05:46,400 --> 00:05:47,909
+background. So you can now kind of think
+of your memory as like a heartbeat, like
+
+372
+00:05:47,909 --> 00:05:47,919
+of your memory as like a heartbeat, like
+ 
+
+373
+00:05:47,919 --> 00:05:50,070
+of your memory as like a heartbeat, like
+expanding and contracting over time. So,
+
+374
+00:05:50,070 --> 00:05:50,080
+expanding and contracting over time. So,
+ 
+
+375
+00:05:50,080 --> 00:05:51,189
+expanding and contracting over time. So,
+your first sessions are going to be
+
+376
+00:05:51,189 --> 00:05:51,199
+your first sessions are going to be
+ 
+
+377
+00:05:51,199 --> 00:05:52,710
+your first sessions are going to be
+super super clean. They're going to
+
+378
+00:05:52,710 --> 00:05:52,720
+super super clean. They're going to
+ 
+
+379
+00:05:52,720 --> 00:05:54,469
+super super clean. They're going to
+expand and get more cluttered and then
+
+380
+00:05:54,469 --> 00:05:54,479
+expand and get more cluttered and then
+ 
+
+381
+00:05:54,479 --> 00:05:56,550
+expand and get more cluttered and then
+autodream is going to come in to
+
+382
+00:05:56,550 --> 00:05:56,560
+autodream is going to come in to
+ 
+
+383
+00:05:56,560 --> 00:05:58,230
+autodream is going to come in to
+consolidate and clean everything up
+
+384
+00:05:58,230 --> 00:05:58,240
+consolidate and clean everything up
+ 
+
+385
+00:05:58,240 --> 00:05:59,909
+consolidate and clean everything up
+again so you can start back at the
+
+386
+00:05:59,909 --> 00:05:59,919
+again so you can start back at the
+ 
+
+387
+00:05:59,919 --> 00:06:01,590
+again so you can start back at the
+beginning of this cycle. So, if we hop
+
+388
+00:06:01,590 --> 00:06:01,600
+beginning of this cycle. So, if we hop
+ 
+
+389
+00:06:01,600 --> 00:06:02,870
+beginning of this cycle. So, if we hop
+back in here, you can see this worked
+
+390
+00:06:02,870 --> 00:06:02,880
+back in here, you can see this worked
+ 
+
+391
+00:06:02,880 --> 00:06:04,390
+back in here, you can see this worked
+for 2 minutes. This improved four of our
+
+392
+00:06:04,390 --> 00:06:04,400
+for 2 minutes. This improved four of our
+ 
+
+393
+00:06:04,400 --> 00:06:05,990
+for 2 minutes. This improved four of our
+memories from the session and everything
+
+394
+00:06:05,990 --> 00:06:06,000
+memories from the session and everything
+ 
+
+395
+00:06:06,000 --> 00:06:08,230
+memories from the session and everything
+is nice and clean and tidy and optimized
+
+396
+00:06:08,230 --> 00:06:08,240
+is nice and clean and tidy and optimized
+ 
+
+397
+00:06:08,240 --> 00:06:10,070
+is nice and clean and tidy and optimized
+moving forward. So, please join me in
+
+398
+00:06:10,070 --> 00:06:10,080
+moving forward. So, please join me in
+ 
+
+399
+00:06:10,080 --> 00:06:11,350
+moving forward. So, please join me in
+giving a big round of applause to
+
+400
+00:06:11,350 --> 00:06:11,360
+giving a big round of applause to
+ 
+
+401
+00:06:11,360 --> 00:06:13,189
+giving a big round of applause to
+Autodream for being the hero that Claude
+
+402
+00:06:13,189 --> 00:06:13,199
+Autodream for being the hero that Claude
+ 
+
+403
+00:06:13,199 --> 00:06:14,870
+Autodream for being the hero that Claude
+Code needs. If you want to see how I use
+
+404
+00:06:14,870 --> 00:06:14,880
+Code needs. If you want to see how I use
+ 
+
+405
+00:06:14,880 --> 00:06:16,790
+Code needs. If you want to see how I use
+Claude Code to gain 10,000 followers on
+
+406
+00:06:16,790 --> 00:06:16,800
+Claude Code to gain 10,000 followers on
+ 
+
+407
+00:06:16,800 --> 00:06:18,550
+Claude Code to gain 10,000 followers on
+LinkedIn and over a million impressions,
+
+408
+00:06:18,550 --> 00:06:18,560
+LinkedIn and over a million impressions,
+ 
+
+409
+00:06:18,560 --> 00:06:22,160
+LinkedIn and over a million impressions,
+just check out this video right here.
+

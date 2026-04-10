@@ -1,0 +1,315 @@
+Title: MiniMax M2.7 IS INSANE! Best Agentic/Coding Model! Beats Opus 4.6 and 50x Cheaper! (Fully Tested)
+Video ID: qb2-wq9MKss
+URL: https://www.youtube.com/watch?v=qb2-wq9MKss
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Looks like the Miniax team is back again
+[00:02] with a massive new release. But what's
+[00:04] actually mind-blowing here is that this
+[00:07] model was trained itself through 100
+[00:09] plus rounds of autonomous
+[00:11] self-improvement with zero human
+[00:13] involvement leading to a 30% performance
+[00:16] gain. Allow me to introduce Miniax M2.7.
+[00:20] This is their nextgen agentic AI model
+[00:23] built for creating complex multi- aent
+[00:26] systems and automating high-level
+[00:28] productivity workflows. And the craziest
+[00:30] part, it doesn't just execute tasks. It
+[00:33] is able to actually build, improve, and
+[00:36] iterate on AI systems itself. Now, in
+[00:39] terms of capabilities, the M2.7 is
+[00:42] seriously strong. It is something that
+[00:44] scored a 56.22 22 percentage on the
+[00:48] Swaybench Pro which is approaching Opus
+[00:50] level performance. On Vibe Pro, it
+[00:53] scored a 55.6 percentage end to end for
+[00:56] project delivery. And on the terminal
+[00:58] bench 2, it scored a 57 percentage with
+[01:01] deep system understanding. This is a
+[01:04] model that can handle large scale
+[01:05] environments with 50 plus skills and 100
+[01:08] plus features while still maintaining
+[01:10] stable instruction following and
+[01:12] reliable tool usage. But here's where
+[01:14] things get wild. The M2.7 is reportedly
+[01:17] up to 50 times cheaper than Opus on
+[01:21] Input while still competing on
+[01:23] benchmarks like the Swaybench and Vibe
+[01:25] Pro. In fact, it surpassed the Gemini
+[01:27] 3.1 Pro on the Swaybench Pro, scoring a
+[01:30] 56.2 percentage, which is incredible on
+[01:33] its own. And this thing absolutely
+[01:35] crushes real world tasks like financial
+[01:38] modeling, coding workflows, even open
+[01:41] clause setups, often in a single shot.
+[01:43] When it comes to software engineering,
+[01:45] the M2.7 goes deep into real world
+[01:48] workflows. Things like log analysis for
+[01:50] debugging. It can refactor. It has
+[01:53] better code security capabilities,
+[01:55] machine learning pipelines, and Android
+[01:57] development, and so much more. Now,
+[01:59] pricing wise, this model is definitely
+[02:01] great cuz the M2.7 is delivering GLM5
+[02:05] level intelligence at less than onethird
+[02:07] of the cost. It's priced at 30 cents per
+[02:10] 1 million input tokens and $120 per 1
+[02:14] million output tokens. And if you want
+[02:16] higher speed generations, you can enable
+[02:18] the fast mode, but it simply doubles the
+[02:20] cost. Oh, and it also comes with the 24K
+[02:24] context window, which is going to be
+[02:25] great for long complex workflows. If you
+[02:28] want the best AI tools, workflows, and
+[02:30] drops before everyone else, join my free
+[02:33] newsletter with the link in the
+[02:34] description below, which is completely
+[02:36] free. To get started with this model,
+[02:38] you have a lot of different options. If
+[02:40] you're a power user, you can use their
+[02:41] token plan or their coding plan. And
+[02:44] this is essentially where you have a lot
+[02:46] of different deals for you to get more
+[02:48] usage out of this model, which I would
+[02:50] highly recommend with these different
+[02:52] plans. So, I'll leave a link to this in
+[02:54] the description below, but you also have
+[02:56] the ability to pay as you go. You can
+[02:58] also access it directly through their
+[03:00] chatbot completely for free. You can use
+[03:02] it via Open Router as another API
+[03:05] provider or through Kilo, which is
+[03:07] something that I particularly use more
+[03:10] because they offer a free open-source
+[03:12] CLI tool that lets you use the models
+[03:15] completely for free through their free
+[03:16] credits that they provide. I'm truly
+[03:18] impressed by the quality of output from
+[03:20] the Miniax M2.7 cuz there are a lot of
+[03:24] generations that you'll see throughout
+[03:25] today's video as to how it is able to
+[03:28] generate some pretty great generations
+[03:30] with various sorts of frontends,
+[03:33] backends, as well as problem solving
+[03:35] through complex tasks. In this case, it
+[03:37] was able to zeroot a GTA Sanagas type of
+[03:41] game, a 3D Lego style game, and it
+[03:44] actually did a pretty great job in
+[03:46] styling the Legoike graphics, all
+[03:48] generated from a single prompt. And I
+[03:51] got to say, its front-end capability is
+[03:53] a lot better in comparison to its
+[03:55] previous model. And I can actually have
+[03:57] it comparable up against to something
+[03:59] like Opus 4.6. And you can see the
+[04:02] quality of output here, guys. This is
+[04:04] something that I didn't really expect
+[04:06] from the M2.7 at this price especially.
+[04:09] I really love how it was able to create
+[04:11] this landing page for me and it did it
+[04:13] quite rapidly as well. To start off our
+[04:16] test, we're going to be using the Kilo
+[04:18] CLI, which is an open-source AI coding
+[04:20] agent, which I particularly use through
+[04:22] my terminal. I find it better than Open
+[04:25] Code, and it is able to be used
+[04:27] completely for free via the free API.
+[04:30] What we're going to be doing is testing
+[04:31] out its first prompt on creating a Mac
+[04:34] OS style browser OS. And we're trying to
+[04:36] see how proficient it is in generating
+[04:39] this OS with the Miniax M2.7.
+[04:43] And there we go. This is the Mac OS
+[04:45] styled operating system that Kilo Code
+[04:47] was able to generate powered by our
+[04:50] beautiful M2.7. If you are to head over
+[04:52] to the settings, you have the ability to
+[04:54] change the background of our desktop.
+[04:58] You have the dynamic movement with these
+[05:00] different applications. You have the
+[05:01] ability to access all of these different
+[05:03] apps, which is great. All of them seem
+[05:05] to be working, and it did do a great job
+[05:08] with this generation. I would give this
+[05:10] a 9 out of 10 for this Mac OS styled
+[05:12] operating system.
+[05:15] And something I want to note is that the
+[05:16] M2.7 does exceptionally well with its
+[05:19] skills and structured workflows. Unlike
+[05:22] normal models, it doesn't just generate
+[05:23] text. It can plan, it can break things
+[05:26] down into multiple steps. And it has the
+[05:28] ability to execute upon it using
+[05:31] different sorts of skills like research,
+[05:33] structuring, and even creating different
+[05:35] sorts of slide decks, which you see over
+[05:37] here. And in this case, I simply just
+[05:39] requested it to create a presentation
+[05:42] doing deep research on a particular
+[05:44] analysis, which you see over here. And
+[05:46] it did do a great job in listing out the
+[05:49] KPIs, the global electric vehicle
+[05:51] market, including the market size, key
+[05:53] players, as well as the growth
+[05:55] projections. And it did a remarkable job
+[05:57] in this case. Next is where I had
+[05:59] requested it to create a dynamic landing
+[06:02] page. And this is where I wanted to
+[06:04] implement many different attributes with
+[06:07] different shader renderings as well as
+[06:09] dynamic movements. And you can see that
+[06:10] it did a remarkable job in coding this
+[06:13] fullon landing page with multiple
+[06:16] functions. And you can see that it did a
+[06:17] pretty decent job in this landing page.
+[06:20] Next up from the Kilo CLI, I was able to
+[06:22] build out this Minecraft clone. And I
+[06:25] got to say, this is actually pretty nice
+[06:27] cuz it was able to generate all the
+[06:28] textures like the water texture. You
+[06:31] have uh terrain generation, which
+[06:33] actually works, and you also have the
+[06:35] inventory bar. Now, one thing that
+[06:37] doesn't work though is the ability to
+[06:39] break the blocks, which is something
+[06:40] that other Minecraft clones have been
+[06:42] able to do. But still, the capability of
+[06:45] generating infinite terrain is perfect
+[06:47] and I really love what it was able to
+[06:49] generate with this. Next, I had
+[06:51] requested it to create a simple
+[06:53] butterfly and it was able to do a great
+[06:55] job with this. It even animated it and
+[06:58] it got the job done. So, in this case, I
+[07:00] would give this test an 8 out of 10.
+[07:02] Here is another landing page that I had
+[07:05] generated with the Miniax M2.7 and I can
+[07:08] clearly tell you that this model has
+[07:10] gotten a serious boost with its
+[07:13] front-end capability cuz it's able to
+[07:15] work with different typographies,
+[07:17] different animations and dynamic
+[07:18] movements which you see over here and it
+[07:20] looks absolutely amazing guys. This is
+[07:23] where you have the ability to generate
+[07:25] qualitative frontends at a lower cost in
+[07:28] comparison to the Opus 4.6. For my next
+[07:31] prompt, I had created a casino slot
+[07:33] machine with a spinning wheel. You have
+[07:35] a lever pull animation which you see
+[07:38] over here. You also have symbol
+[07:40] matchings. You have win line
+[07:42] highlighting which you can see with the
+[07:44] pay table. You also have a coin payout
+[07:46] animation and a jackpot celebration. So,
+[07:49] if I am to get something like a
+[07:52] combination that mimics something from
+[07:54] the pay table, you'll see that it will
+[07:56] also showcase the animation. God damn, I
+[07:59] suck at gambling. All right, let's add
+[08:01] in another 500.
+[08:05] Finally, you can see now that it pops up
+[08:08] with the win animation. Overall, this
+[08:10] was something that tests the model's
+[08:12] ability to build interactive state-
+[08:14] driven systems with animations,
+[08:17] including the logic for the randomness
+[08:18] of these different winnings. You have it
+[08:21] so that it also provides a visual
+[08:22] feedback. And in my opinion, this is
+[08:24] something that did a better job than
+[08:26] what the Opus 4.6 did. Because here is
+[08:29] what the Opus 4.6 had generated with
+[08:32] extended thinking and I can tell you it
+[08:34] is not at the same quality as what you
+[08:37] saw from the Miniax model. There's no
+[08:39] animations. There's no randomness of
+[08:42] different winnings. It is just
+[08:44] showcasing a basic slot combination.
+[08:47] Next up, I had created a 360° rotation
+[08:51] product viewer app. And this is
+[08:53] essentially where you have multiple
+[08:55] components that have been generated like
+[08:56] the zoom feature. You also have the
+[08:58] annotations of the different features of
+[09:01] the product. And I think this is one of
+[09:04] the best generations I've gotten with
+[09:06] its quality. Now, Gemini, I don't know
+[09:09] why, for some reason, hasn't been
+[09:11] capable of generating any of these
+[09:13] different prompts within the arena. Same
+[09:15] with the Opus 4.6, but you can see the
+[09:17] type of quality you're expected to get
+[09:20] from the Miniax M2.7 at such a cheaper
+[09:23] discounted price. Next up, I had
+[09:26] requested to create a casual cartoon
+[09:28] style gold miner game, and I didn't
+[09:31] expect this generation because this is
+[09:33] pretty cool. You have the ability to
+[09:35] tweak different settings like the music
+[09:36] volume, as well as the sound effect
+[09:38] volume. I have the ability to choose
+[09:40] different modes like story mode, arcade,
+[09:43] versus, as well as co-op. You can see
+[09:45] that with the story mode, you have the
+[09:47] ability to get started. If you are to
+[09:49] click on gold, it actually brings it in.
+[09:52] I picked in a rock, which I shouldn't
+[09:54] have done that. You can see that I have
+[09:56] the ability to pick up the gold from
+[09:58] different areas in the map. And that
+[10:00] way, you get a score. You have the
+[10:03] ability to visit the shop, and you have
+[10:04] the ability to add different upgrades to
+[10:08] your mining system. If you like this
+[10:10] video and would love to support the
+[10:11] channel, you can consider donating to my
+[10:14] channel through the super thanks option
+[10:16] below. Or you can consider joining our
+[10:18] private Discord where you can access
+[10:20] multiple subscriptions to different AI
+[10:22] tools for free on a monthly basis, plus
+[10:25] daily AI news and exclusive content,
+[10:27] plus a lot more. What's nice is that the
+[10:30] Miniax team had gifted our viewers a
+[10:32] link that would basically allow new and
+[10:35] existing users to get 12% off of the
+[10:38] token plan. This is a really good deal
+[10:40] that I highly recommend that you take a
+[10:42] look at with the link in the description
+[10:44] below. Overall, the Miniax M2.7 is
+[10:47] definitely a great improvement from its
+[10:49] predecessor and I personally believe
+[10:51] that this next generation Aentic model
+[10:54] is something that goes up against
+[10:56] something like Opus 4.6. six obviously
+[10:59] at a slightly lower scale, but it's able
+[11:01] to build, manage, and improve complex
+[11:03] multi- aent systems at a similar sort of
+[11:06] level. It stands out with its ability to
+[11:08] undergo autonomous self-improvement as
+[11:11] well as its strong performance in real
+[11:13] world software engineering tasks. So, I
+[11:15] highly recommend that you take a look at
+[11:16] it with the links in the description
+[11:17] below. It is something that is pretty
+[11:19] cheap and it works quite well in almost
+[11:22] every AI coding agent platform. Make
+[11:24] sure you go ahead and subscribe to our
+[11:26] second channel if you haven't already.
+[11:27] Join our newsletter, join the Discord,
+[11:29] follow me on Twitter, and lastly, make
+[11:31] sure you guys subscribe, turn on
+[11:32] notification bell, like this video, and
+[11:34] please take a look at our previous
+[11:35] videos so that you can stay up to date
+[11:37] with the latest AI news. But with that
+[11:38] thought, guys, have an amazing day,
+[11:40] spread positivity, and I'll see you guys
+[11:41] fairly shortly. Peace out, fellas.
+
+--- Plain text ---
+Looks like the Miniax team is back again with a massive new release. But what's actually mind-blowing here is that this model was trained itself through 100 plus rounds of autonomous self-improvement with zero human involvement leading to a 30% performance gain. Allow me to introduce Miniax M2.7. This is their nextgen agentic AI model built for creating complex multi- aent systems and automating high-level productivity workflows. And the craziest part, it doesn't just execute tasks. It is able to actually build, improve, and iterate on AI systems itself. Now, in terms of capabilities, the M2.7 is seriously strong. It is something that scored a 56.22 22 percentage on the Swaybench Pro which is approaching Opus level performance. On Vibe Pro, it scored a 55.6 percentage end to end for project delivery. And on the terminal bench 2, it scored a 57 percentage with deep system understanding. This is a model that can handle large scale environments with 50 plus skills and 100 plus features while still maintaining stable instruction following and reliable tool usage. But here's where things get wild. The M2.7 is reportedly up to 50 times cheaper than Opus on Input while still competing on benchmarks like the Swaybench and Vibe Pro. In fact, it surpassed the Gemini 3.1 Pro on the Swaybench Pro, scoring a 56.2 percentage, which is incredible on its own. And this thing absolutely crushes real world tasks like financial modeling, coding workflows, even open clause setups, often in a single shot. When it comes to software engineering, the M2.7 goes deep into real world workflows. Things like log analysis for debugging. It can refactor. It has better code security capabilities, machine learning pipelines, and Android development, and so much more. Now, pricing wise, this model is definitely great cuz the M2.7 is delivering GLM5 level intelligence at less than onethird of the cost. It's priced at 30 cents per 1 million input tokens and $120 per 1 million output tokens. And if you want higher speed generations, you can enable the fast mode, but it simply doubles the cost. Oh, and it also comes with the 24K context window, which is going to be great for long complex workflows. If you want the best AI tools, workflows, and drops before everyone else, join my free newsletter with the link in the description below, which is completely free. To get started with this model, you have a lot of different options. If you're a power user, you can use their token plan or their coding plan. And this is essentially where you have a lot of different deals for you to get more usage out of this model, which I would highly recommend with these different plans. So, I'll leave a link to this in the description below, but you also have the ability to pay as you go. You can also access it directly through their chatbot completely for free. You can use it via Open Router as another API provider or through Kilo, which is something that I particularly use more because they offer a free open-source CLI tool that lets you use the models completely for free through their free credits that they provide. I'm truly impressed by the quality of output from the Miniax M2.7 cuz there are a lot of generations that you'll see throughout today's video as to how it is able to generate some pretty great generations with various sorts of frontends, backends, as well as problem solving through complex tasks. In this case, it was able to zeroot a GTA Sanagas type of game, a 3D Lego style game, and it actually did a pretty great job in styling the Legoike graphics, all generated from a single prompt. And I got to say, its front-end capability is a lot better in comparison to its previous model. And I can actually have it comparable up against to something like Opus 4.6. And you can see the quality of output here, guys. This is something that I didn't really expect from the M2.7 at this price especially. I really love how it was able to create this landing page for me and it did it quite rapidly as well. To start off our test, we're going to be using the Kilo CLI, which is an open-source AI coding agent, which I particularly use through my terminal. I find it better than Open Code, and it is able to be used completely for free via the free API. What we're going to be doing is testing out its first prompt on creating a Mac OS style browser OS. And we're trying to see how proficient it is in generating this OS with the Miniax M2.7. And there we go. This is the Mac OS styled operating system that Kilo Code was able to generate powered by our beautiful M2.7. If you are to head over to the settings, you have the ability to change the background of our desktop. You have the dynamic movement with these different applications. You have the ability to access all of these different apps, which is great. All of them seem to be working, and it did do a great job with this generation. I would give this a 9 out of 10 for this Mac OS styled operating system. And something I want to note is that the M2.7 does exceptionally well with its skills and structured workflows. Unlike normal models, it doesn't just generate text. It can plan, it can break things down into multiple steps. And it has the ability to execute upon it using different sorts of skills like research, structuring, and even creating different sorts of slide decks, which you see over here. And in this case, I simply just requested it to create a presentation doing deep research on a particular analysis, which you see over here. And it did do a great job in listing out the KPIs, the global electric vehicle market, including the market size, key players, as well as the growth projections. And it did a remarkable job in this case. Next is where I had requested it to create a dynamic landing page. And this is where I wanted to implement many different attributes with different shader renderings as well as dynamic movements. And you can see that it did a remarkable job in coding this fullon landing page with multiple functions. And you can see that it did a pretty decent job in this landing page. Next up from the Kilo CLI, I was able to build out this Minecraft clone. And I got to say, this is actually pretty nice cuz it was able to generate all the textures like the water texture. You have uh terrain generation, which actually works, and you also have the inventory bar. Now, one thing that doesn't work though is the ability to break the blocks, which is something that other Minecraft clones have been able to do. But still, the capability of generating infinite terrain is perfect and I really love what it was able to generate with this. Next, I had requested it to create a simple butterfly and it was able to do a great job with this. It even animated it and it got the job done. So, in this case, I would give this test an 8 out of 10. Here is another landing page that I had generated with the Miniax M2.7 and I can clearly tell you that this model has gotten a serious boost with its front-end capability cuz it's able to work with different typographies, different animations and dynamic movements which you see over here and it looks absolutely amazing guys. This is where you have the ability to generate qualitative frontends at a lower cost in comparison to the Opus 4.6. For my next prompt, I had created a casino slot machine with a spinning wheel. You have a lever pull animation which you see over here. You also have symbol matchings. You have win line highlighting which you can see with the pay table. You also have a coin payout animation and a jackpot celebration. So, if I am to get something like a combination that mimics something from the pay table, you'll see that it will also showcase the animation. God damn, I suck at gambling. All right, let's add in another 500. Finally, you can see now that it pops up with the win animation. Overall, this was something that tests the model's ability to build interactive state- driven systems with animations, including the logic for the randomness of these different winnings. You have it so that it also provides a visual feedback. And in my opinion, this is something that did a better job than what the Opus 4.6 did. Because here is what the Opus 4.6 had generated with extended thinking and I can tell you it is not at the same quality as what you saw from the Miniax model. There's no animations. There's no randomness of different winnings. It is just showcasing a basic slot combination. Next up, I had created a 360° rotation product viewer app. And this is essentially where you have multiple components that have been generated like the zoom feature. You also have the annotations of the different features of the product. And I think this is one of the best generations I've gotten with its quality. Now, Gemini, I don't know why, for some reason, hasn't been capable of generating any of these different prompts within the arena. Same with the Opus 4.6, but you can see the type of quality you're expected to get from the Miniax M2.7 at such a cheaper discounted price. Next up, I had requested to create a casual cartoon style gold miner game, and I didn't expect this generation because this is pretty cool. You have the ability to tweak different settings like the music volume, as well as the sound effect volume. I have the ability to choose different modes like story mode, arcade, versus, as well as co-op. You can see that with the story mode, you have the ability to get started. If you are to click on gold, it actually brings it in. I picked in a rock, which I shouldn't have done that. You can see that I have the ability to pick up the gold from different areas in the map. And that way, you get a score. You have the ability to visit the shop, and you have the ability to add different upgrades to your mining system. If you like this video and would love to support the channel, you can consider donating to my channel through the super thanks option below. Or you can consider joining our private Discord where you can access multiple subscriptions to different AI tools for free on a monthly basis, plus daily AI news and exclusive content, plus a lot more. What's nice is that the Miniax team had gifted our viewers a link that would basically allow new and existing users to get 12% off of the token plan. This is a really good deal that I highly recommend that you take a look at with the link in the description below. Overall, the Miniax M2.7 is definitely a great improvement from its predecessor and I personally believe that this next generation Aentic model is something that goes up against something like Opus 4.6. six obviously at a slightly lower scale, but it's able to build, manage, and improve complex multi- aent systems at a similar sort of level. It stands out with its ability to undergo autonomous self-improvement as well as its strong performance in real world software engineering tasks. So, I highly recommend that you take a look at it with the links in the description below. It is something that is pretty cheap and it works quite well in almost every AI coding agent platform. Make sure you go ahead and subscribe to our second channel if you haven't already. Join our newsletter, join the Discord, follow me on Twitter, and lastly, make sure you guys subscribe, turn on notification bell, like this video, and please take a look at our previous videos so that you can stay up to date with the latest AI news. But with that thought, guys, have an amazing day, spread positivity, and I'll see you guys fairly shortly. Peace out, fellas.

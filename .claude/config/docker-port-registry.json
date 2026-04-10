@@ -1,0 +1,241 @@
+{
+  "$schema": "docker-port-registry-v1",
+  "version": "1.0.0",
+  "lastUpdated": "2026-02-23T19:00:00Z",
+  "description": "Centralized Docker port registry for all Quik Nation boilerplate projects",
+  "scanDirectories": [
+    "/Volumes/X10-Pro/Native-Projects/clients",
+    "/Volumes/X10-Pro/Native-Projects/Quik-Nation",
+    "/Volumes/X10-Pro/Native-Projects/apps",
+    "/Volumes/X10-Pro/Native-Projects/shared-ngrok"
+  ],
+  "portRanges": {
+    "frontend": { "start": 3000, "end": 3098, "step": 2, "description": "Next.js/React frontend applications (EVEN numbers only)" },
+    "backend": { "start": 3001, "end": 3099, "step": 2, "description": "Express/Node.js backend APIs (ODD numbers only)" },
+    "standalone": { "start": 4000, "end": 4099, "description": "Standalone/utility apps" },
+    "postgres": { "start": 5432, "end": 5450, "description": "PostgreSQL database instances" },
+    "redis": { "start": 6379, "end": 6399, "description": "Redis cache instances" },
+    "debug": { "start": 9229, "end": 9250, "description": "Node.js debug ports" },
+    "mailhog": { "start": 1025, "end": 1030, "description": "MailHog SMTP ports" },
+    "mailhogWeb": { "start": 8025, "end": 8030, "description": "MailHog web UI ports" },
+    "pgadmin": { "start": 5050, "end": 5060, "description": "pgAdmin web UI ports" },
+    "redisCommander": { "start": 8081, "end": 8090, "description": "Redis Commander web UI ports" },
+    "ngrok": { "start": 4040, "end": 4050, "description": "ngrok web UI ports" }
+  },
+  "projects": {
+    "dreamihaircare": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/dreamihaircare",
+      "status": "active",
+      "ports": {
+        "frontend": 3000,
+        "backend": 3001,
+        "postgres": 5433,
+        "redis": 6380,
+        "pgadmin": 5050,
+        "mailhog": 1025,
+        "mailhogWeb": 8025,
+        "redisCommander": 8081
+      }
+    },
+    "ppsv-charities": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/ppsv-charities",
+      "status": "active",
+      "ports": {
+        "frontend": 3028,
+        "backend": 3027
+      }
+    },
+    "pink-collar-contractors": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/pink-collar-contractors",
+      "status": "active",
+      "ports": {
+        "frontend": 3030,
+        "backend": 3029,
+        "postgres": 5434,
+        "redis": 6381
+      }
+    },
+    "empresss-eats": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/empresss-eats",
+      "status": "active",
+      "ports": {
+        "frontend": 3026,
+        "backend": 3025,
+        "postgres": 5432,
+        "redis": 6379,
+        "debug": 9229
+      }
+    },
+    "quiknation": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/Quik-Nation/quiknation",
+      "status": "active",
+      "ports": {
+        "backend": 3005,
+        "frontendMain": 3006,
+        "frontendInvestors": 3008,
+        "frontendAdmin": 3010,
+        "frontendStripe": 3020,
+        "postgres": 5434,
+        "redis": 6381,
+        "pgadmin": 5050,
+        "redisCommander": 8081,
+        "debug": 9230
+      }
+    },
+    "quikcarrental": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/Quik-Nation/quikcarrental",
+      "status": "active",
+      "ports": {
+        "frontend": 3024,
+        "backend": 3023
+      }
+    },
+    "quiksession": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/Quik-Nation/quiksession",
+      "status": "active",
+      "ports": {
+        "frontend": 3004,
+        "backend": 3003
+      }
+    },
+    "thegcode": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/thegcode",
+      "status": "active",
+      "ports": {
+        "backend": 3011,
+        "backendNext": 3013
+      }
+    },
+    "site962": {
+      "directory": "/Users/amenra/Native-Projects/Quik-Nation/site962",
+      "status": "active",
+      "notes": "Event Management Platform - migrating to boilerplate architecture",
+      "ports": {
+        "frontend": 3962,
+        "backend": 3961,
+        "postgres": 5439,
+        "redis": 6384,
+        "debug": 9231
+      }
+    },
+    "myvoyages": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/my-voyages",
+      "status": "active",
+      "notes": "Travel social platform - Amadeus API, Clerk auth, mobile app (Metro, not Docker)",
+      "ports": {
+        "frontend": 3038,
+        "backend": 3037
+      },
+      "domains": {
+        "production": {
+          "frontend": "https://myvoyages.app",
+          "backend": "https://api.myvoyages.app"
+        },
+        "development": {
+          "backend": "https://api-dev.myvoyages.app"
+        }
+      },
+      "ngrok": {
+        "backend": "myvoyages-backend-dev.ngrok.quiknation.com"
+      }
+    },
+    "stacksbabiee": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/stacksbabiee",
+      "status": "active",
+      "ports": {
+        "frontend": 3032,
+        "backend": 3031,
+        "postgres": 5435,
+        "redis": 6382
+      }
+    },
+    "quikaction": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/quikaction",
+      "status": "active",
+      "ports": {
+        "frontend": 3034,
+        "backend": 3033,
+        "postgres": 5436,
+        "redis": 6383
+      }
+    },
+    "quiknation-convert-to-next-js": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/apps/quiknation-convert-to-next-js",
+      "status": "active",
+      "notes": "Case Management System - moved to 4000 range to avoid conflicts",
+      "ports": {
+        "frontend": 4006,
+        "backend": 4005,
+        "postgres": 5438,
+        "redis": 6390,
+        "mailhog": 1026,
+        "mailhogWeb": 8026,
+        "prometheus": 9090,
+        "grafana": 4007
+      }
+    },
+    "shared-ngrok": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/shared-ngrok",
+      "status": "active",
+      "ports": {
+        "ngrokWeb": 4040
+      }
+    },
+    "fmo": {
+      "directory": "/Volumes/X10-Pro/Native-Projects/clients/fmo",
+      "status": "active",
+      "notes": "FMO Fine Grooming - Barbershop booking and management",
+      "ports": {
+        "frontend": 3036,
+        "backend": 3035,
+        "postgres": 5440,
+        "redis": 6385,
+        "debug": 9232
+      },
+      "domains": {
+        "production": {
+          "frontend": "https://fmogrooming.com",
+          "backend": "https://api.fmogrooming.com"
+        },
+        "development": {
+          "frontend": "https://develop.fmogrooming.com",
+          "backend": "https://api-dev.fmogrooming.com"
+        }
+      }
+    }
+  },
+  "allocatedPorts": {
+    "frontend": [3000, 3004, 3006, 3008, 3010, 3020, 3024, 3026, 3028, 3030, 3032, 3034, 3036, 3038, 3962, 4006],
+    "backend": [3001, 3003, 3005, 3011, 3013, 3023, 3025, 3027, 3029, 3031, 3033, 3035, 3037, 3961, 4005],
+    "standalone": [4007],
+    "postgres": [5432, 5433, 5434, 5435, 5436, 5438, 5439, 5440],
+    "redis": [6379, 6380, 6381, 6382, 6383, 6384, 6385, 6390],
+    "debug": [9229, 9230, 9231, 9232],
+    "mailhog": [1025, 1026],
+    "mailhogWeb": [8025, 8026],
+    "pgadmin": [5050],
+    "redisCommander": [8081],
+    "ngrok": [4040],
+    "prometheus": [9090]
+  },
+  "nextAvailable": {
+    "frontend": 3040,
+    "backend": 3039,
+    "standalone": 4008,
+    "postgres": 5441,
+    "redis": 6386,
+    "debug": 9233,
+    "mailhog": 1027,
+    "mailhogWeb": 8027,
+    "pgadmin": 5051,
+    "redisCommander": 8082,
+    "ngrok": 4041
+  },
+  "portConvention": {
+    "rule": "Frontend ports use EVEN numbers, Backend ports use ODD numbers",
+    "examples": {
+      "validPair": "Frontend: 3038, Backend: 3037",
+      "invalidPair": "Frontend: 3037, Backend: 3038"
+    }
+  }
+}

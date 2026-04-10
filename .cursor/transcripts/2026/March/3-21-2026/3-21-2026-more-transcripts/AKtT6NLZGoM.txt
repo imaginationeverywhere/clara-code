@@ -1,0 +1,201 @@
+Title: How I Use Claude Code For Marketing (SMM, Ads, Outreach)
+Video ID: AKtT6NLZGoM
+URL: https://www.youtube.com/watch?v=AKtT6NLZGoM
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Hey guys, Cloud Cod is absolutely insane
+[00:02] when it comes to marketing tasks and
+[00:03] today I want to demonstrate to you five
+[00:05] use cases that you can start
+[00:06] implementing right now and get more
+[00:08] clients to your business. So I will use
+[00:10] this example, Alington properties.
+[00:12] Imagine it is your company. You're
+[00:14] selling real estate in Dubai. Here is
+[00:16] your Instagram. You can see the visual.
+[00:18] You can see the style. This is a big
+[00:20] established company. And let's imagine
+[00:22] we want to get more leads from
+[00:23] marketing. I'll show you what I did
+[00:26] using Claude. So first of all, I
+[00:28] generated Instagram reel. Check it out.
+[00:30] So, as you can see, everything in is in
+[00:32] the style guide of our company. The
+[00:35] branding is here and it was all
+[00:37] generated using one prompt and we can
+[00:39] get infinite amount of videos like this.
+[00:40] We can use them for ads, for our profile
+[00:43] page, whatever it might be. The second
+[00:46] use case is scraping popular, trending
+[00:49] Instagram res from our competitors and
+[00:51] generating new concepts based on them.
+[00:53] So, as you can see, we're getting like a
+[00:56] whole new web page, a whole HTML with
+[01:00] the beautiful results that we have. So,
+[01:02] the system found 10 trending Instagram
+[01:04] res. They got in total almost 7 million
+[01:07] views. And here are all the specific
+[01:10] reels that we scraped, 3 million views.
+[01:12] Here's the video. And this is the stuff
+[01:15] that we analyzed. And if we scroll down,
+[01:17] here are key trends that we identified.
+[01:20] And then here are new scripts that we
+[01:22] can start implementing right now for our
+[01:24] own company. So it did all the web
+[01:26] scraping and everything. I will show you
+[01:29] after I present all the results, how to
+[01:31] set up the cloud project, how to connect
+[01:33] it to necessary APIs to do that. And
+[01:36] don't worry, you don't need to know how
+[01:38] to code in order to use cloud code. It
+[01:39] is actually a very simple tool. You just
+[01:41] interact with it using this chat
+[01:42] interface with your plain English. So
+[01:45] you will be able to set everything up in
+[01:46] less than 10 minutes. So the third use
+[01:49] case was this one. I wanted to find an
+[01:52] interesting podcast that is trending
+[01:54] that is in the real estate niche and
+[01:56] then make social media posts based on
+[01:58] that. So it actually did the YouTube
+[02:00] scraping. It found this podcast with
+[02:03] Grant Cardone. What an OG. I love this
+[02:05] dude. I I was consuming his audio books
+[02:07] and as you can see this video got more
+[02:10] than 100,000 views and it is like almost
+[02:13] 2 hours duration. So, it's obviously
+[02:15] packed with interesting ideas about the
+[02:17] real estate market. And then bum, we
+[02:19] scroll. We have five posts for social
+[02:22] media that we can publish across
+[02:24] LinkedIn, Instagram, Facebook, any
+[02:26] platform that we want. The post number
+[02:28] one, post number two. So, we have the
+[02:29] visuals, we have the text, we have
+[02:31] everything. So, cloud code is doing
+[02:33] everything for us from one single
+[02:35] prompt. It is very simple. I believe
+[02:37] that prompt to generate this was just
+[02:39] three sentences. This is nuts. I cannot
+[02:42] believe. Another use case is called
+[02:44] outreach. So basically I asked to
+[02:47] generate a list of 100 target people on
+[02:50] LinkedIn that we can actually DM. So it
+[02:53] scraped all this information. Here's the
+[02:55] first lead. Here's their niche. Here is
+[02:57] their LinkedIn. So we can open it up.
+[02:59] And here is the personalized opener. So
+[03:01] it actually made a personalized direct
+[03:04] message that we can send to them and
+[03:06] will increase our chances of getting a
+[03:08] reply. Then we can connect it to some
+[03:10] cold outreach software and the campaign
+[03:13] will get started. Right? And the final
+[03:15] use case is that I asked it to analyze
+[03:19] ads of my competitors that are being run
+[03:22] on Facebook and Google. Look, these are
+[03:25] ads from our competition. We can see how
+[03:27] long they were running this one for 4
+[03:29] years. This sounds crazy. I I cannot
+[03:32] believe it. Uh this one, let's say from
+[03:34] Azizi. I know this company is a huge
+[03:36] company here in Dubai. It was running
+[03:38] for more than 200 days. Here are the
+[03:40] engagement metrics of this ad and then
+[03:43] AI analyzed all these ads inside what is
+[03:46] going on actually and then it generated
+[03:48] new concepts for us based on what is
+[03:50] working best for our competition. Right?
+[03:53] So all that was generated literally from
+[03:57] one single prompt per task and you can
+[04:00] set it up in less than 10 minutes. So to
+[04:02] make cloud code capable of getting all
+[04:05] these data and generating all these
+[04:07] images and visuals, I connected it to
+[04:09] just two APIs. It is very simple. The
+[04:11] first one is API. This is the best API
+[04:14] to scrape social media data, Facebook
+[04:16] ads data, Google trends data. So
+[04:19] anything when it comes to scraping, you
+[04:21] should use this. You should never ask
+[04:23] cloudcot scrape to me this website
+[04:25] directly. It will not work out the way
+[04:27] you want to. But this thing is awesome.
+[04:29] I honestly I'm spending like I think 300
+[04:32] bucks per month on this API. I know I'm
+[04:36] crazy, but you don't need to spend this
+[04:38] crazy amount of money for these tasks
+[04:40] that we just discussed. I think we spent
+[04:42] maybe $3 something like that. So
+[04:44] absolutely reasonable price. Instruction
+[04:46] will be down below in terms of how you
+[04:48] can get the API key for API, how you can
+[04:50] set everything up. So don't worry, it is
+[04:52] very easy. And the second part is Kai
+[04:54] AI. So this is the API which is
+[04:57] connecting you to the video generation
+[04:59] and image generation. So you are getting
+[05:02] access to video models to Nana Banana.
+[05:04] So we connected that and that's it. Then
+[05:07] we just build a project around our
+[05:08] company. So I just told Claude that
+[05:11] here's my company. I gave the website of
+[05:13] Alington properties and I said scrape
+[05:15] the website understand what we're doing.
+[05:17] what is our business? Initialize the
+[05:19] context and the reason for this project
+[05:21] is to just grow our lead base, our
+[05:24] client base using marketing efforts and
+[05:27] then after the project was initialized,
+[05:29] the cloud had all the contacts and then
+[05:31] we can just give very human like
+[05:34] instructions and by the way you can give
+[05:36] them via voice. So we can dictate just
+[05:39] like that. I'm using whisper flow. I'm
+[05:41] just telling, hey, let's do competitor
+[05:44] analysis on the Facebook ads. Scrape top
+[05:46] ads from the real estate brokers here in
+[05:49] Dubai. Look at what is working well.
+[05:51] What are the ads that companies are
+[05:53] running for a very long amount of time,
+[05:55] look at the legit companies, analyze
+[05:58] what are the hooks that are working the
+[05:59] best and generate five new creatives for
+[06:01] our company and output everything as a
+[06:04] beautiful HTML website in our style and
+[06:07] design. And I'm pressing this button.
+[06:10] And then bum, the whole prompt is here.
+[06:12] And I'm just pressing this. Let's go.
+[06:14] And it will do the task. And just like
+[06:16] that, you can automate all of your
+[06:18] marketing efforts. And by the way, one
+[06:20] important thing here in the reference
+[06:21] tab. Let make it bigger. I just provided
+[06:24] four reference images explaining the
+[06:27] style of my brand. So here is one of the
+[06:29] screenshots, another screenshot, another
+[06:31] one, and the fourth one. I just made the
+[06:33] screenshots from Instagram. So this is
+[06:35] how I communicated the context. And this
+[06:38] is how the system knew what is the vibe
+[06:40] that I'm going after. So this is
+[06:42] insanely simple. Check out the link in
+[06:44] the down below. It is a short
+[06:46] instruction how you can get started with
+[06:48] this project. Set up the VS code this
+[06:51] environment for cloud code. Then how you
+[06:53] can actually start using cloud code. How
+[06:55] you can initialize this project and
+[06:58] start applying this to your business.
+[07:01] Please don't waste this opportunity.
+[07:03] Cloud code is insane right now and you
+[07:05] don't need to be a software developer to
+[07:07] use this. If you enjoy the video,
+[07:09] subscribe to my channel. It will help me
+[07:11] a lot. I will post so many more videos
+[07:14] about clot code very
+
+--- Plain text ---
+Hey guys, Cloud Cod is absolutely insane when it comes to marketing tasks and today I want to demonstrate to you five use cases that you can start implementing right now and get more clients to your business. So I will use this example, Alington properties. Imagine it is your company. You're selling real estate in Dubai. Here is your Instagram. You can see the visual. You can see the style. This is a big established company. And let's imagine we want to get more leads from marketing. I'll show you what I did using Claude. So first of all, I generated Instagram reel. Check it out. So, as you can see, everything in is in the style guide of our company. The branding is here and it was all generated using one prompt and we can get infinite amount of videos like this. We can use them for ads, for our profile page, whatever it might be. The second use case is scraping popular, trending Instagram res from our competitors and generating new concepts based on them. So, as you can see, we're getting like a whole new web page, a whole HTML with the beautiful results that we have. So, the system found 10 trending Instagram res. They got in total almost 7 million views. And here are all the specific reels that we scraped, 3 million views. Here's the video. And this is the stuff that we analyzed. And if we scroll down, here are key trends that we identified. And then here are new scripts that we can start implementing right now for our own company. So it did all the web scraping and everything. I will show you after I present all the results, how to set up the cloud project, how to connect it to necessary APIs to do that. And don't worry, you don't need to know how to code in order to use cloud code. It is actually a very simple tool. You just interact with it using this chat interface with your plain English. So you will be able to set everything up in less than 10 minutes. So the third use case was this one. I wanted to find an interesting podcast that is trending that is in the real estate niche and then make social media posts based on that. So it actually did the YouTube scraping. It found this podcast with Grant Cardone. What an OG. I love this dude. I I was consuming his audio books and as you can see this video got more than 100,000 views and it is like almost 2 hours duration. So, it's obviously packed with interesting ideas about the real estate market. And then bum, we scroll. We have five posts for social media that we can publish across LinkedIn, Instagram, Facebook, any platform that we want. The post number one, post number two. So, we have the visuals, we have the text, we have everything. So, cloud code is doing everything for us from one single prompt. It is very simple. I believe that prompt to generate this was just three sentences. This is nuts. I cannot believe. Another use case is called outreach. So basically I asked to generate a list of 100 target people on LinkedIn that we can actually DM. So it scraped all this information. Here's the first lead. Here's their niche. Here is their LinkedIn. So we can open it up. And here is the personalized opener. So it actually made a personalized direct message that we can send to them and will increase our chances of getting a reply. Then we can connect it to some cold outreach software and the campaign will get started. Right? And the final use case is that I asked it to analyze ads of my competitors that are being run on Facebook and Google. Look, these are ads from our competition. We can see how long they were running this one for 4 years. This sounds crazy. I I cannot believe it. Uh this one, let's say from Azizi. I know this company is a huge company here in Dubai. It was running for more than 200 days. Here are the engagement metrics of this ad and then AI analyzed all these ads inside what is going on actually and then it generated new concepts for us based on what is working best for our competition. Right? So all that was generated literally from one single prompt per task and you can set it up in less than 10 minutes. So to make cloud code capable of getting all these data and generating all these images and visuals, I connected it to just two APIs. It is very simple. The first one is API. This is the best API to scrape social media data, Facebook ads data, Google trends data. So anything when it comes to scraping, you should use this. You should never ask cloudcot scrape to me this website directly. It will not work out the way you want to. But this thing is awesome. I honestly I'm spending like I think 300 bucks per month on this API. I know I'm crazy, but you don't need to spend this crazy amount of money for these tasks that we just discussed. I think we spent maybe $3 something like that. So absolutely reasonable price. Instruction will be down below in terms of how you can get the API key for API, how you can set everything up. So don't worry, it is very easy. And the second part is Kai AI. So this is the API which is connecting you to the video generation and image generation. So you are getting access to video models to Nana Banana. So we connected that and that's it. Then we just build a project around our company. So I just told Claude that here's my company. I gave the website of Alington properties and I said scrape the website understand what we're doing. what is our business? Initialize the context and the reason for this project is to just grow our lead base, our client base using marketing efforts and then after the project was initialized, the cloud had all the contacts and then we can just give very human like instructions and by the way you can give them via voice. So we can dictate just like that. I'm using whisper flow. I'm just telling, hey, let's do competitor analysis on the Facebook ads. Scrape top ads from the real estate brokers here in Dubai. Look at what is working well. What are the ads that companies are running for a very long amount of time, look at the legit companies, analyze what are the hooks that are working the best and generate five new creatives for our company and output everything as a beautiful HTML website in our style and design. And I'm pressing this button. And then bum, the whole prompt is here. And I'm just pressing this. Let's go. And it will do the task. And just like that, you can automate all of your marketing efforts. And by the way, one important thing here in the reference tab. Let make it bigger. I just provided four reference images explaining the style of my brand. So here is one of the screenshots, another screenshot, another one, and the fourth one. I just made the screenshots from Instagram. So this is how I communicated the context. And this is how the system knew what is the vibe that I'm going after. So this is insanely simple. Check out the link in the down below. It is a short instruction how you can get started with this project. Set up the VS code this environment for cloud code. Then how you can actually start using cloud code. How you can initialize this project and start applying this to your business. Please don't waste this opportunity. Cloud code is insane right now and you don't need to be a software developer to use this. If you enjoy the video, subscribe to my channel. It will help me a lot. I will post so many more videos about clot code very

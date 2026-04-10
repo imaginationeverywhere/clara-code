@@ -1,0 +1,34 @@
+Title: What can our Hybrid Cloud do for you? Find out in this video!
+Video ID: qHepzdW38KA
+URL: https://www.youtube.com/watch?v=qHepzdW38KA
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] looking for a way to power your
+[00:01] cognitive applications and easily handle
+[00:03] workloads
+[00:04] the new census hybrid cloud is the
+[00:06] solution
+[00:07] made from the combination of usens and
+[00:09] the ibm cloud our hybrid cloud can
+[00:11] provide solutions across multiple
+[00:13] environments
+[00:14] capable of handling data intensive
+[00:15] workloads now
+[00:17] you can easily and efficiently build
+[00:19] deploy
+[00:20] and power new and emerging artificial
+[00:22] intelligence machine learning
+[00:23] and cognitive workloads our solutions
+[00:26] include integration
+[00:27] multi-cloud management cloud native
+[00:30] application
+[00:31] iaas data storage web hosting
+[00:34] and much more ready to accelerate your
+[00:36] next breakthrough with cognitive
+[00:38] computing services
+[00:39] visit www.usens.com
+
+--- Plain text ---
+looking for a way to power your cognitive applications and easily handle workloads the new census hybrid cloud is the solution made from the combination of usens and the ibm cloud our hybrid cloud can provide solutions across multiple environments capable of handling data intensive workloads now you can easily and efficiently build deploy and power new and emerging artificial intelligence machine learning and cognitive workloads our solutions include integration multi-cloud management cloud native application iaas data storage web hosting and much more ready to accelerate your next breakthrough with cognitive computing services visit www.usens.com

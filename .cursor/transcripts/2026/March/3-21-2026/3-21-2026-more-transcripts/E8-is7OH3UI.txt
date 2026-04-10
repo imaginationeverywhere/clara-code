@@ -1,0 +1,578 @@
+Title: Why Your AI Agents Keep Forgetting (And How To Fix That) - Vasilije Markovic (Cognee)
+Video ID: E8-is7OH3UI
+URL: https://www.youtube.com/watch?v=E8-is7OH3UI
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] [music]
+[00:02] So hi everyone. I'm uh Vasili. You can
+[00:05] [music] call me Vas if it's uh too
+[00:07] complicated. Uh I have too many
+[00:09] consonants in my name. Uh so uh yeah,
+[00:12] I'm originally from Montenegro, been in
+[00:15] Berlin for 10 plus years and we are
+[00:17] based in Berlin and San Francisco and I
+[00:19] started Cognney uh a while back. We are
+[00:22] memory layer for AI apps and agents. And
+[00:24] today I'll be showing you a demo of a
+[00:26] couple of agents using memory and
+[00:29] figuring out what's going on on a
+[00:30] problem uh that uh many of you have seen
+[00:33] or or experienced yourself. Who we are
+[00:37] is a team of around 12 people right now.
+[00:40] Um we have a couple of researchers,
+[00:43] couple of uh people on the business
+[00:44] side. Uh but mostly we are techies. We
+[00:47] are building Cognney as um yeah a tool
+[00:50] for last two years where I started in my
+[00:53] bedroom and now we managed to get to u
+[00:56] let's say um 10,000 GitHub stars and
+[00:59] around half a million runs of our SDK a
+[01:01] month based on the telemetry half of the
+[01:03] tele people turn off telemetry so
+[01:05] hopefully it's more uh but yeah uh in
+[01:08] the end um we are also not alone uh we
+[01:11] have people backing us we just closed
+[01:13] the funding round with Pebble Bed uh
+[01:15] that's the founders of for former
+[01:17] founder of OpenAI and a former founder
+[01:19] of Facebook AI research. We have some uh
+[01:22] let's say uh good support from the
+[01:24] people in academic side. Ian and Dan are
+[01:28] from Berkeley and Brown neuroscientists
+[01:30] and our plays pretty much uh move past
+[01:34] this traditional memory solutions and
+[01:37] get neuroscience inspired approaches
+[01:39] that can work in production. We have a
+[01:41] couple of great angels Magdi Yan and
+[01:44] Alex. Alex Dean you might have known
+[01:46] from London he's he's around on every
+[01:48] meetup I feel uh these days and as we
+[01:52] talk about what is the problem we are
+[01:54] solving we are trying to effectively
+[01:56] address this issue that uh back two
+[01:59] three years ago what people try to do is
+[02:01] to bring their let's say data to the
+[02:03] LLMs with a static rag so they would
+[02:06] load data to some vector store they
+[02:08] would embed it they would load that into
+[02:10] the context of the LLM and then when you
+[02:12] say to the LLM something with the right
+[02:14] uh information and ask for a response,
+[02:16] it will respond. The problem with that
+[02:19] is the static approaches didn't really
+[02:21] work out because you couldn't really
+[02:22] refresh, update and know what's really
+[02:24] going on. So people move towards the
+[02:26] dynamic rag. Dynamic is the data gets
+[02:30] refreshed as it gets updated in the
+[02:31] source systems, data warehouses and
+[02:33] everything in between. But also that
+[02:35] didn't really work since if you're
+[02:37] searching for an Apple, it could be an
+[02:38] Apple computer in your organization, it
+[02:41] could be an physical Apple someone
+[02:42] mentioned in some Slack somewhere. All
+[02:44] of that uh led to rag not really working
+[02:47] out as we needed it. On the other side,
+[02:49] Agentic systems as they became more
+[02:51] popular could solve more and more things
+[02:53] out of the box with better models, but
+[02:56] they couldn't really keep the state.
+[02:58] They uh would forget about every session
+[03:00] and they would not really know what's
+[03:01] happening if you turn them on like
+[03:03] three, four weeks later. And uh we
+[03:05] wanted to solve both of those issues. So
+[03:07] solve the rag issue on one side where we
+[03:10] wanted to create a layer of
+[03:12] representation of memory above it. And
+[03:15] uh second piece is that we wanted to
+[03:16] solve the statelessness of AI agents
+[03:19] since our big bet is that uh something
+[03:21] like Cogni would be needed for all the
+[03:23] agents to run in production in thousands
+[03:25] of agents communicating to each other.
+[03:27] they would need some type of a memory
+[03:29] solution that's more than rack and
+[03:31] that's more than uh what typical data
+[03:32] warehouses can offer. So that's the base
+[03:36] problem we are solving and um we are
+[03:38] solving it to effectively make sure that
+[03:41] uh we can deliver the knowledge to the
+[03:44] AI agents in a structured way where year
+[03:47] and revenue can mean different things
+[03:49] where each session can require different
+[03:51] context input and over and over again
+[03:54] and then these agents need to also
+[03:55] maintain and update and handle this data
+[03:58] in various types of ways um in order to
+[04:01] be able to effectively process the
+[04:03] feedback they're getting from the
+[04:04] external systems from other agents and
+[04:07] then from the source systems that
+[04:08] provide the data. So to do that um we
+[04:13] create knowledge graphs on top of the
+[04:15] embeddings. We use Neoforj for that. So
+[04:17] you saw it on my beginning slide. Uh we
+[04:20] use other stores although uh Neoforj
+[04:22] works best and it's a sponsor of this
+[04:23] meetup. So uh just just stating it that
+[04:26] way. Uh and then um as we talk about
+[04:29] these knowledge graphs they are really
+[04:31] difficult to construct at times right.
+[04:33] So you need to manually update them,
+[04:35] handle them and and deal with them. And
+[04:37] what we do to uh simplify that is we
+[04:40] built a whole framework that allows you
+[04:42] to just use simple Python and pedantic
+[04:44] structures to create and maintain and
+[04:46] update these knowledge graphs with a lot
+[04:48] of elements that allow you auto updates
+[04:51] and feedback that can be fed into the
+[04:53] system to readjust the things that you
+[04:56] don't want to manually change. So um a
+[04:59] few things ontologies feedback uh
+[05:01] knowledge graphs that's that's what we
+[05:03] are about at this point and I'm going to
+[05:05] show this on a small example of a user
+[05:09] who lost uh suddenly the access to their
+[05:12] workspace. So imagine that case it
+[05:15] probably happened to you sometimes in
+[05:16] the past. Um you have some SAS that
+[05:18] you're paying for. You lost access. you
+[05:20] need to write to the customer support
+[05:22] and then uh this customer support in the
+[05:25] future and maybe even now depending on
+[05:27] the level of technical maturity of
+[05:29] different teams can be run by agents.
+[05:31] Right? So uh this customer support and
+[05:34] um the problem of uh reconciling what
+[05:38] happened is still currently mostly done
+[05:41] by humans on some higher level. But what
+[05:43] we are trying to demonstrate here is
+[05:45] just a simple case where if an incident
+[05:47] starts some supervisor agent needs to
+[05:50] reconstruct what changed in billing
+[05:52] systems in different scattered systems
+[05:54] and then suggest the solution. So I'll
+[05:58] guide you through and run this code and
+[06:00] and guide you through the code but maybe
+[06:01] it's easier to just kind of see it on
+[06:03] the slide first. So let's say we have
+[06:05] some type of a customer that some uh
+[06:07] corporation uh this corporation has a
+[06:09] problem with active subscription. What
+[06:11] they currently see is that they are
+[06:13] downgraded and blocked. They cannot
+[06:15] really access the tool. What they're
+[06:18] supposed to have is the full workspace
+[06:20] access. Now they can share about some
+[06:23] inputs. Typically you would open a
+[06:25] ticket with any type of a customer
+[06:26] support and you would say that hey I
+[06:28] paid but I can't access this. Uh what
+[06:30] happened? Can I get this? It's urgent my
+[06:33] boss la. So the data that exists about
+[06:37] these people in a typical system like
+[06:39] this would be some type of contract
+[06:41] terms or some type of let's say meta
+[06:42] store that stipulates the rule of the
+[06:44] system. We often talk about ontologies
+[06:46] in that context. There might be some
+[06:48] billing records, invoices, payments, um
+[06:51] account statuses. They would live in
+[06:53] some type of a relational store. They
+[06:55] might be in PDF somewhere depending on
+[06:56] the level of technical maturity of the
+[06:58] organization. And you might have some
+[07:01] type of um workspace entitlement state
+[07:03] that's some type of a production DB
+[07:05] saying that what's a current access
+[07:07] level what flags are being applied what
+[07:09] seat limits are there and what should
+[07:11] you actually um have offer to this user
+[07:14] based on the on the use on the payment
+[07:18] of the on of the invoice. So what we
+[07:21] will let agents do here is connect the
+[07:23] scatter data that might exist in
+[07:25] different types of data silos or stores
+[07:27] and then uh we would try to let agents
+[07:30] also reason and provide feedback on this
+[07:32] data and then on top of that uh they
+[07:35] would add that feedback to the system
+[07:37] changing the internal structures of this
+[07:39] data based on this customer's feedback
+[07:41] and then effectively continue and try to
+[07:44] understand with the supervisor agent and
+[07:46] connect all the dots of what happened.
+[07:49] So
+[07:50] agents and uh so with this agents that
+[07:54] uh we're the agents we're talking about
+[07:56] are the billing agent, support agent and
+[07:58] supervisor agent. Um the billing uh
+[08:02] agent is effectively um just
+[08:05] understanding what happened on the
+[08:06] transaction side. Support agent is
+[08:08] reacting to the support request from the
+[08:10] customer and then supervisor agent is
+[08:12] stitching these signals and trying to
+[08:14] understand and see what the next action
+[08:16] would be. So um support agents asks
+[08:19] what's the customer seeing where and how
+[08:22] billing agent is updating plans and
+[08:24] seats and checking the invoices and
+[08:26] workspace agent is checking what is the
+[08:29] current entitlements what changed when
+[08:31] and why so this can be stopped in the in
+[08:33] the future. So um effectively let's
+[08:37] let's go through the example might be
+[08:39] easier at this point and then I can go
+[08:42] back to the slides.
+[08:45] So uh what we have here is um a mock of
+[08:50] all of the information. This is
+[08:51] published on our GitHub under Cognney
+[08:54] Langraph project since we worked with
+[08:56] Langraph agent. So you can run this
+[08:58] yourself. You just need an open AI API
+[09:00] key or any other type of an LLM you want
+[09:03] to use you can use. And what we do
+[09:05] initially uh at this stage is and I'm
+[09:08] not going to go too much in depth over
+[09:09] this one. I just preloaded all of the
+[09:12] let's say mock relational database
+[09:15] information unstructured data in a
+[09:18] certain uh let's say memory domains that
+[09:21] the agents can access later. So Cogni
+[09:24] has um three four commands to do this.
+[09:28] Basically you start by adding which
+[09:30] registers the data and then after that
+[09:32] you do the cognify which is a
+[09:34] transformation event that turns the data
+[09:36] into graph vector representation using
+[09:38] the default cognitive pipeline called
+[09:40] cognify. After we do this uh then we can
+[09:43] effectively search and in this case you
+[09:46] can run it and check if the data is
+[09:48] loaded correctly and the search can be
+[09:50] on what we call memory layers. So in
+[09:53] this case we can have some type of a
+[09:54] subscription core layer uh billing
+[09:57] finance layer tickets layer contracts
+[09:59] layer so we can isolate these memory
+[10:01] domains in a soft and hard way and
+[10:04] understand where to store these
+[10:06] different graph vector representations
+[10:07] in the space. Now the fun part is the
+[10:10] agents themselves. So I'll open the
+[10:15] agents and then we can see that
+[10:19] um this ba base class of a SAS agent is
+[10:23] uh we just use a typical langraph react
+[10:25] agent for this one. This uh base class
+[10:28] is just there for us to allow us to
+[10:30] query and um interact with the database.
+[10:34] Next level would be to have the React
+[10:37] agent do more reasoning or talk to other
+[10:39] agents directly. But I didn't get to it
+[10:42] unfortunately. So we give it some
+[10:44] prompt. We say hey uh you need to search
+[10:47] the knowledge base using the search
+[10:49] tool. We define Cogni search tool just
+[10:52] wrapping around Cogniz API. Um do not uh
+[10:55] specify um the information on the
+[10:58] parameters. Um use the sessions. So each
+[11:01] agent can have its own independent
+[11:02] session where it's storing the reasoning
+[11:05] information and then it can have a
+[11:07] permanent memory where it can store the
+[11:08] other part of info. So we are just
+[11:10] trying to make sure it's using the right
+[11:11] memory domain. And then um we say that
+[11:14] it needs to be as specific as possible
+[11:16] to site the sources and uh if you don't
+[11:19] have enough information say so clearly
+[11:21] which is usually not working but hey and
+[11:24] then um we have two agents that inherit
+[11:27] from this agent class. We have a billing
+[11:28] agent in this case. Billing agent has
+[11:31] access to these specific data sets. So
+[11:34] we have in memory we don't want to have
+[11:36] a huge graph vector representation of
+[11:38] everything. We want to have these
+[11:39] isolation layers and Cogni supports that
+[11:42] natively. It's called note set. So you
+[11:43] can just easily um define the groups of
+[11:47] documents you want to load it together
+[11:49] and then uh you can put that in a
+[11:50] certain session and then uh this agent
+[11:53] has the billing agent has only access to
+[11:55] a part of the information. Why is this
+[11:57] so? Because in general terms, when
+[11:59] you're deploying an agent, you probably
+[12:00] don't want it to have full access, read
+[12:02] and write to everything. So, this is
+[12:04] just mocking this type of a scenario.
+[12:06] Now, the support agent has access to
+[12:09] only support information and then we
+[12:11] have the entitlement agent or SAS agent
+[12:14] that is the supervisor agent in this
+[12:17] case and he has access to everything. So
+[12:19] in this case now what we can do is um we
+[12:23] can effectively run this code where each
+[12:26] of the agents will investigate its own
+[12:28] issue try to understand what happened
+[12:30] provide feedback to update the memory
+[12:33] representation with the information he
+[12:35] found and and connect the dots and then
+[12:38] uh we would effectively give it to the
+[12:40] supervisor agent to proceed. I hardcoded
+[12:43] the outcomes of this so we could see the
+[12:46] differences in when feedback is provided
+[12:48] because sometimes agents provide right
+[12:49] feedback sometimes they don't. But in
+[12:52] the end um in the end we will just see
+[12:54] the final outcome of the supervisor
+[12:56] agent and what his conclusions are. So
+[12:58] let's run this and then we can see step
+[13:00] by step what each agent does.
+[13:06] So I'll show that here and I'll enter
+[13:08] the presentation mode since it might not
+[13:10] be
+[13:12] visible.
+[13:28] So we have now the
+[13:31] and so this is the agent investigation
+[13:34] demo and we are effectively checking for
+[13:37] the data.
+[13:42] So what's happening here is um
+[13:47] the billing agent is now trying to
+[13:49] understand um and searching for the
+[13:52] status of this invoice that got lost. So
+[13:54] we are now looking at hey uh this
+[13:56] invoice is reported by someone we want
+[13:59] to see what happens with it and he has
+[14:01] the access to the to the billing tables.
+[14:04] So it's going to take a bit um the
+[14:07] biggest uh bottleneck here is always the
+[14:09] LLM call. So OpenAI is at four to 8
+[14:11] seconds. So until you do all of these
+[14:13] correctly that's that's where you uh
+[14:16] wait a bit. But in the end we're going
+[14:19] to do a couple of these and then observe
+[14:21] how they go.
+[14:23] So what we are doing in this process now
+[14:25] is we have um search function cognisite.
+[14:28] So what you see it do is um it's
+[14:30] effectively retrieving information from
+[14:33] the vector store. Then it's surfacing up
+[14:36] to the graph. In the graph it's doing
+[14:38] some type of uh graph traversal and
+[14:39] retrieval. We have around 10 to 15 I
+[14:43] think at this point retrievers. Some are
+[14:45] specific to time awareness. Some are
+[14:48] doing more complex um some are doing
+[14:52] more complex analysis, others are like
+[14:55] chain of thought type of an approach
+[14:57] with the composition. So you have all
+[14:59] kinds of things and you can custom also
+[15:01] build those where you need them. Where
+[15:04] we get with this retrieval is um we get
+[15:07] to the search results where we see that
+[15:08] the invoice status is paid, the stripe
+[15:11] is captured uh and then uh the status of
+[15:15] invoice becomes clear to the agent. So
+[15:17] um the agent is now checking okay what's
+[15:20] happening with the billing account and
+[15:22] is there any issues with reconciliation
+[15:24] of this and then uh he's going to search
+[15:27] again and try to understand uh where uh
+[15:30] where the problem occurred. So by
+[15:32] connecting the dots and looking at the
+[15:33] billing account status of the invoice
+[15:35] and doing the LLM completion we
+[15:38] understand that we have a delayed
+[15:39] reconciliation on cleared uh that didn't
+[15:42] clear the status correctly. So
+[15:45] entitlement cache resync was required to
+[15:47] restore the product access. So
+[15:48] effectively one system didn't update the
+[15:51] other. We need to manually trigger the
+[15:53] update or ask the other agent that has
+[15:56] access to that to trigger that update.
+[15:58] So the right field in the database gets
+[16:00] populated. So with this um now the agent
+[16:04] would uh conclude its investigation and
+[16:07] then uh suggest what could be done
+[16:09] better in the future. provide that
+[16:11] feedback back and then um end up um
+[16:15] pretty much move we then move to the
+[16:16] next agent. So um here is the detailed
+[16:21] information based on the retrieval and
+[16:23] the agent is understanding what happened
+[16:26] with the status creating a summary
+[16:28] report and then uh would uh suggest
+[16:31] action items. So uh reconciliation was
+[16:34] completed with event pass due that was
+[16:36] cleared explicit event emission for
+[16:38] billing status change and reync of
+[16:40] entitlement is required to restore full
+[16:42] access. So this is pretty much the
+[16:45] suggestion. So based on his
+[16:46] investigation
+[16:48] um this is the outcome. The account
+[16:51] remained in the past due status after
+[16:53] the payment and this is an interesting
+[16:56] piece. So for future queries the agent
+[16:58] can now provide the information on uh
+[17:02] what it should do better. So it says I
+[17:04] will I should search invoice payment
+[17:07] status and billing account status. So
+[17:09] this in the next queries gets taken into
+[17:11] account. The web hook reconciliation
+[17:13] timing should be taken into account and
+[17:15] then any grace period rules that might
+[17:18] be in effect uh should be taken into
+[17:20] account and that's given back as a
+[17:22] feedback to the system which is going to
+[17:23] change the future queries. So you get to
+[17:26] the solution faster and then uh this is
+[17:29] being provided and then we would
+[17:31] replicate the the search and with the
+[17:35] search now we effectively get a better
+[17:38] answer with a repeated search because we
+[17:40] provided that feedback into the system
+[17:42] and here um pretty much the data is more
+[17:46] detailed and on point on what needs to
+[17:48] be done. The second agent, support
+[17:50] investigation agent, is going to do
+[17:52] pretty much the similar uh type of a um
+[17:55] query where it's going to try to
+[17:57] understand what issue is first reported,
+[18:00] try to get the information on that issue
+[18:02] and then interact with it and then try
+[18:05] to see what it finds out in the other
+[18:08] domains so it can provide the answer to
+[18:10] the user more effectively. And then um
+[18:14] what would happen with the supervisor
+[18:16] agent is pretty much following the
+[18:17] similar flow. So um so for us not to
+[18:20] wait for all of this to execute and and
+[18:23] uh since code is working I'm not I'm not
+[18:25] too ashamed. So I think we can move back
+[18:27] to the to going on a review of what
+[18:30] happened here and how it worked with the
+[18:32] with the deck or the presentation. So
+[18:36] again doing the research formulating the
+[18:38] proposal for formulating feedback going
+[18:41] into the loop and then uh moving to the
+[18:43] next one.
+[18:45] So let's see. So effectively what we saw
+[18:48] is that the billing agent is updating
+[18:50] plans and seats. Then the status paid
+[18:53] over due ding is being also updated
+[18:56] contract terms are being used as a
+[18:58] source of truth of what should be
+[18:59] correct at which stage of this process
+[19:01] for these agents. And then we also have
+[19:03] a timeline audit stream which I didn't
+[19:05] show you which shows each of the events
+[19:08] in a organized uh time representation.
+[19:10] So you can also log and understand what
+[19:12] happened over time. The supervisor agent
+[19:15] combines all of this and then shows
+[19:16] final results so we don't wait for all
+[19:18] these LLM calls to happen. I can also uh
+[19:21] share this after the the meetup.
+[19:24] Now I just got the logo rights from
+[19:26] buyer today since they're our client and
+[19:28] and I wanted to put that logo somewhere.
+[19:30] So I created this slide which is uh
+[19:32] pretty much uh useless uh here. Uh but
+[19:35] yeah uh forgive me. Um the point here is
+[19:38] uh what you just saw gets quite tricky
+[19:40] with uh more specific uh industry
+[19:44] requests and requirements. Maybe that's
+[19:46] just my message that I wanted to share.
+[19:48] For buyer we are doing scientific
+[19:50] hypothesis prediction where we are
+[19:51] decomposing elements of the scientific
+[19:53] hypothesis and then calculating future
+[19:56] possible states of these in the vector
+[19:58] space and it gets gets quite tricky on
+[20:00] what you can do with this type of
+[20:01] representation both on the graph and the
+[20:03] vector side. And then uh this is uh not
+[20:05] my formula. Our um lead data scientist
+[20:08] did it but effectively happy to also
+[20:10] talk about these more deeper cases but
+[20:13] where we are at this point now is we are
+[20:15] really working with clients that have
+[20:17] let's say more specific needs in domain
+[20:19] mapping in different memory domains like
+[20:21] finance or healthcare or legal where we
+[20:24] can effectively uh utilize the full uh
+[20:27] use of cognis. So the agents when they
+[20:29] access access what they need to access
+[20:30] and our pretty much specialty is this uh
+[20:33] memory representation that we are
+[20:35] building on top of this graph and vector
+[20:37] stores. So um currently we are open
+[20:41] source and we will be for many more
+[20:44] years. Um the idea here is um people can
+[20:48] contribute and many companies use us and
+[20:50] contributed to the rep or deploy us on
+[20:52] their side. These are just some of the
+[20:53] companies that we are working with or
+[20:56] collaborating with to build this and and
+[20:58] push it for the to the next step. Now,
+[21:00] um we have all these uh GitHub stars and
+[21:04] runs. So, if you feel like it, give us a
+[21:06] GitHub star or try the software. We have
+[21:08] a Discord channel that's active.
+[21:11] Although, I don't know how I feel about
+[21:12] Discord, but it works. Uh so, come by,
+[21:16] ask questions. We're always happy to
+[21:18] answer. Someone from the team is always
+[21:19] online or or it's me. And then uh where
+[21:22] we usually like to see people involved
+[21:24] is doing some type of contributions on
+[21:26] the community side, building memory subm
+[21:28] modules that that we define in the
+[21:30] contributing requests or asking us the
+[21:32] right questions where they start seeing
+[21:34] problems with Cogni scaling or doing
+[21:36] anything at that side. We have it
+[21:38] running with large volumes of data
+[21:39] already. But there is always edge cases
+[21:41] as you all know running something in
+[21:42] production. That's all from it for
+[21:44] today. Just wanted to kind of illustrate
+[21:46] how you can give agents memory. Um if
+[21:49] you have some questions uh please feel
+[21:51] free after. Yeah.
+[21:53] >> Thank you. Uh I have a question about
+[21:56] presentation. You showed that agent has
+[21:59] instructions for the next runs. Can you
+[22:01] save them so when on the next startup
+[22:04] they are stored somewhere and they like
+[22:07] saved for the future runs.
+[22:10] >> Yes, I forgot to show that and um thanks
+[22:13] to Neoforj again for uh being here with
+[22:16] us. You can joking uh you can see the
+[22:19] graph here. So you can already represent
+[22:22] the data with Cogni inside of the Neo4j
+[22:25] store per agent per session uh for
+[22:28] individual agents and isolate it that
+[22:30] way. So when it comes next time it would
+[22:32] already have this information back. So
+[22:33] you don't always have to start from the
+[22:35] fresh run. So this is just the
+[22:36] representation of everything it's seeing
+[22:38] right now. But you can isolate it quite
+[22:40] nicely.
+[22:42] [applause]
+[22:44] >> [music]
+[22:51] [music]
+
+--- Plain text ---
+[music] So hi everyone. I'm uh Vasili. You can [music] call me Vas if it's uh too complicated. Uh I have too many consonants in my name. Uh so uh yeah, I'm originally from Montenegro, been in Berlin for 10 plus years and we are based in Berlin and San Francisco and I started Cognney uh a while back. We are memory layer for AI apps and agents. And today I'll be showing you a demo of a couple of agents using memory and figuring out what's going on on a problem uh that uh many of you have seen or or experienced yourself. Who we are is a team of around 12 people right now. Um we have a couple of researchers, couple of uh people on the business side. Uh but mostly we are techies. We are building Cognney as um yeah a tool for last two years where I started in my bedroom and now we managed to get to u let's say um 10,000 GitHub stars and around half a million runs of our SDK a month based on the telemetry half of the tele people turn off telemetry so hopefully it's more uh but yeah uh in the end um we are also not alone uh we have people backing us we just closed the funding round with Pebble Bed uh that's the founders of for former founder of OpenAI and a former founder of Facebook AI research. We have some uh let's say uh good support from the people in academic side. Ian and Dan are from Berkeley and Brown neuroscientists and our plays pretty much uh move past this traditional memory solutions and get neuroscience inspired approaches that can work in production. We have a couple of great angels Magdi Yan and Alex. Alex Dean you might have known from London he's he's around on every meetup I feel uh these days and as we talk about what is the problem we are solving we are trying to effectively address this issue that uh back two three years ago what people try to do is to bring their let's say data to the LLMs with a static rag so they would load data to some vector store they would embed it they would load that into the context of the LLM and then when you say to the LLM something with the right uh information and ask for a response, it will respond. The problem with that is the static approaches didn't really work out because you couldn't really refresh, update and know what's really going on. So people move towards the dynamic rag. Dynamic is the data gets refreshed as it gets updated in the source systems, data warehouses and everything in between. But also that didn't really work since if you're searching for an Apple, it could be an Apple computer in your organization, it could be an physical Apple someone mentioned in some Slack somewhere. All of that uh led to rag not really working out as we needed it. On the other side, Agentic systems as they became more popular could solve more and more things out of the box with better models, but they couldn't really keep the state. They uh would forget about every session and they would not really know what's happening if you turn them on like three, four weeks later. And uh we wanted to solve both of those issues. So solve the rag issue on one side where we wanted to create a layer of representation of memory above it. And uh second piece is that we wanted to solve the statelessness of AI agents since our big bet is that uh something like Cogni would be needed for all the agents to run in production in thousands of agents communicating to each other. they would need some type of a memory solution that's more than rack and that's more than uh what typical data warehouses can offer. So that's the base problem we are solving and um we are solving it to effectively make sure that uh we can deliver the knowledge to the AI agents in a structured way where year and revenue can mean different things where each session can require different context input and over and over again and then these agents need to also maintain and update and handle this data in various types of ways um in order to be able to effectively process the feedback they're getting from the external systems from other agents and then from the source systems that provide the data. So to do that um we create knowledge graphs on top of the embeddings. We use Neoforj for that. So you saw it on my beginning slide. Uh we use other stores although uh Neoforj works best and it's a sponsor of this meetup. So uh just just stating it that way. Uh and then um as we talk about these knowledge graphs they are really difficult to construct at times right. So you need to manually update them, handle them and and deal with them. And what we do to uh simplify that is we built a whole framework that allows you to just use simple Python and pedantic structures to create and maintain and update these knowledge graphs with a lot of elements that allow you auto updates and feedback that can be fed into the system to readjust the things that you don't want to manually change. So um a few things ontologies feedback uh knowledge graphs that's that's what we are about at this point and I'm going to show this on a small example of a user who lost uh suddenly the access to their workspace. So imagine that case it probably happened to you sometimes in the past. Um you have some SAS that you're paying for. You lost access. you need to write to the customer support and then uh this customer support in the future and maybe even now depending on the level of technical maturity of different teams can be run by agents. Right? So uh this customer support and um the problem of uh reconciling what happened is still currently mostly done by humans on some higher level. But what we are trying to demonstrate here is just a simple case where if an incident starts some supervisor agent needs to reconstruct what changed in billing systems in different scattered systems and then suggest the solution. So I'll guide you through and run this code and and guide you through the code but maybe it's easier to just kind of see it on the slide first. So let's say we have some type of a customer that some uh corporation uh this corporation has a problem with active subscription. What they currently see is that they are downgraded and blocked. They cannot really access the tool. What they're supposed to have is the full workspace access. Now they can share about some inputs. Typically you would open a ticket with any type of a customer support and you would say that hey I paid but I can't access this. Uh what happened? Can I get this? It's urgent my boss la. So the data that exists about these people in a typical system like this would be some type of contract terms or some type of let's say meta store that stipulates the rule of the system. We often talk about ontologies in that context. There might be some billing records, invoices, payments, um account statuses. They would live in some type of a relational store. They might be in PDF somewhere depending on the level of technical maturity of the organization. And you might have some type of um workspace entitlement state that's some type of a production DB saying that what's a current access level what flags are being applied what seat limits are there and what should you actually um have offer to this user based on the on the use on the payment of the on of the invoice. So what we will let agents do here is connect the scatter data that might exist in different types of data silos or stores and then uh we would try to let agents also reason and provide feedback on this data and then on top of that uh they would add that feedback to the system changing the internal structures of this data based on this customer's feedback and then effectively continue and try to understand with the supervisor agent and connect all the dots of what happened. So agents and uh so with this agents that uh we're the agents we're talking about are the billing agent, support agent and supervisor agent. Um the billing uh agent is effectively um just understanding what happened on the transaction side. Support agent is reacting to the support request from the customer and then supervisor agent is stitching these signals and trying to understand and see what the next action would be. So um support agents asks what's the customer seeing where and how billing agent is updating plans and seats and checking the invoices and workspace agent is checking what is the current entitlements what changed when and why so this can be stopped in the in the future. So um effectively let's let's go through the example might be easier at this point and then I can go back to the slides. So uh what we have here is um a mock of all of the information. This is published on our GitHub under Cognney Langraph project since we worked with Langraph agent. So you can run this yourself. You just need an open AI API key or any other type of an LLM you want to use you can use. And what we do initially uh at this stage is and I'm not going to go too much in depth over this one. I just preloaded all of the let's say mock relational database information unstructured data in a certain uh let's say memory domains that the agents can access later. So Cogni has um three four commands to do this. Basically you start by adding which registers the data and then after that you do the cognify which is a transformation event that turns the data into graph vector representation using the default cognitive pipeline called cognify. After we do this uh then we can effectively search and in this case you can run it and check if the data is loaded correctly and the search can be on what we call memory layers. So in this case we can have some type of a subscription core layer uh billing finance layer tickets layer contracts layer so we can isolate these memory domains in a soft and hard way and understand where to store these different graph vector representations in the space. Now the fun part is the agents themselves. So I'll open the agents and then we can see that um this ba base class of a SAS agent is uh we just use a typical langraph react agent for this one. This uh base class is just there for us to allow us to query and um interact with the database. Next level would be to have the React agent do more reasoning or talk to other agents directly. But I didn't get to it unfortunately. So we give it some prompt. We say hey uh you need to search the knowledge base using the search tool. We define Cogni search tool just wrapping around Cogniz API. Um do not uh specify um the information on the parameters. Um use the sessions. So each agent can have its own independent session where it's storing the reasoning information and then it can have a permanent memory where it can store the other part of info. So we are just trying to make sure it's using the right memory domain. And then um we say that it needs to be as specific as possible to site the sources and uh if you don't have enough information say so clearly which is usually not working but hey and then um we have two agents that inherit from this agent class. We have a billing agent in this case. Billing agent has access to these specific data sets. So we have in memory we don't want to have a huge graph vector representation of everything. We want to have these isolation layers and Cogni supports that natively. It's called note set. So you can just easily um define the groups of documents you want to load it together and then uh you can put that in a certain session and then uh this agent has the billing agent has only access to a part of the information. Why is this so? Because in general terms, when you're deploying an agent, you probably don't want it to have full access, read and write to everything. So, this is just mocking this type of a scenario. Now, the support agent has access to only support information and then we have the entitlement agent or SAS agent that is the supervisor agent in this case and he has access to everything. So in this case now what we can do is um we can effectively run this code where each of the agents will investigate its own issue try to understand what happened provide feedback to update the memory representation with the information he found and and connect the dots and then uh we would effectively give it to the supervisor agent to proceed. I hardcoded the outcomes of this so we could see the differences in when feedback is provided because sometimes agents provide right feedback sometimes they don't. But in the end um in the end we will just see the final outcome of the supervisor agent and what his conclusions are. So let's run this and then we can see step by step what each agent does. So I'll show that here and I'll enter the presentation mode since it might not be visible. So we have now the and so this is the agent investigation demo and we are effectively checking for the data. So what's happening here is um the billing agent is now trying to understand um and searching for the status of this invoice that got lost. So we are now looking at hey uh this invoice is reported by someone we want to see what happens with it and he has the access to the to the billing tables. So it's going to take a bit um the biggest uh bottleneck here is always the LLM call. So OpenAI is at four to 8 seconds. So until you do all of these correctly that's that's where you uh wait a bit. But in the end we're going to do a couple of these and then observe how they go. So what we are doing in this process now is we have um search function cognisite. So what you see it do is um it's effectively retrieving information from the vector store. Then it's surfacing up to the graph. In the graph it's doing some type of uh graph traversal and retrieval. We have around 10 to 15 I think at this point retrievers. Some are specific to time awareness. Some are doing more complex um some are doing more complex analysis, others are like chain of thought type of an approach with the composition. So you have all kinds of things and you can custom also build those where you need them. Where we get with this retrieval is um we get to the search results where we see that the invoice status is paid, the stripe is captured uh and then uh the status of invoice becomes clear to the agent. So um the agent is now checking okay what's happening with the billing account and is there any issues with reconciliation of this and then uh he's going to search again and try to understand uh where uh where the problem occurred. So by connecting the dots and looking at the billing account status of the invoice and doing the LLM completion we understand that we have a delayed reconciliation on cleared uh that didn't clear the status correctly. So entitlement cache resync was required to restore the product access. So effectively one system didn't update the other. We need to manually trigger the update or ask the other agent that has access to that to trigger that update. So the right field in the database gets populated. So with this um now the agent would uh conclude its investigation and then uh suggest what could be done better in the future. provide that feedback back and then um end up um pretty much move we then move to the next agent. So um here is the detailed information based on the retrieval and the agent is understanding what happened with the status creating a summary report and then uh would uh suggest action items. So uh reconciliation was completed with event pass due that was cleared explicit event emission for billing status change and reync of entitlement is required to restore full access. So this is pretty much the suggestion. So based on his investigation um this is the outcome. The account remained in the past due status after the payment and this is an interesting piece. So for future queries the agent can now provide the information on uh what it should do better. So it says I will I should search invoice payment status and billing account status. So this in the next queries gets taken into account. The web hook reconciliation timing should be taken into account and then any grace period rules that might be in effect uh should be taken into account and that's given back as a feedback to the system which is going to change the future queries. So you get to the solution faster and then uh this is being provided and then we would replicate the the search and with the search now we effectively get a better answer with a repeated search because we provided that feedback into the system and here um pretty much the data is more detailed and on point on what needs to be done. The second agent, support investigation agent, is going to do pretty much the similar uh type of a um query where it's going to try to understand what issue is first reported, try to get the information on that issue and then interact with it and then try to see what it finds out in the other domains so it can provide the answer to the user more effectively. And then um what would happen with the supervisor agent is pretty much following the similar flow. So um so for us not to wait for all of this to execute and and uh since code is working I'm not I'm not too ashamed. So I think we can move back to the to going on a review of what happened here and how it worked with the with the deck or the presentation. So again doing the research formulating the proposal for formulating feedback going into the loop and then uh moving to the next one. So let's see. So effectively what we saw is that the billing agent is updating plans and seats. Then the status paid over due ding is being also updated contract terms are being used as a source of truth of what should be correct at which stage of this process for these agents. And then we also have a timeline audit stream which I didn't show you which shows each of the events in a organized uh time representation. So you can also log and understand what happened over time. The supervisor agent combines all of this and then shows final results so we don't wait for all these LLM calls to happen. I can also uh share this after the the meetup. Now I just got the logo rights from buyer today since they're our client and and I wanted to put that logo somewhere. So I created this slide which is uh pretty much uh useless uh here. Uh but yeah uh forgive me. Um the point here is uh what you just saw gets quite tricky with uh more specific uh industry requests and requirements. Maybe that's just my message that I wanted to share. For buyer we are doing scientific hypothesis prediction where we are decomposing elements of the scientific hypothesis and then calculating future possible states of these in the vector space and it gets gets quite tricky on what you can do with this type of representation both on the graph and the vector side. And then uh this is uh not my formula. Our um lead data scientist did it but effectively happy to also talk about these more deeper cases but where we are at this point now is we are really working with clients that have let's say more specific needs in domain mapping in different memory domains like finance or healthcare or legal where we can effectively uh utilize the full uh use of cognis. So the agents when they access access what they need to access and our pretty much specialty is this uh memory representation that we are building on top of this graph and vector stores. So um currently we are open source and we will be for many more years. Um the idea here is um people can contribute and many companies use us and contributed to the rep or deploy us on their side. These are just some of the companies that we are working with or collaborating with to build this and and push it for the to the next step. Now, um we have all these uh GitHub stars and runs. So, if you feel like it, give us a GitHub star or try the software. We have a Discord channel that's active. Although, I don't know how I feel about Discord, but it works. Uh so, come by, ask questions. We're always happy to answer. Someone from the team is always online or or it's me. And then uh where we usually like to see people involved is doing some type of contributions on the community side, building memory subm modules that that we define in the contributing requests or asking us the right questions where they start seeing problems with Cogni scaling or doing anything at that side. We have it running with large volumes of data already. But there is always edge cases as you all know running something in production. That's all from it for today. Just wanted to kind of illustrate how you can give agents memory. Um if you have some questions uh please feel free after. Yeah. >> Thank you. Uh I have a question about presentation. You showed that agent has instructions for the next runs. Can you save them so when on the next startup they are stored somewhere and they like saved for the future runs. >> Yes, I forgot to show that and um thanks to Neoforj again for uh being here with us. You can joking uh you can see the graph here. So you can already represent the data with Cogni inside of the Neo4j store per agent per session uh for individual agents and isolate it that way. So when it comes next time it would already have this information back. So you don't always have to start from the fresh run. So this is just the representation of everything it's seeing right now. But you can isolate it quite nicely. [applause] >> [music] [music]

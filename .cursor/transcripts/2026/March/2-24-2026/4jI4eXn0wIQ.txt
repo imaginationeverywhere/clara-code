@@ -1,0 +1,217 @@
+Title: OpenClaw Lossless Context: How It Works
+Video ID: 4jI4eXn0wIQ
+URL: https://www.youtube.com/watch?v=4jI4eXn0wIQ
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] My AI agent memory is broken. Pete
+[00:02] Steinberger, the creator of OpenClaw,
+[00:04] told everyone to install this plugin. I
+[00:06] don't know about you, but the longer I
+[00:07] talk to my OpenClaw, the more it seems
+[00:10] to forget. And I guess what's happening
+[00:12] is that it summarizes the conversations
+[00:14] and over that summarization or
+[00:16] compaction, it actually loses detail.
+[00:18] And so this plugin is apparently
+[00:20] supposed to fix that. [music] And the
+[00:21] install is literally just one line. But
+[00:23] the thing that surprised me is what
+[00:25] happens if you actually combine this
+[00:26] with Telegram topics. This is a little
+[00:28] bit crazy. and I'm curious to see what's
+[00:30] going to happen. So, let's go ahead and
+[00:31] dig in. So, this is your context window
+[00:33] and your token budget. And this is what
+[00:35] it normally happens. You have, you know,
+[00:36] help me set up a plan for a 3we solo
+[00:38] trip to Japan. And then the agent
+[00:40] responds with like, great. And then, so
+[00:42] you see you use 140 tokens. And the next
+[00:44] one there use about 520. And if you keep
+[00:47] scrolling down, boom, you start to get
+[00:49] pretty close to the threshold, which is
+[00:50] 1,700, about 86%. Right? So, you have
+[00:53] all these turns. And what you end up
+[00:54] doing, uh, you want to basically make
+[00:57] one flat summary. So everything is
+[00:58] replaced by a single summary. Uh and the
+[01:00] space is basically now reclaimed. Uh but
+[01:03] the details are lost. A flat summary
+[01:04] can't hold the fidelity of a long
+[01:06] conversation and the model will
+[01:08] confidently um misremember specifics and
+[01:12] contradict earlier decisions. So that's
+[01:14] the problem that I've been having. So
+[01:15] LCM starts the same way, a conversation
+[01:18] accumulating messages, but instead of
+[01:19] truncating, it compacts them into
+[01:22] layered summaries [music] where nothing
+[01:23] is ever lost. So the fresh tail is an
+[01:25] interesting concept here, right? So, uh,
+[01:27] the LCM always protects the most recent
+[01:29] raw messages with the fresh tail. These
+[01:31] are never compacted. When raw messages
+[01:33] outside of the fresh tail exceed 2,000
+[01:35] tokens, the LCM, which is the plugin,
+[01:39] uh, fires, an incremental compaction
+[01:40] happens. And so, this happens
+[01:42] asynchronously. So, your conversation
+[01:43] isn't interrupted. It's almost like an
+[01:45] index, right? If there's something in
+[01:47] the conversation that kind of has to go
+[01:48] back and reference that, you have all
+[01:50] these different compactions. So this
+[01:52] node that's here shows a big summary
+[01:54] depth of like basically this could be an
+[01:56] entire day. This can be an entire like
+[01:58] huge lengths of conversations and this
+[02:00] is how it has a relationship to all the
+[02:02] data and it still has access to go down
+[02:04] to all those specific conversations. So
+[02:06] to install the plugin you just have to
+[02:08] go to openclaw plugins install and just
+[02:11] point it at this. Okay. Plugins install
+[02:13] restart the gateway to load the plugins.
+[02:15] Lossless claw. Cool. It compacts
+[02:17] conversation history into summaries so
+[02:18] context doesn't get lost when the window
+[02:20] fills up. It's installed and running and
+[02:22] it's fresh, but we'll need to keep
+[02:24] talking and context compaction happens.
+[02:26] It looks like it's just kind of starting
+[02:27] from whenever you install it going
+[02:29] forward. So, QMD is the long-term memory
+[02:31] and LCM saves the data in conversation
+[02:33] detail that gets squeezed out during
+[02:35] compactions. I like to work in projects.
+[02:37] So, I recently just set up inside of my
+[02:40] open claw in Telegram is the ability to
+[02:43] to for my agent to work in groups. I
+[02:45] just set one up for the the Nebus
+[02:47] hackathon. So, that's an interesting
+[02:49] thing that I'm working on there. So, I
+[02:51] want to research things and keep all
+[02:52] that stuff specific to that topic just
+[02:55] in there. So, that way I don't have to
+[02:57] scroll up in the chat and go back to
+[02:58] that section. What's promising is that
+[03:00] fact that like in that one topic, I can
+[03:03] just go on forever and it'll have
+[03:05] everything I need already organized in
+[03:06] that conversation. So, each topic gets
+[03:08] appended making it a unique session. So,
+[03:10] Nebius hackathon topic gets its own
+[03:12] session in its own context. I share the
+[03:14] same brain but each topic gets its own
+[03:15] conversation in its own history. By
+[03:17] default, each session compaction gets
+[03:18] stored separately in LCM, but LCM tools
+[03:21] have all conversations flagged. So, LCM
+[03:23] GRP will search across all sessions.
+[03:27] Oh, this is interesting. This is really
+[03:29] cool to know. And the practical flow is
+[03:31] that you're in a hackathon topic. What
+[03:32] was the rental comp data we looked at? I
+[03:34] run LCM all conversations rental comp.
+[03:37] It finds compacted data in RDM. I expand
+[03:39] upon it and give you the answer. That's
+[03:42] actually really really cool. An
+[03:43] advantage of this is like for example
+[03:45] like I'm talking in one topic inside of
+[03:48] you know like hackathon stuff but then I
+[03:50] need something from a different thing
+[03:51] that I'm looking at in the health and
+[03:53] fitness stuff right so like I want to
+[03:54] pull some of that stuff in all I just
+[03:56] have to do is just talk about it and
+[03:57] because the LCM plugin is already there
+[04:00] it's going to go find it for us which is
+[04:01] going to be really cool and pull in that
+[04:03] thing and pull in the reverence stuff
+[04:04] for the conversation you generally don't
+[04:06] need to tweak these things you can make
+[04:08] it longer for example if you have lots
+[04:09] of long in-depth conversations that you
+[04:11] still want to keep fresh you and change
+[04:13] that there. Uh, you can change the
+[04:15] context threshold, too. So, at 75%, it's
+[04:17] going to do this like context compaction
+[04:19] thing. Um, so you can change that, but
+[04:21] that's the default for now. And then
+[04:23] here's the plug-in config if we wanted
+[04:24] to do this by hand. So, if we wanted to
+[04:26] like make our trail count a little bit
+[04:28] different. So, one of the things I also
+[04:29] wanted to show y'all is this this Chrome
+[04:31] thing, which is kind of mindboggling
+[04:32] right now. in Chrome to set this up with
+[04:36] OpenClaw. In order for you to do this,
+[04:37] basically you inspect Chrome remote
+[04:39] debugging, enable remote debugging, keep
+[04:41] Chrome running and approve the
+[04:43] connection prompt when openclaw
+[04:44] attaches. [music] And once you do that,
+[04:46] um, like the expost that announced it in
+[04:50] this way, it says live Chrome session
+[04:51] attach real login one toggle zero
+[04:54] extensions. And so this will allow for
+[04:57] the remote debugging to happen. Make
+[04:59] sure you check this. It's going to be
+[05:00] like yes, I could do it. just say update
+[05:02] my open claw to the latest version. Now
+[05:05] anything that you're logged into
+[05:07] whatever it's going to behave just like
+[05:08] it is. So right now I'm going to say can
+[05:10] you open chrome and oh go to eball.
+[05:15] I want to go to my uh soccer game.
+[05:19] So we should be able to play live.
+[05:20] [laughter]
+[05:21] That'd be fire. Let's see. Let's play
+[05:24] the game right now. I'm going to play on
+[05:25] my phone. This is this is fire right
+[05:27] now. Let's go. You're on the open AI
+[05:29] team. Match started. I want to see if it
+[05:31] can play. Can you play? You are stuck
+[05:35] there. Let's see. By the time I process
+[05:36] the move, the ball's already on the side
+[05:38] of the field. I probably shouldn't be
+[05:39] using Opus for this, by the way. Like,
+[05:41] this is kind of insane, actually. This
+[05:43] is basically how your Open Claw now just
+[05:45] if you update to the latest update 3.13.
+[05:48] You can now have your OpenClaw control
+[05:50] your browser. Wait, so hold up. You mean
+[05:52] there's one plugin and this one line to
+[05:56] install everything will just fix the
+[05:57] memory all in one shot? It seems too
+[05:59] good to be true. So, if you want to get
+[06:00] this going, all you have to do is just
+[06:02] run that one line and it should install
+[06:04] LCM and get you going in 30 seconds.
+[06:06] It's that easy. And if you're not using
+[06:08] Telegram topics to organize your
+[06:10] projects yet, go ahead and get that set
+[06:11] up. This cross reference thing seems
+[06:14] pretty fire. I just installed this and
+[06:16] got it set up, so I'll let you know how
+[06:18] things are going after a couple days and
+[06:19] see how this actually ends up working
+[06:21] out over long conversations. It seems
+[06:23] very promising to me. And look, I don't
+[06:24] know about you, it's just sometimes
+[06:26] really hard to keep up with all the
+[06:27] changes that are moving. a new plugin, a
+[06:29] new workflow. Somebody says this, who
+[06:32] knows? But what I do is I stream live
+[06:34] every single weekend. [music] And so you
+[06:36] can just check out startmy.ai and just
+[06:38] put your name on the email list. It's
+[06:40] free. And that'll allow you to join our
+[06:42] community and we'll be able to connect
+[06:45] and build more together. All right,
+[06:46] y'all. Let's keep cooking.
+
+--- Plain text ---
+My AI agent memory is broken. Pete Steinberger, the creator of OpenClaw, told everyone to install this plugin. I don't know about you, but the longer I talk to my OpenClaw, the more it seems to forget. And I guess what's happening is that it summarizes the conversations and over that summarization or compaction, it actually loses detail. And so this plugin is apparently supposed to fix that. [music] And the install is literally just one line. But the thing that surprised me is what happens if you actually combine this with Telegram topics. This is a little bit crazy. and I'm curious to see what's going to happen. So, let's go ahead and dig in. So, this is your context window and your token budget. And this is what it normally happens. You have, you know, help me set up a plan for a 3we solo trip to Japan. And then the agent responds with like, great. And then, so you see you use 140 tokens. And the next one there use about 520. And if you keep scrolling down, boom, you start to get pretty close to the threshold, which is 1,700, about 86%. Right? So, you have all these turns. And what you end up doing, uh, you want to basically make one flat summary. So everything is replaced by a single summary. Uh and the space is basically now reclaimed. Uh but the details are lost. A flat summary can't hold the fidelity of a long conversation and the model will confidently um misremember specifics and contradict earlier decisions. So that's the problem that I've been having. So LCM starts the same way, a conversation accumulating messages, but instead of truncating, it compacts them into layered summaries [music] where nothing is ever lost. So the fresh tail is an interesting concept here, right? So, uh, the LCM always protects the most recent raw messages with the fresh tail. These are never compacted. When raw messages outside of the fresh tail exceed 2,000 tokens, the LCM, which is the plugin, uh, fires, an incremental compaction happens. And so, this happens asynchronously. So, your conversation isn't interrupted. It's almost like an index, right? If there's something in the conversation that kind of has to go back and reference that, you have all these different compactions. So this node that's here shows a big summary depth of like basically this could be an entire day. This can be an entire like huge lengths of conversations and this is how it has a relationship to all the data and it still has access to go down to all those specific conversations. So to install the plugin you just have to go to openclaw plugins install and just point it at this. Okay. Plugins install restart the gateway to load the plugins. Lossless claw. Cool. It compacts conversation history into summaries so context doesn't get lost when the window fills up. It's installed and running and it's fresh, but we'll need to keep talking and context compaction happens. It looks like it's just kind of starting from whenever you install it going forward. So, QMD is the long-term memory and LCM saves the data in conversation detail that gets squeezed out during compactions. I like to work in projects. So, I recently just set up inside of my open claw in Telegram is the ability to to for my agent to work in groups. I just set one up for the the Nebus hackathon. So, that's an interesting thing that I'm working on there. So, I want to research things and keep all that stuff specific to that topic just in there. So, that way I don't have to scroll up in the chat and go back to that section. What's promising is that fact that like in that one topic, I can just go on forever and it'll have everything I need already organized in that conversation. So, each topic gets appended making it a unique session. So, Nebius hackathon topic gets its own session in its own context. I share the same brain but each topic gets its own conversation in its own history. By default, each session compaction gets stored separately in LCM, but LCM tools have all conversations flagged. So, LCM GRP will search across all sessions. Oh, this is interesting. This is really cool to know. And the practical flow is that you're in a hackathon topic. What was the rental comp data we looked at? I run LCM all conversations rental comp. It finds compacted data in RDM. I expand upon it and give you the answer. That's actually really really cool. An advantage of this is like for example like I'm talking in one topic inside of you know like hackathon stuff but then I need something from a different thing that I'm looking at in the health and fitness stuff right so like I want to pull some of that stuff in all I just have to do is just talk about it and because the LCM plugin is already there it's going to go find it for us which is going to be really cool and pull in that thing and pull in the reverence stuff for the conversation you generally don't need to tweak these things you can make it longer for example if you have lots of long in-depth conversations that you still want to keep fresh you and change that there. Uh, you can change the context threshold, too. So, at 75%, it's going to do this like context compaction thing. Um, so you can change that, but that's the default for now. And then here's the plug-in config if we wanted to do this by hand. So, if we wanted to like make our trail count a little bit different. So, one of the things I also wanted to show y'all is this this Chrome thing, which is kind of mindboggling right now. in Chrome to set this up with OpenClaw. In order for you to do this, basically you inspect Chrome remote debugging, enable remote debugging, keep Chrome running and approve the connection prompt when openclaw attaches. [music] And once you do that, um, like the expost that announced it in this way, it says live Chrome session attach real login one toggle zero extensions. And so this will allow for the remote debugging to happen. Make sure you check this. It's going to be like yes, I could do it. just say update my open claw to the latest version. Now anything that you're logged into whatever it's going to behave just like it is. So right now I'm going to say can you open chrome and oh go to eball. I want to go to my uh soccer game. So we should be able to play live. [laughter] That'd be fire. Let's see. Let's play the game right now. I'm going to play on my phone. This is this is fire right now. Let's go. You're on the open AI team. Match started. I want to see if it can play. Can you play? You are stuck there. Let's see. By the time I process the move, the ball's already on the side of the field. I probably shouldn't be using Opus for this, by the way. Like, this is kind of insane, actually. This is basically how your Open Claw now just if you update to the latest update 3.13. You can now have your OpenClaw control your browser. Wait, so hold up. You mean there's one plugin and this one line to install everything will just fix the memory all in one shot? It seems too good to be true. So, if you want to get this going, all you have to do is just run that one line and it should install LCM and get you going in 30 seconds. It's that easy. And if you're not using Telegram topics to organize your projects yet, go ahead and get that set up. This cross reference thing seems pretty fire. I just installed this and got it set up, so I'll let you know how things are going after a couple days and see how this actually ends up working out over long conversations. It seems very promising to me. And look, I don't know about you, it's just sometimes really hard to keep up with all the changes that are moving. a new plugin, a new workflow. Somebody says this, who knows? But what I do is I stream live every single weekend. [music] And so you can just check out startmy.ai and just put your name on the email list. It's free. And that'll allow you to join our community and we'll be able to connect and build more together. All right, y'all. Let's keep cooking.

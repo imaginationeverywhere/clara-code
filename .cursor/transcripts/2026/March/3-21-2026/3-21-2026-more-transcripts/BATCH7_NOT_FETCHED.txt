@@ -1,0 +1,36 @@
+Batch 7 (2026-03-21): transcripts were not downloaded from this environment.
+
+Reason: YouTube returned IpBlocked (youtube-transcript-api) and HTTP 429 (yt-dlp subtitle URLs). That usually happens from cloud/datacenter IPs or after rate limits.
+
+Videos (7):
+
+1. LvLdNkgO-N0 — The senior engineer's guide to AI coding: Context loading, custom hooks, and automation
+   https://www.youtube.com/watch?v=LvLdNkgO-N0
+
+2. oOVJgfCqyUQ — How to Run Claude Code for Free (2 Methods)
+   https://www.youtube.com/watch?v=oOVJgfCqyUQ
+
+3. MppKHh_MfFc — Everyone Uses GSD. Smart Devs Use PAUL.
+   https://www.youtube.com/watch?v=MppKHh_MfFc
+
+4. CXeCIgc982I — The Claude Code Skills Trap (Most People Fall For This)
+   https://www.youtube.com/watch?v=CXeCIgc982I
+
+5. ZNIsMt8LMF0 — Qwen3.5 + Claude-4.6-Opus-Reasoning = Another Anthropic FREE Open Source Claude Model
+   https://www.youtube.com/watch?v=ZNIsMt8LMF0
+
+6. 5lrMdq-HdZc — Claude Code + Remotion = Unlimited Shorts
+   https://www.youtube.com/watch?v=5lrMdq-HdZc
+
+7. g_xXfPHfFuE — Claude Code FULL COURSE 3 Hours — (Build & Automate Anything)
+   https://www.youtube.com/watch?v=g_xXfPHfFuE
+
+Fix: on your local machine (home/residential IP), run:
+
+  cd .cursor/transcripts/3-21-2026-more-transcripts
+  python3 -m venv .venv-fetch && .venv-fetch/bin/pip install -q youtube-transcript-api
+  .venv-fetch/bin/python fetch_batch7_2026-03-21.py
+
+Or use the existing venv at ../3-21-2026/.venv-transcribe if youtube-transcript-api is installed:
+
+  ../3-21-2026/.venv-transcribe/bin/python fetch_batch7_2026-03-21.py

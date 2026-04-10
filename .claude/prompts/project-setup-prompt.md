@@ -1,0 +1,1 @@
+Create a Next.js app with TypeScript, ESLint, TailwindCSS, Better Auth, Neon PostgreSQL, Drizzle ORM, and Zustand. Also define a products table, seed sample Nike items, and render it on homepage that queries the DB with Drizzle and renders the list.

@@ -1,0 +1,11 @@
+{
+  "name": "frontend-design",
+  "version": "1.0.0",
+  "description": "Create distinctive, production-grade frontend interfaces that avoid generic AI aesthetics",
+  "author": {
+    "name": "Prithvi Rajasekaran & Alexander Bricken",
+    "email": "prithvi@anthropic.com"
+  },
+  "integration": "boilerplate",
+  "compatible_with": ["claude-code", "cursor"]
+}

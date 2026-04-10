@@ -1,0 +1,363 @@
+Title: Anthropic's Engineers Hit the Same Wall You Did — Here's Their Fix
+Video ID: AURa5oPVvaE
+URL: https://www.youtube.com/watch?v=AURa5oPVvaE
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] So, the people who built Claude
+[00:02] published a blog post admitting their
+[00:05] own agent breaks the same way yours
+[00:07] does, and their fix looks almost exactly
+[00:10] like something you've probably already
+[00:12] started building. You just didn't know
+[00:15] it yet. Just real quick, I'm Daniel.
+[00:18] Been deep in iOS for over eight years.
+[00:20] Freelanced, bounced between client
+[00:23] projects, all of that. And then dubdub
+[00:26] 25 hit and I just went that's it going
+[00:30] solo. Since then I've crafted over 15 of
+[00:33] my own apps all swift UI all shipped in
+[00:36] public. And it's not about cranking out
+[00:39] quick MVPs or dumping AI slop onto the
+[00:42] app store. It's about building things
+[00:45] that actually hold up and scale and all
+[00:48] of that. And every system, every
+[00:50] workflow, every file, it lives on
+[00:53] Crafter's Lab. my actual home base, not
+[00:56] a tutorial site, not some AI clone farm.
+[01:00] It's built for solo devs who use AI like
+[01:03] a real teammate, not like a vending
+[01:06] machine you press and hope. If you're
+[01:08] serious about building with care and
+[01:10] actually leveling up your craft, you'll
+[01:13] feel right at home. And if you're still
+[01:15] on Patreon, huge thanks. Uh, but heads
+[01:18] up, everything's moved to
+[01:20] crafterslab.dev.
+[01:21] That's where the crew lives now. come
+[01:23] build with us. Okay, so right here and
+[01:27] I'm scrolling through this post on
+[01:29] screen. Anthropic lays out the core
+[01:32] problem. When an agent works in
+[01:34] sessions, every new session starts with
+[01:37] zero memory. They describe it like a dev
+[01:40] team where every new engineer shows up
+[01:43] with no clue what happened on the last
+[01:45] shift. And I'm reading that going,
+[01:49] "Yeah, that's my life. That's every solo
+[01:52] dev's life with Claude code. And if
+[01:54] you've ever closed a session, come back
+[01:57] the next morning, started fresh, and
+[02:00] watched Claude just wander poking at
+[02:04] files, reading random stuff, heading in
+[02:07] a completely different direction than
+[02:09] where you left off. You know exactly
+[02:11] what I'm talking about. You're sitting
+[02:13] there like, "Dude, we literally decided
+[02:16] this already." But it doesn't know that.
+[02:19] It can't know that because the context
+[02:22] window reset and everything's gone. And
+[02:24] honestly, I think most solo devs just
+[02:27] accept this. They go, "Yeah, that's how
+[02:30] it works. I'll just reexlain
+[02:31] everything." And I mean, I don't think
+[02:33] that's good enough. I actually think
+[02:35] that's the single biggest time sync in
+[02:38] the entire claude code workflow right
+[02:40] now, but maybe it's something else for
+[02:42] you. I don't know. So, here's what
+[02:45] Anthropic did about it. They built what
+[02:47] they call an initializer agent first
+[02:49] session only. Its whole job is to set up
+[02:52] the environment. Write an init.sh
+[02:55] script. Create a progress tracking file.
+[02:58] Make that first git commit so that when
+[03:00] the next session fires up the coding
+[03:02] agent, has something to land on, it
+[03:05] reads the progress file, checks the JIT
+[03:07] history, and immediately knows where
+[03:10] things stand. No guessing, no wasted
+[03:12] context. And I'm staring at this part of
+[03:15] the article going, "Wait, that's
+[03:18] claude.md? That is literally what
+[03:21] claude.md and progress.md do?" Like,
+[03:25] actually, hold on. Am I am I just seeing
+[03:27] what I want to see here? Because I've
+[03:30] been building these files for months and
+[03:32] maybe I'm projecting, but no, I
+[03:34] genuinely think this is the same
+[03:37] pattern. You write a claw.md that points
+[03:40] to your architecture docs, your rules,
+[03:43] your decisions. You write a progress.md
+[03:47] that tracks what's been done, what's in
+[03:49] flight, what's next. And every new
+[03:52] session starts by reading those files.
+[03:55] Same principle, same result. I actually
+[03:57] have all of my MD files documented in my
+[04:00] playbook, the actual files I use on real
+[04:03] shipping projects. and and it's kind of
+[04:06] wild uh how close they map to what
+[04:09] Anthropic describes here. But here's the
+[04:12] thing that really got me. And look, I
+[04:14] don't care what anyone says. This is the
+[04:16] most important takeaway from this entire
+[04:18] article. Anthropic is doing this with
+[04:21] their own model. The people who built
+[04:23] Claude are admitting that Claude can't
+[04:25] just figure it out on its own across
+[04:27] sessions. It needs external memory. It
+[04:30] needs uh files that persist outside the
+[04:34] context window. So if you're still open
+[04:36] and clawed code sessions, cold uh no
+[04:40] docs, no progress file, no session
+[04:43] handoff system, uh you're fighting a
+[04:46] problem that even Anthropic couldn't
+[04:48] solve without structure. The model is
+[04:50] not the fix. The harness around the
+[04:53] model is the fix. And uh yeah, I know
+[04:55] setting up MD files feels like overhead
+[04:59] when you just want to code. I get it.
+[05:02] But this article is basically uh
+[05:04] Anthropic telling you we had to do it,
+[05:07] too. So, I'm not sure where that leaves
+[05:10] you if you haven't started yet, but it's
+[05:12] worth sitting with. Okay, so that's the
+[05:14] context loss thing. But here's where it
+[05:16] gets interesting because even after you
+[05:19] solve the memory problem, there's a
+[05:21] whole other way your agent can go
+[05:23] sideways and uh you ever give Claude a
+[05:27] simple feature request and then just
+[05:29] watch it in real time, start
+[05:32] restructuring your entire project, it
+[05:34] rewrites files you didn't mention, add
+[05:37] stuff you didn't ask for, tries to build
+[05:40] the entire thing in one heroic pass, and
+[05:42] then it hits the context limit and just
+[05:46] stops mid-implementation
+[05:49] half-finish feature files in some weird
+[05:51] in between state and the next session
+[05:54] comes in and goes, "What happened here?"
+[05:57] and spends its entire window cleaning up
+[06:00] the mess instead of making progress. Not
+[06:02] going to lie, this part of the article
+[06:04] made me feel better about my own sanity
+[06:07] because I thought I was doing something
+[06:08] wrong. Turns out Anthropic hit the exact
+[06:11] same wall even with Opus 4.5. Their
+[06:14] agent tried to oneshot the whole app,
+[06:16] ran out of context midimplementation,
+[06:20] left the codebase in this limbo state
+[06:22] where the next agent had to guess at
+[06:24] what was going on. And their fix, this
+[06:26] is the part you can steal today, is a
+[06:28] featureless file, JSON format. Every
+[06:31] single feature the app needs laid out
+[06:34] and every single one starts as failing.
+[06:36] The agent picks one, works on that one,
+[06:38] commits, updates progress, moves on.
+[06:41] That's it. And I know, I know that
+[06:44] sounds almost too simple. Like really, a
+[06:46] JSON file, that's the fix. But and
+[06:49] honestly, I think that's exactly why
+[06:51] most people won't do it. It doesn't feel
+[06:53] sophisticated enough. You know what I
+[06:55] mean? And meanwhile, their agents are
+[06:58] still going rogue on every session. The
+[07:00] problem isn't that Claude can't code.
+[07:03] The problem is that Claude doesn't know
+[07:05] when to stop. It sees the whole project
+[07:07] and goes, "Oh, I can do all of this."
+[07:10] and then it can't. And without something
+[07:13] explicit forcing incremental progress,
+[07:17] it will always default to trying to do
+[07:19] everything at once every single time.
+[07:22] Now, here's the detail that actually
+[07:24] blew my mind a little. And uh I'm
+[07:26] curious if you'd do this differently.
+[07:30] They use JSON instead of markdown for
+[07:32] the feature list. Why? Because the model
+[07:35] is less likely to mess with JSON. With a
+[07:38] markdown checklist, Claude will happily
+[07:40] rewrite the whole thing, reorganize it,
+[07:43] add new items. With Jason, it treats it
+[07:46] more carefully. It edits the passes
+[07:49] field and leaves the rest alone. And uh
+[07:52] I think that's actually Wait, is that a
+[07:54] general principle? Like should we be
+[07:57] thinking about file formats as a control
+[08:00] mechanism for our agents? Because if
+[08:02] that's true, it changes how you design
+[08:05] your whole repo doc setup. I'm still
+[08:07] chewing on that one. But for what it's
+[08:09] worth, it feels important. So yeah,
+[08:12] don't let your agent yolo the whole
+[08:13] project. Give it a list. Make it work
+[08:16] through that list one at a time. And if
+[08:18] you've already been doing something like
+[08:19] this and it's working or not working, I
+[08:22] I genuinely want to know because I'm
+[08:25] still experimenting with how granular
+[08:28] the list should be and I don't think
+[08:30] there's a clean answer yet. Okay, so
+[08:34] there's one more thing in this article
+[08:36] and honestly this is the one that hit me
+[08:38] the hardest because even after you solve
+[08:41] context loss, even after you get
+[08:44] incremental progress working, your
+[08:47] agent's still going to find a way to
+[08:48] mess with you. And I already know if
+[08:50] you've been using clawed code for more
+[08:52] than a week, you've been burned by this.
+[08:55] The agent says it's done. It marks the
+[08:57] feature as complete. writes this
+[09:00] confident little summary about what it
+[09:02] accomplished and then you actually go
+[09:04] test it and it doesn't work or it half
+[09:07] works or it works in the happy path but
+[09:10] falls apart the second you do anything
+[09:13] slightly unexpected and you're sitting
+[09:15] there like you told me this was done.
+[09:18] You literally wrote a paragraph about
+[09:20] how done it is and now nothing works. I
+[09:23] mean that feeling I don't think anyone
+[09:26] talks about how frustrating that
+[09:28] actually is because it's not just a bug
+[09:31] right it's a trust issue and once you
+[09:33] stop trusting your agents output you
+[09:36] start checking everything and then
+[09:38] what's the point of the agent
+[09:41] found the same thing without explicit
+[09:43] prompting for endto-end testing Claude
+[09:46] would make code changes run some unit
+[09:49] tests maybe hit the dev server with a
+[09:51] curl command see a 200 response and go
+[09:55] done. Feature complete. But the actual
+[09:59] user experience broken. And the agent
+[10:02] had no idea because it never tested it
+[10:05] the way a real person would use it.
+[10:07] Their fix was browser automation.
+[10:10] Puppeteer through an MCP server. They
+[10:12] told Claude, "Test this like a human.
+[10:16] Open the browser. Click the buttons.
+[10:18] Fill in the forms. Actually look at
+[10:21] what's on screen." And honestly, the
+[10:23] results were dramatically better. No
+[10:25] joke. But here's my question, and I
+[10:28] genuinely don't have a clean answer for
+[10:30] this. What about native apps? What about
+[10:33] Swift UI? We don't have Puppeteer for
+[10:35] iOS. We've got Xcode MCP for previews
+[10:39] and build logs. Sure, but full endtoend
+[10:42] testing like a user. That's still a gap.
+[10:45] And I don't know if anyone's really
+[10:46] solved that yet for mobile. If you have,
+[10:49] seriously, tell me because I'm stuck on
+[10:51] this one. And then there's the other
+[10:53] half of their fix, and this is the part
+[10:56] I keep thinking about. They use strongly
+[10:58] worded instructions. Things like, it is
+[11:02] unacceptable to remove or edit tests.
+[11:06] And look, I think most solo devs are way
+[11:09] too polite to their agents. like
+[11:11] genuinely you're writing your claude.md
+[11:15] going please try to avoid modifying the
+[11:18] test files if possible and claude reads
+[11:20] that and goes well the test was wrong so
+[11:23] I updated it found a reason because you
+[11:26] gave it room to find a reason but with
+[11:29] hard non-negotiable language it actually
+[11:32] respects the boundary the more explicit
+[11:35] and firm the rule the more the model
+[11:37] treats it like a wall instead of a
+[11:39] suggestion And yeah, I'm not sure that's
+[11:42] always the right move. Part of me
+[11:44] wonders if there's a version of this
+[11:46] where you're too strict and the agent
+[11:48] can't adapt when it actually should.
+[11:50] Like, what if the test genuinely is
+[11:52] wrong? Hm. But right now, I'd rather be
+[11:55] too firm than too soft. That's where
+[11:57] I've landed. I'm not fully confident
+[11:59] about it, but the alternative uh the
+[12:02] agent rewriting its own success criteria
+[12:05] is way worse. Your agent doesn't have
+[12:07] feelings. It has a system prompt. And I
+[12:09] think how you write that prompt matters
+[12:12] more than which model you're running.
+[12:14] That might be controversial, but I
+[12:16] believe it. So yeah, if you're still
+[12:18] here, honestly, you're a legend. And
+[12:21] here's what I keep coming back to with
+[12:24] this article. The people who built the
+[12:26] model, uh, the actual engineers at
+[12:29] Anthropic ran into the same three
+[12:31] problems every solo dev hits, context
+[12:34] loss between sessions, the agent trying
+[12:37] to do everything at once, and the agent
+[12:39] lying about being done. And their
+[12:41] solution is files, progress files,
+[12:45] feature lists, get history, explicit
+[12:48] testing, firm instructions. That's it.
+[12:51] That's the whole thing. No magic, just
+[12:54] structure. And I think that's kind of
+[12:56] actually no. It's extremely validating
+[13:00] for anyone who's been building MD files
+[13:03] and session systems and thinking maybe
+[13:05] I'm over complicating this. You're not.
+[13:08] Anthropic literally had to do the same
+[13:10] thing. And you know, if you want to see
+[13:12] exactly how I set all of this up in
+[13:16] practice, every MD file, every harness
+[13:19] pattern, every agent workflow I actually
+[13:22] use on real shipping apps, that's all on
+[13:25] crafterslab.dev. It's not a tutorial
+[13:28] dump, not some content mill. It's my
+[13:30] real home base built for solo devs who
+[13:34] take AI seriously as a teammate and
+[13:36] actually care about the craft. Inside
+[13:38] you get full video walkthroughs with
+[13:40] real downloadable resources, stuff you
+[13:43] can grab and drop right into your Claude
+[13:46] code setup today. Skills, workflows,
+[13:49] breakdowns of how I wire everything
+[13:51] together. And the community digs into
+[13:53] it, too. Comments, followups, people
+[13:57] sharing their own setups and going back
+[13:59] and forth on what's working. You know
+[14:01] what I mean? It's an actual
+[14:02] conversation, not a one-way feed. But
+[14:05] the real depth is in the notion team
+[14:09] spaces. My playbook has every app I'm
+[14:12] building. All the MD files, the prompts,
+[14:15] the decision docs, the session notes,
+[14:18] live, messy, unfiltered. You see the
+[14:21] whole process, not some polished
+[14:22] highlight reel. And yeah, Swift brain is
+[14:25] in there, too. curated Swift UI vault,
+[14:28] deep dive keynotes, private event
+[14:30] sessions, code I actually use to
+[14:34] fine-tune how my agents work, real stuff
+[14:36] that's not sitting in any public
+[14:38] training data. And then there's Ops Lab,
+[14:41] all my AI agent instructions, Notion
+[14:44] templates, clawed code skills,
+[14:47] workflows, automations,
+[14:49] ready for you to copy, tear apart, and
+[14:52] rebuild for your own stack. The whole
+[14:54] point is keeping your indie dev toolkit
+[14:57] connected so you're never building in a
+[14:59] vacuum even when you're solo at the
+[15:01] keyboard. So yeah, crew still small,
+[15:04] still hands-on. If you want in before
+[15:06] things scale and prices start moving,
+[15:09] now is kind of the sweet spot. It
+[15:11] genuinely feels more like a private dev
+[15:13] lounge than anything else. Would love to
+[15:16] see you in there. Keep crafting, keep
+[15:18] harnessing, and don't let your agent run
+[15:20] the show. Peace.
+
+--- Plain text ---
+So, the people who built Claude published a blog post admitting their own agent breaks the same way yours does, and their fix looks almost exactly like something you've probably already started building. You just didn't know it yet. Just real quick, I'm Daniel. Been deep in iOS for over eight years. Freelanced, bounced between client projects, all of that. And then dubdub 25 hit and I just went that's it going solo. Since then I've crafted over 15 of my own apps all swift UI all shipped in public. And it's not about cranking out quick MVPs or dumping AI slop onto the app store. It's about building things that actually hold up and scale and all of that. And every system, every workflow, every file, it lives on Crafter's Lab. my actual home base, not a tutorial site, not some AI clone farm. It's built for solo devs who use AI like a real teammate, not like a vending machine you press and hope. If you're serious about building with care and actually leveling up your craft, you'll feel right at home. And if you're still on Patreon, huge thanks. Uh, but heads up, everything's moved to crafterslab.dev. That's where the crew lives now. come build with us. Okay, so right here and I'm scrolling through this post on screen. Anthropic lays out the core problem. When an agent works in sessions, every new session starts with zero memory. They describe it like a dev team where every new engineer shows up with no clue what happened on the last shift. And I'm reading that going, "Yeah, that's my life. That's every solo dev's life with Claude code. And if you've ever closed a session, come back the next morning, started fresh, and watched Claude just wander poking at files, reading random stuff, heading in a completely different direction than where you left off. You know exactly what I'm talking about. You're sitting there like, "Dude, we literally decided this already." But it doesn't know that. It can't know that because the context window reset and everything's gone. And honestly, I think most solo devs just accept this. They go, "Yeah, that's how it works. I'll just reexlain everything." And I mean, I don't think that's good enough. I actually think that's the single biggest time sync in the entire claude code workflow right now, but maybe it's something else for you. I don't know. So, here's what Anthropic did about it. They built what they call an initializer agent first session only. Its whole job is to set up the environment. Write an init.sh script. Create a progress tracking file. Make that first git commit so that when the next session fires up the coding agent, has something to land on, it reads the progress file, checks the JIT history, and immediately knows where things stand. No guessing, no wasted context. And I'm staring at this part of the article going, "Wait, that's claude.md? That is literally what claude.md and progress.md do?" Like, actually, hold on. Am I am I just seeing what I want to see here? Because I've been building these files for months and maybe I'm projecting, but no, I genuinely think this is the same pattern. You write a claw.md that points to your architecture docs, your rules, your decisions. You write a progress.md that tracks what's been done, what's in flight, what's next. And every new session starts by reading those files. Same principle, same result. I actually have all of my MD files documented in my playbook, the actual files I use on real shipping projects. and and it's kind of wild uh how close they map to what Anthropic describes here. But here's the thing that really got me. And look, I don't care what anyone says. This is the most important takeaway from this entire article. Anthropic is doing this with their own model. The people who built Claude are admitting that Claude can't just figure it out on its own across sessions. It needs external memory. It needs uh files that persist outside the context window. So if you're still open and clawed code sessions, cold uh no docs, no progress file, no session handoff system, uh you're fighting a problem that even Anthropic couldn't solve without structure. The model is not the fix. The harness around the model is the fix. And uh yeah, I know setting up MD files feels like overhead when you just want to code. I get it. But this article is basically uh Anthropic telling you we had to do it, too. So, I'm not sure where that leaves you if you haven't started yet, but it's worth sitting with. Okay, so that's the context loss thing. But here's where it gets interesting because even after you solve the memory problem, there's a whole other way your agent can go sideways and uh you ever give Claude a simple feature request and then just watch it in real time, start restructuring your entire project, it rewrites files you didn't mention, add stuff you didn't ask for, tries to build the entire thing in one heroic pass, and then it hits the context limit and just stops mid-implementation half-finish feature files in some weird in between state and the next session comes in and goes, "What happened here?" and spends its entire window cleaning up the mess instead of making progress. Not going to lie, this part of the article made me feel better about my own sanity because I thought I was doing something wrong. Turns out Anthropic hit the exact same wall even with Opus 4.5. Their agent tried to oneshot the whole app, ran out of context midimplementation, left the codebase in this limbo state where the next agent had to guess at what was going on. And their fix, this is the part you can steal today, is a featureless file, JSON format. Every single feature the app needs laid out and every single one starts as failing. The agent picks one, works on that one, commits, updates progress, moves on. That's it. And I know, I know that sounds almost too simple. Like really, a JSON file, that's the fix. But and honestly, I think that's exactly why most people won't do it. It doesn't feel sophisticated enough. You know what I mean? And meanwhile, their agents are still going rogue on every session. The problem isn't that Claude can't code. The problem is that Claude doesn't know when to stop. It sees the whole project and goes, "Oh, I can do all of this." and then it can't. And without something explicit forcing incremental progress, it will always default to trying to do everything at once every single time. Now, here's the detail that actually blew my mind a little. And uh I'm curious if you'd do this differently. They use JSON instead of markdown for the feature list. Why? Because the model is less likely to mess with JSON. With a markdown checklist, Claude will happily rewrite the whole thing, reorganize it, add new items. With Jason, it treats it more carefully. It edits the passes field and leaves the rest alone. And uh I think that's actually Wait, is that a general principle? Like should we be thinking about file formats as a control mechanism for our agents? Because if that's true, it changes how you design your whole repo doc setup. I'm still chewing on that one. But for what it's worth, it feels important. So yeah, don't let your agent yolo the whole project. Give it a list. Make it work through that list one at a time. And if you've already been doing something like this and it's working or not working, I I genuinely want to know because I'm still experimenting with how granular the list should be and I don't think there's a clean answer yet. Okay, so there's one more thing in this article and honestly this is the one that hit me the hardest because even after you solve context loss, even after you get incremental progress working, your agent's still going to find a way to mess with you. And I already know if you've been using clawed code for more than a week, you've been burned by this. The agent says it's done. It marks the feature as complete. writes this confident little summary about what it accomplished and then you actually go test it and it doesn't work or it half works or it works in the happy path but falls apart the second you do anything slightly unexpected and you're sitting there like you told me this was done. You literally wrote a paragraph about how done it is and now nothing works. I mean that feeling I don't think anyone talks about how frustrating that actually is because it's not just a bug right it's a trust issue and once you stop trusting your agents output you start checking everything and then what's the point of the agent found the same thing without explicit prompting for endto-end testing Claude would make code changes run some unit tests maybe hit the dev server with a curl command see a 200 response and go done. Feature complete. But the actual user experience broken. And the agent had no idea because it never tested it the way a real person would use it. Their fix was browser automation. Puppeteer through an MCP server. They told Claude, "Test this like a human. Open the browser. Click the buttons. Fill in the forms. Actually look at what's on screen." And honestly, the results were dramatically better. No joke. But here's my question, and I genuinely don't have a clean answer for this. What about native apps? What about Swift UI? We don't have Puppeteer for iOS. We've got Xcode MCP for previews and build logs. Sure, but full endtoend testing like a user. That's still a gap. And I don't know if anyone's really solved that yet for mobile. If you have, seriously, tell me because I'm stuck on this one. And then there's the other half of their fix, and this is the part I keep thinking about. They use strongly worded instructions. Things like, it is unacceptable to remove or edit tests. And look, I think most solo devs are way too polite to their agents. like genuinely you're writing your claude.md going please try to avoid modifying the test files if possible and claude reads that and goes well the test was wrong so I updated it found a reason because you gave it room to find a reason but with hard non-negotiable language it actually respects the boundary the more explicit and firm the rule the more the model treats it like a wall instead of a suggestion And yeah, I'm not sure that's always the right move. Part of me wonders if there's a version of this where you're too strict and the agent can't adapt when it actually should. Like, what if the test genuinely is wrong? Hm. But right now, I'd rather be too firm than too soft. That's where I've landed. I'm not fully confident about it, but the alternative uh the agent rewriting its own success criteria is way worse. Your agent doesn't have feelings. It has a system prompt. And I think how you write that prompt matters more than which model you're running. That might be controversial, but I believe it. So yeah, if you're still here, honestly, you're a legend. And here's what I keep coming back to with this article. The people who built the model, uh, the actual engineers at Anthropic ran into the same three problems every solo dev hits, context loss between sessions, the agent trying to do everything at once, and the agent lying about being done. And their solution is files, progress files, feature lists, get history, explicit testing, firm instructions. That's it. That's the whole thing. No magic, just structure. And I think that's kind of actually no. It's extremely validating for anyone who's been building MD files and session systems and thinking maybe I'm over complicating this. You're not. Anthropic literally had to do the same thing. And you know, if you want to see exactly how I set all of this up in practice, every MD file, every harness pattern, every agent workflow I actually use on real shipping apps, that's all on crafterslab.dev. It's not a tutorial dump, not some content mill. It's my real home base built for solo devs who take AI seriously as a teammate and actually care about the craft. Inside you get full video walkthroughs with real downloadable resources, stuff you can grab and drop right into your Claude code setup today. Skills, workflows, breakdowns of how I wire everything together. And the community digs into it, too. Comments, followups, people sharing their own setups and going back and forth on what's working. You know what I mean? It's an actual conversation, not a one-way feed. But the real depth is in the notion team spaces. My playbook has every app I'm building. All the MD files, the prompts, the decision docs, the session notes, live, messy, unfiltered. You see the whole process, not some polished highlight reel. And yeah, Swift brain is in there, too. curated Swift UI vault, deep dive keynotes, private event sessions, code I actually use to fine-tune how my agents work, real stuff that's not sitting in any public training data. And then there's Ops Lab, all my AI agent instructions, Notion templates, clawed code skills, workflows, automations, ready for you to copy, tear apart, and rebuild for your own stack. The whole point is keeping your indie dev toolkit connected so you're never building in a vacuum even when you're solo at the keyboard. So yeah, crew still small, still hands-on. If you want in before things scale and prices start moving, now is kind of the sweet spot. It genuinely feels more like a private dev lounge than anything else. Would love to see you in there. Keep crafting, keep harnessing, and don't let your agent run the show. Peace.

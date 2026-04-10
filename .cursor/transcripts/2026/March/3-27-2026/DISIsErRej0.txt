@@ -1,0 +1,1379 @@
+There's this GitHub repo we need to talk
+There's this GitHub repo we need to talk
+There's this GitHub repo we need to talk
+about with over 2100 stars in just one
+about with over 2100 stars in just one
+about with over 2100 stars in just one
+week. This repo replaces your entire dev
+week. This repo replaces your entire dev
+week. This repo replaces your entire dev
+team in just seconds. We're going to be
+team in just seconds. We're going to be
+team in just seconds. We're going to be
+talking about it and how we can use it
+talking about it and how we can use it
+talking about it and how we can use it
+and implement it in our open claw setups
+and implement it in our open claw setups
+and implement it in our open claw setups
+to help buy back some of your time and
+to help buy back some of your time and
+to help buy back some of your time and
+hit the ground running if you're just
+hit the ground running if you're just
+hit the ground running if you're just
+getting going with AI agents. So, like I
+getting going with AI agents. So, like I
+getting going with AI agents. So, like I
+said, this thing just hit 2100 stars in
+said, this thing just hit 2100 stars in
+said, this thing just hit 2100 stars in
+a week and there's a good reason for it.
+a week and there's a good reason for it.
+a week and there's a good reason for it.
+You know, if you've been using Codex at
+You know, if you've been using Codex at
+You know, if you've been using Codex at
+all or Claude code and or open claw, you
+all or Claude code and or open claw, you
+all or Claude code and or open claw, you
+know, this is very powerful. You know,
+know, this is very powerful. You know,
+know, this is very powerful. You know,
+you open it up, you give it a task, it
+you open it up, you give it a task, it
+you open it up, you give it a task, it
+writes code, it does it in a sandbox
+writes code, it does it in a sandbox
+writes code, it does it in a sandbox
+environment, and then that's great. But,
+environment, and then that's great. But,
+environment, and then that's great. But,
+the thing that most people don't realize
+the thing that most people don't realize
+the thing that most people don't realize
+and most people are using Codex
+and most people are using Codex
+and most people are using Codex
+basically like a single generalist, same
+basically like a single generalist, same
+basically like a single generalist, same
+thing with Claude code. You can say
+thing with Claude code. You can say
+thing with Claude code. You can say
+like, "Hey, you know, build me a back
+like, "Hey, you know, build me a back
+like, "Hey, you know, build me a back
+end or you know, review this code, fix
+end or you know, review this code, fix
+end or you know, review this code, fix
+my CES, things like that, right?" And it
+my CES, things like that, right?" And it
+my CES, things like that, right?" And it
+does it, gets the job done. But, you're
+does it, gets the job done. But, you're
+does it, gets the job done. But, you're
+basically asking one person to be a
+basically asking one person to be a
+basically asking one person to be a
+doctor and a lawyer and a plumber and a
+doctor and a lawyer and a plumber and a
+doctor and a lawyer and a plumber and a
+chef all at the same time. They can do
+chef all at the same time. They can do
+chef all at the same time. They can do
+all of those things, but wouldn't you
+all of those things, but wouldn't you
+all of those things, but wouldn't you
+rather have a specialist? That's where
+rather have a specialist? That's where
+rather have a specialist? That's where
+these AI agents are pretty much drag and
+these AI agents are pretty much drag and
+these AI agents are pretty much drag and
+drop. 136 of them to be exact. I have
+drop. 136 of them to be exact. I have
+drop. 136 of them to be exact. I have
+the repo linked down below. You got to
+the repo linked down below. You got to
+the repo linked down below. You got to
+check it out. So, this is exactly what
+check it out. So, this is exactly what
+check it out. So, this is exactly what
+the repo gives you. Basically, 136
+the repo gives you. Basically, 136
+the repo gives you. Basically, 136
+specialists. I know that sounds
+specialists. I know that sounds
+specialists. I know that sounds
+overwhelming, but I want to break down
+overwhelming, but I want to break down
+overwhelming, but I want to break down
+the key ones in this repo. So, you got
+the key ones in this repo. So, you got
+the key ones in this repo. So, you got
+sub agents. Basically, each one is
+sub agents. Basically, each one is
+sub agents. Basically, each one is
+designed to do one specific type of
+designed to do one specific type of
+designed to do one specific type of
+development task very, very well. What
+development task very, very well. What
+development task very, very well. What
+exactly is a sub agent because there's a
+exactly is a sub agent because there's a
+exactly is a sub agent because there's a
+lot of confusion around this whole AI
+lot of confusion around this whole AI
+lot of confusion around this whole AI
+agent space. If you're not familiar,
+agent space. If you're not familiar,
+agent space. If you're not familiar,
+Codex has this feature where you can
+Codex has this feature where you can
+Codex has this feature where you can
+create a custom agent that live in a
+create a custom agent that live in a
+create a custom agent that live in a
+specific directory on your machine. You
+specific directory on your machine. You
+specific directory on your machine. You
+put in a little tunnel file config and
+put in a little tunnel file config and
+put in a little tunnel file config and
+basically your global agents folder,
+basically your global agents folder,
+basically your global agents folder,
+your project agents folder, and now
+your project agents folder, and now
+your project agents folder, and now
+Codex can call on that specialist
+Codex can call on that specialist
+Codex can call on that specialist
+whenever it needs to. So, you can think
+whenever it needs to. So, you can think
+whenever it needs to. So, you can think
+of it like building a team, basically.
+of it like building a team, basically.
+of it like building a team, basically.
+Your front end developer, your security
+Your front end developer, your security
+Your front end developer, your security
+auditor, your API designer, basically a
+auditor, your API designer, basically a
+auditor, your API designer, basically a
+database expert, things like that,
+database expert, things like that,
+database expert, things like that,
+right? Each one has their own
+right? Each one has their own
+right? Each one has their own
+instructions, you know, their own model
+instructions, you know, their own model
+instructions, you know, their own model
+preferences, their own sandbox
+preferences, their own sandbox
+preferences, their own sandbox
+permissions. But, this is what Vault
+permissions. But, this is what Vault
+permissions. But, this is what Vault
+agent built. 136 categorized sub agents
+agent built. 136 categorized sub agents
+agent built. 136 categorized sub agents
+into 10 categories. I'm going to walk
+into 10 categories. I'm going to walk
+into 10 categories. I'm going to walk
+you through some of them because this is
+you through some of them because this is
+you through some of them because this is
+where it gets more interesting is
+where it gets more interesting is
+where it gets more interesting is
+category one is the core development
+category one is the core development
+category one is the core development
+team. This is where your bread and
+team. This is where your bread and
+team. This is where your bread and
+butter is like you have a back end
+butter is like you have a back end
+butter is like you have a back end
+developer agent, a front end developer
+developer agent, a front end developer
+developer agent, a front end developer
+agent, a full stack developer, a mobile
+agent, a full stack developer, a mobile
+agent, a full stack developer, a mobile
+developer, an API designer, and a
+developer, an API designer, and a
+developer, an API designer, and a
+GraphQL architect, a microservices
+GraphQL architect, a microservices
+GraphQL architect, a microservices
+architect, a web socket engineer,
+architect, a web socket engineer,
+architect, a web socket engineer,
+basically a engineer and designer that
+basically a engineer and designer that
+basically a engineer and designer that
+focuses on UI as well. So, right there
+focuses on UI as well. So, right there
+focuses on UI as well. So, right there
+is like 10 specialists just for building
+is like 10 specialists just for building
+is like 10 specialists just for building
+things. The back end developer knows
+things. The back end developer knows
+things. The back end developer knows
+about scalable APIs, the server
+about scalable APIs, the server
+about scalable APIs, the server
+architecture, the front end developer
+architecture, the front end developer
+architecture, the front end developer
+specializes in React, Angular. The
+specializes in React, Angular. The
+specializes in React, Angular. The
+mobile developer does cross-platform
+mobile developer does cross-platform
+mobile developer does cross-platform
+work. Each one has deep specific
+work. Each one has deep specific
+work. Each one has deep specific
+instructions about how to approach that
+instructions about how to approach that
+instructions about how to approach that
+type of work. The second category is
+type of work. The second category is
+type of work. The second category is
+more language specialists and this one's
+more language specialists and this one's
+more language specialists and this one's
+a huge one because if you're working in
+a huge one because if you're working in
+a huge one because if you're working in
+a specific language, you want an agent
+a specific language, you want an agent
+a specific language, you want an agent
+that actually knows that ecosystem
+that actually knows that ecosystem
+that actually knows that ecosystem
+deeply. So, they have agents specific
+deeply. So, they have agents specific
+deeply. So, they have agents specific
+for Python, JavaScript, TypeScript, Go,
+for Python, JavaScript, TypeScript, Go,
+for Python, JavaScript, TypeScript, Go,
+Rust, Java, C#, C++, Ruby, PHP, Swift,
+Rust, Java, C#, C++, Ruby, PHP, Swift,
+Rust, Java, C#, C++, Ruby, PHP, Swift,
+all of them, guys. Flutter, Django,
+all of them, guys. Flutter, Django,
+all of them, guys. Flutter, Django,
+Angular, Next.js. It They the It's a
+Angular, Next.js. It They the It's a
+Angular, Next.js. It They the It's a
+little bit overwhelming this what this
+little bit overwhelming this what this
+little bit overwhelming this what this
+repo offers. That's why we're making a
+repo offers. That's why we're making a
+repo offers. That's why we're making a
+video about it. Real quick, before we
+video about it. Real quick, before we
+video about it. Real quick, before we
+keep going, if you're watching this and
+keep going, if you're watching this and
+keep going, if you're watching this and
+you want to actually build with some of
+you want to actually build with some of
+you want to actually build with some of
+these tools, not just watch videos about
+these tools, not just watch videos about
+these tools, not just watch videos about
+them, then you're going to want to check
+them, then you're going to want to check
+them, then you're going to want to check
+out our community down below, Shipping
+out our community down below, Shipping
+out our community down below, Shipping
+School. We have a full Claude code
+School. We have a full Claude code
+School. We have a full Claude code
+course, a full open claw course, and
+course, a full open claw course, and
+course, a full open claw course, and
+four live bootcamps every single week
+four live bootcamps every single week
+four live bootcamps every single week
+where we actually help you get set up
+where we actually help you get set up
+where we actually help you get set up
+from scratch. Like actually set this
+from scratch. Like actually set this
+from scratch. Like actually set this
+thing up, not just watch a tutorial and
+thing up, not just watch a tutorial and
+thing up, not just watch a tutorial and
+figure it out by yourself. And we also
+figure it out by yourself. And we also
+figure it out by yourself. And we also
+provide one-on-one coaching, so you can
+provide one-on-one coaching, so you can
+provide one-on-one coaching, so you can
+book a call with me, we can share
+book a call with me, we can share
+book a call with me, we can share
+screens, and I can help you get Claude
+screens, and I can help you get Claude
+screens, and I can help you get Claude
+code or open claw running on your
+code or open claw running on your
+code or open claw running on your
+machine. That's it, no fluff. I built
+machine. That's it, no fluff. I built
+machine. That's it, no fluff. I built
+this community because watching
+this community because watching
+this community because watching
+YouTube's only gets you so far. We
+YouTube's only gets you so far. We
+YouTube's only gets you so far. We
+launched it just 3 days ago and we have
+launched it just 3 days ago and we have
+launched it just 3 days ago and we have
+over 55 members. You need people around
+over 55 members. You need people around
+over 55 members. You need people around
+you who are actually building, people
+you who are actually building, people
+you who are actually building, people
+who hold you accountable, and coaches
+who hold you accountable, and coaches
+who hold you accountable, and coaches
+who can help you when you get stuck.
+who can help you when you get stuck.
+who can help you when you get stuck.
+I'll put the link in the description
+I'll put the link in the description
+I'll put the link in the description
+down below. Get in now before the price
+down below. Get in now before the price
+down below. Get in now before the price
+goes up. Each one is not just a generic
+goes up. Each one is not just a generic
+goes up. Each one is not just a generic
+coder that happens to know the language.
+coder that happens to know the language.
+coder that happens to know the language.
+Each one has deep framework knowledge
+Each one has deep framework knowledge
+Each one has deep framework knowledge
+specific to that stack. So, let's say
+specific to that stack. So, let's say
+specific to that stack. So, let's say
+your Django developer knows Django 4+
+your Django developer knows Django 4+
+your Django developer knows Django 4+
+patterns. Your Laravel specialist knows
+patterns. Your Laravel specialist knows
+patterns. Your Laravel specialist knows
+Laravel 10+ conventions. Your Next.js
+Laravel 10+ conventions. Your Next.js
+Laravel 10+ conventions. Your Next.js
+expert knows app router. That
+expert knows app router. That
+expert knows app router. That
+specificity matters because generic
+specificity matters because generic
+specificity matters because generic
+advice leads to generic code. We've all
+advice leads to generic code. We've all
+advice leads to generic code. We've all
+been there before when you vibe code a
+been there before when you vibe code a
+been there before when you vibe code a
+landing page, it looks like every other
+landing page, it looks like every other
+landing page, it looks like every other
+vibe coded landing page in existence.
+vibe coded landing page in existence.
+vibe coded landing page in existence.
+That's why it's important to have
+That's why it's important to have
+That's why it's important to have
+specialized agents with specialized
+specialized agents with specialized
+specialized agents with specialized
+skills and knowledge to be able to stand
+skills and knowledge to be able to stand
+skills and knowledge to be able to stand
+out and build a unique product. Here is
+out and build a unique product. Here is
+out and build a unique product. Here is
+something that's really smart about what
+something that's really smart about what
+something that's really smart about what
+they did with model routing. Each sub
+they did with model routing. Each sub
+they did with model routing. Each sub
+agent has model field in its config file
+agent has model field in its config file
+agent has model field in its config file
+that routes it to the right AI model
+that routes it to the right AI model
+that routes it to the right AI model
+automatically. So, your security auditor
+automatically. So, your security auditor
+automatically. So, your security auditor
+and your architecture reviewer, you
+and your architecture reviewer, you
+and your architecture reviewer, you
+know, the ones that need deep reasoning,
+know, the ones that need deep reasoning,
+know, the ones that need deep reasoning,
+those run on GPT-54. And that's the
+those run on GPT-54. And that's the
+those run on GPT-54. And that's the
+heavy hitter. But, your search
+heavy hitter. But, your search
+heavy hitter. But, your search
+specialist and your docs researcher, and
+specialist and your docs researcher, and
+specialist and your docs researcher, and
+the ones doing more of the lighter work
+the ones doing more of the lighter work
+the ones doing more of the lighter work
+like scanning and synthesis, those run
+like scanning and synthesis, those run
+like scanning and synthesis, those run
+on GPT-53,
+on GPT-53,
+on GPT-53,
+Codex Spark, which is much faster and
+Codex Spark, which is much faster and
+Codex Spark, which is much faster and
+cheaper. So, you're not burning most of
+cheaper. So, you're not burning most of
+cheaper. So, you're not burning most of
+the expensive model on simple task.
+the expensive model on simple task.
+the expensive model on simple task.
+You're running routing intelligent. That
+You're running routing intelligent. That
+You're running routing intelligent. That
+is cost optimization built right into
+is cost optimization built right into
+is cost optimization built right into
+the agent design. And if you've been
+the agent design. And if you've been
+the agent design. And if you've been
+watching my videos, you know I talk
+watching my videos, you know I talk
+watching my videos, you know I talk
+about this all the time. The number one
+about this all the time. The number one
+about this all the time. The number one
+people mistake they make when getting AI
+people mistake they make when getting AI
+people mistake they make when getting AI
+agents up and running, you know, they
+agents up and running, you know, they
+agents up and running, you know, they
+get the most expensive model, which you
+get the most expensive model, which you
+get the most expensive model, which you
+should for the coordination agent. You
+should for the coordination agent. You
+should for the coordination agent. You
+know, I I run it on Opus 46. But, you
+know, I I run it on Opus 46. But, you
+know, I I run it on Opus 46. But, you
+don't need Opus 46 for simple things,
+don't need Opus 46 for simple things,
+don't need Opus 46 for simple things,
+you know, like searching and web
+you know, like searching and web
+you know, like searching and web
+scraping. You're going to blow through
+scraping. You're going to blow through
+scraping. You're going to blow through
+your usage limits in an hour. You know,
+your usage limits in an hour. You know,
+your usage limits in an hour. You know,
+and the same principle applies here is
+and the same principle applies here is
+and the same principle applies here is
+like figure out what models can be
+like figure out what models can be
+like figure out what models can be
+delegated to handle the simpler tasks
+delegated to handle the simpler tasks
+delegated to handle the simpler tasks
+that a you know, more more token
+that a you know, more more token
+that a you know, more more token
+efficient LLM can do. You know, they
+efficient LLM can do. You know, they
+efficient LLM can do. You know, they
+also thought about this when they built
+also thought about this when they built
+also thought about this when they built
+the repo. You know, they thought about
+the repo. You know, they thought about
+the repo. You know, they thought about
+security, which I always appreciate.
+security, which I always appreciate.
+security, which I always appreciate.
+Each sub agent has basically a sandbox
+Each sub agent has basically a sandbox
+Each sub agent has basically a sandbox
+mode setting. Reviewers and auditors are
+mode setting. Reviewers and auditors are
+mode setting. Reviewers and auditors are
+set to read only. They can only look at
+set to read only. They can only look at
+set to read only. They can only look at
+your code, but they can't modify
+your code, but they can't modify
+your code, but they can't modify
+anything. Developers and engineers that
+anything. Developers and engineers that
+anything. Developers and engineers that
+actually need to write files, those get
+actually need to write files, those get
+actually need to write files, those get
+workspace right permissions. So, you
+workspace right permissions. So, you
+workspace right permissions. So, you
+have got this nice separation of
+have got this nice separation of
+have got this nice separation of
+concerns where not every agent can touch
+concerns where not every agent can touch
+concerns where not every agent can touch
+everything. That is exactly how you
+everything. That is exactly how you
+everything. That is exactly how you
+should be thinking about agent
+should be thinking about agent
+should be thinking about agent
+permissions. So, I'm going to talk about
+permissions. So, I'm going to talk about
+permissions. So, I'm going to talk about
+some of the categories that really stood
+some of the categories that really stood
+some of the categories that really stood
+out in this huge repo. Category four is
+out in this huge repo. Category four is
+out in this huge repo. Category four is
+quality and security. You have a code
+quality and security. You have a code
+quality and security. You have a code
+reviewer, a security auditor, a
+reviewer, a security auditor, a
+reviewer, a security auditor, a
+performance profiler, a test architect,
+performance profiler, a test architect,
+performance profiler, a test architect,
+an accessibility expert, and a tech debt
+an accessibility expert, and a tech debt
+an accessibility expert, and a tech debt
+analyst. So, if you think about that for
+analyst. So, if you think about that for
+analyst. So, if you think about that for
+a second, you could have a dedicated
+a second, you could have a dedicated
+a second, you could have a dedicated
+agent whose entire job is to look at
+agent whose entire job is to look at
+agent whose entire job is to look at
+your code base and find tech debt. Or
+your code base and find tech debt. Or
+your code base and find tech debt. Or
+one that specifically audits security
+one that specifically audits security
+one that specifically audits security
+vulnerabilities. Or one that checks your
+vulnerabilities. Or one that checks your
+vulnerabilities. Or one that checks your
+app for accessibility compliance. These
+app for accessibility compliance. These
+app for accessibility compliance. These
+are the things that most solo devs and
+are the things that most solo devs and
+are the things that most solo devs and
+even small teams just skip because they
+even small teams just skip because they
+even small teams just skip because they
+don't have the time. Now you have a
+don't have the time. Now you have a
+don't have the time. Now you have a
+specialist for each one sitting in a
+specialist for each one sitting in a
+specialist for each one sitting in a
+tunnel file ready to go. Category five
+tunnel file ready to go. Category five
+tunnel file ready to go. Category five
+is the DevOps team and infrastructure.
+is the DevOps team and infrastructure.
+is the DevOps team and infrastructure.
+CI/CD engineer, you know, a Docker
+CI/CD engineer, you know, a Docker
+CI/CD engineer, you know, a Docker
+specialist, a cloud architect, monitor,
+specialist, a cloud architect, monitor,
+specialist, a cloud architect, monitor,
+and all of that. You know, if you're
+and all of that. You know, if you're
+and all of that. You know, if you're
+deploying apps and managing
+deploying apps and managing
+deploying apps and managing
+infrastructure, you basically now have a
+infrastructure, you basically now have a
+infrastructure, you basically now have a
+team of agents that know exactly how to
+team of agents that know exactly how to
+team of agents that know exactly how to
+handle all of that. And the fact that
+handle all of that. And the fact that
+handle all of that. And the fact that
+they separated this into its own
+they separated this into its own
+they separated this into its own
+category tells you how important
+category tells you how important
+category tells you how important
+infrastructure automation is becoming.
+infrastructure automation is becoming.
+infrastructure automation is becoming.
+The sixth category is data and AI. So,
+The sixth category is data and AI. So,
+The sixth category is data and AI. So,
+the database expert, data pipeline
+the database expert, data pipeline
+the database expert, data pipeline
+builder, the machine language the
+builder, the machine language the
+builder, the machine language the
+machine learning engineer, vector
+machine learning engineer, vector
+machine learning engineer, vector
+database specialist, analytics dashboard
+database specialist, analytics dashboard
+database specialist, analytics dashboard
+builder, you know, just the fact that
+builder, you know, just the fact that
+builder, you know, just the fact that
+they have a vector database specialist
+they have a vector database specialist
+they have a vector database specialist
+tells you where the industry is headed.
+tells you where the industry is headed.
+tells you where the industry is headed.
+Everyone is building with embeddings and
+Everyone is building with embeddings and
+Everyone is building with embeddings and
+semantic search now, and having an agent
+semantic search now, and having an agent
+semantic search now, and having an agent
+that specializes in that is generally
+that specializes in that is generally
+that specializes in that is generally
+useful. The machine learning engineer
+useful. The machine learning engineer
+useful. The machine learning engineer
+knows about experiment tracking and
+knows about experiment tracking and
+knows about experiment tracking and
+model optimization. The data pipeline
+model optimization. The data pipeline
+model optimization. The data pipeline
+builder understands ETL workflows and
+builder understands ETL workflows and
+builder understands ETL workflows and
+data quality checks. Category seven is
+data quality checks. Category seven is
+data quality checks. Category seven is
+documentation and research. So, you have
+documentation and research. So, you have
+documentation and research. So, you have
+a technical writer, an API docs
+a technical writer, an API docs
+a technical writer, an API docs
+generator, a search specialist, a change
+generator, a search specialist, a change
+generator, a search specialist, a change
+log manager. These are all tasks that
+log manager. These are all tasks that
+log manager. These are all tasks that
+nobody wants to do, but everyone needs
+nobody wants to do, but everyone needs
+nobody wants to do, but everyone needs
+it to be done. So, having an agent that
+it to be done. So, having an agent that
+it to be done. So, having an agent that
+specifically writes clean API
+specifically writes clean API
+specifically writes clean API
+documentation or manages your change
+documentation or manages your change
+documentation or manages your change
+log, that saves hours every single week.
+log, that saves hours every single week.
+log, that saves hours every single week.
+I know from building out our mission
+I know from building out our mission
+I know from building out our mission
+control here that documentation is the
+control here that documentation is the
+control here that documentation is the
+thing that I was always putting off.
+thing that I was always putting off.
+thing that I was always putting off.
+But, having an agent dedicated to this
+But, having an agent dedicated to this
+But, having an agent dedicated to this
+will help greatly. Category eight is
+will help greatly. Category eight is
+will help greatly. Category eight is
+specialized domains. So, this is where
+specialized domains. So, this is where
+specialized domains. So, this is where
+it gets more interesting for people
+it gets more interesting for people
+it gets more interesting for people
+building actual real products. Fintech
+building actual real products. Fintech
+building actual real products. Fintech
+engineer, healthcare compliance
+engineer, healthcare compliance
+engineer, healthcare compliance
+specialist, e-commerce developer, real
+specialist, e-commerce developer, real
+specialist, e-commerce developer, real
+estate tech developer, game developer.
+estate tech developer, game developer.
+estate tech developer, game developer.
+These agents know domain specific rules
+These agents know domain specific rules
+These agents know domain specific rules
+and regulations. So, like your Fintech
+and regulations. So, like your Fintech
+and regulations. So, like your Fintech
+agent understands financial compliance
+agent understands financial compliance
+agent understands financial compliance
+and PCI standards. Let's say your
+and PCI standards. Let's say your
+and PCI standards. Let's say your
+healthcare agent knows about HIPAA
+healthcare agent knows about HIPAA
+healthcare agent knows about HIPAA
+requirements. Your real estate tech
+requirements. Your real estate tech
+requirements. Your real estate tech
+developer understands MLS integrations.
+developer understands MLS integrations.
+developer understands MLS integrations.
+These are not generic coders now. We're
+These are not generic coders now. We're
+These are not generic coders now. We're
+past that. These are agents with real
+past that. These are agents with real
+past that. These are agents with real
+domain expertise baked into their
+domain expertise baked into their
+domain expertise baked into their
+instructions. So, if you're going to be
+instructions. So, if you're going to be
+instructions. So, if you're going to be
+building one of in one of these
+building one of in one of these
+building one of in one of these
+industries, this alone is worth cloning
+industries, this alone is worth cloning
+industries, this alone is worth cloning
+this repo. Category nine is agent
+this repo. Category nine is agent
+this repo. Category nine is agent
+automation. So, which is where the real
+automation. So, which is where the real
+automation. So, which is where the real
+meta is at. You know, you have got an
+meta is at. You know, you have got an
+meta is at. You know, you have got an
+agent installer, an MCP developer for
+agent installer, an MCP developer for
+agent installer, an MCP developer for
+building model context protocols, a
+building model context protocols, a
+building model context protocols, a
+workflow orchestrator, and an agent
+workflow orchestrator, and an agent
+workflow orchestrator, and an agent
+communication specialist. So, you have
+communication specialist. So, you have
+communication specialist. So, you have
+agents that help you build more agents.
+agents that help you build more agents.
+agents that help you build more agents.
+That is the pattern we are seeing
+That is the pattern we are seeing
+That is the pattern we are seeing
+everywhere now. The tools are building
+everywhere now. The tools are building
+everywhere now. The tools are building
+tools. The category 10 is utilities, so
+tools. The category 10 is utilities, so
+tools. The category 10 is utilities, so
+you have a Git specialist, a regex
+you have a Git specialist, a regex
+you have a Git specialist, a regex
+expert, config manager, log analyzer,
+expert, config manager, log analyzer,
+expert, config manager, log analyzer,
+migration specialist. These are all
+migration specialist. These are all
+migration specialist. These are all
+little tasks that eat up your entire day
+little tasks that eat up your entire day
+little tasks that eat up your entire day
+if you let them, and we're all trying to
+if you let them, and we're all trying to
+if you let them, and we're all trying to
+optimize to get our time back. I am at
+optimize to get our time back. I am at
+optimize to get our time back. I am at
+least. So, having a dedicated regex
+least. So, having a dedicated regex
+least. So, having a dedicated regex
+expert that you can delegate to and
+expert that you can delegate to and
+expert that you can delegate to and
+instead of spending 30 minutes on Stack
+instead of spending 30 minutes on Stack
+instead of spending 30 minutes on Stack
+Overflow trying to figure out the right
+Overflow trying to figure out the right
+Overflow trying to figure out the right
+pattern, having a migration specialist
+pattern, having a migration specialist
+pattern, having a migration specialist
+that handles database schema changes
+that handles database schema changes
+that handles database schema changes
+cleanly, that's time back in your
+cleanly, that's time back in your
+cleanly, that's time back in your
+pocket. So, how do you actually use all
+pocket. So, how do you actually use all
+pocket. So, how do you actually use all
+this? Like, if you're a beginner
+this? Like, if you're a beginner
+this? Like, if you're a beginner
+watching this, this probably is
+watching this, this probably is
+watching this, this probably is
+overwhelming. I'm only making this video
+overwhelming. I'm only making this video
+overwhelming. I'm only making this video
+because AI agents is the hot topic now,
+because AI agents is the hot topic now,
+because AI agents is the hot topic now,
+and a lot of people get Open Claw going
+and a lot of people get Open Claw going
+and a lot of people get Open Claw going
+or Codex going or Claude Code going, and
+or Codex going or Claude Code going, and
+or Codex going or Claude Code going, and
+they're just working at it out of the
+they're just working at it out of the
+they're just working at it out of the
+box, default level. Your agents need
+box, default level. Your agents need
+box, default level. Your agents need
+domain-specific knowledge. They need
+domain-specific knowledge. They need
+domain-specific knowledge. They need
+skills to be able to execute tasks and
+skills to be able to execute tasks and
+skills to be able to execute tasks and
+get good quality output. You know, it's
+get good quality output. You know, it's
+get good quality output. You know, it's
+really dead simple. You go to the link
+really dead simple. You go to the link
+really dead simple. You go to the link
+in the description, you clone the
+in the description, you clone the
+in the description, you clone the
+you clone the repo, you copy the TOML
+you clone the repo, you copy the TOML
+you clone the repo, you copy the TOML
+files, and you put them in the Claude
+files, and you put them in the Claude
+files, and you put them in the Claude
+Code, you put them in the Codex, give
+Code, you put them in the Codex, give
+Code, you put them in the Codex, give
+them in the Open Claw. If you're
+them in the Open Claw. If you're
+them in the Open Claw. If you're
+struggling to keep up with content, what
+struggling to keep up with content, what
+struggling to keep up with content, what
+I'm about to save you about 40 days
+I'm about to save you about 40 days
+I'm about to save you about 40 days
+worth of work. [music] I built something
+worth of work. [music] I built something
+worth of work. [music] I built something
+called Content Machine. It's 10 AI
+called Content Machine. It's 10 AI
+called Content Machine. It's 10 AI
+agents that run on the Open Claw
+agents that run on the Open Claw
+agents that run on the Open Claw
+orchestration, and they handle
+orchestration, and they handle
+orchestration, and they handle
+everything. Scripts, thumbnails, X
+everything. Scripts, thumbnails, X
+everything. Scripts, thumbnails, X
+posts, [music] blogs, outreach, clips,
+posts, [music] blogs, outreach, clips,
+posts, [music] blogs, outreach, clips,
+newsletters, all of it. So, I went from
+newsletters, all of it. So, I went from
+newsletters, all of it. So, I went from
+1,000 subscribers to 4,000 subscribers
+1,000 subscribers to 4,000 subscribers
+1,000 subscribers to 4,000 subscribers
+on YouTube in 7 days using this exact
+on YouTube in 7 days using this exact
+on YouTube in 7 days using this exact
+system. Every single morning I wake up
+system. Every single morning I wake up
+system. Every single morning I wake up
+and [music] the content's already done.
+and [music] the content's already done.
+and [music] the content's already done.
+I spend maybe 15, 20 minutes reviewing
+I spend maybe 15, 20 minutes reviewing
+I spend maybe 15, 20 minutes reviewing
+and approving them, and I move on with
+and approving them, and I move on with
+and approving them, and I move on with
+my day. It works for any niche, fitness,
+my day. It works for any niche, fitness,
+my day. It works for any niche, fitness,
+[music] finance, real estate, marketing,
+[music] finance, real estate, marketing,
+[music] finance, real estate, marketing,
+whatever you are building, and it is
+whatever you are building, and it is
+whatever you are building, and it is
+100% completely customizable to your use
+100% completely customizable to your use
+100% completely customizable to your use
+case. So, you get the mission control
+case. So, you get the mission control
+case. So, you get the mission control
+dashboard, all of the cron jobs,
+dashboard, all of the cron jobs,
+dashboard, all of the cron jobs,
+everything I've built over the last 40
+everything I've built over the last 40
+everything I've built over the last 40
+days helping me gain more and more
+days helping me gain more and more
+days helping me gain more and more
+people to subscribe and join the
+people to subscribe and join the
+people to subscribe and join the
+community. So, you plug in your own
+community. So, you plug in your own
+community. So, you plug in your own
+thing and it molds it to you, it learns
+thing and it molds it to you, it learns
+thing and it molds it to you, it learns
+how you talk and it writes [music] so it
+how you talk and it writes [music] so it
+how you talk and it writes [music] so it
+doesn't sound like AI slop. $97 one
+doesn't sound like AI slop. $97 one
+doesn't sound like AI slop. $97 one
+time, it's not a subscription. I'll put
+time, it's not a subscription. I'll put
+time, it's not a subscription. I'll put
+the link down below and you'll thank me
+the link down below and you'll thank me
+the link down below and you'll thank me
+later. You know, if you want them
+later. You know, if you want them
+later. You know, if you want them
+available globally across all your
+available globally across all your
+available globally across all your
+projects, you put them in your home
+projects, you put them in your home
+projects, you put them in your home
+directory under .codex/agents.
+directory under .codex/agents.
+directory under .codex/agents.
+Likewise, just give the repo to your
+Likewise, just give the repo to your
+Likewise, just give the repo to your
+Open Claw agent and let them do the
+Open Claw agent and let them do the
+Open Claw agent and let them do the
+rest. So, if you want them in specific
+rest. So, if you want them in specific
+rest. So, if you want them in specific
+to one project, you put them in that
+to one project, you put them in that
+to one project, you put them in that
+project's So, project agents take
+project's So, project agents take
+project's So, project agents take
+priority over global ones if there's a
+priority over global ones if there's a
+priority over global ones if there's a
+naming conflict, you know, which is
+naming conflict, you know, which is
+naming conflict, you know, which is
+pretty smart design. Then you just
+pretty smart design. Then you just
+pretty smart design. Then you just
+restart your session and you can start
+restart your session and you can start
+restart your session and you can start
+delegating
+to them explicitly, you know, in your
+to them explicitly, you know, in your
+to them explicitly, you know, in your
+prompts. One thing to note is that Codex
+prompts. One thing to note is that Codex
+prompts. One thing to note is that Codex
+does not auto-spawn custom sub-agents,
+does not auto-spawn custom sub-agents,
+does not auto-spawn custom sub-agents,
+so you have to tell it which specialist
+so you have to tell it which specialist
+so you have to tell it which specialist
+to use. So, you would say something
+to use. So, you would say something
+to use. So, you would say something
+like, use the security auditor to review
+like, use the security auditor to review
+like, use the security auditor to review
+or pull or use the do this pull request
+or pull or use the do this pull request
+or pull or use the do this pull request
+or delegate this database migration to
+or delegate this database migration to
+or delegate this database migration to
+the database expert. It's like being a
+the database expert. It's like being a
+the database expert. It's like being a
+project manager and assigning tasks
+project manager and assigning tasks
+project manager and assigning tasks
+right to the team member. Here's what
+right to the team member. Here's what
+right to the team member. Here's what
+makes this more powerful and why it
+makes this more powerful and why it
+makes this more powerful and why it
+connects to what I've been doing. You
+connects to what I've been doing. You
+connects to what I've been doing. You
+know, I run the entire content operation
+know, I run the entire content operation
+know, I run the entire content operation
+in my business of specialized AI agents
+in my business of specialized AI agents
+in my business of specialized AI agents
+on the Mac Mini over here, and I've got
+on the Mac Mini over here, and I've got
+on the Mac Mini over here, and I've got
+the Rizza handling video outlines,
+the Rizza handling video outlines,
+the Rizza handling video outlines,
+Inspector Deck handling everything on X,
+Inspector Deck handling everything on X,
+Inspector Deck handling everything on X,
+Ghostface doing intel research, Method
+Ghostface doing intel research, Method
+Ghostface doing intel research, Method
+Man doing clips, Gizza running the
+Man doing clips, Gizza running the
+Man doing clips, Gizza running the
+security. You know, each one has
+security. You know, each one has
+security. You know, each one has
+specific jobs and specific personality.
+specific jobs and specific personality.
+specific jobs and specific personality.
+That is the pattern that works.
+That is the pattern that works.
+That is the pattern that works.
+Specialization beats generalization
+Specialization beats generalization
+Specialization beats generalization
+every time. I learned that the hard way
+every time. I learned that the hard way
+every time. I learned that the hard way
+by trying to make one agent to do
+by trying to make one agent to do
+by trying to make one agent to do
+everything and it would just fail over
+everything and it would just fail over
+everything and it would just fail over
+and over again. This repo proves that
+and over again. This repo proves that
+and over again. This repo proves that
+the developer community is figuring this
+the developer community is figuring this
+the developer community is figuring this
+out at scale. You know, 2,100 stars in a
+out at scale. You know, 2,100 stars in a
+out at scale. You know, 2,100 stars in a
+week doesn't happen by accident. People
+week doesn't happen by accident. People
+week doesn't happen by accident. People
+are realizing the way to get the most
+are realizing the way to get the most
+are realizing the way to get the most
+out of AI coding tools is not to use one
+out of AI coding tools is not to use one
+out of AI coding tools is not to use one
+agent for everything. It is to build a
+agent for everything. It is to build a
+agent for everything. It is to build a
+team of specialists and orchestrate them
+team of specialists and orchestrate them
+team of specialists and orchestrate them
+intelligently, but not one doing
+intelligently, but not one doing
+intelligently, but not one doing
+everything. And that's what Vault Agent
+everything. And that's what Vault Agent
+everything. And that's what Vault Agent
+also did, and I think that's really
+also did, and I think that's really
+also did, and I think that's really
+smart. They built a companion of repos,
+smart. They built a companion of repos,
+smart. They built a companion of repos,
+and they have awesome Claude Code
+and they have awesome Claude Code
+and they have awesome Claude Code
+sub-agents for Claude Code users,
+sub-agents for Claude Code users,
+sub-agents for Claude Code users,
+awesome Claude skills for Open Claw
+awesome Claude skills for Open Claw
+awesome Claude skills for Open Claw
+users, and awesome agent skills that
+users, and awesome agent skills that
+users, and awesome agent skills that
+cover skills across multiple platforms.
+cover skills across multiple platforms.
+cover skills across multiple platforms.
+So, regardless of what tool you're
+So, regardless of what tool you're
+So, regardless of what tool you're
+using, they're trying to give you that
+using, they're trying to give you that
+using, they're trying to give you that
+specialist approach that tells you and
+specialist approach that tells you and
+specialist approach that tells you and
+tells me that the team understands, you
+tells me that the team understands, you
+tells me that the team understands, you
+know, the future is not about one
+know, the future is not about one
+know, the future is not about one
+platform winning. It's a pattern of
+platform winning. It's a pattern of
+platform winning. It's a pattern of
+specialized agents working for you
+specialized agents working for you
+specialized agents working for you
+everywhere 24/7. The thing I want to you
+everywhere 24/7. The thing I want to you
+everywhere 24/7. The thing I want to you
+to take away from all this is that the
+to take away from all this is that the
+to take away from all this is that the
+era of generic AI assistant is
+era of generic AI assistant is
+era of generic AI assistant is
+completely gone. We are moving into the
+completely gone. We are moving into the
+completely gone. We are moving into the
+era of AI teams. Whether you're using
+era of AI teams. Whether you're using
+era of AI teams. Whether you're using
+Codex, Claude Code, Open Claw, Cursor,
+Codex, Claude Code, Open Claw, Cursor,
+Codex, Claude Code, Open Claw, Cursor,
+whatever you're using, the builders who
+whatever you're using, the builders who
+whatever you're using, the builders who
+figure out how to create specialized
+figure out how to create specialized
+figure out how to create specialized
+agents and orchestrate them are going to
+agents and orchestrate them are going to
+agents and orchestrate them are going to
+absolutely crush the market because you
+absolutely crush the market because you
+absolutely crush the market because you
+are not limited by your own time
+are not limited by your own time
+are not limited by your own time
+anymore. You are limited by how well you
+anymore. You are limited by how well you
+anymore. You are limited by how well you
+set up your team. And if you want to
+set up your team. And if you want to
+set up your team. And if you want to
+learn how to actually build out these
+learn how to actually build out these
+learn how to actually build out these
+agent teams for your business, if you
+agent teams for your business, if you
+agent teams for your business, if you
+want to go from using AI as a tool to
+want to go from using AI as a tool to
+want to go from using AI as a tool to
+using it as a real competitive
+using it as a real competitive
+using it as a real competitive
+advantage, that's exactly what we teach
+advantage, that's exactly what we teach
+advantage, that's exactly what we teach
+inside Shipping School. We are on day 13
+inside Shipping School. We are on day 13
+inside Shipping School. We are on day 13
+of launching the community, and we have
+of launching the community, and we have
+of launching the community, and we have
+134 members. We've got builders in there
+134 members. We've got builders in there
+134 members. We've got builders in there
+right now running agent teams for their
+right now running agent teams for their
+right now running agent teams for their
+businesses, real people getting real
+businesses, real people getting real
+businesses, real people getting real
+results. We have people that are
+results. We have people that are
+results. We have people that are
+non-technical getting Open Claw
+non-technical getting Open Claw
+non-technical getting Open Claw
+installed and launching their landing
+installed and launching their landing
+installed and launching their landing
+page within a day. Bunch of people from
+page within a day. Bunch of people from
+page within a day. Bunch of people from
+all over the world, and we're really
+all over the world, and we're really
+all over the world, and we're really
+focused on community first, which is why
+focused on community first, which is why
+focused on community first, which is why
+we do six boot camp calls every single
+we do six boot camp calls every single
+we do six boot camp calls every single
+week, and everything's recorded. We do
+week, and everything's recorded. We do
+week, and everything's recorded. We do
+have courses in there as well, but we're
+have courses in there as well, but we're
+have courses in there as well, but we're
+focused on human-to-human interaction.
+focused on human-to-human interaction.
+focused on human-to-human interaction.
+So, like I said, I'll put that repo and
+So, like I said, I'll put that repo and
+So, like I said, I'll put that repo and
+the link to the community down below.
+the link to the community down below.
+the link to the community down below.
+Check it out. You know, we got awesome
+Check it out. You know, we got awesome
+Check it out. You know, we got awesome
+Codex sub-agents on GitHub and many
+Codex sub-agents on GitHub and many
+Codex sub-agents on GitHub and many
+other different types of repos that you
+other different types of repos that you
+other different types of repos that you
+could plug and play to get your AI agent
+could plug and play to get your AI agent
+could plug and play to get your AI agent
+orchestration going. You know, even if
+orchestration going. You know, even if
+orchestration going. You know, even if
+you don't use Codex, for example, the
+you don't use Codex, for example, the
+you don't use Codex, for example, the
+patterns they use and the way they
+patterns they use and the way they
+patterns they use and the way they
+structure agents with specific
+structure agents with specific
+structure agents with specific
+instructions and model routing and
+instructions and model routing and
+instructions and model routing and
+sandbox permissions, you can apply those
+sandbox permissions, you can apply those
+sandbox permissions, you can apply those
+same patterns to whatever tool you're
+same patterns to whatever tool you're
+same patterns to whatever tool you're
+using. The framework doesn't matter
+using. The framework doesn't matter
+using. The framework doesn't matter
+here. The pattern does. I just hope
+here. The pattern does. I just hope
+here. The pattern does. I just hope
+you're taking advantage of all this AI
+you're taking advantage of all this AI
+you're taking advantage of all this AI
+agent news and applying it to your setup
+agent news and applying it to your setup
+agent news and applying it to your setup
+because that's what makes the
+because that's what makes the
+because that's what makes the
+difference. If you haven't subscribed
+difference. If you haven't subscribed
+difference. If you haven't subscribed
+already and you like AI news just like
+already and you like AI news just like
+already and you like AI news just like
+this, make sure you subscribe, hit the
+this, make sure you subscribe, hit the
+this, make sure you subscribe, hit the
+notification bell. We literally release
+notification bell. We literally release
+notification bell. We literally release
+four to six videos every single day.
+four to six videos every single day.
+four to six videos every single day.
+Have a blessed one. We'll see you in
+Have a blessed one. We'll see you in
+Have a blessed one. We'll see you in
+about an hour.

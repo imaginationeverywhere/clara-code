@@ -1,0 +1,3405 @@
+1
+00:00:00,160 --> 00:00:02,310
+
+The newest AI models are the smartest
+
+2
+00:00:02,310 --> 00:00:02,320
+The newest AI models are the smartest
+ 
+
+3
+00:00:02,320 --> 00:00:04,309
+The newest AI models are the smartest
+that we've ever had. They're also the
+
+4
+00:00:04,309 --> 00:00:04,319
+that we've ever had. They're also the
+ 
+
+5
+00:00:04,319 --> 00:00:06,309
+that we've ever had. They're also the
+worst at telling you when they're wrong.
+
+6
+00:00:06,309 --> 00:00:06,319
+worst at telling you when they're wrong.
+ 
+
+7
+00:00:06,319 --> 00:00:07,990
+worst at telling you when they're wrong.
+For those of you that are new here, hi,
+
+8
+00:00:07,990 --> 00:00:08,000
+For those of you that are new here, hi,
+ 
+
+9
+00:00:08,000 --> 00:00:10,629
+For those of you that are new here, hi,
+I'm Dylan. I run an AI consultancy and I
+
+10
+00:00:10,629 --> 00:00:10,639
+I'm Dylan. I run an AI consultancy and I
+ 
+
+11
+00:00:10,639 --> 00:00:13,669
+I'm Dylan. I run an AI consultancy and I
+use Claude, Chatbt, and Gemini every
+
+12
+00:00:13,669 --> 00:00:13,679
+use Claude, Chatbt, and Gemini every
+ 
+
+13
+00:00:13,679 --> 00:00:15,990
+use Claude, Chatbt, and Gemini every
+single day across all my client work.
+
+14
+00:00:15,990 --> 00:00:16,000
+single day across all my client work.
+ 
+
+15
+00:00:16,000 --> 00:00:18,230
+single day across all my client work.
+And the smarter these models get, the
+
+16
+00:00:18,230 --> 00:00:18,240
+And the smarter these models get, the
+ 
+
+17
+00:00:18,240 --> 00:00:20,470
+And the smarter these models get, the
+more confidently they guess instead of
+
+18
+00:00:20,470 --> 00:00:20,480
+more confidently they guess instead of
+ 
+
+19
+00:00:20,480 --> 00:00:23,029
+more confidently they guess instead of
+admitting that they don't know. Now,
+
+20
+00:00:23,029 --> 00:00:23,039
+admitting that they don't know. Now,
+ 
+
+21
+00:00:23,039 --> 00:00:25,109
+admitting that they don't know. Now,
+this video gives you three prompt rules
+
+22
+00:00:25,109 --> 00:00:25,119
+this video gives you three prompt rules
+ 
+
+23
+00:00:25,119 --> 00:00:27,029
+this video gives you three prompt rules
+that fix that. I'll walk you through
+
+24
+00:00:27,029 --> 00:00:27,039
+that fix that. I'll walk you through
+ 
+
+25
+00:00:27,039 --> 00:00:29,349
+that fix that. I'll walk you through
+each one and give you the exact prompt
+
+26
+00:00:29,349 --> 00:00:29,359
+each one and give you the exact prompt
+ 
+
+27
+00:00:29,359 --> 00:00:31,349
+each one and give you the exact prompt
+that stops the guessing completely. So,
+
+28
+00:00:31,349 --> 00:00:31,359
+that stops the guessing completely. So,
+ 
+
+29
+00:00:31,359 --> 00:00:32,790
+that stops the guessing completely. So,
+let's get into it. So, this is the
+
+30
+00:00:32,790 --> 00:00:32,800
+let's get into it. So, this is the
+ 
+
+31
+00:00:32,800 --> 00:00:35,190
+let's get into it. So, this is the
+challenge we're all facing. As new model
+
+32
+00:00:35,190 --> 00:00:35,200
+challenge we're all facing. As new model
+ 
+
+33
+00:00:35,200 --> 00:00:37,110
+challenge we're all facing. As new model
+generations are released, its
+
+34
+00:00:37,110 --> 00:00:37,120
+generations are released, its
+ 
+
+35
+00:00:37,120 --> 00:00:38,869
+generations are released, its
+intelligence increases, which is a
+
+36
+00:00:38,869 --> 00:00:38,879
+intelligence increases, which is a
+ 
+
+37
+00:00:38,879 --> 00:00:40,950
+intelligence increases, which is a
+benefit. But the negative here is that
+
+38
+00:00:40,950 --> 00:00:40,960
+benefit. But the negative here is that
+ 
+
+39
+00:00:40,960 --> 00:00:43,270
+benefit. But the negative here is that
+the more intelligent AI becomes, the
+
+40
+00:00:43,270 --> 00:00:43,280
+the more intelligent AI becomes, the
+ 
+
+41
+00:00:43,280 --> 00:00:46,229
+the more intelligent AI becomes, the
+less likely it the less likely it is to
+
+42
+00:00:46,229 --> 00:00:46,239
+less likely it the less likely it is to
+ 
+
+43
+00:00:46,239 --> 00:00:49,110
+less likely it the less likely it is to
+admit that it's wrong. So, its honesty
+
+44
+00:00:49,110 --> 00:00:49,120
+admit that it's wrong. So, its honesty
+ 
+
+45
+00:00:49,120 --> 00:00:51,110
+admit that it's wrong. So, its honesty
+stays the same, its intelligence
+
+46
+00:00:51,110 --> 00:00:51,120
+stays the same, its intelligence
+ 
+
+47
+00:00:51,120 --> 00:00:54,229
+stays the same, its intelligence
+increases, which causes the honesty gap.
+
+48
+00:00:54,229 --> 00:00:54,239
+increases, which causes the honesty gap.
+ 
+
+49
+00:00:54,239 --> 00:00:55,830
+increases, which causes the honesty gap.
+And this is known by many researchers.
+
+50
+00:00:55,830 --> 00:00:55,840
+And this is known by many researchers.
+ 
+
+51
+00:00:55,840 --> 00:00:57,510
+And this is known by many researchers.
+Open AI just published a research paper
+
+52
+00:00:57,510 --> 00:00:57,520
+Open AI just published a research paper
+ 
+
+53
+00:00:57,520 --> 00:00:59,349
+Open AI just published a research paper
+on this exact topic. And that's just one
+
+54
+00:00:59,349 --> 00:00:59,359
+on this exact topic. And that's just one
+ 
+
+55
+00:00:59,359 --> 00:01:01,029
+on this exact topic. And that's just one
+of two problems. So with this first
+
+56
+00:01:01,029 --> 00:01:01,039
+of two problems. So with this first
+ 
+
+57
+00:01:01,039 --> 00:01:02,389
+of two problems. So with this first
+problem, we know as the intelligence
+
+58
+00:01:02,389 --> 00:01:02,399
+problem, we know as the intelligence
+ 
+
+59
+00:01:02,399 --> 00:01:04,310
+problem, we know as the intelligence
+increases, the AI wants to please us and
+
+60
+00:01:04,310 --> 00:01:04,320
+increases, the AI wants to please us and
+ 
+
+61
+00:01:04,320 --> 00:01:05,670
+increases, the AI wants to please us and
+it wants to give us an answer instead of
+
+62
+00:01:05,670 --> 00:01:05,680
+it wants to give us an answer instead of
+ 
+
+63
+00:01:05,680 --> 00:01:07,429
+it wants to give us an answer instead of
+just saying it doesn't know. That's the
+
+64
+00:01:07,429 --> 00:01:07,439
+just saying it doesn't know. That's the
+ 
+
+65
+00:01:07,439 --> 00:01:09,109
+just saying it doesn't know. That's the
+first problem. And the second problem is
+
+66
+00:01:09,109 --> 00:01:09,119
+first problem. And the second problem is
+ 
+
+67
+00:01:09,119 --> 00:01:10,950
+first problem. And the second problem is
+actually you and me. That's what we call
+
+68
+00:01:10,950 --> 00:01:10,960
+actually you and me. That's what we call
+ 
+
+69
+00:01:10,960 --> 00:01:12,550
+actually you and me. That's what we call
+automation bias. So what's happening
+
+70
+00:01:12,550 --> 00:01:12,560
+automation bias. So what's happening
+ 
+
+71
+00:01:12,560 --> 00:01:15,109
+automation bias. So what's happening
+here is as the AI sounds more confident,
+
+72
+00:01:15,109 --> 00:01:15,119
+here is as the AI sounds more confident,
+ 
+
+73
+00:01:15,119 --> 00:01:17,270
+here is as the AI sounds more confident,
+as its intelligence increases, we start
+
+74
+00:01:17,270 --> 00:01:17,280
+as its intelligence increases, we start
+ 
+
+75
+00:01:17,280 --> 00:01:19,270
+as its intelligence increases, we start
+to trust it more, which means we check
+
+76
+00:01:19,270 --> 00:01:19,280
+to trust it more, which means we check
+ 
+
+77
+00:01:19,280 --> 00:01:21,830
+to trust it more, which means we check
+its output less, which in turn causes
+
+78
+00:01:21,830 --> 00:01:21,840
+its output less, which in turn causes
+ 
+
+79
+00:01:21,840 --> 00:01:23,910
+its output less, which in turn causes
+errors that compound over time. And this
+
+80
+00:01:23,910 --> 00:01:23,920
+errors that compound over time. And this
+ 
+
+81
+00:01:23,920 --> 00:01:25,830
+errors that compound over time. And this
+loop feeds back into itself as the
+
+82
+00:01:25,830 --> 00:01:25,840
+loop feeds back into itself as the
+ 
+
+83
+00:01:25,840 --> 00:01:27,109
+loop feeds back into itself as the
+intelligence gets smarter and smarter
+
+84
+00:01:27,109 --> 00:01:27,119
+intelligence gets smarter and smarter
+ 
+
+85
+00:01:27,119 --> 00:01:29,109
+intelligence gets smarter and smarter
+and smarter. So if we don't add any
+
+86
+00:01:29,109 --> 00:01:29,119
+and smarter. So if we don't add any
+ 
+
+87
+00:01:29,119 --> 00:01:30,950
+and smarter. So if we don't add any
+checks and balances here, there's a high
+
+88
+00:01:30,950 --> 00:01:30,960
+checks and balances here, there's a high
+ 
+
+89
+00:01:30,960 --> 00:01:32,069
+checks and balances here, there's a high
+probability that we're missing stuff
+
+90
+00:01:32,069 --> 00:01:32,079
+probability that we're missing stuff
+ 
+
+91
+00:01:32,079 --> 00:01:33,910
+probability that we're missing stuff
+that's critical for us not to miss. And
+
+92
+00:01:33,910 --> 00:01:33,920
+that's critical for us not to miss. And
+ 
+
+93
+00:01:33,920 --> 00:01:35,109
+that's critical for us not to miss. And
+this challenge is something that all of
+
+94
+00:01:35,109 --> 00:01:35,119
+this challenge is something that all of
+ 
+
+95
+00:01:35,119 --> 00:01:37,270
+this challenge is something that all of
+us will face. Here are just a few use
+
+96
+00:01:37,270 --> 00:01:37,280
+us will face. Here are just a few use
+ 
+
+97
+00:01:37,280 --> 00:01:38,950
+us will face. Here are just a few use
+cases that I've seen this manifest when
+
+98
+00:01:38,950 --> 00:01:38,960
+cases that I've seen this manifest when
+ 
+
+99
+00:01:38,960 --> 00:01:40,550
+cases that I've seen this manifest when
+working with clients. But it's important
+
+100
+00:01:40,550 --> 00:01:40,560
+working with clients. But it's important
+ 
+
+101
+00:01:40,560 --> 00:01:42,550
+working with clients. But it's important
+to note this is just a small sampling.
+
+102
+00:01:42,550 --> 00:01:42,560
+to note this is just a small sampling.
+ 
+
+103
+00:01:42,560 --> 00:01:44,230
+to note this is just a small sampling.
+This can happen and likely does happen
+
+104
+00:01:44,230 --> 00:01:44,240
+This can happen and likely does happen
+ 
+
+105
+00:01:44,240 --> 00:01:46,230
+This can happen and likely does happen
+in hundreds of cases. The most common
+
+106
+00:01:46,230 --> 00:01:46,240
+in hundreds of cases. The most common
+ 
+
+107
+00:01:46,240 --> 00:01:48,630
+in hundreds of cases. The most common
+category of task where AI guesses is
+
+108
+00:01:48,630 --> 00:01:48,640
+category of task where AI guesses is
+ 
+
+109
+00:01:48,640 --> 00:01:50,069
+category of task where AI guesses is
+when you're asking the AI to pull
+
+110
+00:01:50,069 --> 00:01:50,079
+when you're asking the AI to pull
+ 
+
+111
+00:01:50,079 --> 00:01:51,749
+when you're asking the AI to pull
+something directly from a source. So if
+
+112
+00:01:51,749 --> 00:01:51,759
+something directly from a source. So if
+ 
+
+113
+00:01:51,759 --> 00:01:53,510
+something directly from a source. So if
+you've given it a report, an Excel
+
+114
+00:01:53,510 --> 00:01:53,520
+you've given it a report, an Excel
+ 
+
+115
+00:01:53,520 --> 00:01:55,590
+you've given it a report, an Excel
+sheet, a contract, an email, whatever
+
+116
+00:01:55,590 --> 00:01:55,600
+sheet, a contract, an email, whatever
+ 
+
+117
+00:01:55,600 --> 00:01:56,789
+sheet, a contract, an email, whatever
+else, you wanted to extract that
+
+118
+00:01:56,789 --> 00:01:56,799
+else, you wanted to extract that
+ 
+
+119
+00:01:56,799 --> 00:01:58,950
+else, you wanted to extract that
+information and do something with it. In
+
+120
+00:01:58,950 --> 00:01:58,960
+information and do something with it. In
+ 
+
+121
+00:01:58,960 --> 00:02:00,149
+information and do something with it. In
+the process of extracting that
+
+122
+00:02:00,149 --> 00:02:00,159
+the process of extracting that
+ 
+
+123
+00:02:00,159 --> 00:02:01,670
+the process of extracting that
+information and giving you the answer,
+
+124
+00:02:01,670 --> 00:02:01,680
+information and giving you the answer,
+ 
+
+125
+00:02:01,680 --> 00:02:03,030
+information and giving you the answer,
+it may infer things from its own
+
+126
+00:02:03,030 --> 00:02:03,040
+it may infer things from its own
+ 
+
+127
+00:02:03,040 --> 00:02:04,310
+it may infer things from its own
+knowledge base, the internet or
+
+128
+00:02:04,310 --> 00:02:04,320
+knowledge base, the internet or
+ 
+
+129
+00:02:04,320 --> 00:02:05,670
+knowledge base, the internet or
+elsewhere, and that might go against
+
+130
+00:02:05,670 --> 00:02:05,680
+elsewhere, and that might go against
+ 
+
+131
+00:02:05,680 --> 00:02:07,190
+elsewhere, and that might go against
+what you actually wanted to do. Some
+
+132
+00:02:07,190 --> 00:02:07,200
+what you actually wanted to do. Some
+ 
+
+133
+00:02:07,200 --> 00:02:09,029
+what you actually wanted to do. Some
+clear examples of this is say you have
+
+134
+00:02:09,029 --> 00:02:09,039
+clear examples of this is say you have
+ 
+
+135
+00:02:09,039 --> 00:02:10,790
+clear examples of this is say you have
+the AI reviewing contracts for you.
+
+136
+00:02:10,790 --> 00:02:10,800
+the AI reviewing contracts for you.
+ 
+
+137
+00:02:10,800 --> 00:02:13,030
+the AI reviewing contracts for you.
+Well, we're reviewing those contracts.
+
+138
+00:02:13,030 --> 00:02:13,040
+Well, we're reviewing those contracts.
+ 
+
+139
+00:02:13,040 --> 00:02:14,470
+Well, we're reviewing those contracts.
+There could be two clauses in there that
+
+140
+00:02:14,470 --> 00:02:14,480
+There could be two clauses in there that
+ 
+
+141
+00:02:14,480 --> 00:02:15,910
+There could be two clauses in there that
+talk about payment terms, but the AI
+
+142
+00:02:15,910 --> 00:02:15,920
+talk about payment terms, but the AI
+ 
+
+143
+00:02:15,920 --> 00:02:17,190
+talk about payment terms, but the AI
+just picks one and gives you an answer
+
+144
+00:02:17,190 --> 00:02:17,200
+just picks one and gives you an answer
+ 
+
+145
+00:02:17,200 --> 00:02:19,110
+just picks one and gives you an answer
+from that and ignores a second. Another
+
+146
+00:02:19,110 --> 00:02:19,120
+from that and ignores a second. Another
+ 
+
+147
+00:02:19,120 --> 00:02:20,630
+from that and ignores a second. Another
+one could be a simple thing with meeting
+
+148
+00:02:20,630 --> 00:02:20,640
+one could be a simple thing with meeting
+ 
+
+149
+00:02:20,640 --> 00:02:22,390
+one could be a simple thing with meeting
+notes. So, say you have a transcript and
+
+150
+00:02:22,390 --> 00:02:22,400
+notes. So, say you have a transcript and
+ 
+
+151
+00:02:22,400 --> 00:02:24,309
+notes. So, say you have a transcript and
+you have the AI extracting action items
+
+152
+00:02:24,309 --> 00:02:24,319
+you have the AI extracting action items
+ 
+
+153
+00:02:24,319 --> 00:02:26,150
+you have the AI extracting action items
+from that and it sees in the transcript
+
+154
+00:02:26,150 --> 00:02:26,160
+from that and it sees in the transcript
+ 
+
+155
+00:02:26,160 --> 00:02:28,229
+from that and it sees in the transcript
+that somebody said, "Let's circle back
+
+156
+00:02:28,229 --> 00:02:28,239
+that somebody said, "Let's circle back
+ 
+
+157
+00:02:28,239 --> 00:02:31,110
+that somebody said, "Let's circle back
+next week." From this, the AI may infer
+
+158
+00:02:31,110 --> 00:02:31,120
+next week." From this, the AI may infer
+ 
+
+159
+00:02:31,120 --> 00:02:32,390
+next week." From this, the AI may infer
+that it's going to just choose a
+
+160
+00:02:32,390 --> 00:02:32,400
+that it's going to just choose a
+ 
+
+161
+00:02:32,400 --> 00:02:34,150
+that it's going to just choose a
+specific date as well as give that task
+
+162
+00:02:34,150 --> 00:02:34,160
+specific date as well as give that task
+ 
+
+163
+00:02:34,160 --> 00:02:35,830
+specific date as well as give that task
+to a specific owner. And sometimes the
+
+164
+00:02:35,830 --> 00:02:35,840
+to a specific owner. And sometimes the
+ 
+
+165
+00:02:35,840 --> 00:02:37,830
+to a specific owner. And sometimes the
+AI inferring from the context is useful,
+
+166
+00:02:37,830 --> 00:02:37,840
+AI inferring from the context is useful,
+ 
+
+167
+00:02:37,840 --> 00:02:39,430
+AI inferring from the context is useful,
+but most times you at least want to
+
+168
+00:02:39,430 --> 00:02:39,440
+but most times you at least want to
+ 
+
+169
+00:02:39,440 --> 00:02:40,949
+but most times you at least want to
+check it. And there are many other use
+
+170
+00:02:40,949 --> 00:02:40,959
+check it. And there are many other use
+ 
+
+171
+00:02:40,959 --> 00:02:42,710
+check it. And there are many other use
+cases that I've seen. So, extracting
+
+172
+00:02:42,710 --> 00:02:42,720
+cases that I've seen. So, extracting
+ 
+
+173
+00:02:42,720 --> 00:02:44,550
+cases that I've seen. So, extracting
+information from invoices and receipts,
+
+174
+00:02:44,550 --> 00:02:44,560
+information from invoices and receipts,
+ 
+
+175
+00:02:44,560 --> 00:02:46,070
+information from invoices and receipts,
+checking legal documents for insurance
+
+176
+00:02:46,070 --> 00:02:46,080
+checking legal documents for insurance
+ 
+
+177
+00:02:46,080 --> 00:02:47,910
+checking legal documents for insurance
+and leases, scoring different vendors
+
+178
+00:02:47,910 --> 00:02:47,920
+and leases, scoring different vendors
+ 
+
+179
+00:02:47,920 --> 00:02:49,830
+and leases, scoring different vendors
+against each other, building out CRM,
+
+180
+00:02:49,830 --> 00:02:49,840
+against each other, building out CRM,
+ 
+
+181
+00:02:49,840 --> 00:02:51,430
+against each other, building out CRM,
+all types of things. Quick pause in your
+
+182
+00:02:51,430 --> 00:02:51,440
+all types of things. Quick pause in your
+ 
+
+183
+00:02:51,440 --> 00:02:52,869
+all types of things. Quick pause in your
+regular programming. This video is
+
+184
+00:02:52,869 --> 00:02:52,879
+regular programming. This video is
+ 
+
+185
+00:02:52,879 --> 00:02:55,270
+regular programming. This video is
+brought to you by me as always. So, two
+
+186
+00:02:55,270 --> 00:02:55,280
+brought to you by me as always. So, two
+ 
+
+187
+00:02:55,280 --> 00:02:57,190
+brought to you by me as always. So, two
+quick things. First off, Blow is a
+
+188
+00:02:57,190 --> 00:02:57,200
+quick things. First off, Blow is a
+ 
+
+189
+00:02:57,200 --> 00:02:59,350
+quick things. First off, Blow is a
+30-day AI insight series, completely
+
+190
+00:02:59,350 --> 00:02:59,360
+30-day AI insight series, completely
+ 
+
+191
+00:02:59,360 --> 00:03:01,030
+30-day AI insight series, completely
+free. You'll get 30 insights in your
+
+192
+00:03:01,030 --> 00:03:01,040
+free. You'll get 30 insights in your
+ 
+
+193
+00:03:01,040 --> 00:03:02,630
+free. You'll get 30 insights in your
+inbox so I can apply AI to your business
+
+194
+00:03:02,630 --> 00:03:02,640
+inbox so I can apply AI to your business
+ 
+
+195
+00:03:02,640 --> 00:03:04,550
+inbox so I can apply AI to your business
+and your work. The second thing is if
+
+196
+00:03:04,550 --> 00:03:04,560
+and your work. The second thing is if
+ 
+
+197
+00:03:04,560 --> 00:03:06,229
+and your work. The second thing is if
+you'd like to work with me, blow a
+
+198
+00:03:06,229 --> 00:03:06,239
+you'd like to work with me, blow a
+ 
+
+199
+00:03:06,239 --> 00:03:07,509
+you'd like to work with me, blow a
+series of offerings to see if there's a
+
+200
+00:03:07,509 --> 00:03:07,519
+series of offerings to see if there's a
+ 
+
+201
+00:03:07,519 --> 00:03:09,270
+series of offerings to see if there's a
+good fit from the two of us. Now, let's
+
+202
+00:03:09,270 --> 00:03:09,280
+good fit from the two of us. Now, let's
+ 
+
+203
+00:03:09,280 --> 00:03:10,949
+good fit from the two of us. Now, let's
+get back in the video. So, we know the
+
+204
+00:03:10,949 --> 00:03:10,959
+get back in the video. So, we know the
+ 
+
+205
+00:03:10,959 --> 00:03:12,149
+get back in the video. So, we know the
+challenge and we know where this
+
+206
+00:03:12,149 --> 00:03:12,159
+challenge and we know where this
+ 
+
+207
+00:03:12,159 --> 00:03:13,830
+challenge and we know where this
+potentially could pop up. Now, let's
+
+208
+00:03:13,830 --> 00:03:13,840
+potentially could pop up. Now, let's
+ 
+
+209
+00:03:13,840 --> 00:03:14,949
+potentially could pop up. Now, let's
+actually walk through the rules of how
+
+210
+00:03:14,949 --> 00:03:14,959
+actually walk through the rules of how
+ 
+
+211
+00:03:14,959 --> 00:03:17,110
+actually walk through the rules of how
+we can mitigate this. So, the first rule
+
+212
+00:03:17,110 --> 00:03:17,120
+we can mitigate this. So, the first rule
+ 
+
+213
+00:03:17,120 --> 00:03:18,949
+we can mitigate this. So, the first rule
+is forcing the AI to give us blank
+
+214
+00:03:18,949 --> 00:03:18,959
+is forcing the AI to give us blank
+ 
+
+215
+00:03:18,959 --> 00:03:20,710
+is forcing the AI to give us blank
+answers when it doesn't know the answer.
+
+216
+00:03:20,710 --> 00:03:20,720
+answers when it doesn't know the answer.
+ 
+
+217
+00:03:20,720 --> 00:03:22,309
+answers when it doesn't know the answer.
+And a common thing people mess up here
+
+218
+00:03:22,309 --> 00:03:22,319
+And a common thing people mess up here
+ 
+
+219
+00:03:22,319 --> 00:03:24,070
+And a common thing people mess up here
+is instead of asking the AI to give them
+
+220
+00:03:24,070 --> 00:03:24,080
+is instead of asking the AI to give them
+ 
+
+221
+00:03:24,080 --> 00:03:25,990
+is instead of asking the AI to give them
+nothing, they ask them to give me
+
+222
+00:03:25,990 --> 00:03:26,000
+nothing, they ask them to give me
+ 
+
+223
+00:03:26,000 --> 00:03:27,750
+nothing, they ask them to give me
+something but give me a confidence score
+
+224
+00:03:27,750 --> 00:03:27,760
+something but give me a confidence score
+ 
+
+225
+00:03:27,760 --> 00:03:29,350
+something but give me a confidence score
+associated to that answer. With this
+
+226
+00:03:29,350 --> 00:03:29,360
+associated to that answer. With this
+ 
+
+227
+00:03:29,360 --> 00:03:30,710
+associated to that answer. With this
+approach, we're giving the AI another
+
+228
+00:03:30,710 --> 00:03:30,720
+approach, we're giving the AI another
+ 
+
+229
+00:03:30,720 --> 00:03:32,630
+approach, we're giving the AI another
+out to lie to us. It could give us an
+
+230
+00:03:32,630 --> 00:03:32,640
+out to lie to us. It could give us an
+ 
+
+231
+00:03:32,640 --> 00:03:34,470
+out to lie to us. It could give us an
+eight confidence score, but really it's
+
+232
+00:03:34,470 --> 00:03:34,480
+eight confidence score, but really it's
+ 
+
+233
+00:03:34,480 --> 00:03:35,990
+eight confidence score, but really it's
+probably a zero. So, we don't want to
+
+234
+00:03:35,990 --> 00:03:36,000
+probably a zero. So, we don't want to
+ 
+
+235
+00:03:36,000 --> 00:03:37,750
+probably a zero. So, we don't want to
+leave that up to AI. We want to remove
+
+236
+00:03:37,750 --> 00:03:37,760
+leave that up to AI. We want to remove
+ 
+
+237
+00:03:37,760 --> 00:03:39,509
+leave that up to AI. We want to remove
+that responsibility from them and have
+
+238
+00:03:39,509 --> 00:03:39,519
+that responsibility from them and have
+ 
+
+239
+00:03:39,519 --> 00:03:41,110
+that responsibility from them and have
+them just give us evidence. And the way
+
+240
+00:03:41,110 --> 00:03:41,120
+them just give us evidence. And the way
+ 
+
+241
+00:03:41,120 --> 00:03:42,149
+them just give us evidence. And the way
+we're going to do that is we're going to
+
+242
+00:03:42,149 --> 00:03:42,159
+we're going to do that is we're going to
+ 
+
+243
+00:03:42,159 --> 00:03:44,229
+we're going to do that is we're going to
+ask the AI to give us a blank value when
+
+244
+00:03:44,229 --> 00:03:44,239
+ask the AI to give us a blank value when
+ 
+
+245
+00:03:44,239 --> 00:03:46,149
+ask the AI to give us a blank value when
+it's uncertain or doesn't know. In
+
+246
+00:03:46,149 --> 00:03:46,159
+it's uncertain or doesn't know. In
+ 
+
+247
+00:03:46,159 --> 00:03:47,670
+it's uncertain or doesn't know. In
+addition to the blank value, it has to
+
+248
+00:03:47,670 --> 00:03:47,680
+addition to the blank value, it has to
+ 
+
+249
+00:03:47,680 --> 00:03:49,670
+addition to the blank value, it has to
+tell us why it's uncertain. So, it has
+
+250
+00:03:49,670 --> 00:03:49,680
+tell us why it's uncertain. So, it has
+ 
+
+251
+00:03:49,680 --> 00:03:51,589
+tell us why it's uncertain. So, it has
+to give us an explanation of why it
+
+252
+00:03:51,589 --> 00:03:51,599
+to give us an explanation of why it
+ 
+
+253
+00:03:51,599 --> 00:03:53,190
+to give us an explanation of why it
+doesn't know the answer. This helps us
+
+254
+00:03:53,190 --> 00:03:53,200
+doesn't know the answer. This helps us
+ 
+
+255
+00:03:53,200 --> 00:03:55,670
+doesn't know the answer. This helps us
+in two big ways. One is we can quickly
+
+256
+00:03:55,670 --> 00:03:55,680
+in two big ways. One is we can quickly
+ 
+
+257
+00:03:55,680 --> 00:03:57,509
+in two big ways. One is we can quickly
+skim all the values, seeing the ones
+
+258
+00:03:57,509 --> 00:03:57,519
+skim all the values, seeing the ones
+ 
+
+259
+00:03:57,519 --> 00:03:58,789
+skim all the values, seeing the ones
+that are blank, and those that are blank
+
+260
+00:03:58,789 --> 00:03:58,799
+that are blank, and those that are blank
+ 
+
+261
+00:03:58,799 --> 00:04:00,710
+that are blank, and those that are blank
+we can check quickly. In addition to
+
+262
+00:04:00,710 --> 00:04:00,720
+we can check quickly. In addition to
+ 
+
+263
+00:04:00,720 --> 00:04:02,710
+we can check quickly. In addition to
+that, by forcing the AI to explain why
+
+264
+00:04:02,710 --> 00:04:02,720
+that, by forcing the AI to explain why
+ 
+
+265
+00:04:02,720 --> 00:04:04,550
+that, by forcing the AI to explain why
+it doesn't know, it gives us an easier
+
+266
+00:04:04,550 --> 00:04:04,560
+it doesn't know, it gives us an easier
+ 
+
+267
+00:04:04,560 --> 00:04:06,309
+it doesn't know, it gives us an easier
+way to identify exactly where the error
+
+268
+00:04:06,309 --> 00:04:06,319
+way to identify exactly where the error
+ 
+
+269
+00:04:06,319 --> 00:04:08,390
+way to identify exactly where the error
+is and fix it ourselves quickly. So
+
+270
+00:04:08,390 --> 00:04:08,400
+is and fix it ourselves quickly. So
+ 
+
+271
+00:04:08,400 --> 00:04:09,509
+is and fix it ourselves quickly. So
+let's see what this looks like in
+
+272
+00:04:09,509 --> 00:04:09,519
+let's see what this looks like in
+ 
+
+273
+00:04:09,519 --> 00:04:11,910
+let's see what this looks like in
+action. So on the left hand side we have
+
+274
+00:04:11,910 --> 00:04:11,920
+action. So on the left hand side we have
+ 
+
+275
+00:04:11,920 --> 00:04:13,670
+action. So on the left hand side we have
+no rule. So this is using it without the
+
+276
+00:04:13,670 --> 00:04:13,680
+no rule. So this is using it without the
+ 
+
+277
+00:04:13,680 --> 00:04:14,630
+no rule. So this is using it without the
+rule. And here we can see we're
+
+278
+00:04:14,630 --> 00:04:14,640
+rule. And here we can see we're
+ 
+
+279
+00:04:14,640 --> 00:04:17,030
+rule. And here we can see we're
+extracting data from a contract. We have
+
+280
+00:04:17,030 --> 00:04:17,040
+extracting data from a contract. We have
+ 
+
+281
+00:04:17,040 --> 00:04:18,870
+extracting data from a contract. We have
+payment terms, renewal date, liability
+
+282
+00:04:18,870 --> 00:04:18,880
+payment terms, renewal date, liability
+ 
+
+283
+00:04:18,880 --> 00:04:21,270
+payment terms, renewal date, liability
+cap, etc. All the values been have been
+
+284
+00:04:21,270 --> 00:04:21,280
+cap, etc. All the values been have been
+ 
+
+285
+00:04:21,280 --> 00:04:23,510
+cap, etc. All the values been have been
+populated by the AI. Now we have the
+
+286
+00:04:23,510 --> 00:04:23,520
+populated by the AI. Now we have the
+ 
+
+287
+00:04:23,520 --> 00:04:25,430
+populated by the AI. Now we have the
+rule turned on with the prompt. And
+
+288
+00:04:25,430 --> 00:04:25,440
+rule turned on with the prompt. And
+ 
+
+289
+00:04:25,440 --> 00:04:26,950
+rule turned on with the prompt. And
+instead of having all the values filled
+
+290
+00:04:26,950 --> 00:04:26,960
+instead of having all the values filled
+ 
+
+291
+00:04:26,960 --> 00:04:29,350
+instead of having all the values filled
+in, we have a few different blanks here.
+
+292
+00:04:29,350 --> 00:04:29,360
+in, we have a few different blanks here.
+ 
+
+293
+00:04:29,360 --> 00:04:31,909
+in, we have a few different blanks here.
+And these blanks have reasons as to why
+
+294
+00:04:31,909 --> 00:04:31,919
+And these blanks have reasons as to why
+ 
+
+295
+00:04:31,919 --> 00:04:33,590
+And these blanks have reasons as to why
+they're blank. So for the payment terms,
+
+296
+00:04:33,590 --> 00:04:33,600
+they're blank. So for the payment terms,
+ 
+
+297
+00:04:33,600 --> 00:04:35,990
+they're blank. So for the payment terms,
+we can see that the AI stated on pages 8
+
+298
+00:04:35,990 --> 00:04:36,000
+we can see that the AI stated on pages 8
+ 
+
+299
+00:04:36,000 --> 00:04:37,670
+we can see that the AI stated on pages 8
+and 14, there are two different payment
+
+300
+00:04:37,670 --> 00:04:37,680
+and 14, there are two different payment
+ 
+
+301
+00:04:37,680 --> 00:04:39,510
+and 14, there are two different payment
+terms, net 30 and net 45. That's why I
+
+302
+00:04:39,510 --> 00:04:39,520
+terms, net 30 and net 45. That's why I
+ 
+
+303
+00:04:39,520 --> 00:04:41,749
+terms, net 30 and net 45. That's why I
+left it blank. So we as the user, we can
+
+304
+00:04:41,749 --> 00:04:41,759
+left it blank. So we as the user, we can
+ 
+
+305
+00:04:41,759 --> 00:04:43,189
+left it blank. So we as the user, we can
+look at this and say, okay, we want
+
+306
+00:04:43,189 --> 00:04:43,199
+look at this and say, okay, we want
+ 
+
+307
+00:04:43,199 --> 00:04:45,270
+look at this and say, okay, we want
+net30 or we want net 45. But we don't
+
+308
+00:04:45,270 --> 00:04:45,280
+net30 or we want net 45. But we don't
+ 
+
+309
+00:04:45,280 --> 00:04:46,950
+net30 or we want net 45. But we don't
+have to have the AI decide that for us.
+
+310
+00:04:46,950 --> 00:04:46,960
+have to have the AI decide that for us.
+ 
+
+311
+00:04:46,960 --> 00:04:48,230
+have to have the AI decide that for us.
+And the prompt here is simple to
+
+312
+00:04:48,230 --> 00:04:48,240
+And the prompt here is simple to
+ 
+
+313
+00:04:48,240 --> 00:04:50,070
+And the prompt here is simple to
+actually enable this specific rule. It's
+
+314
+00:04:50,070 --> 00:04:50,080
+actually enable this specific rule. It's
+ 
+
+315
+00:04:50,080 --> 00:04:52,310
+actually enable this specific rule. It's
+only a few lines. So at the very top,
+
+316
+00:04:52,310 --> 00:04:52,320
+only a few lines. So at the very top,
+ 
+
+317
+00:04:52,320 --> 00:04:53,670
+only a few lines. So at the very top,
+we're stating that I want you to extract
+
+318
+00:04:53,670 --> 00:04:53,680
+we're stating that I want you to extract
+ 
+
+319
+00:04:53,680 --> 00:04:55,030
+we're stating that I want you to extract
+the following fields from this document
+
+320
+00:04:55,030 --> 00:04:55,040
+the following fields from this document
+ 
+
+321
+00:04:55,040 --> 00:04:56,230
+the following fields from this document
+into the table. So we're giving it a
+
+322
+00:04:56,230 --> 00:04:56,240
+into the table. So we're giving it a
+ 
+
+323
+00:04:56,240 --> 00:04:58,070
+into the table. So we're giving it a
+purpose. Below that are the rules and
+
+324
+00:04:58,070 --> 00:04:58,080
+purpose. Below that are the rules and
+ 
+
+325
+00:04:58,080 --> 00:04:59,590
+purpose. Below that are the rules and
+this is the important part. So the first
+
+326
+00:04:59,590 --> 00:04:59,600
+this is the important part. So the first
+ 
+
+327
+00:04:59,600 --> 00:05:01,590
+this is the important part. So the first
+rule is stating that we can only extract
+
+328
+00:05:01,590 --> 00:05:01,600
+rule is stating that we can only extract
+ 
+
+329
+00:05:01,600 --> 00:05:03,350
+rule is stating that we can only extract
+values that are explicitly stated in the
+
+330
+00:05:03,350 --> 00:05:03,360
+values that are explicitly stated in the
+ 
+
+331
+00:05:03,360 --> 00:05:05,030
+values that are explicitly stated in the
+document. So this here is a concept
+
+332
+00:05:05,030 --> 00:05:05,040
+document. So this here is a concept
+ 
+
+333
+00:05:05,040 --> 00:05:06,629
+document. So this here is a concept
+called grounding. So we're grounding the
+
+334
+00:05:06,629 --> 00:05:06,639
+called grounding. So we're grounding the
+ 
+
+335
+00:05:06,639 --> 00:05:08,390
+called grounding. So we're grounding the
+AI in the source document ensuring that
+
+336
+00:05:08,390 --> 00:05:08,400
+AI in the source document ensuring that
+ 
+
+337
+00:05:08,400 --> 00:05:10,390
+AI in the source document ensuring that
+it only gets information from here and
+
+338
+00:05:10,390 --> 00:05:10,400
+it only gets information from here and
+ 
+
+339
+00:05:10,400 --> 00:05:11,909
+it only gets information from here and
+nowhere else. And after that we're
+
+340
+00:05:11,909 --> 00:05:11,919
+nowhere else. And after that we're
+ 
+
+341
+00:05:11,919 --> 00:05:13,590
+nowhere else. And after that we're
+giving the AI an out. So we're saying
+
+342
+00:05:13,590 --> 00:05:13,600
+giving the AI an out. So we're saying
+ 
+
+343
+00:05:13,600 --> 00:05:15,590
+giving the AI an out. So we're saying
+it's okay to give us no answer. So if
+
+344
+00:05:15,590 --> 00:05:15,600
+it's okay to give us no answer. So if
+ 
+
+345
+00:05:15,600 --> 00:05:17,510
+it's okay to give us no answer. So if
+the value is ambiguous, missing or
+
+346
+00:05:17,510 --> 00:05:17,520
+the value is ambiguous, missing or
+ 
+
+347
+00:05:17,520 --> 00:05:19,270
+the value is ambiguous, missing or
+unclear, I want you to leave that field
+
+348
+00:05:19,270 --> 00:05:19,280
+unclear, I want you to leave that field
+ 
+
+349
+00:05:19,280 --> 00:05:21,029
+unclear, I want you to leave that field
+blank. In addition to leaving the field
+
+350
+00:05:21,029 --> 00:05:21,039
+blank. In addition to leaving the field
+ 
+
+351
+00:05:21,039 --> 00:05:23,350
+blank. In addition to leaving the field
+blank, you also need to add a column
+
+352
+00:05:23,350 --> 00:05:23,360
+blank, you also need to add a column
+ 
+
+353
+00:05:23,360 --> 00:05:25,510
+blank, you also need to add a column
+called reason. And next to those blank
+
+354
+00:05:25,510 --> 00:05:25,520
+called reason. And next to those blank
+ 
+
+355
+00:05:25,520 --> 00:05:26,710
+called reason. And next to those blank
+fields, I want you to give a one-s
+
+356
+00:05:26,710 --> 00:05:26,720
+fields, I want you to give a one-s
+ 
+
+357
+00:05:26,720 --> 00:05:28,629
+fields, I want you to give a one-s
+sentence explanation as to why you left
+
+358
+00:05:28,629 --> 00:05:28,639
+sentence explanation as to why you left
+ 
+
+359
+00:05:28,639 --> 00:05:30,150
+sentence explanation as to why you left
+it blank. And then we add a last
+
+360
+00:05:30,150 --> 00:05:30,160
+it blank. And then we add a last
+ 
+
+361
+00:05:30,160 --> 00:05:31,749
+it blank. And then we add a last
+reassurance at the bottom, reaffirming
+
+362
+00:05:31,749 --> 00:05:31,759
+reassurance at the bottom, reaffirming
+ 
+
+363
+00:05:31,759 --> 00:05:33,350
+reassurance at the bottom, reaffirming
+that the AI should base every value on
+
+364
+00:05:33,350 --> 00:05:33,360
+that the AI should base every value on
+ 
+
+365
+00:05:33,360 --> 00:05:35,029
+that the AI should base every value on
+what the document actually says, and it
+
+366
+00:05:35,029 --> 00:05:35,039
+what the document actually says, and it
+ 
+
+367
+00:05:35,039 --> 00:05:36,790
+what the document actually says, and it
+should quote and reference specific
+
+368
+00:05:36,790 --> 00:05:36,800
+should quote and reference specific
+ 
+
+369
+00:05:36,800 --> 00:05:38,390
+should quote and reference specific
+sections that it pulled from for that
+
+370
+00:05:38,390 --> 00:05:38,400
+sections that it pulled from for that
+ 
+
+371
+00:05:38,400 --> 00:05:40,310
+sections that it pulled from for that
+blank section. So this is our first rule
+
+372
+00:05:40,310 --> 00:05:40,320
+blank section. So this is our first rule
+ 
+
+373
+00:05:40,320 --> 00:05:42,070
+blank section. So this is our first rule
+in first prompt, where we're forcing the
+
+374
+00:05:42,070 --> 00:05:42,080
+in first prompt, where we're forcing the
+ 
+
+375
+00:05:42,080 --> 00:05:43,590
+in first prompt, where we're forcing the
+AI to give us blank answers when it
+
+376
+00:05:43,590 --> 00:05:43,600
+AI to give us blank answers when it
+ 
+
+377
+00:05:43,600 --> 00:05:45,029
+AI to give us blank answers when it
+doesn't know and explaining why it's
+
+378
+00:05:45,029 --> 00:05:45,039
+doesn't know and explaining why it's
+ 
+
+379
+00:05:45,039 --> 00:05:47,670
+doesn't know and explaining why it's
+blank. The second rule is actually
+
+380
+00:05:47,670 --> 00:05:47,680
+blank. The second rule is actually
+ 
+
+381
+00:05:47,680 --> 00:05:49,590
+blank. The second rule is actually
+changing the incentive mechanism because
+
+382
+00:05:49,590 --> 00:05:49,600
+changing the incentive mechanism because
+ 
+
+383
+00:05:49,600 --> 00:05:51,749
+changing the incentive mechanism because
+currently the way the AI sees these
+
+384
+00:05:51,749 --> 00:05:51,759
+currently the way the AI sees these
+ 
+
+385
+00:05:51,759 --> 00:05:54,469
+currently the way the AI sees these
+answers is it equates a wrong answer to
+
+386
+00:05:54,469 --> 00:05:54,479
+answers is it equates a wrong answer to
+ 
+
+387
+00:05:54,479 --> 00:05:56,230
+answers is it equates a wrong answer to
+the same value as a blank answer. And we
+
+388
+00:05:56,230 --> 00:05:56,240
+the same value as a blank answer. And we
+ 
+
+389
+00:05:56,240 --> 00:05:57,510
+the same value as a blank answer. And we
+want to change that. We don't want the
+
+390
+00:05:57,510 --> 00:05:57,520
+want to change that. We don't want the
+ 
+
+391
+00:05:57,520 --> 00:05:58,710
+want to change that. We don't want the
+AI to think that these are the same
+
+392
+00:05:58,710 --> 00:05:58,720
+AI to think that these are the same
+ 
+
+393
+00:05:58,720 --> 00:06:00,469
+AI to think that these are the same
+because if it does, it's likely going to
+
+394
+00:06:00,469 --> 00:06:00,479
+because if it does, it's likely going to
+ 
+
+395
+00:06:00,479 --> 00:06:01,909
+because if it does, it's likely going to
+default to the wrong answer because it
+
+396
+00:06:01,909 --> 00:06:01,919
+default to the wrong answer because it
+ 
+
+397
+00:06:01,919 --> 00:06:03,350
+default to the wrong answer because it
+wants to give you something. So to
+
+398
+00:06:03,350 --> 00:06:03,360
+wants to give you something. So to
+ 
+
+399
+00:06:03,360 --> 00:06:04,390
+wants to give you something. So to
+change that, we're just going to add a
+
+400
+00:06:04,390 --> 00:06:04,400
+change that, we're just going to add a
+ 
+
+401
+00:06:04,400 --> 00:06:05,990
+change that, we're just going to add a
+single line prompt that alters the
+
+402
+00:06:05,990 --> 00:06:06,000
+single line prompt that alters the
+ 
+
+403
+00:06:06,000 --> 00:06:07,830
+single line prompt that alters the
+incentive in the AI's head. So instead
+
+404
+00:06:07,830 --> 00:06:07,840
+incentive in the AI's head. So instead
+ 
+
+405
+00:06:07,840 --> 00:06:09,350
+incentive in the AI's head. So instead
+of saying this, we're going to say that
+
+406
+00:06:09,350 --> 00:06:09,360
+of saying this, we're going to say that
+ 
+
+407
+00:06:09,360 --> 00:06:11,670
+of saying this, we're going to say that
+a wrong answer is three times worse than
+
+408
+00:06:11,670 --> 00:06:11,680
+a wrong answer is three times worse than
+ 
+
+409
+00:06:11,680 --> 00:06:13,909
+a wrong answer is three times worse than
+a blank answer. And imagine if you have
+
+410
+00:06:13,909 --> 00:06:13,919
+a blank answer. And imagine if you have
+ 
+
+411
+00:06:13,919 --> 00:06:15,909
+a blank answer. And imagine if you have
+a new employee and you hire them and
+
+412
+00:06:15,909 --> 00:06:15,919
+a new employee and you hire them and
+ 
+
+413
+00:06:15,919 --> 00:06:17,110
+a new employee and you hire them and
+they want to please you and they want to
+
+414
+00:06:17,110 --> 00:06:17,120
+they want to please you and they want to
+ 
+
+415
+00:06:17,120 --> 00:06:18,710
+they want to please you and they want to
+give you answers. Well, if you tell them
+
+416
+00:06:18,710 --> 00:06:18,720
+give you answers. Well, if you tell them
+ 
+
+417
+00:06:18,720 --> 00:06:20,309
+give you answers. Well, if you tell them
+that if you give me a wrong answer, it
+
+418
+00:06:20,309 --> 00:06:20,319
+that if you give me a wrong answer, it
+ 
+
+419
+00:06:20,319 --> 00:06:22,070
+that if you give me a wrong answer, it
+costs the company 3x more than a blank
+
+420
+00:06:22,070 --> 00:06:22,080
+costs the company 3x more than a blank
+ 
+
+421
+00:06:22,080 --> 00:06:23,430
+costs the company 3x more than a blank
+answer. They're likely going to give you
+
+422
+00:06:23,430 --> 00:06:23,440
+answer. They're likely going to give you
+ 
+
+423
+00:06:23,440 --> 00:06:24,870
+answer. They're likely going to give you
+a lot more blank answers than wrong
+
+424
+00:06:24,870 --> 00:06:24,880
+a lot more blank answers than wrong
+ 
+
+425
+00:06:24,880 --> 00:06:26,550
+a lot more blank answers than wrong
+answers. The same thing applies here.
+
+426
+00:06:26,550 --> 00:06:26,560
+answers. The same thing applies here.
+ 
+
+427
+00:06:26,560 --> 00:06:27,749
+answers. The same thing applies here.
+And this is the prompt. Like I said,
+
+428
+00:06:27,749 --> 00:06:27,759
+And this is the prompt. Like I said,
+ 
+
+429
+00:06:27,759 --> 00:06:29,510
+And this is the prompt. Like I said,
+it's very basic. All we're saying is a
+
+430
+00:06:29,510 --> 00:06:29,520
+it's very basic. All we're saying is a
+ 
+
+431
+00:06:29,520 --> 00:06:31,430
+it's very basic. All we're saying is a
+wrong answer is 3x more than a blank
+
+432
+00:06:31,430 --> 00:06:31,440
+wrong answer is 3x more than a blank
+ 
+
+433
+00:06:31,440 --> 00:06:33,430
+wrong answer is 3x more than a blank
+answer. When in doubt, leave it blank.
+
+434
+00:06:33,430 --> 00:06:33,440
+answer. When in doubt, leave it blank.
+ 
+
+435
+00:06:33,440 --> 00:06:35,510
+answer. When in doubt, leave it blank.
+That's it. That's rule two, changing the
+
+436
+00:06:35,510 --> 00:06:35,520
+That's it. That's rule two, changing the
+ 
+
+437
+00:06:35,520 --> 00:06:37,909
+That's it. That's rule two, changing the
+incentives. The final rule is forcing
+
+438
+00:06:37,909 --> 00:06:37,919
+incentives. The final rule is forcing
+ 
+
+439
+00:06:37,919 --> 00:06:39,830
+incentives. The final rule is forcing
+the AI to show the source. And we're
+
+440
+00:06:39,830 --> 00:06:39,840
+the AI to show the source. And we're
+ 
+
+441
+00:06:39,840 --> 00:06:41,670
+the AI to show the source. And we're
+doing this because again we're fighting
+
+442
+00:06:41,670 --> 00:06:41,680
+doing this because again we're fighting
+ 
+
+443
+00:06:41,680 --> 00:06:43,670
+doing this because again we're fighting
+a battle that the AI is constantly being
+
+444
+00:06:43,670 --> 00:06:43,680
+a battle that the AI is constantly being
+ 
+
+445
+00:06:43,680 --> 00:06:45,670
+a battle that the AI is constantly being
+pulled into. So say we've given our
+
+446
+00:06:45,670 --> 00:06:45,680
+pulled into. So say we've given our
+ 
+
+447
+00:06:45,680 --> 00:06:47,909
+pulled into. So say we've given our
+instructions here and the instructions
+
+448
+00:06:47,909 --> 00:06:47,919
+instructions here and the instructions
+ 
+
+449
+00:06:47,919 --> 00:06:49,590
+instructions here and the instructions
+explicitly state that we want the AI to
+
+450
+00:06:49,590 --> 00:06:49,600
+explicitly state that we want the AI to
+ 
+
+451
+00:06:49,600 --> 00:06:51,029
+explicitly state that we want the AI to
+extract only information from the
+
+452
+00:06:51,029 --> 00:06:51,039
+extract only information from the
+ 
+
+453
+00:06:51,039 --> 00:06:52,870
+extract only information from the
+document and nothing else. Well, over
+
+454
+00:06:52,870 --> 00:06:52,880
+document and nothing else. Well, over
+ 
+
+455
+00:06:52,880 --> 00:06:54,790
+document and nothing else. Well, over
+time as the AI is working on a complex
+
+456
+00:06:54,790 --> 00:06:54,800
+time as the AI is working on a complex
+ 
+
+457
+00:06:54,800 --> 00:06:57,189
+time as the AI is working on a complex
+task, it will continually want to infer.
+
+458
+00:06:57,189 --> 00:06:57,199
+task, it will continually want to infer.
+ 
+
+459
+00:06:57,199 --> 00:06:58,950
+task, it will continually want to infer.
+So it keeps getting pulled away from the
+
+460
+00:06:58,950 --> 00:06:58,960
+So it keeps getting pulled away from the
+ 
+
+461
+00:06:58,960 --> 00:07:00,390
+So it keeps getting pulled away from the
+system instruction that we gave it and
+
+462
+00:07:00,390 --> 00:07:00,400
+system instruction that we gave it and
+ 
+
+463
+00:07:00,400 --> 00:07:02,230
+system instruction that we gave it and
+it's wanting to go back to its old ways.
+
+464
+00:07:02,230 --> 00:07:02,240
+it's wanting to go back to its old ways.
+ 
+
+465
+00:07:02,240 --> 00:07:04,710
+it's wanting to go back to its old ways.
+So when this occurs for rule three, we
+
+466
+00:07:04,710 --> 00:07:04,720
+So when this occurs for rule three, we
+ 
+
+467
+00:07:04,720 --> 00:07:06,230
+So when this occurs for rule three, we
+want to have a safety net that catches
+
+468
+00:07:06,230 --> 00:07:06,240
+want to have a safety net that catches
+ 
+
+469
+00:07:06,240 --> 00:07:07,830
+want to have a safety net that catches
+it. And that's what this third rule is
+
+470
+00:07:07,830 --> 00:07:07,840
+it. And that's what this third rule is
+ 
+
+471
+00:07:07,840 --> 00:07:09,830
+it. And that's what this third rule is
+all about. Even when the AI wants to
+
+472
+00:07:09,830 --> 00:07:09,840
+all about. Even when the AI wants to
+ 
+
+473
+00:07:09,840 --> 00:07:11,589
+all about. Even when the AI wants to
+avoid what we're asking it to do, we're
+
+474
+00:07:11,589 --> 00:07:11,599
+avoid what we're asking it to do, we're
+ 
+
+475
+00:07:11,599 --> 00:07:12,710
+avoid what we're asking it to do, we're
+still going to have a safety net to
+
+476
+00:07:12,710 --> 00:07:12,720
+still going to have a safety net to
+ 
+
+477
+00:07:12,720 --> 00:07:14,070
+still going to have a safety net to
+catch it. And here's the prompt for
+
+478
+00:07:14,070 --> 00:07:14,080
+catch it. And here's the prompt for
+ 
+
+479
+00:07:14,080 --> 00:07:16,309
+catch it. And here's the prompt for
+that. So in this prompt, we're saying
+
+480
+00:07:16,309 --> 00:07:16,319
+that. So in this prompt, we're saying
+ 
+
+481
+00:07:16,319 --> 00:07:18,070
+that. So in this prompt, we're saying
+that for each field, I want you to add
+
+482
+00:07:18,070 --> 00:07:18,080
+that for each field, I want you to add
+ 
+
+483
+00:07:18,080 --> 00:07:19,430
+that for each field, I want you to add
+another column. So every field that you
+
+484
+00:07:19,430 --> 00:07:19,440
+another column. So every field that you
+ 
+
+485
+00:07:19,440 --> 00:07:20,710
+another column. So every field that you
+extract, and that column is going to be
+
+486
+00:07:20,710 --> 00:07:20,720
+extract, and that column is going to be
+ 
+
+487
+00:07:20,720 --> 00:07:22,790
+extract, and that column is going to be
+the source column. In the source column,
+
+488
+00:07:22,790 --> 00:07:22,800
+the source column. In the source column,
+ 
+
+489
+00:07:22,800 --> 00:07:24,469
+the source column. In the source column,
+you're going to add one of two answers.
+
+490
+00:07:24,469 --> 00:07:24,479
+you're going to add one of two answers.
+ 
+
+491
+00:07:24,479 --> 00:07:26,150
+you're going to add one of two answers.
+Either you're going to say the value is
+
+492
+00:07:26,150 --> 00:07:26,160
+Either you're going to say the value is
+ 
+
+493
+00:07:26,160 --> 00:07:27,670
+Either you're going to say the value is
+extracted because you got it word for
+
+494
+00:07:27,670 --> 00:07:27,680
+extracted because you got it word for
+ 
+
+495
+00:07:27,680 --> 00:07:29,670
+extracted because you got it word for
+word from the document like I asked you,
+
+496
+00:07:29,670 --> 00:07:29,680
+word from the document like I asked you,
+ 
+
+497
+00:07:29,680 --> 00:07:31,670
+word from the document like I asked you,
+or you're going to say inferred, and
+
+498
+00:07:31,670 --> 00:07:31,680
+or you're going to say inferred, and
+ 
+
+499
+00:07:31,680 --> 00:07:33,029
+or you're going to say inferred, and
+that's when the AI derived the answer
+
+500
+00:07:33,029 --> 00:07:33,039
+that's when the AI derived the answer
+ 
+
+501
+00:07:33,039 --> 00:07:34,469
+that's when the AI derived the answer
+from the surrounding context, it
+
+502
+00:07:34,469 --> 00:07:34,479
+from the surrounding context, it
+ 
+
+503
+00:07:34,479 --> 00:07:35,909
+from the surrounding context, it
+calculated something or interpreted
+
+504
+00:07:35,909 --> 00:07:35,919
+calculated something or interpreted
+ 
+
+505
+00:07:35,919 --> 00:07:37,670
+calculated something or interpreted
+something itself. and for the inferred
+
+506
+00:07:37,670 --> 00:07:37,680
+something itself. and for the inferred
+ 
+
+507
+00:07:37,680 --> 00:07:39,430
+something itself. and for the inferred
+column. So when you add this value, if
+
+508
+00:07:39,430 --> 00:07:39,440
+column. So when you add this value, if
+ 
+
+509
+00:07:39,440 --> 00:07:41,270
+column. So when you add this value, if
+you do add this value, I also want you
+
+510
+00:07:41,270 --> 00:07:41,280
+you do add this value, I also want you
+ 
+
+511
+00:07:41,280 --> 00:07:43,510
+you do add this value, I also want you
+to have an evidence column right next to
+
+512
+00:07:43,510 --> 00:07:43,520
+to have an evidence column right next to
+ 
+
+513
+00:07:43,520 --> 00:07:45,189
+to have an evidence column right next to
+that that tells me exactly in one
+
+514
+00:07:45,189 --> 00:07:45,199
+that that tells me exactly in one
+ 
+
+515
+00:07:45,199 --> 00:07:46,629
+that that tells me exactly in one
+sentence explaining what you inferred
+
+516
+00:07:46,629 --> 00:07:46,639
+sentence explaining what you inferred
+ 
+
+517
+00:07:46,639 --> 00:07:48,469
+sentence explaining what you inferred
+from where. Now remember the reason we
+
+518
+00:07:48,469 --> 00:07:48,479
+from where. Now remember the reason we
+ 
+
+519
+00:07:48,479 --> 00:07:49,990
+from where. Now remember the reason we
+have to do this, even though we've asked
+
+520
+00:07:49,990 --> 00:07:50,000
+have to do this, even though we've asked
+ 
+
+521
+00:07:50,000 --> 00:07:51,830
+have to do this, even though we've asked
+the AI to only extract stuff and not
+
+522
+00:07:51,830 --> 00:07:51,840
+the AI to only extract stuff and not
+ 
+
+523
+00:07:51,840 --> 00:07:53,749
+the AI to only extract stuff and not
+infer stuff and give us blank answers,
+
+524
+00:07:53,749 --> 00:07:53,759
+infer stuff and give us blank answers,
+ 
+
+525
+00:07:53,759 --> 00:07:56,150
+infer stuff and give us blank answers,
+it will over time on complex tasks start
+
+526
+00:07:56,150 --> 00:07:56,160
+it will over time on complex tasks start
+ 
+
+527
+00:07:56,160 --> 00:07:58,070
+it will over time on complex tasks start
+to infer. And when it does, we want to
+
+528
+00:07:58,070 --> 00:07:58,080
+to infer. And when it does, we want to
+ 
+
+529
+00:07:58,080 --> 00:07:59,990
+to infer. And when it does, we want to
+have an out or a safety net to ensure
+
+530
+00:07:59,990 --> 00:08:00,000
+have an out or a safety net to ensure
+ 
+
+531
+00:08:00,000 --> 00:08:01,270
+have an out or a safety net to ensure
+that when it does, it gives us an answer
+
+532
+00:08:01,270 --> 00:08:01,280
+that when it does, it gives us an answer
+ 
+
+533
+00:08:01,280 --> 00:08:02,710
+that when it does, it gives us an answer
+as to why. And this is what it looks
+
+534
+00:08:02,710 --> 00:08:02,720
+as to why. And this is what it looks
+ 
+
+535
+00:08:02,720 --> 00:08:04,309
+as to why. And this is what it looks
+like through an example. So say we're
+
+536
+00:08:04,309 --> 00:08:04,319
+like through an example. So say we're
+ 
+
+537
+00:08:04,319 --> 00:08:05,589
+like through an example. So say we're
+still extracting information from the
+
+538
+00:08:05,589 --> 00:08:05,599
+still extracting information from the
+ 
+
+539
+00:08:05,599 --> 00:08:07,430
+still extracting information from the
+contract. We have the field names that
+
+540
+00:08:07,430 --> 00:08:07,440
+contract. We have the field names that
+ 
+
+541
+00:08:07,440 --> 00:08:09,270
+contract. We have the field names that
+we're extracting. We have the values and
+
+542
+00:08:09,270 --> 00:08:09,280
+we're extracting. We have the values and
+ 
+
+543
+00:08:09,280 --> 00:08:10,309
+we're extracting. We have the values and
+then right next to that we have the
+
+544
+00:08:10,309 --> 00:08:10,319
+then right next to that we have the
+ 
+
+545
+00:08:10,319 --> 00:08:12,230
+then right next to that we have the
+source. So the source is the information
+
+546
+00:08:12,230 --> 00:08:12,240
+source. So the source is the information
+ 
+
+547
+00:08:12,240 --> 00:08:13,510
+source. So the source is the information
+I mentioned previously. So we have the
+
+548
+00:08:13,510 --> 00:08:13,520
+I mentioned previously. So we have the
+ 
+
+549
+00:08:13,520 --> 00:08:15,670
+I mentioned previously. So we have the
+extracted, the extracted and inferred.
+
+550
+00:08:15,670 --> 00:08:15,680
+extracted, the extracted and inferred.
+ 
+
+551
+00:08:15,680 --> 00:08:17,430
+extracted, the extracted and inferred.
+For the extracted, it has the evidence
+
+552
+00:08:17,430 --> 00:08:17,440
+For the extracted, it has the evidence
+ 
+
+553
+00:08:17,440 --> 00:08:18,790
+For the extracted, it has the evidence
+column telling me exactly where it got
+
+554
+00:08:18,790 --> 00:08:18,800
+column telling me exactly where it got
+ 
+
+555
+00:08:18,800 --> 00:08:20,790
+column telling me exactly where it got
+it from. For the inferred section, it's
+
+556
+00:08:20,790 --> 00:08:20,800
+it from. For the inferred section, it's
+ 
+
+557
+00:08:20,800 --> 00:08:22,390
+it from. For the inferred section, it's
+telling me exactly what it inferred and
+
+558
+00:08:22,390 --> 00:08:22,400
+telling me exactly what it inferred and
+ 
+
+559
+00:08:22,400 --> 00:08:24,710
+telling me exactly what it inferred and
+from where. So again, this makes it easy
+
+560
+00:08:24,710 --> 00:08:24,720
+from where. So again, this makes it easy
+ 
+
+561
+00:08:24,720 --> 00:08:26,629
+from where. So again, this makes it easy
+for me to skim and validate the AI's
+
+562
+00:08:26,629 --> 00:08:26,639
+for me to skim and validate the AI's
+ 
+
+563
+00:08:26,639 --> 00:08:27,909
+for me to skim and validate the AI's
+output. So instead of looking at
+
+564
+00:08:27,909 --> 00:08:27,919
+output. So instead of looking at
+ 
+
+565
+00:08:27,919 --> 00:08:29,589
+output. So instead of looking at
+everything, I'm just looking at the
+
+566
+00:08:29,589 --> 00:08:29,599
+everything, I'm just looking at the
+ 
+
+567
+00:08:29,599 --> 00:08:31,110
+everything, I'm just looking at the
+inferred fields. And that's our third
+
+568
+00:08:31,110 --> 00:08:31,120
+inferred fields. And that's our third
+ 
+
+569
+00:08:31,120 --> 00:08:32,550
+inferred fields. And that's our third
+rule. But we're adding a safety net when
+
+570
+00:08:32,550 --> 00:08:32,560
+rule. But we're adding a safety net when
+ 
+
+571
+00:08:32,560 --> 00:08:34,709
+rule. But we're adding a safety net when
+the AI decides to infer on more complex
+
+572
+00:08:34,709 --> 00:08:34,719
+the AI decides to infer on more complex
+ 
+
+573
+00:08:34,719 --> 00:08:36,389
+the AI decides to infer on more complex
+tasks. And this is what it looks like
+
+574
+00:08:36,389 --> 00:08:36,399
+tasks. And this is what it looks like
+ 
+
+575
+00:08:36,399 --> 00:08:38,469
+tasks. And this is what it looks like
+altogether. And as a reminder, the
+
+576
+00:08:38,469 --> 00:08:38,479
+altogether. And as a reminder, the
+ 
+
+577
+00:08:38,479 --> 00:08:39,909
+altogether. And as a reminder, the
+reason we're doing this and we're adding
+
+578
+00:08:39,909 --> 00:08:39,919
+reason we're doing this and we're adding
+ 
+
+579
+00:08:39,919 --> 00:08:41,509
+reason we're doing this and we're adding
+this to every single prompt that our AI
+
+580
+00:08:41,509 --> 00:08:41,519
+this to every single prompt that our AI
+ 
+
+581
+00:08:41,519 --> 00:08:43,190
+this to every single prompt that our AI
+extracts information with is we're
+
+582
+00:08:43,190 --> 00:08:43,200
+extracts information with is we're
+ 
+
+583
+00:08:43,200 --> 00:08:44,710
+extracts information with is we're
+reducing the burden on ourselves and
+
+584
+00:08:44,710 --> 00:08:44,720
+reducing the burden on ourselves and
+ 
+
+585
+00:08:44,720 --> 00:08:46,550
+reducing the burden on ourselves and
+increasing our trust with AI because we
+
+586
+00:08:46,550 --> 00:08:46,560
+increasing our trust with AI because we
+ 
+
+587
+00:08:46,560 --> 00:08:47,829
+increasing our trust with AI because we
+don't have to check everything it gives
+
+588
+00:08:47,829 --> 00:08:47,839
+don't have to check everything it gives
+ 
+
+589
+00:08:47,839 --> 00:08:50,230
+don't have to check everything it gives
+us. Instead, all we have to do is check
+
+590
+00:08:50,230 --> 00:08:50,240
+us. Instead, all we have to do is check
+ 
+
+591
+00:08:50,240 --> 00:08:52,070
+us. Instead, all we have to do is check
+the blanks as well as the areas where it
+
+592
+00:08:52,070 --> 00:08:52,080
+the blanks as well as the areas where it
+ 
+
+593
+00:08:52,080 --> 00:08:54,150
+the blanks as well as the areas where it
+inferred. We can skim and approve the
+
+594
+00:08:54,150 --> 00:08:54,160
+inferred. We can skim and approve the
+ 
+
+595
+00:08:54,160 --> 00:08:55,590
+inferred. We can skim and approve the
+rest. And I'll share this presentation
+
+596
+00:08:55,590 --> 00:08:55,600
+rest. And I'll share this presentation
+ 
+
+597
+00:08:55,600 --> 00:08:57,190
+rest. And I'll share this presentation
+with you below in the description so you
+
+598
+00:08:57,190 --> 00:08:57,200
+with you below in the description so you
+ 
+
+599
+00:08:57,200 --> 00:08:58,550
+with you below in the description so you
+can get access to this prompt and all
+
+600
+00:08:58,550 --> 00:08:58,560
+can get access to this prompt and all
+ 
+
+601
+00:08:58,560 --> 00:09:00,150
+can get access to this prompt and all
+the subprompts. So you can copy and
+
+602
+00:09:00,150 --> 00:09:00,160
+the subprompts. So you can copy and
+ 
+
+603
+00:09:00,160 --> 00:09:02,230
+the subprompts. So you can copy and
+paste this anywhere you like. Now, as a
+
+604
+00:09:02,230 --> 00:09:02,240
+paste this anywhere you like. Now, as a
+ 
+
+605
+00:09:02,240 --> 00:09:04,389
+paste this anywhere you like. Now, as a
+quick recap of the three rules. So the
+
+606
+00:09:04,389 --> 00:09:04,399
+quick recap of the three rules. So the
+ 
+
+607
+00:09:04,399 --> 00:09:06,310
+quick recap of the three rules. So the
+first one is we're forcing the AI to
+
+608
+00:09:06,310 --> 00:09:06,320
+first one is we're forcing the AI to
+ 
+
+609
+00:09:06,320 --> 00:09:07,910
+first one is we're forcing the AI to
+give us blank information as well as
+
+610
+00:09:07,910 --> 00:09:07,920
+give us blank information as well as
+ 
+
+611
+00:09:07,920 --> 00:09:09,750
+give us blank information as well as
+explain why it's blank instead of
+
+612
+00:09:09,750 --> 00:09:09,760
+explain why it's blank instead of
+ 
+
+613
+00:09:09,760 --> 00:09:11,190
+explain why it's blank instead of
+allowing it just to fill in the gaps and
+
+614
+00:09:11,190 --> 00:09:11,200
+allowing it just to fill in the gaps and
+ 
+
+615
+00:09:11,200 --> 00:09:13,190
+allowing it just to fill in the gaps and
+give us wrong answers. After that, we're
+
+616
+00:09:13,190 --> 00:09:13,200
+give us wrong answers. After that, we're
+ 
+
+617
+00:09:13,200 --> 00:09:15,030
+give us wrong answers. After that, we're
+penalizing the AI and trying to change
+
+618
+00:09:15,030 --> 00:09:15,040
+penalizing the AI and trying to change
+ 
+
+619
+00:09:15,040 --> 00:09:16,710
+penalizing the AI and trying to change
+the incentives. So we're telling it that
+
+620
+00:09:16,710 --> 00:09:16,720
+the incentives. So we're telling it that
+ 
+
+621
+00:09:16,720 --> 00:09:18,150
+the incentives. So we're telling it that
+if you give us a wrong answer, that's
+
+622
+00:09:18,150 --> 00:09:18,160
+if you give us a wrong answer, that's
+ 
+
+623
+00:09:18,160 --> 00:09:19,910
+if you give us a wrong answer, that's
+three times worse than just giving us a
+
+624
+00:09:19,910 --> 00:09:19,920
+three times worse than just giving us a
+ 
+
+625
+00:09:19,920 --> 00:09:21,590
+three times worse than just giving us a
+blank answer of saying I don't know. And
+
+626
+00:09:21,590 --> 00:09:21,600
+blank answer of saying I don't know. And
+ 
+
+627
+00:09:21,600 --> 00:09:23,110
+blank answer of saying I don't know. And
+finally, in rule three, we're asking the
+
+628
+00:09:23,110 --> 00:09:23,120
+finally, in rule three, we're asking the
+ 
+
+629
+00:09:23,120 --> 00:09:25,030
+finally, in rule three, we're asking the
+AI to show the source. Because even
+
+630
+00:09:25,030 --> 00:09:25,040
+AI to show the source. Because even
+ 
+
+631
+00:09:25,040 --> 00:09:26,550
+AI to show the source. Because even
+though we've stated we only want the AI
+
+632
+00:09:26,550 --> 00:09:26,560
+though we've stated we only want the AI
+ 
+
+633
+00:09:26,560 --> 00:09:28,870
+though we've stated we only want the AI
+to extract information on complex tasks,
+
+634
+00:09:28,870 --> 00:09:28,880
+to extract information on complex tasks,
+ 
+
+635
+00:09:28,880 --> 00:09:30,870
+to extract information on complex tasks,
+it will likely still infer. When it
+
+636
+00:09:30,870 --> 00:09:30,880
+it will likely still infer. When it
+ 
+
+637
+00:09:30,880 --> 00:09:32,630
+it will likely still infer. When it
+does, we want it to show the evidence as
+
+638
+00:09:32,630 --> 00:09:32,640
+does, we want it to show the evidence as
+ 
+
+639
+00:09:32,640 --> 00:09:34,790
+does, we want it to show the evidence as
+to why it did. So, it can quickly skim,
+
+640
+00:09:34,790 --> 00:09:34,800
+to why it did. So, it can quickly skim,
+ 
+
+641
+00:09:34,800 --> 00:09:36,230
+to why it did. So, it can quickly skim,
+find the area that's been inferred,
+
+642
+00:09:36,230 --> 00:09:36,240
+find the area that's been inferred,
+ 
+
+643
+00:09:36,240 --> 00:09:37,430
+find the area that's been inferred,
+check the evidence, and see if it's
+
+644
+00:09:37,430 --> 00:09:37,440
+check the evidence, and see if it's
+ 
+
+645
+00:09:37,440 --> 00:09:39,509
+check the evidence, and see if it's
+right or wrong. And that's it. So, as a
+
+646
+00:09:39,509 --> 00:09:39,519
+right or wrong. And that's it. So, as a
+ 
+
+647
+00:09:39,519 --> 00:09:41,750
+right or wrong. And that's it. So, as a
+quick reminder, two things. First off,
+
+648
+00:09:41,750 --> 00:09:41,760
+quick reminder, two things. First off,
+ 
+
+649
+00:09:41,760 --> 00:09:43,990
+quick reminder, two things. First off,
+Blow is a 30-day AI insight series,
+
+650
+00:09:43,990 --> 00:09:44,000
+Blow is a 30-day AI insight series,
+ 
+
+651
+00:09:44,000 --> 00:09:45,829
+Blow is a 30-day AI insight series,
+completely free. You'll get 30 insights
+
+652
+00:09:45,829 --> 00:09:45,839
+completely free. You'll get 30 insights
+ 
+
+653
+00:09:45,839 --> 00:09:47,670
+completely free. You'll get 30 insights
+in your inbox so I can apply AI to your
+
+654
+00:09:47,670 --> 00:09:47,680
+in your inbox so I can apply AI to your
+ 
+
+655
+00:09:47,680 --> 00:09:49,190
+in your inbox so I can apply AI to your
+business and your work. And the second
+
+656
+00:09:49,190 --> 00:09:49,200
+business and your work. And the second
+ 
+
+657
+00:09:49,200 --> 00:09:50,710
+business and your work. And the second
+thing is, if you'd like to work with me,
+
+658
+00:09:50,710 --> 00:09:50,720
+thing is, if you'd like to work with me,
+ 
+
+659
+00:09:50,720 --> 00:09:52,310
+thing is, if you'd like to work with me,
+Blow a series of offerings to see if
+
+660
+00:09:52,310 --> 00:09:52,320
+Blow a series of offerings to see if
+ 
+
+661
+00:09:52,320 --> 00:09:53,430
+Blow a series of offerings to see if
+there's a good fit between the two of
+
+662
+00:09:53,430 --> 00:09:53,440
+there's a good fit between the two of
+ 
+
+663
+00:09:53,440 --> 00:09:56,150
+there's a good fit between the two of
+us. So, these prompts handle accuracy,
+
+664
+00:09:56,150 --> 00:09:56,160
+us. So, these prompts handle accuracy,
+ 
+
+665
+00:09:56,160 --> 00:09:58,389
+us. So, these prompts handle accuracy,
+but accuracy is just one piece of using
+
+666
+00:09:58,389 --> 00:09:58,399
+but accuracy is just one piece of using
+ 
+
+667
+00:09:58,399 --> 00:10:01,110
+but accuracy is just one piece of using
+AI well. I mapped out four levels that
+
+668
+00:10:01,110 --> 00:10:01,120
+AI well. I mapped out four levels that
+ 
+
+669
+00:10:01,120 --> 00:10:03,829
+AI well. I mapped out four levels that
+every AI user moves through. Most people
+
+670
+00:10:03,829 --> 00:10:03,839
+every AI user moves through. Most people
+ 
+
+671
+00:10:03,839 --> 00:10:05,829
+every AI user moves through. Most people
+skip to the end, and that's exactly why
+
+672
+00:10:05,829 --> 00:10:05,839
+skip to the end, and that's exactly why
+ 
+
+673
+00:10:05,839 --> 00:10:08,070
+skip to the end, and that's exactly why
+they stall out. I'll show you where you
+
+674
+00:10:08,070 --> 00:10:08,080
+they stall out. I'll show you where you
+ 
+
+675
+00:10:08,080 --> 00:10:10,070
+they stall out. I'll show you where you
+are and what to focus on next in this
+
+676
+00:10:10,070 --> 00:10:10,080
+are and what to focus on next in this
+ 
+
+677
+00:10:10,080 --> 00:10:11,670
+are and what to focus on next in this
+video right here. So, go ahead, click
+
+678
+00:10:11,670 --> 00:10:11,680
+video right here. So, go ahead, click
+ 
+
+679
+00:10:11,680 --> 00:10:13,670
+video right here. So, go ahead, click
+that video, internet. Click it. I'll see
+
+680
+00:10:13,670 --> 00:10:13,680
+that video, internet. Click it. I'll see
+ 
+
+681
+00:10:13,680 --> 00:10:16,320
+that video, internet. Click it. I'll see
+you next time.
+

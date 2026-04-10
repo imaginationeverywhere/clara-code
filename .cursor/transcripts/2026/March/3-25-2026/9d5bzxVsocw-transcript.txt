@@ -1,0 +1,506 @@
+Source: https://youtu.be/9d5bzxVsocw
+Title: Anthropic Just Dropped the New Blueprint for Long-Running AI Agents.
+Fetched: 2026-03-25T20:03:57.709Z
+Segments: 496
+
+--- Plain text ---
+Yesterday, Anthropic published a fascinating article on harness design for longrunning agents. And there are some interesting insights and honest admissions from the team that really can help us all when we're building specialized agent systems. In the post, they demonstrated how they built a 2D retro game engine over a 6-hour autonomous coding session. And they also built a digital audio workstation in browser over a 4-hour period. And while these examples of long-running autonomous agents are specific to coding, these principles apply to all types of specialized agent systems like compliance audits, risk analysis, content pipelines, and impact assessments. Last week, I published a video on this channel where I built a specialized agent harness into a custom Python and React app. And a custom harness like this could definitely be improved with some of the insights from Antropics blog post. And if you're not really sure what a harness is, it's essentially just the software and structure that wraps an AI model to keep it on track. It's essentially an orchestration layer that includes the prompts, the tools, the feedback loops, the constraints, the validation. So it's everything around the model that turns it into a reliable system. One analogy for an agent harness is that of a car where the model is the engine and the car itself is the harness. So without the car, the engine just sits there revving and you're not really getting anywhere. While actually a better analogy is that of a horse and an actual harness. A wild horse has raw power, but it'll go wherever it wants. While the harness allows you to control the power, set it in a direction and get where you want to go. And one of the key insights from this post is that for longunning complex tasks, the harness design is as important as the model itself. Yesterday's article builds on their previous post from last November, which talks about effective harnesses for longunning agents. And this article tackles the fundamental problem that the entire industry is trying to solve, which is how do you give an AI agent a complex goal and let it work away over hours or even days to achieve that. And this is where real value can be created. So from a dev perspective, it could be oneshotting a large feature or even an app itself. But in other industries, it could be a case of carrying out compliance audits that would normally take a full month worth of effort. And the problem to be solved without a harness is that an AI agent might try to oneshot an entire app build in a single go. It might run out of context halfway through. It might leave work half finished and undocumented. Or it might declare that the job was done early just to finish up. So Enthropic's original solution was a two-part system. An initializer agent that set up the environment and broke the project into features. It then created a progress tracking file and then a coding agent worked one feature at a time committing to git after each chunk and then it would leave clear artifacts for the next coding agent to take over. So that way you're decomposing the work, you're making incremental progress and you're handing off context cleanly. And it's fair to say that anthropic were not the first to come up with this idea of long running agent harnesses. Jeffrey Huntley came up with the Ralph Wigum loop a few months before which essentially allows you to run an agent within a loop and to check the output against something that can't actually lie. So that could be a llinter or a type checker and it essentially keeps the loop progressing until it's done. So having these explicit stop conditions means that you can loop over and over with an agent to really make sure that it's actually finished the job. And then that gets more powerful if you bundle it with the likes of specd driven development. So frameworks like BMAD or SpecKit or OpenSpec allow you to create structured requirements before the actual dev begins and that way the agent isn't looping in isolation. It's working against a predefined plan. So these frameworks solve the problem of an agent under scoping the work to be done. But outside of external hard validation, it is the agent that's actually self- evvaluating its work. So against that backdrop, even with these approaches of an agent harness and a Ralph Wiggum loop, Anthropic observed two common failure modes when agents executed against these types of tasks. And interestingly, these failure modes apply whether you're building an app or you're carrying out more general purpose work like a research pipeline or a content pipeline. And the first is what's known as context anxiety. As the context window fills up, the models don't just lose coherence, they actually change their behavior. They start wrapping up the conversation prematurely. They rush through steps and declare that things are done when they're not actually done. And you've probably noticed this yourself if you're chatting to an LLM in a single context window over a long time period. It eventually gets shorter and shorter with you. And there is a technique called context compaction where the actual conversational thread is compacted and summarized to leave more room, more space for usable context. But Enthropic found that even with context compaction, models like Sonnet 4.5 still showed context anxiety and tried to finish early. And the reason for that is you're not starting with a clean slate. And that is why their original solution last November was a context reset. You start with a fresh context window, read the latest feature from the progress file, test features that were previously built, and then build out your specific task. Once you're finished, trigger the structured handoff, and then start with the next agent with a clean slate. And as I mentioned, they found that solid 4.5 exhibited these context anxiety symptoms and that's why they built this context reset system, whereas Opus 4.5 does not have this problem to the same extent. And interestingly, in this blog post, when they moved to Opus 4.6, they found they didn't need to context reset at all. They were able to rely on context compaction and not have these anxiety symptoms where the LLM was trying to quit early. And what's interesting is Anthropic recently brought out Opus 4.6 six with a 1 million token context window and they claim that the retrieval quality generally holds up over the longer context. However, to be honest, I would take a bit of a cynical view on this. It's in Anthropic's best interest to process tokens. So, I'm sure they're delighted if you're sending in a 1 million token request every time, even if some of that's going to be cached. So, I definitely don't think it's the end of context resets the way they've been designed to date. The second failure mode is quite interesting, which is poor self-evaluation. Anthropic haven't talked about this before, but essentially if you ask an agent to evaluate its own work, it's likely going to praise it. And as the engineers said, even if the quality is obviously mediocre to a human observer. So I think these are some interesting admissions. They talk about how Claude often produced outputs from a front-end design perspective that were bland at best. And when they were building this system, they penalized highly generic AI slop patterns. And this idea of self-evaluation is a tricky subject because it's different for subjective versus objective tasks. In this article, they were focused on front-end design trying to make subjective quality gradable. And that's the real challenge for even nonAI coding based use cases. How can you evaluate the quality of the writing style of an AI or the visual design of a graphic or the professionalism of a legal analysis for example? And I think that's why AI coding use cases have taken off so much in the last 12 months. But because you have verifiable outputs where you can run lint checkers, you can run type checkers, regression tests, browser tests, and essentially the AI can iterate on its own output. So this idea of making subjective qualities gradable means that an AI can actually evaluate them in a more objective way. Which then leads us to the main solution that Entropic came to in this post which is the idea of adversarial evaluation. So inspired by GAN networks where you would have a generator and a discriminator here we have a generator agent which creates the code creates the content and you would have an evaluator agent whose job it is to judge the work and then ideally graded so that it's somewhat objective and then they can send back that feedback to the main agent. And like a GAN network, the idea here is the tension between these agents should improve the quality. And they found that it was far harder in isolation to get the likes of a generator agent to be more skeptical about the work that they just created versus having a dedicated QA or evaluator agent whose system prompt is dedicated to being skeptical about the work that it was just handed. And then once the generator agent has provided the feedback from the evaluator, it has something concrete to then iterate on. So I know what you're thinking. This is absolutely not new. Multi- aent systems have existed for years now at this point. And the idea of an evaluator agent is no different to LLM as a judge, for example. But I think the difference here is you essentially have an evaluator wired into a production loop rather than used as an ad hoc evaluation tool, let's say. And from looking at the blog post, it really wasn't plain sailing. And another interesting admission, out of the box, Claude is a poor QA agent. And they talk about how in early runs, Claude identified legitimate issues and then talked itself into deciding they weren't a big deal and approved the work anyway. And how it also tended to test superficially rather than probing edge cases. So more subtle bugs often slipped through. So the evaluator agent took multiple rounds of iteration and refinement. It really wasn't a plug-and-play solution. And having gone through that experience, they found that there was three things that were required to really make an evaluator agent work. And the first one I've already touched on which is the idea of making subjective quality gradable from a front-end design perspective as opposed to just asking is this design beautiful instead it's does this follow our principles for good design and then they define the principles. So the grading criteria they created one was on design quality another on originality to avoid the AI slop another on craft which is technical execution and another on functionality. The second learning was the need to weight the criteria towards the model's capabilities as they found that Opus scored well on two out of those four criterias but struggled on the other two and through iteration they ended up weighting that criteria heavier to avoid AI slot patterns. And the third learning was that you have to let the evaluator interact with the output. So they use the playride MCP so that the evaluator has tools it can use to actually navigate the app, screenshot it and test it like a real user. And that's not to say there's not still room for more deterministic testing. In my last video, I talked about how Stripe created their concept of minions where each code change results in testing against a subset of their 3 million tests in their test suite. That's not being prompted by an evaluator agent that is hard baked, hardcoded into their deployment system. So within the case study, they carried out three experiments. The first one was on front-end design where they prompted the model to create a website for a Dutch art museum. And as you can see here, these are some of the earlier iterations and after 10 rounds of feedback, they ended up with something that was completely unique, which is essentially a 3D room with a checkered floor. And they talked about how that was kind of a creative leap that they hadn't seen before from a single past generation, which is interesting when it comes to iterating on something that is so subjective like front-end design. So, this is what that design harness looked like. It was essentially a single kind of one-s sentence prompt and then that went to a generator agent which created HTML, CSS, JavaScript, goes to the evaluator agent who has the ability to interact with it via Playright MCP and then between 5 to 15 iterations of feedback, you end up with your finished product. And obviously all of these harnesses were built on the clawed agent SDK. But that's not to say that you can't use the learnings of how you create these effective harnesses and build them on competitor models or local open source models. So the second experiment was to scale up to full stack coding. So here they introduced the planner agent. And the prompt here was to create a 2D retro game maker with features including a level editor, sprite editor, entity behaviors, and a playable test mode. And they ran this twice. One with the solo harness and another with the full harness of the planner, generator, and evaluator. obviously a lot more expensive and a lot longer to run the full harness, but they found that from the solo run, which was a lot cheaper and faster, the game basically didn't really work. You know, it looked okay, but it was not actually playable in any sense. Whereas the game built by the full harness actually was functional. So, within this version of the harness that went to the planner agent, which then dramatically expanded out the spec, and it split it into sprints. Now, we're using Opus 4.5 here, which is important. But within each sprint, there was contract negotiations between the generator agent and the evaluator agent. It was defining the definition of done up front before it actually started building anything. So that way, the generator agent couldn't move the goalpost halfway through the build to say, "Ah, it's done." So then the evaluator agent evaluated once per sprint and then there was a context reset and a handoff to the next sprint. So not having a planner agent would mean that you would dramatically underscope the project because you've only sent in a single sentence of a game that you want built. And without the evaluator agent, the generator would just over approve all its work and quit early. So then during these experiments, Opus 4.6 was released. So they created a second version of the harness and they decided to simplify things because to build effective agents, you should always look to find the simplest solution possible and not actually over complicate or overengineer it. So they had some trial and error of trying to simplify the architecture and they ended up with this. They removed the sprints. They removed the contract negotiation. They removed the context resets. So they relied on context compaction. So again we had a single sentence prompt to build an app. Went to the planner agent expanded it into a much larger spec. And then that full spec was passed to the generator agent to build to essentially oneshot the entire app. One continuous session. and it was relying on the clawed agent SDK which has context compaction built into it. So the evaluator agent in this case only ran at the end of the full build and that would then provide feedback so that it could then iterate on that feedback. So I think there is a level of anthropic just showing off how good Opus 4.6 is that it can build an entire app that you don't need these harnesses at a 1 million token context window. It's not exactly going to be cheap, but they do seem convinced that the context rot problem and the context anxiety problem don't exist in this version of the model. So for this version two of the harness, the prompt was to build a fully featured DAW in the browser using the web audio API. So this is a digital audio workstation. And here is the phase byphase breakdown. So the planner agent took 5 minutes and 50ent and then the first full build took 2 hours and $71. the evaluator or the QA agent took 10 minutes essentially and then another hour for the second build and then 10 minutes for the third build. So all in all around four hours total $125 and of course all relying on the clawed agent SDK which has context compaction so that you can keep it running over the long term. Now of course you could build this yourself. You don't need to use the clawed agent SDK. You could build the functionality that you need for these agents to run over the long horizon. And so this is the finished product. They did want a fully functional digital audio workstation. I don't think this is fully functional in the sense that, as they say, it's far from a professional music production program. That being said, it costs $100 to create. So maybe that's not to be expected either, but it does seem to have some of the key features that you would actually need. And this brings about one of the big take-home points from this article, which is the idea of a harness evolution. because every component in a harness essentially encodes an assumption that the model can't actually carry out that task itself and the context reset is a perfect example of that. Sonnet 4.5 had context anxiety. So we had to build an entire handing off of context in a harness. So what Entropic are saying is that those assumptions go stale as the models improve as they saw with the leap to opus 4.6. And they also found that the evaluators work depended on how good the model was as well. So if you're really stretching the model to its limits, it really is important to have an evaluator to make sure it's done everything it needs to do. Whereas if you're asking the model to do something that's very much in its wheelhouse, you might not need an evaluator agent at all. And I suppose this is the real work of harness and context engineering because it's not ever a one-shot setup. You do need to refine and iterate as you go. As I mentioned earlier, we're in the middle of an AI builder series on this channel where we build out a full stack AI agent platform. And it's not using cloud agent SDK. It's a completely custom Python and React app with a superbase back end. And last week, we built in a specialized contract review harness into this system. I'll leave a link for it in the card above. And if you're interested in going beyond the theory and actually building these harnesses for yourself, then check out the link in the description to our community, the AI Automators, where you can access our full AI builder course and codebase. We have a private community here of serious builders all creating specialized harnesses and advanced rag systems. We'd love to see you here, so check out the link below. Thanks so much for watching and I'll see you in the next
+
+--- With timestamps ---
+
+[00:00] Yesterday, Anthropic published a
+[00:01] fascinating article on harness design
+[00:04] for longrunning agents. And there are
+[00:06] some interesting insights and honest
+[00:08] admissions from the team that really can
+[00:10] help us all when we're building
+[00:12] specialized agent systems. In the post,
+[00:14] they demonstrated how they built a 2D
+[00:17] retro game engine over a 6-hour
+[00:20] autonomous coding session. And they also
+[00:22] built a digital audio workstation in
+[00:24] browser over a 4-hour period. And while
+[00:27] these examples of long-running
+[00:28] autonomous agents are specific to
+[00:30] coding, these principles apply to all
+[00:32] types of specialized agent systems like
+[00:35] compliance audits, risk analysis,
+[00:37] content pipelines, and impact
+[00:39] assessments. Last week, I published a
+[00:41] video on this channel where I built a
+[00:42] specialized agent harness into a custom
+[00:44] Python and React app. And a custom
+[00:46] harness like this could definitely be
+[00:48] improved with some of the insights from
+[00:50] Antropics blog post. And if you're not
+[00:52] really sure what a harness is, it's
+[00:53] essentially just the software and
+[00:55] structure that wraps an AI model to keep
+[00:58] it on track. It's essentially an
+[00:59] orchestration layer that includes the
+[01:01] prompts, the tools, the feedback loops,
+[01:03] the constraints, the validation. So it's
+[01:06] everything around the model that turns
+[01:07] it into a reliable system. One analogy
+[01:10] for an agent harness is that of a car
+[01:12] where the model is the engine and the
+[01:14] car itself is the harness. So without
+[01:16] the car, the engine just sits there
+[01:17] revving and you're not really getting
+[01:19] anywhere. While actually a better
+[01:20] analogy is that of a horse and an actual
+[01:22] harness. A wild horse has raw power, but
+[01:25] it'll go wherever it wants. While the
+[01:27] harness allows you to control the power,
+[01:29] set it in a direction and get where you
+[01:31] want to go. And one of the key insights
+[01:32] from this post is that for longunning
+[01:34] complex tasks, the harness design is as
+[01:37] important as the model itself.
+[01:39] Yesterday's article builds on their
+[01:41] previous post from last November, which
+[01:43] talks about effective harnesses for
+[01:45] longunning agents. And this article
+[01:47] tackles the fundamental problem that the
+[01:49] entire industry is trying to solve,
+[01:51] which is how do you give an AI agent a
+[01:53] complex goal and let it work away over
+[01:56] hours or even days to achieve that. And
+[01:58] this is where real value can be created.
+[02:00] So from a dev perspective, it could be
+[02:02] oneshotting a large feature or even an
+[02:04] app itself. But in other industries, it
+[02:06] could be a case of carrying out
+[02:08] compliance audits that would normally
+[02:10] take a full month worth of effort. And
+[02:11] the problem to be solved without a
+[02:13] harness is that an AI agent might try to
+[02:15] oneshot an entire app build in a single
+[02:18] go. It might run out of context halfway
+[02:20] through. It might leave work half
+[02:22] finished and undocumented. Or it might
+[02:24] declare that the job was done early just
+[02:26] to finish up. So Enthropic's original
+[02:28] solution was a two-part system. An
+[02:30] initializer agent that set up the
+[02:31] environment and broke the project into
+[02:33] features. It then created a progress
+[02:35] tracking file and then a coding agent
+[02:38] worked one feature at a time committing
+[02:40] to git after each chunk and then it
+[02:41] would leave clear artifacts for the next
+[02:43] coding agent to take over. So that way
+[02:45] you're decomposing the work, you're
+[02:47] making incremental progress and you're
+[02:49] handing off context cleanly. And it's
+[02:51] fair to say that anthropic were not the
+[02:52] first to come up with this idea of long
+[02:54] running agent harnesses. Jeffrey Huntley
+[02:56] came up with the Ralph Wigum loop a few
+[02:58] months before which essentially allows
+[03:00] you to run an agent within a loop and to
+[03:02] check the output against something that
+[03:04] can't actually lie. So that could be a
+[03:06] llinter or a type checker and it
+[03:08] essentially keeps the loop progressing
+[03:09] until it's done. So having these
+[03:11] explicit stop conditions means that you
+[03:13] can loop over and over with an agent to
+[03:16] really make sure that it's actually
+[03:17] finished the job. And then that gets
+[03:18] more powerful if you bundle it with the
+[03:20] likes of specd driven development. So
+[03:22] frameworks like BMAD or SpecKit or
+[03:24] OpenSpec allow you to create structured
+[03:26] requirements before the actual dev
+[03:28] begins and that way the agent isn't
+[03:30] looping in isolation. It's working
+[03:31] against a predefined plan. So these
+[03:33] frameworks solve the problem of an agent
+[03:35] under scoping the work to be done. But
+[03:38] outside of external hard validation, it
+[03:40] is the agent that's actually self-
+[03:42] evvaluating its work. So against that
+[03:44] backdrop, even with these approaches of
+[03:47] an agent harness and a Ralph Wiggum
+[03:49] loop, Anthropic observed two common
+[03:51] failure modes when agents executed
+[03:52] against these types of tasks. And
+[03:54] interestingly, these failure modes apply
+[03:56] whether you're building an app or you're
+[03:58] carrying out more general purpose work
+[04:00] like a research pipeline or a content
+[04:02] pipeline. And the first is what's known
+[04:03] as context anxiety. As the context
+[04:06] window fills up, the models don't just
+[04:08] lose coherence, they actually change
+[04:09] their behavior. They start wrapping up
+[04:11] the conversation prematurely. They rush
+[04:14] through steps and declare that things
+[04:15] are done when they're not actually done.
+[04:17] And you've probably noticed this
+[04:18] yourself if you're chatting to an LLM in
+[04:19] a single context window over a long time
+[04:22] period. It eventually gets shorter and
+[04:24] shorter with you. And there is a
+[04:25] technique called context compaction
+[04:27] where the actual conversational thread
+[04:29] is compacted and summarized to leave
+[04:31] more room, more space for usable
+[04:34] context. But Enthropic found that even
+[04:36] with context compaction, models like
+[04:38] Sonnet 4.5 still showed context anxiety
+[04:41] and tried to finish early. And the
+[04:43] reason for that is you're not starting
+[04:44] with a clean slate. And that is why
+[04:47] their original solution last November
+[04:49] was a context reset. You start with a
+[04:51] fresh context window, read the latest
+[04:53] feature from the progress file, test
+[04:55] features that were previously built, and
+[04:56] then build out your specific task. Once
+[04:59] you're finished, trigger the structured
+[05:00] handoff, and then start with the next
+[05:02] agent with a clean slate. And as I
+[05:04] mentioned, they found that solid 4.5
+[05:06] exhibited these context anxiety symptoms
+[05:08] and that's why they built this context
+[05:10] reset system, whereas Opus 4.5 does not
+[05:13] have this problem to the same extent.
+[05:15] And interestingly, in this blog post,
+[05:17] when they moved to Opus 4.6, they found
+[05:19] they didn't need to context reset at
+[05:21] all. They were able to rely on context
+[05:24] compaction and not have these anxiety
+[05:26] symptoms where the LLM was trying to
+[05:28] quit early. And what's interesting is
+[05:30] Anthropic recently brought out Opus 4.6
+[05:32] six with a 1 million token context
+[05:34] window and they claim that the retrieval
+[05:36] quality generally holds up over the
+[05:38] longer context. However, to be honest, I
+[05:41] would take a bit of a cynical view on
+[05:42] this. It's in Anthropic's best interest
+[05:44] to process tokens. So, I'm sure they're
+[05:46] delighted if you're sending in a 1
+[05:48] million token request every time, even
+[05:50] if some of that's going to be cached.
+[05:52] So, I definitely don't think it's the
+[05:53] end of context resets the way they've
+[05:55] been designed to date. The second
+[05:57] failure mode is quite interesting, which
+[05:59] is poor self-evaluation. Anthropic
+[06:01] haven't talked about this before, but
+[06:03] essentially if you ask an agent to
+[06:04] evaluate its own work, it's likely going
+[06:06] to praise it. And as the engineers said,
+[06:09] even if the quality is obviously
+[06:10] mediocre to a human observer. So I think
+[06:13] these are some interesting admissions.
+[06:15] They talk about how Claude often
+[06:17] produced outputs from a front-end design
+[06:19] perspective that were bland at best. And
+[06:21] when they were building this system,
+[06:23] they penalized highly generic AI slop
+[06:26] patterns. And this idea of
+[06:28] self-evaluation is a tricky subject
+[06:30] because it's different for subjective
+[06:33] versus objective tasks. In this article,
+[06:35] they were focused on front-end design
+[06:38] trying to make subjective quality
+[06:40] gradable. And that's the real challenge
+[06:42] for even nonAI coding based use cases.
+[06:45] How can you evaluate the quality of the
+[06:47] writing style of an AI or the visual
+[06:50] design of a graphic or the
+[06:52] professionalism of a legal analysis for
+[06:54] example? And I think that's why AI
+[06:56] coding use cases have taken off so much
+[06:58] in the last 12 months. But because you
+[07:00] have verifiable outputs where you can
+[07:02] run lint checkers, you can run type
+[07:04] checkers, regression tests, browser
+[07:06] tests, and essentially the AI can
+[07:08] iterate on its own output. So this idea
+[07:11] of making subjective qualities gradable
+[07:14] means that an AI can actually evaluate
+[07:16] them in a more objective way. Which then
+[07:19] leads us to the main solution that
+[07:20] Entropic came to in this post which is
+[07:23] the idea of adversarial evaluation. So
+[07:25] inspired by GAN networks where you would
+[07:28] have a generator and a discriminator
+[07:30] here we have a generator agent which
+[07:32] creates the code creates the content and
+[07:35] you would have an evaluator agent whose
+[07:37] job it is to judge the work and then
+[07:40] ideally graded so that it's somewhat
+[07:42] objective and then they can send back
+[07:44] that feedback to the main agent. And
+[07:46] like a GAN network, the idea here is the
+[07:49] tension between these agents should
+[07:51] improve the quality. And they found that
+[07:52] it was far harder in isolation to get
+[07:55] the likes of a generator agent to be
+[07:57] more skeptical about the work that they
+[07:59] just created versus having a dedicated
+[08:02] QA or evaluator agent whose system
+[08:04] prompt is dedicated to being skeptical
+[08:06] about the work that it was just handed.
+[08:08] And then once the generator agent has
+[08:10] provided the feedback from the
+[08:11] evaluator, it has something concrete to
+[08:13] then iterate on. So I know what you're
+[08:15] thinking. This is absolutely not new.
+[08:18] Multi- aent systems have existed for
+[08:20] years now at this point. And the idea of
+[08:22] an evaluator agent is no different to
+[08:24] LLM as a judge, for example. But I think
+[08:26] the difference here is you essentially
+[08:28] have an evaluator wired into a
+[08:30] production loop rather than used as an
+[08:33] ad hoc evaluation tool, let's say. And
+[08:35] from looking at the blog post, it really
+[08:37] wasn't plain sailing. And another
+[08:39] interesting admission, out of the box,
+[08:40] Claude is a poor QA agent. And they talk
+[08:43] about how in early runs, Claude
+[08:45] identified legitimate issues and then
+[08:47] talked itself into deciding they weren't
+[08:48] a big deal and approved the work anyway.
+[08:50] And how it also tended to test
+[08:52] superficially rather than probing edge
+[08:54] cases. So more subtle bugs often slipped
+[08:56] through. So the evaluator agent took
+[08:59] multiple rounds of iteration and
+[09:00] refinement. It really wasn't a
+[09:02] plug-and-play solution. And having gone
+[09:04] through that experience, they found that
+[09:05] there was three things that were
+[09:07] required to really make an evaluator
+[09:09] agent work. And the first one I've
+[09:10] already touched on which is the idea of
+[09:12] making subjective quality gradable from
+[09:15] a front-end design perspective as
+[09:17] opposed to just asking is this design
+[09:19] beautiful instead it's does this follow
+[09:21] our principles for good design and then
+[09:23] they define the principles. So the
+[09:25] grading criteria they created one was on
+[09:28] design quality another on originality to
+[09:30] avoid the AI slop another on craft which
+[09:33] is technical execution and another on
+[09:36] functionality. The second learning was
+[09:38] the need to weight the criteria towards
+[09:40] the model's capabilities as they found
+[09:42] that Opus scored well on two out of
+[09:44] those four criterias but struggled on
+[09:46] the other two and through iteration they
+[09:48] ended up weighting that criteria heavier
+[09:51] to avoid AI slot patterns. And the third
+[09:53] learning was that you have to let the
+[09:55] evaluator interact with the output. So
+[09:57] they use the playride MCP so that the
+[10:00] evaluator has tools it can use to
+[10:02] actually navigate the app, screenshot it
+[10:04] and test it like a real user. And that's
+[10:06] not to say there's not still room for
+[10:08] more deterministic testing. In my last
+[10:10] video, I talked about how Stripe created
+[10:13] their concept of minions where each code
+[10:15] change results in testing against a
+[10:18] subset of their 3 million tests in their
+[10:20] test suite. That's not being prompted by
+[10:22] an evaluator agent that is hard baked,
+[10:25] hardcoded into their deployment system.
+[10:27] So within the case study, they carried
+[10:29] out three experiments. The first one was
+[10:31] on front-end design where they prompted
+[10:33] the model to create a website for a
+[10:35] Dutch art museum. And as you can see
+[10:37] here, these are some of the earlier
+[10:38] iterations and after 10 rounds of
+[10:41] feedback, they ended up with something
+[10:43] that was completely unique, which is
+[10:45] essentially a 3D room with a checkered
+[10:47] floor. And they talked about how that
+[10:48] was kind of a creative leap that they
+[10:50] hadn't seen before from a single past
+[10:52] generation, which is interesting when it
+[10:54] comes to iterating on something that is
+[10:55] so subjective like front-end design. So,
+[10:57] this is what that design harness looked
+[10:59] like. It was essentially a single kind
+[11:01] of one-s sentence prompt and then that
+[11:03] went to a generator agent which created
+[11:05] HTML, CSS, JavaScript, goes to the
+[11:08] evaluator agent who has the ability to
+[11:10] interact with it via Playright MCP and
+[11:13] then between 5 to 15 iterations of
+[11:15] feedback, you end up with your finished
+[11:17] product. And obviously all of these
+[11:19] harnesses were built on the clawed agent
+[11:21] SDK. But that's not to say that you
+[11:23] can't use the learnings of how you
+[11:25] create these effective harnesses and
+[11:27] build them on competitor models or local
+[11:29] open source models. So the second
+[11:31] experiment was to scale up to full stack
+[11:33] coding. So here they introduced the
+[11:35] planner agent. And the prompt here was
+[11:37] to create a 2D retro game maker with
+[11:39] features including a level editor,
+[11:41] sprite editor, entity behaviors, and a
+[11:43] playable test mode. And they ran this
+[11:45] twice. One with the solo harness and
+[11:46] another with the full harness of the
+[11:48] planner, generator, and evaluator.
+[11:50] obviously a lot more expensive and a lot
+[11:52] longer to run the full harness, but they
+[11:54] found that from the solo run, which was
+[11:56] a lot cheaper and faster, the game
+[11:58] basically didn't really work. You know,
+[12:00] it looked okay, but it was not actually
+[12:03] playable in any sense. Whereas the game
+[12:05] built by the full harness actually was
+[12:07] functional. So, within this version of
+[12:09] the harness that went to the planner
+[12:10] agent, which then dramatically expanded
+[12:13] out the spec, and it split it into
+[12:15] sprints. Now, we're using Opus 4.5 here,
+[12:17] which is important. But within each
+[12:19] sprint, there was contract negotiations
+[12:22] between the generator agent and the
+[12:24] evaluator agent. It was defining the
+[12:26] definition of done up front before it
+[12:29] actually started building anything. So
+[12:30] that way, the generator agent couldn't
+[12:32] move the goalpost halfway through the
+[12:34] build to say, "Ah, it's done." So then
+[12:36] the evaluator agent evaluated once per
+[12:38] sprint and then there was a context
+[12:40] reset and a handoff to the next sprint.
+[12:42] So not having a planner agent would mean
+[12:43] that you would dramatically underscope
+[12:45] the project because you've only sent in
+[12:47] a single sentence of a game that you
+[12:48] want built. And without the evaluator
+[12:50] agent, the generator would just over
+[12:52] approve all its work and quit early. So
+[12:54] then during these experiments, Opus 4.6
+[12:57] was released. So they created a second
+[12:59] version of the harness and they decided
+[13:01] to simplify things because to build
+[13:03] effective agents, you should always look
+[13:05] to find the simplest solution possible
+[13:07] and not actually over complicate or
+[13:09] overengineer it. So they had some trial
+[13:11] and error of trying to simplify the
+[13:12] architecture and they ended up with
+[13:14] this. They removed the sprints. They
+[13:16] removed the contract negotiation. They
+[13:18] removed the context resets. So they
+[13:20] relied on context compaction. So again
+[13:22] we had a single sentence prompt to build
+[13:24] an app. Went to the planner agent
+[13:26] expanded it into a much larger spec. And
+[13:28] then that full spec was passed to the
+[13:31] generator agent to build to essentially
+[13:33] oneshot the entire app. One continuous
+[13:36] session. and it was relying on the
+[13:38] clawed agent SDK which has context
+[13:40] compaction built into it. So the
+[13:42] evaluator agent in this case only ran at
+[13:45] the end of the full build and that would
+[13:47] then provide feedback so that it could
+[13:50] then iterate on that feedback. So I
+[13:52] think there is a level of anthropic just
+[13:54] showing off how good Opus 4.6 is that it
+[13:56] can build an entire app that you don't
+[13:58] need these harnesses at a 1 million
+[14:01] token context window. It's not exactly
+[14:03] going to be cheap, but they do seem
+[14:05] convinced that the context rot problem
+[14:07] and the context anxiety problem don't
+[14:09] exist in this version of the model. So
+[14:12] for this version two of the harness, the
+[14:13] prompt was to build a fully featured DAW
+[14:15] in the browser using the web audio API.
+[14:18] So this is a digital audio workstation.
+[14:20] And here is the phase byphase breakdown.
+[14:23] So the planner agent took 5 minutes and
+[14:25] 50ent and then the first full build took
+[14:29] 2 hours and $71. the evaluator or the QA
+[14:33] agent took 10 minutes essentially and
+[14:36] then another hour for the second build
+[14:37] and then 10 minutes for the third build.
+[14:40] So all in all around four hours total
+[14:42] $125 and of course all relying on the
+[14:45] clawed agent SDK which has context
+[14:47] compaction so that you can keep it
+[14:49] running over the long term. Now of
+[14:51] course you could build this yourself.
+[14:52] You don't need to use the clawed agent
+[14:54] SDK. You could build the functionality
+[14:56] that you need for these agents to run
+[14:58] over the long horizon. And so this is
+[15:00] the finished product. They did want a
+[15:02] fully functional digital audio
+[15:04] workstation. I don't think this is fully
+[15:06] functional in the sense that, as they
+[15:08] say, it's far from a professional music
+[15:10] production program. That being said, it
+[15:12] costs $100 to create. So maybe that's
+[15:15] not to be expected either, but it does
+[15:17] seem to have some of the key features
+[15:18] that you would actually need. And this
+[15:20] brings about one of the big take-home
+[15:22] points from this article, which is the
+[15:24] idea of a harness evolution. because
+[15:26] every component in a harness essentially
+[15:29] encodes an assumption that the model
+[15:31] can't actually carry out that task
+[15:32] itself and the context reset is a
+[15:35] perfect example of that. Sonnet 4.5 had
+[15:37] context anxiety. So we had to build an
+[15:39] entire handing off of context in a
+[15:42] harness. So what Entropic are saying is
+[15:44] that those assumptions go stale as the
+[15:46] models improve as they saw with the leap
+[15:48] to opus 4.6. And they also found that
+[15:51] the evaluators work depended on how good
+[15:54] the model was as well. So if you're
+[15:56] really stretching the model to its
+[15:57] limits, it really is important to have
+[15:59] an evaluator to make sure it's done
+[16:01] everything it needs to do. Whereas if
+[16:03] you're asking the model to do something
+[16:04] that's very much in its wheelhouse, you
+[16:06] might not need an evaluator agent at
+[16:08] all. And I suppose this is the real work
+[16:10] of harness and context engineering
+[16:12] because it's not ever a one-shot setup.
+[16:14] You do need to refine and iterate as you
+[16:17] go. As I mentioned earlier, we're in the
+[16:19] middle of an AI builder series on this
+[16:21] channel where we build out a full stack
+[16:23] AI agent platform. And it's not using
+[16:25] cloud agent SDK. It's a completely
+[16:27] custom Python and React app with a
+[16:29] superbase back end. And last week, we
+[16:31] built in a specialized contract review
+[16:33] harness into this system. I'll leave a
+[16:36] link for it in the card above. And if
+[16:37] you're interested in going beyond the
+[16:38] theory and actually building these
+[16:40] harnesses for yourself, then check out
+[16:42] the link in the description to our
+[16:43] community, the AI Automators, where you
+[16:45] can access our full AI builder course
+[16:47] and codebase. We have a private
+[16:49] community here of serious builders all
+[16:51] creating specialized harnesses and
+[16:52] advanced rag systems. We'd love to see
+[16:54] you here, so check out the link below.
+[16:56] Thanks so much for watching and I'll see
+[16:57] you in the next

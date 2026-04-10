@@ -1,0 +1,176 @@
+Title: Claude Code Just Got a MASSIVE Upgrade (Channels)
+Video ID: hgYXMMBJK4U
+URL: https://www.youtube.com/watch?v=hgYXMMBJK4U
+
+Note: YouTube caption/subtitle APIs returned HTTP 429 / IP restrictions when this file was generated; text below is from offline ASR and may differ slightly from official captions.
+
+Source: Local speech-to-text (faster-whisper, model=base, language=en, probability=1.00)
+
+--- Timestamps ---
+[00:00] Hello legends, so Claude code just introduced something called channels and channels lets you control your Claude code session
+[00:06] Which is a thing that's running on your computer directly from your telegram or your discord
+[00:10] This means that you can launch Claude code with the channels tag for either discord or a telegram
+[00:15] You can then leave that session running on your computer at home
+[00:17] You can leave the house you can pull out your phone and then you can open up telegram or discord and then manage that session
+[00:23] You can send in messages and receive responses back in this video
+[00:27] I'm going to take you through the setup instructions for discord and telegram so that you can start using this today
+[00:31] A couple of things tonight before we begin is that this is still in research preview
+[00:35] Which means that there might be a couple of bugs along the way
+[00:37] So if I applied it into my discord and telegram and it seems to be working now
+[00:40] But just be mindful of this next we'll have to update to Claude code version 2.1.8 or later
+[00:46] So if you're using an older version of Claude code and you do not update then this is not going to work for you
+[00:51] And we'll only be able to use this if we authenticate into Claude code using the Claude.ai login
+[00:56] So this is the OAuth login if using the console or the API key authentication this will not work
+[01:02] So you have to log out and then re-log back in and then finally if you're on the team or the enterprise account
+[01:07] You actually have to accept these or change the permissions manually in your configuration file
+[01:12] Whereas if you're on the pro or the max plan you'll be able to use this out of the box
+[01:16] Okay, so the first thing you want to do is open up a brand new terminal and then type in Claude space update
+[01:21] And this is going to look at your current version of Claude
+[01:24] Check for any updates and if there's any updates available, it's going to update your Claude code in my case
+[01:28] I'm already up to date with the latest version of 2.1.8
+[01:31] So I'm ready to go now
+[01:33] Let's start by setting up our telegram connection and our step one is to go across to the telegram bot father
+[01:38] Create a new bot and then get the bot token and inside the chat with the bot father
+[01:42] Let's go into the text box and type in forward slash new and click on create a new bot and just type in a name for your bot
+[01:49] So I'm just going to type in bloopy and then we'll have to type in a username. So I'm going to go bloopy underscore bot and hit enter
+[01:57] Okay, in that case, it's taken
+[02:00] Let's go bloopy underscore one two three and then underscore bot and let's see if this is taken
+[02:06] Awesome, so it's available for us and now we've got our bot token ready to go
+[02:10] So let's go back to step two. Okay, now that we have the bot token our step two is to install the Claude plugin
+[02:16] So I'm just going to copy this command. Let's go back to our terminal and spool up a new Claude session
+[02:21] Let's trust this folder and let's paste that command into here and then we have our plugin details over here
+[02:27] The main thing to note is that we're just going to use the default configuration setting of install for you
+[02:32] Which is the user scope?
+[02:33] So just go ahead and press enter and now we have the telegram plugin installed. Let's just run reload plugins to activate this
+[02:40] I'm going to copy that command paste it back into the terminal and hit enter
+[02:44] Now that we have the plugin installed, let's go ahead and configure our token
+[02:48] So we need to copy this command, which is the telegram configure command
+[02:52] Let's go back into the terminal and paste in that command. Let's back space the placeholder text back in our bot
+[02:59] Father, let's get that token and then paste that token into the terminal
+[03:03] Just be mindful that you want to have a space in between the command, which is telegram configure
+[03:08] Then a space and then the actual bot token. Let's now press enter
+[03:11] Okay, it looks like we ran into an error that the skill is not recognized
+[03:15] I'm just going to exit this session and just start a brand new one. So let's go Claude and let's see if this fixes the issue
+[03:22] So it's trust is folder and let's get that command again
+[03:25] Paste it into our terminal back space the placeholder grab the bot token and paste it back into here
+[03:32] Okay, so it looks like this time it's working. So I'm just going to prove the permissions
+[03:36] Let's approve the next permission as well
+[03:38] Nice and a token's been set. So it looks like after we installed the plugin even though we reloaded it
+[03:43] The trick here was to actually just exit the session and then start a brand new session
+[03:47] So over here, we're told to DM the bot on telegram will then get a pairing token which we can give directly to Claude code
+[03:53] Let's confirm that with the instructions. Okay, so we've just configured our token
+[03:58] Looks like step four is to restart the session with the channels tag enabled
+[04:03] So I'm just going to copy this command and we actually have to run Claude code with the channels tag enabled
+[04:07] Otherwise when we go across to our telegram, we won't be able to actually interact with the session. So I'm just going to exit out of this live session
+[04:15] restart a new one
+[04:17] Accept this folder and now it's paste in that command and launch Claude code with the
+[04:23] Telegram channels tag enabled and now we're listening for channel messages from the official telegram plugin
+[04:28] And now our step five says that we can open up telegram sent any message and then the bot will apply with the pairing code
+[04:34] So let's go ahead and do that. Let's open up the telegram bot that we just created
+[04:38] Click on star and there we go
+[04:39] We have the pairing code over here. I'm just going to copy this command and then back in a terminal
+[04:43] Let's paste this into Claude code and here enter. Let's accept these edits
+[04:48] Accept the edits again and now we've been approved and you've been added to the allow list and there we go
+[04:52] We can see our first message in from the Claude code session now
+[04:55] There is one final instruction that we need to follow so after we give the pairing code into
+[05:00] Claude code we must then lock down access by running this command as well
+[05:03] So I'm just going to take this go back into the terminal and just run this immediately
+[05:08] And now we've just locked down the connection to only allow users from our allow list and currently
+[05:13] I'm the only user on the allow list so no one else can message my Claude code session. So now let's test out our connection
+[05:20] Hi there
+[05:21] Then we can see that our message comes through as the channel tag of telegram so that the actual session knows that we're messaging in from telegram
+[05:29] And then we have to reply back to telegram with the response being high. How can I help you now if you do come back into your Claude code session
+[05:35] And you type in a message within the actual session itself
+[05:38] The message that you send into Claude code from here and the response that you get from Claude code back to your message
+[05:43] So these two things over here are not actually going to go back into your telegram
+[05:47] So there's an isolated session whatever your message from your telegram will be visible in the session
+[05:52] But whatever your message in the session will not be visible back out to your telegram
+[05:56] So at this stage we've got a telegram connected. Let's flick across to discord
+[06:00] So to get started here, we have to go across to our discord developer portal
+[06:04] Let's create a new application. I'm going to call this demo bot 2
+[06:08] And I'm going to agree to the terms and then create now. Let's go across to the bot section
+[06:13] Let's scroll down and let's go all the way here where it says message content intent and let's enable this
+[06:20] Let's save these settings after they're saved. Let's come back into where it says reset token
+[06:25] Let's reset the token then verify your authentication and then copy this token and store it somewhere temporarily
+[06:31] So now we've just done step one and two
+[06:33] So step one was creating the actual app in the portal
+[06:36] And then step two was enabling that permission and then it's just a little bit muddy over here
+[06:40] But basically resetting that token
+[06:42] So now our step three is to go to our OAuth tab and actually just set the permissions for the connection
+[06:48] So back in our application, let's go to OAuth
+[06:50] Let's go down to where it says OAuth URL generator
+[06:54] Let's set the bot scope
+[06:56] Keep scrolling down and now we just need to add all these permissions
+[06:59] So just go ahead and add them one by one
+[07:00] So I've just gone ahead and set all those six permissions
+[07:03] Let's keep scrolling down and now let's copy this generated URL
+[07:07] Now paste it into a new tab and then choose the appropriate server where you want to add your connection
+[07:11] So I'm going to go to barge team and click continue
+[07:14] These are the permissions that we just set before so I'm going to go ahead and authorize
+[07:17] So now we've completed step three and set all the permissions
+[07:20] We now have to go across to Claude code
+[07:21] We're going to start a new session and then install the plugin
+[07:24] So I'm just going to reuse the exact same session that we had before
+[07:27] Rather than the same terminal
+[07:28] I'm going to launch a new Claude session just to keep everything clean
+[07:32] Except this folder
+[07:33] Let's paste in that plugin
+[07:34] Once again, we're just going to go up to default settings of install for you for a user scope
+[07:39] So just hit enter
+[07:40] The plugin is installed
+[07:41] And we're now going to just refresh those plugins
+[07:43] Let's run this command in here
+[07:45] And actually at this stage with the previous setup
+[07:47] We actually had to set the token to make the connection
+[07:50] Same things happening here where to set the token
+[07:53] I'm just going to preemptively exit out of this session and start a brand new one
+[07:57] Just to bypass any possible issues like before
+[07:59] So we have that plugin installed and now we want to configure the token
+[08:02] So I'm going to copy this command
+[08:04] Back into our terminal, let's paste it into here
+[08:06] Let's backspace the placeholder
+[08:08] Once again, we want to leave that little space in between
+[08:10] And now paste in that token that we just generated in step one
+[08:14] Let's run the command
+[08:15] Let's accept the permissions and accept them once again
+[08:18] Nice, so everything's been set and we've been paired
+[08:20] But like we know we have to restart the actual session
+[08:23] And we now want to run Claude code with the channels tag for the discord
+[08:26] So I'm going to copy this command
+[08:28] Let's end this session
+[08:30] And now let's start a new session with the channels tag for discord and trust this folder
+[08:34] And now go back into discord
+[08:36] Open up the team that you gave permissions for the bot
+[08:39] And over here I can see glad you're here
+[08:41] Demo bot2 is enabled
+[08:42] I'm just going to click on my bot's name
+[08:44] And I'm just going to send a message directly into the bot
+[08:46] So I can trigger the pairing request
+[08:48] There we go, pairing required, let's copy this command
+[08:50] Let's go back into our terminal, paste in the command
+[08:53] Let's accept these edits, accept them again
+[08:56] And now we've been approved and added to the allow list
+[08:58] And back in discord we can see the first response from our Claude code session
+[09:02] And just like before the final command that we want to run
+[09:05] Is the policy allow list
+[09:06] We want to lock it down to only our account
+[09:08] That can access the Claude code session
+[09:10] So I'm going to copy this command
+[09:11] Back into terminal, paste it in and run it
+[09:14] And beautiful, now we've locked it down
+[09:15] So that only I can access my Claude code session
+[09:18] So let's test this out
+[09:19] Hi there, we can see the Claude code session is responding back to us
+[09:23] And here's the response, hi how can I help you
+[09:25] And the same situation applies as for telegram
+[09:27] Where if I send a message directly in the session in the terminal
+[09:31] That message is not going to be pushed across to discord
+[09:33] So it won't be seen there
+[09:35] But anything I send from discord
+[09:36] I will be able to see in the session on the terminal
+[09:39] Alright guys, thanks very much for watching
+[09:41] I hope you enjoy your telegram and discord connection
+[09:43] See you next one
+
+--- Plain text ---
+Hello legends, so Claude code just introduced something called channels and channels lets you control your Claude code session Which is a thing that's running on your computer directly from your telegram or your discord This means that you can launch Claude code with the channels tag for either discord or a telegram You can then leave that session running on your computer at home You can leave the house you can pull out your phone and then you can open up telegram or discord and then manage that session You can send in messages and receive responses back in this video I'm going to take you through the setup instructions for discord and telegram so that you can start using this today A couple of things tonight before we begin is that this is still in research preview Which means that there might be a couple of bugs along the way So if I applied it into my discord and telegram and it seems to be working now But just be mindful of this next we'll have to update to Claude code version 2.1.8 or later So if you're using an older version of Claude code and you do not update then this is not going to work for you And we'll only be able to use this if we authenticate into Claude code using the Claude.ai login So this is the OAuth login if using the console or the API key authentication this will not work So you have to log out and then re-log back in and then finally if you're on the team or the enterprise account You actually have to accept these or change the permissions manually in your configuration file Whereas if you're on the pro or the max plan you'll be able to use this out of the box Okay, so the first thing you want to do is open up a brand new terminal and then type in Claude space update And this is going to look at your current version of Claude Check for any updates and if there's any updates available, it's going to update your Claude code in my case I'm already up to date with the latest version of 2.1.8 So I'm ready to go now Let's start by setting up our telegram connection and our step one is to go across to the telegram bot father Create a new bot and then get the bot token and inside the chat with the bot father Let's go into the text box and type in forward slash new and click on create a new bot and just type in a name for your bot So I'm just going to type in bloopy and then we'll have to type in a username. So I'm going to go bloopy underscore bot and hit enter Okay, in that case, it's taken Let's go bloopy underscore one two three and then underscore bot and let's see if this is taken Awesome, so it's available for us and now we've got our bot token ready to go So let's go back to step two. Okay, now that we have the bot token our step two is to install the Claude plugin So I'm just going to copy this command. Let's go back to our terminal and spool up a new Claude session Let's trust this folder and let's paste that command into here and then we have our plugin details over here The main thing to note is that we're just going to use the default configuration setting of install for you Which is the user scope? So just go ahead and press enter and now we have the telegram plugin installed. Let's just run reload plugins to activate this I'm going to copy that command paste it back into the terminal and hit enter Now that we have the plugin installed, let's go ahead and configure our token So we need to copy this command, which is the telegram configure command Let's go back into the terminal and paste in that command. Let's back space the placeholder text back in our bot Father, let's get that token and then paste that token into the terminal Just be mindful that you want to have a space in between the command, which is telegram configure Then a space and then the actual bot token. Let's now press enter Okay, it looks like we ran into an error that the skill is not recognized I'm just going to exit this session and just start a brand new one. So let's go Claude and let's see if this fixes the issue So it's trust is folder and let's get that command again Paste it into our terminal back space the placeholder grab the bot token and paste it back into here Okay, so it looks like this time it's working. So I'm just going to prove the permissions Let's approve the next permission as well Nice and a token's been set. So it looks like after we installed the plugin even though we reloaded it The trick here was to actually just exit the session and then start a brand new session So over here, we're told to DM the bot on telegram will then get a pairing token which we can give directly to Claude code Let's confirm that with the instructions. Okay, so we've just configured our token Looks like step four is to restart the session with the channels tag enabled So I'm just going to copy this command and we actually have to run Claude code with the channels tag enabled Otherwise when we go across to our telegram, we won't be able to actually interact with the session. So I'm just going to exit out of this live session restart a new one Accept this folder and now it's paste in that command and launch Claude code with the Telegram channels tag enabled and now we're listening for channel messages from the official telegram plugin And now our step five says that we can open up telegram sent any message and then the bot will apply with the pairing code So let's go ahead and do that. Let's open up the telegram bot that we just created Click on star and there we go We have the pairing code over here. I'm just going to copy this command and then back in a terminal Let's paste this into Claude code and here enter. Let's accept these edits Accept the edits again and now we've been approved and you've been added to the allow list and there we go We can see our first message in from the Claude code session now There is one final instruction that we need to follow so after we give the pairing code into Claude code we must then lock down access by running this command as well So I'm just going to take this go back into the terminal and just run this immediately And now we've just locked down the connection to only allow users from our allow list and currently I'm the only user on the allow list so no one else can message my Claude code session. So now let's test out our connection Hi there Then we can see that our message comes through as the channel tag of telegram so that the actual session knows that we're messaging in from telegram And then we have to reply back to telegram with the response being high. How can I help you now if you do come back into your Claude code session And you type in a message within the actual session itself The message that you send into Claude code from here and the response that you get from Claude code back to your message So these two things over here are not actually going to go back into your telegram So there's an isolated session whatever your message from your telegram will be visible in the session But whatever your message in the session will not be visible back out to your telegram So at this stage we've got a telegram connected. Let's flick across to discord So to get started here, we have to go across to our discord developer portal Let's create a new application. I'm going to call this demo bot 2 And I'm going to agree to the terms and then create now. Let's go across to the bot section Let's scroll down and let's go all the way here where it says message content intent and let's enable this Let's save these settings after they're saved. Let's come back into where it says reset token Let's reset the token then verify your authentication and then copy this token and store it somewhere temporarily So now we've just done step one and two So step one was creating the actual app in the portal And then step two was enabling that permission and then it's just a little bit muddy over here But basically resetting that token So now our step three is to go to our OAuth tab and actually just set the permissions for the connection So back in our application, let's go to OAuth Let's go down to where it says OAuth URL generator Let's set the bot scope Keep scrolling down and now we just need to add all these permissions So just go ahead and add them one by one So I've just gone ahead and set all those six permissions Let's keep scrolling down and now let's copy this generated URL Now paste it into a new tab and then choose the appropriate server where you want to add your connection So I'm going to go to barge team and click continue These are the permissions that we just set before so I'm going to go ahead and authorize So now we've completed step three and set all the permissions We now have to go across to Claude code We're going to start a new session and then install the plugin So I'm just going to reuse the exact same session that we had before Rather than the same terminal I'm going to launch a new Claude session just to keep everything clean Except this folder Let's paste in that plugin Once again, we're just going to go up to default settings of install for you for a user scope So just hit enter The plugin is installed And we're now going to just refresh those plugins Let's run this command in here And actually at this stage with the previous setup We actually had to set the token to make the connection Same things happening here where to set the token I'm just going to preemptively exit out of this session and start a brand new one Just to bypass any possible issues like before So we have that plugin installed and now we want to configure the token So I'm going to copy this command Back into our terminal, let's paste it into here Let's backspace the placeholder Once again, we want to leave that little space in between And now paste in that token that we just generated in step one Let's run the command Let's accept the permissions and accept them once again Nice, so everything's been set and we've been paired But like we know we have to restart the actual session And we now want to run Claude code with the channels tag for the discord So I'm going to copy this command Let's end this session And now let's start a new session with the channels tag for discord and trust this folder And now go back into discord Open up the team that you gave permissions for the bot And over here I can see glad you're here Demo bot2 is enabled I'm just going to click on my bot's name And I'm just going to send a message directly into the bot So I can trigger the pairing request There we go, pairing required, let's copy this command Let's go back into our terminal, paste in the command Let's accept these edits, accept them again And now we've been approved and added to the allow list And back in discord we can see the first response from our Claude code session And just like before the final command that we want to run Is the policy allow list We want to lock it down to only our account That can access the Claude code session So I'm going to copy this command Back into terminal, paste it in and run it And beautiful, now we've locked it down So that only I can access my Claude code session So let's test this out Hi there, we can see the Claude code session is responding back to us And here's the response, hi how can I help you And the same situation applies as for telegram Where if I send a message directly in the session in the terminal That message is not going to be pushed across to discord So it won't be seen there But anything I send from discord I will be able to see in the session on the terminal Alright guys, thanks very much for watching I hope you enjoy your telegram and discord connection See you next one

@@ -1,0 +1,23 @@
+A Alibaba lançou o **Qwen 3.6 Plus**: modelo com **janela de contexto de 1 milhão de tokens**, em **preview gratuito** no **OpenRouter** (sem cobrança de entrada/saída durante o período). O vídeo contrasta com **Claude Opus 4.6** (preços por milhão de tokens e contexto ~200k) e com modelos pagos com janela de 1M — a tese é que **custo zero** muda o que é viável para negócios: dá para plugar de graça em **OpenClaw**, **Hermes Agent** ou automações via API.
+
+**1M de tokens na prática:** livro inteiro, grande volume de e-mails de clientes, catálogo de produtos, arquivo de blog — tudo num único contexto para o modelo **raciocinar de forma cruzada**, algo caro ou inviável antes para muitas empresas.
+
+A Alibaba posiciona o modelo perto do **estado da arte** em benchmarks; destaque em **comportamento agêntico**, dev **front/back**, problemas complexos; arquitetura **híbrida** mais rápida/eficiente que a série **Qwen 3.5**. Testadores citam **tool calling** e **geração de UI** estáveis — relevante para agentes que orquestram muitas ferramentas. Interface no site do Qwen descrita como mais **polida**; o modelo **mostra o raciocínio** antes da resposta (útil para decisões de negócio).
+
+**Privacidade no preview:** durante o período gratuito, **prompts e completions podem ser coletados** para melhorar o modelo — **não enviar dados sensíveis**; usar para aprendizado e testes com material genérico.
+
+**Por que de graça?** Narrativa do vídeo: empresas chinesas de IA buscam **adoção em massa** (desenvolvedores e negócios), tornar **Qwen o padrão** em que as pessoas constroem — não maximizar receita **por token hoje**. A série Qwen teria passado de “modelo chinês de nicho” a **comparação direta** com Claude e GPT em benchmarks.
+
+**Contexto Qwen 3.5:** já havia **1M tokens** na variante Plus, arquitetura híbrida (atenção linear + **MoE**); **Qwen 3.5 Flash** citado como muito mais rápido que **Claude Sonnet** em alguns testes de latência. **Qwen 3.6** melhora raciocínio, agentes e tarefas úteis a **workflows automatizados**.
+
+**Exemplos:** e-commerce — catálogo inteiro (ex. 500 produtos + descrições + reviews) para achar **oportunidades de cross-sell**; freelancer — meses de posts para **calendário**, lacunas e ângulos; creator — via OpenClaw/Hermes, monitorar concorrentes, tendências e **roteiros** com CTA. O vídeo remete a treinamentos na comunidade **AI Profit Boardroom / Bootcamp** (CTA).
+
+**Panorama 2026:** “preço da capacidade” caindo — **Gemini 3.1 Pro** perto de Opus com custo menor; **MiniMax M2.7** barato; Alibaba com **preview zero dólar** de flagship. Argumento: **não usar IA** pode ficar mais caro que experimentar; quem integrar no dia a dia ganha eficiência.
+
+**Qwen 3.5 Omni:** multimodal (vídeo, imagem, áudio) em demos — padrão de **texto flagship grátis** seguido de **multimodal** e **ecossistema**, não só um checkpoint.
+
+**Open weights:** comunidade pedindo pesos para rodar **local/privado**; Alibaba costuma liberar Qwen no ecossistema (**Hugging Face**, **Ollama**, etc.) — se confirmar para 3.6, amplia uso **on-prem** e controle de dados.
+
+**O que fazer agora:** no OpenRouter, buscar **Qwen 3.6 Plus preview**, testar com **documento grande** ou tarefa complexa; observar **tool calling**, tarefas multi-etapas, **raciocínio explícito**, estabilidade; integrar em OpenClaw/Hermes e comparar APIs. Pergunta-chave: **o que você conseguiria alimentar no contexto que antes não cabia ou era caro demais?**
+
+Fechamento: link para comunidade/coaching (comentários/descrição, **aiprofitbootcamp.com** etc.).

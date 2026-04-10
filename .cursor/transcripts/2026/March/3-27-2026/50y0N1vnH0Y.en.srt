@@ -1,0 +1,2055 @@
+1
+00:00:00,160 --> 00:00:01,750
+
+In this video, we are going to explore
+
+2
+00:00:01,750 --> 00:00:01,760
+In this video, we are going to explore
+ 
+
+3
+00:00:01,760 --> 00:00:03,830
+In this video, we are going to explore
+how we can create highle architectural
+
+4
+00:00:03,830 --> 00:00:03,840
+how we can create highle architectural
+ 
+
+5
+00:00:03,840 --> 00:00:06,710
+how we can create highle architectural
+diagram using MCP server capabilities of
+
+6
+00:00:06,710 --> 00:00:06,720
+diagram using MCP server capabilities of
+ 
+
+7
+00:00:06,720 --> 00:00:09,669
+diagram using MCP server capabilities of
+draw.io and xali draw. And to interact
+
+8
+00:00:09,669 --> 00:00:09,679
+draw.io and xali draw. And to interact
+ 
+
+9
+00:00:09,679 --> 00:00:11,509
+draw.io and xali draw. And to interact
+with these MCP servers, we are going to
+
+10
+00:00:11,509 --> 00:00:11,519
+with these MCP servers, we are going to
+ 
+
+11
+00:00:11,519 --> 00:00:13,749
+with these MCP servers, we are going to
+use cloud desktop and visual studio
+
+12
+00:00:13,749 --> 00:00:13,759
+use cloud desktop and visual studio
+ 
+
+13
+00:00:13,759 --> 00:00:16,390
+use cloud desktop and visual studio
+code. So let's get started with that. So
+
+14
+00:00:16,390 --> 00:00:16,400
+code. So let's get started with that. So
+ 
+
+15
+00:00:16,400 --> 00:00:18,310
+code. So let's get started with that. So
+first thing I'm just going to open my
+
+16
+00:00:18,310 --> 00:00:18,320
+first thing I'm just going to open my
+ 
+
+17
+00:00:18,320 --> 00:00:21,590
+first thing I'm just going to open my
+cloud desktop. So once you open your
+
+18
+00:00:21,590 --> 00:00:21,600
+cloud desktop. So once you open your
+ 
+
+19
+00:00:21,600 --> 00:00:24,470
+cloud desktop. So once you open your
+cloud desktop, you need to go to in your
+
+20
+00:00:24,470 --> 00:00:24,480
+cloud desktop, you need to go to in your
+ 
+
+21
+00:00:24,480 --> 00:00:25,910
+cloud desktop, you need to go to in your
+settings. So I'm just going to go to
+
+22
+00:00:25,910 --> 00:00:25,920
+settings. So I'm just going to go to
+ 
+
+23
+00:00:25,920 --> 00:00:27,670
+settings. So I'm just going to go to
+file and then I'm just going to go to
+
+24
+00:00:27,670 --> 00:00:27,680
+file and then I'm just going to go to
+ 
+
+25
+00:00:27,680 --> 00:00:29,990
+file and then I'm just going to go to
+settings. And under this you can see
+
+26
+00:00:29,990 --> 00:00:30,000
+settings. And under this you can see
+ 
+
+27
+00:00:30,000 --> 00:00:31,750
+settings. And under this you can see
+these connectors over here. I'm just
+
+28
+00:00:31,750 --> 00:00:31,760
+these connectors over here. I'm just
+ 
+
+29
+00:00:31,760 --> 00:00:33,830
+these connectors over here. I'm just
+going to click on this connector. And
+
+30
+00:00:33,830 --> 00:00:33,840
+going to click on this connector. And
+ 
+
+31
+00:00:33,840 --> 00:00:35,590
+going to click on this connector. And
+you see this connector. I'm just going
+
+32
+00:00:35,590 --> 00:00:35,600
+you see this connector. I'm just going
+ 
+
+33
+00:00:35,600 --> 00:00:38,709
+you see this connector. I'm just going
+to click on this browse connectors. So
+
+34
+00:00:38,709 --> 00:00:38,719
+to click on this browse connectors. So
+ 
+
+35
+00:00:38,719 --> 00:00:40,709
+to click on this browse connectors. So
+these are the connectors which are built
+
+36
+00:00:40,709 --> 00:00:40,719
+these are the connectors which are built
+ 
+
+37
+00:00:40,719 --> 00:00:43,670
+these are the connectors which are built
+by third parties and already reviewed by
+
+38
+00:00:43,670 --> 00:00:43,680
+by third parties and already reviewed by
+ 
+
+39
+00:00:43,680 --> 00:00:45,910
+by third parties and already reviewed by
+Enthroy for safety. You can just use
+
+40
+00:00:45,910 --> 00:00:45,920
+Enthroy for safety. You can just use
+ 
+
+41
+00:00:45,920 --> 00:00:48,069
+Enthroy for safety. You can just use
+like any of the connectors from here. As
+
+42
+00:00:48,069 --> 00:00:48,079
+like any of the connectors from here. As
+ 
+
+43
+00:00:48,079 --> 00:00:50,709
+like any of the connectors from here. As
+of now, if I search for draw.io,
+
+44
+00:00:50,709 --> 00:00:50,719
+of now, if I search for draw.io,
+ 
+
+45
+00:00:50,719 --> 00:00:52,470
+of now, if I search for draw.io,
+then there is no connector as such. But
+
+46
+00:00:52,470 --> 00:00:52,480
+then there is no connector as such. But
+ 
+
+47
+00:00:52,480 --> 00:00:55,350
+then there is no connector as such. But
+there is a connector for Xkelly Draw. So
+
+48
+00:00:55,350 --> 00:00:55,360
+there is a connector for Xkelly Draw. So
+ 
+
+49
+00:00:55,360 --> 00:00:57,270
+there is a connector for Xkelly Draw. So
+let's get started with Xkelly Draw. I'm
+
+50
+00:00:57,270 --> 00:00:57,280
+let's get started with Xkelly Draw. I'm
+ 
+
+51
+00:00:57,280 --> 00:00:59,990
+let's get started with Xkelly Draw. I'm
+just going to click on the connect
+
+52
+00:00:59,990 --> 00:01:00,000
+just going to click on the connect
+ 
+
+53
+00:01:00,000 --> 00:01:02,229
+just going to click on the connect
+and you can see like this is already
+
+54
+00:01:02,229 --> 00:01:02,239
+and you can see like this is already
+ 
+
+55
+00:01:02,239 --> 00:01:04,710
+and you can see like this is already
+over here. It has been connected. If you
+
+56
+00:01:04,710 --> 00:01:04,720
+over here. It has been connected. If you
+ 
+
+57
+00:01:04,720 --> 00:01:06,149
+over here. It has been connected. If you
+just want to have a look like which
+
+58
+00:01:06,149 --> 00:01:06,159
+just want to have a look like which
+ 
+
+59
+00:01:06,159 --> 00:01:08,149
+just want to have a look like which
+connector is already in place. There is
+
+60
+00:01:08,149 --> 00:01:08,159
+connector is already in place. There is
+ 
+
+61
+00:01:08,159 --> 00:01:10,310
+connector is already in place. There is
+also you can also check it from this
+
+62
+00:01:10,310 --> 00:01:10,320
+also you can also check it from this
+ 
+
+63
+00:01:10,320 --> 00:01:12,469
+also you can also check it from this
+customize button. You can also click on
+
+64
+00:01:12,469 --> 00:01:12,479
+customize button. You can also click on
+ 
+
+65
+00:01:12,479 --> 00:01:14,950
+customize button. You can also click on
+click over here. Then you can go to
+
+66
+00:01:14,950 --> 00:01:14,960
+click over here. Then you can go to
+ 
+
+67
+00:01:14,960 --> 00:01:17,109
+click over here. Then you can go to
+connectors and here also you could see
+
+68
+00:01:17,109 --> 00:01:17,119
+connectors and here also you could see
+ 
+
+69
+00:01:17,119 --> 00:01:19,670
+connectors and here also you could see
+okay this connector has been listed
+
+70
+00:01:19,670 --> 00:01:19,680
+okay this connector has been listed
+ 
+
+71
+00:01:19,680 --> 00:01:22,550
+okay this connector has been listed
+here. This particular connector comes
+
+72
+00:01:22,550 --> 00:01:22,560
+here. This particular connector comes
+ 
+
+73
+00:01:22,560 --> 00:01:25,990
+here. This particular connector comes
+with these specific tools. Now let's go
+
+74
+00:01:25,990 --> 00:01:26,000
+with these specific tools. Now let's go
+ 
+
+75
+00:01:26,000 --> 00:01:28,230
+with these specific tools. Now let's go
+back to our chat and let's try to draw
+
+76
+00:01:28,230 --> 00:01:28,240
+back to our chat and let's try to draw
+ 
+
+77
+00:01:28,240 --> 00:01:30,149
+back to our chat and let's try to draw
+something out here. I'm just going to
+
+78
+00:01:30,149 --> 00:01:30,159
+something out here. I'm just going to
+ 
+
+79
+00:01:30,159 --> 00:01:32,870
+something out here. I'm just going to
+say use Xali draw to create an
+
+80
+00:01:32,870 --> 00:01:32,880
+say use Xali draw to create an
+ 
+
+81
+00:01:32,880 --> 00:01:34,710
+say use Xali draw to create an
+architectural diagram for a modern web
+
+82
+00:01:34,710 --> 00:01:34,720
+architectural diagram for a modern web
+ 
+
+83
+00:01:34,720 --> 00:01:36,630
+architectural diagram for a modern web
+application. It should include a react
+
+84
+00:01:36,630 --> 00:01:36,640
+application. It should include a react
+ 
+
+85
+00:01:36,640 --> 00:01:39,670
+application. It should include a react
+front end fast repair back end
+
+86
+00:01:39,670 --> 00:01:39,680
+front end fast repair back end
+ 
+
+87
+00:01:39,680 --> 00:01:42,469
+front end fast repair back end
+postgsql database and there are some
+
+88
+00:01:42,469 --> 00:01:42,479
+postgsql database and there are some
+ 
+
+89
+00:01:42,479 --> 00:01:44,230
+postgsql database and there are some
+specific details. So you can pass your
+
+90
+00:01:44,230 --> 00:01:44,240
+specific details. So you can pass your
+ 
+
+91
+00:01:44,240 --> 00:01:47,350
+specific details. So you can pass your
+prompt like this model is default one
+
+92
+00:01:47,350 --> 00:01:47,360
+prompt like this model is default one
+ 
+
+93
+00:01:47,360 --> 00:01:49,990
+prompt like this model is default one
+which is set 4.6 and you can see I'm on
+
+94
+00:01:49,990 --> 00:01:50,000
+which is set 4.6 and you can see I'm on
+ 
+
+95
+00:01:50,000 --> 00:01:52,230
+which is set 4.6 and you can see I'm on
+free plan. So it's going to work in the
+
+96
+00:01:52,230 --> 00:01:52,240
+free plan. So it's going to work in the
+ 
+
+97
+00:01:52,240 --> 00:01:54,469
+free plan. So it's going to work in the
+free plan also. So I'm just going to go
+
+98
+00:01:54,469 --> 00:01:54,479
+free plan also. So I'm just going to go
+ 
+
+99
+00:01:54,479 --> 00:01:57,350
+free plan also. So I'm just going to go
+ahead and submit this.
+
+100
+00:01:57,350 --> 00:01:57,360
+ahead and submit this.
+ 
+
+101
+00:01:57,360 --> 00:01:59,830
+ahead and submit this.
+And first thing you can see claude is
+
+102
+00:01:59,830 --> 00:01:59,840
+And first thing you can see claude is
+ 
+
+103
+00:01:59,840 --> 00:02:02,230
+And first thing you can see claude is
+searching for a tool. It has identified
+
+104
+00:02:02,230 --> 00:02:02,240
+searching for a tool. It has identified
+ 
+
+105
+00:02:02,240 --> 00:02:04,469
+searching for a tool. It has identified
+a tool. And now actually it has started
+
+106
+00:02:04,469 --> 00:02:04,479
+a tool. And now actually it has started
+ 
+
+107
+00:02:04,479 --> 00:02:06,149
+a tool. And now actually it has started
+creating this particular diagram. And
+
+108
+00:02:06,149 --> 00:02:06,159
+creating this particular diagram. And
+ 
+
+109
+00:02:06,159 --> 00:02:07,910
+creating this particular diagram. And
+you can see like this particular diagram
+
+110
+00:02:07,910 --> 00:02:07,920
+you can see like this particular diagram
+ 
+
+111
+00:02:07,920 --> 00:02:10,229
+you can see like this particular diagram
+in real time how it is you know creating
+
+112
+00:02:10,229 --> 00:02:10,239
+in real time how it is you know creating
+ 
+
+113
+00:02:10,239 --> 00:02:12,790
+in real time how it is you know creating
+and it's very cool to see put out all
+
+114
+00:02:12,790 --> 00:02:12,800
+and it's very cool to see put out all
+ 
+
+115
+00:02:12,800 --> 00:02:15,110
+and it's very cool to see put out all
+the boxes based on the description what
+
+116
+00:02:15,110 --> 00:02:15,120
+the boxes based on the description what
+ 
+
+117
+00:02:15,120 --> 00:02:18,869
+the boxes based on the description what
+we have provided and at the bottom it is
+
+118
+00:02:18,869 --> 00:02:18,879
+we have provided and at the bottom it is
+ 
+
+119
+00:02:18,879 --> 00:02:21,510
+we have provided and at the bottom it is
+just sharing the details around it. What
+
+120
+00:02:21,510 --> 00:02:21,520
+just sharing the details around it. What
+ 
+
+121
+00:02:21,520 --> 00:02:23,750
+just sharing the details around it. What
+you can do if you want to edit the you
+
+122
+00:02:23,750 --> 00:02:23,760
+you can do if you want to edit the you
+ 
+
+123
+00:02:23,760 --> 00:02:27,350
+you can do if you want to edit the you
+can also open this one in excal draw web
+
+124
+00:02:27,350 --> 00:02:27,360
+can also open this one in excal draw web
+ 
+
+125
+00:02:27,360 --> 00:02:30,390
+can also open this one in excal draw web
+page or you can also edit it over here.
+
+126
+00:02:30,390 --> 00:02:30,400
+page or you can also edit it over here.
+ 
+
+127
+00:02:30,400 --> 00:02:32,390
+page or you can also edit it over here.
+So if I just click on edit then you can
+
+128
+00:02:32,390 --> 00:02:32,400
+So if I just click on edit then you can
+ 
+
+129
+00:02:32,400 --> 00:02:34,150
+So if I just click on edit then you can
+see like this particular window has been
+
+130
+00:02:34,150 --> 00:02:34,160
+see like this particular window has been
+ 
+
+131
+00:02:34,160 --> 00:02:36,390
+see like this particular window has been
+opened and I can also just click on any
+
+132
+00:02:36,390 --> 00:02:36,400
+opened and I can also just click on any
+ 
+
+133
+00:02:36,400 --> 00:02:39,030
+opened and I can also just click on any
+of the part and can edit it or I can
+
+134
+00:02:39,030 --> 00:02:39,040
+of the part and can edit it or I can
+ 
+
+135
+00:02:39,040 --> 00:02:41,509
+of the part and can edit it or I can
+just directly open it in the web browser
+
+136
+00:02:41,509 --> 00:02:41,519
+just directly open it in the web browser
+ 
+
+137
+00:02:41,519 --> 00:02:44,390
+just directly open it in the web browser
+of excelling
+
+138
+00:02:44,390 --> 00:02:44,400
+of excelling
+ 
+
+139
+00:02:44,400 --> 00:02:45,910
+of excelling
+permission. I'm just going to say open
+
+140
+00:02:45,910 --> 00:02:45,920
+permission. I'm just going to say open
+ 
+
+141
+00:02:45,920 --> 00:02:48,309
+permission. I'm just going to say open
+link. So from here also actually you can
+
+142
+00:02:48,309 --> 00:02:48,319
+link. So from here also actually you can
+ 
+
+143
+00:02:48,319 --> 00:02:50,949
+link. So from here also actually you can
+edit your images and it's very easy to
+
+144
+00:02:50,949 --> 00:02:50,959
+edit your images and it's very easy to
+ 
+
+145
+00:02:50,959 --> 00:02:52,550
+edit your images and it's very easy to
+connect with cloud desktop considering
+
+146
+00:02:52,550 --> 00:02:52,560
+connect with cloud desktop considering
+ 
+
+147
+00:02:52,560 --> 00:02:54,630
+connect with cloud desktop considering
+they do have inbuilt connectors. So you
+
+148
+00:02:54,630 --> 00:02:54,640
+they do have inbuilt connectors. So you
+ 
+
+149
+00:02:54,640 --> 00:02:56,390
+they do have inbuilt connectors. So you
+don't have to pass any kind of config as
+
+150
+00:02:56,390 --> 00:02:56,400
+don't have to pass any kind of config as
+ 
+
+151
+00:02:56,400 --> 00:03:00,070
+don't have to pass any kind of config as
+such. Now what about draw.io. So when we
+
+152
+00:03:00,070 --> 00:03:00,080
+such. Now what about draw.io. So when we
+ 
+
+153
+00:03:00,080 --> 00:03:02,550
+such. Now what about draw.io. So when we
+see draw.io MCP server then there are
+
+154
+00:03:02,550 --> 00:03:02,560
+see draw.io MCP server then there are
+ 
+
+155
+00:03:02,560 --> 00:03:04,790
+see draw.io MCP server then there are
+basically three options to connect with
+
+156
+00:03:04,790 --> 00:03:04,800
+basically three options to connect with
+ 
+
+157
+00:03:04,800 --> 00:03:07,110
+basically three options to connect with
+this particular server. One is like we
+
+158
+00:03:07,110 --> 00:03:07,120
+this particular server. One is like we
+ 
+
+159
+00:03:07,120 --> 00:03:09,910
+this particular server. One is like we
+can just pass this remote URL to connect
+
+160
+00:03:09,910 --> 00:03:09,920
+can just pass this remote URL to connect
+ 
+
+161
+00:03:09,920 --> 00:03:12,949
+can just pass this remote URL to connect
+to the MCP server. That's one option.
+
+162
+00:03:12,949 --> 00:03:12,959
+to the MCP server. That's one option.
+ 
+
+163
+00:03:12,959 --> 00:03:15,350
+to the MCP server. That's one option.
+The second option is going to be where
+
+164
+00:03:15,350 --> 00:03:15,360
+The second option is going to be where
+ 
+
+165
+00:03:15,360 --> 00:03:16,790
+The second option is going to be where
+if you're running something on your
+
+166
+00:03:16,790 --> 00:03:16,800
+if you're running something on your
+ 
+
+167
+00:03:16,800 --> 00:03:19,030
+if you're running something on your
+local and for that actually you just
+
+168
+00:03:19,030 --> 00:03:19,040
+local and for that actually you just
+ 
+
+169
+00:03:19,040 --> 00:03:21,190
+local and for that actually you just
+have to power this command and other
+
+170
+00:03:21,190 --> 00:03:21,200
+have to power this command and other
+ 
+
+171
+00:03:21,200 --> 00:03:23,350
+have to power this command and other
+option is where actually you can pass it
+
+172
+00:03:23,350 --> 00:03:23,360
+option is where actually you can pass it
+ 
+
+173
+00:03:23,360 --> 00:03:27,350
+option is where actually you can pass it
+as a skill. So let's see it one by one
+
+174
+00:03:27,350 --> 00:03:27,360
+as a skill. So let's see it one by one
+ 
+
+175
+00:03:27,360 --> 00:03:29,190
+as a skill. So let's see it one by one
+because we are using a claw desktop
+
+176
+00:03:29,190 --> 00:03:29,200
+because we are using a claw desktop
+ 
+
+177
+00:03:29,200 --> 00:03:31,030
+because we are using a claw desktop
+version so we cannot pass this remote
+
+178
+00:03:31,030 --> 00:03:31,040
+version so we cannot pass this remote
+ 
+
+179
+00:03:31,040 --> 00:03:33,430
+version so we cannot pass this remote
+MCP server we can pass only this
+
+180
+00:03:33,430 --> 00:03:33,440
+MCP server we can pass only this
+ 
+
+181
+00:03:33,440 --> 00:03:35,830
+MCP server we can pass only this
+particular command now. So I'm just
+
+182
+00:03:35,830 --> 00:03:35,840
+particular command now. So I'm just
+ 
+
+183
+00:03:35,840 --> 00:03:38,309
+particular command now. So I'm just
+going to take this and if I need to add
+
+184
+00:03:38,309 --> 00:03:38,319
+going to take this and if I need to add
+ 
+
+185
+00:03:38,319 --> 00:03:40,869
+going to take this and if I need to add
+it into my clot then I'm again going to
+
+186
+00:03:40,869 --> 00:03:40,879
+it into my clot then I'm again going to
+ 
+
+187
+00:03:40,879 --> 00:03:44,630
+it into my clot then I'm again going to
+go to settings and from here I will just
+
+188
+00:03:44,630 --> 00:03:44,640
+go to settings and from here I will just
+ 
+
+189
+00:03:44,640 --> 00:03:46,789
+go to settings and from here I will just
+go to developer. You can see like it's
+
+190
+00:03:46,789 --> 00:03:46,799
+go to developer. You can see like it's
+ 
+
+191
+00:03:46,799 --> 00:03:49,910
+go to developer. You can see like it's
+already added as a local MCP server but
+
+192
+00:03:49,910 --> 00:03:49,920
+already added as a local MCP server but
+ 
+
+193
+00:03:49,920 --> 00:03:51,670
+already added as a local MCP server but
+if it is not added then you can just
+
+194
+00:03:51,670 --> 00:03:51,680
+if it is not added then you can just
+ 
+
+195
+00:03:51,680 --> 00:03:53,910
+if it is not added then you can just
+click on edit.config config and it's
+
+196
+00:03:53,910 --> 00:03:53,920
+click on edit.config config and it's
+ 
+
+197
+00:03:53,920 --> 00:03:56,710
+click on edit.config config and it's
+going to open you this claw desktop
+
+198
+00:03:56,710 --> 00:03:56,720
+going to open you this claw desktop
+ 
+
+199
+00:03:56,720 --> 00:03:59,270
+going to open you this claw desktop
+config file which you can open it in any
+
+200
+00:03:59,270 --> 00:03:59,280
+config file which you can open it in any
+ 
+
+201
+00:03:59,280 --> 00:04:02,470
+config file which you can open it in any
+kind of notepad and then in the command
+
+202
+00:04:02,470 --> 00:04:02,480
+kind of notepad and then in the command
+ 
+
+203
+00:04:02,480 --> 00:04:04,309
+kind of notepad and then in the command
+section actually you have to pass you
+
+204
+00:04:04,309 --> 00:04:04,319
+section actually you have to pass you
+ 
+
+205
+00:04:04,319 --> 00:04:06,869
+section actually you have to pass you
+have to pass the command like this where
+
+206
+00:04:06,869 --> 00:04:06,879
+have to pass the command like this where
+ 
+
+207
+00:04:06,879 --> 00:04:09,030
+have to pass the command like this where
+we have to pass this npx and then in
+
+208
+00:04:09,030 --> 00:04:09,040
+we have to pass this npx and then in
+ 
+
+209
+00:04:09,040 --> 00:04:10,710
+we have to pass this npx and then in
+arguments we have to pass this
+
+210
+00:04:10,710 --> 00:04:10,720
+arguments we have to pass this
+ 
+
+211
+00:04:10,720 --> 00:04:12,949
+arguments we have to pass this
+particular section. So we are passing it
+
+212
+00:04:12,949 --> 00:04:12,959
+particular section. So we are passing it
+ 
+
+213
+00:04:12,959 --> 00:04:14,789
+particular section. So we are passing it
+here. Now once it has been added into
+
+214
+00:04:14,789 --> 00:04:14,799
+here. Now once it has been added into
+ 
+
+215
+00:04:14,799 --> 00:04:16,949
+here. Now once it has been added into
+cloud desktop then you will also see
+
+216
+00:04:16,949 --> 00:04:16,959
+cloud desktop then you will also see
+ 
+
+217
+00:04:16,959 --> 00:04:19,749
+cloud desktop then you will also see
+this in a connector. So if I go over
+
+218
+00:04:19,749 --> 00:04:19,759
+this in a connector. So if I go over
+ 
+
+219
+00:04:19,759 --> 00:04:22,310
+this in a connector. So if I go over
+here in the customize in the connectors
+
+220
+00:04:22,310 --> 00:04:22,320
+here in the customize in the connectors
+ 
+
+221
+00:04:22,320 --> 00:04:24,710
+here in the customize in the connectors
+then you can see one is a web version
+
+222
+00:04:24,710 --> 00:04:24,720
+then you can see one is a web version
+ 
+
+223
+00:04:24,720 --> 00:04:27,189
+then you can see one is a web version
+which xcaly draw and the other is a
+
+224
+00:04:27,189 --> 00:04:27,199
+which xcaly draw and the other is a
+ 
+
+225
+00:04:27,199 --> 00:04:30,070
+which xcaly draw and the other is a
+desktop one which is a local dev once it
+
+226
+00:04:30,070 --> 00:04:30,080
+desktop one which is a local dev once it
+ 
+
+227
+00:04:30,080 --> 00:04:32,469
+desktop one which is a local dev once it
+is configured I try to ask this question
+
+228
+00:04:32,469 --> 00:04:32,479
+is configured I try to ask this question
+ 
+
+229
+00:04:32,479 --> 00:04:34,550
+is configured I try to ask this question
+where I have specifically asked is to
+
+230
+00:04:34,550 --> 00:04:34,560
+where I have specifically asked is to
+ 
+
+231
+00:04:34,560 --> 00:04:37,510
+where I have specifically asked is to
+use draw.io to create a highle payment
+
+232
+00:04:37,510 --> 00:04:37,520
+use draw.io to create a highle payment
+ 
+
+233
+00:04:37,520 --> 00:04:41,030
+use draw.io to create a highle payment
+diagram and it has created over here. So
+
+234
+00:04:41,030 --> 00:04:41,040
+diagram and it has created over here. So
+ 
+
+235
+00:04:41,040 --> 00:04:44,390
+diagram and it has created over here. So
+I can just open this particular URL and
+
+236
+00:04:44,390 --> 00:04:44,400
+I can just open this particular URL and
+ 
+
+237
+00:04:44,400 --> 00:04:46,950
+I can just open this particular URL and
+it has created a payment kind of diagram
+
+238
+00:04:46,950 --> 00:04:46,960
+it has created a payment kind of diagram
+ 
+
+239
+00:04:46,960 --> 00:04:48,629
+it has created a payment kind of diagram
+like this here also actually it's a
+
+240
+00:04:48,629 --> 00:04:48,639
+like this here also actually it's a
+ 
+
+241
+00:04:48,639 --> 00:04:51,110
+like this here also actually it's a
+editable version. So it has opened it on
+
+242
+00:04:51,110 --> 00:04:51,120
+editable version. So it has opened it on
+ 
+
+243
+00:04:51,120 --> 00:04:53,670
+editable version. So it has opened it on
+the draw.io and we can just go ahead and
+
+244
+00:04:53,670 --> 00:04:53,680
+the draw.io and we can just go ahead and
+ 
+
+245
+00:04:53,680 --> 00:04:56,230
+the draw.io and we can just go ahead and
+you know modify things accordingly. The
+
+246
+00:04:56,230 --> 00:04:56,240
+you know modify things accordingly. The
+ 
+
+247
+00:04:56,240 --> 00:04:58,469
+you know modify things accordingly. The
+first option was this remote MCP server.
+
+248
+00:04:58,469 --> 00:04:58,479
+first option was this remote MCP server.
+ 
+
+249
+00:04:58,479 --> 00:05:01,110
+first option was this remote MCP server.
+If you want to just try it out where you
+
+250
+00:05:01,110 --> 00:05:01,120
+If you want to just try it out where you
+ 
+
+251
+00:05:01,120 --> 00:05:02,950
+If you want to just try it out where you
+want to see the diagram in the inline
+
+252
+00:05:02,950 --> 00:05:02,960
+want to see the diagram in the inline
+ 
+
+253
+00:05:02,960 --> 00:05:05,909
+want to see the diagram in the inline
+chat then I cannot do it on the cloud
+
+254
+00:05:05,909 --> 00:05:05,919
+chat then I cannot do it on the cloud
+ 
+
+255
+00:05:05,919 --> 00:05:08,070
+chat then I cannot do it on the cloud
+desktop. We have to do it on the web
+
+256
+00:05:08,070 --> 00:05:08,080
+desktop. We have to do it on the web
+ 
+
+257
+00:05:08,080 --> 00:05:10,150
+desktop. We have to do it on the web
+version. But rather than doing over
+
+258
+00:05:10,150 --> 00:05:10,160
+version. But rather than doing over
+ 
+
+259
+00:05:10,160 --> 00:05:12,550
+version. But rather than doing over
+there, I'm just going to do it in the VS
+
+260
+00:05:12,550 --> 00:05:12,560
+there, I'm just going to do it in the VS
+ 
+
+261
+00:05:12,560 --> 00:05:14,710
+there, I'm just going to do it in the VS
+code. So in the VS code, if you have to
+
+262
+00:05:14,710 --> 00:05:14,720
+code. So in the VS code, if you have to
+ 
+
+263
+00:05:14,720 --> 00:05:18,150
+code. So in the VS code, if you have to
+add like any kind of MCP server, then we
+
+264
+00:05:18,150 --> 00:05:18,160
+add like any kind of MCP server, then we
+ 
+
+265
+00:05:18,160 --> 00:05:20,790
+add like any kind of MCP server, then we
+have to just click on control shift NP.
+
+266
+00:05:20,790 --> 00:05:20,800
+have to just click on control shift NP.
+ 
+
+267
+00:05:20,800 --> 00:05:23,749
+have to just click on control shift NP.
+I'm on Windows and here I just have to
+
+268
+00:05:23,749 --> 00:05:23,759
+I'm on Windows and here I just have to
+ 
+
+269
+00:05:23,759 --> 00:05:25,990
+I'm on Windows and here I just have to
+say add server
+
+270
+00:05:25,990 --> 00:05:26,000
+say add server
+ 
+
+271
+00:05:26,000 --> 00:05:27,749
+say add server
+and you can see like all these options
+
+272
+00:05:27,749 --> 00:05:27,759
+and you can see like all these options
+ 
+
+273
+00:05:27,759 --> 00:05:29,189
+and you can see like all these options
+because this is going to be the remote
+
+274
+00:05:29,189 --> 00:05:29,199
+because this is going to be the remote
+ 
+
+275
+00:05:29,199 --> 00:05:31,029
+because this is going to be the remote
+server. So I'm just going to select this
+
+276
+00:05:31,029 --> 00:05:31,039
+server. So I'm just going to select this
+ 
+
+277
+00:05:31,039 --> 00:05:34,150
+server. So I'm just going to select this
+HTTP and it's saying like URL of the MCP
+
+278
+00:05:34,150 --> 00:05:34,160
+HTTP and it's saying like URL of the MCP
+ 
+
+279
+00:05:34,160 --> 00:05:37,270
+HTTP and it's saying like URL of the MCP
+server. So here I can just say this is
+
+280
+00:05:37,270 --> 00:05:37,280
+server. So here I can just say this is
+ 
+
+281
+00:05:37,280 --> 00:05:39,909
+server. So here I can just say this is
+going to be the URL and I can just pass
+
+282
+00:05:39,909 --> 00:05:39,919
+going to be the URL and I can just pass
+ 
+
+283
+00:05:39,919 --> 00:05:42,950
+going to be the URL and I can just pass
+it over here. And then it's saying enter
+
+284
+00:05:42,950 --> 00:05:42,960
+it over here. And then it's saying enter
+ 
+
+285
+00:05:42,960 --> 00:05:45,990
+it over here. And then it's saying enter
+server ID. I'm just going to say draw
+
+286
+00:05:45,990 --> 00:05:46,000
+server ID. I'm just going to say draw
+ 
+
+287
+00:05:46,000 --> 00:05:49,189
+server ID. I'm just going to say draw
+IO. And you can see like it has created
+
+288
+00:05:49,189 --> 00:05:49,199
+IO. And you can see like it has created
+ 
+
+289
+00:05:49,199 --> 00:05:51,350
+IO. And you can see like it has created
+a configuration like this. It's going to
+
+290
+00:05:51,350 --> 00:05:51,360
+a configuration like this. It's going to
+ 
+
+291
+00:05:51,360 --> 00:05:52,950
+a configuration like this. It's going to
+come up with three tools. I'm just going
+
+292
+00:05:52,950 --> 00:05:52,960
+come up with three tools. I'm just going
+ 
+
+293
+00:05:52,960 --> 00:05:55,510
+come up with three tools. I'm just going
+to start this server. And here we do
+
+294
+00:05:55,510 --> 00:05:55,520
+to start this server. And here we do
+ 
+
+295
+00:05:55,520 --> 00:05:58,150
+to start this server. And here we do
+have like one particular tool available.
+
+296
+00:05:58,150 --> 00:05:58,160
+have like one particular tool available.
+ 
+
+297
+00:05:58,160 --> 00:06:00,790
+have like one particular tool available.
+So let me just open GitHub copilot chat
+
+298
+00:06:00,790 --> 00:06:00,800
+So let me just open GitHub copilot chat
+ 
+
+299
+00:06:00,800 --> 00:06:01,990
+So let me just open GitHub copilot chat
+and let's chat with this particular
+
+300
+00:06:01,990 --> 00:06:02,000
+and let's chat with this particular
+ 
+
+301
+00:06:02,000 --> 00:06:03,830
+and let's chat with this particular
+server. So I can just pass the same
+
+302
+00:06:03,830 --> 00:06:03,840
+server. So I can just pass the same
+ 
+
+303
+00:06:03,840 --> 00:06:07,110
+server. So I can just pass the same
+prompt but instead of xkelly draw I'm
+
+304
+00:06:07,110 --> 00:06:07,120
+prompt but instead of xkelly draw I'm
+ 
+
+305
+00:06:07,120 --> 00:06:09,590
+prompt but instead of xkelly draw I'm
+specifically asking to use draw.io. Now
+
+306
+00:06:09,590 --> 00:06:09,600
+specifically asking to use draw.io. Now
+ 
+
+307
+00:06:09,600 --> 00:06:11,670
+specifically asking to use draw.io. Now
+it's trying to create a diagram for us
+
+308
+00:06:11,670 --> 00:06:11,680
+it's trying to create a diagram for us
+ 
+
+309
+00:06:11,680 --> 00:06:14,070
+it's trying to create a diagram for us
+and you can see like it has created it
+
+310
+00:06:14,070 --> 00:06:14,080
+and you can see like it has created it
+ 
+
+311
+00:06:14,080 --> 00:06:17,029
+and you can see like it has created it
+using draw.io mcp server. In this case,
+
+312
+00:06:17,029 --> 00:06:17,039
+using draw.io mcp server. In this case,
+ 
+
+313
+00:06:17,039 --> 00:06:19,590
+using draw.io mcp server. In this case,
+it's coming in line because it is
+
+314
+00:06:19,590 --> 00:06:19,600
+it's coming in line because it is
+ 
+
+315
+00:06:19,600 --> 00:06:23,430
+it's coming in line because it is
+rendering MCP app and as mentioned over
+
+316
+00:06:23,430 --> 00:06:23,440
+rendering MCP app and as mentioned over
+ 
+
+317
+00:06:23,440 --> 00:06:25,029
+rendering MCP app and as mentioned over
+here, if you are using this particular
+
+318
+00:06:25,029 --> 00:06:25,039
+here, if you are using this particular
+ 
+
+319
+00:06:25,039 --> 00:06:27,510
+here, if you are using this particular
+remote MCP server, then the diagram is
+
+320
+00:06:27,510 --> 00:06:27,520
+remote MCP server, then the diagram is
+ 
+
+321
+00:06:27,520 --> 00:06:30,230
+remote MCP server, then the diagram is
+going to come in line in the AI chart
+
+322
+00:06:30,230 --> 00:06:30,240
+going to come in line in the AI chart
+ 
+
+323
+00:06:30,240 --> 00:06:32,629
+going to come in line in the AI chart
+interface only using MCP apps protocol.
+
+324
+00:06:32,629 --> 00:06:32,639
+interface only using MCP apps protocol.
+ 
+
+325
+00:06:32,639 --> 00:06:34,309
+interface only using MCP apps protocol.
+So, same thing is being reflected over
+
+326
+00:06:34,309 --> 00:06:34,319
+So, same thing is being reflected over
+ 
+
+327
+00:06:34,319 --> 00:06:37,270
+So, same thing is being reflected over
+here. So here we are getting the diagram
+
+328
+00:06:37,270 --> 00:06:37,280
+here. So here we are getting the diagram
+ 
+
+329
+00:06:37,280 --> 00:06:40,790
+here. So here we are getting the diagram
+in the chart itself. We can zoom out or
+
+330
+00:06:40,790 --> 00:06:40,800
+in the chart itself. We can zoom out or
+ 
+
+331
+00:06:40,800 --> 00:06:43,830
+in the chart itself. We can zoom out or
+zoom in just to see specific section but
+
+332
+00:06:43,830 --> 00:06:43,840
+zoom in just to see specific section but
+ 
+
+333
+00:06:43,840 --> 00:06:46,550
+zoom in just to see specific section but
+it's not going to get opened on the web
+
+334
+00:06:46,550 --> 00:06:46,560
+it's not going to get opened on the web
+ 
+
+335
+00:06:46,560 --> 00:06:48,469
+it's not going to get opened on the web
+portal. It's going to be opened here
+
+336
+00:06:48,469 --> 00:06:48,479
+portal. It's going to be opened here
+ 
+
+337
+00:06:48,479 --> 00:06:51,189
+portal. It's going to be opened here
+only. Now the third option what we have
+
+338
+00:06:51,189 --> 00:06:51,199
+only. Now the third option what we have
+ 
+
+339
+00:06:51,199 --> 00:06:53,670
+only. Now the third option what we have
+is creating draw.io diagram using
+
+340
+00:06:53,670 --> 00:06:53,680
+is creating draw.io diagram using
+ 
+
+341
+00:06:53,680 --> 00:06:55,350
+is creating draw.io diagram using
+skills. So I'm just going to go to
+
+342
+00:06:55,350 --> 00:06:55,360
+skills. So I'm just going to go to
+ 
+
+343
+00:06:55,360 --> 00:06:58,070
+skills. So I'm just going to go to
+skills and I'm just going to click on
+
+344
+00:06:58,070 --> 00:06:58,080
+skills and I'm just going to click on
+ 
+
+345
+00:06:58,080 --> 00:06:59,830
+skills and I'm just going to click on
+this
+
+346
+00:06:59,830 --> 00:06:59,840
+this
+ 
+
+347
+00:06:59,840 --> 00:07:02,629
+this
+and I'm just going to say upload skill
+
+348
+00:07:02,629 --> 00:07:02,639
+and I'm just going to say upload skill
+ 
+
+349
+00:07:02,639 --> 00:07:05,510
+and I'm just going to say upload skill
+and I just need to pass an MD file over
+
+350
+00:07:05,510 --> 00:07:05,520
+and I just need to pass an MD file over
+ 
+
+351
+00:07:05,520 --> 00:07:08,390
+and I just need to pass an MD file over
+here. So to do that I'm just going to go
+
+352
+00:07:08,390 --> 00:07:08,400
+here. So to do that I'm just going to go
+ 
+
+353
+00:07:08,400 --> 00:07:10,469
+here. So to do that I'm just going to go
+to this full documentation which is
+
+354
+00:07:10,469 --> 00:07:10,479
+to this full documentation which is
+ 
+
+355
+00:07:10,479 --> 00:07:13,830
+to this full documentation which is
+here. From here I will go to the parent
+
+356
+00:07:13,830 --> 00:07:13,840
+here. From here I will go to the parent
+ 
+
+357
+00:07:13,840 --> 00:07:16,309
+here. From here I will go to the parent
+one. And here we do have this skill.md
+
+358
+00:07:16,309 --> 00:07:16,319
+one. And here we do have this skill.md
+ 
+
+359
+00:07:16,319 --> 00:07:19,110
+one. And here we do have this skill.md
+file. So I'm just going to download it
+
+360
+00:07:19,110 --> 00:07:19,120
+file. So I'm just going to download it
+ 
+
+361
+00:07:19,120 --> 00:07:22,710
+file. So I'm just going to download it
+from here. And the same file I can
+
+362
+00:07:22,710 --> 00:07:22,720
+from here. And the same file I can
+ 
+
+363
+00:07:22,720 --> 00:07:26,150
+from here. And the same file I can
+upload it here.
+
+364
+00:07:26,150 --> 00:07:26,160
+upload it here.
+ 
+
+365
+00:07:26,160 --> 00:07:29,189
+upload it here.
+So this is a skill.md file and this is
+
+366
+00:07:29,189 --> 00:07:29,199
+So this is a skill.md file and this is
+ 
+
+367
+00:07:29,199 --> 00:07:30,790
+So this is a skill.md file and this is
+going to be the custom skill which we
+
+368
+00:07:30,790 --> 00:07:30,800
+going to be the custom skill which we
+ 
+
+369
+00:07:30,800 --> 00:07:33,830
+going to be the custom skill which we
+are uploading. And now you can see I do
+
+370
+00:07:33,830 --> 00:07:33,840
+are uploading. And now you can see I do
+ 
+
+371
+00:07:33,840 --> 00:07:36,790
+are uploading. And now you can see I do
+have this draw.io IO diagram skill and
+
+372
+00:07:36,790 --> 00:07:36,800
+have this draw.io IO diagram skill and
+ 
+
+373
+00:07:36,800 --> 00:07:38,629
+have this draw.io IO diagram skill and
+it has been listed in the my skill
+
+374
+00:07:38,629 --> 00:07:38,639
+it has been listed in the my skill
+ 
+
+375
+00:07:38,639 --> 00:07:41,909
+it has been listed in the my skill
+section and it has been on by default.
+
+376
+00:07:41,909 --> 00:07:41,919
+section and it has been on by default.
+ 
+
+377
+00:07:41,919 --> 00:07:44,150
+section and it has been on by default.
+Now if I have to invoke that skill then
+
+378
+00:07:44,150 --> 00:07:44,160
+Now if I have to invoke that skill then
+ 
+
+379
+00:07:44,160 --> 00:07:49,510
+Now if I have to invoke that skill then
+I can just say use draw IO skill to
+
+380
+00:07:49,510 --> 00:07:49,520
+I can just say use draw IO skill to
+ 
+
+381
+00:07:49,520 --> 00:07:53,909
+I can just say use draw IO skill to
+create highlevel payment design
+
+382
+00:07:53,909 --> 00:07:53,919
+create highlevel payment design
+ 
+
+383
+00:07:53,919 --> 00:08:00,070
+create highlevel payment design
+diagram
+
+384
+00:08:00,070 --> 00:08:00,080
+
+ 
+
+385
+00:08:00,080 --> 00:08:02,550
+
+and it has started reading this draw
+
+386
+00:08:02,550 --> 00:08:02,560
+and it has started reading this draw
+ 
+
+387
+00:08:02,560 --> 00:08:05,990
+and it has started reading this draw
+your skill which we have just added it
+
+388
+00:08:05,990 --> 00:08:06,000
+your skill which we have just added it
+ 
+
+389
+00:08:06,000 --> 00:08:07,909
+your skill which we have just added it
+and you can see like it has started
+
+390
+00:08:07,909 --> 00:08:07,919
+and you can see like it has started
+ 
+
+391
+00:08:07,919 --> 00:08:11,350
+and you can see like it has started
+creating the diagram in the XML format.
+
+392
+00:08:11,350 --> 00:08:11,360
+creating the diagram in the XML format.
+ 
+
+393
+00:08:11,360 --> 00:08:23,189
+creating the diagram in the XML format.
+So let's wait for this to be completed
+
+394
+00:08:23,189 --> 00:08:23,199
+
+ 
+
+395
+00:08:23,199 --> 00:08:25,510
+
+and it has automatically routed us to
+
+396
+00:08:25,510 --> 00:08:25,520
+and it has automatically routed us to
+ 
+
+397
+00:08:25,520 --> 00:08:27,510
+and it has automatically routed us to
+the web URL where actually we can see
+
+398
+00:08:27,510 --> 00:08:27,520
+the web URL where actually we can see
+ 
+
+399
+00:08:27,520 --> 00:08:30,150
+the web URL where actually we can see
+and edit our diagram
+
+400
+00:08:30,150 --> 00:08:30,160
+and edit our diagram
+ 
+
+401
+00:08:30,160 --> 00:08:32,870
+and edit our diagram
+and same thing it has listed here also
+
+402
+00:08:32,870 --> 00:08:32,880
+and same thing it has listed here also
+ 
+
+403
+00:08:32,880 --> 00:08:34,949
+and same thing it has listed here also
+so with the details like what kind of
+
+404
+00:08:34,949 --> 00:08:34,959
+so with the details like what kind of
+ 
+
+405
+00:08:34,959 --> 00:08:37,430
+so with the details like what kind of
+layers has been included. So that's how
+
+406
+00:08:37,430 --> 00:08:37,440
+layers has been included. So that's how
+ 
+
+407
+00:08:37,440 --> 00:08:40,149
+layers has been included. So that's how
+actually you can interact with Xkelly
+
+408
+00:08:40,149 --> 00:08:40,159
+actually you can interact with Xkelly
+ 
+
+409
+00:08:40,159 --> 00:08:43,509
+actually you can interact with Xkelly
+draw and draw.io using multiple options.
+
+410
+00:08:43,509 --> 00:08:43,519
+draw and draw.io using multiple options.
+ 
+
+411
+00:08:43,519 --> 00:08:47,120
+draw and draw.io using multiple options.
+That's all what we have in this video.
+

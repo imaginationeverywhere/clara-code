@@ -1,0 +1,2094 @@
+Title: How to Build Your AI Operating System with Claude Code (Full Guide)
+Video ID: vvDdTPFhCp8
+URL: https://www.youtube.com/watch?v=vvDdTPFhCp8
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] In the last six months, I spent over 500
+[00:02] hours working within clo code. Not just
+[00:05] as a coding tool, but as a full business
+[00:07] operating system. Right now, this tool
+[00:10] runs every single part of my business.
+[00:12] From my content to my outreach to my
+[00:14] client work, all of that is running
+[00:16] within clo code. And in this video, I
+[00:18] want to show you how you can build the
+[00:21] same for your own business. We will go
+[00:23] through five different steps. And each
+[00:26] step will build on the previous one. The
+[00:29] first is the idea. There's a big shift
+[00:31] happening right now in the way people
+[00:34] use AI and the winners will actually
+[00:36] build the AI orchestrator, the people
+[00:38] that can let AI do the job and
+[00:41] coordinate, not just the people that can
+[00:43] chat with AI. This will position you one
+[00:46] step ahead of everyone else. The second
+[00:49] step is the setup. We'll go through how
+[00:51] to install cloud code and how to install
+[00:53] your first AI workspace. Once you
+[00:56] understand the initial structure of
+[00:58] files, you will have a real foundation
+[01:00] where you can start to work and you can
+[01:03] start to build on top of it. The third
+[01:05] phase is the building part. In here, you
+[01:07] will understand which are the components
+[01:09] that you can use to build and improve
+[01:11] your own personal AI workspace. Once you
+[01:14] understand the components, you can
+[01:15] understand how to adapt those components
+[01:17] to your specific workspace and your
+[01:19] specific processes and needs. Then the
+[01:21] fourth stage is live build. I'll show
+[01:23] you how to build something real directly
+[01:25] on camera so you can get an
+[01:27] understanding of what is my process when
+[01:29] thinking about building within a cloud
+[01:31] code AI workspace. And the last
+[01:33] component will be complex AI systems.
+[01:36] This will be end to end system that
+[01:39] could potentially replace entire
+[01:41] departments with the right AI
+[01:42] orchestrator. And by the end of the
+[01:44] video, you will have a full picture on
+[01:46] how you can start building your own
+[01:48] personal AI business, AI workspace for
+[01:52] your business. Let's get started.
+[01:57] Most people are what I call AI users.
+[02:00] They open Sh GPT, they ask a question
+[02:02] and then they get an answer and finally
+[02:05] they close the window. There are some
+[02:06] power user for sure that go forward
+[02:09] using cloud projects custom GPS or MCPS
+[02:12] but there is a problem in all of that
+[02:15] when you are working with AI when you
+[02:17] are um typing something when you're
+[02:19] prompting something you create uh assets
+[02:21] you create document you create analysis
+[02:24] and at the end of the conversation all
+[02:26] these things are lost they cannot be
+[02:29] found easily and you cannot build on top
+[02:32] of that and also on top of that you
+[02:34] cannot build your own tools, you are
+[02:37] stuck with the tools that each of the
+[02:39] platform gives you and so nothing
+[02:42] compounds, nothing grows and every day
+[02:45] it feels like you always have to start
+[02:47] from scratch. Now compare that to what I
+[02:50] call an AI orchestrator. This is
+[02:52] something completely different and I
+[02:55] would like to give you an example of
+[02:56] that. So yesterday I had a call with a
+[02:59] client about a new automation project
+[03:01] and today what I did is I open my AI
+[03:03] workspace and I said please retrieve the
+[03:06] call run the AOI analysis based on what
+[03:09] we discussed and then draft the
+[03:10] follow-up email and the system did
+[03:13] exactly that. It retrieved the call
+[03:16] using the process I built. He run the AI
+[03:19] the ROI analysis the way I want it done
+[03:22] and then it drafted the email using my
+[03:24] old styling. And all of that was done
+[03:27] within a single place and that is just
+[03:30] one single workflow. So the same in
+[03:32] system could be applied for creating
+[03:34] YouTube videos, for generating
+[03:36] thumbnail, for running lead generation,
+[03:37] for doing client work, for personally
+[03:40] whatever I need because I actually build
+[03:42] the system in that way. So this actually
+[03:45] means to be an AI orchestrator. You get
+[03:48] full context on your business in a
+[03:50] single place. So all the things such as
+[03:52] your customers, your workflows, the way
+[03:54] you create your systems and then you are
+[03:58] the manager and the AI becomes the
+[04:01] execution later and all the people that
+[04:05] understand this and figure out this
+[04:07] first will have a real unfair advantage
+[04:10] in this next stage of AI. So what this
+[04:13] actually look like in practice? The idea
+[04:15] of an AI workspace is to have a single
+[04:18] place where you do 90% of your work. The
+[04:21] way it works right now is through
+[04:22] something that is called an IDE, which
+[04:24] is an integrated development
+[04:25] environment, which is a tool that is
+[04:27] normally used for coding combined with
+[04:30] an AI agent such as clo code. Clo is a
+[04:33] really powerful tool because it allows
+[04:35] you to read files, write files, and then
+[04:37] create codes to solve specific problem.
+[04:40] Now for us, we won't be doing any coding
+[04:42] because our goal is to create the system
+[04:44] so that the AI agents can use them and
+[04:48] we just need to write the process by
+[04:51] text or by speaking about them. For this
+[04:53] to work, we actually need three main
+[04:55] components. The first one is having a
+[04:58] context folder which is a single place
+[05:00] where AI can understand everything about
+[05:03] our business. Understand the customer,
+[05:05] understand the process, understand the
+[05:06] goals, understand everything. The second
+[05:09] part is the skills. So those are
+[05:11] actually capabilities that we thought to
+[05:14] the AI agent. So things such as
+[05:16] retrieving conversation via Gmail,
+[05:18] performing ROI calculation, processing
+[05:20] videos, all different skills that could
+[05:23] be relevant to your specific business.
+[05:25] The third element here is a workspace.
+[05:27] So this is where all the documents are
+[05:30] created based on the different projects
+[05:31] that I'm working on. So if I'm working
+[05:33] on YouTube videos, the scripts might go
+[05:36] over there. If I'm working on SOPs,
+[05:38] those might go over there and everything
+[05:40] becomes organized by project. So by
+[05:43] having this three layer structure, the
+[05:45] context, the skills and the workspace, I
+[05:47] can make sure that everything is
+[05:49] connected and also everything is
+[05:51] compounding over time and the AI system
+[05:54] grows and improves over time by having
+[05:56] new skills or by having additional
+[05:59] contacts. So that is the actual mindset.
+[06:01] You're not an AI user anymore. You are
+[06:04] the manager. The AI is just the
+[06:06] employee, but every single employee
+[06:08] needs an actual workspace. It needs a
+[06:10] desk. It needs a filing cabinet. It
+[06:12] needs access to the right tool. And
+[06:14] here's what we will focus on next, the
+[06:17] actual workspace and how CL code is
+[06:19] actually set up.
+[06:23] To get started, we need to install cloud
+[06:25] code directly within RPC. So, you can
+[06:28] type code directly on Google and you
+[06:30] will find this specific website. over
+[06:33] here there will be a bash command. So
+[06:36] you can just click on copy here and then
+[06:39] you will need to open the terminal. So
+[06:42] let's open the terminal. Don't worry,
+[06:44] this will be the only time we'll need to
+[06:46] open this and uh you can simply paste
+[06:50] the command over here and press enter.
+[06:52] Once this is done, this will install
+[06:55] cloud code completely automatically
+[06:57] within your PC and then you can get
+[07:00] started and use clo code in whatever IDE
+[07:04] you want. And now I will explain in a
+[07:06] second what is an ID. So as you can see
+[07:09] it took just uh 1 minute. Installation
+[07:11] is complete. It gives you what is the
+[07:14] version. So 2.0.76.
+[07:17] Okay. The next thing will be to have an
+[07:19] interface to interact with cloud code or
+[07:24] AI employee uh directly and for that we
+[07:27] can use visual studio code. Now visual
+[07:30] studio code is a tool used uh by coders
+[07:33] in order to build code and handle code
+[07:36] bases and different things like that. We
+[07:38] will use the same tool only because it
+[07:42] gives us access to a folder structure
+[07:45] where we can organize our files. So you
+[07:48] can download this directly on Mac. Keep
+[07:50] in mind there are a lot of different
+[07:51] tools available. This is the OG tools.
+[07:55] So every other tool such as Google
+[07:57] anti-gravity, cursor, all of them are
+[08:01] based on visual studio code as a basis.
+[08:04] So uh I would suggest to start with this
+[08:06] one and then later on you can experiment
+[08:09] with others. Now that you installed
+[08:11] Visual Studio Code, we can just open a
+[08:13] new window of Visual Studio Code so that
+[08:16] you can uh familiarize yourself and see
+[08:18] this. So this is a new window. What we
+[08:22] can do is open a folder. So the folder
+[08:25] will decide the specific project or the
+[08:28] specific um yeah the specific project or
+[08:32] the specific AI employee that you're
+[08:34] working on. So this is an example of a
+[08:37] project. In the left column in the left
+[08:40] sidebar over here you will have all the
+[08:43] different files that you're working on.
+[08:45] Um on the right sidebar you can also
+[08:48] have a right sidebar. Here you can have
+[08:51] different things such as the built-in AI
+[08:54] agent will which we will never use and
+[08:58] the terminal which can be used if there
+[09:01] are any specific things that needs to be
+[09:03] done in the terminal. But for our um
+[09:06] purposes we will mostly use command B to
+[09:10] show uh the sidebar or hide the sidebar
+[09:13] when working with that. Now um small
+[09:17] things over here that I have for you is
+[09:20] a VS code customization options. So over
+[09:23] here are a couple of examples of how you
+[09:26] can have the same customization that I
+[09:28] have over here with the icon team, the
+[09:31] activity bar, uh color theme. This is
+[09:34] essentially just so you you can have a
+[09:36] very similar interface to this one. Next
+[09:39] up couple of important things are
+[09:41] extensions.
+[09:42] So uh when it comes to extension the
+[09:45] first one is this uh symbols one which
+[09:49] is a aesthetic u extension. So symbols
+[09:54] over here is just to have icons that are
+[09:57] like colorcoded just for organizational
+[10:00] purposes. The most important thing is
+[10:03] the cloud code extension. Now you will
+[10:06] find a lot of different extensions over
+[10:07] here. I would suggest to stick with the
+[10:09] official from Antropic. Um, and you can
+[10:13] see this is from Antropic itself and
+[10:16] cloud code for VS code. Now, let me show
+[10:19] you uh how cloud code actually works
+[10:22] over here and a few um customizations
+[10:25] that we can also do to cloud code
+[10:27] himself. So if you go back to the
+[10:30] extension here and type code
+[10:34] and we can type this gear icon over
+[10:36] here. We have some settings that we can
+[10:38] have. One setting that I uh suggest you
+[10:41] to enable is this allow uh dangerously
+[10:44] skip permissions. This is to run code in
+[10:48] yolo mode so that you can run um the the
+[10:52] tool even without asking for permission
+[10:56] every single time. The reason for that
+[10:58] essentially is if you have a very clear
+[11:01] expectation on what you need to do, you
+[11:03] can enable this uh uh feature and then
+[11:05] let cloud code run without any problems.
+[11:08] Now it's time to actually launch cloud
+[11:10] code. So uh what we can do is we can
+[11:13] press command control P in order to open
+[11:18] the command pallet and then we can
+[11:20] select close code run a new window. In
+[11:23] this way we will have the clothe cod
+[11:25] code experience directly within a
+[11:28] beautify window uh without having to go
+[11:30] into the terminal itself and then we can
+[11:32] work directly from here. One additional
+[11:35] tip that I have for you in order to
+[11:37] improve the experience even more as a
+[11:38] non-coder that is using this kind of
+[11:40] tool is to use vibe coding as to use
+[11:43] your microphone to say things. So you
+[11:47] can install some application that is uh
+[11:50] such as like super whisper or whisper
+[11:53] flow. Um this is an example of super
+[11:55] whisper. Essentially you can just uh
+[11:58] type um a command for me is the function
+[12:02] key. And then if I type the function key
+[12:05] essentially the the stuff will be
+[12:07] transcribed over here. This is very
+[12:09] useful when you are rambling and you
+[12:11] want to um create something specific
+[12:14] with clo code but you don't have a rough
+[12:16] idea. So you can actually use um voice
+[12:20] in order to um understand your thoughts
+[12:22] a little bit more like explain stuff in
+[12:25] a more lengthy concept without having to
+[12:28] uh specifically channel and write stuff
+[12:31] all the time. And this is also faster
+[12:33] because generally voice is way faster
+[12:35] than um than written text. So in this
+[12:39] way you can this can transcribe
+[12:41] everything directly and you can work
+[12:44] with clothes code in this way. Now the
+[12:47] beauty about the cloud code and the
+[12:49] beauty about the system is that here you
+[12:52] can do anything and uh possibilities are
+[12:55] endless because we have access to files.
+[12:58] we have access to the possibility of
+[13:00] writing a simple programming script and
+[13:04] um all sort of things like that. So what
+[13:06] we can say is hey please create a folder
+[13:10] called workspace within that folder add
+[13:13] um three test clients and then within
+[13:17] each of these clients add uh the
+[13:20] different goals that we have for them
+[13:21] and the different um projects that we
+[13:25] need to set up for them. uh make
+[13:28] everything a dummy like file.
+[13:31] So in this way I can write this specific
+[13:34] command and once I write this the system
+[13:37] will go on and create uh all uh all the
+[13:40] different files directly over here. So
+[13:42] in this case it will create the the
+[13:44] folder itself. So the workspace folder
+[13:46] as you can see already created the three
+[13:49] uh workspaces directly and then within
+[13:52] each of these folder it will create this
+[13:55] goals and projects uh files for each of
+[13:59] them. So we can
+[14:02] um ask to write all these different
+[14:04] files and as you can see for each of
+[14:07] them we will have uh some goals file and
+[14:10] some projects file already created.
+[14:15] So in order to set everything up, we
+[14:17] need to understand how we are currently
+[14:19] hiring and training employees. At day
+[14:21] one or at zero, an employee doesn't know
+[14:24] anything about the business. It doesn't
+[14:26] have context on what are the specific
+[14:28] offers that we have. It doesn't have
+[14:30] context on the type of clients that we
+[14:32] have and it doesn't have ability to
+[14:34] perform specific tasks in the way we
+[14:36] want to. So it doesn't know how to
+[14:37] schedule appointments the way we want
+[14:39] to. It doesn't know how to send emails,
+[14:41] how to do cold calling, how to do cold
+[14:44] emails, all activities like that. Then
+[14:46] through training after sometimes after
+[14:48] 30 days, 15 days, 60 days, the employee
+[14:51] gathers this kind of knowledge. It
+[14:53] gathers the context on the business and
+[14:56] then it gathers the ability to perform
+[14:57] tasks. Now the same thing right now is
+[15:01] possible with AI employees and with
+[15:03] coding agents such as clothe code
+[15:06] because if you think about the kind of
+[15:09] pieces of information that we need to
+[15:11] give to an employee which are the skills
+[15:14] and the context these things can be now
+[15:18] given to an AI agent such as clo code in
+[15:21] a form of text files and coding files to
+[15:24] execute different tasks. So for the
+[15:26] first time right now what we can do is
+[15:28] we can engineer employees. So you will
+[15:32] act as the manager coordinating
+[15:34] [clears throat]
+[15:34] different stuff and then you will have
+[15:36] an AI employee such as clo code and you
+[15:38] will ask clo code to uh do some specific
+[15:41] task such as hey please create a
+[15:43] transcript for a video. Hey please
+[15:45] create a concept. Hey please create some
+[15:47] graphics for the video and all things of
+[15:50] that nature. In order to do that, what
+[15:52] we need to do is we need to mimic the
+[15:54] folder structure that we have within our
+[15:56] computer. The folder structure that an
+[15:58] AI agent would use to a company
+[16:00] structure. So if we think about a
+[16:02] business structure, we have company
+[16:04] knowledge that would be context that CL
+[16:07] code uses. Employee capabilities and
+[16:09] SOPs which would be skills, daily
+[16:12] rituals and standups that could be
+[16:14] commands that could be easily executed.
+[16:17] specialist departments that could be
+[16:19] specialized AI agents that we want to
+[16:21] add and then where the work happens.
+[16:23] It's a workspace where all the files
+[16:26] that are generated by AI actually live.
+[16:28] So let me show you how it works within
+[16:32] cloud code and how it works within a
+[16:34] platform such as Visual Studio Code.
+[16:36] Right now I'm within Visual Studio Code
+[16:39] and what I can do is I can clone the
+[16:42] specific repository. So right now I
+[16:45] cloned everything and here we have the
+[16:47] business OS structure. Now there are a
+[16:50] couple of different components to this.
+[16:52] The first one is the
+[16:56] cloud.md which is the system file. Clod
+[17:00] in this specific case acts as the
+[17:03] operating system and we want to make
+[17:05] sure that cloud actually knows that. The
+[17:08] things we do with this kind of operating
+[17:11] system are essentially two. First off,
+[17:14] every time we execute a specific action,
+[17:16] what we do is we check for the skills
+[17:19] first because the skills are different
+[17:22] ways where an action is executed within
+[17:25] our business and we can create more and
+[17:27] more skills as time goes on. So, as you
+[17:30] can see over here, before studying any
+[17:33] task, check the skills and see if there
+[17:35] are any relevant skills. If found follow
+[17:38] discrete instructions if not found
+[17:40] complete the task and then ask should we
+[17:42] create a skill for this. So in this way
+[17:44] what happens is every every time we have
+[17:47] to do a new task what we can do is we
+[17:50] can create a specific skill that would
+[17:52] go to the process. The second area is
+[17:55] quick commands. You can think of quick
+[17:57] commands as actions that we want to
+[17:59] perform every single time in a specific
+[18:02] way. Uh in this case those could be
+[18:05] things such as understanding what are
+[18:07] the tasks that needs to be done today.
+[18:09] Uh planning the day before uh with an
+[18:11] end of day um creating checkpoints for
+[18:15] when cloud code runs out of context all
+[18:19] those things could be added within the
+[18:22] commands. The difference between skills
+[18:24] and commands is a little bit subtle. So
+[18:28] you can think of commands as things that
+[18:30] could be executed quickly and things
+[18:33] that don't needs to be executed every
+[18:36] single day for you or don't need to be
+[18:38] automated. So for me for example if I
+[18:40] want to execute a end of day command I
+[18:43] decide when to execute that. I don't
+[18:45] want the AI agent to do that thing for
+[18:49] me. So just by invoking the command it's
+[18:52] uh more useful and more uh helpful for
+[18:55] me. Meanwhile, for skills such as for
+[18:58] example, I want to process a YouTube
+[18:59] video. That thing would need to happen
+[19:03] every single time. I don't want to type
+[19:04] a command and add that. The other
+[19:07] important things to know here is folder
+[19:10] structure. So generally we have context.
+[19:12] Within context we can have all sort of
+[19:14] information about our business about
+[19:16] content that we are created about
+[19:18] learning that we are currently doing. So
+[19:21] over time we can grow this information
+[19:24] back over and over and then we can
+[19:26] reference this back. The code folder is
+[19:29] where the capabilities are actually
+[19:31] present. So we could have skills which
+[19:33] are repeatable operations. We could have
+[19:35] commands daily triggers and then we
+[19:37] could have agents which could be
+[19:39] specific specialist and then finally the
+[19:41] workspaces. So generally when you are
+[19:43] working with this kind of tool you will
+[19:46] need to have some sort of interface
+[19:48] where uh your work lives. So if you need
+[19:52] to create a file that file needs to be
+[19:53] created in a specific ways. For me that
+[19:56] is the structure. We have foundation we
+[19:58] have content we have docs and journal.
+[20:00] And then it really changes based on um
+[20:05] what is the project. Generally the docs
+[20:07] folder is the most important one because
+[20:09] every time we have a new project uh
+[20:12] everything is added within that docs
+[20:13] folder. Now that you had an
+[20:15] understanding of the structure let me
+[20:17] show you what an actual business OS
+[20:20] could look like over time as you add
+[20:22] more skills and as you add different
+[20:24] things. So this is my um environment my
+[20:28] business OS within the skills I have
+[20:30] different things that are relevant for
+[20:32] me depending on what I need to do. So an
+[20:35] example could be content creation.
+[20:38] Within content creation, we have a
+[20:40] skill. So the skill of content creation
+[20:42] and within the skill of content
+[20:44] creation, we have a YouTube script for
+[20:46] example, which is a a skill related to
+[20:49] creating YouTube scripts. For me, this
+[20:52] is just an example, but a more advanced
+[20:54] one could be a list building, for
+[20:55] example, where we have different modules
+[20:58] to do all sort of different things to
+[21:00] gather leads, to qualify leads, to
+[21:02] enrich leads, to verify leads. And then,
+[21:06] uh, with them, we also have different
+[21:08] scripts to perform those specific
+[21:10] actions. So, um, and by the way, all of
+[21:13] these are actually created by the AI.
+[21:16] What I did on my side is I want to make
+[21:20] sure to map out the process and give the
+[21:22] AI an understanding of what the process
+[21:24] would look like for me and then I let
+[21:27] the AI do the heavy lifting and creating
+[21:30] different scripts. Then what you do is
+[21:32] you do the testing, make sure that that
+[21:34] works for you and then over time you can
+[21:37] modify, you can add more things, you can
+[21:39] remove more things and everything
+[21:41] changes based on the way that you're
+[21:43] working. In this way, what you can do is
+[21:44] you can create something that is unique
+[21:47] for you and that is very very powerful
+[21:50] depending on the type of task that you
+[21:52] need to do. So if I need to do lead
+[21:54] generation, I can use the list building
+[21:55] skill to do lead generation. If I want
+[21:57] to do YouTube, I can use the content
+[22:00] creation skills. If I want to create the
+[22:02] diagrams like the one that you see
+[22:03] before, I use the excali draw skill. And
+[22:07] those are all the skills that we have
+[22:09] available. Then within the context, the
+[22:11] context as I mentioned grows over time
+[22:13] depending on what you need. You could
+[22:15] have business context, you could have
+[22:17] goals that you previously had, you could
+[22:19] add learning context and uh yeah that
+[22:22] also is a component that over time grows
+[22:25] more and more. And the last part is
+[22:28] workspace. So within workspace you would
+[22:30] have client information, you would have
+[22:32] content that you create, you would have
+[22:34] different projects that you have,
+[22:36] journal, foundation outreach. Those are
+[22:38] all the things that are present. I want
+[22:39] to also show you a couple of examples
+[22:41] over here because I think it could be
+[22:43] useful. So one example could be um
+[22:48] let's take a YouTube video for example
+[22:50] and let's take uh one of my videos
+[22:56] marketing
+[22:58] and let's process this video. So let's
+[23:00] say something like process this video
+[23:05] and um if I do this processing of the
+[23:08] video we will have a little bit of a
+[23:10] thinking and then after that we will
+[23:12] launch a specific skill that would
+[23:14] process the video fetch the transcript
+[23:16] of the video categorize the video and
+[23:18] extract the insights of the video. So
+[23:22] now the video is extracted as you can
+[23:24] see that is format that is my video and
+[23:28] then at the end of uh this specific task
+[23:31] what we would have is uh
+[23:35] a insight that is created. So here it
+[23:38] created this specific file with a
+[23:41] summary of all the insights about that
+[23:43] specific video. Great. So right now you
+[23:46] have a workspace with folders, contacts,
+[23:48] a system file. But right now it's empty.
+[23:50] It cannot do anything yet. And to make
+[23:52] it useful, you need to understand which
+[23:54] are the nine building blocks that you
+[23:56] can use within code. And once you master
+[23:58] this, you can start building and you can
+[24:00] start expanding your actual workspace
+[24:02] with skills, commands, agents, and all
+[24:05] the other building blocks that we will
+[24:06] see in a second.
+[24:10] The nine building blocks that we have
+[24:12] are organized into three categories with
+[24:14] three elements each. So you can think
+[24:17] about that as a simple 3x3 grid. The
+[24:20] first category makes up the capabilities
+[24:23] building blocks. So by default code can
+[24:26] read files, can write code, can run
+[24:29] commands. But what if you wanted to ask
+[24:32] CL code to read your email? What if you
+[24:34] wanted to create a ROI? What if you
+[24:36] wanted to create a client proposal or
+[24:38] research a topic in the background? So
+[24:40] this is what capabilities building
+[24:43] blocks are for. Those essentially enable
+[24:46] your cloud code to do new things. Let's
+[24:49] start with skills. A skill is like
+[24:52] training someone to perform a specific
+[24:54] task. You give them a specific process
+[24:56] that they can follow and once they are
+[24:58] trained, you just say perform this
+[25:00] specific process and the work is
+[25:03] actually executed. You don't have to
+[25:05] explain how every single time because
+[25:08] the knowledge is already there and they
+[25:10] have that specific knowledge that they
+[25:12] can follow and the same works with
+[25:13] scale. So with that said, let me show
+[25:15] you a couple of examples of how they
+[25:17] work. We are now within a cloud code
+[25:19] workspace that we will use. By the way,
+[25:22] you can have access to the same
+[25:23] workspace within my free group of AI
+[25:25] workspace builders. You can find the
+[25:27] first link in the description. The
+[25:29] skills that we have over here are
+[25:31] essentially two and all the skills are
+[25:34] within the same folder which is
+[25:36] codeklls.
+[25:38] Over here we have a quick explain skill
+[25:40] and then we have a ROI calculator. Let's
+[25:42] use the quick explain first and ask
+[25:45] something like explain compound
+[25:50] interest.
+[25:51] Now the system will be smart enough to
+[25:54] recognize that we have a specific skill
+[25:57] related to that and it will ask to
+[26:00] proceed with that specific skill. It
+[26:02] will read the content of the file and
+[26:05] will execute the operation in exactly uh
+[26:08] the following format that we give. So
+[26:11] compound interest what interest
+[26:13] calculated why how um this is just an
+[26:16] example as you can see the skills are
+[26:19] autoc called by the system based on the
+[26:21] capability uh that uh the skill has.
+[26:25] Another more advanced example is an ROI
+[26:28] calculation. So I would like to do a ROI
+[26:31] calculation for a client of an
+[26:34] automation related to uh list building.
+[26:37] Can you please create a right
+[26:40] calculation for that and for that
+[26:41] specific client please add that into the
+[26:45] main um into the main part of the
+[26:47] workspace.
+[26:50] This is an example of uh a prompt that I
+[26:53] would ask the system will already know
+[26:56] that they need to use the ROI calculator
+[26:59] and it will start with the creation of
+[27:02] that. This specific skill is dynamic and
+[27:06] so it will ask for example is this
+[27:08] pre-sale or post sales. So let's say
+[27:10] this is pre-sale. We have context a
+[27:14] general idea and then we have a small
+[27:16] company size. Let's submit the answer
+[27:18] and see. So the automation just finished
+[27:20] and we created two different documents
+[27:23] ROI analysis and ROI analysis that is
+[27:27] directly client related. Within each
+[27:29] document, we have different fields such
+[27:31] as an executive summary, a current state
+[27:33] analysis, uh what could be automating,
+[27:36] what could be the calculation for time
+[27:38] savings, the value, uh the pricing
+[27:40] recommendation. Obviously, this is only
+[27:43] for internal facing documents. Uh but
+[27:46] yeah, on the other document over here,
+[27:48] we have the document that could be sent
+[27:50] directly for the client. All of these
+[27:52] documents were generated because we have
+[27:55] a specific structure in place within the
+[27:57] skill that makes that possible. So let
+[27:59] me show you what the structure would
+[28:01] look like. The structure here is the
+[28:03] following. Every single skill will go
+[28:06] into the skills folder which is within
+[28:08] the cloud folder and it will have a
+[28:11] couple of components. It will have a
+[28:13] skill.md file which is the main file
+[28:16] that would contain the information of
+[28:18] the skill itself. But it could also have
+[28:22] different other components such as
+[28:24] modules that define the different steps.
+[28:26] It could have a scripts that would
+[28:29] automate specific processes. An example
+[28:31] for the ROI analysis could be we could
+[28:34] have a script that would create the PDF
+[28:36] version of the ROI analysis to send to
+[28:39] the client. And we could also have
+[28:41] templates such as the ROI analysis
+[28:43] document for example. Now if we go
+[28:46] within the skills we can see that uh the
+[28:48] two skills are a little bit different on
+[28:51] the quick explain what we have is we
+[28:54] have the quick explain skill at the top
+[28:57] level. What we also have is the name of
+[29:00] the skill and then the description of
+[29:02] the skill. These are elements that are
+[29:05] always loaded with every single instance
+[29:08] of code code. And so when you say
+[29:11] something like what is X explain X or
+[29:15] how does X work the system is smart
+[29:18] enough to recognize that it needs to use
+[29:21] the following skill over here and so it
+[29:23] needs to read this specific file and
+[29:25] execute the information that are present
+[29:27] within this specific file. Now this is a
+[29:31] single file scale. So we just have a
+[29:34] single skill that can be executed. But
+[29:37] if we look at the ROI analysis for
+[29:39] example, we have multiple components
+[29:42] within. So the ROI analysis is made up
+[29:46] of different operations that we need to
+[29:48] do. For example, we have discovery
+[29:50] operation. So how do we extract the
+[29:53] opportunity? We have calculations. So
+[29:55] how do we calculate time saving and
+[29:57] pricing uh and value? Sorry. We have
+[30:00] pricing and then we have output. And all
+[30:03] of them are divided into modules. So
+[30:05] this is for example the calculation
+[30:06] module. So in this way you can think
+[30:08] about a skill as a set of different
+[30:11] processes that are defined within and uh
+[30:15] make up a full uh workflow such as
+[30:18] creating an ROI analysis analyzing some
+[30:21] emails do all sort of different things
+[30:24] uh similar to that. So the biggest
+[30:27] advantage of skills is that they are
+[30:29] automatic and code automatically decides
+[30:31] when to use them. But sometimes you
+[30:34] don't want automaticity. You want
+[30:36] control. You want to trigger things on
+[30:38] demand based on your workflow and based
+[30:41] on when you want. And that is what
+[30:43] commands are actually for. So you can
+[30:45] think of commands as a keyboard
+[30:46] shortcuts. So every time you type a
+[30:49] specific command, you trigger a specific
+[30:51] set of actions that you want to take. So
+[30:53] let me show you a couple of examples
+[30:54] here. So the first example could be a
+[30:57] daily task document or a daily task
+[31:00] process. So at the start of a day we
+[31:02] want to type this daily task slashcomand
+[31:06] run this and uh this will go over the uh
+[31:11] things that are present within the daily
+[31:13] task.md and then execute on that. So in
+[31:17] this example it will give me what is the
+[31:19] current plan for today um want to update
+[31:22] this or start fresh. So let's say uh
+[31:24] let's update this
+[31:27] and the system will go over and ask me
+[31:30] for specific question. So what are we
+[31:32] actually doing today? Deep work say uh
+[31:36] uh recording YouTube video.
+[31:40] It will ask me for any meeting. So let's
+[31:42] say I have a meeting at 10:00 a.m. So in
+[31:48] the end it created the actual plan for
+[31:50] today based on the input that we give
+[31:52] them. As you can see, this is a very
+[31:55] input based command that would go back
+[31:57] and forth by a clo code and as to ask
+[32:00] different things. We can also run
+[32:02] different commands which are for example
+[32:05] a standup command. And if we execute
+[32:07] that, we would have the things that we
+[32:09] did yesterday and then the things that
+[32:11] we need to do today as well as the
+[32:13] blockers. So let me show you what is the
+[32:15] structure looking like for each of these
+[32:18] tasks. Here's for example the standup
+[32:21] where we ask something very simple
+[32:23] generate a standup update based on
+[32:25] recent activity. What it can do is it
+[32:27] can read the different document. So we
+[32:29] can instruct the system to read
+[32:31] different MD files and then uh generate
+[32:35] the specific standup. Um this is just an
+[32:38] example. Uh in the daily task uh instead
+[32:42] we were asked for specific questions. So
+[32:45] this is more uh iterative based but
+[32:49] within commands we can ask to read other
+[32:52] files. We can ask to execute scripts or
+[32:55] we can ask also to execute skills if we
+[32:58] really wanted to. The beauty about
+[33:00] commands is that we can add a lot of
+[33:03] things within. We can add the ability to
+[33:05] read files. So read for example the uh
+[33:10] daily brief.md document. We can add the
+[33:12] ability to execute specific scripts if
+[33:15] we have the scripts or we can add the
+[33:17] ability to uh use different skills. So
+[33:21] if you think about that the possibility
+[33:22] here is that you can have a command
+[33:25] which is a slash proposal command that
+[33:29] would execute the ROI analysis and it
+[33:32] would execute another skill which could
+[33:34] be for example a Gmail skill that would
+[33:36] create an email for a person and send
+[33:39] that. So every single component from
+[33:42] skills to command to all the other that
+[33:45] we see is easily composable and we can
+[33:49] build on top of each of them. Now the
+[33:51] beauty of both skills and commands is
+[33:54] that they both run in your main
+[33:56] conversation. But what if you wanted to
+[33:59] work on something in the background
+[34:01] while you keep doing other things? And
+[34:03] that is what agents are for. So you can
+[34:07] think about spawning an agent such as
+[34:10] hiring a specific consultant. So that
+[34:12] consultant will work independently in
+[34:15] their own space outside of your own
+[34:18] workspace and then they will report back
+[34:21] once they are done. You can say
+[34:23] something such as research this topic
+[34:25] while I keep working on something else
+[34:27] and then the agent will research that
+[34:30] and it will uh give you back the
+[34:32] responses. So let's see an example of a
+[34:34] researcher agent. For example, we can
+[34:37] ask something simple such as use the
+[34:41] researcher agent to research the top
+[34:44] three note takingaking apps and compare
+[34:46] their features. So in this way what will
+[34:48] happen is all the context will be stored
+[34:52] away from the conversation. The research
+[34:54] agent will be launched. So as you can
+[34:56] see it will say I'll launch the research
+[34:59] agent. a task will be created and then
+[35:02] everything will be done outside of this
+[35:05] specific conversation. We might see what
+[35:08] are some specific things that might be
+[35:10] happening such as web researcher
+[35:12] different things like that but the agent
+[35:14] will execute uh alone all these
+[35:18] different task and then it will give us
+[35:19] back the the responses at the end and
+[35:22] report back. One thing that you have to
+[35:24] understand is when you are saying launch
+[35:28] a agent a sub agent over here you are
+[35:32] the one that is prompting the main agent
+[35:34] the cloud code and cloud code is
+[35:37] prompting the sub agent and so the sub
+[35:40] agent will report back to co code will
+[35:44] report back for you. As you can see
+[35:46] here, the research agent completed the
+[35:49] comparison and created this different
+[35:52] findings over here as well as a quick
+[35:55] recommendation. You can use agent for
+[35:58] all sort of different things such as
+[36:00] parallel work. So if you want to have a
+[36:03] different task uh of a research task or
+[36:06] of um all sort of different task
+[36:09] isolated context so it doesn't actually
+[36:11] pollute your main context window which
+[36:14] is a huge advantage when working with a
+[36:17] long process for example where you need
+[36:19] to do an in-depth research of a topic.
+[36:23] They are also specialized in one
+[36:25] specific thing and they have
+[36:27] specialization on on that and we will
+[36:30] see that uh from the structure and then
+[36:33] also they have a tool uh restriction and
+[36:36] they can use a specified tool and one uh
+[36:39] real advantage of the tool restriction
+[36:42] is that they can also use skills
+[36:45] themselves. So uh for example you could
+[36:48] have a specific agent that is a um
+[36:51] proposal building agent. Uh it will have
+[36:54] a specific role a specific process that
+[36:57] it would use and you could say launch
+[36:59] the proposal building agent to create
+[37:01] the proposal and then show me uh the
+[37:04] final proposal file. Um for this
+[37:07] instance we have our researcher agent
+[37:10] with what is the role of the agent? what
+[37:13] are the capabilities that the agent has
+[37:15] and then what is the the process as well
+[37:18] as the output finding over here. So
+[37:21] that's capabilities, skills, commands
+[37:24] and agent. Three ways to teach cloud to
+[37:26] new new things. Now let's talk about the
+[37:29] second component which is the
+[37:31] configuration building blocks.
+[37:33] Capabilities change what code can do.
+[37:37] Meanwhile, configuration changes how
+[37:39] cloud behaves. So you can think about
+[37:41] like this. Maybe you might have the same
+[37:44] employee but they act differently based
+[37:47] on the context. Uh they act different
+[37:49] based on who they are talking to, what
+[37:51] mood they are in, what rules they are
+[37:53] following and so the configuration is
+[37:56] exactly how you set that specific
+[37:58] context for code and teach code how to
+[38:02] behave uh in different ways. The
+[38:05] foundation of uh the configuration
+[38:07] building block is memory. So clothe them
+[38:10] every time you start a new conversation
+[38:13] reads a set of instruction first. So
+[38:16] every single time the system has a
+[38:19] system prompt and then it will use
+[38:21] whatever is present in a file called
+[38:24] cloud.md. Uh code uses this file and
+[38:27] references this file in every single uh
+[38:29] session. Here's an example of our own
+[38:32] clod file within uh the demo projects
+[38:36] that we have within here. we have an
+[38:39] explanation of what this workspace is
+[38:41] about. So in this case is a
+[38:43] demonstration workspace for the
+[38:45] ninecloud code primitives. Um and then
+[38:48] it will explain core principle about the
+[38:50] explanation and about the instruction
+[38:52] over here as well as how to operate. So
+[38:55] what are the different ways in which you
+[38:57] can use this and um so the system here
+[39:01] checks for skills first. So one thing um
+[39:05] that it does is every single time we
+[39:07] launch a specific action it will go into
+[39:10] the skills folder and see whether we
+[39:12] have a matching capability and and use
+[39:15] that. Uh as well we have the available
+[39:17] commands and then we have the available
+[39:19] agents as well as the project structure
+[39:21] so that cloud code needs uh knows how to
+[39:24] actually navigate this system over here.
+[39:27] One beautiful thing about um this is
+[39:30] also you can uh make this modular as
+[39:33] well. So if for example here I could add
+[39:36] something like code standards. So when
+[39:38] working with code you can follow the
+[39:40] rules that are present include/
+[39:44] rules/code style. So if we go within the
+[39:47] code folders over here in the rules we
+[39:50] can see this code style rules file uh
+[39:53] that will explain what are the specific
+[39:55] ways in which we prefer prefer to work
+[39:58] with code. Um this can be used with code
+[40:01] but it could be used for example for
+[40:04] contracts. So we could say when we are
+[40:07] dealing with contracts follow the
+[40:09] contracts.mmd guile uh where we have
+[40:11] specific style guides that we use or all
+[40:14] sort of things like that and and another
+[40:17] uh beautiful functionality always
+[40:19] related to memory is um rules that are
+[40:23] path specific. So for example over here
+[40:27] every time we have a file which is
+[40:29] within this path it will have a look at
+[40:33] the specific uh rules that are present
+[40:36] over here. So in this case we have a
+[40:39] source slappi/
+[40:42] typescript which is a file. But if for
+[40:45] example we would have a path which is um
+[40:49] workspace
+[40:50] uh path we could say all the files that
+[40:53] are present within this workspace uh
+[40:55] follow this specific rules that we have.
+[40:58] So this is another example and another
+[41:01] way in which you can enhance the memory
+[41:03] of the tool. So we see that memory tells
+[41:06] code how to behave. Meanwhile, the next
+[41:09] building block which is setting tell
+[41:11] code what it's allowed to do. So you can
+[41:13] think about that as any app permission
+[41:16] on your phone. Uh if you don't want an
+[41:18] app to access your camera, you can deny
+[41:21] that specific action. And the same
+[41:23] happens within clo code within a file
+[41:25] that is called setting.json.
+[41:28] So within this file, what we can do is
+[41:30] we can allow certain actions to happen.
+[41:33] We can ask for certain action. So always
+[41:36] ask us to um to say whether we want that
+[41:40] to happen or not. And we can have deny.
+[41:43] So that means um not doing that specific
+[41:47] action. So in that way we can have full
+[41:49] control of what cl code can do and what
+[41:52] cl code cannot do without our approval.
+[41:55] Now the last component of the
+[41:56] configuration is uh related to how cloud
+[42:00] can communicate differently depending on
+[42:02] the task. So this is a feature that is
+[42:06] called output styles. Essentially output
+[42:08] styles are different ways of
+[42:11] communicating based on uh the different
+[42:14] tasks that we have. So if we want to
+[42:17] explain something more, we want to set
+[42:20] the output style to an explanation tone
+[42:23] or if we want to write a work email
+[42:25] versus write a text to a friend, we
+[42:27] would have a different way of responding
+[42:30] and that is what actually changes in the
+[42:32] way that code responds. So let me show
+[42:35] you within the interface over here. Now
+[42:38] the only problem about the output style
+[42:40] is that currently this is a feature that
+[42:42] is only available from within the
+[42:44] terminal. So um in order to have that
+[42:47] you need to access uh the terminal and
+[42:50] set the output style. What you can do
+[42:52] within there is you can type /output
+[42:55] style and then you can select the
+[42:57] preferred output style that you want
+[42:59] depending on um the task that you have.
+[43:02] So in this instance we have a default
+[43:04] one, we have an explanatory one, a
+[43:06] learning one and then we can build our
+[43:08] own custom output styles. So uh let me
+[43:11] show you an example over here. Uh what
+[43:14] here we have the question of can you
+[43:16] explain compound interest to me uh done
+[43:19] using the default output style. So as
+[43:22] you can see here we would have a
+[43:24] specific explanation that is created.
+[43:26] Meanwhile, if we ask the same question
+[43:28] using a different outpost style, which
+[43:31] is a more explanatory one, the format is
+[43:33] quite different is more explanatory as
+[43:36] uh the the word suggest, right? And so
+[43:39] this is how you can modify the the
+[43:42] output that you're getting. Now what you
+[43:45] can do within the dotcloud file is you
+[43:47] can create your own output styles. So
+[43:49] this is an example of an explanatory
+[43:52] mode which is a way where you want
+[43:55] specific structure to happen every
+[43:58] single time you ask for a specific
+[44:00] frame. So um for this is for example
+[44:03] done using code changes. So if you do
+[44:06] any kind of coding work and you want
+[44:08] every kind of code to be explained uh
+[44:11] this structure will be used for that. So
+[44:14] it will give why the code was changed,
+[44:17] what you did, uh how it actually works
+[44:20] and what to expect. So in this way you
+[44:22] can change uh the the way the code
+[44:25] responds depending on what is the way
+[44:28] that you want code to respond. So those
+[44:30] were the configuration building blocks
+[44:32] uh everything that changes how code
+[44:36] behaves. Now the last category is called
+[44:38] integration and this is all the
+[44:41] different elements that either connect
+[44:43] code to the outside world using external
+[44:46] services that trigger automated action
+[44:49] or that give you the possibility to
+[44:51] share plugins and share skills for
+[44:55] example. First element of this
+[44:57] integration category are hooks. So hooks
+[45:01] are kind of event triggers. You can
+[45:03] think of that as any zapier any make.com
+[45:08] where if x action happens then you can
+[45:12] do that. So there are different ways in
+[45:14] which you can use hooks within your
+[45:16] system. All of them are automated action
+[45:19] and all of the different information are
+[45:22] present within the settings.json file.
+[45:25] So an example of an hook that is present
+[45:28] over here is a post tool use. So what
+[45:32] this actually does is every time code
+[45:35] runs a tool it will log that information
+[45:39] uh it will log the information.
+[45:41] Basically what we have here is we have a
+[45:45] script a file that every time code logs
+[45:48] every time code runs a command that post
+[45:51] tool use command it will log that
+[45:53] specific information. Now this is just
+[45:56] an example. Um you can also use that for
+[45:59] example to call a voice agent that u
+[46:03] notices you when uh the system requires
+[46:06] your input or for example send a slack
+[46:09] message once a process finished running
+[46:12] all sort of things like that. So this is
+[46:14] an example of a logs file where we can
+[46:18] see all sort of uh information that was
+[46:21] created based on um the post tool use.
+[46:25] Uh this is um a technical aspect of the
+[46:29] hooks but hooks can also be used in a
+[46:32] practical way. uh for example with
+[46:35] notification or with uh for example
+[46:39] sending changes to a colleague once that
+[46:42] happens or um yeah login all the
+[46:45] information for future reference for
+[46:47] example. The next element that we have
+[46:49] are MCPS which is one of the most famous
+[46:52] one. MCPS are essentially USB ports for
+[46:56] your computer. So what you can do is you
+[46:58] can plug a specific device a specific
+[47:01] service and then your computer can use
+[47:03] that. Now MCP uh in some sense become
+[47:07] outdated uh because of the advent of
+[47:10] skills but there are still use cases in
+[47:13] which MCP could really be helpful. So an
+[47:17] example that I have here is the
+[47:19] playright MCP um which is a browser
+[47:23] automation tool. So cloud with the
+[47:26] player right MCP can open website click
+[47:28] button fill forms take screenshots all
+[47:31] those different things like that. The
+[47:33] difference between the MCP and the
+[47:35] skills is the fact that the MCP is
+[47:38] always available in every single
+[47:40] conversation that you have within your
+[47:42] code. Meanwhile the skill needs to be
+[47:45] invoked based on the specific context
+[47:48] and based on the specific conversation.
+[47:50] So if in whatever kind of conversation I
+[47:53] would like to use the MCP that is always
+[47:56] ready and available within the context
+[47:58] window. Meanwhile for a skill uh the
+[48:01] skill needs to run first and uh execute.
+[48:05] And now let's see the final component
+[48:07] which are plugins. So plugins
+[48:10] essentially allow you to bundle your
+[48:12] skills together and create a way to
+[48:15] share that uh to multiple people. So for
+[48:18] example, if I wanted to share my skill
+[48:20] on ROI uh creation, ROI document
+[48:24] creation that I showed you at the
+[48:26] beginning, what we can do is we can
+[48:28] create a plug-in out of that and you can
+[48:31] go within your own instance of cloud
+[48:33] code, add a specific repo of that skill
+[48:36] and install the same skill as mine uh in
+[48:39] a easy and effortless way to share. So
+[48:42] here we would have a specific structure
+[48:45] of what a plug-in would look like and
+[48:47] essentially within a plug-in you can
+[48:49] share all the other primitives. So you
+[48:51] can think of as plugins as a tool uh
+[48:54] reserved for sharing different things
+[48:57] across different um different people. Um
+[49:01] whether there is a team for example or
+[49:04] another another aspect. And one thing
+[49:07] that I also believe is uh important when
+[49:10] it comes to to sharing uh plugins is
+[49:13] that once a plug-in is updated all the
+[49:17] people that have that plug-in will have
+[49:19] the updated version of that plug-in as
+[49:21] well. So that is also very cool thing,
+[49:24] cool feature especially useful when you
+[49:27] need to maintain different workflows and
+[49:29] different things for teams and um
+[49:32] different aspect like that. So now you
+[49:34] know the nine building blocks, you
+[49:36] understand the system. Now I have a
+[49:38] question for you. What would be the
+[49:39] first thing that you should build? The
+[49:42] answer is actually a skill and not just
+[49:44] any skill but a skills that builds on
+[49:47] top of other skills because once you
+[49:50] have that the entire system can actually
+[49:52] grow on its own. So that is exactly what
+[49:54] we will see and how I go about building
+[49:57] something like that.
+[50:01] What we will be doing here is
+[50:03] essentially ask code to review the
+[50:05] documentation and then create a meta
+[50:07] skill. So can you please review the
+[50:11] documentation related to cloud code
+[50:13] skills and create a meta skill. So
+[50:17] essentially I would like to create a
+[50:19] skill that would create all the other
+[50:21] skill. Make sure to read the
+[50:23] documentation in depth. Keep all the
+[50:26] information available and create the
+[50:30] skill in the format that is best for non
+[50:34] business uh non-coding related activity.
+[50:38] So within this specific prompt we will
+[50:41] go directly into plan mode for creating
+[50:44] this and we will wait a second for the
+[50:48] plan to be created. There are a few
+[50:51] question that are asked to me. So what
+[50:53] are the kind of skills that I expect to
+[50:55] create? So yeah, we can uh essentially
+[50:59] say mixed varied. We want all of those
+[51:02] related to how should the meta skill
+[51:05] guide the skill creation process. Um I
+[51:08] think over here we can do interactive
+[51:12] and so it will provide you a
+[51:13] questionnaire on like what are the
+[51:15] things that you want within the skill
+[51:16] and then create that. Um complexity
+[51:19] should generated skills include
+[51:21] automation scripts or step pool
+[51:23] markdown. Um over here I would suggest
+[51:26] to include scripts when helpful. This is
+[51:29] really really important to understand
+[51:31] what would be the actual structure of
+[51:32] the skill itself. We have now created
+[51:35] the plan and here you can see what is
+[51:38] the structure of the skill creator or
+[51:41] meta skill uh plan. So here we would
+[51:44] have the skill.mmd which is the main
+[51:47] file. Within this main file we would
+[51:49] have different modules that are
+[51:52] referenced and so module you can think
+[51:54] about modules as different specific
+[51:57] things that can be done. So for example
+[52:00] within the skill creator we would have a
+[52:03] questionnaire that would be asked to the
+[52:04] user. We would have a generator would
+[52:07] actually create the skills. We would
+[52:09] have a templates. So the reference of
+[52:11] the different templates that are
+[52:13] available. And then we would have
+[52:15] templates as well. So the different kind
+[52:17] of possible templates that we could use.
+[52:19] And then finally we would have examples.
+[52:21] So this is an example of a complete
+[52:23] skill and what are some skill patterns.
+[52:26] All of that was done by getting the
+[52:28] documentation for code and then creating
+[52:31] the actual structure itself. So right
+[52:34] now we can go uh accept and then we can
+[52:37] test this out directly with a new skill.
+[52:41] Okay, now the skill is uh created. As
+[52:44] you can see uh all the structure is
+[52:46] created. So let's try to test this skill
+[52:50] and create something. So hey, I'd like
+[52:52] to create a new skill related to
+[52:55] creating drafts within my newsletter. Uh
+[52:58] can you help me out with that and let's
+[53:00] go through the process for creating that
+[53:01] fence.
+[53:04] So in this way I can just say okay I
+[53:06] want to create a specific skill. Um I
+[53:08] can go directly into plan mode before
+[53:10] the creation of the skill to make sure
+[53:12] that I uh go over the different
+[53:15] questionire and the different things. So
+[53:18] um as you can see right now it will read
+[53:20] the skill file and it will start to
+[53:23] execute the actual meta skill. So the
+[53:26] system wants to understand a couple of
+[53:28] question. Uh let's say newsletter draft
+[53:30] that's good. What inputs do you
+[53:32] typically use when writing your
+[53:34] newsletter? And I provide the notes
+[53:39] uh research and bullet points.
+[53:42] And then what is the typical newsletter
+[53:45] uh structure? Let's say that is um
+[53:49] single essay.
+[53:51] So in this way also this allows me to um
+[53:54] create something by specifying what I
+[53:57] actually want and by making sure that
+[53:59] that is adapted to my specific
+[54:02] functionalities. So um here we have the
+[54:05] format um storytelling simple structure
+[54:10] custom um let's do storytelling for now.
+[54:14] Uh where should the newsletter draft be
+[54:16] saved? And uh yeah, let's do workspace
+[54:19] continuous letter. As you can see also
+[54:21] this is smart enough to understand the
+[54:23] structure of the folders that we have
+[54:24] and based on the structure it would save
+[54:27] the stuff into the related folder. So
+[54:30] newsletter is okay. What is the tone of
+[54:33] voice? Um and I have a voice file. So
+[54:36] you can also create your own voice file
+[54:38] if you want. Let's go conversational for
+[54:40] now. Okay. So we have a plan over here.
+[54:44] One thing that wasn't mentioned within
+[54:46] the plan was the actual automation of
+[54:49] the creation within uh the platform and
+[54:52] so I think that is something that could
+[54:54] be added. So we could say please can you
+[54:57] also add a script to create the draft
+[55:01] directly within kit.com. Make sure to
+[55:03] check out the kit.com documentation and
+[55:06] based on that um create the actual
+[55:10] script that can uh uh can do that. uh
+[55:13] only the draft I don't want to send this
+[55:15] thanks.
+[55:18] So in this way we not only focus on the
+[55:22] creation side of the newsletter but we
+[55:25] also focus on the automation side. So
+[55:28] we'll start with the um API um research
+[55:32] on the web and uh let's see what is that
+[55:35] looking like.
+[55:37] Okay. And now we also have this
+[55:39] integration script that will be created.
+[55:43] Um here mention using the API. Let's
+[55:46] also have a look at everything. And uh
+[55:50] yeah, user need to set a kit API envir
+[55:53] variable with their kit.com API key. And
+[55:56] um yeah, other than that it seems uh all
+[55:59] good. So let's play on. Yes, let's build
+[56:02] the skills and then let's test this out.
+[56:04] Okay. So everything is created here and
+[56:07] um the only thing that we need to do is
+[56:10] we need to copy this file and then
+[56:13] create a example here. We can add the
+[56:18] kit API key and then just copy my API
+[56:22] key from kit.com
+[56:25] and then we can test uh this out. All
+[56:28] done. The MV file was created. If you're
+[56:31] not familiar, this uh with this file is
+[56:33] a file where you contain all your API
+[56:36] keys and all your secrets. This is
+[56:38] something that will not be shared
+[56:40] outside because this is really important
+[56:42] for you to keep within your system. And
+[56:45] so right now, let's actually try to
+[56:48] create and generate the newsletter. Hey
+[56:51] there, I'd like to create uh create a
+[56:53] newsletter related to how we were able
+[56:56] to use meta skills in order to build
+[56:59] multiple skills directly within code.
+[57:02] And so I want to share this experience
+[57:04] and I would like you to create this
+[57:06] newsletter for me. Thanks.
+[57:09] In this way, um there's no need for plan
+[57:13] in this uh use case. are we will go on
+[57:17] and see what is the newsletter um skill
+[57:20] looking like. So as you can see it
+[57:22] immediately asks me to use the
+[57:24] newsletter draft. Uh we go through that.
+[57:29] One thing that I notice here is that
+[57:31] this is using a voice.md is searching
+[57:33] for a voice.md which is essentially a a
+[57:37] style file. Uh in this specific case we
+[57:40] don't have that but uh we can uh add
+[57:43] that. Also, one thing to keep in mind
+[57:46] for you is that skills are not stacked.
+[57:50] We can improve our meta skill if we
+[57:52] want. We can improve all the other
+[57:54] skills and change them over time to suit
+[57:58] our specific workflows and to suit our
+[58:00] specific needs.
+[58:02] Okay. So, we are creating the draft over
+[58:06] here. Just a general one. No uh no need
+[58:10] on my side to update that. So, is the
+[58:13] newsletter draft okay? Um, if we review
+[58:16] that seems to be looking good.
+[58:21] Okay. And uh now let's push this as a
+[58:25] draft. Uh please uh push this tok.com.
+[58:32] So in this way you can see that skills
+[58:34] are not only a single element but could
+[58:37] be made up of multiple element and also
+[58:41] on top of that what we can do when
+[58:43] testing this out is seeing whether this
+[58:46] is actually working or this needs
+[58:48] further refining. So for example over
+[58:51] here um yeah it checked whether the kit
+[58:54] API key was present and maybe if it
+[58:57] wasn't present or the system took the a
+[59:00] API key in a different way other than
+[59:02] the MV it would have modified the kit
+[59:06] draft.py file in order to send that out.
+[59:09] So yeah here's an example of uh the file
+[59:13] uh it will run this kit.draft with a
+[59:15] subject and with the content that we
+[59:17] created. So let's say yes and as you can
+[59:21] see draft created successfully and right
+[59:24] now let's see on kit.com for for that.
+[59:28] So we can see what is the what is the
+[59:31] structure and if everything went through
+[59:33] correctly and yeah as you can see over
+[59:35] here the skill that creates the skill
+[59:38] this is the draft if we are looking here
+[59:40] also everything is created into a
+[59:43] specific format as you can see here is
+[59:46] using HTML um which maybe something to
+[59:51] that we would need to modify because um
+[59:54] we would we would use something
+[59:57] different instead But like um right now
+[60:00] it's very very good in terms of results.
+[60:02] And as you can see I just said
+[60:05] everything with my voice. I didn't use
+[60:08] uh I didn't use a complex automation
+[60:10] platform. I didn't use anything. I just
+[60:12] let the system build everything. Now we
+[60:14] are in the final stretch. We saw how to
+[60:17] build the systems. We saw how those
+[60:19] works. We saw how to set up everything.
+[60:21] And now I want to show you a glimpse of
+[60:23] what is actually possible. I want to
+[60:25] show you two examples of end-to-end
+[60:27] systems that could be used to automate
+[60:30] different parts of a department. And in
+[60:32] that way, you can start to think about
+[60:34] how you can stack skills together, how
+[60:36] you can stack commands together in a way
+[60:38] where you could actually build out a
+[60:40] full AI operating system that could run
+[60:43] directly within cloud code.
+[60:47] So let's test this live. Over here, I
+[60:50] open a cloud code window. What I can
+[60:51] type is I can type outreach directly.
+[60:54] The system will start running once I
+[60:56] type outreach and it will ask me a
+[60:58] couple of questions. First off, it will
+[61:00] ask me what is the target. Uh for the
+[61:03] sake of this, let's do coaches and
+[61:05] consultants. And then for offer doc,
+[61:08] let's take an example of a offer dock
+[61:11] that I previously created. And then we
+[61:13] could mention something along the lines
+[61:14] of hey please uh take this framework and
+[61:18] then based on that create an offering
+[61:21] that is related to um offering a free
+[61:25] group access to people to the AI
+[61:27] workspace builders group.
+[61:30] So in this way uh the system will be
+[61:33] smart enough to offer uh the group as
+[61:36] the actual offer that we have itself. It
+[61:38] will ask me for how big is the the
+[61:42] number of leads that I want to reach.
+[61:43] So, let's do 50 for this campaign. But
+[61:45] keep in mind, you can do this for uh
+[61:48] however many leads you want. And then it
+[61:51] will start searching the first 50
+[61:54] coaches and consulting using Prospio.
+[61:56] So, I found 50 leads. Now is enriching
+[62:00] the leads directly. So, it matches 45 49
+[62:04] leads out of those. And then we just
+[62:06] finished the finding lead suspect which
+[62:09] is pretty crazy because just a couple
+[62:11] seconds happened. After that what we are
+[62:13] doing is we are going to the second
+[62:15] phase which is the writing. So it will
+[62:17] generate an email sequence based on the
+[62:20] information that we give them and based
+[62:22] on specific frameworks that I will show
+[62:24] you in a second. And now phase two is
+[62:27] finished and he asks us for uh pushing
+[62:31] and going forward. So here we can review
+[62:34] these emails. So uh an example of the
+[62:36] email is the following. Four coaches
+[62:38] using AI. I first name running a coach's
+[62:40] business been doing the same thing over
+[62:42] and over. Writing content manager client
+[62:44] ask a similar question. Most coaches do
+[62:46] chd for this task but every conversation
+[62:48] staff press nothing compounds. I'm
+[62:50] building a small group of coaches want
+[62:52] to change that. We are building AI
+[62:54] workspaces system that remember your
+[62:55] business and grow smarter over time.
+[62:57] Free to join interested. So this is just
+[63:00] an example. All keep in mind uh this can
+[63:02] be enhanced over time also with your own
+[63:05] context. So um yeah I would say those
+[63:08] are decent to start with. So let's say
+[63:10] yes. And now what we are doing is we are
+[63:13] creating the smartly campaign. We are
+[63:15] pushing the leads to the campaign. As
+[63:17] you can see this is happening in real
+[63:19] time right now. And then finally we are
+[63:21] pushing the email sequence directly
+[63:24] within smartly. So the system finished
+[63:26] creating everything. If we go now within
+[63:30] smart lead, what we can see is a
+[63:32] campaign that has been created over
+[63:34] here. We can see that leads have been
+[63:36] imported. We can see that sequences have
+[63:39] been created. We already have the setup
+[63:41] and then the only thing that we need to
+[63:43] do is we need to do a final review and
+[63:45] then start the campaign itself. So as
+[63:48] you saw here uh this took us 5 to 10
+[63:52] minutes in total uh just with this
+[63:54] example alone. Now let me show you how
+[63:57] it's actually built. And by the way, you
+[63:58] can find the full template so that you
+[64:00] can use that yourself within the AI
+[64:02] workspace builder community. So if I go
+[64:06] back here and show you the architecture,
+[64:09] you saw three different phases. The
+[64:11] first phase that we have is the outreach
+[64:14] command. So when we run the outreach
+[64:16] command, we effectively run the uh
+[64:19] orchestrator of the old process which is
+[64:22] the one responsible for going to step
+[64:25] one, two, three and four. In the first
+[64:27] phase what we do is we find the leads
+[64:30] and in order to do that we use Prospio.
+[64:33] Now the advantage of using Prospio is
+[64:35] the fact that recently Prospio
+[64:37] introduced a lead database directly
+[64:41] within the tool. So uh in this way what
+[64:43] you can do is you can use a bunch of
+[64:47] different filters which are 40 filters
+[64:49] here in order to find the specific leads
+[64:53] that you wanted to. So let's say that I
+[64:55] want uh for example I want founders and
+[64:59] I want founders in the United States. So
+[65:02] United States here. Uh let's say that
+[65:05] employee count is predefined 11 to 20.
+[65:09] and then uh industry and keyword. Let's
+[65:12] put software and development as an
+[65:14] example. So this uh this research uh
+[65:19] this different filtering will give me
+[65:21] 3,772
+[65:23] results as you see over here. But the
+[65:25] beauty about this is that the prospers.
+[65:31] So what we can do is we can use this
+[65:34] specific uh request to uh actually
+[65:37] search the database internally. So what
+[65:40] I actually did over here uh for the
+[65:42] prospio skill is I created a search
+[65:46] filter mapping. So essentially I went
+[65:48] through all the different filtering that
+[65:50] are present over here. I extracted the
+[65:54] uh specific JSON that is used and I
+[65:56] mapped that out to the system. So uh in
+[65:59] this way what happens is the system is
+[66:01] capable of using the prospio search
+[66:05] filtering without having to go directly
+[66:08] within the platform itself and doing the
+[66:10] search every single time. And by the way
+[66:12] over here we have a lot of different
+[66:13] filtering over uh I was very like uh
+[66:18] simplified in terms of filters but we
+[66:20] have buy uh buying intent we have job
+[66:22] change uh we have adcon growth founding
+[66:25] companies all sort of filterings that we
+[66:27] can possibly use to build a really
+[66:30] really uh useful lead um lead list. So
+[66:35] um yeah, prosper is the first phase. Uh
+[66:38] the first aspect is searching within the
+[66:40] database and the search obviously is
+[66:43] dynamic. So it means it means that if it
+[66:46] doesn't find that specific relevant
+[66:48] category for you, it will ask if it can
+[66:52] slightly tune the category in order to
+[66:54] actually get the leads. Then after the
+[66:57] leads are found uh we go into the
+[67:00] enrichment phase. So within prospel here
+[67:04] we have uh different commands. We have
+[67:06] this search uh prospill.py which is the
+[67:09] script that we are using to uh searching
+[67:12] the leads. And the second one that we
+[67:15] are using is this enrich prospill which
+[67:18] is the script used to enrich the leads
+[67:21] that we found within the research with
+[67:24] verify emails. The the advantage of
+[67:26] using this kind of tool like that is
+[67:28] that uh since this is a new version of
+[67:30] prospel, they actually introduce you a
+[67:32] lot of different validation mechanism.
+[67:35] They have bounce banan already
+[67:36] integrated within there. And so all of
+[67:39] the emails that you can get from here
+[67:40] are already validated and you don't need
+[67:43] to run those through an additional email
+[67:46] verification tool if you wanted to. So
+[67:48] uh yeah those are the two steps and
+[67:50] after these two steps what we get is we
+[67:53] get the list of leads. Now the second
+[67:57] step that we have is the part where we
+[67:59] generate the sequence. So in order to
+[68:02] generate the sequence we have another
+[68:04] specific skills which is the campaign
+[68:06] strategy skill. The campaign strategy
+[68:08] skill is designed to uh create I
+[68:10] converting cold email campaigns using
+[68:12] proven frameworks. So what I did over
+[68:14] here is I took a lot of different
+[68:18] frameworks that came from my own work
+[68:20] with over 40 plus lead generation
+[68:22] agencies as well as different proven
+[68:25] framework uh that are generalized and
+[68:28] that are proven to work and then added
+[68:30] those within this uh skill itself. Uh
+[68:34] within the skill we have an agentic
+[68:36] mode. So the agent mode means that we
+[68:38] can pass over a document like the one
+[68:40] that I did over here and then if we pass
+[68:43] that uh the system reads the document
+[68:45] identifies the best campaign angle based
+[68:47] on the document and also from the
+[68:49] framework and then generates uh the uh
+[68:53] four to five email sequences. Now let me
+[68:55] show you also the email sequence file so
+[68:57] that you can have a sense on that. And
+[68:59] here's an example of the campaign
+[69:01] sequence document that is created for
+[69:03] you to review. So within the campaign uh
+[69:05] sequence document you can think about
+[69:07] that as the document that is created
+[69:10] with every single outreach that you will
+[69:12] send uh it will give you a little bit of
+[69:14] an overview where you can have the
+[69:16] target the offering the primary angle.
+[69:19] It will give you the the sending
+[69:21] schedule that you can use as well as the
+[69:23] different emails that you can use. Uh in
+[69:25] this instance what I did for the system
+[69:28] is I wanted to have four emails maximum
+[69:31] and I wanted to have uh two threaded
+[69:34] emails each. So we have email 1.1, email
+[69:37] 1.2, email 2.1 and then email 2.2. So uh
+[69:42] yeah in this way it generates the the
+[69:45] script and keep in mind in this instance
+[69:48] we didn't use any kind of
+[69:49] personalization or nothing. So we wanted
+[69:51] to create something pretty generalized
+[69:54] but we can improve the system more and
+[69:57] more by adding the personalization
+[69:59] component as well. So yeah this is the
+[70:01] full document. It will mention which are
+[70:03] the variables which are used. It will
+[70:06] mention a couple of strategy nodes uh
+[70:08] about why we choose specific framework
+[70:12] specific things and it will uh check for
+[70:14] the work count to make sure that emails
+[70:17] are short and sweet. So after we finish
+[70:20] this sequence, we have the human in the
+[70:22] loop part to review the sequence because
+[70:26] uh with all the system is still
+[70:27] important to have a human component that
+[70:30] would preview all the emails that we
+[70:32] generated. So as you saw uh within the
+[70:35] interface it will uh showing it was
+[70:38] showing us the actual emails that were
+[70:41] present here. And then after that we can
+[70:43] either choose to approve or modify the
+[70:46] sequence based on uh different angles
+[70:49] that we want to change or different
+[70:52] keywords that we want to remove or
+[70:54] things of that nature. Also uh by the
+[70:57] way another thing here is I added a
+[71:00] document uh which is a document of bound
+[71:02] words and patterns which generally sound
+[71:05] AI generated. So that is another uh
+[71:09] small um nugget to the system as well.
+[71:13] Finally the last component that we have
+[71:15] is the push to platform and for that we
+[71:19] use smart. Smart lead is worldcl class
+[71:21] when it comes to APIs and uh within this
+[71:25] system what you we can do is we can
+[71:27] create the campaign we can add the leads
+[71:30] that we generated from here and as you
+[71:33] can see here we have a output document
+[71:35] which is this enrich leads.json JSON
+[71:38] which uh is used by smartly and then it
+[71:42] will create the sequence. In order to
+[71:44] create the sequence, it's taking this
+[71:47] specific document here is parsing the
+[71:50] different elements. So it's parsing like
+[71:52] the uh the copy here, the subject here
+[71:56] and uh different things like that and
+[71:57] then is passing those over to smart list
+[71:59] so uh that it can be used. If I can show
+[72:02] you in detail the skill itself. Here we
+[72:05] have the possibility to do a bunch of
+[72:06] different things such as creating the
+[72:08] campaign, listing all the different
+[72:10] available campaigns, generating the
+[72:12] email sequence, saving the sequence and
+[72:14] then adding uh the leads. So this is the
+[72:17] full system and if you want the full
+[72:18] system here, you can find that within AI
+[72:21] workspace builders uh where we build
+[72:23] system like that all the time. And keep
+[72:26] in mind this is just an initial version.
+[72:29] This could be improved over time and add
+[72:32] additional components such as better uh
+[72:35] mechanism for finding the leads. Uh
+[72:37] better campaign strategy based on other
+[72:40] templates and different things like
+[72:42] that. Over here there's also an how to
+[72:44] use document that explains uh what is
+[72:47] the uh the setup that you need to run
+[72:49] through and uh what is the way that you
+[72:52] use the system as well as how you can
+[72:54] customize the system as well.
+[72:58] So what makes this different from
+[73:00] something like an NADN? You can think of
+[73:03] NADN as a visual canvas where you see
+[73:05] the workflow laid out in front of you
+[73:07] and you can see exactly how the data
+[73:10] moves from one step to another. This is
+[73:12] really powerful in terms of visibility,
+[73:14] especially when you're getting started.
+[73:16] But I feel like you can think of any
+[73:18] more like a workshop where every single
+[73:21] automation that you build, you build it
+[73:23] by end, one automation at a time. And
+[73:26] that is something that really works
+[73:27] great if you have two or three
+[73:29] automation and that's it. Meanwhile, the
+[73:31] automation OS that we have over here is
+[73:34] similar to a factory. So in in this
+[73:37] factory you can design specific
+[73:39] patterns. So by patterns I mean how do
+[73:42] you connect the APIs? How do you handle
+[73:44] error? How do you structure the
+[73:45] automation? So those are easy to debug
+[73:48] and those things needs to be figured out
+[73:50] once and then they are built into the
+[73:53] system. And luckily for you, this part
+[73:56] has already been done by me and so you
+[73:58] will receive the full uh system over
+[74:00] here. Now the beauty of all these
+[74:02] patterns is that they compound with
+[74:04] every single automation that you build.
+[74:06] So if I build the first automation, it
+[74:08] takes me a little bit of time. But then
+[74:10] the 10th automation takes a fraction of
+[74:12] that initial time. So I think it's
+[74:14] enough explanation. Let me show you the
+[74:16] actual system itself. Okay. So this is
+[74:18] the automation OS. And by the way, you
+[74:20] can have full access to the template
+[74:22] within the AI workspace community where
+[74:24] we are focused on building AI workspaces
+[74:26] like that for any part of a business
+[74:29] places where you can actually do huge
+[74:31] part of your work and you can find the
+[74:33] first link in the description. With that
+[74:34] said, let me show you how we can build
+[74:37] an automation using this system. So the
+[74:39] first thing that we can do is first off
+[74:41] open code and we can type a / command
+[74:46] that could be a spec creator. This means
+[74:49] um creating a spec means creating the
+[74:52] actual document that will be used as the
+[74:54] blueprint for creating the automation
+[74:56] for the system. So what we can say is I
+[75:00] would like to create a um automation
+[75:02] that is a webbook to slack automation.
+[75:07] So every time I receive a cold email uh
+[75:10] please analyze the cold email make sure
+[75:13] that the cold email is a positive cold
+[75:15] email and if that is positive send the
+[75:17] message to my Slack.
+[75:20] So as as you saw over here I described
+[75:24] the automation just in plain language. I
+[75:27] can write this command directly and then
+[75:29] once I write this command the system
+[75:31] will go on and start creating the
+[75:33] automation before creating the full
+[75:36] automation and before creating
+[75:38] everything there could be instances
+[75:41] where it would ask for more question
+[75:43] about the automation or uh different
+[75:46] things like that. Here are a couple of
+[75:47] questions that the system ask us. So
+[75:50] which client is the automation for? Um
+[75:52] this is us because the system right now
+[75:55] is built for uh new clients. So over
+[75:58] here we have multiple client folders but
+[76:00] keep in mind we can remove that and we
+[76:02] can have this applied to a single
+[76:04] client. So let's say that this is for my
+[76:08] own use. Uh where do cold emails came
+[76:11] from? So let's say uh smartle.ai
+[76:16] as a tool. And then what is positive
+[76:18] criteria? Let's say that a person wants
+[76:21] to schedule a call um and any positive
+[76:25] reply to be honest. So not a rejection
+[76:27] of subscriber out of office and then
+[76:29] slack message. What information should
+[76:31] be included in the Slack message? What
+[76:33] we can say is we can have the full email
+[76:36] contact with the text sender details. So
+[76:38] as you can see the system is smart
+[76:40] enough to ask you specific question on
+[76:42] how you build something built out and
+[76:44] keep in mind we can go more in depth by
+[76:46] specifying some specific things. So the
+[76:48] document finished creating the spec and
+[76:51] let me show you the file that we have.
+[76:53] It's a file like that that will be used
+[76:56] as the template for building the
+[76:58] automation. So you can think of this
+[77:00] document as the main most important
+[77:02] document uh for building the automation
+[77:05] and making sure that the automation is
+[77:06] correct. We will have a few different
+[77:08] sessions. So we will have what is the
+[77:10] goal of the automation. We will have a
+[77:12] flow diagram so that you can also
+[77:14] visualize what the automation would look
+[77:16] like in your mind. API references. So
+[77:19] what are the tools that we will use?
+[77:21] What are the different steps that we
+[77:23] will go through? Uh so as you can see
+[77:25] initialize, extract email data, classify
+[77:27] will AI and then we will give you also
+[77:30] the the actual prompt that we will use.
+[77:32] Uh format the message for Slack. So in
+[77:35] this way we'll format the message. Maybe
+[77:37] we want the message formatted in a
+[77:39] different way. And so what we can say is
+[77:43] um over here we can mention something
+[77:45] like hey uh I don't want you to mention
+[77:49] the fire emoji and new positive lead
+[77:52] into the formatting of the slack but
+[77:54] instead mention something like hey you
+[77:57] got a new uh new positive lead um yeah
+[78:01] go rock or something like that.
+[78:04] So, uh this was just a stupid example,
+[78:07] but we can modify parts of uh the spec
+[78:10] depending on what we want. Um and yeah,
+[78:14] let's modify that.
+[78:17] Okay. And another cool thing that also
+[78:21] the system handles is edge cases and
+[78:23] error handling. So, in this way, uh the
+[78:26] beauty of this is um those are things
+[78:29] that a developer would have to think
+[78:31] into advance. Meanwhile, the system
+[78:33] already thinks about that and thinks
+[78:35] about what might be some specific
+[78:37] problems that it would have for the
+[78:39] automation. Uh other things it will uh
+[78:42] run some test. It will uh have the
+[78:44] scripts for the test that it could run.
+[78:47] It will have the acceptance criteria. So
+[78:49] that means uh what uh makes the
+[78:52] automation valid for us and those are
+[78:54] all the different things that uh we have
+[78:58] uh the nodes uh notes on the
+[79:00] implementation uh tooling uh what are
+[79:03] the API keys that we will need and all
+[79:06] things like that. So
+[79:08] um this is the starting point. Now let's
+[79:12] actually build the automation itself. Um
+[79:15] and what we can do uh for the building
+[79:17] is we can type slash build automation
+[79:21] and then we can um we can reference this
+[79:25] document over here. So we can copy the
+[79:28] path of the document and then we can uh
+[79:31] link this document here and the system
+[79:34] will get started and will start building
+[79:37] the automation. Okay. So the automation
+[79:39] finished building over here it went
+[79:42] through two phases. one was the code
+[79:44] phase so building the actual code and
+[79:47] the uh third one is the test phase so he
+[79:50] actually tested the code and so at the
+[79:53] end we have the automation itself which
+[79:55] is Python code that we can see over here
+[79:58] and by the way I don't have to write
+[80:01] this I don't have to know what is
+[80:03] present over here I just need to make
+[80:05] sure that the template that I'm creating
+[80:08] over here for this classification
+[80:10] document this blueprint document is good
+[80:12] enough for the system to test. We have a
+[80:15] web hook here. So we can test that out
+[80:17] right now. And then it will mention what
+[80:19] are the different files that the system
+[80:21] created here. So um new files, modified
+[80:25] files, what are the test results um it
+[80:28] will list out what are the environment
+[80:30] variables that will be required and
+[80:32] environment variables here are uh what
+[80:35] will be needed to add to the MV file to
+[80:38] run the system. And so if we have a look
+[80:41] here uh within the internal folder and
+[80:44] we go into the automation we will have
+[80:46] this MV example that we can check out
+[80:50] and as you can see we will have a bunch
+[80:52] of different uh information and a couple
+[80:55] of them which are important for us for
+[80:58] our system are those one that will be
+[81:00] added. So we'll need to add those
+[81:04] and create the uh actual MV file. So let
+[81:10] me create the MV file, the main one. And
+[81:13] then what I will do is I will add the
+[81:16] API keys here and test the system out.
+[81:18] Okay. So let's do a local test right
+[81:20] now. And uh we can say something along
+[81:23] the lines of taking this spec obviously
+[81:28] and say something like
+[81:31] can we perform some local dusting on
+[81:35] this.
+[81:39] So in this way we can actually check
+[81:41] whether the automation works or not
+[81:43] prior to deploying that. So we'll wait a
+[81:46] second and uh yeah all the context is
+[81:49] directly within this file over here. So
+[81:51] the system can check the file and
+[81:54] understand uh the full context and
+[81:56] understand whether also it's uh created
+[81:59] or not because we added the um we added
+[82:03] the elements directly within the MD
+[82:06] file.
+[82:07] So the system went through and create
+[82:09] and run everything into dry mode. That
+[82:12] means not actually sending the
+[82:14] information directly through lock but
+[82:16] performing everything. And so right now
+[82:18] we can say run without dry mode to test
+[82:23] this out. As you can see here the format
+[82:25] that we have is exactly the format that
+[82:27] the automation created. So hey this
+[82:29] sounds interesting. Are we available for
+[82:31] a call? This is the AI analysis with uh
+[82:34] the confidence itself. So this is all
+[82:36] good right now. It's time to take this
+[82:39] and then deploy that. Uh so what we can
+[82:42] say is okay I think it's time to deploy
+[82:45] all of that to railway. Can we go
+[82:47] through there?
+[82:49] And so the uh deployment part is making
+[82:53] sure that this kind of automation don't
+[82:55] only work within your computer but work
+[82:57] any single time that you build them. So
+[83:00] in this case we'll go through a bunch of
+[83:02] stuff such as verifying whether railway
+[83:05] is installed. We will have a specific
+[83:07] skill related to that where we will have
+[83:10] a argument related to the name of the
+[83:12] client. So in this case since the folder
+[83:14] is called internal uh we'll go through
+[83:17] the internal uh checking whether railway
+[83:22] is present whether we are logged in into
+[83:24] railway checking whether we are uh we
+[83:27] have a projects that is linked to this
+[83:30] specific um to this specific uh client.
+[83:35] In this case we have a projects that is
+[83:37] already linked. So we can also check
+[83:40] what are the actual variables and keep
+[83:42] in mind when once we get an error over
+[83:44] here such as uh right now the system
+[83:47] will selfcorrect itself and then we'll
+[83:50] go on and see the variables for the tax
+[83:52] project for example
+[83:57] and then finally we will go uh directly
+[84:00] into the deployment and create the
+[84:02] deployment and uh if we go within
+[84:06] railway as you can see over Here we had
+[84:09] a previous run which failed. But then we
+[84:11] have deployment in progress which is
+[84:13] right now. And in a couple of seconds
+[84:16] this should finish deploying and add all
+[84:20] the different stuff and be live. And now
+[84:23] here as you can see the deployment was
+[84:25] successful. Everything was passed. The
+[84:28] service is live. We have a webbook URL.
+[84:31] So we can say something along the lines
+[84:33] of okay that's great. Can we test the
+[84:35] webbook URL and can we test the
+[84:37] automation from there? So like send some
+[84:40] data to the webbook URL directly and so
+[84:43] we can see what is the result looking
+[84:44] like and if everything works as
+[84:46] expected.
+[84:48] So in this way before we tested the
+[84:50] automation locally right now we test
+[84:52] that uh online um hosted and so it will
+[84:59] run through everything and then we will
+[85:01] do a call to this endpoint and see what
+[85:05] is the results that we get. So as you
+[85:06] can see here we send the post request to
+[85:10] this web hook and we'll send the this
+[85:13] message. So um this is an example of a
+[85:15] message uh that is being processed and
+[85:18] then what we can do is we can check um
+[85:22] the logs first and then we can also
+[85:24] check our slack uh if the message was
+[85:27] created and yeah as you can see over
+[85:29] here the message is created and
+[85:31] everything was working as intended also
+[85:35] will test out a negative one. So as you
+[85:38] can see you can do multiple tests here
+[85:41] directly here without having to write
+[85:43] any line of code. The system takes care
+[85:45] of everything on that side.
+[85:49] And uh here we can also check the logs
+[85:52] uh for the negative to make sure that
+[85:54] everything was working as expected. So
+[85:56] you saw the full automation process
+[85:57] here. We went through the planning
+[86:00] without having to write a single line of
+[86:02] code just explaining what we wanted. The
+[86:05] system did the coding itself, did the
+[86:07] testing itself, did the deployment and
+[86:09] then on top of that what we can do is we
+[86:11] can create documentation uh especially
+[86:14] when it comes to sharing documents for
+[86:17] the client. This is something that the
+[86:18] system could take careful on. Now there
+[86:22] are a couple of nuggets uh in the system
+[86:24] that I want to show you in this session
+[86:25] and this is especially uh related to how
+[86:28] the system compounds over time. So there
+[86:31] are a couple different functionalities.
+[86:33] First off, what we have here is we have
+[86:36] an API docs fetcher. So when we are
+[86:40] working with automation, we are
+[86:41] generally working with APIs and we are
+[86:43] working with different kind of APIs. One
+[86:46] thing though is that over time the
+[86:48] amount of APIs that we are working with
+[86:52] will be limited. we will be always
+[86:54] working with an 8020 of specific uh
+[86:57] services
+[86:59] such as air table, slack, smart lead, um
+[87:03] clickup those are example of that. So
+[87:06] what we want to do is we want to take
+[87:08] the API documentation of those services
+[87:11] and then add that directly into our
+[87:14] system here so that we can create um
+[87:17] scripts already created for those kind
+[87:20] of activities uh that can that we can
+[87:23] do. So to give you an example, if we uh
+[87:26] have an actions that inserts a uh record
+[87:30] within our table, what we can do is we
+[87:33] can create some boiler plate so that
+[87:35] this is always available and this can be
+[87:38] reused either across different
+[87:39] automations or it can be reused across
+[87:42] our own automation. So the API docs
+[87:45] essentially allows us to get uh some
+[87:48] documentation and then once we get a
+[87:50] documentation uh we will get um we will
+[87:54] get different documentation such as the
+[87:56] ones that I have over here. So an
+[87:57] example would be the open router
+[88:00] documentation
+[88:02] and here it will explain like what is
+[88:04] the full documentation how to use the
+[88:07] documentation principle and things like
+[88:09] that as well as what are all the
+[88:11] different pages that are available and
+[88:13] as you can see there are plenty of
+[88:14] pages. Uh this uh full documentation
+[88:18] allows us to uh be used with another
+[88:22] skill which is an API boilerplate skill.
+[88:26] Essentially this skill takes all the
+[88:29] documents that we add and then creates
+[88:31] some um boilerplate such as an HTTP
+[88:36] client wrapper, a pyantic model, some
+[88:39] crude operations and then error handling
+[88:41] for any kind of service that we have. So
+[88:43] in this way uh what we can do is we can
+[88:46] reuse oper automation over time and that
+[88:48] is what makes the service uh compound
+[88:52] and grow over time. One last thing that
+[88:54] I want to show you that is included
+[88:56] within this is a internal dashboard. So
+[89:00] this will be the naming of the client.
+[89:04] So this is something that I do for
+[89:06] clients. So we have an internal
+[89:08] dashboard. So here will be internal and
+[89:11] then we have a password and within the
+[89:14] internal what we have is we have a
+[89:16] dashboard of every kind of automation
+[89:18] that was executed. So over here you'll
+[89:20] see the recent activities of all the
+[89:22] different automations for example and
+[89:25] what we can do here is we can view uh
+[89:28] when this was initialized which was the
+[89:31] data that we got uh how we transformed
+[89:34] this data and then uh the execution
+[89:37] part. So this is an a really useful um
+[89:41] addition to have to monitor all the
+[89:44] different automation and monitor how
+[89:45] they work. On top of that what you have
+[89:48] is you have the available automation. So
+[89:51] you have what is the automation looking
+[89:53] like and then um explain what are the
+[89:56] actual available automation within the
+[89:58] system as well as uh documents which
+[90:01] right now were included for this
+[90:03] specific automation that we created but
+[90:06] could be included in the future if you
+[90:07] if you add those. So yeah that's uh
+[90:10] that's it when it comes to the full
+[90:12] system. Hope I give you a overview of
+[90:14] the full system. I would allow you to
+[90:16] try that out and I will allow you to uh
+[90:19] work and see how you like this new
+[90:21] method of working where you don't have
+[90:23] to go within any you can just type you
+[90:26] can just say what you want and the
+[90:28] system will help you build that you'll
+[90:30] need to have a little bit of technical
+[90:33] uh knowledge but the general knowledge
+[90:36] about the concept is enough for you to
+[90:38] get started and create uh and operate
+[90:41] something like that. So that's it on my
+[90:43] side. Hope this tutorial gave you all
+[90:45] the foundation that you can have in
+[90:47] order to start building your business on
+[90:50] top of clothes code. If you're
+[90:52] interested in having an help directly
+[90:54] from me, you can check the second link
+[90:56] in the description. If you're interested
+[90:58] in joining a community where more and
+[91:00] more people are actually embracing this
+[91:02] style of building businesses using clo
+[91:04] code as their own operating system,
+[91:07] check the first link in the description.
+[91:09] With that said, I'll see you in the next
+[91:11] videos. Bye.
+
+--- Plain text ---
+In the last six months, I spent over 500 hours working within clo code. Not just as a coding tool, but as a full business operating system. Right now, this tool runs every single part of my business. From my content to my outreach to my client work, all of that is running within clo code. And in this video, I want to show you how you can build the same for your own business. We will go through five different steps. And each step will build on the previous one. The first is the idea. There's a big shift happening right now in the way people use AI and the winners will actually build the AI orchestrator, the people that can let AI do the job and coordinate, not just the people that can chat with AI. This will position you one step ahead of everyone else. The second step is the setup. We'll go through how to install cloud code and how to install your first AI workspace. Once you understand the initial structure of files, you will have a real foundation where you can start to work and you can start to build on top of it. The third phase is the building part. In here, you will understand which are the components that you can use to build and improve your own personal AI workspace. Once you understand the components, you can understand how to adapt those components to your specific workspace and your specific processes and needs. Then the fourth stage is live build. I'll show you how to build something real directly on camera so you can get an understanding of what is my process when thinking about building within a cloud code AI workspace. And the last component will be complex AI systems. This will be end to end system that could potentially replace entire departments with the right AI orchestrator. And by the end of the video, you will have a full picture on how you can start building your own personal AI business, AI workspace for your business. Let's get started. Most people are what I call AI users. They open Sh GPT, they ask a question and then they get an answer and finally they close the window. There are some power user for sure that go forward using cloud projects custom GPS or MCPS but there is a problem in all of that when you are working with AI when you are um typing something when you're prompting something you create uh assets you create document you create analysis and at the end of the conversation all these things are lost they cannot be found easily and you cannot build on top of that and also on top of that you cannot build your own tools, you are stuck with the tools that each of the platform gives you and so nothing compounds, nothing grows and every day it feels like you always have to start from scratch. Now compare that to what I call an AI orchestrator. This is something completely different and I would like to give you an example of that. So yesterday I had a call with a client about a new automation project and today what I did is I open my AI workspace and I said please retrieve the call run the AOI analysis based on what we discussed and then draft the follow-up email and the system did exactly that. It retrieved the call using the process I built. He run the AI the ROI analysis the way I want it done and then it drafted the email using my old styling. And all of that was done within a single place and that is just one single workflow. So the same in system could be applied for creating YouTube videos, for generating thumbnail, for running lead generation, for doing client work, for personally whatever I need because I actually build the system in that way. So this actually means to be an AI orchestrator. You get full context on your business in a single place. So all the things such as your customers, your workflows, the way you create your systems and then you are the manager and the AI becomes the execution later and all the people that understand this and figure out this first will have a real unfair advantage in this next stage of AI. So what this actually look like in practice? The idea of an AI workspace is to have a single place where you do 90% of your work. The way it works right now is through something that is called an IDE, which is an integrated development environment, which is a tool that is normally used for coding combined with an AI agent such as clo code. Clo is a really powerful tool because it allows you to read files, write files, and then create codes to solve specific problem. Now for us, we won't be doing any coding because our goal is to create the system so that the AI agents can use them and we just need to write the process by text or by speaking about them. For this to work, we actually need three main components. The first one is having a context folder which is a single place where AI can understand everything about our business. Understand the customer, understand the process, understand the goals, understand everything. The second part is the skills. So those are actually capabilities that we thought to the AI agent. So things such as retrieving conversation via Gmail, performing ROI calculation, processing videos, all different skills that could be relevant to your specific business. The third element here is a workspace. So this is where all the documents are created based on the different projects that I'm working on. So if I'm working on YouTube videos, the scripts might go over there. If I'm working on SOPs, those might go over there and everything becomes organized by project. So by having this three layer structure, the context, the skills and the workspace, I can make sure that everything is connected and also everything is compounding over time and the AI system grows and improves over time by having new skills or by having additional contacts. So that is the actual mindset. You're not an AI user anymore. You are the manager. The AI is just the employee, but every single employee needs an actual workspace. It needs a desk. It needs a filing cabinet. It needs access to the right tool. And here's what we will focus on next, the actual workspace and how CL code is actually set up. To get started, we need to install cloud code directly within RPC. So, you can type code directly on Google and you will find this specific website. over here there will be a bash command. So you can just click on copy here and then you will need to open the terminal. So let's open the terminal. Don't worry, this will be the only time we'll need to open this and uh you can simply paste the command over here and press enter. Once this is done, this will install cloud code completely automatically within your PC and then you can get started and use clo code in whatever IDE you want. And now I will explain in a second what is an ID. So as you can see it took just uh 1 minute. Installation is complete. It gives you what is the version. So 2.0.76. Okay. The next thing will be to have an interface to interact with cloud code or AI employee uh directly and for that we can use visual studio code. Now visual studio code is a tool used uh by coders in order to build code and handle code bases and different things like that. We will use the same tool only because it gives us access to a folder structure where we can organize our files. So you can download this directly on Mac. Keep in mind there are a lot of different tools available. This is the OG tools. So every other tool such as Google anti-gravity, cursor, all of them are based on visual studio code as a basis. So uh I would suggest to start with this one and then later on you can experiment with others. Now that you installed Visual Studio Code, we can just open a new window of Visual Studio Code so that you can uh familiarize yourself and see this. So this is a new window. What we can do is open a folder. So the folder will decide the specific project or the specific um yeah the specific project or the specific AI employee that you're working on. So this is an example of a project. In the left column in the left sidebar over here you will have all the different files that you're working on. Um on the right sidebar you can also have a right sidebar. Here you can have different things such as the built-in AI agent will which we will never use and the terminal which can be used if there are any specific things that needs to be done in the terminal. But for our um purposes we will mostly use command B to show uh the sidebar or hide the sidebar when working with that. Now um small things over here that I have for you is a VS code customization options. So over here are a couple of examples of how you can have the same customization that I have over here with the icon team, the activity bar, uh color theme. This is essentially just so you you can have a very similar interface to this one. Next up couple of important things are extensions. So uh when it comes to extension the first one is this uh symbols one which is a aesthetic u extension. So symbols over here is just to have icons that are like colorcoded just for organizational purposes. The most important thing is the cloud code extension. Now you will find a lot of different extensions over here. I would suggest to stick with the official from Antropic. Um, and you can see this is from Antropic itself and cloud code for VS code. Now, let me show you uh how cloud code actually works over here and a few um customizations that we can also do to cloud code himself. So if you go back to the extension here and type code and we can type this gear icon over here. We have some settings that we can have. One setting that I uh suggest you to enable is this allow uh dangerously skip permissions. This is to run code in yolo mode so that you can run um the the tool even without asking for permission every single time. The reason for that essentially is if you have a very clear expectation on what you need to do, you can enable this uh uh feature and then let cloud code run without any problems. Now it's time to actually launch cloud code. So uh what we can do is we can press command control P in order to open the command pallet and then we can select close code run a new window. In this way we will have the clothe cod code experience directly within a beautify window uh without having to go into the terminal itself and then we can work directly from here. One additional tip that I have for you in order to improve the experience even more as a non-coder that is using this kind of tool is to use vibe coding as to use your microphone to say things. So you can install some application that is uh such as like super whisper or whisper flow. Um this is an example of super whisper. Essentially you can just uh type um a command for me is the function key. And then if I type the function key essentially the the stuff will be transcribed over here. This is very useful when you are rambling and you want to um create something specific with clo code but you don't have a rough idea. So you can actually use um voice in order to um understand your thoughts a little bit more like explain stuff in a more lengthy concept without having to uh specifically channel and write stuff all the time. And this is also faster because generally voice is way faster than um than written text. So in this way you can this can transcribe everything directly and you can work with clothes code in this way. Now the beauty about the cloud code and the beauty about the system is that here you can do anything and uh possibilities are endless because we have access to files. we have access to the possibility of writing a simple programming script and um all sort of things like that. So what we can say is hey please create a folder called workspace within that folder add um three test clients and then within each of these clients add uh the different goals that we have for them and the different um projects that we need to set up for them. uh make everything a dummy like file. So in this way I can write this specific command and once I write this the system will go on and create uh all uh all the different files directly over here. So in this case it will create the the folder itself. So the workspace folder as you can see already created the three uh workspaces directly and then within each of these folder it will create this goals and projects uh files for each of them. So we can um ask to write all these different files and as you can see for each of them we will have uh some goals file and some projects file already created. So in order to set everything up, we need to understand how we are currently hiring and training employees. At day one or at zero, an employee doesn't know anything about the business. It doesn't have context on what are the specific offers that we have. It doesn't have context on the type of clients that we have and it doesn't have ability to perform specific tasks in the way we want to. So it doesn't know how to schedule appointments the way we want to. It doesn't know how to send emails, how to do cold calling, how to do cold emails, all activities like that. Then through training after sometimes after 30 days, 15 days, 60 days, the employee gathers this kind of knowledge. It gathers the context on the business and then it gathers the ability to perform tasks. Now the same thing right now is possible with AI employees and with coding agents such as clothe code because if you think about the kind of pieces of information that we need to give to an employee which are the skills and the context these things can be now given to an AI agent such as clo code in a form of text files and coding files to execute different tasks. So for the first time right now what we can do is we can engineer employees. So you will act as the manager coordinating [clears throat] different stuff and then you will have an AI employee such as clo code and you will ask clo code to uh do some specific task such as hey please create a transcript for a video. Hey please create a concept. Hey please create some graphics for the video and all things of that nature. In order to do that, what we need to do is we need to mimic the folder structure that we have within our computer. The folder structure that an AI agent would use to a company structure. So if we think about a business structure, we have company knowledge that would be context that CL code uses. Employee capabilities and SOPs which would be skills, daily rituals and standups that could be commands that could be easily executed. specialist departments that could be specialized AI agents that we want to add and then where the work happens. It's a workspace where all the files that are generated by AI actually live. So let me show you how it works within cloud code and how it works within a platform such as Visual Studio Code. Right now I'm within Visual Studio Code and what I can do is I can clone the specific repository. So right now I cloned everything and here we have the business OS structure. Now there are a couple of different components to this. The first one is the cloud.md which is the system file. Clod in this specific case acts as the operating system and we want to make sure that cloud actually knows that. The things we do with this kind of operating system are essentially two. First off, every time we execute a specific action, what we do is we check for the skills first because the skills are different ways where an action is executed within our business and we can create more and more skills as time goes on. So, as you can see over here, before studying any task, check the skills and see if there are any relevant skills. If found follow discrete instructions if not found complete the task and then ask should we create a skill for this. So in this way what happens is every every time we have to do a new task what we can do is we can create a specific skill that would go to the process. The second area is quick commands. You can think of quick commands as actions that we want to perform every single time in a specific way. Uh in this case those could be things such as understanding what are the tasks that needs to be done today. Uh planning the day before uh with an end of day um creating checkpoints for when cloud code runs out of context all those things could be added within the commands. The difference between skills and commands is a little bit subtle. So you can think of commands as things that could be executed quickly and things that don't needs to be executed every single day for you or don't need to be automated. So for me for example if I want to execute a end of day command I decide when to execute that. I don't want the AI agent to do that thing for me. So just by invoking the command it's uh more useful and more uh helpful for me. Meanwhile, for skills such as for example, I want to process a YouTube video. That thing would need to happen every single time. I don't want to type a command and add that. The other important things to know here is folder structure. So generally we have context. Within context we can have all sort of information about our business about content that we are created about learning that we are currently doing. So over time we can grow this information back over and over and then we can reference this back. The code folder is where the capabilities are actually present. So we could have skills which are repeatable operations. We could have commands daily triggers and then we could have agents which could be specific specialist and then finally the workspaces. So generally when you are working with this kind of tool you will need to have some sort of interface where uh your work lives. So if you need to create a file that file needs to be created in a specific ways. For me that is the structure. We have foundation we have content we have docs and journal. And then it really changes based on um what is the project. Generally the docs folder is the most important one because every time we have a new project uh everything is added within that docs folder. Now that you had an understanding of the structure let me show you what an actual business OS could look like over time as you add more skills and as you add different things. So this is my um environment my business OS within the skills I have different things that are relevant for me depending on what I need to do. So an example could be content creation. Within content creation, we have a skill. So the skill of content creation and within the skill of content creation, we have a YouTube script for example, which is a a skill related to creating YouTube scripts. For me, this is just an example, but a more advanced one could be a list building, for example, where we have different modules to do all sort of different things to gather leads, to qualify leads, to enrich leads, to verify leads. And then, uh, with them, we also have different scripts to perform those specific actions. So, um, and by the way, all of these are actually created by the AI. What I did on my side is I want to make sure to map out the process and give the AI an understanding of what the process would look like for me and then I let the AI do the heavy lifting and creating different scripts. Then what you do is you do the testing, make sure that that works for you and then over time you can modify, you can add more things, you can remove more things and everything changes based on the way that you're working. In this way, what you can do is you can create something that is unique for you and that is very very powerful depending on the type of task that you need to do. So if I need to do lead generation, I can use the list building skill to do lead generation. If I want to do YouTube, I can use the content creation skills. If I want to create the diagrams like the one that you see before, I use the excali draw skill. And those are all the skills that we have available. Then within the context, the context as I mentioned grows over time depending on what you need. You could have business context, you could have goals that you previously had, you could add learning context and uh yeah that also is a component that over time grows more and more. And the last part is workspace. So within workspace you would have client information, you would have content that you create, you would have different projects that you have, journal, foundation outreach. Those are all the things that are present. I want to also show you a couple of examples over here because I think it could be useful. So one example could be um let's take a YouTube video for example and let's take uh one of my videos marketing and let's process this video. So let's say something like process this video and um if I do this processing of the video we will have a little bit of a thinking and then after that we will launch a specific skill that would process the video fetch the transcript of the video categorize the video and extract the insights of the video. So now the video is extracted as you can see that is format that is my video and then at the end of uh this specific task what we would have is uh a insight that is created. So here it created this specific file with a summary of all the insights about that specific video. Great. So right now you have a workspace with folders, contacts, a system file. But right now it's empty. It cannot do anything yet. And to make it useful, you need to understand which are the nine building blocks that you can use within code. And once you master this, you can start building and you can start expanding your actual workspace with skills, commands, agents, and all the other building blocks that we will see in a second. The nine building blocks that we have are organized into three categories with three elements each. So you can think about that as a simple 3x3 grid. The first category makes up the capabilities building blocks. So by default code can read files, can write code, can run commands. But what if you wanted to ask CL code to read your email? What if you wanted to create a ROI? What if you wanted to create a client proposal or research a topic in the background? So this is what capabilities building blocks are for. Those essentially enable your cloud code to do new things. Let's start with skills. A skill is like training someone to perform a specific task. You give them a specific process that they can follow and once they are trained, you just say perform this specific process and the work is actually executed. You don't have to explain how every single time because the knowledge is already there and they have that specific knowledge that they can follow and the same works with scale. So with that said, let me show you a couple of examples of how they work. We are now within a cloud code workspace that we will use. By the way, you can have access to the same workspace within my free group of AI workspace builders. You can find the first link in the description. The skills that we have over here are essentially two and all the skills are within the same folder which is codeklls. Over here we have a quick explain skill and then we have a ROI calculator. Let's use the quick explain first and ask something like explain compound interest. Now the system will be smart enough to recognize that we have a specific skill related to that and it will ask to proceed with that specific skill. It will read the content of the file and will execute the operation in exactly uh the following format that we give. So compound interest what interest calculated why how um this is just an example as you can see the skills are autoc called by the system based on the capability uh that uh the skill has. Another more advanced example is an ROI calculation. So I would like to do a ROI calculation for a client of an automation related to uh list building. Can you please create a right calculation for that and for that specific client please add that into the main um into the main part of the workspace. This is an example of uh a prompt that I would ask the system will already know that they need to use the ROI calculator and it will start with the creation of that. This specific skill is dynamic and so it will ask for example is this pre-sale or post sales. So let's say this is pre-sale. We have context a general idea and then we have a small company size. Let's submit the answer and see. So the automation just finished and we created two different documents ROI analysis and ROI analysis that is directly client related. Within each document, we have different fields such as an executive summary, a current state analysis, uh what could be automating, what could be the calculation for time savings, the value, uh the pricing recommendation. Obviously, this is only for internal facing documents. Uh but yeah, on the other document over here, we have the document that could be sent directly for the client. All of these documents were generated because we have a specific structure in place within the skill that makes that possible. So let me show you what the structure would look like. The structure here is the following. Every single skill will go into the skills folder which is within the cloud folder and it will have a couple of components. It will have a skill.md file which is the main file that would contain the information of the skill itself. But it could also have different other components such as modules that define the different steps. It could have a scripts that would automate specific processes. An example for the ROI analysis could be we could have a script that would create the PDF version of the ROI analysis to send to the client. And we could also have templates such as the ROI analysis document for example. Now if we go within the skills we can see that uh the two skills are a little bit different on the quick explain what we have is we have the quick explain skill at the top level. What we also have is the name of the skill and then the description of the skill. These are elements that are always loaded with every single instance of code code. And so when you say something like what is X explain X or how does X work the system is smart enough to recognize that it needs to use the following skill over here and so it needs to read this specific file and execute the information that are present within this specific file. Now this is a single file scale. So we just have a single skill that can be executed. But if we look at the ROI analysis for example, we have multiple components within. So the ROI analysis is made up of different operations that we need to do. For example, we have discovery operation. So how do we extract the opportunity? We have calculations. So how do we calculate time saving and pricing uh and value? Sorry. We have pricing and then we have output. And all of them are divided into modules. So this is for example the calculation module. So in this way you can think about a skill as a set of different processes that are defined within and uh make up a full uh workflow such as creating an ROI analysis analyzing some emails do all sort of different things uh similar to that. So the biggest advantage of skills is that they are automatic and code automatically decides when to use them. But sometimes you don't want automaticity. You want control. You want to trigger things on demand based on your workflow and based on when you want. And that is what commands are actually for. So you can think of commands as a keyboard shortcuts. So every time you type a specific command, you trigger a specific set of actions that you want to take. So let me show you a couple of examples here. So the first example could be a daily task document or a daily task process. So at the start of a day we want to type this daily task slashcomand run this and uh this will go over the uh things that are present within the daily task.md and then execute on that. So in this example it will give me what is the current plan for today um want to update this or start fresh. So let's say uh let's update this and the system will go over and ask me for specific question. So what are we actually doing today? Deep work say uh uh recording YouTube video. It will ask me for any meeting. So let's say I have a meeting at 10:00 a.m. So in the end it created the actual plan for today based on the input that we give them. As you can see, this is a very input based command that would go back and forth by a clo code and as to ask different things. We can also run different commands which are for example a standup command. And if we execute that, we would have the things that we did yesterday and then the things that we need to do today as well as the blockers. So let me show you what is the structure looking like for each of these tasks. Here's for example the standup where we ask something very simple generate a standup update based on recent activity. What it can do is it can read the different document. So we can instruct the system to read different MD files and then uh generate the specific standup. Um this is just an example. Uh in the daily task uh instead we were asked for specific questions. So this is more uh iterative based but within commands we can ask to read other files. We can ask to execute scripts or we can ask also to execute skills if we really wanted to. The beauty about commands is that we can add a lot of things within. We can add the ability to read files. So read for example the uh daily brief.md document. We can add the ability to execute specific scripts if we have the scripts or we can add the ability to uh use different skills. So if you think about that the possibility here is that you can have a command which is a slash proposal command that would execute the ROI analysis and it would execute another skill which could be for example a Gmail skill that would create an email for a person and send that. So every single component from skills to command to all the other that we see is easily composable and we can build on top of each of them. Now the beauty of both skills and commands is that they both run in your main conversation. But what if you wanted to work on something in the background while you keep doing other things? And that is what agents are for. So you can think about spawning an agent such as hiring a specific consultant. So that consultant will work independently in their own space outside of your own workspace and then they will report back once they are done. You can say something such as research this topic while I keep working on something else and then the agent will research that and it will uh give you back the responses. So let's see an example of a researcher agent. For example, we can ask something simple such as use the researcher agent to research the top three note takingaking apps and compare their features. So in this way what will happen is all the context will be stored away from the conversation. The research agent will be launched. So as you can see it will say I'll launch the research agent. a task will be created and then everything will be done outside of this specific conversation. We might see what are some specific things that might be happening such as web researcher different things like that but the agent will execute uh alone all these different task and then it will give us back the the responses at the end and report back. One thing that you have to understand is when you are saying launch a agent a sub agent over here you are the one that is prompting the main agent the cloud code and cloud code is prompting the sub agent and so the sub agent will report back to co code will report back for you. As you can see here, the research agent completed the comparison and created this different findings over here as well as a quick recommendation. You can use agent for all sort of different things such as parallel work. So if you want to have a different task uh of a research task or of um all sort of different task isolated context so it doesn't actually pollute your main context window which is a huge advantage when working with a long process for example where you need to do an in-depth research of a topic. They are also specialized in one specific thing and they have specialization on on that and we will see that uh from the structure and then also they have a tool uh restriction and they can use a specified tool and one uh real advantage of the tool restriction is that they can also use skills themselves. So uh for example you could have a specific agent that is a um proposal building agent. Uh it will have a specific role a specific process that it would use and you could say launch the proposal building agent to create the proposal and then show me uh the final proposal file. Um for this instance we have our researcher agent with what is the role of the agent? what are the capabilities that the agent has and then what is the the process as well as the output finding over here. So that's capabilities, skills, commands and agent. Three ways to teach cloud to new new things. Now let's talk about the second component which is the configuration building blocks. Capabilities change what code can do. Meanwhile, configuration changes how cloud behaves. So you can think about like this. Maybe you might have the same employee but they act differently based on the context. Uh they act different based on who they are talking to, what mood they are in, what rules they are following and so the configuration is exactly how you set that specific context for code and teach code how to behave uh in different ways. The foundation of uh the configuration building block is memory. So clothe them every time you start a new conversation reads a set of instruction first. So every single time the system has a system prompt and then it will use whatever is present in a file called cloud.md. Uh code uses this file and references this file in every single uh session. Here's an example of our own clod file within uh the demo projects that we have within here. we have an explanation of what this workspace is about. So in this case is a demonstration workspace for the ninecloud code primitives. Um and then it will explain core principle about the explanation and about the instruction over here as well as how to operate. So what are the different ways in which you can use this and um so the system here checks for skills first. So one thing um that it does is every single time we launch a specific action it will go into the skills folder and see whether we have a matching capability and and use that. Uh as well we have the available commands and then we have the available agents as well as the project structure so that cloud code needs uh knows how to actually navigate this system over here. One beautiful thing about um this is also you can uh make this modular as well. So if for example here I could add something like code standards. So when working with code you can follow the rules that are present include/ rules/code style. So if we go within the code folders over here in the rules we can see this code style rules file uh that will explain what are the specific ways in which we prefer prefer to work with code. Um this can be used with code but it could be used for example for contracts. So we could say when we are dealing with contracts follow the contracts.mmd guile uh where we have specific style guides that we use or all sort of things like that and and another uh beautiful functionality always related to memory is um rules that are path specific. So for example over here every time we have a file which is within this path it will have a look at the specific uh rules that are present over here. So in this case we have a source slappi/ typescript which is a file. But if for example we would have a path which is um workspace uh path we could say all the files that are present within this workspace uh follow this specific rules that we have. So this is another example and another way in which you can enhance the memory of the tool. So we see that memory tells code how to behave. Meanwhile, the next building block which is setting tell code what it's allowed to do. So you can think about that as any app permission on your phone. Uh if you don't want an app to access your camera, you can deny that specific action. And the same happens within clo code within a file that is called setting.json. So within this file, what we can do is we can allow certain actions to happen. We can ask for certain action. So always ask us to um to say whether we want that to happen or not. And we can have deny. So that means um not doing that specific action. So in that way we can have full control of what cl code can do and what cl code cannot do without our approval. Now the last component of the configuration is uh related to how cloud can communicate differently depending on the task. So this is a feature that is called output styles. Essentially output styles are different ways of communicating based on uh the different tasks that we have. So if we want to explain something more, we want to set the output style to an explanation tone or if we want to write a work email versus write a text to a friend, we would have a different way of responding and that is what actually changes in the way that code responds. So let me show you within the interface over here. Now the only problem about the output style is that currently this is a feature that is only available from within the terminal. So um in order to have that you need to access uh the terminal and set the output style. What you can do within there is you can type /output style and then you can select the preferred output style that you want depending on um the task that you have. So in this instance we have a default one, we have an explanatory one, a learning one and then we can build our own custom output styles. So uh let me show you an example over here. Uh what here we have the question of can you explain compound interest to me uh done using the default output style. So as you can see here we would have a specific explanation that is created. Meanwhile, if we ask the same question using a different outpost style, which is a more explanatory one, the format is quite different is more explanatory as uh the the word suggest, right? And so this is how you can modify the the output that you're getting. Now what you can do within the dotcloud file is you can create your own output styles. So this is an example of an explanatory mode which is a way where you want specific structure to happen every single time you ask for a specific frame. So um for this is for example done using code changes. So if you do any kind of coding work and you want every kind of code to be explained uh this structure will be used for that. So it will give why the code was changed, what you did, uh how it actually works and what to expect. So in this way you can change uh the the way the code responds depending on what is the way that you want code to respond. So those were the configuration building blocks uh everything that changes how code behaves. Now the last category is called integration and this is all the different elements that either connect code to the outside world using external services that trigger automated action or that give you the possibility to share plugins and share skills for example. First element of this integration category are hooks. So hooks are kind of event triggers. You can think of that as any zapier any make.com where if x action happens then you can do that. So there are different ways in which you can use hooks within your system. All of them are automated action and all of the different information are present within the settings.json file. So an example of an hook that is present over here is a post tool use. So what this actually does is every time code runs a tool it will log that information uh it will log the information. Basically what we have here is we have a script a file that every time code logs every time code runs a command that post tool use command it will log that specific information. Now this is just an example. Um you can also use that for example to call a voice agent that u notices you when uh the system requires your input or for example send a slack message once a process finished running all sort of things like that. So this is an example of a logs file where we can see all sort of uh information that was created based on um the post tool use. Uh this is um a technical aspect of the hooks but hooks can also be used in a practical way. uh for example with notification or with uh for example sending changes to a colleague once that happens or um yeah login all the information for future reference for example. The next element that we have are MCPS which is one of the most famous one. MCPS are essentially USB ports for your computer. So what you can do is you can plug a specific device a specific service and then your computer can use that. Now MCP uh in some sense become outdated uh because of the advent of skills but there are still use cases in which MCP could really be helpful. So an example that I have here is the playright MCP um which is a browser automation tool. So cloud with the player right MCP can open website click button fill forms take screenshots all those different things like that. The difference between the MCP and the skills is the fact that the MCP is always available in every single conversation that you have within your code. Meanwhile the skill needs to be invoked based on the specific context and based on the specific conversation. So if in whatever kind of conversation I would like to use the MCP that is always ready and available within the context window. Meanwhile for a skill uh the skill needs to run first and uh execute. And now let's see the final component which are plugins. So plugins essentially allow you to bundle your skills together and create a way to share that uh to multiple people. So for example, if I wanted to share my skill on ROI uh creation, ROI document creation that I showed you at the beginning, what we can do is we can create a plug-in out of that and you can go within your own instance of cloud code, add a specific repo of that skill and install the same skill as mine uh in a easy and effortless way to share. So here we would have a specific structure of what a plug-in would look like and essentially within a plug-in you can share all the other primitives. So you can think of as plugins as a tool uh reserved for sharing different things across different um different people. Um whether there is a team for example or another another aspect. And one thing that I also believe is uh important when it comes to to sharing uh plugins is that once a plug-in is updated all the people that have that plug-in will have the updated version of that plug-in as well. So that is also very cool thing, cool feature especially useful when you need to maintain different workflows and different things for teams and um different aspect like that. So now you know the nine building blocks, you understand the system. Now I have a question for you. What would be the first thing that you should build? The answer is actually a skill and not just any skill but a skills that builds on top of other skills because once you have that the entire system can actually grow on its own. So that is exactly what we will see and how I go about building something like that. What we will be doing here is essentially ask code to review the documentation and then create a meta skill. So can you please review the documentation related to cloud code skills and create a meta skill. So essentially I would like to create a skill that would create all the other skill. Make sure to read the documentation in depth. Keep all the information available and create the skill in the format that is best for non business uh non-coding related activity. So within this specific prompt we will go directly into plan mode for creating this and we will wait a second for the plan to be created. There are a few question that are asked to me. So what are the kind of skills that I expect to create? So yeah, we can uh essentially say mixed varied. We want all of those related to how should the meta skill guide the skill creation process. Um I think over here we can do interactive and so it will provide you a questionnaire on like what are the things that you want within the skill and then create that. Um complexity should generated skills include automation scripts or step pool markdown. Um over here I would suggest to include scripts when helpful. This is really really important to understand what would be the actual structure of the skill itself. We have now created the plan and here you can see what is the structure of the skill creator or meta skill uh plan. So here we would have the skill.mmd which is the main file. Within this main file we would have different modules that are referenced and so module you can think about modules as different specific things that can be done. So for example within the skill creator we would have a questionnaire that would be asked to the user. We would have a generator would actually create the skills. We would have a templates. So the reference of the different templates that are available. And then we would have templates as well. So the different kind of possible templates that we could use. And then finally we would have examples. So this is an example of a complete skill and what are some skill patterns. All of that was done by getting the documentation for code and then creating the actual structure itself. So right now we can go uh accept and then we can test this out directly with a new skill. Okay, now the skill is uh created. As you can see uh all the structure is created. So let's try to test this skill and create something. So hey, I'd like to create a new skill related to creating drafts within my newsletter. Uh can you help me out with that and let's go through the process for creating that fence. So in this way I can just say okay I want to create a specific skill. Um I can go directly into plan mode before the creation of the skill to make sure that I uh go over the different questionire and the different things. So um as you can see right now it will read the skill file and it will start to execute the actual meta skill. So the system wants to understand a couple of question. Uh let's say newsletter draft that's good. What inputs do you typically use when writing your newsletter? And I provide the notes uh research and bullet points. And then what is the typical newsletter uh structure? Let's say that is um single essay. So in this way also this allows me to um create something by specifying what I actually want and by making sure that that is adapted to my specific functionalities. So um here we have the format um storytelling simple structure custom um let's do storytelling for now. Uh where should the newsletter draft be saved? And uh yeah, let's do workspace continuous letter. As you can see also this is smart enough to understand the structure of the folders that we have and based on the structure it would save the stuff into the related folder. So newsletter is okay. What is the tone of voice? Um and I have a voice file. So you can also create your own voice file if you want. Let's go conversational for now. Okay. So we have a plan over here. One thing that wasn't mentioned within the plan was the actual automation of the creation within uh the platform and so I think that is something that could be added. So we could say please can you also add a script to create the draft directly within kit.com. Make sure to check out the kit.com documentation and based on that um create the actual script that can uh uh can do that. uh only the draft I don't want to send this thanks. So in this way we not only focus on the creation side of the newsletter but we also focus on the automation side. So we'll start with the um API um research on the web and uh let's see what is that looking like. Okay. And now we also have this integration script that will be created. Um here mention using the API. Let's also have a look at everything. And uh yeah, user need to set a kit API envir variable with their kit.com API key. And um yeah, other than that it seems uh all good. So let's play on. Yes, let's build the skills and then let's test this out. Okay. So everything is created here and um the only thing that we need to do is we need to copy this file and then create a example here. We can add the kit API key and then just copy my API key from kit.com and then we can test uh this out. All done. The MV file was created. If you're not familiar, this uh with this file is a file where you contain all your API keys and all your secrets. This is something that will not be shared outside because this is really important for you to keep within your system. And so right now, let's actually try to create and generate the newsletter. Hey there, I'd like to create uh create a newsletter related to how we were able to use meta skills in order to build multiple skills directly within code. And so I want to share this experience and I would like you to create this newsletter for me. Thanks. In this way, um there's no need for plan in this uh use case. are we will go on and see what is the newsletter um skill looking like. So as you can see it immediately asks me to use the newsletter draft. Uh we go through that. One thing that I notice here is that this is using a voice.md is searching for a voice.md which is essentially a a style file. Uh in this specific case we don't have that but uh we can uh add that. Also, one thing to keep in mind for you is that skills are not stacked. We can improve our meta skill if we want. We can improve all the other skills and change them over time to suit our specific workflows and to suit our specific needs. Okay. So, we are creating the draft over here. Just a general one. No uh no need on my side to update that. So, is the newsletter draft okay? Um, if we review that seems to be looking good. Okay. And uh now let's push this as a draft. Uh please uh push this tok.com. So in this way you can see that skills are not only a single element but could be made up of multiple element and also on top of that what we can do when testing this out is seeing whether this is actually working or this needs further refining. So for example over here um yeah it checked whether the kit API key was present and maybe if it wasn't present or the system took the a API key in a different way other than the MV it would have modified the kit draft.py file in order to send that out. So yeah here's an example of uh the file uh it will run this kit.draft with a subject and with the content that we created. So let's say yes and as you can see draft created successfully and right now let's see on kit.com for for that. So we can see what is the what is the structure and if everything went through correctly and yeah as you can see over here the skill that creates the skill this is the draft if we are looking here also everything is created into a specific format as you can see here is using HTML um which maybe something to that we would need to modify because um we would we would use something different instead But like um right now it's very very good in terms of results. And as you can see I just said everything with my voice. I didn't use uh I didn't use a complex automation platform. I didn't use anything. I just let the system build everything. Now we are in the final stretch. We saw how to build the systems. We saw how those works. We saw how to set up everything. And now I want to show you a glimpse of what is actually possible. I want to show you two examples of end-to-end systems that could be used to automate different parts of a department. And in that way, you can start to think about how you can stack skills together, how you can stack commands together in a way where you could actually build out a full AI operating system that could run directly within cloud code. So let's test this live. Over here, I open a cloud code window. What I can type is I can type outreach directly. The system will start running once I type outreach and it will ask me a couple of questions. First off, it will ask me what is the target. Uh for the sake of this, let's do coaches and consultants. And then for offer doc, let's take an example of a offer dock that I previously created. And then we could mention something along the lines of hey please uh take this framework and then based on that create an offering that is related to um offering a free group access to people to the AI workspace builders group. So in this way uh the system will be smart enough to offer uh the group as the actual offer that we have itself. It will ask me for how big is the the number of leads that I want to reach. So, let's do 50 for this campaign. But keep in mind, you can do this for uh however many leads you want. And then it will start searching the first 50 coaches and consulting using Prospio. So, I found 50 leads. Now is enriching the leads directly. So, it matches 45 49 leads out of those. And then we just finished the finding lead suspect which is pretty crazy because just a couple seconds happened. After that what we are doing is we are going to the second phase which is the writing. So it will generate an email sequence based on the information that we give them and based on specific frameworks that I will show you in a second. And now phase two is finished and he asks us for uh pushing and going forward. So here we can review these emails. So uh an example of the email is the following. Four coaches using AI. I first name running a coach's business been doing the same thing over and over. Writing content manager client ask a similar question. Most coaches do chd for this task but every conversation staff press nothing compounds. I'm building a small group of coaches want to change that. We are building AI workspaces system that remember your business and grow smarter over time. Free to join interested. So this is just an example. All keep in mind uh this can be enhanced over time also with your own context. So um yeah I would say those are decent to start with. So let's say yes. And now what we are doing is we are creating the smartly campaign. We are pushing the leads to the campaign. As you can see this is happening in real time right now. And then finally we are pushing the email sequence directly within smartly. So the system finished creating everything. If we go now within smart lead, what we can see is a campaign that has been created over here. We can see that leads have been imported. We can see that sequences have been created. We already have the setup and then the only thing that we need to do is we need to do a final review and then start the campaign itself. So as you saw here uh this took us 5 to 10 minutes in total uh just with this example alone. Now let me show you how it's actually built. And by the way, you can find the full template so that you can use that yourself within the AI workspace builder community. So if I go back here and show you the architecture, you saw three different phases. The first phase that we have is the outreach command. So when we run the outreach command, we effectively run the uh orchestrator of the old process which is the one responsible for going to step one, two, three and four. In the first phase what we do is we find the leads and in order to do that we use Prospio. Now the advantage of using Prospio is the fact that recently Prospio introduced a lead database directly within the tool. So uh in this way what you can do is you can use a bunch of different filters which are 40 filters here in order to find the specific leads that you wanted to. So let's say that I want uh for example I want founders and I want founders in the United States. So United States here. Uh let's say that employee count is predefined 11 to 20. and then uh industry and keyword. Let's put software and development as an example. So this uh this research uh this different filtering will give me 3,772 results as you see over here. But the beauty about this is that the prospers. So what we can do is we can use this specific uh request to uh actually search the database internally. So what I actually did over here uh for the prospio skill is I created a search filter mapping. So essentially I went through all the different filtering that are present over here. I extracted the uh specific JSON that is used and I mapped that out to the system. So uh in this way what happens is the system is capable of using the prospio search filtering without having to go directly within the platform itself and doing the search every single time. And by the way over here we have a lot of different filtering over uh I was very like uh simplified in terms of filters but we have buy uh buying intent we have job change uh we have adcon growth founding companies all sort of filterings that we can possibly use to build a really really uh useful lead um lead list. So um yeah, prosper is the first phase. Uh the first aspect is searching within the database and the search obviously is dynamic. So it means it means that if it doesn't find that specific relevant category for you, it will ask if it can slightly tune the category in order to actually get the leads. Then after the leads are found uh we go into the enrichment phase. So within prospel here we have uh different commands. We have this search uh prospill.py which is the script that we are using to uh searching the leads. And the second one that we are using is this enrich prospill which is the script used to enrich the leads that we found within the research with verify emails. The the advantage of using this kind of tool like that is that uh since this is a new version of prospel, they actually introduce you a lot of different validation mechanism. They have bounce banan already integrated within there. And so all of the emails that you can get from here are already validated and you don't need to run those through an additional email verification tool if you wanted to. So uh yeah those are the two steps and after these two steps what we get is we get the list of leads. Now the second step that we have is the part where we generate the sequence. So in order to generate the sequence we have another specific skills which is the campaign strategy skill. The campaign strategy skill is designed to uh create I converting cold email campaigns using proven frameworks. So what I did over here is I took a lot of different frameworks that came from my own work with over 40 plus lead generation agencies as well as different proven framework uh that are generalized and that are proven to work and then added those within this uh skill itself. Uh within the skill we have an agentic mode. So the agent mode means that we can pass over a document like the one that I did over here and then if we pass that uh the system reads the document identifies the best campaign angle based on the document and also from the framework and then generates uh the uh four to five email sequences. Now let me show you also the email sequence file so that you can have a sense on that. And here's an example of the campaign sequence document that is created for you to review. So within the campaign uh sequence document you can think about that as the document that is created with every single outreach that you will send uh it will give you a little bit of an overview where you can have the target the offering the primary angle. It will give you the the sending schedule that you can use as well as the different emails that you can use. Uh in this instance what I did for the system is I wanted to have four emails maximum and I wanted to have uh two threaded emails each. So we have email 1.1, email 1.2, email 2.1 and then email 2.2. So uh yeah in this way it generates the the script and keep in mind in this instance we didn't use any kind of personalization or nothing. So we wanted to create something pretty generalized but we can improve the system more and more by adding the personalization component as well. So yeah this is the full document. It will mention which are the variables which are used. It will mention a couple of strategy nodes uh about why we choose specific framework specific things and it will uh check for the work count to make sure that emails are short and sweet. So after we finish this sequence, we have the human in the loop part to review the sequence because uh with all the system is still important to have a human component that would preview all the emails that we generated. So as you saw uh within the interface it will uh showing it was showing us the actual emails that were present here. And then after that we can either choose to approve or modify the sequence based on uh different angles that we want to change or different keywords that we want to remove or things of that nature. Also uh by the way another thing here is I added a document uh which is a document of bound words and patterns which generally sound AI generated. So that is another uh small um nugget to the system as well. Finally the last component that we have is the push to platform and for that we use smart. Smart lead is worldcl class when it comes to APIs and uh within this system what you we can do is we can create the campaign we can add the leads that we generated from here and as you can see here we have a output document which is this enrich leads.json JSON which uh is used by smartly and then it will create the sequence. In order to create the sequence, it's taking this specific document here is parsing the different elements. So it's parsing like the uh the copy here, the subject here and uh different things like that and then is passing those over to smart list so uh that it can be used. If I can show you in detail the skill itself. Here we have the possibility to do a bunch of different things such as creating the campaign, listing all the different available campaigns, generating the email sequence, saving the sequence and then adding uh the leads. So this is the full system and if you want the full system here, you can find that within AI workspace builders uh where we build system like that all the time. And keep in mind this is just an initial version. This could be improved over time and add additional components such as better uh mechanism for finding the leads. Uh better campaign strategy based on other templates and different things like that. Over here there's also an how to use document that explains uh what is the uh the setup that you need to run through and uh what is the way that you use the system as well as how you can customize the system as well. So what makes this different from something like an NADN? You can think of NADN as a visual canvas where you see the workflow laid out in front of you and you can see exactly how the data moves from one step to another. This is really powerful in terms of visibility, especially when you're getting started. But I feel like you can think of any more like a workshop where every single automation that you build, you build it by end, one automation at a time. And that is something that really works great if you have two or three automation and that's it. Meanwhile, the automation OS that we have over here is similar to a factory. So in in this factory you can design specific patterns. So by patterns I mean how do you connect the APIs? How do you handle error? How do you structure the automation? So those are easy to debug and those things needs to be figured out once and then they are built into the system. And luckily for you, this part has already been done by me and so you will receive the full uh system over here. Now the beauty of all these patterns is that they compound with every single automation that you build. So if I build the first automation, it takes me a little bit of time. But then the 10th automation takes a fraction of that initial time. So I think it's enough explanation. Let me show you the actual system itself. Okay. So this is the automation OS. And by the way, you can have full access to the template within the AI workspace community where we are focused on building AI workspaces like that for any part of a business places where you can actually do huge part of your work and you can find the first link in the description. With that said, let me show you how we can build an automation using this system. So the first thing that we can do is first off open code and we can type a / command that could be a spec creator. This means um creating a spec means creating the actual document that will be used as the blueprint for creating the automation for the system. So what we can say is I would like to create a um automation that is a webbook to slack automation. So every time I receive a cold email uh please analyze the cold email make sure that the cold email is a positive cold email and if that is positive send the message to my Slack. So as as you saw over here I described the automation just in plain language. I can write this command directly and then once I write this command the system will go on and start creating the automation before creating the full automation and before creating everything there could be instances where it would ask for more question about the automation or uh different things like that. Here are a couple of questions that the system ask us. So which client is the automation for? Um this is us because the system right now is built for uh new clients. So over here we have multiple client folders but keep in mind we can remove that and we can have this applied to a single client. So let's say that this is for my own use. Uh where do cold emails came from? So let's say uh smartle.ai as a tool. And then what is positive criteria? Let's say that a person wants to schedule a call um and any positive reply to be honest. So not a rejection of subscriber out of office and then slack message. What information should be included in the Slack message? What we can say is we can have the full email contact with the text sender details. So as you can see the system is smart enough to ask you specific question on how you build something built out and keep in mind we can go more in depth by specifying some specific things. So the document finished creating the spec and let me show you the file that we have. It's a file like that that will be used as the template for building the automation. So you can think of this document as the main most important document uh for building the automation and making sure that the automation is correct. We will have a few different sessions. So we will have what is the goal of the automation. We will have a flow diagram so that you can also visualize what the automation would look like in your mind. API references. So what are the tools that we will use? What are the different steps that we will go through? Uh so as you can see initialize, extract email data, classify will AI and then we will give you also the the actual prompt that we will use. Uh format the message for Slack. So in this way we'll format the message. Maybe we want the message formatted in a different way. And so what we can say is um over here we can mention something like hey uh I don't want you to mention the fire emoji and new positive lead into the formatting of the slack but instead mention something like hey you got a new uh new positive lead um yeah go rock or something like that. So, uh this was just a stupid example, but we can modify parts of uh the spec depending on what we want. Um and yeah, let's modify that. Okay. And another cool thing that also the system handles is edge cases and error handling. So, in this way, uh the beauty of this is um those are things that a developer would have to think into advance. Meanwhile, the system already thinks about that and thinks about what might be some specific problems that it would have for the automation. Uh other things it will uh run some test. It will uh have the scripts for the test that it could run. It will have the acceptance criteria. So that means uh what uh makes the automation valid for us and those are all the different things that uh we have uh the nodes uh notes on the implementation uh tooling uh what are the API keys that we will need and all things like that. So um this is the starting point. Now let's actually build the automation itself. Um and what we can do uh for the building is we can type slash build automation and then we can um we can reference this document over here. So we can copy the path of the document and then we can uh link this document here and the system will get started and will start building the automation. Okay. So the automation finished building over here it went through two phases. one was the code phase so building the actual code and the uh third one is the test phase so he actually tested the code and so at the end we have the automation itself which is Python code that we can see over here and by the way I don't have to write this I don't have to know what is present over here I just need to make sure that the template that I'm creating over here for this classification document this blueprint document is good enough for the system to test. We have a web hook here. So we can test that out right now. And then it will mention what are the different files that the system created here. So um new files, modified files, what are the test results um it will list out what are the environment variables that will be required and environment variables here are uh what will be needed to add to the MV file to run the system. And so if we have a look here uh within the internal folder and we go into the automation we will have this MV example that we can check out and as you can see we will have a bunch of different uh information and a couple of them which are important for us for our system are those one that will be added. So we'll need to add those and create the uh actual MV file. So let me create the MV file, the main one. And then what I will do is I will add the API keys here and test the system out. Okay. So let's do a local test right now. And uh we can say something along the lines of taking this spec obviously and say something like can we perform some local dusting on this. So in this way we can actually check whether the automation works or not prior to deploying that. So we'll wait a second and uh yeah all the context is directly within this file over here. So the system can check the file and understand uh the full context and understand whether also it's uh created or not because we added the um we added the elements directly within the MD file. So the system went through and create and run everything into dry mode. That means not actually sending the information directly through lock but performing everything. And so right now we can say run without dry mode to test this out. As you can see here the format that we have is exactly the format that the automation created. So hey this sounds interesting. Are we available for a call? This is the AI analysis with uh the confidence itself. So this is all good right now. It's time to take this and then deploy that. Uh so what we can say is okay I think it's time to deploy all of that to railway. Can we go through there? And so the uh deployment part is making sure that this kind of automation don't only work within your computer but work any single time that you build them. So in this case we'll go through a bunch of stuff such as verifying whether railway is installed. We will have a specific skill related to that where we will have a argument related to the name of the client. So in this case since the folder is called internal uh we'll go through the internal uh checking whether railway is present whether we are logged in into railway checking whether we are uh we have a projects that is linked to this specific um to this specific uh client. In this case we have a projects that is already linked. So we can also check what are the actual variables and keep in mind when once we get an error over here such as uh right now the system will selfcorrect itself and then we'll go on and see the variables for the tax project for example and then finally we will go uh directly into the deployment and create the deployment and uh if we go within railway as you can see over Here we had a previous run which failed. But then we have deployment in progress which is right now. And in a couple of seconds this should finish deploying and add all the different stuff and be live. And now here as you can see the deployment was successful. Everything was passed. The service is live. We have a webbook URL. So we can say something along the lines of okay that's great. Can we test the webbook URL and can we test the automation from there? So like send some data to the webbook URL directly and so we can see what is the result looking like and if everything works as expected. So in this way before we tested the automation locally right now we test that uh online um hosted and so it will run through everything and then we will do a call to this endpoint and see what is the results that we get. So as you can see here we send the post request to this web hook and we'll send the this message. So um this is an example of a message uh that is being processed and then what we can do is we can check um the logs first and then we can also check our slack uh if the message was created and yeah as you can see over here the message is created and everything was working as intended also will test out a negative one. So as you can see you can do multiple tests here directly here without having to write any line of code. The system takes care of everything on that side. And uh here we can also check the logs uh for the negative to make sure that everything was working as expected. So you saw the full automation process here. We went through the planning without having to write a single line of code just explaining what we wanted. The system did the coding itself, did the testing itself, did the deployment and then on top of that what we can do is we can create documentation uh especially when it comes to sharing documents for the client. This is something that the system could take careful on. Now there are a couple of nuggets uh in the system that I want to show you in this session and this is especially uh related to how the system compounds over time. So there are a couple different functionalities. First off, what we have here is we have an API docs fetcher. So when we are working with automation, we are generally working with APIs and we are working with different kind of APIs. One thing though is that over time the amount of APIs that we are working with will be limited. we will be always working with an 8020 of specific uh services such as air table, slack, smart lead, um clickup those are example of that. So what we want to do is we want to take the API documentation of those services and then add that directly into our system here so that we can create um scripts already created for those kind of activities uh that can that we can do. So to give you an example, if we uh have an actions that inserts a uh record within our table, what we can do is we can create some boiler plate so that this is always available and this can be reused either across different automations or it can be reused across our own automation. So the API docs essentially allows us to get uh some documentation and then once we get a documentation uh we will get um we will get different documentation such as the ones that I have over here. So an example would be the open router documentation and here it will explain like what is the full documentation how to use the documentation principle and things like that as well as what are all the different pages that are available and as you can see there are plenty of pages. Uh this uh full documentation allows us to uh be used with another skill which is an API boilerplate skill. Essentially this skill takes all the documents that we add and then creates some um boilerplate such as an HTTP client wrapper, a pyantic model, some crude operations and then error handling for any kind of service that we have. So in this way uh what we can do is we can reuse oper automation over time and that is what makes the service uh compound and grow over time. One last thing that I want to show you that is included within this is a internal dashboard. So this will be the naming of the client. So this is something that I do for clients. So we have an internal dashboard. So here will be internal and then we have a password and within the internal what we have is we have a dashboard of every kind of automation that was executed. So over here you'll see the recent activities of all the different automations for example and what we can do here is we can view uh when this was initialized which was the data that we got uh how we transformed this data and then uh the execution part. So this is an a really useful um addition to have to monitor all the different automation and monitor how they work. On top of that what you have is you have the available automation. So you have what is the automation looking like and then um explain what are the actual available automation within the system as well as uh documents which right now were included for this specific automation that we created but could be included in the future if you if you add those. So yeah that's uh that's it when it comes to the full system. Hope I give you a overview of the full system. I would allow you to try that out and I will allow you to uh work and see how you like this new method of working where you don't have to go within any you can just type you can just say what you want and the system will help you build that you'll need to have a little bit of technical uh knowledge but the general knowledge about the concept is enough for you to get started and create uh and operate something like that. So that's it on my side. Hope this tutorial gave you all the foundation that you can have in order to start building your business on top of clothes code. If you're interested in having an help directly from me, you can check the second link in the description. If you're interested in joining a community where more and more people are actually embracing this style of building businesses using clo code as their own operating system, check the first link in the description. With that said, I'll see you in the next videos. Bye.

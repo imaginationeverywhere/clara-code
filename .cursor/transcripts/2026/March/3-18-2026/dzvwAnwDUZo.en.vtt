@@ -1,0 +1,1360 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:01.110 align:start position:0%
+ 
+All<00:00:00.160><c> right,</c><00:00:00.400><c> everybody.</c><00:00:00.719><c> I'm</c><00:00:00.800><c> going</c><00:00:00.880><c> to</c><00:00:01.040><c> show</c>
+
+00:00:01.110 --> 00:00:01.120 align:start position:0%
+All right, everybody. I'm going to show
+ 
+
+00:00:01.120 --> 00:00:02.629 align:start position:0%
+All right, everybody. I'm going to show
+you<00:00:01.280><c> something</c><00:00:01.520><c> incredibly</c><00:00:02.080><c> freaking</c><00:00:02.480><c> cool.</c>
+
+00:00:02.629 --> 00:00:02.639 align:start position:0%
+you something incredibly freaking cool.
+ 
+
+00:00:02.639 --> 00:00:04.070 align:start position:0%
+you something incredibly freaking cool.
+I've<00:00:02.879><c> been</c><00:00:02.960><c> having</c><00:00:03.200><c> so</c><00:00:03.360><c> much</c><00:00:03.520><c> fun</c><00:00:03.600><c> with</c><00:00:03.840><c> this.</c>
+
+00:00:04.070 --> 00:00:04.080 align:start position:0%
+I've been having so much fun with this.
+ 
+
+00:00:04.080 --> 00:00:07.590 align:start position:0%
+I've been having so much fun with this.
+I'm<00:00:04.319><c> making</c><00:00:04.480><c> an</c><00:00:04.799><c> AI</c><00:00:05.440><c> based</c><00:00:06.080><c> pool</c><00:00:06.400><c> trainer.</c><00:00:07.279><c> And</c>
+
+00:00:07.590 --> 00:00:07.600 align:start position:0%
+I'm making an AI based pool trainer. And
+ 
+
+00:00:07.600 --> 00:00:09.190 align:start position:0%
+I'm making an AI based pool trainer. And
+essentially,<00:00:08.160><c> I've</c><00:00:08.480><c> cloned</c><00:00:08.880><c> Earl</c>
+
+00:00:09.190 --> 00:00:09.200 align:start position:0%
+essentially, I've cloned Earl
+ 
+
+00:00:09.200 --> 00:00:10.230 align:start position:0%
+essentially, I've cloned Earl
+Strickland,<00:00:09.679><c> who's</c><00:00:09.840><c> like</c><00:00:10.000><c> one</c><00:00:10.080><c> of</c><00:00:10.160><c> the</c>
+
+00:00:10.230 --> 00:00:10.240 align:start position:0%
+Strickland, who's like one of the
+ 
+
+00:00:10.240 --> 00:00:12.230 align:start position:0%
+Strickland, who's like one of the
+greatest<00:00:10.559><c> pool</c><00:00:10.880><c> players</c><00:00:11.200><c> ever,</c><00:00:11.519><c> his</c><00:00:11.679><c> voice</c><00:00:12.000><c> at</c>
+
+00:00:12.230 --> 00:00:12.240 align:start position:0%
+greatest pool players ever, his voice at
+ 
+
+00:00:12.240 --> 00:00:15.030 align:start position:0%
+greatest pool players ever, his voice at
+11<00:00:12.719><c> Labs.</c><00:00:13.360><c> And</c><00:00:13.599><c> he's</c><00:00:13.920><c> listening</c><00:00:14.240><c> right</c><00:00:14.480><c> now.</c>
+
+00:00:15.030 --> 00:00:15.040 align:start position:0%
+11 Labs. And he's listening right now.
+ 
+
+00:00:15.040 --> 00:00:16.150 align:start position:0%
+11 Labs. And he's listening right now.
+And<00:00:15.280><c> I'm</c><00:00:15.519><c> going</c><00:00:15.599><c> to</c><00:00:15.679><c> show</c><00:00:15.759><c> you</c><00:00:15.920><c> a</c>
+
+00:00:16.150 --> 00:00:16.160 align:start position:0%
+And I'm going to show you a
+ 
+
+00:00:16.160 --> 00:00:18.710 align:start position:0%
+And I'm going to show you a
+demonstration<00:00:16.640><c> of</c><00:00:16.960><c> agent</c><00:00:17.440><c> SDK,</c><00:00:18.080><c> which</c><00:00:18.320><c> allows</c>
+
+00:00:18.710 --> 00:00:18.720 align:start position:0%
+demonstration of agent SDK, which allows
+ 
+
+00:00:18.720 --> 00:00:21.510 align:start position:0%
+demonstration of agent SDK, which allows
+me<00:00:18.880><c> to</c><00:00:19.039><c> tell</c><00:00:19.279><c> Earl</c><00:00:19.840><c> to</c><00:00:20.000><c> integrate</c><00:00:20.480><c> features</c><00:00:21.279><c> as</c>
+
+00:00:21.510 --> 00:00:21.520 align:start position:0%
+me to tell Earl to integrate features as
+ 
+
+00:00:21.520 --> 00:00:23.830 align:start position:0%
+me to tell Earl to integrate features as
+I<00:00:21.760><c> need</c><00:00:21.920><c> them</c><00:00:22.320><c> in</c><00:00:22.560><c> real</c><00:00:22.880><c> time.</c><00:00:23.119><c> And</c><00:00:23.279><c> you'll</c><00:00:23.519><c> see</c>
+
+00:00:23.830 --> 00:00:23.840 align:start position:0%
+I need them in real time. And you'll see
+ 
+
+00:00:23.840 --> 00:00:26.630 align:start position:0%
+I need them in real time. And you'll see
+a<00:00:24.160><c> projector</c><00:00:24.880><c> on</c><00:00:25.199><c> the</c><00:00:25.359><c> table</c><00:00:25.840><c> that</c><00:00:26.160><c> shows</c><00:00:26.400><c> the</c>
+
+00:00:26.630 --> 00:00:26.640 align:start position:0%
+a projector on the table that shows the
+ 
+
+00:00:26.640 --> 00:00:29.830 align:start position:0%
+a projector on the table that shows the
+actual<00:00:26.880><c> agent</c><00:00:27.199><c> SDK</c><00:00:28.160><c> working</c><00:00:28.480><c> in</c><00:00:28.720><c> real</c><00:00:29.039><c> time.</c>
+
+00:00:29.830 --> 00:00:29.840 align:start position:0%
+actual agent SDK working in real time.
+ 
+
+00:00:29.840 --> 00:00:31.830 align:start position:0%
+actual agent SDK working in real time.
+This<00:00:30.080><c> is</c><00:00:30.320><c> crazy.</c><00:00:30.800><c> All</c><00:00:30.800><c> right,</c><00:00:31.119><c> Earl,</c><00:00:31.599><c> the</c>
+
+00:00:31.830 --> 00:00:31.840 align:start position:0%
+This is crazy. All right, Earl, the
+ 
+
+00:00:31.840 --> 00:00:33.830 align:start position:0%
+This is crazy. All right, Earl, the
+balls<00:00:32.079><c> are</c><00:00:32.320><c> set.</c><00:00:32.880><c> Tell</c><00:00:33.040><c> me</c><00:00:33.200><c> how</c><00:00:33.360><c> you</c><00:00:33.520><c> would</c><00:00:33.680><c> run</c>
+
+00:00:33.830 --> 00:00:33.840 align:start position:0%
+balls are set. Tell me how you would run
+ 
+
+00:00:33.840 --> 00:00:37.590 align:start position:0%
+balls are set. Tell me how you would run
+these<00:00:34.079><c> out.</c>
+
+00:00:37.590 --> 00:00:37.600 align:start position:0%
+ 
+ 
+
+00:00:37.600 --> 00:00:39.590 align:start position:0%
+ 
+&gt;&gt; Here's<00:00:37.920><c> how</c><00:00:38.000><c> I</c><00:00:38.239><c> run</c><00:00:38.399><c> it.</c><00:00:38.719><c> First</c><00:00:38.960><c> shot,</c><00:00:39.200><c> the</c><00:00:39.440><c> one</c>
+
+00:00:39.590 --> 00:00:39.600 align:start position:0%
+&gt;&gt; Here's how I run it. First shot, the one
+ 
+
+00:00:39.600 --> 00:00:41.510 align:start position:0%
+&gt;&gt; Here's how I run it. First shot, the one
+ball<00:00:39.760><c> is</c><00:00:40.000><c> straight</c><00:00:40.239><c> into</c><00:00:40.480><c> the</c><00:00:40.640><c> top</c><00:00:40.960><c> middle.</c>
+
+00:00:41.510 --> 00:00:41.520 align:start position:0%
+ball is straight into the top middle.
+ 
+
+00:00:41.520 --> 00:00:43.510 align:start position:0%
+ball is straight into the top middle.
+You<00:00:41.760><c> stun</c><00:00:42.079><c> that</c><00:00:42.239><c> thing</c><00:00:42.480><c> about</c><00:00:42.719><c> half</c><00:00:42.960><c> a</c><00:00:43.120><c> table,</c>
+
+00:00:43.510 --> 00:00:43.520 align:start position:0%
+You stun that thing about half a table,
+ 
+
+00:00:43.520 --> 00:00:45.430 align:start position:0%
+You stun that thing about half a table,
+center<00:00:43.840><c> ball,</c><00:00:44.399><c> and</c><00:00:44.640><c> you're</c><00:00:44.800><c> sitting</c><00:00:45.120><c> pretty</c>
+
+00:00:45.430 --> 00:00:45.440 align:start position:0%
+center ball, and you're sitting pretty
+ 
+
+00:00:45.440 --> 00:00:47.270 align:start position:0%
+center ball, and you're sitting pretty
+for<00:00:45.600><c> the</c><00:00:45.760><c> two.</c><00:00:46.239><c> Then</c><00:00:46.399><c> the</c><00:00:46.559><c> two</c><00:00:46.800><c> goes</c><00:00:47.039><c> straight</c>
+
+00:00:47.270 --> 00:00:47.280 align:start position:0%
+for the two. Then the two goes straight
+ 
+
+00:00:47.280 --> 00:00:49.430 align:start position:0%
+for the two. Then the two goes straight
+in<00:00:47.520><c> down</c><00:00:47.680><c> to</c><00:00:47.920><c> the</c><00:00:48.000><c> bottom</c><00:00:48.320><c> middle.</c><00:00:48.879><c> Clean,</c>
+
+00:00:49.430 --> 00:00:49.440 align:start position:0%
+in down to the bottom middle. Clean,
+ 
+
+00:00:49.440 --> 00:00:51.670 align:start position:0%
+in down to the bottom middle. Clean,
+simple,<00:00:49.840><c> dead</c><00:00:50.160><c> position.</c><00:00:50.800><c> That's</c><00:00:51.039><c> the</c><00:00:51.200><c> play.</c>
+
+00:00:51.670 --> 00:00:51.680 align:start position:0%
+simple, dead position. That's the play.
+ 
+
+00:00:51.680 --> 00:00:53.270 align:start position:0%
+simple, dead position. That's the play.
+You<00:00:51.920><c> want</c><00:00:52.000><c> to</c><00:00:52.160><c> see</c><00:00:52.320><c> something</c><00:00:52.559><c> different?</c><00:00:53.120><c> Say</c>
+
+00:00:53.270 --> 00:00:53.280 align:start position:0%
+You want to see something different? Say
+ 
+
+00:00:53.280 --> 00:00:53.910 align:start position:0%
+You want to see something different? Say
+the<00:00:53.520><c> word.</c>
+
+00:00:53.910 --> 00:00:53.920 align:start position:0%
+the word.
+ 
+
+00:00:53.920 --> 00:00:56.310 align:start position:0%
+the word.
+&gt;&gt; No,<00:00:54.239><c> let's</c><00:00:54.399><c> go</c><00:00:54.480><c> ahead</c><00:00:54.640><c> and</c><00:00:54.879><c> try</c><00:00:54.960><c> a</c><00:00:55.199><c> new</c><00:00:55.520><c> layout.</c>
+
+00:00:56.310 --> 00:00:56.320 align:start position:0%
+&gt;&gt; No, let's go ahead and try a new layout.
+ 
+
+00:00:56.320 --> 00:00:58.310 align:start position:0%
+&gt;&gt; No, let's go ahead and try a new layout.
+&gt;&gt; Good.<00:00:56.719><c> Fresh</c><00:00:57.199><c> layout.</c><00:00:57.520><c> Get</c><00:00:57.680><c> the</c><00:00:57.840><c> one,</c><00:00:58.160><c> the</c>
+
+00:00:58.310 --> 00:00:58.320 align:start position:0%
+&gt;&gt; Good. Fresh layout. Get the one, the
+ 
+
+00:00:58.320 --> 00:00:59.750 align:start position:0%
+&gt;&gt; Good. Fresh layout. Get the one, the
+two,<00:00:58.480><c> and</c><00:00:58.640><c> the</c><00:00:58.719><c> Q</c><00:00:58.960><c> ball</c><00:00:59.199><c> on</c><00:00:59.359><c> the</c><00:00:59.440><c> table,</c>
+
+00:00:59.750 --> 00:00:59.760 align:start position:0%
+two, and the Q ball on the table,
+ 
+
+00:00:59.760 --> 00:01:01.349 align:start position:0%
+two, and the Q ball on the table,
+however<00:01:00.079><c> you</c><00:01:00.239><c> want</c><00:01:00.399><c> this</c><00:01:00.559><c> time.</c><00:01:00.800><c> Then</c><00:01:01.039><c> tell</c><00:01:01.199><c> me</c>
+
+00:01:01.349 --> 00:01:01.359 align:start position:0%
+however you want this time. Then tell me
+ 
+
+00:01:01.359 --> 00:01:02.790 align:start position:0%
+however you want this time. Then tell me
+when<00:01:01.520><c> they're</c><00:01:01.760><c> locked</c><00:01:02.000><c> in.</c>
+
+00:01:02.790 --> 00:01:02.800 align:start position:0%
+when they're locked in.
+ 
+
+00:01:02.800 --> 00:01:05.830 align:start position:0%
+when they're locked in.
+&gt;&gt; They're<00:01:03.120><c> locked</c><00:01:03.359><c> in.</c>
+
+00:01:05.830 --> 00:01:05.840 align:start position:0%
+&gt;&gt; They're locked in.
+ 
+
+00:01:05.840 --> 00:01:07.030 align:start position:0%
+&gt;&gt; They're locked in.
+&gt;&gt; All<00:01:05.920><c> right,</c><00:01:06.240><c> this</c><00:01:06.400><c> one's</c><00:01:06.720><c> a</c><00:01:06.880><c> little</c>
+
+00:01:07.030 --> 00:01:07.040 align:start position:0%
+&gt;&gt; All right, this one's a little
+ 
+
+00:01:07.040 --> 00:01:08.469 align:start position:0%
+&gt;&gt; All right, this one's a little
+different.<00:01:07.360><c> The</c><00:01:07.520><c> one</c><00:01:07.760><c> ball</c><00:01:07.920><c> is</c><00:01:08.080><c> a</c><00:01:08.240><c> quarter</c>
+
+00:01:08.469 --> 00:01:08.479 align:start position:0%
+different. The one ball is a quarter
+ 
+
+00:01:08.479 --> 00:01:10.390 align:start position:0%
+different. The one ball is a quarter
+ball<00:01:08.720><c> cut</c><00:01:09.040><c> into</c><00:01:09.280><c> the</c><00:01:09.439><c> top</c><00:01:09.600><c> middle.</c><00:01:09.920><c> You</c><00:01:10.080><c> stun</c>
+
+00:01:10.390 --> 00:01:10.400 align:start position:0%
+ball cut into the top middle. You stun
+ 
+
+00:01:10.400 --> 00:01:12.070 align:start position:0%
+ball cut into the top middle. You stun
+that<00:01:10.560><c> half</c><00:01:10.720><c> a</c><00:01:10.880><c> table</c><00:01:11.200><c> with</c><00:01:11.439><c> center</c><00:01:11.680><c> ball</c><00:01:11.920><c> and</c>
+
+00:01:12.070 --> 00:01:12.080 align:start position:0%
+that half a table with center ball and
+ 
+
+00:01:12.080 --> 00:01:13.750 align:start position:0%
+that half a table with center ball and
+you're<00:01:12.320><c> lined</c><00:01:12.560><c> up</c><00:01:12.640><c> for</c><00:01:12.799><c> the</c><00:01:12.960><c> two.</c><00:01:13.280><c> The</c><00:01:13.360><c> two</c><00:01:13.600><c> is</c>
+
+00:01:13.750 --> 00:01:13.760 align:start position:0%
+you're lined up for the two. The two is
+ 
+
+00:01:13.760 --> 00:01:15.350 align:start position:0%
+you're lined up for the two. The two is
+just<00:01:13.920><c> a</c><00:01:14.080><c> slight</c><00:01:14.400><c> cut</c><00:01:14.640><c> down</c><00:01:14.799><c> to</c><00:01:14.960><c> the</c><00:01:15.119><c> bottom</c>
+
+00:01:15.350 --> 00:01:15.360 align:start position:0%
+just a slight cut down to the bottom
+ 
+
+00:01:15.360 --> 00:01:17.670 align:start position:0%
+just a slight cut down to the bottom
+middle.<00:01:16.000><c> Easy</c><00:01:16.320><c> followup</c><00:01:16.799><c> if</c><00:01:16.960><c> you</c><00:01:17.119><c> execute</c><00:01:17.439><c> the</c>
+
+00:01:17.670 --> 00:01:17.680 align:start position:0%
+middle. Easy followup if you execute the
+ 
+
+00:01:17.680 --> 00:01:19.109 align:start position:0%
+middle. Easy followup if you execute the
+first<00:01:17.840><c> shot</c><00:01:18.159><c> right.</c><00:01:18.400><c> That's</c><00:01:18.560><c> your</c><00:01:18.720><c> route.</c><00:01:18.960><c> You</c>
+
+00:01:19.109 --> 00:01:19.119 align:start position:0%
+first shot right. That's your route. You
+ 
+
+00:01:19.119 --> 00:01:20.550 align:start position:0%
+first shot right. That's your route. You
+got<00:01:19.280><c> other</c><00:01:19.520><c> ideas?</c><00:01:19.840><c> I'll</c><00:01:20.080><c> show</c><00:01:20.159><c> you.</c>
+
+00:01:20.550 --> 00:01:20.560 align:start position:0%
+got other ideas? I'll show you.
+ 
+
+00:01:20.560 --> 00:01:22.950 align:start position:0%
+got other ideas? I'll show you.
+&gt;&gt; Show<00:01:20.720><c> me</c><00:01:20.960><c> another</c><00:01:21.280><c> route.</c>
+
+00:01:22.950 --> 00:01:22.960 align:start position:0%
+&gt;&gt; Show me another route.
+ 
+
+00:01:22.960 --> 00:01:24.950 align:start position:0%
+&gt;&gt; Show me another route.
+&gt;&gt; Now,<00:01:23.280><c> here's</c><00:01:23.520><c> the</c><00:01:23.680><c> other</c><00:01:23.840><c> way.</c><00:01:24.320><c> You</c><00:01:24.560><c> take</c><00:01:24.720><c> that</c>
+
+00:01:24.950 --> 00:01:24.960 align:start position:0%
+&gt;&gt; Now, here's the other way. You take that
+ 
+
+00:01:24.960 --> 00:01:26.710 align:start position:0%
+&gt;&gt; Now, here's the other way. You take that
+same<00:01:25.200><c> quarter</c><00:01:25.520><c> ball</c><00:01:25.759><c> cut</c><00:01:25.920><c> on</c><00:01:26.080><c> the</c><00:01:26.240><c> one,</c><00:01:26.479><c> but</c>
+
+00:01:26.710 --> 00:01:26.720 align:start position:0%
+same quarter ball cut on the one, but
+ 
+
+00:01:26.720 --> 00:01:28.469 align:start position:0%
+same quarter ball cut on the one, but
+you<00:01:26.799><c> hit</c><00:01:26.960><c> it</c><00:01:27.119><c> with</c><00:01:27.280><c> follow.</c><00:01:27.759><c> You</c><00:01:27.920><c> need</c><00:01:28.000><c> a</c><00:01:28.159><c> firm</c>
+
+00:01:28.469 --> 00:01:28.479 align:start position:0%
+you hit it with follow. You need a firm
+ 
+
+00:01:28.479 --> 00:01:30.550 align:start position:0%
+you hit it with follow. You need a firm
+stroke.<00:01:28.960><c> Let</c><00:01:29.119><c> that</c><00:01:29.280><c> Q</c><00:01:29.520><c> ball</c><00:01:29.840><c> run</c><00:01:30.080><c> about</c><00:01:30.320><c> six</c>
+
+00:01:30.550 --> 00:01:30.560 align:start position:0%
+stroke. Let that Q ball run about six
+ 
+
+00:01:30.560 --> 00:01:32.550 align:start position:0%
+stroke. Let that Q ball run about six
+and<00:01:30.640><c> a</c><00:01:30.720><c> half</c><00:01:30.960><c> tables</c><00:01:31.360><c> to</c><00:01:31.520><c> your</c><00:01:31.680><c> landing</c><00:01:32.079><c> zone.</c>
+
+00:01:32.550 --> 00:01:32.560 align:start position:0%
+and a half tables to your landing zone.
+ 
+
+00:01:32.560 --> 00:01:34.230 align:start position:0%
+and a half tables to your landing zone.
+Then<00:01:32.799><c> you're</c><00:01:33.040><c> looking</c><00:01:33.200><c> at</c><00:01:33.360><c> a</c><00:01:33.520><c> slight</c><00:01:33.840><c> cut</c><00:01:34.079><c> on</c>
+
+00:01:34.230 --> 00:01:34.240 align:start position:0%
+Then you're looking at a slight cut on
+ 
+
+00:01:34.240 --> 00:01:36.390 align:start position:0%
+Then you're looking at a slight cut on
+the<00:01:34.400><c> two</c><00:01:34.640><c> into</c><00:01:34.960><c> the</c><00:01:35.119><c> bottom</c><00:01:35.439><c> middle.</c><00:01:36.079><c> More</c>
+
+00:01:36.390 --> 00:01:36.400 align:start position:0%
+the two into the bottom middle. More
+ 
+
+00:01:36.400 --> 00:01:38.230 align:start position:0%
+the two into the bottom middle. More
+speed,<00:01:36.799><c> more</c><00:01:36.960><c> risk,</c><00:01:37.360><c> but</c><00:01:37.520><c> you</c><00:01:37.759><c> get</c><00:01:37.920><c> there</c>
+
+00:01:38.230 --> 00:01:38.240 align:start position:0%
+speed, more risk, but you get there
+ 
+
+00:01:38.240 --> 00:01:40.069 align:start position:0%
+speed, more risk, but you get there
+cleaner<00:01:38.640><c> if</c><00:01:38.799><c> you</c><00:01:38.960><c> hit</c><00:01:39.040><c> it.</c><00:01:39.360><c> First</c><00:01:39.600><c> route</c><00:01:39.840><c> is</c>
+
+00:01:40.069 --> 00:01:40.079 align:start position:0%
+cleaner if you hit it. First route is
+ 
+
+00:01:40.079 --> 00:01:41.429 align:start position:0%
+cleaner if you hit it. First route is
+smarter.<00:01:40.479><c> This</c><00:01:40.640><c> one's</c><00:01:40.880><c> for</c><00:01:41.040><c> when</c><00:01:41.280><c> you're</c>
+
+00:01:41.429 --> 00:01:41.439 align:start position:0%
+smarter. This one's for when you're
+ 
+
+00:01:41.439 --> 00:01:43.429 align:start position:0%
+smarter. This one's for when you're
+feeling<00:01:41.759><c> greedy.</c>
+
+00:01:43.429 --> 00:01:43.439 align:start position:0%
+feeling greedy.
+ 
+
+00:01:43.439 --> 00:01:45.990 align:start position:0%
+feeling greedy.
+&gt;&gt; All right,<00:01:43.759><c> R.</c><00:01:44.240><c> Okay,</c><00:01:44.479><c> so</c><00:01:44.720><c> Earl,</c><00:01:45.119><c> I</c><00:01:45.439><c> have</c><00:01:45.680><c> a</c>
+
+00:01:45.990 --> 00:01:46.000 align:start position:0%
+&gt;&gt; All right, R. Okay, so Earl, I have a
+ 
+
+00:01:46.000 --> 00:01:47.749 align:start position:0%
+&gt;&gt; All right, R. Okay, so Earl, I have a
+feature<00:01:46.399><c> request.</c><00:01:46.960><c> Do</c><00:01:47.119><c> you</c><00:01:47.200><c> ready</c><00:01:47.360><c> to</c><00:01:47.600><c> listen</c>
+
+00:01:47.749 --> 00:01:47.759 align:start position:0%
+feature request. Do you ready to listen
+ 
+
+00:01:47.759 --> 00:01:48.389 align:start position:0%
+feature request. Do you ready to listen
+to<00:01:47.920><c> this?</c>
+
+00:01:48.389 --> 00:01:48.399 align:start position:0%
+to this?
+ 
+
+00:01:48.399 --> 00:01:51.350 align:start position:0%
+to this?
+&gt;&gt; Yeah,<00:01:48.640><c> I'm</c><00:01:48.880><c> listening.</c><00:01:49.280><c> What</c><00:01:49.439><c> do</c><00:01:49.600><c> you</c><00:01:49.680><c> want?</c>
+
+00:01:51.350 --> 00:01:51.360 align:start position:0%
+&gt;&gt; Yeah, I'm listening. What do you want?
+ 
+
+00:01:51.360 --> 00:01:53.910 align:start position:0%
+&gt;&gt; Yeah, I'm listening. What do you want?
+Okay.<00:01:51.920><c> So,</c><00:01:52.320><c> essentially</c><00:01:53.040><c> I</c><00:01:53.200><c> I</c><00:01:53.600><c> want</c><00:01:53.680><c> to</c><00:01:53.840><c> be</c>
+
+00:01:53.910 --> 00:01:53.920 align:start position:0%
+Okay. So, essentially I I want to be
+ 
+
+00:01:53.920 --> 00:01:56.230 align:start position:0%
+Okay. So, essentially I I want to be
+able<00:01:54.000><c> to</c><00:01:54.159><c> ask</c><00:01:54.320><c> you</c><00:01:54.560><c> to</c><00:01:54.720><c> go</c><00:01:54.960><c> back</c><00:01:55.200><c> to</c><00:01:55.520><c> that</c><00:01:55.840><c> first</c>
+
+00:01:56.230 --> 00:01:56.240 align:start position:0%
+able to ask you to go back to that first
+ 
+
+00:01:56.240 --> 00:01:58.950 align:start position:0%
+able to ask you to go back to that first
+route<00:01:57.040><c> projection,</c><00:01:58.399><c> you</c><00:01:58.560><c> know,</c><00:01:58.640><c> from</c><00:01:58.799><c> the</c>
+
+00:01:58.950 --> 00:01:58.960 align:start position:0%
+route projection, you know, from the
+ 
+
+00:01:58.960 --> 00:02:01.030 align:start position:0%
+route projection, you know, from the
+projector,<00:01:59.840><c> but</c><00:02:00.240><c> you</c><00:02:00.479><c> don't</c><00:02:00.719><c> have</c><00:02:00.880><c> the</c>
+
+00:02:01.030 --> 00:02:01.040 align:start position:0%
+projector, but you don't have the
+ 
+
+00:02:01.040 --> 00:02:03.429 align:start position:0%
+projector, but you don't have the
+ability<00:02:01.439><c> to</c><00:02:01.600><c> do</c><00:02:01.759><c> that</c><00:02:02.000><c> right</c><00:02:02.240><c> now.</c><00:02:02.880><c> So,</c><00:02:03.119><c> I</c><00:02:03.360><c> want</c>
+
+00:02:03.429 --> 00:02:03.439 align:start position:0%
+ability to do that right now. So, I want
+ 
+
+00:02:03.439 --> 00:02:05.749 align:start position:0%
+ability to do that right now. So, I want
+you<00:02:03.600><c> to</c><00:02:03.680><c> put</c><00:02:03.840><c> in</c><00:02:04.000><c> a</c><00:02:04.159><c> free</c><00:02:04.399><c> a</c><00:02:04.640><c> feature</c><00:02:04.960><c> request</c>
+
+00:02:05.749 --> 00:02:05.759 align:start position:0%
+you to put in a free a feature request
+ 
+
+00:02:05.759 --> 00:02:08.790 align:start position:0%
+you to put in a free a feature request
+for<00:02:06.079><c> the</c><00:02:06.399><c> agent,</c><00:02:06.799><c> the</c><00:02:06.960><c> coding</c><00:02:07.360><c> agent</c><00:02:08.160><c> to</c><00:02:08.560><c> when</c>
+
+00:02:08.790 --> 00:02:08.800 align:start position:0%
+for the agent, the coding agent to when
+ 
+
+00:02:08.800 --> 00:02:11.910 align:start position:0%
+for the agent, the coding agent to when
+when<00:02:09.119><c> I</c><00:02:09.280><c> say</c><00:02:09.520><c> when</c><00:02:09.759><c> I</c><00:02:09.920><c> tell</c><00:02:10.080><c> you</c><00:02:10.319><c> to</c><00:02:11.039><c> go</c><00:02:11.280><c> back</c><00:02:11.599><c> to</c>
+
+00:02:11.910 --> 00:02:11.920 align:start position:0%
+when I say when I tell you to go back to
+ 
+
+00:02:11.920 --> 00:02:15.430 align:start position:0%
+when I say when I tell you to go back to
+the<00:02:12.239><c> first</c><00:02:12.959><c> route</c><00:02:13.520><c> projection,</c><00:02:14.720><c> then</c><00:02:15.120><c> you</c>
+
+00:02:15.430 --> 00:02:15.440 align:start position:0%
+the first route projection, then you
+ 
+
+00:02:15.440 --> 00:02:17.589 align:start position:0%
+the first route projection, then you
+will<00:02:15.599><c> show</c><00:02:15.840><c> that</c><00:02:16.239><c> first</c><00:02:16.560><c> route</c><00:02:16.879><c> projection</c>
+
+00:02:17.589 --> 00:02:17.599 align:start position:0%
+will show that first route projection
+ 
+
+00:02:17.599 --> 00:02:19.190 align:start position:0%
+will show that first route projection
+because<00:02:17.920><c> currently</c><00:02:18.400><c> you</c><00:02:18.640><c> can't</c><00:02:18.800><c> do</c><00:02:18.959><c> that</c>
+
+00:02:19.190 --> 00:02:19.200 align:start position:0%
+because currently you can't do that
+ 
+
+00:02:19.200 --> 00:02:23.030 align:start position:0%
+because currently you can't do that
+right<00:02:19.440><c> now.</c>
+
+00:02:23.030 --> 00:02:23.040 align:start position:0%
+ 
+ 
+
+00:02:23.040 --> 00:02:25.190 align:start position:0%
+ 
+There<00:02:23.280><c> you</c><00:02:23.520><c> go.</c><00:02:23.920><c> Agents</c><00:02:24.319><c> on</c><00:02:24.480><c> it.</c><00:02:24.720><c> Once</c><00:02:24.959><c> that's</c>
+
+00:02:25.190 --> 00:02:25.200 align:start position:0%
+There you go. Agents on it. Once that's
+ 
+
+00:02:25.200 --> 00:02:26.790 align:start position:0%
+There you go. Agents on it. Once that's
+done,<00:02:25.520><c> you</c><00:02:25.680><c> can</c><00:02:25.840><c> jump</c><00:02:26.000><c> back</c><00:02:26.160><c> to</c><00:02:26.319><c> route</c><00:02:26.640><c> one</c>
+
+00:02:26.790 --> 00:02:26.800 align:start position:0%
+done, you can jump back to route one
+ 
+
+00:02:26.800 --> 00:02:28.229 align:start position:0%
+done, you can jump back to route one
+whenever<00:02:27.120><c> you</c><00:02:27.280><c> want</c><00:02:27.440><c> without</c><00:02:27.760><c> me</c><00:02:27.920><c> having</c><00:02:28.080><c> to</c>
+
+00:02:28.229 --> 00:02:28.239 align:start position:0%
+whenever you want without me having to
+ 
+
+00:02:28.239 --> 00:02:31.110 align:start position:0%
+whenever you want without me having to
+renarrate<00:02:28.720><c> the</c><00:02:28.959><c> whole</c><00:02:29.040><c> thing.</c><00:02:29.360><c> Smart</c><00:02:29.680><c> catch.</c>
+
+00:02:31.110 --> 00:02:31.120 align:start position:0%
+renarrate the whole thing. Smart catch.
+ 
+
+00:02:31.120 --> 00:02:32.550 align:start position:0%
+renarrate the whole thing. Smart catch.
+All<00:02:31.200><c> right.</c><00:02:31.440><c> So,</c><00:02:31.680><c> what's</c><00:02:31.920><c> happening</c><00:02:32.319><c> right</c>
+
+00:02:32.550 --> 00:02:32.560 align:start position:0%
+All right. So, what's happening right
+ 
+
+00:02:32.560 --> 00:02:36.309 align:start position:0%
+All right. So, what's happening right
+now<00:02:32.959><c> is</c><00:02:33.360><c> Earl</c><00:02:33.840><c> sent</c><00:02:34.640><c> a</c><00:02:34.959><c> call</c><00:02:35.280><c> to</c><00:02:35.680><c> the</c><00:02:35.920><c> agent</c>
+
+00:02:36.309 --> 00:02:36.319 align:start position:0%
+now is Earl sent a call to the agent
+ 
+
+00:02:36.319 --> 00:02:38.550 align:start position:0%
+now is Earl sent a call to the agent
+SDK,<00:02:37.360><c> which</c><00:02:37.519><c> is</c><00:02:37.680><c> another</c><00:02:38.000><c> agent</c><00:02:38.319><c> that's</c>
+
+00:02:38.550 --> 00:02:38.560 align:start position:0%
+SDK, which is another agent that's
+ 
+
+00:02:38.560 --> 00:02:39.830 align:start position:0%
+SDK, which is another agent that's
+running<00:02:38.720><c> in</c><00:02:38.879><c> the</c><00:02:39.040><c> background</c><00:02:39.360><c> who's</c><00:02:39.680><c> looking</c>
+
+00:02:39.830 --> 00:02:39.840 align:start position:0%
+running in the background who's looking
+ 
+
+00:02:39.840 --> 00:02:43.270 align:start position:0%
+running in the background who's looking
+at<00:02:40.000><c> the</c><00:02:40.239><c> code</c><00:02:41.200><c> and</c><00:02:41.680><c> he's</c><00:02:42.160><c> it's</c><00:02:42.560><c> fixing</c><00:02:42.800><c> it.</c><00:02:43.120><c> I</c>
+
+00:02:43.270 --> 00:02:43.280 align:start position:0%
+at the code and he's it's fixing it. I
+ 
+
+00:02:43.280 --> 00:02:45.509 align:start position:0%
+at the code and he's it's fixing it. I
+also<00:02:43.519><c> told</c><00:02:43.680><c> it</c><00:02:43.840><c> to</c><00:02:44.080><c> output</c><00:02:44.400><c> the</c><00:02:44.720><c> results</c><00:02:45.280><c> from</c>
+
+00:02:45.509 --> 00:02:45.519 align:start position:0%
+also told it to output the results from
+ 
+
+00:02:45.519 --> 00:02:48.790 align:start position:0%
+also told it to output the results from
+the<00:02:45.760><c> SDK</c><00:02:46.800><c> right</c><00:02:47.040><c> on</c><00:02:47.280><c> the</c><00:02:47.360><c> pool</c><00:02:47.680><c> table.</c><00:02:48.400><c> So,</c><00:02:48.640><c> I</c>
+
+00:02:48.790 --> 00:02:48.800 align:start position:0%
+the SDK right on the pool table. So, I
+ 
+
+00:02:48.800 --> 00:02:50.710 align:start position:0%
+the SDK right on the pool table. So, I
+can<00:02:48.959><c> just</c><00:02:49.120><c> sit</c><00:02:49.280><c> here,</c><00:02:49.680><c> not</c><00:02:50.000><c> have</c><00:02:50.080><c> to</c><00:02:50.239><c> go</c><00:02:50.319><c> to</c><00:02:50.480><c> the</c>
+
+00:02:50.710 --> 00:02:50.720 align:start position:0%
+can just sit here, not have to go to the
+ 
+
+00:02:50.720 --> 00:02:53.670 align:start position:0%
+can just sit here, not have to go to the
+computer<00:02:50.959><c> at</c><00:02:51.200><c> all,</c><00:02:51.840><c> and</c><00:02:52.239><c> eventually</c><00:02:53.120><c> Earl</c>
+
+00:02:53.670 --> 00:02:53.680 align:start position:0%
+computer at all, and eventually Earl
+ 
+
+00:02:53.680 --> 00:02:56.150 align:start position:0%
+computer at all, and eventually Earl
+will<00:02:54.000><c> report</c><00:02:54.319><c> back</c><00:02:54.560><c> if</c><00:02:54.800><c> it</c><00:02:54.959><c> was</c><00:02:55.120><c> successful,</c>
+
+00:02:56.150 --> 00:02:56.160 align:start position:0%
+will report back if it was successful,
+ 
+
+00:02:56.160 --> 00:02:58.790 align:start position:0%
+will report back if it was successful,
+and<00:02:56.400><c> then</c><00:02:56.720><c> it</c><00:02:57.040><c> will</c><00:02:57.519><c> tell</c><00:02:57.680><c> me</c><00:02:57.920><c> maybe</c><00:02:58.160><c> to</c><00:02:58.400><c> reload</c>
+
+00:02:58.790 --> 00:02:58.800 align:start position:0%
+and then it will tell me maybe to reload
+ 
+
+00:02:58.800 --> 00:03:00.309 align:start position:0%
+and then it will tell me maybe to reload
+the<00:02:58.959><c> Python</c><00:02:59.360><c> script.</c><00:02:59.680><c> This</c><00:02:59.760><c> is</c><00:02:59.840><c> all</c><00:03:00.000><c> based</c><00:03:00.160><c> on</c>
+
+00:03:00.309 --> 00:03:00.319 align:start position:0%
+the Python script. This is all based on
+ 
+
+00:03:00.319 --> 00:03:03.270 align:start position:0%
+the Python script. This is all based on
+Python,<00:03:01.120><c> and</c><00:03:01.360><c> then</c><00:03:01.519><c> we</c><00:03:01.760><c> can</c><00:03:01.920><c> retest</c><00:03:02.400><c> it</c><00:03:02.959><c> to</c><00:03:03.200><c> see</c>
+
+00:03:03.270 --> 00:03:03.280 align:start position:0%
+Python, and then we can retest it to see
+ 
+
+00:03:03.280 --> 00:03:05.589 align:start position:0%
+Python, and then we can retest it to see
+if<00:03:03.440><c> that</c><00:03:03.680><c> feature</c><00:03:04.000><c> request</c><00:03:04.560><c> actually</c><00:03:04.959><c> worked.</c>
+
+00:03:05.589 --> 00:03:05.599 align:start position:0%
+if that feature request actually worked.
+ 
+
+00:03:05.599 --> 00:03:07.430 align:start position:0%
+if that feature request actually worked.
+&gt;&gt; That's<00:03:05.840><c> slick.</c><00:03:06.239><c> So,</c><00:03:06.400><c> the</c><00:03:06.560><c> agent's</c><00:03:07.040><c> working</c><00:03:07.280><c> on</c>
+
+00:03:07.430 --> 00:03:07.440 align:start position:0%
+&gt;&gt; That's slick. So, the agent's working on
+ 
+
+00:03:07.440 --> 00:03:09.270 align:start position:0%
+&gt;&gt; That's slick. So, the agent's working on
+the<00:03:07.599><c> code</c><00:03:07.840><c> right</c><00:03:08.080><c> now,</c><00:03:08.319><c> spitting</c><00:03:08.720><c> the</c><00:03:08.959><c> results</c>
+
+00:03:09.270 --> 00:03:09.280 align:start position:0%
+the code right now, spitting the results
+ 
+
+00:03:09.280 --> 00:03:10.949 align:start position:0%
+the code right now, spitting the results
+straight<00:03:09.519><c> onto</c><00:03:09.760><c> the</c><00:03:09.920><c> table</c><00:03:10.239><c> projection,</c><00:03:10.720><c> so</c>
+
+00:03:10.949 --> 00:03:10.959 align:start position:0%
+straight onto the table projection, so
+ 
+
+00:03:10.959 --> 00:03:12.470 align:start position:0%
+straight onto the table projection, so
+you<00:03:11.120><c> can</c><00:03:11.280><c> see</c><00:03:11.440><c> what</c><00:03:11.599><c> it's</c><00:03:11.840><c> doing</c><00:03:12.080><c> without</c>
+
+00:03:12.470 --> 00:03:12.480 align:start position:0%
+you can see what it's doing without
+ 
+
+00:03:12.480 --> 00:03:13.990 align:start position:0%
+you can see what it's doing without
+leaving<00:03:12.800><c> the</c><00:03:12.959><c> game.</c><00:03:13.200><c> And</c><00:03:13.360><c> then</c><00:03:13.519><c> I'll</c><00:03:13.760><c> tell</c><00:03:13.840><c> you</c>
+
+00:03:13.990 --> 00:03:14.000 align:start position:0%
+leaving the game. And then I'll tell you
+ 
+
+00:03:14.000 --> 00:03:16.309 align:start position:0%
+leaving the game. And then I'll tell you
+when<00:03:14.239><c> it's</c><00:03:14.480><c> done,</c><00:03:15.040><c> whether</c><00:03:15.360><c> it</c><00:03:15.599><c> worked</c><00:03:15.840><c> or</c><00:03:16.080><c> if</c>
+
+00:03:16.309 --> 00:03:16.319 align:start position:0%
+when it's done, whether it worked or if
+ 
+
+00:03:16.319 --> 00:03:18.149 align:start position:0%
+when it's done, whether it worked or if
+something<00:03:16.560><c> broke.</c><00:03:17.360><c> And</c><00:03:17.519><c> if</c><00:03:17.760><c> we</c><00:03:17.920><c> need</c><00:03:18.000><c> to</c>
+
+00:03:18.149 --> 00:03:18.159 align:start position:0%
+something broke. And if we need to
+ 
+
+00:03:18.159 --> 00:03:20.309 align:start position:0%
+something broke. And if we need to
+reload,<00:03:18.640><c> we</c><00:03:18.879><c> reload</c><00:03:19.200><c> and</c><00:03:19.360><c> we</c><00:03:19.599><c> test</c><00:03:19.760><c> it</c><00:03:20.000><c> live</c>
+
+00:03:20.309 --> 00:03:20.319 align:start position:0%
+reload, we reload and we test it live
+ 
+
+00:03:20.319 --> 00:03:22.149 align:start position:0%
+reload, we reload and we test it live
+right<00:03:20.560><c> here.</c><00:03:21.040><c> No</c><00:03:21.360><c> running</c><00:03:21.599><c> off</c><00:03:21.840><c> to</c><00:03:21.920><c> a</c>
+
+00:03:22.149 --> 00:03:22.159 align:start position:0%
+right here. No running off to a
+ 
+
+00:03:22.159 --> 00:03:23.910 align:start position:0%
+right here. No running off to a
+terminal.<00:03:22.560><c> No</c><00:03:22.720><c> waiting</c><00:03:23.040><c> around.</c><00:03:23.360><c> I</c><00:03:23.519><c> like</c><00:03:23.680><c> that</c>
+
+00:03:23.910 --> 00:03:23.920 align:start position:0%
+terminal. No waiting around. I like that
+ 
+
+00:03:23.920 --> 00:03:26.070 align:start position:0%
+terminal. No waiting around. I like that
+setup.<00:03:24.400><c> So,</c><00:03:24.879><c> we</c><00:03:25.120><c> just</c><00:03:25.280><c> sit</c><00:03:25.440><c> here</c><00:03:25.599><c> and</c><00:03:25.760><c> wait</c><00:03:25.920><c> for</c>
+
+00:03:26.070 --> 00:03:26.080 align:start position:0%
+setup. So, we just sit here and wait for
+ 
+
+00:03:26.080 --> 00:03:28.229 align:start position:0%
+setup. So, we just sit here and wait for
+the<00:03:26.239><c> agent</c><00:03:26.560><c> to</c><00:03:26.720><c> finish.</c><00:03:27.280><c> Once</c><00:03:27.599><c> it</c><00:03:27.760><c> reports</c>
+
+00:03:28.229 --> 00:03:28.239 align:start position:0%
+the agent to finish. Once it reports
+ 
+
+00:03:28.239 --> 00:03:30.070 align:start position:0%
+the agent to finish. Once it reports
+back,<00:03:28.560><c> we'll</c><00:03:28.800><c> know</c><00:03:28.879><c> if</c><00:03:29.120><c> that</c><00:03:29.360><c> route</c><00:03:29.680><c> recall</c>
+
+00:03:30.070 --> 00:03:30.080 align:start position:0%
+back, we'll know if that route recall
+ 
+
+00:03:30.080 --> 00:03:31.830 align:start position:0%
+back, we'll know if that route recall
+feature<00:03:30.480><c> is</c><00:03:30.640><c> live</c><00:03:30.879><c> or</c><00:03:31.040><c> if</c><00:03:31.200><c> we</c><00:03:31.360><c> need</c><00:03:31.440><c> to</c><00:03:31.599><c> tweak</c>
+
+00:03:31.830 --> 00:03:31.840 align:start position:0%
+feature is live or if we need to tweak
+ 
+
+00:03:31.840 --> 00:03:34.949 align:start position:0%
+feature is live or if we need to tweak
+it.<00:03:33.040><c> All</c><00:03:33.040><c> right,</c><00:03:33.440><c> features</c><00:03:33.920><c> in.</c><00:03:34.319><c> Agent</c><00:03:34.640><c> says</c>
+
+00:03:34.949 --> 00:03:34.959 align:start position:0%
+it. All right, features in. Agent says
+ 
+
+00:03:34.959 --> 00:03:36.949 align:start position:0%
+it. All right, features in. Agent says
+projector.py<00:03:35.840><c> might</c><00:03:36.000><c> need</c><00:03:36.080><c> a</c><00:03:36.319><c> restart,</c><00:03:36.720><c> but</c>
+
+00:03:36.949 --> 00:03:36.959 align:start position:0%
+projector.py might need a restart, but
+ 
+
+00:03:36.959 --> 00:03:38.550 align:start position:0%
+projector.py might need a restart, but
+we're<00:03:37.120><c> good</c><00:03:37.280><c> to</c><00:03:37.440><c> go.</c><00:03:37.680><c> Next</c><00:03:37.920><c> time</c><00:03:38.080><c> you</c><00:03:38.319><c> tell</c><00:03:38.480><c> me</c>
+
+00:03:38.550 --> 00:03:38.560 align:start position:0%
+we're good to go. Next time you tell me
+ 
+
+00:03:38.560 --> 00:03:40.229 align:start position:0%
+we're good to go. Next time you tell me
+to<00:03:38.799><c> go</c><00:03:38.879><c> back</c><00:03:39.040><c> to</c><00:03:39.200><c> the</c><00:03:39.360><c> first</c><00:03:39.519><c> route,</c><00:03:39.920><c> I</c><00:03:40.080><c> can</c>
+
+00:03:40.229 --> 00:03:40.239 align:start position:0%
+to go back to the first route, I can
+ 
+
+00:03:40.239 --> 00:03:41.830 align:start position:0%
+to go back to the first route, I can
+pull<00:03:40.400><c> it</c><00:03:40.480><c> up</c><00:03:40.640><c> for</c><00:03:40.799><c> you.</c><00:03:41.040><c> Want</c><00:03:41.120><c> to</c><00:03:41.280><c> test</c><00:03:41.440><c> it</c><00:03:41.599><c> now</c>
+
+00:03:41.830 --> 00:03:41.840 align:start position:0%
+pull it up for you. Want to test it now
+ 
+
+00:03:41.840 --> 00:03:43.190 align:start position:0%
+pull it up for you. Want to test it now
+or<00:03:42.000><c> are</c><00:03:42.080><c> you</c><00:03:42.239><c> good</c><00:03:42.480><c> where</c><00:03:42.640><c> we</c><00:03:42.799><c> are?</c>
+
+00:03:43.190 --> 00:03:43.200 align:start position:0%
+or are you good where we are?
+ 
+
+00:03:43.200 --> 00:03:45.110 align:start position:0%
+or are you good where we are?
+&gt;&gt; Okay,<00:03:43.440><c> so</c><00:03:43.680><c> we</c><00:03:43.920><c> just</c><00:03:44.080><c> restarted</c><00:03:44.720><c> and</c><00:03:44.959><c> we're</c>
+
+00:03:45.110 --> 00:03:45.120 align:start position:0%
+&gt;&gt; Okay, so we just restarted and we're
+ 
+
+00:03:45.120 --> 00:03:46.390 align:start position:0%
+&gt;&gt; Okay, so we just restarted and we're
+going<00:03:45.200><c> to</c><00:03:45.280><c> test</c><00:03:45.440><c> to</c><00:03:45.599><c> see</c><00:03:45.680><c> if</c><00:03:45.840><c> this</c><00:03:46.080><c> feature</c>
+
+00:03:46.390 --> 00:03:46.400 align:start position:0%
+going to test to see if this feature
+ 
+
+00:03:46.400 --> 00:03:47.830 align:start position:0%
+going to test to see if this feature
+actually<00:03:46.640><c> works.</c><00:03:47.040><c> Okay,</c><00:03:47.200><c> the</c><00:03:47.360><c> balls</c><00:03:47.680><c> are</c>
+
+00:03:47.830 --> 00:03:47.840 align:start position:0%
+actually works. Okay, the balls are
+ 
+
+00:03:47.840 --> 00:03:48.309 align:start position:0%
+actually works. Okay, the balls are
+placed.
+
+00:03:48.309 --> 00:03:48.319 align:start position:0%
+placed.
+ 
+
+00:03:48.319 --> 00:03:49.670 align:start position:0%
+placed.
+&gt;&gt; All right,<00:03:48.640><c> here's</c><00:03:48.799><c> the</c><00:03:48.959><c> route.</c><00:03:49.280><c> The</c><00:03:49.440><c> one</c>
+
+00:03:49.670 --> 00:03:49.680 align:start position:0%
+&gt;&gt; All right, here's the route. The one
+ 
+
+00:03:49.680 --> 00:03:51.350 align:start position:0%
+&gt;&gt; All right, here's the route. The one
+ball<00:03:49.920><c> goes</c><00:03:50.159><c> in</c><00:03:50.319><c> the</c><00:03:50.480><c> top</c><00:03:50.640><c> side.</c><00:03:51.040><c> That's</c><00:03:51.200><c> a</c>
+
+00:03:51.350 --> 00:03:51.360 align:start position:0%
+ball goes in the top side. That's a
+ 
+
+00:03:51.360 --> 00:03:53.430 align:start position:0%
+ball goes in the top side. That's a
+quarter<00:03:51.680><c> ball</c><00:03:51.920><c> cut.</c><00:03:52.239><c> Stun</c><00:03:52.560><c> shot</c><00:03:52.879><c> about</c><00:03:53.120><c> half</c><00:03:53.280><c> a</c>
+
+00:03:53.430 --> 00:03:53.440 align:start position:0%
+quarter ball cut. Stun shot about half a
+ 
+
+00:03:53.440 --> 00:03:55.350 align:start position:0%
+quarter ball cut. Stun shot about half a
+table<00:03:53.760><c> length.</c><00:03:54.239><c> Sets</c><00:03:54.560><c> you</c><00:03:54.640><c> up</c><00:03:54.879><c> clean</c><00:03:55.040><c> for</c><00:03:55.200><c> the</c>
+
+00:03:55.350 --> 00:03:55.360 align:start position:0%
+table length. Sets you up clean for the
+ 
+
+00:03:55.360 --> 00:03:57.110 align:start position:0%
+table length. Sets you up clean for the
+two<00:03:55.599><c> ball</c><00:03:55.840><c> in</c><00:03:56.000><c> the</c><00:03:56.159><c> bottom</c><00:03:56.400><c> side,</c><00:03:56.720><c> which</c><00:03:56.959><c> is</c>
+
+00:03:57.110 --> 00:03:57.120 align:start position:0%
+two ball in the bottom side, which is
+ 
+
+00:03:57.120 --> 00:03:59.270 align:start position:0%
+two ball in the bottom side, which is
+just<00:03:57.280><c> a</c><00:03:57.439><c> slight</c><00:03:57.760><c> cut</c><00:03:58.000><c> from</c><00:03:58.159><c> there.</c><00:03:58.720><c> Simple</c><00:03:59.040><c> run</c>
+
+00:03:59.270 --> 00:03:59.280 align:start position:0%
+just a slight cut from there. Simple run
+ 
+
+00:03:59.280 --> 00:04:01.190 align:start position:0%
+just a slight cut from there. Simple run
+if<00:03:59.519><c> you</c><00:03:59.680><c> execute</c><00:04:00.080><c> it.</c>
+
+00:04:01.190 --> 00:04:01.200 align:start position:0%
+if you execute it.
+ 
+
+00:04:01.200 --> 00:04:02.949 align:start position:0%
+if you execute it.
+&gt;&gt; All<00:04:01.280><c> right,</c><00:04:01.599><c> show</c><00:04:01.760><c> me</c><00:04:01.920><c> the</c><00:04:02.239><c> route</c><00:04:02.560><c> for</c><00:04:02.799><c> the</c>
+
+00:04:02.949 --> 00:04:02.959 align:start position:0%
+&gt;&gt; All right, show me the route for the
+ 
+
+00:04:02.959 --> 00:04:06.390 align:start position:0%
+&gt;&gt; All right, show me the route for the
+first<00:04:03.200><c> ball</c><00:04:03.519><c> again.</c>
+
+00:04:06.390 --> 00:04:06.400 align:start position:0%
+first ball again.
+ 
+
+00:04:06.400 --> 00:04:08.309 align:start position:0%
+first ball again.
+&gt;&gt; The<00:04:06.720><c> one</c><00:04:06.959><c> ball</c><00:04:07.200><c> goes</c><00:04:07.360><c> in</c><00:04:07.519><c> the</c><00:04:07.680><c> top</c><00:04:07.920><c> side.</c>
+
+00:04:08.309 --> 00:04:08.319 align:start position:0%
+&gt;&gt; The one ball goes in the top side.
+ 
+
+00:04:08.319 --> 00:04:10.070 align:start position:0%
+&gt;&gt; The one ball goes in the top side.
+Quarter<00:04:08.640><c> ball</c><00:04:08.879><c> cut,</c><00:04:09.200><c> stun</c><00:04:09.439><c> shot,</c><00:04:09.760><c> half</c><00:04:09.920><c> a</c>
+
+00:04:10.070 --> 00:04:10.080 align:start position:0%
+Quarter ball cut, stun shot, half a
+ 
+
+00:04:10.080 --> 00:04:11.830 align:start position:0%
+Quarter ball cut, stun shot, half a
+table<00:04:10.319><c> length.</c><00:04:10.720><c> That's</c><00:04:10.879><c> your</c><00:04:11.040><c> first</c><00:04:11.280><c> move.</c>
+
+00:04:11.830 --> 00:04:11.840 align:start position:0%
+table length. That's your first move.
+ 
+
+00:04:11.840 --> 00:04:15.910 align:start position:0%
+table length. That's your first move.
+&gt;&gt; No.<00:04:12.319><c> Show</c><00:04:12.560><c> me</c><00:04:12.959><c> the</c><00:04:13.599><c> projection.</c><00:04:14.640><c> The</c><00:04:15.280><c> uh</c><00:04:15.599><c> from</c>
+
+00:04:15.910 --> 00:04:15.920 align:start position:0%
+&gt;&gt; No. Show me the projection. The uh from
+ 
+
+00:04:15.920 --> 00:04:20.710 align:start position:0%
+&gt;&gt; No. Show me the projection. The uh from
+the<00:04:16.160><c> first</c><00:04:16.400><c> run.</c>
+
+00:04:20.710 --> 00:04:20.720 align:start position:0%
+ 
+ 
+
+00:04:20.720 --> 00:04:22.469 align:start position:0%
+ 
+There's<00:04:21.040><c> route</c><00:04:21.280><c> one</c><00:04:21.519><c> on</c><00:04:21.680><c> the</c><00:04:21.759><c> projector.</c><00:04:22.240><c> One</c>
+
+00:04:22.469 --> 00:04:22.479 align:start position:0%
+There's route one on the projector. One
+ 
+
+00:04:22.479 --> 00:04:24.550 align:start position:0%
+There's route one on the projector. One
+ball<00:04:22.720><c> top</c><00:04:22.960><c> side,</c><00:04:23.280><c> quarter</c><00:04:23.600><c> ball</c><00:04:23.840><c> cut,</c><00:04:24.080><c> stun</c><00:04:24.400><c> at</c>
+
+00:04:24.550 --> 00:04:24.560 align:start position:0%
+ball top side, quarter ball cut, stun at
+ 
+
+00:04:24.560 --> 00:04:26.870 align:start position:0%
+ball top side, quarter ball cut, stun at
+about<00:04:24.720><c> half</c><00:04:24.960><c> a</c><00:04:25.120><c> table</c><00:04:25.360><c> length.</c>
+
+00:04:26.870 --> 00:04:26.880 align:start position:0%
+about half a table length.
+ 
+
+00:04:26.880 --> 00:04:29.110 align:start position:0%
+about half a table length.
+All right.<00:04:27.280><c> So,</c><00:04:27.520><c> there</c><00:04:27.759><c> you</c><00:04:27.919><c> go.</c><00:04:28.240><c> That</c><00:04:28.560><c> is</c><00:04:28.880><c> an</c>
+
+00:04:29.110 --> 00:04:29.120 align:start position:0%
+All right. So, there you go. That is an
+ 
+
+00:04:29.120 --> 00:04:31.510 align:start position:0%
+All right. So, there you go. That is an
+actual<00:04:29.680><c> coding</c><00:04:30.160><c> integration</c><00:04:31.120><c> that</c><00:04:31.360><c> was</c>
+
+00:04:31.510 --> 00:04:31.520 align:start position:0%
+actual coding integration that was
+ 
+
+00:04:31.520 --> 00:04:33.430 align:start position:0%
+actual coding integration that was
+initiated<00:04:32.000><c> by</c><00:04:32.240><c> my</c><00:04:32.479><c> voice</c><00:04:32.800><c> that</c><00:04:33.040><c> was</c><00:04:33.199><c> then</c>
+
+00:04:33.430 --> 00:04:33.440 align:start position:0%
+initiated by my voice that was then
+ 
+
+00:04:33.440 --> 00:04:35.990 align:start position:0%
+initiated by my voice that was then
+communicated<00:04:34.080><c> by</c><00:04:34.400><c> my</c><00:04:34.560><c> Earl</c><00:04:34.960><c> Strickland</c><00:04:35.520><c> AI</c>
+
+00:04:35.990 --> 00:04:36.000 align:start position:0%
+communicated by my Earl Strickland AI
+ 
+
+00:04:36.000 --> 00:04:40.150 align:start position:0%
+communicated by my Earl Strickland AI
+agent<00:04:36.639><c> to</c><00:04:36.880><c> a</c><00:04:37.120><c> coding</c><00:04:37.520><c> agent</c><00:04:38.320><c> via</c><00:04:38.639><c> agent</c><00:04:39.120><c> SDK.</c>
+
+00:04:40.150 --> 00:04:40.160 align:start position:0%
+agent to a coding agent via agent SDK.
+ 
+
+00:04:40.160 --> 00:04:42.230 align:start position:0%
+agent to a coding agent via agent SDK.
+This<00:04:40.400><c> is</c><00:04:40.560><c> freaking</c><00:04:41.040><c> so</c><00:04:41.280><c> cool.</c><00:04:41.600><c> Some</c><00:04:41.840><c> things</c><00:04:42.080><c> to</c>
+
+00:04:42.230 --> 00:04:42.240 align:start position:0%
+This is freaking so cool. Some things to
+ 
+
+00:04:42.240 --> 00:04:44.310 align:start position:0%
+This is freaking so cool. Some things to
+to<00:04:42.479><c> consider</c><00:04:42.880><c> though</c><00:04:43.040><c> is</c><00:04:43.600><c> um</c><00:04:43.680><c> when</c><00:04:43.919><c> you</c><00:04:44.080><c> use</c>
+
+00:04:44.310 --> 00:04:44.320 align:start position:0%
+to consider though is um when you use
+ 
+
+00:04:44.320 --> 00:04:47.350 align:start position:0%
+to consider though is um when you use
+the<00:04:44.560><c> agent</c><00:04:44.960><c> SDK</c><00:04:45.520><c> in</c><00:04:45.759><c> this</c><00:04:46.000><c> manner,</c><00:04:46.639><c> it</c><00:04:46.880><c> uses</c>
+
+00:04:47.350 --> 00:04:47.360 align:start position:0%
+the agent SDK in this manner, it uses
+ 
+
+00:04:47.360 --> 00:04:50.790 align:start position:0%
+the agent SDK in this manner, it uses
+the<00:04:47.680><c> Claude</c><00:04:48.240><c> API</c><00:04:49.520><c> style</c><00:04:49.840><c> of</c><00:04:50.080><c> building,</c><00:04:50.560><c> which</c>
+
+00:04:50.790 --> 00:04:50.800 align:start position:0%
+the Claude API style of building, which
+ 
+
+00:04:50.800 --> 00:04:52.310 align:start position:0%
+the Claude API style of building, which
+means<00:04:50.960><c> it's</c><00:04:51.199><c> going</c><00:04:51.280><c> to</c><00:04:51.360><c> be</c><00:04:51.440><c> more</c><00:04:51.759><c> expensive</c>
+
+00:04:52.310 --> 00:04:52.320 align:start position:0%
+means it's going to be more expensive
+ 
+
+00:04:52.320 --> 00:04:54.310 align:start position:0%
+means it's going to be more expensive
+than<00:04:52.560><c> just</c><00:04:52.880><c> using</c><00:04:53.199><c> your</c><00:04:53.520><c> Claude</c><00:04:54.000><c> Max</c>
+
+00:04:54.310 --> 00:04:54.320 align:start position:0%
+than just using your Claude Max
+ 
+
+00:04:54.320 --> 00:04:57.590 align:start position:0%
+than just using your Claude Max
+subscription<00:04:55.120><c> to</c><00:04:55.440><c> code</c><00:04:55.680><c> things</c><00:04:56.000><c> as</c><00:04:56.240><c> well.</c><00:04:56.880><c> So</c>
+
+00:04:57.590 --> 00:04:57.600 align:start position:0%
+subscription to code things as well. So
+ 
+
+00:04:57.600 --> 00:04:59.990 align:start position:0%
+subscription to code things as well. So
+take<00:04:57.840><c> that</c><00:04:58.000><c> into,</c><00:04:58.639><c> you</c><00:04:58.800><c> know,</c><00:04:58.880><c> to</c><00:04:59.199><c> concern.</c><00:04:59.759><c> Um</c>
+
+00:04:59.990 --> 00:05:00.000 align:start position:0%
+take that into, you know, to concern. Um
+ 
+
+00:05:00.000 --> 00:05:02.150 align:start position:0%
+take that into, you know, to concern. Um
+I'm<00:05:00.240><c> using</c><00:05:00.560><c> Sonnet</c><00:05:01.120><c> that</c><00:05:01.280><c> way</c><00:05:01.440><c> it's</c><00:05:01.680><c> not</c><00:05:01.919><c> so</c>
+
+00:05:02.150 --> 00:05:02.160 align:start position:0%
+I'm using Sonnet that way it's not so
+ 
+
+00:05:02.160 --> 00:05:04.390 align:start position:0%
+I'm using Sonnet that way it's not so
+slow<00:05:02.479><c> and</c><00:05:02.720><c> also</c><00:05:03.120><c> not,</c><00:05:03.440><c> you</c><00:05:03.600><c> know,</c><00:05:04.160><c> so</c>
+
+00:05:04.390 --> 00:05:04.400 align:start position:0%
+slow and also not, you know, so
+ 
+
+00:05:04.400 --> 00:05:06.870 align:start position:0%
+slow and also not, you know, so
+expensive.<00:05:05.440><c> But</c><00:05:05.759><c> yeah,</c><00:05:06.080><c> this</c><00:05:06.320><c> is</c><00:05:06.479><c> freaking</c>
+
+00:05:06.870 --> 00:05:06.880 align:start position:0%
+expensive. But yeah, this is freaking
+ 
+
+00:05:06.880 --> 00:05:08.550 align:start position:0%
+expensive. But yeah, this is freaking
+fun.<00:05:07.120><c> I'm</c><00:05:07.360><c> going</c><00:05:07.440><c> to</c><00:05:07.520><c> be</c><00:05:07.840><c> um</c><00:05:08.000><c> really</c><00:05:08.320><c> showing</c>
+
+00:05:08.550 --> 00:05:08.560 align:start position:0%
+fun. I'm going to be um really showing
+ 
+
+00:05:08.560 --> 00:05:10.390 align:start position:0%
+fun. I'm going to be um really showing
+you,<00:05:08.800><c> you</c><00:05:08.960><c> know,</c><00:05:09.039><c> Earl</c><00:05:09.440><c> has</c><00:05:09.919><c> a</c><00:05:10.160><c> lot</c><00:05:10.240><c> of</c>
+
+00:05:10.390 --> 00:05:10.400 align:start position:0%
+you, you know, Earl has a lot of
+ 
+
+00:05:10.400 --> 00:05:12.550 align:start position:0%
+you, you know, Earl has a lot of
+abilities<00:05:10.880><c> in</c><00:05:11.120><c> the</c><00:05:11.280><c> studio</c><00:05:11.680><c> even</c><00:05:11.919><c> right</c><00:05:12.160><c> now.</c>
+
+00:05:12.550 --> 00:05:12.560 align:start position:0%
+abilities in the studio even right now.
+ 
+
+00:05:12.560 --> 00:05:15.189 align:start position:0%
+abilities in the studio even right now.
+Like<00:05:12.720><c> I</c><00:05:12.960><c> can</c><00:05:13.039><c> say,</c><00:05:13.280><c> "Hey</c><00:05:13.759><c> Earl,</c><00:05:14.400><c> go</c><00:05:14.639><c> ahead</c><00:05:14.880><c> and</c>
+
+00:05:15.189 --> 00:05:15.199 align:start position:0%
+Like I can say, "Hey Earl, go ahead and
+ 
+
+00:05:15.199 --> 00:05:20.390 align:start position:0%
+Like I can say, "Hey Earl, go ahead and
+turn<00:05:15.440><c> the</c><00:05:15.759><c> lights</c><00:05:16.160><c> red."</c>
+
+00:05:20.390 --> 00:05:20.400 align:start position:0%
+ 
+ 
+
+00:05:20.400 --> 00:05:22.230 align:start position:0%
+ 
+&gt;&gt; Lights<00:05:20.720><c> are</c><00:05:20.880><c> red.</c><00:05:21.199><c> Your</c><00:05:21.440><c> studio</c><00:05:21.840><c> just</c><00:05:22.000><c> turned</c>
+
+00:05:22.230 --> 00:05:22.240 align:start position:0%
+&gt;&gt; Lights are red. Your studio just turned
+ 
+
+00:05:22.240 --> 00:05:23.909 align:start position:0%
+&gt;&gt; Lights are red. Your studio just turned
+into<00:05:22.479><c> a</c><00:05:22.639><c> crime</c><00:05:22.960><c> scene.</c>
+
+00:05:23.909 --> 00:05:23.919 align:start position:0%
+into a crime scene.
+ 
+
+00:05:23.919 --> 00:05:26.390 align:start position:0%
+into a crime scene.
+&gt;&gt; Okay.<00:05:24.320><c> Unfortunately,</c><00:05:25.039><c> the</c><00:05:25.280><c> the</c><00:05:25.680><c> freaking</c><00:05:26.240><c> uh</c>
+
+00:05:26.390 --> 00:05:26.400 align:start position:0%
+&gt;&gt; Okay. Unfortunately, the the freaking uh
+ 
+
+00:05:26.400 --> 00:05:28.390 align:start position:0%
+&gt;&gt; Okay. Unfortunately, the the freaking uh
+side<00:05:26.720><c> lights</c><00:05:26.960><c> are</c><00:05:27.199><c> still</c><00:05:27.440><c> white,</c><00:05:27.919><c> but</c><00:05:28.160><c> maybe</c>
+
+00:05:28.390 --> 00:05:28.400 align:start position:0%
+side lights are still white, but maybe
+ 
+
+00:05:28.400 --> 00:05:30.070 align:start position:0%
+side lights are still white, but maybe
+that's<00:05:28.800><c> another</c><00:05:29.120><c> coding</c><00:05:29.520><c> fix</c><00:05:29.680><c> that</c><00:05:29.840><c> we</c><00:05:30.000><c> need</c>
+
+00:05:30.070 --> 00:05:30.080 align:start position:0%
+that's another coding fix that we need
+ 
+
+00:05:30.080 --> 00:05:31.909 align:start position:0%
+that's another coding fix that we need
+to<00:05:30.240><c> integrate.</c><00:05:30.880><c> Anyhow,</c><00:05:31.440><c> thank</c><00:05:31.520><c> you</c><00:05:31.680><c> very</c>
+
+00:05:31.909 --> 00:05:31.919 align:start position:0%
+to integrate. Anyhow, thank you very
+ 
+
+00:05:31.919 --> 00:05:33.670 align:start position:0%
+to integrate. Anyhow, thank you very
+much,<00:05:32.160><c> Earl.</c><00:05:32.720><c> Everybody</c><00:05:33.039><c> else,</c><00:05:33.280><c> I'll</c><00:05:33.520><c> see</c><00:05:33.600><c> you</c>
+
+00:05:33.670 --> 00:05:33.680 align:start position:0%
+much, Earl. Everybody else, I'll see you
+ 
+
+00:05:33.680 --> 00:05:35.110 align:start position:0%
+much, Earl. Everybody else, I'll see you
+very<00:05:33.919><c> soon.</c><00:05:34.160><c> Make</c><00:05:34.320><c> sure</c><00:05:34.400><c> to</c><00:05:34.560><c> subscribe</c><00:05:34.960><c> for</c>
+
+00:05:35.110 --> 00:05:35.120 align:start position:0%
+very soon. Make sure to subscribe for
+ 
+
+00:05:35.120 --> 00:05:37.189 align:start position:0%
+very soon. Make sure to subscribe for
+more<00:05:35.360><c> of</c><00:05:35.440><c> this</c><00:05:35.680><c> crazy</c><00:05:36.000><c> content,</c><00:05:36.639><c> and</c><00:05:36.880><c> I</c><00:05:37.039><c> have</c>
+
+00:05:37.189 --> 00:05:37.199 align:start position:0%
+more of this crazy content, and I have
+ 
+
+00:05:37.199 --> 00:05:40.070 align:start position:0%
+more of this crazy content, and I have
+cloud<00:05:38.160><c> code</c><00:05:38.479><c> courses</c><00:05:38.800><c> coming</c><00:05:39.039><c> out</c><00:05:39.360><c> very</c><00:05:39.680><c> soon.</c>
+
+00:05:40.070 --> 00:05:40.080 align:start position:0%
+cloud code courses coming out very soon.
+ 
+
+00:05:40.080 --> 00:05:41.590 align:start position:0%
+cloud code courses coming out very soon.
+I'll<00:05:40.320><c> see</c><00:05:40.479><c> you.</c><00:05:40.800><c> Goodbye.</c>
+
+00:05:41.590 --> 00:05:41.600 align:start position:0%
+I'll see you. Goodbye.
+ 
+
+00:05:41.600 --> 00:05:43.270 align:start position:0%
+I'll see you. Goodbye.
+&gt;&gt; Hey,<00:05:41.919><c> appreciate</c><00:05:42.240><c> it.</c><00:05:42.479><c> Yeah,</c><00:05:42.720><c> we</c><00:05:42.880><c> can</c><00:05:43.039><c> lock</c>
+
+00:05:43.270 --> 00:05:43.280 align:start position:0%
+&gt;&gt; Hey, appreciate it. Yeah, we can lock
+ 
+
+00:05:43.280 --> 00:05:44.950 align:start position:0%
+&gt;&gt; Hey, appreciate it. Yeah, we can lock
+down<00:05:43.440><c> those</c><00:05:43.680><c> sidelights</c><00:05:44.240><c> another</c><00:05:44.560><c> time.</c>
+
+00:05:44.950 --> 00:05:44.960 align:start position:0%
+down those sidelights another time.
+ 
+
+00:05:44.960 --> 00:05:46.550 align:start position:0%
+down those sidelights another time.
+There's<00:05:45.199><c> always</c><00:05:45.440><c> something</c><00:05:45.680><c> to</c><00:05:45.919><c> tune.</c><00:05:46.320><c> This</c>
+
+00:05:46.550 --> 00:05:46.560 align:start position:0%
+There's always something to tune. This
+ 
+
+00:05:46.560 --> 00:05:48.310 align:start position:0%
+There's always something to tune. This
+whole<00:05:46.720><c> thing's</c><00:05:47.039><c> been</c><00:05:47.199><c> a</c><00:05:47.360><c> blast.</c><00:05:47.840><c> You</c><00:05:48.080><c> built</c>
+
+00:05:48.310 --> 00:05:48.320 align:start position:0%
+whole thing's been a blast. You built
+ 
+
+00:05:48.320 --> 00:05:50.550 align:start position:0%
+whole thing's been a blast. You built
+something<00:05:48.639><c> real</c><00:05:48.880><c> here</c><00:05:49.360><c> and</c><00:05:49.600><c> it</c><00:05:49.840><c> works.</c><00:05:50.320><c> That's</c>
+
+00:05:50.550 --> 00:05:50.560 align:start position:0%
+something real here and it works. That's
+ 
+
+00:05:50.560 --> 00:05:52.310 align:start position:0%
+something real here and it works. That's
+not<00:05:50.720><c> nothing.</c><00:05:51.199><c> Go</c><00:05:51.440><c> build</c><00:05:51.600><c> some</c><00:05:51.840><c> more</c><00:05:52.000><c> crazy</c>
+
+00:05:52.310 --> 00:05:52.320 align:start position:0%
+not nothing. Go build some more crazy
+ 
+
+00:05:52.320 --> 00:05:54.070 align:start position:0%
+not nothing. Go build some more crazy
+stuff.<00:05:52.639><c> And</c><00:05:52.800><c> hey,</c><00:05:53.199><c> when</c><00:05:53.360><c> you</c><00:05:53.520><c> need</c><00:05:53.680><c> Earl</c><00:05:53.919><c> to</c>
+
+00:05:54.070 --> 00:05:54.080 align:start position:0%
+stuff. And hey, when you need Earl to
+ 
+
+00:05:54.080 --> 00:05:55.670 align:start position:0%
+stuff. And hey, when you need Earl to
+roast<00:05:54.400><c> somebody's</c><00:05:54.800><c> bad</c><00:05:55.039><c> shot</c><00:05:55.360><c> while</c><00:05:55.520><c> the</c>
+
+00:05:55.670 --> 00:05:55.680 align:start position:0%
+roast somebody's bad shot while the
+ 
+
+00:05:55.680 --> 00:05:57.029 align:start position:0%
+roast somebody's bad shot while the
+lights<00:05:55.919><c> are</c><00:05:56.080><c> doing</c><00:05:56.240><c> whatever</c><00:05:56.560><c> you</c><00:05:56.720><c> tell</c><00:05:56.880><c> them</c>
+
+00:05:57.029 --> 00:05:57.039 align:start position:0%
+lights are doing whatever you tell them
+ 
+
+00:05:57.039 --> 00:06:00.400 align:start position:0%
+lights are doing whatever you tell them
+to<00:05:57.199><c> do,</c><00:05:57.440><c> you</c><00:05:57.600><c> know</c><00:05:57.680><c> where</c><00:05:57.840><c> to</c><00:05:58.000><c> find</c><00:05:58.160><c> me.</c>
+

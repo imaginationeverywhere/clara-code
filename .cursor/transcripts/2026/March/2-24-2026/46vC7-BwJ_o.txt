@@ -1,0 +1,507 @@
+Title: SEO Is Dead. Claude Code Just Built Its Replacement (It's FREE)
+Video ID: 46vC7-BwJ_o
+URL: https://www.youtube.com/watch?v=46vC7-BwJ_o
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Agencies are charging 5 to12,000 a month
+[00:02] for something called GEO, which stands
+[00:04] for generative engine optimization. It's
+[00:07] basically the future of SEO. And let me
+[00:09] explain why. If you've searched anything
+[00:10] on Google lately, you've probably
+[00:12] noticed that AI answers sitting right at
+[00:14] the top. Now, most people read that and
+[00:16] never click a single link. [music] And
+[00:18] it's just not Google. People are going
+[00:19] straight to Chat GPT, straight to
+[00:21] Perexity, asking their questions there
+[00:24] instead of searching. So the problem is
+[00:26] when someone asks AI for recommendation
+[00:28] in your industry, does your website show
+[00:30] up? For most businesses, the answer is
+[00:32] no. They're completely invisible to AI
+[00:34] [music] search. And that's only going to
+[00:36] get worse because AI search traffic is
+[00:38] growing over 500% yearover-year. I built
+[00:41] a tool with cloud code that audits any
+[00:44] website and tells you exactly where they
+[00:46] stand with AI search, what's broken,
+[00:49] what's missing, and how to fix it. It
+[00:51] just hit 2,600 stars on GitHub in a few
+[00:53] weeks, which is insane. So, in this
+[00:55] video, I'm going to show you exactly how
+[00:57] to install it in your computer, step by
+[01:00] step, how to use it, and also I'm going
+[01:02] to talk about at the end of the video
+[01:03] how you can monetize this if you are an
+[01:04] agency owner. All right, let's jump
+[01:06] right in. So, before I run this live on
+[01:08] a new website, take a look at this. I
+[01:09] already ran the full audit on this
+[01:11] website called dscript.com, which is one
+[01:13] of the most popular video editing tools
+[01:15] out there in the market. And this is
+[01:16] what it produced. It ran 11 skills and
+[01:20] five AI agents at the same time and it
+[01:22] came back with a full GEO report. Look
+[01:24] at this. Right at the top, you've got
+[01:26] the overall GEO score. So, Dcript got 58
+[01:29] out of 100, which is not that great,
+[01:31] which means there's lots of room for
+[01:32] improvement. And you got these score
+[01:34] gauges breaking down each category. AI
+[01:36] citability, brand authority, technical,
+[01:39] content, quality, schema. Each one is
+[01:41] scored individually so you can see
+[01:43] exactly where the weak spots are. this
+[01:46] bar chart showing how they stack up
+[01:48] across every [music] area and you can
+[01:50] immediately see what's wrong and what
+[01:52] needs work. This is one actually one of
+[01:54] my favorite parts right here. It shows
+[01:55] you how Dcript performs on each AI
+[01:58] platform individually because chat,
+[02:00] Perplexity, Google AI overviews, Gemini,
+[02:03] they all work differently. So a site
+[02:05] might show up great on one but be
+[02:07] invisible on another. And then here at
+[02:10] the bottom you've got the critical
+[02:11] findings, the things that actually are
+[02:13] hurting their AI visibility. and a
+[02:16] prioritize action plan that tells you
+[02:18] exactly what to fix and in what order.
+[02:20] This right here is what you would send
+[02:22] to a client. You don't need to build a
+[02:24] PowerPoint. You don't need to write
+[02:26] anything from scratch. This PDF report
+[02:28] is deliverable. Agencies are charging
+[02:31] thousands of dollars for a report like
+[02:33] this and they spend a week putting it
+[02:35] together. I did this in about 60 seconds
+[02:38] with this amazing clot uh code tool that
+[02:40] I created. So now let me show you how
+[02:42] this works on a real website. I'm going
+[02:44] to run this live on a different website
+[02:46] so you can see the whole thing from
+[02:47] start to finish. All right. So, I'm
+[02:49] going to run this on a brand new website
+[02:50] and then I'm going to show you how this
+[02:52] works, what's going on in the
+[02:54] background, and then show you exactly
+[02:55] how to download this so you can run this
+[02:57] yourself. So, right now I'm in my Cloud
+[02:59] Code instance. I'm using this inside uh
+[03:01] my Visual Studio Code IDE. Again, if
+[03:04] you're not familiar, I'll explain all of
+[03:05] this in a little bit. So, what I'm going
+[03:07] to do is actually run this on this
+[03:09] website called Type Form. So, Type Form
+[03:11] for those of you who are not familiar is
+[03:13] one of the most popular kind of form
+[03:15] building websites. I mean, they have
+[03:16] other other services as well, but
+[03:18] they're uh used by majority of the
+[03:21] bigger companies. Uh so, let's go ahead
+[03:23] and run this for this particular
+[03:25] website. So, what I'm going to do is
+[03:27] just type slash. For those of you who
+[03:29] are not familiar, slash uh you have the
+[03:31] ability to invoke cloth skills. Again,
+[03:33] I'm going to explain everything in a
+[03:34] little bit. So, I'm just going to type
+[03:36] slash geo-
+[03:39] audit. There you go. So you can see
+[03:41] those are the commands that show up. And
+[03:43] now I'm just going to literally paste
+[03:44] that type form.com. Right? And you can
+[03:46] run this with any website just like
+[03:48] this. So I'm going to press enter. So
+[03:50] now what's going to happen is now claude
+[03:52] code is going to run the entire GEO
+[03:56] audit on this particular website. As you
+[03:59] can see there are different phases here.
+[04:00] Phase one is discovery and fetching the
+[04:03] homepage and detect business type. Phase
+[04:05] two is running five parallel sub aent
+[04:07] analysis. And phase three is aggregate
+[04:10] scores and generating the GEO audit. So
+[04:12] this is going to take some time because
+[04:13] obviously this is a pretty comprehensive
+[04:16] um um you know process. So while this is
+[04:18] happening, let's go ahead and let me
+[04:20] show you exactly what's going on. So to
+[04:21] access this, I'm going to put the link
+[04:23] in the description. This is the entire
+[04:25] GitHub repository that you have full
+[04:27] access to where basically it explains
+[04:29] everything and what this is and how to
+[04:32] install it. It's very simple to install.
+[04:34] All you have to do if you can use the
+[04:36] one command installed, you just had to
+[04:37] copy this and paste it on your terminal
+[04:39] and it will install all of these
+[04:41] different skills. So let me explain
+[04:42] exactly what this GEO audit includes or
+[04:46] this entire repository. So first of all,
+[04:49] for those of you who are not familiar
+[04:50] with skills in cloud code, skills are
+[04:52] basically plugins. it it's instructions
+[04:56] that gives claude code the ability to
+[04:58] become quote unquote expert on a
+[05:00] particular topic because generally uh
+[05:03] claude code is a uh obviously AI
+[05:07] assistant but in order for you to give
+[05:09] it a specific task or make it become an
+[05:11] expert on something specific you give it
+[05:14] skills now skills to put it in simple
+[05:16] words it's basically a set of
+[05:18] instructions so this geo audit right
+[05:21] here so if you if I click on this this
+[05:24] skills.md this is a markdown file. If I
+[05:26] click on the inside of this what this is
+[05:28] doing is basically giving claude code
+[05:31] instructions like detailed instruction
+[05:33] of what to do what to run and everything
+[05:36] else that's that's necessary. So as you
+[05:38] can see right here it has a purpose
+[05:39] right the key insights the audit
+[05:42] workflow it has phase one phase 2 phase
+[05:44] three right so that phase one just like
+[05:46] we saw here just like it's running so on
+[05:48] the top right here when we ran this
+[05:49] phase one phase 2 phase three phase one
+[05:52] is fa fetching and discovering the
+[05:54] homepage for that particular
+[05:55] [clears throat] website phase 2 is
+[05:57] running five parallel sub aent analysis
+[05:59] this is one I want to point out so the
+[06:01] reason why it's saying all of this and
+[06:03] the reason why it can run these five
+[06:05] parallel sub aents as you can see right
+[06:07] here is because on this uh claude skill
+[06:11] this go audit skills.mmd file as you can
+[06:14] see I have this phase the discovery and
+[06:16] reconnaissance right in phase two is
+[06:18] going to uh parallel sub aent delegation
+[06:21] I'm specifying hey delegate analysis to
+[06:24] five specialized sub aents each sub aent
+[06:27] operates on collected page data and
+[06:29] produces a category score from 0 to 100
+[06:32] there's five agents here the first sub
+[06:34] agent is going to uh figure out the AI
+[06:36] side ility analysis, right? It's going
+[06:38] to analyze the content uh blocks for
+[06:41] codability by AI systems scores and sub
+[06:44] aent 2 is going to do brand analysis,
+[06:46] sub aent 3 technical GEO infrastructure
+[06:48] and so on and so forth. So if you could
+[06:50] think about it this way in a very simple
+[06:52] turn when you give clot code sub aents
+[06:55] it's like basically let's say somebody's
+[06:58] trying to build a house right you hire a
+[06:59] main contractor now in order for the
+[07:03] house to be built in more efficient and
+[07:05] quickest and fastest way you have the
+[07:07] contractor hire subcontractors that's
+[07:10] that's [music]
+[07:11] tasked to do a specific things in order
+[07:14] to build this house. So for instance,
+[07:15] subcontractor one could be building the
+[07:18] electricity part of the house, right? It
+[07:20] could be the electrician. Subcontractor
+[07:21] two will be in charge of concrete and
+[07:23] the infrastructure of the house.
+[07:24] Subcontract subcontractor 3 will be kind
+[07:27] of doing the HVAC system and so on and
+[07:29] so forth. And in phase three again it
+[07:31] will go ahead and [music] generate the
+[07:33] aggregate report here. And then
+[07:34] afterwards you'll see we have another uh
+[07:37] skill called uh geo report or GEO report
+[07:41] PDF is where you saw in the beginning
+[07:43] where I generated that PDF. will run
+[07:45] this. So that way we can that way cloud
+[07:47] code could generate a nice PDF for us.
+[07:49] Then we can send this to clients or send
+[07:52] this to basically when we're talking to
+[07:54] somebody uh we can have this nice little
+[07:57] structured formatted document that shows
+[07:59] exactly the things that this particular
+[08:02] tool found. Now the reason why I'm so
+[08:04] excited about this particular industry
+[08:05] or this particular tool is because GEO
+[08:08] is brand new. Now this market is
+[08:10] projected to grow up to $7 billion in
+[08:12] the couple next couple of years. AI
+[08:14] search traffic has grown over 500%
+[08:18] yearover-year and it makes sense because
+[08:20] obviously ChachiPT Gemini and everything
+[08:22] has become so popular now that a lot of
+[08:24] people actually search on uh your
+[08:27] ChachiPTs of the world rather than
+[08:28] Google right so of course but that's
+[08:30] only about 23% of like the marketers
+[08:34] that are even thinking about this but
+[08:35] this space is so new that right now
+[08:37] we're kind of just the beginning stages
+[08:39] now think about this you pick five
+[08:41] businesses whatever business it might be
+[08:43] you run this audit on each one. You
+[08:45] know, you run the audit on their
+[08:46] website, you send them the PDF report
+[08:47] and say, "Hey, I ran an AI visibility
+[08:50] report on your website, you're scoring
+[08:52] 30 out of 100, right? AI search engines
+[08:54] aren't recommending you. Would you want
+[08:56] to hop on a quick quick call to uh let
+[08:59] me show you exactly how you can improve
+[09:00] this?" Again, that's a really good way
+[09:02] for you to send some kind of a value to
+[09:05] the client before they agree to jump on
+[09:07] something. And a lot of times when a
+[09:09] client sees that that you're providing
+[09:11] value and they're aware obviously of the
+[09:13] Chach GPTs of the world at this point,
+[09:15] it makes sense for them to say, "Hey,
+[09:16] you know what? This is actually true. If
+[09:18] this person is sending me this much
+[09:19] value for free, I would love to hop on a
+[09:21] call and see what improvements they
+[09:22] could provide." By the way, if you're
+[09:24] interested in learning how to do this, I
+[09:26] uh launched an entire clot code series
+[09:28] where I walk you through step by step
+[09:30] how to do this. And next week, we're
+[09:32] planning to uh or on March 4th, we're
+[09:34] actually running a call where I show you
+[09:36] exactly or talk about exactly how to
+[09:38] sell a service like this. But again, for
+[09:40] those of you who just want to test this
+[09:42] out, run this on your website. Again,
+[09:44] the GitHub repositories completely free.
+[09:47] All you have to do is like I said, just
+[09:49] copy this command, run it on your Mac,
+[09:50] and this will get it installed. And then
+[09:52] you can go to your clot code and just
+[09:55] basically type that /o,
+[09:57] right? And once installed basically all
+[10:00] of this will show up. So it's very very
+[10:02] simple. It's just only one command.
+[10:03] Actually one more thing I forgot to
+[10:04] mention. So obviously I'm running cloud
+[10:06] code on my um Visual Studio Code. The
+[10:09] way to do this is you just basically go
+[10:11] to Visual Studio Code and download. It's
+[10:14] completely for free or you can use
+[10:15] something like anti-gravity and then you
+[10:17] can come on the extensions here and you
+[10:19] could just basically type code and you
+[10:21] can just download this and then you will
+[10:23] be able to have this little sign right
+[10:25] here where then you can click on it and
+[10:27] basically run this inside your um um
+[10:31] Visual Studio Code or of course you can
+[10:33] also run this inside your terminal. You
+[10:35] just basically type claude and then go
+[10:37] through this whole uh slash command
+[10:39] process as well. It's very very simple.
+[10:41] Well, I'm planning to make more videos
+[10:42] on this step by step uh if you're
+[10:44] interested. So, make sure you look out
+[10:46] for that one. But it looks like it
+[10:47] created or it went through phase one,
+[10:49] phase two, and now it's uh working on
+[10:51] phase three, which is aggregate scores
+[10:53] and generate GEO audit report. All
+[10:56] right, so after a good couple of
+[10:57] minutes, it looks like it created the
+[10:59] GEO audit and as you can see right here.
+[11:02] So, it gave overall GEO score to type
+[11:04] form 62 by over 100, which is just fair,
+[11:08] right? And it says the full report has
+[11:09] been saved to go audit.report. So if I
+[11:12] click on this right here, type form AI
+[11:15] visibility report. If I click on this,
+[11:16] you will see that this entire full
+[11:19] report is generated with all the
+[11:21] different details. Now, of course, I'm
+[11:22] going to show you exactly how the next
+[11:24] step is going to be gen convert this
+[11:26] into PDF. But let me quickly show you
+[11:28] exactly what it did. So it said uh here
+[11:30] are the different score categories.
+[11:31] Again, all of these are those five sub
+[11:33] aents that we talked about. They each
+[11:35] individually scored based on whatever
+[11:37] instruction they were given and they
+[11:39] found three critical findings. Pricing
+[11:41] page invincible to AI crawls AI
+[11:43] crawlers. Our pricing data is in
+[11:45] JavaScript rendered via API calls. All
+[11:48] systems cannot answer how much does TY
+[11:50] form cost. Right? So again this is
+[11:52] giving critical findings here. The
+[11:53] second one is schema marker nearly
+[11:56] absent. The score is 28 out of 100. No
+[11:58] software application FAQ page person or
+[12:01] offer schemas. Right. The third one is
+[12:03] llm.ext text file non-compliant 15 out
+[12:05] of 100. This file exists but uses
+[12:07] incorrect format. I mean this is how
+[12:09] incredible incredibly detailed it is,
+[12:11] right? And then it says top three
+[12:13] strands. It provides you uh the
+[12:15] strengths for this website. Uh so now
+[12:17] let's go ahead and actually generate a
+[12:20] PDF report because this is nice but
+[12:22] obviously you can't send this to a
+[12:23] client, right? You want to be able to
+[12:24] send let's say if I'm contacting
+[12:26] Typeform and say hey I want to you know
+[12:29] inc increase your GEO report then I need
+[12:31] to send them a nice PDF. The great thing
+[12:33] is I already built a skill for that
+[12:35] which is called the GEO report PDF right
+[12:39] here. So if I go to the top here and
+[12:41] click on skills and click on GEO report
+[12:45] skills.mmd. So what this is doing is
+[12:47] basically giving this instruction for it
+[12:49] to generate a nice PDF form. And this is
+[12:52] a smaller one. This a shorter obviously
+[12:54] because the go audit is the big one
+[12:56] because it has sub aents those five sub
+[12:58] aents. This one doesn't. Right? We're
+[13:00] just basically telling it to generate a
+[13:02] professionally visually polished PDF
+[13:05] report for the GEO audit data. So the
+[13:07] only thing we need to do is go back to
+[13:09] our clot code here. And now all I have
+[13:11] to do is just type slash again. GEO dash
+[13:15] report, right? And there you go. It
+[13:17] shows up right there. Dash PDF and press
+[13:20] enter. So what this is going to do is
+[13:21] now it's going to go ahead and use that
+[13:24] skills.md file, that instructions that's
+[13:26] inside that skills.mmd file to be able
+[13:28] to generate this report. So it's saying
+[13:30] uh allow this bash command. Yep, that's
+[13:32] fine. I'm just going to allow this so
+[13:34] that way you can go ahead and generate
+[13:35] this. And perfect. There you go. So it
+[13:37] says PDF report generated successfully.
+[13:39] File Geo report-type form.pdf. Now of
+[13:42] course depending on where you save this,
+[13:44] you can download it from your computer
+[13:45] or on the left hand side. I'm going to
+[13:47] click on GEO report here and this is
+[13:49] going to pull this up. All right, take a
+[13:52] look at this nice little uh report here
+[13:54] with the overall score, right? 62
+[13:56] moderate. It has the executive summary,
+[13:58] right? The type form has a solid
+[14:00] foundation for AI visibility. It's fully
+[14:02] open crawler access policy. No AI bots
+[14:05] blocked. Strong brand recognition in
+[14:07] Wikipedia page [music] 85 plus LinkedIn
+[14:10] followers. 4.5 starred on G2 rating from
+[14:12] 600 reviews. Established marketplace,
+[14:14] right? So, it's obviously it's a very
+[14:16] popular uh platform, but it still has a
+[14:19] lot it could improve on. So, there you
+[14:20] go. This go score breakdown. This is
+[14:23] based on those five sub agents, right?
+[14:25] So these are all individual scores. Nice
+[14:27] little bar chart here. And as you can
+[14:30] see here are the AI platform readiness,
+[14:32] right? This is looks like it's optimized
+[14:34] for Google AI overviews and chat GPT and
+[14:36] Plexity. But I think for Bing Copilot,
+[14:38] it's not that great. Even though this is
+[14:42] uh you know blue obviously 65, 68, 62,
+[14:45] there's lots of improvements that it
+[14:47] could be uh that they could do to
+[14:48] improve their AI visibility. So in the
+[14:51] bottom is because it shows right here it
+[14:52] shows that it's the status is moderate.
+[14:54] And here are the uh different details
+[14:57] now about the AI crawler access status
+[15:00] as you can see that's why it was saying
+[15:01] that uh it had um uh really high score
+[15:05] on this particular tool because they
+[15:07] have allowed everything there and
+[15:09] critical findings. So this is the key
+[15:11] findings. This is again this is gold
+[15:12] right? You can just send this to a
+[15:14] client and they would see the amount of
+[15:16] value that you're just giving them just
+[15:17] by this PDF uh document. So pricing page
+[15:20] invisible to AI crawl crawler. So it
+[15:22] says this is a critical thing that you
+[15:24] can fix to significantly improve your AI
+[15:26] visibility. Uh same thing like we
+[15:28] discussed earlier and then they have the
+[15:30] critical, the high, um medium and
+[15:34] [music] then low, right? So now
+[15:36] obviously it also provides this
+[15:38] prioritized action plan, right? Quick
+[15:39] wins for this week. Rewrite the LLM.txt
+[15:42] file to spec compliant markdown format
+[15:45] with site description organized pages.
+[15:47] So it gives you exactly quick action
+[15:49] plans that you can take. Medium-term
+[15:51] improvements. this month strategic
+[15:53] initiatives this quarter, right? So, it
+[15:55] gives them this entire um you know
+[15:58] report on what they can do, what they
+[15:59] can improve. This in itself provides
+[16:01] enough value to when you're sending this
+[16:04] for a client. Now imagine obviously time
+[16:05] form type form is a huge company but you
+[16:08] could do this with any company with any
+[16:09] website with any brand whether it's
+[16:11] local or you know there's small
+[16:14] medium-sized businesses and they would
+[16:16] love uh to hire you for services to be
+[16:19] able to improve this right because once
+[16:21] you send this you can say on the email
+[16:23] hey by the way I have a set of plan that
+[16:25] I can show you and work with you to
+[16:27] actually improve all of these different
+[16:30] findings that this report had and let's
+[16:32] jump on a call and we can figure this
+[16:34] out. Now again, so like I said, you can
+[16:37] run this yourself. All of this is
+[16:39] available for you. And if you're
+[16:41] interested in um checking out the
+[16:43] community, if you want to learn how to
+[16:45] actually build this from scratch and uh
+[16:48] I show you exactly kind of like the
+[16:50] details of how to install cloud code,
+[16:52] how to run this, more details, and most
+[16:54] importantly, how to sell this. Uh check
+[16:56] out the community. We're planning to do
+[16:58] more projects on coming. That's kind of
+[16:59] the concept of building and selling with
+[17:01] cloud code. So we don't want to just do
+[17:03] demos. We want to build actually real
+[17:05] life um uh real life projects that you
+[17:08] can utilize and start your agency. And
+[17:10] of course we have other uh courses there
+[17:12] like how to start your AI agency. And
+[17:14] then most importantly like I said we
+[17:16] have calendar events where you can jump
+[17:17] on in any of these calls with us and ask
+[17:20] us any question if you run any into any
+[17:22] issues. So check out the community.
+[17:23] Hopefully you like the video. Please
+[17:25] make sure you like and subscribe because
+[17:26] I've got a lot more content coming up in
+[17:27] this particular space about building
+[17:29] project with cloud code that you don't
+[17:31] want to miss. Thanks for watching and
+[17:32] I'll see you in the next one.
+
+--- Plain text ---
+Agencies are charging 5 to12,000 a month for something called GEO, which stands for generative engine optimization. It's basically the future of SEO. And let me explain why. If you've searched anything on Google lately, you've probably noticed that AI answers sitting right at the top. Now, most people read that and never click a single link. [music] And it's just not Google. People are going straight to Chat GPT, straight to Perexity, asking their questions there instead of searching. So the problem is when someone asks AI for recommendation in your industry, does your website show up? For most businesses, the answer is no. They're completely invisible to AI [music] search. And that's only going to get worse because AI search traffic is growing over 500% yearover-year. I built a tool with cloud code that audits any website and tells you exactly where they stand with AI search, what's broken, what's missing, and how to fix it. It just hit 2,600 stars on GitHub in a few weeks, which is insane. So, in this video, I'm going to show you exactly how to install it in your computer, step by step, how to use it, and also I'm going to talk about at the end of the video how you can monetize this if you are an agency owner. All right, let's jump right in. So, before I run this live on a new website, take a look at this. I already ran the full audit on this website called dscript.com, which is one of the most popular video editing tools out there in the market. And this is what it produced. It ran 11 skills and five AI agents at the same time and it came back with a full GEO report. Look at this. Right at the top, you've got the overall GEO score. So, Dcript got 58 out of 100, which is not that great, which means there's lots of room for improvement. And you got these score gauges breaking down each category. AI citability, brand authority, technical, content, quality, schema. Each one is scored individually so you can see exactly where the weak spots are. this bar chart showing how they stack up across every [music] area and you can immediately see what's wrong and what needs work. This is one actually one of my favorite parts right here. It shows you how Dcript performs on each AI platform individually because chat, Perplexity, Google AI overviews, Gemini, they all work differently. So a site might show up great on one but be invisible on another. And then here at the bottom you've got the critical findings, the things that actually are hurting their AI visibility. and a prioritize action plan that tells you exactly what to fix and in what order. This right here is what you would send to a client. You don't need to build a PowerPoint. You don't need to write anything from scratch. This PDF report is deliverable. Agencies are charging thousands of dollars for a report like this and they spend a week putting it together. I did this in about 60 seconds with this amazing clot uh code tool that I created. So now let me show you how this works on a real website. I'm going to run this live on a different website so you can see the whole thing from start to finish. All right. So, I'm going to run this on a brand new website and then I'm going to show you how this works, what's going on in the background, and then show you exactly how to download this so you can run this yourself. So, right now I'm in my Cloud Code instance. I'm using this inside uh my Visual Studio Code IDE. Again, if you're not familiar, I'll explain all of this in a little bit. So, what I'm going to do is actually run this on this website called Type Form. So, Type Form for those of you who are not familiar is one of the most popular kind of form building websites. I mean, they have other other services as well, but they're uh used by majority of the bigger companies. Uh so, let's go ahead and run this for this particular website. So, what I'm going to do is just type slash. For those of you who are not familiar, slash uh you have the ability to invoke cloth skills. Again, I'm going to explain everything in a little bit. So, I'm just going to type slash geo- audit. There you go. So you can see those are the commands that show up. And now I'm just going to literally paste that type form.com. Right? And you can run this with any website just like this. So I'm going to press enter. So now what's going to happen is now claude code is going to run the entire GEO audit on this particular website. As you can see there are different phases here. Phase one is discovery and fetching the homepage and detect business type. Phase two is running five parallel sub aent analysis. And phase three is aggregate scores and generating the GEO audit. So this is going to take some time because obviously this is a pretty comprehensive um um you know process. So while this is happening, let's go ahead and let me show you exactly what's going on. So to access this, I'm going to put the link in the description. This is the entire GitHub repository that you have full access to where basically it explains everything and what this is and how to install it. It's very simple to install. All you have to do if you can use the one command installed, you just had to copy this and paste it on your terminal and it will install all of these different skills. So let me explain exactly what this GEO audit includes or this entire repository. So first of all, for those of you who are not familiar with skills in cloud code, skills are basically plugins. it it's instructions that gives claude code the ability to become quote unquote expert on a particular topic because generally uh claude code is a uh obviously AI assistant but in order for you to give it a specific task or make it become an expert on something specific you give it skills now skills to put it in simple words it's basically a set of instructions so this geo audit right here so if you if I click on this this skills.md this is a markdown file. If I click on the inside of this what this is doing is basically giving claude code instructions like detailed instruction of what to do what to run and everything else that's that's necessary. So as you can see right here it has a purpose right the key insights the audit workflow it has phase one phase 2 phase three right so that phase one just like we saw here just like it's running so on the top right here when we ran this phase one phase 2 phase three phase one is fa fetching and discovering the homepage for that particular [clears throat] website phase 2 is running five parallel sub aent analysis this is one I want to point out so the reason why it's saying all of this and the reason why it can run these five parallel sub aents as you can see right here is because on this uh claude skill this go audit skills.mmd file as you can see I have this phase the discovery and reconnaissance right in phase two is going to uh parallel sub aent delegation I'm specifying hey delegate analysis to five specialized sub aents each sub aent operates on collected page data and produces a category score from 0 to 100 there's five agents here the first sub agent is going to uh figure out the AI side ility analysis, right? It's going to analyze the content uh blocks for codability by AI systems scores and sub aent 2 is going to do brand analysis, sub aent 3 technical GEO infrastructure and so on and so forth. So if you could think about it this way in a very simple turn when you give clot code sub aents it's like basically let's say somebody's trying to build a house right you hire a main contractor now in order for the house to be built in more efficient and quickest and fastest way you have the contractor hire subcontractors that's that's [music] tasked to do a specific things in order to build this house. So for instance, subcontractor one could be building the electricity part of the house, right? It could be the electrician. Subcontractor two will be in charge of concrete and the infrastructure of the house. Subcontract subcontractor 3 will be kind of doing the HVAC system and so on and so forth. And in phase three again it will go ahead and [music] generate the aggregate report here. And then afterwards you'll see we have another uh skill called uh geo report or GEO report PDF is where you saw in the beginning where I generated that PDF. will run this. So that way we can that way cloud code could generate a nice PDF for us. Then we can send this to clients or send this to basically when we're talking to somebody uh we can have this nice little structured formatted document that shows exactly the things that this particular tool found. Now the reason why I'm so excited about this particular industry or this particular tool is because GEO is brand new. Now this market is projected to grow up to $7 billion in the couple next couple of years. AI search traffic has grown over 500% yearover-year and it makes sense because obviously ChachiPT Gemini and everything has become so popular now that a lot of people actually search on uh your ChachiPTs of the world rather than Google right so of course but that's only about 23% of like the marketers that are even thinking about this but this space is so new that right now we're kind of just the beginning stages now think about this you pick five businesses whatever business it might be you run this audit on each one. You know, you run the audit on their website, you send them the PDF report and say, "Hey, I ran an AI visibility report on your website, you're scoring 30 out of 100, right? AI search engines aren't recommending you. Would you want to hop on a quick quick call to uh let me show you exactly how you can improve this?" Again, that's a really good way for you to send some kind of a value to the client before they agree to jump on something. And a lot of times when a client sees that that you're providing value and they're aware obviously of the Chach GPTs of the world at this point, it makes sense for them to say, "Hey, you know what? This is actually true. If this person is sending me this much value for free, I would love to hop on a call and see what improvements they could provide." By the way, if you're interested in learning how to do this, I uh launched an entire clot code series where I walk you through step by step how to do this. And next week, we're planning to uh or on March 4th, we're actually running a call where I show you exactly or talk about exactly how to sell a service like this. But again, for those of you who just want to test this out, run this on your website. Again, the GitHub repositories completely free. All you have to do is like I said, just copy this command, run it on your Mac, and this will get it installed. And then you can go to your clot code and just basically type that /o, right? And once installed basically all of this will show up. So it's very very simple. It's just only one command. Actually one more thing I forgot to mention. So obviously I'm running cloud code on my um Visual Studio Code. The way to do this is you just basically go to Visual Studio Code and download. It's completely for free or you can use something like anti-gravity and then you can come on the extensions here and you could just basically type code and you can just download this and then you will be able to have this little sign right here where then you can click on it and basically run this inside your um um Visual Studio Code or of course you can also run this inside your terminal. You just basically type claude and then go through this whole uh slash command process as well. It's very very simple. Well, I'm planning to make more videos on this step by step uh if you're interested. So, make sure you look out for that one. But it looks like it created or it went through phase one, phase two, and now it's uh working on phase three, which is aggregate scores and generate GEO audit report. All right, so after a good couple of minutes, it looks like it created the GEO audit and as you can see right here. So, it gave overall GEO score to type form 62 by over 100, which is just fair, right? And it says the full report has been saved to go audit.report. So if I click on this right here, type form AI visibility report. If I click on this, you will see that this entire full report is generated with all the different details. Now, of course, I'm going to show you exactly how the next step is going to be gen convert this into PDF. But let me quickly show you exactly what it did. So it said uh here are the different score categories. Again, all of these are those five sub aents that we talked about. They each individually scored based on whatever instruction they were given and they found three critical findings. Pricing page invincible to AI crawls AI crawlers. Our pricing data is in JavaScript rendered via API calls. All systems cannot answer how much does TY form cost. Right? So again this is giving critical findings here. The second one is schema marker nearly absent. The score is 28 out of 100. No software application FAQ page person or offer schemas. Right. The third one is llm.ext text file non-compliant 15 out of 100. This file exists but uses incorrect format. I mean this is how incredible incredibly detailed it is, right? And then it says top three strands. It provides you uh the strengths for this website. Uh so now let's go ahead and actually generate a PDF report because this is nice but obviously you can't send this to a client, right? You want to be able to send let's say if I'm contacting Typeform and say hey I want to you know inc increase your GEO report then I need to send them a nice PDF. The great thing is I already built a skill for that which is called the GEO report PDF right here. So if I go to the top here and click on skills and click on GEO report skills.mmd. So what this is doing is basically giving this instruction for it to generate a nice PDF form. And this is a smaller one. This a shorter obviously because the go audit is the big one because it has sub aents those five sub aents. This one doesn't. Right? We're just basically telling it to generate a professionally visually polished PDF report for the GEO audit data. So the only thing we need to do is go back to our clot code here. And now all I have to do is just type slash again. GEO dash report, right? And there you go. It shows up right there. Dash PDF and press enter. So what this is going to do is now it's going to go ahead and use that skills.md file, that instructions that's inside that skills.mmd file to be able to generate this report. So it's saying uh allow this bash command. Yep, that's fine. I'm just going to allow this so that way you can go ahead and generate this. And perfect. There you go. So it says PDF report generated successfully. File Geo report-type form.pdf. Now of course depending on where you save this, you can download it from your computer or on the left hand side. I'm going to click on GEO report here and this is going to pull this up. All right, take a look at this nice little uh report here with the overall score, right? 62 moderate. It has the executive summary, right? The type form has a solid foundation for AI visibility. It's fully open crawler access policy. No AI bots blocked. Strong brand recognition in Wikipedia page [music] 85 plus LinkedIn followers. 4.5 starred on G2 rating from 600 reviews. Established marketplace, right? So, it's obviously it's a very popular uh platform, but it still has a lot it could improve on. So, there you go. This go score breakdown. This is based on those five sub agents, right? So these are all individual scores. Nice little bar chart here. And as you can see here are the AI platform readiness, right? This is looks like it's optimized for Google AI overviews and chat GPT and Plexity. But I think for Bing Copilot, it's not that great. Even though this is uh you know blue obviously 65, 68, 62, there's lots of improvements that it could be uh that they could do to improve their AI visibility. So in the bottom is because it shows right here it shows that it's the status is moderate. And here are the uh different details now about the AI crawler access status as you can see that's why it was saying that uh it had um uh really high score on this particular tool because they have allowed everything there and critical findings. So this is the key findings. This is again this is gold right? You can just send this to a client and they would see the amount of value that you're just giving them just by this PDF uh document. So pricing page invisible to AI crawl crawler. So it says this is a critical thing that you can fix to significantly improve your AI visibility. Uh same thing like we discussed earlier and then they have the critical, the high, um medium and [music] then low, right? So now obviously it also provides this prioritized action plan, right? Quick wins for this week. Rewrite the LLM.txt file to spec compliant markdown format with site description organized pages. So it gives you exactly quick action plans that you can take. Medium-term improvements. this month strategic initiatives this quarter, right? So, it gives them this entire um you know report on what they can do, what they can improve. This in itself provides enough value to when you're sending this for a client. Now imagine obviously time form type form is a huge company but you could do this with any company with any website with any brand whether it's local or you know there's small medium-sized businesses and they would love uh to hire you for services to be able to improve this right because once you send this you can say on the email hey by the way I have a set of plan that I can show you and work with you to actually improve all of these different findings that this report had and let's jump on a call and we can figure this out. Now again, so like I said, you can run this yourself. All of this is available for you. And if you're interested in um checking out the community, if you want to learn how to actually build this from scratch and uh I show you exactly kind of like the details of how to install cloud code, how to run this, more details, and most importantly, how to sell this. Uh check out the community. We're planning to do more projects on coming. That's kind of the concept of building and selling with cloud code. So we don't want to just do demos. We want to build actually real life um uh real life projects that you can utilize and start your agency. And of course we have other uh courses there like how to start your AI agency. And then most importantly like I said we have calendar events where you can jump on in any of these calls with us and ask us any question if you run any into any issues. So check out the community. Hopefully you like the video. Please make sure you like and subscribe because I've got a lot more content coming up in this particular space about building project with cloud code that you don't want to miss. Thanks for watching and I'll see you in the next one.

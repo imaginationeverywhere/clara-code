@@ -1,0 +1,1213 @@
+Today we're going to be looking at how
+Today we're going to be looking at how
+Today we're going to be looking at how
+to use obsidian with open claw and
+to use obsidian with open claw and
+to use obsidian with open claw and
+clawed code to basically create like a
+clawed code to basically create like a
+clawed code to basically create like a
+memory where you have more context. You
+memory where you have more context. You
+memory where you have more context. You
+have a much powerful agent and it can
+have a much powerful agent and it can
+have a much powerful agent and it can
+basically have full context wherever you
+basically have full context wherever you
+basically have full context wherever you
+go whether that's to for example claude
+go whether that's to for example claude
+go whether that's to for example claude
+code whether that's to claude directly
+code whether that's to claude directly
+code whether that's to claude directly
+whether that's to open claw etc. Now the
+whether that's to open claw etc. Now the
+whether that's to open claw etc. Now the
+main point of this is a free way to give
+main point of this is a free way to give
+main point of this is a free way to give
+your AI agents full context on what you
+your AI agents full context on what you
+your AI agents full context on what you
+do. So you can download Obsidian and
+do. So you can download Obsidian and
+do. So you can download Obsidian and
+once you've done that, it's going to
+once you've done that, it's going to
+once you've done that, it's going to
+look something like this. Now you can
+look something like this. Now you can
+look something like this. Now you can
+add personal information like you can
+add personal information like you can
+add personal information like you can
+see right here. And essentially this
+see right here. And essentially this
+see right here. And essentially this
+allows you to connect it with as much
+allows you to connect it with as much
+allows you to connect it with as much
+sort of ideas and information as you
+sort of ideas and information as you
+sort of ideas and information as you
+want directly to whatever AI agent you
+want directly to whatever AI agent you
+want directly to whatever AI agent you
+want to. Right? So for example, what we
+want to. Right? So for example, what we
+want to. Right? So for example, what we
+can do here is if we go back to Claude
+can do here is if we go back to Claude
+can do here is if we go back to Claude
+Co-work now, which I was just using for
+Co-work now, which I was just using for
+Co-work now, which I was just using for
+computer use a second ago, we can
+computer use a second ago, we can
+computer use a second ago, we can
+connect this to Obsidian. And then
+connect this to Obsidian. And then
+connect this to Obsidian. And then
+inside obsidian we put all our context
+inside obsidian we put all our context
+inside obsidian we put all our context
+or our data. Now why would we want to
+or our data. Now why would we want to
+or our data. Now why would we want to
+add more context and data directly to
+add more context and data directly to
+add more context and data directly to
+something like claude co-work or any of
+something like claude co-work or any of
+something like claude co-work or any of
+these AI agents because the quality of
+these AI agents because the quality of
+these AI agents because the quality of
+the outputs comes down to the quality of
+the outputs comes down to the quality of
+the outputs comes down to the quality of
+the data it gets right the more
+the data it gets right the more
+the data it gets right the more
+information you give to these AI agents
+information you give to these AI agents
+information you give to these AI agents
+the better they can help you and the
+the better they can help you and the
+the better they can help you and the
+better they understand how to help you.
+better they understand how to help you.
+better they understand how to help you.
+Right? That's the net with the game. So,
+Right? That's the net with the game. So,
+Right? That's the net with the game. So,
+we're going to get started with this
+we're going to get started with this
+we're going to get started with this
+now. And I'm going to say, now I think
+now. And I'm going to say, now I think
+now. And I'm going to say, now I think
+one of the easiest ways you could
+one of the easiest ways you could
+one of the easiest ways you could
+probably do this is you could connect it
+probably do this is you could connect it
+probably do this is you could connect it
+directly with something like an MCP.
+directly with something like an MCP.
+directly with something like an MCP.
+I don't think it's got a connector for
+I don't think it's got a connector for
+I don't think it's got a connector for
+Obsidian yet, as far as I'm aware. And
+Obsidian yet, as far as I'm aware. And
+Obsidian yet, as far as I'm aware. And
+we can do the same thing inside
+we can do the same thing inside
+we can do the same thing inside
+Open Claw, too. Now inside claw as well
+Open Claw, too. Now inside claw as well
+Open Claw, too. Now inside claw as well
+because it's working off local files
+because it's working off local files
+because it's working off local files
+right we can actually connect this
+right we can actually connect this
+right we can actually connect this
+directly to the files that we've created
+directly to the files that we've created
+directly to the files that we've created
+inside obsidian right so inside obsidian
+inside obsidian right so inside obsidian
+inside obsidian right so inside obsidian
+anytime you create any information or
+anytime you create any information or
+anytime you create any information or
+journals or that sort of thing you can
+journals or that sort of thing you can
+journals or that sort of thing you can
+use
+use
+use
+this as a folder on your laptop like
+this as a folder on your laptop like
+this as a folder on your laptop like
+this right and so we can connect
+this right and so we can connect
+this right and so we can connect
+Obsidian fault to our claude co-work so
+Obsidian fault to our claude co-work so
+Obsidian fault to our claude co-work so
+it has full context on us so let's try
+it has full context on us so let's try
+it has full context on us so let's try
+that. Now, we're going to create a new
+that. Now, we're going to create a new
+that. Now, we're going to create a new
+project inside Claw Co-work, which is a
+project inside Claw Co-work, which is a
+project inside Claw Co-work, which is a
+new feature they've just launched
+new feature they've just launched
+new feature they've just launched
+recently, which helps us connect to
+recently, which helps us connect to
+recently, which helps us connect to
+Obsidian even easier. And this could be,
+Obsidian even easier. And this could be,
+Obsidian even easier. And this could be,
+for example, managing your personal
+for example, managing your personal
+for example, managing your personal
+life. It could be, for example,
+life. It could be, for example,
+life. It could be, for example,
+organizing your work. Whatever contexts
+organizing your work. Whatever contexts
+organizing your work. Whatever contexts
+you want to put inside Obsidian, you can
+you want to put inside Obsidian, you can
+you want to put inside Obsidian, you can
+link. And also, it's not just limited to
+link. And also, it's not just limited to
+link. And also, it's not just limited to
+one AI agent. So, for example, if you're
+one AI agent. So, for example, if you're
+one AI agent. So, for example, if you're
+using claw day-to-day, you could use it
+using claw day-to-day, you could use it
+using claw day-to-day, you could use it
+memory. But the problem is that you
+memory. But the problem is that you
+memory. But the problem is that you
+can't export that memory to open claw as
+can't export that memory to open claw as
+can't export that memory to open claw as
+easily and it's not updated in real
+easily and it's not updated in real
+easily and it's not updated in real
+time. If you link your folder from
+time. If you link your folder from
+time. If you link your folder from
+obsidian to open claw and claw co-work
+obsidian to open claw and claw co-work
+obsidian to open claw and claw co-work
+running locally then anytime you add
+running locally then anytime you add
+running locally then anytime you add
+information to it that's new it's going
+information to it that's new it's going
+information to it that's new it's going
+to get updated right that's the point.
+to get updated right that's the point.
+to get updated right that's the point.
+So we can open up our obsidian vault
+So we can open up our obsidian vault
+So we can open up our obsidian vault
+like and now it's got access to it right
+like and now it's got access to it right
+like and now it's got access to it right
+as you can see. So it's got access to
+as you can see. So it's got access to
+as you can see. So it's got access to
+the files as you can see right here. So
+the files as you can see right here. So
+the files as you can see right here. So
+if we now go inside Obsidian
+if we now go inside Obsidian
+if we now go inside Obsidian
+and we put information about whatever
+and we put information about whatever
+and we put information about whatever
+your business is. So I'm going to use
+your business is. So I'm going to use
+your business is. So I'm going to use
+for example the AR profit boarding
+for example the AR profit boarding
+for example the AR profit boarding
+example. We go inside here and I'll put
+example. We go inside here and I'll put
+example. We go inside here and I'll put
+rename this. We add some information
+rename this. We add some information
+rename this. We add some information
+about us. Right. This. So we've got
+about us. Right. This. So we've got
+about us. Right. This. So we've got
+details of what we do, what we sell,
+details of what we do, what we sell,
+details of what we do, what we sell,
+etc. And then if we go back to Claude Co
+etc. And then if we go back to Claude Co
+etc. And then if we go back to Claude Co
+now, it's got those details right here.
+now, it's got those details right here.
+now, it's got those details right here.
+Right. is uh now I'm going to say okay
+Right. is uh now I'm going to say okay
+Right. is uh now I'm going to say okay
+use Obsidian to write a new sales page
+use Obsidian to write a new sales page
+use Obsidian to write a new sales page
+based on
+based on
+based on
+the AIPB data in there. All right. So we
+the AIPB data in there. All right. So we
+the AIPB data in there. All right. So we
+got details of what we sell here. Then
+got details of what we sell here. Then
+got details of what we sell here. Then
+if we go back to Claude Co-work it's
+if we go back to Claude Co-work it's
+if we go back to Claude Co-work it's
+looking at the business database details
+looking at the business database details
+looking at the business database details
+right here. Right. So it's got all the
+right here. Right. So it's got all the
+right here. Right. So it's got all the
+information from right there. Now we can
+information from right there. Now we can
+information from right there. Now we can
+do the same thing inside openclaw to
+do the same thing inside openclaw to
+do the same thing inside openclaw to
+sync these up as well. Right. And so now
+sync these up as well. Right. And so now
+sync these up as well. Right. And so now
+I'm going to say okay use my local
+I'm going to say okay use my local
+I'm going to say okay use my local
+obsidian vault plus connect to it so
+obsidian vault plus connect to it so
+obsidian vault plus connect to it so
+that you have all my data. Now obviously
+that you have all my data. Now obviously
+that you have all my data. Now obviously
+you only share stuff that you're
+you only share stuff that you're
+you only share stuff that you're
+comfortable with sharing inside here.
+comfortable with sharing inside here.
+comfortable with sharing inside here.
+So, you know, if you're not comfortable
+So, you know, if you're not comfortable
+So, you know, if you're not comfortable
+with connecting this to open claw or to,
+with connecting this to open claw or to,
+with connecting this to open claw or to,
+for example, claw to co-work, then you
+for example, claw to co-work, then you
+for example, claw to co-work, then you
+don't have to, right? And you could
+don't have to, right? And you could
+don't have to, right? And you could
+create a separate folder for another
+create a separate folder for another
+create a separate folder for another
+obsidian bolt that you don't want to
+obsidian bolt that you don't want to
+obsidian bolt that you don't want to
+share with AI agents. But the main thing
+share with AI agents. But the main thing
+share with AI agents. But the main thing
+is
+is
+is
+that now these AI agents can read these.
+that now these AI agents can read these.
+that now these AI agents can read these.
+Now, also the other cool thing about
+Now, also the other cool thing about
+Now, also the other cool thing about
+this is everything that's stored inside
+this is everything that's stored inside
+this is everything that's stored inside
+Obsidian is in a MD file, right? It's a
+Obsidian is in a MD file, right? It's a
+Obsidian is in a MD file, right? It's a
+markdown file. What does that mean?
+markdown file. What does that mean?
+markdown file. What does that mean?
+means that AI can easily look through
+means that AI can easily look through
+means that AI can easily look through
+the page and understand okay here's what
+the page and understand okay here's what
+the page and understand okay here's what
+this guy's doing here's what it's about
+this guy's doing here's what it's about
+this guy's doing here's what it's about
+here's you know some of his best content
+here's you know some of his best content
+here's you know some of his best content
+etc and so it can easily read the files
+etc and so it can easily read the files
+etc and so it can easily read the files
+directly inside here right you can see
+directly inside here right you can see
+directly inside here right you can see
+here it's even understands like the
+here it's even understands like the
+here it's even understands like the
+pricing from the offer because it's got
+pricing from the offer because it's got
+pricing from the offer because it's got
+it directly from the information on our
+it directly from the information on our
+it directly from the information on our
+business inside Obsidian right [snorts]
+business inside Obsidian right [snorts]
+business inside Obsidian right [snorts]
+now you can also do something like you
+now you can also do something like you
+now you can also do something like you
+can periodically sync the Obsidian vault
+can periodically sync the Obsidian vault
+can periodically sync the Obsidian vault
+content into workspace and it's already
+content into workspace and it's already
+content into workspace and it's already
+got access to this locally as well. So,
+got access to this locally as well. So,
+got access to this locally as well. So,
+that was super easy. And you can see
+that was super easy. And you can see
+that was super easy. And you can see
+here is, okay, what would be most useful
+here is, okay, what would be most useful
+here is, okay, what would be most useful
+to you? What's the goal here? I'm going
+to you? What's the goal here? I'm going
+to you? What's the goal here? I'm going
+to say, okay, use Obsidian
+to say, okay, use Obsidian
+to say, okay, use Obsidian
+as context for what I do. Plus, I'll
+as context for what I do. Plus, I'll
+as context for what I do. Plus, I'll
+update it regularly with new info.
+update it regularly with new info.
+update it regularly with new info.
+Inside here, you could have a section
+Inside here, you could have a section
+Inside here, you could have a section
+that's okay, here's my goals. Right now,
+that's okay, here's my goals. Right now,
+that's okay, here's my goals. Right now,
+you'll see here there's four different
+you'll see here there's four different
+you'll see here there's four different
+types. You got new note, canvas, folder,
+types. You got new note, canvas, folder,
+types. You got new note, canvas, folder,
+and base. Right? So you could have like
+and base. Right? So you could have like
+and base. Right? So you could have like
+for example a folder here that's for
+for example a folder here that's for
+for example a folder here that's for
+work and then you add your files
+work and then you add your files
+work and then you add your files
+underneath it, right? So you could plug
+underneath it, right? So you could plug
+underneath it, right? So you could plug
+that in right there. You could have a
+that in right there. You could have a
+that in right there. You could have a
+new folder for example for personal and
+new folder for example for personal and
+new folder for example for personal and
+then you just add in personal
+then you just add in personal
+then you just add in personal
+information about you. And then also
+information about you. And then also
+information about you. And then also
+what's quite cool about this is like it
+what's quite cool about this is like it
+what's quite cool about this is like it
+makes it easy for the AI to connect
+makes it easy for the AI to connect
+makes it easy for the AI to connect
+different information about you, who you
+different information about you, who you
+different information about you, who you
+are, what you do, etc. Right? Because
+are, what you do, etc. Right? Because
+are, what you do, etc. Right? Because
+it's got all this stuff in one folder.
+it's got all this stuff in one folder.
+it's got all this stuff in one folder.
+So the AI just understands you better.
+So the AI just understands you better.
+So the AI just understands you better.
+And so now it says inside openclaw done
+And so now it says inside openclaw done
+And so now it says inside openclaw done
+up all your vault from whenever I need
+up all your vault from whenever I need
+up all your vault from whenever I need
+context with what you're working on your
+context with what you're working on your
+context with what you're working on your
+business etc. And so if we said okay
+business etc. And so if we said okay
+business etc. And so if we said okay
+create a new sales page inside open claw
+create a new sales page inside open claw
+create a new sales page inside open claw
+and bear in mind like we've already
+and bear in mind like we've already
+and bear in mind like we've already
+created the sales page for this with
+created the sales page for this with
+created the sales page for this with
+claude now so it's already understood
+claude now so it's already understood
+claude now so it's already understood
+the information and what we do etc
+the information and what we do etc
+the information and what we do etc
+pulling it directly from obsidian and
+pulling it directly from obsidian and
+pulling it directly from obsidian and
+the same inside Google Chrome right so
+the same inside Google Chrome right so
+the same inside Google Chrome right so
+there you go it says you already got a
+there you go it says you already got a
+there you go it says you already got a
+sales page it's solid what do you want
+sales page it's solid what do you want
+sales page it's solid what do you want
+me to do with it if we say okay build it
+me to do with it if we say okay build it
+me to do with it if we say okay build it
+as a live HTML page plus host it
+as a live HTML page plus host it
+as a live HTML page plus host it
+locally. It can now take that
+locally. It can now take that
+locally. It can now take that
+information from obsidian that's just
+information from obsidian that's just
+information from obsidian that's just
+referenced right there and now it's got
+referenced right there and now it's got
+referenced right there and now it's got
+all that context on us. Right? That's
+all that context on us. Right? That's
+all that context on us. Right? That's
+how easy it is to link to claude and to
+how easy it is to link to claude and to
+how easy it is to link to claude and to
+open claw directly. Right? So easy. So
+open claw directly. Right? So easy. So
+open claw directly. Right? So easy. So
+let's talk about this. What even is
+let's talk about this. What even is
+let's talk about this. What even is
+Obsidian? So Obsidian is a free app
+Obsidian? So Obsidian is a free app
+Obsidian? So Obsidian is a free app
+where you write notes. But here's the
+where you write notes. But here's the
+where you write notes. But here's the
+thing that makes it special, right?
+thing that makes it special, right?
+thing that makes it special, right?
+Every note you write saved as a simple
+Every note you write saved as a simple
+Every note you write saved as a simple
+markdown file on your computer, right?
+markdown file on your computer, right?
+markdown file on your computer, right?
+These are sitting on your laptop. Now,
+These are sitting on your laptop. Now,
+These are sitting on your laptop. Now,
+why is that useful? It's because open
+why is that useful? It's because open
+why is that useful? It's because open
+claw and clogged co-work directly work
+claw and clogged co-work directly work
+claw and clogged co-work directly work
+locally, right? And so the AI can read
+locally, right? And so the AI can read
+locally, right? And so the AI can read
+everything you've written, every idea,
+everything you've written, every idea,
+everything you've written, every idea,
+every piece of research, every random
+every piece of research, every random
+every piece of research, every random
+thought that you jotted down at 2 a.m.
+thought that you jotted down at 2 a.m.
+thought that you jotted down at 2 a.m.
+That's your unlock. And so the smart
+That's your unlock. And so the smart
+That's your unlock. And so the smart
+play here is you're using Obsidian as a
+play here is you're using Obsidian as a
+play here is you're using Obsidian as a
+structured brain that feeds directly
+structured brain that feeds directly
+structured brain that feeds directly
+into your AI agents. That's why it's so
+into your AI agents. That's why it's so
+into your AI agents. That's why it's so
+powerful, right? Now, why would you use
+powerful, right? Now, why would you use
+powerful, right? Now, why would you use
+it for example to create like your own
+it for example to create like your own
+it for example to create like your own
+sort of personal agent? Here's how I
+sort of personal agent? Here's how I
+sort of personal agent? Here's how I
+would do it, right? So, you have your
+would do it, right? So, you have your
+would do it, right? So, you have your
+vault, your AI brain, right? This is
+vault, your AI brain, right? This is
+vault, your AI brain, right? This is
+your obsidian vault, the folder where
+your obsidian vault, the folder where
+your obsidian vault, the folder where
+all your notes live. So, you want to
+all your notes live. So, you want to
+all your notes live. So, you want to
+think of it as the hard drive of your
+think of it as the hard drive of your
+think of it as the hard drive of your
+AI's brain. Without good notes, your AI
+AI's brain. Without good notes, your AI
+AI's brain. Without good notes, your AI
+has nothing to work with. The more you
+has nothing to work with. The more you
+has nothing to work with. The more you
+put in, the smarter it gets. So, you
+put in, the smarter it gets. So, you
+put in, the smarter it gets. So, you
+start by capturing everything. Ideas,
+start by capturing everything. Ideas,
+start by capturing everything. Ideas,
+research, meeting notes, content angles,
+research, meeting notes, content angles,
+research, meeting notes, content angles,
+customer questions, things you learned.
+customer questions, things you learned.
+customer questions, things you learned.
+One note equals one idea. Simple. It's
+One note equals one idea. Simple. It's
+One note equals one idea. Simple. It's
+clean. It's organized. How simple and
+clean. It's organized. How simple and
+clean. It's organized. How simple and
+easy is it to just add some information
+easy is it to just add some information
+easy is it to just add some information
+about you, what you do, what you sell,
+about you, what you do, what you sell,
+about you, what you do, what you sell,
+etc. who you are, your goals, and then
+etc. who you are, your goals, and then
+etc. who you are, your goals, and then
+you've also got the connection, right?
+you've also got the connection, right?
+you've also got the connection, right?
+And so, literally all you do is whether
+And so, literally all you do is whether
+And so, literally all you do is whether
+you're using Claude code, whether you're
+you're using Claude code, whether you're
+you're using Claude code, whether you're
+using Claw Codework, whether you're
+using Claw Codework, whether you're
+using Claw Codework, whether you're
+using Open Claw, etc., right? We've
+using Open Claw, etc., right? We've
+using Open Claw, etc., right? We've
+already got the sales page by the way
+already got the sales page by the way
+already got the sales page by the way
+created right there. Basically, whatever
+created right there. Basically, whatever
+created right there. Basically, whatever
+you're using right now, you can just
+you're using right now, you can just
+you're using right now, you can just
+point it at the folder locally. So, it's
+point it at the folder locally. So, it's
+point it at the folder locally. So, it's
+so easy to connect. You don't even need
+so easy to connect. You don't even need
+so easy to connect. You don't even need
+an MCP server or a API token. You don't
+an MCP server or a API token. You don't
+an MCP server or a API token. You don't
+need to worry about any of that. You've
+need to worry about any of that. You've
+need to worry about any of that. You've
+got it all living inside your AI agents
+got it all living inside your AI agents
+got it all living inside your AI agents
+locally, right? And then you've got the
+locally, right? And then you've got the
+locally, right? And then you've got the
+retrieval. So now you can ask Claude or
+retrieval. So now you can ask Claude or
+retrieval. So now you can ask Claude or
+Open Claw about your own notes. Not
+Open Claw about your own notes. Not
+Open Claw about your own notes. Not
+questions about the internet, but
+questions about the internet, but
+questions about the internet, but
+questions about your research, your
+questions about your research, your
+questions about your research, your
+ideas, your business. For example, what
+ideas, your business. For example, what
+ideas, your business. For example, what
+are the top five topics I've written
+are the top five topics I've written
+are the top five topics I've written
+about this month? Find every note where
+about this month? Find every note where
+about this month? Find every note where
+I mentioned customer objections. So
+I mentioned customer objections. So
+I mentioned customer objections. So
+summarize everything that I've captured
+summarize everything that I've captured
+summarize everything that I've captured
+about AI agents in the last 90 days. And
+about AI agents in the last 90 days. And
+about AI agents in the last 90 days. And
+it pulls the answers from your vault,
+it pulls the answers from your vault,
+it pulls the answers from your vault,
+not from Google, not from Wikipedia,
+not from Google, not from Wikipedia,
+not from Google, not from Wikipedia,
+from you. And that's where the gold is,
+from you. And that's where the gold is,
+from you. And that's where the gold is,
+right? That's the magic of this. And
+right? That's the magic of this. And
+right? That's the magic of this. And
+then this is where it gets really
+then this is where it gets really
+then this is where it gets really
+interesting. So layer number four inside
+interesting. So layer number four inside
+interesting. So layer number four inside
+this framework is that Claude can find
+this framework is that Claude can find
+this framework is that Claude can find
+patterns across notes you wrote weeks or
+patterns across notes you wrote weeks or
+patterns across notes you wrote weeks or
+months apart. Right? It can connect
+months apart. Right? It can connect
+months apart. Right? It can connect
+ideas you never realized were related,
+ideas you never realized were related,
+ideas you never realized were related,
+right? So you can say, for example,
+right? So you can say, for example,
+right? So you can say, for example,
+okay, based on my last 50 notes, what
+okay, based on my last 50 notes, what
+okay, based on my last 50 notes, what
+themes keep showing up? Find gaps in my
+themes keep showing up? Find gaps in my
+themes keep showing up? Find gaps in my
+research. What content angles have I
+research. What content angles have I
+research. What content angles have I
+captured but never turned into a piece
+captured but never turned into a piece
+captured but never turned into a piece
+of content? This is like having a
+of content? This is like having a
+of content? This is like having a
+research analyst who's read everything
+research analyst who's read everything
+research analyst who's read everything
+you've ever written and can see the
+you've ever written and can see the
+you've ever written and can see the
+bigger picture because they have and
+bigger picture because they have and
+bigger picture because they have and
+it's got the analytical brain of AI
+it's got the analytical brain of AI
+it's got the analytical brain of AI
+which is exactly what you want. And then
+which is exactly what you want. And then
+which is exactly what you want. And then
+finally, you got the output, right? You
+finally, you got the output, right? You
+finally, you got the output, right? You
+want to build real things for this. You
+want to build real things for this. You
+want to build real things for this. You
+want to actually implement it. So this
+want to actually implement it. So this
+want to actually implement it. So this
+is the final layer. You're not just
+is the final layer. You're not just
+is the final layer. You're not just
+asking questions anymore. You're asking
+asking questions anymore. You're asking
+asking questions anymore. You're asking
+Claude to build things from your notes.
+Claude to build things from your notes.
+Claude to build things from your notes.
+For example, draft a blog post based on
+For example, draft a blog post based on
+For example, draft a blog post based on
+my last 10 research notes. Create a
+my last 10 research notes. Create a
+my last 10 research notes. Create a
+content calendar from the topics I've
+content calendar from the topics I've
+content calendar from the topics I've
+been capturing. Write an email sequence
+been capturing. Write an email sequence
+been capturing. Write an email sequence
+using the customer objections I've
+using the customer objections I've
+using the customer objections I've
+documented. Generate a training document
+documented. Generate a training document
+documented. Generate a training document
+for my team. Your notes go in, the
+for my team. Your notes go in, the
+for my team. Your notes go in, the
+finished work comes out. And that is the
+finished work comes out. And that is the
+finished work comes out. And that is the
+engine, my friends. So why is this so
+engine, my friends. So why is this so
+engine, my friends. So why is this so
+useful? For example,
+useful? For example,
+useful? For example,
+this basically works 24/7 as an AI
+this basically works 24/7 as an AI
+this basically works 24/7 as an AI
+agent. So you could have inside your
+agent. So you could have inside your
+agent. So you could have inside your
+Obsidian vault, we've actually got a
+Obsidian vault, we've actually got a
+Obsidian vault, we've actually got a
+30-day road map inside the AI profitable
+30-day road map inside the AI profitable
+30-day road map inside the AI profitable
+and video notes, but you could have five
+and video notes, but you could have five
+and video notes, but you could have five
+star folders. You could have ideas,
+star folders. You could have ideas,
+star folders. You could have ideas,
+research, content, clients, and systems.
+research, content, clients, and systems.
+research, content, clients, and systems.
+And then you can paste in a prompt
+And then you can paste in a prompt
+And then you can paste in a prompt
+that's personalized to you. You could
+that's personalized to you. You could
+that's personalized to you. You could
+also just do, you know, something where
+also just do, you know, something where
+also just do, you know, something where
+you take obsidian and you create one
+you take obsidian and you create one
+you take obsidian and you create one
+note for every idea, a process or piece
+note for every idea, a process or piece
+note for every idea, a process or piece
+of knowledge stuck in your brain, right?
+of knowledge stuck in your brain, right?
+of knowledge stuck in your brain, right?
+Number one, it helps you get organized
+Number one, it helps you get organized
+Number one, it helps you get organized
+just in terms of journaling day-to-day.
+just in terms of journaling day-to-day.
+just in terms of journaling day-to-day.
+But number two, it really helps the AI
+But number two, it really helps the AI
+But number two, it really helps the AI
+understand who you are, what you do. And
+understand who you are, what you do. And
+understand who you are, what you do. And
+also the other thing here is like you
+also the other thing here is like you
+also the other thing here is like you
+could store this inside something like
+could store this inside something like
+could store this inside something like
+open core but open core breaks and if
+open core but open core breaks and if
+open core but open core breaks and if
+you have to reinstall it or it bugs out
+you have to reinstall it or it bugs out
+you have to reinstall it or it bugs out
+or it just accidentally deletes
+or it just accidentally deletes
+or it just accidentally deletes
+everything. You've lost it all. It's
+everything. You've lost it all. It's
+everything. You've lost it all. It's
+very hard to keep this organized. If you
+very hard to keep this organized. If you
+very hard to keep this organized. If you
+link it directly to obsidian instead, it
+link it directly to obsidian instead, it
+link it directly to obsidian instead, it
+instantly has context that you don't
+instantly has context that you don't
+instantly has context that you don't
+just use inside open core. You share it
+just use inside open core. You share it
+just use inside open core. You share it
+across cloud code and everywhere else.
+across cloud code and everywhere else.
+across cloud code and everywhere else.
+Right? And that's the beauty of this.
+Right? And that's the beauty of this.
+Right? And that's the beauty of this.
+That's how it works so well. So that's
+That's how it works so well. So that's
+That's how it works so well. So that's
+basically it for how to use it, how to
+basically it for how to use it, how to
+basically it for how to use it, how to
+get access to it. It's completely free
+get access to it. It's completely free
+get access to it. It's completely free
+and you can link it to open claw and
+and you can link it to open claw and
+and you can link it to open claw and
+it's super easy to use. All right, it's
+it's super easy to use. All right, it's
+it's super easy to use. All right, it's
+not a technical way to use this. It's
+not a technical way to use this. It's
+not a technical way to use this. It's
+super easy. Some people say my notes are
+super easy. Some people say my notes are
+super easy. Some people say my notes are
+too messy and disorganized for AI to
+too messy and disorganized for AI to
+too messy and disorganized for AI to
+use. The good news is AI doesn't care
+use. The good news is AI doesn't care
+use. The good news is AI doesn't care
+about the messy stuff, right? It reads
+about the messy stuff, right? It reads
+about the messy stuff, right? It reads
+everything and finds the patterns for
+everything and finds the patterns for
+everything and finds the patterns for
+you. You can have something that's
+you. You can have something that's
+you. You can have something that's
+really messy and that vault just gets
+really messy and that vault just gets
+really messy and that vault just gets
+organized over time because the AI helps
+organized over time because the AI helps
+organized over time because the AI helps
+you see what's connected, right? You can
+you see what's connected, right? You can
+you see what's connected, right? You can
+start messy if you want to and just let
+start messy if you want to and just let
+start messy if you want to and just let
+the AI clean it up. Your notes are just
+the AI clean it up. Your notes are just
+the AI clean it up. Your notes are just
+raw material, right? The AI does the
+raw material, right? The AI does the
+raw material, right? The AI does the
+organizing. Your job is just to capture
+organizing. Your job is just to capture
+organizing. Your job is just to capture
+and give it context.
+and give it context.
+and give it context.
+So that's basically it. And then also
+So that's basically it. And then also
+So that's basically it. And then also
+some people say, I've tried note
+some people say, I've tried note
+some people say, I've tried note
+takingaking apps before and always stop
+takingaking apps before and always stop
+takingaking apps before and always stop
+using them. That's because those apps
+using them. That's because those apps
+using them. That's because those apps
+never gave you anything back, right?
+never gave you anything back, right?
+never gave you anything back, right?
+You'd put notes in there and they just
+You'd put notes in there and they just
+You'd put notes in there and they just
+sit there collecting dust. Obsidian and
+sit there collecting dust. Obsidian and
+sit there collecting dust. Obsidian and
+Claude and Open Core is different
+Claude and Open Core is different
+Claude and Open Core is different
+because your notes start working for
+because your notes start working for
+because your notes start working for
+you, right? They write your emails. They
+you, right? They write your emails. They
+you, right? They write your emails. They
+draft your content. They answer your
+draft your content. They answer your
+draft your content. They answer your
+business questions. So, when your notes
+business questions. So, when your notes
+business questions. So, when your notes
+save you two hours a day, you don't stop
+save you two hours a day, you don't stop
+save you two hours a day, you don't stop
+using them. You use them more and more,
+using them. You use them more and more,
+using them. You use them more and more,
+right? And so, if you've used
+right? And so, if you've used
+right? And so, if you've used
+note-taking apps before and stopped, you
+note-taking apps before and stopped, you
+note-taking apps before and stopped, you
+know, it's not cuz you're lazy, it's
+know, it's not cuz you're lazy, it's
+know, it's not cuz you're lazy, it's
+because the old apps never gave you a
+because the old apps never gave you a
+because the old apps never gave you a
+reason to keep going, right? This one
+reason to keep going, right? This one
+reason to keep going, right? This one
+does. That's what this game is about.
+does. That's what this game is about.
+does. That's what this game is about.
+So, if you want to get 100 prompts, a
+So, if you want to get 100 prompts, a
+So, if you want to get 100 prompts, a
+30-day road map for using Obsidian, the
+30-day road map for using Obsidian, the
+30-day road map for using Obsidian, the
+full framework for using this, and all
+full framework for using this, and all
+full framework for using this, and all
+my best trainings of Clawude and Open
+my best trainings of Clawude and Open
+my best trainings of Clawude and Open
+Claw and the new daily updates that come
+Claw and the new daily updates that come
+Claw and the new daily updates that come
+out every single day, I show you how to
+out every single day, I show you how to
+out every single day, I show you how to
+do all of it inside the AI profit
+do all of it inside the AI profit
+do all of it inside the AI profit
+boardroom link in the comments in
+boardroom link in the comments in
+boardroom link in the comments in
+description or you can go to the
+description or you can go to the
+description or you can go to the
+aprofit.com. We have all my best
+aprofit.com. We have all my best
+aprofit.com. We have all my best
+trainings inside here, an amazing
+trainings inside here, an amazing
+trainings inside here, an amazing
+community of great people that you can
+community of great people that you can
+community of great people that you can
+ask questions to 24/7. Inside the
+ask questions to 24/7. Inside the
+ask questions to 24/7. Inside the
+calendar, we have all of my best
+calendar, we have all of my best
+calendar, we have all of my best
+automation calls. You can meet people in
+automation calls. You can meet people in
+automation calls. You can meet people in
+your local area from the map and then
+your local area from the map and then
+your local area from the map and then
+inside the classroom you get access to
+inside the classroom you get access to
+inside the classroom you get access to
+all my best trainings. So you can go
+all my best trainings. So you can go
+all my best trainings. So you can go
+from beginner to expert with AI
+from beginner to expert with AI
+from beginner to expert with AI
+automation and learn how to build your
+automation and learn how to build your
+automation and learn how to build your
+first AI agent in under five minutes.
+first AI agent in under five minutes.
+first AI agent in under five minutes.
+You can get my best business playbooks
+You can get my best business playbooks
+You can get my best business playbooks
+on how to automate Twitter and the AI
+on how to automate Twitter and the AI
+on how to automate Twitter and the AI
+avatar videos and Instagram and shorts.
+avatar videos and Instagram and shorts.
+avatar videos and Instagram and shorts.
+If you want to see my new daily updates
+If you want to see my new daily updates
+If you want to see my new daily updates
+and the notes from today, check out the
+and the notes from today, check out the
+and the notes from today, check out the
+SAP update section. If you want to learn
+SAP update section. If you want to learn
+SAP update section. If you want to learn
+how to get more clients, check out the
+how to get more clients, check out the
+how to get more clients, check out the
+agency course. If you want to watch
+agency course. If you want to watch
+agency course. If you want to watch
+about the coaching course, watch them
+about the coaching course, watch them
+about the coaching course, watch them
+here. If you want to learn how to rank
+here. If you want to learn how to rank
+here. If you want to learn how to rank
+them more inside Google and AI search
+them more inside Google and AI search
+them more inside Google and AI search
+engines, check this out. And also, if
+engines, check this out. And also, if
+engines, check this out. And also, if
+you want to learn how to grow a YouTube
+you want to learn how to grow a YouTube
+you want to learn how to grow a YouTube
+channel or you can check it out right
+channel or you can check it out right
+channel or you can check it out right
+there, right? So, thanks so much for
+there, right? So, thanks so much for
+there, right? So, thanks so much for
+watching. Appreciate as always and I
+watching. Appreciate as always and I
+watching. Appreciate as always and I
+will see you on the next one. Feel free
+will see you on the next one. Feel free
+will see you on the next one. Feel free
+to check this out. Link in the comments
+to check this out. Link in the comments
+to check this out. Link in the comments
+description. Let's see what questions
+description. Let's see what questions
+description. Let's see what questions
+we've got, my friends. Purpose says,
+we've got, my friends. Purpose says,
+we've got, my friends. Purpose says,
+"How can I reach out to you in person?
+"How can I reach out to you in person?
+"How can I reach out to you in person?
+Come join the AR profit boardroom."
+Come join the AR profit boardroom."
+Come join the AR profit boardroom."
+That's where I personally connect with
+That's where I personally connect with
+That's where I personally connect with
+people. Hello builder says, "This is
+people. Hello builder says, "This is
+people. Hello builder says, "This is
+valuable." Thank you very much, sir.
+valuable." Thank you very much, sir.
+valuable." Thank you very much, sir.
+Thank you, Julian, for the amazing
+Thank you, Julian, for the amazing
+Thank you, Julian, for the amazing
+share. Happy to help. Does Nema claw
+share. Happy to help. Does Nema claw
+share. Happy to help. Does Nema claw
+offer similar to Claude co-work? No,
+offer similar to Claude co-work? No,
+offer similar to Claude co-work? No,
+it's very different. So Nema Claw is
+it's very different. So Nema Claw is
+it's very different. So Nema Claw is
+literally just open claw but in a more
+literally just open claw but in a more
+literally just open claw but in a more
+secure environment. Like that's the
+secure environment. Like that's the
+secure environment. Like that's the
+difference. Dave says the way the
+difference. Dave says the way the
+difference. Dave says the way the
+project panel instructions and cord
+project panel instructions and cord
+project panel instructions and cord
+hooks snap together is oddly satisfying.
+hooks snap together is oddly satisfying.
+hooks snap together is oddly satisfying.
+Thanks for being on the public. Thank
+Thanks for being on the public. Thank
+Thanks for being on the public. Thank
+you very much, sir, for watching. And
+you very much, sir, for watching. And
+you very much, sir, for watching. And
+yeah, I would agree like it's very
+yeah, I would agree like it's very
+yeah, I would agree like it's very
+satisfying using it. It's an amazing
+satisfying using it. It's an amazing
+satisfying using it. It's an amazing
+tool. So, thanks very much for watching.
+tool. So, thanks very much for watching.
+tool. So, thanks very much for watching.
+I will see everyone on the next one.
+I will see everyone on the next one.
+I will see everyone on the next one.
+Cheers.

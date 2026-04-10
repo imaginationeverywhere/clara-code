@@ -1,0 +1,1036 @@
+Title: We Fixed the #1 Reason Claude Code Apps Fail
+Video ID: m6gFmNddbgk
+URL: https://www.youtube.com/watch?v=m6gFmNddbgk
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Everyone says vibe coding with claude
+[00:02] code and anti-gravity is the future, but
+[00:04] 90% of these projects never actually go
+[00:06] anywhere. They start fast, they look
+[00:08] promising, and then they hit a wall that
+[00:10] no amount of prompting could ever fix.
+[00:12] Not even mentioning the back-end
+[00:14] marketing and distribution if the
+[00:15] product is actually functional. So,
+[00:18] after some soularching and a bunch of
+[00:20] failed projects, my co-founder Chris and
+[00:22] I figured out what the one thing that
+[00:24] almost nobody's doing. And later in this
+[00:26] video, Chris is going to do a side
+[00:29] byside. Same AI tools, same features,
+[00:32] one with our framework and one without.
+[00:35] The difference is going to make you
+[00:36] rethink how you're currently building.
+[00:38] And before Chris takes over, I just want
+[00:39] to let you guys know I had to beg him to
+[00:41] come on and get him to sit in front of
+[00:43] the camera cuz he's busy shipping so
+[00:45] many different products for our agency
+[00:47] and for our internal use. But on that
+[00:49] note, we both know there is a huge
+[00:51] seductive trap when it comes to AI and
+[00:54] you could basically skip the entire
+[00:56] planning part. You can go right to
+[00:58] building and try to ship something
+[01:00] without enterprise hardening, without
+[01:02] making sure that your codebase is tight
+[01:04] and you might feel like a genius. All
+[01:06] these lines of code and you didn't
+[01:08] really have to do much. The AI just did
+[01:09] it for you until you have to change
+[01:11] something and have no idea what it
+[01:13] actually does. What we're seeing is that
+[01:15] most people spend 30% of their time
+[01:17] actually building something and then 70%
+[01:20] of the time after the case, after it's
+[01:22] built, trying to actually make it work,
+[01:25] troubleshooting and figuring out what's
+[01:27] wrong, what's it's just a mess without a
+[01:29] proper spec or they call it PRD, product
+[01:32] requirement document. There's no
+[01:34] assimilated understanding between you
+[01:36] and your AI. It's like going to a
+[01:38] contractor and asking him to build you a
+[01:40] house without a blueprint. you never
+[01:42] went to an architect and you're like
+[01:43] just do whatever.
+[01:44] >> Yeah. So, uh on that note, I want to add
+[01:47] that it's not just that there's no spec.
+[01:49] The thing that I've seen the most is
+[01:51] that people will skip their system
+[01:52] design entirely. So, when you think
+[01:54] about a spec that lists features, but
+[01:57] nobody thinks about how those features
+[01:59] actually connect. This is going to be
+[02:01] things like architecture, data flow, and
+[02:04] what happens when you need to extend it
+[02:06] next month. So, you do have to think of
+[02:09] it like you're building a house. Um, so
+[02:11] a feature is kind of like a a list of
+[02:13] rooms. Your system design however is the
+[02:16] loadbearing walls, the plumbing, the
+[02:19] electrical. The thing about vibe coders
+[02:21] is they are listing rooms and wondering
+[02:23] why the house collapses. But the deeper
+[02:26] problem is that AI is stateless. It
+[02:29] starts every session as a blank slate.
+[02:32] There's no memory of your architecture
+[02:34] design, your business logic, your
+[02:36] constraints. So every single new session
+[02:38] is starting from zero. Now, your job as
+[02:41] a human is not just to describe the
+[02:43] features, which is what some people that
+[02:45] think they're vibe coding correctly do
+[02:47] with their specs.
+[02:49] >> It's to build the whole context around
+[02:52] what you're giving to AI to make good
+[02:54] decisions. Now, at a minimum, that's
+[02:57] that is what a spec does, but the real
+[03:00] unlock is in the persistent context that
+[03:03] travels with your project,
+[03:04] >> right? No, that makes a lot of sense. I
+[03:06] agree with you. stacking the different
+[03:09] types of commands, [clears throat]
+[03:10] skills, and I've seen a lot of people,
+[03:13] they download all these skills that are
+[03:15] relevant to somebody else's projects,
+[03:17] but they don't know what's actually in
+[03:18] the markdown files, and there's no
+[03:21] intention behind the skills. So, these
+[03:25] people might have other hooks connected
+[03:27] to some of their softwares, MCPs, you
+[03:29] know, whatever. And if you're not
+[03:31] intentionally crafting your own skills
+[03:33] for your own purposes stacked with if
+[03:36] you're trying to build an app and you
+[03:38] don't have a proper PRD and you don't
+[03:40] have any systems thinking in mind, you
+[03:42] haven't taken that time to process all
+[03:44] these things ahead of time, you're going
+[03:47] to lead yourself into some deep waters.
+[03:49] So if a lack of planning kills the
+[03:51] project, what does the plan actually
+[03:53] look like? And the answer is actually a
+[03:55] lot simpler than you would think. But
+[03:57] it's not just the proper spec and
+[04:00] planning, right? Because I could sit
+[04:02] here for 10 minutes and Chris is going
+[04:03] to show you here in a moment on his
+[04:05] screen what he does. There's going to be
+[04:07] some awesome takeaways for you. The plan
+[04:09] is me just sitting here in plan mode
+[04:11] with Claude code. Discuss with it for
+[04:12] about 10 minutes discussing what you
+[04:14] want to build and just think. That's
+[04:17] really all it is. It's not corporate
+[04:19] bureaucracy or anything more than that.
+[04:21] The real secret in this is having a
+[04:24] proper framework, an orchestration
+[04:27] layer. Those things truly matter when
+[04:30] building with clawed code or
+[04:31] anti-gravity or any agentic coding tool.
+[04:34] Most of us are not top level, senior
+[04:36] level engineers. So how do you
+[04:39] understand how an engineer would build
+[04:41] without actually being one? And these
+[04:44] are the frameworks that come in the form
+[04:46] of plugins. You guys might have heard
+[04:48] about Paul and Chris is actually the
+[04:50] author of that repo as well as Carl. And
+[04:53] if you guys have seen any of the other
+[04:54] videos that I put out on those topics,
+[04:57] you know, they're incredibly useful. So,
+[04:59] I want Chris to show you the frameworks
+[05:01] he's using. I want him to color in the
+[05:04] details on what we're speaking about so
+[05:05] you guys can walk away with this with a
+[05:07] proper understanding how planning is
+[05:09] definitely important, but the proper
+[05:11] frameworks is what's going to take you
+[05:13] to the next level. So, Chris, go ahead,
+[05:15] bro. Share your screen. What Chris is
+[05:16] going to do now in one terminal he's
+[05:19] going to discuss building an app without
+[05:21] a framework without proper planning he's
+[05:23] just going to say hey Claude build this
+[05:25] and in the other he's going to be using
+[05:27] the Paul framework with proper planning
+[05:29] and structure build so that Claude can
+[05:32] understand in each phase what's being
+[05:34] built
+[05:34] >> okay and I want to add one other thing I
+[05:37] use a step before Paul it's available on
+[05:40] GitHub and it's called seed but
+[05:43] essentially it lets you discuss your
+[05:46] application or whatever project you have
+[05:48] that will feed into Paul in a way where
+[05:50] it structures the context Paul uses to
+[05:53] scaffold everything out with
+[05:55] architecture and systems design in mind
+[05:58] baked in. Chris is just going to show
+[06:00] how it works. If you guys want a deeper
+[06:02] breakdown on it, just comment below or
+[06:04] you guys can join the school in the
+[06:06] description below. Man, this is
+[06:08] underground knowledge. Okay, so you're
+[06:09] going to run seed and then he's going to
+[06:12] go ahead into using Paul versus on the
+[06:14] left that's already building here. We're
+[06:16] not even building yet. We're just
+[06:17] planning and we're preemptively
+[06:19] strategizing with Claude, but this guy
+[06:22] over here is already building.
+[06:24] >> Call it awesome intake. Sounds like a
+[06:26] great app name.
+[06:26] >> So, what we're seeing here is Claude is
+[06:28] freehanding. It's just kind of whatever.
+[06:30] Here, we're using a stencil and we're
+[06:32] building like a system designer here.
+[06:34] >> All right. So, who's using it and how?
+[06:37] But notice how it's asking the right
+[06:39] questions before it's building anything.
+[06:41] This allows us to start thinking about
+[06:43] how certain pieces in the application
+[06:45] connect to one another before it starts
+[06:47] building. I'll uh add some thought
+[06:49] [clears throat] here. I have no clue
+[06:51] where this thing is even being built.
+[06:52] Like it's just in some random place. It
+[06:55] just took off. I don't even know where
+[06:57] it's at right now. Another thing is
+[06:59] >> [clears throat]
+[06:59] >> uh during this seed ideation process,
+[07:02] you can do some exploration. So, if you
+[07:06] want to maybe throw in other ideas as
+[07:09] far as technologies that you might use
+[07:11] when building an application, it will
+[07:12] help you break down pros and cons and
+[07:14] really hone in on the best approach. So,
+[07:16] on the right, we're just going to let
+[07:18] the spec be built. Once that's done,
+[07:20] we'll move forward. God only knows what
+[07:22] the left side is doing. I have no idea.
+[07:25] >> It looks like it gave a local host.
+[07:27] We'll check that out in a minute. The
+[07:29] benefit beyond just talking with this
+[07:32] particular uh skill that I've created is
+[07:36] in how [clears throat] it follows your
+[07:39] workspace structure. So it can be built
+[07:43] according to your workspace. For me,
+[07:45] whenever I work with it, it's going to
+[07:47] generate a project and a planning
+[07:50] document. And the planning documents are
+[07:52] consistent. So every planning document
+[07:55] follows a similar template for the type
+[07:58] of plan you're creating. And Paul
+[08:02] expects these template types when it
+[08:04] whenever you're generating a Paul
+[08:06] project for the initiation of the Paul
+[08:10] setup. And because it expects that, it
+[08:12] knows exactly what to do with it in
+[08:14] order to create the Paul project at the
+[08:18] best baseline that it can. From there,
+[08:21] you you just have strong foundations.
+[08:24] It's like really laying, like we brought
+[08:26] up the house analogy before. It's like
+[08:29] really laying out that strong foundation
+[08:31] that you can build a strong, sturdy, and
+[08:34] reliable house on top of.
+[08:35] >> So, the spec works, but what's the full
+[08:38] process? Because the spec is step one.
+[08:40] We both know this. Maybe you guys don't,
+[08:43] but there are more steps to make this
+[08:45] bulletproof.
+[08:46] >> Technically, we just got um I would call
+[08:48] a spec in this planning document. It's a
+[08:51] little bit less of a spec and more of
+[08:53] like a full project plan that has
+[08:56] multiple sections of context for all of
+[08:59] the specs that Paul will end up building
+[09:02] on a phase by phase.
+[09:03] >> Can you show them that?
+[09:04] >> Yeah, of course. So, it's going to go in
+[09:07] my projects and it put it as awesome
+[09:10] intake and let's actually open that.
+[09:13] >> That's interesting. You're using the
+[09:14] UXUI Pro Max for the design. Okay. So,
+[09:17] Oh, it actually creates a a PDF for you.
+[09:20] That's sick.
+[09:20] >> So, it's not a PDF. This is a markdown
+[09:23] uh preview extension that I use. So, it
+[09:25] just
+[09:26] >> And you never told me about this.
+[09:27] >> I didn't know. You didn't know
+[09:28] >> this this [ __ ] guy.
+[09:30] >> The cool thing about Paul and you the
+[09:32] way it works as a a framework is people
+[09:35] use skills for specific scenarios and
+[09:38] situations. And Paul is built to pull in
+[09:42] the skills that are a part of your
+[09:43] processes into the relevant projects and
+[09:46] plans that you're working with. So, this
+[09:48] is an application that's going to have
+[09:50] front end. Um, so what it did is it
+[09:52] pulled the skill load out of the UI UX
+[09:54] Pro Max for getting this quick, you
+[09:56] know, awesome intake app up. And then
+[09:59] also, Sonar Cube is one that is used for
+[10:02] code smells and to detect small bugs.
+[10:05] And non-technically speaking, what Chris
+[10:07] is saying, sonar cube is basically like
+[10:10] a code doctor. It's like having a senior
+[10:12] engineer in your back pocket to kind of
+[10:14] review your code and make sure that it's
+[10:16] clean and it's secure.
+[10:17] >> Yes. Yes. So, it'll bake in the
+[10:20] necessary skills um based on what you
+[10:22] have in your inventory. Then, we're
+[10:24] going to see a problem statement. It's
+[10:26] going to lay out the tech stack and
+[10:27] exactly what we're using everything for.
+[10:29] So, rationale is included. Um if there's
+[10:31] any research done. So in the seed skill,
+[10:34] uh there's the option to do a lot of
+[10:36] research to discover things and to build
+[10:39] context documents in addition to
+[10:40] planning. So some of my projects don't
+[10:43] have just a planning doc. They have like
+[10:44] maybe three or four different context
+[10:46] doc that covers best practices for
+[10:48] certain things specific to that project.
+[10:51] Um it's going to break down the data
+[10:52] model. So there is no guessing. Uh you
+[10:55] can change all of this in the planning
+[10:56] process. So if you want to add or remove
+[10:59] things from your data models can it's
+[11:02] going to go through some of the
+[11:03] strategies um for all aspects of this
+[11:07] application even including the security
+[11:08] considerations and did we get this full
+[11:12] document before we have ever touched a
+[11:14] single line of code. Let me actually
+[11:16] just dial back a little bit. AI is at
+[11:22] its optimal performance whenever it is
+[11:25] constrained. And I think that is a
+[11:26] concept that a lot of vibe coders miss
+[11:28] out on. The more constraints that you
+[11:30] give, the more guard rails you put in
+[11:33] place, the more laser focused it
+[11:35] becomes. I use the word surgical a lot.
+[11:39] All right. So, I'm just going to go
+[11:40] ahead and lock this one in. And there is
+[11:43] a pro uh one more process beyond here
+[11:46] where it's going to uh graduate itself.
+[11:50] Now what you'll see here is it's adding
+[11:52] this to active MD. That is my own
+[11:55] personal active projects tracking. So
+[11:57] what you're seeing is another framework
+[11:59] in action. That's not even what we're
+[12:01] actively working with. All right. So we
+[12:03] are actually going to launch this one.
+[12:05] And while Chris is doing that, let's
+[12:06] just I'm going to let you know every
+[12:08] resource that we talked about here. Seed
+[12:11] Paul sonar cube. We're going to tag them
+[12:13] all below for you guys.
+[12:14] >> I didn't understand the arguments to the
+[12:17] skill.
+[12:17] >> This is just how things work. This is
+[12:20] how you use clawed code or any agent
+[12:23] coder when you don't know. It's always
+[12:25] great. Sometimes I have clawed desktop
+[12:26] open. I'll feed whatever I'm seeing into
+[12:29] another AI like what's the problem here?
+[12:31] Why is this not working? That's how you
+[12:33] learn and understand better with AI. you
+[12:36] know, if if you don't have somebody you
+[12:37] trust, if you don't have us, you're not
+[12:39] in the school and you don't really know
+[12:40] who to ask. And on that note, if you're
+[12:42] finding this video useful so far, I've
+[12:45] mentioned the school. You should
+[12:46] definitely consider joining. We have a
+[12:49] lot of free AI tools and templates and
+[12:52] primarily resources around Claude Code
+[12:54] from beginner to advanced. You gain
+[12:56] access to our Claude Code tool belt and
+[12:59] there's never any pressure to upgrade.
+[13:01] If you would like to upgrade, there's
+[13:02] obviously a lot of bonuses and benefits
+[13:05] for you guys. And everything we build,
+[13:07] we build in public. Same frameworks we
+[13:09] use are going to be the same frameworks
+[13:10] that you get access to. Yeah. So, what
+[13:13] we see here is that I went with the
+[13:16] launch command and it has built in my
+[13:19] apps, which is where I actually have
+[13:22] individual applications that have their
+[13:25] own repos separate from my parent
+[13:28] workspace.
+[13:29] And it is now going to set up using that
+[13:32] planning document that we just created
+[13:34] the entire Paul initiation sequence. So
+[13:38] it will go through the workflow and it
+[13:40] will do it in a headless way where it
+[13:42] does not reask anything. So you see no
+[13:44] reasking and from that planning doc it
+[13:47] will then build out the road map, the
+[13:49] state of the application, the project
+[13:51] specs as well as a few other things. So,
+[13:55] we're just going to give this one uh
+[13:57] moment to run through the workflow and
+[14:00] then I will show you just the first the
+[14:03] first iteration of working with Paul.
+[14:05] That gives you a taste of what it is end
+[14:07] to end. So, this is the way I build
+[14:09] applications. I spend most of my time
+[14:12] telling it yes, proceed, which is, you
+[14:15] know, kind of crazy to think about. Most
+[14:16] VI coders are like in the weeds grabbing
+[14:20] screenshots, grabbing trace stack error
+[14:23] error logs from their console and
+[14:25] pasting it in back and forth. Fix this,
+[14:27] debug that while I'm sitting here just
+[14:30] telling Claude, "Yes, proceed." Oh, it
+[14:32] looks good. Great. Yes, proceed. I was
+[14:34] going to say Paul has been initialized.
+[14:36] So, here's what we have. We have our
+[14:39] project file and I'm going to move this
+[14:41] over here. The project file is just
+[14:43] going to describe what the uh app is,
+[14:45] the core value, requirements,
+[14:48] must, should, nice, the constraints, the
+[14:51] success criteria. This is less used.
+[14:54] What you're going to see used the most
+[14:56] is going to be the road map and the
+[14:57] state. This is what prevents that issue
+[15:01] we talked about in the beginning of our
+[15:03] talk where you are just a part way
+[15:06] through and you think you're good and
+[15:07] then all of a sudden you hit this
+[15:08] invisible wall that you cannot get
+[15:10] around or through and then the app
+[15:12] becomes a nightmare. That is due to
+[15:16] obviously not thinking in terms of
+[15:17] system design but it is also due to what
+[15:19] we call drift. And drift is where one
+[15:22] thing that is done and decided
+[15:25] um is put in place and then down the
+[15:27] road we uh a decision is made or
+[15:29] something is done different that is
+[15:31] incompatible with what was previously
+[15:33] done. Therefore that incompatibility can
+[15:35] sometimes be silent, hidden. They're
+[15:38] like, you know, they're just basically
+[15:40] chaos ninjas in your code that you don't
+[15:43] even know are there. So this prevents
+[15:45] that. So every decision made, every
+[15:47] deferment made, everything that's logged
+[15:50] in and done goes into uh the state
+[15:52] document. The road map tracks the state
+[15:55] over time. This right here tells Claude
+[15:58] where your ad app is at right here and
+[16:00] right now. Uh road map will tell it
+[16:03] where it has been the whole way through.
+[16:05] It's a four-step process we're talking
+[16:07] about here. Step one, the spec sheet,
+[16:09] right? The spec, the planning, you see
+[16:11] the framework on the right terminal.
+[16:13] That's the right way to do it. should
+[16:14] take you no longer than 10 minutes to
+[16:16] do. Step two is prompt with the spec as
+[16:19] context. So that's kind of where we're
+[16:21] at now. You could see over here Chris
+[16:24] has the project MD, the road map, and
+[16:26] the state. The state basically shows you
+[16:28] 0% of the project's complete, things
+[16:31] like that. Just so you can measure where
+[16:32] you're at with the project. Step three
+[16:35] is like Chris said, he's just saying
+[16:37] yes, go ahead. Yes, go ahead. And we're
+[16:40] not running too many actions in
+[16:42] parallel, meaning we're not letting it
+[16:43] just kind of do everything unsupervised.
+[16:46] A huge part of success with this, and
+[16:48] that's going to save you that 70% on the
+[16:50] back end of just testing and making sure
+[16:52] things are working, is doing what Chris
+[16:54] and I call, or it's generally spoken as
+[16:57] UAT, user acceptance testing. And we do
+[17:01] that quite often. So every time it goes
+[17:03] through and it moves forward on a part
+[17:04] of the project, we're going to review
+[17:06] and we're going to make sure that it's
+[17:07] doing what we actually want it to do. So
+[17:09] that's step three. And step four is
+[17:12] testing before you add. So if he does a
+[17:15] phase, and you'll see as we move forward
+[17:17] with Paul, as you can see over here in
+[17:19] the phases, each phase has a different
+[17:21] portion. Some of it is maybe more front
+[17:23] end, some of it is maybe just backend
+[17:25] functionality. But if the front end is
+[17:27] built, we're going to make sure that
+[17:28] it's viewable, that it looks solid, but
+[17:30] ultimately we should see what it's doing
+[17:32] every step of the way to make sure that
+[17:33] it's moving in the direction that we
+[17:35] want it to go because it would totally
+[17:36] suck if you spend all this time saying
+[17:39] yes, yes, yes, yes, and then it just
+[17:41] gives you crap, right? That's it's not
+[17:44] good. Test before you add, run the app,
+[17:46] verify the feature, commit, and then
+[17:49] move to the next one. All right, so we
+[17:50] are almost done fully with the setup.
+[17:54] Once it scaffolds out the basic Paul
+[17:57] setup, it will ask subtargeted questions
+[18:00] about your process such as any skills
+[18:03] that you want or any additional Paul
+[18:05] configurations. We do have an enterprise
+[18:07] audit. I did turn that on and I turned
+[18:09] off sonar cube. So that's what you're
+[18:11] seeing here all configured. Now we can
+[18:13] really actually dive right into how Paul
+[18:14] works. When we when you initially were
+[18:16] teaching me and we were working together
+[18:18] when I was kind of beginning, you
+[18:19] discussed there was five different
+[18:21] levels. And
+[18:22] >> on the level scale, what we're doing
+[18:24] right now, these four steps are about
+[18:26] level one to two of a deeper progression
+[18:29] of leveling, you know, to up to level
+[18:31] five, right? Does that sound about
+[18:33] right?
+[18:33] >> What we're doing here is actually up to
+[18:35] level four.
+[18:35] >> Come on. Really?
+[18:37] >> Yeah. Uh, so the way I look at it is
+[18:39] level one is a person that really just
+[18:41] runs with Claude MD. Level two is
+[18:44] someone that has some skills and a claw
+[18:47] MD. Three is you've got hooks firing
+[18:49] that automate between your skills and
+[18:52] you're getting the start of what a
+[18:54] workflow might look like. This is a
+[18:57] workflow. This is a framework. This is
+[18:59] combining all of the above in a
+[19:02] streamlined executable way.
+[19:04] >> Okay, the the framework's thinking and
+[19:07] workflows thinking and actually having
+[19:09] it execute 90%. It's the 8020 principle.
+[19:13] We're getting 80% of our results from
+[19:14] like 20% input.
+[19:16] >> And we're not diving deep into like
+[19:18] skills like the UIUX Pro Max skill.
+[19:21] We're not going to
+[19:23] >> Yeah. Well, we're not even going to do
+[19:24] that in this video. We could do that in
+[19:25] another video. Um the commands
+[19:27] themselves like the Paul/Paul plan thing
+[19:30] that is a command itself. We're we're
+[19:33] more talking highle frameworks. And
+[19:35] would you say that we've covered the
+[19:37] first four steps of how this framework
+[19:39] works so far? Yeah, we've basically
+[19:41] covered the first four and there is some
+[19:44] elements of level five here as well in
+[19:46] the earlier discussions of talking about
+[19:48] systems design. That is level five
+[19:51] thinking in terms of the overarching
+[19:53] design and keeping that perspective
+[19:56] every day as you're building inside of
+[19:58] cloud code. That is why Paul exists.
+[20:01] That is why all of these frameworks
+[20:02] exist. And each one that I that's added
+[20:05] to the tool stack accelerates every
+[20:08] future project. So the time it takes me
+[20:11] to build an app today is at least 10
+[20:14] times faster and better code quality
+[20:18] than the first app that I built because
+[20:20] along the way I took level five with me
+[20:23] the mindset and built the frameworks
+[20:26] based on my experience with claude. That
+[20:28] is level five.
+[20:30] >> Got it. Okay. And step four, what I was
+[20:33] mentioning is testing before you add.
+[20:36] Now, I'm sure we're not going to go
+[20:37] through and build an entire app with you
+[20:40] guys here. If you guys want to check out
+[20:41] a video on that, I'll tag it below. I
+[20:43] built something with GSD and it's the
+[20:46] same thing as poll, but poll's better in
+[20:48] my opinion. But what I do want to do is
+[20:50] show you what the left hand side, the
+[20:53] freehand terminal built. And what we're
+[20:55] going to do for the right side, if we
+[20:57] get further along here in this and we
+[20:59] can view what phase one builds, we'll
+[21:01] showcase it. But I want Chris to show
+[21:03] you one of the other projects that we've
+[21:05] built using Paul and Carl and show you
+[21:08] the phases and structure. And I want him
+[21:10] he's going to show you how the project
+[21:13] actually came out looking. And he's
+[21:15] going to go on a super high level how
+[21:16] each one of the phases worked up to the
+[21:20] final product. So you guys can see how
+[21:22] it actually ends up looking. But with
+[21:24] the Paul framework that you're seeing
+[21:25] here on the right hand side, it is
+[21:28] following step three of the framework
+[21:29] which is reviewing every 50 100 lines
+[21:32] whatever you know we are seeing what
+[21:34] it's building. And more than just the
+[21:35] framework it's the mindset. It's how you
+[21:38] think about these tools. Get the idea
+[21:40] out of your head that you can't build
+[21:42] products that actually make you money
+[21:44] with AI. If you're stuck between yes or
+[21:46] no, you're never going to get anywhere.
+[21:47] Just move forward. Do your best and try
+[21:49] it. We're doing it. Why can't you? So
+[21:52] Chris, yeah, showcase what the garbage
+[21:54] freehand built and then once you're done
+[21:56] taking a look at that, let's look at
+[21:58] some of the ship products we have and
+[22:00] the phases.
+[22:01] >> Absolutely. So I'm going to get this
+[22:03] front end booted up. In the meantime, uh
+[22:05] we'll look at the file system.
+[22:07] [clears throat]
+[22:07] Uh we'll look at the repo here. So this
+[22:10] is Kgate. It is an application that
+[22:12] we've pushed to production. And here is
+[22:14] the Paul subfolder which houses
+[22:17] everything about this application from
+[22:19] start to finish throughout the build
+[22:20] process. Now what I have here are the
+[22:23] phases. This is actually what I walk
+[22:25] through um in sequential order bit by
+[22:28] bit using this framework that you're
+[22:30] seeing here on the right terminal. It
+[22:32] sets up your foundations all the way
+[22:34] through to getting it in through testing
+[22:38] and any go to market things that you
+[22:40] might need to wrap up or clean up. So
+[22:42] the whole thing phase by phase. It
+[22:45] allows you to also slide in as you go
+[22:47] because projects are never just going to
+[22:49] be purely like sequential all the way to
+[22:52] the very end. You're going to run into
+[22:53] things that you need to move in up. You
+[22:56] need to advance ahead of other things.
+[22:58] And so Paul actually slides those in as
+[23:01] decimal phases to let you follow the
+[23:05] structure without being held so rigidly
+[23:08] to that. And so yeah. Uh, do you want me
+[23:10] to go into any of these to to show kind
+[23:13] of what it looks like at a deeper level?
+[23:15] >> Yeah, if that's Casegate, you could show
+[23:17] that. We're we're uh revising the front
+[23:19] end design of the actual landing page,
+[23:22] but you could boot that open. So, I
+[23:23] mean, if you want to open up the fake
+[23:25] product first or the freehand one, you
+[23:28] do whichever you want first. Do you want
+[23:29] to showcase what?
+[23:30] >> Let's just go ahead and take a look.
+[23:32] >> I am here.
+[23:34] >> Well, it looks like it can't be reached.
+[23:36] >> Well, that's what you get for that's
+[23:38] what you get. Let me see what we got on
+[23:40] this one here. Now, we have Casegate.
+[23:42] So, I am logged into CaseGate as an
+[23:45] attorney. This would be what a person
+[23:48] would see after setting up their 14-day
+[23:50] free trial. They'll land on the
+[23:51] dashboard. It's really simple onboarding
+[23:53] process. They just kind of set up their
+[23:56] firm profile. So, they go to their firm
+[23:58] profile and then what they can do is
+[24:00] upload their logo. I've got a
+[24:02] placeholder here. Okay. So, we can
+[24:04] upload a logo and it's going to put that
+[24:07] in place. And they'll also apply this
+[24:09] logo to their intake form, which the
+[24:12] slug can be changed. And we'll look at
+[24:13] the form in a minute. But the idea is
+[24:15] that a an attorney will white label
+[24:18] their form. They get this intake form
+[24:20] that they can embed on their website so
+[24:22] that all people that are submitting
+[24:23] cases to them to be reviewed and
+[24:26] possibly picked up by the firm go
+[24:28] through this intake process to
+[24:30] streamline their ability to triage this.
+[24:33] And this intake form leverages AI to
+[24:36] produce a comprehensive report out of
+[24:39] all of the details gathered in the form.
+[24:41] This is actually live at kgstate.ai.
+[24:44] We're just showing it in local host to
+[24:45] show you guys how it's operating. And
+[24:47] we're charging about $600 a month. I
+[24:50] think we have it at uh five grand for
+[24:53] the year. Is that right? And then we
+[24:55] have a lifetime limited for like 10
+[24:57] grand. So this is profitable stuff. But
+[24:58] go ahead, Chris.
+[24:59] >> Yeah. So essentially they come in and on
+[25:02] the live version there's templated
+[25:04] criteria here that they can toggle on or
+[25:06] toggle off. What we see here it's empty
+[25:08] but essentially that anyone can add what
+[25:11] kind of criteria is important to them.
+[25:14] So for this it' be a practice area. The
+[25:16] AI understands this is a practice area.
+[25:19] So maybe they do like divorce cases as a
+[25:22] practice area for example and they can
+[25:24] put their keywords in here that are
+[25:26] common to the kinds of cases they look
+[25:29] for in this particular type and the AI
+[25:32] takes all of that into its analysis.
+[25:35] There's a waiting factor here as well so
+[25:37] that certain items can weigh more than
+[25:39] others and it can synthesize a proper
+[25:42] end result. It's pretty complicated. And
+[25:46] what we do have I I would love for you
+[25:48] to show them the form and how it
+[25:49] actually works because the criteria is
+[25:51] the lawyers do on their own, but the
+[25:53] actual intake form when that's filled
+[25:55] out, it hits the attorney's dashboard.
+[25:56] It gives it a rating. It uh takes the
+[25:59] documents, lays out a timeline, lays out
+[26:01] all key facts about things. So, the
+[26:04] [clears throat] attorneys and their
+[26:04] parallegals don't have to spend all that
+[26:06] time looking and hunting through the
+[26:08] data. That's a huge problem for
+[26:10] attorneys. So that data is all going to
+[26:12] be assimilated and then put into a
+[26:15] report with a rating based off of the
+[26:17] filters and criterias that the attorneys
+[26:19] put in. Those types of features in an
+[26:22] application each have their own phase
+[26:25] inside of Claude with the Paul
+[26:28] framework. So you could just fill the
+[26:31] rest of this out. I want to see what the
+[26:32] dashboard looks like. I want to see
+[26:34] something in there. And then Chris is
+[26:36] just going to show you a phase, the
+[26:38] phases that he's built for these
+[26:40] particular features. So actually
+[26:42] Charlie, I pulled up um the live
+[26:46] version. So this is Kgate.ai showing the
+[26:49] templates they can come and toggle on
+[26:51] and off. And then based on practice
+[26:53] areas and there's a few other things in
+[26:55] here when we go to this intake form,
+[26:57] which you know anyone can go to right
+[26:59] now. Intake form is live. It's got my
+[27:01] firm name at the top. It's got a logo
+[27:03] and if as you can see case types are
+[27:05] based on the ones I say I'll I'll take.
+[27:07] So if I want to put a bankruptcy in put
+[27:09] that document in. All right. So we've
+[27:12] got the document in place. I've got a
+[27:15] good case to submit. It's going to give
+[27:18] the user the ability to review their
+[27:20] submission. Make sure all their contact
+[27:22] information is correct. Look at what
+[27:24] they've uploaded. There's disclaimers.
+[27:27] And then we can approve and submit. What
+[27:29] the user sees is that the case was
+[27:32] submitted successfully and then what we
+[27:34] see in the back end is that a case has
+[27:36] come in. So John Doe's case has hit and
+[27:39] is processing and AI is currently
+[27:42] analyzing the case in real time and now
+[27:44] it's done and it will give us the
+[27:47] results here. Um there's a base score of
+[27:51] 50 probably due to a fit in the practice
+[27:54] area alignment that gives a plus there.
+[27:57] And so what we can see is that now this
+[28:00] uh firm has a clear report that they can
+[28:03] look at and it breaks down the key facts
+[28:05] based on documentation that's there.
+[28:08] Lets them view the documentation right
+[28:10] here on the application itself. So they
+[28:12] can look and go through and review any
+[28:15] documents. Gives the analysis details
+[28:18] how long it took, what model was used,
+[28:20] when it was analyzed. Everything is
+[28:21] audited. Everything is logged. That's
+[28:23] all for compliance purposes. And this is
+[28:25] what people missed. And then at the top
+[28:27] or even right there at the right, the
+[28:29] case acceptance is right there. If they
+[28:32] accept it, it'll send them a Calendarly
+[28:34] invite to book a 30-minute consult with
+[28:36] the attorney. If they reject it, they'll
+[28:38] get an email rejecting it. You know, the
+[28:40] prospect as far as I'm saying, but
+[28:42] that's how this project works. Chris,
+[28:44] just show show them the the phases on
+[28:46] CaseGate and highlight the phases that
+[28:48] actually built out each feature that
+[28:50] we're talking about. I want to make a I
+[28:51] want to make a very important point on
+[28:54] what people with vibe coding end up
+[28:56] doing without systems design thinking is
+[28:59] they build an application they could
+[29:00] someone could build this and put it out
+[29:02] there through hours of grueling
+[29:04] iteration with the AI however under the
+[29:08] hood you're going to have data leaks
+[29:10] you're going to have vulnerability
+[29:12] security issues scalability issues
+[29:15] things that you can't see on the front
+[29:16] end that are going to break compliance
+[29:19] and cause you to be
+[29:22] geared up for a lawsuit essentially or
+[29:25] you know something something worse. What
+[29:28] we have here is an application that is
+[29:31] secure that is built according to
+[29:35] compliance standards because we are in
+[29:37] the legal space and all of that has to
+[29:39] be airtight. We can go through and we
+[29:41] can look at all of these phases. This is
+[29:43] what got the application up and running.
+[29:45] But then these phases with the Rs in
+[29:47] front of them, this is all the
+[29:50] enterprise security and compliance
+[29:52] hardening. And without the frameworks,
+[29:55] without Paul and without uh the other
+[29:58] tool that I use to get the hardening
+[30:00] done, we wouldn't have this application
+[30:02] live at the scalability and with the
+[30:06] security it has now. We would not have
+[30:08] it. It's the frameworks that made it
+[30:10] possible.
+[30:11] >> Yeah, for sure. I I I think we've we've
+[30:14] been uh chatting about one product for
+[30:16] decent bit of time. What I'd like to do
+[30:19] before we move into our final discussion
+[30:21] before we wrap this up is show the
+[30:25] freehand software that was uh created at
+[30:27] first. It wasn't loading in local host.
+[30:30] And then we have the one that actually
+[30:31] built out through using Paul. So show
+[30:33] them the one that Paul built first. So
+[30:36] this is awesome intake. It's nothing
+[30:38] crazy, but it was built and we didn't
+[30:40] have to worry about trying to get it to
+[30:42] work. It worked first round. So now,
+[30:45] let's show them the freehand. And it
+[30:48] might work, but it's not structured
+[30:50] properly, and it probably has a lot of
+[30:52] code leaks as it even stands now.
+[30:54] >> All right, let's see.
+[30:56] >> All right. Uh, now in an unstructured
+[30:58] way, we're going to have to ask Claude
+[30:59] to get it to work.
+[31:00] >> Um, I'm going to have to spend extra
+[31:02] effort and time just to get a boot.
+[31:04] That's just the extra effort and time to
+[31:06] get it up and running. Now, from this
+[31:09] point on, the amount of effort I'm going
+[31:11] to be as opposed to this one is
+[31:12] tremendous. I can build this into all
+[31:14] sorts of different directions, and it's
+[31:15] going to work consistently and reliably
+[31:17] every time. This I'm probably going to
+[31:19] have to struggle every step of the way.
+[31:21] >> Then, let's just scrap that. Case point,
+[31:23] there's another one that I want to show
+[31:24] you guys that we built. Yeah, it was a
+[31:26] client project.
+[31:27] >> You want to show them the landing page
+[31:28] really quick? You don't got to go into
+[31:29] all the features. Okay, so this is
+[31:31] Exotics on Demand. This was a great
+[31:34] client project example. Same poll
+[31:36] structure that we used to build this.
+[31:37] And this was a high ticket client. And
+[31:39] this one is absolutely sick. It uses AI
+[31:42] to scrape certain sources for the
+[31:43] dealership to find good deals and be
+[31:45] ahead of their competition instead of
+[31:47] just having to manually go to auction
+[31:48] houses and reach out to everybody and
+[31:50] all that good jazz. Like this is all
+[31:52] done using AI. Another great example of
+[31:54] why structure is so important. Now he's
+[31:56] showing you the settings, the sources.
+[31:58] So using the different phases, you can
+[32:01] add uh toggle features to turn sources
+[32:03] on and off, scrape history, scheduling,
+[32:06] all this is possible with AI. Now, so
+[32:10] enough of the showcasing and showing,
+[32:14] you know, how cool Chris is when it
+[32:15] comes to building and using Paul. I just
+[32:17] wanted to show you guys the main
+[32:18] framework, the steps that we're going
+[32:20] through to build enterprise hardened
+[32:22] products that actually make money. And
+[32:24] the real proof is what happens after you
+[32:26] use it. So, I hope you guys learned
+[32:28] something through the technical
+[32:29] showcase. Um, I have some talking points
+[32:32] here. I'm just going to be asking Chris
+[32:34] some questions, but again, those are the
+[32:36] real projects that we've worked on, that
+[32:38] we've built. And there's a compound
+[32:40] effect with the products that we built.
+[32:42] You get user feedback and you can focus
+[32:44] on that feedback instead of just saying,
+[32:46] "Hey, I got all these ideas. Let me grow
+[32:48] on this." It's like market validation,
+[32:50] product market fit. You build it, they
+[32:52] like it, they use it, but they have
+[32:54] feedback for you. So you build on that
+[32:56] rather than hypotheticals because that's
+[32:59] a waste of time. Why it's so important
+[33:00] to have those things at least ready like
+[33:02] a general idea of a pipeline before you
+[33:05] build anything to stack with the market
+[33:07] validation and the product market fit
+[33:09] increase your likelihood of success
+[33:11] because technically building is already
+[33:13] a pain in the ass as it is. Chris, just
+[33:15] TLDDR, just explain your experience the
+[33:18] past few months, six months, a year
+[33:19] using Agentic coding tools and what it's
+[33:23] been like for you. Just
+[33:24] >> Well, uh came into Claude Code and I
+[33:27] fortunately my the way my brain thinks
+[33:29] is already kind of came in with the
+[33:31] understanding of if I work on cloud
+[33:33] code, cla code will work better for me.
+[33:35] So, just to put that out there, that's
+[33:37] just the way my mind works. So, I kind
+[33:39] of came in with this mindset from the
+[33:40] get-go. However, I am not a developer. I
+[33:44] am not an engineer by default. I am a
+[33:48] non developer vibe coder like everyone
+[33:51] else here. The only difference in me and
+[33:54] anyone else when it comes to my approach
+[33:58] and shipping is the fact that I
+[34:00] recognize this gap in myself and I also
+[34:03] recognize the importance of it for being
+[34:04] able to do what I want to do as a vibe
+[34:06] coder. So, I use Claude for everything.
+[34:08] Uh, even to learn the systems design.
+[34:11] That would be my tip number one. A lot
+[34:12] of people are going to think, well, I
+[34:14] don't know what systems design is. I
+[34:16] don't know architecture and technology.
+[34:17] Well, you have Claude and you have the
+[34:19] internet.
+[34:20] >> That's true.
+[34:20] >> So, chat with Claude. Have it do
+[34:22] research. Have it research Reddit, you
+[34:25] know.
+[34:25] >> Yeah. Um,
+[34:26] >> and I was just going to high I was going
+[34:28] to color in some details. Chris and I
+[34:29] worked on a few projects in the past
+[34:31] over the past almost half a decade and
+[34:33] he's always been a huge automation
+[34:35] systems guy you know onboarding systems
+[34:37] sales processes so and he's a wiz with
+[34:39] go high level before agentic workflows
+[34:42] we had zapierre we had you know go high
+[34:44] level automations now we have agentic uh
+[34:47] AI processed workflows um on that side
+[34:50] of things I hope you guys got the clear
+[34:52] understanding of the mindset shift AI is
+[34:54] really a junior developer with the spec
+[34:57] and the framework you and engineer it
+[35:00] into somewhat of a senior. But it comes
+[35:03] down to how you use it, how you plan,
+[35:05] and the frameworks used. If you ask an
+[35:07] expert a dumb question, you get a dumb
+[35:10] answer. If you ask an expert a great
+[35:12] well-thoughtout question, you get a
+[35:14] great answer. And the compound effect is
+[35:16] much bigger than just building one
+[35:17] project and compounding on user
+[35:19] feedback. It's the frameworks you get
+[35:21] and even the code itself to instill in
+[35:24] other projects. It's the understanding.
+[35:26] It's the overall experience using these
+[35:28] tools that take you to the next level
+[35:31] overall with your mission or with your
+[35:32] business as an agency or as a SAS
+[35:35] product builder. You create patterns for
+[35:37] yourself. Chris is managing multiple
+[35:39] apps, multiple client projects, and even
+[35:41] just those two apps that you see,
+[35:43] they're reusable. And even when it comes
+[35:45] to upcharging somebody, if if one of the
+[35:47] clients that we built this project for
+[35:49] wants a different feature, they're
+[35:51] willing to pay for it. And guess what?
+[35:53] We have the framework. We have
+[35:54] everything built out. We did it the
+[35:56] right way. So all it takes is a little
+[35:58] bit of planning, using the right
+[36:00] framework, adding the features,
+[36:02] repurposing, spending tremendously less
+[36:05] time, and then we can make the same
+[36:06] amount of money with less work. And
+[36:08] that's how this whole thing compounds
+[36:10] over time. And Chris would agree, the
+[36:12] real unlock is not just building a
+[36:14] product, it's building a system that
+[36:16] builds products. Would you agree, Chris?
+[36:20] Yeah, 100%. Or using a system that was
+[36:22] built already. So Chris, if you had to
+[36:24] leave everybody with one drop of sauce
+[36:26] before we conclude this thing, what
+[36:28] would it be?
+[36:29] >> Use Paul.
+[36:30] >> Use Paul. Join the school.
+[36:32] >> Yep. Use [laughter] Paul. You may be uh
+[36:34] honest about that.
+[36:35] >> So if you guys want to use Paul, the
+[36:37] resources are linked below. If you guys
+[36:39] want the exact frameworks, templates,
+[36:42] and closer access to us, consider
+[36:44] joining the school. And definitely drop
+[36:47] a like on this video and consider
+[36:49] subscribing to this channel. We do about
+[36:51] one to two videos a week just like this
+[36:53] on cloud code workflows, templates,
+[36:55] plugins, everything in between. I highly
+[36:58] encourage you guys to check out Chris's
+[36:59] channel as well. He's going to be
+[37:00] putting out some new content, but you'll
+[37:02] get the exclusive stuff inside of the
+[37:04] school. We also do live workshops inside
+[37:06] of school and they're only going to get
+[37:08] more and more extensive as our
+[37:10] repositories grow as well. Everything
+[37:12] we're doing is compounding. We might be
+[37:14] a little bit further ahead, but with
+[37:16] this knowledge and these insights that
+[37:18] you got from us, you can go from level
+[37:20] one to level five real quick. Next week,
+[37:22] what I can promise you guys is that
+[37:24] Chris over here is going to go through
+[37:26] an even deeper level of sauce. It's
+[37:28] called base. It's a new workspace
+[37:30] orchestrator, which at the highest level
+[37:33] sits above Paul and the app building
+[37:36] orchestrator or framework itself. So, I
+[37:38] hope you guys enjoyed and we will see
+[37:40] you guys on the next episode of Agentic
+[37:42] Operators. Holy.
+
+--- Plain text ---
+Everyone says vibe coding with claude code and anti-gravity is the future, but 90% of these projects never actually go anywhere. They start fast, they look promising, and then they hit a wall that no amount of prompting could ever fix. Not even mentioning the back-end marketing and distribution if the product is actually functional. So, after some soularching and a bunch of failed projects, my co-founder Chris and I figured out what the one thing that almost nobody's doing. And later in this video, Chris is going to do a side byside. Same AI tools, same features, one with our framework and one without. The difference is going to make you rethink how you're currently building. And before Chris takes over, I just want to let you guys know I had to beg him to come on and get him to sit in front of the camera cuz he's busy shipping so many different products for our agency and for our internal use. But on that note, we both know there is a huge seductive trap when it comes to AI and you could basically skip the entire planning part. You can go right to building and try to ship something without enterprise hardening, without making sure that your codebase is tight and you might feel like a genius. All these lines of code and you didn't really have to do much. The AI just did it for you until you have to change something and have no idea what it actually does. What we're seeing is that most people spend 30% of their time actually building something and then 70% of the time after the case, after it's built, trying to actually make it work, troubleshooting and figuring out what's wrong, what's it's just a mess without a proper spec or they call it PRD, product requirement document. There's no assimilated understanding between you and your AI. It's like going to a contractor and asking him to build you a house without a blueprint. you never went to an architect and you're like just do whatever. >> Yeah. So, uh on that note, I want to add that it's not just that there's no spec. The thing that I've seen the most is that people will skip their system design entirely. So, when you think about a spec that lists features, but nobody thinks about how those features actually connect. This is going to be things like architecture, data flow, and what happens when you need to extend it next month. So, you do have to think of it like you're building a house. Um, so a feature is kind of like a a list of rooms. Your system design however is the loadbearing walls, the plumbing, the electrical. The thing about vibe coders is they are listing rooms and wondering why the house collapses. But the deeper problem is that AI is stateless. It starts every session as a blank slate. There's no memory of your architecture design, your business logic, your constraints. So every single new session is starting from zero. Now, your job as a human is not just to describe the features, which is what some people that think they're vibe coding correctly do with their specs. >> It's to build the whole context around what you're giving to AI to make good decisions. Now, at a minimum, that's that is what a spec does, but the real unlock is in the persistent context that travels with your project, >> right? No, that makes a lot of sense. I agree with you. stacking the different types of commands, [clears throat] skills, and I've seen a lot of people, they download all these skills that are relevant to somebody else's projects, but they don't know what's actually in the markdown files, and there's no intention behind the skills. So, these people might have other hooks connected to some of their softwares, MCPs, you know, whatever. And if you're not intentionally crafting your own skills for your own purposes stacked with if you're trying to build an app and you don't have a proper PRD and you don't have any systems thinking in mind, you haven't taken that time to process all these things ahead of time, you're going to lead yourself into some deep waters. So if a lack of planning kills the project, what does the plan actually look like? And the answer is actually a lot simpler than you would think. But it's not just the proper spec and planning, right? Because I could sit here for 10 minutes and Chris is going to show you here in a moment on his screen what he does. There's going to be some awesome takeaways for you. The plan is me just sitting here in plan mode with Claude code. Discuss with it for about 10 minutes discussing what you want to build and just think. That's really all it is. It's not corporate bureaucracy or anything more than that. The real secret in this is having a proper framework, an orchestration layer. Those things truly matter when building with clawed code or anti-gravity or any agentic coding tool. Most of us are not top level, senior level engineers. So how do you understand how an engineer would build without actually being one? And these are the frameworks that come in the form of plugins. You guys might have heard about Paul and Chris is actually the author of that repo as well as Carl. And if you guys have seen any of the other videos that I put out on those topics, you know, they're incredibly useful. So, I want Chris to show you the frameworks he's using. I want him to color in the details on what we're speaking about so you guys can walk away with this with a proper understanding how planning is definitely important, but the proper frameworks is what's going to take you to the next level. So, Chris, go ahead, bro. Share your screen. What Chris is going to do now in one terminal he's going to discuss building an app without a framework without proper planning he's just going to say hey Claude build this and in the other he's going to be using the Paul framework with proper planning and structure build so that Claude can understand in each phase what's being built >> okay and I want to add one other thing I use a step before Paul it's available on GitHub and it's called seed but essentially it lets you discuss your application or whatever project you have that will feed into Paul in a way where it structures the context Paul uses to scaffold everything out with architecture and systems design in mind baked in. Chris is just going to show how it works. If you guys want a deeper breakdown on it, just comment below or you guys can join the school in the description below. Man, this is underground knowledge. Okay, so you're going to run seed and then he's going to go ahead into using Paul versus on the left that's already building here. We're not even building yet. We're just planning and we're preemptively strategizing with Claude, but this guy over here is already building. >> Call it awesome intake. Sounds like a great app name. >> So, what we're seeing here is Claude is freehanding. It's just kind of whatever. Here, we're using a stencil and we're building like a system designer here. >> All right. So, who's using it and how? But notice how it's asking the right questions before it's building anything. This allows us to start thinking about how certain pieces in the application connect to one another before it starts building. I'll uh add some thought [clears throat] here. I have no clue where this thing is even being built. Like it's just in some random place. It just took off. I don't even know where it's at right now. Another thing is >> [clears throat] >> uh during this seed ideation process, you can do some exploration. So, if you want to maybe throw in other ideas as far as technologies that you might use when building an application, it will help you break down pros and cons and really hone in on the best approach. So, on the right, we're just going to let the spec be built. Once that's done, we'll move forward. God only knows what the left side is doing. I have no idea. >> It looks like it gave a local host. We'll check that out in a minute. The benefit beyond just talking with this particular uh skill that I've created is in how [clears throat] it follows your workspace structure. So it can be built according to your workspace. For me, whenever I work with it, it's going to generate a project and a planning document. And the planning documents are consistent. So every planning document follows a similar template for the type of plan you're creating. And Paul expects these template types when it whenever you're generating a Paul project for the initiation of the Paul setup. And because it expects that, it knows exactly what to do with it in order to create the Paul project at the best baseline that it can. From there, you you just have strong foundations. It's like really laying, like we brought up the house analogy before. It's like really laying out that strong foundation that you can build a strong, sturdy, and reliable house on top of. >> So, the spec works, but what's the full process? Because the spec is step one. We both know this. Maybe you guys don't, but there are more steps to make this bulletproof. >> Technically, we just got um I would call a spec in this planning document. It's a little bit less of a spec and more of like a full project plan that has multiple sections of context for all of the specs that Paul will end up building on a phase by phase. >> Can you show them that? >> Yeah, of course. So, it's going to go in my projects and it put it as awesome intake and let's actually open that. >> That's interesting. You're using the UXUI Pro Max for the design. Okay. So, Oh, it actually creates a a PDF for you. That's sick. >> So, it's not a PDF. This is a markdown uh preview extension that I use. So, it just >> And you never told me about this. >> I didn't know. You didn't know >> this this [ __ ] guy. >> The cool thing about Paul and you the way it works as a a framework is people use skills for specific scenarios and situations. And Paul is built to pull in the skills that are a part of your processes into the relevant projects and plans that you're working with. So, this is an application that's going to have front end. Um, so what it did is it pulled the skill load out of the UI UX Pro Max for getting this quick, you know, awesome intake app up. And then also, Sonar Cube is one that is used for code smells and to detect small bugs. And non-technically speaking, what Chris is saying, sonar cube is basically like a code doctor. It's like having a senior engineer in your back pocket to kind of review your code and make sure that it's clean and it's secure. >> Yes. Yes. So, it'll bake in the necessary skills um based on what you have in your inventory. Then, we're going to see a problem statement. It's going to lay out the tech stack and exactly what we're using everything for. So, rationale is included. Um if there's any research done. So in the seed skill, uh there's the option to do a lot of research to discover things and to build context documents in addition to planning. So some of my projects don't have just a planning doc. They have like maybe three or four different context doc that covers best practices for certain things specific to that project. Um it's going to break down the data model. So there is no guessing. Uh you can change all of this in the planning process. So if you want to add or remove things from your data models can it's going to go through some of the strategies um for all aspects of this application even including the security considerations and did we get this full document before we have ever touched a single line of code. Let me actually just dial back a little bit. AI is at its optimal performance whenever it is constrained. And I think that is a concept that a lot of vibe coders miss out on. The more constraints that you give, the more guard rails you put in place, the more laser focused it becomes. I use the word surgical a lot. All right. So, I'm just going to go ahead and lock this one in. And there is a pro uh one more process beyond here where it's going to uh graduate itself. Now what you'll see here is it's adding this to active MD. That is my own personal active projects tracking. So what you're seeing is another framework in action. That's not even what we're actively working with. All right. So we are actually going to launch this one. And while Chris is doing that, let's just I'm going to let you know every resource that we talked about here. Seed Paul sonar cube. We're going to tag them all below for you guys. >> I didn't understand the arguments to the skill. >> This is just how things work. This is how you use clawed code or any agent coder when you don't know. It's always great. Sometimes I have clawed desktop open. I'll feed whatever I'm seeing into another AI like what's the problem here? Why is this not working? That's how you learn and understand better with AI. you know, if if you don't have somebody you trust, if you don't have us, you're not in the school and you don't really know who to ask. And on that note, if you're finding this video useful so far, I've mentioned the school. You should definitely consider joining. We have a lot of free AI tools and templates and primarily resources around Claude Code from beginner to advanced. You gain access to our Claude Code tool belt and there's never any pressure to upgrade. If you would like to upgrade, there's obviously a lot of bonuses and benefits for you guys. And everything we build, we build in public. Same frameworks we use are going to be the same frameworks that you get access to. Yeah. So, what we see here is that I went with the launch command and it has built in my apps, which is where I actually have individual applications that have their own repos separate from my parent workspace. And it is now going to set up using that planning document that we just created the entire Paul initiation sequence. So it will go through the workflow and it will do it in a headless way where it does not reask anything. So you see no reasking and from that planning doc it will then build out the road map, the state of the application, the project specs as well as a few other things. So, we're just going to give this one uh moment to run through the workflow and then I will show you just the first the first iteration of working with Paul. That gives you a taste of what it is end to end. So, this is the way I build applications. I spend most of my time telling it yes, proceed, which is, you know, kind of crazy to think about. Most VI coders are like in the weeds grabbing screenshots, grabbing trace stack error error logs from their console and pasting it in back and forth. Fix this, debug that while I'm sitting here just telling Claude, "Yes, proceed." Oh, it looks good. Great. Yes, proceed. I was going to say Paul has been initialized. So, here's what we have. We have our project file and I'm going to move this over here. The project file is just going to describe what the uh app is, the core value, requirements, must, should, nice, the constraints, the success criteria. This is less used. What you're going to see used the most is going to be the road map and the state. This is what prevents that issue we talked about in the beginning of our talk where you are just a part way through and you think you're good and then all of a sudden you hit this invisible wall that you cannot get around or through and then the app becomes a nightmare. That is due to obviously not thinking in terms of system design but it is also due to what we call drift. And drift is where one thing that is done and decided um is put in place and then down the road we uh a decision is made or something is done different that is incompatible with what was previously done. Therefore that incompatibility can sometimes be silent, hidden. They're like, you know, they're just basically chaos ninjas in your code that you don't even know are there. So this prevents that. So every decision made, every deferment made, everything that's logged in and done goes into uh the state document. The road map tracks the state over time. This right here tells Claude where your ad app is at right here and right now. Uh road map will tell it where it has been the whole way through. It's a four-step process we're talking about here. Step one, the spec sheet, right? The spec, the planning, you see the framework on the right terminal. That's the right way to do it. should take you no longer than 10 minutes to do. Step two is prompt with the spec as context. So that's kind of where we're at now. You could see over here Chris has the project MD, the road map, and the state. The state basically shows you 0% of the project's complete, things like that. Just so you can measure where you're at with the project. Step three is like Chris said, he's just saying yes, go ahead. Yes, go ahead. And we're not running too many actions in parallel, meaning we're not letting it just kind of do everything unsupervised. A huge part of success with this, and that's going to save you that 70% on the back end of just testing and making sure things are working, is doing what Chris and I call, or it's generally spoken as UAT, user acceptance testing. And we do that quite often. So every time it goes through and it moves forward on a part of the project, we're going to review and we're going to make sure that it's doing what we actually want it to do. So that's step three. And step four is testing before you add. So if he does a phase, and you'll see as we move forward with Paul, as you can see over here in the phases, each phase has a different portion. Some of it is maybe more front end, some of it is maybe just backend functionality. But if the front end is built, we're going to make sure that it's viewable, that it looks solid, but ultimately we should see what it's doing every step of the way to make sure that it's moving in the direction that we want it to go because it would totally suck if you spend all this time saying yes, yes, yes, yes, and then it just gives you crap, right? That's it's not good. Test before you add, run the app, verify the feature, commit, and then move to the next one. All right, so we are almost done fully with the setup. Once it scaffolds out the basic Paul setup, it will ask subtargeted questions about your process such as any skills that you want or any additional Paul configurations. We do have an enterprise audit. I did turn that on and I turned off sonar cube. So that's what you're seeing here all configured. Now we can really actually dive right into how Paul works. When we when you initially were teaching me and we were working together when I was kind of beginning, you discussed there was five different levels. And >> on the level scale, what we're doing right now, these four steps are about level one to two of a deeper progression of leveling, you know, to up to level five, right? Does that sound about right? >> What we're doing here is actually up to level four. >> Come on. Really? >> Yeah. Uh, so the way I look at it is level one is a person that really just runs with Claude MD. Level two is someone that has some skills and a claw MD. Three is you've got hooks firing that automate between your skills and you're getting the start of what a workflow might look like. This is a workflow. This is a framework. This is combining all of the above in a streamlined executable way. >> Okay, the the framework's thinking and workflows thinking and actually having it execute 90%. It's the 8020 principle. We're getting 80% of our results from like 20% input. >> And we're not diving deep into like skills like the UIUX Pro Max skill. We're not going to >> Yeah. Well, we're not even going to do that in this video. We could do that in another video. Um the commands themselves like the Paul/Paul plan thing that is a command itself. We're we're more talking highle frameworks. And would you say that we've covered the first four steps of how this framework works so far? Yeah, we've basically covered the first four and there is some elements of level five here as well in the earlier discussions of talking about systems design. That is level five thinking in terms of the overarching design and keeping that perspective every day as you're building inside of cloud code. That is why Paul exists. That is why all of these frameworks exist. And each one that I that's added to the tool stack accelerates every future project. So the time it takes me to build an app today is at least 10 times faster and better code quality than the first app that I built because along the way I took level five with me the mindset and built the frameworks based on my experience with claude. That is level five. >> Got it. Okay. And step four, what I was mentioning is testing before you add. Now, I'm sure we're not going to go through and build an entire app with you guys here. If you guys want to check out a video on that, I'll tag it below. I built something with GSD and it's the same thing as poll, but poll's better in my opinion. But what I do want to do is show you what the left hand side, the freehand terminal built. And what we're going to do for the right side, if we get further along here in this and we can view what phase one builds, we'll showcase it. But I want Chris to show you one of the other projects that we've built using Paul and Carl and show you the phases and structure. And I want him he's going to show you how the project actually came out looking. And he's going to go on a super high level how each one of the phases worked up to the final product. So you guys can see how it actually ends up looking. But with the Paul framework that you're seeing here on the right hand side, it is following step three of the framework which is reviewing every 50 100 lines whatever you know we are seeing what it's building. And more than just the framework it's the mindset. It's how you think about these tools. Get the idea out of your head that you can't build products that actually make you money with AI. If you're stuck between yes or no, you're never going to get anywhere. Just move forward. Do your best and try it. We're doing it. Why can't you? So Chris, yeah, showcase what the garbage freehand built and then once you're done taking a look at that, let's look at some of the ship products we have and the phases. >> Absolutely. So I'm going to get this front end booted up. In the meantime, uh we'll look at the file system. [clears throat] Uh we'll look at the repo here. So this is Kgate. It is an application that we've pushed to production. And here is the Paul subfolder which houses everything about this application from start to finish throughout the build process. Now what I have here are the phases. This is actually what I walk through um in sequential order bit by bit using this framework that you're seeing here on the right terminal. It sets up your foundations all the way through to getting it in through testing and any go to market things that you might need to wrap up or clean up. So the whole thing phase by phase. It allows you to also slide in as you go because projects are never just going to be purely like sequential all the way to the very end. You're going to run into things that you need to move in up. You need to advance ahead of other things. And so Paul actually slides those in as decimal phases to let you follow the structure without being held so rigidly to that. And so yeah. Uh, do you want me to go into any of these to to show kind of what it looks like at a deeper level? >> Yeah, if that's Casegate, you could show that. We're we're uh revising the front end design of the actual landing page, but you could boot that open. So, I mean, if you want to open up the fake product first or the freehand one, you do whichever you want first. Do you want to showcase what? >> Let's just go ahead and take a look. >> I am here. >> Well, it looks like it can't be reached. >> Well, that's what you get for that's what you get. Let me see what we got on this one here. Now, we have Casegate. So, I am logged into CaseGate as an attorney. This would be what a person would see after setting up their 14-day free trial. They'll land on the dashboard. It's really simple onboarding process. They just kind of set up their firm profile. So, they go to their firm profile and then what they can do is upload their logo. I've got a placeholder here. Okay. So, we can upload a logo and it's going to put that in place. And they'll also apply this logo to their intake form, which the slug can be changed. And we'll look at the form in a minute. But the idea is that a an attorney will white label their form. They get this intake form that they can embed on their website so that all people that are submitting cases to them to be reviewed and possibly picked up by the firm go through this intake process to streamline their ability to triage this. And this intake form leverages AI to produce a comprehensive report out of all of the details gathered in the form. This is actually live at kgstate.ai. We're just showing it in local host to show you guys how it's operating. And we're charging about $600 a month. I think we have it at uh five grand for the year. Is that right? And then we have a lifetime limited for like 10 grand. So this is profitable stuff. But go ahead, Chris. >> Yeah. So essentially they come in and on the live version there's templated criteria here that they can toggle on or toggle off. What we see here it's empty but essentially that anyone can add what kind of criteria is important to them. So for this it' be a practice area. The AI understands this is a practice area. So maybe they do like divorce cases as a practice area for example and they can put their keywords in here that are common to the kinds of cases they look for in this particular type and the AI takes all of that into its analysis. There's a waiting factor here as well so that certain items can weigh more than others and it can synthesize a proper end result. It's pretty complicated. And what we do have I I would love for you to show them the form and how it actually works because the criteria is the lawyers do on their own, but the actual intake form when that's filled out, it hits the attorney's dashboard. It gives it a rating. It uh takes the documents, lays out a timeline, lays out all key facts about things. So, the [clears throat] attorneys and their parallegals don't have to spend all that time looking and hunting through the data. That's a huge problem for attorneys. So that data is all going to be assimilated and then put into a report with a rating based off of the filters and criterias that the attorneys put in. Those types of features in an application each have their own phase inside of Claude with the Paul framework. So you could just fill the rest of this out. I want to see what the dashboard looks like. I want to see something in there. And then Chris is just going to show you a phase, the phases that he's built for these particular features. So actually Charlie, I pulled up um the live version. So this is Kgate.ai showing the templates they can come and toggle on and off. And then based on practice areas and there's a few other things in here when we go to this intake form, which you know anyone can go to right now. Intake form is live. It's got my firm name at the top. It's got a logo and if as you can see case types are based on the ones I say I'll I'll take. So if I want to put a bankruptcy in put that document in. All right. So we've got the document in place. I've got a good case to submit. It's going to give the user the ability to review their submission. Make sure all their contact information is correct. Look at what they've uploaded. There's disclaimers. And then we can approve and submit. What the user sees is that the case was submitted successfully and then what we see in the back end is that a case has come in. So John Doe's case has hit and is processing and AI is currently analyzing the case in real time and now it's done and it will give us the results here. Um there's a base score of 50 probably due to a fit in the practice area alignment that gives a plus there. And so what we can see is that now this uh firm has a clear report that they can look at and it breaks down the key facts based on documentation that's there. Lets them view the documentation right here on the application itself. So they can look and go through and review any documents. Gives the analysis details how long it took, what model was used, when it was analyzed. Everything is audited. Everything is logged. That's all for compliance purposes. And this is what people missed. And then at the top or even right there at the right, the case acceptance is right there. If they accept it, it'll send them a Calendarly invite to book a 30-minute consult with the attorney. If they reject it, they'll get an email rejecting it. You know, the prospect as far as I'm saying, but that's how this project works. Chris, just show show them the the phases on CaseGate and highlight the phases that actually built out each feature that we're talking about. I want to make a I want to make a very important point on what people with vibe coding end up doing without systems design thinking is they build an application they could someone could build this and put it out there through hours of grueling iteration with the AI however under the hood you're going to have data leaks you're going to have vulnerability security issues scalability issues things that you can't see on the front end that are going to break compliance and cause you to be geared up for a lawsuit essentially or you know something something worse. What we have here is an application that is secure that is built according to compliance standards because we are in the legal space and all of that has to be airtight. We can go through and we can look at all of these phases. This is what got the application up and running. But then these phases with the Rs in front of them, this is all the enterprise security and compliance hardening. And without the frameworks, without Paul and without uh the other tool that I use to get the hardening done, we wouldn't have this application live at the scalability and with the security it has now. We would not have it. It's the frameworks that made it possible. >> Yeah, for sure. I I I think we've we've been uh chatting about one product for decent bit of time. What I'd like to do before we move into our final discussion before we wrap this up is show the freehand software that was uh created at first. It wasn't loading in local host. And then we have the one that actually built out through using Paul. So show them the one that Paul built first. So this is awesome intake. It's nothing crazy, but it was built and we didn't have to worry about trying to get it to work. It worked first round. So now, let's show them the freehand. And it might work, but it's not structured properly, and it probably has a lot of code leaks as it even stands now. >> All right, let's see. >> All right. Uh, now in an unstructured way, we're going to have to ask Claude to get it to work. >> Um, I'm going to have to spend extra effort and time just to get a boot. That's just the extra effort and time to get it up and running. Now, from this point on, the amount of effort I'm going to be as opposed to this one is tremendous. I can build this into all sorts of different directions, and it's going to work consistently and reliably every time. This I'm probably going to have to struggle every step of the way. >> Then, let's just scrap that. Case point, there's another one that I want to show you guys that we built. Yeah, it was a client project. >> You want to show them the landing page really quick? You don't got to go into all the features. Okay, so this is Exotics on Demand. This was a great client project example. Same poll structure that we used to build this. And this was a high ticket client. And this one is absolutely sick. It uses AI to scrape certain sources for the dealership to find good deals and be ahead of their competition instead of just having to manually go to auction houses and reach out to everybody and all that good jazz. Like this is all done using AI. Another great example of why structure is so important. Now he's showing you the settings, the sources. So using the different phases, you can add uh toggle features to turn sources on and off, scrape history, scheduling, all this is possible with AI. Now, so enough of the showcasing and showing, you know, how cool Chris is when it comes to building and using Paul. I just wanted to show you guys the main framework, the steps that we're going through to build enterprise hardened products that actually make money. And the real proof is what happens after you use it. So, I hope you guys learned something through the technical showcase. Um, I have some talking points here. I'm just going to be asking Chris some questions, but again, those are the real projects that we've worked on, that we've built. And there's a compound effect with the products that we built. You get user feedback and you can focus on that feedback instead of just saying, "Hey, I got all these ideas. Let me grow on this." It's like market validation, product market fit. You build it, they like it, they use it, but they have feedback for you. So you build on that rather than hypotheticals because that's a waste of time. Why it's so important to have those things at least ready like a general idea of a pipeline before you build anything to stack with the market validation and the product market fit increase your likelihood of success because technically building is already a pain in the ass as it is. Chris, just TLDDR, just explain your experience the past few months, six months, a year using Agentic coding tools and what it's been like for you. Just >> Well, uh came into Claude Code and I fortunately my the way my brain thinks is already kind of came in with the understanding of if I work on cloud code, cla code will work better for me. So, just to put that out there, that's just the way my mind works. So, I kind of came in with this mindset from the get-go. However, I am not a developer. I am not an engineer by default. I am a non developer vibe coder like everyone else here. The only difference in me and anyone else when it comes to my approach and shipping is the fact that I recognize this gap in myself and I also recognize the importance of it for being able to do what I want to do as a vibe coder. So, I use Claude for everything. Uh, even to learn the systems design. That would be my tip number one. A lot of people are going to think, well, I don't know what systems design is. I don't know architecture and technology. Well, you have Claude and you have the internet. >> That's true. >> So, chat with Claude. Have it do research. Have it research Reddit, you know. >> Yeah. Um, >> and I was just going to high I was going to color in some details. Chris and I worked on a few projects in the past over the past almost half a decade and he's always been a huge automation systems guy you know onboarding systems sales processes so and he's a wiz with go high level before agentic workflows we had zapierre we had you know go high level automations now we have agentic uh AI processed workflows um on that side of things I hope you guys got the clear understanding of the mindset shift AI is really a junior developer with the spec and the framework you and engineer it into somewhat of a senior. But it comes down to how you use it, how you plan, and the frameworks used. If you ask an expert a dumb question, you get a dumb answer. If you ask an expert a great well-thoughtout question, you get a great answer. And the compound effect is much bigger than just building one project and compounding on user feedback. It's the frameworks you get and even the code itself to instill in other projects. It's the understanding. It's the overall experience using these tools that take you to the next level overall with your mission or with your business as an agency or as a SAS product builder. You create patterns for yourself. Chris is managing multiple apps, multiple client projects, and even just those two apps that you see, they're reusable. And even when it comes to upcharging somebody, if if one of the clients that we built this project for wants a different feature, they're willing to pay for it. And guess what? We have the framework. We have everything built out. We did it the right way. So all it takes is a little bit of planning, using the right framework, adding the features, repurposing, spending tremendously less time, and then we can make the same amount of money with less work. And that's how this whole thing compounds over time. And Chris would agree, the real unlock is not just building a product, it's building a system that builds products. Would you agree, Chris? Yeah, 100%. Or using a system that was built already. So Chris, if you had to leave everybody with one drop of sauce before we conclude this thing, what would it be? >> Use Paul. >> Use Paul. Join the school. >> Yep. Use [laughter] Paul. You may be uh honest about that. >> So if you guys want to use Paul, the resources are linked below. If you guys want the exact frameworks, templates, and closer access to us, consider joining the school. And definitely drop a like on this video and consider subscribing to this channel. We do about one to two videos a week just like this on cloud code workflows, templates, plugins, everything in between. I highly encourage you guys to check out Chris's channel as well. He's going to be putting out some new content, but you'll get the exclusive stuff inside of the school. We also do live workshops inside of school and they're only going to get more and more extensive as our repositories grow as well. Everything we're doing is compounding. We might be a little bit further ahead, but with this knowledge and these insights that you got from us, you can go from level one to level five real quick. Next week, what I can promise you guys is that Chris over here is going to go through an even deeper level of sauce. It's called base. It's a new workspace orchestrator, which at the highest level sits above Paul and the app building orchestrator or framework itself. So, I hope you guys enjoyed and we will see you guys on the next episode of Agentic Operators. Holy.

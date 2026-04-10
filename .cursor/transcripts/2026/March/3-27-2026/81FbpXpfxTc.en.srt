@@ -1,0 +1,2635 @@
+1
+00:00:00,160 --> 00:00:01,750
+
+As an engineer, I've been using
+
+2
+00:00:01,750 --> 00:00:01,760
+As an engineer, I've been using
+ 
+
+3
+00:00:01,760 --> 00:00:03,750
+As an engineer, I've been using
+different forms of generative AI for
+
+4
+00:00:03,750 --> 00:00:03,760
+different forms of generative AI for
+ 
+
+5
+00:00:03,760 --> 00:00:05,910
+different forms of generative AI for
+years now. I could think of first it
+
+6
+00:00:05,910 --> 00:00:05,920
+years now. I could think of first it
+ 
+
+7
+00:00:05,920 --> 00:00:08,390
+years now. I could think of first it
+was, you know, a coding assistant in my
+
+8
+00:00:08,390 --> 00:00:08,400
+was, you know, a coding assistant in my
+ 
+
+9
+00:00:08,400 --> 00:00:11,749
+was, you know, a coding assistant in my
+IDE back in maybe 2022. And then, of
+
+10
+00:00:11,749 --> 00:00:11,759
+IDE back in maybe 2022. And then, of
+ 
+
+11
+00:00:11,759 --> 00:00:13,110
+IDE back in maybe 2022. And then, of
+course, that progressed to us getting
+
+12
+00:00:13,110 --> 00:00:13,120
+course, that progressed to us getting
+ 
+
+13
+00:00:13,120 --> 00:00:15,990
+course, that progressed to us getting
+those early versions of GPT back in
+
+14
+00:00:15,990 --> 00:00:16,000
+those early versions of GPT back in
+ 
+
+15
+00:00:16,000 --> 00:00:18,630
+those early versions of GPT back in
+2023. And then we were adding our data,
+
+16
+00:00:18,630 --> 00:00:18,640
+2023. And then we were adding our data,
+ 
+
+17
+00:00:18,640 --> 00:00:20,070
+2023. And then we were adding our data,
+right? We were doing techniques such as
+
+18
+00:00:20,070 --> 00:00:20,080
+right? We were doing techniques such as
+ 
+
+19
+00:00:20,080 --> 00:00:22,470
+right? We were doing techniques such as
+rag or retrieval augmented generation to
+
+20
+00:00:22,470 --> 00:00:22,480
+rag or retrieval augmented generation to
+ 
+
+21
+00:00:22,480 --> 00:00:25,269
+rag or retrieval augmented generation to
+pull in our PDFs and other data sources.
+
+22
+00:00:25,269 --> 00:00:25,279
+pull in our PDFs and other data sources.
+ 
+
+23
+00:00:25,279 --> 00:00:27,910
+pull in our PDFs and other data sources.
+And that led us to of course other types
+
+24
+00:00:27,910 --> 00:00:27,920
+And that led us to of course other types
+ 
+
+25
+00:00:27,920 --> 00:00:31,269
+And that led us to of course other types
+of APIs and services with agents and MCP
+
+26
+00:00:31,269 --> 00:00:31,279
+of APIs and services with agents and MCP
+ 
+
+27
+00:00:31,279 --> 00:00:34,310
+of APIs and services with agents and MCP
+back in 2025. And who knows what's going
+
+28
+00:00:34,310 --> 00:00:34,320
+back in 2025. And who knows what's going
+ 
+
+29
+00:00:34,320 --> 00:00:37,590
+back in 2025. And who knows what's going
+to happen in 2026 and the years after.
+
+30
+00:00:37,590 --> 00:00:37,600
+to happen in 2026 and the years after.
+ 
+
+31
+00:00:37,600 --> 00:00:39,830
+to happen in 2026 and the years after.
+The thing is, as I've been using all of
+
+32
+00:00:39,830 --> 00:00:39,840
+The thing is, as I've been using all of
+ 
+
+33
+00:00:39,840 --> 00:00:41,750
+The thing is, as I've been using all of
+these different AI models and AI
+
+34
+00:00:41,750 --> 00:00:41,760
+these different AI models and AI
+ 
+
+35
+00:00:41,760 --> 00:00:43,830
+these different AI models and AI
+services, all of this has been through
+
+36
+00:00:43,830 --> 00:00:43,840
+services, all of this has been through
+ 
+
+37
+00:00:43,840 --> 00:00:46,310
+services, all of this has been through
+public APIs and I've been both sending
+
+38
+00:00:46,310 --> 00:00:46,320
+public APIs and I've been both sending
+ 
+
+39
+00:00:46,320 --> 00:00:48,869
+public APIs and I've been both sending
+my data but also sending my money to
+
+40
+00:00:48,869 --> 00:00:48,879
+my data but also sending my money to
+ 
+
+41
+00:00:48,879 --> 00:00:51,110
+my data but also sending my money to
+thirdparty APIs in order to use their
+
+42
+00:00:51,110 --> 00:00:51,120
+thirdparty APIs in order to use their
+ 
+
+43
+00:00:51,120 --> 00:00:53,830
+thirdparty APIs in order to use their
+models. And now as organizations are
+
+44
+00:00:53,830 --> 00:00:53,840
+models. And now as organizations are
+ 
+
+45
+00:00:53,840 --> 00:00:56,630
+models. And now as organizations are
+looking to deploy their own private and
+
+46
+00:00:56,630 --> 00:00:56,640
+looking to deploy their own private and
+ 
+
+47
+00:00:56,640 --> 00:00:59,029
+looking to deploy their own private and
+sovereign AI solutions to power all of
+
+48
+00:00:59,029 --> 00:00:59,039
+sovereign AI solutions to power all of
+ 
+
+49
+00:00:59,039 --> 00:01:01,750
+sovereign AI solutions to power all of
+these applications like rag and agentic
+
+50
+00:01:01,750 --> 00:01:01,760
+these applications like rag and agentic
+ 
+
+51
+00:01:01,760 --> 00:01:04,070
+these applications like rag and agentic
+AI well how can they be sure that
+
+52
+00:01:04,070 --> 00:01:04,080
+AI well how can they be sure that
+ 
+
+53
+00:01:04,080 --> 00:01:06,230
+AI well how can they be sure that
+they're keeping firstly their cost down
+
+54
+00:01:06,230 --> 00:01:06,240
+they're keeping firstly their cost down
+ 
+
+55
+00:01:06,240 --> 00:01:08,310
+they're keeping firstly their cost down
+when they're deploying their own AI but
+
+56
+00:01:08,310 --> 00:01:08,320
+when they're deploying their own AI but
+ 
+
+57
+00:01:08,320 --> 00:01:10,230
+when they're deploying their own AI but
+also ensuring that they have that data
+
+58
+00:01:10,230 --> 00:01:10,240
+also ensuring that they have that data
+ 
+
+59
+00:01:10,240 --> 00:01:12,469
+also ensuring that they have that data
+privacy and sovereignty while also
+
+60
+00:01:12,469 --> 00:01:12,479
+privacy and sovereignty while also
+ 
+
+61
+00:01:12,479 --> 00:01:14,390
+privacy and sovereignty while also
+having governance and being able to
+
+62
+00:01:14,390 --> 00:01:14,400
+having governance and being able to
+ 
+
+63
+00:01:14,400 --> 00:01:16,390
+having governance and being able to
+scale this up to not only just a couple
+
+64
+00:01:16,390 --> 00:01:16,400
+scale this up to not only just a couple
+ 
+
+65
+00:01:16,400 --> 00:01:18,230
+scale this up to not only just a couple
+engineers but an entire team of
+
+66
+00:01:18,230 --> 00:01:18,240
+engineers but an entire team of
+ 
+
+67
+00:01:18,240 --> 00:01:20,870
+engineers but an entire team of
+developers and at the end of the day end
+
+68
+00:01:20,870 --> 00:01:20,880
+developers and at the end of the day end
+ 
+
+69
+00:01:20,880 --> 00:01:21,990
+developers and at the end of the day end
+users.
+
+70
+00:01:21,990 --> 00:01:22,000
+users.
+ 
+
+71
+00:01:22,000 --> 00:01:24,070
+users.
+Well, you probably know what's going to
+
+72
+00:01:24,070 --> 00:01:24,080
+Well, you probably know what's going to
+ 
+
+73
+00:01:24,080 --> 00:01:26,149
+Well, you probably know what's going to
+be the answer. It's a technique that's
+
+74
+00:01:26,149 --> 00:01:26,159
+be the answer. It's a technique that's
+ 
+
+75
+00:01:26,159 --> 00:01:29,590
+be the answer. It's a technique that's
+known as models as a service. So, just
+
+76
+00:01:29,590 --> 00:01:29,600
+known as models as a service. So, just
+ 
+
+77
+00:01:29,600 --> 00:01:32,149
+known as models as a service. So, just
+as we've had, you know, software as a
+
+78
+00:01:32,149 --> 00:01:32,159
+as we've had, you know, software as a
+ 
+
+79
+00:01:32,159 --> 00:01:34,630
+as we've had, you know, software as a
+service back in the day to provide us
+
+80
+00:01:34,630 --> 00:01:34,640
+service back in the day to provide us
+ 
+
+81
+00:01:34,640 --> 00:01:36,789
+service back in the day to provide us
+Gmail and storage and a lot of other
+
+82
+00:01:36,789 --> 00:01:36,799
+Gmail and storage and a lot of other
+ 
+
+83
+00:01:36,799 --> 00:01:38,630
+Gmail and storage and a lot of other
+utilities that we use every day, well,
+
+84
+00:01:38,630 --> 00:01:38,640
+utilities that we use every day, well,
+ 
+
+85
+00:01:38,640 --> 00:01:41,030
+utilities that we use every day, well,
+models as a service is kind of this new
+
+86
+00:01:41,030 --> 00:01:41,040
+models as a service is kind of this new
+ 
+
+87
+00:01:41,040 --> 00:01:42,630
+models as a service is kind of this new
+pattern that's emerging that's allowing
+
+88
+00:01:42,630 --> 00:01:42,640
+pattern that's emerging that's allowing
+ 
+
+89
+00:01:42,640 --> 00:01:44,950
+pattern that's emerging that's allowing
+us to serve multiple models, whether
+
+90
+00:01:44,950 --> 00:01:44,960
+us to serve multiple models, whether
+ 
+
+91
+00:01:44,960 --> 00:01:47,270
+us to serve multiple models, whether
+it's vision or language models through
+
+92
+00:01:47,270 --> 00:01:47,280
+it's vision or language models through
+ 
+
+93
+00:01:47,280 --> 00:01:49,990
+it's vision or language models through
+one singular API. an API that's
+
+94
+00:01:49,990 --> 00:01:50,000
+one singular API. an API that's
+ 
+
+95
+00:01:50,000 --> 00:01:51,830
+one singular API. an API that's
+providing us transparency behind the
+
+96
+00:01:51,830 --> 00:01:51,840
+providing us transparency behind the
+ 
+
+97
+00:01:51,840 --> 00:01:54,469
+providing us transparency behind the
+billing and cost of our GPU utilization,
+
+98
+00:01:54,469 --> 00:01:54,479
+billing and cost of our GPU utilization,
+ 
+
+99
+00:01:54,479 --> 00:01:56,870
+billing and cost of our GPU utilization,
+the data privacy and and sensitivity of
+
+100
+00:01:56,870 --> 00:01:56,880
+the data privacy and and sensitivity of
+ 
+
+101
+00:01:56,880 --> 00:01:58,469
+the data privacy and and sensitivity of
+our data and governance, but also
+
+102
+00:01:58,469 --> 00:01:58,479
+our data and governance, but also
+ 
+
+103
+00:01:58,479 --> 00:02:01,030
+our data and governance, but also
+observability all through this API
+
+104
+00:02:01,030 --> 00:02:01,040
+observability all through this API
+ 
+
+105
+00:02:01,040 --> 00:02:04,310
+observability all through this API
+gateway, right? Um, but we're also able
+
+106
+00:02:04,310 --> 00:02:04,320
+gateway, right? Um, but we're also able
+ 
+
+107
+00:02:04,320 --> 00:02:06,550
+gateway, right? Um, but we're also able
+to then share this to variety of
+
+108
+00:02:06,550 --> 00:02:06,560
+to then share this to variety of
+ 
+
+109
+00:02:06,560 --> 00:02:09,749
+to then share this to variety of
+different users and developers who will
+
+110
+00:02:09,749 --> 00:02:09,759
+different users and developers who will
+ 
+
+111
+00:02:09,759 --> 00:02:11,830
+different users and developers who will
+then be consuming the model. So the IT
+
+112
+00:02:11,830 --> 00:02:11,840
+then be consuming the model. So the IT
+ 
+
+113
+00:02:11,840 --> 00:02:14,070
+then be consuming the model. So the IT
+team here or platform engineers are
+
+114
+00:02:14,070 --> 00:02:14,080
+team here or platform engineers are
+ 
+
+115
+00:02:14,080 --> 00:02:16,470
+team here or platform engineers are
+serving these models and then the end
+
+116
+00:02:16,470 --> 00:02:16,480
+serving these models and then the end
+ 
+
+117
+00:02:16,480 --> 00:02:19,430
+serving these models and then the end
+developers or users here are the final
+
+118
+00:02:19,430 --> 00:02:19,440
+developers or users here are the final
+ 
+
+119
+00:02:19,440 --> 00:02:21,830
+developers or users here are the final
+consumers of these artifacts. And this
+
+120
+00:02:21,830 --> 00:02:21,840
+consumers of these artifacts. And this
+ 
+
+121
+00:02:21,840 --> 00:02:24,710
+consumers of these artifacts. And this
+my friends is what we call models as a
+
+122
+00:02:24,710 --> 00:02:24,720
+my friends is what we call models as a
+ 
+
+123
+00:02:24,720 --> 00:02:26,710
+my friends is what we call models as a
+service. And I'm really excited to show
+
+124
+00:02:26,710 --> 00:02:26,720
+service. And I'm really excited to show
+ 
+
+125
+00:02:26,720 --> 00:02:29,030
+service. And I'm really excited to show
+you how this works behind the scenes and
+
+126
+00:02:29,030 --> 00:02:29,040
+you how this works behind the scenes and
+ 
+
+127
+00:02:29,040 --> 00:02:31,190
+you how this works behind the scenes and
+why models as a service is becoming a de
+
+128
+00:02:31,190 --> 00:02:31,200
+why models as a service is becoming a de
+ 
+
+129
+00:02:31,200 --> 00:02:33,910
+why models as a service is becoming a de
+facto standard for how organizations can
+
+130
+00:02:33,910 --> 00:02:33,920
+facto standard for how organizations can
+ 
+
+131
+00:02:33,920 --> 00:02:37,270
+facto standard for how organizations can
+scale and deploy models where they work.
+
+132
+00:02:37,270 --> 00:02:37,280
+scale and deploy models where they work.
+ 
+
+133
+00:02:37,280 --> 00:02:39,270
+scale and deploy models where they work.
+In fact, I bet that you've already used
+
+134
+00:02:39,270 --> 00:02:39,280
+In fact, I bet that you've already used
+ 
+
+135
+00:02:39,280 --> 00:02:41,509
+In fact, I bet that you've already used
+models as a service in your own work.
+
+136
+00:02:41,509 --> 00:02:41,519
+models as a service in your own work.
+ 
+
+137
+00:02:41,519 --> 00:02:43,350
+models as a service in your own work.
+So, I want you to think about the AI
+
+138
+00:02:43,350 --> 00:02:43,360
+So, I want you to think about the AI
+ 
+
+139
+00:02:43,360 --> 00:02:45,589
+So, I want you to think about the AI
+giants, right? So, they're not actually
+
+140
+00:02:45,589 --> 00:02:45,599
+giants, right? So, they're not actually
+ 
+
+141
+00:02:45,599 --> 00:02:48,070
+giants, right? So, they're not actually
+giving you access to these huge data
+
+142
+00:02:48,070 --> 00:02:48,080
+giving you access to these huge data
+ 
+
+143
+00:02:48,080 --> 00:02:49,430
+giving you access to these huge data
+centers that they have, right? They're
+
+144
+00:02:49,430 --> 00:02:49,440
+centers that they have, right? They're
+ 
+
+145
+00:02:49,440 --> 00:02:51,910
+centers that they have, right? They're
+giving you access to individual models,
+
+146
+00:02:51,910 --> 00:02:51,920
+giving you access to individual models,
+ 
+
+147
+00:02:51,920 --> 00:02:54,550
+giving you access to individual models,
+but they're doing so in a way that's
+
+148
+00:02:54,550 --> 00:02:54,560
+but they're doing so in a way that's
+ 
+
+149
+00:02:54,560 --> 00:02:57,430
+but they're doing so in a way that's
+actually quite similar to models as a
+
+150
+00:02:57,430 --> 00:02:57,440
+actually quite similar to models as a
+ 
+
+151
+00:02:57,440 --> 00:02:59,670
+actually quite similar to models as a
+service. So, think about these different
+
+152
+00:02:59,670 --> 00:02:59,680
+service. So, think about these different
+ 
+
+153
+00:02:59,680 --> 00:03:01,670
+service. So, think about these different
+versions of models that you can access,
+
+154
+00:03:01,670 --> 00:03:01,680
+versions of models that you can access,
+ 
+
+155
+00:03:01,680 --> 00:03:03,430
+versions of models that you can access,
+right? You're not accessing them
+
+156
+00:03:03,430 --> 00:03:03,440
+right? You're not accessing them
+ 
+
+157
+00:03:03,440 --> 00:03:05,350
+right? You're not accessing them
+directly. you're going through some type
+
+158
+00:03:05,350 --> 00:03:05,360
+directly. you're going through some type
+ 
+
+159
+00:03:05,360 --> 00:03:09,350
+directly. you're going through some type
+of app or API for example uh just as we
+
+160
+00:03:09,350 --> 00:03:09,360
+of app or API for example uh just as we
+ 
+
+161
+00:03:09,360 --> 00:03:10,790
+of app or API for example uh just as we
+have the API gateway that we just
+
+162
+00:03:10,790 --> 00:03:10,800
+have the API gateway that we just
+ 
+
+163
+00:03:10,800 --> 00:03:13,110
+have the API gateway that we just
+mentioned earlier so that you can then
+
+164
+00:03:13,110 --> 00:03:13,120
+mentioned earlier so that you can then
+ 
+
+165
+00:03:13,120 --> 00:03:14,630
+mentioned earlier so that you can then
+you know uh ensure that you've got
+
+166
+00:03:14,630 --> 00:03:14,640
+you know uh ensure that you've got
+ 
+
+167
+00:03:14,640 --> 00:03:17,030
+you know uh ensure that you've got
+billing or authentication or or
+
+168
+00:03:17,030 --> 00:03:17,040
+billing or authentication or or
+ 
+
+169
+00:03:17,040 --> 00:03:18,390
+billing or authentication or or
+something like that that you need as a
+
+170
+00:03:18,390 --> 00:03:18,400
+something like that that you need as a
+ 
+
+171
+00:03:18,400 --> 00:03:21,030
+something like that that you need as a
+prerequisite to then access for example
+
+172
+00:03:21,030 --> 00:03:21,040
+prerequisite to then access for example
+ 
+
+173
+00:03:21,040 --> 00:03:24,229
+prerequisite to then access for example
+the app or the API. So our devs here can
+
+174
+00:03:24,229 --> 00:03:24,239
+the app or the API. So our devs here can
+ 
+
+175
+00:03:24,239 --> 00:03:26,949
+the app or the API. So our devs here can
+now use that API of the model to build
+
+176
+00:03:26,949 --> 00:03:26,959
+now use that API of the model to build
+ 
+
+177
+00:03:26,959 --> 00:03:29,190
+now use that API of the model to build
+out really cool applications maybe rag
+
+178
+00:03:29,190 --> 00:03:29,200
+out really cool applications maybe rag
+ 
+
+179
+00:03:29,200 --> 00:03:32,309
+out really cool applications maybe rag
+or agentic AI apps and then the users
+
+180
+00:03:32,309 --> 00:03:32,319
+or agentic AI apps and then the users
+ 
+
+181
+00:03:32,319 --> 00:03:34,470
+or agentic AI apps and then the users
+down here are you know our happy little
+
+182
+00:03:34,470 --> 00:03:34,480
+down here are you know our happy little
+ 
+
+183
+00:03:34,480 --> 00:03:36,550
+down here are you know our happy little
+users that are consuming the AI
+
+184
+00:03:36,550 --> 00:03:36,560
+users that are consuming the AI
+ 
+
+185
+00:03:36,560 --> 00:03:39,190
+users that are consuming the AI
+application and so this is exactly what
+
+186
+00:03:39,190 --> 00:03:39,200
+application and so this is exactly what
+ 
+
+187
+00:03:39,200 --> 00:03:41,190
+application and so this is exactly what
+models as a service is and it's already
+
+188
+00:03:41,190 --> 00:03:41,200
+models as a service is and it's already
+ 
+
+189
+00:03:41,200 --> 00:03:42,949
+models as a service is and it's already
+being used today but the only difference
+
+190
+00:03:42,949 --> 00:03:42,959
+being used today but the only difference
+ 
+
+191
+00:03:42,959 --> 00:03:44,949
+being used today but the only difference
+that we're talking about is that instead
+
+192
+00:03:44,949 --> 00:03:44,959
+that we're talking about is that instead
+ 
+
+193
+00:03:44,959 --> 00:03:47,430
+that we're talking about is that instead
+of renting thirdparty services and
+
+194
+00:03:47,430 --> 00:03:47,440
+of renting thirdparty services and
+ 
+
+195
+00:03:47,440 --> 00:03:49,670
+of renting thirdparty services and
+servers or paying for tokens you're able
+
+196
+00:03:49,670 --> 00:03:49,680
+servers or paying for tokens you're able
+ 
+
+197
+00:03:49,680 --> 00:03:52,550
+servers or paying for tokens you're able
+to run your own models as a service to
+
+198
+00:03:52,550 --> 00:03:52,560
+to run your own models as a service to
+ 
+
+199
+00:03:52,560 --> 00:03:54,869
+to run your own models as a service to
+maintain control over cost, the access
+
+200
+00:03:54,869 --> 00:03:54,879
+maintain control over cost, the access
+ 
+
+201
+00:03:54,879 --> 00:03:56,550
+maintain control over cost, the access
+of the models, and the maintenance of
+
+202
+00:03:56,550 --> 00:03:56,560
+of the models, and the maintenance of
+ 
+
+203
+00:03:56,560 --> 00:03:58,470
+of the models, and the maintenance of
+the models. And let me tell you that
+
+204
+00:03:58,470 --> 00:03:58,480
+the models. And let me tell you that
+ 
+
+205
+00:03:58,480 --> 00:04:00,470
+the models. And let me tell you that
+maintenance part is super important
+
+206
+00:04:00,470 --> 00:04:00,480
+maintenance part is super important
+ 
+
+207
+00:04:00,480 --> 00:04:02,710
+maintenance part is super important
+because for example, each time a new
+
+208
+00:04:02,710 --> 00:04:02,720
+because for example, each time a new
+ 
+
+209
+00:04:02,720 --> 00:04:04,869
+because for example, each time a new
+Frontier model is released, let's say a
+
+210
+00:04:04,869 --> 00:04:04,879
+Frontier model is released, let's say a
+ 
+
+211
+00:04:04,879 --> 00:04:06,949
+Frontier model is released, let's say a
+version seven or something of this
+
+212
+00:04:06,949 --> 00:04:06,959
+version seven or something of this
+ 
+
+213
+00:04:06,959 --> 00:04:09,509
+version seven or something of this
+model, the older versions are typically
+
+214
+00:04:09,509 --> 00:04:09,519
+model, the older versions are typically
+ 
+
+215
+00:04:09,519 --> 00:04:12,149
+model, the older versions are typically
+depreciated and sometimes it's with or
+
+216
+00:04:12,149 --> 00:04:12,159
+depreciated and sometimes it's with or
+ 
+
+217
+00:04:12,159 --> 00:04:13,910
+depreciated and sometimes it's with or
+without notice. So let's say for
+
+218
+00:04:13,910 --> 00:04:13,920
+without notice. So let's say for
+ 
+
+219
+00:04:13,920 --> 00:04:16,469
+without notice. So let's say for
+example, we get rid of that V5. And this
+
+220
+00:04:16,469 --> 00:04:16,479
+example, we get rid of that V5. And this
+ 
+
+221
+00:04:16,479 --> 00:04:19,590
+example, we get rid of that V5. And this
+means as a developer if your application
+
+222
+00:04:19,590 --> 00:04:19,600
+means as a developer if your application
+ 
+
+223
+00:04:19,600 --> 00:04:21,670
+means as a developer if your application
+is already or currently using that
+
+224
+00:04:21,670 --> 00:04:21,680
+is already or currently using that
+ 
+
+225
+00:04:21,680 --> 00:04:24,629
+is already or currently using that
+model, you're now forced to upgrade to a
+
+226
+00:04:24,629 --> 00:04:24,639
+model, you're now forced to upgrade to a
+ 
+
+227
+00:04:24,639 --> 00:04:26,070
+model, you're now forced to upgrade to a
+newer version of the model. But what
+
+228
+00:04:26,070 --> 00:04:26,080
+newer version of the model. But what
+ 
+
+229
+00:04:26,080 --> 00:04:27,749
+newer version of the model. But what
+happens if the prompt template for
+
+230
+00:04:27,749 --> 00:04:27,759
+happens if the prompt template for
+ 
+
+231
+00:04:27,759 --> 00:04:30,870
+happens if the prompt template for
+example for version five is different
+
+232
+00:04:30,870 --> 00:04:30,880
+example for version five is different
+ 
+
+233
+00:04:30,880 --> 00:04:33,510
+example for version five is different
+than that of the version six model?
+
+234
+00:04:33,510 --> 00:04:33,520
+than that of the version six model?
+ 
+
+235
+00:04:33,520 --> 00:04:36,070
+than that of the version six model?
+Well, as we know, the model behavior
+
+236
+00:04:36,070 --> 00:04:36,080
+Well, as we know, the model behavior
+ 
+
+237
+00:04:36,080 --> 00:04:38,629
+Well, as we know, the model behavior
+might change and those bugs are then
+
+238
+00:04:38,629 --> 00:04:38,639
+might change and those bugs are then
+ 
+
+239
+00:04:38,639 --> 00:04:41,670
+might change and those bugs are then
+going to impact the developer down here,
+
+240
+00:04:41,670 --> 00:04:41,680
+going to impact the developer down here,
+ 
+
+241
+00:04:41,680 --> 00:04:43,670
+going to impact the developer down here,
+which then he has to spend time or they
+
+242
+00:04:43,670 --> 00:04:43,680
+which then he has to spend time or they
+ 
+
+243
+00:04:43,680 --> 00:04:45,590
+which then he has to spend time or they
+have to spend time fixing their
+
+244
+00:04:45,590 --> 00:04:45,600
+have to spend time fixing their
+ 
+
+245
+00:04:45,600 --> 00:04:48,150
+have to spend time fixing their
+application for the users to consume at
+
+246
+00:04:48,150 --> 00:04:48,160
+application for the users to consume at
+ 
+
+247
+00:04:48,160 --> 00:04:49,830
+application for the users to consume at
+the end of the day. So, it kind of
+
+248
+00:04:49,830 --> 00:04:49,840
+the end of the day. So, it kind of
+ 
+
+249
+00:04:49,840 --> 00:04:52,070
+the end of the day. So, it kind of
+creates this downstream effect. And so,
+
+250
+00:04:52,070 --> 00:04:52,080
+creates this downstream effect. And so,
+ 
+
+251
+00:04:52,080 --> 00:04:53,590
+creates this downstream effect. And so,
+with models as a service, you're able to
+
+252
+00:04:53,590 --> 00:04:53,600
+with models as a service, you're able to
+ 
+
+253
+00:04:53,600 --> 00:04:55,670
+with models as a service, you're able to
+have full control over the models that
+
+254
+00:04:55,670 --> 00:04:55,680
+have full control over the models that
+ 
+
+255
+00:04:55,680 --> 00:04:57,510
+have full control over the models that
+you're releasing and the maintenance on
+
+256
+00:04:57,510 --> 00:04:57,520
+you're releasing and the maintenance on
+ 
+
+257
+00:04:57,520 --> 00:04:59,350
+you're releasing and the maintenance on
+how they are released in the life cycle.
+
+258
+00:04:59,350 --> 00:04:59,360
+how they are released in the life cycle.
+ 
+
+259
+00:04:59,360 --> 00:05:01,430
+how they are released in the life cycle.
+So if you want to go to hugging face and
+
+260
+00:05:01,430 --> 00:05:01,440
+So if you want to go to hugging face and
+ 
+
+261
+00:05:01,440 --> 00:05:03,830
+So if you want to go to hugging face and
+search for a new model, you can then add
+
+262
+00:05:03,830 --> 00:05:03,840
+search for a new model, you can then add
+ 
+
+263
+00:05:03,840 --> 00:05:06,950
+search for a new model, you can then add
+that here to your models as a service
+
+264
+00:05:06,950 --> 00:05:06,960
+that here to your models as a service
+ 
+
+265
+00:05:06,960 --> 00:05:09,189
+that here to your models as a service
+infrastructure with your IT team and be
+
+266
+00:05:09,189 --> 00:05:09,199
+infrastructure with your IT team and be
+ 
+
+267
+00:05:09,199 --> 00:05:10,950
+infrastructure with your IT team and be
+able to manage what's currently being
+
+268
+00:05:10,950 --> 00:05:10,960
+able to manage what's currently being
+ 
+
+269
+00:05:10,960 --> 00:05:13,510
+able to manage what's currently being
+used most by your teams and maybe
+
+270
+00:05:13,510 --> 00:05:13,520
+used most by your teams and maybe
+ 
+
+271
+00:05:13,520 --> 00:05:15,110
+used most by your teams and maybe
+depreciate of what you don't need
+
+272
+00:05:15,110 --> 00:05:15,120
+depreciate of what you don't need
+ 
+
+273
+00:05:15,120 --> 00:05:17,350
+depreciate of what you don't need
+anymore. Now I want you to think about
+
+274
+00:05:17,350 --> 00:05:17,360
+anymore. Now I want you to think about
+ 
+
+275
+00:05:17,360 --> 00:05:19,830
+anymore. Now I want you to think about
+environments that are sensitive. So for
+
+276
+00:05:19,830 --> 00:05:19,840
+environments that are sensitive. So for
+ 
+
+277
+00:05:19,840 --> 00:05:21,749
+environments that are sensitive. So for
+example when we typically think of data
+
+278
+00:05:21,749 --> 00:05:21,759
+example when we typically think of data
+ 
+
+279
+00:05:21,759 --> 00:05:23,270
+example when we typically think of data
+sensitive environments it's something
+
+280
+00:05:23,270 --> 00:05:23,280
+sensitive environments it's something
+ 
+
+281
+00:05:23,280 --> 00:05:25,749
+sensitive environments it's something
+like healthcare or say financial
+
+282
+00:05:25,749 --> 00:05:25,759
+like healthcare or say financial
+ 
+
+283
+00:05:25,759 --> 00:05:28,070
+like healthcare or say financial
+services where you have a lot of
+
+284
+00:05:28,070 --> 00:05:28,080
+services where you have a lot of
+ 
+
+285
+00:05:28,080 --> 00:05:30,469
+services where you have a lot of
+personally identifying information or
+
+286
+00:05:30,469 --> 00:05:30,479
+personally identifying information or
+ 
+
+287
+00:05:30,479 --> 00:05:34,230
+personally identifying information or
+PII and the data that is within these
+
+288
+00:05:34,230 --> 00:05:34,240
+PII and the data that is within these
+ 
+
+289
+00:05:34,240 --> 00:05:36,629
+PII and the data that is within these
+organizations need to be handled with uh
+
+290
+00:05:36,629 --> 00:05:36,639
+organizations need to be handled with uh
+ 
+
+291
+00:05:36,639 --> 00:05:39,670
+organizations need to be handled with uh
+a lot of scrutiny because one it's you
+
+292
+00:05:39,670 --> 00:05:39,680
+a lot of scrutiny because one it's you
+ 
+
+293
+00:05:39,680 --> 00:05:41,590
+a lot of scrutiny because one it's you
+know customer data but secondly there's
+
+294
+00:05:41,590 --> 00:05:41,600
+know customer data but secondly there's
+ 
+
+295
+00:05:41,600 --> 00:05:43,590
+know customer data but secondly there's
+a lot of government regulations and
+
+296
+00:05:43,590 --> 00:05:43,600
+a lot of government regulations and
+ 
+
+297
+00:05:43,600 --> 00:05:45,749
+a lot of government regulations and
+practices around the handling of that
+
+298
+00:05:45,749 --> 00:05:45,759
+practices around the handling of that
+ 
+
+299
+00:05:45,759 --> 00:05:48,550
+practices around the handling of that
+data. So, it's not easy to just, you
+
+300
+00:05:48,550 --> 00:05:48,560
+data. So, it's not easy to just, you
+ 
+
+301
+00:05:48,560 --> 00:05:50,950
+data. So, it's not easy to just, you
+know, go connect to some type of, you
+
+302
+00:05:50,950 --> 00:05:50,960
+know, go connect to some type of, you
+ 
+
+303
+00:05:50,960 --> 00:05:52,950
+know, go connect to some type of, you
+know, third-party LLM with that data,
+
+304
+00:05:52,950 --> 00:05:52,960
+know, third-party LLM with that data,
+ 
+
+305
+00:05:52,960 --> 00:05:54,710
+know, third-party LLM with that data,
+right? Because when we're going to a
+
+306
+00:05:54,710 --> 00:05:54,720
+right? Because when we're going to a
+ 
+
+307
+00:05:54,720 --> 00:05:57,510
+right? Because when we're going to a
+third party LM, what we're sending maybe
+
+308
+00:05:57,510 --> 00:05:57,520
+third party LM, what we're sending maybe
+ 
+
+309
+00:05:57,520 --> 00:06:00,070
+third party LM, what we're sending maybe
+what might not be sensitive data, but
+
+310
+00:06:00,070 --> 00:06:00,080
+what might not be sensitive data, but
+ 
+
+311
+00:06:00,080 --> 00:06:01,830
+what might not be sensitive data, but
+there could be risk of a data break or
+
+312
+00:06:01,830 --> 00:06:01,840
+there could be risk of a data break or
+ 
+
+313
+00:06:01,840 --> 00:06:04,230
+there could be risk of a data break or
+leakage. And so, all of this information
+
+314
+00:06:04,230 --> 00:06:04,240
+leakage. And so, all of this information
+ 
+
+315
+00:06:04,240 --> 00:06:07,189
+leakage. And so, all of this information
+is typically kept on premise. And it's
+
+316
+00:06:07,189 --> 00:06:07,199
+is typically kept on premise. And it's
+ 
+
+317
+00:06:07,199 --> 00:06:09,029
+is typically kept on premise. And it's
+not just the database, right? It's also
+
+318
+00:06:09,029 --> 00:06:09,039
+not just the database, right? It's also
+ 
+
+319
+00:06:09,039 --> 00:06:12,070
+not just the database, right? It's also
+the applications that are being used. It
+
+320
+00:06:12,070 --> 00:06:12,080
+the applications that are being used. It
+ 
+
+321
+00:06:12,080 --> 00:06:14,390
+the applications that are being used. It
+might also be the for example hardware
+
+322
+00:06:14,390 --> 00:06:14,400
+might also be the for example hardware
+ 
+
+323
+00:06:14,400 --> 00:06:17,350
+might also be the for example hardware
+so GPUs and CPUs. All of this can
+
+324
+00:06:17,350 --> 00:06:17,360
+so GPUs and CPUs. All of this can
+ 
+
+325
+00:06:17,360 --> 00:06:19,990
+so GPUs and CPUs. All of this can
+typically run on prem or maybe in a
+
+326
+00:06:19,990 --> 00:06:20,000
+typically run on prem or maybe in a
+ 
+
+327
+00:06:20,000 --> 00:06:21,590
+typically run on prem or maybe in a
+mixed hybrid cloud environment where
+
+328
+00:06:21,590 --> 00:06:21,600
+mixed hybrid cloud environment where
+ 
+
+329
+00:06:21,600 --> 00:06:23,749
+mixed hybrid cloud environment where
+it's onrem but also in the cloud and
+
+330
+00:06:23,749 --> 00:06:23,759
+it's onrem but also in the cloud and
+ 
+
+331
+00:06:23,759 --> 00:06:26,390
+it's onrem but also in the cloud and
+other data sources. But the cool part
+
+332
+00:06:26,390 --> 00:06:26,400
+other data sources. But the cool part
+ 
+
+333
+00:06:26,400 --> 00:06:28,550
+other data sources. But the cool part
+about models as a service is you become
+
+334
+00:06:28,550 --> 00:06:28,560
+about models as a service is you become
+ 
+
+335
+00:06:28,560 --> 00:06:31,270
+about models as a service is you become
+your own private AI provider. So in
+
+336
+00:06:31,270 --> 00:06:31,280
+your own private AI provider. So in
+ 
+
+337
+00:06:31,280 --> 00:06:33,110
+your own private AI provider. So in
+addition to the applications and the
+
+338
+00:06:33,110 --> 00:06:33,120
+addition to the applications and the
+ 
+
+339
+00:06:33,120 --> 00:06:36,390
+addition to the applications and the
+databases, we can also run these local
+
+340
+00:06:36,390 --> 00:06:36,400
+databases, we can also run these local
+ 
+
+341
+00:06:36,400 --> 00:06:38,790
+databases, we can also run these local
+large language models alongside of our
+
+342
+00:06:38,790 --> 00:06:38,800
+large language models alongside of our
+ 
+
+343
+00:06:38,800 --> 00:06:40,710
+large language models alongside of our
+applications so that we have this fully
+
+344
+00:06:40,710 --> 00:06:40,720
+applications so that we have this fully
+ 
+
+345
+00:06:40,720 --> 00:06:43,590
+applications so that we have this fully
+airgapped and disconnected environment
+
+346
+00:06:43,590 --> 00:06:43,600
+airgapped and disconnected environment
+ 
+
+347
+00:06:43,600 --> 00:06:46,469
+airgapped and disconnected environment
+so that we can deliver these secure uh
+
+348
+00:06:46,469 --> 00:06:46,479
+so that we can deliver these secure uh
+ 
+
+349
+00:06:46,479 --> 00:06:49,430
+so that we can deliver these secure uh
+LLMs but without having to uh depend on
+
+350
+00:06:49,430 --> 00:06:49,440
+LLMs but without having to uh depend on
+ 
+
+351
+00:06:49,440 --> 00:06:51,110
+LLMs but without having to uh depend on
+a public cloud provider but we still get
+
+352
+00:06:51,110 --> 00:06:51,120
+a public cloud provider but we still get
+ 
+
+353
+00:06:51,120 --> 00:06:53,590
+a public cloud provider but we still get
+the benefits of rag or retrieve
+
+354
+00:06:53,590 --> 00:06:53,600
+the benefits of rag or retrieve
+ 
+
+355
+00:06:53,600 --> 00:06:55,029
+the benefits of rag or retrieve
+augmented generation for private
+
+356
+00:06:55,029 --> 00:06:55,039
+augmented generation for private
+ 
+
+357
+00:06:55,039 --> 00:06:57,909
+augmented generation for private
+documentation with AI or aentic AI that
+
+358
+00:06:57,909 --> 00:06:57,919
+documentation with AI or aentic AI that
+ 
+
+359
+00:06:57,919 --> 00:06:59,909
+documentation with AI or aentic AI that
+can call our different services and it's
+
+360
+00:06:59,909 --> 00:06:59,919
+can call our different services and it's
+ 
+
+361
+00:06:59,919 --> 00:07:01,830
+can call our different services and it's
+all within in this disconnected
+
+362
+00:07:01,830 --> 00:07:01,840
+all within in this disconnected
+ 
+
+363
+00:07:01,840 --> 00:07:03,990
+all within in this disconnected
+environment. So how does this look in
+
+364
+00:07:03,990 --> 00:07:04,000
+environment. So how does this look in
+ 
+
+365
+00:07:04,000 --> 00:07:05,830
+environment. So how does this look in
+action? Well, let's architect it out
+
+366
+00:07:05,830 --> 00:07:05,840
+action? Well, let's architect it out
+ 
+
+367
+00:07:05,840 --> 00:07:07,270
+action? Well, let's architect it out
+starting with the base layer of
+
+368
+00:07:07,270 --> 00:07:07,280
+starting with the base layer of
+ 
+
+369
+00:07:07,280 --> 00:07:09,830
+starting with the base layer of
+infrastructure and orchestration using a
+
+370
+00:07:09,830 --> 00:07:09,840
+infrastructure and orchestration using a
+ 
+
+371
+00:07:09,840 --> 00:07:11,909
+infrastructure and orchestration using a
+technology like Open Shift or
+
+372
+00:07:11,909 --> 00:07:11,919
+technology like Open Shift or
+ 
+
+373
+00:07:11,919 --> 00:07:15,110
+technology like Open Shift or
+Kubernetes. So these are the open-source
+
+374
+00:07:15,110 --> 00:07:15,120
+Kubernetes. So these are the open-source
+ 
+
+375
+00:07:15,120 --> 00:07:17,749
+Kubernetes. So these are the open-source
+technologies that allow us to bring
+
+376
+00:07:17,749 --> 00:07:17,759
+technologies that allow us to bring
+ 
+
+377
+00:07:17,759 --> 00:07:19,990
+technologies that allow us to bring
+together a variety of different
+
+378
+00:07:19,990 --> 00:07:20,000
+together a variety of different
+ 
+
+379
+00:07:20,000 --> 00:07:23,830
+together a variety of different
+environments such as on prem for example
+
+380
+00:07:23,830 --> 00:07:23,840
+environments such as on prem for example
+ 
+
+381
+00:07:23,840 --> 00:07:27,270
+environments such as on prem for example
+or cloud providers or say for example
+
+382
+00:07:27,270 --> 00:07:27,280
+or cloud providers or say for example
+ 
+
+383
+00:07:27,280 --> 00:07:29,270
+or cloud providers or say for example
+edge if we're running our workloads and
+
+384
+00:07:29,270 --> 00:07:29,280
+edge if we're running our workloads and
+ 
+
+385
+00:07:29,280 --> 00:07:32,150
+edge if we're running our workloads and
+AI out there as well. So we can bring
+
+386
+00:07:32,150 --> 00:07:32,160
+AI out there as well. So we can bring
+ 
+
+387
+00:07:32,160 --> 00:07:34,790
+AI out there as well. So we can bring
+together for example GPUs all in one
+
+388
+00:07:34,790 --> 00:07:34,800
+together for example GPUs all in one
+ 
+
+389
+00:07:34,800 --> 00:07:37,029
+together for example GPUs all in one
+place to be able to dynamically scale
+
+390
+00:07:37,029 --> 00:07:37,039
+place to be able to dynamically scale
+ 
+
+391
+00:07:37,039 --> 00:07:39,350
+place to be able to dynamically scale
+them when needed. Now let's also talk
+
+392
+00:07:39,350 --> 00:07:39,360
+them when needed. Now let's also talk
+ 
+
+393
+00:07:39,360 --> 00:07:41,909
+them when needed. Now let's also talk
+about our AI platform layer. So the AI
+
+394
+00:07:41,909 --> 00:07:41,919
+about our AI platform layer. So the AI
+ 
+
+395
+00:07:41,919 --> 00:07:44,550
+about our AI platform layer. So the AI
+platform layer is really important in
+
+396
+00:07:44,550 --> 00:07:44,560
+platform layer is really important in
+ 
+
+397
+00:07:44,560 --> 00:07:46,870
+platform layer is really important in
+this situation because vanilla
+
+398
+00:07:46,870 --> 00:07:46,880
+this situation because vanilla
+ 
+
+399
+00:07:46,880 --> 00:07:49,430
+this situation because vanilla
+Kubernetes by itself can use additional
+
+400
+00:07:49,430 --> 00:07:49,440
+Kubernetes by itself can use additional
+ 
+
+401
+00:07:49,440 --> 00:07:51,909
+Kubernetes by itself can use additional
+capabilities such as inference engines
+
+402
+00:07:51,909 --> 00:07:51,919
+capabilities such as inference engines
+ 
+
+403
+00:07:51,919 --> 00:07:55,510
+capabilities such as inference engines
+with VLLM or other projects such as
+
+404
+00:07:55,510 --> 00:07:55,520
+with VLLM or other projects such as
+ 
+
+405
+00:07:55,520 --> 00:07:58,710
+with VLLM or other projects such as
+KSERve that allow us to uh orchestrate
+
+406
+00:07:58,710 --> 00:07:58,720
+KSERve that allow us to uh orchestrate
+ 
+
+407
+00:07:58,720 --> 00:08:01,589
+KSERve that allow us to uh orchestrate
+individual LLMs just like microservices.
+
+408
+00:08:01,589 --> 00:08:01,599
+individual LLMs just like microservices.
+ 
+
+409
+00:08:01,599 --> 00:08:03,350
+individual LLMs just like microservices.
+And this gives us a lot of flexibility
+
+410
+00:08:03,350 --> 00:08:03,360
+And this gives us a lot of flexibility
+ 
+
+411
+00:08:03,360 --> 00:08:05,589
+And this gives us a lot of flexibility
+when we're running AI workloads. And at
+
+412
+00:08:05,589 --> 00:08:05,599
+when we're running AI workloads. And at
+ 
+
+413
+00:08:05,599 --> 00:08:07,990
+when we're running AI workloads. And at
+this point, yes, technically we can run
+
+414
+00:08:07,990 --> 00:08:08,000
+this point, yes, technically we can run
+ 
+
+415
+00:08:08,000 --> 00:08:10,710
+this point, yes, technically we can run
+a model, but to expose the endpoints for
+
+416
+00:08:10,710 --> 00:08:10,720
+a model, but to expose the endpoints for
+ 
+
+417
+00:08:10,720 --> 00:08:13,510
+a model, but to expose the endpoints for
+our organization and teams to use in a
+
+418
+00:08:13,510 --> 00:08:13,520
+our organization and teams to use in a
+ 
+
+419
+00:08:13,520 --> 00:08:15,510
+our organization and teams to use in a
+standardized way. Well, this involves
+
+420
+00:08:15,510 --> 00:08:15,520
+standardized way. Well, this involves
+ 
+
+421
+00:08:15,520 --> 00:08:19,430
+standardized way. Well, this involves
+some type of API uh gateway. So the API
+
+422
+00:08:19,430 --> 00:08:19,440
+some type of API uh gateway. So the API
+ 
+
+423
+00:08:19,440 --> 00:08:22,469
+some type of API uh gateway. So the API
+gateway here is the way for us to add
+
+424
+00:08:22,469 --> 00:08:22,479
+gateway here is the way for us to add
+ 
+
+425
+00:08:22,479 --> 00:08:24,309
+gateway here is the way for us to add
+these additional enterprise
+
+426
+00:08:24,309 --> 00:08:24,319
+these additional enterprise
+ 
+
+427
+00:08:24,319 --> 00:08:27,029
+these additional enterprise
+capabilities. So for example, rate
+
+428
+00:08:27,029 --> 00:08:27,039
+capabilities. So for example, rate
+ 
+
+429
+00:08:27,039 --> 00:08:30,550
+capabilities. So for example, rate
+limiting or maybe authentication for our
+
+430
+00:08:30,550 --> 00:08:30,560
+limiting or maybe authentication for our
+ 
+
+431
+00:08:30,560 --> 00:08:33,430
+limiting or maybe authentication for our
+users or the ability to do usage
+
+432
+00:08:33,430 --> 00:08:33,440
+users or the ability to do usage
+ 
+
+433
+00:08:33,440 --> 00:08:35,430
+users or the ability to do usage
+tracking and much much more and have
+
+434
+00:08:35,430 --> 00:08:35,440
+tracking and much much more and have
+ 
+
+435
+00:08:35,440 --> 00:08:38,149
+tracking and much much more and have
+observability throughout this entire
+
+436
+00:08:38,149 --> 00:08:38,159
+observability throughout this entire
+ 
+
+437
+00:08:38,159 --> 00:08:40,630
+observability throughout this entire
+process, right? Because it's not just
+
+438
+00:08:40,630 --> 00:08:40,640
+process, right? Because it's not just
+ 
+
+439
+00:08:40,640 --> 00:08:42,790
+process, right? Because it's not just
+the kind of infrastructure itself but
+
+440
+00:08:42,790 --> 00:08:42,800
+the kind of infrastructure itself but
+ 
+
+441
+00:08:42,800 --> 00:08:45,750
+the kind of infrastructure itself but
+the observability for uh telemetry for
+
+442
+00:08:45,750 --> 00:08:45,760
+the observability for uh telemetry for
+ 
+
+443
+00:08:45,760 --> 00:08:49,910
+the observability for uh telemetry for
+example or logging or for example with
+
+444
+00:08:49,910 --> 00:08:49,920
+example or logging or for example with
+ 
+
+445
+00:08:49,920 --> 00:08:51,670
+example or logging or for example with
+AI applications we need to understand
+
+446
+00:08:51,670 --> 00:08:51,680
+AI applications we need to understand
+ 
+
+447
+00:08:51,680 --> 00:08:53,030
+AI applications we need to understand
+why did they make the decision they
+
+448
+00:08:53,030 --> 00:08:53,040
+why did they make the decision they
+ 
+
+449
+00:08:53,040 --> 00:08:56,150
+why did they make the decision they
+made. So this could be the traces of how
+
+450
+00:08:56,150 --> 00:08:56,160
+made. So this could be the traces of how
+ 
+
+451
+00:08:56,160 --> 00:08:58,790
+made. So this could be the traces of how
+the LM is going to an MCP server to call
+
+452
+00:08:58,790 --> 00:08:58,800
+the LM is going to an MCP server to call
+ 
+
+453
+00:08:58,800 --> 00:09:00,230
+the LM is going to an MCP server to call
+a database and get that information
+
+454
+00:09:00,230 --> 00:09:00,240
+a database and get that information
+ 
+
+455
+00:09:00,240 --> 00:09:02,310
+a database and get that information
+back. So all of this additional
+
+456
+00:09:02,310 --> 00:09:02,320
+back. So all of this additional
+ 
+
+457
+00:09:02,320 --> 00:09:04,470
+back. So all of this additional
+information is really important to have.
+
+458
+00:09:04,470 --> 00:09:04,480
+information is really important to have.
+ 
+
+459
+00:09:04,480 --> 00:09:06,630
+information is really important to have.
+But because of the open- source projects
+
+460
+00:09:06,630 --> 00:09:06,640
+But because of the open- source projects
+ 
+
+461
+00:09:06,640 --> 00:09:08,949
+But because of the open- source projects
+like Prometheus and Graphfana and Jerger
+
+462
+00:09:08,949 --> 00:09:08,959
+like Prometheus and Graphfana and Jerger
+ 
+
+463
+00:09:08,959 --> 00:09:10,790
+like Prometheus and Graphfana and Jerger
+and many more that we're pretty familiar
+
+464
+00:09:10,790 --> 00:09:10,800
+and many more that we're pretty familiar
+ 
+
+465
+00:09:10,800 --> 00:09:13,269
+and many more that we're pretty familiar
+with for traditional applications uh
+
+466
+00:09:13,269 --> 00:09:13,279
+with for traditional applications uh
+ 
+
+467
+00:09:13,279 --> 00:09:15,509
+with for traditional applications uh
+using open source technologies as well.
+
+468
+00:09:15,509 --> 00:09:15,519
+using open source technologies as well.
+ 
+
+469
+00:09:15,519 --> 00:09:17,509
+using open source technologies as well.
+Well, we're able to apply this to our AI
+
+470
+00:09:17,509 --> 00:09:17,519
+Well, we're able to apply this to our AI
+ 
+
+471
+00:09:17,519 --> 00:09:20,310
+Well, we're able to apply this to our AI
+applications and be able to get a more,
+
+472
+00:09:20,310 --> 00:09:20,320
+applications and be able to get a more,
+ 
+
+473
+00:09:20,320 --> 00:09:21,829
+applications and be able to get a more,
+you know, behindthe-scenes look when it
+
+474
+00:09:21,829 --> 00:09:21,839
+you know, behindthe-scenes look when it
+ 
+
+475
+00:09:21,839 --> 00:09:24,150
+you know, behindthe-scenes look when it
+comes to building AI apps. And with this
+
+476
+00:09:24,150 --> 00:09:24,160
+comes to building AI apps. And with this
+ 
+
+477
+00:09:24,160 --> 00:09:26,389
+comes to building AI apps. And with this
+centralized AI infrastructure, instead
+
+478
+00:09:26,389 --> 00:09:26,399
+centralized AI infrastructure, instead
+ 
+
+479
+00:09:26,399 --> 00:09:28,790
+centralized AI infrastructure, instead
+of having to work from a single model
+
+480
+00:09:28,790 --> 00:09:28,800
+of having to work from a single model
+ 
+
+481
+00:09:28,800 --> 00:09:31,190
+of having to work from a single model
+that we've maybe deployed from our IT
+
+482
+00:09:31,190 --> 00:09:31,200
+that we've maybe deployed from our IT
+ 
+
+483
+00:09:31,200 --> 00:09:35,030
+that we've maybe deployed from our IT
+team to a single team or user and have
+
+484
+00:09:35,030 --> 00:09:35,040
+team to a single team or user and have
+ 
+
+485
+00:09:35,040 --> 00:09:37,030
+team to a single team or user and have
+to do that multiple times and spread
+
+486
+00:09:37,030 --> 00:09:37,040
+to do that multiple times and spread
+ 
+
+487
+00:09:37,040 --> 00:09:38,949
+to do that multiple times and spread
+that across, well, we're able to
+
+488
+00:09:38,949 --> 00:09:38,959
+that across, well, we're able to
+ 
+
+489
+00:09:38,959 --> 00:09:42,710
+that across, well, we're able to
+individually uh call LLMs that are all
+
+490
+00:09:42,710 --> 00:09:42,720
+individually uh call LLMs that are all
+ 
+
+491
+00:09:42,720 --> 00:09:45,829
+individually uh call LLMs that are all
+managed by this, you know, models as a
+
+492
+00:09:45,829 --> 00:09:45,839
+managed by this, you know, models as a
+ 
+
+493
+00:09:45,839 --> 00:09:49,030
+managed by this, you know, models as a
+service infrastructure up here to be
+
+494
+00:09:49,030 --> 00:09:49,040
+service infrastructure up here to be
+ 
+
+495
+00:09:49,040 --> 00:09:51,430
+service infrastructure up here to be
+able to support various teams from our
+
+496
+00:09:51,430 --> 00:09:51,440
+able to support various teams from our
+ 
+
+497
+00:09:51,440 --> 00:09:53,670
+able to support various teams from our
+organization as they independently
+
+498
+00:09:53,670 --> 00:09:53,680
+organization as they independently
+ 
+
+499
+00:09:53,680 --> 00:09:56,630
+organization as they independently
+scale up their AI efforts, but also make
+
+500
+00:09:56,630 --> 00:09:56,640
+scale up their AI efforts, but also make
+ 
+
+501
+00:09:56,640 --> 00:09:58,389
+scale up their AI efforts, but also make
+sure that we have cost control in
+
+502
+00:09:58,389 --> 00:09:58,399
+sure that we have cost control in
+ 
+
+503
+00:09:58,399 --> 00:10:01,190
+sure that we have cost control in
+effect. We've got data privacy and full
+
+504
+00:10:01,190 --> 00:10:01,200
+effect. We've got data privacy and full
+ 
+
+505
+00:10:01,200 --> 00:10:03,269
+effect. We've got data privacy and full
+control over our AI adoption so that we
+
+506
+00:10:03,269 --> 00:10:03,279
+control over our AI adoption so that we
+ 
+
+507
+00:10:03,279 --> 00:10:06,070
+control over our AI adoption so that we
+can scale things up when we're using AI.
+
+508
+00:10:06,070 --> 00:10:06,080
+can scale things up when we're using AI.
+ 
+
+509
+00:10:06,080 --> 00:10:08,070
+can scale things up when we're using AI.
+So, models as a service, it's just one
+
+510
+00:10:08,070 --> 00:10:08,080
+So, models as a service, it's just one
+ 
+
+511
+00:10:08,080 --> 00:10:09,910
+So, models as a service, it's just one
+of the many approaches that you can use,
+
+512
+00:10:09,910 --> 00:10:09,920
+of the many approaches that you can use,
+ 
+
+513
+00:10:09,920 --> 00:10:11,990
+of the many approaches that you can use,
+but it's quickly becoming the standard
+
+514
+00:10:11,990 --> 00:10:12,000
+but it's quickly becoming the standard
+ 
+
+515
+00:10:12,000 --> 00:10:14,710
+but it's quickly becoming the standard
+for in-house and sovereign AI
+
+516
+00:10:14,710 --> 00:10:14,720
+for in-house and sovereign AI
+ 
+
+517
+00:10:14,720 --> 00:10:16,470
+for in-house and sovereign AI
+infrastructure. Now, if you learned
+
+518
+00:10:16,470 --> 00:10:16,480
+infrastructure. Now, if you learned
+ 
+
+519
+00:10:16,480 --> 00:10:18,150
+infrastructure. Now, if you learned
+something today, please be sure to like
+
+520
+00:10:18,150 --> 00:10:18,160
+something today, please be sure to like
+ 
+
+521
+00:10:18,160 --> 00:10:20,550
+something today, please be sure to like
+the video and hack the algorithm and
+
+522
+00:10:20,550 --> 00:10:20,560
+the video and hack the algorithm and
+ 
+
+523
+00:10:20,560 --> 00:10:22,710
+the video and hack the algorithm and
+stay subscribed for more content on AI
+
+524
+00:10:22,710 --> 00:10:22,720
+stay subscribed for more content on AI
+ 
+
+525
+00:10:22,720 --> 00:10:25,030
+stay subscribed for more content on AI
+and open-source technology. We'll see
+
+526
+00:10:25,030 --> 00:10:25,040
+and open-source technology. We'll see
+ 
+
+527
+00:10:25,040 --> 00:10:28,040
+and open-source technology. We'll see
+you.
+

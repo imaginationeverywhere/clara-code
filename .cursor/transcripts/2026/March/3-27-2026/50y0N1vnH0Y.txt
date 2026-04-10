@@ -1,0 +1,612 @@
+In this video, we are going to explore
+In this video, we are going to explore
+In this video, we are going to explore
+how we can create highle architectural
+how we can create highle architectural
+how we can create highle architectural
+diagram using MCP server capabilities of
+diagram using MCP server capabilities of
+diagram using MCP server capabilities of
+draw.io and xali draw. And to interact
+draw.io and xali draw. And to interact
+draw.io and xali draw. And to interact
+with these MCP servers, we are going to
+with these MCP servers, we are going to
+with these MCP servers, we are going to
+use cloud desktop and visual studio
+use cloud desktop and visual studio
+use cloud desktop and visual studio
+code. So let's get started with that. So
+code. So let's get started with that. So
+code. So let's get started with that. So
+first thing I'm just going to open my
+first thing I'm just going to open my
+first thing I'm just going to open my
+cloud desktop. So once you open your
+cloud desktop. So once you open your
+cloud desktop. So once you open your
+cloud desktop, you need to go to in your
+cloud desktop, you need to go to in your
+cloud desktop, you need to go to in your
+settings. So I'm just going to go to
+settings. So I'm just going to go to
+settings. So I'm just going to go to
+file and then I'm just going to go to
+file and then I'm just going to go to
+file and then I'm just going to go to
+settings. And under this you can see
+settings. And under this you can see
+settings. And under this you can see
+these connectors over here. I'm just
+these connectors over here. I'm just
+these connectors over here. I'm just
+going to click on this connector. And
+going to click on this connector. And
+going to click on this connector. And
+you see this connector. I'm just going
+you see this connector. I'm just going
+you see this connector. I'm just going
+to click on this browse connectors. So
+to click on this browse connectors. So
+to click on this browse connectors. So
+these are the connectors which are built
+these are the connectors which are built
+these are the connectors which are built
+by third parties and already reviewed by
+by third parties and already reviewed by
+by third parties and already reviewed by
+Enthroy for safety. You can just use
+Enthroy for safety. You can just use
+Enthroy for safety. You can just use
+like any of the connectors from here. As
+like any of the connectors from here. As
+like any of the connectors from here. As
+of now, if I search for draw.io,
+of now, if I search for draw.io,
+of now, if I search for draw.io,
+then there is no connector as such. But
+then there is no connector as such. But
+then there is no connector as such. But
+there is a connector for Xkelly Draw. So
+there is a connector for Xkelly Draw. So
+there is a connector for Xkelly Draw. So
+let's get started with Xkelly Draw. I'm
+let's get started with Xkelly Draw. I'm
+let's get started with Xkelly Draw. I'm
+just going to click on the connect
+just going to click on the connect
+just going to click on the connect
+and you can see like this is already
+and you can see like this is already
+and you can see like this is already
+over here. It has been connected. If you
+over here. It has been connected. If you
+over here. It has been connected. If you
+just want to have a look like which
+just want to have a look like which
+just want to have a look like which
+connector is already in place. There is
+connector is already in place. There is
+connector is already in place. There is
+also you can also check it from this
+also you can also check it from this
+also you can also check it from this
+customize button. You can also click on
+customize button. You can also click on
+customize button. You can also click on
+click over here. Then you can go to
+click over here. Then you can go to
+click over here. Then you can go to
+connectors and here also you could see
+connectors and here also you could see
+connectors and here also you could see
+okay this connector has been listed
+okay this connector has been listed
+okay this connector has been listed
+here. This particular connector comes
+here. This particular connector comes
+here. This particular connector comes
+with these specific tools. Now let's go
+with these specific tools. Now let's go
+with these specific tools. Now let's go
+back to our chat and let's try to draw
+back to our chat and let's try to draw
+back to our chat and let's try to draw
+something out here. I'm just going to
+something out here. I'm just going to
+something out here. I'm just going to
+say use Xali draw to create an
+say use Xali draw to create an
+say use Xali draw to create an
+architectural diagram for a modern web
+architectural diagram for a modern web
+architectural diagram for a modern web
+application. It should include a react
+application. It should include a react
+application. It should include a react
+front end fast repair back end
+front end fast repair back end
+front end fast repair back end
+postgsql database and there are some
+postgsql database and there are some
+postgsql database and there are some
+specific details. So you can pass your
+specific details. So you can pass your
+specific details. So you can pass your
+prompt like this model is default one
+prompt like this model is default one
+prompt like this model is default one
+which is set 4.6 and you can see I'm on
+which is set 4.6 and you can see I'm on
+which is set 4.6 and you can see I'm on
+free plan. So it's going to work in the
+free plan. So it's going to work in the
+free plan. So it's going to work in the
+free plan also. So I'm just going to go
+free plan also. So I'm just going to go
+free plan also. So I'm just going to go
+ahead and submit this.
+ahead and submit this.
+ahead and submit this.
+And first thing you can see claude is
+And first thing you can see claude is
+And first thing you can see claude is
+searching for a tool. It has identified
+searching for a tool. It has identified
+searching for a tool. It has identified
+a tool. And now actually it has started
+a tool. And now actually it has started
+a tool. And now actually it has started
+creating this particular diagram. And
+creating this particular diagram. And
+creating this particular diagram. And
+you can see like this particular diagram
+you can see like this particular diagram
+you can see like this particular diagram
+in real time how it is you know creating
+in real time how it is you know creating
+in real time how it is you know creating
+and it's very cool to see put out all
+and it's very cool to see put out all
+and it's very cool to see put out all
+the boxes based on the description what
+the boxes based on the description what
+the boxes based on the description what
+we have provided and at the bottom it is
+we have provided and at the bottom it is
+we have provided and at the bottom it is
+just sharing the details around it. What
+just sharing the details around it. What
+just sharing the details around it. What
+you can do if you want to edit the you
+you can do if you want to edit the you
+you can do if you want to edit the you
+can also open this one in excal draw web
+can also open this one in excal draw web
+can also open this one in excal draw web
+page or you can also edit it over here.
+page or you can also edit it over here.
+page or you can also edit it over here.
+So if I just click on edit then you can
+So if I just click on edit then you can
+So if I just click on edit then you can
+see like this particular window has been
+see like this particular window has been
+see like this particular window has been
+opened and I can also just click on any
+opened and I can also just click on any
+opened and I can also just click on any
+of the part and can edit it or I can
+of the part and can edit it or I can
+of the part and can edit it or I can
+just directly open it in the web browser
+just directly open it in the web browser
+just directly open it in the web browser
+of excelling
+of excelling
+of excelling
+permission. I'm just going to say open
+permission. I'm just going to say open
+permission. I'm just going to say open
+link. So from here also actually you can
+link. So from here also actually you can
+link. So from here also actually you can
+edit your images and it's very easy to
+edit your images and it's very easy to
+edit your images and it's very easy to
+connect with cloud desktop considering
+connect with cloud desktop considering
+connect with cloud desktop considering
+they do have inbuilt connectors. So you
+they do have inbuilt connectors. So you
+they do have inbuilt connectors. So you
+don't have to pass any kind of config as
+don't have to pass any kind of config as
+don't have to pass any kind of config as
+such. Now what about draw.io. So when we
+such. Now what about draw.io. So when we
+such. Now what about draw.io. So when we
+see draw.io MCP server then there are
+see draw.io MCP server then there are
+see draw.io MCP server then there are
+basically three options to connect with
+basically three options to connect with
+basically three options to connect with
+this particular server. One is like we
+this particular server. One is like we
+this particular server. One is like we
+can just pass this remote URL to connect
+can just pass this remote URL to connect
+can just pass this remote URL to connect
+to the MCP server. That's one option.
+to the MCP server. That's one option.
+to the MCP server. That's one option.
+The second option is going to be where
+The second option is going to be where
+The second option is going to be where
+if you're running something on your
+if you're running something on your
+if you're running something on your
+local and for that actually you just
+local and for that actually you just
+local and for that actually you just
+have to power this command and other
+have to power this command and other
+have to power this command and other
+option is where actually you can pass it
+option is where actually you can pass it
+option is where actually you can pass it
+as a skill. So let's see it one by one
+as a skill. So let's see it one by one
+as a skill. So let's see it one by one
+because we are using a claw desktop
+because we are using a claw desktop
+because we are using a claw desktop
+version so we cannot pass this remote
+version so we cannot pass this remote
+version so we cannot pass this remote
+MCP server we can pass only this
+MCP server we can pass only this
+MCP server we can pass only this
+particular command now. So I'm just
+particular command now. So I'm just
+particular command now. So I'm just
+going to take this and if I need to add
+going to take this and if I need to add
+going to take this and if I need to add
+it into my clot then I'm again going to
+it into my clot then I'm again going to
+it into my clot then I'm again going to
+go to settings and from here I will just
+go to settings and from here I will just
+go to settings and from here I will just
+go to developer. You can see like it's
+go to developer. You can see like it's
+go to developer. You can see like it's
+already added as a local MCP server but
+already added as a local MCP server but
+already added as a local MCP server but
+if it is not added then you can just
+if it is not added then you can just
+if it is not added then you can just
+click on edit.config config and it's
+click on edit.config config and it's
+click on edit.config config and it's
+going to open you this claw desktop
+going to open you this claw desktop
+going to open you this claw desktop
+config file which you can open it in any
+config file which you can open it in any
+config file which you can open it in any
+kind of notepad and then in the command
+kind of notepad and then in the command
+kind of notepad and then in the command
+section actually you have to pass you
+section actually you have to pass you
+section actually you have to pass you
+have to pass the command like this where
+have to pass the command like this where
+have to pass the command like this where
+we have to pass this npx and then in
+we have to pass this npx and then in
+we have to pass this npx and then in
+arguments we have to pass this
+arguments we have to pass this
+arguments we have to pass this
+particular section. So we are passing it
+particular section. So we are passing it
+particular section. So we are passing it
+here. Now once it has been added into
+here. Now once it has been added into
+here. Now once it has been added into
+cloud desktop then you will also see
+cloud desktop then you will also see
+cloud desktop then you will also see
+this in a connector. So if I go over
+this in a connector. So if I go over
+this in a connector. So if I go over
+here in the customize in the connectors
+here in the customize in the connectors
+here in the customize in the connectors
+then you can see one is a web version
+then you can see one is a web version
+then you can see one is a web version
+which xcaly draw and the other is a
+which xcaly draw and the other is a
+which xcaly draw and the other is a
+desktop one which is a local dev once it
+desktop one which is a local dev once it
+desktop one which is a local dev once it
+is configured I try to ask this question
+is configured I try to ask this question
+is configured I try to ask this question
+where I have specifically asked is to
+where I have specifically asked is to
+where I have specifically asked is to
+use draw.io to create a highle payment
+use draw.io to create a highle payment
+use draw.io to create a highle payment
+diagram and it has created over here. So
+diagram and it has created over here. So
+diagram and it has created over here. So
+I can just open this particular URL and
+I can just open this particular URL and
+I can just open this particular URL and
+it has created a payment kind of diagram
+it has created a payment kind of diagram
+it has created a payment kind of diagram
+like this here also actually it's a
+like this here also actually it's a
+like this here also actually it's a
+editable version. So it has opened it on
+editable version. So it has opened it on
+editable version. So it has opened it on
+the draw.io and we can just go ahead and
+the draw.io and we can just go ahead and
+the draw.io and we can just go ahead and
+you know modify things accordingly. The
+you know modify things accordingly. The
+you know modify things accordingly. The
+first option was this remote MCP server.
+first option was this remote MCP server.
+first option was this remote MCP server.
+If you want to just try it out where you
+If you want to just try it out where you
+If you want to just try it out where you
+want to see the diagram in the inline
+want to see the diagram in the inline
+want to see the diagram in the inline
+chat then I cannot do it on the cloud
+chat then I cannot do it on the cloud
+chat then I cannot do it on the cloud
+desktop. We have to do it on the web
+desktop. We have to do it on the web
+desktop. We have to do it on the web
+version. But rather than doing over
+version. But rather than doing over
+version. But rather than doing over
+there, I'm just going to do it in the VS
+there, I'm just going to do it in the VS
+there, I'm just going to do it in the VS
+code. So in the VS code, if you have to
+code. So in the VS code, if you have to
+code. So in the VS code, if you have to
+add like any kind of MCP server, then we
+add like any kind of MCP server, then we
+add like any kind of MCP server, then we
+have to just click on control shift NP.
+have to just click on control shift NP.
+have to just click on control shift NP.
+I'm on Windows and here I just have to
+I'm on Windows and here I just have to
+I'm on Windows and here I just have to
+say add server
+say add server
+say add server
+and you can see like all these options
+and you can see like all these options
+and you can see like all these options
+because this is going to be the remote
+because this is going to be the remote
+because this is going to be the remote
+server. So I'm just going to select this
+server. So I'm just going to select this
+server. So I'm just going to select this
+HTTP and it's saying like URL of the MCP
+HTTP and it's saying like URL of the MCP
+HTTP and it's saying like URL of the MCP
+server. So here I can just say this is
+server. So here I can just say this is
+server. So here I can just say this is
+going to be the URL and I can just pass
+going to be the URL and I can just pass
+going to be the URL and I can just pass
+it over here. And then it's saying enter
+it over here. And then it's saying enter
+it over here. And then it's saying enter
+server ID. I'm just going to say draw
+server ID. I'm just going to say draw
+server ID. I'm just going to say draw
+IO. And you can see like it has created
+IO. And you can see like it has created
+IO. And you can see like it has created
+a configuration like this. It's going to
+a configuration like this. It's going to
+a configuration like this. It's going to
+come up with three tools. I'm just going
+come up with three tools. I'm just going
+come up with three tools. I'm just going
+to start this server. And here we do
+to start this server. And here we do
+to start this server. And here we do
+have like one particular tool available.
+have like one particular tool available.
+have like one particular tool available.
+So let me just open GitHub copilot chat
+So let me just open GitHub copilot chat
+So let me just open GitHub copilot chat
+and let's chat with this particular
+and let's chat with this particular
+and let's chat with this particular
+server. So I can just pass the same
+server. So I can just pass the same
+server. So I can just pass the same
+prompt but instead of xkelly draw I'm
+prompt but instead of xkelly draw I'm
+prompt but instead of xkelly draw I'm
+specifically asking to use draw.io. Now
+specifically asking to use draw.io. Now
+specifically asking to use draw.io. Now
+it's trying to create a diagram for us
+it's trying to create a diagram for us
+it's trying to create a diagram for us
+and you can see like it has created it
+and you can see like it has created it
+and you can see like it has created it
+using draw.io mcp server. In this case,
+using draw.io mcp server. In this case,
+using draw.io mcp server. In this case,
+it's coming in line because it is
+it's coming in line because it is
+it's coming in line because it is
+rendering MCP app and as mentioned over
+rendering MCP app and as mentioned over
+rendering MCP app and as mentioned over
+here, if you are using this particular
+here, if you are using this particular
+here, if you are using this particular
+remote MCP server, then the diagram is
+remote MCP server, then the diagram is
+remote MCP server, then the diagram is
+going to come in line in the AI chart
+going to come in line in the AI chart
+going to come in line in the AI chart
+interface only using MCP apps protocol.
+interface only using MCP apps protocol.
+interface only using MCP apps protocol.
+So, same thing is being reflected over
+So, same thing is being reflected over
+So, same thing is being reflected over
+here. So here we are getting the diagram
+here. So here we are getting the diagram
+here. So here we are getting the diagram
+in the chart itself. We can zoom out or
+in the chart itself. We can zoom out or
+in the chart itself. We can zoom out or
+zoom in just to see specific section but
+zoom in just to see specific section but
+zoom in just to see specific section but
+it's not going to get opened on the web
+it's not going to get opened on the web
+it's not going to get opened on the web
+portal. It's going to be opened here
+portal. It's going to be opened here
+portal. It's going to be opened here
+only. Now the third option what we have
+only. Now the third option what we have
+only. Now the third option what we have
+is creating draw.io diagram using
+is creating draw.io diagram using
+is creating draw.io diagram using
+skills. So I'm just going to go to
+skills. So I'm just going to go to
+skills. So I'm just going to go to
+skills and I'm just going to click on
+skills and I'm just going to click on
+skills and I'm just going to click on
+this
+this
+this
+and I'm just going to say upload skill
+and I'm just going to say upload skill
+and I'm just going to say upload skill
+and I just need to pass an MD file over
+and I just need to pass an MD file over
+and I just need to pass an MD file over
+here. So to do that I'm just going to go
+here. So to do that I'm just going to go
+here. So to do that I'm just going to go
+to this full documentation which is
+to this full documentation which is
+to this full documentation which is
+here. From here I will go to the parent
+here. From here I will go to the parent
+here. From here I will go to the parent
+one. And here we do have this skill.md
+one. And here we do have this skill.md
+one. And here we do have this skill.md
+file. So I'm just going to download it
+file. So I'm just going to download it
+file. So I'm just going to download it
+from here. And the same file I can
+from here. And the same file I can
+from here. And the same file I can
+upload it here.
+upload it here.
+upload it here.
+So this is a skill.md file and this is
+So this is a skill.md file and this is
+So this is a skill.md file and this is
+going to be the custom skill which we
+going to be the custom skill which we
+going to be the custom skill which we
+are uploading. And now you can see I do
+are uploading. And now you can see I do
+are uploading. And now you can see I do
+have this draw.io IO diagram skill and
+have this draw.io IO diagram skill and
+have this draw.io IO diagram skill and
+it has been listed in the my skill
+it has been listed in the my skill
+it has been listed in the my skill
+section and it has been on by default.
+section and it has been on by default.
+section and it has been on by default.
+Now if I have to invoke that skill then
+Now if I have to invoke that skill then
+Now if I have to invoke that skill then
+I can just say use draw IO skill to
+I can just say use draw IO skill to
+I can just say use draw IO skill to
+create highlevel payment design
+create highlevel payment design
+create highlevel payment design
+diagram
+and it has started reading this draw
+and it has started reading this draw
+and it has started reading this draw
+your skill which we have just added it
+your skill which we have just added it
+your skill which we have just added it
+and you can see like it has started
+and you can see like it has started
+and you can see like it has started
+creating the diagram in the XML format.
+creating the diagram in the XML format.
+creating the diagram in the XML format.
+So let's wait for this to be completed
+and it has automatically routed us to
+and it has automatically routed us to
+and it has automatically routed us to
+the web URL where actually we can see
+the web URL where actually we can see
+the web URL where actually we can see
+and edit our diagram
+and edit our diagram
+and edit our diagram
+and same thing it has listed here also
+and same thing it has listed here also
+and same thing it has listed here also
+so with the details like what kind of
+so with the details like what kind of
+so with the details like what kind of
+layers has been included. So that's how
+layers has been included. So that's how
+layers has been included. So that's how
+actually you can interact with Xkelly
+actually you can interact with Xkelly
+actually you can interact with Xkelly
+draw and draw.io using multiple options.
+draw and draw.io using multiple options.
+draw and draw.io using multiple options.
+That's all what we have in this video.

@@ -1,0 +1,14 @@
+Video: https://youtu.be/PXq6awYzfT8
+
+Automated fetch did not produce PXq6awYzfT8.en.srt / PXq6awYzfT8.txt.
+
+What we observed:
+  - With youtube:player_client=android, yt-dlp reported: “There are no subtitles for the requested languages” for English auto-subs.
+  - Alternate clients / repeated requests hit HTTP 429 (Too Many Requests) or stalled on the webpage fetch.
+
+How to obtain this transcript locally:
+  1. Wait and retry: yt-dlp --extractor-args "youtube:player_client=android" --write-auto-sub --sub-lang en --skip-download --convert-subs srt -o "%(id)s" "https://www.youtube.com/watch?v=PXq6awYzfT8"
+  2. Or use browser cookies: yt-dlp --cookies-from-browser safari (or chrome) … same subtitle flags as above.
+  3. Or copy from YouTube: video → … → Show transcript → paste into PXq6awYzfT8.txt.
+
+Reference: https://github.com/yt-dlp/yt-dlp/wiki/FAQ#how-do-i-pass-cookies-to-yt-dlp

@@ -1,0 +1,828 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.920
+Okay, so earlier today, the&nbsp;
+Anthropic employees basically vibecoded a&nbsp;&nbsp;
+
+00:00:03.920 --> 00:00:08.720
+little too hard and accidentally released what is&nbsp;
+essentially the source code for Claude Code. Now,&nbsp;&nbsp;
+
+00:00:08.720 --> 00:00:12.720
+over the last few hours, Twitter has been blowing&nbsp;
+up because people have been dissecting the source&nbsp;&nbsp;
+
+00:00:12.720 --> 00:00:16.720
+code in all sorts of ways. But in this video,&nbsp;
+I want to go through all the upcoming features&nbsp;&nbsp;
+
+00:00:16.720 --> 00:00:21.760
+in Claude Code as evident from the source code&nbsp;
+itself. Now, do bear in mind, they may or may&nbsp;&nbsp;
+
+00:00:21.760 --> 00:00:26.800
+not release these features and the features may be&nbsp;
+different by the time they're released. But this&nbsp;&nbsp;
+
+00:00:26.800 --> 00:00:32.000
+is the present state as in the source code itself.&nbsp;
+Now, first of all, we have an upcoming proactive&nbsp;&nbsp;
+
+00:00:32.000 --> 00:00:37.200
+mode in Claude Code. Up until now, Claude Code has&nbsp;
+been reactive whereby you give it a task and then&nbsp;&nbsp;
+
+00:00:37.200 --> 00:00:41.600
+it will basically do it for you and then wait for&nbsp;
+your next input. But what they're doing here is&nbsp;&nbsp;
+
+00:00:41.600 --> 00:00:46.000
+they're basically having Claude Code run around&nbsp;
+the clock. So there's like an interval and it&nbsp;&nbsp;
+
+00:00:46.000 --> 00:00:50.560
+basically decides, are there any tasks that need&nbsp;
+to be done? It explores a codebase and then it&nbsp;&nbsp;
+
+00:00:50.560 --> 00:00:54.880
+will do the task and then it will go back to sleep&nbsp;
+until there's another task that it deems that is&nbsp;&nbsp;
+
+00:00:54.880 --> 00:00:58.720
+worth doing. So they're kind of shifting away&nbsp;
+from this reactive mode where Claude Code only&nbsp;&nbsp;
+
+00:00:58.720 --> 00:01:02.800
+waits for your input to proactive mode where it's&nbsp;
+working around the clock for you. So you may have&nbsp;&nbsp;
+
+00:01:02.800 --> 00:01:07.120
+Claude Code hooked up to Slack via channels,&nbsp;
+and then it sees a Slack message and decides&nbsp;&nbsp;
+
+00:01:07.120 --> 00:01:11.840
+to implement it then and there. It notices&nbsp;
+any to-dos in the comments of your codebase,&nbsp;&nbsp;
+
+00:01:11.840 --> 00:01:16.400
+it just does them. It sees that a new file has&nbsp;
+been added, so it like reviews those new files.&nbsp;&nbsp;
+
+00:01:16.400 --> 00:01:20.000
+It may notice some tests are not passing and&nbsp;
+then it will automatically fix them. Basically,&nbsp;&nbsp;
+
+00:01:20.000 --> 00:01:24.160
+we will find that Claude Code will soon be&nbsp;
+much more active in doing tasks for us that&nbsp;&nbsp;
+
+00:01:24.160 --> 00:01:28.640
+need to be done. And I do have a previous video&nbsp;
+about this where I basically talked about how&nbsp;&nbsp;
+
+00:01:28.640 --> 00:01:33.440
+Anthropic are heading towards a software factory&nbsp;
+model that you can watch as well. So next up,&nbsp;&nbsp;
+
+00:01:33.440 --> 00:01:38.640
+we're going to have some background skill&nbsp;
+improvement added, whereby every 5 user messages,&nbsp;&nbsp;
+
+00:01:38.640 --> 00:01:44.080
+Claude Code will basically do some analysis behind&nbsp;
+the scenes of those user messages and ask like,&nbsp;&nbsp;
+
+00:01:44.080 --> 00:01:48.240
+what should be changed about the skill based&nbsp;
+on what the user said? So for example, if you&nbsp;&nbsp;
+
+00:01:48.240 --> 00:01:52.560
+triggered a skill and then you corrected it and&nbsp;
+said, no, actually use this other thing instead,&nbsp;&nbsp;
+
+00:01:52.560 --> 00:01:56.320
+then Claude Code will automatically update&nbsp;
+the skill in the background. And maybe they&nbsp;&nbsp;
+
+00:01:56.320 --> 00:02:00.400
+will add have some kind of review feature at the&nbsp;
+end being like, hey, I noticed the skill needs&nbsp;&nbsp;
+
+00:02:00.400 --> 00:02:04.560
+updating in this particular way. But I think this&nbsp;
+is a much better approach going forwards whereby&nbsp;&nbsp;
+
+00:02:04.560 --> 00:02:09.600
+a lot of people make a skill like really well&nbsp;
+the first time and then it slowly falls out of&nbsp;&nbsp;
+
+00:02:09.600 --> 00:02:13.680
+date and they forget to update it. So by having&nbsp;
+background agents that automatically improve&nbsp;&nbsp;
+
+00:02:13.680 --> 00:02:18.640
+our skills for us can lead to better results in&nbsp;
+the long term. Next up, we're gonna have an away&nbsp;&nbsp;
+
+00:02:18.640 --> 00:02:23.760
+summary whereby Claude Code will automatically&nbsp;
+see if the terminal isn't focused. And if you&nbsp;&nbsp;
+
+00:02:23.760 --> 00:02:29.280
+switch away from the terminal to another program&nbsp;
+for more than 5 minutes and then come back to it&nbsp;&nbsp;
+
+00:02:29.280 --> 00:02:33.920
+will automatically tell you what it did whilst&nbsp;
+you were away with a nice summary. So this can be&nbsp;&nbsp;
+
+00:02:33.920 --> 00:02:38.000
+handy because then when you come back, you don't&nbsp;
+have to scroll up through the session history to&nbsp;&nbsp;
+
+00:02:38.000 --> 00:02:42.240
+find out what Claude Code did whilst you were away&nbsp;
+because it will automatically tell you. Next up,&nbsp;&nbsp;
+
+00:02:42.240 --> 00:02:47.680
+we will have a coordinator mode whereby currently&nbsp;
+right now in Claude Code, you have a single agent&nbsp;&nbsp;
+
+00:02:47.680 --> 00:02:52.640
+mode where it just reads messages. It may spin&nbsp;
+up a subagent, run commands and stuff like that.&nbsp;&nbsp;
+
+00:02:52.640 --> 00:02:57.280
+So most of the time, the default behavior of&nbsp;
+Claude Code is it will automatically read,&nbsp;&nbsp;
+
+00:02:57.280 --> 00:03:01.760
+run commands and write files. It may occasionally&nbsp;
+delegate things to subagents, subagents. Now,&nbsp;&nbsp;
+
+00:03:01.760 --> 00:03:05.360
+essentially in coordinated mode, you will&nbsp;
+find that Claude will basically not do any&nbsp;&nbsp;
+
+00:03:05.360 --> 00:03:10.560
+work with inside of the main context window, and&nbsp;
+it will delegate it amongst a team of subagents.&nbsp;&nbsp;
+
+00:03:10.560 --> 00:03:15.760
+So essentially Claude Code will never touch your&nbsp;
+codebase directly. It will always touch it via a&nbsp;&nbsp;
+
+00:03:15.760 --> 00:03:21.600
+kind of worker subagent. Now in coordinated mode,&nbsp;
+we may be in one of four phases. The first phase&nbsp;&nbsp;
+
+00:03:21.600 --> 00:03:26.640
+could be a research phase whereby Claude will&nbsp;
+automatically decide to spin up parallel workers,&nbsp;&nbsp;
+
+00:03:26.640 --> 00:03:31.040
+which will read through the codebase, kind of&nbsp;
+like the planning mode how it does currently. To&nbsp;&nbsp;
+
+00:03:31.040 --> 00:03:35.440
+understand how things work and fit together. Then&nbsp;
+there will be a synthesis whereby the coordinator&nbsp;&nbsp;
+
+00:03:35.440 --> 00:03:40.640
+will review all the reports from the researchers&nbsp;
+to identify gaps and figure out where there are&nbsp;&nbsp;
+
+00:03:40.640 --> 00:03:44.240
+contradictions and stuff like that. And then&nbsp;
+any implementation that needs to be done will&nbsp;&nbsp;
+
+00:03:44.240 --> 00:03:48.560
+be delegated to task-specific subagents. And&nbsp;
+then there will be more subagents that kind of&nbsp;&nbsp;
+
+00:03:48.560 --> 00:03:53.440
+do validation and verification via tests. Now you&nbsp;
+don't actually have to wait until the coordinator&nbsp;&nbsp;
+
+00:03:53.440 --> 00:03:59.200
+mode is released because you can essentially&nbsp;
+do this with a good Claude.md file and subagent&nbsp;&nbsp;
+
+00:03:59.200 --> 00:04:02.880
+teams. But it seems that the Anthropic team&nbsp;
+basically discovered that this is a good approach&nbsp;&nbsp;
+
+00:04:02.880 --> 00:04:06.720
+And coincidentally, I also discovered that this&nbsp;
+is a good approach, which I talked about in my&nbsp;&nbsp;
+
+00:04:06.720 --> 00:04:11.840
+Claude Code Masterclass about 1 month ago. So if&nbsp;
+you do want to stay ahead in terms of Claude Code,&nbsp;&nbsp;
+
+00:04:11.840 --> 00:04:16.240
+then this is the best place to do so. A lot of&nbsp;
+people from some of the world's biggest companies&nbsp;&nbsp;
+
+00:04:16.240 --> 00:04:20.720
+have taken this and have found it really useful.&nbsp;
+And many of them have become the best Claude Code&nbsp;&nbsp;
+
+00:04:20.720 --> 00:04:24.480
+users at their companies. You will find that&nbsp;
+many of the ideas that I talk about within&nbsp;&nbsp;
+
+00:04:24.480 --> 00:04:28.560
+this masterclass have become mainstream&nbsp;
+many months later. So if you want to stay&nbsp;&nbsp;
+
+00:04:28.560 --> 00:04:33.440
+ahead on the curve and be like learning the best&nbsp;
+Claude Code practices before pretty much anyone&nbsp;&nbsp;
+
+00:04:33.440 --> 00:04:38.160
+else, and then this is the best place to do so.&nbsp;
+Anyways, they will also be adding a verification&nbsp;&nbsp;
+
+00:04:38.160 --> 00:04:43.920
+agent. So the default behavior of Claude Code is&nbsp;
+it's kind of like an optimistic developer where&nbsp;&nbsp;
+
+00:04:43.920 --> 00:04:49.200
+it kind of assumes that something works. It runs&nbsp;
+like basic in-shallow tests. It reads a code that&nbsp;&nbsp;
+
+00:04:49.200 --> 00:04:53.840
+it wrote itself and is like, oh, this obviously&nbsp;
+works because I wrote it. But now Claude Code is&nbsp;&nbsp;
+
+00:04:53.840 --> 00:04:58.960
+adding an adversarial agent, which will have a&nbsp;
+pessimistic approach and it will default assume&nbsp;&nbsp;
+
+00:04:58.960 --> 00:05:04.240
+that anything breaks and try to actively break the&nbsp;
+code. And to show you just how early I am when it&nbsp;&nbsp;
+
+00:05:04.240 --> 00:05:08.960
+comes to this stuff, I was talking about this&nbsp;
+concept except 7 months ago in my video on how&nbsp;&nbsp;
+
+00:05:08.960 --> 00:05:14.320
+I used Codex CLI to fix Claude Code. And then&nbsp;
+7 months later, OpenAI released a Codex plugin&nbsp;&nbsp;
+
+00:05:14.320 --> 00:05:18.880
+for Claude Code so you can automate the process&nbsp;
+that I was talking about 7 months ago. So yeah,&nbsp;&nbsp;
+
+00:05:18.880 --> 00:05:22.400
+if you do want to stay ahead on the curve, then&nbsp;
+my Claude Code Masterclass is the best place to&nbsp;&nbsp;
+
+00:05:22.400 --> 00:05:27.520
+do so because ideas that I talk about here become&nbsp;
+mainstream many months later. But I actually don't&nbsp;&nbsp;
+
+00:05:27.520 --> 00:05:32.560
+know how much of an impact this would have because&nbsp;
+it's likely going to be using the exact same model&nbsp;&nbsp;
+
+00:05:32.560 --> 00:05:36.960
+except with a different system prompt to try and&nbsp;
+find those problems. But I find that it's better&nbsp;&nbsp;
+
+00:05:36.960 --> 00:05:42.320
+to use a completely different model GPT-5.4&nbsp;
+because it can find much more mistakes. So&nbsp;&nbsp;
+
+00:05:42.320 --> 00:05:46.880
+even though they're adding this, I don't think it&nbsp;
+will be as good as using a different model. But I&nbsp;&nbsp;
+
+00:05:46.880 --> 00:05:51.520
+think one difference with this verification agent&nbsp;
+is that it basically has a bunch of strategies to&nbsp;&nbsp;
+
+00:05:51.520 --> 00:05:56.400
+figure out and find problems. So it can spin up&nbsp;
+a development server and then do like browser&nbsp;&nbsp;
+
+00:05:56.400 --> 00:06:01.360
+automation for UI testing. It will run curl&nbsp;
+requests to like different endpoints to make sure&nbsp;&nbsp;
+
+00:06:01.360 --> 00:06:06.720
+the API is robust. It will try to reproduce the&nbsp;
+bug itself first before trying to fix it. And it&nbsp;&nbsp;
+
+00:06:06.720 --> 00:06:11.920
+will do stuff like making sure database migrations&nbsp;
+are reversible. Claude Code will also be adding&nbsp;&nbsp;
+
+00:06:11.920 --> 00:06:16.880
+token budgets as a way of forcing deep work.&nbsp;
+So currently right now, Claude Code will just&nbsp;&nbsp;
+
+00:06:16.880 --> 00:06:21.120
+decide like, okay, I think I'm done with this and&nbsp;
+then give you a pretty simple answer. And it may&nbsp;&nbsp;
+
+00:06:21.120 --> 00:06:26.160
+have only used about 3,000, 4,000 tokens to come&nbsp;
+up with that answer for you. But you may have a&nbsp;&nbsp;
+
+00:06:26.160 --> 00:06:30.960
+task which you want Claude Code to do a really big&nbsp;
+deep dive into, like doing really deep research&nbsp;&nbsp;
+
+00:06:30.960 --> 00:06:37.040
+online or in a complicated codebase, for example.&nbsp;
+In this case, you can specify a token budget. So&nbsp;&nbsp;
+
+00:06:37.040 --> 00:06:42.240
+you can tell Claude Code, okay, we gotta use at&nbsp;
+least 500,000 tokens here. So essentially you're&nbsp;&nbsp;
+
+00:06:42.240 --> 00:06:47.840
+telling it to spend a minimum dollar amount of&nbsp;
+compute and then Claude will decide to stop once&nbsp;&nbsp;
+
+00:06:47.840 --> 00:06:53.120
+it either reaches a budget threshold, which is 90%&nbsp;
+of the token budget you assign to it. So if you&nbsp;&nbsp;
+
+00:06:53.120 --> 00:06:58.640
+assign a token budget of 1 million and it reached&nbsp;
+900,000, then it would stop. And secondly, it&nbsp;&nbsp;
+
+00:06:58.640 --> 00:07:03.200
+would stop when it thinks that progress is slowing&nbsp;
+down. And I think internally they defined like if&nbsp;&nbsp;
+
+00:07:03.200 --> 00:07:09.200
+the last 3 continuations where Claude Code just&nbsp;
+keeps continuing returns less than 500 tokens,&nbsp;&nbsp;
+
+00:07:09.200 --> 00:07:15.200
+but maybe they will adjust this in some way. But&nbsp;
+essentially you now have a hard minimum whereby&nbsp;&nbsp;
+
+00:07:15.200 --> 00:07:19.840
+if you have a really complicated task and you&nbsp;
+want the best possible answer from Claude Code,&nbsp;&nbsp;
+
+00:07:19.840 --> 00:07:24.160
+you can define it to use a minimum number of&nbsp;
+tokens. And I think the interesting meta point&nbsp;&nbsp;
+
+00:07:24.160 --> 00:07:29.520
+here is that Anthropic are basically making it&nbsp;
+easier for us to use even more tokens with token&nbsp;&nbsp;
+
+00:07:29.520 --> 00:07:34.080
+budgets and the proactive thing that I mentioned&nbsp;
+earlier. Next up, if they move ahead with this,&nbsp;&nbsp;
+
+00:07:34.080 --> 00:07:39.760
+there will be an ultra plan mode where basically&nbsp;
+Claude will automatically connect to a remote&nbsp;&nbsp;
+
+00:07:39.760 --> 00:07:45.120
+session on the Claude Code runtime. And then&nbsp;
+automatically upload your repo onto it. And&nbsp;&nbsp;
+
+00:07:45.120 --> 00:07:49.840
+then the Claude Code runtime will be doing a deep&nbsp;
+plan. And they may have some kind of like internal&nbsp;&nbsp;
+
+00:07:49.840 --> 00:07:54.240
+system prompt for this or something like that,&nbsp;
+or deep planning architecture. And it has like&nbsp;&nbsp;
+
+00:07:54.240 --> 00:07:59.440
+a timeout of 30 minutes maximum. Then your local&nbsp;
+session of Claude Code will automatically check&nbsp;&nbsp;
+
+00:07:59.440 --> 00:08:04.480
+the Claude Code runtime, the cloud version every&nbsp;
+3 seconds to make sure that everything has been&nbsp;&nbsp;
+
+00:08:04.480 --> 00:08:09.680
+done. And if it has been done, then you can view&nbsp;
+the plan on Claude.ai. If you reject it, then it&nbsp;&nbsp;
+
+00:08:09.680 --> 00:08:14.560
+will go back into runtime. If you accept it, then&nbsp;
+you can either have the plan executed locally on&nbsp;&nbsp;
+
+00:08:14.560 --> 00:08:19.520
+your terminal or have the plan executed remotely&nbsp;
+on the Claude Code runtime. I'm really curious&nbsp;&nbsp;
+
+00:08:19.520 --> 00:08:24.400
+what kind of system prompt and architecture they&nbsp;
+will use for this brand new ultra planning mode,&nbsp;&nbsp;
+
+00:08:24.400 --> 00:08:28.400
+but I imagine it will be kind of hidden from us&nbsp;
+because it will be running on their own cloud&nbsp;&nbsp;
+
+00:08:28.400 --> 00:08:34.080
+version instead. Anyways, they will also be adding&nbsp;
+a templating job system inside of Claude Code.&nbsp;&nbsp;
+
+00:08:34.080 --> 00:08:39.120
+So right now all your conversations with Claude&nbsp;
+Code are ephemeral, whereby you give it a task,&nbsp;&nbsp;
+
+00:08:39.120 --> 00:08:43.920
+it replies, and then you basically go back and&nbsp;
+forth. And tomorrow you may end up doing the exact&nbsp;&nbsp;
+
+00:08:43.920 --> 00:08:48.400
+same thing. So what this persistent job template&nbsp;
+Cloud Code Assistant will basically do is Claude&nbsp;&nbsp;
+
+00:08:48.400 --> 00:08:53.040
+will automatically identify when something needs&nbsp;
+to be turned into a job and then it will turn it&nbsp;&nbsp;
+
+00:08:53.040 --> 00:08:58.000
+into a job template for you. So this means that&nbsp;
+tomorrow when you're doing a very similar task,&nbsp;&nbsp;
+
+00:08:58.000 --> 00:09:02.880
+then you can basically reuse the same template&nbsp;
+that Claude Code automatically made for you&nbsp;&nbsp;
+
+00:09:02.880 --> 00:09:07.360
+yesterday. And then there will be a bunch of&nbsp;
+commands whereby you could just do Claude new&nbsp;&nbsp;
+
+00:09:07.360 --> 00:09:13.200
+and then do the job name. Like you'd probably be&nbsp;
+able to do like Claude new, deployed to production&nbsp;&nbsp;
+
+00:09:13.200 --> 00:09:17.680
+or something like that. And then you will be able&nbsp;
+to do Claude list to basically see which jobs&nbsp;&nbsp;
+
+00:09:17.680 --> 00:09:22.160
+are in progress and then reply to individual&nbsp;
+jobs without actually having to open up the&nbsp;&nbsp;
+
+00:09:22.160 --> 00:09:26.400
+conversation for each of those jobs. So it kind&nbsp;
+of feels like they're turning this part of Claude&nbsp;&nbsp;
+
+00:09:26.400 --> 00:09:32.320
+Code with the templating and job thing into a task&nbsp;
+management system of sorts. Next up, it seems that&nbsp;&nbsp;
+
+00:09:32.320 --> 00:09:37.120
+they will be adding push notifications as well,&nbsp;
+whereby it will automatically be able to send&nbsp;&nbsp;
+
+00:09:37.120 --> 00:09:43.200
+you notifications probably via the Claude app on&nbsp;
+your phone. So when a task has been completed on&nbsp;&nbsp;
+
+00:09:43.200 --> 00:09:47.440
+the cloud, then it would send you a notification&nbsp;
+there or on your computer if it's running in a&nbsp;&nbsp;
+
+00:09:47.440 --> 00:09:52.000
+proactive mode. So I think this is really handy&nbsp;
+for proactive mode, whereby if Claude is running&nbsp;&nbsp;
+
+00:09:52.000 --> 00:09:57.760
+proactively, I kind of want to get a regular like&nbsp;
+understanding via notifications of what exactly&nbsp;&nbsp;
+
+00:09:57.760 --> 00:10:03.760
+it's doing and what it's done so far today. We&nbsp;
+will also have real-time PR watching with GitHub&nbsp;&nbsp;
+
+00:10:03.760 --> 00:10:11.280
+webhook subscriptions. Whereby if you make a brand&nbsp;
+new PR, then another team member replies to PR or&nbsp;&nbsp;
+
+00:10:11.280 --> 00:10:16.720
+another agent, like a code review agent replies&nbsp;
+to it, then Claude will automatically be notified,&nbsp;&nbsp;
+
+00:10:16.720 --> 00:10:21.040
+okay, we have a brand new reply, let's look at it&nbsp;
+and check it out. Next up, we will have the option&nbsp;&nbsp;
+
+00:10:21.040 --> 00:10:26.640
+of context-preserving subagents. Now when you&nbsp;
+spawn up a subagent, the subagent doesn't have any&nbsp;&nbsp;
+
+00:10:26.640 --> 00:10:32.080
+prior context of the conversation except for the&nbsp;
+system prompt that Claude Code gave it. But if you&nbsp;&nbsp;
+
+00:10:32.080 --> 00:10:37.280
+are a heavy user of Claude Code, then you may find&nbsp;
+in certain situations when Claude Code decided to&nbsp;&nbsp;
+
+00:10:37.280 --> 00:10:42.800
+spin up a subagent, then like even though the&nbsp;
+system prompts contained a lot of information,&nbsp;&nbsp;
+
+00:10:42.800 --> 00:10:46.800
+it didn't contain enough information for the&nbsp;
+subagent to do a good job. This is kind of&nbsp;&nbsp;
+
+00:10:46.800 --> 00:10:51.360
+like a double-sided sword whereby a subagent&nbsp;
+can bring a brand new perspective because&nbsp;&nbsp;
+
+00:10:51.360 --> 00:10:56.640
+it's not distracted by all the context that's&nbsp;
+been accumulated so far. But in other cases,&nbsp;&nbsp;
+
+00:10:56.640 --> 00:11:00.960
+it can actually do a worse job because it didn't&nbsp;
+have all the context. So essentially what Claude&nbsp;&nbsp;
+
+00:11:00.960 --> 00:11:07.040
+Code will be able to do is using the same prompt&nbsp;
+cache so far, it can spin up subagent with all&nbsp;&nbsp;
+
+00:11:07.040 --> 00:11:11.040
+the prior history in the conversation so far,&nbsp;
+and then have it do a task or have many of&nbsp;&nbsp;
+
+00:11:11.040 --> 00:11:16.480
+them running in parallel. So you could have the&nbsp;
+entire conversation so far be divided amongst 5&nbsp;&nbsp;
+
+00:11:16.480 --> 00:11:21.360
+parallel subagents that are all forked from&nbsp;
+the main conversation, doing some research,&nbsp;&nbsp;
+
+00:11:21.360 --> 00:11:26.160
+some hypothesis or whatever. And then that feeds&nbsp;
+back into main session. Next up, we will have&nbsp;&nbsp;
+
+00:11:26.160 --> 00:11:31.600
+some kind of team memory as well. So right now&nbsp;
+there is auto memory inside of Claude Code, but&nbsp;&nbsp;
+
+00:11:31.600 --> 00:11:36.480
+that's unfortunately individual memory that only&nbsp;
+exists at the local level instead. Which kind of&nbsp;&nbsp;
+
+00:11:36.480 --> 00:11:42.000
+means that knowledge is siloed and shared context&nbsp;
+may be outdated or drifting apart in some way.&nbsp;&nbsp;
+
+00:11:42.000 --> 00:11:46.480
+But essentially what Claude Code will be doing&nbsp;
+is adding a brand new directory for projects,&nbsp;&nbsp;
+
+00:11:46.480 --> 00:11:51.200
+which is like memory/team. I don't know how this&nbsp;
+will be synced. It may be synced in the background&nbsp;&nbsp;
+
+00:11:51.200 --> 00:11:55.920
+automatically via like Claude AI or something if&nbsp;
+you're part of a team plan. But essentially this&nbsp;&nbsp;
+
+00:11:55.920 --> 00:12:01.680
+now becomes a living document knowledge base&nbsp;
+that every team member's Claude contributes to&nbsp;&nbsp;
+
+00:12:01.680 --> 00:12:06.880
+and benefits from. We will also have some kind&nbsp;
+of bring your own compute for Cloud Code. So if&nbsp;&nbsp;
+
+00:12:06.880 --> 00:12:11.600
+you use Cloud Code, the web version, you know&nbsp;
+that you can define environments, set secrets&nbsp;&nbsp;
+
+00:12:11.600 --> 00:12:16.400
+and a bunch of other things as well. And all&nbsp;
+of that runs on Anthropic servers. But it seems&nbsp;&nbsp;
+
+00:12:16.400 --> 00:12:21.040
+that what the Cloud Code team will be providing&nbsp;
+is a Docker image whereby you can install it on&nbsp;&nbsp;
+
+00:12:21.040 --> 00:12:24.960
+your own servers instead. And then in your own&nbsp;
+server you can set your environment variables,&nbsp;&nbsp;
+
+00:12:24.960 --> 00:12:30.400
+MCP configs and stuff like that. And then when&nbsp;
+you send a task to Cloud Code to the cloud,&nbsp;&nbsp;
+
+00:12:30.400 --> 00:12:34.880
+then instead of running on Anthropic servers,&nbsp;
+it will run on your own servers. It will still&nbsp;&nbsp;
+
+00:12:34.880 --> 00:12:39.840
+of course make requests to the Anthropic API, so&nbsp;
+that has to be whitelisted, but everything else&nbsp;&nbsp;
+
+00:12:39.840 --> 00:12:44.080
+will be happening on your own servers instead. So&nbsp;
+this matters more for enterprise whereby you have&nbsp;&nbsp;
+
+00:12:44.080 --> 00:12:49.360
+secure isolation and you would have like parallel&nbsp;
+subagents that can spin up really quickly on your&nbsp;&nbsp;
+
+00:12:49.360 --> 00:12:54.160
+own infrastructure instead of being bottlenecked&nbsp;
+by Anthropic's infrastructure instead. Next up,&nbsp;&nbsp;
+
+00:12:54.160 --> 00:12:59.280
+we will have a brand new concept known as context&nbsp;
+collapse. So right now there's a problem with&nbsp;&nbsp;
+
+00:12:59.280 --> 00:13:04.480
+autocompact or just doing /compact whereby your&nbsp;
+The entire session history will go to Claude,&nbsp;&nbsp;
+
+00:13:04.480 --> 00:13:08.800
+like their servers. It will say, summarize&nbsp;
+this conversation so far, and then that will&nbsp;&nbsp;
+
+00:13:08.800 --> 00:13:14.400
+be passed into a new session. Now this means a lot&nbsp;
+of like important things can be lost and a lot of&nbsp;&nbsp;
+
+00:13:14.400 --> 00:13:19.680
+non-important things can stay. So essentially&nbsp;
+what Claude Code is now going to do is have a&nbsp;&nbsp;
+
+00:13:19.680 --> 00:13:25.120
+reversible context collapse whereby things will&nbsp;
+have a different risk score assigned to them.&nbsp;&nbsp;
+
+00:13:25.120 --> 00:13:30.000
+So really long tool output, for example, would&nbsp;
+have a low risk score assigned to it and would&nbsp;&nbsp;
+
+00:13:30.000 --> 00:13:36.080
+be summarized and replaced in like line in the&nbsp;
+conversation. And something like a key decision&nbsp;&nbsp;
+
+00:13:36.080 --> 00:13:40.960
+that you made would have a high risk score&nbsp;
+assigned to it. So you'd have different blocks&nbsp;&nbsp;
+
+00:13:40.960 --> 00:13:44.960
+in your conversation with different risk scores.&nbsp;
+And when Claude Code automatically sees that,&nbsp;&nbsp;
+
+00:13:44.960 --> 00:13:48.960
+okay, our context window is being filled&nbsp;
+up, then anything that is a low risk,&nbsp;&nbsp;
+
+00:13:48.960 --> 00:13:53.520
+it will replace with the summary instead. But&nbsp;
+that will still be reversible. So I think that&nbsp;&nbsp;
+
+00:13:53.520 --> 00:13:59.600
+if Claude Code still decided it needed to see the&nbsp;
+full message of that chunk instead of the summary,&nbsp;&nbsp;
+
+00:13:59.600 --> 00:14:03.680
+then it would be able to do so in some kind&nbsp;
+of way. You can also sync your local version&nbsp;&nbsp;
+
+00:14:03.680 --> 00:14:10.880
+of Claude Code to Claude.ai and have that be a&nbsp;
+read-only mode. So this matters because like,&nbsp;&nbsp;
+
+00:14:10.880 --> 00:14:15.120
+let's say for example, you were giving a&nbsp;
+presentation and you wanted everyone to see your&nbsp;&nbsp;
+
+00:14:15.120 --> 00:14:20.320
+local instance of Claude Code. You could just give&nbsp;
+them a URL to like Claude.ai and then they could&nbsp;&nbsp;
+
+00:14:20.320 --> 00:14:25.360
+see it but not actually make any changes. So this&nbsp;
+is really great for demos or monitoring someone&nbsp;&nbsp;
+
+00:14:25.360 --> 00:14:29.920
+else's instance of Claude Code or showing a team&nbsp;
+like member to get feedback or something like&nbsp;&nbsp;
+
+00:14:29.920 --> 00:14:34.640
+that. For how you're working with Claude Code. I&nbsp;
+imagine that this will also be used for technical&nbsp;&nbsp;
+
+00:14:34.640 --> 00:14:39.280
+interviews as well, because many companies are&nbsp;
+now interviewing for how good someone is at using&nbsp;&nbsp;
+
+00:14:39.280 --> 00:14:43.840
+Claude Code these days. And of course, remember,&nbsp;
+if you want to get better at using Claude Code,&nbsp;&nbsp;
+
+00:14:43.840 --> 00:14:48.480
+then there is my masterclass for doing exactly&nbsp;
+that. So right now, switching between the terminal&nbsp;&nbsp;
+
+00:14:48.480 --> 00:14:52.880
+and Claude Code is like a bit tedious, but it&nbsp;
+seems that what they will do is turn it into&nbsp;&nbsp;
+
+00:14:52.880 --> 00:14:57.120
+a single shortcut whereby you just press it,&nbsp;
+it switches to terminal, you press it again,&nbsp;&nbsp;
+
+00:14:57.120 --> 00:15:01.920
+it switches back to Claude Code. Claude Code will&nbsp;
+also make it easier to launch and view background&nbsp;&nbsp;
+
+00:15:01.920 --> 00:15:07.200
+sessions as well. So you can launch a background&nbsp;
+session by just doing like Claude --bg and then&nbsp;&nbsp;
+
+00:15:07.200 --> 00:15:11.120
+give it a command over here. And then it will&nbsp;
+basically run headless on your computer or your&nbsp;&nbsp;
+
+00:15:11.120 --> 00:15:16.080
+server. Then you can do Claude list to see the&nbsp;
+background sessions, show the logs of any of them,&nbsp;&nbsp;
+
+00:15:16.080 --> 00:15:20.640
+attach to a particular background session, or&nbsp;
+decide to kill it instead. So I guess the commands&nbsp;&nbsp;
+
+00:15:20.640 --> 00:15:25.360
+will kind of be like Claude ps, kind of like&nbsp;
+Docker ps. Cloud Logs, Cloud Attach, and Cloud&nbsp;&nbsp;
+
+00:15:25.360 --> 00:15:30.560
+Kill. Next up, we will have some kind of setting&nbsp;
+sync whereby your settings on one machine will&nbsp;&nbsp;
+
+00:15:30.560 --> 00:15:36.560
+automatically be encrypted and saved on Anthropic&nbsp;
+servers and then decrypted onto another device or&nbsp;&nbsp;
+
+00:15:36.560 --> 00:15:41.120
+something like that. So if you change your config&nbsp;
+on one device, then that should carry over to&nbsp;&nbsp;
+
+00:15:41.120 --> 00:15:46.480
+other devices and other remote instances of Claude&nbsp;
+Code, any memories that you have, key bindings,&nbsp;&nbsp;
+
+00:15:46.480 --> 00:15:51.040
+permissions, and so forth. Now there is also an&nbsp;
+Easter egg feature that they will be releasing&nbsp;&nbsp;
+
+00:15:51.040 --> 00:15:55.680
+tomorrow for April Fools'. So if you don't want&nbsp;
+a spoiler, then like end of the video video here,&nbsp;&nbsp;
+
+00:15:55.680 --> 00:15:59.440
+but if you are interested, then I will be&nbsp;
+explaining it right now. So they will be adding&nbsp;&nbsp;
+
+00:15:59.440 --> 00:16:05.120
+some kind of AI Tamagotchi tomorrow, whereby&nbsp;
+essentially your user ID will be turned into a&nbsp;&nbsp;
+
+00:16:05.120 --> 00:16:10.640
+hash, and then you will be automatically assigned&nbsp;
+a companion of sorts. So it could be like a duck,&nbsp;&nbsp;
+
+00:16:10.640 --> 00:16:16.240
+goose, cat, dragon, robot, whatever. And people&nbsp;
+will have different ones with different rarities&nbsp;&nbsp;
+
+00:16:16.240 --> 00:16:20.400
+attached to them. Anyways, I thought this was&nbsp;
+really interesting. Do bear in mind that they may&nbsp;&nbsp;
+
+00:16:20.400 --> 00:16:24.880
+not decide to release all of these features, and&nbsp;
+by the time they are released, they may actually&nbsp;&nbsp;
+
+00:16:24.880 --> 00:16:28.720
+work differently to how I described. But when the&nbsp;
+final versions of those features are released,&nbsp;&nbsp;
+
+00:16:28.720 --> 00:16:32.400
+then I will be making actual videos about them.&nbsp;
+And if you do want to stay updated with that,&nbsp;&nbsp;
+
+00:16:32.400 --> 00:16:36.643
+then do subscribe to the channel because I do&nbsp;
+make the best Claude Code videos here on YouTube.
+

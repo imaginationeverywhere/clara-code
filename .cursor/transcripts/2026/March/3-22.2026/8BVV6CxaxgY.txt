@@ -1,0 +1,166 @@
+Title: Claude Channels Just Dropped and It Replaces OpenClaw
+Video ID: 8BVV6CxaxgY
+URL: https://www.youtube.com/watch?v=8BVV6CxaxgY
+
+Note: YouTube caption/subtitle APIs were unavailable when this file was generated; text below is from offline ASR and may differ slightly from official captions.
+
+Source: Local speech-to-text (faster-whisper, model=base, language=en, probability=1.00)
+
+--- Timestamps ---
+[00:00] All right, so watch this. I'm on my phone right now. I have telegram open, hypothetically,
+[00:03] let's say I'm across town, and we need a task done. We need to use cloud code. We need
+[00:07] to use some of our skills that we have set up, some of the processes that we have established
+[00:11] inside of cloud code. Also, we just need it to do some jobs. So I'm going to type out,
+[00:17] scrape me 10 new roofing companies and Dallas with under 20 employees. We're getting a little
+[00:21] bit specific, but we're also just keeping it broad. Now, if you actually see on my computer,
+[00:26] it is recognizing this request. It is going ahead and starting to do the web search. So,
+[00:31] of course, we just have to imagine that I'm across town and not actually at my desk right
+[00:34] now. But anyways, it's going ahead, recognizing the request, and it's going to soon return back
+[00:40] to me. Awesome. So we just got that back that took exactly about 50 seconds. So we can go from
+[00:46] the top to the bottom, seeing where the saved, and it says at the bottom, all small operations
+[00:50] consistent with under 20 employees. I'm going to pull contact information or dig deeper on
+[00:53] any of these. So if we did have any more specific SOPs, like being able to pull from any databases,
+[00:59] we would be able to give it a little bit direction on how we want it to be able to search for emails.
+[01:03] But the point being, this is now able to utilize cloud code exactly how we would be able to,
+[01:08] like if I were at my desk. Now, as of March 19th andthropic just shipped this, it's called
+[01:12] Cloud Code Channels, and it's a research preview that just dropped today. So if you're running any kind
+[01:17] of AI workflows inside of cloud code, whether that's for your business or for your clients,
+[01:21] this changes how you operate today today. Now, if you're like me, you're dealing with situations
+[01:25] where you have cloud code set up with a bunch of different skills. So let's say you have lead scraping,
+[01:30] inbox management, report generation, even some content research, all of it is running locally
+[01:35] on my machine, on this computer. Now, that means if I am not sitting at my desk,
+[01:40] none of it is going to be running. So let's say I'm at a client meeting, I'm driving somewhere,
+[01:44] or I'm getting launched, whatever I am doing, all that automation is just sitting there idle because
+[01:49] I cannot talk to it. Now, there have been some third-party solutions for this. I mean, obviously,
+[01:55] there's OpenClaw. This is the main one that people were using and what Cloud Code is actually trying
+[02:00] to urbanthropic rather is trying to compete with and releasing all these features just rapidly. But
+[02:05] I tried briefly, I mean, it worked, but I never fully committed to it. You know, the security model
+[02:10] it just made me uneasy for anything touching client data, and I just know inthropic was just going
+[02:15] to release insane things like this with the way that we've been seeing how they perform and what
+[02:19] they've been coming up with the past year. So seemingly, it's starting to pay off. And also,
+[02:24] like, just the token-based billing, it added up way faster with OpenClaw than I expected. So I always
+[02:30] prefer just keeping things inside of Cloud Code all natively. So when athropic announced that they
+[02:34] were building this directly into Cloud Code, I mean, that was exactly what I've been waiting for,
+[02:38] and I'm sure many of you as well. Now, really quick, before we actually get into how to set this up and
+[02:42] how this actually works and what it actually is, I want to mention that I'm hosting a free webinar
+[02:46] on Tuesday, March 24th. Make sure to sign up for that if you're looking to use AI in your business
+[02:52] and actually looking to monetize and start your own business using AI and actually gets to 10k per
+[02:57] month and much, much more within under 90 days. So make sure you're missing that link will be down
+[03:03] below in the description to sign up, but we are capping seats. So please only sign up if you are
+[03:08] interested in starting an AI business and you will show up. So again, I'll see you there.
+[03:12] All right, but anyways, let me just get into how this actually works. So the Cloud Code channel,
+[03:16] it is essentially just an MCP server that pushes messages into a running Cloud Code session.
+[03:21] So with this, you can just message Cloud through Telegram or Discord. It's only those two right now.
+[03:26] I'm sure it'll expand to much, much more just based off of how fast we've been seeing inthropic
+[03:32] ship. So right now, Cloud is able to read the message. It does the work using whatever skills and whatever
+[03:37] you're asking of it and using the tools that you've already configured and then replies back
+[03:41] through the same channel. So it's just that two-way communication. So essentially, just like texting
+[03:46] someone who happens to be an AI agent, sitting at your computer. Now, we're all familiar with Open
+[03:50] Class. So you should be familiar with this as well. If not, I'm going to explain it a little bit further.
+[03:54] So your Cloud Code session, it does need to be running. So your computer stays on or you have a
+[03:59] dedicated machine, but you do not have to be anywhere near it. You could just control everything from
+[04:04] your phone. So the security works just through a center allow list. So you pair your Telegram or
+[04:09] your Discord account just using a security code. You lock the policy to allow list only and anyone who
+[04:15] isn't approved, they get silently dropped. Now with this, there is no API keys just sitting in
+[04:20] config files and it runs on your existing Cloud subscription. So there's a flat monthly rate,
+[04:24] whether you're sending five or 500 messages. So that is one of the biggest things is you can use
+[04:30] your subscription, which is really where everyone ran into issues with OpenClaw or at least why I was
+[04:35] staying away from it even though there is work around. All right. Now let's get into how to actually set
+[04:38] this up and how to integrate this with Telegram specifically. For Discord, it's going to look a little
+[04:43] bit different and I'll probably just make a separate video on that for sake of speed and simplicity.
+[04:47] All right. So we're just going to open up a brand new terminal and what I am going to do is I'm going
+[04:52] to first type Cloud dangerously skip permissions. Now, it's very important that you are following this
+[04:58] and it's very important that you're using the terminal. You can't just open up Cloud code,
+[05:02] very simply like you normally would. You have to open it up through this version or this approach
+[05:07] rather. All right. So let's open it up and now in this case, we want to actually install the GitHub.
+[05:13] Here's the get that we're going to be installing. This is coming from Cloud Plugins official. Feel
+[05:17] free to browse this. Feel free to look through the read me if you would like. Break it down a little bit
+[05:21] further, but really it's as simple as it sounds. It's really just being able to use Telegram and Discord
+[05:27] through an MCP, just like we have been using MCPs for all of our other tools thus far on the one now
+[05:32] we're moving more towards CLI's. So next up, what I am going to say is to install this plugin. Also,
+[05:37] feel free to pause this now or you can get this all inside, you know, the entire instruction guide inside
+[05:43] of my free school community. We have a little bit over 17,000 members. So go ahead check that out if
+[05:48] you're looking to learn AI and connect with other people who are looking to start their own business
+[05:53] and grow their own business. But anyways, we're just going to click install this plugin, start setup
+[05:56] process for the Telegram connection. Alright, so we just got a response back and it's saying here's
+[06:01] the plan, install bond, install a plugin, so on and so forth. We don't got to worry about that. The only
+[06:05] thing you have to worry about is connecting and creating a new bot via Telegram, assuming that's the
+[06:11] method that you want to go. Otherwise, wait for my next video where we're checking out somebody else's.
+[06:15] But we are going to open up Telegram, find botfather. If you don't know how to do that, just go ahead and
+[06:19] go into your tabs. Search for botfather. Here it is what the name looks like. And we're just going
+[06:24] to type slash new bot. Now, within this, it is going to create a message that is going to provide us
+[06:30] with the HTTP API. So that is what this recent message is. And we're just going to copy the text.
+[06:36] After of course, we create it with our name. So I'll ask like what name would you like to create this
+[06:41] as? And that's where you just respond. And it'll provide you with your API token. And you can just send
+[06:47] that back to Claude in which we're going to provide it with whatever we just got. So in this case,
+[06:52] it is recognizing that my token was already created so it cannot connect another sequence or
+[06:57] another instance. So it's not going to work. We have to create a new bot. But you'll only ever have
+[07:02] to do this once. Now, let's assume that this was a brand new token and everything was great. All
+[07:08] we're going to do is we're just going to close out our terminal and we're going to start a brand new
+[07:12] one. So we have to restart our instance right after we are providing it with API that we are getting
+[07:17] from Telegram. So let's close it out. I'm just going to press control C. Press that once again
+[07:22] and it's going to ask us to basically just going to restart the terminal. Now, from here, we are
+[07:27] essentially just copying the output that you're getting. And you could just pause on the screen and input
+[07:32] this beyond this. What you would also have to type out is we have to do the same thing in bypass any
+[07:38] permissions. So that is where I'm going to type out Claude dangerously skip permissions. And we are
+[07:43] going to run this off. So in my situation, I already have something open and it is this instance right
+[07:49] here. So we can actually close this one off right now and we don't have to worry about it any further.
+[07:54] Now, from here, what you would actually be able to do is go inside of your Telegram and you can just
+[07:59] click on your assistant and then it's going to prompt something that's going to look a little something
+[08:03] like this at the top where immediately it's going to say start and it's just going to introduce
+[08:08] itself. And now you will be off to the races. Everything is set up. It is quite literally as simple as
+[08:13] that where you only have to do about five lines of entering in any commands. Now, if you do have any
+[08:19] issues at all with this installation, make sure it's rewind and watch exactly what I did. It is a very
+[08:25] simple process. There's really only three steps to it and just involves really just having a telegram
+[08:30] account. Now, with that being said, you could also visit the GitHub. Maybe they have some instructions
+[08:35] that are a little bit going to be more advanced than what I just covered. Now, quick heads up. This is in
+[08:39] research previews. So that is one of the reasons why we have to use the dangerously skip permissions.
+[08:44] So this is going to essentially just really put you in a restricted mode that can block any responses.
+[08:50] So if you send a message and you get nothing back, you just have to make sure you are in that dangerously
+[08:55] skip permissions mode. Otherwise, it is not going to work. I don't know why it is like that right now.
+[08:59] I'm sure in the very new future it is going to be changing. It's probably just for our beta sake and
+[09:05] making sure they can do some testing on us but making sure that everything is running properly but
+[09:09] that is going to give quad full autonomy to respond without asking. You provide any sort of action
+[09:15] or approve of anything at all. Now, you only want to do this in an environment that you trust. So
+[09:20] that is going to be for your own machine running your skills that you do truly trust and I wouldn't
+[09:26] really be building anything from your phone. So again, do not do anything that's going to be
+[09:30] increasing the complex. Make sure it's just going to be things that you have SOPs specifically for.
+[09:35] In terms of actual use cases and all that stuff, you can fire off multiple different tasks and they
+[09:40] are just going to be queued up. So if I send three messages back to back, run the inbox cleaner,
+[09:45] scrape 100 plumbing companies and Houston and generate this week's content brief. Quad is going
+[09:50] to pick them up, work them through, deliver results back to telegram and then just move on from there.
+[09:55] So for me, I'm stacking productivity tasks all from my phone while Quad is just grinding through them
+[10:00] on my machine. Now, you can also run multiple channels at the same time. So you can use telegram
+[10:04] and Discord if you would like simultaneously. So you can have two different instances. So for maybe
+[10:08] different purposes. So you could pass both plugins just through the channels flag. So maybe you use
+[10:14] telegram for your own tasks and then Discord channel where your team can trigger specific workflows.
+[10:18] And just to iterate once again, the channel only works while Quad code session is actually active. So
+[10:23] your computer, sleeping, the session is going to be closed and messages are not going to be going
+[10:28] through. So it's similar to what they released not too long ago where you are able to just enable
+[10:33] the remote ENVIRT or remote control rather. And it's just going to be through the app or the CLI
+[10:38] rather. But anyways, the most people are going to be making and what is going to be the most ideal
+[10:43] is buying a dedicated machine. So maybe a Mac mini, for example, just because that's the most
+[10:48] popular, a Mac mini plugged in at your office sets a never sleep running Quad code with the channels flag
+[10:55] just sits there in response to your messages all around the clock. So if you are already using
+[10:58] Quad code with the skills and workflows built out, like this is a no brainer ad and I highly recommend
+[11:03] you start using this as well if you have not been integrating in some sort of fashion just using
+[11:08] Quad code like this. So you already did the hard part, the animations exist, channels just give you
+[11:12] more remote and accessible access to what you have already built. So with that being said,
+[11:16] that is all I wanted to cover super quick video. I just wanted to show you guys how you can actually
+[11:19] set this up because it is a little bit difficult and tricky trying to get it up and running, especially
+[11:24] if you're a beginner, you're non-technical like myself, then it takes some trial and error because
+[11:29] I did not know about that dangerously skip permissions and I had to do a little bit of research to actually
+[11:33] figure out how to set it up properly and make sure we're going to be good to go. But in any case before
+[11:38] we go, I just wanted to mention that if you're a business owner looking to learn Quad code or upskill
+[11:42] your team or just ultimately increase your bottom line and drive leverage within the business,
+[11:46] make sure to check out the link down below in the description, check out our website and what we do
+[11:50] at our price. We'll be able to educate your team and also handle all of that where we will schedule
+[11:54] a free call and discuss and learn over your bottlenecks and how we can actually assist you. And if you're
+[11:59] an entrepreneur looking to start an AI business and make money in this space, then make sure to sign
+[12:04] up for our webinar. It is going to be next Tuesday on the 24th. So do not miss that if you're looking to
+[12:11] actually get your start in this business and I'll see you guys there. So thank you guys for watching.
+[12:15] Make sure to drop a like, subscribe, comment, I read every single comment but I'll see you guys
+[12:20] in the next video.
+
+--- Plain text ---
+All right, so watch this. I'm on my phone right now. I have telegram open, hypothetically, let's say I'm across town, and we need a task done. We need to use cloud code. We need to use some of our skills that we have set up, some of the processes that we have established inside of cloud code. Also, we just need it to do some jobs. So I'm going to type out, scrape me 10 new roofing companies and Dallas with under 20 employees. We're getting a little bit specific, but we're also just keeping it broad. Now, if you actually see on my computer, it is recognizing this request. It is going ahead and starting to do the web search. So, of course, we just have to imagine that I'm across town and not actually at my desk right now. But anyways, it's going ahead, recognizing the request, and it's going to soon return back to me. Awesome. So we just got that back that took exactly about 50 seconds. So we can go from the top to the bottom, seeing where the saved, and it says at the bottom, all small operations consistent with under 20 employees. I'm going to pull contact information or dig deeper on any of these. So if we did have any more specific SOPs, like being able to pull from any databases, we would be able to give it a little bit direction on how we want it to be able to search for emails. But the point being, this is now able to utilize cloud code exactly how we would be able to, like if I were at my desk. Now, as of March 19th andthropic just shipped this, it's called Cloud Code Channels, and it's a research preview that just dropped today. So if you're running any kind of AI workflows inside of cloud code, whether that's for your business or for your clients, this changes how you operate today today. Now, if you're like me, you're dealing with situations where you have cloud code set up with a bunch of different skills. So let's say you have lead scraping, inbox management, report generation, even some content research, all of it is running locally on my machine, on this computer. Now, that means if I am not sitting at my desk, none of it is going to be running. So let's say I'm at a client meeting, I'm driving somewhere, or I'm getting launched, whatever I am doing, all that automation is just sitting there idle because I cannot talk to it. Now, there have been some third-party solutions for this. I mean, obviously, there's OpenClaw. This is the main one that people were using and what Cloud Code is actually trying to urbanthropic rather is trying to compete with and releasing all these features just rapidly. But I tried briefly, I mean, it worked, but I never fully committed to it. You know, the security model it just made me uneasy for anything touching client data, and I just know inthropic was just going to release insane things like this with the way that we've been seeing how they perform and what they've been coming up with the past year. So seemingly, it's starting to pay off. And also, like, just the token-based billing, it added up way faster with OpenClaw than I expected. So I always prefer just keeping things inside of Cloud Code all natively. So when athropic announced that they were building this directly into Cloud Code, I mean, that was exactly what I've been waiting for, and I'm sure many of you as well. Now, really quick, before we actually get into how to set this up and how this actually works and what it actually is, I want to mention that I'm hosting a free webinar on Tuesday, March 24th. Make sure to sign up for that if you're looking to use AI in your business and actually looking to monetize and start your own business using AI and actually gets to 10k per month and much, much more within under 90 days. So make sure you're missing that link will be down below in the description to sign up, but we are capping seats. So please only sign up if you are interested in starting an AI business and you will show up. So again, I'll see you there. All right, but anyways, let me just get into how this actually works. So the Cloud Code channel, it is essentially just an MCP server that pushes messages into a running Cloud Code session. So with this, you can just message Cloud through Telegram or Discord. It's only those two right now. I'm sure it'll expand to much, much more just based off of how fast we've been seeing inthropic ship. So right now, Cloud is able to read the message. It does the work using whatever skills and whatever you're asking of it and using the tools that you've already configured and then replies back through the same channel. So it's just that two-way communication. So essentially, just like texting someone who happens to be an AI agent, sitting at your computer. Now, we're all familiar with Open Class. So you should be familiar with this as well. If not, I'm going to explain it a little bit further. So your Cloud Code session, it does need to be running. So your computer stays on or you have a dedicated machine, but you do not have to be anywhere near it. You could just control everything from your phone. So the security works just through a center allow list. So you pair your Telegram or your Discord account just using a security code. You lock the policy to allow list only and anyone who isn't approved, they get silently dropped. Now with this, there is no API keys just sitting in config files and it runs on your existing Cloud subscription. So there's a flat monthly rate, whether you're sending five or 500 messages. So that is one of the biggest things is you can use your subscription, which is really where everyone ran into issues with OpenClaw or at least why I was staying away from it even though there is work around. All right. Now let's get into how to actually set this up and how to integrate this with Telegram specifically. For Discord, it's going to look a little bit different and I'll probably just make a separate video on that for sake of speed and simplicity. All right. So we're just going to open up a brand new terminal and what I am going to do is I'm going to first type Cloud dangerously skip permissions. Now, it's very important that you are following this and it's very important that you're using the terminal. You can't just open up Cloud code, very simply like you normally would. You have to open it up through this version or this approach rather. All right. So let's open it up and now in this case, we want to actually install the GitHub. Here's the get that we're going to be installing. This is coming from Cloud Plugins official. Feel free to browse this. Feel free to look through the read me if you would like. Break it down a little bit further, but really it's as simple as it sounds. It's really just being able to use Telegram and Discord through an MCP, just like we have been using MCPs for all of our other tools thus far on the one now we're moving more towards CLI's. So next up, what I am going to say is to install this plugin. Also, feel free to pause this now or you can get this all inside, you know, the entire instruction guide inside of my free school community. We have a little bit over 17,000 members. So go ahead check that out if you're looking to learn AI and connect with other people who are looking to start their own business and grow their own business. But anyways, we're just going to click install this plugin, start setup process for the Telegram connection. Alright, so we just got a response back and it's saying here's the plan, install bond, install a plugin, so on and so forth. We don't got to worry about that. The only thing you have to worry about is connecting and creating a new bot via Telegram, assuming that's the method that you want to go. Otherwise, wait for my next video where we're checking out somebody else's. But we are going to open up Telegram, find botfather. If you don't know how to do that, just go ahead and go into your tabs. Search for botfather. Here it is what the name looks like. And we're just going to type slash new bot. Now, within this, it is going to create a message that is going to provide us with the HTTP API. So that is what this recent message is. And we're just going to copy the text. After of course, we create it with our name. So I'll ask like what name would you like to create this as? And that's where you just respond. And it'll provide you with your API token. And you can just send that back to Claude in which we're going to provide it with whatever we just got. So in this case, it is recognizing that my token was already created so it cannot connect another sequence or another instance. So it's not going to work. We have to create a new bot. But you'll only ever have to do this once. Now, let's assume that this was a brand new token and everything was great. All we're going to do is we're just going to close out our terminal and we're going to start a brand new one. So we have to restart our instance right after we are providing it with API that we are getting from Telegram. So let's close it out. I'm just going to press control C. Press that once again and it's going to ask us to basically just going to restart the terminal. Now, from here, we are essentially just copying the output that you're getting. And you could just pause on the screen and input this beyond this. What you would also have to type out is we have to do the same thing in bypass any permissions. So that is where I'm going to type out Claude dangerously skip permissions. And we are going to run this off. So in my situation, I already have something open and it is this instance right here. So we can actually close this one off right now and we don't have to worry about it any further. Now, from here, what you would actually be able to do is go inside of your Telegram and you can just click on your assistant and then it's going to prompt something that's going to look a little something like this at the top where immediately it's going to say start and it's just going to introduce itself. And now you will be off to the races. Everything is set up. It is quite literally as simple as that where you only have to do about five lines of entering in any commands. Now, if you do have any issues at all with this installation, make sure it's rewind and watch exactly what I did. It is a very simple process. There's really only three steps to it and just involves really just having a telegram account. Now, with that being said, you could also visit the GitHub. Maybe they have some instructions that are a little bit going to be more advanced than what I just covered. Now, quick heads up. This is in research previews. So that is one of the reasons why we have to use the dangerously skip permissions. So this is going to essentially just really put you in a restricted mode that can block any responses. So if you send a message and you get nothing back, you just have to make sure you are in that dangerously skip permissions mode. Otherwise, it is not going to work. I don't know why it is like that right now. I'm sure in the very new future it is going to be changing. It's probably just for our beta sake and making sure they can do some testing on us but making sure that everything is running properly but that is going to give quad full autonomy to respond without asking. You provide any sort of action or approve of anything at all. Now, you only want to do this in an environment that you trust. So that is going to be for your own machine running your skills that you do truly trust and I wouldn't really be building anything from your phone. So again, do not do anything that's going to be increasing the complex. Make sure it's just going to be things that you have SOPs specifically for. In terms of actual use cases and all that stuff, you can fire off multiple different tasks and they are just going to be queued up. So if I send three messages back to back, run the inbox cleaner, scrape 100 plumbing companies and Houston and generate this week's content brief. Quad is going to pick them up, work them through, deliver results back to telegram and then just move on from there. So for me, I'm stacking productivity tasks all from my phone while Quad is just grinding through them on my machine. Now, you can also run multiple channels at the same time. So you can use telegram and Discord if you would like simultaneously. So you can have two different instances. So for maybe different purposes. So you could pass both plugins just through the channels flag. So maybe you use telegram for your own tasks and then Discord channel where your team can trigger specific workflows. And just to iterate once again, the channel only works while Quad code session is actually active. So your computer, sleeping, the session is going to be closed and messages are not going to be going through. So it's similar to what they released not too long ago where you are able to just enable the remote ENVIRT or remote control rather. And it's just going to be through the app or the CLI rather. But anyways, the most people are going to be making and what is going to be the most ideal is buying a dedicated machine. So maybe a Mac mini, for example, just because that's the most popular, a Mac mini plugged in at your office sets a never sleep running Quad code with the channels flag just sits there in response to your messages all around the clock. So if you are already using Quad code with the skills and workflows built out, like this is a no brainer ad and I highly recommend you start using this as well if you have not been integrating in some sort of fashion just using Quad code like this. So you already did the hard part, the animations exist, channels just give you more remote and accessible access to what you have already built. So with that being said, that is all I wanted to cover super quick video. I just wanted to show you guys how you can actually set this up because it is a little bit difficult and tricky trying to get it up and running, especially if you're a beginner, you're non-technical like myself, then it takes some trial and error because I did not know about that dangerously skip permissions and I had to do a little bit of research to actually figure out how to set it up properly and make sure we're going to be good to go. But in any case before we go, I just wanted to mention that if you're a business owner looking to learn Quad code or upskill your team or just ultimately increase your bottom line and drive leverage within the business, make sure to check out the link down below in the description, check out our website and what we do at our price. We'll be able to educate your team and also handle all of that where we will schedule a free call and discuss and learn over your bottlenecks and how we can actually assist you. And if you're an entrepreneur looking to start an AI business and make money in this space, then make sure to sign up for our webinar. It is going to be next Tuesday on the 24th. So do not miss that if you're looking to actually get your start in this business and I'll see you guys there. So thank you guys for watching. Make sure to drop a like, subscribe, comment, I read every single comment but I'll see you guys in the next video.

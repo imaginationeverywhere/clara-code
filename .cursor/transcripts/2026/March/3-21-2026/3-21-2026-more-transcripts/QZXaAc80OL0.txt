@@ -1,0 +1,292 @@
+Title: Claude Code Channels in 8 Minutes
+Video ID: QZXaAc80OL0
+URL: https://www.youtube.com/watch?v=QZXaAc80OL0
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Anthropic has just shipped channels for
+[00:02] cloud code. It's effectively a new way
+[00:04] where you can send in external events
+[00:06] directly into running cloud code
+[00:08] sessions. Now, if this sounds familiar
+[00:10] to something like openclaw, it is very
+[00:13] similar to the same type of idea. Just
+[00:15] to double click a little bit on where
+[00:16] this can potentially be useful. So,
+[00:18] right now there's a ton of different
+[00:20] scenarios where you and I alike probably
+[00:22] run into these day-to-day. And what can
+[00:25] happen is let's say you have a CI alert.
+[00:27] Maybe there's an error in your
+[00:28] production server or maybe you want to
+[00:30] send in an event from something like
+[00:31] Discord or Telegram or maybe there's a
+[00:34] new PR comment. And now effectively as
+[00:36] AI engineers, we're the bridge between
+[00:38] the infrastructure and the AI agent. Now
+[00:40] a lot of these different events and
+[00:42] things that we can pick up on whether
+[00:43] it's within repos, CI alerts, or error
+[00:46] monitoring. What we can effectively do
+[00:48] if we wanted to is we could send all of
+[00:50] those things within a cloud code
+[00:52] session. you'd probably want to know
+[00:54] when there are errors or if something is
+[00:56] about to fail. Now, what you can do is
+[00:58] you can set up proactive monitoring to
+[01:00] actually send in these different events
+[01:02] to cloud code sessions if they pass
+[01:04] certain thresholds or if certain events
+[01:06] are met. Now, in real projects, there
+[01:08] are dozens of signals firing at any
+[01:10] time. You're going to be doing a ton of
+[01:12] different triage for different tasks.
+[01:14] You're going to delegate these to
+[01:15] different software engineers. Now, you
+[01:16] might be thinking, but how is this
+[01:18] different than what's already within
+[01:19] Cloud Code? Now, right now you can pipe
+[01:21] into a headless session within cloud
+[01:23] code and you can just have it run within
+[01:24] a cold session and it will return the
+[01:26] result to you. But what channels allow
+[01:28] you to do is you can actually have a
+[01:29] warm session within cloud code. Just to
+[01:31] put this into context, effectively what
+[01:33] you can have is on a server you could
+[01:34] have an active cloud code session
+[01:36] running. You could actually go within
+[01:38] that session with channels and that can
+[01:39] run with continuity. Especially with the
+[01:41] larger context windows, there's a ton of
+[01:43] interesting things that you can do with
+[01:45] channels that you couldn't have
+[01:46] otherwise done. Now, additionally, you
+[01:48] might have seen that claude code had a
+[01:50] remote control feature. This is really
+[01:52] nice in some scenarios where you might
+[01:53] want to walk away from your computer and
+[01:55] on your phone be able to interact with
+[01:57] that local cloud code session. But what
+[01:59] channels allow you to do is it sort of
+[02:00] extends that capability. Channels can
+[02:02] effectively react automatically whereas
+[02:05] remote control lets you review and
+[02:07] control that session. These are actually
+[02:08] a really nice pairing. Remote control
+[02:10] allows you to interact whereas channels
+[02:12] are really about reacting automatically.
+[02:15] Now, in terms of how you can actually
+[02:16] leverage channels, so this can be
+[02:17] anything from a web hook through to a
+[02:19] bot message on Telegram or Discord or
+[02:21] what have you. You can have this on a CI
+[02:23] alert or within cron jobs. Now, how
+[02:25] they've set this up is with an MCP
+[02:27] plugin. Effectively, what this allows
+[02:28] you to do is you're going to have a
+[02:30] subprocess that's going to run locally
+[02:31] wherever your Cloud Code instance is
+[02:33] running and it's going to bridge all of
+[02:35] those different events. And what's nice
+[02:37] with the channel architecture is you can
+[02:39] actually have Claude reply back while
+[02:41] still having that active session. Just
+[02:42] to run through an example. So let's say
+[02:44] you push something and the CI fails.
+[02:46] What we could have is the web hook will
+[02:47] fire, the channel will receive that
+[02:49] message, and then we could potentially
+[02:50] even have Claude fix that mistake. Once
+[02:53] it fixes the mistake, we could have it
+[02:54] push the fix and then we can have the CI
+[02:56] actually pass. And if you just think
+[02:58] about the evolution of we used to go and
+[03:00] scour the internet for things like Stack
+[03:02] Overflow. We copy and paste little bits
+[03:03] of code. Then we used to copy and paste
+[03:05] things from Chat GPT. We started to move
+[03:07] and automate a lot more of the software
+[03:09] development loop. And this is just yet
+[03:11] another extension of that. Often times
+[03:13] when you go and UPR something or you
+[03:15] merge something, that's only the start
+[03:16] of things. You might actually break
+[03:18] something or when your CI actually
+[03:19] fails, you could potentially send that
+[03:21] event into a cloud code session and have
+[03:23] it automatically fix it. Okay. Now,
+[03:25] what's interesting with this to consider
+[03:26] is we're effectively heading to an area
+[03:28] where we all have these always on
+[03:29] agents. Think about open clock and in
+[03:31] part why that was as popular as it was.
+[03:34] What you could do is you could pull out
+[03:35] your phone at any point. You could send
+[03:37] a message on Telegram or Discord or what
+[03:39] have you and you could send those
+[03:40] messages into your Open Claw instance
+[03:42] and have it act on different things.
+[03:44] This just takes that type of idea and
+[03:46] extends it to other different events in
+[03:48] the Cloud Code ecosystem. Like I
+[03:50] mentioned, you might have a Sentry event
+[03:52] that you send within this. You might
+[03:53] have CI events. You might be watching
+[03:55] different files or have custom web hooks
+[03:57] or have different logs that you want to
+[03:59] monitor or potentially things built into
+[04:01] a dev server. There's a ton of different
+[04:03] ways I think people are going to be
+[04:04] leveraging this. Now, how you could
+[04:05] potentially leverage this is by
+[04:07] monitoring your log files. So, think
+[04:08] things like whether it's PM2, Docker, or
+[04:10] what have you, you could have whenever
+[04:12] something breaks, automatically send
+[04:14] those things to Claude and have it
+[04:15] propose a solution. And additionally,
+[04:17] how you could leverage this is maybe
+[04:18] you're monitoring a folder and as soon
+[04:20] as you add something within something
+[04:22] like a Dropbox or what have you, you can
+[04:24] have that actually send an event and
+[04:26] Claude perform some sort of task. This
+[04:28] can be used in test runners. It can also
+[04:30] be used in different health checks.
+[04:32] Whenever something fails, it allows you
+[04:34] to have an active session that can
+[04:36] continually run. Maybe you have a
+[04:38] cascade of different events and errors.
+[04:40] For instance, you might have a service
+[04:42] that fails and then because that service
+[04:44] fails, there's cascading failures across
+[04:47] your different offering. And where this
+[04:48] is really neat and where it can be
+[04:49] leveraged in a ton of different
+[04:50] scenarios within software development.
+[04:52] Think about a particular error where if
+[04:54] you were to pipe in an error, let's say
+[04:56] something within your logs were to fail
+[04:58] and you send that to a cloud instance
+[04:59] and you get that cold session and you
+[05:01] get that message back. With a warm
+[05:03] session, what you can do is let's say
+[05:05] your server goes down and that server is
+[05:07] a core dependency of a number of
+[05:09] different services. So you might have a
+[05:11] number of cascading failures where what
+[05:13] you can do with channels is you can pipe
+[05:15] in all of those different events into an
+[05:17] always on running cloud code instance
+[05:19] and then that cloud code instance will
+[05:21] have the context and the continuity of
+[05:23] everything that's happening. This could
+[05:25] be helpful potentially in an on call
+[05:26] setting where things are starting to
+[05:28] fail where you can have claude already
+[05:30] working on something before you actually
+[05:31] get to your laptop. Now in terms of some
+[05:33] reactions to this so I quite like this
+[05:34] one. The ability for the claude team to
+[05:36] learn from things like open claw and
+[05:38] implement features like this on a daily
+[05:40] basis is a very strong argument that for
+[05:42] AI powered coding teams a very different
+[05:45] software development process is possible
+[05:47] with large strategic implications. Think
+[05:49] about the projects that you work on
+[05:51] whether it's at work or personally you
+[05:53] know where all the brittle points are
+[05:54] where things fail all of those different
+[05:56] things. Potentially what you could do is
+[05:58] you could set those up and have Claude
+[06:00] automatically go through and PR a fix.
+[06:03] Now, what you previously might have done
+[06:05] is you might see that the CI fails. You
+[06:07] might go and paste that within Cloud
+[06:09] Code or have Claude run all of the
+[06:10] various commands to have GitHub grab the
+[06:13] logs or what have you. But now, what
+[06:14] channels allow you to do is to close the
+[06:16] loop even further on more tasks. So, now
+[06:18] to show you a quick demonstration on how
+[06:20] you can get started if you're interested
+[06:21] in using this within Telegram. So, it's
+[06:23] super straightforward. All that you need
+[06:24] to do is search for BotFather. Once
+[06:26] you've searched for BotFather, you'll be
+[06:28] able to see this account here. Now, what
+[06:30] you can do within BotFather, you can go
+[06:31] ahead, you can type new bot. Then once
+[06:33] you've done that, you'll have what are
+[06:35] we going to call the bot. And then all
+[06:36] that you have to do is just give your
+[06:37] bot a name. As soon as we have that,
+[06:39] we're going to have this access token.
+[06:40] And I'm going to hide this as soon as
+[06:42] the video goes live. You don't need to
+[06:43] worry about actually seeing this. And
+[06:45] then what we're going to do is within
+[06:46] Claude Code is we're going to/plugins
+[06:49] Telegram-plugins-official.
+[06:52] Now, what we're going to do is we're
+[06:53] going to install this for the user
+[06:55] scope. And then once we have that
+[06:56] installed, all that we need to do is
+[06:58] configure our token. And then we need to
+[07:00] go ahead and restart Cloud Code. And
+[07:02] then once we've restarted Cloud Code,
+[07:03] all that we need to do is /telegram:
+[07:06] configure. And then what we can do is we
+[07:08] can take in this key. We can paste this
+[07:10] in. And as soon as we paste that in,
+[07:12] it's going to save within the channels
+[07:14] Telegram environment variable. And then
+[07:16] we'll have this Telegram bot token that
+[07:19] we can access to actually have that
+[07:20] channel. Then within here, it will ask
+[07:22] us to create the within the Telegram
+[07:24] channel. We'll go ahead and we'll accept
+[07:26] that. And then once we've restarted, we
+[07:28] have to cla- channels the plugin for
+[07:30] Telegram. And then what we can do now is
+[07:33] our bot should now be set up. Now if I
+[07:35] go and I start a conversation, what
+[07:37] we'll have is DM me anything. You'll get
+[07:39] a six character code. For instance, I'll
+[07:41] have hello world. And then once you've
+[07:43] sent in a message, all that you have to
+[07:44] do is paste in this command to get the
+[07:47] access code to pair to this session.
+[07:49] Now, finally, there is one more
+[07:50] important step that you do have to run,
+[07:52] and that's to lock down messages. only
+[07:54] you can send messages from your telegram
+[07:56] account to your cloud code session. This
+[07:58] is a really important piece to remember
+[08:00] and all that you need to do that is run
+[08:02] /te telegram access policy allow list.
+[08:06] When I send that and only my telegram
+[08:08] account is going to be able to send
+[08:09] messages to this cloud code session. For
+[08:11] instance, what I can do now is I can say
+[08:13] hello world and then within here now you
+[08:15] can interact with your cloud code
+[08:17] session directly from telegram. Within
+[08:19] here you can see the telegram messages
+[08:21] are being sent and we have that MCP that
+[08:24] is replying back. So, we can see, yep,
+[08:26] it's working perfectly. And now you can
+[08:27] interact with the Cloud Code session as
+[08:29] well as this channel from this MCP
+[08:31] plugin that they've set up. All in all,
+[08:32] kudos to the Cloud Code team for another
+[08:34] great feature. And if you found this
+[08:36] video useful, please like, comment,
+[08:37] share, and subscribe. Otherwise, until
+[08:39] the next one.
+
+--- Plain text ---
+Anthropic has just shipped channels for cloud code. It's effectively a new way where you can send in external events directly into running cloud code sessions. Now, if this sounds familiar to something like openclaw, it is very similar to the same type of idea. Just to double click a little bit on where this can potentially be useful. So, right now there's a ton of different scenarios where you and I alike probably run into these day-to-day. And what can happen is let's say you have a CI alert. Maybe there's an error in your production server or maybe you want to send in an event from something like Discord or Telegram or maybe there's a new PR comment. And now effectively as AI engineers, we're the bridge between the infrastructure and the AI agent. Now a lot of these different events and things that we can pick up on whether it's within repos, CI alerts, or error monitoring. What we can effectively do if we wanted to is we could send all of those things within a cloud code session. you'd probably want to know when there are errors or if something is about to fail. Now, what you can do is you can set up proactive monitoring to actually send in these different events to cloud code sessions if they pass certain thresholds or if certain events are met. Now, in real projects, there are dozens of signals firing at any time. You're going to be doing a ton of different triage for different tasks. You're going to delegate these to different software engineers. Now, you might be thinking, but how is this different than what's already within Cloud Code? Now, right now you can pipe into a headless session within cloud code and you can just have it run within a cold session and it will return the result to you. But what channels allow you to do is you can actually have a warm session within cloud code. Just to put this into context, effectively what you can have is on a server you could have an active cloud code session running. You could actually go within that session with channels and that can run with continuity. Especially with the larger context windows, there's a ton of interesting things that you can do with channels that you couldn't have otherwise done. Now, additionally, you might have seen that claude code had a remote control feature. This is really nice in some scenarios where you might want to walk away from your computer and on your phone be able to interact with that local cloud code session. But what channels allow you to do is it sort of extends that capability. Channels can effectively react automatically whereas remote control lets you review and control that session. These are actually a really nice pairing. Remote control allows you to interact whereas channels are really about reacting automatically. Now, in terms of how you can actually leverage channels, so this can be anything from a web hook through to a bot message on Telegram or Discord or what have you. You can have this on a CI alert or within cron jobs. Now, how they've set this up is with an MCP plugin. Effectively, what this allows you to do is you're going to have a subprocess that's going to run locally wherever your Cloud Code instance is running and it's going to bridge all of those different events. And what's nice with the channel architecture is you can actually have Claude reply back while still having that active session. Just to run through an example. So let's say you push something and the CI fails. What we could have is the web hook will fire, the channel will receive that message, and then we could potentially even have Claude fix that mistake. Once it fixes the mistake, we could have it push the fix and then we can have the CI actually pass. And if you just think about the evolution of we used to go and scour the internet for things like Stack Overflow. We copy and paste little bits of code. Then we used to copy and paste things from Chat GPT. We started to move and automate a lot more of the software development loop. And this is just yet another extension of that. Often times when you go and UPR something or you merge something, that's only the start of things. You might actually break something or when your CI actually fails, you could potentially send that event into a cloud code session and have it automatically fix it. Okay. Now, what's interesting with this to consider is we're effectively heading to an area where we all have these always on agents. Think about open clock and in part why that was as popular as it was. What you could do is you could pull out your phone at any point. You could send a message on Telegram or Discord or what have you and you could send those messages into your Open Claw instance and have it act on different things. This just takes that type of idea and extends it to other different events in the Cloud Code ecosystem. Like I mentioned, you might have a Sentry event that you send within this. You might have CI events. You might be watching different files or have custom web hooks or have different logs that you want to monitor or potentially things built into a dev server. There's a ton of different ways I think people are going to be leveraging this. Now, how you could potentially leverage this is by monitoring your log files. So, think things like whether it's PM2, Docker, or what have you, you could have whenever something breaks, automatically send those things to Claude and have it propose a solution. And additionally, how you could leverage this is maybe you're monitoring a folder and as soon as you add something within something like a Dropbox or what have you, you can have that actually send an event and Claude perform some sort of task. This can be used in test runners. It can also be used in different health checks. Whenever something fails, it allows you to have an active session that can continually run. Maybe you have a cascade of different events and errors. For instance, you might have a service that fails and then because that service fails, there's cascading failures across your different offering. And where this is really neat and where it can be leveraged in a ton of different scenarios within software development. Think about a particular error where if you were to pipe in an error, let's say something within your logs were to fail and you send that to a cloud instance and you get that cold session and you get that message back. With a warm session, what you can do is let's say your server goes down and that server is a core dependency of a number of different services. So you might have a number of cascading failures where what you can do with channels is you can pipe in all of those different events into an always on running cloud code instance and then that cloud code instance will have the context and the continuity of everything that's happening. This could be helpful potentially in an on call setting where things are starting to fail where you can have claude already working on something before you actually get to your laptop. Now in terms of some reactions to this so I quite like this one. The ability for the claude team to learn from things like open claw and implement features like this on a daily basis is a very strong argument that for AI powered coding teams a very different software development process is possible with large strategic implications. Think about the projects that you work on whether it's at work or personally you know where all the brittle points are where things fail all of those different things. Potentially what you could do is you could set those up and have Claude automatically go through and PR a fix. Now, what you previously might have done is you might see that the CI fails. You might go and paste that within Cloud Code or have Claude run all of the various commands to have GitHub grab the logs or what have you. But now, what channels allow you to do is to close the loop even further on more tasks. So, now to show you a quick demonstration on how you can get started if you're interested in using this within Telegram. So, it's super straightforward. All that you need to do is search for BotFather. Once you've searched for BotFather, you'll be able to see this account here. Now, what you can do within BotFather, you can go ahead, you can type new bot. Then once you've done that, you'll have what are we going to call the bot. And then all that you have to do is just give your bot a name. As soon as we have that, we're going to have this access token. And I'm going to hide this as soon as the video goes live. You don't need to worry about actually seeing this. And then what we're going to do is within Claude Code is we're going to/plugins Telegram-plugins-official. Now, what we're going to do is we're going to install this for the user scope. And then once we have that installed, all that we need to do is configure our token. And then we need to go ahead and restart Cloud Code. And then once we've restarted Cloud Code, all that we need to do is /telegram: configure. And then what we can do is we can take in this key. We can paste this in. And as soon as we paste that in, it's going to save within the channels Telegram environment variable. And then we'll have this Telegram bot token that we can access to actually have that channel. Then within here, it will ask us to create the within the Telegram channel. We'll go ahead and we'll accept that. And then once we've restarted, we have to cla- channels the plugin for Telegram. And then what we can do now is our bot should now be set up. Now if I go and I start a conversation, what we'll have is DM me anything. You'll get a six character code. For instance, I'll have hello world. And then once you've sent in a message, all that you have to do is paste in this command to get the access code to pair to this session. Now, finally, there is one more important step that you do have to run, and that's to lock down messages. only you can send messages from your telegram account to your cloud code session. This is a really important piece to remember and all that you need to do that is run /te telegram access policy allow list. When I send that and only my telegram account is going to be able to send messages to this cloud code session. For instance, what I can do now is I can say hello world and then within here now you can interact with your cloud code session directly from telegram. Within here you can see the telegram messages are being sent and we have that MCP that is replying back. So, we can see, yep, it's working perfectly. And now you can interact with the Cloud Code session as well as this channel from this MCP plugin that they've set up. All in all, kudos to the Cloud Code team for another great feature. And if you found this video useful, please like, comment, share, and subscribe. Otherwise, until the next one.

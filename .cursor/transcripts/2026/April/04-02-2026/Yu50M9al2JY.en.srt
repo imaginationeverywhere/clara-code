@@ -1,0 +1,4545 @@
+1
+00:00:00,000 --> 00:00:02,550
+
+By the end of this video, AI Claude Code
+
+2
+00:00:02,550 --> 00:00:02,560
+By the end of this video, AI Claude Code
+ 
+
+3
+00:00:02,560 --> 00:00:04,470
+By the end of this video, AI Claude Code
+specifically will be able to do things
+
+4
+00:00:04,470 --> 00:00:04,480
+specifically will be able to do things
+ 
+
+5
+00:00:04,480 --> 00:00:06,550
+specifically will be able to do things
+inside your GoHighle account. Claude
+
+6
+00:00:06,550 --> 00:00:06,560
+inside your GoHighle account. Claude
+ 
+
+7
+00:00:06,560 --> 00:00:09,030
+inside your GoHighle account. Claude
+Code is going to pull contacts, read
+
+8
+00:00:09,030 --> 00:00:09,040
+Code is going to pull contacts, read
+ 
+
+9
+00:00:09,040 --> 00:00:11,430
+Code is going to pull contacts, read
+your conversations, move pipelines and
+
+10
+00:00:11,430 --> 00:00:11,440
+your conversations, move pipelines and
+ 
+
+11
+00:00:11,440 --> 00:00:13,910
+your conversations, move pipelines and
+deals, and post social media content
+
+12
+00:00:13,910 --> 00:00:13,920
+deals, and post social media content
+ 
+
+13
+00:00:13,920 --> 00:00:15,829
+deals, and post social media content
+along with some blogs all from a single
+
+14
+00:00:15,829 --> 00:00:15,839
+along with some blogs all from a single
+ 
+
+15
+00:00:15,839 --> 00:00:17,349
+along with some blogs all from a single
+sentence that I'm going to type. No
+
+16
+00:00:17,349 --> 00:00:17,359
+sentence that I'm going to type. No
+ 
+
+17
+00:00:17,359 --> 00:00:19,830
+sentence that I'm going to type. No
+Zapier, no API calls, no thirdparty
+
+18
+00:00:19,830 --> 00:00:19,840
+Zapier, no API calls, no thirdparty
+ 
+
+19
+00:00:19,840 --> 00:00:21,990
+Zapier, no API calls, no thirdparty
+middleware, just cloud code talking
+
+20
+00:00:21,990 --> 00:00:22,000
+middleware, just cloud code talking
+ 
+
+21
+00:00:22,000 --> 00:00:23,910
+middleware, just cloud code talking
+directly to your GoHighle account
+
+22
+00:00:23,910 --> 00:00:23,920
+directly to your GoHighle account
+ 
+
+23
+00:00:23,920 --> 00:00:25,750
+directly to your GoHighle account
+through something called an MCP. We're
+
+24
+00:00:25,750 --> 00:00:25,760
+through something called an MCP. We're
+ 
+
+25
+00:00:25,760 --> 00:00:27,269
+through something called an MCP. We're
+going to set up this in four steps.
+
+26
+00:00:27,269 --> 00:00:27,279
+going to set up this in four steps.
+ 
+
+27
+00:00:27,279 --> 00:00:28,710
+going to set up this in four steps.
+First, we're going to create a secure
+
+28
+00:00:28,710 --> 00:00:28,720
+First, we're going to create a secure
+ 
+
+29
+00:00:28,720 --> 00:00:31,109
+First, we're going to create a secure
+token inside of Go Highle. Then, we'll
+
+30
+00:00:31,109 --> 00:00:31,119
+token inside of Go Highle. Then, we'll
+ 
+
+31
+00:00:31,119 --> 00:00:33,590
+token inside of Go Highle. Then, we'll
+grab your location ID. Then, we'll drop
+
+32
+00:00:33,590 --> 00:00:33,600
+grab your location ID. Then, we'll drop
+ 
+
+33
+00:00:33,600 --> 00:00:36,229
+grab your location ID. Then, we'll drop
+one config block into COD code, and it
+
+34
+00:00:36,229 --> 00:00:36,239
+one config block into COD code, and it
+ 
+
+35
+00:00:36,239 --> 00:00:38,069
+one config block into COD code, and it
+takes about 30 seconds in general. And
+
+36
+00:00:38,069 --> 00:00:38,079
+takes about 30 seconds in general. And
+ 
+
+37
+00:00:38,079 --> 00:00:39,590
+takes about 30 seconds in general. And
+then, we're going to be able to test it
+
+38
+00:00:39,590 --> 00:00:39,600
+then, we're going to be able to test it
+ 
+
+39
+00:00:39,600 --> 00:00:41,270
+then, we're going to be able to test it
+live so you could see it actually
+
+40
+00:00:41,270 --> 00:00:41,280
+live so you could see it actually
+ 
+
+41
+00:00:41,280 --> 00:00:43,190
+live so you could see it actually
+working. If you use GoHigh Level and
+
+42
+00:00:43,190 --> 00:00:43,200
+working. If you use GoHigh Level and
+ 
+
+43
+00:00:43,200 --> 00:00:44,790
+working. If you use GoHigh Level and
+you've been building in Claude and been
+
+44
+00:00:44,790 --> 00:00:44,800
+you've been building in Claude and been
+ 
+
+45
+00:00:44,800 --> 00:00:46,709
+you've been building in Claude and been
+using agents inside of Claude Code, this
+
+46
+00:00:46,709 --> 00:00:46,719
+using agents inside of Claude Code, this
+ 
+
+47
+00:00:46,719 --> 00:00:47,830
+using agents inside of Claude Code, this
+is going to be the setup you've been
+
+48
+00:00:47,830 --> 00:00:47,840
+is going to be the setup you've been
+ 
+
+49
+00:00:47,840 --> 00:00:49,590
+is going to be the setup you've been
+waiting for. So, come along and build
+
+50
+00:00:49,590 --> 00:00:49,600
+waiting for. So, come along and build
+ 
+
+51
+00:00:49,600 --> 00:00:51,670
+waiting for. So, come along and build
+along with us.
+
+52
+00:00:51,670 --> 00:00:51,680
+along with us.
+ 
+
+53
+00:00:51,680 --> 00:00:53,670
+along with us.
+This means your AI can manage your CRM
+
+54
+00:00:53,670 --> 00:00:53,680
+This means your AI can manage your CRM
+ 
+
+55
+00:00:53,680 --> 00:00:55,510
+This means your AI can manage your CRM
+while you sleep. No manual data entry
+
+56
+00:00:55,510 --> 00:00:55,520
+while you sleep. No manual data entry
+ 
+
+57
+00:00:55,520 --> 00:00:57,830
+while you sleep. No manual data entry
+and no app switching. So now let's go
+
+58
+00:00:57,830 --> 00:00:57,840
+and no app switching. So now let's go
+ 
+
+59
+00:00:57,840 --> 00:01:00,229
+and no app switching. So now let's go
+into model context protocol. These are
+
+60
+00:01:00,229 --> 00:01:00,239
+into model context protocol. These are
+ 
+
+61
+00:01:00,239 --> 00:01:02,470
+into model context protocol. These are
+the official goh highle documents that
+
+62
+00:01:02,470 --> 00:01:02,480
+the official goh highle documents that
+ 
+
+63
+00:01:02,480 --> 00:01:04,789
+the official goh highle documents that
+you see and inside these documents
+
+64
+00:01:04,789 --> 00:01:04,799
+you see and inside these documents
+ 
+
+65
+00:01:04,799 --> 00:01:06,550
+you see and inside these documents
+you're going to see the highle MCP
+
+66
+00:01:06,550 --> 00:01:06,560
+you're going to see the highle MCP
+ 
+
+67
+00:01:06,560 --> 00:01:08,630
+you're going to see the highle MCP
+server. Now all the instructions are
+
+68
+00:01:08,630 --> 00:01:08,640
+server. Now all the instructions are
+ 
+
+69
+00:01:08,640 --> 00:01:10,149
+server. Now all the instructions are
+actually here to connect and believe it
+
+70
+00:01:10,149 --> 00:01:10,159
+actually here to connect and believe it
+ 
+
+71
+00:01:10,159 --> 00:01:11,429
+actually here to connect and believe it
+or not it's going to make it fairly
+
+72
+00:01:11,429 --> 00:01:11,439
+or not it's going to make it fairly
+ 
+
+73
+00:01:11,439 --> 00:01:13,750
+or not it's going to make it fairly
+easy. Now all I have to do technically
+
+74
+00:01:13,750 --> 00:01:13,760
+easy. Now all I have to do technically
+ 
+
+75
+00:01:13,760 --> 00:01:16,950
+easy. Now all I have to do technically
+is give our AI these instructions and it
+
+76
+00:01:16,950 --> 00:01:16,960
+is give our AI these instructions and it
+ 
+
+77
+00:01:16,960 --> 00:01:18,630
+is give our AI these instructions and it
+should be able to figure it out. The
+
+78
+00:01:18,630 --> 00:01:18,640
+should be able to figure it out. The
+ 
+
+79
+00:01:18,640 --> 00:01:20,149
+should be able to figure it out. The
+second thing I want you to know is all
+
+80
+00:01:20,149 --> 00:01:20,159
+second thing I want you to know is all
+ 
+
+81
+00:01:20,159 --> 00:01:21,749
+second thing I want you to know is all
+the different things it can do. All
+
+82
+00:01:21,749 --> 00:01:21,759
+the different things it can do. All
+ 
+
+83
+00:01:21,759 --> 00:01:22,870
+the different things it can do. All
+these different things are called
+
+84
+00:01:22,870 --> 00:01:22,880
+these different things are called
+ 
+
+85
+00:01:22,880 --> 00:01:25,270
+these different things are called
+endpoints and they're basically things
+
+86
+00:01:25,270 --> 00:01:25,280
+endpoints and they're basically things
+ 
+
+87
+00:01:25,280 --> 00:01:26,950
+endpoints and they're basically things
+that are allowed right now through the
+
+88
+00:01:26,950 --> 00:01:26,960
+that are allowed right now through the
+ 
+
+89
+00:01:26,960 --> 00:01:29,350
+that are allowed right now through the
+MCP server through the official Highle
+
+90
+00:01:29,350 --> 00:01:29,360
+MCP server through the official Highle
+ 
+
+91
+00:01:29,360 --> 00:01:31,670
+MCP server through the official Highle
+MCP server that will allow you to do all
+
+92
+00:01:31,670 --> 00:01:31,680
+MCP server that will allow you to do all
+ 
+
+93
+00:01:31,680 --> 00:01:33,830
+MCP server that will allow you to do all
+these things. Now, believe it or not, if
+
+94
+00:01:33,830 --> 00:01:33,840
+these things. Now, believe it or not, if
+ 
+
+95
+00:01:33,840 --> 00:01:36,630
+these things. Now, believe it or not, if
+you want to do more inside of Highle,
+
+96
+00:01:36,630 --> 00:01:36,640
+you want to do more inside of Highle,
+ 
+
+97
+00:01:36,640 --> 00:01:39,190
+you want to do more inside of Highle,
+you can make your own MCP, host it
+
+98
+00:01:39,190 --> 00:01:39,200
+you can make your own MCP, host it
+ 
+
+99
+00:01:39,200 --> 00:01:41,510
+you can make your own MCP, host it
+somewhere, and have instead of the 39
+
+100
+00:01:41,510 --> 00:01:41,520
+somewhere, and have instead of the 39
+ 
+
+101
+00:01:41,520 --> 00:01:43,350
+somewhere, and have instead of the 39
+that are available here, have close to
+
+102
+00:01:43,350 --> 00:01:43,360
+that are available here, have close to
+ 
+
+103
+00:01:43,360 --> 00:01:45,109
+that are available here, have close to
+the 200 and something 90 that are
+
+104
+00:01:45,109 --> 00:01:45,119
+the 200 and something 90 that are
+ 
+
+105
+00:01:45,119 --> 00:01:46,310
+the 200 and something 90 that are
+available out there. But that's not
+
+106
+00:01:46,310 --> 00:01:46,320
+available out there. But that's not
+ 
+
+107
+00:01:46,320 --> 00:01:47,510
+available out there. But that's not
+going to be covered here today. What's
+
+108
+00:01:47,510 --> 00:01:47,520
+going to be covered here today. What's
+ 
+
+109
+00:01:47,520 --> 00:01:48,710
+going to be covered here today. What's
+going to be covered is already using
+
+110
+00:01:48,710 --> 00:01:48,720
+going to be covered is already using
+ 
+
+111
+00:01:48,720 --> 00:01:50,469
+going to be covered is already using
+what they have existing, which is pretty
+
+112
+00:01:50,469 --> 00:01:50,479
+what they have existing, which is pretty
+ 
+
+113
+00:01:50,479 --> 00:01:52,069
+what they have existing, which is pretty
+good. you can do a good amount and at
+
+114
+00:01:52,069 --> 00:01:52,079
+good. you can do a good amount and at
+ 
+
+115
+00:01:52,079 --> 00:01:54,389
+good. you can do a good amount and at
+least have your AI executive assistant
+
+116
+00:01:54,389 --> 00:01:54,399
+least have your AI executive assistant
+ 
+
+117
+00:01:54,399 --> 00:01:56,310
+least have your AI executive assistant
+help you do these things. Right? So,
+
+118
+00:01:56,310 --> 00:01:56,320
+help you do these things. Right? So,
+ 
+
+119
+00:01:56,320 --> 00:01:57,670
+help you do these things. Right? So,
+first thing that we're going to do is
+
+120
+00:01:57,670 --> 00:01:57,680
+first thing that we're going to do is
+ 
+
+121
+00:01:57,680 --> 00:01:59,030
+first thing that we're going to do is
+we're just kind of understand where it
+
+122
+00:01:59,030 --> 00:01:59,040
+we're just kind of understand where it
+ 
+
+123
+00:01:59,040 --> 00:02:01,670
+we're just kind of understand where it
+is. This is marketplace.goyle.com
+
+124
+00:02:01,670 --> 00:02:01,680
+is. This is marketplace.goyle.com
+ 
+
+125
+00:02:01,680 --> 00:02:05,510
+is. This is marketplace.goyle.com
+docs/ othermcp in the index. And it
+
+126
+00:02:05,510 --> 00:02:05,520
+docs/ othermcp in the index. And it
+ 
+
+127
+00:02:05,520 --> 00:02:07,270
+docs/ othermcp in the index. And it
+literally gives you exactly the steps
+
+128
+00:02:07,270 --> 00:02:07,280
+literally gives you exactly the steps
+ 
+
+129
+00:02:07,280 --> 00:02:08,790
+literally gives you exactly the steps
+that you need to follow, but I'm going
+
+130
+00:02:08,790 --> 00:02:08,800
+that you need to follow, but I'm going
+ 
+
+131
+00:02:08,800 --> 00:02:10,229
+that you need to follow, but I'm going
+to walk you through them anyway. So,
+
+132
+00:02:10,229 --> 00:02:10,239
+to walk you through them anyway. So,
+ 
+
+133
+00:02:10,239 --> 00:02:11,830
+to walk you through them anyway. So,
+first thing you got to do though is you
+
+134
+00:02:11,830 --> 00:02:11,840
+first thing you got to do though is you
+ 
+
+135
+00:02:11,840 --> 00:02:13,990
+first thing you got to do though is you
+got to give permission inside of your
+
+136
+00:02:13,990 --> 00:02:14,000
+got to give permission inside of your
+ 
+
+137
+00:02:14,000 --> 00:02:15,670
+got to give permission inside of your
+account. Now, I'm going to go into my
+
+138
+00:02:15,670 --> 00:02:15,680
+account. Now, I'm going to go into my
+ 
+
+139
+00:02:15,680 --> 00:02:17,510
+account. Now, I'm going to go into my
+account. This is my test account. And
+
+140
+00:02:17,510 --> 00:02:17,520
+account. This is my test account. And
+ 
+
+141
+00:02:17,520 --> 00:02:18,949
+account. This is my test account. And
+inside of here, you're going to go to
+
+142
+00:02:18,949 --> 00:02:18,959
+inside of here, you're going to go to
+ 
+
+143
+00:02:18,959 --> 00:02:20,470
+inside of here, you're going to go to
+settings. And inside of settings, you're
+
+144
+00:02:20,470 --> 00:02:20,480
+settings. And inside of settings, you're
+ 
+
+145
+00:02:20,480 --> 00:02:22,229
+settings. And inside of settings, you're
+going to go to private integrations.
+
+146
+00:02:22,229 --> 00:02:22,239
+going to go to private integrations.
+ 
+
+147
+00:02:22,239 --> 00:02:24,150
+going to go to private integrations.
+Inside private integrations, you're
+
+148
+00:02:24,150 --> 00:02:24,160
+Inside private integrations, you're
+ 
+
+149
+00:02:24,160 --> 00:02:26,150
+Inside private integrations, you're
+going to hit create a new integration
+
+150
+00:02:26,150 --> 00:02:26,160
+going to hit create a new integration
+ 
+
+151
+00:02:26,160 --> 00:02:28,309
+going to hit create a new integration
+and you're going to type in cloud code.
+
+152
+00:02:28,309 --> 00:02:28,319
+and you're going to type in cloud code.
+ 
+
+153
+00:02:28,319 --> 00:02:31,030
+and you're going to type in cloud code.
+Okay, MCP. Grab that. Ctrl + C. Come
+
+154
+00:02:31,030 --> 00:02:31,040
+Okay, MCP. Grab that. Ctrl + C. Come
+ 
+
+155
+00:02:31,040 --> 00:02:33,589
+Okay, MCP. Grab that. Ctrl + C. Come
+back over here. Cloud code MCP. And now
+
+156
+00:02:33,589 --> 00:02:33,599
+back over here. Cloud code MCP. And now
+ 
+
+157
+00:02:33,599 --> 00:02:36,150
+back over here. Cloud code MCP. And now
+in the tool that we gave you, the SOP,
+
+158
+00:02:36,150 --> 00:02:36,160
+in the tool that we gave you, the SOP,
+ 
+
+159
+00:02:36,160 --> 00:02:37,990
+in the tool that we gave you, the SOP,
+you're going to have a whole bunch of
+
+160
+00:02:37,990 --> 00:02:38,000
+you're going to have a whole bunch of
+ 
+
+161
+00:02:38,000 --> 00:02:39,830
+you're going to have a whole bunch of
+things that need to be in here. And I
+
+162
+00:02:39,830 --> 00:02:39,840
+things that need to be in here. And I
+ 
+
+163
+00:02:39,840 --> 00:02:41,110
+things that need to be in here. And I
+can tell you that one of the most
+
+164
+00:02:41,110 --> 00:02:41,120
+can tell you that one of the most
+ 
+
+165
+00:02:41,120 --> 00:02:43,270
+can tell you that one of the most
+important ones is to view locations. And
+
+166
+00:02:43,270 --> 00:02:43,280
+important ones is to view locations. And
+ 
+
+167
+00:02:43,280 --> 00:02:44,710
+important ones is to view locations. And
+it's listed on here. So, make sure
+
+168
+00:02:44,710 --> 00:02:44,720
+it's listed on here. So, make sure
+ 
+
+169
+00:02:44,720 --> 00:02:46,150
+it's listed on here. So, make sure
+you're following the SOP of all the
+
+170
+00:02:46,150 --> 00:02:46,160
+you're following the SOP of all the
+ 
+
+171
+00:02:46,160 --> 00:02:47,910
+you're following the SOP of all the
+things you want to basically turn on.
+
+172
+00:02:47,910 --> 00:02:47,920
+things you want to basically turn on.
+ 
+
+173
+00:02:47,920 --> 00:02:49,589
+things you want to basically turn on.
+But let's just do it together, right?
+
+174
+00:02:49,589 --> 00:02:49,599
+But let's just do it together, right?
+ 
+
+175
+00:02:49,599 --> 00:02:51,030
+But let's just do it together, right?
+So, I don't want it to edit the
+
+176
+00:02:51,030 --> 00:02:51,040
+So, I don't want it to edit the
+ 
+
+177
+00:02:51,040 --> 00:02:51,990
+So, I don't want it to edit the
+business, but I definitely want it to
+
+178
+00:02:51,990 --> 00:02:52,000
+business, but I definitely want it to
+ 
+
+179
+00:02:52,000 --> 00:02:53,589
+business, but I definitely want it to
+view it. I'm going to edit calendars.
+
+180
+00:02:53,589 --> 00:02:53,599
+view it. I'm going to edit calendars.
+ 
+
+181
+00:02:53,599 --> 00:02:54,790
+view it. I'm going to edit calendars.
+And by the way, do not give it all
+
+182
+00:02:54,790 --> 00:02:54,800
+And by the way, do not give it all
+ 
+
+183
+00:02:54,800 --> 00:02:55,830
+And by the way, do not give it all
+because if you give it all, it can
+
+184
+00:02:55,830 --> 00:02:55,840
+because if you give it all, it can
+ 
+
+185
+00:02:55,840 --> 00:02:57,589
+because if you give it all, it can
+delete users, add users, and it can
+
+186
+00:02:57,589 --> 00:02:57,599
+delete users, add users, and it can
+ 
+
+187
+00:02:57,599 --> 00:02:59,190
+delete users, add users, and it can
+create a bunch of problems if you give
+
+188
+00:02:59,190 --> 00:02:59,200
+create a bunch of problems if you give
+ 
+
+189
+00:02:59,200 --> 00:03:01,830
+create a bunch of problems if you give
+it the wrong kind of availability. Now,
+
+190
+00:03:01,830 --> 00:03:01,840
+it the wrong kind of availability. Now,
+ 
+
+191
+00:03:01,840 --> 00:03:03,670
+it the wrong kind of availability. Now,
+this thing can even write AI, voice
+
+192
+00:03:03,670 --> 00:03:03,680
+this thing can even write AI, voice
+ 
+
+193
+00:03:03,680 --> 00:03:05,350
+this thing can even write AI, voice
+bots, and chat bots for you. And I'll
+
+194
+00:03:05,350 --> 00:03:05,360
+bots, and chat bots for you. And I'll
+ 
+
+195
+00:03:05,360 --> 00:03:07,110
+bots, and chat bots for you. And I'll
+show you where that is. But again, just
+
+196
+00:03:07,110 --> 00:03:07,120
+show you where that is. But again, just
+ 
+
+197
+00:03:07,120 --> 00:03:08,630
+show you where that is. But again, just
+be very careful what you're giving it
+
+198
+00:03:08,630 --> 00:03:08,640
+be very careful what you're giving it
+ 
+
+199
+00:03:08,640 --> 00:03:09,670
+be very careful what you're giving it
+because if you don't know what you're
+
+200
+00:03:09,670 --> 00:03:09,680
+because if you don't know what you're
+ 
+
+201
+00:03:09,680 --> 00:03:11,190
+because if you don't know what you're
+doing, it could delete a user for you
+
+202
+00:03:11,190 --> 00:03:11,200
+doing, it could delete a user for you
+ 
+
+203
+00:03:11,200 --> 00:03:12,390
+doing, it could delete a user for you
+and everything else. So, try to avoid
+
+204
+00:03:12,390 --> 00:03:12,400
+and everything else. So, try to avoid
+ 
+
+205
+00:03:12,400 --> 00:03:13,350
+and everything else. So, try to avoid
+the ones that are going to have some
+
+206
+00:03:13,350 --> 00:03:13,360
+the ones that are going to have some
+ 
+
+207
+00:03:13,360 --> 00:03:15,750
+the ones that are going to have some
+pretty bad impact, right? But that's 65.
+
+208
+00:03:15,750 --> 00:03:15,760
+pretty bad impact, right? But that's 65.
+ 
+
+209
+00:03:15,760 --> 00:03:17,190
+pretty bad impact, right? But that's 65.
+That's pretty good. I'm going to go
+
+210
+00:03:17,190 --> 00:03:17,200
+That's pretty good. I'm going to go
+ 
+
+211
+00:03:17,200 --> 00:03:18,630
+That's pretty good. I'm going to go
+ahead and create. Now, the second I
+
+212
+00:03:18,630 --> 00:03:18,640
+ahead and create. Now, the second I
+ 
+
+213
+00:03:18,640 --> 00:03:19,990
+ahead and create. Now, the second I
+create, it's going to expose my key, but
+
+214
+00:03:19,990 --> 00:03:20,000
+create, it's going to expose my key, but
+ 
+
+215
+00:03:20,000 --> 00:03:21,270
+create, it's going to expose my key, but
+I know for a fact I'm going to rotate
+
+216
+00:03:21,270 --> 00:03:21,280
+I know for a fact I'm going to rotate
+ 
+
+217
+00:03:21,280 --> 00:03:23,350
+I know for a fact I'm going to rotate
+it. So, it's also going to be blurred,
+
+218
+00:03:23,350 --> 00:03:23,360
+it. So, it's also going to be blurred,
+ 
+
+219
+00:03:23,360 --> 00:03:24,710
+it. So, it's also going to be blurred,
+but I'm going to take this key. It's
+
+220
+00:03:24,710 --> 00:03:24,720
+but I'm going to take this key. It's
+ 
+
+221
+00:03:24,720 --> 00:03:25,830
+but I'm going to take this key. It's
+very important. I'm going to copy it
+
+222
+00:03:25,830 --> 00:03:25,840
+very important. I'm going to copy it
+ 
+
+223
+00:03:25,840 --> 00:03:27,030
+very important. I'm going to copy it
+because once you have it, you're not
+
+224
+00:03:27,030 --> 00:03:27,040
+because once you have it, you're not
+ 
+
+225
+00:03:27,040 --> 00:03:28,309
+because once you have it, you're not
+going to see it again. And what I'm
+
+226
+00:03:28,309 --> 00:03:28,319
+going to see it again. And what I'm
+ 
+
+227
+00:03:28,319 --> 00:03:29,509
+going to see it again. And what I'm
+going to do is I'm just going to paste
+
+228
+00:03:29,509 --> 00:03:29,519
+going to do is I'm just going to paste
+ 
+
+229
+00:03:29,519 --> 00:03:31,830
+going to do is I'm just going to paste
+it somewhere safe. Once I paste it and I
+
+230
+00:03:31,830 --> 00:03:31,840
+it somewhere safe. Once I paste it and I
+ 
+
+231
+00:03:31,840 --> 00:03:33,030
+it somewhere safe. Once I paste it and I
+have it somewhere good, it's awesome.
+
+232
+00:03:33,030 --> 00:03:33,040
+have it somewhere good, it's awesome.
+ 
+
+233
+00:03:33,040 --> 00:03:34,390
+have it somewhere good, it's awesome.
+And by the way, again, I'll just rotate
+
+234
+00:03:34,390 --> 00:03:34,400
+And by the way, again, I'll just rotate
+ 
+
+235
+00:03:34,400 --> 00:03:36,229
+And by the way, again, I'll just rotate
+it or delete it entirely. This is also
+
+236
+00:03:36,229 --> 00:03:36,239
+it or delete it entirely. This is also
+ 
+
+237
+00:03:36,239 --> 00:03:37,830
+it or delete it entirely. This is also
+my test account. Has no payments. Has no
+
+238
+00:03:37,830 --> 00:03:37,840
+my test account. Has no payments. Has no
+ 
+
+239
+00:03:37,840 --> 00:03:39,509
+my test account. Has no payments. Has no
+real information in there. But either
+
+240
+00:03:39,509 --> 00:03:39,519
+real information in there. But either
+ 
+
+241
+00:03:39,519 --> 00:03:41,430
+real information in there. But either
+way, I'm being super safe. Then I go to
+
+242
+00:03:41,430 --> 00:03:41,440
+way, I'm being super safe. Then I go to
+ 
+
+243
+00:03:41,440 --> 00:03:43,190
+way, I'm being super safe. Then I go to
+my business profile. And in your
+
+244
+00:03:43,190 --> 00:03:43,200
+my business profile. And in your
+ 
+
+245
+00:03:43,200 --> 00:03:44,630
+my business profile. And in your
+business location, you're going to grab
+
+246
+00:03:44,630 --> 00:03:44,640
+business location, you're going to grab
+ 
+
+247
+00:03:44,640 --> 00:03:46,550
+business location, you're going to grab
+this ID right here. You're going to copy
+
+248
+00:03:46,550 --> 00:03:46,560
+this ID right here. You're going to copy
+ 
+
+249
+00:03:46,560 --> 00:03:47,830
+this ID right here. You're going to copy
+that and also put that in a safe
+
+250
+00:03:47,830 --> 00:03:47,840
+that and also put that in a safe
+ 
+
+251
+00:03:47,840 --> 00:03:48,789
+that and also put that in a safe
+location because you're going to need
+
+252
+00:03:48,789 --> 00:03:48,799
+location because you're going to need
+ 
+
+253
+00:03:48,799 --> 00:03:51,030
+location because you're going to need
+that later on. Right. So, now that you
+
+254
+00:03:51,030 --> 00:03:51,040
+that later on. Right. So, now that you
+ 
+
+255
+00:03:51,040 --> 00:03:53,430
+that later on. Right. So, now that you
+have the account you want it to go into,
+
+256
+00:03:53,430 --> 00:03:53,440
+have the account you want it to go into,
+ 
+
+257
+00:03:53,440 --> 00:03:54,869
+have the account you want it to go into,
+you are set to go. So, the first thing
+
+258
+00:03:54,869 --> 00:03:54,879
+you are set to go. So, the first thing
+ 
+
+259
+00:03:54,879 --> 00:03:56,309
+you are set to go. So, the first thing
+that we're going to do is one, we're
+
+260
+00:03:56,309 --> 00:03:56,319
+that we're going to do is one, we're
+ 
+
+261
+00:03:56,319 --> 00:03:58,390
+that we're going to do is one, we're
+going to pull up VS Code. And in VS
+
+262
+00:03:58,390 --> 00:03:58,400
+going to pull up VS Code. And in VS
+ 
+
+263
+00:03:58,400 --> 00:04:00,470
+going to pull up VS Code. And in VS
+Code, I'm going to pull up a terminal.
+
+264
+00:04:00,470 --> 00:04:00,480
+Code, I'm going to pull up a terminal.
+ 
+
+265
+00:04:00,480 --> 00:04:01,670
+Code, I'm going to pull up a terminal.
+So, I'm going to get rid of these two
+
+266
+00:04:01,670 --> 00:04:01,680
+So, I'm going to get rid of these two
+ 
+
+267
+00:04:01,680 --> 00:04:04,309
+So, I'm going to get rid of these two
+terminals. And inside the terminal, I'm
+
+268
+00:04:04,309 --> 00:04:04,319
+terminals. And inside the terminal, I'm
+ 
+
+269
+00:04:04,319 --> 00:04:05,589
+terminals. And inside the terminal, I'm
+going to have what we call the
+
+270
+00:04:05,589 --> 00:04:05,599
+going to have what we call the
+ 
+
+271
+00:04:05,599 --> 00:04:07,110
+going to have what we call the
+PowerShell. This is bash, but we're
+
+272
+00:04:07,110 --> 00:04:07,120
+PowerShell. This is bash, but we're
+ 
+
+273
+00:04:07,120 --> 00:04:07,910
+PowerShell. This is bash, but we're
+actually going to change it to
+
+274
+00:04:07,910 --> 00:04:07,920
+actually going to change it to
+ 
+
+275
+00:04:07,920 --> 00:04:09,589
+actually going to change it to
+PowerShell. So, you're going to click on
+
+276
+00:04:09,589 --> 00:04:09,599
+PowerShell. So, you're going to click on
+ 
+
+277
+00:04:09,599 --> 00:04:11,030
+PowerShell. So, you're going to click on
+this little down arrow, and you're going
+
+278
+00:04:11,030 --> 00:04:11,040
+this little down arrow, and you're going
+ 
+
+279
+00:04:11,040 --> 00:04:12,869
+this little down arrow, and you're going
+to go to PowerShell. Now, if you haven't
+
+280
+00:04:12,869 --> 00:04:12,879
+to go to PowerShell. Now, if you haven't
+ 
+
+281
+00:04:12,879 --> 00:04:14,949
+to go to PowerShell. Now, if you haven't
+installed Claude on your terminal, I
+
+282
+00:04:14,949 --> 00:04:14,959
+installed Claude on your terminal, I
+ 
+
+283
+00:04:14,959 --> 00:04:16,949
+installed Claude on your terminal, I
+suggest you watch my previous video on
+
+284
+00:04:16,949 --> 00:04:16,959
+suggest you watch my previous video on
+ 
+
+285
+00:04:16,959 --> 00:04:18,550
+suggest you watch my previous video on
+installation of Claude in order to get
+
+286
+00:04:18,550 --> 00:04:18,560
+installation of Claude in order to get
+ 
+
+287
+00:04:18,560 --> 00:04:19,909
+installation of Claude in order to get
+that. I don't want to waste a lot of
+
+288
+00:04:19,909 --> 00:04:19,919
+that. I don't want to waste a lot of
+ 
+
+289
+00:04:19,919 --> 00:04:21,430
+that. I don't want to waste a lot of
+time here on that one because again,
+
+290
+00:04:21,430 --> 00:04:21,440
+time here on that one because again,
+ 
+
+291
+00:04:21,440 --> 00:04:23,270
+time here on that one because again,
+that video is pretty jam-packed with
+
+292
+00:04:23,270 --> 00:04:23,280
+that video is pretty jam-packed with
+ 
+
+293
+00:04:23,280 --> 00:04:25,510
+that video is pretty jam-packed with
+that. So, what I recommend you doing is
+
+294
+00:04:25,510 --> 00:04:25,520
+that. So, what I recommend you doing is
+ 
+
+295
+00:04:25,520 --> 00:04:27,189
+that. So, what I recommend you doing is
+exactly this. And anytime you get a code
+
+296
+00:04:27,189 --> 00:04:27,199
+exactly this. And anytime you get a code
+ 
+
+297
+00:04:27,199 --> 00:04:29,510
+exactly this. And anytime you get a code
+from anybody anywhere on the internet,
+
+298
+00:04:29,510 --> 00:04:29,520
+from anybody anywhere on the internet,
+ 
+
+299
+00:04:29,520 --> 00:04:31,909
+from anybody anywhere on the internet,
+what I usually do is I go to my cloud
+
+300
+00:04:31,909 --> 00:04:31,919
+what I usually do is I go to my cloud
+ 
+
+301
+00:04:31,919 --> 00:04:33,749
+what I usually do is I go to my cloud
+code chat. I come in here, I create a
+
+302
+00:04:33,749 --> 00:04:33,759
+code chat. I come in here, I create a
+ 
+
+303
+00:04:33,759 --> 00:04:35,749
+code chat. I come in here, I create a
+new chat. And in this new chat, I'm
+
+304
+00:04:35,749 --> 00:04:35,759
+new chat. And in this new chat, I'm
+ 
+
+305
+00:04:35,759 --> 00:04:38,230
+new chat. And in this new chat, I'm
+going to say, I just received a code
+
+306
+00:04:38,230 --> 00:04:38,240
+going to say, I just received a code
+ 
+
+307
+00:04:38,240 --> 00:04:41,590
+going to say, I just received a code
+that will help install a go highle MCP
+
+308
+00:04:41,590 --> 00:04:41,600
+that will help install a go highle MCP
+ 
+
+309
+00:04:41,600 --> 00:04:44,150
+that will help install a go highle MCP
+on my claude code in my terminal. Please
+
+310
+00:04:44,150 --> 00:04:44,160
+on my claude code in my terminal. Please
+ 
+
+311
+00:04:44,160 --> 00:04:45,830
+on my claude code in my terminal. Please
+make sure that this code is not
+
+312
+00:04:45,830 --> 00:04:45,840
+make sure that this code is not
+ 
+
+313
+00:04:45,840 --> 00:04:47,749
+make sure that this code is not
+malicious or it's going to harm and that
+
+314
+00:04:47,749 --> 00:04:47,759
+malicious or it's going to harm and that
+ 
+
+315
+00:04:47,759 --> 00:04:49,990
+malicious or it's going to harm and that
+it's right for my PC. And if you scroll
+
+316
+00:04:49,990 --> 00:04:50,000
+it's right for my PC. And if you scroll
+ 
+
+317
+00:04:50,000 --> 00:04:51,749
+it's right for my PC. And if you scroll
+down in the SOP and if you follow all
+
+318
+00:04:51,749 --> 00:04:51,759
+down in the SOP and if you follow all
+ 
+
+319
+00:04:51,759 --> 00:04:53,749
+down in the SOP and if you follow all
+the steps like we have been, what I'm
+
+320
+00:04:53,749 --> 00:04:53,759
+the steps like we have been, what I'm
+ 
+
+321
+00:04:53,759 --> 00:04:55,430
+the steps like we have been, what I'm
+going to do is I'm going to come in here
+
+322
+00:04:55,430 --> 00:04:55,440
+going to do is I'm going to come in here
+ 
+
+323
+00:04:55,440 --> 00:04:58,390
+going to do is I'm going to come in here
+and I'm going to copy this whole thing.
+
+324
+00:04:58,390 --> 00:04:58,400
+and I'm going to copy this whole thing.
+ 
+
+325
+00:04:58,400 --> 00:05:01,830
+and I'm going to copy this whole thing.
+Crl + C, Crl + V. and I'm going to just
+
+326
+00:05:01,830 --> 00:05:01,840
+Crl + C, Crl + V. and I'm going to just
+ 
+
+327
+00:05:01,840 --> 00:05:03,670
+Crl + C, Crl + V. and I'm going to just
+make sure it verifies that I'm doing
+
+328
+00:05:03,670 --> 00:05:03,680
+make sure it verifies that I'm doing
+ 
+
+329
+00:05:03,680 --> 00:05:05,110
+make sure it verifies that I'm doing
+everything right. Now, a couple things
+
+330
+00:05:05,110 --> 00:05:05,120
+everything right. Now, a couple things
+ 
+
+331
+00:05:05,120 --> 00:05:06,710
+everything right. Now, a couple things
+that you need to understand. First and
+
+332
+00:05:06,710 --> 00:05:06,720
+that you need to understand. First and
+ 
+
+333
+00:05:06,720 --> 00:05:08,390
+that you need to understand. First and
+foremost, you have to have cloud code
+
+334
+00:05:08,390 --> 00:05:08,400
+foremost, you have to have cloud code
+ 
+
+335
+00:05:08,400 --> 00:05:09,830
+foremost, you have to have cloud code
+installed on your terminal. You have to
+
+336
+00:05:09,830 --> 00:05:09,840
+installed on your terminal. You have to
+ 
+
+337
+00:05:09,840 --> 00:05:11,430
+installed on your terminal. You have to
+have git bash and you also have to have
+
+338
+00:05:11,430 --> 00:05:11,440
+have git bash and you also have to have
+ 
+
+339
+00:05:11,440 --> 00:05:14,070
+have git bash and you also have to have
+Node.js installed if you're using a PC.
+
+340
+00:05:14,070 --> 00:05:14,080
+Node.js installed if you're using a PC.
+ 
+
+341
+00:05:14,080 --> 00:05:15,189
+Node.js installed if you're using a PC.
+Apple has a set of different
+
+342
+00:05:15,189 --> 00:05:15,199
+Apple has a set of different
+ 
+
+343
+00:05:15,199 --> 00:05:16,629
+Apple has a set of different
+instructions. I've included that in
+
+344
+00:05:16,629 --> 00:05:16,639
+instructions. I've included that in
+ 
+
+345
+00:05:16,639 --> 00:05:18,230
+instructions. I've included that in
+there, but again, you would put that
+
+346
+00:05:18,230 --> 00:05:18,240
+there, but again, you would put that
+ 
+
+347
+00:05:18,240 --> 00:05:21,029
+there, but again, you would put that
+plan in here or that code to ensure that
+
+348
+00:05:21,029 --> 00:05:21,039
+plan in here or that code to ensure that
+ 
+
+349
+00:05:21,039 --> 00:05:23,110
+plan in here or that code to ensure that
+it's really good. Now, code review, it's
+
+350
+00:05:23,110 --> 00:05:23,120
+it's really good. Now, code review, it's
+ 
+
+351
+00:05:23,120 --> 00:05:25,110
+it's really good. Now, code review, it's
+safe to run, blah blah blah, and it goes
+
+352
+00:05:25,110 --> 00:05:25,120
+safe to run, blah blah blah, and it goes
+ 
+
+353
+00:05:25,120 --> 00:05:26,710
+safe to run, blah blah blah, and it goes
+through the whole entire thing. So, now
+
+354
+00:05:26,710 --> 00:05:26,720
+through the whole entire thing. So, now
+ 
+
+355
+00:05:26,720 --> 00:05:28,790
+through the whole entire thing. So, now
+you're good to go here. So, what we're
+
+356
+00:05:28,790 --> 00:05:28,800
+you're good to go here. So, what we're
+ 
+
+357
+00:05:28,800 --> 00:05:30,550
+you're good to go here. So, what we're
+going to do is we're going to take that
+
+358
+00:05:30,550 --> 00:05:30,560
+going to do is we're going to take that
+ 
+
+359
+00:05:30,560 --> 00:05:32,070
+going to do is we're going to take that
+code that I gave you. We're going to
+
+360
+00:05:32,070 --> 00:05:32,080
+code that I gave you. We're going to
+ 
+
+361
+00:05:32,080 --> 00:05:33,670
+code that I gave you. We're going to
+open up a text document. We're going to
+
+362
+00:05:33,670 --> 00:05:33,680
+open up a text document. We're going to
+ 
+
+363
+00:05:33,680 --> 00:05:35,990
+open up a text document. We're going to
+put that code in there. And let's just
+
+364
+00:05:35,990 --> 00:05:36,000
+put that code in there. And let's just
+ 
+
+365
+00:05:36,000 --> 00:05:37,430
+put that code in there. And let's just
+do it together. Going to go to that
+
+366
+00:05:37,430 --> 00:05:37,440
+do it together. Going to go to that
+ 
+
+367
+00:05:37,440 --> 00:05:39,189
+do it together. Going to go to that
+code. Windows is going to be up here.
+
+368
+00:05:39,189 --> 00:05:39,199
+code. Windows is going to be up here.
+ 
+
+369
+00:05:39,199 --> 00:05:40,710
+code. Windows is going to be up here.
+Mac is going to be down there. What
+
+370
+00:05:40,710 --> 00:05:40,720
+Mac is going to be down there. What
+ 
+
+371
+00:05:40,720 --> 00:05:41,830
+Mac is going to be down there. What
+you're going to do is you're going to
+
+372
+00:05:41,830 --> 00:05:41,840
+you're going to do is you're going to
+ 
+
+373
+00:05:41,840 --> 00:05:42,790
+you're going to do is you're going to
+come over here and you're just going to
+
+374
+00:05:42,790 --> 00:05:42,800
+come over here and you're just going to
+ 
+
+375
+00:05:42,800 --> 00:05:45,350
+come over here and you're just going to
+copy this yellow part right here. Ctrl +
+
+376
+00:05:45,350 --> 00:05:45,360
+copy this yellow part right here. Ctrl +
+ 
+
+377
+00:05:45,360 --> 00:05:49,270
+copy this yellow part right here. Ctrl +
+C. Go into this file and you're going to
+
+378
+00:05:49,270 --> 00:05:49,280
+C. Go into this file and you're going to
+ 
+
+379
+00:05:49,280 --> 00:05:50,710
+C. Go into this file and you're going to
+notice that it's going to say
+
+380
+00:05:50,710 --> 00:05:50,720
+notice that it's going to say
+ 
+
+381
+00:05:50,720 --> 00:05:53,110
+notice that it's going to say
+authorization bearer your PIT token
+
+382
+00:05:53,110 --> 00:05:53,120
+authorization bearer your PIT token
+ 
+
+383
+00:05:53,120 --> 00:05:55,189
+authorization bearer your PIT token
+here. Highlight where it says your PIT
+
+384
+00:05:55,189 --> 00:05:55,199
+here. Highlight where it says your PIT
+ 
+
+385
+00:05:55,199 --> 00:05:58,550
+here. Highlight where it says your PIT
+token. Grab the PIT token that you got
+
+386
+00:05:58,550 --> 00:05:58,560
+token. Grab the PIT token that you got
+ 
+
+387
+00:05:58,560 --> 00:06:01,029
+token. Grab the PIT token that you got
+from high level and only the PIT token.
+
+388
+00:06:01,029 --> 00:06:01,039
+from high level and only the PIT token.
+ 
+
+389
+00:06:01,039 --> 00:06:02,390
+from high level and only the PIT token.
+And what we're going to do is we're
+
+390
+00:06:02,390 --> 00:06:02,400
+And what we're going to do is we're
+ 
+
+391
+00:06:02,400 --> 00:06:04,390
+And what we're going to do is we're
+going to paste it. All right. So that is
+
+392
+00:06:04,390 --> 00:06:04,400
+going to paste it. All right. So that is
+ 
+
+393
+00:06:04,400 --> 00:06:07,110
+going to paste it. All right. So that is
+pasted and it should say bearer space
+
+394
+00:06:07,110 --> 00:06:07,120
+pasted and it should say bearer space
+ 
+
+395
+00:06:07,120 --> 00:06:09,029
+pasted and it should say bearer space
+pit and then whatever the code is. Then
+
+396
+00:06:09,029 --> 00:06:09,039
+pit and then whatever the code is. Then
+ 
+
+397
+00:06:09,039 --> 00:06:10,790
+pit and then whatever the code is. Then
+you're going to have your location ID.
+
+398
+00:06:10,790 --> 00:06:10,800
+you're going to have your location ID.
+ 
+
+399
+00:06:10,800 --> 00:06:12,950
+you're going to have your location ID.
+You're going to highlight this right in
+
+400
+00:06:12,950 --> 00:06:12,960
+You're going to highlight this right in
+ 
+
+401
+00:06:12,960 --> 00:06:14,629
+You're going to highlight this right in
+between the quotations. Very important
+
+402
+00:06:14,629 --> 00:06:14,639
+between the quotations. Very important
+ 
+
+403
+00:06:14,639 --> 00:06:15,990
+between the quotations. Very important
+that you keep the quotations or leave
+
+404
+00:06:15,990 --> 00:06:16,000
+that you keep the quotations or leave
+ 
+
+405
+00:06:16,000 --> 00:06:17,909
+that you keep the quotations or leave
+the file unchanged. So, right in between
+
+406
+00:06:17,909 --> 00:06:17,919
+the file unchanged. So, right in between
+ 
+
+407
+00:06:17,919 --> 00:06:19,430
+the file unchanged. So, right in between
+the quotations of this one, like you did
+
+408
+00:06:19,430 --> 00:06:19,440
+the quotations of this one, like you did
+ 
+
+409
+00:06:19,440 --> 00:06:21,270
+the quotations of this one, like you did
+with the token area there, you're going
+
+410
+00:06:21,270 --> 00:06:21,280
+with the token area there, you're going
+ 
+
+411
+00:06:21,280 --> 00:06:25,189
+with the token area there, you're going
+to grab the location ID, copy it, and
+
+412
+00:06:25,189 --> 00:06:25,199
+to grab the location ID, copy it, and
+ 
+
+413
+00:06:25,199 --> 00:06:28,230
+to grab the location ID, copy it, and
+paste it right in here. Okay. All right.
+
+414
+00:06:28,230 --> 00:06:28,240
+paste it right in here. Okay. All right.
+ 
+
+415
+00:06:28,240 --> 00:06:30,550
+paste it right in here. Okay. All right.
+Now, I'm going to go into my VS Code.
+
+416
+00:06:30,550 --> 00:06:30,560
+Now, I'm going to go into my VS Code.
+ 
+
+417
+00:06:30,560 --> 00:06:32,309
+Now, I'm going to go into my VS Code.
+I'm going to open up a terminal window.
+
+418
+00:06:32,309 --> 00:06:32,319
+I'm going to open up a terminal window.
+ 
+
+419
+00:06:32,319 --> 00:06:34,390
+I'm going to open up a terminal window.
+I'm going to select the down arrow right
+
+420
+00:06:34,390 --> 00:06:34,400
+I'm going to select the down arrow right
+ 
+
+421
+00:06:34,400 --> 00:06:35,590
+I'm going to select the down arrow right
+here. I'm going to go into what's called
+
+422
+00:06:35,590 --> 00:06:35,600
+here. I'm going to go into what's called
+ 
+
+423
+00:06:35,600 --> 00:06:37,749
+here. I'm going to go into what's called
+the PowerShell. Inside the PowerShell,
+
+424
+00:06:37,749 --> 00:06:37,759
+the PowerShell. Inside the PowerShell,
+ 
+
+425
+00:06:37,759 --> 00:06:40,390
+the PowerShell. Inside the PowerShell,
+I'm in my AI executive assistant folder.
+
+426
+00:06:40,390 --> 00:06:40,400
+I'm in my AI executive assistant folder.
+ 
+
+427
+00:06:40,400 --> 00:06:41,990
+I'm in my AI executive assistant folder.
+And what I'm going to do is I'm going to
+
+428
+00:06:41,990 --> 00:06:42,000
+And what I'm going to do is I'm going to
+ 
+
+429
+00:06:42,000 --> 00:06:44,230
+And what I'm going to do is I'm going to
+paste that command that I told you all
+
+430
+00:06:44,230 --> 00:06:44,240
+paste that command that I told you all
+ 
+
+431
+00:06:44,240 --> 00:06:46,550
+paste that command that I told you all
+to copy. So, I copy that command. And
+
+432
+00:06:46,550 --> 00:06:46,560
+to copy. So, I copy that command. And
+ 
+
+433
+00:06:46,560 --> 00:06:47,670
+to copy. So, I copy that command. And
+I'm going to come in here. I'm going to
+
+434
+00:06:47,670 --> 00:06:47,680
+I'm going to come in here. I'm going to
+ 
+
+435
+00:06:47,680 --> 00:06:49,270
+I'm going to come in here. I'm going to
+paste it. I'm going to hit enter. And if
+
+436
+00:06:49,270 --> 00:06:49,280
+paste it. I'm going to hit enter. And if
+ 
+
+437
+00:06:49,280 --> 00:06:51,909
+paste it. I'm going to hit enter. And if
+I did this right, I got done. GHLmcp
+
+438
+00:06:51,909 --> 00:06:51,919
+I did this right, I got done. GHLmcp
+ 
+
+439
+00:06:51,919 --> 00:06:53,830
+I did this right, I got done. GHLmcp
+added. And now what I'm going to do is
+
+440
+00:06:53,830 --> 00:06:53,840
+added. And now what I'm going to do is
+ 
+
+441
+00:06:53,840 --> 00:06:56,230
+added. And now what I'm going to do is
+I'm going to call and I'm going to type
+
+442
+00:06:56,230 --> 00:06:56,240
+I'm going to call and I'm going to type
+ 
+
+443
+00:06:56,240 --> 00:06:59,189
+I'm going to call and I'm going to type
+in MCP. And if I did it right, I'll see.
+
+444
+00:06:59,189 --> 00:06:59,199
+in MCP. And if I did it right, I'll see.
+ 
+
+445
+00:06:59,199 --> 00:07:01,909
+in MCP. And if I did it right, I'll see.
+Yep, there it is right here. ghl MCP
+
+446
+00:07:01,909 --> 00:07:01,919
+Yep, there it is right here. ghl MCP
+ 
+
+447
+00:07:01,919 --> 00:07:03,909
+Yep, there it is right here. ghl MCP
+connected. Cool. Now that we actually
+
+448
+00:07:03,909 --> 00:07:03,919
+connected. Cool. Now that we actually
+ 
+
+449
+00:07:03,919 --> 00:07:05,670
+connected. Cool. Now that we actually
+have the GHL connected, like you can see
+
+450
+00:07:05,670 --> 00:07:05,680
+have the GHL connected, like you can see
+ 
+
+451
+00:07:05,680 --> 00:07:07,110
+have the GHL connected, like you can see
+here, we're now going to do the second
+
+452
+00:07:07,110 --> 00:07:07,120
+here, we're now going to do the second
+ 
+
+453
+00:07:07,120 --> 00:07:08,550
+here, we're now going to do the second
+part of this is where we're going to
+
+454
+00:07:08,550 --> 00:07:08,560
+part of this is where we're going to
+ 
+
+455
+00:07:08,560 --> 00:07:11,589
+part of this is where we're going to
+create our first person of our AI agent
+
+456
+00:07:11,589 --> 00:07:11,599
+create our first person of our AI agent
+ 
+
+457
+00:07:11,599 --> 00:07:13,670
+create our first person of our AI agent
+team. Right. So, what I'm going to do is
+
+458
+00:07:13,670 --> 00:07:13,680
+team. Right. So, what I'm going to do is
+ 
+
+459
+00:07:13,680 --> 00:07:15,510
+team. Right. So, what I'm going to do is
+I'm going to come over here and we're
+
+460
+00:07:15,510 --> 00:07:15,520
+I'm going to come over here and we're
+ 
+
+461
+00:07:15,520 --> 00:07:16,710
+I'm going to come over here and we're
+going to talk a little bit about file
+
+462
+00:07:16,710 --> 00:07:16,720
+going to talk a little bit about file
+ 
+
+463
+00:07:16,720 --> 00:07:18,390
+going to talk a little bit about file
+structure just so you have it. Now, I
+
+464
+00:07:18,390 --> 00:07:18,400
+structure just so you have it. Now, I
+ 
+
+465
+00:07:18,400 --> 00:07:20,550
+structure just so you have it. Now, I
+have a folder that I call dev. If you go
+
+466
+00:07:20,550 --> 00:07:20,560
+have a folder that I call dev. If you go
+ 
+
+467
+00:07:20,560 --> 00:07:22,070
+have a folder that I call dev. If you go
+I have it in my D drive or whatever else
+
+468
+00:07:22,070 --> 00:07:22,080
+I have it in my D drive or whatever else
+ 
+
+469
+00:07:22,080 --> 00:07:23,350
+I have it in my D drive or whatever else
+and I have dev where I have all my
+
+470
+00:07:23,350 --> 00:07:23,360
+and I have dev where I have all my
+ 
+
+471
+00:07:23,360 --> 00:07:24,950
+and I have dev where I have all my
+projects. I'm going to rightclick and
+
+472
+00:07:24,950 --> 00:07:24,960
+projects. I'm going to rightclick and
+ 
+
+473
+00:07:24,960 --> 00:07:26,309
+projects. I'm going to rightclick and
+I'm going to create a new folder. All
+
+474
+00:07:26,309 --> 00:07:26,319
+I'm going to create a new folder. All
+ 
+
+475
+00:07:26,319 --> 00:07:27,589
+I'm going to create a new folder. All
+right. So, we're going to come in here
+
+476
+00:07:27,589 --> 00:07:27,599
+right. So, we're going to come in here
+ 
+
+477
+00:07:27,599 --> 00:07:29,110
+right. So, we're going to come in here
+and we're going to do new folder and
+
+478
+00:07:29,110 --> 00:07:29,120
+and we're going to do new folder and
+ 
+
+479
+00:07:29,120 --> 00:07:32,790
+and we're going to do new folder and
+we're going to do AI agent team. And the
+
+480
+00:07:32,790 --> 00:07:32,800
+we're going to do AI agent team. And the
+ 
+
+481
+00:07:32,800 --> 00:07:34,629
+we're going to do AI agent team. And the
+second gift I'm going to have for you is
+
+482
+00:07:34,629 --> 00:07:34,639
+second gift I'm going to have for you is
+ 
+
+483
+00:07:34,639 --> 00:07:36,710
+second gift I'm going to have for you is
+if you click and you grab all the
+
+484
+00:07:36,710 --> 00:07:36,720
+if you click and you grab all the
+ 
+
+485
+00:07:36,720 --> 00:07:38,070
+if you click and you grab all the
+folders and everything else. Just go
+
+486
+00:07:38,070 --> 00:07:38,080
+folders and everything else. Just go
+ 
+
+487
+00:07:38,080 --> 00:07:39,990
+folders and everything else. Just go
+ahead sign up for our newsletter so you
+
+488
+00:07:39,990 --> 00:07:40,000
+ahead sign up for our newsletter so you
+ 
+
+489
+00:07:40,000 --> 00:07:41,350
+ahead sign up for our newsletter so you
+can be able to learn more about this
+
+490
+00:07:41,350 --> 00:07:41,360
+can be able to learn more about this
+ 
+
+491
+00:07:41,360 --> 00:07:42,870
+can be able to learn more about this
+stuff as we constantly go through. If
+
+492
+00:07:42,870 --> 00:07:42,880
+stuff as we constantly go through. If
+ 
+
+493
+00:07:42,880 --> 00:07:45,510
+stuff as we constantly go through. If
+you go in here, I have given you a file
+
+494
+00:07:45,510 --> 00:07:45,520
+you go in here, I have given you a file
+ 
+
+495
+00:07:45,520 --> 00:07:47,510
+you go in here, I have given you a file
+that you can download that is on top of
+
+496
+00:07:47,510 --> 00:07:47,520
+that you can download that is on top of
+ 
+
+497
+00:07:47,520 --> 00:07:50,070
+that you can download that is on top of
+the SOPs an agent that you can put in.
+
+498
+00:07:50,070 --> 00:07:50,080
+the SOPs an agent that you can put in.
+ 
+
+499
+00:07:50,080 --> 00:07:51,589
+the SOPs an agent that you can put in.
+Now again, this is my version of the
+
+500
+00:07:51,589 --> 00:07:51,599
+Now again, this is my version of the
+ 
+
+501
+00:07:51,599 --> 00:07:52,870
+Now again, this is my version of the
+agent. Yours will be a little bit
+
+502
+00:07:52,870 --> 00:07:52,880
+agent. Yours will be a little bit
+ 
+
+503
+00:07:52,880 --> 00:07:54,869
+agent. Yours will be a little bit
+differently. So obviously do the agent
+
+504
+00:07:54,869 --> 00:07:54,879
+differently. So obviously do the agent
+ 
+
+505
+00:07:54,879 --> 00:07:56,790
+differently. So obviously do the agent
+the way you wanted to, but it's going to
+
+506
+00:07:56,790 --> 00:07:56,800
+the way you wanted to, but it's going to
+ 
+
+507
+00:07:56,800 --> 00:07:58,070
+the way you wanted to, but it's going to
+give you the structure of everything you
+
+508
+00:07:58,070 --> 00:07:58,080
+give you the structure of everything you
+ 
+
+509
+00:07:58,080 --> 00:08:00,230
+give you the structure of everything you
+need to run your first AI agent inside
+
+510
+00:08:00,230 --> 00:08:00,240
+need to run your first AI agent inside
+ 
+
+511
+00:08:00,240 --> 00:08:02,869
+need to run your first AI agent inside
+of here. Now you see I have dev AI agent
+
+512
+00:08:02,869 --> 00:08:02,879
+of here. Now you see I have dev AI agent
+ 
+
+513
+00:08:02,879 --> 00:08:05,350
+of here. Now you see I have dev AI agent
+team and what I'm going to do inside
+
+514
+00:08:05,350 --> 00:08:05,360
+team and what I'm going to do inside
+ 
+
+515
+00:08:05,360 --> 00:08:07,189
+team and what I'm going to do inside
+this folder I'm going to install another
+
+516
+00:08:07,189 --> 00:08:07,199
+this folder I'm going to install another
+ 
+
+517
+00:08:07,199 --> 00:08:09,990
+this folder I'm going to install another
+folder which is my GHL agent that is
+
+518
+00:08:09,990 --> 00:08:10,000
+folder which is my GHL agent that is
+ 
+
+519
+00:08:10,000 --> 00:08:12,070
+folder which is my GHL agent that is
+going to do things in GHL for me. So
+
+520
+00:08:12,070 --> 00:08:12,080
+going to do things in GHL for me. So
+ 
+
+521
+00:08:12,080 --> 00:08:13,510
+going to do things in GHL for me. So
+what I'm going to do is I'm going to
+
+522
+00:08:13,510 --> 00:08:13,520
+what I'm going to do is I'm going to
+ 
+
+523
+00:08:13,520 --> 00:08:16,390
+what I'm going to do is I'm going to
+open up my another version of my file
+
+524
+00:08:16,390 --> 00:08:16,400
+open up my another version of my file
+ 
+
+525
+00:08:16,400 --> 00:08:18,230
+open up my another version of my file
+manager or wherever you store documents
+
+526
+00:08:18,230 --> 00:08:18,240
+manager or wherever you store documents
+ 
+
+527
+00:08:18,240 --> 00:08:20,869
+manager or wherever you store documents
+or wherever you download and I'll have a
+
+528
+00:08:20,869 --> 00:08:20,879
+or wherever you download and I'll have a
+ 
+
+529
+00:08:20,879 --> 00:08:22,710
+or wherever you download and I'll have a
+zip file. I'm going to click on the zip
+
+530
+00:08:22,710 --> 00:08:22,720
+zip file. I'm going to click on the zip
+ 
+
+531
+00:08:22,720 --> 00:08:25,189
+zip file. I'm going to click on the zip
+file and in here usually in a PC you
+
+532
+00:08:25,189 --> 00:08:25,199
+file and in here usually in a PC you
+ 
+
+533
+00:08:25,199 --> 00:08:27,029
+file and in here usually in a PC you
+have extract all and a Mac it might be a
+
+534
+00:08:27,029 --> 00:08:27,039
+have extract all and a Mac it might be a
+ 
+
+535
+00:08:27,039 --> 00:08:28,550
+have extract all and a Mac it might be a
+little bit differently but extract the
+
+536
+00:08:28,550 --> 00:08:28,560
+little bit differently but extract the
+ 
+
+537
+00:08:28,560 --> 00:08:31,670
+little bit differently but extract the
+file and then browse to that dev folder
+
+538
+00:08:31,670 --> 00:08:31,680
+file and then browse to that dev folder
+ 
+
+539
+00:08:31,680 --> 00:08:33,190
+file and then browse to that dev folder
+agent team and you're going to literally
+
+540
+00:08:33,190 --> 00:08:33,200
+agent team and you're going to literally
+ 
+
+541
+00:08:33,200 --> 00:08:35,110
+agent team and you're going to literally
+select that folder and extract the
+
+542
+00:08:35,110 --> 00:08:35,120
+select that folder and extract the
+ 
+
+543
+00:08:35,120 --> 00:08:37,350
+select that folder and extract the
+folder right in there right and now what
+
+544
+00:08:37,350 --> 00:08:37,360
+folder right in there right and now what
+ 
+
+545
+00:08:37,360 --> 00:08:40,149
+folder right in there right and now what
+you're going to see is is in that folder
+
+546
+00:08:40,149 --> 00:08:40,159
+you're going to see is is in that folder
+ 
+
+547
+00:08:40,159 --> 00:08:41,829
+you're going to see is is in that folder
+we are going to have all the necessary
+
+548
+00:08:41,829 --> 00:08:41,839
+we are going to have all the necessary
+ 
+
+549
+00:08:41,839 --> 00:08:44,149
+we are going to have all the necessary
+files to launch our agent so I'm going
+
+550
+00:08:44,149 --> 00:08:44,159
+files to launch our agent so I'm going
+ 
+
+551
+00:08:44,159 --> 00:08:46,150
+files to launch our agent so I'm going
+to go to file I'm going to go to open
+
+552
+00:08:46,150 --> 00:08:46,160
+to go to file I'm going to go to open
+ 
+
+553
+00:08:46,160 --> 00:08:48,150
+to go to file I'm going to go to open
+folder and inside of this open folder
+
+554
+00:08:48,150 --> 00:08:48,160
+folder and inside of this open folder
+ 
+
+555
+00:08:48,160 --> 00:08:49,910
+folder and inside of this open folder
+I'm going to go to my dev I'm going to
+
+556
+00:08:49,910 --> 00:08:49,920
+I'm going to go to my dev I'm going to
+ 
+
+557
+00:08:49,920 --> 00:08:53,750
+I'm going to go to my dev I'm going to
+go to my AI agent team and lo and behold
+
+558
+00:08:53,750 --> 00:08:53,760
+go to my AI agent team and lo and behold
+ 
+
+559
+00:08:53,760 --> 00:08:57,269
+go to my AI agent team and lo and behold
+I have my agents here right so my AI
+
+560
+00:08:57,269 --> 00:08:57,279
+I have my agents here right so my AI
+ 
+
+561
+00:08:57,279 --> 00:08:59,829
+I have my agents here right so my AI
+agent team is Donna which is my main
+
+562
+00:08:59,829 --> 00:08:59,839
+agent team is Donna which is my main
+ 
+
+563
+00:08:59,839 --> 00:09:01,910
+agent team is Donna which is my main
+agent content agent and these are all
+
+564
+00:09:01,910 --> 00:09:01,920
+agent content agent and these are all
+ 
+
+565
+00:09:01,920 --> 00:09:03,910
+agent content agent and these are all
+other ones you can build GHL agent and
+
+566
+00:09:03,910 --> 00:09:03,920
+other ones you can build GHL agent and
+ 
+
+567
+00:09:03,920 --> 00:09:05,750
+other ones you can build GHL agent and
+everything else but the GHL agent is the
+
+568
+00:09:05,750 --> 00:09:05,760
+everything else but the GHL agent is the
+ 
+
+569
+00:09:05,760 --> 00:09:07,350
+everything else but the GHL agent is the
+one that we're going to work on right
+
+570
+00:09:07,350 --> 00:09:07,360
+one that we're going to work on right
+ 
+
+571
+00:09:07,360 --> 00:09:09,910
+one that we're going to work on right
+but very specially about this AI agent
+
+572
+00:09:09,910 --> 00:09:09,920
+but very specially about this AI agent
+ 
+
+573
+00:09:09,920 --> 00:09:11,990
+but very specially about this AI agent
+is going to be the cloud MD file so the
+
+574
+00:09:11,990 --> 00:09:12,000
+is going to be the cloud MD file so the
+ 
+
+575
+00:09:12,000 --> 00:09:15,430
+is going to be the cloud MD file so the
+cloudmd file is always going to be the
+
+576
+00:09:15,430 --> 00:09:15,440
+cloudmd file is always going to be the
+ 
+
+577
+00:09:15,440 --> 00:09:19,030
+cloudmd file is always going to be the
+actual directions for the bot so in here
+
+578
+00:09:19,030 --> 00:09:19,040
+actual directions for the bot so in here
+ 
+
+579
+00:09:19,040 --> 00:09:20,550
+actual directions for the bot so in here
+it tells everything that we have to do
+
+580
+00:09:20,550 --> 00:09:20,560
+it tells everything that we have to do
+ 
+
+581
+00:09:20,560 --> 00:09:22,150
+it tells everything that we have to do
+these are just some set of rules that we
+
+582
+00:09:22,150 --> 00:09:22,160
+these are just some set of rules that we
+ 
+
+583
+00:09:22,160 --> 00:09:24,150
+these are just some set of rules that we
+have and more importantly it tells you
+
+584
+00:09:24,150 --> 00:09:24,160
+have and more importantly it tells you
+ 
+
+585
+00:09:24,160 --> 00:09:26,070
+have and more importantly it tells you
+where the MCP server it tells you that
+
+586
+00:09:26,070 --> 00:09:26,080
+where the MCP server it tells you that
+ 
+
+587
+00:09:26,080 --> 00:09:28,870
+where the MCP server it tells you that
+the PIT token is stored in the root and
+
+588
+00:09:28,870 --> 00:09:28,880
+the PIT token is stored in the root and
+ 
+
+589
+00:09:28,880 --> 00:09:30,550
+the PIT token is stored in the root and
+the location ID is stored in the
+
+590
+00:09:30,550 --> 00:09:30,560
+the location ID is stored in the
+ 
+
+591
+00:09:30,560 --> 00:09:32,790
+the location ID is stored in the
+environment variable now the environment
+
+592
+00:09:32,790 --> 00:09:32,800
+environment variable now the environment
+ 
+
+593
+00:09:32,800 --> 00:09:34,310
+environment variable now the environment
+variable and we're going to go where
+
+594
+00:09:34,310 --> 00:09:34,320
+variable and we're going to go where
+ 
+
+595
+00:09:34,320 --> 00:09:37,110
+variable and we're going to go where
+that is right there is this environment
+
+596
+00:09:37,110 --> 00:09:37,120
+that is right there is this environment
+ 
+
+597
+00:09:37,120 --> 00:09:38,949
+that is right there is this environment
+example right here and notice that it
+
+598
+00:09:38,949 --> 00:09:38,959
+example right here and notice that it
+ 
+
+599
+00:09:38,959 --> 00:09:42,630
+example right here and notice that it
+already states your GHL pit token and
+
+600
+00:09:42,630 --> 00:09:42,640
+already states your GHL pit token and
+ 
+
+601
+00:09:42,640 --> 00:09:45,829
+already states your GHL pit token and
+your GHL location ID is in here and it
+
+602
+00:09:45,829 --> 00:09:45,839
+your GHL location ID is in here and it
+ 
+
+603
+00:09:45,839 --> 00:09:47,590
+your GHL location ID is in here and it
+needs to have those two things added the
+
+604
+00:09:47,590 --> 00:09:47,600
+needs to have those two things added the
+ 
+
+605
+00:09:47,600 --> 00:09:49,750
+needs to have those two things added the
+reason is is even though you added it to
+
+606
+00:09:49,750 --> 00:09:49,760
+reason is is even though you added it to
+ 
+
+607
+00:09:49,760 --> 00:09:52,230
+reason is is even though you added it to
+the MCP server However, when you start
+
+608
+00:09:52,230 --> 00:09:52,240
+the MCP server However, when you start
+ 
+
+609
+00:09:52,240 --> 00:09:53,750
+the MCP server However, when you start
+working with GHL when you're working
+
+610
+00:09:53,750 --> 00:09:53,760
+working with GHL when you're working
+ 
+
+611
+00:09:53,760 --> 00:09:56,150
+working with GHL when you're working
+inside the skill and inside this agent,
+
+612
+00:09:56,150 --> 00:09:56,160
+inside the skill and inside this agent,
+ 
+
+613
+00:09:56,160 --> 00:09:57,350
+inside the skill and inside this agent,
+it's always going to need to ensure
+
+614
+00:09:57,350 --> 00:09:57,360
+it's always going to need to ensure
+ 
+
+615
+00:09:57,360 --> 00:09:59,030
+it's always going to need to ensure
+that's going to the right location ID
+
+616
+00:09:59,030 --> 00:09:59,040
+that's going to the right location ID
+ 
+
+617
+00:09:59,040 --> 00:10:00,630
+that's going to the right location ID
+and the token. Now, this is just kind of
+
+618
+00:10:00,630 --> 00:10:00,640
+and the token. Now, this is just kind of
+ 
+
+619
+00:10:00,640 --> 00:10:02,150
+and the token. Now, this is just kind of
+a requirement. So, what we're going to
+
+620
+00:10:02,150 --> 00:10:02,160
+a requirement. So, what we're going to
+ 
+
+621
+00:10:02,160 --> 00:10:03,670
+a requirement. So, what we're going to
+do is we're going to come in here and
+
+622
+00:10:03,670 --> 00:10:03,680
+do is we're going to come in here and
+ 
+
+623
+00:10:03,680 --> 00:10:05,030
+do is we're going to come in here and
+we're going to fill those in. Obviously,
+
+624
+00:10:05,030 --> 00:10:05,040
+we're going to fill those in. Obviously,
+ 
+
+625
+00:10:05,040 --> 00:10:06,870
+we're going to fill those in. Obviously,
+I'm not going to share mine, but you
+
+626
+00:10:06,870 --> 00:10:06,880
+I'm not going to share mine, but you
+ 
+
+627
+00:10:06,880 --> 00:10:08,389
+I'm not going to share mine, but you
+would just fill in the tokens you have
+
+628
+00:10:08,389 --> 00:10:08,399
+would just fill in the tokens you have
+ 
+
+629
+00:10:08,399 --> 00:10:11,509
+would just fill in the tokens you have
+in here. So, we go back to the file that
+
+630
+00:10:11,509 --> 00:10:11,519
+in here. So, we go back to the file that
+ 
+
+631
+00:10:11,519 --> 00:10:14,310
+in here. So, we go back to the file that
+we had first the location ID here, and
+
+632
+00:10:14,310 --> 00:10:14,320
+we had first the location ID here, and
+ 
+
+633
+00:10:14,320 --> 00:10:16,790
+we had first the location ID here, and
+you're going to paste it. And then the
+
+634
+00:10:16,790 --> 00:10:16,800
+you're going to paste it. And then the
+ 
+
+635
+00:10:16,800 --> 00:10:18,870
+you're going to paste it. And then the
+token base you're going to come in here
+
+636
+00:10:18,870 --> 00:10:18,880
+token base you're going to come in here
+ 
+
+637
+00:10:18,880 --> 00:10:20,550
+token base you're going to come in here
+and you're going to put in once you have
+
+638
+00:10:20,550 --> 00:10:20,560
+and you're going to put in once you have
+ 
+
+639
+00:10:20,560 --> 00:10:22,470
+and you're going to put in once you have
+that I'm going to leave it and I'm going
+
+640
+00:10:22,470 --> 00:10:22,480
+that I'm going to leave it and I'm going
+ 
+
+641
+00:10:22,480 --> 00:10:24,870
+that I'm going to leave it and I'm going
+to go back to just closing this out and
+
+642
+00:10:24,870 --> 00:10:24,880
+to go back to just closing this out and
+ 
+
+643
+00:10:24,880 --> 00:10:26,310
+to go back to just closing this out and
+it's automatically going to save. And
+
+644
+00:10:26,310 --> 00:10:26,320
+it's automatically going to save. And
+ 
+
+645
+00:10:26,320 --> 00:10:27,990
+it's automatically going to save. And
+for you because again this was an
+
+646
+00:10:27,990 --> 00:10:28,000
+for you because again this was an
+ 
+
+647
+00:10:28,000 --> 00:10:29,269
+for you because again this was an
+example for you what you're going to do
+
+648
+00:10:29,269 --> 00:10:29,279
+example for you what you're going to do
+ 
+
+649
+00:10:29,279 --> 00:10:31,430
+example for you what you're going to do
+is once you've gone in here and you
+
+650
+00:10:31,430 --> 00:10:31,440
+is once you've gone in here and you
+ 
+
+651
+00:10:31,440 --> 00:10:32,870
+is once you've gone in here and you
+fixed that environmental file and
+
+652
+00:10:32,870 --> 00:10:32,880
+fixed that environmental file and
+ 
+
+653
+00:10:32,880 --> 00:10:34,069
+fixed that environmental file and
+because you have your right tokens in
+
+654
+00:10:34,069 --> 00:10:34,079
+because you have your right tokens in
+ 
+
+655
+00:10:34,079 --> 00:10:35,509
+because you have your right tokens in
+here you're going to just rename it and
+
+656
+00:10:35,509 --> 00:10:35,519
+here you're going to just rename it and
+ 
+
+657
+00:10:35,519 --> 00:10:36,949
+here you're going to just rename it and
+you're going to remove the example with
+
+658
+00:10:36,949 --> 00:10:36,959
+you're going to remove the example with
+ 
+
+659
+00:10:36,959 --> 00:10:39,670
+you're going to remove the example with
+a dot and that becomes your env file
+
+660
+00:10:39,670 --> 00:10:39,680
+a dot and that becomes your env file
+ 
+
+661
+00:10:39,680 --> 00:10:41,190
+a dot and that becomes your env file
+which is you're going to need. Now I'm
+
+662
+00:10:41,190 --> 00:10:41,200
+which is you're going to need. Now I'm
+ 
+
+663
+00:10:41,200 --> 00:10:43,030
+which is you're going to need. Now I'm
+back in my GHL agents. What's really
+
+664
+00:10:43,030 --> 00:10:43,040
+back in my GHL agents. What's really
+ 
+
+665
+00:10:43,040 --> 00:10:45,350
+back in my GHL agents. What's really
+cool now is so I can come in here and if
+
+666
+00:10:45,350 --> 00:10:45,360
+cool now is so I can come in here and if
+ 
+
+667
+00:10:45,360 --> 00:10:47,590
+cool now is so I can come in here and if
+I follow my SOP that I have in here,
+
+668
+00:10:47,590 --> 00:10:47,600
+I follow my SOP that I have in here,
+ 
+
+669
+00:10:47,600 --> 00:10:50,069
+I follow my SOP that I have in here,
+there are some examples here how Donna
+
+670
+00:10:50,069 --> 00:10:50,079
+there are some examples here how Donna
+ 
+
+671
+00:10:50,079 --> 00:10:51,269
+there are some examples here how Donna
+works, blah blah blah. And you can
+
+672
+00:10:51,269 --> 00:10:51,279
+works, blah blah blah. And you can
+ 
+
+673
+00:10:51,279 --> 00:10:53,110
+works, blah blah blah. And you can
+create additional Donna and just add it
+
+674
+00:10:53,110 --> 00:10:53,120
+create additional Donna and just add it
+ 
+
+675
+00:10:53,120 --> 00:10:54,230
+create additional Donna and just add it
+to what I wanted to give you a little
+
+676
+00:10:54,230 --> 00:10:54,240
+to what I wanted to give you a little
+ 
+
+677
+00:10:54,240 --> 00:10:55,670
+to what I wanted to give you a little
+placeholder. Delete the agents if you
+
+678
+00:10:55,670 --> 00:10:55,680
+placeholder. Delete the agents if you
+ 
+
+679
+00:10:55,680 --> 00:10:57,030
+placeholder. Delete the agents if you
+don't want it. But this is just to give
+
+680
+00:10:57,030 --> 00:10:57,040
+don't want it. But this is just to give
+ 
+
+681
+00:10:57,040 --> 00:10:58,710
+don't want it. But this is just to give
+you a really good idea how to do all
+
+682
+00:10:58,710 --> 00:10:58,720
+you a really good idea how to do all
+ 
+
+683
+00:10:58,720 --> 00:11:02,389
+you a really good idea how to do all
+this. Okay, so now we can be in Donna
+
+684
+00:11:02,389 --> 00:11:02,399
+this. Okay, so now we can be in Donna
+ 
+
+685
+00:11:02,399 --> 00:11:04,150
+this. Okay, so now we can be in Donna
+because that's the main folder or the
+
+686
+00:11:04,150 --> 00:11:04,160
+because that's the main folder or the
+ 
+
+687
+00:11:04,160 --> 00:11:05,910
+because that's the main folder or the
+main team. And I can come in here and
+
+688
+00:11:05,910 --> 00:11:05,920
+main team. And I can come in here and
+ 
+
+689
+00:11:05,920 --> 00:11:09,750
+main team. And I can come in here and
+just paste this. Hit enter. Ask GHL to
+
+690
+00:11:09,750 --> 00:11:09,760
+just paste this. Hit enter. Ask GHL to
+ 
+
+691
+00:11:09,760 --> 00:11:11,590
+just paste this. Hit enter. Ask GHL to
+run its first discovery. Connect GHL.
+
+692
+00:11:11,590 --> 00:11:11,600
+run its first discovery. Connect GHL.
+ 
+
+693
+00:11:11,600 --> 00:11:13,269
+run its first discovery. Connect GHL.
+pull all pipelines, tags, and custom
+
+694
+00:11:13,269 --> 00:11:13,279
+pull all pipelines, tags, and custom
+ 
+
+695
+00:11:13,279 --> 00:11:15,829
+pull all pipelines, tags, and custom
+fields and save everything. So now what
+
+696
+00:11:15,829 --> 00:11:15,839
+fields and save everything. So now what
+ 
+
+697
+00:11:15,839 --> 00:11:17,350
+fields and save everything. So now what
+it's going to do is it's going to save a
+
+698
+00:11:17,350 --> 00:11:17,360
+it's going to do is it's going to save a
+ 
+
+699
+00:11:17,360 --> 00:11:20,069
+it's going to do is it's going to save a
+lot of this into the memory and my Donna
+
+700
+00:11:20,069 --> 00:11:20,079
+lot of this into the memory and my Donna
+ 
+
+701
+00:11:20,079 --> 00:11:21,829
+lot of this into the memory and my Donna
+is already kind of doing a lot of the
+
+702
+00:11:21,829 --> 00:11:21,839
+is already kind of doing a lot of the
+ 
+
+703
+00:11:21,839 --> 00:11:23,910
+is already kind of doing a lot of the
+things. So now I'm basically building my
+
+704
+00:11:23,910 --> 00:11:23,920
+things. So now I'm basically building my
+ 
+
+705
+00:11:23,920 --> 00:11:26,069
+things. So now I'm basically building my
+own AI team as we're doing this. But
+
+706
+00:11:26,069 --> 00:11:26,079
+own AI team as we're doing this. But
+ 
+
+707
+00:11:26,079 --> 00:11:27,509
+own AI team as we're doing this. But
+what I have to do is preload everything
+
+708
+00:11:27,509 --> 00:11:27,519
+what I have to do is preload everything
+ 
+
+709
+00:11:27,519 --> 00:11:30,069
+what I have to do is preload everything
+into the GHL agent. So the GHL, you
+
+710
+00:11:30,069 --> 00:11:30,079
+into the GHL agent. So the GHL, you
+ 
+
+711
+00:11:30,079 --> 00:11:31,990
+into the GHL agent. So the GHL, you
+know, it's knows the location. It's
+
+712
+00:11:31,990 --> 00:11:32,000
+know, it's knows the location. It's
+ 
+
+713
+00:11:32,000 --> 00:11:33,829
+know, it's knows the location. It's
+going to the MCPS now. It's going to ask
+
+714
+00:11:33,829 --> 00:11:33,839
+going to the MCPS now. It's going to ask
+ 
+
+715
+00:11:33,839 --> 00:11:35,670
+going to the MCPS now. It's going to ask
+for a bunch of permissions. All right,
+
+716
+00:11:35,670 --> 00:11:35,680
+for a bunch of permissions. All right,
+ 
+
+717
+00:11:35,680 --> 00:11:37,750
+for a bunch of permissions. All right,
+success true means it's connected. All
+
+718
+00:11:37,750 --> 00:11:37,760
+success true means it's connected. All
+ 
+
+719
+00:11:37,760 --> 00:11:39,269
+success true means it's connected. All
+these are true. So, it's connecting to
+
+720
+00:11:39,269 --> 00:11:39,279
+these are true. So, it's connecting to
+ 
+
+721
+00:11:39,279 --> 00:11:41,509
+these are true. So, it's connecting to
+each of the end points to grab the
+
+722
+00:11:41,509 --> 00:11:41,519
+each of the end points to grab the
+ 
+
+723
+00:11:41,519 --> 00:11:43,509
+each of the end points to grab the
+information that it needs. So, then it
+
+724
+00:11:43,509 --> 00:11:43,519
+information that it needs. So, then it
+ 
+
+725
+00:11:43,519 --> 00:11:45,190
+information that it needs. So, then it
+could do its job and do whatever it
+
+726
+00:11:45,190 --> 00:11:45,200
+could do its job and do whatever it
+ 
+
+727
+00:11:45,200 --> 00:11:46,949
+could do its job and do whatever it
+needs. So, as long as I keep getting
+
+728
+00:11:46,949 --> 00:11:46,959
+needs. So, as long as I keep getting
+ 
+
+729
+00:11:46,959 --> 00:11:48,790
+needs. So, as long as I keep getting
+those 200 twos back, that means that the
+
+730
+00:11:48,790 --> 00:11:48,800
+those 200 twos back, that means that the
+ 
+
+731
+00:11:48,800 --> 00:11:50,790
+those 200 twos back, that means that the
+token and the action location ID is
+
+732
+00:11:50,790 --> 00:11:50,800
+token and the action location ID is
+ 
+
+733
+00:11:50,800 --> 00:11:53,030
+token and the action location ID is
+right. Now, later on, if I'm running
+
+734
+00:11:53,030 --> 00:11:53,040
+right. Now, later on, if I'm running
+ 
+
+735
+00:11:53,040 --> 00:11:54,630
+right. Now, later on, if I'm running
+multiple accounts and she might need
+
+736
+00:11:54,630 --> 00:11:54,640
+multiple accounts and she might need
+ 
+
+737
+00:11:54,640 --> 00:11:58,069
+multiple accounts and she might need
+access to it, this will be GHL agent for
+
+738
+00:11:58,069 --> 00:11:58,079
+access to it, this will be GHL agent for
+ 
+
+739
+00:11:58,079 --> 00:11:59,910
+access to it, this will be GHL agent for
+the specific location and then another
+
+740
+00:11:59,910 --> 00:11:59,920
+the specific location and then another
+ 
+
+741
+00:11:59,920 --> 00:12:02,470
+the specific location and then another
+GHL agent for another location and then
+
+742
+00:12:02,470 --> 00:12:02,480
+GHL agent for another location and then
+ 
+
+743
+00:12:02,480 --> 00:12:04,470
+GHL agent for another location and then
+you would use different MCPS to connect
+
+744
+00:12:04,470 --> 00:12:04,480
+you would use different MCPS to connect
+ 
+
+745
+00:12:04,480 --> 00:12:05,430
+you would use different MCPS to connect
+and you would just connect them
+
+746
+00:12:05,430 --> 00:12:05,440
+and you would just connect them
+ 
+
+747
+00:12:05,440 --> 00:12:06,949
+and you would just connect them
+appropriately. Now there is a way to
+
+748
+00:12:06,949 --> 00:12:06,959
+appropriately. Now there is a way to
+ 
+
+749
+00:12:06,959 --> 00:12:08,629
+appropriately. Now there is a way to
+connect to your entire agency but again
+
+750
+00:12:08,629 --> 00:12:08,639
+connect to your entire agency but again
+ 
+
+751
+00:12:08,639 --> 00:12:10,230
+connect to your entire agency but again
+you got to use that sporadically. This
+
+752
+00:12:10,230 --> 00:12:10,240
+you got to use that sporadically. This
+ 
+
+753
+00:12:10,240 --> 00:12:11,910
+you got to use that sporadically. This
+way you can communicate directly with
+
+754
+00:12:11,910 --> 00:12:11,920
+way you can communicate directly with
+ 
+
+755
+00:12:11,920 --> 00:12:14,389
+way you can communicate directly with
+the client. Now it looked at the 19 you
+
+756
+00:12:14,389 --> 00:12:14,399
+the client. Now it looked at the 19 you
+ 
+
+757
+00:12:14,399 --> 00:12:16,470
+the client. Now it looked at the 19 you
+know pipelines discovered 15 tags custom
+
+758
+00:12:16,470 --> 00:12:16,480
+know pipelines discovered 15 tags custom
+ 
+
+759
+00:12:16,480 --> 00:12:18,310
+know pipelines discovered 15 tags custom
+fields and everything else. Now one
+
+760
+00:12:18,310 --> 00:12:18,320
+fields and everything else. Now one
+ 
+
+761
+00:12:18,320 --> 00:12:19,829
+fields and everything else. Now one
+thing that we are correcting in the MD
+
+762
+00:12:19,829 --> 00:12:19,839
+thing that we are correcting in the MD
+ 
+
+763
+00:12:19,839 --> 00:12:21,190
+thing that we are correcting in the MD
+file or in the memory file is we don't
+
+764
+00:12:21,190 --> 00:12:21,200
+file or in the memory file is we don't
+ 
+
+765
+00:12:21,200 --> 00:12:22,230
+file or in the memory file is we don't
+want to store all the context
+
+766
+00:12:22,230 --> 00:12:22,240
+want to store all the context
+ 
+
+767
+00:12:22,240 --> 00:12:23,350
+want to store all the context
+conversations and anything else that
+
+768
+00:12:23,350 --> 00:12:23,360
+conversations and anything else that
+ 
+
+769
+00:12:23,360 --> 00:12:24,949
+conversations and anything else that
+might be too a little too crazy. But
+
+770
+00:12:24,949 --> 00:12:24,959
+might be too a little too crazy. But
+ 
+
+771
+00:12:24,959 --> 00:12:27,030
+might be too a little too crazy. But
+this at least will get you an idea to do
+
+772
+00:12:27,030 --> 00:12:27,040
+this at least will get you an idea to do
+ 
+
+773
+00:12:27,040 --> 00:12:28,790
+this at least will get you an idea to do
+that. So it knows what it's working with
+
+774
+00:12:28,790 --> 00:12:28,800
+that. So it knows what it's working with
+ 
+
+775
+00:12:28,800 --> 00:12:30,790
+that. So it knows what it's working with
+and how to tag and everything else. So
+
+776
+00:12:30,790 --> 00:12:30,800
+and how to tag and everything else. So
+ 
+
+777
+00:12:30,800 --> 00:12:33,190
+and how to tag and everything else. So
+here I can say who is in the lead
+
+778
+00:12:33,190 --> 00:12:33,200
+here I can say who is in the lead
+ 
+
+779
+00:12:33,200 --> 00:12:34,710
+here I can say who is in the lead
+management pipeline and how many
+
+780
+00:12:34,710 --> 00:12:34,720
+management pipeline and how many
+ 
+
+781
+00:12:34,720 --> 00:12:37,829
+management pipeline and how many
+contacts are in the new lead section and
+
+782
+00:12:37,829 --> 00:12:37,839
+contacts are in the new lead section and
+ 
+
+783
+00:12:37,839 --> 00:12:39,190
+contacts are in the new lead section and
+it might not be any because like again
+
+784
+00:12:39,190 --> 00:12:39,200
+it might not be any because like again
+ 
+
+785
+00:12:39,200 --> 00:12:40,870
+it might not be any because like again
+this is a test account but at least we
+
+786
+00:12:40,870 --> 00:12:40,880
+this is a test account but at least we
+ 
+
+787
+00:12:40,880 --> 00:12:42,069
+this is a test account but at least we
+can go in there and we can figure it
+
+788
+00:12:42,069 --> 00:12:42,079
+can go in there and we can figure it
+ 
+
+789
+00:12:42,079 --> 00:12:43,829
+can go in there and we can figure it
+out. And now what you can do is you can
+
+790
+00:12:43,829 --> 00:12:43,839
+out. And now what you can do is you can
+ 
+
+791
+00:12:43,839 --> 00:12:46,069
+out. And now what you can do is you can
+come in here and you can add an
+
+792
+00:12:46,069 --> 00:12:46,079
+come in here and you can add an
+ 
+
+793
+00:12:46,079 --> 00:12:48,069
+come in here and you can add an
+individual to a lead just by speaking
+
+794
+00:12:48,069 --> 00:12:48,079
+individual to a lead just by speaking
+ 
+
+795
+00:12:48,079 --> 00:12:49,750
+individual to a lead just by speaking
+it. If this is communicating with other
+
+796
+00:12:49,750 --> 00:12:49,760
+it. If this is communicating with other
+ 
+
+797
+00:12:49,760 --> 00:12:51,910
+it. If this is communicating with other
+agents, you can then now say okay give
+
+798
+00:12:51,910 --> 00:12:51,920
+agents, you can then now say okay give
+ 
+
+799
+00:12:51,920 --> 00:12:54,069
+agents, you can then now say okay give
+this to the lead magnet agent and make
+
+800
+00:12:54,069 --> 00:12:54,079
+this to the lead magnet agent and make
+ 
+
+801
+00:12:54,079 --> 00:12:55,990
+this to the lead magnet agent and make
+sure to put this person into a contact.
+
+802
+00:12:55,990 --> 00:12:56,000
+sure to put this person into a contact.
+ 
+
+803
+00:12:56,000 --> 00:12:57,110
+sure to put this person into a contact.
+And remember you're also going to have
+
+804
+00:12:57,110 --> 00:12:57,120
+And remember you're also going to have
+ 
+
+805
+00:12:57,120 --> 00:12:59,350
+And remember you're also going to have
+calendar abilities. So you could say
+
+806
+00:12:59,350 --> 00:12:59,360
+calendar abilities. So you could say
+ 
+
+807
+00:12:59,360 --> 00:13:00,870
+calendar abilities. So you could say
+what calendars do I have available and
+
+808
+00:13:00,870 --> 00:13:00,880
+what calendars do I have available and
+ 
+
+809
+00:13:00,880 --> 00:13:02,550
+what calendars do I have available and
+so forth and so on. And then it will do
+
+810
+00:13:02,550 --> 00:13:02,560
+so forth and so on. And then it will do
+ 
+
+811
+00:13:02,560 --> 00:13:04,790
+so forth and so on. And then it will do
+the same exact thing. So new lead, one
+
+812
+00:13:04,790 --> 00:13:04,800
+the same exact thing. So new lead, one
+ 
+
+813
+00:13:04,800 --> 00:13:06,389
+the same exact thing. So new lead, one
+contact. Boom. And it gives, you know,
+
+814
+00:13:06,389 --> 00:13:06,399
+contact. Boom. And it gives, you know,
+ 
+
+815
+00:13:06,399 --> 00:13:07,829
+contact. Boom. And it gives, you know,
+the contact name of everything that's in
+
+816
+00:13:07,829 --> 00:13:07,839
+the contact name of everything that's in
+ 
+
+817
+00:13:07,839 --> 00:13:09,990
+the contact name of everything that's in
+there, which is amazing. And now if we
+
+818
+00:13:09,990 --> 00:13:10,000
+there, which is amazing. And now if we
+ 
+
+819
+00:13:10,000 --> 00:13:11,030
+there, which is amazing. And now if we
+want to, let's just clear this
+
+820
+00:13:11,030 --> 00:13:11,040
+want to, let's just clear this
+ 
+
+821
+00:13:11,040 --> 00:13:13,190
+want to, let's just clear this
+conversation. I can say what calendars
+
+822
+00:13:13,190 --> 00:13:13,200
+conversation. I can say what calendars
+ 
+
+823
+00:13:13,200 --> 00:13:14,790
+conversation. I can say what calendars
+do I have available for me inside of
+
+824
+00:13:14,790 --> 00:13:14,800
+do I have available for me inside of
+ 
+
+825
+00:13:14,800 --> 00:13:16,230
+do I have available for me inside of
+GHL. And it's going to pull the
+
+826
+00:13:16,230 --> 00:13:16,240
+GHL. And it's going to pull the
+ 
+
+827
+00:13:16,240 --> 00:13:17,590
+GHL. And it's going to pull the
+calendars to see which calendars are
+
+828
+00:13:17,590 --> 00:13:17,600
+calendars to see which calendars are
+ 
+
+829
+00:13:17,600 --> 00:13:19,509
+calendars to see which calendars are
+available. And then again, remember what
+
+830
+00:13:19,509 --> 00:13:19,519
+available. And then again, remember what
+ 
+
+831
+00:13:19,519 --> 00:13:21,110
+available. And then again, remember what
+we're doing here is we're printing raw
+
+832
+00:13:21,110 --> 00:13:21,120
+we're doing here is we're printing raw
+ 
+
+833
+00:13:21,120 --> 00:13:22,550
+we're doing here is we're printing raw
+information. But at the end of the day,
+
+834
+00:13:22,550 --> 00:13:22,560
+information. But at the end of the day,
+ 
+
+835
+00:13:22,560 --> 00:13:24,230
+information. But at the end of the day,
+like if this is connected to other apps
+
+836
+00:13:24,230 --> 00:13:24,240
+like if this is connected to other apps
+ 
+
+837
+00:13:24,240 --> 00:13:25,590
+like if this is connected to other apps
+or you're speaking it, you could just
+
+838
+00:13:25,590 --> 00:13:25,600
+or you're speaking it, you could just
+ 
+
+839
+00:13:25,600 --> 00:13:27,190
+or you're speaking it, you could just
+say make an appointment for such and
+
+840
+00:13:27,190 --> 00:13:27,200
+say make an appointment for such and
+ 
+
+841
+00:13:27,200 --> 00:13:29,509
+say make an appointment for such and
+such. use GHL to put a calendar on this
+
+842
+00:13:29,509 --> 00:13:29,519
+such. use GHL to put a calendar on this
+ 
+
+843
+00:13:29,519 --> 00:13:31,350
+such. use GHL to put a calendar on this
+particular calendar and then it will go
+
+844
+00:13:31,350 --> 00:13:31,360
+particular calendar and then it will go
+ 
+
+845
+00:13:31,360 --> 00:13:33,990
+particular calendar and then it will go
+do its thing to make sure that it's able
+
+846
+00:13:33,990 --> 00:13:34,000
+do its thing to make sure that it's able
+ 
+
+847
+00:13:34,000 --> 00:13:36,710
+do its thing to make sure that it's able
+to go in and do the entire process which
+
+848
+00:13:36,710 --> 00:13:36,720
+to go in and do the entire process which
+ 
+
+849
+00:13:36,720 --> 00:13:38,870
+to go in and do the entire process which
+is amazing right okay so it's saying get
+
+850
+00:13:38,870 --> 00:13:38,880
+is amazing right okay so it's saying get
+ 
+
+851
+00:13:38,880 --> 00:13:40,870
+is amazing right okay so it's saying get
+calendar events benches the specific and
+
+852
+00:13:40,870 --> 00:13:40,880
+calendar events benches the specific and
+ 
+
+853
+00:13:40,880 --> 00:13:42,870
+calendar events benches the specific and
+it needs a calendar ID so it's saying
+
+854
+00:13:42,870 --> 00:13:42,880
+it needs a calendar ID so it's saying
+ 
+
+855
+00:13:42,880 --> 00:13:44,310
+it needs a calendar ID so it's saying
+that it has a location ID but
+
+856
+00:13:44,310 --> 00:13:44,320
+that it has a location ID but
+ 
+
+857
+00:13:44,320 --> 00:13:46,310
+that it has a location ID but
+unfortunately GHL tools don't include a
+
+858
+00:13:46,310 --> 00:13:46,320
+unfortunately GHL tools don't include a
+ 
+
+859
+00:13:46,320 --> 00:13:48,069
+unfortunately GHL tools don't include a
+list calendars endpoint and it could
+
+860
+00:13:48,069 --> 00:13:48,079
+list calendars endpoint and it could
+ 
+
+861
+00:13:48,079 --> 00:13:49,750
+list calendars endpoint and it could
+have been me that I maybe didn't have it
+
+862
+00:13:49,750 --> 00:13:49,760
+have been me that I maybe didn't have it
+ 
+
+863
+00:13:49,760 --> 00:13:51,829
+have been me that I maybe didn't have it
+so we would just go to the calendar ID
+
+864
+00:13:51,829 --> 00:13:51,839
+so we would just go to the calendar ID
+ 
+
+865
+00:13:51,839 --> 00:13:54,310
+so we would just go to the calendar ID
+or user group so if I'm back in GHL I
+
+866
+00:13:54,310 --> 00:13:54,320
+or user group so if I'm back in GHL I
+ 
+
+867
+00:13:54,320 --> 00:13:56,069
+or user group so if I'm back in GHL I
+would just have all my calendar IDs
+
+868
+00:13:56,069 --> 00:13:56,079
+would just have all my calendar IDs
+ 
+
+869
+00:13:56,079 --> 00:13:59,110
+would just have all my calendar IDs
+listed in here. So I go to GHL, go to my
+
+870
+00:13:59,110 --> 00:13:59,120
+listed in here. So I go to GHL, go to my
+ 
+
+871
+00:13:59,120 --> 00:14:01,750
+listed in here. So I go to GHL, go to my
+cloud MD file and I would tell here's
+
+872
+00:14:01,750 --> 00:14:01,760
+cloud MD file and I would tell here's
+ 
+
+873
+00:14:01,760 --> 00:14:03,189
+cloud MD file and I would tell here's
+the available skills but then I would
+
+874
+00:14:03,189 --> 00:14:03,199
+the available skills but then I would
+ 
+
+875
+00:14:03,199 --> 00:14:06,470
+the available skills but then I would
+also say here are my common calendar ids
+
+876
+00:14:06,470 --> 00:14:06,480
+also say here are my common calendar ids
+ 
+
+877
+00:14:06,480 --> 00:14:08,069
+also say here are my common calendar ids
+and you would get all the calendar ids
+
+878
+00:14:08,069 --> 00:14:08,079
+and you would get all the calendar ids
+ 
+
+879
+00:14:08,079 --> 00:14:10,230
+and you would get all the calendar ids
+from GHL and so forth and so on. There
+
+880
+00:14:10,230 --> 00:14:10,240
+from GHL and so forth and so on. There
+ 
+
+881
+00:14:10,240 --> 00:14:13,189
+from GHL and so forth and so on. There
+is some nice ideas of checking the
+
+882
+00:14:13,189 --> 00:14:13,199
+is some nice ideas of checking the
+ 
+
+883
+00:14:13,199 --> 00:14:14,790
+is some nice ideas of checking the
+pipelines of things that you can do in
+
+884
+00:14:14,790 --> 00:14:14,800
+pipelines of things that you can do in
+ 
+
+885
+00:14:14,800 --> 00:14:16,629
+pipelines of things that you can do in
+here. But again now you can come in here
+
+886
+00:14:16,629 --> 00:14:16,639
+here. But again now you can come in here
+ 
+
+887
+00:14:16,639 --> 00:14:17,990
+here. But again now you can come in here
+and you can integrate and you can
+
+888
+00:14:17,990 --> 00:14:18,000
+and you can integrate and you can
+ 
+
+889
+00:14:18,000 --> 00:14:19,910
+and you can integrate and you can
+communicate with your actual GHL
+
+890
+00:14:19,910 --> 00:14:19,920
+communicate with your actual GHL
+ 
+
+891
+00:14:19,920 --> 00:14:21,269
+communicate with your actual GHL
+account. And just remember this is now
+
+892
+00:14:21,269 --> 00:14:21,279
+account. And just remember this is now
+ 
+
+893
+00:14:21,279 --> 00:14:23,269
+account. And just remember this is now
+part one of like your agent team. You
+
+894
+00:14:23,269 --> 00:14:23,279
+part one of like your agent team. You
+ 
+
+895
+00:14:23,279 --> 00:14:24,710
+part one of like your agent team. You
+now can come in here and you can do
+
+896
+00:14:24,710 --> 00:14:24,720
+now can come in here and you can do
+ 
+
+897
+00:14:24,720 --> 00:14:26,470
+now can come in here and you can do
+whatever you want and add more agents
+
+898
+00:14:26,470 --> 00:14:26,480
+whatever you want and add more agents
+ 
+
+899
+00:14:26,480 --> 00:14:28,629
+whatever you want and add more agents
+and make a full AI agent team that can
+
+900
+00:14:28,629 --> 00:14:28,639
+and make a full AI agent team that can
+ 
+
+901
+00:14:28,639 --> 00:14:29,910
+and make a full AI agent team that can
+communicate with each other and get
+
+902
+00:14:29,910 --> 00:14:29,920
+communicate with each other and get
+ 
+
+903
+00:14:29,920 --> 00:14:31,590
+communicate with each other and get
+everything done for you. So hopefully
+
+904
+00:14:31,590 --> 00:14:31,600
+everything done for you. So hopefully
+ 
+
+905
+00:14:31,600 --> 00:14:32,870
+everything done for you. So hopefully
+this helps and we'll see you in the next
+
+906
+00:14:32,870 --> 00:14:32,880
+this helps and we'll see you in the next
+ 
+
+907
+00:14:32,880 --> 00:14:37,045
+this helps and we'll see you in the next
+one.
+
+908
+00:14:37,045 --> 00:14:37,055
+
+ 
+
+909
+00:14:37,055 --> 00:14:39,075
+
+>> [music]
+

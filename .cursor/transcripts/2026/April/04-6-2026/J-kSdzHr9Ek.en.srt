@@ -1,0 +1,8175 @@
+1
+00:00:00,080 --> 00:00:02,310
+
+There is a new generation of AI agents
+
+2
+00:00:02,310 --> 00:00:02,320
+There is a new generation of AI agents
+ 
+
+3
+00:00:02,320 --> 00:00:04,309
+There is a new generation of AI agents
+emerging and most of them they forget
+
+4
+00:00:04,309 --> 00:00:04,319
+emerging and most of them they forget
+ 
+
+5
+00:00:04,319 --> 00:00:06,470
+emerging and most of them they forget
+everything they learn. Hermes agent, it
+
+6
+00:00:06,470 --> 00:00:06,480
+everything they learn. Hermes agent, it
+ 
+
+7
+00:00:06,480 --> 00:00:08,390
+everything they learn. Hermes agent, it
+does not. It's built by news research.
+
+8
+00:00:08,390 --> 00:00:08,400
+does not. It's built by news research.
+ 
+
+9
+00:00:08,400 --> 00:00:10,150
+does not. It's built by news research.
+It's open source and it is the only
+
+10
+00:00:10,150 --> 00:00:10,160
+It's open source and it is the only
+ 
+
+11
+00:00:10,160 --> 00:00:11,749
+It's open source and it is the only
+agent framework with a built-in learning
+
+12
+00:00:11,749 --> 00:00:11,759
+agent framework with a built-in learning
+ 
+
+13
+00:00:11,759 --> 00:00:13,749
+agent framework with a built-in learning
+system that actually improves over time.
+
+14
+00:00:13,749 --> 00:00:13,759
+system that actually improves over time.
+ 
+
+15
+00:00:13,759 --> 00:00:15,350
+system that actually improves over time.
+Now, in this video, we're going to go
+
+16
+00:00:15,350 --> 00:00:15,360
+Now, in this video, we're going to go
+ 
+
+17
+00:00:15,360 --> 00:00:17,349
+Now, in this video, we're going to go
+deep on how it works, why it's different
+
+18
+00:00:17,349 --> 00:00:17,359
+deep on how it works, why it's different
+ 
+
+19
+00:00:17,359 --> 00:00:19,269
+deep on how it works, why it's different
+from any other agent out there, and
+
+20
+00:00:19,269 --> 00:00:19,279
+from any other agent out there, and
+ 
+
+21
+00:00:19,279 --> 00:00:20,390
+from any other agent out there, and
+whether it's the right choice for you.
+
+22
+00:00:20,390 --> 00:00:20,400
+whether it's the right choice for you.
+ 
+
+23
+00:00:20,400 --> 00:00:22,470
+whether it's the right choice for you.
+Now, the AI agent space right now, it's
+
+24
+00:00:22,470 --> 00:00:22,480
+Now, the AI agent space right now, it's
+ 
+
+25
+00:00:22,480 --> 00:00:25,349
+Now, the AI agent space right now, it's
+essentially like the web wars in 1995.
+
+26
+00:00:25,349 --> 00:00:25,359
+essentially like the web wars in 1995.
+ 
+
+27
+00:00:25,359 --> 00:00:27,109
+essentially like the web wars in 1995.
+Everyone's building them. That's Chrome,
+
+28
+00:00:27,109 --> 00:00:27,119
+Everyone's building them. That's Chrome,
+ 
+
+29
+00:00:27,119 --> 00:00:29,669
+Everyone's building them. That's Chrome,
+Firefox, Safari, except for agents.
+
+30
+00:00:29,669 --> 00:00:29,679
+Firefox, Safari, except for agents.
+ 
+
+31
+00:00:29,679 --> 00:00:31,349
+Firefox, Safari, except for agents.
+There's no consensus yet on what
+
+32
+00:00:31,349 --> 00:00:31,359
+There's no consensus yet on what
+ 
+
+33
+00:00:31,359 --> 00:00:32,790
+There's no consensus yet on what
+actually matters. [music] Now, most
+
+34
+00:00:32,790 --> 00:00:32,800
+actually matters. [music] Now, most
+ 
+
+35
+00:00:32,800 --> 00:00:34,790
+actually matters. [music] Now, most
+agent frameworks, they treat the agent
+
+36
+00:00:34,790 --> 00:00:34,800
+agent frameworks, they treat the agent
+ 
+
+37
+00:00:34,800 --> 00:00:37,190
+agent frameworks, they treat the agent
+as stateless. So, you ask it something,
+
+38
+00:00:37,190 --> 00:00:37,200
+as stateless. So, you ask it something,
+ 
+
+39
+00:00:37,200 --> 00:00:39,110
+as stateless. So, you ask it something,
+it answers, and if you ask the same
+
+40
+00:00:39,110 --> 00:00:39,120
+it answers, and if you ask the same
+ 
+
+41
+00:00:39,120 --> 00:00:41,430
+it answers, and if you ask the same
+question next week, it starts from zero.
+
+42
+00:00:41,430 --> 00:00:41,440
+question next week, it starts from zero.
+ 
+
+43
+00:00:41,440 --> 00:00:42,950
+question next week, it starts from zero.
+Hermes, it does not work [music] that
+
+44
+00:00:42,950 --> 00:00:42,960
+Hermes, it does not work [music] that
+ 
+
+45
+00:00:42,960 --> 00:00:44,790
+Hermes, it does not work [music] that
+way. It's built on a core assumption
+
+46
+00:00:44,790 --> 00:00:44,800
+way. It's built on a core assumption
+ 
+
+47
+00:00:44,800 --> 00:00:47,029
+way. It's built on a core assumption
+that an AI agent learns from its
+
+48
+00:00:47,029 --> 00:00:47,039
+that an AI agent learns from its
+ 
+
+49
+00:00:47,039 --> 00:00:48,709
+that an AI agent learns from its
+interactions and becomes more valuable
+
+50
+00:00:48,709 --> 00:00:48,719
+interactions and becomes more valuable
+ 
+
+51
+00:00:48,719 --> 00:00:49,910
+interactions and becomes more valuable
+over time. And that's not just a
+
+52
+00:00:49,910 --> 00:00:49,920
+over time. And that's not just a
+ 
+
+53
+00:00:49,920 --> 00:00:51,270
+over time. And that's not just a
+marketing spin. Like, it's a completely
+
+54
+00:00:51,270 --> 00:00:51,280
+marketing spin. Like, it's a completely
+ 
+
+55
+00:00:51,280 --> 00:00:52,630
+marketing spin. Like, it's a completely
+different architecture and it changes
+
+56
+00:00:52,630 --> 00:00:52,640
+different architecture and it changes
+ 
+
+57
+00:00:52,640 --> 00:00:54,470
+different architecture and it changes
+what you can actually build with it. So,
+
+58
+00:00:54,470 --> 00:00:54,480
+what you can actually build with it. So,
+ 
+
+59
+00:00:54,480 --> 00:00:55,750
+what you can actually build with it. So,
+let's break down what that actually
+
+60
+00:00:55,750 --> 00:00:55,760
+let's break down what that actually
+ 
+
+61
+00:00:55,760 --> 00:00:56,869
+let's break down what that actually
+means. And really quick, if you're new
+
+62
+00:00:56,869 --> 00:00:56,879
+means. And really quick, if you're new
+ 
+
+63
+00:00:56,879 --> 00:00:57,910
+means. And really quick, if you're new
+to the [music] channel, my name is Nick.
+
+64
+00:00:57,910 --> 00:00:57,920
+to the [music] channel, my name is Nick.
+ 
+
+65
+00:00:57,920 --> 00:00:59,270
+to the [music] channel, my name is Nick.
+I've spent the last 2 years helping
+
+66
+00:00:59,270 --> 00:00:59,280
+I've spent the last 2 years helping
+ 
+
+67
+00:00:59,280 --> 00:01:01,349
+I've spent the last 2 years helping
+companies implement AI, driving over $5
+
+68
+00:01:01,349 --> 00:01:01,359
+companies implement AI, driving over $5
+ 
+
+69
+00:01:01,359 --> 00:01:03,029
+companies implement AI, driving over $5
+million in bottomline revenue across
+
+70
+00:01:03,029 --> 00:01:03,039
+million in bottomline revenue across
+ 
+
+71
+00:01:03,039 --> 00:01:04,229
+million in bottomline revenue across
+clients, helping hundreds of
+
+72
+00:01:04,229 --> 00:01:04,239
+clients, helping hundreds of
+ 
+
+73
+00:01:04,239 --> 00:01:06,149
+clients, helping hundreds of
+entrepreneurs build AI businesses. In
+
+74
+00:01:06,149 --> 00:01:06,159
+entrepreneurs build AI businesses. In
+ 
+
+75
+00:01:06,159 --> 00:01:08,070
+entrepreneurs build AI businesses. In
+today's video, it is directly relevant
+
+76
+00:01:08,070 --> 00:01:08,080
+today's video, it is directly relevant
+ 
+
+77
+00:01:08,080 --> 00:01:09,350
+today's video, it is directly relevant
+because if you're building anything with
+
+78
+00:01:09,350 --> 00:01:09,360
+because if you're building anything with
+ 
+
+79
+00:01:09,360 --> 00:01:11,190
+because if you're building anything with
+AI agents, you need to understand the
+
+80
+00:01:11,190 --> 00:01:11,200
+AI agents, you need to understand the
+ 
+
+81
+00:01:11,200 --> 00:01:12,950
+AI agents, you need to understand the
+actual architectural choices that
+
+82
+00:01:12,950 --> 00:01:12,960
+actual architectural choices that
+ 
+
+83
+00:01:12,960 --> 00:01:15,429
+actual architectural choices that
+separate a tool that stagnates from one
+
+84
+00:01:15,429 --> 00:01:15,439
+separate a tool that stagnates from one
+ 
+
+85
+00:01:15,439 --> 00:01:17,749
+separate a tool that stagnates from one
+that improves. Now, Hermes agent, it
+
+86
+00:01:17,749 --> 00:01:17,759
+that improves. Now, Hermes agent, it
+ 
+
+87
+00:01:17,759 --> 00:01:19,350
+that improves. Now, Hermes agent, it
+represents a fundamentally different bet
+
+88
+00:01:19,350 --> 00:01:19,360
+represents a fundamentally different bet
+ 
+
+89
+00:01:19,360 --> 00:01:21,190
+represents a fundamentally different bet
+on how agents should be working. So,
+
+90
+00:01:21,190 --> 00:01:21,200
+on how agents should be working. So,
+ 
+
+91
+00:01:21,200 --> 00:01:22,630
+on how agents should be working. So,
+what actually is this framework? Well,
+
+92
+00:01:22,630 --> 00:01:22,640
+what actually is this framework? Well,
+ 
+
+93
+00:01:22,640 --> 00:01:23,910
+what actually is this framework? Well,
+Hermes agent, this is just an
+
+94
+00:01:23,910 --> 00:01:23,920
+Hermes agent, this is just an
+ 
+
+95
+00:01:23,920 --> 00:01:25,910
+Hermes agent, this is just an
+open-source self-improving AI agent
+
+96
+00:01:25,910 --> 00:01:25,920
+open-source self-improving AI agent
+ 
+
+97
+00:01:25,920 --> 00:01:27,910
+open-source self-improving AI agent
+framework. It's built by News Research,
+
+98
+00:01:27,910 --> 00:01:27,920
+framework. It's built by News Research,
+ 
+
+99
+00:01:27,920 --> 00:01:30,550
+framework. It's built by News Research,
+so it's version 0.6.0.
+
+100
+00:01:30,550 --> 00:01:30,560
+so it's version 0.6.0.
+ 
+
+101
+00:01:30,560 --> 00:01:32,149
+so it's version 0.6.0.
+It is production ready. There's also a
+
+102
+00:01:32,149 --> 00:01:32,159
+It is production ready. There's also a
+ 
+
+103
+00:01:32,159 --> 00:01:33,990
+It is production ready. There's also a
+very strong adoption. They have about
+
+104
+00:01:33,990 --> 00:01:34,000
+very strong adoption. They have about
+ 
+
+105
+00:01:34,000 --> 00:01:36,469
+very strong adoption. They have about
+19,000 GitHub stars, solid community,
+
+106
+00:01:36,469 --> 00:01:36,479
+19,000 GitHub stars, solid community,
+ 
+
+107
+00:01:36,479 --> 00:01:39,190
+19,000 GitHub stars, solid community,
+and about 200 plus contributors. It's
+
+108
+00:01:39,190 --> 00:01:39,200
+and about 200 plus contributors. It's
+ 
+
+109
+00:01:39,200 --> 00:01:41,590
+and about 200 plus contributors. It's
+also MIT licensed. It's fully commercial
+
+110
+00:01:41,590 --> 00:01:41,600
+also MIT licensed. It's fully commercial
+ 
+
+111
+00:01:41,600 --> 00:01:43,429
+also MIT licensed. It's fully commercial
+friendly. Here's the thing. Hermes, it
+
+112
+00:01:43,429 --> 00:01:43,439
+friendly. Here's the thing. Hermes, it
+ 
+
+113
+00:01:43,439 --> 00:01:45,109
+friendly. Here's the thing. Hermes, it
+does three different things. It is a
+
+114
+00:01:45,109 --> 00:01:45,119
+does three different things. It is a
+ 
+
+115
+00:01:45,119 --> 00:01:47,190
+does three different things. It is a
+fullfeatured agent that can use over 40
+
+116
+00:01:47,190 --> 00:01:47,200
+fullfeatured agent that can use over 40
+ 
+
+117
+00:01:47,200 --> 00:01:48,789
+fullfeatured agent that can use over 40
+different tools like web search,
+
+118
+00:01:48,789 --> 00:01:48,799
+different tools like web search,
+ 
+
+119
+00:01:48,799 --> 00:01:50,789
+different tools like web search,
+terminal, file system, browser
+
+120
+00:01:50,789 --> 00:01:50,799
+terminal, file system, browser
+ 
+
+121
+00:01:50,799 --> 00:01:52,789
+terminal, file system, browser
+automation, code execution, image
+
+122
+00:01:52,789 --> 00:01:52,799
+automation, code execution, image
+ 
+
+123
+00:01:52,799 --> 00:01:55,109
+automation, code execution, image
+generation, text to speech, and even
+
+124
+00:01:55,109 --> 00:01:55,119
+generation, text to speech, and even
+ 
+
+125
+00:01:55,119 --> 00:01:56,870
+generation, text to speech, and even
+vision. It's also got a messaging
+
+126
+00:01:56,870 --> 00:01:56,880
+vision. It's also got a messaging
+ 
+
+127
+00:01:56,880 --> 00:01:58,469
+vision. It's also got a messaging
+gateway so you can talk to it from your
+
+128
+00:01:58,469 --> 00:01:58,479
+gateway so you can talk to it from your
+ 
+
+129
+00:01:58,479 --> 00:02:00,310
+gateway so you can talk to it from your
+terminal. You can connect it to
+
+130
+00:02:00,310 --> 00:02:00,320
+terminal. You can connect it to
+ 
+
+131
+00:02:00,320 --> 00:02:02,789
+terminal. You can connect it to
+Telegram, Discord, Slack, WhatsApp,
+
+132
+00:02:02,789 --> 00:02:02,799
+Telegram, Discord, Slack, WhatsApp,
+ 
+
+133
+00:02:02,799 --> 00:02:06,069
+Telegram, Discord, Slack, WhatsApp,
+Signal, even email all from one process.
+
+134
+00:02:06,069 --> 00:02:06,079
+Signal, even email all from one process.
+ 
+
+135
+00:02:06,079 --> 00:02:07,270
+Signal, even email all from one process.
+And it has a built-in [clears throat]
+
+136
+00:02:07,270 --> 00:02:07,280
+And it has a built-in [clears throat]
+ 
+
+137
+00:02:07,280 --> 00:02:08,790
+And it has a built-in [clears throat]
+learning system. So that is the part
+
+138
+00:02:08,790 --> 00:02:08,800
+learning system. So that is the part
+ 
+
+139
+00:02:08,800 --> 00:02:11,029
+learning system. So that is the part
+that is actually different. It doesn't
+
+140
+00:02:11,029 --> 00:02:11,039
+that is actually different. It doesn't
+ 
+
+141
+00:02:11,039 --> 00:02:12,949
+that is actually different. It doesn't
+just run tests, it learns from them.
+
+142
+00:02:12,949 --> 00:02:12,959
+just run tests, it learns from them.
+ 
+
+143
+00:02:12,959 --> 00:02:14,470
+just run tests, it learns from them.
+It's also built on Python. So that's
+
+144
+00:02:14,470 --> 00:02:14,480
+It's also built on Python. So that's
+ 
+
+145
+00:02:14,480 --> 00:02:18,309
+It's also built on Python. So that's
+about 92% of the codebase. 92.5%
+
+146
+00:02:18,309 --> 00:02:18,319
+about 92% of the codebase. 92.5%
+ 
+
+147
+00:02:18,319 --> 00:02:19,910
+about 92% of the codebase. 92.5%
+actually, which actually matters because
+
+148
+00:02:19,910 --> 00:02:19,920
+actually, which actually matters because
+ 
+
+149
+00:02:19,920 --> 00:02:21,830
+actually, which actually matters because
+most AI infrastructures, it lives inside
+
+150
+00:02:21,830 --> 00:02:21,840
+most AI infrastructures, it lives inside
+ 
+
+151
+00:02:21,840 --> 00:02:24,470
+most AI infrastructures, it lives inside
+of Python. So any LLM APIs, any
+
+152
+00:02:24,470 --> 00:02:24,480
+of Python. So any LLM APIs, any
+ 
+
+153
+00:02:24,480 --> 00:02:26,949
+of Python. So any LLM APIs, any
+transformers, any training frameworks
+
+154
+00:02:26,949 --> 00:02:26,959
+transformers, any training frameworks
+ 
+
+155
+00:02:26,959 --> 00:02:28,949
+transformers, any training frameworks
+and you can integrate it, you can debug
+
+156
+00:02:28,949 --> 00:02:28,959
+and you can integrate it, you can debug
+ 
+
+157
+00:02:28,959 --> 00:02:31,190
+and you can integrate it, you can debug
+it and you can extend it if necessary.
+
+158
+00:02:31,190 --> 00:02:31,200
+it and you can extend it if necessary.
+ 
+
+159
+00:02:31,200 --> 00:02:32,390
+it and you can extend it if necessary.
+So with that being said, the
+
+160
+00:02:32,390 --> 00:02:32,400
+So with that being said, the
+ 
+
+161
+00:02:32,400 --> 00:02:34,229
+So with that being said, the
+installation it takes about 60 seconds.
+
+162
+00:02:34,229 --> 00:02:34,239
+installation it takes about 60 seconds.
+ 
+
+163
+00:02:34,239 --> 00:02:36,070
+installation it takes about 60 seconds.
+It's just one batch command and it
+
+164
+00:02:36,070 --> 00:02:36,080
+It's just one batch command and it
+ 
+
+165
+00:02:36,080 --> 00:02:38,869
+It's just one batch command and it
+handles Python, NodeJS, everything. All
+
+166
+00:02:38,869 --> 00:02:38,879
+handles Python, NodeJS, everything. All
+ 
+
+167
+00:02:38,879 --> 00:02:40,550
+handles Python, NodeJS, everything. All
+right, here's where Hermes gets very
+
+168
+00:02:40,550 --> 00:02:40,560
+right, here's where Hermes gets very
+ 
+
+169
+00:02:40,560 --> 00:02:42,229
+right, here's where Hermes gets very
+interesting and why all these tools and
+
+170
+00:02:42,229 --> 00:02:42,239
+interesting and why all these tools and
+ 
+
+171
+00:02:42,239 --> 00:02:44,229
+interesting and why all these tools and
+platforms actually matter. Now most
+
+172
+00:02:44,229 --> 00:02:44,239
+platforms actually matter. Now most
+ 
+
+173
+00:02:44,239 --> 00:02:46,229
+platforms actually matter. Now most
+agents, these are effectively just
+
+174
+00:02:46,229 --> 00:02:46,239
+agents, these are effectively just
+ 
+
+175
+00:02:46,239 --> 00:02:49,910
+agents, these are effectively just
+tools. So you are using a tool, it helps
+
+176
+00:02:49,910 --> 00:02:49,920
+tools. So you are using a tool, it helps
+ 
+
+177
+00:02:49,920 --> 00:02:52,229
+tools. So you are using a tool, it helps
+you, you move on. Simple as that. Now,
+
+178
+00:02:52,229 --> 00:02:52,239
+you, you move on. Simple as that. Now,
+ 
+
+179
+00:02:52,239 --> 00:02:54,070
+you, you move on. Simple as that. Now,
+Hermes, it treats itself like a product
+
+180
+00:02:54,070 --> 00:02:54,080
+Hermes, it treats itself like a product
+ 
+
+181
+00:02:54,080 --> 00:02:55,350
+Hermes, it treats itself like a product
+that is just going to get better and
+
+182
+00:02:55,350 --> 00:02:55,360
+that is just going to get better and
+ 
+
+183
+00:02:55,360 --> 00:02:56,790
+that is just going to get better and
+better. So, think about how this
+
+184
+00:02:56,790 --> 00:02:56,800
+better. So, think about how this
+ 
+
+185
+00:02:56,800 --> 00:02:58,869
+better. So, think about how this
+actually can work in practice. Hermes,
+
+186
+00:02:58,869 --> 00:02:58,879
+actually can work in practice. Hermes,
+ 
+
+187
+00:02:58,879 --> 00:03:01,830
+actually can work in practice. Hermes,
+it is going to store everything. So, you
+
+188
+00:03:01,830 --> 00:03:01,840
+it is going to store everything. So, you
+ 
+
+189
+00:03:01,840 --> 00:03:03,990
+it is going to store everything. So, you
+have this folder right here. So, this is
+
+190
+00:03:03,990 --> 00:03:04,000
+have this folder right here. So, this is
+ 
+
+191
+00:03:04,000 --> 00:03:06,710
+have this folder right here. So, this is
+going to be every conversation inside of
+
+192
+00:03:06,710 --> 00:03:06,720
+going to be every conversation inside of
+ 
+
+193
+00:03:06,720 --> 00:03:09,910
+going to be every conversation inside of
+it. You have every task. You have every
+
+194
+00:03:09,910 --> 00:03:09,920
+it. You have every task. You have every
+ 
+
+195
+00:03:09,920 --> 00:03:11,589
+it. You have every task. You have every
+question. This is starting to look like
+
+196
+00:03:11,589 --> 00:03:11,599
+question. This is starting to look like
+ 
+
+197
+00:03:11,599 --> 00:03:13,430
+question. This is starting to look like
+a face, but but anyways, it is going to
+
+198
+00:03:13,430 --> 00:03:13,440
+a face, but but anyways, it is going to
+ 
+
+199
+00:03:13,440 --> 00:03:15,270
+a face, but but anyways, it is going to
+be able to search its own past using
+
+200
+00:03:15,270 --> 00:03:15,280
+be able to search its own past using
+ 
+
+201
+00:03:15,280 --> 00:03:17,509
+be able to search its own past using
+full text search. And when it finds
+
+202
+00:03:17,509 --> 00:03:17,519
+full text search. And when it finds
+ 
+
+203
+00:03:17,519 --> 00:03:18,949
+full text search. And when it finds
+something that's going to be relevant,
+
+204
+00:03:18,949 --> 00:03:18,959
+something that's going to be relevant,
+ 
+
+205
+00:03:18,959 --> 00:03:20,949
+something that's going to be relevant,
+it's then going to summarize that from
+
+206
+00:03:20,949 --> 00:03:20,959
+it's then going to summarize that from
+ 
+
+207
+00:03:20,959 --> 00:03:22,550
+it's then going to summarize that from
+there. So 6 months from now you can ask
+
+208
+00:03:22,550 --> 00:03:22,560
+there. So 6 months from now you can ask
+ 
+
+209
+00:03:22,560 --> 00:03:23,830
+there. So 6 months from now you can ask
+something as simple as like haven't we
+
+210
+00:03:23,830 --> 00:03:23,840
+something as simple as like haven't we
+ 
+
+211
+00:03:23,840 --> 00:03:25,589
+something as simple as like haven't we
+solved something like this in the past
+
+212
+00:03:25,589 --> 00:03:25,599
+solved something like this in the past
+ 
+
+213
+00:03:25,599 --> 00:03:27,430
+solved something like this in the past
+and it should be able to find that it'll
+
+214
+00:03:27,430 --> 00:03:27,440
+and it should be able to find that it'll
+ 
+
+215
+00:03:27,440 --> 00:03:29,750
+and it should be able to find that it'll
+know it will actually be able to
+
+216
+00:03:29,750 --> 00:03:29,760
+know it will actually be able to
+ 
+
+217
+00:03:29,760 --> 00:03:31,350
+know it will actually be able to
+remember. Now with this it's able to
+
+218
+00:03:31,350 --> 00:03:31,360
+remember. Now with this it's able to
+ 
+
+219
+00:03:31,360 --> 00:03:33,670
+remember. Now with this it's able to
+actually create some skills from here
+
+220
+00:03:33,670 --> 00:03:33,680
+actually create some skills from here
+ 
+
+221
+00:03:33,680 --> 00:03:35,589
+actually create some skills from here
+with that. So this comes about week
+
+222
+00:03:35,589 --> 00:03:35,599
+with that. So this comes about week
+ 
+
+223
+00:03:35,599 --> 00:03:37,589
+with that. So this comes about week
+four. This is all hypothetical by the
+
+224
+00:03:37,589 --> 00:03:37,599
+four. This is all hypothetical by the
+ 
+
+225
+00:03:37,599 --> 00:03:39,750
+four. This is all hypothetical by the
+way. So let's say you ask it to just
+
+226
+00:03:39,750 --> 00:03:39,760
+way. So let's say you ask it to just
+ 
+
+227
+00:03:39,760 --> 00:03:41,830
+way. So let's say you ask it to just
+like analyze my monthly revenue, pull
+
+228
+00:03:41,830 --> 00:03:41,840
+like analyze my monthly revenue, pull
+ 
+
+229
+00:03:41,840 --> 00:03:44,789
+like analyze my monthly revenue, pull
+data from Stripe and also HubSpot and
+
+230
+00:03:44,789 --> 00:03:44,799
+data from Stripe and also HubSpot and
+ 
+
+231
+00:03:44,799 --> 00:03:46,630
+data from Stripe and also HubSpot and
+then send me just a weekly summary with
+
+232
+00:03:46,630 --> 00:03:46,640
+then send me just a weekly summary with
+ 
+
+233
+00:03:46,640 --> 00:03:49,350
+then send me just a weekly summary with
+three insights every single Tuesday.
+
+234
+00:03:49,350 --> 00:03:49,360
+three insights every single Tuesday.
+ 
+
+235
+00:03:49,360 --> 00:03:51,509
+three insights every single Tuesday.
+Now, Hermes, it'll do it for you. So,
+
+236
+00:03:51,509 --> 00:03:51,519
+Now, Hermes, it'll do it for you. So,
+ 
+
+237
+00:03:51,519 --> 00:03:53,830
+Now, Hermes, it'll do it for you. So,
+the first time it'll be maybe 20
+
+238
+00:03:53,830 --> 00:03:53,840
+the first time it'll be maybe 20
+ 
+
+239
+00:03:53,840 --> 00:03:56,390
+the first time it'll be maybe 20
+different steps. It'll be multiple API
+
+240
+00:03:56,390 --> 00:03:56,400
+different steps. It'll be multiple API
+ 
+
+241
+00:03:56,400 --> 00:03:59,509
+different steps. It'll be multiple API
+calls. It'll do the research for you.
+
+242
+00:03:59,509 --> 00:03:59,519
+calls. It'll do the research for you.
+ 
+
+243
+00:03:59,519 --> 00:04:01,990
+calls. It'll do the research for you.
+And with that, like what happens is it
+
+244
+00:04:01,990 --> 00:04:02,000
+And with that, like what happens is it
+ 
+
+245
+00:04:02,000 --> 00:04:03,750
+And with that, like what happens is it
+creates a skill from that interaction.
+
+246
+00:04:03,750 --> 00:04:03,760
+creates a skill from that interaction.
+ 
+
+247
+00:04:03,760 --> 00:04:06,470
+creates a skill from that interaction.
+So, it packages the logic as a reusable
+
+248
+00:04:06,470 --> 00:04:06,480
+So, it packages the logic as a reusable
+ 
+
+249
+00:04:06,480 --> 00:04:08,710
+So, it packages the logic as a reusable
+function. It tests it. It also stores
+
+250
+00:04:08,710 --> 00:04:08,720
+function. It tests it. It also stores
+ 
+
+251
+00:04:08,720 --> 00:04:10,470
+function. It tests it. It also stores
+it. So, next time you ask for something
+
+252
+00:04:10,470 --> 00:04:10,480
+it. So, next time you ask for something
+ 
+
+253
+00:04:10,480 --> 00:04:12,470
+it. So, next time you ask for something
+similar, it doesn't just start over. It
+
+254
+00:04:12,470 --> 00:04:12,480
+similar, it doesn't just start over. It
+ 
+
+255
+00:04:12,480 --> 00:04:14,070
+similar, it doesn't just start over. It
+would actually run the skill. It'll
+
+256
+00:04:14,070 --> 00:04:14,080
+would actually run the skill. It'll
+ 
+
+257
+00:04:14,080 --> 00:04:15,670
+would actually run the skill. It'll
+refine [music] it and it will make it
+
+258
+00:04:15,670 --> 00:04:15,680
+refine [music] it and it will make it
+ 
+
+259
+00:04:15,680 --> 00:04:17,349
+refine [music] it and it will make it
+faster as well. Now beyond this, Hermes
+
+260
+00:04:17,349 --> 00:04:17,359
+faster as well. Now beyond this, Hermes
+ 
+
+261
+00:04:17,359 --> 00:04:18,870
+faster as well. Now beyond this, Hermes
+is going to actually track some patterns
+
+262
+00:04:18,870 --> 00:04:18,880
+is going to actually track some patterns
+ 
+
+263
+00:04:18,880 --> 00:04:21,189
+is going to actually track some patterns
+that are going to be very specific
+
+264
+00:04:21,189 --> 00:04:21,199
+that are going to be very specific
+ 
+
+265
+00:04:21,199 --> 00:04:23,990
+that are going to be very specific
+towards you. So this can consist of any
+
+266
+00:04:23,990 --> 00:04:24,000
+towards you. So this can consist of any
+ 
+
+267
+00:04:24,000 --> 00:04:27,110
+towards you. So this can consist of any
+of your preferences, maybe your working
+
+268
+00:04:27,110 --> 00:04:27,120
+of your preferences, maybe your working
+ 
+
+269
+00:04:27,120 --> 00:04:29,350
+of your preferences, maybe your working
+style and what actually is going to
+
+270
+00:04:29,350 --> 00:04:29,360
+style and what actually is going to
+ 
+
+271
+00:04:29,360 --> 00:04:31,350
+style and what actually is going to
+matter to you. So when you ask something
+
+272
+00:04:31,350 --> 00:04:31,360
+matter to you. So when you ask something
+ 
+
+273
+00:04:31,360 --> 00:04:33,510
+matter to you. So when you ask something
+very vague, it's not going to guess like
+
+274
+00:04:33,510 --> 00:04:33,520
+very vague, it's not going to guess like
+ 
+
+275
+00:04:33,520 --> 00:04:35,030
+very vague, it's not going to guess like
+it would actually understand your
+
+276
+00:04:35,030 --> 00:04:35,040
+it would actually understand your
+ 
+
+277
+00:04:35,040 --> 00:04:37,110
+it would actually understand your
+context and over time it would
+
+278
+00:04:37,110 --> 00:04:37,120
+context and over time it would
+ 
+
+279
+00:04:37,120 --> 00:04:40,070
+context and over time it would
+eventually be able to nudge itself. So
+
+280
+00:04:40,070 --> 00:04:40,080
+eventually be able to nudge itself. So
+ 
+
+281
+00:04:40,080 --> 00:04:41,909
+eventually be able to nudge itself. So
+it notices patterns across your
+
+282
+00:04:41,909 --> 00:04:41,919
+it notices patterns across your
+ 
+
+283
+00:04:41,919 --> 00:04:43,990
+it notices patterns across your
+conversations. It can suggest like you
+
+284
+00:04:43,990 --> 00:04:44,000
+conversations. It can suggest like you
+ 
+
+285
+00:04:44,000 --> 00:04:46,790
+conversations. It can suggest like you
+probably want a skill that's going to do
+
+286
+00:04:46,790 --> 00:04:46,800
+probably want a skill that's going to do
+ 
+
+287
+00:04:46,800 --> 00:04:49,590
+probably want a skill that's going to do
+X instead of Y. So you can improve it,
+
+288
+00:04:49,590 --> 00:04:49,600
+X instead of Y. So you can improve it,
+ 
+
+289
+00:04:49,600 --> 00:04:51,590
+X instead of Y. So you can improve it,
+you can reject it and week after week,
+
+290
+00:04:51,590 --> 00:04:51,600
+you can reject it and week after week,
+ 
+
+291
+00:04:51,600 --> 00:04:53,430
+you can reject it and week after week,
+month after month, this is going to be
+
+292
+00:04:53,430 --> 00:04:53,440
+month after month, this is going to be
+ 
+
+293
+00:04:53,440 --> 00:04:54,870
+month after month, this is going to be
+compounding for you because it's getting
+
+294
+00:04:54,870 --> 00:04:54,880
+compounding for you because it's getting
+ 
+
+295
+00:04:54,880 --> 00:04:56,790
+compounding for you because it's getting
+better. It's going to get more tailored
+
+296
+00:04:56,790 --> 00:04:56,800
+better. It's going to get more tailored
+ 
+
+297
+00:04:56,800 --> 00:04:58,469
+better. It's going to get more tailored
+towards you and your preferences. And
+
+298
+00:04:58,469 --> 00:04:58,479
+towards you and your preferences. And
+ 
+
+299
+00:04:58,479 --> 00:04:59,830
+towards you and your preferences. And
+this is fundamentally different from
+
+300
+00:04:59,830 --> 00:04:59,840
+this is fundamentally different from
+ 
+
+301
+00:04:59,840 --> 00:05:02,230
+this is fundamentally different from
+Chat GBT or Claude or OpenClaw. They
+
+302
+00:05:02,230 --> 00:05:02,240
+Chat GBT or Claude or OpenClaw. They
+ 
+
+303
+00:05:02,240 --> 00:05:04,550
+Chat GBT or Claude or OpenClaw. They
+reset every time. Hermes, it is designed
+
+304
+00:05:04,550 --> 00:05:04,560
+reset every time. Hermes, it is designed
+ 
+
+305
+00:05:04,560 --> 00:05:06,390
+reset every time. Hermes, it is designed
+to be getting better. It gets smarter
+
+306
+00:05:06,390 --> 00:05:06,400
+to be getting better. It gets smarter
+ 
+
+307
+00:05:06,400 --> 00:05:07,909
+to be getting better. It gets smarter
+the longer that it actually works with
+
+308
+00:05:07,909 --> 00:05:07,919
+the longer that it actually works with
+ 
+
+309
+00:05:07,919 --> 00:05:09,830
+the longer that it actually works with
+you. Now, if you're going to actually
+
+310
+00:05:09,830 --> 00:05:09,840
+you. Now, if you're going to actually
+ 
+
+311
+00:05:09,840 --> 00:05:12,469
+you. Now, if you're going to actually
+deploy an agent that learns just like
+
+312
+00:05:12,469 --> 00:05:12,479
+deploy an agent that learns just like
+ 
+
+313
+00:05:12,479 --> 00:05:15,110
+deploy an agent that learns just like
+this, where it runs matters just as much
+
+314
+00:05:15,110 --> 00:05:15,120
+this, where it runs matters just as much
+ 
+
+315
+00:05:15,120 --> 00:05:17,350
+this, where it runs matters just as much
+as what it can actually do. So, let's
+
+316
+00:05:17,350 --> 00:05:17,360
+as what it can actually do. So, let's
+ 
+
+317
+00:05:17,360 --> 00:05:18,469
+as what it can actually do. So, let's
+discuss that. Now, most agent
+
+318
+00:05:18,469 --> 00:05:18,479
+discuss that. Now, most agent
+ 
+
+319
+00:05:18,479 --> 00:05:19,590
+discuss that. Now, most agent
+frameworks, they're just built for
+
+320
+00:05:19,590 --> 00:05:19,600
+frameworks, they're just built for
+ 
+
+321
+00:05:19,600 --> 00:05:21,830
+frameworks, they're just built for
+notebooks or local machines, right? So,
+
+322
+00:05:21,830 --> 00:05:21,840
+notebooks or local machines, right? So,
+ 
+
+323
+00:05:21,840 --> 00:05:23,270
+notebooks or local machines, right? So,
+you can run them on your laptop. If your
+
+324
+00:05:23,270 --> 00:05:23,280
+you can run them on your laptop. If your
+ 
+
+325
+00:05:23,280 --> 00:05:25,430
+you can run them on your laptop. If your
+laptop turns off, just like clawed code,
+
+326
+00:05:25,430 --> 00:05:25,440
+laptop turns off, just like clawed code,
+ 
+
+327
+00:05:25,440 --> 00:05:26,790
+laptop turns off, just like clawed code,
+for instance, the agent will stop
+
+328
+00:05:26,790 --> 00:05:26,800
+for instance, the agent will stop
+ 
+
+329
+00:05:26,800 --> 00:05:28,390
+for instance, the agent will stop
+working. But you can actually run Hermes
+
+330
+00:05:28,390 --> 00:05:28,400
+working. But you can actually run Hermes
+ 
+
+331
+00:05:28,400 --> 00:05:30,150
+working. But you can actually run Hermes
+in about six different places. So, you
+
+332
+00:05:30,150 --> 00:05:30,160
+in about six different places. So, you
+ 
+
+333
+00:05:30,160 --> 00:05:32,710
+in about six different places. So, you
+can install it on your local terminal if
+
+334
+00:05:32,710 --> 00:05:32,720
+can install it on your local terminal if
+ 
+
+335
+00:05:32,720 --> 00:05:34,550
+can install it on your local terminal if
+you're developing. You can run it on
+
+336
+00:05:34,550 --> 00:05:34,560
+you're developing. You can run it on
+ 
+
+337
+00:05:34,560 --> 00:05:37,110
+you're developing. You can run it on
+Docker for any containerization. You can
+
+338
+00:05:37,110 --> 00:05:37,120
+Docker for any containerization. You can
+ 
+
+339
+00:05:37,120 --> 00:05:39,670
+Docker for any containerization. You can
+SSH if you want it on a VPS which is how
+
+340
+00:05:39,670 --> 00:05:39,680
+SSH if you want it on a VPS which is how
+ 
+
+341
+00:05:39,680 --> 00:05:42,230
+SSH if you want it on a VPS which is how
+I actually utilize it myself and
+
+342
+00:05:42,230 --> 00:05:42,240
+I actually utilize it myself and
+ 
+
+343
+00:05:42,240 --> 00:05:44,950
+I actually utilize it myself and
+Singularity if you have even any
+
+344
+00:05:44,950 --> 00:05:44,960
+Singularity if you have even any
+ 
+
+345
+00:05:44,960 --> 00:05:47,189
+Singularity if you have even any
+research cluster access or Daytona for
+
+346
+00:05:47,189 --> 00:05:47,199
+research cluster access or Daytona for
+ 
+
+347
+00:05:47,199 --> 00:05:49,270
+research cluster access or Daytona for
+any persistent cloud development and
+
+348
+00:05:49,270 --> 00:05:49,280
+any persistent cloud development and
+ 
+
+349
+00:05:49,280 --> 00:05:51,029
+any persistent cloud development and
+then there's also going to be modal
+
+350
+00:05:51,029 --> 00:05:51,039
+then there's also going to be modal
+ 
+
+351
+00:05:51,039 --> 00:05:52,790
+then there's also going to be modal
+where you can just pay for any compute
+
+352
+00:05:52,790 --> 00:05:52,800
+where you can just pay for any compute
+ 
+
+353
+00:05:52,800 --> 00:05:55,189
+where you can just pay for any compute
+seconds. So when your agent it is idle
+
+354
+00:05:55,189 --> 00:05:55,199
+seconds. So when your agent it is idle
+ 
+
+355
+00:05:55,199 --> 00:05:56,710
+seconds. So when your agent it is idle
+and waiting for message you're not
+
+356
+00:05:56,710 --> 00:05:56,720
+and waiting for message you're not
+ 
+
+357
+00:05:56,720 --> 00:05:59,110
+and waiting for message you're not
+paying anything at all. It is zero modal
+
+358
+00:05:59,110 --> 00:05:59,120
+paying anything at all. It is zero modal
+ 
+
+359
+00:05:59,120 --> 00:06:01,189
+paying anything at all. It is zero modal
+it hibernates all automatically. It
+
+360
+00:06:01,189 --> 00:06:01,199
+it hibernates all automatically. It
+ 
+
+361
+00:06:01,199 --> 00:06:02,870
+it hibernates all automatically. It
+wakes when you have a message coming in
+
+362
+00:06:02,870 --> 00:06:02,880
+wakes when you have a message coming in
+ 
+
+363
+00:06:02,880 --> 00:06:06,629
+wakes when you have a message coming in
+in your agent. It runs 247 for about5 to
+
+364
+00:06:06,629 --> 00:06:06,639
+in your agent. It runs 247 for about5 to
+ 
+
+365
+00:06:06,639 --> 00:06:08,629
+in your agent. It runs 247 for about5 to
+$10 a month instead of a permanent VPS
+
+366
+00:06:08,629 --> 00:06:08,639
+$10 a month instead of a permanent VPS
+ 
+
+367
+00:06:08,639 --> 00:06:09,749
+$10 a month instead of a permanent VPS
+where it's going to be a little bit more
+
+368
+00:06:09,749 --> 00:06:09,759
+where it's going to be a little bit more
+ 
+
+369
+00:06:09,759 --> 00:06:11,990
+where it's going to be a little bit more
+expensive, but still the costs are going
+
+370
+00:06:11,990 --> 00:06:12,000
+expensive, but still the costs are going
+ 
+
+371
+00:06:12,000 --> 00:06:14,870
+expensive, but still the costs are going
+to be relatively minimal. Now, this
+
+372
+00:06:14,870 --> 00:06:14,880
+to be relatively minimal. Now, this
+ 
+
+373
+00:06:14,880 --> 00:06:16,469
+to be relatively minimal. Now, this
+matters because you have different
+
+374
+00:06:16,469 --> 00:06:16,479
+matters because you have different
+ 
+
+375
+00:06:16,479 --> 00:06:18,230
+matters because you have different
+projects needing different types of
+
+376
+00:06:18,230 --> 00:06:18,240
+projects needing different types of
+ 
+
+377
+00:06:18,240 --> 00:06:20,550
+projects needing different types of
+infrastructure. So I would imagine where
+
+378
+00:06:20,550 --> 00:06:20,560
+infrastructure. So I would imagine where
+ 
+
+379
+00:06:20,560 --> 00:06:22,390
+infrastructure. So I would imagine where
+you have a personal assistant on your
+
+380
+00:06:22,390 --> 00:06:22,400
+you have a personal assistant on your
+ 
+
+381
+00:06:22,400 --> 00:06:25,029
+you have a personal assistant on your
+laptop like maybe that can be local a
+
+382
+00:06:25,029 --> 00:06:25,039
+laptop like maybe that can be local a
+ 
+
+383
+00:06:25,039 --> 00:06:27,830
+laptop like maybe that can be local a
+production system it needs to SSH or you
+
+384
+00:06:27,830 --> 00:06:27,840
+production system it needs to SSH or you
+ 
+
+385
+00:06:27,840 --> 00:06:30,390
+production system it needs to SSH or you
+can use Docker for or a research project
+
+386
+00:06:30,390 --> 00:06:30,400
+can use Docker for or a research project
+ 
+
+387
+00:06:30,400 --> 00:06:33,990
+can use Docker for or a research project
+using GPU it needs some HPC clusters or
+
+388
+00:06:33,990 --> 00:06:34,000
+using GPU it needs some HPC clusters or
+ 
+
+389
+00:06:34,000 --> 00:06:36,070
+using GPU it needs some HPC clusters or
+a startup decoding like can we actually
+
+390
+00:06:36,070 --> 00:06:36,080
+a startup decoding like can we actually
+ 
+
+391
+00:06:36,080 --> 00:06:38,150
+a startup decoding like can we actually
+afford this like that needs serverless
+
+392
+00:06:38,150 --> 00:06:38,160
+afford this like that needs serverless
+ 
+
+393
+00:06:38,160 --> 00:06:40,390
+afford this like that needs serverless
+and Hermes it does not lock you in like
+
+394
+00:06:40,390 --> 00:06:40,400
+and Hermes it does not lock you in like
+ 
+
+395
+00:06:40,400 --> 00:06:41,909
+and Hermes it does not lock you in like
+you can use any of these you just pick
+
+396
+00:06:41,909 --> 00:06:41,919
+you can use any of these you just pick
+ 
+
+397
+00:06:41,919 --> 00:06:43,189
+you can use any of these you just pick
+the back end that's going to be most
+
+398
+00:06:43,189 --> 00:06:43,199
+the back end that's going to be most
+ 
+
+399
+00:06:43,199 --> 00:06:45,510
+the back end that's going to be most
+applicable and actually make sense for
+
+400
+00:06:45,510 --> 00:06:45,520
+applicable and actually make sense for
+ 
+
+401
+00:06:45,520 --> 00:06:47,029
+applicable and actually make sense for
+you and the reason that I actually put
+
+402
+00:06:47,029 --> 00:06:47,039
+you and the reason that I actually put
+ 
+
+403
+00:06:47,039 --> 00:06:50,070
+you and the reason that I actually put
+this on that VPS guess is because I
+
+404
+00:06:50,070 --> 00:06:50,080
+this on that VPS guess is because I
+ 
+
+405
+00:06:50,080 --> 00:06:51,990
+this on that VPS guess is because I
+needs to be able to utilize a lot of the
+
+406
+00:06:51,990 --> 00:06:52,000
+needs to be able to utilize a lot of the
+ 
+
+407
+00:06:52,000 --> 00:06:54,469
+needs to be able to utilize a lot of the
+stuff and have it do jobs while I am
+
+408
+00:06:54,469 --> 00:06:54,479
+stuff and have it do jobs while I am
+ 
+
+409
+00:06:54,479 --> 00:06:56,230
+stuff and have it do jobs while I am
+away. I do not want to keep my computer
+
+410
+00:06:56,230 --> 00:06:56,240
+away. I do not want to keep my computer
+ 
+
+411
+00:06:56,240 --> 00:06:57,670
+away. I do not want to keep my computer
+around. I don't want to buy a separate
+
+412
+00:06:57,670 --> 00:06:57,680
+around. I don't want to buy a separate
+ 
+
+413
+00:06:57,680 --> 00:07:00,070
+around. I don't want to buy a separate
+computer or anything like that just yet.
+
+414
+00:07:00,070 --> 00:07:00,080
+computer or anything like that just yet.
+ 
+
+415
+00:07:00,080 --> 00:07:02,150
+computer or anything like that just yet.
+I just want to keep it simple and see if
+
+416
+00:07:02,150 --> 00:07:02,160
+I just want to keep it simple and see if
+ 
+
+417
+00:07:02,160 --> 00:07:04,070
+I just want to keep it simple and see if
+I like this first through a VPS. We'll
+
+418
+00:07:04,070 --> 00:07:04,080
+I like this first through a VPS. We'll
+ 
+
+419
+00:07:04,080 --> 00:07:05,670
+I like this first through a VPS. We'll
+test it and we'll go from there. But
+
+420
+00:07:05,670 --> 00:07:05,680
+test it and we'll go from there. But
+ 
+
+421
+00:07:05,680 --> 00:07:06,870
+test it and we'll go from there. But
+now, let's just break down what this
+
+422
+00:07:06,870 --> 00:07:06,880
+now, let's just break down what this
+ 
+
+423
+00:07:06,880 --> 00:07:08,629
+now, let's just break down what this
+actually looks like and how it operates
+
+424
+00:07:08,629 --> 00:07:08,639
+actually looks like and how it operates
+ 
+
+425
+00:07:08,639 --> 00:07:09,990
+actually looks like and how it operates
+under the hood. So, when I say that
+
+426
+00:07:09,990 --> 00:07:10,000
+under the hood. So, when I say that
+ 
+
+427
+00:07:10,000 --> 00:07:12,629
+under the hood. So, when I say that
+Hermes is learning, I want to actually
+
+428
+00:07:12,629 --> 00:07:12,639
+Hermes is learning, I want to actually
+ 
+
+429
+00:07:12,639 --> 00:07:14,629
+Hermes is learning, I want to actually
+show you what that means mechanically
+
+430
+00:07:14,629 --> 00:07:14,639
+show you what that means mechanically
+ 
+
+431
+00:07:14,639 --> 00:07:16,469
+show you what that means mechanically
+because it's not magic. It's just an
+
+432
+00:07:16,469 --> 00:07:16,479
+because it's not magic. It's just an
+ 
+
+433
+00:07:16,479 --> 00:07:19,589
+because it's not magic. It's just an
+architectural decision. So it all is
+
+434
+00:07:19,589 --> 00:07:19,599
+architectural decision. So it all is
+ 
+
+435
+00:07:19,599 --> 00:07:21,670
+architectural decision. So it all is
+going to start here with this user
+
+436
+00:07:21,670 --> 00:07:21,680
+going to start here with this user
+ 
+
+437
+00:07:21,680 --> 00:07:24,870
+going to start here with this user
+request up at the top. Now within this,
+
+438
+00:07:24,870 --> 00:07:24,880
+request up at the top. Now within this,
+ 
+
+439
+00:07:24,880 --> 00:07:27,110
+request up at the top. Now within this,
+you give Hermes a real task. So it can't
+
+440
+00:07:27,110 --> 00:07:27,120
+you give Hermes a real task. So it can't
+ 
+
+441
+00:07:27,120 --> 00:07:29,189
+you give Hermes a real task. So it can't
+be something as simple as like what's
+
+442
+00:07:29,189 --> 00:07:29,199
+be something as simple as like what's
+ 
+
+443
+00:07:29,199 --> 00:07:31,830
+be something as simple as like what's
+the weather or anything that generic. It
+
+444
+00:07:31,830 --> 00:07:31,840
+the weather or anything that generic. It
+ 
+
+445
+00:07:31,840 --> 00:07:33,350
+the weather or anything that generic. It
+should be something like pull my revenue
+
+446
+00:07:33,350 --> 00:07:33,360
+should be something like pull my revenue
+ 
+
+447
+00:07:33,360 --> 00:07:35,350
+should be something like pull my revenue
+from Stripe and then I want you to cross
+
+448
+00:07:35,350 --> 00:07:35,360
+from Stripe and then I want you to cross
+ 
+
+449
+00:07:35,360 --> 00:07:37,510
+from Stripe and then I want you to cross
+reference it with my HubSpot pipeline
+
+450
+00:07:37,510 --> 00:07:37,520
+reference it with my HubSpot pipeline
+ 
+
+451
+00:07:37,520 --> 00:07:40,150
+reference it with my HubSpot pipeline
+and then analyze it in Python and then
+
+452
+00:07:40,150 --> 00:07:40,160
+and then analyze it in Python and then
+ 
+
+453
+00:07:40,160 --> 00:07:43,110
+and then analyze it in Python and then
+write me a one-page summary with three
+
+454
+00:07:43,110 --> 00:07:43,120
+write me a one-page summary with three
+ 
+
+455
+00:07:43,120 --> 00:07:45,189
+write me a one-page summary with three
+different insights and send it to the
+
+456
+00:07:45,189 --> 00:07:45,199
+different insights and send it to the
+ 
+
+457
+00:07:45,199 --> 00:07:47,430
+different insights and send it to the
+leadership Slack channel. So like that
+
+458
+00:07:47,430 --> 00:07:47,440
+leadership Slack channel. So like that
+ 
+
+459
+00:07:47,440 --> 00:07:49,029
+leadership Slack channel. So like that
+is a real workflow like that is a
+
+460
+00:07:49,029 --> 00:07:49,039
+is a real workflow like that is a
+ 
+
+461
+00:07:49,039 --> 00:07:52,790
+is a real workflow like that is a
+generic or non-generic and uh pretty
+
+462
+00:07:52,790 --> 00:07:52,800
+generic or non-generic and uh pretty
+ 
+
+463
+00:07:52,800 --> 00:07:54,790
+generic or non-generic and uh pretty
+complex process I should say. You have
+
+464
+00:07:54,790 --> 00:07:54,800
+complex process I should say. You have
+ 
+
+465
+00:07:54,800 --> 00:07:56,790
+complex process I should say. You have
+multiple systems you also have multiple
+
+466
+00:07:56,790 --> 00:07:56,800
+multiple systems you also have multiple
+ 
+
+467
+00:07:56,800 --> 00:08:00,550
+multiple systems you also have multiple
+steps associated with it. Now within
+
+468
+00:08:00,550 --> 00:08:00,560
+steps associated with it. Now within
+ 
+
+469
+00:08:00,560 --> 00:08:03,990
+steps associated with it. Now within
+step number two right here. So Hermes it
+
+470
+00:08:03,990 --> 00:08:04,000
+step number two right here. So Hermes it
+ 
+
+471
+00:08:04,000 --> 00:08:06,390
+step number two right here. So Hermes it
+has over 40 tools as I have mentioned.
+
+472
+00:08:06,390 --> 00:08:06,400
+has over 40 tools as I have mentioned.
+ 
+
+473
+00:08:06,400 --> 00:08:08,150
+has over 40 tools as I have mentioned.
+So it changed them together. It's
+
+474
+00:08:08,150 --> 00:08:08,160
+So it changed them together. It's
+ 
+
+475
+00:08:08,160 --> 00:08:10,070
+So it changed them together. It's
+hitting Stripe APIs. It's pulling from
+
+476
+00:08:10,070 --> 00:08:10,080
+hitting Stripe APIs. It's pulling from
+ 
+
+477
+00:08:10,080 --> 00:08:12,710
+hitting Stripe APIs. It's pulling from
+HubSpot. It's running Python to actually
+
+478
+00:08:12,710 --> 00:08:12,720
+HubSpot. It's running Python to actually
+ 
+
+479
+00:08:12,720 --> 00:08:15,189
+HubSpot. It's running Python to actually
+crunch the numbers. So it's generating a
+
+480
+00:08:15,189 --> 00:08:15,199
+crunch the numbers. So it's generating a
+ 
+
+481
+00:08:15,199 --> 00:08:17,510
+crunch the numbers. So it's generating a
+chart. It's formatting and sending Slack
+
+482
+00:08:17,510 --> 00:08:17,520
+chart. It's formatting and sending Slack
+ 
+
+483
+00:08:17,520 --> 00:08:19,749
+chart. It's formatting and sending Slack
+a message. So if it's the first time
+
+484
+00:08:19,749 --> 00:08:19,759
+a message. So if it's the first time
+ 
+
+485
+00:08:19,759 --> 00:08:22,070
+a message. So if it's the first time
+running this through, that's about 15 20
+
+486
+00:08:22,070 --> 00:08:22,080
+running this through, that's about 15 20
+ 
+
+487
+00:08:22,080 --> 00:08:24,150
+running this through, that's about 15 20
+different steps. It will take a few
+
+488
+00:08:24,150 --> 00:08:24,160
+different steps. It will take a few
+ 
+
+489
+00:08:24,160 --> 00:08:26,150
+different steps. It will take a few
+minutes or up to 5 minutes, whatever it
+
+490
+00:08:26,150 --> 00:08:26,160
+minutes or up to 5 minutes, whatever it
+ 
+
+491
+00:08:26,160 --> 00:08:27,990
+minutes or up to 5 minutes, whatever it
+may be. And that's fine. like every
+
+492
+00:08:27,990 --> 00:08:28,000
+may be. And that's fine. like every
+ 
+
+493
+00:08:28,000 --> 00:08:30,070
+may be. And that's fine. like every
+agent it takes a while especially the
+
+494
+00:08:30,070 --> 00:08:30,080
+agent it takes a while especially the
+ 
+
+495
+00:08:30,080 --> 00:08:31,510
+agent it takes a while especially the
+first time and that's not the
+
+496
+00:08:31,510 --> 00:08:31,520
+first time and that's not the
+ 
+
+497
+00:08:31,520 --> 00:08:32,630
+first time and that's not the
+interesting part. This is the
+
+498
+00:08:32,630 --> 00:08:32,640
+interesting part. This is the
+ 
+
+499
+00:08:32,640 --> 00:08:35,350
+interesting part. This is the
+interesting part within step three. So
+
+500
+00:08:35,350 --> 00:08:35,360
+interesting part within step three. So
+ 
+
+501
+00:08:35,360 --> 00:08:37,670
+interesting part within step three. So
+right here what's actually going on is
+
+502
+00:08:37,670 --> 00:08:37,680
+right here what's actually going on is
+ 
+
+503
+00:08:37,680 --> 00:08:39,750
+right here what's actually going on is
+it is going to well after it finishes
+
+504
+00:08:39,750 --> 00:08:39,760
+it is going to well after it finishes
+ 
+
+505
+00:08:39,760 --> 00:08:41,750
+it is going to well after it finishes
+Hermes will record everything that it
+
+506
+00:08:41,750 --> 00:08:41,760
+Hermes will record everything that it
+ 
+
+507
+00:08:41,760 --> 00:08:44,230
+Hermes will record everything that it
+had just done. So every API call, every
+
+508
+00:08:44,230 --> 00:08:44,240
+had just done. So every API call, every
+ 
+
+509
+00:08:44,240 --> 00:08:46,550
+had just done. So every API call, every
+decision, every tool it used in what
+
+510
+00:08:46,550 --> 00:08:46,560
+decision, every tool it used in what
+ 
+
+511
+00:08:46,560 --> 00:08:48,550
+decision, every tool it used in what
+order that's going to be recorded and
+
+512
+00:08:48,550 --> 00:08:48,560
+order that's going to be recorded and
+ 
+
+513
+00:08:48,560 --> 00:08:51,110
+order that's going to be recorded and
+that full recorded is what they call a
+
+514
+00:08:51,110 --> 00:08:51,120
+that full recorded is what they call a
+ 
+
+515
+00:08:51,120 --> 00:08:53,430
+that full recorded is what they call a
+trajectory. So most agent frameworks,
+
+516
+00:08:53,430 --> 00:08:53,440
+trajectory. So most agent frameworks,
+ 
+
+517
+00:08:53,440 --> 00:08:55,190
+trajectory. So most agent frameworks,
+they just throw that away completely.
+
+518
+00:08:55,190 --> 00:08:55,200
+they just throw that away completely.
+ 
+
+519
+00:08:55,200 --> 00:08:56,870
+they just throw that away completely.
+Like the task is done, the memor is
+
+520
+00:08:56,870 --> 00:08:56,880
+Like the task is done, the memor is
+ 
+
+521
+00:08:56,880 --> 00:08:59,269
+Like the task is done, the memor is
+gone, Hermes keeps it instead. And then
+
+522
+00:08:59,269 --> 00:08:59,279
+gone, Hermes keeps it instead. And then
+ 
+
+523
+00:08:59,279 --> 00:09:01,269
+gone, Hermes keeps it instead. And then
+from there, we're going to get into step
+
+524
+00:09:01,269 --> 00:09:01,279
+from there, we're going to get into step
+ 
+
+525
+00:09:01,279 --> 00:09:03,430
+from there, we're going to get into step
+four. Step four, this is just going to
+
+526
+00:09:03,430 --> 00:09:03,440
+four. Step four, this is just going to
+ 
+
+527
+00:09:03,440 --> 00:09:05,190
+four. Step four, this is just going to
+analyze that trajectory. And it's going
+
+528
+00:09:05,190 --> 00:09:05,200
+analyze that trajectory. And it's going
+ 
+
+529
+00:09:05,200 --> 00:09:07,350
+analyze that trajectory. And it's going
+to ask itself like, can I package this
+
+530
+00:09:07,350 --> 00:09:07,360
+to ask itself like, can I package this
+ 
+
+531
+00:09:07,360 --> 00:09:08,710
+to ask itself like, can I package this
+into something that's going to be
+
+532
+00:09:08,710 --> 00:09:08,720
+into something that's going to be
+ 
+
+533
+00:09:08,720 --> 00:09:10,949
+into something that's going to be
+reusable? And if the answer is yes,
+
+534
+00:09:10,949 --> 00:09:10,959
+reusable? And if the answer is yes,
+ 
+
+535
+00:09:10,959 --> 00:09:12,949
+reusable? And if the answer is yes,
+well, it writes a skill. It packages the
+
+536
+00:09:12,949 --> 00:09:12,959
+well, it writes a skill. It packages the
+ 
+
+537
+00:09:12,959 --> 00:09:15,190
+well, it writes a skill. It packages the
+whole workflow as a reusable function.
+
+538
+00:09:15,190 --> 00:09:15,200
+whole workflow as a reusable function.
+ 
+
+539
+00:09:15,200 --> 00:09:17,030
+whole workflow as a reusable function.
+It tests it. It then stores it right in
+
+540
+00:09:17,030 --> 00:09:17,040
+It tests it. It then stores it right in
+ 
+
+541
+00:09:17,040 --> 00:09:19,670
+It tests it. It then stores it right in
+your local file system at Hermes
+
+542
+00:09:19,670 --> 00:09:19,680
+your local file system at Hermes
+ 
+
+543
+00:09:19,680 --> 00:09:22,070
+your local file system at Hermes
+back/skills. and you can go look at it.
+
+544
+00:09:22,070 --> 00:09:22,080
+back/skills. and you can go look at it.
+ 
+
+545
+00:09:22,080 --> 00:09:23,430
+back/skills. and you can go look at it.
+It's just going to be code sitting on
+
+546
+00:09:23,430 --> 00:09:23,440
+It's just going to be code sitting on
+ 
+
+547
+00:09:23,440 --> 00:09:25,190
+It's just going to be code sitting on
+your machine. Simple as that. Just like
+
+548
+00:09:25,190 --> 00:09:25,200
+your machine. Simple as that. Just like
+ 
+
+549
+00:09:25,200 --> 00:09:27,269
+your machine. Simple as that. Just like
+if you use cloud code or anything
+
+550
+00:09:27,269 --> 00:09:27,279
+if you use cloud code or anything
+ 
+
+551
+00:09:27,279 --> 00:09:29,430
+if you use cloud code or anything
+remotely similar. Moving on to step
+
+552
+00:09:29,430 --> 00:09:29,440
+remotely similar. Moving on to step
+ 
+
+553
+00:09:29,440 --> 00:09:32,710
+remotely similar. Moving on to step
+number five, the reuse and refinement.
+
+554
+00:09:32,710 --> 00:09:32,720
+number five, the reuse and refinement.
+ 
+
+555
+00:09:32,720 --> 00:09:35,509
+number five, the reuse and refinement.
+So this is effectively the whole point
+
+556
+00:09:35,509 --> 00:09:35,519
+So this is effectively the whole point
+ 
+
+557
+00:09:35,519 --> 00:09:37,590
+So this is effectively the whole point
+right here like this one. So next time
+
+558
+00:09:37,590 --> 00:09:37,600
+right here like this one. So next time
+ 
+
+559
+00:09:37,600 --> 00:09:39,350
+right here like this one. So next time
+you actually are asking for something
+
+560
+00:09:39,350 --> 00:09:39,360
+you actually are asking for something
+ 
+
+561
+00:09:39,360 --> 00:09:41,910
+you actually are asking for something
+similar like maybe it's the a Monday
+
+562
+00:09:41,910 --> 00:09:41,920
+similar like maybe it's the a Monday
+ 
+
+563
+00:09:41,920 --> 00:09:44,630
+similar like maybe it's the a Monday
+report, maybe it's a variation. Hermes
+
+564
+00:09:44,630 --> 00:09:44,640
+report, maybe it's a variation. Hermes
+ 
+
+565
+00:09:44,640 --> 00:09:46,470
+report, maybe it's a variation. Hermes
+it will not be starting from scratch. It
+
+566
+00:09:46,470 --> 00:09:46,480
+it will not be starting from scratch. It
+ 
+
+567
+00:09:46,480 --> 00:09:48,070
+it will not be starting from scratch. It
+will run the skill. It'll be faster.
+
+568
+00:09:48,070 --> 00:09:48,080
+will run the skill. It'll be faster.
+ 
+
+569
+00:09:48,080 --> 00:09:49,190
+will run the skill. It'll be faster.
+will be cleaner because it has a
+
+570
+00:09:49,190 --> 00:09:49,200
+will be cleaner because it has a
+ 
+
+571
+00:09:49,200 --> 00:09:50,710
+will be cleaner because it has a
+standard operating procedure to be
+
+572
+00:09:50,710 --> 00:09:50,720
+standard operating procedure to be
+ 
+
+573
+00:09:50,720 --> 00:09:52,630
+standard operating procedure to be
+following and if something changed like
+
+574
+00:09:52,630 --> 00:09:52,640
+following and if something changed like
+ 
+
+575
+00:09:52,640 --> 00:09:54,389
+following and if something changed like
+you added a data source or if you want
+
+576
+00:09:54,389 --> 00:09:54,399
+you added a data source or if you want
+ 
+
+577
+00:09:54,399 --> 00:09:56,310
+you added a data source or if you want
+the format different it will refine the
+
+578
+00:09:56,310 --> 00:09:56,320
+the format different it will refine the
+ 
+
+579
+00:09:56,320 --> 00:09:58,389
+the format different it will refine the
+skill it will update it will get better
+
+580
+00:09:58,389 --> 00:09:58,399
+skill it will update it will get better
+ 
+
+581
+00:09:58,399 --> 00:10:00,230
+skill it will update it will get better
+and better so this entire loop right
+
+582
+00:10:00,230 --> 00:10:00,240
+and better so this entire loop right
+ 
+
+583
+00:10:00,240 --> 00:10:02,870
+and better so this entire loop right
+here like this is effectively the entire
+
+584
+00:10:02,870 --> 00:10:02,880
+here like this is effectively the entire
+ 
+
+585
+00:10:02,880 --> 00:10:05,269
+here like this is effectively the entire
+value proposition of Hermes so like
+
+586
+00:10:05,269 --> 00:10:05,279
+value proposition of Hermes so like
+ 
+
+587
+00:10:05,279 --> 00:10:07,269
+value proposition of Hermes so like
+these are not pre-recorded macros like
+
+588
+00:10:07,269 --> 00:10:07,279
+these are not pre-recorded macros like
+ 
+
+589
+00:10:07,279 --> 00:10:09,829
+these are not pre-recorded macros like
+these skills they are very alive and
+
+590
+00:10:09,829 --> 00:10:09,839
+these skills they are very alive and
+ 
+
+591
+00:10:09,839 --> 00:10:11,910
+these skills they are very alive and
+inside of your code they're able to
+
+592
+00:10:11,910 --> 00:10:11,920
+inside of your code they're able to
+ 
+
+593
+00:10:11,920 --> 00:10:13,990
+inside of your code they're able to
+learn from each execution and you can
+
+594
+00:10:13,990 --> 00:10:14,000
+learn from each execution and you can
+ 
+
+595
+00:10:14,000 --> 00:10:16,069
+learn from each execution and you can
+also share them through any maybe it's
+
+596
+00:10:16,069 --> 00:10:16,079
+also share them through any maybe it's
+ 
+
+597
+00:10:16,079 --> 00:10:17,910
+also share them through any maybe it's
+like agentskills.io IO. I know it's a
+
+598
+00:10:17,910 --> 00:10:17,920
+like agentskills.io IO. I know it's a
+ 
+
+599
+00:10:17,920 --> 00:10:19,829
+like agentskills.io IO. I know it's a
+very common one which is basically just
+
+600
+00:10:19,829 --> 00:10:19,839
+very common one which is basically just
+ 
+
+601
+00:10:19,839 --> 00:10:23,350
+very common one which is basically just
+npm packages for agents where Hermes it
+
+602
+00:10:23,350 --> 00:10:23,360
+npm packages for agents where Hermes it
+ 
+
+603
+00:10:23,360 --> 00:10:25,430
+npm packages for agents where Hermes it
+ships with over 40 bundled skills
+
+604
+00:10:25,430 --> 00:10:25,440
+ships with over 40 bundled skills
+ 
+
+605
+00:10:25,440 --> 00:10:26,949
+ships with over 40 bundled skills
+already but the real power is the custom
+
+606
+00:10:26,949 --> 00:10:26,959
+already but the real power is the custom
+ 
+
+607
+00:10:26,959 --> 00:10:27,990
+already but the real power is the custom
+ones that you can actually build
+
+608
+00:10:27,990 --> 00:10:28,000
+ones that you can actually build
+ 
+
+609
+00:10:28,000 --> 00:10:30,710
+ones that you can actually build
+specifically for how you are working and
+
+610
+00:10:30,710 --> 00:10:30,720
+specifically for how you are working and
+ 
+
+611
+00:10:30,720 --> 00:10:32,710
+specifically for how you are working and
+again over time like your Hermes it
+
+612
+00:10:32,710 --> 00:10:32,720
+again over time like your Hermes it
+ 
+
+613
+00:10:32,720 --> 00:10:35,269
+again over time like your Hermes it
+becomes a completely different tool than
+
+614
+00:10:35,269 --> 00:10:35,279
+becomes a completely different tool than
+ 
+
+615
+00:10:35,279 --> 00:10:37,430
+becomes a completely different tool than
+somebody else's Hermes like it's shaped
+
+616
+00:10:37,430 --> 00:10:37,440
+somebody else's Hermes like it's shaped
+ 
+
+617
+00:10:37,440 --> 00:10:39,670
+somebody else's Hermes like it's shaped
+by your workflows your preferences your
+
+618
+00:10:39,670 --> 00:10:39,680
+by your workflows your preferences your
+ 
+
+619
+00:10:39,680 --> 00:10:41,430
+by your workflows your preferences your
+patterns and that is what self-improving
+
+620
+00:10:41,430 --> 00:10:41,440
+patterns and that is what self-improving
+ 
+
+621
+00:10:41,440 --> 00:10:43,110
+patterns and that is what self-improving
+actually means in practice. Now, of
+
+622
+00:10:43,110 --> 00:10:43,120
+actually means in practice. Now, of
+ 
+
+623
+00:10:43,120 --> 00:10:44,230
+actually means in practice. Now, of
+course, as you would expect, like this
+
+624
+00:10:44,230 --> 00:10:44,240
+course, as you would expect, like this
+ 
+
+625
+00:10:44,240 --> 00:10:45,750
+course, as you would expect, like this
+matters a lot in practice. So, let me
+
+626
+00:10:45,750 --> 00:10:45,760
+matters a lot in practice. So, let me
+ 
+
+627
+00:10:45,760 --> 00:10:47,269
+matters a lot in practice. So, let me
+show you what real deployment actually
+
+628
+00:10:47,269 --> 00:10:47,279
+show you what real deployment actually
+ 
+
+629
+00:10:47,279 --> 00:10:48,550
+show you what real deployment actually
+is going to look like. All right, let's
+
+630
+00:10:48,550 --> 00:10:48,560
+is going to look like. All right, let's
+ 
+
+631
+00:10:48,560 --> 00:10:49,829
+is going to look like. All right, let's
+discuss a little bit about the
+
+632
+00:10:49,829 --> 00:10:49,839
+discuss a little bit about the
+ 
+
+633
+00:10:49,839 --> 00:10:51,910
+discuss a little bit about the
+limitations because there definitely is
+
+634
+00:10:51,910 --> 00:10:51,920
+limitations because there definitely is
+ 
+
+635
+00:10:51,920 --> 00:10:54,870
+limitations because there definitely is
+some. First up, Windows does not work. I
+
+636
+00:10:54,870 --> 00:10:54,880
+some. First up, Windows does not work. I
+ 
+
+637
+00:10:54,880 --> 00:10:56,630
+some. First up, Windows does not work. I
+don't mean that it's not optimized for
+
+638
+00:10:56,630 --> 00:10:56,640
+don't mean that it's not optimized for
+ 
+
+639
+00:10:56,640 --> 00:10:58,389
+don't mean that it's not optimized for
+Windows. I genuinely mean like if you
+
+640
+00:10:58,389 --> 00:10:58,399
+Windows. I genuinely mean like if you
+ 
+
+641
+00:10:58,399 --> 00:10:59,829
+Windows. I genuinely mean like if you
+are on Windows, you are completely out
+
+642
+00:10:59,829 --> 00:10:59,839
+are on Windows, you are completely out
+ 
+
+643
+00:10:59,839 --> 00:11:02,790
+are on Windows, you are completely out
+of the equation. So, you need WSL2 like
+
+644
+00:11:02,790 --> 00:11:02,800
+of the equation. So, you need WSL2 like
+ 
+
+645
+00:11:02,800 --> 00:11:04,790
+of the equation. So, you need WSL2 like
+full stop. That sounds like a small
+
+646
+00:11:04,790 --> 00:11:04,800
+full stop. That sounds like a small
+ 
+
+647
+00:11:04,800 --> 00:11:06,710
+full stop. That sounds like a small
+thing until you're actually talking to
+
+648
+00:11:06,710 --> 00:11:06,720
+thing until you're actually talking to
+ 
+
+649
+00:11:06,720 --> 00:11:08,630
+thing until you're actually talking to
+any enterprise teams and half your
+
+650
+00:11:08,630 --> 00:11:08,640
+any enterprise teams and half your
+ 
+
+651
+00:11:08,640 --> 00:11:10,150
+any enterprise teams and half your
+engineers are on Window machines. Now
+
+652
+00:11:10,150 --> 00:11:10,160
+engineers are on Window machines. Now
+ 
+
+653
+00:11:10,160 --> 00:11:11,910
+engineers are on Window machines. Now
+they are working on experimental Windows
+
+654
+00:11:11,910 --> 00:11:11,920
+they are working on experimental Windows
+ 
+
+655
+00:11:11,920 --> 00:11:14,710
+they are working on experimental Windows
+support but there are PRs landing for
+
+656
+00:11:14,710 --> 00:11:14,720
+support but there are PRs landing for
+ 
+
+657
+00:11:14,720 --> 00:11:16,790
+support but there are PRs landing for
+path handling and PTI support but as of
+
+658
+00:11:16,790 --> 00:11:16,800
+path handling and PTI support but as of
+ 
+
+659
+00:11:16,800 --> 00:11:18,230
+path handling and PTI support but as of
+right now the readme says they are not
+
+660
+00:11:18,230 --> 00:11:18,240
+right now the readme says they are not
+ 
+
+661
+00:11:18,240 --> 00:11:19,910
+right now the readme says they are not
+supported. Plan accordingly. Now the
+
+662
+00:11:19,910 --> 00:11:19,920
+supported. Plan accordingly. Now the
+ 
+
+663
+00:11:19,920 --> 00:11:21,829
+supported. Plan accordingly. Now the
+learning loop here's the thing that not
+
+664
+00:11:21,829 --> 00:11:21,839
+learning loop here's the thing that not
+ 
+
+665
+00:11:21,839 --> 00:11:23,030
+learning loop here's the thing that not
+many people are going to tell you like
+
+666
+00:11:23,030 --> 00:11:23,040
+many people are going to tell you like
+ 
+
+667
+00:11:23,040 --> 00:11:25,190
+many people are going to tell you like
+it is very beautiful in theory but in
+
+668
+00:11:25,190 --> 00:11:25,200
+it is very beautiful in theory but in
+ 
+
+669
+00:11:25,200 --> 00:11:27,430
+it is very beautiful in theory but in
+practice like it only creates skills for
+
+670
+00:11:27,430 --> 00:11:27,440
+practice like it only creates skills for
+ 
+
+671
+00:11:27,440 --> 00:11:29,670
+practice like it only creates skills for
+very complex tasks. So if you give it
+
+672
+00:11:29,670 --> 00:11:29,680
+very complex tasks. So if you give it
+ 
+
+673
+00:11:29,680 --> 00:11:31,430
+very complex tasks. So if you give it
+something simple it is not going to be
+
+674
+00:11:31,430 --> 00:11:31,440
+something simple it is not going to be
+ 
+
+675
+00:11:31,440 --> 00:11:33,190
+something simple it is not going to be
+learning and the skill that it creates
+
+676
+00:11:33,190 --> 00:11:33,200
+learning and the skill that it creates
+ 
+
+677
+00:11:33,200 --> 00:11:35,190
+learning and the skill that it creates
+it is LLM generated. So it's not
+
+678
+00:11:35,190 --> 00:11:35,200
+it is LLM generated. So it's not
+ 
+
+679
+00:11:35,200 --> 00:11:37,910
+it is LLM generated. So it's not
+actually going to be guaranteed to work
+
+680
+00:11:37,910 --> 00:11:37,920
+actually going to be guaranteed to work
+ 
+
+681
+00:11:37,920 --> 00:11:39,990
+actually going to be guaranteed to work
+properly for you. So you get a skill,
+
+682
+00:11:39,990 --> 00:11:40,000
+properly for you. So you get a skill,
+ 
+
+683
+00:11:40,000 --> 00:11:41,430
+properly for you. So you get a skill,
+you run it, it fails, you're like,
+
+684
+00:11:41,430 --> 00:11:41,440
+you run it, it fails, you're like,
+ 
+
+685
+00:11:41,440 --> 00:11:43,030
+you run it, it fails, you're like,
+"Okay, so I thought that this would save
+
+686
+00:11:43,030 --> 00:11:43,040
+"Okay, so I thought that this would save
+ 
+
+687
+00:11:43,040 --> 00:11:45,750
+"Okay, so I thought that this would save
+me time and actually just wasted it." So
+
+688
+00:11:45,750 --> 00:11:45,760
+me time and actually just wasted it." So
+ 
+
+689
+00:11:45,760 --> 00:11:47,350
+me time and actually just wasted it." So
+maybe it was a nuisance, it was
+
+690
+00:11:47,350 --> 00:11:47,360
+maybe it was a nuisance, it was
+ 
+
+691
+00:11:47,360 --> 00:11:49,670
+maybe it was a nuisance, it was
+detrimental where the the learning it is
+
+692
+00:11:49,670 --> 00:11:49,680
+detrimental where the the learning it is
+ 
+
+693
+00:11:49,680 --> 00:11:51,430
+detrimental where the the learning it is
+real, but it's not magic. So you have to
+
+694
+00:11:51,430 --> 00:11:51,440
+real, but it's not magic. So you have to
+ 
+
+695
+00:11:51,440 --> 00:11:53,750
+real, but it's not magic. So you have to
+set your expectations accordingly and
+
+696
+00:11:53,750 --> 00:11:53,760
+set your expectations accordingly and
+ 
+
+697
+00:11:53,760 --> 00:11:55,350
+set your expectations accordingly and
+just know that you are going to have to
+
+698
+00:11:55,350 --> 00:11:55,360
+just know that you are going to have to
+ 
+
+699
+00:11:55,360 --> 00:11:57,829
+just know that you are going to have to
+adjust things quite frequently. Now
+
+700
+00:11:57,829 --> 00:11:57,839
+adjust things quite frequently. Now
+ 
+
+701
+00:11:57,839 --> 00:11:59,509
+adjust things quite frequently. Now
+there's also a security thing that
+
+702
+00:11:59,509 --> 00:11:59,519
+there's also a security thing that
+ 
+
+703
+00:11:59,519 --> 00:12:01,030
+there's also a security thing that
+bothered me a bit. So if you're running
+
+704
+00:12:01,030 --> 00:12:01,040
+bothered me a bit. So if you're running
+ 
+
+705
+00:12:01,040 --> 00:12:03,190
+bothered me a bit. So if you're running
+on the local back end like not docker
+
+706
+00:12:03,190 --> 00:12:03,200
+on the local back end like not docker
+ 
+
+707
+00:12:03,200 --> 00:12:05,829
+on the local back end like not docker
+not modal you're running this locally
+
+708
+00:12:05,829 --> 00:12:05,839
+not modal you're running this locally
+ 
+
+709
+00:12:05,839 --> 00:12:07,430
+not modal you're running this locally
+your agent it can call the terminal
+
+710
+00:12:07,430 --> 00:12:07,440
+your agent it can call the terminal
+ 
+
+711
+00:12:07,440 --> 00:12:09,670
+your agent it can call the terminal
+which runs as you on your machine. So if
+
+712
+00:12:09,670 --> 00:12:09,680
+which runs as you on your machine. So if
+ 
+
+713
+00:12:09,680 --> 00:12:12,870
+which runs as you on your machine. So if
+the LLM decides to do something weird or
+
+714
+00:12:12,870 --> 00:12:12,880
+the LLM decides to do something weird or
+ 
+
+715
+00:12:12,880 --> 00:12:15,190
+the LLM decides to do something weird or
+edgy it definitely can like there are
+
+716
+00:12:15,190 --> 00:12:15,200
+edgy it definitely can like there are
+ 
+
+717
+00:12:15,200 --> 00:12:17,509
+edgy it definitely can like there are
+dangerous command checks built in and
+
+718
+00:12:17,509 --> 00:12:17,519
+dangerous command checks built in and
+ 
+
+719
+00:12:17,519 --> 00:12:19,350
+dangerous command checks built in and
+there's actually a PR right now to
+
+720
+00:12:19,350 --> 00:12:19,360
+there's actually a PR right now to
+ 
+
+721
+00:12:19,360 --> 00:12:21,750
+there's actually a PR right now to
+tighten this even further but the docs
+
+722
+00:12:21,750 --> 00:12:21,760
+tighten this even further but the docs
+ 
+
+723
+00:12:21,760 --> 00:12:23,509
+tighten this even further but the docs
+they themselves for production use
+
+724
+00:12:23,509 --> 00:12:23,519
+they themselves for production use
+ 
+
+725
+00:12:23,519 --> 00:12:25,430
+they themselves for production use
+docker or modal as your backend because
+
+726
+00:12:25,430 --> 00:12:25,440
+docker or modal as your backend because
+ 
+
+727
+00:12:25,440 --> 00:12:27,110
+docker or modal as your backend because
+the container it is the security
+
+728
+00:12:27,110 --> 00:12:27,120
+the container it is the security
+ 
+
+729
+00:12:27,120 --> 00:12:28,550
+the container it is the security
+boundary. So if you're security
+
+730
+00:12:28,550 --> 00:12:28,560
+boundary. So if you're security
+ 
+
+731
+00:12:28,560 --> 00:12:30,069
+boundary. So if you're security
+conscious and you're running locally,
+
+732
+00:12:30,069 --> 00:12:30,079
+conscious and you're running locally,
+ 
+
+733
+00:12:30,079 --> 00:12:31,350
+conscious and you're running locally,
+like this is something you genuinely
+
+734
+00:12:31,350 --> 00:12:31,360
+like this is something you genuinely
+ 
+
+735
+00:12:31,360 --> 00:12:32,949
+like this is something you genuinely
+need to be thinking about. Now the
+
+736
+00:12:32,949 --> 00:12:32,959
+need to be thinking about. Now the
+ 
+
+737
+00:12:32,959 --> 00:12:35,190
+need to be thinking about. Now the
+agent, it also gets stuck sometimes. So
+
+738
+00:12:35,190 --> 00:12:35,200
+agent, it also gets stuck sometimes. So
+ 
+
+739
+00:12:35,200 --> 00:12:37,030
+agent, it also gets stuck sometimes. So
+if you message it, it can ignore you and
+
+740
+00:12:37,030 --> 00:12:37,040
+if you message it, it can ignore you and
+ 
+
+741
+00:12:37,040 --> 00:12:38,949
+if you message it, it can ignore you and
+it'll so often just get into a loop and
+
+742
+00:12:38,949 --> 00:12:38,959
+it'll so often just get into a loop and
+ 
+
+743
+00:12:38,959 --> 00:12:40,790
+it'll so often just get into a loop and
+just keep going while you are just going
+
+744
+00:12:40,790 --> 00:12:40,800
+just keep going while you are just going
+ 
+
+745
+00:12:40,800 --> 00:12:42,389
+just keep going while you are just going
+to be sitting there. So they have
+
+746
+00:12:42,389 --> 00:12:42,399
+to be sitting there. So they have
+ 
+
+747
+00:12:42,399 --> 00:12:44,389
+to be sitting there. So they have
+shipped some fixes for this in past
+
+748
+00:12:44,389 --> 00:12:44,399
+shipped some fixes for this in past
+ 
+
+749
+00:12:44,399 --> 00:12:48,230
+shipped some fixes for this in past
+releases like the VO. 4.0 change log. It
+
+750
+00:12:48,230 --> 00:12:48,240
+releases like the VO. 4.0 change log. It
+ 
+
+751
+00:12:48,240 --> 00:12:50,230
+releases like the VO. 4.0 change log. It
+has multiple fixed stuck agent loop
+
+752
+00:12:50,230 --> 00:12:50,240
+has multiple fixed stuck agent loop
+ 
+
+753
+00:12:50,240 --> 00:12:51,430
+has multiple fixed stuck agent loop
+entries, but it's one of those things
+
+754
+00:12:51,430 --> 00:12:51,440
+entries, but it's one of those things
+ 
+
+755
+00:12:51,440 --> 00:12:52,949
+entries, but it's one of those things
+that just keeps coming back in different
+
+756
+00:12:52,949 --> 00:12:52,959
+that just keeps coming back in different
+ 
+
+757
+00:12:52,959 --> 00:12:54,629
+that just keeps coming back in different
+forms. So it's getting better, but is
+
+758
+00:12:54,629 --> 00:12:54,639
+forms. So it's getting better, but is
+ 
+
+759
+00:12:54,639 --> 00:12:56,550
+forms. So it's getting better, but is
+not completely solved. And then there's
+
+760
+00:12:56,550 --> 00:12:56,560
+not completely solved. And then there's
+ 
+
+761
+00:12:56,560 --> 00:12:58,470
+not completely solved. And then there's
+also the speed. So if you need raw
+
+762
+00:12:58,470 --> 00:12:58,480
+also the speed. So if you need raw
+ 
+
+763
+00:12:58,480 --> 00:13:01,030
+also the speed. So if you need raw
+execution speed on multi-top workflows,
+
+764
+00:13:01,030 --> 00:13:01,040
+execution speed on multi-top workflows,
+ 
+
+765
+00:13:01,040 --> 00:13:03,350
+execution speed on multi-top workflows,
+Hermes it is not exactly optimized for
+
+766
+00:13:03,350 --> 00:13:03,360
+Hermes it is not exactly optimized for
+ 
+
+767
+00:13:03,360 --> 00:13:06,069
+Hermes it is not exactly optimized for
+that. Where frameworks like Crew AI and
+
+768
+00:13:06,069 --> 00:13:06,079
+that. Where frameworks like Crew AI and
+ 
+
+769
+00:13:06,079 --> 00:13:08,310
+that. Where frameworks like Crew AI and
+Langraph, they're purpose-built for fast
+
+770
+00:13:08,310 --> 00:13:08,320
+Langraph, they're purpose-built for fast
+ 
+
+771
+00:13:08,320 --> 00:13:11,509
+Langraph, they're purpose-built for fast
+orchestration. In Hermes, it is trading
+
+772
+00:13:11,509 --> 00:13:11,519
+orchestration. In Hermes, it is trading
+ 
+
+773
+00:13:11,519 --> 00:13:13,910
+orchestration. In Hermes, it is trading
+speed for learning and that's the bet
+
+774
+00:13:13,910 --> 00:13:13,920
+speed for learning and that's the bet
+ 
+
+775
+00:13:13,920 --> 00:13:16,069
+speed for learning and that's the bet
+that they are essentially making. So if
+
+776
+00:13:16,069 --> 00:13:16,079
+that they are essentially making. So if
+ 
+
+777
+00:13:16,079 --> 00:13:18,310
+that they are essentially making. So if
+your use case is run this pipeline as
+
+778
+00:13:18,310 --> 00:13:18,320
+your use case is run this pipeline as
+ 
+
+779
+00:13:18,320 --> 00:13:20,710
+your use case is run this pipeline as
+fast as possible, like those frameworks,
+
+780
+00:13:20,710 --> 00:13:20,720
+fast as possible, like those frameworks,
+ 
+
+781
+00:13:20,720 --> 00:13:22,949
+fast as possible, like those frameworks,
+there are going to be better tools. And
+
+782
+00:13:22,949 --> 00:13:22,959
+there are going to be better tools. And
+ 
+
+783
+00:13:22,959 --> 00:13:24,710
+there are going to be better tools. And
+if your use case is to just build an
+
+784
+00:13:24,710 --> 00:13:24,720
+if your use case is to just build an
+ 
+
+785
+00:13:24,720 --> 00:13:26,310
+if your use case is to just build an
+agent that gets smarter the longer I use
+
+786
+00:13:26,310 --> 00:13:26,320
+agent that gets smarter the longer I use
+ 
+
+787
+00:13:26,320 --> 00:13:28,069
+agent that gets smarter the longer I use
+it, that's where Hermes is going to
+
+788
+00:13:28,069 --> 00:13:28,079
+it, that's where Hermes is going to
+ 
+
+789
+00:13:28,079 --> 00:13:29,350
+it, that's where Hermes is going to
+actually be much much better for you.
+
+790
+00:13:29,350 --> 00:13:29,360
+actually be much much better for you.
+ 
+
+791
+00:13:29,360 --> 00:13:31,110
+actually be much much better for you.
+Now look, these are not deal breakers if
+
+792
+00:13:31,110 --> 00:13:31,120
+Now look, these are not deal breakers if
+ 
+
+793
+00:13:31,120 --> 00:13:33,030
+Now look, these are not deal breakers if
+you're a Mac or Linux shop building
+
+794
+00:13:33,030 --> 00:13:33,040
+you're a Mac or Linux shop building
+ 
+
+795
+00:13:33,040 --> 00:13:34,550
+you're a Mac or Linux shop building
+internal tools and you're okay running
+
+796
+00:13:34,550 --> 00:13:34,560
+internal tools and you're okay running
+ 
+
+797
+00:13:34,560 --> 00:13:36,069
+internal tools and you're okay running
+Docker for isolation. But if you need
+
+798
+00:13:36,069 --> 00:13:36,079
+Docker for isolation. But if you need
+ 
+
+799
+00:13:36,079 --> 00:13:37,750
+Docker for isolation. But if you need
+native Windows or if you need lockdown
+
+800
+00:13:37,750 --> 00:13:37,760
+native Windows or if you need lockdown
+ 
+
+801
+00:13:37,760 --> 00:13:39,750
+native Windows or if you need lockdown
+security environment with no containers
+
+802
+00:13:39,750 --> 00:13:39,760
+security environment with no containers
+ 
+
+803
+00:13:39,760 --> 00:13:41,910
+security environment with no containers
+or speedritical pipelines, then Hermes
+
+804
+00:13:41,910 --> 00:13:41,920
+or speedritical pipelines, then Hermes
+ 
+
+805
+00:13:41,920 --> 00:13:43,509
+or speedritical pipelines, then Hermes
+is not going to be your tool. it's
+
+806
+00:13:43,509 --> 00:13:43,519
+is not going to be your tool. it's
+ 
+
+807
+00:13:43,519 --> 00:13:45,190
+is not going to be your tool. it's
+optimizing for something completely
+
+808
+00:13:45,190 --> 00:13:45,200
+optimizing for something completely
+ 
+
+809
+00:13:45,200 --> 00:13:47,110
+optimizing for something completely
+differently. Now, that brings me to the
+
+810
+00:13:47,110 --> 00:13:47,120
+differently. Now, that brings me to the
+ 
+
+811
+00:13:47,120 --> 00:13:48,790
+differently. Now, that brings me to the
+comparison. So, if learning is what
+
+812
+00:13:48,790 --> 00:13:48,800
+comparison. So, if learning is what
+ 
+
+813
+00:13:48,800 --> 00:13:50,710
+comparison. So, if learning is what
+Hermes is betting on, there's another
+
+814
+00:13:50,710 --> 00:13:50,720
+Hermes is betting on, there's another
+ 
+
+815
+00:13:50,720 --> 00:13:52,230
+Hermes is betting on, there's another
+framework taking a completely different
+
+816
+00:13:52,230 --> 00:13:52,240
+framework taking a completely different
+ 
+
+817
+00:13:52,240 --> 00:13:54,230
+framework taking a completely different
+bet. So, if Hermes has all these
+
+818
+00:13:54,230 --> 00:13:54,240
+bet. So, if Hermes has all these
+ 
+
+819
+00:13:54,240 --> 00:13:56,470
+bet. So, if Hermes has all these
+trade-offs, and it definitely does, the
+
+820
+00:13:56,470 --> 00:13:56,480
+trade-offs, and it definitely does, the
+ 
+
+821
+00:13:56,480 --> 00:13:58,150
+trade-offs, and it definitely does, the
+obvious question is like, okay, well,
+
+822
+00:13:58,150 --> 00:13:58,160
+obvious question is like, okay, well,
+ 
+
+823
+00:13:58,160 --> 00:13:59,670
+obvious question is like, okay, well,
+what about OpenClaw? Because every time
+
+824
+00:13:59,670 --> 00:13:59,680
+what about OpenClaw? Because every time
+ 
+
+825
+00:13:59,680 --> 00:14:01,829
+what about OpenClaw? Because every time
+that I mention Hermes in my community,
+
+826
+00:14:01,829 --> 00:14:01,839
+that I mention Hermes in my community,
+ 
+
+827
+00:14:01,839 --> 00:14:03,670
+that I mention Hermes in my community,
+somebody says like just use OpenClaw.
+
+828
+00:14:03,670 --> 00:14:03,680
+somebody says like just use OpenClaw.
+ 
+
+829
+00:14:03,680 --> 00:14:05,030
+somebody says like just use OpenClaw.
+Like, so let me just break this down
+
+830
+00:14:05,030 --> 00:14:05,040
+Like, so let me just break this down
+ 
+
+831
+00:14:05,040 --> 00:14:06,949
+Like, so let me just break this down
+because I think most of the comparisons
+
+832
+00:14:06,949 --> 00:14:06,959
+because I think most of the comparisons
+ 
+
+833
+00:14:06,959 --> 00:14:08,629
+because I think most of the comparisons
+out there are actually getting this
+
+834
+00:14:08,629 --> 00:14:08,639
+out there are actually getting this
+ 
+
+835
+00:14:08,639 --> 00:14:10,949
+out there are actually getting this
+completely wrong. So, first, if you do
+
+836
+00:14:10,949 --> 00:14:10,959
+completely wrong. So, first, if you do
+ 
+
+837
+00:14:10,959 --> 00:14:13,189
+completely wrong. So, first, if you do
+not know what OpenClaw is, you need to.
+
+838
+00:14:13,189 --> 00:14:13,199
+not know what OpenClaw is, you need to.
+ 
+
+839
+00:14:13,199 --> 00:14:15,189
+not know what OpenClaw is, you need to.
+Peter Steinberger, he built it as a
+
+840
+00:14:15,189 --> 00:14:15,199
+Peter Steinberger, he built it as a
+ 
+
+841
+00:14:15,199 --> 00:14:17,670
+Peter Steinberger, he built it as a
+weekend side project back in 2025. So,
+
+842
+00:14:17,670 --> 00:14:17,680
+weekend side project back in 2025. So,
+ 
+
+843
+00:14:17,680 --> 00:14:20,310
+weekend side project back in 2025. So,
+it went from zero to about 300,000 plus
+
+844
+00:14:20,310 --> 00:14:20,320
+it went from zero to about 300,000 plus
+ 
+
+845
+00:14:20,320 --> 00:14:22,870
+it went from zero to about 300,000 plus
+GitHub stars in about 4 months. It beat
+
+846
+00:14:22,870 --> 00:14:22,880
+GitHub stars in about 4 months. It beat
+ 
+
+847
+00:14:22,880 --> 00:14:24,870
+GitHub stars in about 4 months. It beat
+React's all-time record and the record
+
+848
+00:14:24,870 --> 00:14:24,880
+React's all-time record and the record
+ 
+
+849
+00:14:24,880 --> 00:14:27,670
+React's all-time record and the record
+that React took 10 years to set. It took
+
+850
+00:14:27,670 --> 00:14:27,680
+that React took 10 years to set. It took
+ 
+
+851
+00:14:27,680 --> 00:14:29,990
+that React took 10 years to set. It took
+this 60 days for Open Claw. Now, Jensen
+
+852
+00:14:29,990 --> 00:14:30,000
+this 60 days for Open Claw. Now, Jensen
+ 
+
+853
+00:14:30,000 --> 00:14:31,509
+this 60 days for Open Claw. Now, Jensen
+Wang, he called it probably the most
+
+854
+00:14:31,509 --> 00:14:31,519
+Wang, he called it probably the most
+ 
+
+855
+00:14:31,519 --> 00:14:33,430
+Wang, he called it probably the most
+important release of software ever.
+
+856
+00:14:33,430 --> 00:14:33,440
+important release of software ever.
+ 
+
+857
+00:14:33,440 --> 00:14:35,509
+important release of software ever.
+Dyner, he then joined OpenAI in
+
+858
+00:14:35,509 --> 00:14:35,519
+Dyner, he then joined OpenAI in
+ 
+
+859
+00:14:35,519 --> 00:14:37,189
+Dyner, he then joined OpenAI in
+February. The project moved to an
+
+860
+00:14:37,189 --> 00:14:37,199
+February. The project moved to an
+ 
+
+861
+00:14:37,199 --> 00:14:39,110
+February. The project moved to an
+independent foundation and the
+
+862
+00:14:39,110 --> 00:14:39,120
+independent foundation and the
+ 
+
+863
+00:14:39,120 --> 00:14:40,629
+independent foundation and the
+development pace somehow got even
+
+864
+00:14:40,629 --> 00:14:40,639
+development pace somehow got even
+ 
+
+865
+00:14:40,639 --> 00:14:42,230
+development pace somehow got even
+faster. You know, there are releases
+
+866
+00:14:42,230 --> 00:14:42,240
+faster. You know, there are releases
+ 
+
+867
+00:14:42,240 --> 00:14:44,150
+faster. You know, there are releases
+landing every few hours. There about
+
+868
+00:14:44,150 --> 00:14:44,160
+landing every few hours. There about
+ 
+
+869
+00:14:44,160 --> 00:14:46,870
+landing every few hours. There about
+13,000 community skills on Claw Hub. 2
+
+870
+00:14:46,870 --> 00:14:46,880
+13,000 community skills on Claw Hub. 2
+ 
+
+871
+00:14:46,880 --> 00:14:48,550
+13,000 community skills on Claw Hub. 2
+million monthly active users and this is
+
+872
+00:14:48,550 --> 00:14:48,560
+million monthly active users and this is
+ 
+
+873
+00:14:48,560 --> 00:14:50,550
+million monthly active users and this is
+not a small project that you have not
+
+874
+00:14:50,550 --> 00:14:50,560
+not a small project that you have not
+ 
+
+875
+00:14:50,560 --> 00:14:52,069
+not a small project that you have not
+heard of. Like this is the biggest thing
+
+876
+00:14:52,069 --> 00:14:52,079
+heard of. Like this is the biggest thing
+ 
+
+877
+00:14:52,079 --> 00:14:54,710
+heard of. Like this is the biggest thing
+happening in open-source AI right now.
+
+878
+00:14:54,710 --> 00:14:54,720
+happening in open-source AI right now.
+ 
+
+879
+00:14:54,720 --> 00:14:56,550
+happening in open-source AI right now.
+And here's like where most creators just
+
+880
+00:14:56,550 --> 00:14:56,560
+And here's like where most creators just
+ 
+
+881
+00:14:56,560 --> 00:14:58,069
+And here's like where most creators just
+get this wrong about the comparison is
+
+882
+00:14:58,069 --> 00:14:58,079
+get this wrong about the comparison is
+ 
+
+883
+00:14:58,079 --> 00:14:59,990
+get this wrong about the comparison is
+like they frame it as like which one is
+
+884
+00:14:59,990 --> 00:15:00,000
+like they frame it as like which one is
+ 
+
+885
+00:15:00,000 --> 00:15:01,750
+like they frame it as like which one is
+better and that's the wrong question.
+
+886
+00:15:01,750 --> 00:15:01,760
+better and that's the wrong question.
+ 
+
+887
+00:15:01,760 --> 00:15:02,949
+better and that's the wrong question.
+Like these tools, they're making
+
+888
+00:15:02,949 --> 00:15:02,959
+Like these tools, they're making
+ 
+
+889
+00:15:02,959 --> 00:15:04,710
+Like these tools, they're making
+fundamentally different architectural
+
+890
+00:15:04,710 --> 00:15:04,720
+fundamentally different architectural
+ 
+
+891
+00:15:04,720 --> 00:15:07,269
+fundamentally different architectural
+bets. So, OpenC Claw, it is a messaging
+
+892
+00:15:07,269 --> 00:15:07,279
+bets. So, OpenC Claw, it is a messaging
+ 
+
+893
+00:15:07,279 --> 00:15:09,750
+bets. So, OpenC Claw, it is a messaging
+gateway. It is built in Typescript. It's
+
+894
+00:15:09,750 --> 00:15:09,760
+gateway. It is built in Typescript. It's
+ 
+
+895
+00:15:09,760 --> 00:15:11,430
+gateway. It is built in Typescript. It's
+designed to be the single control plane
+
+896
+00:15:11,430 --> 00:15:11,440
+designed to be the single control plane
+ 
+
+897
+00:15:11,440 --> 00:15:13,590
+designed to be the single control plane
+that routes your AI across every
+
+898
+00:15:13,590 --> 00:15:13,600
+that routes your AI across every
+ 
+
+899
+00:15:13,600 --> 00:15:16,629
+that routes your AI across every
+platform that your life is touching. So,
+
+900
+00:15:16,629 --> 00:15:16,639
+platform that your life is touching. So,
+ 
+
+901
+00:15:16,639 --> 00:15:18,470
+platform that your life is touching. So,
+24 platforms including WhatsApp,
+
+902
+00:15:18,470 --> 00:15:18,480
+24 platforms including WhatsApp,
+ 
+
+903
+00:15:18,480 --> 00:15:21,350
+24 platforms including WhatsApp,
+Telegram, iMessage through Blue Bubbles,
+
+904
+00:15:21,350 --> 00:15:21,360
+Telegram, iMessage through Blue Bubbles,
+ 
+
+905
+00:15:21,360 --> 00:15:23,189
+Telegram, iMessage through Blue Bubbles,
+Teams, Discord, Slack, Signal, Google
+
+906
+00:15:23,189 --> 00:15:23,199
+Teams, Discord, Slack, Signal, Google
+ 
+
+907
+00:15:23,199 --> 00:15:26,230
+Teams, Discord, Slack, Signal, Google
+Chat, Line Matrix, IRC, WeChat. There's
+
+908
+00:15:26,230 --> 00:15:26,240
+Chat, Line Matrix, IRC, WeChat. There's
+ 
+
+909
+00:15:26,240 --> 00:15:28,069
+Chat, Line Matrix, IRC, WeChat. There's
+even more. Now, you text it from your
+
+910
+00:15:28,069 --> 00:15:28,079
+even more. Now, you text it from your
+ 
+
+911
+00:15:28,079 --> 00:15:29,910
+even more. Now, you text it from your
+phone. It works on your machine and the
+
+912
+00:15:29,910 --> 00:15:29,920
+phone. It works on your machine and the
+ 
+
+913
+00:15:29,920 --> 00:15:32,150
+phone. It works on your machine and the
+community ecosystem. It is gigantic.
+
+914
+00:15:32,150 --> 00:15:32,160
+community ecosystem. It is gigantic.
+ 
+
+915
+00:15:32,160 --> 00:15:34,710
+community ecosystem. It is gigantic.
+There's 13,000 skills on Claw Hub.
+
+916
+00:15:34,710 --> 00:15:34,720
+There's 13,000 skills on Claw Hub.
+ 
+
+917
+00:15:34,720 --> 00:15:36,710
+There's 13,000 skills on Claw Hub.
+There's tutorials everywhere. There's a
+
+918
+00:15:36,710 --> 00:15:36,720
+There's tutorials everywhere. There's a
+ 
+
+919
+00:15:36,720 --> 00:15:38,949
+There's tutorials everywhere. There's a
+whole startup ecosystem just building on
+
+920
+00:15:38,949 --> 00:15:38,959
+whole startup ecosystem just building on
+ 
+
+921
+00:15:38,959 --> 00:15:40,790
+whole startup ecosystem just building on
+top of it. And if you need an agent that
+
+922
+00:15:40,790 --> 00:15:40,800
+top of it. And if you need an agent that
+ 
+
+923
+00:15:40,800 --> 00:15:43,430
+top of it. And if you need an agent that
+shows up across five business channels
+
+924
+00:15:43,430 --> 00:15:43,440
+shows up across five business channels
+ 
+
+925
+00:15:43,440 --> 00:15:45,269
+shows up across five business channels
+from day one with a huge community
+
+926
+00:15:45,269 --> 00:15:45,279
+from day one with a huge community
+ 
+
+927
+00:15:45,279 --> 00:15:47,110
+from day one with a huge community
+behind it, like OpenClaw is
+
+928
+00:15:47,110 --> 00:15:47,120
+behind it, like OpenClaw is
+ 
+
+929
+00:15:47,120 --> 00:15:49,910
+behind it, like OpenClaw is
+purpose-built specifically for that. But
+
+930
+00:15:49,910 --> 00:15:49,920
+purpose-built specifically for that. But
+ 
+
+931
+00:15:49,920 --> 00:15:51,829
+purpose-built specifically for that. But
+here's what OpenClaw does not do for
+
+932
+00:15:51,829 --> 00:15:51,839
+here's what OpenClaw does not do for
+ 
+
+933
+00:15:51,839 --> 00:15:54,310
+here's what OpenClaw does not do for
+you. It does not learn. So the skills in
+
+934
+00:15:54,310 --> 00:15:54,320
+you. It does not learn. So the skills in
+ 
+
+935
+00:15:54,320 --> 00:15:56,230
+you. It does not learn. So the skills in
+OpenClaw, they are maintained by humans
+
+936
+00:15:56,230 --> 00:15:56,240
+OpenClaw, they are maintained by humans
+ 
+
+937
+00:15:56,240 --> 00:15:57,829
+OpenClaw, they are maintained by humans
+where you install them, you configure
+
+938
+00:15:57,829 --> 00:15:57,839
+where you install them, you configure
+ 
+
+939
+00:15:57,839 --> 00:16:00,389
+where you install them, you configure
+them, you update them. And with that, if
+
+940
+00:16:00,389 --> 00:16:00,399
+them, you update them. And with that, if
+ 
+
+941
+00:16:00,399 --> 00:16:02,230
+them, you update them. And with that, if
+the agent does something clever today,
+
+942
+00:16:02,230 --> 00:16:02,240
+the agent does something clever today,
+ 
+
+943
+00:16:02,240 --> 00:16:03,910
+the agent does something clever today,
+it's not going to remember how to do it
+
+944
+00:16:03,910 --> 00:16:03,920
+it's not going to remember how to do it
+ 
+
+945
+00:16:03,920 --> 00:16:06,150
+it's not going to remember how to do it
+even faster tomorrow. So there's no
+
+946
+00:16:06,150 --> 00:16:06,160
+even faster tomorrow. So there's no
+ 
+
+947
+00:16:06,160 --> 00:16:08,629
+even faster tomorrow. So there's no
+trajectory capture. There's no RL
+
+948
+00:16:08,629 --> 00:16:08,639
+trajectory capture. There's no RL
+ 
+
+949
+00:16:08,639 --> 00:16:11,189
+trajectory capture. There's no RL
+training pipeline and open clause memory
+
+950
+00:16:11,189 --> 00:16:11,199
+training pipeline and open clause memory
+ 
+
+951
+00:16:11,199 --> 00:16:13,030
+training pipeline and open clause memory
+system. It is going to work through
+
+952
+00:16:13,030 --> 00:16:13,040
+system. It is going to work through
+ 
+
+953
+00:16:13,040 --> 00:16:15,829
+system. It is going to work through
+plugins. So any filebacked memory, you
+
+954
+00:16:15,829 --> 00:16:15,839
+plugins. So any filebacked memory, you
+ 
+
+955
+00:16:15,839 --> 00:16:17,829
+plugins. So any filebacked memory, you
+have lance DB for vector search. You
+
+956
+00:16:17,829 --> 00:16:17,839
+have lance DB for vector search. You
+ 
+
+957
+00:16:17,839 --> 00:16:20,069
+have lance DB for vector search. You
+have lossless claw for full conversation
+
+958
+00:16:20,069 --> 00:16:20,079
+have lossless claw for full conversation
+ 
+
+959
+00:16:20,079 --> 00:16:22,550
+have lossless claw for full conversation
+persistence. So it is solid, but you
+
+960
+00:16:22,550 --> 00:16:22,560
+persistence. So it is solid, but you
+ 
+
+961
+00:16:22,560 --> 00:16:24,069
+persistence. So it is solid, but you
+install it and configure each of those
+
+962
+00:16:24,069 --> 00:16:24,079
+install it and configure each of those
+ 
+
+963
+00:16:24,079 --> 00:16:25,990
+install it and configure each of those
+parts separately. And it's just a lot to
+
+964
+00:16:25,990 --> 00:16:26,000
+parts separately. And it's just a lot to
+ 
+
+965
+00:16:26,000 --> 00:16:28,470
+parts separately. And it's just a lot to
+configure and constantly have to
+
+966
+00:16:28,470 --> 00:16:28,480
+configure and constantly have to
+ 
+
+967
+00:16:28,480 --> 00:16:30,550
+configure and constantly have to
+optimize. Hermes, it is the opposite
+
+968
+00:16:30,550 --> 00:16:30,560
+optimize. Hermes, it is the opposite
+ 
+
+969
+00:16:30,560 --> 00:16:32,870
+optimize. Hermes, it is the opposite
+bet. It is built in Python by Noose
+
+970
+00:16:32,870 --> 00:16:32,880
+bet. It is built in Python by Noose
+ 
+
+971
+00:16:32,880 --> 00:16:35,189
+bet. It is built in Python by Noose
+Research. It's an actual AI lab, not a
+
+972
+00:16:35,189 --> 00:16:35,199
+Research. It's an actual AI lab, not a
+ 
+
+973
+00:16:35,199 --> 00:16:37,189
+Research. It's an actual AI lab, not a
+solo developer project. And these are
+
+974
+00:16:37,189 --> 00:16:37,199
+solo developer project. And these are
+ 
+
+975
+00:16:37,199 --> 00:16:39,430
+solo developer project. And these are
+the people behind Hermes model family.
+
+976
+00:16:39,430 --> 00:16:39,440
+the people behind Hermes model family.
+ 
+
+977
+00:16:39,440 --> 00:16:40,949
+the people behind Hermes model family.
+So they know how models learn because
+
+978
+00:16:40,949 --> 00:16:40,959
+So they know how models learn because
+ 
+
+979
+00:16:40,959 --> 00:16:42,949
+So they know how models learn because
+they train them for legitimately a
+
+980
+00:16:42,949 --> 00:16:42,959
+they train them for legitimately a
+ 
+
+981
+00:16:42,959 --> 00:16:44,470
+they train them for legitimately a
+living. And that shows in the
+
+982
+00:16:44,470 --> 00:16:44,480
+living. And that shows in the
+ 
+
+983
+00:16:44,480 --> 00:16:46,150
+living. And that shows in the
+architecture because the learning loop
+
+984
+00:16:46,150 --> 00:16:46,160
+architecture because the learning loop
+ 
+
+985
+00:16:46,160 --> 00:16:48,230
+architecture because the learning loop
+it is fundamentally baked into the core
+
+986
+00:16:48,230 --> 00:16:48,240
+it is fundamentally baked into the core
+ 
+
+987
+00:16:48,240 --> 00:16:50,069
+it is fundamentally baked into the core
+where you have autonomous skill creation
+
+988
+00:16:50,069 --> 00:16:50,079
+where you have autonomous skill creation
+ 
+
+989
+00:16:50,079 --> 00:16:52,230
+where you have autonomous skill creation
+after complex tasks and skills that
+
+990
+00:16:52,230 --> 00:16:52,240
+after complex tasks and skills that
+ 
+
+991
+00:16:52,240 --> 00:16:54,470
+after complex tasks and skills that
+self-improve during use and memory that
+
+992
+00:16:54,470 --> 00:16:54,480
+self-improve during use and memory that
+ 
+
+993
+00:16:54,480 --> 00:16:56,629
+self-improve during use and memory that
+can nudge itself and a trajectory
+
+994
+00:16:56,629 --> 00:16:56,639
+can nudge itself and a trajectory
+ 
+
+995
+00:16:56,639 --> 00:16:58,870
+can nudge itself and a trajectory
+capture that exports to share GPT for
+
+996
+00:16:58,870 --> 00:16:58,880
+capture that exports to share GPT for
+ 
+
+997
+00:16:58,880 --> 00:17:01,269
+capture that exports to share GPT for
+any fine-tuning your own models. Now the
+
+998
+00:17:01,269 --> 00:17:01,279
+any fine-tuning your own models. Now the
+ 
+
+999
+00:17:01,279 --> 00:17:03,189
+any fine-tuning your own models. Now the
+last part is the RL training pipeline.
+
+1000
+00:17:03,189 --> 00:17:03,199
+last part is the RL training pipeline.
+ 
+
+1001
+00:17:03,199 --> 00:17:04,870
+last part is the RL training pipeline.
+So if you're building AI models or doing
+
+1002
+00:17:04,870 --> 00:17:04,880
+So if you're building AI models or doing
+ 
+
+1003
+00:17:04,880 --> 00:17:06,390
+So if you're building AI models or doing
+any kind of research like this is the
+
+1004
+00:17:06,390 --> 00:17:06,400
+any kind of research like this is the
+ 
+
+1005
+00:17:06,400 --> 00:17:07,750
+any kind of research like this is the
+infrastructure that openclaw
+
+1006
+00:17:07,750 --> 00:17:07,760
+infrastructure that openclaw
+ 
+
+1007
+00:17:07,760 --> 00:17:09,829
+infrastructure that openclaw
+fundamentally does not have. So on
+
+1008
+00:17:09,829 --> 00:17:09,839
+fundamentally does not have. So on
+ 
+
+1009
+00:17:09,839 --> 00:17:12,390
+fundamentally does not have. So on
+platforms Hermes it now covers 12. It
+
+1010
+00:17:12,390 --> 00:17:12,400
+platforms Hermes it now covers 12. It
+ 
+
+1011
+00:17:12,400 --> 00:17:15,189
+platforms Hermes it now covers 12. It
+has Telegram, Discord, Slack, WhatsApp,
+
+1012
+00:17:15,189 --> 00:17:15,199
+has Telegram, Discord, Slack, WhatsApp,
+ 
+
+1013
+00:17:15,199 --> 00:17:18,069
+has Telegram, Discord, Slack, WhatsApp,
+Signal, Email, Home Assistant, Dingtalk,
+
+1014
+00:17:18,069 --> 00:17:18,079
+Signal, Email, Home Assistant, Dingtalk,
+ 
+
+1015
+00:17:18,079 --> 00:17:21,350
+Signal, Email, Home Assistant, Dingtalk,
+Mattermost, Matrix, Fau, and Wecom.
+
+1016
+00:17:21,350 --> 00:17:21,360
+Mattermost, Matrix, Fau, and Wecom.
+ 
+
+1017
+00:17:21,360 --> 00:17:23,510
+Mattermost, Matrix, Fau, and Wecom.
+That's still less than open clause 24,
+
+1018
+00:17:23,510 --> 00:17:23,520
+That's still less than open clause 24,
+ 
+
+1019
+00:17:23,520 --> 00:17:25,829
+That's still less than open clause 24,
+but the gap it is narrower than most
+
+1020
+00:17:25,829 --> 00:17:25,839
+but the gap it is narrower than most
+ 
+
+1021
+00:17:25,839 --> 00:17:26,949
+but the gap it is narrower than most
+people actually realize. And the
+
+1022
+00:17:26,949 --> 00:17:26,959
+people actually realize. And the
+ 
+
+1023
+00:17:26,959 --> 00:17:29,510
+people actually realize. And the
+crossplatform conversation continuity in
+
+1024
+00:17:29,510 --> 00:17:29,520
+crossplatform conversation continuity in
+ 
+
+1025
+00:17:29,520 --> 00:17:31,510
+crossplatform conversation continuity in
+Hermes. It is something that multiple
+
+1026
+00:17:31,510 --> 00:17:31,520
+Hermes. It is something that multiple
+ 
+
+1027
+00:17:31,520 --> 00:17:33,270
+Hermes. It is something that multiple
+reviewers, they have called out. So,
+
+1028
+00:17:33,270 --> 00:17:33,280
+reviewers, they have called out. So,
+ 
+
+1029
+00:17:33,280 --> 00:17:35,510
+reviewers, they have called out. So,
+start on the CLI, get notified on
+
+1030
+00:17:35,510 --> 00:17:35,520
+start on the CLI, get notified on
+ 
+
+1031
+00:17:35,520 --> 00:17:37,669
+start on the CLI, get notified on
+Telegram, resume on Discord, and then
+
+1032
+00:17:37,669 --> 00:17:37,679
+Telegram, resume on Discord, and then
+ 
+
+1033
+00:17:37,679 --> 00:17:38,870
+Telegram, resume on Discord, and then
+there's not going to be any context
+
+1034
+00:17:38,870 --> 00:17:38,880
+there's not going to be any context
+ 
+
+1035
+00:17:38,880 --> 00:17:40,870
+there's not going to be any context
+lost. On the infrastructure, Hermes has
+
+1036
+00:17:40,870 --> 00:17:40,880
+lost. On the infrastructure, Hermes has
+ 
+
+1037
+00:17:40,880 --> 00:17:42,070
+lost. On the infrastructure, Hermes has
+six different backends where you have
+
+1038
+00:17:42,070 --> 00:17:42,080
+six different backends where you have
+ 
+
+1039
+00:17:42,080 --> 00:17:44,710
+six different backends where you have
+the local, you have Docker, SSH,
+
+1040
+00:17:44,710 --> 00:17:44,720
+the local, you have Docker, SSH,
+ 
+
+1041
+00:17:44,720 --> 00:17:47,110
+the local, you have Docker, SSH,
+Singularity, Daytona, and modal
+
+1042
+00:17:47,110 --> 00:17:47,120
+Singularity, Daytona, and modal
+ 
+
+1043
+00:17:47,120 --> 00:17:49,110
+Singularity, Daytona, and modal
+serviceless. So, you can run it on just
+
+1044
+00:17:49,110 --> 00:17:49,120
+serviceless. So, you can run it on just
+ 
+
+1045
+00:17:49,120 --> 00:17:51,830
+serviceless. So, you can run it on just
+a simple $5 VPS that costs nothing when
+
+1046
+00:17:51,830 --> 00:17:51,840
+a simple $5 VPS that costs nothing when
+ 
+
+1047
+00:17:51,840 --> 00:17:54,390
+a simple $5 VPS that costs nothing when
+it's idle. And OpenClaw, it's primarily
+
+1048
+00:17:54,390 --> 00:17:54,400
+it's idle. And OpenClaw, it's primarily
+ 
+
+1049
+00:17:54,400 --> 00:17:57,909
+it's idle. And OpenClaw, it's primarily
+just a node.js process or most commonly
+
+1050
+00:17:57,909 --> 00:17:57,919
+just a node.js process or most commonly
+ 
+
+1051
+00:17:57,919 --> 00:17:59,909
+just a node.js process or most commonly
+docker. Both work, but if you want
+
+1052
+00:17:59,909 --> 00:17:59,919
+docker. Both work, but if you want
+ 
+
+1053
+00:17:59,919 --> 00:18:02,150
+docker. Both work, but if you want
+serverless or any HPC cluster
+
+1054
+00:18:02,150 --> 00:18:02,160
+serverless or any HPC cluster
+ 
+
+1055
+00:18:02,160 --> 00:18:03,990
+serverless or any HPC cluster
+developments, Hermes is the one that's
+
+1056
+00:18:03,990 --> 00:18:04,000
+developments, Hermes is the one that's
+ 
+
+1057
+00:18:04,000 --> 00:18:06,230
+developments, Hermes is the one that's
+going to be supporting that. And one
+
+1058
+00:18:06,230 --> 00:18:06,240
+going to be supporting that. And one
+ 
+
+1059
+00:18:06,240 --> 00:18:07,909
+going to be supporting that. And one
+thing that I haven't seen on any other
+
+1060
+00:18:07,909 --> 00:18:07,919
+thing that I haven't seen on any other
+ 
+
+1061
+00:18:07,919 --> 00:18:09,990
+thing that I haven't seen on any other
+video thus far is that Hermes, it has a
+
+1062
+00:18:09,990 --> 00:18:10,000
+video thus far is that Hermes, it has a
+ 
+
+1063
+00:18:10,000 --> 00:18:11,750
+video thus far is that Hermes, it has a
+built-in openclaw migration tool. So if
+
+1064
+00:18:11,750 --> 00:18:11,760
+built-in openclaw migration tool. So if
+ 
+
+1065
+00:18:11,760 --> 00:18:12,710
+built-in openclaw migration tool. So if
+you actually run this command,
+
+1066
+00:18:12,710 --> 00:18:12,720
+you actually run this command,
+ 
+
+1067
+00:18:12,720 --> 00:18:15,510
+you actually run this command,
+Hermesclaw migrate, it is going to pull
+
+1068
+00:18:15,510 --> 00:18:15,520
+Hermesclaw migrate, it is going to pull
+ 
+
+1069
+00:18:15,520 --> 00:18:17,909
+Hermesclaw migrate, it is going to pull
+your soul. MD, it can pull your
+
+1070
+00:18:17,909 --> 00:18:17,919
+your soul. MD, it can pull your
+ 
+
+1071
+00:18:17,919 --> 00:18:19,430
+your soul. MD, it can pull your
+memories. It can pull your skills, your
+
+1072
+00:18:19,430 --> 00:18:19,440
+memories. It can pull your skills, your
+ 
+
+1073
+00:18:19,440 --> 00:18:22,390
+memories. It can pull your skills, your
+API keys, and your messaging config. So
+
+1074
+00:18:22,390 --> 00:18:22,400
+API keys, and your messaging config. So
+ 
+
+1075
+00:18:22,400 --> 00:18:24,470
+API keys, and your messaging config. So
+literally everything. It's one command.
+
+1076
+00:18:24,470 --> 00:18:24,480
+literally everything. It's one command.
+ 
+
+1077
+00:18:24,480 --> 00:18:25,830
+literally everything. It's one command.
+So if you're already running OpenClaw
+
+1078
+00:18:25,830 --> 00:18:25,840
+So if you're already running OpenClaw
+ 
+
+1079
+00:18:25,840 --> 00:18:27,350
+So if you're already running OpenClaw
+and you're curious about the learning
+
+1080
+00:18:27,350 --> 00:18:27,360
+and you're curious about the learning
+ 
+
+1081
+00:18:27,360 --> 00:18:29,270
+and you're curious about the learning
+side, you don't start from scratch. Like
+
+1082
+00:18:29,270 --> 00:18:29,280
+side, you don't start from scratch. Like
+ 
+
+1083
+00:18:29,280 --> 00:18:31,270
+side, you don't start from scratch. Like
+that's a very deliberate strategic move
+
+1084
+00:18:31,270 --> 00:18:31,280
+that's a very deliberate strategic move
+ 
+
+1085
+00:18:31,280 --> 00:18:33,430
+that's a very deliberate strategic move
+from noose because they're not asking
+
+1086
+00:18:33,430 --> 00:18:33,440
+from noose because they're not asking
+ 
+
+1087
+00:18:33,440 --> 00:18:34,710
+from noose because they're not asking
+you to choose. They're just saying like
+
+1088
+00:18:34,710 --> 00:18:34,720
+you to choose. They're just saying like
+ 
+
+1089
+00:18:34,720 --> 00:18:36,230
+you to choose. They're just saying like
+keep open cloth if it works for you and
+
+1090
+00:18:36,230 --> 00:18:36,240
+keep open cloth if it works for you and
+ 
+
+1091
+00:18:36,240 --> 00:18:38,310
+keep open cloth if it works for you and
+try Hermes alongside it. So look, if you
+
+1092
+00:18:38,310 --> 00:18:38,320
+try Hermes alongside it. So look, if you
+ 
+
+1093
+00:18:38,320 --> 00:18:40,150
+try Hermes alongside it. So look, if you
+are running a business and you need an
+
+1094
+00:18:40,150 --> 00:18:40,160
+are running a business and you need an
+ 
+
+1095
+00:18:40,160 --> 00:18:41,990
+are running a business and you need an
+agent that operates across multiple
+
+1096
+00:18:41,990 --> 00:18:42,000
+agent that operates across multiple
+ 
+
+1097
+00:18:42,000 --> 00:18:44,150
+agent that operates across multiple
+channels, handles customerf facing
+
+1098
+00:18:44,150 --> 00:18:44,160
+channels, handles customerf facing
+ 
+
+1099
+00:18:44,160 --> 00:18:45,750
+channels, handles customerf facing
+tasks, has a massive community
+
+1100
+00:18:45,750 --> 00:18:45,760
+tasks, has a massive community
+ 
+
+1101
+00:18:45,760 --> 00:18:47,110
+tasks, has a massive community
+ecosystem, and you want something where
+
+1102
+00:18:47,110 --> 00:18:47,120
+ecosystem, and you want something where
+ 
+
+1103
+00:18:47,120 --> 00:18:48,470
+ecosystem, and you want something where
+you can find a tutorial for literally
+
+1104
+00:18:48,470 --> 00:18:48,480
+you can find a tutorial for literally
+ 
+
+1105
+00:18:48,480 --> 00:18:50,870
+you can find a tutorial for literally
+anything at 2 a.m. That's OpenClaw. It's
+
+1106
+00:18:50,870 --> 00:18:50,880
+anything at 2 a.m. That's OpenClaw. It's
+ 
+
+1107
+00:18:50,880 --> 00:18:52,950
+anything at 2 a.m. That's OpenClaw. It's
+the operations and platform play. And if
+
+1108
+00:18:52,950 --> 00:18:52,960
+the operations and platform play. And if
+ 
+
+1109
+00:18:52,960 --> 00:18:54,630
+the operations and platform play. And if
+you want an agent that compounds what it
+
+1110
+00:18:54,630 --> 00:18:54,640
+you want an agent that compounds what it
+ 
+
+1111
+00:18:54,640 --> 00:18:56,549
+you want an agent that compounds what it
+knows over time, gets faster the more
+
+1112
+00:18:56,549 --> 00:18:56,559
+knows over time, gets faster the more
+ 
+
+1113
+00:18:56,559 --> 00:18:58,630
+knows over time, gets faster the more
+you use it, it can export training data
+
+1114
+00:18:58,630 --> 00:18:58,640
+you use it, it can export training data
+ 
+
+1115
+00:18:58,640 --> 00:18:59,990
+you use it, it can export training data
+for your own models, and you're
+
+1116
+00:18:59,990 --> 00:19:00,000
+for your own models, and you're
+ 
+
+1117
+00:19:00,000 --> 00:19:02,070
+for your own models, and you're
+comfortable running it on a server,
+
+1118
+00:19:02,070 --> 00:19:02,080
+comfortable running it on a server,
+ 
+
+1119
+00:19:02,080 --> 00:19:03,669
+comfortable running it on a server,
+that's going to be Hermes. It's the
+
+1120
+00:19:03,669 --> 00:19:03,679
+that's going to be Hermes. It's the
+ 
+
+1121
+00:19:03,679 --> 00:19:06,230
+that's going to be Hermes. It's the
+personal agent and the research play if
+
+1122
+00:19:06,230 --> 00:19:06,240
+personal agent and the research play if
+ 
+
+1123
+00:19:06,240 --> 00:19:07,830
+personal agent and the research play if
+that is what you need. So they're just
+
+1124
+00:19:07,830 --> 00:19:07,840
+that is what you need. So they're just
+ 
+
+1125
+00:19:07,840 --> 00:19:09,669
+that is what you need. So they're just
+completely different games. Pick the one
+
+1126
+00:19:09,669 --> 00:19:09,679
+completely different games. Pick the one
+ 
+
+1127
+00:19:09,679 --> 00:19:11,029
+completely different games. Pick the one
+that actually matches what you're going
+
+1128
+00:19:11,029 --> 00:19:11,039
+that actually matches what you're going
+ 
+
+1129
+00:19:11,039 --> 00:19:12,789
+that actually matches what you're going
+to be building. So if you're leaning
+
+1130
+00:19:12,789 --> 00:19:12,799
+to be building. So if you're leaning
+ 
+
+1131
+00:19:12,799 --> 00:19:14,230
+to be building. So if you're leaning
+towards Hermes, let me show you how
+
+1132
+00:19:14,230 --> 00:19:14,240
+towards Hermes, let me show you how
+ 
+
+1133
+00:19:14,240 --> 00:19:16,070
+towards Hermes, let me show you how
+simple it actually is to get started.
+
+1134
+00:19:16,070 --> 00:19:16,080
+simple it actually is to get started.
+ 
+
+1135
+00:19:16,080 --> 00:19:17,590
+simple it actually is to get started.
+Let's do that now. Now, one thing that I
+
+1136
+00:19:17,590 --> 00:19:17,600
+Let's do that now. Now, one thing that I
+ 
+
+1137
+00:19:17,600 --> 00:19:20,150
+Let's do that now. Now, one thing that I
+really like about Hermes is how simple
+
+1138
+00:19:20,150 --> 00:19:20,160
+really like about Hermes is how simple
+ 
+
+1139
+00:19:20,160 --> 00:19:22,630
+really like about Hermes is how simple
+this is to actually set up. So it's
+
+1140
+00:19:22,630 --> 00:19:22,640
+this is to actually set up. So it's
+ 
+
+1141
+00:19:22,640 --> 00:19:24,310
+this is to actually set up. So it's
+legitimately a few minute task. All
+
+1142
+00:19:24,310 --> 00:19:24,320
+legitimately a few minute task. All
+ 
+
+1143
+00:19:24,320 --> 00:19:25,270
+legitimately a few minute task. All
+right, so here's what we're going to do.
+
+1144
+00:19:25,270 --> 00:19:25,280
+right, so here's what we're going to do.
+ 
+
+1145
+00:19:25,280 --> 00:19:26,470
+right, so here's what we're going to do.
+We're just going to copy this read me
+
+1146
+00:19:26,470 --> 00:19:26,480
+We're just going to copy this read me
+ 
+
+1147
+00:19:26,480 --> 00:19:27,990
+We're just going to copy this read me
+that is from GitHub. I'll have
+
+1148
+00:19:27,990 --> 00:19:28,000
+that is from GitHub. I'll have
+ 
+
+1149
+00:19:28,000 --> 00:19:29,350
+that is from GitHub. I'll have
+everything linked inside of my school
+
+1150
+00:19:29,350 --> 00:19:29,360
+everything linked inside of my school
+ 
+
+1151
+00:19:29,360 --> 00:19:30,710
+everything linked inside of my school
+community, so it is super simple for you
+
+1152
+00:19:30,710 --> 00:19:30,720
+community, so it is super simple for you
+ 
+
+1153
+00:19:30,720 --> 00:19:32,630
+community, so it is super simple for you
+to actually install. But we're just
+
+1154
+00:19:32,630 --> 00:19:32,640
+to actually install. But we're just
+ 
+
+1155
+00:19:32,640 --> 00:19:35,430
+to actually install. But we're just
+going to type in this curl and then the
+
+1156
+00:19:35,430 --> 00:19:35,440
+going to type in this curl and then the
+ 
+
+1157
+00:19:35,440 --> 00:19:38,150
+going to type in this curl and then the
+GitHub install link. So from this, it's
+
+1158
+00:19:38,150 --> 00:19:38,160
+GitHub install link. So from this, it's
+ 
+
+1159
+00:19:38,160 --> 00:19:40,470
+GitHub install link. So from this, it's
+going to run the Hermes agent installer.
+
+1160
+00:19:40,470 --> 00:19:40,480
+going to run the Hermes agent installer.
+ 
+
+1161
+00:19:40,480 --> 00:19:42,150
+going to run the Hermes agent installer.
+You can see it's an open source AI agent
+
+1162
+00:19:42,150 --> 00:19:42,160
+You can see it's an open source AI agent
+ 
+
+1163
+00:19:42,160 --> 00:19:43,990
+You can see it's an open source AI agent
+by news research. That's how you know it
+
+1164
+00:19:43,990 --> 00:19:44,000
+by news research. That's how you know it
+ 
+
+1165
+00:19:44,000 --> 00:19:46,390
+by news research. That's how you know it
+is the right one. It's going to install
+
+1166
+00:19:46,390 --> 00:19:46,400
+is the right one. It's going to install
+ 
+
+1167
+00:19:46,400 --> 00:19:48,230
+is the right one. It's going to install
+everything else. So all the Python,
+
+1168
+00:19:48,230 --> 00:19:48,240
+everything else. So all the Python,
+ 
+
+1169
+00:19:48,240 --> 00:19:50,470
+everything else. So all the Python,
+going to install the NodeJS, all the
+
+1170
+00:19:50,470 --> 00:19:50,480
+going to install the NodeJS, all the
+ 
+
+1171
+00:19:50,480 --> 00:19:53,350
+going to install the NodeJS, all the
+current updates, checking RIP Grip. So
+
+1172
+00:19:53,350 --> 00:19:53,360
+current updates, checking RIP Grip. So
+ 
+
+1173
+00:19:53,360 --> 00:19:55,430
+current updates, checking RIP Grip. So
+we'll go from there. Now it's installing
+
+1174
+00:19:55,430 --> 00:19:55,440
+we'll go from there. Now it's installing
+ 
+
+1175
+00:19:55,440 --> 00:19:57,510
+we'll go from there. Now it's installing
+all the other dependencies. And with
+
+1176
+00:19:57,510 --> 00:19:57,520
+all the other dependencies. And with
+ 
+
+1177
+00:19:57,520 --> 00:19:58,950
+all the other dependencies. And with
+this, it's just checking your system.
+
+1178
+00:19:58,950 --> 00:19:58,960
+this, it's just checking your system.
+ 
+
+1179
+00:19:58,960 --> 00:20:01,430
+this, it's just checking your system.
+So, Linux, iuntu, wherever you're
+
+1180
+00:20:01,430 --> 00:20:01,440
+So, Linux, iuntu, wherever you're
+ 
+
+1181
+00:20:01,440 --> 00:20:03,190
+So, Linux, iuntu, wherever you're
+actually on, and it detects what you
+
+1182
+00:20:03,190 --> 00:20:03,200
+actually on, and it detects what you
+ 
+
+1183
+00:20:03,200 --> 00:20:05,430
+actually on, and it detects what you
+have and it installs what you don't. So,
+
+1184
+00:20:05,430 --> 00:20:05,440
+have and it installs what you don't. So,
+ 
+
+1185
+00:20:05,440 --> 00:20:09,110
+have and it installs what you don't. So,
+Python, Node, Rip, Grap, uh, FFmpeg, as
+
+1186
+00:20:09,110 --> 00:20:09,120
+Python, Node, Rip, Grap, uh, FFmpeg, as
+ 
+
+1187
+00:20:09,120 --> 00:20:10,710
+Python, Node, Rip, Grap, uh, FFmpeg, as
+you guys can see up here. Like, you
+
+1188
+00:20:10,710 --> 00:20:10,720
+you guys can see up here. Like, you
+ 
+
+1189
+00:20:10,720 --> 00:20:12,549
+you guys can see up here. Like, you
+don't have to touch any of that. So, the
+
+1190
+00:20:12,549 --> 00:20:12,559
+don't have to touch any of that. So, the
+ 
+
+1191
+00:20:12,559 --> 00:20:14,310
+don't have to touch any of that. So, the
+installer, it handles everything. It is
+
+1192
+00:20:14,310 --> 00:20:14,320
+installer, it handles everything. It is
+ 
+
+1193
+00:20:14,320 --> 00:20:16,470
+installer, it handles everything. It is
+super simple to get up and running. And
+
+1194
+00:20:16,470 --> 00:20:16,480
+super simple to get up and running. And
+ 
+
+1195
+00:20:16,480 --> 00:20:18,310
+super simple to get up and running. And
+I mean, this is about 60% of the work
+
+1196
+00:20:18,310 --> 00:20:18,320
+I mean, this is about 60% of the work
+ 
+
+1197
+00:20:18,320 --> 00:20:20,549
+I mean, this is about 60% of the work
+right here. So, there's no prerequisites
+
+1198
+00:20:20,549 --> 00:20:20,559
+right here. So, there's no prerequisites
+ 
+
+1199
+00:20:20,559 --> 00:20:23,190
+right here. So, there's no prerequisites
+except for just using Git. So, now we
+
+1200
+00:20:23,190 --> 00:20:23,200
+except for just using Git. So, now we
+ 
+
+1201
+00:20:23,200 --> 00:20:25,350
+except for just using Git. So, now we
+have the setup wizard. everything from
+
+1202
+00:20:25,350 --> 00:20:25,360
+have the setup wizard. everything from
+ 
+
+1203
+00:20:25,360 --> 00:20:28,470
+have the setup wizard. everything from
+here we can just press insert to begin
+
+1204
+00:20:28,470 --> 00:20:28,480
+here we can just press insert to begin
+ 
+
+1205
+00:20:28,480 --> 00:20:31,909
+here we can just press insert to begin
+now it's going to ask me for my provider
+
+1206
+00:20:31,909 --> 00:20:31,919
+now it's going to ask me for my provider
+ 
+
+1207
+00:20:31,919 --> 00:20:34,390
+now it's going to ask me for my provider
+now if you are using any of your plans
+
+1208
+00:20:34,390 --> 00:20:34,400
+now if you are using any of your plans
+ 
+
+1209
+00:20:34,400 --> 00:20:36,470
+now if you are using any of your plans
+if you're using chat GPT if you are
+
+1210
+00:20:36,470 --> 00:20:36,480
+if you're using chat GPT if you are
+ 
+
+1211
+00:20:36,480 --> 00:20:38,390
+if you're using chat GPT if you are
+using your enthropic or cloud
+
+1212
+00:20:38,390 --> 00:20:38,400
+using your enthropic or cloud
+ 
+
+1213
+00:20:38,400 --> 00:20:40,310
+using your enthropic or cloud
+subscription you can continue using this
+
+1214
+00:20:40,310 --> 00:20:40,320
+subscription you can continue using this
+ 
+
+1215
+00:20:40,320 --> 00:20:41,909
+subscription you can continue using this
+it's not like openclaw where you are
+
+1216
+00:20:41,909 --> 00:20:41,919
+it's not like openclaw where you are
+ 
+
+1217
+00:20:41,919 --> 00:20:43,590
+it's not like openclaw where you are
+restricted from something like that so
+
+1218
+00:20:43,590 --> 00:20:43,600
+restricted from something like that so
+ 
+
+1219
+00:20:43,600 --> 00:20:46,310
+restricted from something like that so
+you just have to input your oath where
+
+1220
+00:20:46,310 --> 00:20:46,320
+you just have to input your oath where
+ 
+
+1221
+00:20:46,320 --> 00:20:47,909
+you just have to input your oath where
+run you through it real quick if you do
+
+1222
+00:20:47,909 --> 00:20:47,919
+run you through it real quick if you do
+ 
+
+1223
+00:20:47,919 --> 00:20:49,590
+run you through it real quick if you do
+want to go with enthropic I have some
+
+1224
+00:20:49,590 --> 00:20:49,600
+want to go with enthropic I have some
+ 
+
+1225
+00:20:49,600 --> 00:20:51,430
+want to go with enthropic I have some
+existing credentials but what you would
+
+1226
+00:20:51,430 --> 00:20:51,440
+existing credentials but what you would
+ 
+
+1227
+00:20:51,440 --> 00:20:53,430
+existing credentials but what you would
+do is you would click reauthenticate it
+
+1228
+00:20:53,430 --> 00:20:53,440
+do is you would click reauthenticate it
+ 
+
+1229
+00:20:53,440 --> 00:20:54,789
+do is you would click reauthenticate it
+to actually say something different, but
+
+1230
+00:20:54,789 --> 00:20:54,799
+to actually say something different, but
+ 
+
+1231
+00:20:54,799 --> 00:20:56,789
+to actually say something different, but
+you're going to select your oath, in
+
+1232
+00:20:56,789 --> 00:20:56,799
+you're going to select your oath, in
+ 
+
+1233
+00:20:56,799 --> 00:20:58,149
+you're going to select your oath, in
+which case it'll provide you with a link
+
+1234
+00:20:58,149 --> 00:20:58,159
+which case it'll provide you with a link
+ 
+
+1235
+00:20:58,159 --> 00:20:59,669
+which case it'll provide you with a link
+where you just log into your cloud
+
+1236
+00:20:59,669 --> 00:20:59,679
+where you just log into your cloud
+ 
+
+1237
+00:20:59,679 --> 00:21:01,270
+where you just log into your cloud
+account and you get a code and then you
+
+1238
+00:21:01,270 --> 00:21:01,280
+account and you get a code and then you
+ 
+
+1239
+00:21:01,280 --> 00:21:02,870
+account and you get a code and then you
+just have to input it back into here.
+
+1240
+00:21:02,870 --> 00:21:02,880
+just have to input it back into here.
+ 
+
+1241
+00:21:02,880 --> 00:21:04,310
+just have to input it back into here.
+But I'm going to cancel this for the
+
+1242
+00:21:04,310 --> 00:21:04,320
+But I'm going to cancel this for the
+ 
+
+1243
+00:21:04,320 --> 00:21:05,830
+But I'm going to cancel this for the
+time being. And we're just going to move
+
+1244
+00:21:05,830 --> 00:21:05,840
+time being. And we're just going to move
+ 
+
+1245
+00:21:05,840 --> 00:21:07,190
+time being. And we're just going to move
+on to the next piece. So this is the
+
+1246
+00:21:07,190 --> 00:21:07,200
+on to the next piece. So this is the
+ 
+
+1247
+00:21:07,200 --> 00:21:09,590
+on to the next piece. So this is the
+TTS. So we are able to use something
+
+1248
+00:21:09,590 --> 00:21:09,600
+TTS. So we are able to use something
+ 
+
+1249
+00:21:09,600 --> 00:21:12,630
+TTS. So we are able to use something
+like 11 Labs to actually talk back and
+
+1250
+00:21:12,630 --> 00:21:12,640
+like 11 Labs to actually talk back and
+ 
+
+1251
+00:21:12,640 --> 00:21:15,270
+like 11 Labs to actually talk back and
+forth with to this agent. So I'm just
+
+1252
+00:21:15,270 --> 00:21:15,280
+forth with to this agent. So I'm just
+ 
+
+1253
+00:21:15,280 --> 00:21:17,909
+forth with to this agent. So I'm just
+going to keep the current one. And now
+
+1254
+00:21:17,909 --> 00:21:17,919
+going to keep the current one. And now
+ 
+
+1255
+00:21:17,919 --> 00:21:19,669
+going to keep the current one. And now
+this is the terminal backend. So if he
+
+1256
+00:21:19,669 --> 00:21:19,679
+this is the terminal backend. So if he
+ 
+
+1257
+00:21:19,679 --> 00:21:22,149
+this is the terminal backend. So if he
+wants to put this on docker local modal
+
+1258
+00:21:22,149 --> 00:21:22,159
+wants to put this on docker local modal
+ 
+
+1259
+00:21:22,159 --> 00:21:25,350
+wants to put this on docker local modal
+SSH. So I will run this locally for the
+
+1260
+00:21:25,350 --> 00:21:25,360
+SSH. So I will run this locally for the
+ 
+
+1261
+00:21:25,360 --> 00:21:27,110
+SSH. So I will run this locally for the
+time being. Let's continue this and
+
+1262
+00:21:27,110 --> 00:21:27,120
+time being. Let's continue this and
+ 
+
+1263
+00:21:27,120 --> 00:21:29,190
+time being. Let's continue this and
+we're just going to enable pseudo
+
+1264
+00:21:29,190 --> 00:21:29,200
+we're just going to enable pseudo
+ 
+
+1265
+00:21:29,200 --> 00:21:31,830
+we're just going to enable pseudo
+support and everything else. We're just
+
+1266
+00:21:31,830 --> 00:21:31,840
+support and everything else. We're just
+ 
+
+1267
+00:21:31,840 --> 00:21:34,230
+support and everything else. We're just
+going to run with that. Full progress
+
+1268
+00:21:34,230 --> 00:21:34,240
+going to run with that. Full progress
+ 
+
+1269
+00:21:34,240 --> 00:21:36,070
+going to run with that. Full progress
+display. Press enter again. Context
+
+1270
+00:21:36,070 --> 00:21:36,080
+display. Press enter again. Context
+ 
+
+1271
+00:21:36,080 --> 00:21:38,310
+display. Press enter again. Context
+compression. We'll keep that in activity
+
+1272
+00:21:38,310 --> 00:21:38,320
+compression. We'll keep that in activity
+ 
+
+1273
+00:21:38,320 --> 00:21:39,830
+compression. We'll keep that in activity
+mode. So I'm going to go with whatever
+
+1274
+00:21:39,830 --> 00:21:39,840
+mode. So I'm going to go with whatever
+ 
+
+1275
+00:21:39,840 --> 00:21:41,669
+mode. So I'm going to go with whatever
+is actually being recommended. Now we
+
+1276
+00:21:41,669 --> 00:21:41,679
+is actually being recommended. Now we
+ 
+
+1277
+00:21:41,679 --> 00:21:43,909
+is actually being recommended. Now we
+have a session reset policy. I'm going
+
+1278
+00:21:43,909 --> 00:21:43,919
+have a session reset policy. I'm going
+ 
+
+1279
+00:21:43,919 --> 00:21:45,750
+have a session reset policy. I'm going
+to skip this. You guys can spend a
+
+1280
+00:21:45,750 --> 00:21:45,760
+to skip this. You guys can spend a
+ 
+
+1281
+00:21:45,760 --> 00:21:46,950
+to skip this. You guys can spend a
+little bit more time on this and
+
+1282
+00:21:46,950 --> 00:21:46,960
+little bit more time on this and
+ 
+
+1283
+00:21:46,960 --> 00:21:48,549
+little bit more time on this and
+customize this to your particular
+
+1284
+00:21:48,549 --> 00:21:48,559
+customize this to your particular
+ 
+
+1285
+00:21:48,559 --> 00:21:51,430
+customize this to your particular
+settings, but I'm just going to uh go
+
+1286
+00:21:51,430 --> 00:21:51,440
+settings, but I'm just going to uh go
+ 
+
+1287
+00:21:51,440 --> 00:21:53,909
+settings, but I'm just going to uh go
+with most of the defaults. I'm going to
+
+1288
+00:21:53,909 --> 00:21:53,919
+with most of the defaults. I'm going to
+ 
+
+1289
+00:21:53,919 --> 00:21:55,990
+with most of the defaults. I'm going to
+ignore it to set up any of these. So,
+
+1290
+00:21:55,990 --> 00:21:56,000
+ignore it to set up any of these. So,
+ 
+
+1291
+00:21:56,000 --> 00:21:57,909
+ignore it to set up any of these. So,
+WhatsApp web hooks. Now, if you guys do
+
+1292
+00:21:57,909 --> 00:21:57,919
+WhatsApp web hooks. Now, if you guys do
+ 
+
+1293
+00:21:57,919 --> 00:21:59,830
+WhatsApp web hooks. Now, if you guys do
+want to enable any of those specific
+
+1294
+00:21:59,830 --> 00:21:59,840
+want to enable any of those specific
+ 
+
+1295
+00:21:59,840 --> 00:22:01,669
+want to enable any of those specific
+things, it's very straightforward. So,
+
+1296
+00:22:01,669 --> 00:22:01,679
+things, it's very straightforward. So,
+ 
+
+1297
+00:22:01,679 --> 00:22:03,750
+things, it's very straightforward. So,
+for example, with uh with Telegram, if
+
+1298
+00:22:03,750 --> 00:22:03,760
+for example, with uh with Telegram, if
+ 
+
+1299
+00:22:03,760 --> 00:22:05,110
+for example, with uh with Telegram, if
+we actually pull that up right now,
+
+1300
+00:22:05,110 --> 00:22:05,120
+we actually pull that up right now,
+ 
+
+1301
+00:22:05,120 --> 00:22:06,789
+we actually pull that up right now,
+we'll be able to see that it's as simple
+
+1302
+00:22:06,789 --> 00:22:06,799
+we'll be able to see that it's as simple
+ 
+
+1303
+00:22:06,799 --> 00:22:09,430
+we'll be able to see that it's as simple
+as just creating a new bot inside of
+
+1304
+00:22:09,430 --> 00:22:09,440
+as just creating a new bot inside of
+ 
+
+1305
+00:22:09,440 --> 00:22:12,470
+as just creating a new bot inside of
+here. So you just type out / newbot and
+
+1306
+00:22:12,470 --> 00:22:12,480
+here. So you just type out / newbot and
+ 
+
+1307
+00:22:12,480 --> 00:22:15,430
+here. So you just type out / newbot and
+you'll be able to just take your API
+
+1308
+00:22:15,430 --> 00:22:15,440
+you'll be able to just take your API
+ 
+
+1309
+00:22:15,440 --> 00:22:17,510
+you'll be able to just take your API
+access token and you can throw that
+
+1310
+00:22:17,510 --> 00:22:17,520
+access token and you can throw that
+ 
+
+1311
+00:22:17,520 --> 00:22:20,070
+access token and you can throw that
+inside of your terminal. Anyways, moving
+
+1312
+00:22:20,070 --> 00:22:20,080
+inside of your terminal. Anyways, moving
+ 
+
+1313
+00:22:20,080 --> 00:22:21,590
+inside of your terminal. Anyways, moving
+on. We now have all these different
+
+1314
+00:22:21,590 --> 00:22:21,600
+on. We now have all these different
+ 
+
+1315
+00:22:21,600 --> 00:22:22,950
+on. We now have all these different
+skills. We have web searching and
+
+1316
+00:22:22,950 --> 00:22:22,960
+skills. We have web searching and
+ 
+
+1317
+00:22:22,960 --> 00:22:23,990
+skills. We have web searching and
+scraping. We have the browser
+
+1318
+00:22:23,990 --> 00:22:24,000
+scraping. We have the browser
+ 
+
+1319
+00:22:24,000 --> 00:22:25,909
+scraping. We have the browser
+automation, terminal processes. I'm
+
+1320
+00:22:25,909 --> 00:22:25,919
+automation, terminal processes. I'm
+ 
+
+1321
+00:22:25,919 --> 00:22:27,590
+automation, terminal processes. I'm
+choosing to set this up later. I'm just
+
+1322
+00:22:27,590 --> 00:22:27,600
+choosing to set this up later. I'm just
+ 
+
+1323
+00:22:27,600 --> 00:22:29,590
+choosing to set this up later. I'm just
+going to leave everything blank, but I
+
+1324
+00:22:29,590 --> 00:22:29,600
+going to leave everything blank, but I
+ 
+
+1325
+00:22:29,600 --> 00:22:31,270
+going to leave everything blank, but I
+actually will enable some of these so I
+
+1326
+00:22:31,270 --> 00:22:31,280
+actually will enable some of these so I
+ 
+
+1327
+00:22:31,280 --> 00:22:34,789
+actually will enable some of these so I
+can press space to check mark them. And
+
+1328
+00:22:34,789 --> 00:22:34,799
+can press space to check mark them. And
+ 
+
+1329
+00:22:34,799 --> 00:22:37,350
+can press space to check mark them. And
+let's go ahead and just skip. You guys
+
+1330
+00:22:37,350 --> 00:22:37,360
+let's go ahead and just skip. You guys
+ 
+
+1331
+00:22:37,360 --> 00:22:39,750
+let's go ahead and just skip. You guys
+can provide any of your API keys now. So
+
+1332
+00:22:39,750 --> 00:22:39,760
+can provide any of your API keys now. So
+ 
+
+1333
+00:22:39,760 --> 00:22:41,270
+can provide any of your API keys now. So
+if you want to set that up, you can use
+
+1334
+00:22:41,270 --> 00:22:41,280
+if you want to set that up, you can use
+ 
+
+1335
+00:22:41,280 --> 00:22:42,870
+if you want to set that up, you can use
+browser use, local browser, browser
+
+1336
+00:22:42,870 --> 00:22:42,880
+browser use, local browser, browser
+ 
+
+1337
+00:22:42,880 --> 00:22:45,029
+browser use, local browser, browser
+base, camo fox. They give you a lot of
+
+1338
+00:22:45,029 --> 00:22:45,039
+base, camo fox. They give you a lot of
+ 
+
+1339
+00:22:45,039 --> 00:22:46,870
+base, camo fox. They give you a lot of
+different options. So the smart home,
+
+1340
+00:22:46,870 --> 00:22:46,880
+different options. So the smart home,
+ 
+
+1341
+00:22:46,880 --> 00:22:49,110
+different options. So the smart home,
+I'm going to leave that blank. Not worry
+
+1342
+00:22:49,110 --> 00:22:49,120
+I'm going to leave that blank. Not worry
+ 
+
+1343
+00:22:49,120 --> 00:22:52,070
+I'm going to leave that blank. Not worry
+about that. Foul image generation. I
+
+1344
+00:22:52,070 --> 00:22:52,080
+about that. Foul image generation. I
+ 
+
+1345
+00:22:52,080 --> 00:22:54,230
+about that. Foul image generation. I
+don't want that now. Arl training. So
+
+1346
+00:22:54,230 --> 00:22:54,240
+don't want that now. Arl training. So
+ 
+
+1347
+00:22:54,240 --> 00:22:56,470
+don't want that now. Arl training. So
+everything I'm just going to skip for
+
+1348
+00:22:56,470 --> 00:22:56,480
+everything I'm just going to skip for
+ 
+
+1349
+00:22:56,480 --> 00:22:58,630
+everything I'm just going to skip for
+the time being. I don't want to set any
+
+1350
+00:22:58,630 --> 00:22:58,640
+the time being. I don't want to set any
+ 
+
+1351
+00:22:58,640 --> 00:23:00,070
+the time being. I don't want to set any
+of this up now. Next up, it's just
+
+1352
+00:23:00,070 --> 00:23:00,080
+of this up now. Next up, it's just
+ 
+
+1353
+00:23:00,080 --> 00:23:02,789
+of this up now. Next up, it's just
+asking me to reload my show to use the
+
+1354
+00:23:02,789 --> 00:23:02,799
+asking me to reload my show to use the
+ 
+
+1355
+00:23:02,799 --> 00:23:04,950
+asking me to reload my show to use the
+Hermes command. So I'm going to type
+
+1356
+00:23:04,950 --> 00:23:04,960
+Hermes command. So I'm going to type
+ 
+
+1357
+00:23:04,960 --> 00:23:06,870
+Hermes command. So I'm going to type
+this out. It's going to reload
+
+1358
+00:23:06,870 --> 00:23:06,880
+this out. It's going to reload
+ 
+
+1359
+00:23:06,880 --> 00:23:08,470
+this out. It's going to reload
+everything. Now, to actually get started
+
+1360
+00:23:08,470 --> 00:23:08,480
+everything. Now, to actually get started
+ 
+
+1361
+00:23:08,480 --> 00:23:10,149
+everything. Now, to actually get started
+using this, I'm just going to simply
+
+1362
+00:23:10,149 --> 00:23:10,159
+using this, I'm just going to simply
+ 
+
+1363
+00:23:10,159 --> 00:23:13,270
+using this, I'm just going to simply
+type out Hermes and it's going to start
+
+1364
+00:23:13,270 --> 00:23:13,280
+type out Hermes and it's going to start
+ 
+
+1365
+00:23:13,280 --> 00:23:15,430
+type out Hermes and it's going to start
+setting everything up for me. So, just
+
+1366
+00:23:15,430 --> 00:23:15,440
+setting everything up for me. So, just
+ 
+
+1367
+00:23:15,440 --> 00:23:17,909
+setting everything up for me. So, just
+like that, we are now inside of our
+
+1368
+00:23:17,909 --> 00:23:17,919
+like that, we are now inside of our
+ 
+
+1369
+00:23:17,919 --> 00:23:20,950
+like that, we are now inside of our
+environment. We are now able to fully
+
+1370
+00:23:20,950 --> 00:23:20,960
+environment. We are now able to fully
+ 
+
+1371
+00:23:20,960 --> 00:23:22,789
+environment. We are now able to fully
+utilize Hermes agent. So, you guys can
+
+1372
+00:23:22,789 --> 00:23:22,799
+utilize Hermes agent. So, you guys can
+ 
+
+1373
+00:23:22,799 --> 00:23:24,390
+utilize Hermes agent. So, you guys can
+see all the available tools and you can
+
+1374
+00:23:24,390 --> 00:23:24,400
+see all the available tools and you can
+ 
+
+1375
+00:23:24,400 --> 00:23:25,990
+see all the available tools and you can
+change the colors of everything because
+
+1376
+00:23:25,990 --> 00:23:26,000
+change the colors of everything because
+ 
+
+1377
+00:23:26,000 --> 00:23:27,510
+change the colors of everything because
+it is a little bit hard to see. So, you
+
+1378
+00:23:27,510 --> 00:23:27,520
+it is a little bit hard to see. So, you
+ 
+
+1379
+00:23:27,520 --> 00:23:29,190
+it is a little bit hard to see. So, you
+can change your terminal and the
+
+1380
+00:23:29,190 --> 00:23:29,200
+can change your terminal and the
+ 
+
+1381
+00:23:29,200 --> 00:23:31,110
+can change your terminal and the
+background of everything because, you
+
+1382
+00:23:31,110 --> 00:23:31,120
+background of everything because, you
+ 
+
+1383
+00:23:31,120 --> 00:23:32,710
+background of everything because, you
+know, can't really tell what anything is
+
+1384
+00:23:32,710 --> 00:23:32,720
+know, can't really tell what anything is
+ 
+
+1385
+00:23:32,720 --> 00:23:34,630
+know, can't really tell what anything is
+being listed out as. Now just like cloud
+
+1386
+00:23:34,630 --> 00:23:34,640
+being listed out as. Now just like cloud
+ 
+
+1387
+00:23:34,640 --> 00:23:36,630
+being listed out as. Now just like cloud
+code we now have access to the full
+
+1388
+00:23:36,630 --> 00:23:36,640
+code we now have access to the full
+ 
+
+1389
+00:23:36,640 --> 00:23:38,950
+code we now have access to the full
+terminal interface where if we just type
+
+1390
+00:23:38,950 --> 00:23:38,960
+terminal interface where if we just type
+ 
+
+1391
+00:23:38,960 --> 00:23:40,630
+terminal interface where if we just type
+slash you can see all the different
+
+1392
+00:23:40,630 --> 00:23:40,640
+slash you can see all the different
+ 
+
+1393
+00:23:40,640 --> 00:23:42,710
+slash you can see all the different
+commands. So we can try new reset
+
+1394
+00:23:42,710 --> 00:23:42,720
+commands. So we can try new reset
+ 
+
+1395
+00:23:42,720 --> 00:23:45,990
+commands. So we can try new reset
+background where um we can go even
+
+1396
+00:23:45,990 --> 00:23:46,000
+background where um we can go even
+ 
+
+1397
+00:23:46,000 --> 00:23:48,549
+background where um we can go even
+further. We can have the provider the
+
+1398
+00:23:48,549 --> 00:23:48,559
+further. We can have the provider the
+ 
+
+1399
+00:23:48,559 --> 00:23:49,990
+further. We can have the provider the
+prompt you guys can provide it with a
+
+1400
+00:23:49,990 --> 00:23:50,000
+prompt you guys can provide it with a
+ 
+
+1401
+00:23:50,000 --> 00:23:51,510
+prompt you guys can provide it with a
+backup API key. So if you want to use
+
+1402
+00:23:51,510 --> 00:23:51,520
+backup API key. So if you want to use
+ 
+
+1403
+00:23:51,520 --> 00:23:54,149
+backup API key. So if you want to use
+something like open router instead of
+
+1404
+00:23:54,149 --> 00:23:54,159
+something like open router instead of
+ 
+
+1405
+00:23:54,159 --> 00:23:55,990
+something like open router instead of
+just using you know your quad
+
+1406
+00:23:55,990 --> 00:23:56,000
+just using you know your quad
+ 
+
+1407
+00:23:56,000 --> 00:23:57,510
+just using you know your quad
+subscription because sometimes I want to
+
+1408
+00:23:57,510 --> 00:23:57,520
+subscription because sometimes I want to
+ 
+
+1409
+00:23:57,520 --> 00:23:59,750
+subscription because sometimes I want to
+use us 4.6 6, but I also want to be able
+
+1410
+00:23:59,750 --> 00:23:59,760
+use us 4.6 6, but I also want to be able
+ 
+
+1411
+00:23:59,760 --> 00:24:02,390
+use us 4.6 6, but I also want to be able
+to use chat GPT, use codeex, so I'm not
+
+1412
+00:24:02,390 --> 00:24:02,400
+to use chat GPT, use codeex, so I'm not
+ 
+
+1413
+00:24:02,400 --> 00:24:04,230
+to use chat GPT, use codeex, so I'm not
+going to be spending an arm and a leg
+
+1414
+00:24:04,230 --> 00:24:04,240
+going to be spending an arm and a leg
+ 
+
+1415
+00:24:04,240 --> 00:24:07,270
+going to be spending an arm and a leg
+doing simple tasks and overkilling it by
+
+1416
+00:24:07,270 --> 00:24:07,280
+doing simple tasks and overkilling it by
+ 
+
+1417
+00:24:07,280 --> 00:24:09,350
+doing simple tasks and overkilling it by
+just using Opus 4.6. So, the list goes
+
+1418
+00:24:09,350 --> 00:24:09,360
+just using Opus 4.6. So, the list goes
+ 
+
+1419
+00:24:09,360 --> 00:24:11,510
+just using Opus 4.6. So, the list goes
+on and on of all the different commands.
+
+1420
+00:24:11,510 --> 00:24:11,520
+on and on of all the different commands.
+ 
+
+1421
+00:24:11,520 --> 00:24:12,870
+on and on of all the different commands.
+So, I'm not going to run through all of
+
+1422
+00:24:12,870 --> 00:24:12,880
+So, I'm not going to run through all of
+ 
+
+1423
+00:24:12,880 --> 00:24:15,269
+So, I'm not going to run through all of
+these. It is very in-depth, but you guys
+
+1424
+00:24:15,269 --> 00:24:15,279
+these. It is very in-depth, but you guys
+ 
+
+1425
+00:24:15,279 --> 00:24:16,470
+these. It is very in-depth, but you guys
+will be able to explore them for
+
+1426
+00:24:16,470 --> 00:24:16,480
+will be able to explore them for
+ 
+
+1427
+00:24:16,480 --> 00:24:17,990
+will be able to explore them for
+yourself. So, we even have some native
+
+1428
+00:24:17,990 --> 00:24:18,000
+yourself. So, we even have some native
+ 
+
+1429
+00:24:18,000 --> 00:24:21,510
+yourself. So, we even have some native
+Obsidian connections and uh we have
+
+1430
+00:24:21,510 --> 00:24:21,520
+Obsidian connections and uh we have
+ 
+
+1431
+00:24:21,520 --> 00:24:23,590
+Obsidian connections and uh we have
+Claude code, we have codeex, we have
+
+1432
+00:24:23,590 --> 00:24:23,600
+Claude code, we have codeex, we have
+ 
+
+1433
+00:24:23,600 --> 00:24:25,590
+Claude code, we have codeex, we have
+Hermes agent. I mean, the list goes on
+
+1434
+00:24:25,590 --> 00:24:25,600
+Hermes agent. I mean, the list goes on
+ 
+
+1435
+00:24:25,600 --> 00:24:27,590
+Hermes agent. I mean, the list goes on
+and on. You can use open code. You can
+
+1436
+00:24:27,590 --> 00:24:27,600
+and on. You can use open code. You can
+ 
+
+1437
+00:24:27,600 --> 00:24:29,269
+and on. You can use open code. You can
+use dog food, which I actually have no
+
+1438
+00:24:29,269 --> 00:24:29,279
+use dog food, which I actually have no
+ 
+
+1439
+00:24:29,279 --> 00:24:30,710
+use dog food, which I actually have no
+idea what that is even for. It looks
+
+1440
+00:24:30,710 --> 00:24:30,720
+idea what that is even for. It looks
+ 
+
+1441
+00:24:30,720 --> 00:24:32,870
+idea what that is even for. It looks
+like it's some QA testing. You have nano
+
+1442
+00:24:32,870 --> 00:24:32,880
+like it's some QA testing. You have nano
+ 
+
+1443
+00:24:32,880 --> 00:24:35,190
+like it's some QA testing. You have nano
+PDF where you can even edit PDFs with
+
+1444
+00:24:35,190 --> 00:24:35,200
+PDF where you can even edit PDFs with
+ 
+
+1445
+00:24:35,200 --> 00:24:37,190
+PDF where you can even edit PDFs with
+natural language instructions. You have
+
+1446
+00:24:37,190 --> 00:24:37,200
+natural language instructions. You have
+ 
+
+1447
+00:24:37,200 --> 00:24:40,470
+natural language instructions. You have
+linear, you have notion, um, PowerPoint,
+
+1448
+00:24:40,470 --> 00:24:40,480
+linear, you have notion, um, PowerPoint,
+ 
+
+1449
+00:24:40,480 --> 00:24:42,630
+linear, you have notion, um, PowerPoint,
+Google Workspace. So, I'm not exactly
+
+1450
+00:24:42,630 --> 00:24:42,640
+Google Workspace. So, I'm not exactly
+ 
+
+1451
+00:24:42,640 --> 00:24:44,789
+Google Workspace. So, I'm not exactly
+sure if these are CLIs or just MCP
+
+1452
+00:24:44,789 --> 00:24:44,799
+sure if these are CLIs or just MCP
+ 
+
+1453
+00:24:44,799 --> 00:24:46,950
+sure if these are CLIs or just MCP
+connections, but anyways. Now, I do want
+
+1454
+00:24:46,950 --> 00:24:46,960
+connections, but anyways. Now, I do want
+ 
+
+1455
+00:24:46,960 --> 00:24:48,230
+connections, but anyways. Now, I do want
+to mention that if you want to run this
+
+1456
+00:24:48,230 --> 00:24:48,240
+to mention that if you want to run this
+ 
+
+1457
+00:24:48,240 --> 00:24:49,669
+to mention that if you want to run this
+from your phone, which is kind of the
+
+1458
+00:24:49,669 --> 00:24:49,679
+from your phone, which is kind of the
+ 
+
+1459
+00:24:49,679 --> 00:24:51,830
+from your phone, which is kind of the
+whole point of running this on a server,
+
+1460
+00:24:51,830 --> 00:24:51,840
+whole point of running this on a server,
+ 
+
+1461
+00:24:51,840 --> 00:24:53,750
+whole point of running this on a server,
+is you need to actually start the
+
+1462
+00:24:53,750 --> 00:24:53,760
+is you need to actually start the
+ 
+
+1463
+00:24:53,760 --> 00:24:55,190
+is you need to actually start the
+gateway. So, what that actually looks
+
+1464
+00:24:55,190 --> 00:24:55,200
+gateway. So, what that actually looks
+ 
+
+1465
+00:24:55,200 --> 00:24:57,510
+gateway. So, what that actually looks
+like is you just need to simply type
+
+1466
+00:24:57,510 --> 00:24:57,520
+like is you just need to simply type
+ 
+
+1467
+00:24:57,520 --> 00:25:01,909
+like is you just need to simply type
+out, let's back up, Hermes gateway. So,
+
+1468
+00:25:01,909 --> 00:25:01,919
+out, let's back up, Hermes gateway. So,
+ 
+
+1469
+00:25:01,919 --> 00:25:03,909
+out, let's back up, Hermes gateway. So,
+with my current setting, you can't
+
+1470
+00:25:03,909 --> 00:25:03,919
+with my current setting, you can't
+ 
+
+1471
+00:25:03,919 --> 00:25:05,190
+with my current setting, you can't
+really see what I'm typing out, but
+
+1472
+00:25:05,190 --> 00:25:05,200
+really see what I'm typing out, but
+ 
+
+1473
+00:25:05,200 --> 00:25:06,310
+really see what I'm typing out, but
+there you go. So, we just type out
+
+1474
+00:25:06,310 --> 00:25:06,320
+there you go. So, we just type out
+ 
+
+1475
+00:25:06,320 --> 00:25:07,830
+there you go. So, we just type out
+Hermes Gateway, and this is going to
+
+1476
+00:25:07,830 --> 00:25:07,840
+Hermes Gateway, and this is going to
+ 
+
+1477
+00:25:07,840 --> 00:25:10,310
+Hermes Gateway, and this is going to
+allow us to actually start this. So, the
+
+1478
+00:25:10,310 --> 00:25:10,320
+allow us to actually start this. So, the
+ 
+
+1479
+00:25:10,320 --> 00:25:11,830
+allow us to actually start this. So, the
+gateway would go up. You have your
+
+1480
+00:25:11,830 --> 00:25:11,840
+gateway would go up. You have your
+ 
+
+1481
+00:25:11,840 --> 00:25:13,669
+gateway would go up. You have your
+Telegram adapter connected, and then
+
+1482
+00:25:13,669 --> 00:25:13,679
+Telegram adapter connected, and then
+ 
+
+1483
+00:25:13,679 --> 00:25:15,430
+Telegram adapter connected, and then
+you'll be able to utilize Telegram on
+
+1484
+00:25:15,430 --> 00:25:15,440
+you'll be able to utilize Telegram on
+ 
+
+1485
+00:25:15,440 --> 00:25:16,710
+you'll be able to utilize Telegram on
+your phone. Find the bot you just
+
+1486
+00:25:16,710 --> 00:25:16,720
+your phone. Find the bot you just
+ 
+
+1487
+00:25:16,720 --> 00:25:18,710
+your phone. Find the bot you just
+created. Hit start, send it a message,
+
+1488
+00:25:18,710 --> 00:25:18,720
+created. Hit start, send it a message,
+ 
+
+1489
+00:25:18,720 --> 00:25:19,990
+created. Hit start, send it a message,
+you'll be good to go. It'll start
+
+1490
+00:25:19,990 --> 00:25:20,000
+you'll be good to go. It'll start
+ 
+
+1491
+00:25:20,000 --> 00:25:21,510
+you'll be good to go. It'll start
+responding. It'll be the same exact
+
+1492
+00:25:21,510 --> 00:25:21,520
+responding. It'll be the same exact
+ 
+
+1493
+00:25:21,520 --> 00:25:23,830
+responding. It'll be the same exact
+agent that is inside of here. same
+
+1494
+00:25:23,830 --> 00:25:23,840
+agent that is inside of here. same
+ 
+
+1495
+00:25:23,840 --> 00:25:25,510
+agent that is inside of here. same
+memory, same skills, just accessible
+
+1496
+00:25:25,510 --> 00:25:25,520
+memory, same skills, just accessible
+ 
+
+1497
+00:25:25,520 --> 00:25:27,590
+memory, same skills, just accessible
+from your phone and really wherever you
+
+1498
+00:25:27,590 --> 00:25:27,600
+from your phone and really wherever you
+ 
+
+1499
+00:25:27,600 --> 00:25:28,870
+from your phone and really wherever you
+want to be. So that's the setup. It's
+
+1500
+00:25:28,870 --> 00:25:28,880
+want to be. So that's the setup. It's
+ 
+
+1501
+00:25:28,880 --> 00:25:31,029
+want to be. So that's the setup. It's
+just one install command, one setup
+
+1502
+00:25:31,029 --> 00:25:31,039
+just one install command, one setup
+ 
+
+1503
+00:25:31,039 --> 00:25:33,110
+just one install command, one setup
+wizard, one Hermes to be running it. And
+
+1504
+00:25:33,110 --> 00:25:33,120
+wizard, one Hermes to be running it. And
+ 
+
+1505
+00:25:33,120 --> 00:25:34,390
+wizard, one Hermes to be running it. And
+if you guys do want to be setting this
+
+1506
+00:25:34,390 --> 00:25:34,400
+if you guys do want to be setting this
+ 
+
+1507
+00:25:34,400 --> 00:25:36,230
+if you guys do want to be setting this
+up on a VPS where you don't have to
+
+1508
+00:25:36,230 --> 00:25:36,240
+up on a VPS where you don't have to
+ 
+
+1509
+00:25:36,240 --> 00:25:37,909
+up on a VPS where you don't have to
+worry about keeping your computer on at
+
+1510
+00:25:37,909 --> 00:25:37,919
+worry about keeping your computer on at
+ 
+
+1511
+00:25:37,919 --> 00:25:39,909
+worry about keeping your computer on at
+all times, and you know, you can just
+
+1512
+00:25:39,909 --> 00:25:39,919
+all times, and you know, you can just
+ 
+
+1513
+00:25:39,919 --> 00:25:41,750
+all times, and you know, you can just
+focus on locking it down from there,
+
+1514
+00:25:41,750 --> 00:25:41,760
+focus on locking it down from there,
+ 
+
+1515
+00:25:41,760 --> 00:25:43,350
+focus on locking it down from there,
+making sure that everything is secure,
+
+1516
+00:25:43,350 --> 00:25:43,360
+making sure that everything is secure,
+ 
+
+1517
+00:25:43,360 --> 00:25:44,470
+making sure that everything is secure,
+similar to what you would do with
+
+1518
+00:25:44,470 --> 00:25:44,480
+similar to what you would do with
+ 
+
+1519
+00:25:44,480 --> 00:25:45,909
+similar to what you would do with
+OpenClaw, then you can do something like
+
+1520
+00:25:45,909 --> 00:25:45,919
+OpenClaw, then you can do something like
+ 
+
+1521
+00:25:45,919 --> 00:25:47,590
+OpenClaw, then you can do something like
+Katner, you can use Hostinger. I mean,
+
+1522
+00:25:47,590 --> 00:25:47,600
+Katner, you can use Hostinger. I mean,
+ 
+
+1523
+00:25:47,600 --> 00:25:49,110
+Katner, you can use Hostinger. I mean,
+there's so many different options out
+
+1524
+00:25:49,110 --> 00:25:49,120
+there's so many different options out
+ 
+
+1525
+00:25:49,120 --> 00:25:51,510
+there's so many different options out
+there, but it is very simple. You just
+
+1526
+00:25:51,510 --> 00:25:51,520
+there, but it is very simple. You just
+ 
+
+1527
+00:25:51,520 --> 00:25:52,950
+there, but it is very simple. You just
+have to start off with the console
+
+1528
+00:25:52,950 --> 00:25:52,960
+have to start off with the console
+ 
+
+1529
+00:25:52,960 --> 00:25:55,110
+have to start off with the console
+inside of your platform, whichever
+
+1530
+00:25:55,110 --> 00:25:55,120
+inside of your platform, whichever
+ 
+
+1531
+00:25:55,120 --> 00:25:56,870
+inside of your platform, whichever
+you're using and then you're going to
+
+1532
+00:25:56,870 --> 00:25:56,880
+you're using and then you're going to
+ 
+
+1533
+00:25:56,880 --> 00:25:59,430
+you're using and then you're going to
+have to SSH into it through your machine
+
+1534
+00:25:59,430 --> 00:25:59,440
+have to SSH into it through your machine
+ 
+
+1535
+00:25:59,440 --> 00:26:01,510
+have to SSH into it through your machine
+first, but you can SSH in through any
+
+1536
+00:26:01,510 --> 00:26:01,520
+first, but you can SSH in through any
+ 
+
+1537
+00:26:01,520 --> 00:26:03,830
+first, but you can SSH in through any
+computer you're using. But anyways,
+
+1538
+00:26:03,830 --> 00:26:03,840
+computer you're using. But anyways,
+ 
+
+1539
+00:26:03,840 --> 00:26:05,350
+computer you're using. But anyways,
+you'll be able to utilizing it on your
+
+1540
+00:26:05,350 --> 00:26:05,360
+you'll be able to utilizing it on your
+ 
+
+1541
+00:26:05,360 --> 00:26:07,750
+you'll be able to utilizing it on your
+phone once you first set it up and get
+
+1542
+00:26:07,750 --> 00:26:07,760
+phone once you first set it up and get
+ 
+
+1543
+00:26:07,760 --> 00:26:09,110
+phone once you first set it up and get
+your foundation set up. So, if you guys
+
+1544
+00:26:09,110 --> 00:26:09,120
+your foundation set up. So, if you guys
+ 
+
+1545
+00:26:09,120 --> 00:26:10,710
+your foundation set up. So, if you guys
+want a full video on how to set this up
+
+1546
+00:26:10,710 --> 00:26:10,720
+want a full video on how to set this up
+ 
+
+1547
+00:26:10,720 --> 00:26:12,390
+want a full video on how to set this up
+through a VPS, I'm happy to do so
+
+1548
+00:26:12,390 --> 00:26:12,400
+through a VPS, I'm happy to do so
+ 
+
+1549
+00:26:12,400 --> 00:26:13,830
+through a VPS, I'm happy to do so
+because it is a little bit more complex
+
+1550
+00:26:13,830 --> 00:26:13,840
+because it is a little bit more complex
+ 
+
+1551
+00:26:13,840 --> 00:26:15,190
+because it is a little bit more complex
+than just setting it up locally. But
+
+1552
+00:26:15,190 --> 00:26:15,200
+than just setting it up locally. But
+ 
+
+1553
+00:26:15,200 --> 00:26:16,549
+than just setting it up locally. But
+anyways, I hope you guys are realizing
+
+1554
+00:26:16,549 --> 00:26:16,559
+anyways, I hope you guys are realizing
+ 
+
+1555
+00:26:16,559 --> 00:26:18,310
+anyways, I hope you guys are realizing
+that the question isn't anymore like
+
+1556
+00:26:18,310 --> 00:26:18,320
+that the question isn't anymore like
+ 
+
+1557
+00:26:18,320 --> 00:26:19,750
+that the question isn't anymore like
+should we use agents or what kind of
+
+1558
+00:26:19,750 --> 00:26:19,760
+should we use agents or what kind of
+ 
+
+1559
+00:26:19,760 --> 00:26:21,110
+should we use agents or what kind of
+agents like should we actually be
+
+1560
+00:26:21,110 --> 00:26:21,120
+agents like should we actually be
+ 
+
+1561
+00:26:21,120 --> 00:26:23,029
+agents like should we actually be
+building where Hermes it represents one
+
+1562
+00:26:23,029 --> 00:26:23,039
+building where Hermes it represents one
+ 
+
+1563
+00:26:23,039 --> 00:26:25,350
+building where Hermes it represents one
+answer agents that learn and that feels
+
+1564
+00:26:25,350 --> 00:26:25,360
+answer agents that learn and that feels
+ 
+
+1565
+00:26:25,360 --> 00:26:27,110
+answer agents that learn and that feels
+almost obvious now. So of course agents
+
+1566
+00:26:27,110 --> 00:26:27,120
+almost obvious now. So of course agents
+ 
+
+1567
+00:26:27,120 --> 00:26:28,310
+almost obvious now. So of course agents
+should improve over time but
+
+1568
+00:26:28,310 --> 00:26:28,320
+should improve over time but
+ 
+
+1569
+00:26:28,320 --> 00:26:29,830
+should improve over time but
+architecturally like it's surprisingly
+
+1570
+00:26:29,830 --> 00:26:29,840
+architecturally like it's surprisingly
+ 
+
+1571
+00:26:29,840 --> 00:26:31,510
+architecturally like it's surprisingly
+hard and most agent frameworks it
+
+1572
+00:26:31,510 --> 00:26:31,520
+hard and most agent frameworks it
+ 
+
+1573
+00:26:31,520 --> 00:26:33,029
+hard and most agent frameworks it
+couldn't do this if you ask them. And
+
+1574
+00:26:33,029 --> 00:26:33,039
+couldn't do this if you ask them. And
+ 
+
+1575
+00:26:33,039 --> 00:26:34,470
+couldn't do this if you ask them. And
+the fact that news research built this
+
+1576
+00:26:34,470 --> 00:26:34,480
+the fact that news research built this
+ 
+
+1577
+00:26:34,480 --> 00:26:35,590
+the fact that news research built this
+from the ground up, it tells you
+
+1578
+00:26:35,590 --> 00:26:35,600
+from the ground up, it tells you
+ 
+
+1579
+00:26:35,600 --> 00:26:37,990
+from the ground up, it tells you
+something that they really believe the
+
+1580
+00:26:37,990 --> 00:26:38,000
+something that they really believe the
+ 
+
+1581
+00:26:38,000 --> 00:26:40,390
+something that they really believe the
+future of agents, it is in adaptation
+
+1582
+00:26:40,390 --> 00:26:40,400
+future of agents, it is in adaptation
+ 
+
+1583
+00:26:40,400 --> 00:26:42,630
+future of agents, it is in adaptation
+and learning and depth, not in the
+
+1584
+00:26:42,630 --> 00:26:42,640
+and learning and depth, not in the
+ 
+
+1585
+00:26:42,640 --> 00:26:45,590
+and learning and depth, not in the
+breadth and the generality. So whether
+
+1586
+00:26:45,590 --> 00:26:45,600
+breadth and the generality. So whether
+ 
+
+1587
+00:26:45,600 --> 00:26:47,990
+breadth and the generality. So whether
+they are right, time will tell. But if
+
+1588
+00:26:47,990 --> 00:26:48,000
+they are right, time will tell. But if
+ 
+
+1589
+00:26:48,000 --> 00:26:49,590
+they are right, time will tell. But if
+you are building AI infrastructure and
+
+1590
+00:26:49,590 --> 00:26:49,600
+you are building AI infrastructure and
+ 
+
+1591
+00:26:49,600 --> 00:26:51,430
+you are building AI infrastructure and
+understanding that this choice learning
+
+1592
+00:26:51,430 --> 00:26:51,440
+understanding that this choice learning
+ 
+
+1593
+00:26:51,440 --> 00:26:53,269
+understanding that this choice learning
+versus breath, it is essential. And if
+
+1594
+00:26:53,269 --> 00:26:53,279
+versus breath, it is essential. And if
+ 
+
+1595
+00:26:53,279 --> 00:26:54,710
+versus breath, it is essential. And if
+you're learning how to evaluate and
+
+1596
+00:26:54,710 --> 00:26:54,720
+you're learning how to evaluate and
+ 
+
+1597
+00:26:54,720 --> 00:26:56,470
+you're learning how to evaluate and
+deploy AI infrastructure like this, you
+
+1598
+00:26:56,470 --> 00:26:56,480
+deploy AI infrastructure like this, you
+ 
+
+1599
+00:26:56,480 --> 00:26:57,830
+deploy AI infrastructure like this, you
+need to go ahead and join our free
+
+1600
+00:26:57,830 --> 00:26:57,840
+need to go ahead and join our free
+ 
+
+1601
+00:26:57,840 --> 00:26:59,350
+need to go ahead and join our free
+school community. That is where we are
+
+1602
+00:26:59,350 --> 00:26:59,360
+school community. That is where we are
+ 
+
+1603
+00:26:59,360 --> 00:27:01,830
+school community. That is where we are
+having the real conversations about what
+
+1604
+00:27:01,830 --> 00:27:01,840
+having the real conversations about what
+ 
+
+1605
+00:27:01,840 --> 00:27:03,830
+having the real conversations about what
+actually works. It's not hype. It's not
+
+1606
+00:27:03,830 --> 00:27:03,840
+actually works. It's not hype. It's not
+ 
+
+1607
+00:27:03,840 --> 00:27:05,909
+actually works. It's not hype. It's not
+theory. We have over 18,000 members, all
+
+1608
+00:27:05,909 --> 00:27:05,919
+theory. We have over 18,000 members, all
+ 
+
+1609
+00:27:05,919 --> 00:27:08,390
+theory. We have over 18,000 members, all
+founders and operators building AI into
+
+1610
+00:27:08,390 --> 00:27:08,400
+founders and operators building AI into
+ 
+
+1611
+00:27:08,400 --> 00:27:10,230
+founders and operators building AI into
+their businesses. Now, we deep dive on
+
+1612
+00:27:10,230 --> 00:27:10,240
+their businesses. Now, we deep dive on
+ 
+
+1613
+00:27:10,240 --> 00:27:12,149
+their businesses. Now, we deep dive on
+architecture and decision infrastructure
+
+1614
+00:27:12,149 --> 00:27:12,159
+architecture and decision infrastructure
+ 
+
+1615
+00:27:12,159 --> 00:27:13,830
+architecture and decision infrastructure
+and choices and real implementation
+
+1616
+00:27:13,830 --> 00:27:13,840
+and choices and real implementation
+ 
+
+1617
+00:27:13,840 --> 00:27:15,669
+and choices and real implementation
+challenges every week. So, link is in
+
+1618
+00:27:15,669 --> 00:27:15,679
+challenges every week. So, link is in
+ 
+
+1619
+00:27:15,679 --> 00:27:17,269
+challenges every week. So, link is in
+the description. But thank you guys for
+
+1620
+00:27:17,269 --> 00:27:17,279
+the description. But thank you guys for
+ 
+
+1621
+00:27:17,279 --> 00:27:18,950
+the description. But thank you guys for
+watching. If this was helpful, make sure
+
+1622
+00:27:18,950 --> 00:27:18,960
+watching. If this was helpful, make sure
+ 
+
+1623
+00:27:18,960 --> 00:27:20,950
+watching. If this was helpful, make sure
+to like and subscribe for more on AI
+
+1624
+00:27:20,950 --> 00:27:20,960
+to like and subscribe for more on AI
+ 
+
+1625
+00:27:20,960 --> 00:27:23,269
+to like and subscribe for more on AI
+infrastructure and agent frameworks. But
+
+1626
+00:27:23,269 --> 00:27:23,279
+infrastructure and agent frameworks. But
+ 
+
+1627
+00:27:23,279 --> 00:27:24,549
+infrastructure and agent frameworks. But
+I'll see you guys in the next video. And
+
+1628
+00:27:24,549 --> 00:27:24,559
+I'll see you guys in the next video. And
+ 
+
+1629
+00:27:24,559 --> 00:27:26,549
+I'll see you guys in the next video. And
+if you're looking for more on AI tools
+
+1630
+00:27:26,549 --> 00:27:26,559
+if you're looking for more on AI tools
+ 
+
+1631
+00:27:26,559 --> 00:27:28,310
+if you're looking for more on AI tools
+and weekly strategies to growing and
+
+1632
+00:27:28,310 --> 00:27:28,320
+and weekly strategies to growing and
+ 
+
+1633
+00:27:28,320 --> 00:27:29,590
+and weekly strategies to growing and
+starting your business, that's
+
+1634
+00:27:29,590 --> 00:27:29,600
+starting your business, that's
+ 
+
+1635
+00:27:29,600 --> 00:27:33,200
+starting your business, that's
+subscribed to our free AI newsletter as
+

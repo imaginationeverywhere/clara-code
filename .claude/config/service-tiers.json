@@ -1,0 +1,624 @@
+{
+  "$schema": "./service-tiers.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-24",
+  "description": "Revenue model and service tier configuration for Quik Nation AI",
+
+  "serviceTiers": {
+
+    "self-service": {
+      "displayName": "Self-Service (Template-Based)",
+      "description": "Client uses existing PRD template and pre-built mockup patterns",
+      "targetClient": "Small businesses, startups with clear requirements",
+      "deliveryTime": "30-45 days",
+
+      "included": {
+        "prd": {
+          "type": "template",
+          "source": "docs/prd-templates/{industry}.md",
+          "customization": "client-fills-placeholders",
+          "support": "documentation-only"
+        },
+        "design": {
+          "type": "template",
+          "source": "templates/{pattern}/",
+          "customization": "colors-and-branding-only",
+          "support": "none"
+        },
+        "patternDefinition": {
+          "type": "pre-defined",
+          "source": "pattern-mappings.json",
+          "customization": "none"
+        },
+        "development": {
+          "type": "auto-claude-execution",
+          "humanOversight": "minimal",
+          "revisionRounds": 2
+        }
+      },
+
+      "pricing": {
+        "model": "fixed",
+        "range": {
+          "min": 15000,
+          "max": 35000
+        },
+        "factors": ["pattern-complexity", "feature-count"]
+      },
+
+      "recurring": {
+        "hosting": {
+          "min": 99,
+          "max": 299,
+          "period": "monthly"
+        },
+        "support": {
+          "min": 0,
+          "max": 199,
+          "period": "monthly",
+          "note": "Email support included, priority support extra"
+        },
+        "transactionFees": {
+          "percentage": 0.5,
+          "note": "Platform fee on Stripe Connect transactions"
+        }
+      },
+
+      "requirements": {
+        "clientProvides": [
+          "Completed PRD template with all placeholders filled",
+          "Brand assets (logo, colors, fonts)",
+          "Content (product data, service descriptions, etc.)",
+          "Stripe account",
+          "Domain name"
+        ],
+        "quikNationProvides": [
+          "Template-based mockup",
+          "Auto Claude implementation",
+          "AWS infrastructure",
+          "Deployment",
+          "30-day bug fixes"
+        ]
+      }
+    },
+
+    "guided-custom": {
+      "displayName": "Guided Custom",
+      "description": "Customized PRD and Magic Patterns design with existing pattern",
+      "targetClient": "Growing businesses needing unique branding and UX",
+      "deliveryTime": "45-75 days",
+
+      "included": {
+        "prd": {
+          "type": "guided-creation",
+          "source": "discovery-session",
+          "customization": "full",
+          "support": "2-hour-discovery-call",
+          "billable": true,
+          "price": {
+            "min": 1500,
+            "max": 5000
+          }
+        },
+        "design": {
+          "type": "magic-patterns-custom",
+          "source": "design-team-creates",
+          "customization": "full",
+          "support": "3-revision-rounds",
+          "billable": true,
+          "price": {
+            "min": 2500,
+            "max": 15000
+          }
+        },
+        "patternDefinition": {
+          "type": "pre-defined-with-modifications",
+          "source": "pattern-mappings.json",
+          "customization": "agent-skill-additions"
+        },
+        "development": {
+          "type": "auto-claude-with-oversight",
+          "humanOversight": "regular",
+          "revisionRounds": 3
+        }
+      },
+
+      "pricing": {
+        "model": "itemized",
+        "components": {
+          "discovery": {
+            "min": 1500,
+            "max": 5000
+          },
+          "design": {
+            "min": 2500,
+            "max": 15000
+          },
+          "development": {
+            "min": 25000,
+            "max": 60000
+          }
+        },
+        "totalRange": {
+          "min": 29000,
+          "max": 80000
+        }
+      },
+
+      "recurring": {
+        "hosting": {
+          "min": 199,
+          "max": 499,
+          "period": "monthly"
+        },
+        "support": {
+          "min": 199,
+          "max": 499,
+          "period": "monthly",
+          "note": "Priority support with SLA"
+        },
+        "transactionFees": {
+          "percentage": 0.5,
+          "note": "Platform fee on Stripe Connect transactions"
+        }
+      },
+
+      "requirements": {
+        "clientProvides": [
+          "Business requirements (we help refine)",
+          "Brand assets (logo, colors, fonts)",
+          "Content (product data, service descriptions, etc.)",
+          "Stripe account",
+          "Domain name",
+          "Availability for discovery sessions"
+        ],
+        "quikNationProvides": [
+          "PRD discovery and creation",
+          "Custom Magic Patterns design",
+          "Pattern adaptation",
+          "Auto Claude implementation with oversight",
+          "AWS infrastructure",
+          "Deployment",
+          "60-day bug fixes",
+          "Training session"
+        ]
+      }
+    },
+
+    "full-custom": {
+      "displayName": "Full Custom (Premium)",
+      "description": "Complete custom PRD, design, pattern definition, and white-glove implementation",
+      "targetClient": "Enterprises, unique business models, complex requirements",
+      "deliveryTime": "90-180 days",
+
+      "included": {
+        "prd": {
+          "type": "custom-from-scratch",
+          "source": "discovery-workshops",
+          "customization": "full",
+          "support": "unlimited-discovery",
+          "billable": true,
+          "price": {
+            "min": 5000,
+            "max": 15000
+          },
+          "deliverables": [
+            "Complete PRD.md",
+            "User personas",
+            "Feature prioritization matrix",
+            "Technical architecture document",
+            "Integration requirements",
+            "Compliance assessment"
+          ]
+        },
+        "design": {
+          "type": "full-design-service",
+          "source": "design-team-creates",
+          "customization": "full",
+          "support": "unlimited-revisions-until-approval",
+          "billable": true,
+          "price": {
+            "min": 10000,
+            "max": 35000
+          },
+          "deliverables": [
+            "Brand integration",
+            "Custom component library",
+            "All page designs",
+            "Mobile responsive designs",
+            "Interactive prototypes",
+            "Design system documentation"
+          ]
+        },
+        "patternDefinition": {
+          "type": "custom-pattern-creation",
+          "source": "new-pattern-definition",
+          "customization": "full",
+          "support": "architect-review",
+          "billable": true,
+          "price": {
+            "min": 3000,
+            "max": 10000
+          },
+          "deliverables": [
+            "Custom pattern-mapping entry",
+            "Agent activation chain",
+            "Skill requirements",
+            "Database schema design",
+            "Integration architecture",
+            "MASTER_TASKS.md generation"
+          ],
+          "ipNote": "Pattern becomes Quik Nation IP for future clients"
+        },
+        "development": {
+          "type": "white-glove-implementation",
+          "humanOversight": "continuous",
+          "revisionRounds": "unlimited",
+          "seniorDeveloperReview": true
+        }
+      },
+
+      "pricing": {
+        "model": "itemized-with-scope",
+        "components": {
+          "discovery": {
+            "min": 5000,
+            "max": 15000,
+            "note": "Billed upfront before work begins"
+          },
+          "design": {
+            "min": 10000,
+            "max": 35000,
+            "note": "50% upfront, 50% on approval"
+          },
+          "patternDefinition": {
+            "min": 3000,
+            "max": 10000,
+            "note": "Included in discovery for most projects"
+          },
+          "development": {
+            "min": 50000,
+            "max": 150000,
+            "note": "Milestone-based payments"
+          }
+        },
+        "totalRange": {
+          "min": 68000,
+          "max": 210000
+        }
+      },
+
+      "recurring": {
+        "hosting": {
+          "min": 499,
+          "max": 999,
+          "period": "monthly"
+        },
+        "support": {
+          "min": 499,
+          "max": 999,
+          "period": "monthly",
+          "note": "Dedicated support with SLA, includes monthly check-ins"
+        },
+        "transactionFees": {
+          "percentage": 0.25,
+          "note": "Reduced platform fee for premium clients"
+        },
+        "retainer": {
+          "min": 2000,
+          "max": 5000,
+          "period": "monthly",
+          "note": "Optional ongoing development retainer"
+        }
+      },
+
+      "requirements": {
+        "clientProvides": [
+          "Access to stakeholders for discovery",
+          "Business documentation (if exists)",
+          "Brand assets (or budget for brand creation)",
+          "Content (or content creation budget)",
+          "Stripe account (we help set up if needed)",
+          "Domain name",
+          "Dedicated point of contact"
+        ],
+        "quikNationProvides": [
+          "Full discovery process",
+          "Complete PRD creation",
+          "Custom design creation",
+          "Custom pattern definition",
+          "White-glove implementation",
+          "AWS infrastructure with optimization",
+          "Deployment with monitoring",
+          "90-day bug fixes",
+          "Training sessions (up to 3)",
+          "Documentation",
+          "Launch support"
+        ]
+      }
+    },
+
+    "enterprise": {
+      "displayName": "Enterprise",
+      "description": "Multi-application, multi-team, ongoing partnership",
+      "targetClient": "Large organizations, multiple projects, ongoing development",
+      "deliveryTime": "Custom timeline per project",
+
+      "included": {
+        "all": "Everything in Full Custom",
+        "additional": [
+          "Dedicated account manager",
+          "Multi-project management",
+          "Custom SLA",
+          "On-site workshops (optional)",
+          "Priority access to new features",
+          "Custom integration development",
+          "White-label options"
+        ]
+      },
+
+      "pricing": {
+        "model": "custom-contract",
+        "minimumAnnualCommitment": 250000,
+        "note": "Custom pricing based on scope and volume"
+      },
+
+      "recurring": {
+        "model": "custom-msa",
+        "note": "Master Service Agreement with custom terms"
+      }
+    }
+  },
+
+  "addOnServices": {
+    "prdCreation": {
+      "displayName": "PRD Creation Service",
+      "description": "Professional product requirements document creation",
+      "availability": ["self-service", "guided-custom"],
+      "pricing": {
+        "simple": {
+          "price": 1500,
+          "deliveryDays": 5,
+          "includes": ["1 discovery call", "PRD document", "1 revision"]
+        },
+        "standard": {
+          "price": 3500,
+          "deliveryDays": 10,
+          "includes": ["2 discovery calls", "PRD document", "User personas", "2 revisions"]
+        },
+        "comprehensive": {
+          "price": 7500,
+          "deliveryDays": 15,
+          "includes": ["Unlimited calls", "Full PRD", "Personas", "Technical arch", "Unlimited revisions"]
+        }
+      }
+    },
+
+    "designService": {
+      "displayName": "Magic Patterns Design Service",
+      "description": "Custom UI/UX design using Magic Patterns",
+      "availability": ["self-service", "guided-custom"],
+      "pricing": {
+        "landingPage": {
+          "price": 2500,
+          "deliveryDays": 5,
+          "includes": ["Hero section", "Features", "Pricing", "Footer", "Responsive"]
+        },
+        "basicApp": {
+          "price": 7500,
+          "deliveryDays": 14,
+          "includes": ["Up to 8 pages", "Component library", "Responsive", "2 revisions"]
+        },
+        "fullApp": {
+          "price": 15000,
+          "deliveryDays": 21,
+          "includes": ["Unlimited pages", "Full component library", "Responsive", "Unlimited revisions"]
+        },
+        "multiPlatform": {
+          "price": 25000,
+          "deliveryDays": 30,
+          "includes": ["Web + Mobile designs", "Design system", "Responsive", "Unlimited revisions"]
+        }
+      }
+    },
+
+    "patternDefinition": {
+      "displayName": "Custom Pattern Definition",
+      "description": "Define new agent/skill matching for unique business types",
+      "availability": ["guided-custom"],
+      "pricing": {
+        "adaptation": {
+          "price": 1500,
+          "deliveryDays": 3,
+          "includes": ["Modify existing pattern", "Add/remove agents", "Documentation"]
+        },
+        "newPattern": {
+          "price": 5000,
+          "deliveryDays": 7,
+          "includes": ["Full pattern definition", "Agent chain", "Skill mapping", "Schema design", "MASTER_TASKS template"]
+        },
+        "complexPattern": {
+          "price": 10000,
+          "deliveryDays": 14,
+          "includes": ["Multi-platform pattern", "Complex integrations", "Compliance considerations", "Full documentation"]
+        }
+      },
+      "ipAgreement": "Pattern becomes Quik Nation IP unless otherwise negotiated"
+    },
+
+    "mobileApp": {
+      "displayName": "Mobile App Development",
+      "description": "React Native mobile application",
+      "availability": ["all"],
+      "pricing": {
+        "singlePlatform": {
+          "price": 25000,
+          "deliveryDays": 45,
+          "includes": ["iOS OR Android", "Core features", "Push notifications"]
+        },
+        "crossPlatform": {
+          "price": 40000,
+          "deliveryDays": 60,
+          "includes": ["iOS AND Android", "All features", "Push notifications", "App store submission"]
+        }
+      }
+    },
+
+    "additionalIntegrations": {
+      "displayName": "Third-Party Integrations",
+      "description": "Additional integrations beyond standard pattern",
+      "availability": ["all"],
+      "pricing": {
+        "simpleIntegration": {
+          "price": 2500,
+          "includes": ["Single API integration", "Webhook handling", "Documentation"]
+        },
+        "complexIntegration": {
+          "price": 7500,
+          "includes": ["Multi-endpoint integration", "Data sync", "Error handling", "Monitoring"]
+        },
+        "enterpriseIntegration": {
+          "price": 15000,
+          "includes": ["Enterprise system integration", "SSO", "Custom middleware", "Full support"]
+        }
+      }
+    },
+
+    "expeditedDelivery": {
+      "displayName": "Expedited Delivery",
+      "description": "Faster delivery timeline",
+      "availability": ["self-service", "guided-custom"],
+      "pricing": {
+        "model": "percentage-upcharge",
+        "twoWeeksFaster": 25,
+        "fourWeeksFaster": 50,
+        "note": "Percentage added to base development cost"
+      }
+    }
+  },
+
+  "recurringRevenue": {
+    "hosting": {
+      "tiers": {
+        "starter": {
+          "price": 99,
+          "period": "monthly",
+          "includes": ["Shared EC2", "Basic monitoring", "Daily backups", "Email support"]
+        },
+        "professional": {
+          "price": 299,
+          "period": "monthly",
+          "includes": ["Dedicated resources", "Advanced monitoring", "Hourly backups", "Priority support"]
+        },
+        "business": {
+          "price": 499,
+          "period": "monthly",
+          "includes": ["High availability", "Auto-scaling", "Real-time monitoring", "Phone support"]
+        },
+        "enterprise": {
+          "price": 999,
+          "period": "monthly",
+          "includes": ["Custom infrastructure", "SLA guarantees", "Dedicated support", "Custom backups"]
+        }
+      }
+    },
+
+    "support": {
+      "tiers": {
+        "basic": {
+          "price": 0,
+          "period": "monthly",
+          "includes": ["Documentation access", "Community forum", "Email (48hr response)"]
+        },
+        "standard": {
+          "price": 199,
+          "period": "monthly",
+          "includes": ["Email support (24hr)", "Bug fixes", "Minor updates"]
+        },
+        "priority": {
+          "price": 499,
+          "period": "monthly",
+          "includes": ["Priority email (4hr)", "Phone support", "Bug fixes", "Feature requests queue"]
+        },
+        "dedicated": {
+          "price": 999,
+          "period": "monthly",
+          "includes": ["Dedicated support contact", "1hr response SLA", "Monthly check-ins", "Proactive monitoring"]
+        }
+      }
+    },
+
+    "transactionFees": {
+      "description": "Platform fee on Stripe Connect transactions",
+      "tiers": {
+        "standard": {
+          "percentage": 0.5,
+          "note": "Default for self-service and guided-custom"
+        },
+        "premium": {
+          "percentage": 0.25,
+          "note": "Reduced rate for full-custom clients"
+        },
+        "enterprise": {
+          "percentage": "negotiated",
+          "note": "Custom rate based on volume"
+        }
+      }
+    },
+
+    "featureEnhancements": {
+      "description": "Ongoing development work",
+      "pricing": {
+        "hourly": {
+          "rate": 150,
+          "minimumHours": 5
+        },
+        "retainer": {
+          "hours10": 1250,
+          "hours20": 2400,
+          "hours40": 4500,
+          "note": "Monthly retainer with rollover"
+        }
+      }
+    }
+  },
+
+  "ipBuilding": {
+    "description": "How custom work builds reusable IP",
+    "process": {
+      "1_fullCustomClient": {
+        "action": "Client pays for custom pattern definition",
+        "cost": "Included in full-custom pricing",
+        "ownership": "Quik Nation owns pattern, client owns their implementation"
+      },
+      "2_patternExtraction": {
+        "action": "Pattern added to pattern-mappings.json",
+        "includes": ["Agent chain", "Skill mapping", "Feature list", "Timeline", "Pricing"]
+      },
+      "3_futureClients": {
+        "action": "Similar clients use pre-built pattern",
+        "pricing": "Template tier pricing (lower cost, higher margin)",
+        "benefit": "80% less work, same or better margins"
+      }
+    },
+    "revenueModel": {
+      "firstClient": "Full custom pricing (pattern development funded)",
+      "subsequentClients": "Template pricing (pure profit)",
+      "verticalOwnership": "Become the expert in that industry vertical"
+    },
+    "examples": [
+      {
+        "pattern": "construction",
+        "firstClient": "Pink Collar Contractors - $75,000",
+        "secondClient": "QuikAction - $35,000 (pattern reuse)",
+        "margin": "80% less development effort"
+      },
+      {
+        "pattern": "nonprofit",
+        "firstClient": "G Code Systems - $60,000",
+        "futureClients": "Other nonprofits - $30,000",
+        "verticalValue": "Nonprofit management vertical owned"
+      }
+    ]
+  }
+}

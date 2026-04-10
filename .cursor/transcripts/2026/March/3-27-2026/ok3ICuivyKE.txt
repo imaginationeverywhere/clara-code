@@ -1,0 +1,1186 @@
+Yet again, Enthropic just dropped
+Yet again, Enthropic just dropped
+Yet again, Enthropic just dropped
+another feature that I think a lot of
+another feature that I think a lot of
+another feature that I think a lot of
+people have been waiting for. Now, Cloud
+people have been waiting for. Now, Cloud
+people have been waiting for. Now, Cloud
+Code, it can now control your actual
+Code, it can now control your actual
+Code, it can now control your actual
+computer, your mouse, your keyboard,
+computer, your mouse, your keyboard,
+computer, your mouse, your keyboard,
+your screen. It will take screenshots.
+your screen. It will take screenshots.
+your screen. It will take screenshots.
+It'll figure out what is on your
+It'll figure out what is on your
+It'll figure out what is on your
+display, and it'll just click around and
+display, and it'll just click around and
+display, and it'll just click around and
+actually do things for you. Now, this
+actually do things for you. Now, this
+actually do things for you. Now, this
+will work in both Cloud Code and Cloud
+will work in both Cloud Code and Cloud
+will work in both Cloud Code and Cloud
+Co-Work, and it's available right now
+Co-Work, and it's available right now
+Co-Work, and it's available right now
+for any Pro and Max users on Mac. But
+for any Pro and Max users on Mac. But
+for any Pro and Max users on Mac. But
+here's where it actually gets
+here's where it actually gets
+here's where it actually gets
+interesting is that you can pair this
+interesting is that you can pair this
+interesting is that you can pair this
+with another feature called dispatch,
+with another feature called dispatch,
+with another feature called dispatch,
+which this will let you text Claude from
+which this will let you text Claude from
+which this will let you text Claude from
+your phone and it will do the work on
+your phone and it will do the work on
+your phone and it will do the work on
+your computer while you're away. So,
+your computer while you're away. So,
+your computer while you're away. So,
+let's say you're sitting down for lunch,
+let's say you're sitting down for lunch,
+let's say you're sitting down for lunch,
+you realize you forgot to export that
+you realize you forgot to export that
+you realize you forgot to export that
+report, you text Claude, it opens up the
+report, you text Claude, it opens up the
+report, you text Claude, it opens up the
+app, grabs the file, sends it off. So
+app, grabs the file, sends it off. So
+app, grabs the file, sends it off. So
+today I'm going to be showing you guys
+today I'm going to be showing you guys
+today I'm going to be showing you guys
+how to actually set this up, walk you
+how to actually set this up, walk you
+how to actually set this up, walk you
+through some real demos, talk about what
+through some real demos, talk about what
+through some real demos, talk about what
+it's actually good at, what it can't do
+it's actually good at, what it can't do
+it's actually good at, what it can't do
+yet, and a few use cases that I think
+yet, and a few use cases that I think
+yet, and a few use cases that I think
+are going to be really practical for
+are going to be really practical for
+are going to be really practical for
+anyone running a business or just doing
+anyone running a business or just doing
+anyone running a business or just doing
+any sort of knowledge work. So let's get
+any sort of knowledge work. So let's get
+any sort of knowledge work. So let's get
+into it. Here's the official blog post
+into it. Here's the official blog post
+into it. Here's the official blog post
+from Anthropic. They're calling this
+from Anthropic. They're calling this
+from Anthropic. They're calling this
+computer use, and it just went live
+computer use, and it just went live
+computer use, and it just went live
+yesterday as a research preview. Now,
+yesterday as a research preview. Now,
+yesterday as a research preview. Now,
+what's actually happening under the
+what's actually happening under the
+what's actually happening under the
+hood? It's pretty straightforward. So
+hood? It's pretty straightforward. So
+hood? It's pretty straightforward. So
+when you tell Claw to do something on
+when you tell Claw to do something on
+when you tell Claw to do something on
+your computer, it will follow a specific
+your computer, it will follow a specific
+your computer, it will follow a specific
+order. So first, it'll check if there's
+order. So first, it'll check if there's
+order. So first, it'll check if there's
+a direct integration. Like if you ask it
+a direct integration. Like if you ask it
+a direct integration. Like if you ask it
+to check your calendar, it'll just use
+to check your calendar, it'll just use
+to check your calendar, it'll just use
+Google calendar connector because that
+Google calendar connector because that
+Google calendar connector because that
+is faster and it's more reliable. Second
+is faster and it's more reliable. Second
+is faster and it's more reliable. Second
+is if the task needs a browser, it'll
+is if the task needs a browser, it'll
+is if the task needs a browser, it'll
+just use the quad in Chrome extension.
+just use the quad in Chrome extension.
+just use the quad in Chrome extension.
+And third, when neither of those can
+And third, when neither of those can
+And third, when neither of those can
+actually handle the job, does it fall
+actually handle the job, does it fall
+actually handle the job, does it fall
+back to actually controlling your
+back to actually controlling your
+back to actually controlling your
+screen. So taking screenshots, moving
+screen. So taking screenshots, moving
+screen. So taking screenshots, moving
+the mouse, clicking buttons, typing, all
+the mouse, clicking buttons, typing, all
+the mouse, clicking buttons, typing, all
+that stuff. So it's not just using
+that stuff. So it's not just using
+that stuff. So it's not just using
+screen control for everything because
+screen control for everything because
+screen control for everything because
+that would be a little bit more
+that would be a little bit more
+that would be a little bit more
+expensive. So it's actually being
+expensive. So it's actually being
+expensive. So it's actually being
+optimal. So that's just a design choice.
+optimal. So that's just a design choice.
+optimal. So that's just a design choice.
+screen control. It would be the backup
+screen control. It would be the backup
+screen control. It would be the backup
+option for things like any native apps,
+option for things like any native apps,
+option for things like any native apps,
+internal tools, or anything that just
+internal tools, or anything that just
+internal tools, or anything that just
+does not have a native API integration.
+does not have a native API integration.
+does not have a native API integration.
+So, to actually turn this on, you just
+So, to actually turn this on, you just
+So, to actually turn this on, you just
+need to simply go into your cloud
+need to simply go into your cloud
+need to simply go into your cloud
+settings. So, I'm on the cloud app
+settings. So, I'm on the cloud app
+settings. So, I'm on the cloud app
+currently. So, we'll just navigate over
+currently. So, we'll just navigate over
+currently. So, we'll just navigate over
+to our settings. And from here, we'll
+to our settings. And from here, we'll
+to our settings. And from here, we'll
+just scroll down to the desktop app
+just scroll down to the desktop app
+just scroll down to the desktop app
+section. You can go to general, and you
+section. You can go to general, and you
+section. You can go to general, and you
+scroll down, you should see computer
+scroll down, you should see computer
+scroll down, you should see computer
+use. You just have to enable this. So,
+use. You just have to enable this. So,
+use. You just have to enable this. So,
+it's going to give you a few
+it's going to give you a few
+it's going to give you a few
+disclaimers, all that sorts of stuff.
+disclaimers, all that sorts of stuff.
+disclaimers, all that sorts of stuff.
+And we'll just enable this. What I also
+And we'll just enable this. What I also
+And we'll just enable this. What I also
+want to do is going to keep our computer
+want to do is going to keep our computer
+want to do is going to keep our computer
+awake. This is going to allow us to make
+awake. This is going to allow us to make
+awake. This is going to allow us to make
+sure that, you know, our computer isn't
+sure that, you know, our computer isn't
+sure that, you know, our computer isn't
+going to go idle or anything. So, we can
+going to go idle or anything. So, we can
+going to go idle or anything. So, we can
+actually use our cloud code instance on
+actually use our cloud code instance on
+actually use our cloud code instance on
+the go and it's not going to go to sleep
+the go and it's not going to go to sleep
+the go and it's not going to go to sleep
+or anything like that. Now, if you're
+or anything like that. Now, if you're
+or anything like that. Now, if you're
+not seeing computer use, all you want to
+not seeing computer use, all you want to
+not seeing computer use, all you want to
+do just close out your application. So,
+do just close out your application. So,
+do just close out your application. So,
+again, I am using this inside of the
+again, I am using this inside of the
+again, I am using this inside of the
+desktop app. And what you want to do,
+desktop app. And what you want to do,
+desktop app. And what you want to do,
+just log back out, log back in, make
+just log back out, log back in, make
+just log back out, log back in, make
+sure you're updated on the latest
+sure you're updated on the latest
+sure you're updated on the latest
+instance, and you should be good to go.
+instance, and you should be good to go.
+instance, and you should be good to go.
+You'll be able to see it. All right, let
+You'll be able to see it. All right, let
+You'll be able to see it. All right, let
+me show you what this actually looks
+me show you what this actually looks
+me show you what this actually looks
+like. So, I have this PDF. This is just
+like. So, I have this PDF. This is just
+like. So, I have this PDF. This is just
+sitting in my downloads folder on my
+sitting in my downloads folder on my
+sitting in my downloads folder on my
+computer. And I want Claude to actually
+computer. And I want Claude to actually
+computer. And I want Claude to actually
+be able to send it as a DM to somebody
+be able to send it as a DM to somebody
+be able to send it as a DM to somebody
+on Slack. Also be able to email it off
+on Slack. Also be able to email it off
+on Slack. Also be able to email it off
+to somebody. Now, I don't have either of
+to somebody. Now, I don't have either of
+to somebody. Now, I don't have either of
+those applications open right now. So,
+those applications open right now. So,
+those applications open right now. So,
+I'm just going to go back to Claude. I'm
+I'm just going to go back to Claude. I'm
+I'm just going to go back to Claude. I'm
+going to say use computer use to find
+going to say use computer use to find
+going to say use computer use to find
+the client proposal PDF on my computer
+the client proposal PDF on my computer
+the client proposal PDF on my computer
+and send it as an email to this guy and
+and send it as an email to this guy and
+and send it as an email to this guy and
+DM it to Kave in Slack of a summary. So,
+DM it to Kave in Slack of a summary. So,
+DM it to Kave in Slack of a summary. So,
+we'll run this off. Now it is worth
+we'll run this off. Now it is worth
+we'll run this off. Now it is worth
+noting if you are running this for the
+noting if you are running this for the
+noting if you are running this for the
+first time using computer use for the
+first time using computer use for the
+first time using computer use for the
+first time it is going to require and
+first time it is going to require and
+first time it is going to require and
+request a few different permissions. So
+request a few different permissions. So
+request a few different permissions. So
+if you're you know asking it to access
+if you're you know asking it to access
+if you're you know asking it to access
+your downloads access your local
+your downloads access your local
+your downloads access your local
+computer you will have to first provide
+computer you will have to first provide
+computer you will have to first provide
+it with those permissions. So if you're
+it with those permissions. So if you're
+it with those permissions. So if you're
+asking it to go ahead go on Slack or
+asking it to go ahead go on Slack or
+asking it to go ahead go on Slack or
+record your screen anything like that
+record your screen anything like that
+record your screen anything like that
+you have to enable those system
+you have to enable those system
+you have to enable those system
+settings. So you only have to do that
+settings. So you only have to do that
+settings. So you only have to do that
+once. So right now it's asking to just
+once. So right now it's asking to just
+once. So right now it's asking to just
+read for this. So I'm going to give it
+read for this. So I'm going to give it
+read for this. So I'm going to give it
+permission. And next up, should be able
+permission. And next up, should be able
+permission. And next up, should be able
+to be able to actually read the entire
+to be able to actually read the entire
+to be able to actually read the entire
+proposal and then start sending the
+proposal and then start sending the
+proposal and then start sending the
+summaries, connects to Gmail, and also
+summaries, connects to Gmail, and also
+summaries, connects to Gmail, and also
+connects to Slack. All right, I've read
+connects to Slack. All right, I've read
+connects to Slack. All right, I've read
+the proposal. It's a 73,000 10E AI
+the proposal. It's a 73,000 10E AI
+the proposal. It's a 73,000 10E AI
+workflow automation engagement. Before I
+workflow automation engagement. Before I
+workflow automation engagement. Before I
+send anything, here's what I'll do. I'll
+send anything, here's what I'll do. I'll
+send anything, here's what I'll do. I'll
+email this guy and then I'll send the DM
+email this guy and then I'll send the DM
+email this guy and then I'll send the DM
+over to Slack. Can I proceed? I will say
+over to Slack. Can I proceed? I will say
+over to Slack. Can I proceed? I will say
+proceed. Let me create the Gmail draft
+proceed. Let me create the Gmail draft
+proceed. Let me create the Gmail draft
+and then send the DM to Khave in
+and then send the DM to Khave in
+and then send the DM to Khave in
+parallel. So right now it is just using
+parallel. So right now it is just using
+parallel. So right now it is just using
+the connector. So it's not even using
+the connector. So it's not even using
+the connector. So it's not even using
+computer use. So right now it is
+computer use. So right now it is
+computer use. So right now it is
+recognizing that it already has a
+recognizing that it already has a
+recognizing that it already has a
+connector. So it's going to be a bit
+connector. So it's going to be a bit
+connector. So it's going to be a bit
+more efficient, bit more practical
+more efficient, bit more practical
+more efficient, bit more practical
+because it's going to cost less tokens
+because it's going to cost less tokens
+because it's going to cost less tokens
+to actually interact and use computer
+to actually interact and use computer
+to actually interact and use computer
+use. Whereas the connector, it's much
+use. Whereas the connector, it's much
+use. Whereas the connector, it's much
+easier and there's a better procedure to
+easier and there's a better procedure to
+easier and there's a better procedure to
+actually be going about this. So let's
+actually be going about this. So let's
+actually be going about this. So let's
+go ahead and check that. All right. So
+go ahead and check that. All right. So
+go ahead and check that. All right. So
+you guys can see right here we have the
+you guys can see right here we have the
+you guys can see right here we have the
+draft. Please find the client proposal
+draft. Please find the client proposal
+draft. Please find the client proposal
+for Acme Corps operations team attached.
+for Acme Corps operations team attached.
+for Acme Corps operations team attached.
+This covers the full 10E engagement. Let
+This covers the full 10E engagement. Let
+This covers the full 10E engagement. Let
+me know if any revisions are needed. Not
+me know if any revisions are needed. Not
+me know if any revisions are needed. Not
+check slack. Cool. So we can see right
+check slack. Cool. So we can see right
+check slack. Cool. So we can see right
+here, hey Kjav, here's a quick summary
+here, hey Kjav, here's a quick summary
+here, hey Kjav, here's a quick summary
+of the Acme Corp client proposal I just
+of the Acme Corp client proposal I just
+of the Acme Corp client proposal I just
+sent over. So it's pretty much the same
+sent over. So it's pretty much the same
+sent over. So it's pretty much the same
+thing as the Gmail draft.
+thing as the Gmail draft.
+thing as the Gmail draft.
+Hypothetically, if Slack was not a
+Hypothetically, if Slack was not a
+Hypothetically, if Slack was not a
+connector, same with Gmail, then that is
+connector, same with Gmail, then that is
+connector, same with Gmail, then that is
+where it would be able to use computer
+where it would be able to use computer
+where it would be able to use computer
+use and actually interact. Let me show
+use and actually interact. Let me show
+use and actually interact. Let me show
+you where it's actually going to be
+you where it's actually going to be
+you where it's actually going to be
+using computer use. And before we do
+using computer use. And before we do
+using computer use. And before we do
+that, I have to introduce Dispatch. So
+that, I have to introduce Dispatch. So
+that, I have to introduce Dispatch. So
+dispatch, this is going to allow you to
+dispatch, this is going to allow you to
+dispatch, this is going to allow you to
+actually utilize Claude from your phone
+actually utilize Claude from your phone
+actually utilize Claude from your phone
+while your computer is elsewhere. So if
+while your computer is elsewhere. So if
+while your computer is elsewhere. So if
+you have not set up dispatch yet, just
+you have not set up dispatch yet, just
+you have not set up dispatch yet, just
+go ahead, navigate to dispatch. It's
+go ahead, navigate to dispatch. It's
+go ahead, navigate to dispatch. It's
+extremely simple. You'll just have to
+extremely simple. You'll just have to
+extremely simple. You'll just have to
+scan a QR code or just log into Claude
+scan a QR code or just log into Claude
+scan a QR code or just log into Claude
+on your phone and it'll be paired. It is
+on your phone and it'll be paired. It is
+on your phone and it'll be paired. It is
+as simple as that. It takes maybe 30
+as simple as that. It takes maybe 30
+as simple as that. It takes maybe 30
+seconds to set up. So, go to that now if
+seconds to set up. So, go to that now if
+seconds to set up. So, go to that now if
+you have not already. So, what I'm going
+you have not already. So, what I'm going
+you have not already. So, what I'm going
+to do is I'm just going to start a new
+to do is I'm just going to start a new
+to do is I'm just going to start a new
+message and I'm going to paste in use
+message and I'm going to paste in use
+message and I'm going to paste in use
+computer use to actually open up my
+computer use to actually open up my
+computer use to actually open up my
+notes app on my computer and create a
+notes app on my computer and create a
+notes app on my computer and create a
+new note summarizing today's meetings
+new note summarizing today's meetings
+new note summarizing today's meetings
+for my Google calendar. So, let's send
+for my Google calendar. So, let's send
+for my Google calendar. So, let's send
+that off. You can see I actually ran
+that off. You can see I actually ran
+that off. You can see I actually ran
+that earlier, but we should see on our
+that earlier, but we should see on our
+that earlier, but we should see on our
+computer that we will have this new
+computer that we will have this new
+computer that we will have this new
+request. So, it's going to log that,
+request. So, it's going to log that,
+request. So, it's going to log that,
+recognize the input. You know,
+recognize the input. You know,
+recognize the input. You know,
+everything's going to be hands off. So,
+everything's going to be hands off. So,
+everything's going to be hands off. So,
+you can see that I'm not actually
+you can see that I'm not actually
+you can see that I'm not actually
+controlling my computer in just a second
+controlling my computer in just a second
+controlling my computer in just a second
+where it will actually open up my notes
+where it will actually open up my notes
+where it will actually open up my notes
+here. This is where my notes app is now
+here. This is where my notes app is now
+here. This is where my notes app is now
+open. It says Claude is using your
+open. It says Claude is using your
+open. It says Claude is using your
+computer. And in a second, it should
+computer. And in a second, it should
+computer. And in a second, it should
+input everything, you know, the summary
+input everything, you know, the summary
+input everything, you know, the summary
+from my Google calendar, which there it
+from my Google calendar, which there it
+from my Google calendar, which there it
+was using a Google connector. So, that's
+was using a Google connector. So, that's
+was using a Google connector. So, that's
+just something that's natively set up
+just something that's natively set up
+just something that's natively set up
+inside of Claude. So, right now, it's
+inside of Claude. So, right now, it's
+inside of Claude. So, right now, it's
+just inputting everything in here. So
+just inputting everything in here. So
+just inputting everything in here. So
+here I have my morning routine from 8:00
+here I have my morning routine from 8:00
+here I have my morning routine from 8:00
+to 8:30. This is recurring. I have my
+to 8:30. This is recurring. I have my
+to 8:30. This is recurring. I have my
+team sync at 1:00 p.m. and then we have
+team sync at 1:00 p.m. and then we have
+team sync at 1:00 p.m. and then we have
+a call later in the day. So awesome.
+a call later in the day. So awesome.
+a call later in the day. So awesome.
+That is how we are actually utilizing
+That is how we are actually utilizing
+That is how we are actually utilizing
+the computer use. Hypothetically if we
+the computer use. Hypothetically if we
+the computer use. Hypothetically if we
+wanted to use it from our phone. So if
+wanted to use it from our phone. So if
+wanted to use it from our phone. So if
+we're away from our desk or anything
+we're away from our desk or anything
+we're away from our desk or anything
+else. So beyond what I just showed you,
+else. So beyond what I just showed you,
+else. So beyond what I just showed you,
+I mean there's a thousand different use
+I mean there's a thousand different use
+I mean there's a thousand different use
+cases that you can use this for. Lead
+cases that you can use this for. Lead
+cases that you can use this for. Lead
+generation, lead research, lead
+generation, lead research, lead
+generation, lead research, lead
+enrichment, whatever it may be. It
+enrichment, whatever it may be. It
+enrichment, whatever it may be. It
+doesn't have to be regarding to leads,
+doesn't have to be regarding to leads,
+doesn't have to be regarding to leads,
+but you can use this across departments
+but you can use this across departments
+but you can use this across departments
+for so many different use cases. So,
+for so many different use cases. So,
+for so many different use cases. So,
+just to expand and give you guys some
+just to expand and give you guys some
+just to expand and give you guys some
+ideas, first one, client deliverable
+ideas, first one, client deliverable
+ideas, first one, client deliverable
+prep. So, let's say you're just building
+prep. So, let's say you're just building
+prep. So, let's say you're just building
+out an automation or a project workflow
+out an automation or a project workflow
+out an automation or a project workflow
+for a client and you've got the proposal
+for a client and you've got the proposal
+for a client and you've got the proposal
+doc inside of Google Docs. You've got
+doc inside of Google Docs. You've got
+doc inside of Google Docs. You've got
+the scope spreadsheet in Excel and the
+the scope spreadsheet in Excel and the
+the scope spreadsheet in Excel and the
+contract PDF in your downloads folder.
+contract PDF in your downloads folder.
+contract PDF in your downloads folder.
+Now, normally you would have to spend
+Now, normally you would have to spend
+Now, normally you would have to spend
+about 10 minutes just jumping between
+about 10 minutes just jumping between
+about 10 minutes just jumping between
+apps, copying all that information,
+apps, copying all that information,
+apps, copying all that information,
+reformatting whatever it may be. But
+reformatting whatever it may be. But
+reformatting whatever it may be. But
+with computer use, you can just tell
+with computer use, you can just tell
+with computer use, you can just tell
+Claude to pull the key numbers from the
+Claude to pull the key numbers from the
+Claude to pull the key numbers from the
+spreadsheet, open the proposal, update
+spreadsheet, open the proposal, update
+spreadsheet, open the proposal, update
+the figures, and then attach everything
+the figures, and then attach everything
+the figures, and then attach everything
+to a single email draft. It will handle
+to a single email draft. It will handle
+to a single email draft. It will handle
+all the app switching automatically for
+all the app switching automatically for
+all the app switching automatically for
+you. Second is any overnight code
+you. Second is any overnight code
+you. Second is any overnight code
+reviews with scheduled tasks. So clawed
+reviews with scheduled tasks. So clawed
+reviews with scheduled tasks. So clawed
+code, it already has a scheduling
+code, it already has a scheduling
+code, it already has a scheduling
+feature you guys may already know about
+feature you guys may already know about
+feature you guys may already know about
+where you can just set prompts to run on
+where you can just set prompts to run on
+where you can just set prompts to run on
+a chrome. Now combine that with computer
+a chrome. Now combine that with computer
+a chrome. Now combine that with computer
+use. You can just set a task that runs
+use. You can just set a task that runs
+use. You can just set a task that runs
+at midnight, pulls up your staging
+at midnight, pulls up your staging
+at midnight, pulls up your staging
+environment in the iOS simulator and
+environment in the iOS simulator and
+environment in the iOS simulator and
+then clicks through the core user flows,
+then clicks through the core user flows,
+then clicks through the core user flows,
+screenshot anything that looks off and
+screenshot anything that looks off and
+screenshot anything that looks off and
+commits a bug report to your repo before
+commits a bug report to your repo before
+commits a bug report to your repo before
+you even wake up. Now third, and this
+you even wake up. Now third, and this
+you even wake up. Now third, and this
+one is very specific to agency owners. A
+one is very specific to agency owners. A
+one is very specific to agency owners. A
+lot of your clients, they're going to be
+lot of your clients, they're going to be
+lot of your clients, they're going to be
+running proprietary softwares that has
+running proprietary softwares that has
+running proprietary softwares that has
+zero API access. So you can think about
+zero API access. So you can think about
+zero API access. So you can think about
+like old clinic like dental practice
+like old clinic like dental practice
+like old clinic like dental practice
+management systems where they have local
+management systems where they have local
+management systems where they have local
+accounting tools or any niche industry
+accounting tools or any niche industry
+accounting tools or any niche industry
+platforms that were just built 15 years
+platforms that were just built 15 years
+platforms that were just built 15 years
+ago. They're legacy systems. There's no
+ago. They're legacy systems. There's no
+ago. They're legacy systems. There's no
+Zapier connector. There's no web hook.
+Zapier connector. There's no web hook.
+Zapier connector. There's no web hook.
+There's no API documentation. There's
+There's no API documentation. There's
+There's no API documentation. There's
+nothing. But those apps, they do have a
+nothing. But those apps, they do have a
+nothing. But those apps, they do have a
+GUI. And now Claude can interact with
+GUI. And now Claude can interact with
+GUI. And now Claude can interact with
+that GUI. So you can actually build
+that GUI. So you can actually build
+that GUI. So you can actually build
+automations around software that was
+automations around software that was
+automations around software that was
+previously impossible to integrate with
+previously impossible to integrate with
+previously impossible to integrate with
+and that opens up a whole new category
+and that opens up a whole new category
+and that opens up a whole new category
+of clients that you can now serve.
+of clients that you can now serve.
+of clients that you can now serve.
+Fourth is competitor research on
+Fourth is competitor research on
+Fourth is competitor research on
+autopilot. So you can schedule Claude to
+autopilot. So you can schedule Claude to
+autopilot. So you can schedule Claude to
+open a local note-taking app every
+open a local note-taking app every
+open a local note-taking app every
+single morning. Pull up three or four
+single morning. Pull up three or four
+single morning. Pull up three or four
+competitor websites using the Chrome
+competitor websites using the Chrome
+competitor websites using the Chrome
+extension. Screenshot their pricing
+extension. Screenshot their pricing
+extension. Screenshot their pricing
+pages. Compile a weekly comparison dock.
+pages. Compile a weekly comparison dock.
+pages. Compile a weekly comparison dock.
+And if you're running an agency and
+And if you're running an agency and
+And if you're running an agency and
+tracking how competitors are actually
+tracking how competitors are actually
+tracking how competitors are actually
+positioning, that is a task that a VA
+positioning, that is a task that a VA
+positioning, that is a task that a VA
+may have well taken like 30 minutes to
+may have well taken like 30 minutes to
+may have well taken like 30 minutes to
+perform. Now, it runs itself. And last
+perform. Now, it runs itself. And last
+perform. Now, it runs itself. And last
+but not least, and again, like these are
+but not least, and again, like these are
+but not least, and again, like these are
+not limited to just these use cases.
+not limited to just these use cases.
+not limited to just these use cases.
+There's so many more that you can be
+There's so many more that you can be
+There's so many more that you can be
+using this for. So, this is the one that
+using this for. So, this is the one that
+using this for. So, this is the one that
+I actually keep coming back to and what
+I actually keep coming back to and what
+I actually keep coming back to and what
+I have been using this over the past day
+I have been using this over the past day
+I have been using this over the past day
+is let's say you're on a sales call. The
+is let's say you're on a sales call. The
+is let's say you're on a sales call. The
+prospect is asking for a case study that
+prospect is asking for a case study that
+prospect is asking for a case study that
+you know is saved somewhere on your
+you know is saved somewhere on your
+you know is saved somewhere on your
+machine. So, maybe it's just a Google
+machine. So, maybe it's just a Google
+machine. So, maybe it's just a Google
+Slides saved on your computer. So
+Slides saved on your computer. So
+Slides saved on your computer. So
+instead of saying like, "Okay, let me
+instead of saying like, "Okay, let me
+instead of saying like, "Okay, let me
+find this after the call." You can pull
+find this after the call." You can pull
+find this after the call." You can pull
+it up right on the call. You can use
+it up right on the call. You can use
+it up right on the call. You can use
+dispatch saying, "Hey, I need you to
+dispatch saying, "Hey, I need you to
+dispatch saying, "Hey, I need you to
+find me this file." And then you can
+find me this file." And then you can
+find me this file." And then you can
+present it, show it on the call because
+present it, show it on the call because
+present it, show it on the call because
+you're going to have it in seconds. You
+you're going to have it in seconds. You
+you're going to have it in seconds. You
+don't have to be digging and finding it.
+don't have to be digging and finding it.
+don't have to be digging and finding it.
+Meanwhile, Claude, it will do all that
+Meanwhile, Claude, it will do all that
+Meanwhile, Claude, it will do all that
+for you. Now, to talk about some
+for you. Now, to talk about some
+for you. Now, to talk about some
+limitations of what you should know
+limitations of what you should know
+limitations of what you should know
+before you actually get too excited
+before you actually get too excited
+before you actually get too excited
+because there is some important
+because there is some important
+because there is some important
+disclaimers. So, first thing, this is a
+disclaimers. So, first thing, this is a
+disclaimers. So, first thing, this is a
+research preview. It works, but it is
+research preview. It works, but it is
+research preview. It works, but it is
+not bulletproof by any means. Like
+not bulletproof by any means. Like
+not bulletproof by any means. Like
+sometimes claude it will click the right
+sometimes claude it will click the right
+sometimes claude it will click the right
+button from what I have found. Sometimes
+button from what I have found. Sometimes
+button from what I have found. Sometimes
+it misreads the screenshot. It is early
+it misreads the screenshot. It is early
+it misreads the screenshot. It is early
+enthropic. They are saying that upfront
+enthropic. They are saying that upfront
+enthropic. They are saying that upfront
+and that is what I respect and
+and that is what I respect and
+and that is what I respect and
+appreciate about them. Second, it is Mac
+appreciate about them. Second, it is Mac
+appreciate about them. Second, it is Mac
+only right now. So it will come I'm sure
+only right now. So it will come I'm sure
+only right now. So it will come I'm sure
+for Windows pretty soon but for right
+for Windows pretty soon but for right
+for Windows pretty soon but for right
+now it's just Mac. And third, this is a
+now it's just Mac. And third, this is a
+now it's just Mac. And third, this is a
+big one. Browsers are very limited. You
+big one. Browsers are very limited. You
+big one. Browsers are very limited. You
+can't use Google Chrome. Claude can't
+can't use Google Chrome. Claude can't
+can't use Google Chrome. Claude can't
+click around, type in Safari, Chrome, or
+click around, type in Safari, Chrome, or
+click around, type in Safari, Chrome, or
+any browser through screen control. That
+any browser through screen control. That
+any browser through screen control. That
+is a deliberate security decision. So
+is a deliberate security decision. So
+is a deliberate security decision. So
+like web pages, they can contain hidden
+like web pages, they can contain hidden
+like web pages, they can contain hidden
+instructions that could trick an AI
+instructions that could trick an AI
+instructions that could trick an AI
+agent into doing something that you did
+agent into doing something that you did
+agent into doing something that you did
+not ask for. So for any browser tasks,
+not ask for. So for any browser tasks,
+not ask for. So for any browser tasks,
+you would have to use the claude in
+you would have to use the claude in
+you would have to use the claude in
+Chrome extension instead, which is a
+Chrome extension instead, which is a
+Chrome extension instead, which is a
+separate tool, or you could just
+separate tool, or you could just
+separate tool, or you could just
+download a different browser. So I don't
+download a different browser. So I don't
+download a different browser. So I don't
+know all the other ones available, but
+know all the other ones available, but
+know all the other ones available, but
+it will not be Chrome, it will not be
+it will not be Chrome, it will not be
+it will not be Chrome, it will not be
+Safari, all the big ones. You'll have to
+Safari, all the big ones. You'll have to
+Safari, all the big ones. You'll have to
+look for a different third party
+look for a different third party
+look for a different third party
+application, a different browser that
+application, a different browser that
+application, a different browser that
+you will have to use. Fourth is the
+you will have to use. Fourth is the
+you will have to use. Fourth is the
+financial apps and crypto wallets. These
+financial apps and crypto wallets. These
+financial apps and crypto wallets. These
+are blocked by default. So you can just
+are blocked by default. So you can just
+are blocked by default. So you can just
+add your own apps to the block list. And
+add your own apps to the block list. And
+add your own apps to the block list. And
+I mean this makes sense. Like you do not
+I mean this makes sense. Like you do not
+I mean this makes sense. Like you do not
+want an AI agent to be accidentally
+want an AI agent to be accidentally
+want an AI agent to be accidentally
+clicking around your training platform
+clicking around your training platform
+clicking around your training platform
+or your wallet. Fifth is computer use.
+or your wallet. Fifth is computer use.
+or your wallet. Fifth is computer use.
+It runs outside the normal sandbox. So
+It runs outside the normal sandbox. So
+It runs outside the normal sandbox. So
+usually when Claude works on files in
+usually when Claude works on files in
+usually when Claude works on files in
+co-work
+co-work
+co-work
+isolated virtual machine, but computer
+isolated virtual machine, but computer
+isolated virtual machine, but computer
+use, it actually breaks out of that
+use, it actually breaks out of that
+use, it actually breaks out of that
+where it's interacting with your actual
+where it's interacting with your actual
+where it's interacting with your actual
+desktop. So you should think of it like
+desktop. So you should think of it like
+desktop. So you should think of it like
+giving somebody remote desktop access.
+giving somebody remote desktop access.
+giving somebody remote desktop access.
+So you have to be intentional about what
+So you have to be intentional about what
+So you have to be intentional about what
+you actually let it touch. And this is
+you actually let it touch. And this is
+you actually let it touch. And this is
+where it's a little bit more similar to
+where it's a little bit more similar to
+where it's a little bit more similar to
+OpenClaw and where you might want to
+OpenClaw and where you might want to
+OpenClaw and where you might want to
+have a different computer specifically
+have a different computer specifically
+have a different computer specifically
+for this. So it's not going to mess up
+for this. So it's not going to mess up
+for this. So it's not going to mess up
+all your files or anything like that.
+all your files or anything like that.
+all your files or anything like that.
+And finally, this is only available on
+And finally, this is only available on
+And finally, this is only available on
+Pro and Max plans right now. So it's not
+Pro and Max plans right now. So it's not
+Pro and Max plans right now. So it's not
+on Teams or Enterprise. And the reason
+on Teams or Enterprise. And the reason
+on Teams or Enterprise. And the reason
+is that activity from computer use, it
+is that activity from computer use, it
+is that activity from computer use, it
+isn't captured in audit logs, which is
+isn't captured in audit logs, which is
+isn't captured in audit logs, which is
+something that enterprise customers
+something that enterprise customers
+something that enterprise customers
+would need for compliance. Now look, I
+would need for compliance. Now look, I
+would need for compliance. Now look, I
+mentioned this is still early, but what
+mentioned this is still early, but what
+mentioned this is still early, but what
+Enthropic just shipped here, it is
+Enthropic just shipped here, it is
+Enthropic just shipped here, it is
+pretty clear signal of where things are
+pretty clear signal of where things are
+pretty clear signal of where things are
+actually headed to. Like we're moving
+actually headed to. Like we're moving
+actually headed to. Like we're moving
+past the stage where AI just writes text
+past the stage where AI just writes text
+past the stage where AI just writes text
+in a chat. This is actually doing work
+in a chat. This is actually doing work
+in a chat. This is actually doing work
+on your computer while you can go live
+on your computer while you can go live
+on your computer while you can go live
+your life. You can pair that with
+your life. You can pair that with
+your life. You can pair that with
+dispatch from your phone and actually
+dispatch from your phone and actually
+dispatch from your phone and actually
+schedule tasks that run overnight and
+schedule tasks that run overnight and
+schedule tasks that run overnight and
+you basically have a digital employee
+you basically have a digital employee
+you basically have a digital employee
+that is always on for you. And for
+that is always on for you. And for
+that is always on for you. And for
+anyone running a service business or
+anyone running a service business or
+anyone running a service business or
+just an AI agency, like this is the
+just an AI agency, like this is the
+just an AI agency, like this is the
+stuff that should be on your radar. the
+stuff that should be on your radar. the
+stuff that should be on your radar. the
+use cases, they're only going to get
+use cases, they're only going to get
+use cases, they're only going to get
+better as this moves out of the research
+better as this moves out of the research
+better as this moves out of the research
+preview. Now, if you guys do want to
+preview. Now, if you guys do want to
+preview. Now, if you guys do want to
+stay up to date on how to actually use
+stay up to date on how to actually use
+stay up to date on how to actually use
+these tools in your business and
+these tools in your business and
+these tools in your business and
+practical AI strategies to starting and
+practical AI strategies to starting and
+practical AI strategies to starting and
+growing your business, then check out
+growing your business, then check out
+growing your business, then check out
+our free AI newsletter. We upload weekly
+our free AI newsletter. We upload weekly
+our free AI newsletter. We upload weekly
+sending you strategies on how to start
+sending you strategies on how to start
+sending you strategies on how to start
+and actually grow your business and our
+and actually grow your business and our
+and actually grow your business and our
+experience in the space. And before you
+experience in the space. And before you
+experience in the space. And before you
+guys go, we are hosting a live free
+guys go, we are hosting a live free
+guys go, we are hosting a live free
+workshop next Tuesday, breaking down how
+workshop next Tuesday, breaking down how
+workshop next Tuesday, breaking down how
+we use AI inside of our three companies,
+we use AI inside of our three companies,
+we use AI inside of our three companies,
+automating about 60 to 70% of our tasks
+automating about 60 to 70% of our tasks
+automating about 60 to 70% of our tasks
+currently and how we've been
+currently and how we've been
+currently and how we've been
+implementing AI, Claude Code, OpenClaw
+implementing AI, Claude Code, OpenClaw
+implementing AI, Claude Code, OpenClaw
+for all of our clients and the results
+for all of our clients and the results
+for all of our clients and the results
+that they have seen and how you can
+that they have seen and how you can
+that they have seen and how you can
+actually do that for yourself, your
+actually do that for yourself, your
+actually do that for yourself, your
+team, upskill your team, and install
+team, upskill your team, and install
+team, upskill your team, and install
+Claude inside of your guys'
+Claude inside of your guys'
+Claude inside of your guys'
+environments. So, if you are a business
+environments. So, if you are a business
+environments. So, if you are a business
+owner and you're looking to either drive
+owner and you're looking to either drive
+owner and you're looking to either drive
+leverage or increase your bottom line,
+leverage or increase your bottom line,
+leverage or increase your bottom line,
+then make sure to check out and sign up
+then make sure to check out and sign up
+then make sure to check out and sign up
+for that webinar next Tuesday. We'll be
+for that webinar next Tuesday. We'll be
+for that webinar next Tuesday. We'll be
+covering all of that. You guys do not
+covering all of that. You guys do not
+covering all of that. You guys do not
+want to miss it. But with that being
+want to miss it. But with that being
+want to miss it. But with that being
+said, thank you guys for watching.

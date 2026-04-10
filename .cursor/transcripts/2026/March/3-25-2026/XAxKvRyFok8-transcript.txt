@@ -1,0 +1,277 @@
+Source: https://youtu.be/XAxKvRyFok8
+Title: Anthropic Just Revealed How Their Entire Team Uses Claude Code (23 Pages)
+Fetched: 2026-03-25T20:03:57.421Z
+Segments: 267
+
+--- Plain text ---
+The anthropic team behind Claude and Claude Code just dropped a 23-page document that walks through how their internal teams are using Claude Code. And we're not talking developers, designers, and machine learning experts. We're talking lawyers, finance, marketing, operations, probably folks like you who maybe are a little technical or AI adjacent, but aren't natively kind of using cloud code all day every day. And in this video, I'm going to walk through and I want to share with you my takeaway from this document. And and I'll link the entire document down below so you can take a look and read the lessons and the stories that they have. But there's eight things I want to highlight in this video across all the disciplines of a company that you can take away for your company and your job and your team to help them level up using cloud code at work. And the first area of the business is data and data infrastructure. And my big takeaway here is the finance team was able to kind of just write what they want to do in plain English and create dashboards and interactive dashboards, many of which would persist over time instead of creating kind of throwaway queries or bothering a data analytics team. So they're self- serving. They're creating tools custom made for themselves and they're able to use them all day, any day, anytime they want. pretty big level up for a team that was previously non-technical. The other part of the data infrastructure team and and data is really the backbone of any business I think is being able to work with much larger volumes of data. And you know when we've talked about cloud versus cloud co-work versus claude code the really big step between anything that's in the web and anything that's local on your computer is the amount of data that it has access to. And so they're monitoring 200 different dashboards, all of which have massive amounts of data because they're working on their computer on a really powerful machine, not in a browser on the website. I think something for us all to take away is how can we work locally because we can work much more powerfully if we're working locally. You know, I wanted to skip product development entirely because there's so much out there. I'm not a developer. But I think the big thing here is if you're building any kind of product, whether it's a a internal tool or a side hobby or or you're building a AI native SAS tool, the big takeaway here is yeah, of course, Claude code and Claude can write all the code for you. But the big takeaway is kind of self-sufficient loops. You might call it Ralph loops. Uh, I have an entire video I'm working on right now about a five-step process where I go from idea to the product being done without me writing a single line of code and it running for hours on end. I've done it a few times. I have a really good system down. So, if you're interested in that kind of thing, subscribe below to make sure you get that video when it comes out. But suffice to say, the big takeaway for me when it comes to product and engineering is coming from an idea to a plan to uh atomic kind of units of that plan to a loop that just iteratively goes through and finishes and and closes those issues as it goes. And in the end, you have exactly the thing that you want. This is what top-notch engineering teams are doing. And so this is what I think we all should strive for. from the security engineering team. My big takeaway was they're working in a test-driven development first kind of methodology. And if you're not familiar with test-driven development, it's basically like, hey, I want to create the criteria for which the code can satisfy. So like, hey, I want this button when this happens. I want to submit a form and I want to create an API call or whatever. And then you write the code to make that true. Uh this is often talked about as kind of like the best way to develop and to engineer code but it's time consuming takes a lot of effort takes a lot of intentionality. I think with us being able to offload a lot of the cognitive ability of writing the code to the LLMs we're able to do TDD or test-driven development a lot easier and a lot more consistently which ends up with better code in the end. So inference and machine learning, of course, you know, Anthropic is a large language model company. My big takeaway here was they have folks working on machine learning that don't know what machine learning is. And Claude Code is teaching them as they go. And this is something that like I think all of us have a level of imposttor syndrome when we're working with AI because you're like, "Oh my gosh, like I don't know how to do this thing and I'm going through and it's just telling me what to do." Well, arguably the best company in the world at machine learning is having Claude Code teach their employees how to do machine learning. So, if that's okay for them, it should be okay for you. Back to data, data science, and data visualization. I think one of the big unlocks for us at my business at Castos has been creating internal tools that persist over time that let us do this one specific thing really, really well that there's not an off-the-shelf tool for. and they talk about this ter this tool Jupiter Jupyter notebooks I honestly not familiar with it but let's assume it's a data science thing instead of kind of using these Jupyter notebooks one time building them up using them throwing away they're [snorts] building reusable atomic kind of apps internally to do data inference and visualization so I think again if it's good enough for anthropic to vibe code up an internal tool to use it should be for you and your team as Well, if it lets you do your job faster, easier, and better. Okay, so back to programming a little bit, API. So, application, program, interface. It's the way that two computer systems talk. The big takeaway for me here was the developers are the big takeaway for me here is the developers are treating Claude code as a thought partner as much as anything. And that's true for me. Most of the time I use Claude Code, it's not to do a thing, it's to help me think. So, you might have had a coach or a therapist or a mentor or something like before and you still might, but you also probably are talking to Claude a lot just about the things that you do. It's a really great thought partner, especially if you seed it with enough context to when it really knows you and kind of iteratively learns as you go. Marketing, this is the biggest one for me. So, out of the entire anthropic company, there's one person that leads growth marketing for Claude Code. It's one person. They're not technical at all and they're managing all sorts of stuff around ads, uh, design, uh, MCPs, engineering, memory systems, right? They're doing all this stuff and it's one person leading growth for Cloud Code. Of course, you see the founders and people on the technical team on Twitter a lot, but when you go, oh my gosh, this is the most funded company in history probably, and they have one person leading growth on their team. I think it just says a lot for how much anyone who's really cla bought into working in cloud code all day every day can accomplish. Talking about like non-technical folks getting into the product more easily. I think this is one of the big unlocks. You know, at my company, everyone now is involved in products. They're in GitHub. They're creating issues. They're having input, which is great because this kind of customer product feedback loop is really everything. Whether you're a software company or not, it's like, hey, do the customers like what we built? What kind of feedback do they give us? How can we make that thing that we do better, the widget that we make better, and then how can we tell the customers about it? And everyone being involved in this loop very quickly and as often as possible is the key to success. And that's exactly what their product design folks are seeing is they're creating issues in GitHub. GitHub has actions built in to go dispatch clawed code to figure out what it can do about that problem to solve it and then it just does it. So development often isn't even involved in creating the fix for an issue. the product people can go and say, "Hey, this button needs to be over here or whatever." Uh, and it just does it and it creates a pull request, like an approval step for that to get merged into the product. And so for you, it might be like, hey, how can my marketing folks get involved in the product directly? How can my product folks get involved in the product directly instead of relying just on the development team to get things done? Okay. And probably the most sensitive thing in any company is legal. and the legal team here using cloud code. You know, it talks about how they were worried about uh compliance and security and so they're working locally a lot more and maybe not calling out as often and using external services and and that's cool and I would agree with that. Maybe sandbox cloud code a little more than you would if you were doing something more trivial. Um but one team member had a personal use case in creating an accessibility tool for a family and to create work prototypes that demonstrate kind of the power of this for nontechnical folks. Doing a lot of automation, doing a lot of uh coordination between teams and using external tools like G Suite uh you know Google calendar, Google Docs to integrate their workflow a lot more. You see stuff on Twitter about legal teams using cloud cloud code and cloud code work which is arguably more accessible for nontechnical folks and automating 80 plus% of what they do and that's just the future. And if you're just getting started I think the last takeaway here is start in claude chat maybe move to claude co-work as a more accessible way to work locally on a huge context window and then cloud code for developing new products. And so if you want to see the progression that I go through and that I would recommend for most folks amongst the clawed spectrum of products, check out this video right
+
+--- With timestamps ---
+
+[00:00] The anthropic team behind Claude and
+[00:02] Claude Code just dropped a 23-page
+[00:05] document that walks through how their
+[00:07] internal teams are using Claude Code.
+[00:09] And we're not talking developers,
+[00:12] designers, and machine learning experts.
+[00:14] We're talking lawyers, finance,
+[00:17] marketing, operations, probably folks
+[00:20] like you who maybe are a little
+[00:22] technical or AI adjacent, but aren't
+[00:25] natively kind of using cloud code all
+[00:27] day every day. And in this video, I'm
+[00:29] going to walk through and I want to
+[00:30] share with you my takeaway from this
+[00:32] document. And and I'll link the entire
+[00:34] document down below so you can take a
+[00:36] look and read the lessons and the
+[00:37] stories that they have. But there's
+[00:40] eight things I want to highlight in this
+[00:42] video across all the disciplines of a
+[00:44] company that you can take away for your
+[00:47] company and your job and your team to
+[00:49] help them level up using cloud code at
+[00:51] work. And the first area of the business
+[00:53] is data and data infrastructure. And my
+[00:56] big takeaway here is the finance team
+[00:59] was able to kind of just write what they
+[01:02] want to do in plain English and create
+[01:05] dashboards and interactive dashboards,
+[01:08] many of which would persist over time
+[01:10] instead of creating kind of throwaway
+[01:12] queries or bothering a data analytics
+[01:15] team. So they're self- serving. They're
+[01:17] creating tools custom made for
+[01:18] themselves and they're able to use them
+[01:21] all day, any day, anytime they want.
+[01:23] pretty big level up for a team that was
+[01:26] previously non-technical. The other part
+[01:29] of the data infrastructure team and and
+[01:31] data is really the backbone of any
+[01:32] business I think is being able to work
+[01:35] with much larger volumes of data. And
+[01:37] you know when we've talked about cloud
+[01:39] versus cloud co-work versus claude code
+[01:42] the really big step between anything
+[01:45] that's in the web and anything that's
+[01:46] local on your computer is the amount of
+[01:48] data that it has access to. And so
+[01:50] they're monitoring 200 different
+[01:52] dashboards, all of which have massive
+[01:55] amounts of data because they're working
+[01:57] on their computer on a really powerful
+[01:58] machine, not in a browser on the
+[02:00] website. I think something for us all to
+[02:02] take away is how can we work locally
+[02:03] because we can work much more powerfully
+[02:06] if we're working locally. You know, I
+[02:08] wanted to skip product development
+[02:09] entirely because there's so much out
+[02:11] there. I'm not a developer. But I think
+[02:14] the big thing here is if you're building
+[02:15] any kind of product, whether it's a a
+[02:17] internal tool or a side hobby or or
+[02:19] you're building a AI native SAS tool,
+[02:22] the big takeaway here is yeah, of
+[02:24] course, Claude code and Claude can write
+[02:27] all the code for you. But the big
+[02:28] takeaway is kind of self-sufficient
+[02:31] loops. You might call it Ralph loops.
+[02:33] Uh, I have an entire video I'm working
+[02:34] on right now about a five-step process
+[02:37] where I go from idea to the product
+[02:40] being done without me writing a single
+[02:41] line of code and it running for hours on
+[02:44] end. I've done it a few times. I have a
+[02:45] really good system down. So, if you're
+[02:47] interested in that kind of thing,
+[02:48] subscribe below to make sure you get
+[02:49] that video when it comes out. But
+[02:51] suffice to say, the big takeaway for me
+[02:53] when it comes to product and engineering
+[02:55] is coming from an idea to a plan to uh
+[02:59] atomic kind of units of that plan to a
+[03:02] loop that just iteratively goes through
+[03:04] and finishes and and closes those issues
+[03:07] as it goes. And in the end, you have
+[03:08] exactly the thing that you want. This is
+[03:10] what top-notch engineering teams are
+[03:12] doing. And so this is what I think we
+[03:14] all should strive for. from the security
+[03:16] engineering team. My big takeaway was
+[03:19] they're working in a test-driven
+[03:21] development first kind of methodology.
+[03:24] And if you're not familiar with
+[03:25] test-driven development, it's basically
+[03:26] like, hey, I want to create the criteria
+[03:29] for which the code can satisfy. So like,
+[03:32] hey, I want this button when this
+[03:33] happens. I want to submit a form and I
+[03:35] want to create an API call or whatever.
+[03:36] And then you write the code to make that
+[03:38] true. Uh this is often talked about as
+[03:42] kind of like the best way to develop and
+[03:45] to engineer code but it's time consuming
+[03:48] takes a lot of effort takes a lot of
+[03:50] intentionality. I think with us being
+[03:52] able to offload a lot of the cognitive
+[03:54] ability of writing the code to the LLMs
+[03:56] we're able to do TDD or test-driven
+[03:59] development a lot easier and a lot more
+[04:01] consistently which ends up with better
+[04:03] code in the end. So inference and
+[04:06] machine learning, of course, you know,
+[04:08] Anthropic is a large language model
+[04:10] company. My big takeaway here was they
+[04:13] have folks working on machine learning
+[04:15] that don't know what machine learning
+[04:16] is. And Claude Code is teaching them as
+[04:18] they go. And this is something that like
+[04:21] I think all of us have a level of
+[04:22] imposttor syndrome when we're working
+[04:23] with AI because you're like, "Oh my
+[04:25] gosh, like I don't know how to do this
+[04:26] thing and I'm going through and it's
+[04:27] just telling me what to do." Well,
+[04:29] arguably the best company in the world
+[04:31] at machine learning is having Claude
+[04:34] Code teach their employees how to do
+[04:35] machine learning. So, if that's okay for
+[04:38] them, it should be okay for you. Back to
+[04:40] data, data science, and data
+[04:42] visualization. I think one of the big
+[04:44] unlocks for us at my business at Castos
+[04:46] has been creating internal tools that
+[04:48] persist over time that let us do this
+[04:50] one specific thing really, really well
+[04:52] that there's not an off-the-shelf tool
+[04:55] for. and they talk about this ter this
+[04:57] tool Jupiter Jupyter notebooks I
+[04:59] honestly not familiar with it but let's
+[05:01] assume it's a data science thing instead
+[05:03] of kind of using these Jupyter notebooks
+[05:06] one time building them up using them
+[05:07] throwing away they're [snorts] building
+[05:10] reusable atomic kind of apps internally
+[05:14] to do data inference and visualization
+[05:17] so I think again if it's good enough for
+[05:20] anthropic to vibe code up an internal
+[05:22] tool to use it should be for you and
+[05:24] your team as Well, if it lets you do
+[05:26] your job faster, easier, and better.
+[05:28] Okay, so back to programming a little
+[05:30] bit, API. So, application, program,
+[05:32] interface. It's the way that two
+[05:34] computer systems talk. The big takeaway
+[05:36] for me here was the developers are the
+[05:40] big takeaway for me here is the
+[05:42] developers are treating Claude code as a
+[05:44] thought partner as much as anything. And
+[05:47] that's true for me. Most of the time I
+[05:50] use Claude Code, it's not to do a thing,
+[05:52] it's to help me think. So, you might
+[05:53] have had a coach or a therapist or a
+[05:55] mentor or something like before and you
+[05:57] still might, but you also probably are
+[05:59] talking to Claude a lot just about the
+[06:02] things that you do. It's a really great
+[06:04] thought partner, especially if you seed
+[06:05] it with enough context to when it really
+[06:07] knows you and kind of iteratively learns
+[06:10] as you go. Marketing, this is the
+[06:12] biggest one for me. So, out of the
+[06:14] entire anthropic company, there's one
+[06:16] person that leads growth marketing for
+[06:19] Claude Code. It's one person. They're
+[06:21] not technical at all and they're
+[06:22] managing all sorts of stuff around ads,
+[06:26] uh, design,
+[06:28] uh, MCPs,
+[06:30] engineering, memory systems, right?
+[06:32] They're doing all this stuff and it's
+[06:34] one person leading growth for Cloud
+[06:36] Code. Of course, you see the founders
+[06:38] and people on the technical team on
+[06:40] Twitter a lot, but when you go, oh my
+[06:43] gosh, this is the most funded company in
+[06:45] history probably, and they have one
+[06:47] person leading growth on their team. I
+[06:49] think it just says a lot for how much
+[06:51] anyone who's really cla
+[06:54] bought into working in cloud code all
+[06:56] day every day can accomplish. Talking
+[06:59] about like non-technical folks getting
+[07:01] into the product more easily. I think
+[07:02] this is one of the big unlocks. You
+[07:04] know, at my company, everyone now is
+[07:06] involved in products. They're in GitHub.
+[07:07] They're creating issues. They're having
+[07:09] input, which is great because this kind
+[07:10] of customer product feedback loop is
+[07:12] really everything. Whether you're a
+[07:14] software company or not, it's like, hey,
+[07:15] do the customers like what we built?
+[07:17] What kind of feedback do they give us?
+[07:18] How can we make that thing that we do
+[07:20] better, the widget that we make better,
+[07:21] and then how can we tell the customers
+[07:22] about it? And everyone being involved in
+[07:25] this loop very quickly and as often as
+[07:27] possible is the key to success. And
+[07:29] that's exactly what their product design
+[07:30] folks are seeing is they're creating
+[07:32] issues in GitHub. GitHub has actions
+[07:35] built in to go dispatch clawed code to
+[07:38] figure out what it can do about that
+[07:40] problem to solve it and then it just
+[07:42] does it. So development often isn't even
+[07:44] involved in creating the fix for an
+[07:47] issue. the product people can go and
+[07:48] say, "Hey, this button needs to be over
+[07:50] here or whatever." Uh, and it just does
+[07:52] it and it creates a pull request, like
+[07:54] an approval step for that to get merged
+[07:57] into the product. And so for you, it
+[07:58] might be like, hey, how can my marketing
+[08:00] folks get involved in the product
+[08:02] directly? How can my product folks get
+[08:03] involved in the product directly instead
+[08:05] of relying just on the development team
+[08:07] to get things done? Okay. And probably
+[08:09] the most sensitive thing in any company
+[08:11] is legal. and the legal team here using
+[08:14] cloud code. You know, it talks about how
+[08:16] they were worried about uh compliance
+[08:18] and security and so they're working
+[08:20] locally a lot more and maybe not calling
+[08:22] out as often and using external services
+[08:25] and and that's cool and I would agree
+[08:26] with that. Maybe sandbox cloud code a
+[08:28] little more than you would if you were
+[08:29] doing something more trivial. Um but one
+[08:32] team member had a personal use case in
+[08:34] creating an accessibility tool for a
+[08:35] family and to create work prototypes
+[08:38] that demonstrate kind of the power of
+[08:40] this for nontechnical folks. Doing a lot
+[08:42] of automation, doing a lot of uh
+[08:44] coordination between teams and using
+[08:46] external tools like G Suite uh you know
+[08:49] Google calendar, Google Docs to
+[08:51] integrate their workflow a lot more. You
+[08:53] see stuff on Twitter about legal teams
+[08:57] using cloud cloud code and cloud code
+[08:58] work which is arguably more accessible
+[09:00] for nontechnical folks and automating 80
+[09:03] plus% of what they do and that's just
+[09:05] the future. And if you're just getting
+[09:06] started I think the last takeaway here
+[09:08] is start in claude chat maybe move to
+[09:12] claude co-work as a more accessible way
+[09:15] to work locally on a huge context window
+[09:18] and then cloud code for developing new
+[09:20] products. And so if you want to see the
+[09:22] progression that I go through and that I
+[09:24] would recommend for most folks amongst
+[09:27] the clawed spectrum of products, check
+[09:29] out this video right

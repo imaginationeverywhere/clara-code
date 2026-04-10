@@ -1,0 +1,424 @@
+Title: 10 CLI Tools That Make Claude Code UNSTOPPABLE
+Video ID: uULvhQrKB_c
+URL: https://www.youtube.com/watch?v=uULvhQrKB_c
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] If you've been paying attention to the
+[00:01] Cloud Code ecosystem at all, then you've
+[00:03] noticed a huge shift. Everyone, I mean
+[00:07] everyone, is building CLI tools to
+[00:10] enhance what Cloud Code can do. And
+[00:11] today, I'm going to show you my 10
+[00:13] favorites. And they range from YouTube
+[00:15] research to deploying applications to
+[00:17] controlling my entire Google suite all
+[00:20] from Cloud Code. And you might recognize
+[00:22] a few of the ones we covered today, but
+[00:23] if you leave with just a couple new
+[00:25] ones, then I'll have done my job. So the
+[00:27] first tool on our list is kind of a meta
+[00:29] pick and that is CLI anything. This is a
+[00:32] CLI tool that creates other CLI tools.
+[00:35] This thing is completely open- source
+[00:37] and it's from the makers of light rag
+[00:38] and rag anything. So these guys are kind
+[00:40] of titans in the AI open source world.
+[00:42] Now the cell for this particular tool is
+[00:45] that I can use CLI anything and point
+[00:48] cloud code at any open-source project
+[00:51] and claude code will use CLI anything to
+[00:53] create a CLI tool for said program. And
+[00:57] this repo shows some of the projects
+[00:59] that they've already done this on things
+[01:01] like Blender, Inkspace, OBS, Zoom.
+[01:05] We actually did a full deep dive on this
+[01:07] exact tool not too long ago. So I'll put
+[01:10] a link to that above. And it looks like
+[01:11] they've added a few since then. Notebook
+[01:12] LM as well, right? So, the idea is if
+[01:15] you want cloud code to work with some
+[01:18] other program from the terminal and
+[01:20] there's not like a clear API type deal
+[01:21] to go along with it and it's open
+[01:23] source, well, this is the perfect tool
+[01:25] for that job. And it's also really easy
+[01:27] to install and use. It's like two steps
+[01:29] to install it and then it's just a
+[01:31] one-step process to actually execute
+[01:33] this. It runs the full pipeline on its
+[01:36] own and for you the user, it's very,
+[01:38] very simple. So before we jump into tool
+[01:40] number two, a quick word from
+[01:41] everybody's favorite sponsor, me. I just
+[01:44] released the Claude Code Masterass. You
+[01:46] can find it inside of Chase AI Plus.
+[01:48] There is a link to that in the pin
+[01:49] comment. And it is the perfect place if
+[01:51] you're trying to figure out how can I go
+[01:52] from zero to AI dev, especially if you
+[01:55] don't come from a technical background.
+[01:57] I add updates to this every single week
+[01:59] and we really focus on real life
+[02:01] practical use cases, not just feature
+[02:04] explanations. So, if that's something
+[02:06] you're interested in, definitely check
+[02:07] it out. And if you're brand new, I also
+[02:10] have the free Chase AI community. Tons
+[02:12] of free resources. Link to that is in
+[02:14] the description. So, hopefully there's
+[02:16] something there for everybody. Now, tool
+[02:18] number two is one of my personal
+[02:20] favorites, and you've seen me showcase
+[02:21] this before, and that is the Notebook
+[02:23] LM-PI tool. This tool, this CLI tool,
+[02:26] allows us to connect cloud code to
+[02:29] Notebook LM. There's no public API for
+[02:31] Notebook LM. So there's no way normally
+[02:33] for me to control Notebook LM from the
+[02:35] terminal unless I've created some sort
+[02:37] of custom browser automation, but this
+[02:40] GitHub repo fixes that. And this is
+[02:42] something I quite literally use every
+[02:44] day for my own research because it
+[02:46] solves one of the issues with Claude
+[02:48] Code and Son and Opus in general is the
+[02:50] fact that they can't really handle
+[02:52] videos. Notebook LM can. I can just
+[02:54] throw YouTube URLs at Notebook LM. It
+[02:57] will do all the analysis for me for free
+[02:59] because these tokens are on Google
+[03:00] servers, not ours. And then it just
+[03:02] brings it back to cloud code. And on top
+[03:04] of the analysis it does in notebook LM,
+[03:06] it can create all the deliverables that
+[03:07] notebook LM does as well. So things like
+[03:10] podcasts, videos, slide decks,
+[03:11] infographics, quizzes, flashcards, on
+[03:14] and on and on. If you can do it in
+[03:15] Notebook LM, you can do it inside of
+[03:17] Cloud Code. And being able to control
+[03:19] all of this from a terminal is a huge
+[03:21] benefit versus doing it manually inside
+[03:23] of Notebook LM. And it's not just a
+[03:25] convenience thing. It's the fact that I
+[03:27] can very easily take all the analysis
+[03:29] from Notebook LM and integrate it into
+[03:31] whatever I'm doing at a larger scale
+[03:33] inside of my project. And you also get
+[03:36] access to things you can't really do
+[03:37] inside of Notebook LM's web interface.
+[03:39] And they're all listed down here.
+[03:41] Everything from batch downloads to slide
+[03:43] revision to programmatic sharing. Now,
+[03:45] like many of these CLI tools, it's
+[03:47] really a two-step process because we
+[03:49] need to one, actually install the CLI
+[03:52] tool, the dependency on our actual
+[03:54] computer. And then number two, you know,
+[03:56] we need a skill. Skills and CLI tools
+[03:58] tend to go handinand when it comes to
+[04:01] cloud code because we need to
+[04:03] essentially give it the functionality
+[04:04] and then we need to teach it how to use
+[04:07] that specific tool in the specific way.
+[04:09] So, if we're talking about CLI tools
+[04:11] that don't require a skill, I'll let you
+[04:13] know, but this is one of them that does.
+[04:14] And in pretty much all these repos,
+[04:16] there will be some sort of command that
+[04:18] you just have to copy paste to get the
+[04:20] skills loaded. And also, you know, while
+[04:23] all the install is spelled out for us
+[04:25] here, there is nothing stopping you from
+[04:27] just giving cloud code the URL to
+[04:30] whatever repo we're talking about or you
+[04:33] know, whatever web page happens to
+[04:34] explain the CLI, give it the cloud code
+[04:37] and it will install it for you. Now, I
+[04:38] really like tool number three because
+[04:39] it's all about money and that's the
+[04:42] Stripe CLI. Now, if you've ever used
+[04:44] Stripe to essentially create a product
+[04:47] that's tied into something like a web
+[04:48] app, you know what a pain in the butt it
+[04:50] is to go through Stripe's interface. It
+[04:52] is not userfriendly at all. However,
+[04:54] when we use the Stripe CLI, it takes all
+[04:57] of that turmoil away from you and puts
+[05:00] it on top of Cloud Code and Cloud Code
+[05:01] is able to navigate all that nonsense
+[05:04] much more quickly. That being said, when
+[05:05] you are dealing with things that have to
+[05:07] do with money and transactions, like
+[05:09] obviously you still want to test these
+[05:11] out by hand, but the actual like product
+[05:14] creation and all like the steps that
+[05:16] require you to go through like 20
+[05:17] different tabs inside of Stripe. Like we
+[05:19] can just get rid of that. This makes it
+[05:21] way easier. Now, tool number four is
+[05:23] also in this content/multimedia
+[05:25] video game, and that's FFmpeg.
+[05:28] And this is a collection of libraries
+[05:30] that allow you to manipulate video and
+[05:32] audio and subtitles. And it actually
+[05:34] could be very useful in things like web
+[05:35] design. So I was able to create this
+[05:37] scrolling animation on my web page with
+[05:41] ffmpeg. And what it was able to do is it
+[05:43] was able to take an entire video that I
+[05:45] had created of this keyboard going from,
+[05:47] you know, completely together to like
+[05:49] completely expanded and then chop it up
+[05:52] into individual frames to turn it into
+[05:55] what you see here. And if I had tried to
+[05:56] do that manually be giant pain in the
+[05:58] butt. But something like ffmpeg makes
+[06:00] this very simple. If I wanted to do a
+[06:03] let's say an animation on the hero
+[06:05] section, let's say I had some sort of
+[06:06] image back here and I wanted to loop it.
+[06:08] Well, I could just give it one video. It
+[06:09] can automatically copy the video,
+[06:11] reverse it, stitch it. So, it gives
+[06:13] Claude Code a lot of functionality when
+[06:15] it comes to manipulating any sort of
+[06:17] multimedia, which is again, it's a place
+[06:19] that Claude Code out of the box isn't
+[06:21] great at. So, these CLI tools that can
+[06:23] give it some enhanced functionality in
+[06:25] those spaces are always welcome. And I
+[06:27] also have a full video breaking down how
+[06:28] to do this exactly that I'll link above.
+[06:30] Now, tool number five is one you
+[06:32] probably already know about and you
+[06:33] definitely should be using. If not,
+[06:34] you're way behind. And that is the
+[06:36] GitHub CLI. If we are doing anything
+[06:39] where we are writing code and we want to
+[06:41] push to GitHub, there is no reason why
+[06:43] we wouldn't just use the GitHub CLI to
+[06:45] do this, right? Anytime where we have
+[06:48] some sort of task or workflow that we
+[06:49] are constantly doing and pushing to
+[06:51] GitHub and anything on the deployment
+[06:52] side is probably one of those, we want
+[06:54] to be looking for CLIs that help us do
+[06:56] it. And the GitHub CLI, you really can't
+[06:58] ask for anything better. Now, like all
+[07:00] things Git and GitHub related, Cloud
+[07:02] Code is already very spun up on how to
+[07:05] do this properly. So, when it comes to
+[07:06] installing the GitHub CLI and using it,
+[07:08] quite literally, you can do that in one
+[07:10] sentence. Open up Cloud Code and say,
+[07:11] "Hey, I want to install the GitHub CLI."
+[07:13] It will do it automatically. It's just
+[07:15] going to ask you to authenticate, which
+[07:16] is a really simple process where you
+[07:17] click a link, you log into GitHub, and
+[07:19] you're all set. And from here, when it
+[07:21] comes to pushing code, when it comes to,
+[07:24] you know, commits and doing branches and
+[07:26] all these things, you can just do it
+[07:28] from the terminal. Now, while we're on
+[07:29] the topic of deployments, we would be
+[07:31] remiss if we didn't talk about tool
+[07:33] number six, Verscell CLI. Now, I love
+[07:36] Verscell because they have a very
+[07:37] generous free tier and their connection
+[07:38] with GitHub makes it very simple to
+[07:41] essentially create a CI/CD pipeline just
+[07:44] with these two tools. Now, installing
+[07:45] the Versel CLI is again very simple. And
+[07:49] this just allows you like all these CLI
+[07:51] tools to control some part of the
+[07:54] architecture process, the deployment
+[07:56] process from your terminal. also not
+[07:57] switching from tabs back and forth. Now,
+[07:59] if you're ever wondering, hey, how do I
+[08:01] actually use this? Well, you know what
+[08:03] I'm going to tell you? Take this page,
+[08:05] copy the whole dang thing, throw it
+[08:07] inside of Claude Code, and it will know
+[08:08] what to do. Now, when it comes to skills
+[08:10] with the Verscell CLI, Verscell actually
+[08:12] has a ton of skills available for you to
+[08:13] give to Claude Code. But if we head over
+[08:16] here to deployment, they have a specific
+[08:17] one for Versell CLI, and they have a few
+[08:20] others that are in the deployment realm,
+[08:22] specifically Versel deploy.
+[08:24] But I definitely suggest checking out
+[08:26] this page. page. I'll put a link to that
+[08:27] down below as well because they actually
+[08:29] have a ton of really useful skills that
+[08:31] if you're doing anything like browser
+[08:33] automation as well. Um, same thing like
+[08:35] design and UI, you definitely want to
+[08:37] take a look at. Now, tool number seven
+[08:38] is all about the backend and that's the
+[08:40] Superbase CLI. I like Superbase for the
+[08:42] same reason I like very generous free
+[08:44] tier and I can handle both all of my
+[08:46] databases and authentication from one
+[08:49] place from the terminal using this tool.
+[08:52] And remember, Superbase is also open
+[08:54] source. It was always meant to be a
+[08:55] firebased alternative. So if you want to
+[08:57] run Superbase completely locally, the
+[08:59] CLI tool helps you do that as well. Now
+[09:01] tool number eight is all about browser
+[09:03] automations and giving cloud code the
+[09:05] ability to spin up its own instances of
+[09:07] Chrome and do things on the web for you
+[09:10] and that's where Playright CLI comes in.
+[09:12] Playright Playright CLI is also a great
+[09:15] case study when we look at CLIs versus
+[09:17] MCPs. I highly suggest you take a look
+[09:19] at the Playright YouTube account. They
+[09:22] have an entire video on this where they
+[09:23] compared them head-to-head and CLI
+[09:26] essentially to do the exact same thing
+[09:27] as the MCP server was both quicker and
+[09:30] it was like 90,000 less tokens. And
+[09:32] that's kind of what you kind of see here
+[09:34] with all these CLI tools versus their
+[09:36] MCP counterparts even with the changes
+[09:39] that Cloud Code has made when it comes
+[09:40] to MCPS where everything isn't just
+[09:42] frontloaded. So definitely an
+[09:44] interesting thing, but the Playright CLI
+[09:47] is great. If you want an alternative,
+[09:49] while we're on the, you know, topic of
+[09:51] browser automations, Verscell actually
+[09:54] has its own, right? So, I mentioned that
+[09:56] a little bit before, the agent browser
+[09:58] skill. So, if you don't love Playright
+[10:00] CLI, you can always check out the
+[10:01] Verscell alternative. But I highly
+[10:03] suggest you start integrating something
+[10:06] like Playright CLI into your stack,
+[10:08] especially if you're someone who builds
+[10:10] web apps. Why is that? Because
+[10:12] inevitably, we need to test things on
+[10:13] the web apps we build. And I don't want
+[10:14] to go into a new tab every single time,
+[10:17] you know, go on the dev server, check
+[10:18] out the new form myself. Why don't I
+[10:21] just have Cloud Co do that on its own,
+[10:23] spin up five Chrome tabs, and just
+[10:26] attack it from a bunch of different
+[10:27] angles automatically, right? This allows
+[10:30] us to do that. Like almost all these,
+[10:32] there is also the requisite skills we
+[10:34] want to install here, and it's just a
+[10:35] oneliner, and it will automatically go
+[10:37] inside your dotcloud folder. Now, I will
+[10:39] say Playright in particular actually is
+[10:42] pretty deep. There's a whole lot of
+[10:44] things you can do with it beyond just,
+[10:45] hey, open up Chrome and test out this
+[10:47] form submission. So, if you're really
+[10:48] into browser automation, I highly
+[10:50] suggest you kind of dive into this repo
+[10:52] and see what's really available to you,
+[10:53] cuz it again, these are deep waters when
+[10:55] you go into the browser automation
+[10:56] stuff. Now, tool number nine is a pretty
+[10:58] interesting one. I just got introduced
+[10:59] to it not too long ago. You might have
+[11:02] seen me reference it in my how to run
+[11:04] Cloud Code locally video, and that's LLM
+[11:07] fit. this is a CLI tool that allows you
+[11:10] when you run it to figure out well what
+[11:13] local model actually makes sense for my
+[11:16] setup. And for most people that question
+[11:17] has a non-obvious answer. I mean if you
+[11:19] head to O Lama and go to the models like
+[11:21] it's essentially like a neverending list
+[11:23] of different things to do and open
+[11:25] source is being updated every 3 seconds
+[11:27] and so you know every single model also
+[11:29] has like nine different versions of the
+[11:31] same model. So it's it's kind of a
+[11:33] confusing space especially if it's not
+[11:34] one you hang out in very often. And this
+[11:36] project LLMIT essentially solves that
+[11:39] issue. And last but not least is GWS,
+[11:42] the Google Workspace CLI tool. This is
+[11:45] the CLI tool that allows us to have
+[11:47] Cloud Code control our entire Google
+[11:50] Workspace. Right? We're giving it access
+[11:51] to our email, our Docs, Sheets,
+[11:55] everything. Right? This is extremely
+[11:58] powerful. But this also is the place
+[11:59] where you start getting into those
+[12:00] security issues like do we necessarily
+[12:02] want Cloud Code to have access to all
+[12:04] our emails? But luckily, it's not too
+[12:06] hard to set up the GWS CLI tool in a way
+[12:09] where we almost like sandbox cloud code
+[12:11] and it has like shared folders with us
+[12:13] and it only has access to certain emails
+[12:14] if we use filters. So, there is some
+[12:16] wiggle room if you're scared about the
+[12:18] security side. But for many people,
+[12:20] having claude code have full access to
+[12:22] the Google suite is a big deal. And even
+[12:24] if you do give cloud code access to say
+[12:26] your Google email, Google Workspace has
+[12:29] something called Armor and it's all
+[12:31] about dealing with like prompt
+[12:32] injections and that sort of thing. So,
+[12:34] there are guard rails in place. We
+[12:36] aren't just like letting Cloud Code go
+[12:38] off and do whatever it wants. Now, this
+[12:40] one in particular has like a billion
+[12:43] skills. Like, I'm not really
+[12:44] exaggerating, right? So, a big part of
+[12:47] figuring out how to use this tool um to
+[12:50] the most effect is also figuring out
+[12:51] which skills make the most sense, right?
+[12:53] Skills aren't a huge context window, you
+[12:56] know, drag. But if you have too many of
+[12:59] them, triggering the right one becomes a
+[13:00] problem. So this is the kind of repo
+[13:03] where what I would do and what I have
+[13:05] done when I installed this thing was I
+[13:06] essentially pointed cloud code at this
+[13:08] thing. I created a new directory. I had
+[13:09] it clone the whole thing and then you
+[13:11] can have a discussion with cloud code
+[13:12] and say hey like all right now that you
+[13:15] have full visibility into how this works
+[13:17] and what's going on. What would make the
+[13:18] most sense for us to actually like
+[13:19] install and use right and that's going
+[13:21] to be different for every single person.
+[13:22] So that's my list of my 10 favorite CLI
+[13:25] tools as of today. Tomorrow that list
+[13:27] will probably change in a week. I'll
+[13:28] probably have added like three more of
+[13:30] them because I wasn't joking about it in
+[13:32] the intro. Like this is the shift. Like
+[13:34] we're moving away from MCPs. We're
+[13:36] moving into CLIs because it just makes
+[13:38] sense. Cloud code lives in the terminal.
+[13:39] CLIs live in the terminal. There's no
+[13:42] overhead. It's like just a straight
+[13:43] connection and allows cloud code to do
+[13:46] the most with the least amount of tokens
+[13:48] for all intents and purposes. So
+[13:50] hopefully at least a couple of these
+[13:51] were new to you and you can begin to
+[13:53] integrate them into your stack. So let
+[13:56] me know in the comments what you
+[13:57] thought. Make sure to check out Chase AI
+[13:59] Plus if you're interested in the master
+[14:01] class.
+
+--- Plain text ---
+If you've been paying attention to the Cloud Code ecosystem at all, then you've noticed a huge shift. Everyone, I mean everyone, is building CLI tools to enhance what Cloud Code can do. And today, I'm going to show you my 10 favorites. And they range from YouTube research to deploying applications to controlling my entire Google suite all from Cloud Code. And you might recognize a few of the ones we covered today, but if you leave with just a couple new ones, then I'll have done my job. So the first tool on our list is kind of a meta pick and that is CLI anything. This is a CLI tool that creates other CLI tools. This thing is completely open- source and it's from the makers of light rag and rag anything. So these guys are kind of titans in the AI open source world. Now the cell for this particular tool is that I can use CLI anything and point cloud code at any open-source project and claude code will use CLI anything to create a CLI tool for said program. And this repo shows some of the projects that they've already done this on things like Blender, Inkspace, OBS, Zoom. We actually did a full deep dive on this exact tool not too long ago. So I'll put a link to that above. And it looks like they've added a few since then. Notebook LM as well, right? So, the idea is if you want cloud code to work with some other program from the terminal and there's not like a clear API type deal to go along with it and it's open source, well, this is the perfect tool for that job. And it's also really easy to install and use. It's like two steps to install it and then it's just a one-step process to actually execute this. It runs the full pipeline on its own and for you the user, it's very, very simple. So before we jump into tool number two, a quick word from everybody's favorite sponsor, me. I just released the Claude Code Masterass. You can find it inside of Chase AI Plus. There is a link to that in the pin comment. And it is the perfect place if you're trying to figure out how can I go from zero to AI dev, especially if you don't come from a technical background. I add updates to this every single week and we really focus on real life practical use cases, not just feature explanations. So, if that's something you're interested in, definitely check it out. And if you're brand new, I also have the free Chase AI community. Tons of free resources. Link to that is in the description. So, hopefully there's something there for everybody. Now, tool number two is one of my personal favorites, and you've seen me showcase this before, and that is the Notebook LM-PI tool. This tool, this CLI tool, allows us to connect cloud code to Notebook LM. There's no public API for Notebook LM. So there's no way normally for me to control Notebook LM from the terminal unless I've created some sort of custom browser automation, but this GitHub repo fixes that. And this is something I quite literally use every day for my own research because it solves one of the issues with Claude Code and Son and Opus in general is the fact that they can't really handle videos. Notebook LM can. I can just throw YouTube URLs at Notebook LM. It will do all the analysis for me for free because these tokens are on Google servers, not ours. And then it just brings it back to cloud code. And on top of the analysis it does in notebook LM, it can create all the deliverables that notebook LM does as well. So things like podcasts, videos, slide decks, infographics, quizzes, flashcards, on and on and on. If you can do it in Notebook LM, you can do it inside of Cloud Code. And being able to control all of this from a terminal is a huge benefit versus doing it manually inside of Notebook LM. And it's not just a convenience thing. It's the fact that I can very easily take all the analysis from Notebook LM and integrate it into whatever I'm doing at a larger scale inside of my project. And you also get access to things you can't really do inside of Notebook LM's web interface. And they're all listed down here. Everything from batch downloads to slide revision to programmatic sharing. Now, like many of these CLI tools, it's really a two-step process because we need to one, actually install the CLI tool, the dependency on our actual computer. And then number two, you know, we need a skill. Skills and CLI tools tend to go handinand when it comes to cloud code because we need to essentially give it the functionality and then we need to teach it how to use that specific tool in the specific way. So, if we're talking about CLI tools that don't require a skill, I'll let you know, but this is one of them that does. And in pretty much all these repos, there will be some sort of command that you just have to copy paste to get the skills loaded. And also, you know, while all the install is spelled out for us here, there is nothing stopping you from just giving cloud code the URL to whatever repo we're talking about or you know, whatever web page happens to explain the CLI, give it the cloud code and it will install it for you. Now, I really like tool number three because it's all about money and that's the Stripe CLI. Now, if you've ever used Stripe to essentially create a product that's tied into something like a web app, you know what a pain in the butt it is to go through Stripe's interface. It is not userfriendly at all. However, when we use the Stripe CLI, it takes all of that turmoil away from you and puts it on top of Cloud Code and Cloud Code is able to navigate all that nonsense much more quickly. That being said, when you are dealing with things that have to do with money and transactions, like obviously you still want to test these out by hand, but the actual like product creation and all like the steps that require you to go through like 20 different tabs inside of Stripe. Like we can just get rid of that. This makes it way easier. Now, tool number four is also in this content/multimedia video game, and that's FFmpeg. And this is a collection of libraries that allow you to manipulate video and audio and subtitles. And it actually could be very useful in things like web design. So I was able to create this scrolling animation on my web page with ffmpeg. And what it was able to do is it was able to take an entire video that I had created of this keyboard going from, you know, completely together to like completely expanded and then chop it up into individual frames to turn it into what you see here. And if I had tried to do that manually be giant pain in the butt. But something like ffmpeg makes this very simple. If I wanted to do a let's say an animation on the hero section, let's say I had some sort of image back here and I wanted to loop it. Well, I could just give it one video. It can automatically copy the video, reverse it, stitch it. So, it gives Claude Code a lot of functionality when it comes to manipulating any sort of multimedia, which is again, it's a place that Claude Code out of the box isn't great at. So, these CLI tools that can give it some enhanced functionality in those spaces are always welcome. And I also have a full video breaking down how to do this exactly that I'll link above. Now, tool number five is one you probably already know about and you definitely should be using. If not, you're way behind. And that is the GitHub CLI. If we are doing anything where we are writing code and we want to push to GitHub, there is no reason why we wouldn't just use the GitHub CLI to do this, right? Anytime where we have some sort of task or workflow that we are constantly doing and pushing to GitHub and anything on the deployment side is probably one of those, we want to be looking for CLIs that help us do it. And the GitHub CLI, you really can't ask for anything better. Now, like all things Git and GitHub related, Cloud Code is already very spun up on how to do this properly. So, when it comes to installing the GitHub CLI and using it, quite literally, you can do that in one sentence. Open up Cloud Code and say, "Hey, I want to install the GitHub CLI." It will do it automatically. It's just going to ask you to authenticate, which is a really simple process where you click a link, you log into GitHub, and you're all set. And from here, when it comes to pushing code, when it comes to, you know, commits and doing branches and all these things, you can just do it from the terminal. Now, while we're on the topic of deployments, we would be remiss if we didn't talk about tool number six, Verscell CLI. Now, I love Verscell because they have a very generous free tier and their connection with GitHub makes it very simple to essentially create a CI/CD pipeline just with these two tools. Now, installing the Versel CLI is again very simple. And this just allows you like all these CLI tools to control some part of the architecture process, the deployment process from your terminal. also not switching from tabs back and forth. Now, if you're ever wondering, hey, how do I actually use this? Well, you know what I'm going to tell you? Take this page, copy the whole dang thing, throw it inside of Claude Code, and it will know what to do. Now, when it comes to skills with the Verscell CLI, Verscell actually has a ton of skills available for you to give to Claude Code. But if we head over here to deployment, they have a specific one for Versell CLI, and they have a few others that are in the deployment realm, specifically Versel deploy. But I definitely suggest checking out this page. page. I'll put a link to that down below as well because they actually have a ton of really useful skills that if you're doing anything like browser automation as well. Um, same thing like design and UI, you definitely want to take a look at. Now, tool number seven is all about the backend and that's the Superbase CLI. I like Superbase for the same reason I like very generous free tier and I can handle both all of my databases and authentication from one place from the terminal using this tool. And remember, Superbase is also open source. It was always meant to be a firebased alternative. So if you want to run Superbase completely locally, the CLI tool helps you do that as well. Now tool number eight is all about browser automations and giving cloud code the ability to spin up its own instances of Chrome and do things on the web for you and that's where Playright CLI comes in. Playright Playright CLI is also a great case study when we look at CLIs versus MCPs. I highly suggest you take a look at the Playright YouTube account. They have an entire video on this where they compared them head-to-head and CLI essentially to do the exact same thing as the MCP server was both quicker and it was like 90,000 less tokens. And that's kind of what you kind of see here with all these CLI tools versus their MCP counterparts even with the changes that Cloud Code has made when it comes to MCPS where everything isn't just frontloaded. So definitely an interesting thing, but the Playright CLI is great. If you want an alternative, while we're on the, you know, topic of browser automations, Verscell actually has its own, right? So, I mentioned that a little bit before, the agent browser skill. So, if you don't love Playright CLI, you can always check out the Verscell alternative. But I highly suggest you start integrating something like Playright CLI into your stack, especially if you're someone who builds web apps. Why is that? Because inevitably, we need to test things on the web apps we build. And I don't want to go into a new tab every single time, you know, go on the dev server, check out the new form myself. Why don't I just have Cloud Co do that on its own, spin up five Chrome tabs, and just attack it from a bunch of different angles automatically, right? This allows us to do that. Like almost all these, there is also the requisite skills we want to install here, and it's just a oneliner, and it will automatically go inside your dotcloud folder. Now, I will say Playright in particular actually is pretty deep. There's a whole lot of things you can do with it beyond just, hey, open up Chrome and test out this form submission. So, if you're really into browser automation, I highly suggest you kind of dive into this repo and see what's really available to you, cuz it again, these are deep waters when you go into the browser automation stuff. Now, tool number nine is a pretty interesting one. I just got introduced to it not too long ago. You might have seen me reference it in my how to run Cloud Code locally video, and that's LLM fit. this is a CLI tool that allows you when you run it to figure out well what local model actually makes sense for my setup. And for most people that question has a non-obvious answer. I mean if you head to O Lama and go to the models like it's essentially like a neverending list of different things to do and open source is being updated every 3 seconds and so you know every single model also has like nine different versions of the same model. So it's it's kind of a confusing space especially if it's not one you hang out in very often. And this project LLMIT essentially solves that issue. And last but not least is GWS, the Google Workspace CLI tool. This is the CLI tool that allows us to have Cloud Code control our entire Google Workspace. Right? We're giving it access to our email, our Docs, Sheets, everything. Right? This is extremely powerful. But this also is the place where you start getting into those security issues like do we necessarily want Cloud Code to have access to all our emails? But luckily, it's not too hard to set up the GWS CLI tool in a way where we almost like sandbox cloud code and it has like shared folders with us and it only has access to certain emails if we use filters. So, there is some wiggle room if you're scared about the security side. But for many people, having claude code have full access to the Google suite is a big deal. And even if you do give cloud code access to say your Google email, Google Workspace has something called Armor and it's all about dealing with like prompt injections and that sort of thing. So, there are guard rails in place. We aren't just like letting Cloud Code go off and do whatever it wants. Now, this one in particular has like a billion skills. Like, I'm not really exaggerating, right? So, a big part of figuring out how to use this tool um to the most effect is also figuring out which skills make the most sense, right? Skills aren't a huge context window, you know, drag. But if you have too many of them, triggering the right one becomes a problem. So this is the kind of repo where what I would do and what I have done when I installed this thing was I essentially pointed cloud code at this thing. I created a new directory. I had it clone the whole thing and then you can have a discussion with cloud code and say hey like all right now that you have full visibility into how this works and what's going on. What would make the most sense for us to actually like install and use right and that's going to be different for every single person. So that's my list of my 10 favorite CLI tools as of today. Tomorrow that list will probably change in a week. I'll probably have added like three more of them because I wasn't joking about it in the intro. Like this is the shift. Like we're moving away from MCPs. We're moving into CLIs because it just makes sense. Cloud code lives in the terminal. CLIs live in the terminal. There's no overhead. It's like just a straight connection and allows cloud code to do the most with the least amount of tokens for all intents and purposes. So hopefully at least a couple of these were new to you and you can begin to integrate them into your stack. So let me know in the comments what you thought. Make sure to check out Chase AI Plus if you're interested in the master class.

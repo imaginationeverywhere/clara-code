@@ -1,0 +1,3640 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:02.070 align:start position:0%
+ 
+When<00:00:00.320><c> GSD</c><00:00:00.880><c> was</c><00:00:01.040><c> released</c><00:00:01.280><c> a</c><00:00:01.520><c> few</c><00:00:01.600><c> months</c><00:00:01.760><c> ago,</c>
+
+00:00:02.070 --> 00:00:02.080 align:start position:0%
+When GSD was released a few months ago,
+ 
+
+00:00:02.080 --> 00:00:03.669 align:start position:0%
+When GSD was released a few months ago,
+it<00:00:02.320><c> was</c><00:00:02.399><c> one</c><00:00:02.560><c> of</c><00:00:02.639><c> the</c><00:00:02.800><c> most</c><00:00:03.120><c> powerful</c>
+
+00:00:03.669 --> 00:00:03.679 align:start position:0%
+it was one of the most powerful
+ 
+
+00:00:03.679 --> 00:00:06.070 align:start position:0%
+it was one of the most powerful
+orchestration<00:00:04.480><c> layers</c><00:00:04.960><c> you</c><00:00:05.279><c> could</c><00:00:05.440><c> use</c><00:00:05.839><c> in</c>
+
+00:00:06.070 --> 00:00:06.080 align:start position:0%
+orchestration layers you could use in
+ 
+
+00:00:06.080 --> 00:00:07.909 align:start position:0%
+orchestration layers you could use in
+combination<00:00:06.480><c> with</c><00:00:06.720><c> cloud</c><00:00:07.040><c> code.</c><00:00:07.359><c> And</c><00:00:07.600><c> just</c><00:00:07.680><c> a</c>
+
+00:00:07.909 --> 00:00:07.919 align:start position:0%
+combination with cloud code. And just a
+ 
+
+00:00:07.919 --> 00:00:10.870 align:start position:0%
+combination with cloud code. And just a
+few<00:00:08.000><c> days</c><00:00:08.160><c> ago,</c><00:00:08.880><c> GSD2</c><00:00:09.840><c> was</c><00:00:10.080><c> released</c><00:00:10.480><c> and</c><00:00:10.639><c> with</c>
+
+00:00:10.870 --> 00:00:10.880 align:start position:0%
+few days ago, GSD2 was released and with
+ 
+
+00:00:10.880 --> 00:00:13.990 align:start position:0%
+few days ago, GSD2 was released and with
+it<00:00:11.440><c> a</c><00:00:11.759><c> huge</c><00:00:12.400><c> set</c><00:00:12.800><c> of</c><00:00:13.040><c> changes.</c><00:00:13.599><c> And</c><00:00:13.759><c> the</c>
+
+00:00:13.990 --> 00:00:14.000 align:start position:0%
+it a huge set of changes. And the
+ 
+
+00:00:14.000 --> 00:00:16.150 align:start position:0%
+it a huge set of changes. And the
+biggest<00:00:14.240><c> change</c><00:00:14.480><c> is</c><00:00:14.639><c> that</c><00:00:14.880><c> GSD2</c><00:00:15.599><c> no</c><00:00:15.839><c> longer</c>
+
+00:00:16.150 --> 00:00:16.160 align:start position:0%
+biggest change is that GSD2 no longer
+ 
+
+00:00:16.160 --> 00:00:18.070 align:start position:0%
+biggest change is that GSD2 no longer
+lives<00:00:16.640><c> inside</c><00:00:16.960><c> of</c><00:00:17.119><c> cloud</c><00:00:17.520><c> code.</c><00:00:17.760><c> It's</c><00:00:18.000><c> no</c>
+
+00:00:18.070 --> 00:00:18.080 align:start position:0%
+lives inside of cloud code. It's no
+ 
+
+00:00:18.080 --> 00:00:20.150 align:start position:0%
+lives inside of cloud code. It's no
+longer<00:00:18.320><c> a</c><00:00:18.560><c> simple</c><00:00:18.880><c> orchestration</c><00:00:19.600><c> layer.</c>
+
+00:00:20.150 --> 00:00:20.160 align:start position:0%
+longer a simple orchestration layer.
+ 
+
+00:00:20.160 --> 00:00:22.950 align:start position:0%
+longer a simple orchestration layer.
+Instead,<00:00:21.039><c> it's</c><00:00:21.359><c> actually</c><00:00:21.680><c> its</c><00:00:22.000><c> own</c><00:00:22.240><c> agentic</c>
+
+00:00:22.950 --> 00:00:22.960 align:start position:0%
+Instead, it's actually its own agentic
+ 
+
+00:00:22.960 --> 00:00:25.349 align:start position:0%
+Instead, it's actually its own agentic
+coding<00:00:23.359><c> CLI</c><00:00:23.840><c> tool</c><00:00:24.320><c> that's</c><00:00:24.720><c> built</c><00:00:24.960><c> on</c><00:00:25.119><c> top</c><00:00:25.279><c> of</c>
+
+00:00:25.349 --> 00:00:25.359 align:start position:0%
+coding CLI tool that's built on top of
+ 
+
+00:00:25.359 --> 00:00:27.670 align:start position:0%
+coding CLI tool that's built on top of
+the<00:00:25.519><c> PI</c><00:00:25.840><c> SDK.</c><00:00:26.560><c> So</c><00:00:26.800><c> what</c><00:00:26.960><c> does</c><00:00:27.039><c> that</c><00:00:27.279><c> mean?</c>
+
+00:00:27.670 --> 00:00:27.680 align:start position:0%
+the PI SDK. So what does that mean?
+ 
+
+00:00:27.680 --> 00:00:29.830 align:start position:0%
+the PI SDK. So what does that mean?
+Well,<00:00:27.920><c> it</c><00:00:28.080><c> means</c><00:00:28.240><c> GSD</c><00:00:28.800><c> is</c><00:00:28.960><c> no</c><00:00:29.119><c> longer</c><00:00:29.279><c> a</c><00:00:29.439><c> Claude</c>
+
+00:00:29.830 --> 00:00:29.840 align:start position:0%
+Well, it means GSD is no longer a Claude
+ 
+
+00:00:29.840 --> 00:00:31.589 align:start position:0%
+Well, it means GSD is no longer a Claude
+Code<00:00:30.000><c> add-on.</c><00:00:30.720><c> It's</c><00:00:30.880><c> a</c><00:00:31.039><c> Cloud</c><00:00:31.359><c> Code</c>
+
+00:00:31.589 --> 00:00:31.599 align:start position:0%
+Code add-on. It's a Cloud Code
+ 
+
+00:00:31.599 --> 00:00:33.430 align:start position:0%
+Code add-on. It's a Cloud Code
+competitor.<00:00:32.239><c> And</c><00:00:32.399><c> in</c><00:00:32.559><c> this</c><00:00:32.719><c> video,</c><00:00:33.040><c> I</c><00:00:33.200><c> put</c>
+
+00:00:33.430 --> 00:00:33.440 align:start position:0%
+competitor. And in this video, I put
+ 
+
+00:00:33.440 --> 00:00:35.670 align:start position:0%
+competitor. And in this video, I put
+these<00:00:33.680><c> two</c><00:00:33.920><c> agent</c><00:00:34.480><c> coding</c><00:00:34.800><c> titans</c><00:00:35.280><c> in</c><00:00:35.520><c> a</c>
+
+00:00:35.670 --> 00:00:35.680 align:start position:0%
+these two agent coding titans in a
+ 
+
+00:00:35.680 --> 00:00:38.709 align:start position:0%
+these two agent coding titans in a
+head-to-head<00:00:36.239><c> test</c><00:00:36.800><c> so</c><00:00:36.960><c> you</c><00:00:37.200><c> know</c><00:00:37.520><c> exactly</c>
+
+00:00:38.709 --> 00:00:38.719 align:start position:0%
+head-to-head test so you know exactly
+ 
+
+00:00:38.719 --> 00:00:40.790 align:start position:0%
+head-to-head test so you know exactly
+which<00:00:38.960><c> coding</c><00:00:39.360><c> tool</c><00:00:39.840><c> you</c><00:00:40.079><c> should</c><00:00:40.239><c> be</c><00:00:40.399><c> using.</c>
+
+00:00:40.790 --> 00:00:40.800 align:start position:0%
+which coding tool you should be using.
+ 
+
+00:00:40.800 --> 00:00:42.229 align:start position:0%
+which coding tool you should be using.
+And<00:00:41.040><c> along</c><00:00:41.200><c> the</c><00:00:41.360><c> way,</c><00:00:41.520><c> I</c><00:00:41.680><c> will</c><00:00:41.840><c> also</c><00:00:42.079><c> break</c>
+
+00:00:42.229 --> 00:00:42.239 align:start position:0%
+And along the way, I will also break
+ 
+
+00:00:42.239 --> 00:00:44.790 align:start position:0%
+And along the way, I will also break
+down<00:00:42.399><c> what</c><00:00:42.559><c> GST</c><00:00:43.040><c> even</c><00:00:43.280><c> is,</c><00:00:43.680><c> how</c><00:00:43.920><c> it</c><00:00:44.079><c> works,</c><00:00:44.559><c> and</c>
+
+00:00:44.790 --> 00:00:44.800 align:start position:0%
+down what GST even is, how it works, and
+ 
+
+00:00:44.800 --> 00:00:46.630 align:start position:0%
+down what GST even is, how it works, and
+how<00:00:45.040><c> it</c><00:00:45.200><c> differs</c><00:00:45.600><c> from</c><00:00:45.920><c> its</c><00:00:46.239><c> original</c>
+
+00:00:46.630 --> 00:00:46.640 align:start position:0%
+how it differs from its original
+ 
+
+00:00:46.640 --> 00:00:48.389 align:start position:0%
+how it differs from its original
+incarnation.<00:00:47.520><c> So,</c><00:00:47.680><c> before</c><00:00:47.920><c> we</c><00:00:48.079><c> dive</c><00:00:48.239><c> into</c>
+
+00:00:48.389 --> 00:00:48.399 align:start position:0%
+incarnation. So, before we dive into
+ 
+
+00:00:48.399 --> 00:00:51.029 align:start position:0%
+incarnation. So, before we dive into
+GSD2,<00:00:49.200><c> just</c><00:00:49.360><c> a</c><00:00:49.520><c> quick</c><00:00:49.760><c> plug</c><00:00:50.239><c> for</c><00:00:50.480><c> my</c><00:00:50.640><c> Claude</c>
+
+00:00:51.029 --> 00:00:51.039 align:start position:0%
+GSD2, just a quick plug for my Claude
+ 
+
+00:00:51.039 --> 00:00:53.270 align:start position:0%
+GSD2, just a quick plug for my Claude
+Code<00:00:51.280><c> Masterass.</c><00:00:52.079><c> Just</c><00:00:52.320><c> a</c><00:00:52.480><c> few</c><00:00:52.559><c> days</c><00:00:52.719><c> ago,</c><00:00:52.960><c> we</c>
+
+00:00:53.270 --> 00:00:53.280 align:start position:0%
+Code Masterass. Just a few days ago, we
+ 
+
+00:00:53.280 --> 00:00:55.830 align:start position:0%
+Code Masterass. Just a few days ago, we
+already<00:00:53.520><c> updated</c><00:00:54.079><c> 20</c><00:00:54.399><c> of</c><00:00:54.640><c> the</c><00:00:54.800><c> modules,</c><00:00:55.440><c> added</c>
+
+00:00:55.830 --> 00:00:55.840 align:start position:0%
+already updated 20 of the modules, added
+ 
+
+00:00:55.840 --> 00:00:58.389 align:start position:0%
+already updated 20 of the modules, added
+an<00:00:56.000><c> additional</c><00:00:56.480><c> hour</c><00:00:56.879><c> of</c><00:00:57.199><c> content.</c><00:00:58.000><c> So,</c><00:00:58.160><c> if</c>
+
+00:00:58.389 --> 00:00:58.399 align:start position:0%
+an additional hour of content. So, if
+ 
+
+00:00:58.399 --> 00:01:00.069 align:start position:0%
+an additional hour of content. So, if
+you're<00:00:58.559><c> looking</c><00:00:58.719><c> to</c><00:00:58.879><c> go</c><00:00:59.039><c> from</c><00:00:59.199><c> zero</c><00:00:59.520><c> to</c><00:00:59.680><c> AI</c>
+
+00:01:00.069 --> 00:01:00.079 align:start position:0%
+you're looking to go from zero to AI
+ 
+
+00:01:00.079 --> 00:01:01.430 align:start position:0%
+you're looking to go from zero to AI
+dev,<00:01:00.399><c> no</c><00:01:00.399><c> matter</c><00:01:00.800><c> your</c><00:01:01.039><c> technical</c>
+
+00:01:01.430 --> 00:01:01.440 align:start position:0%
+dev, no matter your technical
+ 
+
+00:01:01.440 --> 00:01:03.670 align:start position:0%
+dev, no matter your technical
+background,<00:01:02.399><c> this</c><00:01:02.640><c> is</c><00:01:02.879><c> what</c><00:01:03.039><c> you</c><00:01:03.199><c> need.</c><00:01:03.520><c> You</c>
+
+00:01:03.670 --> 00:01:03.680 align:start position:0%
+background, this is what you need. You
+ 
+
+00:01:03.680 --> 00:01:05.189 align:start position:0%
+background, this is what you need. You
+can<00:01:03.760><c> find</c><00:01:03.840><c> it</c><00:01:04.000><c> inside</c><00:01:04.239><c> of</c><00:01:04.320><c> Chase</c><00:01:04.640><c> AI</c><00:01:04.960><c> Plus.</c>
+
+00:01:05.189 --> 00:01:05.199 align:start position:0%
+can find it inside of Chase AI Plus.
+ 
+
+00:01:05.199 --> 00:01:07.030 align:start position:0%
+can find it inside of Chase AI Plus.
+There<00:01:05.360><c> is</c><00:01:05.439><c> a</c><00:01:05.600><c> link</c><00:01:05.760><c> to</c><00:01:05.920><c> that</c><00:01:06.240><c> in</c><00:01:06.479><c> the</c><00:01:06.640><c> pinned</c>
+
+00:01:07.030 --> 00:01:07.040 align:start position:0%
+There is a link to that in the pinned
+ 
+
+00:01:07.040 --> 00:01:09.270 align:start position:0%
+There is a link to that in the pinned
+comment.<00:01:07.360><c> I</c><00:01:07.520><c> also</c><00:01:07.760><c> have</c><00:01:07.840><c> the</c><00:01:08.000><c> free</c><00:01:08.560><c> Chase</c><00:01:08.960><c> AI</c>
+
+00:01:09.270 --> 00:01:09.280 align:start position:0%
+comment. I also have the free Chase AI
+ 
+
+00:01:09.280 --> 00:01:11.270 align:start position:0%
+comment. I also have the free Chase AI
+community<00:01:10.000><c> that</c><00:01:10.320><c> can</c><00:01:10.479><c> be</c><00:01:10.640><c> found</c><00:01:10.880><c> in</c><00:01:11.119><c> the</c>
+
+00:01:11.270 --> 00:01:11.280 align:start position:0%
+community that can be found in the
+ 
+
+00:01:11.280 --> 00:01:12.789 align:start position:0%
+community that can be found in the
+description.<00:01:11.840><c> So,</c><00:01:12.159><c> there's</c><00:01:12.400><c> something</c><00:01:12.560><c> for</c>
+
+00:01:12.789 --> 00:01:12.799 align:start position:0%
+description. So, there's something for
+ 
+
+00:01:12.799 --> 00:01:16.390 align:start position:0%
+description. So, there's something for
+everyone.<00:01:13.280><c> Now,</c><00:01:13.600><c> GSD2</c><00:01:14.799><c> is</c><00:01:15.200><c> obviously</c><00:01:16.080><c> the</c>
+
+00:01:16.390 --> 00:01:16.400 align:start position:0%
+everyone. Now, GSD2 is obviously the
+ 
+
+00:01:16.400 --> 00:01:19.590 align:start position:0%
+everyone. Now, GSD2 is obviously the
+upgrade<00:01:17.040><c> from</c><00:01:17.520><c> GSD.</c><00:01:18.240><c> The</c><00:01:18.560><c> original</c><00:01:19.040><c> get</c><00:01:19.280><c> [&nbsp;__&nbsp;]</c>
+
+00:01:19.590 --> 00:01:19.600 align:start position:0%
+upgrade from GSD. The original get [&nbsp;__&nbsp;]
+ 
+
+00:01:19.600 --> 00:01:21.670 align:start position:0%
+upgrade from GSD. The original get [&nbsp;__&nbsp;]
+done<00:01:20.000><c> was</c><00:01:20.400><c> essentially</c><00:01:20.640><c> an</c><00:01:20.880><c> orchestration</c>
+
+00:01:21.670 --> 00:01:21.680 align:start position:0%
+done was essentially an orchestration
+ 
+
+00:01:21.680 --> 00:01:23.910 align:start position:0%
+done was essentially an orchestration
+layer<00:01:21.840><c> that</c><00:01:22.080><c> lived</c><00:01:22.400><c> on</c><00:01:22.640><c> top</c><00:01:22.799><c> of</c><00:01:22.960><c> cloud</c><00:01:23.360><c> code.</c>
+
+00:01:23.910 --> 00:01:23.920 align:start position:0%
+layer that lived on top of cloud code.
+ 
+
+00:01:23.920 --> 00:01:27.350 align:start position:0%
+layer that lived on top of cloud code.
+You<00:01:24.240><c> use</c><00:01:24.560><c> GSD</c><00:01:25.520><c> inside</c><00:01:25.920><c> of</c><00:01:26.080><c> cloud</c><00:01:26.479><c> code.</c><00:01:27.119><c> One</c><00:01:27.280><c> of</c>
+
+00:01:27.350 --> 00:01:27.360 align:start position:0%
+You use GSD inside of cloud code. One of
+ 
+
+00:01:27.360 --> 00:01:29.510 align:start position:0%
+You use GSD inside of cloud code. One of
+the<00:01:27.600><c> biggest</c><00:01:27.920><c> differences</c><00:01:28.320><c> with</c><00:01:28.560><c> GSD2</c><00:01:29.280><c> is</c>
+
+00:01:29.510 --> 00:01:29.520 align:start position:0%
+the biggest differences with GSD2 is
+ 
+
+00:01:29.520 --> 00:01:32.069 align:start position:0%
+the biggest differences with GSD2 is
+that<00:01:29.680><c> it</c><00:01:29.920><c> no</c><00:01:30.080><c> longer</c><00:01:30.400><c> lives</c><00:01:31.119><c> inside</c><00:01:31.520><c> of</c><00:01:31.680><c> cloud</c>
+
+00:01:32.069 --> 00:01:32.079 align:start position:0%
+that it no longer lives inside of cloud
+ 
+
+00:01:32.079 --> 00:01:34.870 align:start position:0%
+that it no longer lives inside of cloud
+code.<00:01:32.479><c> Instead,</c><00:01:33.280><c> it</c><00:01:33.520><c> is</c><00:01:33.680><c> now</c><00:01:33.920><c> a</c><00:01:34.240><c> standalone</c>
+
+00:01:34.870 --> 00:01:34.880 align:start position:0%
+code. Instead, it is now a standalone
+ 
+
+00:01:34.880 --> 00:01:38.469 align:start position:0%
+code. Instead, it is now a standalone
+CLI<00:01:35.439><c> built</c><00:01:35.759><c> on</c><00:01:36.000><c> the</c><00:01:36.240><c> PI</c><00:01:37.119><c> SDK.</c><00:01:38.000><c> This</c><00:01:38.159><c> is</c><00:01:38.240><c> a</c>
+
+00:01:38.469 --> 00:01:38.479 align:start position:0%
+CLI built on the PI SDK. This is a
+ 
+
+00:01:38.479 --> 00:01:39.910 align:start position:0%
+CLI built on the PI SDK. This is a
+pretty<00:01:38.720><c> massive</c><00:01:39.119><c> change,</c><00:01:39.439><c> especially</c><00:01:39.759><c> when</c>
+
+00:01:39.910 --> 00:01:39.920 align:start position:0%
+pretty massive change, especially when
+ 
+
+00:01:39.920 --> 00:01:42.230 align:start position:0%
+pretty massive change, especially when
+it<00:01:40.079><c> comes</c><00:01:40.240><c> to</c><00:01:40.880><c> cost,</c><00:01:41.600><c> and</c><00:01:41.759><c> we'll</c><00:01:42.000><c> talk</c><00:01:42.079><c> about</c>
+
+00:01:42.230 --> 00:01:42.240 align:start position:0%
+it comes to cost, and we'll talk about
+ 
+
+00:01:42.240 --> 00:01:43.749 align:start position:0%
+it comes to cost, and we'll talk about
+that<00:01:42.400><c> in</c><00:01:42.479><c> a</c><00:01:42.640><c> little</c><00:01:42.720><c> bit.</c><00:01:42.960><c> Now</c><00:01:43.200><c> the</c><00:01:43.360><c> cell</c><00:01:43.600><c> for</c>
+
+00:01:43.749 --> 00:01:43.759 align:start position:0%
+that in a little bit. Now the cell for
+ 
+
+00:01:43.759 --> 00:01:46.789 align:start position:0%
+that in a little bit. Now the cell for
+GSD2<00:01:44.400><c> versus</c><00:01:44.640><c> its</c><00:01:44.880><c> clawed</c><00:01:45.280><c> code</c><00:01:45.920><c> incarnation</c>
+
+00:01:46.789 --> 00:01:46.799 align:start position:0%
+GSD2 versus its clawed code incarnation
+ 
+
+00:01:46.799 --> 00:01:49.109 align:start position:0%
+GSD2 versus its clawed code incarnation
+is<00:01:47.040><c> that</c><00:01:47.200><c> we</c><00:01:47.439><c> can</c><00:01:47.680><c> essentially</c><00:01:48.079><c> have</c><00:01:48.240><c> it</c><00:01:48.479><c> do</c>
+
+00:01:49.109 --> 00:01:49.119 align:start position:0%
+is that we can essentially have it do
+ 
+
+00:01:49.119 --> 00:01:50.950 align:start position:0%
+is that we can essentially have it do
+everything<00:01:49.520><c> for</c><00:01:49.840><c> us.</c><00:01:50.159><c> We</c><00:01:50.320><c> can</c><00:01:50.479><c> just</c><00:01:50.640><c> give</c><00:01:50.799><c> it</c>
+
+00:01:50.950 --> 00:01:50.960 align:start position:0%
+everything for us. We can just give it
+ 
+
+00:01:50.960 --> 00:01:53.429 align:start position:0%
+everything for us. We can just give it
+one<00:01:51.280><c> command,</c><00:01:52.000><c> give</c><00:01:52.159><c> it</c><00:01:52.399><c> one</c><00:01:52.640><c> prompt</c><00:01:53.040><c> and</c><00:01:53.280><c> come</c>
+
+00:01:53.429 --> 00:01:53.439 align:start position:0%
+one command, give it one prompt and come
+ 
+
+00:01:53.439 --> 00:01:55.910 align:start position:0%
+one command, give it one prompt and come
+back<00:01:53.600><c> to</c><00:01:53.840><c> a</c><00:01:54.079><c> built</c><00:01:54.479><c> project</c><00:01:54.880><c> with</c><00:01:55.119><c> a</c><00:01:55.280><c> clean</c><00:01:55.600><c> git</c>
+
+00:01:55.910 --> 00:01:55.920 align:start position:0%
+back to a built project with a clean git
+ 
+
+00:01:55.920 --> 00:01:57.749 align:start position:0%
+back to a built project with a clean git
+history.<00:01:56.640><c> Essentially,</c><00:01:57.119><c> it's</c><00:01:57.360><c> much</c><00:01:57.600><c> more</c>
+
+00:01:57.749 --> 00:01:57.759 align:start position:0%
+history. Essentially, it's much more
+ 
+
+00:01:57.759 --> 00:01:59.590 align:start position:0%
+history. Essentially, it's much more
+autonomous<00:01:58.320><c> than</c><00:01:58.479><c> its</c><00:01:58.719><c> previous</c><00:01:59.040><c> version.</c>
+
+00:01:59.590 --> 00:01:59.600 align:start position:0%
+autonomous than its previous version.
+ 
+
+00:01:59.600 --> 00:02:01.190 align:start position:0%
+autonomous than its previous version.
+And<00:01:59.759><c> inside</c><00:02:00.079><c> the</c><00:02:00.240><c> GitHub,</c><00:02:00.719><c> there</c><00:02:00.880><c> is</c><00:02:00.960><c> an</c>
+
+00:02:01.190 --> 00:02:01.200 align:start position:0%
+And inside the GitHub, there is an
+ 
+
+00:02:01.200 --> 00:02:03.190 align:start position:0%
+And inside the GitHub, there is an
+entire<00:02:01.439><c> chart</c><00:02:01.680><c> that</c><00:02:01.920><c> breaks</c><00:02:02.240><c> down</c><00:02:02.640><c> at</c><00:02:02.880><c> a</c><00:02:03.040><c> more</c>
+
+00:02:03.190 --> 00:02:03.200 align:start position:0%
+entire chart that breaks down at a more
+ 
+
+00:02:03.200 --> 00:02:05.510 align:start position:0%
+entire chart that breaks down at a more
+granular<00:02:03.680><c> level</c><00:02:03.920><c> what</c><00:02:04.159><c> changed</c><00:02:04.399><c> from</c><00:02:04.640><c> v1</c><00:02:05.280><c> to</c>
+
+00:02:05.510 --> 00:02:05.520 align:start position:0%
+granular level what changed from v1 to
+ 
+
+00:02:05.520 --> 00:02:07.350 align:start position:0%
+granular level what changed from v1 to
+v2.<00:02:06.000><c> And</c><00:02:06.159><c> again,</c><00:02:06.320><c> the</c><00:02:06.560><c> biggest</c><00:02:06.799><c> thing</c><00:02:06.960><c> here</c><00:02:07.200><c> is</c>
+
+00:02:07.350 --> 00:02:07.360 align:start position:0%
+v2. And again, the biggest thing here is
+ 
+
+00:02:07.360 --> 00:02:09.350 align:start position:0%
+v2. And again, the biggest thing here is
+that<00:02:07.520><c> we're</c><00:02:07.680><c> going</c><00:02:07.840><c> from</c><00:02:08.080><c> cloud</c><00:02:08.399><c> code/comands</c>
+
+00:02:09.350 --> 00:02:09.360 align:start position:0%
+that we're going from cloud code/comands
+ 
+
+00:02:09.360 --> 00:02:12.309 align:start position:0%
+that we're going from cloud code/comands
+to<00:02:09.599><c> an</c><00:02:09.840><c> actual</c><00:02:10.239><c> standalone</c><00:02:11.039><c> CLI.</c><00:02:11.840><c> That</c><00:02:12.080><c> being</c>
+
+00:02:12.309 --> 00:02:12.319 align:start position:0%
+to an actual standalone CLI. That being
+ 
+
+00:02:12.319 --> 00:02:14.070 align:start position:0%
+to an actual standalone CLI. That being
+said,<00:02:12.560><c> in</c><00:02:12.720><c> terms</c><00:02:12.879><c> of</c><00:02:12.959><c> its</c><00:02:13.200><c> theoretical</c><00:02:13.840><c> core</c>
+
+00:02:14.070 --> 00:02:14.080 align:start position:0%
+said, in terms of its theoretical core
+ 
+
+00:02:14.080 --> 00:02:16.229 align:start position:0%
+said, in terms of its theoretical core
+of<00:02:14.319><c> how</c><00:02:14.480><c> it</c><00:02:14.720><c> attacks</c><00:02:15.120><c> problems,</c><00:02:15.760><c> it's</c><00:02:16.000><c> pretty</c>
+
+00:02:16.229 --> 00:02:16.239 align:start position:0%
+of how it attacks problems, it's pretty
+ 
+
+00:02:16.239 --> 00:02:18.070 align:start position:0%
+of how it attacks problems, it's pretty
+much<00:02:16.400><c> the</c><00:02:16.640><c> same.</c><00:02:17.040><c> The</c><00:02:17.280><c> big</c><00:02:17.360><c> thing</c><00:02:17.440><c> with</c><00:02:17.680><c> GSD</c>
+
+00:02:18.070 --> 00:02:18.080 align:start position:0%
+much the same. The big thing with GSD
+ 
+
+00:02:18.080 --> 00:02:19.910 align:start position:0%
+much the same. The big thing with GSD
+before<00:02:18.319><c> was,</c><00:02:18.560><c> hey,</c><00:02:18.800><c> we're</c><00:02:18.959><c> taking</c><00:02:19.200><c> your</c><00:02:19.680><c> big</c>
+
+00:02:19.910 --> 00:02:19.920 align:start position:0%
+before was, hey, we're taking your big
+ 
+
+00:02:19.920 --> 00:02:21.990 align:start position:0%
+before was, hey, we're taking your big
+idea,<00:02:20.319><c> your</c><00:02:20.480><c> big</c><00:02:20.640><c> app</c><00:02:20.879><c> plan.</c><00:02:21.440><c> We're</c><00:02:21.680><c> breaking</c>
+
+00:02:21.990 --> 00:02:22.000 align:start position:0%
+idea, your big app plan. We're breaking
+ 
+
+00:02:22.000 --> 00:02:24.309 align:start position:0%
+idea, your big app plan. We're breaking
+it<00:02:22.160><c> down</c><00:02:22.480><c> into</c><00:02:22.800><c> individual</c><00:02:23.360><c> phases.</c><00:02:24.080><c> We're</c>
+
+00:02:24.309 --> 00:02:24.319 align:start position:0%
+it down into individual phases. We're
+ 
+
+00:02:24.319 --> 00:02:26.390 align:start position:0%
+it down into individual phases. We're
+breaking<00:02:24.560><c> down</c><00:02:24.800><c> each</c><00:02:25.040><c> phase</c><00:02:25.440><c> into</c><00:02:25.760><c> individual</c>
+
+00:02:26.390 --> 00:02:26.400 align:start position:0%
+breaking down each phase into individual
+ 
+
+00:02:26.400 --> 00:02:28.790 align:start position:0%
+breaking down each phase into individual
+tasks.<00:02:26.879><c> And</c><00:02:27.040><c> we're</c><00:02:27.280><c> having</c><00:02:27.520><c> sub</c><00:02:27.840><c> agents</c>
+
+00:02:28.790 --> 00:02:28.800 align:start position:0%
+tasks. And we're having sub agents
+ 
+
+00:02:28.800 --> 00:02:31.030 align:start position:0%
+tasks. And we're having sub agents
+execute<00:02:29.280><c> on</c><00:02:29.520><c> each</c><00:02:29.760><c> individual</c><00:02:30.239><c> task</c><00:02:30.560><c> in</c><00:02:30.800><c> its</c>
+
+00:02:31.030 --> 00:02:31.040 align:start position:0%
+execute on each individual task in its
+ 
+
+00:02:31.040 --> 00:02:32.710 align:start position:0%
+execute on each individual task in its
+own<00:02:31.280><c> context</c><00:02:31.760><c> window.</c><00:02:32.239><c> And</c><00:02:32.400><c> we</c><00:02:32.480><c> see</c><00:02:32.560><c> that</c>
+
+00:02:32.710 --> 00:02:32.720 align:start position:0%
+own context window. And we see that
+ 
+
+00:02:32.720 --> 00:02:34.710 align:start position:0%
+own context window. And we see that
+here,<00:02:32.959><c> the</c><00:02:33.120><c> iron</c><00:02:33.440><c> rule.</c><00:02:33.760><c> A</c><00:02:33.920><c> task</c><00:02:34.160><c> must</c><00:02:34.319><c> fit</c><00:02:34.560><c> in</c>
+
+00:02:34.710 --> 00:02:34.720 align:start position:0%
+here, the iron rule. A task must fit in
+ 
+
+00:02:34.720 --> 00:02:36.229 align:start position:0%
+here, the iron rule. A task must fit in
+one<00:02:34.879><c> context</c><00:02:35.280><c> window.</c><00:02:35.599><c> If</c><00:02:35.680><c> it</c><00:02:35.840><c> can't,</c><00:02:36.000><c> it's</c>
+
+00:02:36.229 --> 00:02:36.239 align:start position:0%
+one context window. If it can't, it's
+ 
+
+00:02:36.239 --> 00:02:38.150 align:start position:0%
+one context window. If it can't, it's
+two<00:02:36.480><c> tasks.</c><00:02:37.040><c> And</c><00:02:37.200><c> why</c><00:02:37.360><c> is</c><00:02:37.519><c> that?</c><00:02:37.760><c> Well,</c><00:02:38.000><c> even</c>
+
+00:02:38.150 --> 00:02:38.160 align:start position:0%
+two tasks. And why is that? Well, even
+ 
+
+00:02:38.160 --> 00:02:39.670 align:start position:0%
+two tasks. And why is that? Well, even
+though<00:02:38.319><c> we</c><00:02:38.560><c> have</c><00:02:38.720><c> larger</c><00:02:39.040><c> context</c><00:02:39.440><c> windows</c>
+
+00:02:39.670 --> 00:02:39.680 align:start position:0%
+though we have larger context windows
+ 
+
+00:02:39.680 --> 00:02:42.790 align:start position:0%
+though we have larger context windows
+now<00:02:39.840><c> in</c><00:02:40.000><c> Opus</c><00:02:40.319><c> 4.6</c><00:02:40.640><c> six</c><00:02:40.800><c> and</c><00:02:40.959><c> sonnet</c><00:02:41.440><c> 4.6.</c>
+
+00:02:42.790 --> 00:02:42.800 align:start position:0%
+now in Opus 4.6 six and sonnet 4.6.
+ 
+
+00:02:42.800 --> 00:02:43.910 align:start position:0%
+now in Opus 4.6 six and sonnet 4.6.
+They're<00:02:43.120><c> still</c><00:02:43.280><c> better</c><00:02:43.440><c> at</c><00:02:43.599><c> the</c><00:02:43.760><c> beginning</c><00:02:43.840><c> of</c>
+
+00:02:43.910 --> 00:02:43.920 align:start position:0%
+They're still better at the beginning of
+ 
+
+00:02:43.920 --> 00:02:45.910 align:start position:0%
+They're still better at the beginning of
+the<00:02:44.080><c> window,</c><00:02:44.720><c> right?</c><00:02:44.959><c> They've</c><00:02:45.200><c> gotten</c><00:02:45.599><c> pretty</c>
+
+00:02:45.910 --> 00:02:45.920 align:start position:0%
+the window, right? They've gotten pretty
+ 
+
+00:02:45.920 --> 00:02:47.750 align:start position:0%
+the window, right? They've gotten pretty
+good<00:02:46.080><c> at</c><00:02:46.319><c> large</c><00:02:46.720><c> context,</c><00:02:47.200><c> but</c><00:02:47.360><c> at</c><00:02:47.519><c> the</c><00:02:47.599><c> end</c><00:02:47.680><c> of</c>
+
+00:02:47.750 --> 00:02:47.760 align:start position:0%
+good at large context, but at the end of
+ 
+
+00:02:47.760 --> 00:02:49.509 align:start position:0%
+good at large context, but at the end of
+the<00:02:47.840><c> day,</c><00:02:48.000><c> I'd</c><00:02:48.239><c> rather</c><00:02:48.480><c> be</c><00:02:48.640><c> starting</c><00:02:48.800><c> at</c><00:02:48.959><c> zero</c>
+
+00:02:49.509 --> 00:02:49.519 align:start position:0%
+the day, I'd rather be starting at zero
+ 
+
+00:02:49.519 --> 00:02:52.229 align:start position:0%
+the day, I'd rather be starting at zero
+than<00:02:49.760><c> at</c><00:02:49.920><c> token</c><00:02:50.400><c> 700,000.</c><00:02:51.280><c> So,</c><00:02:51.440><c> GSD</c><00:02:52.000><c> makes</c>
+
+00:02:52.229 --> 00:02:52.239 align:start position:0%
+than at token 700,000. So, GSD makes
+ 
+
+00:02:52.239 --> 00:02:54.070 align:start position:0%
+than at token 700,000. So, GSD makes
+sure<00:02:52.640><c> that's</c><00:02:52.879><c> the</c><00:02:53.120><c> case</c><00:02:53.200><c> for</c><00:02:53.519><c> every</c><00:02:53.760><c> single</c>
+
+00:02:54.070 --> 00:02:54.080 align:start position:0%
+sure that's the case for every single
+ 
+
+00:02:54.080 --> 00:02:55.910 align:start position:0%
+sure that's the case for every single
+task.<00:02:54.560><c> And</c><00:02:54.720><c> I</c><00:02:54.879><c> alluded</c><00:02:55.120><c> to</c><00:02:55.280><c> this</c><00:02:55.440><c> before,</c><00:02:55.680><c> but</c>
+
+00:02:55.910 --> 00:02:55.920 align:start position:0%
+task. And I alluded to this before, but
+ 
+
+00:02:55.920 --> 00:02:59.509 align:start position:0%
+task. And I alluded to this before, but
+another<00:02:56.239><c> big</c><00:02:56.480><c> GSD2</c><00:02:57.280><c> feature</c><00:02:57.920><c> is</c><00:02:58.239><c> the</c><00:02:58.879><c> auto</c>
+
+00:02:59.509 --> 00:02:59.519 align:start position:0%
+another big GSD2 feature is the auto
+ 
+
+00:02:59.519 --> 00:03:01.270 align:start position:0%
+another big GSD2 feature is the auto
+setting,<00:02:59.920><c> which</c><00:03:00.239><c> essentially</c><00:03:00.560><c> means</c><00:03:01.040><c> you</c>
+
+00:03:01.270 --> 00:03:01.280 align:start position:0%
+setting, which essentially means you
+ 
+
+00:03:01.280 --> 00:03:03.430 align:start position:0%
+setting, which essentially means you
+give<00:03:01.440><c> it</c><00:03:01.519><c> a</c><00:03:01.760><c> plan,</c><00:03:02.319><c> you</c><00:03:02.560><c> walk</c><00:03:02.800><c> away,</c><00:03:03.120><c> and</c><00:03:03.280><c> it's</c>
+
+00:03:03.430 --> 00:03:03.440 align:start position:0%
+give it a plan, you walk away, and it's
+ 
+
+00:03:03.440 --> 00:03:05.430 align:start position:0%
+give it a plan, you walk away, and it's
+going<00:03:03.519><c> to</c><00:03:03.680><c> finish</c><00:03:03.920><c> all</c><00:03:04.159><c> of</c><00:03:04.239><c> it</c><00:03:04.400><c> for</c><00:03:04.640><c> you.</c><00:03:05.280><c> And</c>
+
+00:03:05.430 --> 00:03:05.440 align:start position:0%
+going to finish all of it for you. And
+ 
+
+00:03:05.440 --> 00:03:07.430 align:start position:0%
+going to finish all of it for you. And
+what's<00:03:05.680><c> going</c><00:03:05.840><c> on</c><00:03:05.920><c> under</c><00:03:06.159><c> the</c><00:03:06.319><c> hood</c><00:03:06.560><c> is</c><00:03:06.800><c> again</c>
+
+00:03:07.430 --> 00:03:07.440 align:start position:0%
+what's going on under the hood is again
+ 
+
+00:03:07.440 --> 00:03:09.270 align:start position:0%
+what's going on under the hood is again
+broken<00:03:07.840><c> down</c><00:03:08.080><c> at</c><00:03:08.319><c> a</c><00:03:08.480><c> very</c><00:03:08.720><c> detailed</c><00:03:09.040><c> level</c>
+
+00:03:09.270 --> 00:03:09.280 align:start position:0%
+broken down at a very detailed level
+ 
+
+00:03:09.280 --> 00:03:10.869 align:start position:0%
+broken down at a very detailed level
+here<00:03:09.519><c> inside</c><00:03:09.760><c> the</c><00:03:09.920><c> GitHub.</c><00:03:10.400><c> But</c><00:03:10.480><c> you</c><00:03:10.640><c> aren't</c>
+
+00:03:10.869 --> 00:03:10.879 align:start position:0%
+here inside the GitHub. But you aren't
+ 
+
+00:03:10.879 --> 00:03:12.710 align:start position:0%
+here inside the GitHub. But you aren't
+forced<00:03:11.200><c> to</c><00:03:11.360><c> go</c><00:03:11.440><c> into</c><00:03:11.680><c> the</c><00:03:11.840><c> auto</c><00:03:12.159><c> feature.</c><00:03:12.560><c> You</c>
+
+00:03:12.710 --> 00:03:12.720 align:start position:0%
+forced to go into the auto feature. You
+ 
+
+00:03:12.720 --> 00:03:15.190 align:start position:0%
+forced to go into the auto feature. You
+have<00:03:12.800><c> the</c><00:03:12.959><c> ability</c><00:03:13.200><c> to</c><00:03:13.440><c> be</c><00:03:13.599><c> in</c><00:03:13.920><c> step</c><00:03:14.239><c> mode.</c><00:03:14.879><c> So</c>
+
+00:03:15.190 --> 00:03:15.200 align:start position:0%
+have the ability to be in step mode. So
+ 
+
+00:03:15.200 --> 00:03:17.670 align:start position:0%
+have the ability to be in step mode. So
+you<00:03:15.680><c> still</c><00:03:16.080><c> can</c><00:03:16.319><c> be</c><00:03:16.560><c> more</c><00:03:16.879><c> hands-on</c><00:03:17.360><c> if</c><00:03:17.519><c> that's</c>
+
+00:03:17.670 --> 00:03:17.680 align:start position:0%
+you still can be more hands-on if that's
+ 
+
+00:03:17.680 --> 00:03:18.949 align:start position:0%
+you still can be more hands-on if that's
+what<00:03:17.840><c> you</c><00:03:17.920><c> want</c><00:03:18.000><c> to</c><00:03:18.080><c> do.</c><00:03:18.480><c> Now</c><00:03:18.640><c> let's</c><00:03:18.879><c> talk</c>
+
+00:03:18.949 --> 00:03:18.959 align:start position:0%
+what you want to do. Now let's talk
+ 
+
+00:03:18.959 --> 00:03:20.710 align:start position:0%
+what you want to do. Now let's talk
+about<00:03:19.200><c> cost</c><00:03:19.440><c> for</c><00:03:19.599><c> a</c><00:03:19.760><c> second</c><00:03:19.920><c> because</c><00:03:20.239><c> this</c><00:03:20.480><c> is</c>
+
+00:03:20.710 --> 00:03:20.720 align:start position:0%
+about cost for a second because this is
+ 
+
+00:03:20.720 --> 00:03:23.270 align:start position:0%
+about cost for a second because this is
+a<00:03:21.040><c> big</c><00:03:21.519><c> deal.</c><00:03:21.840><c> Like</c><00:03:22.000><c> I</c><00:03:22.159><c> said,</c><00:03:22.319><c> we're</c><00:03:22.640><c> no</c><00:03:22.879><c> longer</c>
+
+00:03:23.270 --> 00:03:23.280 align:start position:0%
+a big deal. Like I said, we're no longer
+ 
+
+00:03:23.280 --> 00:03:26.149 align:start position:0%
+a big deal. Like I said, we're no longer
+using<00:03:23.599><c> GSD</c><00:03:24.800><c> exclusively</c><00:03:25.519><c> inside</c><00:03:25.840><c> of</c><00:03:25.920><c> Cloud</c>
+
+00:03:26.149 --> 00:03:26.159 align:start position:0%
+using GSD exclusively inside of Cloud
+ 
+
+00:03:26.159 --> 00:03:27.110 align:start position:0%
+using GSD exclusively inside of Cloud
+Code.<00:03:26.400><c> It's</c><00:03:26.560><c> no</c><00:03:26.640><c> longer</c><00:03:26.879><c> just</c><00:03:26.959><c> an</c>
+
+00:03:27.110 --> 00:03:27.120 align:start position:0%
+Code. It's no longer just an
+ 
+
+00:03:27.120 --> 00:03:28.869 align:start position:0%
+Code. It's no longer just an
+orchestration<00:03:27.680><c> layer.</c><00:03:27.920><c> This</c><00:03:28.000><c> is</c><00:03:28.080><c> its</c><00:03:28.319><c> own</c><00:03:28.400><c> CLI</c>
+
+00:03:28.869 --> 00:03:28.879 align:start position:0%
+orchestration layer. This is its own CLI
+ 
+
+00:03:28.879 --> 00:03:31.190 align:start position:0%
+orchestration layer. This is its own CLI
+tool<00:03:29.040><c> that</c><00:03:29.200><c> runs</c><00:03:29.280><c> on</c><00:03:29.440><c> PI</c><00:03:29.760><c> SDK.</c><00:03:30.720><c> What</c><00:03:30.879><c> does</c><00:03:31.040><c> that</c>
+
+00:03:31.190 --> 00:03:31.200 align:start position:0%
+tool that runs on PI SDK. What does that
+ 
+
+00:03:31.200 --> 00:03:32.949 align:start position:0%
+tool that runs on PI SDK. What does that
+mean<00:03:31.360><c> if</c><00:03:31.519><c> you're</c><00:03:31.599><c> a</c><00:03:31.680><c> Cloud</c><00:03:32.080><c> Code</c><00:03:32.319><c> Max</c><00:03:32.640><c> Plan</c>
+
+00:03:32.949 --> 00:03:32.959 align:start position:0%
+mean if you're a Cloud Code Max Plan
+ 
+
+00:03:32.959 --> 00:03:35.830 align:start position:0%
+mean if you're a Cloud Code Max Plan
+user?<00:03:33.760><c> Well,</c><00:03:34.080><c> GSD2</c><00:03:34.799><c> will</c><00:03:35.040><c> say,</c><00:03:35.200><c> "Hey,</c><00:03:35.599><c> like</c>
+
+00:03:35.830 --> 00:03:35.840 align:start position:0%
+user? Well, GSD2 will say, "Hey, like
+ 
+
+00:03:35.840 --> 00:03:37.990 align:start position:0%
+user? Well, GSD2 will say, "Hey, like
+you<00:03:36.080><c> can</c><00:03:36.159><c> use</c><00:03:36.319><c> the</c><00:03:36.560><c> OOTH</c><00:03:37.040><c> and</c><00:03:37.200><c> MAX</c><00:03:37.519><c> plan.</c><00:03:37.840><c> Like</c>
+
+00:03:37.990 --> 00:03:38.000 align:start position:0%
+you can use the OOTH and MAX plan. Like
+ 
+
+00:03:38.000 --> 00:03:40.710 align:start position:0%
+you can use the OOTH and MAX plan. Like
+you<00:03:38.239><c> don't</c><00:03:38.400><c> need</c><00:03:38.560><c> an</c><00:03:38.799><c> API</c><00:03:39.200><c> key."</c><00:03:40.080><c> I</c><00:03:40.319><c> would</c>
+
+00:03:40.710 --> 00:03:40.720 align:start position:0%
+you don't need an API key." I would
+ 
+
+00:03:40.720 --> 00:03:43.509 align:start position:0%
+you don't need an API key." I would
+highly<00:03:41.120><c> suggest</c><00:03:41.599><c> you</c><00:03:41.920><c> do</c><00:03:42.239><c> not</c><00:03:42.640><c> do</c><00:03:42.879><c> this.</c>
+
+00:03:43.509 --> 00:03:43.519 align:start position:0%
+highly suggest you do not do this.
+ 
+
+00:03:43.519 --> 00:03:44.710 align:start position:0%
+highly suggest you do not do this.
+Remember<00:03:43.840><c> when</c><00:03:44.080><c> everyone</c><00:03:44.319><c> was</c><00:03:44.560><c> getting</c>
+
+00:03:44.710 --> 00:03:44.720 align:start position:0%
+Remember when everyone was getting
+ 
+
+00:03:44.720 --> 00:03:46.390 align:start position:0%
+Remember when everyone was getting
+banned<00:03:45.120><c> using</c><00:03:45.360><c> their</c><00:03:45.599><c> Max</c><00:03:45.920><c> accounts</c><00:03:46.239><c> in</c>
+
+00:03:46.390 --> 00:03:46.400 align:start position:0%
+banned using their Max accounts in
+ 
+
+00:03:46.400 --> 00:03:48.630 align:start position:0%
+banned using their Max accounts in
+OpenClaw?<00:03:46.959><c> This</c><00:03:47.120><c> is</c><00:03:47.200><c> the</c><00:03:47.440><c> same</c><00:03:47.599><c> thing.</c><00:03:48.239><c> And</c>
+
+00:03:48.630 --> 00:03:48.640 align:start position:0%
+OpenClaw? This is the same thing. And
+ 
+
+00:03:48.640 --> 00:03:50.390 align:start position:0%
+OpenClaw? This is the same thing. And
+Anthropic<00:03:49.280><c> lately</c><00:03:49.599><c> has</c><00:03:49.840><c> been</c><00:03:50.000><c> a</c><00:03:50.159><c> bit</c><00:03:50.239><c> more</c>
+
+00:03:50.390 --> 00:03:50.400 align:start position:0%
+Anthropic lately has been a bit more
+ 
+
+00:03:50.400 --> 00:03:52.149 align:start position:0%
+Anthropic lately has been a bit more
+explicit<00:03:50.799><c> about</c><00:03:50.959><c> this.</c><00:03:51.200><c> You</c><00:03:51.440><c> cannot</c><00:03:51.760><c> use</c><00:03:51.920><c> your</c>
+
+00:03:52.149 --> 00:03:52.159 align:start position:0%
+explicit about this. You cannot use your
+ 
+
+00:03:52.159 --> 00:03:56.070 align:start position:0%
+explicit about this. You cannot use your
+Max<00:03:52.480><c> plan</c><00:03:53.280><c> outside</c><00:03:53.599><c> of</c><00:03:53.840><c> clawed</c><00:03:54.239><c> code.</c><00:03:55.360><c> Okay?</c>
+
+00:03:56.070 --> 00:03:56.080 align:start position:0%
+Max plan outside of clawed code. Okay?
+ 
+
+00:03:56.080 --> 00:03:57.990 align:start position:0%
+Max plan outside of clawed code. Okay?
+If<00:03:56.239><c> you</c><00:03:56.480><c> do</c><00:03:56.640><c> that,</c><00:03:56.959><c> it</c><00:03:57.200><c> might</c><00:03:57.360><c> work.</c><00:03:57.680><c> Just</c>
+
+00:03:57.990 --> 00:03:58.000 align:start position:0%
+If you do that, it might work. Just
+ 
+
+00:03:58.000 --> 00:04:00.309 align:start position:0%
+If you do that, it might work. Just
+understand<00:03:59.040><c> you</c><00:03:59.280><c> may</c><00:03:59.439><c> wake</c><00:03:59.599><c> up</c><00:03:59.680><c> one</c><00:03:59.920><c> day</c><00:04:00.080><c> and</c>
+
+00:04:00.309 --> 00:04:00.319 align:start position:0%
+understand you may wake up one day and
+ 
+
+00:04:00.319 --> 00:04:02.550 align:start position:0%
+understand you may wake up one day and
+your<00:04:00.560><c> account</c><00:04:00.959><c> is</c><00:04:01.200><c> banned.</c><00:04:01.840><c> The</c><00:04:02.080><c> same</c><00:04:02.319><c> thing</c>
+
+00:04:02.550 --> 00:04:02.560 align:start position:0%
+your account is banned. The same thing
+ 
+
+00:04:02.560 --> 00:04:04.550 align:start position:0%
+your account is banned. The same thing
+goes<00:04:02.799><c> for</c><00:04:02.959><c> anti-gravity</c><00:04:03.680><c> OATH.</c><00:04:04.239><c> And</c><00:04:04.319><c> this</c>
+
+00:04:04.550 --> 00:04:04.560 align:start position:0%
+goes for anti-gravity OATH. And this
+ 
+
+00:04:04.560 --> 00:04:06.550 align:start position:0%
+goes for anti-gravity OATH. And this
+makes<00:04:04.799><c> sense.</c><00:04:05.439><c> Remember,</c><00:04:05.680><c> on</c><00:04:05.840><c> your</c><00:04:06.000><c> Claw</c><00:04:06.319><c> Max</c>
+
+00:04:06.550 --> 00:04:06.560 align:start position:0%
+makes sense. Remember, on your Claw Max
+ 
+
+00:04:06.560 --> 00:04:08.149 align:start position:0%
+makes sense. Remember, on your Claw Max
+plan,<00:04:06.879><c> even</c><00:04:07.040><c> if</c><00:04:07.120><c> you're</c><00:04:07.280><c> paying</c><00:04:07.519><c> 200</c><00:04:07.840><c> bucks</c><00:04:08.000><c> a</c>
+
+00:04:08.149 --> 00:04:08.159 align:start position:0%
+plan, even if you're paying 200 bucks a
+ 
+
+00:04:08.159 --> 00:04:10.710 align:start position:0%
+plan, even if you're paying 200 bucks a
+month,<00:04:08.400><c> you</c><00:04:08.640><c> are</c><00:04:09.280><c> extremely</c><00:04:09.920><c> subsidized.</c><00:04:10.640><c> For</c>
+
+00:04:10.710 --> 00:04:10.720 align:start position:0%
+month, you are extremely subsidized. For
+ 
+
+00:04:10.720 --> 00:04:12.789 align:start position:0%
+month, you are extremely subsidized. For
+all<00:04:10.879><c> intents</c><00:04:11.200><c> and</c><00:04:11.360><c> purposes,</c><00:04:11.680><c> a</c><00:04:12.000><c> $200</c><00:04:12.480><c> max</c>
+
+00:04:12.789 --> 00:04:12.799 align:start position:0%
+all intents and purposes, a $200 max
+ 
+
+00:04:12.799 --> 00:04:16.550 align:start position:0%
+all intents and purposes, a $200 max
+plan<00:04:13.200><c> is</c><00:04:13.439><c> anywhere</c><00:04:13.840><c> between</c><00:04:14.799><c> 2500</c><00:04:15.439><c> to</c><00:04:15.840><c> $5,000</c>
+
+00:04:16.550 --> 00:04:16.560 align:start position:0%
+plan is anywhere between 2500 to $5,000
+ 
+
+00:04:16.560 --> 00:04:19.430 align:start position:0%
+plan is anywhere between 2500 to $5,000
+in<00:04:16.720><c> API</c><00:04:17.280><c> credits.</c><00:04:18.239><c> So,</c><00:04:18.720><c> it</c><00:04:18.959><c> makes</c><00:04:19.120><c> sense</c><00:04:19.280><c> that</c>
+
+00:04:19.430 --> 00:04:19.440 align:start position:0%
+in API credits. So, it makes sense that
+ 
+
+00:04:19.440 --> 00:04:20.550 align:start position:0%
+in API credits. So, it makes sense that
+they<00:04:19.680><c> don't</c><00:04:19.759><c> want</c><00:04:19.840><c> you</c><00:04:20.000><c> to</c><00:04:20.079><c> be</c><00:04:20.160><c> able</c><00:04:20.320><c> to</c><00:04:20.400><c> take</c>
+
+00:04:20.550 --> 00:04:20.560 align:start position:0%
+they don't want you to be able to take
+ 
+
+00:04:20.560 --> 00:04:22.870 align:start position:0%
+they don't want you to be able to take
+that<00:04:20.799><c> subsidized</c><00:04:21.840><c> account</c><00:04:22.160><c> and</c><00:04:22.400><c> just</c><00:04:22.560><c> use</c><00:04:22.720><c> it</c>
+
+00:04:22.870 --> 00:04:22.880 align:start position:0%
+that subsidized account and just use it
+ 
+
+00:04:22.880 --> 00:04:24.469 align:start position:0%
+that subsidized account and just use it
+somewhere<00:04:23.199><c> else</c><00:04:23.360><c> outside</c><00:04:23.680><c> their</c><00:04:23.840><c> ecosystem.</c>
+
+00:04:24.469 --> 00:04:24.479 align:start position:0%
+somewhere else outside their ecosystem.
+ 
+
+00:04:24.479 --> 00:04:25.590 align:start position:0%
+somewhere else outside their ecosystem.
+So,<00:04:24.639><c> what</c><00:04:24.800><c> does</c><00:04:24.880><c> that</c><00:04:24.960><c> mean?</c><00:04:25.199><c> That</c><00:04:25.280><c> means</c><00:04:25.440><c> you</c>
+
+00:04:25.590 --> 00:04:25.600 align:start position:0%
+So, what does that mean? That means you
+ 
+
+00:04:25.600 --> 00:04:27.430 align:start position:0%
+So, what does that mean? That means you
+need<00:04:25.680><c> to</c><00:04:25.759><c> use</c><00:04:25.919><c> APIs,</c><00:04:26.639><c> right?</c><00:04:26.960><c> Whether</c><00:04:27.199><c> that's</c>
+
+00:04:27.430 --> 00:04:27.440 align:start position:0%
+need to use APIs, right? Whether that's
+ 
+
+00:04:27.440 --> 00:04:29.430 align:start position:0%
+need to use APIs, right? Whether that's
+something<00:04:27.680><c> through</c><00:04:28.000><c> open</c><00:04:28.320><c> router</c><00:04:28.880><c> or</c><00:04:29.199><c> we're</c>
+
+00:04:29.430 --> 00:04:29.440 align:start position:0%
+something through open router or we're
+ 
+
+00:04:29.440 --> 00:04:30.950 align:start position:0%
+something through open router or we're
+actually<00:04:29.680><c> going</c><00:04:29.840><c> to</c><00:04:29.919><c> the</c><00:04:30.080><c> anthropic</c><00:04:30.639><c> website</c>
+
+00:04:30.950 --> 00:04:30.960 align:start position:0%
+actually going to the anthropic website
+ 
+
+00:04:30.960 --> 00:04:32.950 align:start position:0%
+actually going to the anthropic website
+using<00:04:31.120><c> an</c><00:04:31.280><c> API</c><00:04:31.680><c> key,</c><00:04:32.160><c> you</c><00:04:32.400><c> are</c><00:04:32.479><c> going</c><00:04:32.560><c> to</c><00:04:32.720><c> pay</c>
+
+00:04:32.950 --> 00:04:32.960 align:start position:0%
+using an API key, you are going to pay
+ 
+
+00:04:32.960 --> 00:04:36.230 align:start position:0%
+using an API key, you are going to pay
+API<00:04:33.520><c> costs</c><00:04:34.160><c> inside</c><00:04:34.479><c> of</c><00:04:34.639><c> GSD2</c><00:04:35.600><c> which</c><00:04:35.840><c> are</c><00:04:36.000><c> much</c>
+
+00:04:36.230 --> 00:04:36.240 align:start position:0%
+API costs inside of GSD2 which are much
+ 
+
+00:04:36.240 --> 00:04:38.150 align:start position:0%
+API costs inside of GSD2 which are much
+more<00:04:36.400><c> expensive</c><00:04:36.800><c> than</c><00:04:37.120><c> subsidized</c><00:04:37.840><c> max</c>
+
+00:04:38.150 --> 00:04:38.160 align:start position:0%
+more expensive than subsidized max
+ 
+
+00:04:38.160 --> 00:04:39.990 align:start position:0%
+more expensive than subsidized max
+plans.<00:04:38.560><c> Now,</c><00:04:38.800><c> to</c><00:04:38.960><c> help</c><00:04:39.120><c> out</c><00:04:39.360><c> with</c><00:04:39.520><c> potential</c>
+
+00:04:39.990 --> 00:04:40.000 align:start position:0%
+plans. Now, to help out with potential
+ 
+
+00:04:40.000 --> 00:04:42.629 align:start position:0%
+plans. Now, to help out with potential
+costs,<00:04:40.800><c> GSD2</c><00:04:41.600><c> does</c><00:04:41.840><c> have</c><00:04:42.080><c> a</c><00:04:42.240><c> token</c>
+
+00:04:42.629 --> 00:04:42.639 align:start position:0%
+costs, GSD2 does have a token
+ 
+
+00:04:42.639 --> 00:04:44.150 align:start position:0%
+costs, GSD2 does have a token
+optimization<00:04:43.199><c> system.</c><00:04:43.520><c> You</c><00:04:43.759><c> can</c><00:04:43.840><c> set</c><00:04:44.000><c> a</c>
+
+00:04:44.150 --> 00:04:44.160 align:start position:0%
+optimization system. You can set a
+ 
+
+00:04:44.160 --> 00:04:45.830 align:start position:0%
+optimization system. You can set a
+budget<00:04:44.560><c> for</c><00:04:44.800><c> how</c><00:04:45.040><c> much</c><00:04:45.199><c> money</c><00:04:45.360><c> is</c><00:04:45.520><c> going</c><00:04:45.600><c> to</c><00:04:45.680><c> be</c>
+
+00:04:45.830 --> 00:04:45.840 align:start position:0%
+budget for how much money is going to be
+ 
+
+00:04:45.840 --> 00:04:47.510 align:start position:0%
+budget for how much money is going to be
+spent<00:04:46.160><c> on</c><00:04:46.320><c> any</c><00:04:46.560><c> one</c><00:04:46.720><c> project.</c><00:04:47.040><c> So,</c><00:04:47.199><c> you're</c><00:04:47.360><c> not</c>
+
+00:04:47.510 --> 00:04:47.520 align:start position:0%
+spent on any one project. So, you're not
+ 
+
+00:04:47.520 --> 00:04:48.870 align:start position:0%
+spent on any one project. So, you're not
+just<00:04:47.600><c> going</c><00:04:47.680><c> to</c><00:04:48.000><c> have</c><00:04:48.160><c> it</c><00:04:48.320><c> go</c><00:04:48.400><c> to</c><00:04:48.560><c> work</c><00:04:48.720><c> and</c>
+
+00:04:48.870 --> 00:04:48.880 align:start position:0%
+just going to have it go to work and
+ 
+
+00:04:48.880 --> 00:04:50.390 align:start position:0%
+just going to have it go to work and
+then<00:04:49.040><c> wake</c><00:04:49.199><c> up</c><00:04:49.360><c> and</c><00:04:49.520><c> you</c><00:04:49.680><c> just</c><00:04:49.840><c> spent,</c><00:04:50.240><c> you</c>
+
+00:04:50.390 --> 00:04:50.400 align:start position:0%
+then wake up and you just spent, you
+ 
+
+00:04:50.400 --> 00:04:52.390 align:start position:0%
+then wake up and you just spent, you
+know,<00:04:50.639><c> $500.</c><00:04:51.360><c> So</c><00:04:51.520><c> understand</c><00:04:51.840><c> there</c><00:04:52.080><c> are</c><00:04:52.240><c> some</c>
+
+00:04:52.390 --> 00:04:52.400 align:start position:0%
+know, $500. So understand there are some
+ 
+
+00:04:52.400 --> 00:04:55.590 align:start position:0%
+know, $500. So understand there are some
+guardrails,<00:04:52.880><c> but</c><00:04:53.040><c> this</c><00:04:53.280><c> is</c><00:04:53.440><c> a</c><00:04:53.680><c> big</c><00:04:53.919><c> deal</c><00:04:54.560><c> and</c><00:04:54.880><c> a</c>
+
+00:04:55.590 --> 00:04:55.600 align:start position:0%
+guardrails, but this is a big deal and a
+ 
+
+00:04:55.600 --> 00:04:57.110 align:start position:0%
+guardrails, but this is a big deal and a
+major<00:04:56.000><c> thing</c><00:04:56.080><c> you</c><00:04:56.320><c> need</c><00:04:56.479><c> to</c><00:04:56.639><c> think</c><00:04:56.720><c> about</c><00:04:56.880><c> if</c>
+
+00:04:57.110 --> 00:04:57.120 align:start position:0%
+major thing you need to think about if
+ 
+
+00:04:57.120 --> 00:04:58.550 align:start position:0%
+major thing you need to think about if
+you're<00:04:57.199><c> like,</c><00:04:57.280><c> "Hey,</c><00:04:57.600><c> should</c><00:04:57.759><c> I</c><00:04:57.919><c> be</c><00:04:58.240><c> working</c>
+
+00:04:58.550 --> 00:04:58.560 align:start position:0%
+you're like, "Hey, should I be working
+ 
+
+00:04:58.560 --> 00:05:01.110 align:start position:0%
+you're like, "Hey, should I be working
+with<00:04:58.720><c> GSD2</c><00:04:59.520><c> or</c><00:04:59.840><c> should</c><00:04:59.919><c> I</c><00:05:00.080><c> be</c><00:05:00.240><c> moving</c><00:05:00.479><c> off</c><00:05:01.040><c> of</c>
+
+00:05:01.110 --> 00:05:01.120 align:start position:0%
+with GSD2 or should I be moving off of
+ 
+
+00:05:01.120 --> 00:05:03.110 align:start position:0%
+with GSD2 or should I be moving off of
+my<00:05:01.280><c> CloudMax</c><00:05:01.840><c> plan?"</c><00:05:02.320><c> So</c><00:05:02.560><c> now</c><00:05:02.720><c> I'll</c><00:05:02.960><c> walk</c>
+
+00:05:03.110 --> 00:05:03.120 align:start position:0%
+my CloudMax plan?" So now I'll walk
+ 
+
+00:05:03.120 --> 00:05:04.390 align:start position:0%
+my CloudMax plan?" So now I'll walk
+through<00:05:03.280><c> the</c><00:05:03.440><c> install</c><00:05:03.759><c> with</c><00:05:03.919><c> you</c><00:05:04.080><c> and</c><00:05:04.240><c> then</c>
+
+00:05:04.390 --> 00:05:04.400 align:start position:0%
+through the install with you and then
+ 
+
+00:05:04.400 --> 00:05:05.909 align:start position:0%
+through the install with you and then
+we'll<00:05:04.639><c> actually</c><00:05:04.880><c> run</c><00:05:05.040><c> our</c><00:05:05.199><c> head-to-head</c><00:05:05.680><c> test</c>
+
+00:05:05.909 --> 00:05:05.919 align:start position:0%
+we'll actually run our head-to-head test
+ 
+
+00:05:05.919 --> 00:05:08.950 align:start position:0%
+we'll actually run our head-to-head test
+with<00:05:06.080><c> GSD2</c><00:05:07.280><c> versus</c><00:05:07.840><c> Cloud</c><00:05:08.240><c> Code.</c><00:05:08.639><c> So</c><00:05:08.800><c> now</c>
+
+00:05:08.950 --> 00:05:08.960 align:start position:0%
+with GSD2 versus Cloud Code. So now
+ 
+
+00:05:08.960 --> 00:05:10.469 align:start position:0%
+with GSD2 versus Cloud Code. So now
+let's<00:05:09.199><c> install</c><00:05:09.440><c> this</c><00:05:09.600><c> thing.</c><00:05:09.840><c> Just</c><00:05:10.000><c> copy</c><00:05:10.320><c> this</c>
+
+00:05:10.469 --> 00:05:10.479 align:start position:0%
+let's install this thing. Just copy this
+ 
+
+00:05:10.479 --> 00:05:11.909 align:start position:0%
+let's install this thing. Just copy this
+command<00:05:10.720><c> and</c><00:05:10.880><c> paste</c><00:05:11.120><c> it</c><00:05:11.199><c> into</c><00:05:11.440><c> your</c><00:05:11.600><c> terminal</c>
+
+00:05:11.909 --> 00:05:11.919 align:start position:0%
+command and paste it into your terminal
+ 
+
+00:05:11.919 --> 00:05:13.350 align:start position:0%
+command and paste it into your terminal
+and<00:05:12.080><c> you</c><00:05:12.240><c> should</c><00:05:12.400><c> see</c><00:05:12.560><c> something</c><00:05:12.800><c> like</c><00:05:12.960><c> this.</c>
+
+00:05:13.350 --> 00:05:13.360 align:start position:0%
+and you should see something like this.
+ 
+
+00:05:13.360 --> 00:05:16.070 align:start position:0%
+and you should see something like this.
+Next,<00:05:13.600><c> we</c><00:05:13.759><c> want</c><00:05:13.840><c> to</c><00:05:14.000><c> log</c><00:05:14.160><c> in.</c><00:05:14.400><c> So</c><00:05:14.560><c> we'll</c><00:05:14.720><c> do</c><00:05:14.880><c> GSD</c>
+
+00:05:16.070 --> 00:05:16.080 align:start position:0%
+Next, we want to log in. So we'll do GSD
+ 
+
+00:05:16.080 --> 00:05:17.350 align:start position:0%
+Next, we want to log in. So we'll do GSD
+and<00:05:16.320><c> it'll</c><00:05:16.479><c> take</c><00:05:16.639><c> you</c><00:05:16.720><c> through</c><00:05:16.880><c> the</c><00:05:17.039><c> setup</c>
+
+00:05:17.350 --> 00:05:17.360 align:start position:0%
+and it'll take you through the setup
+ 
+
+00:05:17.360 --> 00:05:20.550 align:start position:0%
+and it'll take you through the setup
+wizard.<00:05:18.639><c> So,</c><00:05:18.880><c> I</c><00:05:19.120><c> suggest</c><00:05:19.440><c> using</c><00:05:19.600><c> an</c><00:05:19.840><c> API</c><00:05:20.240><c> key</c>
+
+00:05:20.550 --> 00:05:20.560 align:start position:0%
+wizard. So, I suggest using an API key
+ 
+
+00:05:20.560 --> 00:05:21.990 align:start position:0%
+wizard. So, I suggest using an API key
+again<00:05:20.880><c> because</c><00:05:21.199><c> that</c><00:05:21.360><c> entire</c><00:05:21.600><c> OOTH</c>
+
+00:05:21.990 --> 00:05:22.000 align:start position:0%
+again because that entire OOTH
+ 
+
+00:05:22.000 --> 00:05:23.749 align:start position:0%
+again because that entire OOTH
+discussion<00:05:22.320><c> we</c><00:05:22.479><c> had</c><00:05:22.639><c> before.</c><00:05:23.199><c> I'll</c><00:05:23.440><c> be</c><00:05:23.520><c> using</c>
+
+00:05:23.749 --> 00:05:23.759 align:start position:0%
+discussion we had before. I'll be using
+ 
+
+00:05:23.759 --> 00:05:25.350 align:start position:0%
+discussion we had before. I'll be using
+open<00:05:24.080><c> router.</c><00:05:24.560><c> Feel</c><00:05:24.720><c> free</c><00:05:24.800><c> to</c><00:05:24.960><c> use</c><00:05:25.120><c> whatever</c>
+
+00:05:25.350 --> 00:05:25.360 align:start position:0%
+open router. Feel free to use whatever
+ 
+
+00:05:25.360 --> 00:05:27.189 align:start position:0%
+open router. Feel free to use whatever
+you<00:05:25.520><c> want.</c><00:05:25.840><c> And</c><00:05:26.000><c> I'll</c><00:05:26.160><c> be</c><00:05:26.320><c> using</c><00:05:26.560><c> Brave</c><00:05:26.960><c> Search</c>
+
+00:05:27.189 --> 00:05:27.199 align:start position:0%
+you want. And I'll be using Brave Search
+ 
+
+00:05:27.199 --> 00:05:29.189 align:start position:0%
+you want. And I'll be using Brave Search
+with<00:05:27.600><c> GSD.</c><00:05:28.240><c> So,</c><00:05:28.400><c> I'm</c><00:05:28.560><c> just</c><00:05:28.639><c> going</c><00:05:28.720><c> to</c><00:05:28.800><c> paste</c><00:05:29.039><c> in</c>
+
+00:05:29.189 --> 00:05:29.199 align:start position:0%
+with GSD. So, I'm just going to paste in
+ 
+
+00:05:29.199 --> 00:05:30.629 align:start position:0%
+with GSD. So, I'm just going to paste in
+that<00:05:29.280><c> API</c><00:05:29.680><c> key.</c><00:05:29.840><c> If</c><00:05:29.919><c> you</c><00:05:30.000><c> don't</c><00:05:30.160><c> have</c><00:05:30.240><c> Brave</c>
+
+00:05:30.629 --> 00:05:30.639 align:start position:0%
+that API key. If you don't have Brave
+ 
+
+00:05:30.639 --> 00:05:32.230 align:start position:0%
+that API key. If you don't have Brave
+Search,<00:05:30.880><c> it's</c><00:05:31.120><c> free</c><00:05:31.360><c> to</c><00:05:31.520><c> sign</c><00:05:31.680><c> up.</c><00:05:31.919><c> We</c><00:05:32.160><c> can</c>
+
+00:05:32.230 --> 00:05:32.240 align:start position:0%
+Search, it's free to sign up. We can
+ 
+
+00:05:32.240 --> 00:05:33.830 align:start position:0%
+Search, it's free to sign up. We can
+also<00:05:32.400><c> do</c><00:05:32.639><c> remote</c><00:05:32.960><c> questions.</c><00:05:33.440><c> So,</c><00:05:33.600><c> you</c><00:05:33.759><c> can</c>
+
+00:05:33.830 --> 00:05:33.840 align:start position:0%
+also do remote questions. So, you can
+ 
+
+00:05:33.840 --> 00:05:35.510 align:start position:0%
+also do remote questions. So, you can
+kind<00:05:34.000><c> of</c><00:05:34.080><c> almost</c><00:05:34.400><c> have</c><00:05:34.639><c> like</c><00:05:34.960><c> the</c><00:05:35.199><c> same</c><00:05:35.360><c> thing</c>
+
+00:05:35.510 --> 00:05:35.520 align:start position:0%
+kind of almost have like the same thing
+ 
+
+00:05:35.520 --> 00:05:37.270 align:start position:0%
+kind of almost have like the same thing
+as<00:05:35.680><c> cloud</c><00:05:36.080><c> remote</c><00:05:36.400><c> builtin,</c><00:05:36.800><c> but</c><00:05:36.960><c> we're</c><00:05:37.199><c> just</c>
+
+00:05:37.270 --> 00:05:37.280 align:start position:0%
+as cloud remote builtin, but we're just
+ 
+
+00:05:37.280 --> 00:05:38.550 align:start position:0%
+as cloud remote builtin, but we're just
+going<00:05:37.360><c> to</c><00:05:37.440><c> skip</c><00:05:37.600><c> that</c><00:05:37.759><c> for</c><00:05:37.919><c> now.</c><00:05:38.240><c> And</c><00:05:38.400><c> then</c>
+
+00:05:38.550 --> 00:05:38.560 align:start position:0%
+going to skip that for now. And then
+ 
+
+00:05:38.560 --> 00:05:39.749 align:start position:0%
+going to skip that for now. And then
+we're<00:05:38.720><c> not</c><00:05:38.800><c> going</c><00:05:38.880><c> to</c><00:05:38.960><c> need</c><00:05:39.039><c> the</c><00:05:39.199><c> tool</c><00:05:39.520><c> keys</c>
+
+00:05:39.749 --> 00:05:39.759 align:start position:0%
+we're not going to need the tool keys
+ 
+
+00:05:39.759 --> 00:05:41.830 align:start position:0%
+we're not going to need the tool keys
+for<00:05:40.000><c> today.</c><00:05:40.320><c> So,</c><00:05:40.479><c> I</c><00:05:40.639><c> also</c><00:05:40.960><c> skip</c><00:05:41.199><c> that.</c><00:05:41.440><c> Now,</c><00:05:41.680><c> to</c>
+
+00:05:41.830 --> 00:05:41.840 align:start position:0%
+for today. So, I also skip that. Now, to
+ 
+
+00:05:41.840 --> 00:05:43.430 align:start position:0%
+for today. So, I also skip that. Now, to
+configure<00:05:42.160><c> some</c><00:05:42.400><c> of</c><00:05:42.479><c> our</c><00:05:42.800><c> preferences,</c><00:05:43.280><c> we</c>
+
+00:05:43.430 --> 00:05:43.440 align:start position:0%
+configure some of our preferences, we
+ 
+
+00:05:43.440 --> 00:05:45.510 align:start position:0%
+configure some of our preferences, we
+can<00:05:43.520><c> do</c><00:05:43.680><c> for/gsdres.</c>
+
+00:05:45.510 --> 00:05:45.520 align:start position:0%
+can do for/gsdres.
+ 
+
+00:05:45.520 --> 00:05:46.710 align:start position:0%
+can do for/gsdres.
+Again,<00:05:45.840><c> all</c><00:05:45.919><c> these</c><00:05:46.160><c> commands</c><00:05:46.400><c> are</c><00:05:46.560><c> in</c><00:05:46.639><c> the</c>
+
+00:05:46.710 --> 00:05:46.720 align:start position:0%
+Again, all these commands are in the
+ 
+
+00:05:46.720 --> 00:05:48.710 align:start position:0%
+Again, all these commands are in the
+GitHub.<00:05:47.280><c> We're</c><00:05:47.360><c> going</c><00:05:47.520><c> to</c><00:05:47.600><c> go</c><00:05:47.680><c> to</c><00:05:47.840><c> models</c><00:05:48.479><c> and</c>
+
+00:05:48.710 --> 00:05:48.720 align:start position:0%
+GitHub. We're going to go to models and
+ 
+
+00:05:48.720 --> 00:05:50.310 align:start position:0%
+GitHub. We're going to go to models and
+it<00:05:48.880><c> wants</c><00:05:49.039><c> to</c><00:05:49.120><c> know</c><00:05:49.280><c> our</c><00:05:49.520><c> research</c><00:05:50.000><c> phase</c>
+
+00:05:50.310 --> 00:05:50.320 align:start position:0%
+it wants to know our research phase
+ 
+
+00:05:50.320 --> 00:05:52.629 align:start position:0%
+it wants to know our research phase
+model.<00:05:50.800><c> So</c><00:05:50.960><c> what</c><00:05:51.120><c> we'll</c><00:05:51.360><c> do</c><00:05:51.440><c> for</c><00:05:51.680><c> this</c><00:05:52.160><c> test,</c>
+
+00:05:52.629 --> 00:05:52.639 align:start position:0%
+model. So what we'll do for this test,
+ 
+
+00:05:52.639 --> 00:05:55.189 align:start position:0%
+model. So what we'll do for this test,
+the<00:05:53.360><c> research</c><00:05:53.919><c> and</c><00:05:54.160><c> planning</c><00:05:54.479><c> models</c><00:05:54.800><c> will</c><00:05:55.039><c> be</c>
+
+00:05:55.189 --> 00:05:55.199 align:start position:0%
+the research and planning models will be
+ 
+
+00:05:55.199 --> 00:05:57.909 align:start position:0%
+the research and planning models will be
+opus<00:05:55.600><c> 4.6</c><00:05:56.479><c> and</c><00:05:56.639><c> the</c><00:05:56.880><c> execution</c><00:05:57.440><c> models</c><00:05:57.759><c> will</c>
+
+00:05:57.909 --> 00:05:57.919 align:start position:0%
+opus 4.6 and the execution models will
+ 
+
+00:05:57.919 --> 00:06:00.390 align:start position:0%
+opus 4.6 and the execution models will
+be<00:05:58.080><c> Sonic</c><00:05:58.400><c> 4.6.</c><00:05:59.280><c> Here</c><00:05:59.440><c> we</c><00:05:59.680><c> can</c><00:05:59.759><c> also</c><00:05:59.919><c> enable</c><00:06:00.240><c> a</c>
+
+00:06:00.390 --> 00:06:00.400 align:start position:0%
+be Sonic 4.6. Here we can also enable a
+ 
+
+00:06:00.400 --> 00:06:02.790 align:start position:0%
+be Sonic 4.6. Here we can also enable a
+budget.<00:06:01.360><c> So</c><00:06:01.520><c> for</c><00:06:01.680><c> the</c><00:06:01.840><c> budget</c><00:06:02.160><c> ceiling,</c><00:06:02.560><c> I'll</c>
+
+00:06:02.790 --> 00:06:02.800 align:start position:0%
+budget. So for the budget ceiling, I'll
+ 
+
+00:06:02.800 --> 00:06:04.309 align:start position:0%
+budget. So for the budget ceiling, I'll
+put<00:06:03.039><c> 20</c><00:06:03.199><c> bucks.</c><00:06:03.440><c> Should</c><00:06:03.680><c> be</c><00:06:03.759><c> more</c><00:06:03.919><c> than</c><00:06:04.080><c> enough</c>
+
+00:06:04.309 --> 00:06:04.319 align:start position:0%
+put 20 bucks. Should be more than enough
+ 
+
+00:06:04.319 --> 00:06:06.790 align:start position:0%
+put 20 bucks. Should be more than enough
+for<00:06:04.479><c> today</c><00:06:05.039><c> and</c><00:06:05.199><c> we'll</c><00:06:05.600><c> pause</c><00:06:05.840><c> it.</c><00:06:06.479><c> That'll</c><00:06:06.720><c> be</c>
+
+00:06:06.790 --> 00:06:06.800 align:start position:0%
+for today and we'll pause it. That'll be
+ 
+
+00:06:06.800 --> 00:06:08.550 align:start position:0%
+for today and we'll pause it. That'll be
+enough<00:06:07.039><c> for</c><00:06:07.199><c> now.</c><00:06:07.520><c> Feel</c><00:06:07.680><c> free</c><00:06:07.840><c> to</c><00:06:08.080><c> tinker</c><00:06:08.400><c> with</c>
+
+00:06:08.550 --> 00:06:08.560 align:start position:0%
+enough for now. Feel free to tinker with
+ 
+
+00:06:08.560 --> 00:06:10.070 align:start position:0%
+enough for now. Feel free to tinker with
+the<00:06:08.720><c> rest</c><00:06:08.800><c> of</c><00:06:08.880><c> it</c><00:06:08.960><c> as</c><00:06:09.199><c> needed.</c><00:06:09.680><c> Then</c><00:06:09.840><c> you</c><00:06:10.000><c> can</c>
+
+00:06:10.070 --> 00:06:10.080 align:start position:0%
+the rest of it as needed. Then you can
+ 
+
+00:06:10.080 --> 00:06:11.670 align:start position:0%
+the rest of it as needed. Then you can
+also<00:06:10.319><c> select</c><00:06:10.560><c> your</c><00:06:10.720><c> model</c><00:06:11.039><c> by</c><00:06:11.280><c> also</c><00:06:11.520><c> doing</c>
+
+00:06:11.670 --> 00:06:11.680 align:start position:0%
+also select your model by also doing
+ 
+
+00:06:11.680 --> 00:06:13.510 align:start position:0%
+also select your model by also doing
+forward/model.<00:06:12.720><c> So</c><00:06:12.960><c> now</c><00:06:13.120><c> let's</c><00:06:13.280><c> talk</c><00:06:13.360><c> about</c>
+
+00:06:13.510 --> 00:06:13.520 align:start position:0%
+forward/model. So now let's talk about
+ 
+
+00:06:13.520 --> 00:06:15.350 align:start position:0%
+forward/model. So now let's talk about
+the<00:06:13.600><c> head-to-head</c><00:06:14.080><c> test</c><00:06:14.319><c> between</c><00:06:14.560><c> GSD2</c><00:06:15.199><c> and</c>
+
+00:06:15.350 --> 00:06:15.360 align:start position:0%
+the head-to-head test between GSD2 and
+ 
+
+00:06:15.360 --> 00:06:17.029 align:start position:0%
+the head-to-head test between GSD2 and
+Claude<00:06:15.759><c> Code.</c><00:06:16.319><c> We're</c><00:06:16.560><c> going</c><00:06:16.639><c> to</c><00:06:16.720><c> be</c><00:06:16.800><c> using</c>
+
+00:06:17.029 --> 00:06:17.039 align:start position:0%
+Claude Code. We're going to be using
+ 
+
+00:06:17.039 --> 00:06:18.150 align:start position:0%
+Claude Code. We're going to be using
+this<00:06:17.199><c> prompt.</c><00:06:17.600><c> We're</c><00:06:17.680><c> going</c><00:06:17.759><c> to</c><00:06:17.840><c> have</c><00:06:17.919><c> it</c>
+
+00:06:18.150 --> 00:06:18.160 align:start position:0%
+this prompt. We're going to have it
+ 
+
+00:06:18.160 --> 00:06:20.550 align:start position:0%
+this prompt. We're going to have it
+build<00:06:18.319><c> a</c><00:06:18.560><c> personal</c><00:06:19.039><c> expense</c><00:06:19.520><c> tracker</c><00:06:19.919><c> web</c><00:06:20.160><c> app</c>
+
+00:06:20.550 --> 00:06:20.560 align:start position:0%
+build a personal expense tracker web app
+ 
+
+00:06:20.560 --> 00:06:22.309 align:start position:0%
+build a personal expense tracker web app
+for<00:06:20.880><c> us.</c><00:06:21.520><c> It's</c><00:06:21.759><c> going</c><00:06:21.840><c> to</c><00:06:21.919><c> have</c><00:06:22.080><c> four</c>
+
+00:06:22.309 --> 00:06:22.319 align:start position:0%
+for us. It's going to have four
+ 
+
+00:06:22.319 --> 00:06:25.590 align:start position:0%
+for us. It's going to have four
+features.<00:06:22.880><c> An</c><00:06:23.039><c> expense</c><00:06:23.440><c> form,</c><00:06:24.400><c> expense</c><00:06:24.800><c> list,</c>
+
+00:06:25.590 --> 00:06:25.600 align:start position:0%
+features. An expense form, expense list,
+ 
+
+00:06:25.600 --> 00:06:29.350 align:start position:0%
+features. An expense form, expense list,
+a<00:06:25.919><c> dashboard,</c><00:06:26.880><c> and</c><00:06:27.039><c> a</c><00:06:27.360><c> monthly</c><00:06:27.840><c> summary</c><00:06:28.479><c> card.</c>
+
+00:06:29.350 --> 00:06:29.360 align:start position:0%
+a dashboard, and a monthly summary card.
+ 
+
+00:06:29.360 --> 00:06:31.430 align:start position:0%
+a dashboard, and a monthly summary card.
+Design<00:06:29.759><c> is</c><00:06:30.080><c> clean,</c><00:06:30.400><c> modern,</c><00:06:30.720><c> and</c><00:06:30.960><c> dark</c><00:06:31.199><c> mode.</c>
+
+00:06:31.430 --> 00:06:31.440 align:start position:0%
+Design is clean, modern, and dark mode.
+ 
+
+00:06:31.440 --> 00:06:32.950 align:start position:0%
+Design is clean, modern, and dark mode.
+And<00:06:31.520><c> then</c><00:06:31.680><c> we</c><00:06:31.840><c> wanted</c><00:06:32.080><c> to</c><00:06:32.160><c> fill</c><00:06:32.319><c> it</c><00:06:32.400><c> with</c><00:06:32.560><c> some,</c>
+
+00:06:32.950 --> 00:06:32.960 align:start position:0%
+And then we wanted to fill it with some,
+ 
+
+00:06:32.960 --> 00:06:35.189 align:start position:0%
+And then we wanted to fill it with some,
+you<00:06:33.120><c> know,</c><00:06:33.360><c> dummy</c><00:06:33.840><c> data.</c><00:06:34.319><c> So,</c><00:06:34.560><c> this</c><00:06:34.800><c> prompt</c><00:06:35.039><c> is</c>
+
+00:06:35.189 --> 00:06:35.199 align:start position:0%
+you know, dummy data. So, this prompt is
+ 
+
+00:06:35.199 --> 00:06:36.469 align:start position:0%
+you know, dummy data. So, this prompt is
+vague<00:06:35.520><c> enough</c><00:06:35.600><c> that</c><00:06:35.840><c> we</c><00:06:36.080><c> should</c><00:06:36.160><c> be</c><00:06:36.240><c> able</c><00:06:36.400><c> to</c>
+
+00:06:36.469 --> 00:06:36.479 align:start position:0%
+vague enough that we should be able to
+ 
+
+00:06:36.479 --> 00:06:38.710 align:start position:0%
+vague enough that we should be able to
+see<00:06:36.639><c> some</c><00:06:36.960><c> divergence</c><00:06:37.520><c> between</c><00:06:37.840><c> two</c><00:06:38.000><c> models,</c>
+
+00:06:38.710 --> 00:06:38.720 align:start position:0%
+see some divergence between two models,
+ 
+
+00:06:38.720 --> 00:06:40.469 align:start position:0%
+see some divergence between two models,
+but<00:06:38.960><c> it's</c><00:06:39.199><c> specific</c><00:06:39.600><c> enough</c><00:06:39.840><c> in</c><00:06:40.080><c> terms</c><00:06:40.240><c> of</c><00:06:40.319><c> the</c>
+
+00:06:40.469 --> 00:06:40.479 align:start position:0%
+but it's specific enough in terms of the
+ 
+
+00:06:40.479 --> 00:06:42.950 align:start position:0%
+but it's specific enough in terms of the
+features<00:06:40.800><c> to</c><00:06:41.120><c> actually</c><00:06:41.680><c> grade</c><00:06:42.080><c> what</c><00:06:42.319><c> each</c><00:06:42.560><c> one</c>
+
+00:06:42.950 --> 00:06:42.960 align:start position:0%
+features to actually grade what each one
+ 
+
+00:06:42.960 --> 00:06:44.390 align:start position:0%
+features to actually grade what each one
+did.<00:06:43.280><c> and</c><00:06:43.520><c> it</c><00:06:43.680><c> includes</c><00:06:44.000><c> things</c><00:06:44.240><c> like</c>
+
+00:06:44.390 --> 00:06:44.400 align:start position:0%
+did. and it includes things like
+ 
+
+00:06:44.400 --> 00:06:45.830 align:start position:0%
+did. and it includes things like
+databases.<00:06:45.039><c> So</c><00:06:45.120><c> it's</c><00:06:45.280><c> not</c><00:06:45.440><c> just</c><00:06:45.520><c> like</c><00:06:45.680><c> a</c>
+
+00:06:45.830 --> 00:06:45.840 align:start position:0%
+databases. So it's not just like a
+ 
+
+00:06:45.840 --> 00:06:47.189 align:start position:0%
+databases. So it's not just like a
+landing<00:06:46.080><c> page</c><00:06:46.240><c> we're</c><00:06:46.479><c> building</c><00:06:46.720><c> here.</c><00:06:47.039><c> Now</c>
+
+00:06:47.189 --> 00:06:47.199 align:start position:0%
+landing page we're building here. Now
+ 
+
+00:06:47.199 --> 00:06:49.990 align:start position:0%
+landing page we're building here. Now
+let's<00:06:47.440><c> talk</c><00:06:47.600><c> about</c><00:06:47.840><c> actually</c><00:06:48.240><c> using</c><00:06:48.800><c> GSD.</c><00:06:49.520><c> So</c>
+
+00:06:49.990 --> 00:06:50.000 align:start position:0%
+let's talk about actually using GSD. So
+ 
+
+00:06:50.000 --> 00:06:52.230 align:start position:0%
+let's talk about actually using GSD. So
+the<00:06:50.240><c> GitHub</c><00:06:50.639><c> suggests</c><00:06:51.199><c> having</c><00:06:51.520><c> two</c><00:06:51.759><c> terminals</c>
+
+00:06:52.230 --> 00:06:52.240 align:start position:0%
+the GitHub suggests having two terminals
+ 
+
+00:06:52.240 --> 00:06:54.550 align:start position:0%
+the GitHub suggests having two terminals
+up<00:06:52.800><c> at</c><00:06:53.039><c> any</c><00:06:53.280><c> time.</c><00:06:53.600><c> So</c><00:06:53.759><c> the</c><00:06:54.000><c> first</c><00:06:54.160><c> terminal</c>
+
+00:06:54.550 --> 00:06:54.560 align:start position:0%
+up at any time. So the first terminal
+ 
+
+00:06:54.560 --> 00:06:56.469 align:start position:0%
+up at any time. So the first terminal
+will<00:06:54.720><c> be</c><00:06:54.800><c> the</c><00:06:54.960><c> GSD</c><00:06:55.520><c> auto</c><00:06:55.919><c> terminal.</c><00:06:56.319><c> That's</c>
+
+00:06:56.469 --> 00:06:56.479 align:start position:0%
+will be the GSD auto terminal. That's
+ 
+
+00:06:56.479 --> 00:06:57.510 align:start position:0%
+will be the GSD auto terminal. That's
+like<00:06:56.560><c> the</c><00:06:56.720><c> terminal</c><00:06:57.039><c> that's</c><00:06:57.280><c> actually</c>
+
+00:06:57.510 --> 00:06:57.520 align:start position:0%
+like the terminal that's actually
+ 
+
+00:06:57.520 --> 00:06:58.790 align:start position:0%
+like the terminal that's actually
+working,<00:06:57.919><c> right?</c><00:06:58.160><c> It's</c><00:06:58.319><c> the</c><00:06:58.479><c> one</c><00:06:58.560><c> doing</c>
+
+00:06:58.790 --> 00:06:58.800 align:start position:0%
+working, right? It's the one doing
+ 
+
+00:06:58.800 --> 00:07:00.309 align:start position:0%
+working, right? It's the one doing
+everything<00:06:59.039><c> autonomously</c><00:06:59.840><c> and</c><00:07:00.000><c> it's</c><00:07:00.160><c> just</c>
+
+00:07:00.309 --> 00:07:00.319 align:start position:0%
+everything autonomously and it's just
+ 
+
+00:07:00.319 --> 00:07:02.150 align:start position:0%
+everything autonomously and it's just
+going<00:07:00.400><c> to</c><00:07:00.479><c> keep</c><00:07:00.960><c> running</c><00:07:01.199><c> it</c><00:07:01.360><c> down</c><00:07:01.599><c> till</c><00:07:01.840><c> it's</c>
+
+00:07:02.150 --> 00:07:02.160 align:start position:0%
+going to keep running it down till it's
+ 
+
+00:07:02.160 --> 00:07:04.390 align:start position:0%
+going to keep running it down till it's
+done.<00:07:02.800><c> The</c><00:07:03.039><c> second</c><00:07:03.280><c> terminal</c><00:07:03.759><c> is</c><00:07:04.000><c> like</c><00:07:04.160><c> your</c>
+
+00:07:04.390 --> 00:07:04.400 align:start position:0%
+done. The second terminal is like your
+ 
+
+00:07:04.400 --> 00:07:06.070 align:start position:0%
+done. The second terminal is like your
+discussion<00:07:04.960><c> terminal.</c><00:07:05.360><c> So</c><00:07:05.599><c> whatever</c><00:07:05.919><c> you</c>
+
+00:07:06.070 --> 00:07:06.080 align:start position:0%
+discussion terminal. So whatever you
+ 
+
+00:07:06.080 --> 00:07:07.909 align:start position:0%
+discussion terminal. So whatever you
+talk<00:07:06.319><c> about</c><00:07:06.479><c> in</c><00:07:06.800><c> this</c><00:07:07.199><c> second</c><00:07:07.520><c> terminal</c>
+
+00:07:07.909 --> 00:07:07.919 align:start position:0%
+talk about in this second terminal
+ 
+
+00:07:07.919 --> 00:07:10.469 align:start position:0%
+talk about in this second terminal
+within<00:07:08.240><c> the</c><00:07:08.479><c> context</c><00:07:08.880><c> of</c><00:07:09.120><c> that</c><00:07:09.440><c> project,</c><00:07:10.240><c> it</c>
+
+00:07:10.469 --> 00:07:10.479 align:start position:0%
+within the context of that project, it
+ 
+
+00:07:10.479 --> 00:07:12.070 align:start position:0%
+within the context of that project, it
+will<00:07:10.720><c> eventually</c><00:07:11.120><c> make</c><00:07:11.280><c> its</c><00:07:11.520><c> way</c><00:07:11.680><c> to</c><00:07:11.840><c> the</c>
+
+00:07:12.070 --> 00:07:12.080 align:start position:0%
+will eventually make its way to the
+ 
+
+00:07:12.080 --> 00:07:14.550 align:start position:0%
+will eventually make its way to the
+actual<00:07:12.960><c> workhorse</c><00:07:13.440><c> terminal</c><00:07:13.840><c> if</c><00:07:14.000><c> that</c><00:07:14.240><c> makes</c>
+
+00:07:14.550 --> 00:07:14.560 align:start position:0%
+actual workhorse terminal if that makes
+ 
+
+00:07:14.560 --> 00:07:15.749 align:start position:0%
+actual workhorse terminal if that makes
+sense,<00:07:14.880><c> right?</c><00:07:15.120><c> Because</c><00:07:15.280><c> it's</c><00:07:15.440><c> reading</c>
+
+00:07:15.749 --> 00:07:15.759 align:start position:0%
+sense, right? Because it's reading
+ 
+
+00:07:15.759 --> 00:07:18.070 align:start position:0%
+sense, right? Because it's reading
+everything<00:07:16.160><c> off</c><00:07:16.319><c> a</c><00:07:16.560><c> disk.</c><00:07:17.199><c> So</c><00:07:17.520><c> everything</c><00:07:17.840><c> we</c>
+
+00:07:18.070 --> 00:07:18.080 align:start position:0%
+everything off a disk. So everything we
+ 
+
+00:07:18.080 --> 00:07:19.510 align:start position:0%
+everything off a disk. So everything we
+talk<00:07:18.240><c> about</c><00:07:18.319><c> and</c><00:07:18.560><c> discuss</c><00:07:18.880><c> here</c><00:07:19.120><c> related</c><00:07:19.360><c> to</c>
+
+00:07:19.510 --> 00:07:19.520 align:start position:0%
+talk about and discuss here related to
+ 
+
+00:07:19.520 --> 00:07:21.990 align:start position:0%
+talk about and discuss here related to
+the<00:07:19.680><c> project</c><00:07:20.000><c> will</c><00:07:20.319><c> eventually</c><00:07:20.639><c> make</c><00:07:20.880><c> its</c><00:07:21.120><c> way</c>
+
+00:07:21.990 --> 00:07:22.000 align:start position:0%
+the project will eventually make its way
+ 
+
+00:07:22.000 --> 00:07:24.390 align:start position:0%
+the project will eventually make its way
+to<00:07:22.240><c> the</c><00:07:22.560><c> version</c><00:07:22.720><c> of</c><00:07:22.960><c> GSD</c><00:07:23.599><c> that's</c><00:07:24.000><c> actually</c>
+
+00:07:24.390 --> 00:07:24.400 align:start position:0%
+to the version of GSD that's actually
+ 
+
+00:07:24.400 --> 00:07:27.270 align:start position:0%
+to the version of GSD that's actually
+coding<00:07:25.199><c> everything.</c><00:07:25.680><c> So</c><00:07:26.319><c> all</c><00:07:26.560><c> that's</c><00:07:26.880><c> to</c><00:07:27.039><c> say,</c>
+
+00:07:27.270 --> 00:07:27.280 align:start position:0%
+coding everything. So all that's to say,
+ 
+
+00:07:27.280 --> 00:07:29.510 align:start position:0%
+coding everything. So all that's to say,
+when<00:07:27.440><c> you</c><00:07:27.599><c> use</c><00:07:27.759><c> GSD,</c><00:07:28.479><c> you're</c><00:07:28.720><c> going</c><00:07:28.800><c> to</c><00:07:28.960><c> want</c>
+
+00:07:29.510 --> 00:07:29.520 align:start position:0%
+when you use GSD, you're going to want
+ 
+
+00:07:29.520 --> 00:07:31.189 align:start position:0%
+when you use GSD, you're going to want
+to<00:07:29.840><c> terminal</c><00:07:30.240><c> windows</c><00:07:30.560><c> up.</c><00:07:30.800><c> Now,</c><00:07:31.039><c> when</c><00:07:31.120><c> it</c>
+
+00:07:31.189 --> 00:07:31.199 align:start position:0%
+to terminal windows up. Now, when it
+ 
+
+00:07:31.199 --> 00:07:32.309 align:start position:0%
+to terminal windows up. Now, when it
+comes<00:07:31.280><c> to</c><00:07:31.440><c> cloud</c><00:07:31.680><c> code,</c><00:07:31.919><c> we're</c><00:07:32.080><c> just</c><00:07:32.160><c> going</c><00:07:32.240><c> to</c>
+
+00:07:32.309 --> 00:07:32.319 align:start position:0%
+comes to cloud code, we're just going to
+ 
+
+00:07:32.319 --> 00:07:33.510 align:start position:0%
+comes to cloud code, we're just going to
+do<00:07:32.400><c> the</c><00:07:32.560><c> standard</c><00:07:32.720><c> thing,</c><00:07:32.960><c> right?</c><00:07:33.199><c> I'll</c><00:07:33.360><c> start</c>
+
+00:07:33.510 --> 00:07:33.520 align:start position:0%
+do the standard thing, right? I'll start
+ 
+
+00:07:33.520 --> 00:07:35.430 align:start position:0%
+do the standard thing, right? I'll start
+it<00:07:33.680><c> in</c><00:07:33.840><c> plan</c><00:07:34.080><c> mode.</c><00:07:34.639><c> It'll</c><00:07:34.880><c> ask</c><00:07:35.039><c> whatever</c>
+
+00:07:35.430 --> 00:07:35.440 align:start position:0%
+it in plan mode. It'll ask whatever
+ 
+
+00:07:35.440 --> 00:07:37.350 align:start position:0%
+it in plan mode. It'll ask whatever
+questions<00:07:35.759><c> it</c><00:07:36.000><c> wants</c><00:07:36.160><c> to</c><00:07:36.319><c> ask</c><00:07:36.880><c> and</c><00:07:37.039><c> then</c><00:07:37.199><c> we'll</c>
+
+00:07:37.350 --> 00:07:37.360 align:start position:0%
+questions it wants to ask and then we'll
+ 
+
+00:07:37.360 --> 00:07:38.790 align:start position:0%
+questions it wants to ask and then we'll
+have<00:07:37.440><c> it</c><00:07:37.599><c> go</c><00:07:37.840><c> forth</c><00:07:38.080><c> and</c><00:07:38.240><c> conquer.</c><00:07:38.639><c> Now,</c>
+
+00:07:38.790 --> 00:07:38.800 align:start position:0%
+have it go forth and conquer. Now,
+ 
+
+00:07:38.800 --> 00:07:40.309 align:start position:0%
+have it go forth and conquer. Now,
+inside<00:07:39.039><c> of</c><00:07:39.199><c> GSD</c><00:07:39.599><c> to</c><00:07:39.759><c> actually</c><00:07:40.000><c> get</c><00:07:40.080><c> this</c>
+
+00:07:40.309 --> 00:07:40.319 align:start position:0%
+inside of GSD to actually get this
+ 
+
+00:07:40.319 --> 00:07:41.510 align:start position:0%
+inside of GSD to actually get this
+working,<00:07:40.560><c> what</c><00:07:40.720><c> you</c><00:07:40.880><c> want</c><00:07:40.960><c> to</c><00:07:41.039><c> do</c><00:07:41.120><c> is</c><00:07:41.280><c> first</c>
+
+00:07:41.510 --> 00:07:41.520 align:start position:0%
+working, what you want to do is first
+ 
+
+00:07:41.520 --> 00:07:42.870 align:start position:0%
+working, what you want to do is first
+initialize<00:07:42.000><c> a</c><00:07:42.240><c> project.</c><00:07:42.479><c> So,</c><00:07:42.639><c> we're</c><00:07:42.720><c> going</c><00:07:42.800><c> to</c>
+
+00:07:42.870 --> 00:07:42.880 align:start position:0%
+initialize a project. So, we're going to
+ 
+
+00:07:42.880 --> 00:07:44.790 align:start position:0%
+initialize a project. So, we're going to
+do<00:07:42.960><c> forward/gsd</c><00:07:44.160><c> and</c><00:07:44.319><c> then</c><00:07:44.479><c> I'm</c><00:07:44.639><c> just</c><00:07:44.720><c> going</c>
+
+00:07:44.790 --> 00:07:44.800 align:start position:0%
+do forward/gsd and then I'm just going
+ 
+
+00:07:44.800 --> 00:07:46.790 align:start position:0%
+do forward/gsd and then I'm just going
+to<00:07:44.880><c> paste</c><00:07:45.199><c> in</c><00:07:45.360><c> the</c><00:07:45.599><c> prompt.</c><00:07:46.080><c> And</c><00:07:46.319><c> similar</c><00:07:46.639><c> to</c>
+
+00:07:46.790 --> 00:07:46.800 align:start position:0%
+to paste in the prompt. And similar to
+ 
+
+00:07:46.800 --> 00:07:48.390 align:start position:0%
+to paste in the prompt. And similar to
+cloud<00:07:47.120><c> code,</c><00:07:47.440><c> it</c><00:07:47.599><c> basically</c><00:07:47.840><c> comes</c><00:07:48.080><c> back</c><00:07:48.240><c> and</c>
+
+00:07:48.390 --> 00:07:48.400 align:start position:0%
+cloud code, it basically comes back and
+ 
+
+00:07:48.400 --> 00:07:49.909 align:start position:0%
+cloud code, it basically comes back and
+says,<00:07:48.560><c> "Hey,</c><00:07:48.800><c> are</c><00:07:48.960><c> we</c><00:07:49.120><c> on</c><00:07:49.360><c> the</c><00:07:49.440><c> same</c><00:07:49.520><c> page?</c><00:07:49.759><c> Is</c>
+
+00:07:49.909 --> 00:07:49.919 align:start position:0%
+says, "Hey, are we on the same page? Is
+ 
+
+00:07:49.919 --> 00:07:52.550 align:start position:0%
+says, "Hey, are we on the same page? Is
+this<00:07:50.160><c> exactly</c><00:07:50.400><c> what</c><00:07:50.639><c> you</c><00:07:50.800><c> want?"</c>
+
+00:07:52.550 --> 00:07:52.560 align:start position:0%
+this exactly what you want?"
+ 
+
+00:07:52.560 --> 00:07:54.550 align:start position:0%
+this exactly what you want?"
+Yes,<00:07:52.880><c> that's</c><00:07:53.199><c> correct.</c><00:07:54.080><c> And</c><00:07:54.240><c> now</c><00:07:54.400><c> it's</c><00:07:54.560><c> going</c>
+
+00:07:54.550 --> 00:07:54.560 align:start position:0%
+Yes, that's correct. And now it's going
+ 
+
+00:07:54.560 --> 00:07:55.909 align:start position:0%
+Yes, that's correct. And now it's going
+to<00:07:54.639><c> go</c><00:07:54.720><c> ahead</c><00:07:54.879><c> and</c><00:07:55.039><c> start</c><00:07:55.199><c> planning.</c><00:07:55.599><c> Now,</c><00:07:55.759><c> as</c>
+
+00:07:55.909 --> 00:07:55.919 align:start position:0%
+to go ahead and start planning. Now, as
+ 
+
+00:07:55.919 --> 00:07:57.110 align:start position:0%
+to go ahead and start planning. Now, as
+that's<00:07:56.240><c> happening,</c><00:07:56.560><c> we're</c><00:07:56.720><c> going</c><00:07:56.800><c> to</c><00:07:56.879><c> do</c><00:07:56.960><c> the</c>
+
+00:07:57.110 --> 00:07:57.120 align:start position:0%
+that's happening, we're going to do the
+ 
+
+00:07:57.120 --> 00:07:59.270 align:start position:0%
+that's happening, we're going to do the
+same<00:07:57.280><c> thing</c><00:07:57.440><c> inside</c><00:07:57.840><c> of</c><00:07:58.000><c> Cloud</c><00:07:58.319><c> Code.</c><00:07:58.800><c> Also</c><00:07:59.039><c> of</c>
+
+00:07:59.270 --> 00:07:59.280 align:start position:0%
+same thing inside of Cloud Code. Also of
+ 
+
+00:07:59.280 --> 00:08:00.790 align:start position:0%
+same thing inside of Cloud Code. Also of
+note,<00:07:59.440><c> we</c><00:07:59.599><c> can</c><00:07:59.759><c> keep</c><00:07:59.919><c> track</c><00:08:00.080><c> of</c><00:08:00.240><c> our</c><00:08:00.479><c> tokens</c>
+
+00:08:00.790 --> 00:08:00.800 align:start position:0%
+note, we can keep track of our tokens
+ 
+
+00:08:00.800 --> 00:08:02.550 align:start position:0%
+note, we can keep track of our tokens
+and<00:08:01.039><c> how</c><00:08:01.199><c> much</c><00:08:01.360><c> money</c><00:08:01.599><c> we've</c><00:08:01.840><c> spent</c><00:08:02.240><c> down</c><00:08:02.400><c> here</c>
+
+00:08:02.550 --> 00:08:02.560 align:start position:0%
+and how much money we've spent down here
+ 
+
+00:08:02.560 --> 00:08:05.430 align:start position:0%
+and how much money we've spent down here
+at<00:08:02.720><c> the</c><00:08:02.800><c> bottom</c><00:08:02.960><c> of</c><00:08:03.120><c> GSD2.</c><00:08:03.759><c> So,</c><00:08:04.000><c> so</c><00:08:04.240><c> far</c><00:08:05.199><c> just</c>
+
+00:08:05.430 --> 00:08:05.440 align:start position:0%
+at the bottom of GSD2. So, so far just
+ 
+
+00:08:05.440 --> 00:08:06.869 align:start position:0%
+at the bottom of GSD2. So, so far just
+in<00:08:05.599><c> this</c><00:08:05.840><c> planning</c><00:08:06.160><c> phase,</c><00:08:06.479><c> we've</c><00:08:06.720><c> already</c>
+
+00:08:06.869 --> 00:08:06.879 align:start position:0%
+in this planning phase, we've already
+ 
+
+00:08:06.879 --> 00:08:09.909 align:start position:0%
+in this planning phase, we've already
+burned<00:08:08.080><c> 73</c><00:08:08.560><c> cents.</c><00:08:09.199><c> So,</c><00:08:09.360><c> over</c><00:08:09.520><c> here</c><00:08:09.680><c> on</c><00:08:09.759><c> the</c>
+
+00:08:09.909 --> 00:08:09.919 align:start position:0%
+burned 73 cents. So, over here on the
+ 
+
+00:08:09.919 --> 00:08:11.510 align:start position:0%
+burned 73 cents. So, over here on the
+right<00:08:10.080><c> hand</c><00:08:10.240><c> side</c><00:08:10.319><c> with</c><00:08:10.479><c> GST2,</c><00:08:11.120><c> we</c><00:08:11.280><c> can</c><00:08:11.360><c> see</c>
+
+00:08:11.510 --> 00:08:11.520 align:start position:0%
+right hand side with GST2, we can see
+ 
+
+00:08:11.520 --> 00:08:14.150 align:start position:0%
+right hand side with GST2, we can see
+how<00:08:11.680><c> it's</c><00:08:11.919><c> broken</c><00:08:12.560><c> everything</c><00:08:13.120><c> down</c><00:08:13.680><c> into</c>
+
+00:08:14.150 --> 00:08:14.160 align:start position:0%
+how it's broken everything down into
+ 
+
+00:08:14.160 --> 00:08:15.990 align:start position:0%
+how it's broken everything down into
+essentially
+
+00:08:15.990 --> 00:08:16.000 align:start position:0%
+essentially
+ 
+
+00:08:16.000 --> 00:08:19.110 align:start position:0%
+essentially
+12<00:08:17.039><c> different</c><00:08:17.360><c> tasks</c><00:08:18.319><c> and</c><00:08:18.560><c> included</c><00:08:18.960><c> some</c>
+
+00:08:19.110 --> 00:08:19.120 align:start position:0%
+12 different tasks and included some
+ 
+
+00:08:19.120 --> 00:08:21.110 align:start position:0%
+12 different tasks and included some
+things<00:08:19.280><c> that</c><00:08:19.440><c> are</c><00:08:19.520><c> out</c><00:08:19.680><c> of</c><00:08:19.840><c> scope.</c><00:08:20.319><c> Now,</c><00:08:20.560><c> GSD</c>
+
+00:08:21.110 --> 00:08:21.120 align:start position:0%
+things that are out of scope. Now, GSD
+ 
+
+00:08:21.120 --> 00:08:23.270 align:start position:0%
+things that are out of scope. Now, GSD
+is<00:08:21.280><c> writing</c><00:08:21.520><c> the</c><00:08:21.840><c> project.md</c><00:08:22.720><c> file.</c><00:08:23.039><c> Again,</c>
+
+00:08:23.270 --> 00:08:23.280 align:start position:0%
+is writing the project.md file. Again,
+ 
+
+00:08:23.280 --> 00:08:25.189 align:start position:0%
+is writing the project.md file. Again,
+very<00:08:23.520><c> similar</c><00:08:23.759><c> to</c><00:08:23.919><c> the</c><00:08:24.080><c> original</c><00:08:24.639><c> incarnation</c>
+
+00:08:25.189 --> 00:08:25.199 align:start position:0%
+very similar to the original incarnation
+ 
+
+00:08:25.199 --> 00:08:26.710 align:start position:0%
+very similar to the original incarnation
+of<00:08:25.360><c> GSD.</c><00:08:25.840><c> And</c><00:08:25.919><c> this</c><00:08:26.080><c> is</c><00:08:26.160><c> like</c><00:08:26.319><c> the</c><00:08:26.479><c> single</c>
+
+00:08:26.710 --> 00:08:26.720 align:start position:0%
+of GSD. And this is like the single
+ 
+
+00:08:26.720 --> 00:08:28.710 align:start position:0%
+of GSD. And this is like the single
+source<00:08:27.039><c> of</c><00:08:27.199><c> truth</c><00:08:27.440><c> for</c><00:08:27.919><c> what</c><00:08:28.080><c> it</c><00:08:28.240><c> is</c><00:08:28.479><c> we're</c>
+
+00:08:28.710 --> 00:08:28.720 align:start position:0%
+source of truth for what it is we're
+ 
+
+00:08:28.720 --> 00:08:30.150 align:start position:0%
+source of truth for what it is we're
+actually<00:08:29.039><c> building</c><00:08:29.280><c> from</c><00:08:29.520><c> a</c><00:08:29.680><c> highle</c>
+
+00:08:30.150 --> 00:08:30.160 align:start position:0%
+actually building from a highle
+ 
+
+00:08:30.160 --> 00:08:31.909 align:start position:0%
+actually building from a highle
+overview.<00:08:30.800><c> And</c><00:08:30.960><c> it's</c><00:08:31.199><c> also</c><00:08:31.440><c> doing</c><00:08:31.599><c> the</c><00:08:31.759><c> same</c>
+
+00:08:31.909 --> 00:08:31.919 align:start position:0%
+overview. And it's also doing the same
+ 
+
+00:08:31.919 --> 00:08:34.310 align:start position:0%
+overview. And it's also doing the same
+for<00:08:32.240><c> requirements.md.</c>
+
+00:08:34.310 --> 00:08:34.320 align:start position:0%
+for requirements.md.
+ 
+
+00:08:34.320 --> 00:08:35.670 align:start position:0%
+for requirements.md.
+And<00:08:34.479><c> over</c><00:08:34.640><c> here</c><00:08:34.800><c> on</c><00:08:34.880><c> the</c><00:08:35.039><c> left,</c><00:08:35.200><c> we</c><00:08:35.360><c> have</c><00:08:35.440><c> the</c>
+
+00:08:35.670 --> 00:08:35.680 align:start position:0%
+And over here on the left, we have the
+ 
+
+00:08:35.680 --> 00:08:37.990 align:start position:0%
+And over here on the left, we have the
+standard<00:08:36.159><c> cloud</c><00:08:36.560><c> code</c><00:08:36.959><c> plan,</c><00:08:37.519><c> right?</c><00:08:37.839><c> Gives</c>
+
+00:08:37.990 --> 00:08:38.000 align:start position:0%
+standard cloud code plan, right? Gives
+ 
+
+00:08:38.000 --> 00:08:40.469 align:start position:0%
+standard cloud code plan, right? Gives
+us<00:08:38.159><c> the</c><00:08:38.320><c> architecture,</c><00:08:39.440><c> breaks</c><00:08:39.760><c> it</c><00:08:39.919><c> down</c><00:08:40.080><c> into</c>
+
+00:08:40.469 --> 00:08:40.479 align:start position:0%
+us the architecture, breaks it down into
+ 
+
+00:08:40.479 --> 00:08:42.149 align:start position:0%
+us the architecture, breaks it down into
+nine<00:08:41.200><c> steps,</c><00:08:41.680><c> and</c><00:08:41.839><c> we're</c><00:08:42.000><c> going</c><00:08:42.000><c> to</c><00:08:42.080><c> say,</c>
+
+00:08:42.149 --> 00:08:42.159 align:start position:0%
+nine steps, and we're going to say,
+ 
+
+00:08:42.159 --> 00:08:44.470 align:start position:0%
+nine steps, and we're going to say,
+"Hey,<00:08:42.479><c> go</c><00:08:42.560><c> ahead,</c><00:08:42.880><c> clear</c><00:08:43.120><c> context,</c><00:08:43.919><c> and</c><00:08:44.159><c> go</c><00:08:44.320><c> to</c>
+
+00:08:44.470 --> 00:08:44.480 align:start position:0%
+"Hey, go ahead, clear context, and go to
+ 
+
+00:08:44.480 --> 00:08:45.990 align:start position:0%
+"Hey, go ahead, clear context, and go to
+work."
+
+00:08:45.990 --> 00:08:46.000 align:start position:0%
+work."
+ 
+
+00:08:46.000 --> 00:08:47.430 align:start position:0%
+work."
+And<00:08:46.240><c> remember,</c><00:08:46.480><c> when</c><00:08:46.640><c> it</c><00:08:46.800><c> comes</c><00:08:46.880><c> to</c><00:08:47.040><c> cloud</c>
+
+00:08:47.430 --> 00:08:47.440 align:start position:0%
+And remember, when it comes to cloud
+ 
+
+00:08:47.440 --> 00:08:49.910 align:start position:0%
+And remember, when it comes to cloud
+code,<00:08:48.399><c> it's</c>
+
+00:08:49.910 --> 00:08:49.920 align:start position:0%
+code, it's
+ 
+
+00:08:49.920 --> 00:08:51.670 align:start position:0%
+code, it's
+not<00:08:50.080><c> necessarily</c><00:08:50.560><c> going</c><00:08:50.720><c> to</c><00:08:50.880><c> always</c><00:08:51.279><c> spawn</c>
+
+00:08:51.670 --> 00:08:51.680 align:start position:0%
+not necessarily going to always spawn
+ 
+
+00:08:51.680 --> 00:08:54.230 align:start position:0%
+not necessarily going to always spawn
+sub<00:08:52.000><c> agents</c><00:08:52.320><c> like</c><00:08:52.560><c> GSD</c><00:08:53.120><c> does</c><00:08:53.279><c> to</c><00:08:53.519><c> like</c><00:08:53.839><c> have</c><00:08:54.080><c> a</c>
+
+00:08:54.230 --> 00:08:54.240 align:start position:0%
+sub agents like GSD does to like have a
+ 
+
+00:08:54.240 --> 00:08:55.750 align:start position:0%
+sub agents like GSD does to like have a
+separate<00:08:54.480><c> context</c><00:08:54.880><c> window</c><00:08:55.200><c> for</c><00:08:55.360><c> each</c><00:08:55.600><c> and</c>
+
+00:08:55.750 --> 00:08:55.760 align:start position:0%
+separate context window for each and
+ 
+
+00:08:55.760 --> 00:08:57.430 align:start position:0%
+separate context window for each and
+every<00:08:56.000><c> task.</c><00:08:56.399><c> Sometimes</c><00:08:56.720><c> cloud</c><00:08:57.040><c> code</c><00:08:57.200><c> will</c>
+
+00:08:57.430 --> 00:08:57.440 align:start position:0%
+every task. Sometimes cloud code will
+ 
+
+00:08:57.440 --> 00:08:59.030 align:start position:0%
+every task. Sometimes cloud code will
+spawn<00:08:57.760><c> some</c><00:08:57.839><c> agents.</c><00:08:58.480><c> you</c><00:08:58.640><c> can</c><00:08:58.800><c> be</c><00:08:58.880><c> more</c>
+
+00:08:59.030 --> 00:08:59.040 align:start position:0%
+spawn some agents. you can be more
+ 
+
+00:08:59.040 --> 00:09:00.230 align:start position:0%
+spawn some agents. you can be more
+explicit<00:08:59.360><c> with</c><00:08:59.440><c> it</c><00:08:59.519><c> and</c><00:08:59.680><c> say,</c><00:08:59.760><c> "Hey,</c><00:09:00.000><c> I</c><00:09:00.160><c> want</c>
+
+00:09:00.230 --> 00:09:00.240 align:start position:0%
+explicit with it and say, "Hey, I want
+ 
+
+00:09:00.240 --> 00:09:02.150 align:start position:0%
+explicit with it and say, "Hey, I want
+to<00:09:00.320><c> do</c><00:09:00.480><c> agent</c><00:09:00.800><c> teams."</c><00:09:01.279><c> So,</c><00:09:01.440><c> like</c><00:09:01.600><c> the</c><00:09:01.760><c> tasks</c>
+
+00:09:02.150 --> 00:09:02.160 align:start position:0%
+to do agent teams." So, like the tasks
+ 
+
+00:09:02.160 --> 00:09:03.829 align:start position:0%
+to do agent teams." So, like the tasks
+are<00:09:02.399><c> broken</c><00:09:02.720><c> down.</c><00:09:03.200><c> And</c><00:09:03.360><c> that's</c><00:09:03.519><c> kind</c><00:09:03.600><c> of</c><00:09:03.680><c> the</c>
+
+00:09:03.829 --> 00:09:03.839 align:start position:0%
+are broken down. And that's kind of the
+ 
+
+00:09:03.839 --> 00:09:05.110 align:start position:0%
+are broken down. And that's kind of the
+big<00:09:04.000><c> difference</c><00:09:04.160><c> between</c><00:09:04.480><c> cloud</c><00:09:04.800><c> code</c><00:09:04.959><c> where</c>
+
+00:09:05.110 --> 00:09:05.120 align:start position:0%
+big difference between cloud code where
+ 
+
+00:09:05.120 --> 00:09:07.670 align:start position:0%
+big difference between cloud code where
+it's<00:09:05.279><c> sort</c><00:09:05.440><c> of</c><00:09:05.519><c> like</c><00:09:06.000><c> a</c><00:09:06.240><c> maybe</c><00:09:07.040><c> when</c><00:09:07.279><c> it</c><00:09:07.440><c> comes</c>
+
+00:09:07.670 --> 00:09:07.680 align:start position:0%
+it's sort of like a maybe when it comes
+ 
+
+00:09:07.680 --> 00:09:10.150 align:start position:0%
+it's sort of like a maybe when it comes
+to<00:09:08.399><c> how</c><00:09:08.640><c> it</c><00:09:08.800><c> deals</c><00:09:09.040><c> with</c><00:09:09.200><c> context</c><00:09:09.680><c> management</c>
+
+00:09:10.150 --> 00:09:10.160 align:start position:0%
+to how it deals with context management
+ 
+
+00:09:10.160 --> 00:09:12.310 align:start position:0%
+to how it deals with context management
+versus<00:09:10.560><c> GSD.</c><00:09:11.040><c> We're</c><00:09:11.279><c> like,</c><00:09:11.440><c> it's</c><00:09:11.760><c> very,</c><00:09:12.000><c> very</c>
+
+00:09:12.310 --> 00:09:12.320 align:start position:0%
+versus GSD. We're like, it's very, very
+ 
+
+00:09:12.320 --> 00:09:13.590 align:start position:0%
+versus GSD. We're like, it's very, very
+clear.<00:09:12.720><c> This</c><00:09:12.880><c> is</c><00:09:12.959><c> how</c><00:09:13.120><c> we're</c><00:09:13.279><c> going</c><00:09:13.360><c> to</c><00:09:13.440><c> break</c>
+
+00:09:13.590 --> 00:09:13.600 align:start position:0%
+clear. This is how we're going to break
+ 
+
+00:09:13.600 --> 00:09:16.070 align:start position:0%
+clear. This is how we're going to break
+it<00:09:13.760><c> down</c><00:09:14.240><c> and</c><00:09:14.399><c> this</c><00:09:14.560><c> is</c><00:09:14.640><c> how</c><00:09:14.800><c> we</c><00:09:15.040><c> make</c><00:09:15.200><c> sure</c><00:09:15.760><c> the</c>
+
+00:09:16.070 --> 00:09:16.080 align:start position:0%
+it down and this is how we make sure the
+ 
+
+00:09:16.080 --> 00:09:17.990 align:start position:0%
+it down and this is how we make sure the
+context<00:09:16.480><c> is</c><00:09:16.720><c> always</c><00:09:16.959><c> fresh.</c><00:09:17.440><c> So,</c><00:09:17.680><c> now</c><00:09:17.839><c> we're</c>
+
+00:09:17.990 --> 00:09:18.000 align:start position:0%
+context is always fresh. So, now we're
+ 
+
+00:09:18.000 --> 00:09:19.350 align:start position:0%
+context is always fresh. So, now we're
+getting<00:09:18.160><c> deep</c><00:09:18.320><c> in</c><00:09:18.480><c> the</c><00:09:18.640><c> research</c><00:09:18.959><c> phase</c><00:09:19.200><c> for</c>
+
+00:09:19.350 --> 00:09:19.360 align:start position:0%
+getting deep in the research phase for
+ 
+
+00:09:19.360 --> 00:09:21.430 align:start position:0%
+getting deep in the research phase for
+GSD.<00:09:20.160><c> And</c><00:09:20.320><c> now</c><00:09:20.480><c> it's</c><00:09:20.720><c> asking</c><00:09:20.880><c> me,</c><00:09:21.040><c> hey,</c><00:09:21.279><c> do</c><00:09:21.360><c> you</c>
+
+00:09:21.430 --> 00:09:21.440 align:start position:0%
+GSD. And now it's asking me, hey, do you
+ 
+
+00:09:21.440 --> 00:09:22.630 align:start position:0%
+GSD. And now it's asking me, hey, do you
+want<00:09:21.519><c> to</c><00:09:21.600><c> be</c><00:09:21.760><c> a</c><00:09:21.839><c> little</c><00:09:22.000><c> more</c><00:09:22.080><c> hands-on</c><00:09:22.480><c> with</c>
+
+00:09:22.630 --> 00:09:22.640 align:start position:0%
+want to be a little more hands-on with
+ 
+
+00:09:22.640 --> 00:09:23.750 align:start position:0%
+want to be a little more hands-on with
+the<00:09:22.800><c> planning</c><00:09:23.040><c> or</c><00:09:23.200><c> do</c><00:09:23.360><c> we</c><00:09:23.440><c> want</c><00:09:23.519><c> to</c><00:09:23.600><c> just</c>
+
+00:09:23.750 --> 00:09:23.760 align:start position:0%
+the planning or do we want to just
+ 
+
+00:09:23.760 --> 00:09:25.350 align:start position:0%
+the planning or do we want to just
+switch<00:09:23.920><c> to</c><00:09:24.080><c> auto</c><00:09:24.399><c> now?</c><00:09:24.640><c> So,</c><00:09:24.880><c> I'm</c><00:09:25.120><c> going</c><00:09:25.200><c> to</c>
+
+00:09:25.350 --> 00:09:25.360 align:start position:0%
+switch to auto now? So, I'm going to
+ 
+
+00:09:25.360 --> 00:09:27.670 align:start position:0%
+switch to auto now? So, I'm going to
+switch<00:09:25.519><c> to</c><00:09:25.760><c> auto</c><00:09:26.480><c> and</c><00:09:26.720><c> just</c><00:09:26.880><c> let</c><00:09:27.040><c> it</c><00:09:27.200><c> run.</c><00:09:27.519><c> And</c>
+
+00:09:27.670 --> 00:09:27.680 align:start position:0%
+switch to auto and just let it run. And
+ 
+
+00:09:27.680 --> 00:09:28.870 align:start position:0%
+switch to auto and just let it run. And
+again,<00:09:27.920><c> at</c><00:09:28.080><c> this</c><00:09:28.240><c> point,</c><00:09:28.399><c> like</c><00:09:28.560><c> I</c><00:09:28.720><c> talked</c>
+
+00:09:28.870 --> 00:09:28.880 align:start position:0%
+again, at this point, like I talked
+ 
+
+00:09:28.880 --> 00:09:30.150 align:start position:0%
+again, at this point, like I talked
+about<00:09:29.040><c> before,</c><00:09:29.360><c> we</c><00:09:29.519><c> still</c><00:09:29.600><c> have</c><00:09:29.760><c> those</c><00:09:29.920><c> two</c>
+
+00:09:30.150 --> 00:09:30.160 align:start position:0%
+about before, we still have those two
+ 
+
+00:09:30.160 --> 00:09:33.269 align:start position:0%
+about before, we still have those two
+terminals.<00:09:31.040><c> So,</c><00:09:31.279><c> I</c><00:09:31.600><c> can</c><00:09:31.839><c> still</c><00:09:32.160><c> talk</c><00:09:32.480><c> to</c><00:09:32.640><c> GSD</c>
+
+00:09:33.269 --> 00:09:33.279 align:start position:0%
+terminals. So, I can still talk to GSD
+ 
+
+00:09:33.279 --> 00:09:35.430 align:start position:0%
+terminals. So, I can still talk to GSD
+even<00:09:33.760><c> as</c><00:09:34.000><c> it's</c><00:09:34.160><c> running</c><00:09:34.320><c> on</c><00:09:34.560><c> auto</c><00:09:35.120><c> in</c><00:09:35.279><c> this</c>
+
+00:09:35.430 --> 00:09:35.440 align:start position:0%
+even as it's running on auto in this
+ 
+
+00:09:35.440 --> 00:09:36.550 align:start position:0%
+even as it's running on auto in this
+terminal<00:09:35.760><c> and</c><00:09:35.839><c> be</c><00:09:35.920><c> like,</c><00:09:36.000><c> "Hey,</c><00:09:36.240><c> actually,</c><00:09:36.480><c> I</c>
+
+00:09:36.550 --> 00:09:36.560 align:start position:0%
+terminal and be like, "Hey, actually, I
+ 
+
+00:09:36.560 --> 00:09:38.470 align:start position:0%
+terminal and be like, "Hey, actually, I
+changed<00:09:36.720><c> my</c><00:09:36.959><c> mind.</c><00:09:37.360><c> Let's</c><00:09:37.600><c> do</c><00:09:37.839><c> A,</c><00:09:38.000><c> B,</c><00:09:38.160><c> and</c><00:09:38.320><c> C</c>
+
+00:09:38.470 --> 00:09:38.480 align:start position:0%
+changed my mind. Let's do A, B, and C
+ 
+
+00:09:38.480 --> 00:09:40.389 align:start position:0%
+changed my mind. Let's do A, B, and C
+instead."<00:09:39.040><c> But</c><00:09:39.200><c> we're</c><00:09:39.360><c> going</c><00:09:39.440><c> to</c><00:09:39.519><c> let</c><00:09:39.680><c> it</c><00:09:39.839><c> run</c>
+
+00:09:40.389 --> 00:09:40.399 align:start position:0%
+instead." But we're going to let it run
+ 
+
+00:09:40.399 --> 00:09:41.990 align:start position:0%
+instead." But we're going to let it run
+and<00:09:40.640><c> we'll</c><00:09:40.880><c> come</c><00:09:41.040><c> back</c><00:09:41.279><c> when</c><00:09:41.519><c> it's</c><00:09:41.680><c> either</c>
+
+00:09:41.990 --> 00:09:42.000 align:start position:0%
+and we'll come back when it's either
+ 
+
+00:09:42.000 --> 00:09:44.150 align:start position:0%
+and we'll come back when it's either
+done<00:09:42.480><c> or</c><00:09:42.720><c> it's</c><00:09:42.959><c> burned</c><00:09:43.200><c> up</c><00:09:43.360><c> all</c><00:09:43.519><c> my</c><00:09:43.600><c> money.</c>
+
+00:09:44.150 --> 00:09:44.160 align:start position:0%
+done or it's burned up all my money.
+ 
+
+00:09:44.160 --> 00:09:45.670 align:start position:0%
+done or it's burned up all my money.
+Okay,<00:09:44.399><c> they</c><00:09:44.640><c> finally</c><00:09:44.880><c> finished</c><00:09:45.200><c> building</c><00:09:45.440><c> the</c>
+
+00:09:45.670 --> 00:09:45.680 align:start position:0%
+Okay, they finally finished building the
+ 
+
+00:09:45.680 --> 00:09:47.750 align:start position:0%
+Okay, they finally finished building the
+app.<00:09:46.240><c> So,</c><00:09:46.399><c> let's</c><00:09:46.800><c> take</c><00:09:46.959><c> a</c><00:09:47.200><c> look</c><00:09:47.279><c> at</c><00:09:47.519><c> the</c>
+
+00:09:47.750 --> 00:09:47.760 align:start position:0%
+app. So, let's take a look at the
+ 
+
+00:09:47.760 --> 00:09:49.509 align:start position:0%
+app. So, let's take a look at the
+results.<00:09:48.399><c> On</c><00:09:48.560><c> the</c><00:09:48.720><c> left,</c><00:09:48.880><c> we</c><00:09:49.120><c> have</c><00:09:49.200><c> what</c><00:09:49.440><c> was</c>
+
+00:09:49.509 --> 00:09:49.519 align:start position:0%
+results. On the left, we have what was
+ 
+
+00:09:49.519 --> 00:09:51.350 align:start position:0%
+results. On the left, we have what was
+built<00:09:49.760><c> by</c><00:09:49.839><c> Claude</c><00:09:50.240><c> Code</c><00:09:50.560><c> and</c><00:09:50.800><c> on</c><00:09:50.959><c> the</c><00:09:51.120><c> right,</c>
+
+00:09:51.350 --> 00:09:51.360 align:start position:0%
+built by Claude Code and on the right,
+ 
+
+00:09:51.360 --> 00:09:54.389 align:start position:0%
+built by Claude Code and on the right,
+we<00:09:51.519><c> have</c><00:09:51.680><c> what</c><00:09:51.839><c> was</c><00:09:52.000><c> built</c><00:09:52.240><c> by</c><00:09:52.399><c> GSD2.</c><00:09:53.680><c> Now,</c>
+
+00:09:54.389 --> 00:09:54.399 align:start position:0%
+we have what was built by GSD2. Now,
+ 
+
+00:09:54.399 --> 00:09:55.829 align:start position:0%
+we have what was built by GSD2. Now,
+right<00:09:54.640><c> away</c><00:09:54.959><c> in</c><00:09:55.200><c> terms</c><00:09:55.360><c> of</c><00:09:55.519><c> visual</c>
+
+00:09:55.829 --> 00:09:55.839 align:start position:0%
+right away in terms of visual
+ 
+
+00:09:55.839 --> 00:09:58.230 align:start position:0%
+right away in terms of visual
+aesthetics,<00:09:56.480><c> I'm</c><00:09:56.720><c> going</c><00:09:56.800><c> to</c><00:09:56.959><c> give</c><00:09:57.120><c> the</c><00:09:57.279><c> nod</c><00:09:57.600><c> to</c>
+
+00:09:58.230 --> 00:09:58.240 align:start position:0%
+aesthetics, I'm going to give the nod to
+ 
+
+00:09:58.240 --> 00:10:00.310 align:start position:0%
+aesthetics, I'm going to give the nod to
+Claude<00:09:58.640><c> Code.</c><00:09:58.959><c> It's</c><00:09:59.360><c> pretty</c><00:09:59.680><c> easy</c><00:09:59.920><c> to</c><00:10:00.160><c> tell</c>
+
+00:10:00.310 --> 00:10:00.320 align:start position:0%
+Claude Code. It's pretty easy to tell
+ 
+
+00:10:00.320 --> 00:10:02.230 align:start position:0%
+Claude Code. It's pretty easy to tell
+that<00:10:00.560><c> this</c><00:10:00.800><c> looks</c><00:10:01.040><c> a</c><00:10:01.200><c> bit</c><00:10:01.360><c> more</c><00:10:01.519><c> clean</c><00:10:02.080><c> than</c>
+
+00:10:02.230 --> 00:10:02.240 align:start position:0%
+that this looks a bit more clean than
+ 
+
+00:10:02.240 --> 00:10:04.310 align:start position:0%
+that this looks a bit more clean than
+the<00:10:02.480><c> one</c><00:10:02.720><c> on</c><00:10:02.959><c> the</c><00:10:03.120><c> right.</c><00:10:03.600><c> Now,</c><00:10:03.839><c> in</c><00:10:04.000><c> terms</c><00:10:04.160><c> of</c>
+
+00:10:04.310 --> 00:10:04.320 align:start position:0%
+the one on the right. Now, in terms of
+ 
+
+00:10:04.320 --> 00:10:06.710 align:start position:0%
+the one on the right. Now, in terms of
+features,<00:10:04.959><c> they</c><00:10:05.120><c> all</c><00:10:05.279><c> hit</c><00:10:05.680><c> what</c><00:10:06.160><c> I</c><00:10:06.399><c> told</c><00:10:06.560><c> them</c>
+
+00:10:06.710 --> 00:10:06.720 align:start position:0%
+features, they all hit what I told them
+ 
+
+00:10:06.720 --> 00:10:08.630 align:start position:0%
+features, they all hit what I told them
+to<00:10:06.880><c> do,</c><00:10:07.040><c> right?</c><00:10:07.440><c> We</c><00:10:07.600><c> have</c><00:10:07.680><c> a</c><00:10:07.839><c> dashboard,</c><00:10:08.480><c> we</c>
+
+00:10:08.630 --> 00:10:08.640 align:start position:0%
+to do, right? We have a dashboard, we
+ 
+
+00:10:08.640 --> 00:10:10.070 align:start position:0%
+to do, right? We have a dashboard, we
+have<00:10:08.720><c> multiple</c><00:10:09.120><c> charts,</c><00:10:09.440><c> we</c><00:10:09.600><c> have</c><00:10:09.680><c> a</c><00:10:09.839><c> place</c><00:10:09.920><c> to</c>
+
+00:10:10.070 --> 00:10:10.080 align:start position:0%
+have multiple charts, we have a place to
+ 
+
+00:10:10.080 --> 00:10:12.870 align:start position:0%
+have multiple charts, we have a place to
+add<00:10:10.320><c> expenses,</c><00:10:11.360><c> and</c><00:10:11.680><c> we</c><00:10:11.920><c> have</c><00:10:12.000><c> an</c><00:10:12.320><c> expense</c>
+
+00:10:12.870 --> 00:10:12.880 align:start position:0%
+add expenses, and we have an expense
+ 
+
+00:10:12.880 --> 00:10:14.310 align:start position:0%
+add expenses, and we have an expense
+list.<00:10:13.360><c> Now,</c><00:10:13.519><c> let's</c><00:10:13.680><c> look</c><00:10:13.839><c> at</c><00:10:13.920><c> this</c><00:10:14.079><c> a</c><00:10:14.240><c> little</c>
+
+00:10:14.310 --> 00:10:14.320 align:start position:0%
+list. Now, let's look at this a little
+ 
+
+00:10:14.320 --> 00:10:17.269 align:start position:0%
+list. Now, let's look at this a little
+more<00:10:14.480><c> closely</c><00:10:15.200><c> on</c><00:10:15.440><c> the</c><00:10:15.600><c> GSD</c><00:10:16.240><c> side.</c><00:10:16.720><c> I</c><00:10:16.959><c> will</c><00:10:17.120><c> say</c>
+
+00:10:17.269 --> 00:10:17.279 align:start position:0%
+more closely on the GSD side. I will say
+ 
+
+00:10:17.279 --> 00:10:19.829 align:start position:0%
+more closely on the GSD side. I will say
+this<00:10:17.519><c> add</c><00:10:17.839><c> expense</c><00:10:18.640><c> and</c><00:10:18.959><c> the</c><00:10:19.120><c> actual</c><00:10:19.440><c> expense</c>
+
+00:10:19.829 --> 00:10:19.839 align:start position:0%
+this add expense and the actual expense
+ 
+
+00:10:19.839 --> 00:10:22.150 align:start position:0%
+this add expense and the actual expense
+list,<00:10:20.160><c> again,</c><00:10:21.120><c> it</c><00:10:21.279><c> leaves</c><00:10:21.519><c> a</c><00:10:21.680><c> little</c><00:10:21.839><c> to</c><00:10:22.000><c> be</c>
+
+00:10:22.150 --> 00:10:22.160 align:start position:0%
+list, again, it leaves a little to be
+ 
+
+00:10:22.160 --> 00:10:23.670 align:start position:0%
+list, again, it leaves a little to be
+desired,<00:10:22.560><c> right?</c><00:10:22.720><c> I'm</c><00:10:22.959><c> not</c><00:10:23.120><c> really</c><00:10:23.279><c> blown</c>
+
+00:10:23.670 --> 00:10:23.680 align:start position:0%
+desired, right? I'm not really blown
+ 
+
+00:10:23.680 --> 00:10:25.350 align:start position:0%
+desired, right? I'm not really blown
+away<00:10:24.079><c> by</c><00:10:24.320><c> the</c><00:10:24.480><c> front</c><00:10:24.640><c> end</c><00:10:24.800><c> design</c><00:10:25.040><c> here,</c>
+
+00:10:25.350 --> 00:10:25.360 align:start position:0%
+away by the front end design here,
+ 
+
+00:10:25.360 --> 00:10:27.829 align:start position:0%
+away by the front end design here,
+although<00:10:25.680><c> it</c><00:10:25.920><c> did</c><00:10:26.320><c> do</c><00:10:26.640><c> the</c><00:10:26.959><c> job.</c><00:10:27.360><c> But</c><00:10:27.519><c> it's</c><00:10:27.680><c> not</c>
+
+00:10:27.829 --> 00:10:27.839 align:start position:0%
+although it did do the job. But it's not
+ 
+
+00:10:27.839 --> 00:10:29.269 align:start position:0%
+although it did do the job. But it's not
+enough<00:10:28.000><c> to</c><00:10:28.160><c> just</c><00:10:28.240><c> look</c><00:10:28.399><c> at</c><00:10:28.480><c> the</c><00:10:28.640><c> front</c><00:10:28.800><c> ends.</c>
+
+00:10:29.269 --> 00:10:29.279 align:start position:0%
+enough to just look at the front ends.
+ 
+
+00:10:29.279 --> 00:10:31.269 align:start position:0%
+enough to just look at the front ends.
+What<00:10:29.440><c> did</c><00:10:29.600><c> this</c><00:10:29.760><c> actually</c><00:10:30.320><c> cost</c><00:10:30.640><c> us</c><00:10:30.880><c> in</c><00:10:31.120><c> terms</c>
+
+00:10:31.269 --> 00:10:31.279 align:start position:0%
+What did this actually cost us in terms
+ 
+
+00:10:31.279 --> 00:10:32.870 align:start position:0%
+What did this actually cost us in terms
+of<00:10:31.440><c> both</c><00:10:31.680><c> time</c><00:10:31.839><c> and</c><00:10:32.079><c> money?</c><00:10:32.399><c> Because</c><00:10:32.640><c> like</c><00:10:32.720><c> I</c>
+
+00:10:32.870 --> 00:10:32.880 align:start position:0%
+of both time and money? Because like I
+ 
+
+00:10:32.880 --> 00:10:34.630 align:start position:0%
+of both time and money? Because like I
+said<00:10:33.040><c> at</c><00:10:33.279><c> the</c><00:10:33.440><c> beginning,</c><00:10:34.000><c> the</c><00:10:34.160><c> fact</c><00:10:34.320><c> that</c><00:10:34.480><c> we</c>
+
+00:10:34.630 --> 00:10:34.640 align:start position:0%
+said at the beginning, the fact that we
+ 
+
+00:10:34.640 --> 00:10:36.630 align:start position:0%
+said at the beginning, the fact that we
+go<00:10:34.800><c> outside</c><00:10:35.279><c> of</c><00:10:35.440><c> the</c><00:10:35.600><c> cloud</c><00:10:35.920><c> code</c><00:10:36.160><c> ecosystem</c>
+
+00:10:36.630 --> 00:10:36.640 align:start position:0%
+go outside of the cloud code ecosystem
+ 
+
+00:10:36.640 --> 00:10:39.509 align:start position:0%
+go outside of the cloud code ecosystem
+and<00:10:36.880><c> we're</c><00:10:37.120><c> now</c><00:10:37.279><c> on</c><00:10:37.600><c> pure</c><00:10:37.920><c> API</c><00:10:38.480><c> costs</c><00:10:39.200><c> is</c>
+
+00:10:39.509 --> 00:10:39.519 align:start position:0%
+and we're now on pure API costs is
+ 
+
+00:10:39.519 --> 00:10:41.030 align:start position:0%
+and we're now on pure API costs is
+something<00:10:39.680><c> we</c><00:10:39.920><c> need</c><00:10:40.000><c> to</c><00:10:40.160><c> take</c><00:10:40.320><c> into</c><00:10:40.560><c> account.</c>
+
+00:10:41.030 --> 00:10:41.040 align:start position:0%
+something we need to take into account.
+ 
+
+00:10:41.040 --> 00:10:43.750 align:start position:0%
+something we need to take into account.
+And<00:10:41.200><c> I</c><00:10:41.360><c> will</c><00:10:41.519><c> say</c><00:10:41.680><c> in</c><00:10:41.920><c> that</c><00:10:42.160><c> category,</c><00:10:42.880><c> GSD2</c>
+
+00:10:43.750 --> 00:10:43.760 align:start position:0%
+And I will say in that category, GSD2
+ 
+
+00:10:43.760 --> 00:10:46.230 align:start position:0%
+And I will say in that category, GSD2
+did<00:10:44.000><c> leave</c><00:10:44.240><c> something</c><00:10:44.560><c> to</c><00:10:44.800><c> be</c><00:10:44.959><c> desired.</c><00:10:46.079><c> In</c>
+
+00:10:46.230 --> 00:10:46.240 align:start position:0%
+did leave something to be desired. In
+ 
+
+00:10:46.240 --> 00:10:49.990 align:start position:0%
+did leave something to be desired. In
+fact,<00:10:46.800><c> it</c><00:10:47.120><c> cost</c><00:10:47.360><c> me</c><00:10:47.600><c> almost</c><00:10:48.399><c> $30</c>
+
+00:10:49.990 --> 00:10:50.000 align:start position:0%
+fact, it cost me almost $30
+ 
+
+00:10:50.000 --> 00:10:52.310 align:start position:0%
+fact, it cost me almost $30
+to<00:10:50.399><c> actually</c><00:10:50.800><c> create</c><00:10:51.120><c> what</c><00:10:51.360><c> you</c><00:10:51.519><c> just</c><00:10:51.680><c> saw.</c><00:10:52.079><c> It</c>
+
+00:10:52.310 --> 00:10:52.320 align:start position:0%
+to actually create what you just saw. It
+ 
+
+00:10:52.320 --> 00:10:55.350 align:start position:0%
+to actually create what you just saw. It
+was<00:10:52.399><c> about</c><00:10:52.560><c> $2720</c><00:10:53.600><c> in</c><00:10:53.760><c> API</c><00:10:54.160><c> costs</c><00:10:54.720><c> to</c><00:10:54.959><c> do</c><00:10:55.040><c> this</c>
+
+00:10:55.350 --> 00:10:55.360 align:start position:0%
+was about $2720 in API costs to do this
+ 
+
+00:10:55.360 --> 00:10:57.670 align:start position:0%
+was about $2720 in API costs to do this
+using<00:10:55.680><c> Opus</c><00:10:56.160><c> 4.6</c><00:10:56.720><c> for</c><00:10:56.880><c> planning</c><00:10:57.120><c> and</c><00:10:57.279><c> Sonnet</c>
+
+00:10:57.670 --> 00:10:57.680 align:start position:0%
+using Opus 4.6 for planning and Sonnet
+ 
+
+00:10:57.680 --> 00:11:01.190 align:start position:0%
+using Opus 4.6 for planning and Sonnet
+4.6<00:10:58.160><c> for</c><00:10:58.399><c> execution.</c><00:10:59.440><c> Yes.</c><00:11:00.320><c> Are</c><00:11:00.640><c> anthropic</c>
+
+00:11:01.190 --> 00:11:01.200 align:start position:0%
+4.6 for execution. Yes. Are anthropic
+ 
+
+00:11:01.200 --> 00:11:03.829 align:start position:0%
+4.6 for execution. Yes. Are anthropic
+models<00:11:01.920><c> expensive</c><00:11:02.399><c> when</c><00:11:02.640><c> it</c><00:11:02.720><c> comes</c><00:11:02.880><c> to</c><00:11:03.040><c> APIs?</c>
+
+00:11:03.829 --> 00:11:03.839 align:start position:0%
+models expensive when it comes to APIs?
+ 
+
+00:11:03.839 --> 00:11:05.350 align:start position:0%
+models expensive when it comes to APIs?
+Of<00:11:04.000><c> course</c><00:11:04.160><c> they</c><00:11:04.399><c> are.</c><00:11:04.640><c> But</c><00:11:04.800><c> we're</c><00:11:05.040><c> comparing</c>
+
+00:11:05.350 --> 00:11:05.360 align:start position:0%
+Of course they are. But we're comparing
+ 
+
+00:11:05.360 --> 00:11:07.110 align:start position:0%
+Of course they are. But we're comparing
+this<00:11:05.680><c> to</c><00:11:05.920><c> clawed</c><00:11:06.240><c> code.</c><00:11:06.560><c> If</c><00:11:06.640><c> you</c><00:11:06.800><c> want</c><00:11:06.880><c> to</c><00:11:06.959><c> use</c>
+
+00:11:07.110 --> 00:11:07.120 align:start position:0%
+this to clawed code. If you want to use
+ 
+
+00:11:07.120 --> 00:11:08.790 align:start position:0%
+this to clawed code. If you want to use
+GSD,<00:11:07.680><c> you</c><00:11:07.839><c> need</c><00:11:07.920><c> to</c><00:11:08.079><c> understand</c><00:11:08.399><c> we're</c><00:11:08.640><c> doing</c>
+
+00:11:08.790 --> 00:11:08.800 align:start position:0%
+GSD, you need to understand we're doing
+ 
+
+00:11:08.800 --> 00:11:10.470 align:start position:0%
+GSD, you need to understand we're doing
+something<00:11:09.040><c> differently.</c><00:11:09.519><c> So</c><00:11:09.680><c> these</c><00:11:10.000><c> costs</c>
+
+00:11:10.470 --> 00:11:10.480 align:start position:0%
+something differently. So these costs
+ 
+
+00:11:10.480 --> 00:11:12.470 align:start position:0%
+something differently. So these costs
+matter.<00:11:11.600><c> On</c><00:11:11.839><c> the</c><00:11:12.000><c> other</c><00:11:12.160><c> side</c><00:11:12.240><c> of</c><00:11:12.320><c> the</c>
+
+00:11:12.470 --> 00:11:12.480 align:start position:0%
+matter. On the other side of the
+ 
+
+00:11:12.480 --> 00:11:14.069 align:start position:0%
+matter. On the other side of the
+equation<00:11:12.720><c> with</c><00:11:12.880><c> cloud</c><00:11:13.200><c> code,</c><00:11:13.360><c> this</c><00:11:13.600><c> used</c><00:11:13.839><c> less</c>
+
+00:11:14.069 --> 00:11:14.079 align:start position:0%
+equation with cloud code, this used less
+ 
+
+00:11:14.079 --> 00:11:17.829 align:start position:0%
+equation with cloud code, this used less
+than<00:11:14.240><c> 1%</c><00:11:15.200><c> of</c><00:11:15.360><c> my</c><00:11:15.600><c> usage</c><00:11:16.800><c> for</c><00:11:17.120><c> the</c><00:11:17.360><c> five</c><00:11:17.600><c> hour</c>
+
+00:11:17.829 --> 00:11:17.839 align:start position:0%
+than 1% of my usage for the five hour
+ 
+
+00:11:17.839 --> 00:11:19.990 align:start position:0%
+than 1% of my usage for the five hour
+block.<00:11:18.240><c> Not</c><00:11:18.399><c> even</c><00:11:18.640><c> for</c><00:11:19.040><c> the</c><00:11:19.279><c> week.</c><00:11:19.519><c> for</c><00:11:19.680><c> the</c><00:11:19.839><c> 5</c>
+
+00:11:19.990 --> 00:11:20.000 align:start position:0%
+block. Not even for the week. for the 5
+ 
+
+00:11:20.000 --> 00:11:22.230 align:start position:0%
+block. Not even for the week. for the 5
+hour<00:11:20.160><c> block</c><00:11:20.480><c> less</c><00:11:20.640><c> than</c><00:11:20.800><c> 1%</c><00:11:21.200><c> usage.</c><00:11:21.839><c> On</c><00:11:22.000><c> top</c><00:11:22.160><c> of</c>
+
+00:11:22.230 --> 00:11:22.240 align:start position:0%
+hour block less than 1% usage. On top of
+ 
+
+00:11:22.240 --> 00:11:23.509 align:start position:0%
+hour block less than 1% usage. On top of
+that,<00:11:22.480><c> let's</c><00:11:22.640><c> talk</c><00:11:22.800><c> about</c><00:11:22.880><c> the</c><00:11:23.040><c> time</c><00:11:23.200><c> it</c><00:11:23.279><c> took.</c>
+
+00:11:23.509 --> 00:11:23.519 align:start position:0%
+that, let's talk about the time it took.
+ 
+
+00:11:23.519 --> 00:11:26.550 align:start position:0%
+that, let's talk about the time it took.
+For<00:11:23.680><c> cla</c><00:11:24.000><c> code,</c><00:11:24.720><c> it</c><00:11:24.959><c> took</c><00:11:25.360><c> 4</c><00:11:25.600><c> minutes</c><00:11:25.920><c> and</c><00:11:26.160><c> 38</c>
+
+00:11:26.550 --> 00:11:26.560 align:start position:0%
+For cla code, it took 4 minutes and 38
+ 
+
+00:11:26.560 --> 00:11:29.350 align:start position:0%
+For cla code, it took 4 minutes and 38
+seconds<00:11:27.839><c> to</c><00:11:28.079><c> put</c><00:11:28.240><c> this</c><00:11:28.480><c> together.</c><00:11:28.959><c> 4</c><00:11:29.200><c> minutes</c>
+
+00:11:29.350 --> 00:11:29.360 align:start position:0%
+seconds to put this together. 4 minutes
+ 
+
+00:11:29.360 --> 00:11:32.710 align:start position:0%
+seconds to put this together. 4 minutes
+and<00:11:29.600><c> 38</c><00:11:29.920><c> seconds.</c><00:11:30.800><c> For</c><00:11:31.040><c> GSD,</c>
+
+00:11:32.710 --> 00:11:32.720 align:start position:0%
+and 38 seconds. For GSD,
+ 
+
+00:11:32.720 --> 00:11:35.990 align:start position:0%
+and 38 seconds. For GSD,
+this<00:11:33.040><c> took</c><00:11:33.519><c> about</c><00:11:33.760><c> an</c><00:11:34.079><c> hour</c><00:11:34.240><c> and</c><00:11:34.399><c> a</c><00:11:34.560><c> half.</c><00:11:35.839><c> And</c>
+
+00:11:35.990 --> 00:11:36.000 align:start position:0%
+this took about an hour and a half. And
+ 
+
+00:11:36.000 --> 00:11:37.590 align:start position:0%
+this took about an hour and a half. And
+the<00:11:36.240><c> reason</c><00:11:36.399><c> it</c><00:11:36.560><c> took</c><00:11:36.800><c> almost</c><00:11:36.959><c> an</c><00:11:37.200><c> hour</c><00:11:37.279><c> and</c><00:11:37.440><c> a</c>
+
+00:11:37.590 --> 00:11:37.600 align:start position:0%
+the reason it took almost an hour and a
+ 
+
+00:11:37.600 --> 00:11:39.910 align:start position:0%
+the reason it took almost an hour and a
+half<00:11:37.839><c> is</c><00:11:38.160><c> because</c><00:11:38.320><c> we</c><00:11:38.560><c> got</c><00:11:38.720><c> hung</c><00:11:38.959><c> up</c><00:11:39.360><c> multiple</c>
+
+00:11:39.910 --> 00:11:39.920 align:start position:0%
+half is because we got hung up multiple
+ 
+
+00:11:39.920 --> 00:11:42.630 align:start position:0%
+half is because we got hung up multiple
+times.<00:11:40.560><c> Like</c><00:11:40.720><c> you</c><00:11:40.959><c> will</c><00:11:41.120><c> see</c><00:11:41.360><c> here</c><00:11:42.000><c> during</c><00:11:42.320><c> its</c>
+
+00:11:42.630 --> 00:11:42.640 align:start position:0%
+times. Like you will see here during its
+ 
+
+00:11:42.640 --> 00:11:44.949 align:start position:0%
+times. Like you will see here during its
+actual<00:11:42.959><c> execution</c><00:11:43.600><c> process,</c><00:11:44.480><c> it</c><00:11:44.720><c> started</c>
+
+00:11:44.949 --> 00:11:44.959 align:start position:0%
+actual execution process, it started
+ 
+
+00:11:44.959 --> 00:11:47.190 align:start position:0%
+actual execution process, it started
+getting<00:11:45.279><c> stuck.</c><00:11:45.920><c> And</c><00:11:46.079><c> I</c><00:11:46.240><c> let</c><00:11:46.399><c> it</c><00:11:46.640><c> run</c><00:11:46.800><c> for</c><00:11:47.040><c> a</c>
+
+00:11:47.190 --> 00:11:47.200 align:start position:0%
+getting stuck. And I let it run for a
+ 
+
+00:11:47.200 --> 00:11:48.550 align:start position:0%
+getting stuck. And I let it run for a
+little<00:11:47.360><c> bit.</c><00:11:47.600><c> Now,</c><00:11:47.760><c> when</c><00:11:47.920><c> it</c><00:11:48.079><c> was</c><00:11:48.160><c> running,</c><00:11:48.399><c> as</c>
+
+00:11:48.550 --> 00:11:48.560 align:start position:0%
+little bit. Now, when it was running, as
+ 
+
+00:11:48.560 --> 00:11:49.829 align:start position:0%
+little bit. Now, when it was running, as
+it<00:11:48.720><c> was</c><00:11:48.800><c> stuck,</c><00:11:49.120><c> it</c><00:11:49.279><c> wasn't</c><00:11:49.440><c> burning</c><00:11:49.680><c> any</c>
+
+00:11:49.829 --> 00:11:49.839 align:start position:0%
+it was stuck, it wasn't burning any
+ 
+
+00:11:49.839 --> 00:11:51.350 align:start position:0%
+it was stuck, it wasn't burning any
+tokens.<00:11:50.240><c> So,</c><00:11:50.399><c> that's</c><00:11:50.560><c> not</c><00:11:50.720><c> the</c><00:11:50.880><c> reason</c><00:11:50.959><c> why</c><00:11:51.120><c> it</c>
+
+00:11:51.350 --> 00:11:51.360 align:start position:0%
+tokens. So, that's not the reason why it
+ 
+
+00:11:51.360 --> 00:11:53.509 align:start position:0%
+tokens. So, that's not the reason why it
+was<00:11:51.440><c> so</c><00:11:51.600><c> expensive.</c><00:11:52.560><c> But,</c><00:11:52.640><c> it</c><00:11:52.880><c> sat</c><00:11:53.120><c> here</c><00:11:53.279><c> again</c>
+
+00:11:53.509 --> 00:11:53.519 align:start position:0%
+was so expensive. But, it sat here again
+ 
+
+00:11:53.519 --> 00:11:55.590 align:start position:0%
+was so expensive. But, it sat here again
+for<00:11:53.920><c> 17</c><00:11:54.240><c> minutes</c><00:11:54.480><c> and</c><00:11:54.720><c> then</c><00:11:54.880><c> for</c><00:11:55.120><c> again</c><00:11:55.440><c> for</c>
+
+00:11:55.590 --> 00:11:55.600 align:start position:0%
+for 17 minutes and then for again for
+ 
+
+00:11:55.600 --> 00:11:57.910 align:start position:0%
+for 17 minutes and then for again for
+almost<00:11:55.839><c> 40</c><00:11:56.160><c> minutes.</c><00:11:56.399><c> It</c><00:11:56.640><c> just</c><00:11:57.040><c> stopped.</c><00:11:57.760><c> I</c>
+
+00:11:57.910 --> 00:11:57.920 align:start position:0%
+almost 40 minutes. It just stopped. I
+ 
+
+00:11:57.920 --> 00:12:00.550 align:start position:0%
+almost 40 minutes. It just stopped. I
+tried<00:11:58.240><c> running</c><00:11:58.480><c> GSD</c><00:11:59.120><c> stop,</c><00:11:59.920><c> that</c><00:12:00.160><c> didn't</c><00:12:00.399><c> do</c>
+
+00:12:00.550 --> 00:12:00.560 align:start position:0%
+tried running GSD stop, that didn't do
+ 
+
+00:12:00.560 --> 00:12:02.230 align:start position:0%
+tried running GSD stop, that didn't do
+anything.<00:12:00.959><c> Eventually,</c><00:12:01.360><c> I</c><00:12:01.519><c> had</c><00:12:01.680><c> to</c><00:12:01.839><c> actually</c>
+
+00:12:02.230 --> 00:12:02.240 align:start position:0%
+anything. Eventually, I had to actually
+ 
+
+00:12:02.240 --> 00:12:04.150 align:start position:0%
+anything. Eventually, I had to actually
+kill<00:12:02.480><c> it</c><00:12:02.720><c> entirely.</c><00:12:03.360><c> And</c><00:12:03.519><c> so,</c><00:12:03.680><c> when</c><00:12:03.839><c> I</c><00:12:03.920><c> hopped</c>
+
+00:12:04.150 --> 00:12:04.160 align:start position:0%
+kill it entirely. And so, when I hopped
+ 
+
+00:12:04.160 --> 00:12:05.590 align:start position:0%
+kill it entirely. And so, when I hopped
+to<00:12:04.320><c> the</c><00:12:04.480><c> second</c><00:12:04.640><c> terminal</c><00:12:04.959><c> to</c><00:12:05.120><c> do</c><00:12:05.279><c> the</c><00:12:05.440><c> same</c>
+
+00:12:05.590 --> 00:12:05.600 align:start position:0%
+to the second terminal to do the same
+ 
+
+00:12:05.600 --> 00:12:08.389 align:start position:0%
+to the second terminal to do the same
+thing<00:12:06.000><c> again,</c><00:12:06.639><c> we</c><00:12:06.959><c> got</c><00:12:07.200><c> hung</c><00:12:07.519><c> up.</c><00:12:08.000><c> It</c><00:12:08.160><c> wasn't</c>
+
+00:12:08.389 --> 00:12:08.399 align:start position:0%
+thing again, we got hung up. It wasn't
+ 
+
+00:12:08.399 --> 00:12:10.470 align:start position:0%
+thing again, we got hung up. It wasn't
+until<00:12:08.720><c> I</c><00:12:09.040><c> completely</c><00:12:09.440><c> shut</c><00:12:09.680><c> it</c><00:12:09.839><c> all</c><00:12:09.920><c> down,</c>
+
+00:12:10.470 --> 00:12:10.480 align:start position:0%
+until I completely shut it all down,
+ 
+
+00:12:10.480 --> 00:12:12.629 align:start position:0%
+until I completely shut it all down,
+spun<00:12:10.800><c> it</c><00:12:10.959><c> up</c><00:12:11.120><c> for</c><00:12:11.200><c> a</c><00:12:11.360><c> third</c><00:12:11.600><c> time,</c><00:12:12.000><c> did</c><00:12:12.240><c> we</c><00:12:12.399><c> get</c>
+
+00:12:12.629 --> 00:12:12.639 align:start position:0%
+spun it up for a third time, did we get
+ 
+
+00:12:12.639 --> 00:12:15.190 align:start position:0%
+spun it up for a third time, did we get
+what<00:12:12.880><c> you</c><00:12:13.120><c> see</c><00:12:13.360><c> here.</c><00:12:14.240><c> And</c><00:12:14.480><c> so</c><00:12:14.639><c> in</c><00:12:14.880><c> terms</c><00:12:15.040><c> of</c>
+
+00:12:15.190 --> 00:12:15.200 align:start position:0%
+what you see here. And so in terms of
+ 
+
+00:12:15.200 --> 00:12:18.949 align:start position:0%
+what you see here. And so in terms of
+time,<00:12:15.519><c> an</c><00:12:15.760><c> hour</c><00:12:15.920><c> and</c><00:12:16.000><c> a</c><00:12:16.160><c> half</c><00:12:16.560><c> for</c><00:12:16.800><c> GSD</c><00:12:17.519><c> versus</c>
+
+00:12:18.949 --> 00:12:18.959 align:start position:0%
+time, an hour and a half for GSD versus
+ 
+
+00:12:18.959 --> 00:12:21.430 align:start position:0%
+time, an hour and a half for GSD versus
+four<00:12:19.120><c> and</c><00:12:19.200><c> a</c><00:12:19.279><c> half</c><00:12:19.519><c> minutes</c><00:12:20.240><c> for</c><00:12:20.480><c> cloud</c><00:12:20.880><c> code</c>
+
+00:12:21.430 --> 00:12:21.440 align:start position:0%
+four and a half minutes for cloud code
+ 
+
+00:12:21.440 --> 00:12:23.509 align:start position:0%
+four and a half minutes for cloud code
+and<00:12:21.680><c> less</c><00:12:21.920><c> than</c><00:12:22.079><c> 1%</c><00:12:22.399><c> of</c><00:12:22.560><c> my</c><00:12:22.720><c> usage</c><00:12:23.040><c> for</c><00:12:23.200><c> cloud</c>
+
+00:12:23.509 --> 00:12:23.519 align:start position:0%
+and less than 1% of my usage for cloud
+ 
+
+00:12:23.519 --> 00:12:26.870 align:start position:0%
+and less than 1% of my usage for cloud
+code<00:12:24.079><c> versus</c><00:12:24.480><c> almost</c><00:12:24.880><c> $30</c><00:12:25.360><c> in</c><00:12:25.600><c> API</c><00:12:26.000><c> costs.</c><00:12:26.639><c> And</c>
+
+00:12:26.870 --> 00:12:26.880 align:start position:0%
+code versus almost $30 in API costs. And
+ 
+
+00:12:26.880 --> 00:12:28.790 align:start position:0%
+code versus almost $30 in API costs. And
+let's<00:12:27.120><c> be</c><00:12:27.279><c> real,</c><00:12:27.519><c> the</c><00:12:27.760><c> outcome</c><00:12:28.160><c> isn't</c><00:12:28.560><c> even</c>
+
+00:12:28.790 --> 00:12:28.800 align:start position:0%
+let's be real, the outcome isn't even
+ 
+
+00:12:28.800 --> 00:12:32.790 align:start position:0%
+let's be real, the outcome isn't even
+better,<00:12:30.000><c> right?</c><00:12:31.200><c> So</c>
+
+00:12:32.790 --> 00:12:32.800 align:start position:0%
+better, right? So
+ 
+
+00:12:32.800 --> 00:12:35.509 align:start position:0%
+better, right? So
+let's<00:12:33.040><c> kind</c><00:12:33.200><c> of</c><00:12:33.279><c> talk</c><00:12:33.440><c> about</c><00:12:33.600><c> this</c><00:12:33.839><c> then</c><00:12:35.120><c> in</c><00:12:35.279><c> a</c>
+
+00:12:35.509 --> 00:12:35.519 align:start position:0%
+let's kind of talk about this then in a
+ 
+
+00:12:35.519 --> 00:12:37.269 align:start position:0%
+let's kind of talk about this then in a
+vacuum<00:12:35.920><c> then</c><00:12:36.240><c> there's</c><00:12:36.560><c> kind</c><00:12:36.639><c> of</c><00:12:36.720><c> no</c><00:12:36.880><c> contest</c>
+
+00:12:37.269 --> 00:12:37.279 align:start position:0%
+vacuum then there's kind of no contest
+ 
+
+00:12:37.279 --> 00:12:41.030 align:start position:0%
+vacuum then there's kind of no contest
+here.<00:12:37.519><c> Why</c><00:12:37.680><c> would</c><00:12:37.839><c> we</c><00:12:38.079><c> use</c><00:12:38.399><c> GSD2</c><00:12:39.600><c> specifically</c>
+
+00:12:41.030 --> 00:12:41.040 align:start position:0%
+here. Why would we use GSD2 specifically
+ 
+
+00:12:41.040 --> 00:12:44.710 align:start position:0%
+here. Why would we use GSD2 specifically
+with<00:12:41.600><c> anthropic</c><00:12:42.639><c> APIs</c><00:12:44.079><c> if</c><00:12:44.320><c> we're</c><00:12:44.480><c> doing</c>
+
+00:12:44.710 --> 00:12:44.720 align:start position:0%
+with anthropic APIs if we're doing
+ 
+
+00:12:44.720 --> 00:12:45.750 align:start position:0%
+with anthropic APIs if we're doing
+projects<00:12:44.959><c> like</c><00:12:45.120><c> this?</c><00:12:45.360><c> There's</c><00:12:45.519><c> no</c><00:12:45.680><c> reason</c>
+
+00:12:45.750 --> 00:12:45.760 align:start position:0%
+projects like this? There's no reason
+ 
+
+00:12:45.760 --> 00:12:47.509 align:start position:0%
+projects like this? There's no reason
+to.<00:12:46.079><c> This</c><00:12:46.240><c> is</c><00:12:46.399><c> more</c><00:12:46.639><c> expensive</c><00:12:46.880><c> and</c><00:12:47.120><c> it</c><00:12:47.279><c> takes</c>
+
+00:12:47.509 --> 00:12:47.519 align:start position:0%
+to. This is more expensive and it takes
+ 
+
+00:12:47.519 --> 00:12:49.269 align:start position:0%
+to. This is more expensive and it takes
+longer.
+
+00:12:49.269 --> 00:12:49.279 align:start position:0%
+longer.
+ 
+
+00:12:49.279 --> 00:12:51.750 align:start position:0%
+longer.
+The<00:12:50.160><c> reason</c><00:12:50.399><c> you</c><00:12:50.639><c> would</c><00:12:50.800><c> go</c><00:12:50.880><c> for</c><00:12:51.040><c> GSD</c><00:12:51.600><c> then</c>
+
+00:12:51.750 --> 00:12:51.760 align:start position:0%
+The reason you would go for GSD then
+ 
+
+00:12:51.760 --> 00:12:53.750 align:start position:0%
+The reason you would go for GSD then
+would<00:12:51.920><c> be,</c><00:12:52.240><c> all</c><00:12:52.320><c> right,</c><00:12:52.639><c> well,</c><00:12:53.120><c> I'm</c><00:12:53.360><c> not</c><00:12:53.519><c> using</c>
+
+00:12:53.750 --> 00:12:53.760 align:start position:0%
+would be, all right, well, I'm not using
+ 
+
+00:12:53.760 --> 00:12:55.350 align:start position:0%
+would be, all right, well, I'm not using
+cloud<00:12:54.079><c> code.</c><00:12:54.240><c> I'm</c><00:12:54.399><c> not</c><00:12:54.560><c> using</c><00:12:54.720><c> anti-gravity.</c>
+
+00:12:55.350 --> 00:12:55.360 align:start position:0%
+cloud code. I'm not using anti-gravity.
+ 
+
+00:12:55.360 --> 00:12:56.870 align:start position:0%
+cloud code. I'm not using anti-gravity.
+I'm<00:12:55.519><c> already</c><00:12:55.680><c> purely</c><00:12:56.000><c> in</c><00:12:56.079><c> the</c><00:12:56.240><c> API</c><00:12:56.639><c> game.</c>
+
+00:12:56.870 --> 00:12:56.880 align:start position:0%
+I'm already purely in the API game.
+ 
+
+00:12:56.880 --> 00:12:59.590 align:start position:0%
+I'm already purely in the API game.
+Maybe<00:12:57.120><c> I</c><00:12:57.360><c> like</c><00:12:57.519><c> the</c><00:12:57.680><c> way</c><00:12:57.760><c> that</c><00:12:58.000><c> GSD</c><00:12:58.480><c> is</c><00:12:58.639><c> set</c><00:12:58.720><c> up.</c>
+
+00:12:59.590 --> 00:12:59.600 align:start position:0%
+Maybe I like the way that GSD is set up.
+ 
+
+00:12:59.600 --> 00:13:01.030 align:start position:0%
+Maybe I like the way that GSD is set up.
+There's<00:12:59.760><c> an</c><00:13:00.000><c> argument</c><00:13:00.240><c> to</c><00:13:00.399><c> be</c><00:13:00.560><c> made</c><00:13:00.720><c> that</c><00:13:00.880><c> what</c>
+
+00:13:01.030 --> 00:13:01.040 align:start position:0%
+There's an argument to be made that what
+ 
+
+00:13:01.040 --> 00:13:02.949 align:start position:0%
+There's an argument to be made that what
+we<00:13:01.200><c> did</c><00:13:01.360><c> here</c><00:13:01.600><c> was</c><00:13:01.839><c> rather</c><00:13:02.240><c> simple,</c><00:13:02.720><c> right?</c>
+
+00:13:02.949 --> 00:13:02.959 align:start position:0%
+we did here was rather simple, right?
+ 
+
+00:13:02.959 --> 00:13:05.670 align:start position:0%
+we did here was rather simple, right?
+This<00:13:03.120><c> expense</c><00:13:03.519><c> tracker.</c><00:13:03.920><c> and</c><00:13:04.079><c> that</c><00:13:04.240><c> GSD</c><00:13:05.120><c> with</c>
+
+00:13:05.670 --> 00:13:05.680 align:start position:0%
+This expense tracker. and that GSD with
+ 
+
+00:13:05.680 --> 00:13:07.590 align:start position:0%
+This expense tracker. and that GSD with
+all<00:13:06.000><c> of</c><00:13:06.160><c> its</c><00:13:06.399><c> scaffolding</c><00:13:06.959><c> around</c><00:13:07.279><c> how</c><00:13:07.440><c> it</c>
+
+00:13:07.590 --> 00:13:07.600 align:start position:0%
+all of its scaffolding around how it
+ 
+
+00:13:07.600 --> 00:13:09.030 align:start position:0%
+all of its scaffolding around how it
+does<00:13:07.760><c> the</c><00:13:08.000><c> plan</c><00:13:08.160><c> and</c><00:13:08.320><c> how</c><00:13:08.480><c> it</c><00:13:08.639><c> breaks</c><00:13:08.800><c> it</c><00:13:08.959><c> down</c>
+
+00:13:09.030 --> 00:13:09.040 align:start position:0%
+does the plan and how it breaks it down
+ 
+
+00:13:09.040 --> 00:13:11.030 align:start position:0%
+does the plan and how it breaks it down
+into<00:13:09.279><c> tasks</c><00:13:09.760><c> and</c><00:13:10.000><c> all</c><00:13:10.160><c> the</c><00:13:10.320><c> context</c><00:13:10.720><c> window</c>
+
+00:13:11.030 --> 00:13:11.040 align:start position:0%
+into tasks and all the context window
+ 
+
+00:13:11.040 --> 00:13:13.350 align:start position:0%
+into tasks and all the context window
+management<00:13:11.760><c> that</c><00:13:12.079><c> this</c><00:13:12.240><c> is</c><00:13:12.320><c> like</c><00:13:12.880><c> bringing</c><00:13:13.200><c> a</c>
+
+00:13:13.350 --> 00:13:13.360 align:start position:0%
+management that this is like bringing a
+ 
+
+00:13:13.360 --> 00:13:14.870 align:start position:0%
+management that this is like bringing a
+nuclear<00:13:13.760><c> bomb</c><00:13:13.920><c> to</c><00:13:14.079><c> a</c><00:13:14.240><c> knife</c><00:13:14.480><c> fight,</c><00:13:14.720><c> right?</c>
+
+00:13:14.870 --> 00:13:14.880 align:start position:0%
+nuclear bomb to a knife fight, right?
+ 
+
+00:13:14.880 --> 00:13:16.550 align:start position:0%
+nuclear bomb to a knife fight, right?
+This<00:13:15.040><c> is</c><00:13:15.120><c> just</c><00:13:15.360><c> too</c><00:13:15.680><c> much</c><00:13:15.839><c> power</c><00:13:16.160><c> for</c><00:13:16.399><c> what</c>
+
+00:13:16.550 --> 00:13:16.560 align:start position:0%
+This is just too much power for what
+ 
+
+00:13:16.560 --> 00:13:19.190 align:start position:0%
+This is just too much power for what
+we're<00:13:16.720><c> trying</c><00:13:16.800><c> to</c><00:13:16.959><c> do.</c><00:13:18.399><c> And</c><00:13:18.639><c> there's</c><00:13:18.880><c> also</c><00:13:19.040><c> an</c>
+
+00:13:19.190 --> 00:13:19.200 align:start position:0%
+we're trying to do. And there's also an
+ 
+
+00:13:19.200 --> 00:13:20.310 align:start position:0%
+we're trying to do. And there's also an
+argument<00:13:19.360><c> to</c><00:13:19.519><c> be</c><00:13:19.600><c> made</c><00:13:19.760><c> like,</c><00:13:19.920><c> hey,</c><00:13:20.079><c> why</c><00:13:20.160><c> are</c>
+
+00:13:20.310 --> 00:13:20.320 align:start position:0%
+argument to be made like, hey, why are
+ 
+
+00:13:20.320 --> 00:13:22.069 align:start position:0%
+argument to be made like, hey, why are
+we<00:13:20.399><c> using</c><00:13:20.639><c> anthropic</c><00:13:21.120><c> models</c><00:13:21.440><c> here?</c><00:13:21.760><c> Right?</c>
+
+00:13:22.069 --> 00:13:22.079 align:start position:0%
+we using anthropic models here? Right?
+ 
+
+00:13:22.079 --> 00:13:25.030 align:start position:0%
+we using anthropic models here? Right?
+Did<00:13:22.320><c> we</c><00:13:22.480><c> really</c><00:13:22.720><c> need</c><00:13:23.600><c> Opus</c><00:13:24.079><c> 4.6</c><00:13:24.560><c> and</c><00:13:24.720><c> Sonic</c>
+
+00:13:25.030 --> 00:13:25.040 align:start position:0%
+Did we really need Opus 4.6 and Sonic
+ 
+
+00:13:25.040 --> 00:13:29.030 align:start position:0%
+Did we really need Opus 4.6 and Sonic
+4.6<00:13:25.600><c> to</c><00:13:25.839><c> do</c><00:13:25.920><c> this?</c><00:13:27.040><c> Maybe</c><00:13:27.360><c> not.</c><00:13:28.560><c> But</c><00:13:28.800><c> then</c>
+
+00:13:29.030 --> 00:13:29.040 align:start position:0%
+4.6 to do this? Maybe not. But then
+ 
+
+00:13:29.040 --> 00:13:31.110 align:start position:0%
+4.6 to do this? Maybe not. But then
+that's<00:13:29.279><c> a</c><00:13:29.440><c> whole</c><00:13:29.600><c> another</c><00:13:29.839><c> like</c><00:13:30.399><c> decision</c>
+
+00:13:31.110 --> 00:13:31.120 align:start position:0%
+that's a whole another like decision
+ 
+
+00:13:31.120 --> 00:13:32.870 align:start position:0%
+that's a whole another like decision
+point<00:13:31.440><c> you</c><00:13:31.760><c> have</c><00:13:31.920><c> to</c><00:13:32.079><c> take</c><00:13:32.160><c> into</c><00:13:32.480><c> account</c><00:13:32.639><c> when</c>
+
+00:13:32.870 --> 00:13:32.880 align:start position:0%
+point you have to take into account when
+ 
+
+00:13:32.880 --> 00:13:34.550 align:start position:0%
+point you have to take into account when
+you're<00:13:33.040><c> using</c><00:13:33.279><c> something</c><00:13:33.519><c> like</c><00:13:33.760><c> GSD2</c><00:13:34.399><c> like</c>
+
+00:13:34.550 --> 00:13:34.560 align:start position:0%
+you're using something like GSD2 like
+ 
+
+00:13:34.560 --> 00:13:36.389 align:start position:0%
+you're using something like GSD2 like
+are<00:13:34.720><c> we</c><00:13:34.880><c> using</c><00:13:35.040><c> the</c><00:13:35.200><c> right</c><00:13:35.360><c> model</c><00:13:35.600><c> for</c><00:13:35.760><c> the</c><00:13:35.920><c> job</c>
+
+00:13:36.389 --> 00:13:36.399 align:start position:0%
+are we using the right model for the job
+ 
+
+00:13:36.399 --> 00:13:37.990 align:start position:0%
+are we using the right model for the job
+instead<00:13:36.720><c> of</c><00:13:36.880><c> like</c><00:13:37.040><c> we're</c><00:13:37.200><c> in</c><00:13:37.360><c> cloud</c><00:13:37.680><c> code</c><00:13:37.920><c> like</c>
+
+00:13:37.990 --> 00:13:38.000 align:start position:0%
+instead of like we're in cloud code like
+ 
+
+00:13:38.000 --> 00:13:40.629 align:start position:0%
+instead of like we're in cloud code like
+I<00:13:38.160><c> can</c><00:13:38.320><c> go</c><00:13:38.480><c> crazy</c><00:13:38.800><c> I</c><00:13:38.959><c> can</c><00:13:39.040><c> do</c><00:13:39.279><c> opus</c><00:13:39.760><c> 4.6</c><00:13:40.480><c> 1</c>
+
+00:13:40.629 --> 00:13:40.639 align:start position:0%
+I can go crazy I can do opus 4.6 1
+ 
+
+00:13:40.639 --> 00:13:42.550 align:start position:0%
+I can go crazy I can do opus 4.6 1
+million<00:13:40.959><c> co</c><00:13:41.200><c> context</c><00:13:41.680><c> window</c><00:13:41.920><c> length</c>
+
+00:13:42.550 --> 00:13:42.560 align:start position:0%
+million co context window length
+ 
+
+00:13:42.560 --> 00:13:44.790 align:start position:0%
+million co context window length
+extended<00:13:43.040><c> thinking</c><00:13:43.680><c> max</c><00:13:44.000><c> effort</c><00:13:44.399><c> not</c><00:13:44.560><c> even</c>
+
+00:13:44.790 --> 00:13:44.800 align:start position:0%
+extended thinking max effort not even
+ 
+
+00:13:44.800 --> 00:13:47.670 align:start position:0%
+extended thinking max effort not even
+think<00:13:45.040><c> about</c><00:13:45.200><c> it</c><00:13:45.920><c> but</c><00:13:46.160><c> if</c><00:13:46.320><c> I'm</c><00:13:46.480><c> using</c><00:13:46.880><c> this</c><00:13:47.440><c> now</c>
+
+00:13:47.670 --> 00:13:47.680 align:start position:0%
+think about it but if I'm using this now
+ 
+
+00:13:47.680 --> 00:13:49.190 align:start position:0%
+think about it but if I'm using this now
+I<00:13:47.839><c> do</c><00:13:48.079><c> need</c><00:13:48.160><c> to</c><00:13:48.320><c> think</c><00:13:48.399><c> about</c><00:13:48.639><c> it's</c><00:13:48.800><c> like</c><00:13:48.959><c> did</c><00:13:49.040><c> I</c>
+
+00:13:49.190 --> 00:13:49.200 align:start position:0%
+I do need to think about it's like did I
+ 
+
+00:13:49.200 --> 00:13:50.470 align:start position:0%
+I do need to think about it's like did I
+actually<00:13:49.360><c> choose</c><00:13:49.600><c> the</c><00:13:49.760><c> right</c><00:13:49.839><c> model?</c><00:13:50.160><c> Was</c><00:13:50.320><c> it</c>
+
+00:13:50.470 --> 00:13:50.480 align:start position:0%
+actually choose the right model? Was it
+ 
+
+00:13:50.480 --> 00:13:51.990 align:start position:0%
+actually choose the right model? Was it
+too<00:13:50.639><c> powerful?</c><00:13:51.120><c> Am</c><00:13:51.200><c> I</c><00:13:51.360><c> getting</c><00:13:51.600><c> charged</c><00:13:51.839><c> too</c>
+
+00:13:51.990 --> 00:13:52.000 align:start position:0%
+too powerful? Am I getting charged too
+ 
+
+00:13:52.000 --> 00:13:54.230 align:start position:0%
+too powerful? Am I getting charged too
+much?<00:13:52.240><c> Am</c><00:13:52.320><c> I</c><00:13:52.480><c> not</c><00:13:52.639><c> doing</c><00:13:52.800><c> enough</c><00:13:53.120><c> power?</c>
+
+00:13:54.230 --> 00:13:54.240 align:start position:0%
+much? Am I not doing enough power?
+ 
+
+00:13:54.240 --> 00:13:55.670 align:start position:0%
+much? Am I not doing enough power?
+Right?<00:13:54.480><c> That's</c><00:13:54.720><c> very</c><00:13:54.880><c> much</c><00:13:54.959><c> a</c><00:13:55.120><c> gray</c><00:13:55.360><c> area.</c>
+
+00:13:55.670 --> 00:13:55.680 align:start position:0%
+Right? That's very much a gray area.
+ 
+
+00:13:55.680 --> 00:13:58.150 align:start position:0%
+Right? That's very much a gray area.
+It's<00:13:55.839><c> not</c><00:13:56.399><c> an</c><00:13:56.720><c> exact</c><00:13:57.199><c> science</c><00:13:57.519><c> to</c><00:13:57.680><c> what</c><00:13:57.920><c> model</c>
+
+00:13:58.150 --> 00:13:58.160 align:start position:0%
+It's not an exact science to what model
+ 
+
+00:13:58.160 --> 00:13:59.829 align:start position:0%
+It's not an exact science to what model
+to<00:13:58.320><c> use.</c><00:13:58.639><c> So,</c><00:13:58.800><c> I</c><00:13:59.040><c> know</c><00:13:59.120><c> it</c><00:13:59.279><c> sounds</c><00:13:59.519><c> like</c><00:13:59.600><c> I'm</c>
+
+00:13:59.829 --> 00:13:59.839 align:start position:0%
+to use. So, I know it sounds like I'm
+ 
+
+00:13:59.839 --> 00:14:02.550 align:start position:0%
+to use. So, I know it sounds like I'm
+kind<00:13:59.920><c> of</c><00:14:00.079><c> railing</c><00:14:00.639><c> on</c><00:14:01.199><c> GSD2</c><00:14:01.920><c> here,</c><00:14:02.160><c> but</c><00:14:02.320><c> I</c><00:14:02.399><c> will</c>
+
+00:14:02.550 --> 00:14:02.560 align:start position:0%
+kind of railing on GSD2 here, but I will
+ 
+
+00:14:02.560 --> 00:14:05.030 align:start position:0%
+kind of railing on GSD2 here, but I will
+be<00:14:02.720><c> honest,</c><00:14:03.120><c> this</c><00:14:03.279><c> is</c>
+
+00:14:05.030 --> 00:14:05.040 align:start position:0%
+be honest, this is
+ 
+
+00:14:05.040 --> 00:14:07.269 align:start position:0%
+be honest, this is
+not<00:14:05.760><c> super</c><00:14:06.240><c> impressive</c><00:14:06.639><c> when</c><00:14:06.880><c> we</c><00:14:07.040><c> do</c><00:14:07.120><c> this</c>
+
+00:14:07.269 --> 00:14:07.279 align:start position:0%
+not super impressive when we do this
+ 
+
+00:14:07.279 --> 00:14:09.670 align:start position:0%
+not super impressive when we do this
+head-to-head<00:14:07.839><c> right</c><00:14:08.000><c> now.</c><00:14:08.880><c> I</c><00:14:09.199><c> think</c><00:14:09.360><c> part</c><00:14:09.600><c> of</c>
+
+00:14:09.670 --> 00:14:09.680 align:start position:0%
+head-to-head right now. I think part of
+ 
+
+00:14:09.680 --> 00:14:11.990 align:start position:0%
+head-to-head right now. I think part of
+that<00:14:09.839><c> has</c><00:14:10.000><c> to</c><00:14:10.160><c> do</c><00:14:10.320><c> with</c><00:14:10.959><c> the</c><00:14:11.199><c> example</c><00:14:11.519><c> we</c><00:14:11.760><c> use.</c>
+
+00:14:11.990 --> 00:14:12.000 align:start position:0%
+that has to do with the example we use.
+ 
+
+00:14:12.000 --> 00:14:13.430 align:start position:0%
+that has to do with the example we use.
+I<00:14:12.160><c> think</c><00:14:12.240><c> part</c><00:14:12.399><c> of</c><00:14:12.480><c> it</c><00:14:12.720><c> has</c><00:14:12.880><c> to</c><00:14:13.040><c> do</c><00:14:13.120><c> with</c><00:14:13.279><c> the</c>
+
+00:14:13.430 --> 00:14:13.440 align:start position:0%
+I think part of it has to do with the
+ 
+
+00:14:13.440 --> 00:14:14.949 align:start position:0%
+I think part of it has to do with the
+fact<00:14:13.519><c> that</c><00:14:13.680><c> this</c><00:14:13.920><c> is</c><00:14:14.000><c> still</c><00:14:14.240><c> very</c><00:14:14.480><c> new</c><00:14:14.639><c> inside</c>
+
+00:14:14.949 --> 00:14:14.959 align:start position:0%
+fact that this is still very new inside
+ 
+
+00:14:14.959 --> 00:14:16.870 align:start position:0%
+fact that this is still very new inside
+of<00:14:15.120><c> GSD2,</c><00:14:16.079><c> but</c><00:14:16.240><c> if</c><00:14:16.399><c> we're</c><00:14:16.560><c> going</c><00:14:16.639><c> to</c><00:14:16.720><c> be</c>
+
+00:14:16.870 --> 00:14:16.880 align:start position:0%
+of GSD2, but if we're going to be
+ 
+
+00:14:16.880 --> 00:14:19.030 align:start position:0%
+of GSD2, but if we're going to be
+charging<00:14:17.199><c> me,</c><00:14:17.519><c> if</c><00:14:17.760><c> I</c><00:14:17.839><c> have</c><00:14:18.000><c> to</c><00:14:18.079><c> pay</c><00:14:18.399><c> API</c><00:14:18.800><c> costs,</c>
+
+00:14:19.030 --> 00:14:19.040 align:start position:0%
+charging me, if I have to pay API costs,
+ 
+
+00:14:19.040 --> 00:14:20.150 align:start position:0%
+charging me, if I have to pay API costs,
+like<00:14:19.199><c> this</c><00:14:19.360><c> needs</c><00:14:19.519><c> to</c><00:14:19.600><c> knock</c><00:14:19.760><c> it</c><00:14:19.920><c> out</c><00:14:20.000><c> of</c><00:14:20.079><c> the</c>
+
+00:14:20.150 --> 00:14:20.160 align:start position:0%
+like this needs to knock it out of the
+ 
+
+00:14:20.160 --> 00:14:22.790 align:start position:0%
+like this needs to knock it out of the
+park.<00:14:20.560><c> Like</c><00:14:21.440><c> this</c><00:14:21.680><c> is</c><00:14:21.839><c> so</c><00:14:22.079><c> subsidized</c><00:14:22.639><c> with</c>
+
+00:14:22.790 --> 00:14:22.800 align:start position:0%
+park. Like this is so subsidized with
+ 
+
+00:14:22.800 --> 00:14:25.110 align:start position:0%
+park. Like this is so subsidized with
+claw<00:14:23.120><c> code.</c><00:14:23.519><c> It</c><00:14:23.680><c> makes</c><00:14:23.920><c> no</c><00:14:24.240><c> sense</c><00:14:24.639><c> not</c><00:14:24.880><c> to</c><00:14:25.040><c> use</c>
+
+00:14:25.110 --> 00:14:25.120 align:start position:0%
+claw code. It makes no sense not to use
+ 
+
+00:14:25.120 --> 00:14:26.710 align:start position:0%
+claw code. It makes no sense not to use
+it.<00:14:25.360><c> If</c><00:14:25.519><c> we're</c><00:14:25.680><c> going</c><00:14:25.760><c> to</c><00:14:25.839><c> go</c><00:14:25.920><c> outside</c><00:14:26.240><c> of</c><00:14:26.399><c> claw</c>
+
+00:14:26.710 --> 00:14:26.720 align:start position:0%
+it. If we're going to go outside of claw
+ 
+
+00:14:26.720 --> 00:14:28.629 align:start position:0%
+it. If we're going to go outside of claw
+code<00:14:27.120><c> or</c><00:14:27.440><c> go</c><00:14:27.600><c> outside</c><00:14:27.839><c> of</c><00:14:28.000><c> codeex</c><00:14:28.399><c> or</c><00:14:28.480><c> go</c>
+
+00:14:28.629 --> 00:14:28.639 align:start position:0%
+code or go outside of codeex or go
+ 
+
+00:14:28.639 --> 00:14:29.990 align:start position:0%
+code or go outside of codeex or go
+outside<00:14:28.800><c> of</c><00:14:28.880><c> anti-gravity</c><00:14:29.440><c> like</c><00:14:29.600><c> you</c><00:14:29.760><c> got</c><00:14:29.839><c> to</c>
+
+00:14:29.990 --> 00:14:30.000 align:start position:0%
+outside of anti-gravity like you got to
+ 
+
+00:14:30.000 --> 00:14:31.430 align:start position:0%
+outside of anti-gravity like you got to
+blow<00:14:30.160><c> me</c><00:14:30.320><c> out</c><00:14:30.480><c> of</c><00:14:30.560><c> the</c><00:14:30.720><c> water</c><00:14:30.959><c> because</c><00:14:31.120><c> of</c><00:14:31.279><c> the</c>
+
+00:14:31.430 --> 00:14:31.440 align:start position:0%
+blow me out of the water because of the
+ 
+
+00:14:31.440 --> 00:14:34.150 align:start position:0%
+blow me out of the water because of the
+cost<00:14:31.680><c> difference.</c><00:14:32.560><c> You</c><00:14:32.720><c> just</c><00:14:32.880><c> do.</c><00:14:33.360><c> And</c><00:14:33.680><c> to</c><00:14:33.839><c> be</c>
+
+00:14:34.150 --> 00:14:34.160 align:start position:0%
+cost difference. You just do. And to be
+ 
+
+00:14:34.160 --> 00:14:36.230 align:start position:0%
+cost difference. You just do. And to be
+and<00:14:34.320><c> to</c><00:14:34.480><c> be</c><00:14:34.560><c> honest,</c><00:14:34.800><c> I'm</c><00:14:35.040><c> just</c><00:14:35.199><c> not</c><00:14:35.600><c> blown</c><00:14:36.079><c> out</c>
+
+00:14:36.230 --> 00:14:36.240 align:start position:0%
+and to be honest, I'm just not blown out
+ 
+
+00:14:36.240 --> 00:14:38.069 align:start position:0%
+and to be honest, I'm just not blown out
+of<00:14:36.320><c> the</c><00:14:36.480><c> water.</c><00:14:37.040><c> So</c><00:14:37.279><c> my</c><00:14:37.440><c> final</c><00:14:37.680><c> thoughts</c><00:14:37.920><c> are</c>
+
+00:14:38.069 --> 00:14:38.079 align:start position:0%
+of the water. So my final thoughts are
+ 
+
+00:14:38.079 --> 00:14:39.750 align:start position:0%
+of the water. So my final thoughts are
+this.<00:14:38.320><c> I</c><00:14:38.560><c> still</c><00:14:38.639><c> really</c><00:14:38.880><c> like</c><00:14:38.959><c> the</c><00:14:39.120><c> way</c><00:14:39.199><c> GS2</c>
+
+00:14:39.750 --> 00:14:39.760 align:start position:0%
+this. I still really like the way GS2
+ 
+
+00:14:39.760 --> 00:14:41.189 align:start position:0%
+this. I still really like the way GS2
+handles<00:14:40.079><c> things,</c><00:14:40.320><c> right?</c><00:14:40.800><c> The</c><00:14:41.040><c> whole</c>
+
+00:14:41.189 --> 00:14:41.199 align:start position:0%
+handles things, right? The whole
+ 
+
+00:14:41.199 --> 00:14:42.710 align:start position:0%
+handles things, right? The whole
+theoretical<00:14:41.680><c> idea</c><00:14:41.920><c> of</c><00:14:42.079><c> us</c><00:14:42.240><c> breaking</c><00:14:42.560><c> down</c>
+
+00:14:42.710 --> 00:14:42.720 align:start position:0%
+theoretical idea of us breaking down
+ 
+
+00:14:42.720 --> 00:14:44.710 align:start position:0%
+theoretical idea of us breaking down
+this,<00:14:43.199><c> you</c><00:14:43.360><c> know,</c><00:14:43.519><c> plan</c><00:14:43.839><c> into</c><00:14:44.079><c> phases</c><00:14:44.480><c> into</c>
+
+00:14:44.710 --> 00:14:44.720 align:start position:0%
+this, you know, plan into phases into
+ 
+
+00:14:44.720 --> 00:14:46.629 align:start position:0%
+this, you know, plan into phases into
+tasks<00:14:45.040><c> and</c><00:14:45.279><c> context</c><00:14:45.600><c> window.</c><00:14:45.920><c> It's</c><00:14:46.160><c> great.</c>
+
+00:14:46.629 --> 00:14:46.639 align:start position:0%
+tasks and context window. It's great.
+ 
+
+00:14:46.639 --> 00:14:49.110 align:start position:0%
+tasks and context window. It's great.
+It's<00:14:46.959><c> great.</c><00:14:47.839><c> But</c><00:14:48.079><c> I</c><00:14:48.399><c> don't</c><00:14:48.560><c> think</c><00:14:48.720><c> what</c><00:14:48.880><c> it's</c>
+
+00:14:49.110 --> 00:14:49.120 align:start position:0%
+It's great. But I don't think what it's
+ 
+
+00:14:49.120 --> 00:14:51.430 align:start position:0%
+It's great. But I don't think what it's
+buying<00:14:49.360><c> us</c><00:14:49.519><c> now</c><00:14:49.760><c> is</c><00:14:50.079><c> worth</c><00:14:50.240><c> it.</c><00:14:50.880><c> The</c><00:14:51.040><c> second</c><00:14:51.279><c> we</c>
+
+00:14:51.430 --> 00:14:51.440 align:start position:0%
+buying us now is worth it. The second we
+ 
+
+00:14:51.440 --> 00:14:53.509 align:start position:0%
+buying us now is worth it. The second we
+go<00:14:51.519><c> outside</c><00:14:51.839><c> of</c><00:14:51.920><c> cloud</c><00:14:52.320><c> code,</c><00:14:52.800><c> it's</c><00:14:53.120><c> just</c><00:14:53.279><c> too</c>
+
+00:14:53.509 --> 00:14:53.519 align:start position:0%
+go outside of cloud code, it's just too
+ 
+
+00:14:53.519 --> 00:14:55.110 align:start position:0%
+go outside of cloud code, it's just too
+expensive.<00:14:54.160><c> It's</c><00:14:54.399><c> just</c><00:14:54.480><c> too</c><00:14:54.720><c> expensive.</c><00:14:54.959><c> And</c>
+
+00:14:55.110 --> 00:14:55.120 align:start position:0%
+expensive. It's just too expensive. And
+ 
+
+00:14:55.120 --> 00:14:57.030 align:start position:0%
+expensive. It's just too expensive. And
+frankly,<00:14:55.360><c> it's</c><00:14:55.519><c> a</c><00:14:55.680><c> bit</c><00:14:55.760><c> too</c><00:14:55.920><c> slow.</c><00:14:56.560><c> And</c><00:14:56.720><c> again,</c>
+
+00:14:57.030 --> 00:14:57.040 align:start position:0%
+frankly, it's a bit too slow. And again,
+ 
+
+00:14:57.040 --> 00:14:58.550 align:start position:0%
+frankly, it's a bit too slow. And again,
+perhaps<00:14:57.279><c> there's</c><00:14:57.519><c> an</c><00:14:57.680><c> argument</c><00:14:58.000><c> to</c><00:14:58.160><c> be</c><00:14:58.320><c> made</c>
+
+00:14:58.550 --> 00:14:58.560 align:start position:0%
+perhaps there's an argument to be made
+ 
+
+00:14:58.560 --> 00:15:00.470 align:start position:0%
+perhaps there's an argument to be made
+where,<00:14:58.880><c> hey,</c><00:14:59.120><c> we</c><00:14:59.279><c> want</c><00:14:59.360><c> to</c><00:14:59.440><c> use</c><00:14:59.680><c> GSD2</c><00:15:00.320><c> when</c>
+
+00:15:00.470 --> 00:15:00.480 align:start position:0%
+where, hey, we want to use GSD2 when
+ 
+
+00:15:00.480 --> 00:15:02.389 align:start position:0%
+where, hey, we want to use GSD2 when
+we're<00:15:00.639><c> doing</c><00:15:00.800><c> some</c><00:15:00.959><c> like</c><00:15:01.120><c> huge</c><00:15:01.360><c> huge</c><00:15:01.680><c> project.</c>
+
+00:15:02.389 --> 00:15:02.399 align:start position:0%
+we're doing some like huge huge project.
+ 
+
+00:15:02.399 --> 00:15:05.509 align:start position:0%
+we're doing some like huge huge project.
+But<00:15:02.480><c> again,</c><00:15:02.800><c> that</c><00:15:03.040><c> also</c><00:15:03.440><c> comes</c><00:15:04.480><c> with</c><00:15:05.279><c> the</c>
+
+00:15:05.509 --> 00:15:05.519 align:start position:0%
+But again, that also comes with the
+ 
+
+00:15:05.519 --> 00:15:08.870 align:start position:0%
+But again, that also comes with the
+requisite<00:15:06.160><c> API</c><00:15:06.639><c> costs.</c><00:15:07.519><c> So</c><00:15:07.920><c> I</c><00:15:08.160><c> have</c><00:15:08.320><c> a</c><00:15:08.639><c> very</c>
+
+00:15:08.870 --> 00:15:08.880 align:start position:0%
+requisite API costs. So I have a very
+ 
+
+00:15:08.880 --> 00:15:10.870 align:start position:0%
+requisite API costs. So I have a very
+hard<00:15:09.120><c> time</c><00:15:09.279><c> with</c><00:15:09.440><c> suggesting</c><00:15:09.760><c> to</c><00:15:09.920><c> use</c><00:15:10.079><c> GS2</c>
+
+00:15:10.870 --> 00:15:10.880 align:start position:0%
+hard time with suggesting to use GS2
+ 
+
+00:15:10.880 --> 00:15:12.550 align:start position:0%
+hard time with suggesting to use GS2
+GSD2<00:15:11.519><c> right</c><00:15:11.600><c> now</c><00:15:11.760><c> if</c><00:15:11.920><c> you're</c><00:15:12.000><c> using</c><00:15:12.240><c> cloud</c>
+
+00:15:12.550 --> 00:15:12.560 align:start position:0%
+GSD2 right now if you're using cloud
+ 
+
+00:15:12.560 --> 00:15:14.870 align:start position:0%
+GSD2 right now if you're using cloud
+code.<00:15:13.120><c> Feels</c><00:15:13.839><c> kind</c><00:15:14.079><c> of</c><00:15:14.160><c> tough</c><00:15:14.320><c> to</c><00:15:14.480><c> say</c><00:15:14.639><c> that</c>
+
+00:15:14.870 --> 00:15:14.880 align:start position:0%
+code. Feels kind of tough to say that
+ 
+
+00:15:14.880 --> 00:15:16.949 align:start position:0%
+code. Feels kind of tough to say that
+because<00:15:15.040><c> I</c><00:15:15.440><c> did</c><00:15:15.680><c> love</c><00:15:15.839><c> the</c><00:15:16.079><c> original</c><00:15:16.480><c> GSD</c>
+
+00:15:16.949 --> 00:15:16.959 align:start position:0%
+because I did love the original GSD
+ 
+
+00:15:16.959 --> 00:15:19.670 align:start position:0%
+because I did love the original GSD
+within<00:15:17.279><c> the</c><00:15:17.440><c> Cloud</c><00:15:17.760><c> Code</c><00:15:18.000><c> context,</c><00:15:18.880><c> but</c><00:15:19.440><c> I</c>
+
+00:15:19.670 --> 00:15:19.680 align:start position:0%
+within the Cloud Code context, but I
+ 
+
+00:15:19.680 --> 00:15:21.910 align:start position:0%
+within the Cloud Code context, but I
+think<00:15:19.760><c> the</c><00:15:20.000><c> results</c><00:15:20.639><c> speak</c><00:15:20.959><c> for</c><00:15:21.199><c> themselves.</c>
+
+00:15:21.910 --> 00:15:21.920 align:start position:0%
+think the results speak for themselves.
+ 
+
+00:15:21.920 --> 00:15:23.350 align:start position:0%
+think the results speak for themselves.
+So,<00:15:22.160><c> as</c><00:15:22.320><c> always,</c><00:15:22.639><c> let</c><00:15:22.880><c> me</c><00:15:22.959><c> know</c><00:15:23.040><c> what</c><00:15:23.199><c> you</c>
+
+00:15:23.350 --> 00:15:23.360 align:start position:0%
+So, as always, let me know what you
+ 
+
+00:15:23.360 --> 00:15:24.870 align:start position:0%
+So, as always, let me know what you
+thought<00:15:23.519><c> about</c><00:15:23.680><c> this</c><00:15:24.000><c> inside</c><00:15:24.320><c> the</c><00:15:24.480><c> comments.</c>
+
+00:15:24.870 --> 00:15:24.880 align:start position:0%
+thought about this inside the comments.
+ 
+
+00:15:24.880 --> 00:15:26.389 align:start position:0%
+thought about this inside the comments.
+Make<00:15:24.959><c> sure</c><00:15:25.040><c> to</c><00:15:25.199><c> check</c><00:15:25.279><c> out</c><00:15:25.440><c> Chase</c><00:15:25.760><c> AI</c><00:15:26.079><c> Plus</c><00:15:26.240><c> for</c>
+
+00:15:26.389 --> 00:15:26.399 align:start position:0%
+Make sure to check out Chase AI Plus for
+ 
+
+00:15:26.399 --> 00:15:28.389 align:start position:0%
+Make sure to check out Chase AI Plus for
+the<00:15:26.480><c> Cloud</c><00:15:26.800><c> Code</c><00:15:27.040><c> Masterass</c><00:15:27.760><c> or</c><00:15:28.000><c> the</c><00:15:28.240><c> free</c>
+
+00:15:28.389 --> 00:15:28.399 align:start position:0%
+the Cloud Code Masterass or the free
+ 
+
+00:15:28.399 --> 00:15:29.750 align:start position:0%
+the Cloud Code Masterass or the free
+Chase<00:15:28.800><c> AI</c><00:15:29.120><c> community</c><00:15:29.279><c> if</c><00:15:29.519><c> you're</c><00:15:29.600><c> just</c>
+
+00:15:29.750 --> 00:15:29.760 align:start position:0%
+Chase AI community if you're just
+ 
+
+00:15:29.760 --> 00:15:31.910 align:start position:0%
+Chase AI community if you're just
+getting<00:15:30.000><c> started.</c><00:15:30.880><c> And</c><00:15:30.959><c> other</c><00:15:31.199><c> than</c><00:15:31.360><c> that,</c>
+
+00:15:31.910 --> 00:15:31.920 align:start position:0%
+getting started. And other than that,
+ 
+
+00:15:31.920 --> 00:15:34.399 align:start position:0%
+getting started. And other than that,
+I'll<00:15:32.160><c> see</c><00:15:32.320><c> you</c>
+

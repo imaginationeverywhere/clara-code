@@ -1,0 +1,5175 @@
+1
+00:00:00,000 --> 00:00:01,750
+
+So, if you've been using claw code for a
+
+2
+00:00:01,750 --> 00:00:01,760
+So, if you've been using claw code for a
+ 
+
+3
+00:00:01,760 --> 00:00:03,669
+So, if you've been using claw code for a
+while, you'll remember the old problem.
+
+4
+00:00:03,669 --> 00:00:03,679
+while, you'll remember the old problem.
+ 
+
+5
+00:00:03,679 --> 00:00:05,510
+while, you'll remember the old problem.
+The output was never good enough. You
+
+6
+00:00:05,510 --> 00:00:05,520
+The output was never good enough. You
+ 
+
+7
+00:00:05,520 --> 00:00:07,829
+The output was never good enough. You
+had to babysit everything, and you'd end
+
+8
+00:00:07,829 --> 00:00:07,839
+had to babysit everything, and you'd end
+ 
+
+9
+00:00:07,839 --> 00:00:10,070
+had to babysit everything, and you'd end
+up telling it to fix its own mistakes.
+
+10
+00:00:10,070 --> 00:00:10,080
+up telling it to fix its own mistakes.
+ 
+
+11
+00:00:10,080 --> 00:00:12,150
+up telling it to fix its own mistakes.
+But now, that's completely changed. Now,
+
+12
+00:00:12,150 --> 00:00:12,160
+But now, that's completely changed. Now,
+ 
+
+13
+00:00:12,160 --> 00:00:13,990
+But now, that's completely changed. Now,
+the agents are actually good. They can
+
+14
+00:00:13,990 --> 00:00:14,000
+the agents are actually good. They can
+ 
+
+15
+00:00:14,000 --> 00:00:16,070
+the agents are actually good. They can
+run full tasks. They can handle real
+
+16
+00:00:16,070 --> 00:00:16,080
+run full tasks. They can handle real
+ 
+
+17
+00:00:16,080 --> 00:00:18,630
+run full tasks. They can handle real
+workflows and get surprisingly close to
+
+18
+00:00:18,630 --> 00:00:18,640
+workflows and get surprisingly close to
+ 
+
+19
+00:00:18,640 --> 00:00:20,310
+workflows and get surprisingly close to
+what you want. And that's created a new
+
+20
+00:00:20,310 --> 00:00:20,320
+what you want. And that's created a new
+ 
+
+21
+00:00:20,320 --> 00:00:21,830
+what you want. And that's created a new
+problem. You've got multiple agents
+
+22
+00:00:21,830 --> 00:00:21,840
+problem. You've got multiple agents
+ 
+
+23
+00:00:21,840 --> 00:00:24,150
+problem. You've got multiple agents
+running at once, five terminal tabs
+
+24
+00:00:24,150 --> 00:00:24,160
+running at once, five terminal tabs
+ 
+
+25
+00:00:24,160 --> 00:00:26,310
+running at once, five terminal tabs
+open, and you're clicking between them
+
+26
+00:00:26,310 --> 00:00:26,320
+open, and you're clicking between them
+ 
+
+27
+00:00:26,320 --> 00:00:28,150
+open, and you're clicking between them
+trying to remember what each one is
+
+28
+00:00:28,150 --> 00:00:28,160
+trying to remember what each one is
+ 
+
+29
+00:00:28,160 --> 00:00:29,910
+trying to remember what each one is
+doing. So every time you switch, you're
+
+30
+00:00:29,910 --> 00:00:29,920
+doing. So every time you switch, you're
+ 
+
+31
+00:00:29,920 --> 00:00:32,150
+doing. So every time you switch, you're
+losing context. And it's not claw code
+
+32
+00:00:32,150 --> 00:00:32,160
+losing context. And it's not claw code
+ 
+
+33
+00:00:32,160 --> 00:00:34,069
+losing context. And it's not claw code
+that's slowing you down anymore. It's
+
+34
+00:00:34,069 --> 00:00:34,079
+that's slowing you down anymore. It's
+ 
+
+35
+00:00:34,079 --> 00:00:35,910
+that's slowing you down anymore. It's
+the way that you're using it. So I've
+
+36
+00:00:35,910 --> 00:00:35,920
+the way that you're using it. So I've
+ 
+
+37
+00:00:35,920 --> 00:00:37,830
+the way that you're using it. So I've
+spent the last 3 or 4 months building
+
+38
+00:00:37,830 --> 00:00:37,840
+spent the last 3 or 4 months building
+ 
+
+39
+00:00:37,840 --> 00:00:40,310
+spent the last 3 or 4 months building
+full business systems inside claw code,
+
+40
+00:00:40,310 --> 00:00:40,320
+full business systems inside claw code,
+ 
+
+41
+00:00:40,320 --> 00:00:42,549
+full business systems inside claw code,
+running multiple agents in parallel,
+
+42
+00:00:42,549 --> 00:00:42,559
+running multiple agents in parallel,
+ 
+
+43
+00:00:42,559 --> 00:00:44,950
+running multiple agents in parallel,
+managing my business using it. And this
+
+44
+00:00:44,950 --> 00:00:44,960
+managing my business using it. And this
+ 
+
+45
+00:00:44,960 --> 00:00:46,869
+managing my business using it. And this
+is the bottleneck that nobody's talking
+
+46
+00:00:46,869 --> 00:00:46,879
+is the bottleneck that nobody's talking
+ 
+
+47
+00:00:46,879 --> 00:00:48,470
+is the bottleneck that nobody's talking
+about. So I went out looking for a
+
+48
+00:00:48,470 --> 00:00:48,480
+about. So I went out looking for a
+ 
+
+49
+00:00:48,480 --> 00:00:50,630
+about. So I went out looking for a
+better way. And I tried everything.
+
+50
+00:00:50,630 --> 00:00:50,640
+better way. And I tried everything.
+ 
+
+51
+00:00:50,640 --> 00:00:54,069
+better way. And I tried everything.
+T-Mox, the desktop app, Vibe Camban,
+
+52
+00:00:54,069 --> 00:00:54,079
+T-Mox, the desktop app, Vibe Camban,
+ 
+
+53
+00:00:54,079 --> 00:00:55,910
+T-Mox, the desktop app, Vibe Camban,
+Paperclip, and they all have the same
+
+54
+00:00:55,910 --> 00:00:55,920
+Paperclip, and they all have the same
+ 
+
+55
+00:00:55,920 --> 00:00:58,389
+Paperclip, and they all have the same
+issue. They're all built for developers
+
+56
+00:00:58,389 --> 00:00:58,399
+issue. They're all built for developers
+ 
+
+57
+00:00:58,399 --> 00:01:00,709
+issue. They're all built for developers
+managing code, not for business owners
+
+58
+00:01:00,709 --> 00:01:00,719
+managing code, not for business owners
+ 
+
+59
+00:01:00,719 --> 00:01:02,389
+managing code, not for business owners
+managing goals. So, I decided to build
+
+60
+00:01:02,389 --> 00:01:02,399
+managing goals. So, I decided to build
+ 
+
+61
+00:01:02,399 --> 00:01:04,149
+managing goals. So, I decided to build
+something different. And in this video,
+
+62
+00:01:04,149 --> 00:01:04,159
+something different. And in this video,
+ 
+
+63
+00:01:04,159 --> 00:01:06,230
+something different. And in this video,
+I'll show you what's out there, why it
+
+64
+00:01:06,230 --> 00:01:06,240
+I'll show you what's out there, why it
+ 
+
+65
+00:01:06,240 --> 00:01:08,550
+I'll show you what's out there, why it
+doesn't work, why it breaks down, and
+
+66
+00:01:08,550 --> 00:01:08,560
+doesn't work, why it breaks down, and
+ 
+
+67
+00:01:08,560 --> 00:01:10,469
+doesn't work, why it breaks down, and
+the command center that I built that
+
+68
+00:01:10,469 --> 00:01:10,479
+the command center that I built that
+ 
+
+69
+00:01:10,479 --> 00:01:11,990
+the command center that I built that
+actually fixes it. So, let's get
+
+70
+00:01:11,990 --> 00:01:12,000
+actually fixes it. So, let's get
+ 
+
+71
+00:01:12,000 --> 00:01:13,750
+actually fixes it. So, let's get
+straight into it. And first, let me
+
+72
+00:01:13,750 --> 00:01:13,760
+straight into it. And first, let me
+ 
+
+73
+00:01:13,760 --> 00:01:15,109
+straight into it. And first, let me
+paint a picture of what's actually
+
+74
+00:01:15,109 --> 00:01:15,119
+paint a picture of what's actually
+ 
+
+75
+00:01:15,119 --> 00:01:16,710
+paint a picture of what's actually
+happening. So, you're going to start a
+
+76
+00:01:16,710 --> 00:01:16,720
+happening. So, you're going to start a
+ 
+
+77
+00:01:16,720 --> 00:01:18,550
+happening. So, you're going to start a
+Claw Code session. You're working on
+
+78
+00:01:18,550 --> 00:01:18,560
+Claw Code session. You're working on
+ 
+
+79
+00:01:18,560 --> 00:01:19,990
+Claw Code session. You're working on
+something, whether it's a content
+
+80
+00:01:19,990 --> 00:01:20,000
+something, whether it's a content
+ 
+
+81
+00:01:20,000 --> 00:01:21,910
+something, whether it's a content
+system, a lead genen workflow, whatever
+
+82
+00:01:21,910 --> 00:01:21,920
+system, a lead genen workflow, whatever
+ 
+
+83
+00:01:21,920 --> 00:01:24,310
+system, a lead genen workflow, whatever
+it is. Claude is running, doing its
+
+84
+00:01:24,310 --> 00:01:24,320
+it is. Claude is running, doing its
+ 
+
+85
+00:01:24,320 --> 00:01:26,070
+it is. Claude is running, doing its
+thing for, let's say, 5 to 10 minutes.
+
+86
+00:01:26,070 --> 00:01:26,080
+thing for, let's say, 5 to 10 minutes.
+ 
+
+87
+00:01:26,080 --> 00:01:27,749
+thing for, let's say, 5 to 10 minutes.
+and your mind starts wondering. So, you
+
+88
+00:01:27,749 --> 00:01:27,759
+and your mind starts wondering. So, you
+ 
+
+89
+00:01:27,759 --> 00:01:29,749
+and your mind starts wondering. So, you
+decide to start another task. So, you
+
+90
+00:01:29,749 --> 00:01:29,759
+decide to start another task. So, you
+ 
+
+91
+00:01:29,759 --> 00:01:31,670
+decide to start another task. So, you
+open up another terminal tab and then
+
+92
+00:01:31,670 --> 00:01:31,680
+open up another terminal tab and then
+ 
+
+93
+00:01:31,680 --> 00:01:33,350
+open up another terminal tab and then
+another one for the next task. And
+
+94
+00:01:33,350 --> 00:01:33,360
+another one for the next task. And
+ 
+
+95
+00:01:33,360 --> 00:01:34,630
+another one for the next task. And
+before you know it, you've got five
+
+96
+00:01:34,630 --> 00:01:34,640
+before you know it, you've got five
+ 
+
+97
+00:01:34,640 --> 00:01:36,230
+before you know it, you've got five
+terminals open because that's the max
+
+98
+00:01:36,230 --> 00:01:36,240
+terminals open because that's the max
+ 
+
+99
+00:01:36,240 --> 00:01:37,749
+terminals open because that's the max
+you can handle. And you're clicking
+
+100
+00:01:37,749 --> 00:01:37,759
+you can handle. And you're clicking
+ 
+
+101
+00:01:37,759 --> 00:01:39,590
+you can handle. And you're clicking
+through them all going, "Which one was
+
+102
+00:01:39,590 --> 00:01:39,600
+through them all going, "Which one was
+ 
+
+103
+00:01:39,600 --> 00:01:41,109
+through them all going, "Which one was
+building my landing page? Which one was
+
+104
+00:01:41,109 --> 00:01:41,119
+building my landing page? Which one was
+ 
+
+105
+00:01:41,119 --> 00:01:42,630
+building my landing page? Which one was
+doing my research?" And this is the
+
+106
+00:01:42,630 --> 00:01:42,640
+doing my research?" And this is the
+ 
+
+107
+00:01:42,640 --> 00:01:44,390
+doing my research?" And this is the
+thing that gets me. Claude Code has
+
+108
+00:01:44,390 --> 00:01:44,400
+thing that gets me. Claude Code has
+ 
+
+109
+00:01:44,400 --> 00:01:46,310
+thing that gets me. Claude Code has
+honestly gotten so good at doing the
+
+110
+00:01:46,310 --> 00:01:46,320
+honestly gotten so good at doing the
+ 
+
+111
+00:01:46,320 --> 00:01:48,069
+honestly gotten so good at doing the
+work autonomously. The agents are
+
+112
+00:01:48,069 --> 00:01:48,079
+work autonomously. The agents are
+ 
+
+113
+00:01:48,079 --> 00:01:50,069
+work autonomously. The agents are
+faster. They're smarter. They can handle
+
+114
+00:01:50,069 --> 00:01:50,079
+faster. They're smarter. They can handle
+ 
+
+115
+00:01:50,079 --> 00:01:51,670
+faster. They're smarter. They can handle
+more complex tasks without you having to
+
+116
+00:01:51,670 --> 00:01:51,680
+more complex tasks without you having to
+ 
+
+117
+00:01:51,680 --> 00:01:54,069
+more complex tasks without you having to
+watch them. We can run them on auto mode
+
+118
+00:01:54,069 --> 00:01:54,079
+watch them. We can run them on auto mode
+ 
+
+119
+00:01:54,079 --> 00:01:55,990
+watch them. We can run them on auto mode
+most of the time. But our interface for
+
+120
+00:01:55,990 --> 00:01:56,000
+most of the time. But our interface for
+ 
+
+121
+00:01:56,000 --> 00:01:58,069
+most of the time. But our interface for
+actually managing those agents has not
+
+122
+00:01:58,069 --> 00:01:58,079
+actually managing those agents has not
+ 
+
+123
+00:01:58,079 --> 00:01:59,749
+actually managing those agents has not
+changed at all. We're still flicking
+
+124
+00:01:59,749 --> 00:01:59,759
+changed at all. We're still flicking
+ 
+
+125
+00:01:59,759 --> 00:02:01,590
+changed at all. We're still flicking
+between these terminal windows. And you
+
+126
+00:02:01,590 --> 00:02:01,600
+between these terminal windows. And you
+ 
+
+127
+00:02:01,600 --> 00:02:03,109
+between these terminal windows. And you
+guessed it, every time you switch
+
+128
+00:02:03,109 --> 00:02:03,119
+guessed it, every time you switch
+ 
+
+129
+00:02:03,119 --> 00:02:04,630
+guessed it, every time you switch
+between the terminals, you have to
+
+130
+00:02:04,630 --> 00:02:04,640
+between the terminals, you have to
+ 
+
+131
+00:02:04,640 --> 00:02:06,630
+between the terminals, you have to
+reread what's happening. You have to
+
+132
+00:02:06,630 --> 00:02:06,640
+reread what's happening. You have to
+ 
+
+133
+00:02:06,640 --> 00:02:08,309
+reread what's happening. You have to
+figure out where things are at. And all
+
+134
+00:02:08,309 --> 00:02:08,319
+figure out where things are at. And all
+ 
+
+135
+00:02:08,319 --> 00:02:10,469
+figure out where things are at. And all
+of that mental overhead does genuinely
+
+136
+00:02:10,469 --> 00:02:10,479
+of that mental overhead does genuinely
+ 
+
+137
+00:02:10,479 --> 00:02:12,229
+of that mental overhead does genuinely
+add up and it slows you down massively
+
+138
+00:02:12,229 --> 00:02:12,239
+add up and it slows you down massively
+ 
+
+139
+00:02:12,239 --> 00:02:14,070
+add up and it slows you down massively
+and stops you from doing other tasks,
+
+140
+00:02:14,070 --> 00:02:14,080
+and stops you from doing other tasks,
+ 
+
+141
+00:02:14,080 --> 00:02:15,990
+and stops you from doing other tasks,
+which let's be honest is why you wanted
+
+142
+00:02:15,990 --> 00:02:16,000
+which let's be honest is why you wanted
+ 
+
+143
+00:02:16,000 --> 00:02:17,670
+which let's be honest is why you wanted
+to actually use claw code in the first
+
+144
+00:02:17,670 --> 00:02:17,680
+to actually use claw code in the first
+ 
+
+145
+00:02:17,680 --> 00:02:19,670
+to actually use claw code in the first
+place. So the problem isn't claw code.
+
+146
+00:02:19,670 --> 00:02:19,680
+place. So the problem isn't claw code.
+ 
+
+147
+00:02:19,680 --> 00:02:21,589
+place. So the problem isn't claw code.
+The problem is that we need to abstract
+
+148
+00:02:21,589 --> 00:02:21,599
+The problem is that we need to abstract
+ 
+
+149
+00:02:21,599 --> 00:02:23,589
+The problem is that we need to abstract
+one layer higher. So we need to start
+
+150
+00:02:23,589 --> 00:02:23,599
+one layer higher. So we need to start
+ 
+
+151
+00:02:23,599 --> 00:02:25,910
+one layer higher. So we need to start
+managing goals and tasks not managing
+
+152
+00:02:25,910 --> 00:02:25,920
+managing goals and tasks not managing
+ 
+
+153
+00:02:25,920 --> 00:02:28,070
+managing goals and tasks not managing
+terminals. So naturally I went looking
+
+154
+00:02:28,070 --> 00:02:28,080
+terminals. So naturally I went looking
+ 
+
+155
+00:02:28,080 --> 00:02:29,990
+terminals. So naturally I went looking
+for solutions online and there are
+
+156
+00:02:29,990 --> 00:02:30,000
+for solutions online and there are
+ 
+
+157
+00:02:30,000 --> 00:02:31,510
+for solutions online and there are
+actually quite a few options out there.
+
+158
+00:02:31,510 --> 00:02:31,520
+actually quite a few options out there.
+ 
+
+159
+00:02:31,520 --> 00:02:33,110
+actually quite a few options out there.
+So let me walk you through what I found
+
+160
+00:02:33,110 --> 00:02:33,120
+So let me walk you through what I found
+ 
+
+161
+00:02:33,120 --> 00:02:34,790
+So let me walk you through what I found
+and these can be pulled into kind of
+
+162
+00:02:34,790 --> 00:02:34,800
+and these can be pulled into kind of
+ 
+
+163
+00:02:34,800 --> 00:02:37,589
+and these can be pulled into kind of
+five main approaches. So option one is
+
+164
+00:02:37,589 --> 00:02:37,599
+five main approaches. So option one is
+ 
+
+165
+00:02:37,599 --> 00:02:40,229
+five main approaches. So option one is
+T-Max. The first thing that most techled
+
+166
+00:02:40,229 --> 00:02:40,239
+T-Max. The first thing that most techled
+ 
+
+167
+00:02:40,239 --> 00:02:43,030
+T-Max. The first thing that most techled
+clawed code users or developers try is
+
+168
+00:02:43,030 --> 00:02:43,040
+clawed code users or developers try is
+ 
+
+169
+00:02:43,040 --> 00:02:44,630
+clawed code users or developers try is
+T-Max. And if you don't know what that
+
+170
+00:02:44,630 --> 00:02:44,640
+T-Max. And if you don't know what that
+ 
+
+171
+00:02:44,640 --> 00:02:46,550
+T-Max. And if you don't know what that
+is, it lets you split your terminals
+
+172
+00:02:46,550 --> 00:02:46,560
+is, it lets you split your terminals
+ 
+
+173
+00:02:46,560 --> 00:02:48,550
+is, it lets you split your terminals
+into multiple panes. So you can see
+
+174
+00:02:48,550 --> 00:02:48,560
+into multiple panes. So you can see
+ 
+
+175
+00:02:48,560 --> 00:02:50,390
+into multiple panes. So you can see
+several claw code sessions running at
+
+176
+00:02:50,390 --> 00:02:50,400
+several claw code sessions running at
+ 
+
+177
+00:02:50,400 --> 00:02:51,990
+several claw code sessions running at
+the same time. You can see multiple
+
+178
+00:02:51,990 --> 00:02:52,000
+the same time. You can see multiple
+ 
+
+179
+00:02:52,000 --> 00:02:54,070
+the same time. You can see multiple
+agents working side by side and have a
+
+180
+00:02:54,070 --> 00:02:54,080
+agents working side by side and have a
+ 
+
+181
+00:02:54,080 --> 00:02:56,070
+agents working side by side and have a
+chat to those individual agents in one
+
+182
+00:02:56,070 --> 00:02:56,080
+chat to those individual agents in one
+ 
+
+183
+00:02:56,080 --> 00:02:57,589
+chat to those individual agents in one
+window. But it still has one major
+
+184
+00:02:57,589 --> 00:02:57,599
+window. But it still has one major
+ 
+
+185
+00:02:57,599 --> 00:02:59,270
+window. But it still has one major
+limitation. You are still in that
+
+186
+00:02:59,270 --> 00:02:59,280
+limitation. You are still in that
+ 
+
+187
+00:02:59,280 --> 00:03:01,430
+limitation. You are still in that
+terminal. You can't see the big picture
+
+188
+00:03:01,430 --> 00:03:01,440
+terminal. You can't see the big picture
+ 
+
+189
+00:03:01,440 --> 00:03:03,350
+terminal. You can't see the big picture
+and you can't drag tasks around. You
+
+190
+00:03:03,350 --> 00:03:03,360
+and you can't drag tasks around. You
+ 
+
+191
+00:03:03,360 --> 00:03:05,190
+and you can't drag tasks around. You
+can't see progress at a glance. You're
+
+192
+00:03:05,190 --> 00:03:05,200
+can't see progress at a glance. You're
+ 
+
+193
+00:03:05,200 --> 00:03:07,190
+can't see progress at a glance. You're
+still just having a chat interface
+
+194
+00:03:07,190 --> 00:03:07,200
+still just having a chat interface
+ 
+
+195
+00:03:07,200 --> 00:03:08,949
+still just having a chat interface
+conversation back and forth. And then
+
+196
+00:03:08,949 --> 00:03:08,959
+conversation back and forth. And then
+ 
+
+197
+00:03:08,959 --> 00:03:10,390
+conversation back and forth. And then
+when you start to think about passing
+
+198
+00:03:10,390 --> 00:03:10,400
+when you start to think about passing
+ 
+
+199
+00:03:10,400 --> 00:03:12,869
+when you start to think about passing
+this to a client, imagine passing that
+
+200
+00:03:12,869 --> 00:03:12,879
+this to a client, imagine passing that
+ 
+
+201
+00:03:12,879 --> 00:03:14,630
+this to a client, imagine passing that
+to your non-technical client and asking
+
+202
+00:03:14,630 --> 00:03:14,640
+to your non-technical client and asking
+ 
+
+203
+00:03:14,640 --> 00:03:16,390
+to your non-technical client and asking
+them to manage the agents that you've
+
+204
+00:03:16,390 --> 00:03:16,400
+them to manage the agents that you've
+ 
+
+205
+00:03:16,400 --> 00:03:17,990
+them to manage the agents that you've
+implemented for them. So then on the
+
+206
+00:03:17,990 --> 00:03:18,000
+implemented for them. So then on the
+ 
+
+207
+00:03:18,000 --> 00:03:19,589
+implemented for them. So then on the
+other end of the spectrum, we have
+
+208
+00:03:19,589 --> 00:03:19,599
+other end of the spectrum, we have
+ 
+
+209
+00:03:19,599 --> 00:03:21,589
+other end of the spectrum, we have
+Anthropic's own desktop app. And
+
+210
+00:03:21,589 --> 00:03:21,599
+Anthropic's own desktop app. And
+ 
+
+211
+00:03:21,599 --> 00:03:24,070
+Anthropic's own desktop app. And
+honestly, the UI is really nice for this
+
+212
+00:03:24,070 --> 00:03:24,080
+honestly, the UI is really nice for this
+ 
+
+213
+00:03:24,080 --> 00:03:26,070
+honestly, the UI is really nice for this
+and it's improving all the time. It's
+
+214
+00:03:26,070 --> 00:03:26,080
+and it's improving all the time. It's
+ 
+
+215
+00:03:26,080 --> 00:03:27,910
+and it's improving all the time. It's
+clean and it gives you a proper chat
+
+216
+00:03:27,910 --> 00:03:27,920
+clean and it gives you a proper chat
+ 
+
+217
+00:03:27,920 --> 00:03:29,910
+clean and it gives you a proper chat
+interface instead of that terminal. But
+
+218
+00:03:29,910 --> 00:03:29,920
+interface instead of that terminal. But
+ 
+
+219
+00:03:29,920 --> 00:03:32,470
+interface instead of that terminal. But
+there are two problems with it. First,
+
+220
+00:03:32,470 --> 00:03:32,480
+there are two problems with it. First,
+ 
+
+221
+00:03:32,480 --> 00:03:33,830
+there are two problems with it. First,
+setting up things like environment
+
+222
+00:03:33,830 --> 00:03:33,840
+setting up things like environment
+ 
+
+223
+00:03:33,840 --> 00:03:36,949
+setting up things like environment
+variables and MCP servers is harder in
+
+224
+00:03:36,949 --> 00:03:36,959
+variables and MCP servers is harder in
+ 
+
+225
+00:03:36,959 --> 00:03:38,949
+variables and MCP servers is harder in
+the desktop app than it is files in your
+
+226
+00:03:38,949 --> 00:03:38,959
+the desktop app than it is files in your
+ 
+
+227
+00:03:38,959 --> 00:03:40,550
+the desktop app than it is files in your
+terminal. In the terminal, we literally
+
+228
+00:03:40,550 --> 00:03:40,560
+terminal. In the terminal, we literally
+ 
+
+229
+00:03:40,560 --> 00:03:43,030
+terminal. In the terminal, we literally
+just add av file with our keys or a
+
+230
+00:03:43,030 --> 00:03:43,040
+just add av file with our keys or a
+ 
+
+231
+00:03:43,040 --> 00:03:45,589
+just add av file with our keys or a
+settings.json file. And second, this is
+
+232
+00:03:45,589 --> 00:03:45,599
+settings.json file. And second, this is
+ 
+
+233
+00:03:45,599 --> 00:03:47,670
+settings.json file. And second, this is
+the big one, you're still managing one
+
+234
+00:03:47,670 --> 00:03:47,680
+the big one, you're still managing one
+ 
+
+235
+00:03:47,680 --> 00:03:49,270
+the big one, you're still managing one
+conversation at a time. You've got a
+
+236
+00:03:49,270 --> 00:03:49,280
+conversation at a time. You've got a
+ 
+
+237
+00:03:49,280 --> 00:03:51,270
+conversation at a time. You've got a
+nicer window, but it's still one window
+
+238
+00:03:51,270 --> 00:03:51,280
+nicer window, but it's still one window
+ 
+
+239
+00:03:51,280 --> 00:03:52,630
+nicer window, but it's still one window
+and you're flicking back and forth
+
+240
+00:03:52,630 --> 00:03:52,640
+and you're flicking back and forth
+ 
+
+241
+00:03:52,640 --> 00:03:54,710
+and you're flicking back and forth
+between your conversation topics to
+
+242
+00:03:54,710 --> 00:03:54,720
+between your conversation topics to
+ 
+
+243
+00:03:54,720 --> 00:03:56,070
+between your conversation topics to
+actually get those individual tasks
+
+244
+00:03:56,070 --> 00:03:56,080
+actually get those individual tasks
+ 
+
+245
+00:03:56,080 --> 00:03:57,670
+actually get those individual tasks
+done. You don't have that abstracted
+
+246
+00:03:57,670 --> 00:03:57,680
+done. You don't have that abstracted
+ 
+
+247
+00:03:57,680 --> 00:03:59,270
+done. You don't have that abstracted
+higher level view. Now, this is where it
+
+248
+00:03:59,270 --> 00:03:59,280
+higher level view. Now, this is where it
+ 
+
+249
+00:03:59,280 --> 00:04:01,670
+higher level view. Now, this is where it
+gets really interesting. Vibe canban is
+
+250
+00:04:01,670 --> 00:04:01,680
+gets really interesting. Vibe canban is
+ 
+
+251
+00:04:01,680 --> 00:04:03,910
+gets really interesting. Vibe canban is
+a canban board designed specifically for
+
+252
+00:04:03,910 --> 00:04:03,920
+a canban board designed specifically for
+ 
+
+253
+00:04:03,920 --> 00:04:05,990
+a canban board designed specifically for
+managing coding agents. So, you can
+
+254
+00:04:05,990 --> 00:04:06,000
+managing coding agents. So, you can
+ 
+
+255
+00:04:06,000 --> 00:04:08,229
+managing coding agents. So, you can
+create issues, drag them into in
+
+256
+00:04:08,229 --> 00:04:08,239
+create issues, drag them into in
+ 
+
+257
+00:04:08,239 --> 00:04:10,789
+create issues, drag them into in
+progress, and it automatically spins up
+
+258
+00:04:10,789 --> 00:04:10,799
+progress, and it automatically spins up
+ 
+
+259
+00:04:10,799 --> 00:04:12,869
+progress, and it automatically spins up
+separate claw code sessions. And the UI
+
+260
+00:04:12,869 --> 00:04:12,879
+separate claw code sessions. And the UI
+ 
+
+261
+00:04:12,879 --> 00:04:14,949
+separate claw code sessions. And the UI
+is genuinely very nice. But this is the
+
+262
+00:04:14,949 --> 00:04:14,959
+is genuinely very nice. But this is the
+ 
+
+263
+00:04:14,959 --> 00:04:17,110
+is genuinely very nice. But this is the
+key thing. It's designed for developers
+
+264
+00:04:17,110 --> 00:04:17,120
+key thing. It's designed for developers
+ 
+
+265
+00:04:17,120 --> 00:04:19,110
+key thing. It's designed for developers
+who are managing code. So it talks about
+
+266
+00:04:19,110 --> 00:04:19,120
+who are managing code. So it talks about
+ 
+
+267
+00:04:19,120 --> 00:04:21,830
+who are managing code. So it talks about
+GitHub commits, pull requests, branches,
+
+268
+00:04:21,830 --> 00:04:21,840
+GitHub commits, pull requests, branches,
+ 
+
+269
+00:04:21,840 --> 00:04:23,510
+GitHub commits, pull requests, branches,
+diffs, and if you're a software engineer
+
+270
+00:04:23,510 --> 00:04:23,520
+diffs, and if you're a software engineer
+ 
+
+271
+00:04:23,520 --> 00:04:25,350
+diffs, and if you're a software engineer
+orchestrating coding agents, that's
+
+272
+00:04:25,350 --> 00:04:25,360
+orchestrating coding agents, that's
+ 
+
+273
+00:04:25,360 --> 00:04:26,710
+orchestrating coding agents, that's
+brilliant. But if you're a business
+
+274
+00:04:26,710 --> 00:04:26,720
+brilliant. But if you're a business
+ 
+
+275
+00:04:26,720 --> 00:04:28,550
+brilliant. But if you're a business
+owner who just wants to say get this
+
+276
+00:04:28,550 --> 00:04:28,560
+owner who just wants to say get this
+ 
+
+277
+00:04:28,560 --> 00:04:30,629
+owner who just wants to say get this
+goal done, it's too much for your use
+
+278
+00:04:30,629 --> 00:04:30,639
+goal done, it's too much for your use
+ 
+
+279
+00:04:30,639 --> 00:04:32,150
+goal done, it's too much for your use
+case. And then if you want to abstract
+
+280
+00:04:32,150 --> 00:04:32,160
+case. And then if you want to abstract
+ 
+
+281
+00:04:32,160 --> 00:04:34,390
+case. And then if you want to abstract
+one level higher, we've got paperclipip.
+
+282
+00:04:34,390 --> 00:04:34,400
+one level higher, we've got paperclipip.
+ 
+
+283
+00:04:34,400 --> 00:04:35,990
+one level higher, we've got paperclipip.
+So paperclip is an open-source
+
+284
+00:04:35,990 --> 00:04:36,000
+So paperclip is an open-source
+ 
+
+285
+00:04:36,000 --> 00:04:37,590
+So paperclip is an open-source
+framework, and you can think of this as
+
+286
+00:04:37,590 --> 00:04:37,600
+framework, and you can think of this as
+ 
+
+287
+00:04:37,600 --> 00:04:39,749
+framework, and you can think of this as
+an operating system for running an
+
+288
+00:04:39,749 --> 00:04:39,759
+an operating system for running an
+ 
+
+289
+00:04:39,759 --> 00:04:41,510
+an operating system for running an
+autonomous company. So, it's set out
+
+290
+00:04:41,510 --> 00:04:41,520
+autonomous company. So, it's set out
+ 
+
+291
+00:04:41,520 --> 00:04:42,950
+autonomous company. So, it's set out
+like a traditional company. You create
+
+292
+00:04:42,950 --> 00:04:42,960
+like a traditional company. You create
+ 
+
+293
+00:04:42,960 --> 00:04:46,230
+like a traditional company. You create
+org charts, assign roles like CEO, CTO,
+
+294
+00:04:46,230 --> 00:04:46,240
+org charts, assign roles like CEO, CTO,
+ 
+
+295
+00:04:46,240 --> 00:04:48,469
+org charts, assign roles like CEO, CTO,
+and set budgets for specific roles. And
+
+296
+00:04:48,469 --> 00:04:48,479
+and set budgets for specific roles. And
+ 
+
+297
+00:04:48,479 --> 00:04:50,710
+and set budgets for specific roles. And
+conceptually, I get where this is going,
+
+298
+00:04:50,710 --> 00:04:50,720
+conceptually, I get where this is going,
+ 
+
+299
+00:04:50,720 --> 00:04:52,710
+conceptually, I get where this is going,
+but in practice, it's way too much for
+
+300
+00:04:52,710 --> 00:04:52,720
+but in practice, it's way too much for
+ 
+
+301
+00:04:52,720 --> 00:04:54,870
+but in practice, it's way too much for
+most of us. You don't need an org chart
+
+302
+00:04:54,870 --> 00:04:54,880
+most of us. You don't need an org chart
+ 
+
+303
+00:04:54,880 --> 00:04:56,469
+most of us. You don't need an org chart
+to write a LinkedIn post and build a
+
+304
+00:04:56,469 --> 00:04:56,479
+to write a LinkedIn post and build a
+ 
+
+305
+00:04:56,479 --> 00:04:58,469
+to write a LinkedIn post and build a
+landing page. You just need to get jobs
+
+306
+00:04:58,469 --> 00:04:58,479
+landing page. You just need to get jobs
+ 
+
+307
+00:04:58,479 --> 00:05:00,390
+landing page. You just need to get jobs
+done faster. So, Paperclip, although it
+
+308
+00:05:00,390 --> 00:05:00,400
+done faster. So, Paperclip, although it
+ 
+
+309
+00:05:00,400 --> 00:05:01,990
+done faster. So, Paperclip, although it
+looks brilliant, is solving a problem
+
+310
+00:05:01,990 --> 00:05:02,000
+looks brilliant, is solving a problem
+ 
+
+311
+00:05:02,000 --> 00:05:03,590
+looks brilliant, is solving a problem
+that most of us don't even have yet
+
+312
+00:05:03,590 --> 00:05:03,600
+that most of us don't even have yet
+ 
+
+313
+00:05:03,600 --> 00:05:05,030
+that most of us don't even have yet
+because we still want to manage those
+
+314
+00:05:05,030 --> 00:05:05,040
+because we still want to manage those
+ 
+
+315
+00:05:05,040 --> 00:05:06,950
+because we still want to manage those
+outputs. And then there are tools like
+
+316
+00:05:06,950 --> 00:05:06,960
+outputs. And then there are tools like
+ 
+
+317
+00:05:06,960 --> 00:05:09,189
+outputs. And then there are tools like
+claude code board claude code task
+
+318
+00:05:09,189 --> 00:05:09,199
+claude code board claude code task
+ 
+
+319
+00:05:09,199 --> 00:05:12,150
+claude code board claude code task
+viewer open clause mission control and a
+
+320
+00:05:12,150 --> 00:05:12,160
+viewer open clause mission control and a
+ 
+
+321
+00:05:12,160 --> 00:05:13,510
+viewer open clause mission control and a
+bunch of others and some of them are
+
+322
+00:05:13,510 --> 00:05:13,520
+bunch of others and some of them are
+ 
+
+323
+00:05:13,520 --> 00:05:15,350
+bunch of others and some of them are
+really polished but again they're all
+
+324
+00:05:15,350 --> 00:05:15,360
+really polished but again they're all
+ 
+
+325
+00:05:15,360 --> 00:05:18,150
+really polished but again they're all
+oriented around coding sessions code
+
+326
+00:05:18,150 --> 00:05:18,160
+oriented around coding sessions code
+ 
+
+327
+00:05:18,160 --> 00:05:20,710
+oriented around coding sessions code
+review developer workflows technical
+
+328
+00:05:20,710 --> 00:05:20,720
+review developer workflows technical
+ 
+
+329
+00:05:20,720 --> 00:05:22,710
+review developer workflows technical
+users only. So every tool out there is
+
+330
+00:05:22,710 --> 00:05:22,720
+users only. So every tool out there is
+ 
+
+331
+00:05:22,720 --> 00:05:24,629
+users only. So every tool out there is
+solving the same problem. How do I
+
+332
+00:05:24,629 --> 00:05:24,639
+solving the same problem. How do I
+ 
+
+333
+00:05:24,639 --> 00:05:26,550
+solving the same problem. How do I
+manage multiple coding sessions? But
+
+334
+00:05:26,550 --> 00:05:26,560
+manage multiple coding sessions? But
+ 
+
+335
+00:05:26,560 --> 00:05:27,990
+manage multiple coding sessions? But
+that's not actually the problem for
+
+336
+00:05:27,990 --> 00:05:28,000
+that's not actually the problem for
+ 
+
+337
+00:05:28,000 --> 00:05:30,150
+that's not actually the problem for
+business users. Their question is how do
+
+338
+00:05:30,150 --> 00:05:30,160
+business users. Their question is how do
+ 
+
+339
+00:05:30,160 --> 00:05:32,230
+business users. Their question is how do
+I manage multiple business goals? let
+
+340
+00:05:32,230 --> 00:05:32,240
+I manage multiple business goals? let
+ 
+
+341
+00:05:32,240 --> 00:05:33,990
+I manage multiple business goals? let
+Claude code figure out the rest for me,
+
+342
+00:05:33,990 --> 00:05:34,000
+Claude code figure out the rest for me,
+ 
+
+343
+00:05:34,000 --> 00:05:36,230
+Claude code figure out the rest for me,
+but still have a handle on and maintain
+
+344
+00:05:36,230 --> 00:05:36,240
+but still have a handle on and maintain
+ 
+
+345
+00:05:36,240 --> 00:05:38,230
+but still have a handle on and maintain
+and supervise the outputs. And this is
+
+346
+00:05:38,230 --> 00:05:38,240
+and supervise the outputs. And this is
+ 
+
+347
+00:05:38,240 --> 00:05:40,629
+and supervise the outputs. And this is
+the gap that none of these tools fill.
+
+348
+00:05:40,629 --> 00:05:40,639
+the gap that none of these tools fill.
+ 
+
+349
+00:05:40,639 --> 00:05:42,150
+the gap that none of these tools fill.
+So, let me explain what it's actually
+
+350
+00:05:42,150 --> 00:05:42,160
+So, let me explain what it's actually
+ 
+
+351
+00:05:42,160 --> 00:05:44,070
+So, let me explain what it's actually
+missing. Every tool I just showed
+
+352
+00:05:44,070 --> 00:05:44,080
+missing. Every tool I just showed
+ 
+
+353
+00:05:44,080 --> 00:05:45,510
+missing. Every tool I just showed
+started from the bottom up. So, they
+
+354
+00:05:45,510 --> 00:05:45,520
+started from the bottom up. So, they
+ 
+
+355
+00:05:45,520 --> 00:05:47,510
+started from the bottom up. So, they
+start with the session in the terminal.
+
+356
+00:05:47,510 --> 00:05:47,520
+start with the session in the terminal.
+ 
+
+357
+00:05:47,520 --> 00:05:48,950
+start with the session in the terminal.
+They start with the code and then they
+
+358
+00:05:48,950 --> 00:05:48,960
+They start with the code and then they
+ 
+
+359
+00:05:48,960 --> 00:05:50,870
+They start with the code and then they
+try to add a project management layer on
+
+360
+00:05:50,870 --> 00:05:50,880
+try to add a project management layer on
+ 
+
+361
+00:05:50,880 --> 00:05:52,310
+try to add a project management layer on
+top of it. But what we actually need is
+
+362
+00:05:52,310 --> 00:05:52,320
+top of it. But what we actually need is
+ 
+
+363
+00:05:52,320 --> 00:05:54,230
+top of it. But what we actually need is
+the opposite. We need to start from the
+
+364
+00:05:54,230 --> 00:05:54,240
+the opposite. We need to start from the
+ 
+
+365
+00:05:54,240 --> 00:05:56,150
+the opposite. We need to start from the
+top and work our way downwards. So we
+
+366
+00:05:56,150 --> 00:05:56,160
+top and work our way downwards. So we
+ 
+
+367
+00:05:56,160 --> 00:05:57,749
+top and work our way downwards. So we
+need to start with the goal like I want
+
+368
+00:05:57,749 --> 00:05:57,759
+need to start with the goal like I want
+ 
+
+369
+00:05:57,759 --> 00:05:59,749
+need to start with the goal like I want
+to build a lead generation system and
+
+370
+00:05:59,749 --> 00:05:59,759
+to build a lead generation system and
+ 
+
+371
+00:05:59,759 --> 00:06:01,510
+to build a lead generation system and
+then let the system figure out what
+
+372
+00:06:01,510 --> 00:06:01,520
+then let the system figure out what
+ 
+
+373
+00:06:01,520 --> 00:06:03,510
+then let the system figure out what
+sessions to spin up, how in-depth the
+
+374
+00:06:03,510 --> 00:06:03,520
+sessions to spin up, how in-depth the
+ 
+
+375
+00:06:03,520 --> 00:06:05,510
+sessions to spin up, how in-depth the
+planning should be, how many agents are
+
+376
+00:06:05,510 --> 00:06:05,520
+planning should be, how many agents are
+ 
+
+377
+00:06:05,520 --> 00:06:08,469
+planning should be, how many agents are
+needed, what skills to use and how to
+
+378
+00:06:08,469 --> 00:06:08,479
+needed, what skills to use and how to
+ 
+
+379
+00:06:08,479 --> 00:06:10,230
+needed, what skills to use and how to
+get it done, i.e. all the technical
+
+380
+00:06:10,230 --> 00:06:10,240
+get it done, i.e. all the technical
+ 
+
+381
+00:06:10,240 --> 00:06:11,830
+get it done, i.e. all the technical
+overhead. And it's much like hiring a
+
+382
+00:06:11,830 --> 00:06:11,840
+overhead. And it's much like hiring a
+ 
+
+383
+00:06:11,840 --> 00:06:13,430
+overhead. And it's much like hiring a
+competent employee. You give that
+
+384
+00:06:13,430 --> 00:06:13,440
+competent employee. You give that
+ 
+
+385
+00:06:13,440 --> 00:06:15,110
+competent employee. You give that
+employee a goal. You say, "Here's the
+
+386
+00:06:15,110 --> 00:06:15,120
+employee a goal. You say, "Here's the
+ 
+
+387
+00:06:15,120 --> 00:06:16,629
+employee a goal. You say, "Here's the
+deadline. Go and figure it out and
+
+388
+00:06:16,629 --> 00:06:16,639
+deadline. Go and figure it out and
+ 
+
+389
+00:06:16,639 --> 00:06:17,830
+deadline. Go and figure it out and
+update me when you've made some
+
+390
+00:06:17,830 --> 00:06:17,840
+update me when you've made some
+ 
+
+391
+00:06:17,840 --> 00:06:19,029
+update me when you've made some
+progress." That's the level of
+
+392
+00:06:19,029 --> 00:06:19,039
+progress." That's the level of
+ 
+
+393
+00:06:19,039 --> 00:06:20,870
+progress." That's the level of
+abstraction as business owners that we
+
+394
+00:06:20,870 --> 00:06:20,880
+abstraction as business owners that we
+ 
+
+395
+00:06:20,880 --> 00:06:22,150
+abstraction as business owners that we
+need. And there's also one more thing
+
+396
+00:06:22,150 --> 00:06:22,160
+need. And there's also one more thing
+ 
+
+397
+00:06:22,160 --> 00:06:23,830
+need. And there's also one more thing
+that none of these tools handle at the
+
+398
+00:06:23,830 --> 00:06:23,840
+that none of these tools handle at the
+ 
+
+399
+00:06:23,840 --> 00:06:25,670
+that none of these tools handle at the
+moment. None of them have the operating
+
+400
+00:06:25,670 --> 00:06:25,680
+moment. None of them have the operating
+ 
+
+401
+00:06:25,680 --> 00:06:27,350
+moment. None of them have the operating
+system in the back end that stores your
+
+402
+00:06:27,350 --> 00:06:27,360
+system in the back end that stores your
+ 
+
+403
+00:06:27,360 --> 00:06:29,749
+system in the back end that stores your
+business context, your brand voice, your
+
+404
+00:06:29,749 --> 00:06:29,759
+business context, your brand voice, your
+ 
+
+405
+00:06:29,759 --> 00:06:31,670
+business context, your brand voice, your
+client details, your content strategy,
+
+406
+00:06:31,670 --> 00:06:31,680
+client details, your content strategy,
+ 
+
+407
+00:06:31,680 --> 00:06:33,430
+client details, your content strategy,
+your target audience. None of these
+
+408
+00:06:33,430 --> 00:06:33,440
+your target audience. None of these
+ 
+
+409
+00:06:33,440 --> 00:06:35,430
+your target audience. None of these
+camban tools show anything about your
+
+410
+00:06:35,430 --> 00:06:35,440
+camban tools show anything about your
+ 
+
+411
+00:06:35,440 --> 00:06:37,350
+camban tools show anything about your
+business. They're just managing coding
+
+412
+00:06:37,350 --> 00:06:37,360
+business. They're just managing coding
+ 
+
+413
+00:06:37,360 --> 00:06:39,270
+business. They're just managing coding
+sessions in a complete vacuum. So, what
+
+414
+00:06:39,270 --> 00:06:39,280
+sessions in a complete vacuum. So, what
+ 
+
+415
+00:06:39,280 --> 00:06:41,670
+sessions in a complete vacuum. So, what
+we need is a tool that thinks in goals,
+
+416
+00:06:41,670 --> 00:06:41,680
+we need is a tool that thinks in goals,
+ 
+
+417
+00:06:41,680 --> 00:06:43,590
+we need is a tool that thinks in goals,
+not sessions. It knows your business
+
+418
+00:06:43,590 --> 00:06:43,600
+not sessions. It knows your business
+ 
+
+419
+00:06:43,600 --> 00:06:45,270
+not sessions. It knows your business
+context and lets you manage everything
+
+420
+00:06:45,270 --> 00:06:45,280
+context and lets you manage everything
+ 
+
+421
+00:06:45,280 --> 00:06:47,670
+context and lets you manage everything
+from one place with minimal interaction
+
+422
+00:06:47,670 --> 00:06:47,680
+from one place with minimal interaction
+ 
+
+423
+00:06:47,680 --> 00:06:49,189
+from one place with minimal interaction
+with the terminal. So, that's exactly
+
+424
+00:06:49,189 --> 00:06:49,199
+with the terminal. So, that's exactly
+ 
+
+425
+00:06:49,199 --> 00:06:51,270
+with the terminal. So, that's exactly
+what I built. So, let me show you the
+
+426
+00:06:51,270 --> 00:06:51,280
+what I built. So, let me show you the
+ 
+
+427
+00:06:51,280 --> 00:06:53,270
+what I built. So, let me show you the
+command center. So, it sits on top of
+
+428
+00:06:53,270 --> 00:06:53,280
+command center. So, it sits on top of
+ 
+
+429
+00:06:53,280 --> 00:06:55,350
+command center. So, it sits on top of
+the Aentic OS that we've built out in
+
+430
+00:06:55,350 --> 00:06:55,360
+the Aentic OS that we've built out in
+ 
+
+431
+00:06:55,360 --> 00:06:57,430
+the Aentic OS that we've built out in
+previous videos. So, quick recap if
+
+432
+00:06:57,430 --> 00:06:57,440
+previous videos. So, quick recap if
+ 
+
+433
+00:06:57,440 --> 00:06:59,430
+previous videos. So, quick recap if
+you're new here. The Aentic OS is your
+
+434
+00:06:59,430 --> 00:06:59,440
+you're new here. The Aentic OS is your
+ 
+
+435
+00:06:59,440 --> 00:07:01,909
+you're new here. The Aentic OS is your
+entire business brain living inside
+
+436
+00:07:01,909 --> 00:07:01,919
+entire business brain living inside
+ 
+
+437
+00:07:01,919 --> 00:07:04,070
+entire business brain living inside
+Cloud Code that you can spin up in just
+
+438
+00:07:04,070 --> 00:07:04,080
+Cloud Code that you can spin up in just
+ 
+
+439
+00:07:04,080 --> 00:07:05,830
+Cloud Code that you can spin up in just
+10 minutes using our plug-and-play
+
+440
+00:07:05,830 --> 00:07:05,840
+10 minutes using our plug-and-play
+ 
+
+441
+00:07:05,840 --> 00:07:07,510
+10 minutes using our plug-and-play
+templates. So, it contains your brand
+
+442
+00:07:07,510 --> 00:07:07,520
+templates. So, it contains your brand
+ 
+
+443
+00:07:07,520 --> 00:07:09,670
+templates. So, it contains your brand
+voice, your content strategy, all your
+
+444
+00:07:09,670 --> 00:07:09,680
+voice, your content strategy, all your
+ 
+
+445
+00:07:09,680 --> 00:07:11,670
+voice, your content strategy, all your
+ICP details, and it's all connected
+
+446
+00:07:11,670 --> 00:07:11,680
+ICP details, and it's all connected
+ 
+
+447
+00:07:11,680 --> 00:07:13,110
+ICP details, and it's all connected
+through skills that actually work
+
+448
+00:07:13,110 --> 00:07:13,120
+through skills that actually work
+ 
+
+449
+00:07:13,120 --> 00:07:15,029
+through skills that actually work
+together with memories of what you've
+
+450
+00:07:15,029 --> 00:07:15,039
+together with memories of what you've
+ 
+
+451
+00:07:15,039 --> 00:07:16,790
+together with memories of what you've
+previously worked on. Now, the core idea
+
+452
+00:07:16,790 --> 00:07:16,800
+previously worked on. Now, the core idea
+ 
+
+453
+00:07:16,800 --> 00:07:19,029
+previously worked on. Now, the core idea
+of the command center on top of the
+
+454
+00:07:19,029 --> 00:07:19,039
+of the command center on top of the
+ 
+
+455
+00:07:19,039 --> 00:07:21,350
+of the command center on top of the
+Aentic OS is really simple. Instead of
+
+456
+00:07:21,350 --> 00:07:21,360
+Aentic OS is really simple. Instead of
+ 
+
+457
+00:07:21,360 --> 00:07:23,350
+Aentic OS is really simple. Instead of
+managing terminal interfaces, we're
+
+458
+00:07:23,350 --> 00:07:23,360
+managing terminal interfaces, we're
+ 
+
+459
+00:07:23,360 --> 00:07:24,950
+managing terminal interfaces, we're
+going to be managing our business goals.
+
+460
+00:07:24,950 --> 00:07:24,960
+going to be managing our business goals.
+ 
+
+461
+00:07:24,960 --> 00:07:27,029
+going to be managing our business goals.
+So you can think of this as a sort of
+
+462
+00:07:27,029 --> 00:07:27,039
+So you can think of this as a sort of
+ 
+
+463
+00:07:27,039 --> 00:07:29,110
+So you can think of this as a sort of
+canban board for your business. But if
+
+464
+00:07:29,110 --> 00:07:29,120
+canban board for your business. But if
+ 
+
+465
+00:07:29,120 --> 00:07:30,550
+canban board for your business. But if
+we have a look at traditional canban,
+
+466
+00:07:30,550 --> 00:07:30,560
+we have a look at traditional canban,
+ 
+
+467
+00:07:30,560 --> 00:07:32,390
+we have a look at traditional canban,
+you'll see why it's different when we're
+
+468
+00:07:32,390 --> 00:07:32,400
+you'll see why it's different when we're
+ 
+
+469
+00:07:32,400 --> 00:07:34,230
+you'll see why it's different when we're
+considering not human workforce but a
+
+470
+00:07:34,230 --> 00:07:34,240
+considering not human workforce but a
+ 
+
+471
+00:07:34,240 --> 00:07:35,909
+considering not human workforce but a
+genic workforce. So say we have the
+
+472
+00:07:35,909 --> 00:07:35,919
+genic workforce. So say we have the
+ 
+
+473
+00:07:35,919 --> 00:07:37,430
+genic workforce. So say we have the
+traditional canban board here. We have
+
+474
+00:07:37,430 --> 00:07:37,440
+traditional canban board here. We have
+ 
+
+475
+00:07:37,440 --> 00:07:39,589
+traditional canban board here. We have
+not started and we want to actually
+
+476
+00:07:39,589 --> 00:07:39,599
+not started and we want to actually
+ 
+
+477
+00:07:39,599 --> 00:07:41,670
+not started and we want to actually
+create a content repurposing system for
+
+478
+00:07:41,670 --> 00:07:41,680
+create a content repurposing system for
+ 
+
+479
+00:07:41,680 --> 00:07:43,749
+create a content repurposing system for
+our business. So we would then push the
+
+480
+00:07:43,749 --> 00:07:43,759
+our business. So we would then push the
+ 
+
+481
+00:07:43,759 --> 00:07:45,670
+our business. So we would then push the
+task to Claude. Claude would then start
+
+482
+00:07:45,670 --> 00:07:45,680
+task to Claude. Claude would then start
+ 
+
+483
+00:07:45,680 --> 00:07:47,430
+task to Claude. Claude would then start
+the task, do a bunch of research, spin
+
+484
+00:07:47,430 --> 00:07:47,440
+the task, do a bunch of research, spin
+ 
+
+485
+00:07:47,440 --> 00:07:49,029
+the task, do a bunch of research, spin
+out some subtasks. They'd appear in this
+
+486
+00:07:49,029 --> 00:07:49,039
+out some subtasks. They'd appear in this
+ 
+
+487
+00:07:49,039 --> 00:07:50,629
+out some subtasks. They'd appear in this
+view here. Claude would then take on the
+
+488
+00:07:50,629 --> 00:07:50,639
+view here. Claude would then take on the
+ 
+
+489
+00:07:50,639 --> 00:07:52,629
+view here. Claude would then take on the
+subtask. We might at some point get to a
+
+490
+00:07:52,629 --> 00:07:52,639
+subtask. We might at some point get to a
+ 
+
+491
+00:07:52,639 --> 00:07:53,749
+subtask. We might at some point get to a
+point where we have to review the
+
+492
+00:07:53,749 --> 00:07:53,759
+point where we have to review the
+ 
+
+493
+00:07:53,759 --> 00:07:55,749
+point where we have to review the
+outputs. So it pass it to the review
+
+494
+00:07:55,749 --> 00:07:55,759
+outputs. So it pass it to the review
+ 
+
+495
+00:07:55,759 --> 00:07:57,909
+outputs. So it pass it to the review
+stage. This is very sequential at this
+
+496
+00:07:57,909 --> 00:07:57,919
+stage. This is very sequential at this
+ 
+
+497
+00:07:57,919 --> 00:07:59,350
+stage. This is very sequential at this
+point, but actually the way that we
+
+498
+00:07:59,350 --> 00:07:59,360
+point, but actually the way that we
+ 
+
+499
+00:07:59,360 --> 00:08:01,670
+point, but actually the way that we
+operate with agents and claw code is not
+
+500
+00:08:01,670 --> 00:08:01,680
+operate with agents and claw code is not
+ 
+
+501
+00:08:01,680 --> 00:08:04,309
+operate with agents and claw code is not
+sequential. It's actually iterative. So
+
+502
+00:08:04,309 --> 00:08:04,319
+sequential. It's actually iterative. So
+ 
+
+503
+00:08:04,319 --> 00:08:06,469
+sequential. It's actually iterative. So
+the next stage would be I give feedback.
+
+504
+00:08:06,469 --> 00:08:06,479
+the next stage would be I give feedback.
+ 
+
+505
+00:08:06,479 --> 00:08:08,230
+the next stage would be I give feedback.
+Claude goes back into progress. Claude
+
+506
+00:08:08,230 --> 00:08:08,240
+Claude goes back into progress. Claude
+ 
+
+507
+00:08:08,240 --> 00:08:10,309
+Claude goes back into progress. Claude
+does some more work. It then gives me
+
+508
+00:08:10,309 --> 00:08:10,319
+does some more work. It then gives me
+ 
+
+509
+00:08:10,319 --> 00:08:12,790
+does some more work. It then gives me
+back for review, back to Claude, back to
+
+510
+00:08:12,790 --> 00:08:12,800
+back for review, back to Claude, back to
+ 
+
+511
+00:08:12,800 --> 00:08:14,710
+back for review, back to Claude, back to
+me. You see how it's so iterative like
+
+512
+00:08:14,710 --> 00:08:14,720
+me. You see how it's so iterative like
+ 
+
+513
+00:08:14,720 --> 00:08:15,990
+me. You see how it's so iterative like
+this? So what we've done is just
+
+514
+00:08:15,990 --> 00:08:16,000
+this? So what we've done is just
+ 
+
+515
+00:08:16,000 --> 00:08:17,830
+this? So what we've done is just
+extracted the iterative nature of the
+
+516
+00:08:17,830 --> 00:08:17,840
+extracted the iterative nature of the
+ 
+
+517
+00:08:17,840 --> 00:08:20,309
+extracted the iterative nature of the
+clawed conversation and actually built
+
+518
+00:08:20,309 --> 00:08:20,319
+clawed conversation and actually built
+ 
+
+519
+00:08:20,319 --> 00:08:22,390
+clawed conversation and actually built
+it out into our own canban board. And on
+
+520
+00:08:22,390 --> 00:08:22,400
+it out into our own canban board. And on
+ 
+
+521
+00:08:22,400 --> 00:08:24,629
+it out into our own canban board. And on
+the left hand side we've got our turn
+
+522
+00:08:24,629 --> 00:08:24,639
+the left hand side we've got our turn
+ 
+
+523
+00:08:24,639 --> 00:08:26,070
+the left hand side we've got our turn
+which is all the stuff that we need to
+
+524
+00:08:26,070 --> 00:08:26,080
+which is all the stuff that we need to
+ 
+
+525
+00:08:26,080 --> 00:08:27,589
+which is all the stuff that we need to
+review. And you can see we're stacking
+
+526
+00:08:27,589 --> 00:08:27,599
+review. And you can see we're stacking
+ 
+
+527
+00:08:27,599 --> 00:08:29,830
+review. And you can see we're stacking
+different tasks, different goals on the
+
+528
+00:08:29,830 --> 00:08:29,840
+different tasks, different goals on the
+ 
+
+529
+00:08:29,840 --> 00:08:31,430
+different tasks, different goals on the
+your turn here. And on the right hand
+
+530
+00:08:31,430 --> 00:08:31,440
+your turn here. And on the right hand
+ 
+
+531
+00:08:31,440 --> 00:08:33,029
+your turn here. And on the right hand
+side we have Claude's turn. Now you'll
+
+532
+00:08:33,029 --> 00:08:33,039
+side we have Claude's turn. Now you'll
+ 
+
+533
+00:08:33,039 --> 00:08:35,029
+side we have Claude's turn. Now you'll
+notice here it's not a coding canban
+
+534
+00:08:35,029 --> 00:08:35,039
+notice here it's not a coding canban
+ 
+
+535
+00:08:35,039 --> 00:08:37,029
+notice here it's not a coding canban
+board. You've got your goals, your
+
+536
+00:08:37,029 --> 00:08:37,039
+board. You've got your goals, your
+ 
+
+537
+00:08:37,039 --> 00:08:40,070
+board. You've got your goals, your
+active task, what's in progress, and
+
+538
+00:08:40,070 --> 00:08:40,080
+active task, what's in progress, and
+ 
+
+539
+00:08:40,080 --> 00:08:41,909
+active task, what's in progress, and
+what's done or been achieved. Down here
+
+540
+00:08:41,909 --> 00:08:41,919
+what's done or been achieved. Down here
+ 
+
+541
+00:08:41,919 --> 00:08:43,350
+what's done or been achieved. Down here
+we've got the scheduled task. We've got
+
+542
+00:08:43,350 --> 00:08:43,360
+we've got the scheduled task. We've got
+ 
+
+543
+00:08:43,360 --> 00:08:45,590
+we've got the scheduled task. We've got
+the recent outputs and the history and
+
+544
+00:08:45,590 --> 00:08:45,600
+the recent outputs and the history and
+ 
+
+545
+00:08:45,600 --> 00:08:47,269
+the recent outputs and the history and
+we can separate it per client. But none
+
+546
+00:08:47,269 --> 00:08:47,279
+we can separate it per client. But none
+ 
+
+547
+00:08:47,279 --> 00:08:50,070
+we can separate it per client. But none
+of this talks about GitHub commits, pull
+
+548
+00:08:50,070 --> 00:08:50,080
+of this talks about GitHub commits, pull
+ 
+
+549
+00:08:50,080 --> 00:08:52,070
+of this talks about GitHub commits, pull
+requests, or anything technical. This is
+
+550
+00:08:52,070 --> 00:08:52,080
+requests, or anything technical. This is
+ 
+
+551
+00:08:52,080 --> 00:08:53,910
+requests, or anything technical. This is
+all about managing business goals. But
+
+552
+00:08:53,910 --> 00:08:53,920
+all about managing business goals. But
+ 
+
+553
+00:08:53,920 --> 00:08:55,430
+all about managing business goals. But
+we're doing that through effectively
+
+554
+00:08:55,430 --> 00:08:55,440
+we're doing that through effectively
+ 
+
+555
+00:08:55,440 --> 00:08:57,269
+we're doing that through effectively
+different tasks which spin up different
+
+556
+00:08:57,269 --> 00:08:57,279
+different tasks which spin up different
+ 
+
+557
+00:08:57,279 --> 00:08:59,269
+different tasks which spin up different
+agents in your terminal. And all we need
+
+558
+00:08:59,269 --> 00:08:59,279
+agents in your terminal. And all we need
+ 
+
+559
+00:08:59,279 --> 00:09:01,110
+agents in your terminal. And all we need
+to do is describe our goal. So we can
+
+560
+00:09:01,110 --> 00:09:01,120
+to do is describe our goal. So we can
+ 
+
+561
+00:09:01,120 --> 00:09:02,710
+to do is describe our goal. So we can
+use some of the plug-and-play commands
+
+562
+00:09:02,710 --> 00:09:02,720
+use some of the plug-and-play commands
+ 
+
+563
+00:09:02,720 --> 00:09:04,550
+use some of the plug-and-play commands
+here as part of the agent OS or we can
+
+564
+00:09:04,550 --> 00:09:04,560
+here as part of the agent OS or we can
+ 
+
+565
+00:09:04,560 --> 00:09:06,070
+here as part of the agent OS or we can
+come in and say build me a content
+
+566
+00:09:06,070 --> 00:09:06,080
+come in and say build me a content
+ 
+
+567
+00:09:06,080 --> 00:09:08,070
+come in and say build me a content
+repurposing system for my YouTube
+
+568
+00:09:08,070 --> 00:09:08,080
+repurposing system for my YouTube
+ 
+
+569
+00:09:08,080 --> 00:09:09,750
+repurposing system for my YouTube
+channel. We can decide what permissions
+
+570
+00:09:09,750 --> 00:09:09,760
+channel. We can decide what permissions
+ 
+
+571
+00:09:09,760 --> 00:09:11,269
+channel. We can decide what permissions
+to give it. The default permissions that
+
+572
+00:09:11,269 --> 00:09:11,279
+to give it. The default permissions that
+ 
+
+573
+00:09:11,279 --> 00:09:12,870
+to give it. The default permissions that
+we've already assigned in settings.j or
+
+574
+00:09:12,870 --> 00:09:12,880
+we've already assigned in settings.j or
+ 
+
+575
+00:09:12,880 --> 00:09:14,870
+we've already assigned in settings.j or
+JSON or the fully automatic i.e.
+
+576
+00:09:14,870 --> 00:09:14,880
+JSON or the fully automatic i.e.
+ 
+
+577
+00:09:14,880 --> 00:09:16,310
+JSON or the fully automatic i.e.
+dangerously skip permissions. And then
+
+578
+00:09:16,310 --> 00:09:16,320
+dangerously skip permissions. And then
+ 
+
+579
+00:09:16,320 --> 00:09:18,070
+dangerously skip permissions. And then
+we can give it a level of task. So is
+
+580
+00:09:18,070 --> 00:09:18,080
+we can give it a level of task. So is
+ 
+
+581
+00:09:18,080 --> 00:09:20,470
+we can give it a level of task. So is
+this a quick task? Is it a campaign with
+
+582
+00:09:20,470 --> 00:09:20,480
+this a quick task? Is it a campaign with
+ 
+
+583
+00:09:20,480 --> 00:09:21,910
+this a quick task? Is it a campaign with
+multiple deliverables where it has to
+
+584
+00:09:21,910 --> 00:09:21,920
+multiple deliverables where it has to
+ 
+
+585
+00:09:21,920 --> 00:09:24,070
+multiple deliverables where it has to
+break out subtasks or is this a deep
+
+586
+00:09:24,070 --> 00:09:24,080
+break out subtasks or is this a deep
+ 
+
+587
+00:09:24,080 --> 00:09:26,070
+break out subtasks or is this a deep
+build where it needs to go into way more
+
+588
+00:09:26,070 --> 00:09:26,080
+build where it needs to go into way more
+ 
+
+589
+00:09:26,080 --> 00:09:27,269
+build where it needs to go into way more
+detail with the planning? We're going to
+
+590
+00:09:27,269 --> 00:09:27,279
+detail with the planning? We're going to
+ 
+
+591
+00:09:27,279 --> 00:09:29,110
+detail with the planning? We're going to
+hit quick task for this. Send it to
+
+592
+00:09:29,110 --> 00:09:29,120
+hit quick task for this. Send it to
+ 
+
+593
+00:09:29,120 --> 00:09:30,630
+hit quick task for this. Send it to
+Claude. And you can see it's now in
+
+594
+00:09:30,630 --> 00:09:30,640
+Claude. And you can see it's now in
+ 
+
+595
+00:09:30,640 --> 00:09:32,230
+Claude. And you can see it's now in
+Claude's queue. So this is spinning up
+
+596
+00:09:32,230 --> 00:09:32,240
+Claude's queue. So this is spinning up
+ 
+
+597
+00:09:32,240 --> 00:09:34,470
+Claude's queue. So this is spinning up
+an instance inside Claude that we can
+
+598
+00:09:34,470 --> 00:09:34,480
+an instance inside Claude that we can
+ 
+
+599
+00:09:34,480 --> 00:09:36,389
+an instance inside Claude that we can
+actually click inside and see the
+
+600
+00:09:36,389 --> 00:09:36,399
+actually click inside and see the
+ 
+
+601
+00:09:36,399 --> 00:09:38,630
+actually click inside and see the
+activity as it built out with Claude. So
+
+602
+00:09:38,630 --> 00:09:38,640
+activity as it built out with Claude. So
+ 
+
+603
+00:09:38,640 --> 00:09:40,389
+activity as it built out with Claude. So
+we can see the full logs of exactly what
+
+604
+00:09:40,389 --> 00:09:40,399
+we can see the full logs of exactly what
+ 
+
+605
+00:09:40,399 --> 00:09:42,710
+we can see the full logs of exactly what
+Claude is doing inside this conversation
+
+606
+00:09:42,710 --> 00:09:42,720
+Claude is doing inside this conversation
+ 
+
+607
+00:09:42,720 --> 00:09:44,630
+Claude is doing inside this conversation
+history of the goal that we're trying to
+
+608
+00:09:44,630 --> 00:09:44,640
+history of the goal that we're trying to
+ 
+
+609
+00:09:44,640 --> 00:09:46,230
+history of the goal that we're trying to
+achieve. So Claude's going to work out
+
+610
+00:09:46,230 --> 00:09:46,240
+achieve. So Claude's going to work out
+ 
+
+611
+00:09:46,240 --> 00:09:48,470
+achieve. So Claude's going to work out
+exactly what planning level is needed
+
+612
+00:09:48,470 --> 00:09:48,480
+exactly what planning level is needed
+ 
+
+613
+00:09:48,480 --> 00:09:50,630
+exactly what planning level is needed
+for that given task. It's going to come
+
+614
+00:09:50,630 --> 00:09:50,640
+for that given task. It's going to come
+ 
+
+615
+00:09:50,640 --> 00:09:52,790
+for that given task. It's going to come
+back to us seeking feedback where
+
+616
+00:09:52,790 --> 00:09:52,800
+back to us seeking feedback where
+ 
+
+617
+00:09:52,800 --> 00:09:54,389
+back to us seeking feedback where
+required and it's going to use the
+
+618
+00:09:54,389 --> 00:09:54,399
+required and it's going to use the
+ 
+
+619
+00:09:54,399 --> 00:09:56,310
+required and it's going to use the
+skills that we've got built into the
+
+620
+00:09:56,310 --> 00:09:56,320
+skills that we've got built into the
+ 
+
+621
+00:09:56,320 --> 00:09:57,750
+skills that we've got built into the
+system which we'll come to. and it's
+
+622
+00:09:57,750 --> 00:09:57,760
+system which we'll come to. and it's
+ 
+
+623
+00:09:57,760 --> 00:09:59,910
+system which we'll come to. and it's
+come back to me because it's reflected
+
+624
+00:09:59,910 --> 00:09:59,920
+come back to me because it's reflected
+ 
+
+625
+00:09:59,920 --> 00:10:02,310
+come back to me because it's reflected
+on all of the memory that it has inside
+
+626
+00:10:02,310 --> 00:10:02,320
+on all of the memory that it has inside
+ 
+
+627
+00:10:02,320 --> 00:10:04,630
+on all of the memory that it has inside
+the history of the repository and said
+
+628
+00:10:04,630 --> 00:10:04,640
+the history of the repository and said
+ 
+
+629
+00:10:04,640 --> 00:10:06,230
+the history of the repository and said
+before I scope this out further are you
+
+630
+00:10:06,230 --> 00:10:06,240
+before I scope this out further are you
+ 
+
+631
+00:10:06,240 --> 00:10:08,070
+before I scope this out further are you
+looking to expand beyond newsletters or
+
+632
+00:10:08,070 --> 00:10:08,080
+looking to expand beyond newsletters or
+ 
+
+633
+00:10:08,080 --> 00:10:09,910
+looking to expand beyond newsletters or
+is this about refining or fixing the
+
+634
+00:10:09,910 --> 00:10:09,920
+is this about refining or fixing the
+ 
+
+635
+00:10:09,920 --> 00:10:11,590
+is this about refining or fixing the
+newsletter system from yesterday so it
+
+636
+00:10:11,590 --> 00:10:11,600
+newsletter system from yesterday so it
+ 
+
+637
+00:10:11,600 --> 00:10:13,269
+newsletter system from yesterday so it
+understands that yesterday we input
+
+638
+00:10:13,269 --> 00:10:13,279
+understands that yesterday we input
+ 
+
+639
+00:10:13,279 --> 00:10:15,350
+understands that yesterday we input
+exactly the same task to build out this
+
+640
+00:10:15,350 --> 00:10:15,360
+exactly the same task to build out this
+ 
+
+641
+00:10:15,360 --> 00:10:17,190
+exactly the same task to build out this
+content repurposing system and is
+
+642
+00:10:17,190 --> 00:10:17,200
+content repurposing system and is
+ 
+
+643
+00:10:17,200 --> 00:10:18,389
+content repurposing system and is
+starting to build on that memory
+
+644
+00:10:18,389 --> 00:10:18,399
+starting to build on that memory
+ 
+
+645
+00:10:18,399 --> 00:10:19,670
+starting to build on that memory
+yesterday we can see the full
+
+646
+00:10:19,670 --> 00:10:19,680
+yesterday we can see the full
+ 
+
+647
+00:10:19,680 --> 00:10:21,509
+yesterday we can see the full
+conversation history or just actually
+
+648
+00:10:21,509 --> 00:10:21,519
+conversation history or just actually
+ 
+
+649
+00:10:21,519 --> 00:10:24,470
+conversation history or just actually
+reply at a glance without needing to see
+
+650
+00:10:24,470 --> 00:10:24,480
+reply at a glance without needing to see
+ 
+
+651
+00:10:24,480 --> 00:10:26,069
+reply at a glance without needing to see
+and scroll through all the conversation
+
+652
+00:10:26,069 --> 00:10:26,079
+and scroll through all the conversation
+ 
+
+653
+00:10:26,079 --> 00:10:27,590
+and scroll through all the conversation
+history for demonstration I'm going to
+
+654
+00:10:27,590 --> 00:10:27,600
+history for demonstration I'm going to
+ 
+
+655
+00:10:27,600 --> 00:10:29,509
+history for demonstration I'm going to
+mark this one as done and it will pop
+
+656
+00:10:29,509 --> 00:10:29,519
+mark this one as done and it will pop
+ 
+
+657
+00:10:29,519 --> 00:10:31,829
+mark this one as done and it will pop
+into the achieved or I can drag it down
+
+658
+00:10:31,829 --> 00:10:31,839
+into the achieved or I can drag it down
+ 
+
+659
+00:10:31,839 --> 00:10:34,630
+into the achieved or I can drag it down
+here and we basically move that into
+
+660
+00:10:34,630 --> 00:10:34,640
+here and we basically move that into
+ 
+
+661
+00:10:34,640 --> 00:10:36,949
+here and we basically move that into
+already completed to close that terminal
+
+662
+00:10:36,949 --> 00:10:36,959
+already completed to close that terminal
+ 
+
+663
+00:10:36,959 --> 00:10:38,550
+already completed to close that terminal
+session. Now if we look at an example I
+
+664
+00:10:38,550 --> 00:10:38,560
+session. Now if we look at an example I
+ 
+
+665
+00:10:38,560 --> 00:10:39,990
+session. Now if we look at an example I
+created earlier when we click into a
+
+666
+00:10:39,990 --> 00:10:40,000
+created earlier when we click into a
+ 
+
+667
+00:10:40,000 --> 00:10:42,230
+created earlier when we click into a
+task we've got a full view of the last
+
+668
+00:10:42,230 --> 00:10:42,240
+task we've got a full view of the last
+ 
+
+669
+00:10:42,240 --> 00:10:44,710
+task we've got a full view of the last
+two messages between us which are the
+
+670
+00:10:44,710 --> 00:10:44,720
+two messages between us which are the
+ 
+
+671
+00:10:44,720 --> 00:10:46,069
+two messages between us which are the
+most important messages cuz it's what
+
+672
+00:10:46,069 --> 00:10:46,079
+most important messages cuz it's what
+ 
+
+673
+00:10:46,079 --> 00:10:47,829
+most important messages cuz it's what
+information did I give Claude? What
+
+674
+00:10:47,829 --> 00:10:47,839
+information did I give Claude? What
+ 
+
+675
+00:10:47,839 --> 00:10:49,750
+information did I give Claude? What
+information did it give back? So this is
+
+676
+00:10:49,750 --> 00:10:49,760
+information did it give back? So this is
+ 
+
+677
+00:10:49,760 --> 00:10:52,389
+information did it give back? So this is
+about a LinkedIn post on claw code and
+
+678
+00:10:52,389 --> 00:10:52,399
+about a LinkedIn post on claw code and
+ 
+
+679
+00:10:52,399 --> 00:10:53,910
+about a LinkedIn post on claw code and
+codeex. And what I want to point out
+
+680
+00:10:53,910 --> 00:10:53,920
+codeex. And what I want to point out
+ 
+
+681
+00:10:53,920 --> 00:10:55,590
+codeex. And what I want to point out
+here is not only can we reply and
+
+682
+00:10:55,590 --> 00:10:55,600
+here is not only can we reply and
+ 
+
+683
+00:10:55,600 --> 00:10:57,670
+here is not only can we reply and
+actually use our built-in commands like
+
+684
+00:10:57,670 --> 00:10:57,680
+actually use our built-in commands like
+ 
+
+685
+00:10:57,680 --> 00:11:00,069
+actually use our built-in commands like
+we can in claw code add our attachments
+
+686
+00:11:00,069 --> 00:11:00,079
+we can in claw code add our attachments
+ 
+
+687
+00:11:00,079 --> 00:11:01,509
+we can in claw code add our attachments
+but we can actually see all of the
+
+688
+00:11:01,509 --> 00:11:01,519
+but we can actually see all of the
+ 
+
+689
+00:11:01,519 --> 00:11:03,269
+but we can actually see all of the
+outputs in one place that it's produced.
+
+690
+00:11:03,269 --> 00:11:03,279
+outputs in one place that it's produced.
+ 
+
+691
+00:11:03,279 --> 00:11:05,350
+outputs in one place that it's produced.
+So if I wanted to see this LinkedIn post
+
+692
+00:11:05,350 --> 00:11:05,360
+So if I wanted to see this LinkedIn post
+ 
+
+693
+00:11:05,360 --> 00:11:07,030
+So if I wanted to see this LinkedIn post
+I could effectively look at this preview
+
+694
+00:11:07,030 --> 00:11:07,040
+I could effectively look at this preview
+ 
+
+695
+00:11:07,040 --> 00:11:09,110
+I could effectively look at this preview
+and actually scroll down and see this in
+
+696
+00:11:09,110 --> 00:11:09,120
+and actually scroll down and see this in
+ 
+
+697
+00:11:09,120 --> 00:11:11,190
+and actually scroll down and see this in
+a markdown preview and then take that
+
+698
+00:11:11,190 --> 00:11:11,200
+a markdown preview and then take that
+ 
+
+699
+00:11:11,200 --> 00:11:13,269
+a markdown preview and then take that
+either download it directly here or take
+
+700
+00:11:13,269 --> 00:11:13,279
+either download it directly here or take
+ 
+
+701
+00:11:13,279 --> 00:11:15,030
+either download it directly here or take
+that directly to LinkedIn. But what
+
+702
+00:11:15,030 --> 00:11:15,040
+that directly to LinkedIn. But what
+ 
+
+703
+00:11:15,040 --> 00:11:17,110
+that directly to LinkedIn. But what
+we're not doing is actually going
+
+704
+00:11:17,110 --> 00:11:17,120
+we're not doing is actually going
+ 
+
+705
+00:11:17,120 --> 00:11:18,550
+we're not doing is actually going
+through and just having a standard
+
+706
+00:11:18,550 --> 00:11:18,560
+through and just having a standard
+ 
+
+707
+00:11:18,560 --> 00:11:20,310
+through and just having a standard
+conversation with Claude. What we're
+
+708
+00:11:20,310 --> 00:11:20,320
+conversation with Claude. What we're
+ 
+
+709
+00:11:20,320 --> 00:11:23,750
+conversation with Claude. What we're
+doing is managing six plus tasks at a
+
+710
+00:11:23,750 --> 00:11:23,760
+doing is managing six plus tasks at a
+ 
+
+711
+00:11:23,760 --> 00:11:25,990
+doing is managing six plus tasks at a
+glance from this dashboard and able to
+
+712
+00:11:25,990 --> 00:11:26,000
+glance from this dashboard and able to
+ 
+
+713
+00:11:26,000 --> 00:11:28,470
+glance from this dashboard and able to
+actually get that summary view inside by
+
+714
+00:11:28,470 --> 00:11:28,480
+actually get that summary view inside by
+ 
+
+715
+00:11:28,480 --> 00:11:30,150
+actually get that summary view inside by
+clicking on each task. You can see the
+
+716
+00:11:30,150 --> 00:11:30,160
+clicking on each task. You can see the
+ 
+
+717
+00:11:30,160 --> 00:11:32,790
+clicking on each task. You can see the
+deeper builds have full phases that
+
+718
+00:11:32,790 --> 00:11:32,800
+deeper builds have full phases that
+ 
+
+719
+00:11:32,800 --> 00:11:34,630
+deeper builds have full phases that
+we're able to execute with many many
+
+720
+00:11:34,630 --> 00:11:34,640
+we're able to execute with many many
+ 
+
+721
+00:11:34,640 --> 00:11:36,550
+we're able to execute with many many
+files that link to those phases. If
+
+722
+00:11:36,550 --> 00:11:36,560
+files that link to those phases. If
+ 
+
+723
+00:11:36,560 --> 00:11:38,069
+files that link to those phases. If
+we're working across multiple clients,
+
+724
+00:11:38,069 --> 00:11:38,079
+we're working across multiple clients,
+ 
+
+725
+00:11:38,079 --> 00:11:39,990
+we're working across multiple clients,
+then we might want to see just the tasks
+
+726
+00:11:39,990 --> 00:11:40,000
+then we might want to see just the tasks
+ 
+
+727
+00:11:40,000 --> 00:11:42,069
+then we might want to see just the tasks
+or the files in that client and what's
+
+728
+00:11:42,069 --> 00:11:42,079
+or the files in that client and what's
+ 
+
+729
+00:11:42,079 --> 00:11:43,590
+or the files in that client and what's
+been achieved. or we just want to see
+
+730
+00:11:43,590 --> 00:11:43,600
+been achieved. or we just want to see
+ 
+
+731
+00:11:43,600 --> 00:11:45,509
+been achieved. or we just want to see
+across all of our projects what tasks
+
+732
+00:11:45,509 --> 00:11:45,519
+across all of our projects what tasks
+ 
+
+733
+00:11:45,519 --> 00:11:47,509
+across all of our projects what tasks
+are we looking to manage and at a glance
+
+734
+00:11:47,509 --> 00:11:47,519
+are we looking to manage and at a glance
+ 
+
+735
+00:11:47,519 --> 00:11:49,430
+are we looking to manage and at a glance
+we can see all scheduled tasks that
+
+736
+00:11:49,430 --> 00:11:49,440
+we can see all scheduled tasks that
+ 
+
+737
+00:11:49,440 --> 00:11:51,190
+we can see all scheduled tasks that
+we've built i.e. we have a monthly
+
+738
+00:11:51,190 --> 00:11:51,200
+we've built i.e. we have a monthly
+ 
+
+739
+00:11:51,200 --> 00:11:53,269
+we've built i.e. we have a monthly
+learnings health check so it checks all
+
+740
+00:11:53,269 --> 00:11:53,279
+learnings health check so it checks all
+ 
+
+741
+00:11:53,279 --> 00:11:54,470
+learnings health check so it checks all
+of the learnings and all the feedback
+
+742
+00:11:54,470 --> 00:11:54,480
+of the learnings and all the feedback
+ 
+
+743
+00:11:54,480 --> 00:11:55,910
+of the learnings and all the feedback
+that we've given it and consolidates
+
+744
+00:11:55,910 --> 00:11:55,920
+that we've given it and consolidates
+ 
+
+745
+00:11:55,920 --> 00:11:57,350
+that we've given it and consolidates
+that every month we have a weekly
+
+746
+00:11:57,350 --> 00:11:57,360
+that every month we have a weekly
+ 
+
+747
+00:11:57,360 --> 00:11:59,430
+that every month we have a weekly
+activity digest and a skill update check
+
+748
+00:11:59,430 --> 00:11:59,440
+activity digest and a skill update check
+ 
+
+749
+00:11:59,440 --> 00:12:01,430
+activity digest and a skill update check
+that runs at 9:00 a.m. every single day
+
+750
+00:12:01,430 --> 00:12:01,440
+that runs at 9:00 a.m. every single day
+ 
+
+751
+00:12:01,440 --> 00:12:03,110
+that runs at 9:00 a.m. every single day
+to make sure that our docs are up to
+
+752
+00:12:03,110 --> 00:12:03,120
+to make sure that our docs are up to
+ 
+
+753
+00:12:03,120 --> 00:12:04,389
+to make sure that our docs are up to
+date with all the skills that we've
+
+754
+00:12:04,389 --> 00:12:04,399
+date with all the skills that we've
+ 
+
+755
+00:12:04,399 --> 00:12:05,910
+date with all the skills that we've
+installed. And then down here we have
+
+756
+00:12:05,910 --> 00:12:05,920
+installed. And then down here we have
+ 
+
+757
+00:12:05,920 --> 00:12:07,509
+installed. And then down here we have
+all of our recent output. So, at a
+
+758
+00:12:07,509 --> 00:12:07,519
+all of our recent output. So, at a
+ 
+
+759
+00:12:07,519 --> 00:12:09,509
+all of our recent output. So, at a
+glance, we can see without having to go
+
+760
+00:12:09,509 --> 00:12:09,519
+glance, we can see without having to go
+ 
+
+761
+00:12:09,519 --> 00:12:11,670
+glance, we can see without having to go
+into the individual tasks, all of these
+
+762
+00:12:11,670 --> 00:12:11,680
+into the individual tasks, all of these
+ 
+
+763
+00:12:11,680 --> 00:12:13,990
+into the individual tasks, all of these
+MD files and actually click into, let's
+
+764
+00:12:13,990 --> 00:12:14,000
+MD files and actually click into, let's
+ 
+
+765
+00:12:14,000 --> 00:12:16,629
+MD files and actually click into, let's
+use the LinkedIn post as an example.
+
+766
+00:12:16,629 --> 00:12:16,639
+use the LinkedIn post as an example.
+ 
+
+767
+00:12:16,639 --> 00:12:18,230
+use the LinkedIn post as an example.
+Click into and see the preview of the
+
+768
+00:12:18,230 --> 00:12:18,240
+Click into and see the preview of the
+ 
+
+769
+00:12:18,240 --> 00:12:19,750
+Click into and see the preview of the
+markdown down here as well. So, you're
+
+770
+00:12:19,750 --> 00:12:19,760
+markdown down here as well. So, you're
+ 
+
+771
+00:12:19,760 --> 00:12:21,829
+markdown down here as well. So, you're
+able to totally abstract away from the
+
+772
+00:12:21,829 --> 00:12:21,839
+able to totally abstract away from the
+ 
+
+773
+00:12:21,839 --> 00:12:24,069
+able to totally abstract away from the
+terminal here and manage a series of
+
+774
+00:12:24,069 --> 00:12:24,079
+terminal here and manage a series of
+ 
+
+775
+00:12:24,079 --> 00:12:26,389
+terminal here and manage a series of
+tasks that flick between your turn and
+
+776
+00:12:26,389 --> 00:12:26,399
+tasks that flick between your turn and
+ 
+
+777
+00:12:26,399 --> 00:12:28,389
+tasks that flick between your turn and
+Claude's turn in this canban style. Now,
+
+778
+00:12:28,389 --> 00:12:28,399
+Claude's turn in this canban style. Now,
+ 
+
+779
+00:12:28,399 --> 00:12:29,509
+Claude's turn in this canban style. Now,
+this is definitely still under
+
+780
+00:12:29,509 --> 00:12:29,519
+this is definitely still under
+ 
+
+781
+00:12:29,519 --> 00:12:30,870
+this is definitely still under
+construction, by the way. It's not
+
+782
+00:12:30,870 --> 00:12:30,880
+construction, by the way. It's not
+ 
+
+783
+00:12:30,880 --> 00:12:32,949
+construction, by the way. It's not
+perfect yet, but it's becoming better by
+
+784
+00:12:32,949 --> 00:12:32,959
+perfect yet, but it's becoming better by
+ 
+
+785
+00:12:32,959 --> 00:12:34,230
+perfect yet, but it's becoming better by
+the day, and we're going to launch it
+
+786
+00:12:34,230 --> 00:12:34,240
+the day, and we're going to launch it
+ 
+
+787
+00:12:34,240 --> 00:12:36,230
+the day, and we're going to launch it
+for all members in the community in the
+
+788
+00:12:36,230 --> 00:12:36,240
+for all members in the community in the
+ 
+
+789
+00:12:36,240 --> 00:12:37,670
+for all members in the community in the
+next week or so once we've ironed out
+
+790
+00:12:37,670 --> 00:12:37,680
+next week or so once we've ironed out
+ 
+
+791
+00:12:37,680 --> 00:12:39,509
+next week or so once we've ironed out
+the bugs. And we've already alluded to
+
+792
+00:12:39,509 --> 00:12:39,519
+the bugs. And we've already alluded to
+ 
+
+793
+00:12:39,519 --> 00:12:41,430
+the bugs. And we've already alluded to
+this, but not only do we have this feed,
+
+794
+00:12:41,430 --> 00:12:41,440
+this, but not only do we have this feed,
+ 
+
+795
+00:12:41,440 --> 00:12:43,110
+this, but not only do we have this feed,
+which gives us an overview, but we've
+
+796
+00:12:43,110 --> 00:12:43,120
+which gives us an overview, but we've
+ 
+
+797
+00:12:43,120 --> 00:12:45,430
+which gives us an overview, but we've
+also got scheduled tasks. So, in Claw
+
+798
+00:12:45,430 --> 00:12:45,440
+also got scheduled tasks. So, in Claw
+ 
+
+799
+00:12:45,440 --> 00:12:47,190
+also got scheduled tasks. So, in Claw
+Code, we can actually interact with your
+
+800
+00:12:47,190 --> 00:12:47,200
+Code, we can actually interact with your
+ 
+
+801
+00:12:47,200 --> 00:12:49,269
+Code, we can actually interact with your
+Mac or your Windows machine and run
+
+802
+00:12:49,269 --> 00:12:49,279
+Mac or your Windows machine and run
+ 
+
+803
+00:12:49,279 --> 00:12:51,030
+Mac or your Windows machine and run
+things on a schedule. So, you can set up
+
+804
+00:12:51,030 --> 00:12:51,040
+things on a schedule. So, you can set up
+ 
+
+805
+00:12:51,040 --> 00:12:53,190
+things on a schedule. So, you can set up
+tasks that fire every single morning,
+
+806
+00:12:53,190 --> 00:12:53,200
+tasks that fire every single morning,
+ 
+
+807
+00:12:53,200 --> 00:12:54,870
+tasks that fire every single morning,
+every week, every month, whatever period
+
+808
+00:12:54,870 --> 00:12:54,880
+every week, every month, whatever period
+ 
+
+809
+00:12:54,880 --> 00:12:56,470
+every week, every month, whatever period
+you want. Say for example our skill
+
+810
+00:12:56,470 --> 00:12:56,480
+you want. Say for example our skill
+ 
+
+811
+00:12:56,480 --> 00:12:59,110
+you want. Say for example our skill
+update check. We can see at last round
+
+812
+00:12:59,110 --> 00:12:59,120
+update check. We can see at last round
+ 
+
+813
+00:12:59,120 --> 00:13:01,430
+update check. We can see at last round
+one day ago there was a success message
+
+814
+00:13:01,430 --> 00:13:01,440
+one day ago there was a success message
+ 
+
+815
+00:13:01,440 --> 00:13:03,190
+one day ago there was a success message
+and we've got a link to the output file
+
+816
+00:13:03,190 --> 00:13:03,200
+and we've got a link to the output file
+ 
+
+817
+00:13:03,200 --> 00:13:05,110
+and we've got a link to the output file
+here which gives us a log of exactly
+
+818
+00:13:05,110 --> 00:13:05,120
+here which gives us a log of exactly
+ 
+
+819
+00:13:05,120 --> 00:13:06,710
+here which gives us a log of exactly
+what happened. Now we can test run
+
+820
+00:13:06,710 --> 00:13:06,720
+what happened. Now we can test run
+ 
+
+821
+00:13:06,720 --> 00:13:09,110
+what happened. Now we can test run
+these. We can activate and deactivate or
+
+822
+00:13:09,110 --> 00:13:09,120
+these. We can activate and deactivate or
+ 
+
+823
+00:13:09,120 --> 00:13:10,310
+these. We can activate and deactivate or
+we can actually delete them directly
+
+824
+00:13:10,310 --> 00:13:10,320
+we can actually delete them directly
+ 
+
+825
+00:13:10,320 --> 00:13:11,670
+we can actually delete them directly
+from here and that will affect the
+
+826
+00:13:11,670 --> 00:13:11,680
+from here and that will affect the
+ 
+
+827
+00:13:11,680 --> 00:13:14,230
+from here and that will affect the
+underlying files in our VS Code at the
+
+828
+00:13:14,230 --> 00:13:14,240
+underlying files in our VS Code at the
+ 
+
+829
+00:13:14,240 --> 00:13:15,990
+underlying files in our VS Code at the
+base. Now next up we've got skills
+
+830
+00:13:15,990 --> 00:13:16,000
+base. Now next up we've got skills
+ 
+
+831
+00:13:16,000 --> 00:13:17,670
+base. Now next up we've got skills
+management. And this is something I'm
+
+832
+00:13:17,670 --> 00:13:17,680
+management. And this is something I'm
+ 
+
+833
+00:13:17,680 --> 00:13:19,430
+management. And this is something I'm
+really excited about because you can see
+
+834
+00:13:19,430 --> 00:13:19,440
+really excited about because you can see
+ 
+
+835
+00:13:19,440 --> 00:13:21,750
+really excited about because you can see
+all of your skills in one place. So not
+
+836
+00:13:21,750 --> 00:13:21,760
+all of your skills in one place. So not
+ 
+
+837
+00:13:21,760 --> 00:13:23,350
+all of your skills in one place. So not
+buried in different file folders
+
+838
+00:13:23,350 --> 00:13:23,360
+buried in different file folders
+ 
+
+839
+00:13:23,360 --> 00:13:25,110
+buried in different file folders
+somewhere. They're right here. So you
+
+840
+00:13:25,110 --> 00:13:25,120
+somewhere. They're right here. So you
+ 
+
+841
+00:13:25,120 --> 00:13:26,230
+somewhere. They're right here. So you
+can search through the skills. You can
+
+842
+00:13:26,230 --> 00:13:26,240
+can search through the skills. You can
+ 
+
+843
+00:13:26,240 --> 00:13:28,069
+can search through the skills. You can
+see we've got 21 skills installed. You
+
+844
+00:13:28,069 --> 00:13:28,079
+see we've got 21 skills installed. You
+ 
+
+845
+00:13:28,079 --> 00:13:29,430
+see we've got 21 skills installed. You
+can search through the skills by
+
+846
+00:13:29,430 --> 00:13:29,440
+can search through the skills by
+ 
+
+847
+00:13:29,440 --> 00:13:31,750
+can search through the skills by
+category and see exactly what those
+
+848
+00:13:31,750 --> 00:13:31,760
+category and see exactly what those
+ 
+
+849
+00:13:31,760 --> 00:13:33,590
+category and see exactly what those
+skills are and actually modify them from
+
+850
+00:13:33,590 --> 00:13:33,600
+skills are and actually modify them from
+ 
+
+851
+00:13:33,600 --> 00:13:35,110
+skills are and actually modify them from
+the interface. So if we go into our
+
+852
+00:13:35,110 --> 00:13:35,120
+the interface. So if we go into our
+ 
+
+853
+00:13:35,120 --> 00:13:37,269
+the interface. So if we go into our
+copywriting skill, we've got the
+
+854
+00:13:37,269 --> 00:13:37,279
+copywriting skill, we've got the
+ 
+
+855
+00:13:37,279 --> 00:13:40,389
+copywriting skill, we've got the
+skill.md file, but also we can see all
+
+856
+00:13:40,389 --> 00:13:40,399
+skill.md file, but also we can see all
+ 
+
+857
+00:13:40,399 --> 00:13:41,990
+skill.md file, but also we can see all
+of the reference files in there. And
+
+858
+00:13:41,990 --> 00:13:42,000
+of the reference files in there. And
+ 
+
+859
+00:13:42,000 --> 00:13:43,430
+of the reference files in there. And
+what we can do is actually go in
+
+860
+00:13:43,430 --> 00:13:43,440
+what we can do is actually go in
+ 
+
+861
+00:13:43,440 --> 00:13:45,910
+what we can do is actually go in
+directly and edit this markdown inside
+
+862
+00:13:45,910 --> 00:13:45,920
+directly and edit this markdown inside
+ 
+
+863
+00:13:45,920 --> 00:13:47,269
+directly and edit this markdown inside
+here. And that will affect the
+
+864
+00:13:47,269 --> 00:13:47,279
+here. And that will affect the
+ 
+
+865
+00:13:47,279 --> 00:13:49,509
+here. And that will affect the
+underlying file. And every time now the
+
+866
+00:13:49,509 --> 00:13:49,519
+underlying file. And every time now the
+ 
+
+867
+00:13:49,519 --> 00:13:51,590
+underlying file. And every time now the
+skill runs, those changes take effect.
+
+868
+00:13:51,590 --> 00:13:51,600
+skill runs, those changes take effect.
+ 
+
+869
+00:13:51,600 --> 00:13:53,430
+skill runs, those changes take effect.
+But you can see how this directly
+
+870
+00:13:53,430 --> 00:13:53,440
+But you can see how this directly
+ 
+
+871
+00:13:53,440 --> 00:13:55,590
+But you can see how this directly
+compares to actually looking at this
+
+872
+00:13:55,590 --> 00:13:55,600
+compares to actually looking at this
+ 
+
+873
+00:13:55,600 --> 00:13:59,430
+compares to actually looking at this
+exact skill inside the VS code terminal.
+
+874
+00:13:59,430 --> 00:13:59,440
+exact skill inside the VS code terminal.
+ 
+
+875
+00:13:59,440 --> 00:14:01,590
+exact skill inside the VS code terminal.
+So we go into doclude skills the
+
+876
+00:14:01,590 --> 00:14:01,600
+So we go into doclude skills the
+ 
+
+877
+00:14:01,600 --> 00:14:03,430
+So we go into doclude skills the
+skill.md file and then we have this
+
+878
+00:14:03,430 --> 00:14:03,440
+skill.md file and then we have this
+ 
+
+879
+00:14:03,440 --> 00:14:05,590
+skill.md file and then we have this
+markdown that's quite hard to visually
+
+880
+00:14:05,590 --> 00:14:05,600
+markdown that's quite hard to visually
+ 
+
+881
+00:14:05,600 --> 00:14:07,430
+markdown that's quite hard to visually
+understand and read versus the markdown
+
+882
+00:14:07,430 --> 00:14:07,440
+understand and read versus the markdown
+ 
+
+883
+00:14:07,440 --> 00:14:09,189
+understand and read versus the markdown
+that's actually rendered on the site. We
+
+884
+00:14:09,189 --> 00:14:09,199
+that's actually rendered on the site. We
+ 
+
+885
+00:14:09,199 --> 00:14:10,949
+that's actually rendered on the site. We
+can make a change and it will update it
+
+886
+00:14:10,949 --> 00:14:10,959
+can make a change and it will update it
+ 
+
+887
+00:14:10,959 --> 00:14:12,550
+can make a change and it will update it
+directly. And just to prove that I'm
+
+888
+00:14:12,550 --> 00:14:12,560
+directly. And just to prove that I'm
+ 
+
+889
+00:14:12,560 --> 00:14:14,389
+directly. And just to prove that I'm
+going to save this to test markdown
+
+890
+00:14:14,389 --> 00:14:14,399
+going to save this to test markdown
+ 
+
+891
+00:14:14,399 --> 00:14:16,150
+going to save this to test markdown
+copywriting test. And you can see that
+
+892
+00:14:16,150 --> 00:14:16,160
+copywriting test. And you can see that
+ 
+
+893
+00:14:16,160 --> 00:14:18,069
+copywriting test. And you can see that
+that's immediately rendered in here.
+
+894
+00:14:18,069 --> 00:14:18,079
+that's immediately rendered in here.
+ 
+
+895
+00:14:18,079 --> 00:14:20,310
+that's immediately rendered in here.
+Marketing copywriting test. and we'll go
+
+896
+00:14:20,310 --> 00:14:20,320
+Marketing copywriting test. and we'll go
+ 
+
+897
+00:14:20,320 --> 00:14:22,069
+Marketing copywriting test. and we'll go
+back to all skills. Now, the important
+
+898
+00:14:22,069 --> 00:14:22,079
+back to all skills. Now, the important
+ 
+
+899
+00:14:22,079 --> 00:14:24,230
+back to all skills. Now, the important
+thing here is we've got a meta skill
+
+900
+00:14:24,230 --> 00:14:24,240
+thing here is we've got a meta skill
+ 
+
+901
+00:14:24,240 --> 00:14:25,990
+thing here is we've got a meta skill
+creator built in that builds on
+
+902
+00:14:25,990 --> 00:14:26,000
+creator built in that builds on
+ 
+
+903
+00:14:26,000 --> 00:14:28,470
+creator built in that builds on
+anthropics skill creator and adapts
+
+904
+00:14:28,470 --> 00:14:28,480
+anthropics skill creator and adapts
+ 
+
+905
+00:14:28,480 --> 00:14:31,829
+anthropics skill creator and adapts
+skills to fit this agentic OS. So, what
+
+906
+00:14:31,829 --> 00:14:31,839
+skills to fit this agentic OS. So, what
+ 
+
+907
+00:14:31,839 --> 00:14:33,509
+skills to fit this agentic OS. So, what
+we can actually do is use that in the
+
+908
+00:14:33,509 --> 00:14:33,519
+we can actually do is use that in the
+ 
+
+909
+00:14:33,519 --> 00:14:35,269
+we can actually do is use that in the
+add a skill and we can either put like a
+
+910
+00:14:35,269 --> 00:14:35,279
+add a skill and we can either put like a
+ 
+
+911
+00:14:35,279 --> 00:14:37,350
+add a skill and we can either put like a
+GitHub reference to a specific skill we
+
+912
+00:14:37,350 --> 00:14:37,360
+GitHub reference to a specific skill we
+ 
+
+913
+00:14:37,360 --> 00:14:38,949
+GitHub reference to a specific skill we
+want to emulate or just give it a
+
+914
+00:14:38,949 --> 00:14:38,959
+want to emulate or just give it a
+ 
+
+915
+00:14:38,959 --> 00:14:41,030
+want to emulate or just give it a
+description or upload the skill directly
+
+916
+00:14:41,030 --> 00:14:41,040
+description or upload the skill directly
+ 
+
+917
+00:14:41,040 --> 00:14:42,550
+description or upload the skill directly
+and what that will do is use the skill
+
+918
+00:14:42,550 --> 00:14:42,560
+and what that will do is use the skill
+ 
+
+919
+00:14:42,560 --> 00:14:44,629
+and what that will do is use the skill
+creator to create that new skill inside
+
+920
+00:14:44,629 --> 00:14:44,639
+creator to create that new skill inside
+ 
+
+921
+00:14:44,639 --> 00:14:46,230
+creator to create that new skill inside
+here. And then let's not also forget
+
+922
+00:14:46,230 --> 00:14:46,240
+here. And then let's not also forget
+ 
+
+923
+00:14:46,240 --> 00:14:48,069
+here. And then let's not also forget
+about the documentation. So when you're
+
+924
+00:14:48,069 --> 00:14:48,079
+about the documentation. So when you're
+ 
+
+925
+00:14:48,079 --> 00:14:50,069
+about the documentation. So when you're
+writing out your claude.mmd, your
+
+926
+00:14:50,069 --> 00:14:50,079
+writing out your claude.mmd, your
+ 
+
+927
+00:14:50,079 --> 00:14:52,629
+writing out your claude.mmd, your
+readme.md, all your brand context where
+
+928
+00:14:52,629 --> 00:14:52,639
+readme.md, all your brand context where
+ 
+
+929
+00:14:52,639 --> 00:14:54,230
+readme.md, all your brand context where
+we store things like your community
+
+930
+00:14:54,230 --> 00:14:54,240
+we store things like your community
+ 
+
+931
+00:14:54,240 --> 00:14:56,470
+we store things like your community
+links, your personal links, your YouTube
+
+932
+00:14:56,470 --> 00:14:56,480
+links, your personal links, your YouTube
+ 
+
+933
+00:14:56,480 --> 00:14:58,150
+links, your personal links, your YouTube
+handles, stuff you use again and again
+
+934
+00:14:58,150 --> 00:14:58,160
+handles, stuff you use again and again
+ 
+
+935
+00:14:58,160 --> 00:14:59,829
+handles, stuff you use again and again
+are all saved into this system. And
+
+936
+00:14:59,829 --> 00:14:59,839
+are all saved into this system. And
+ 
+
+937
+00:14:59,839 --> 00:15:02,150
+are all saved into this system. And
+we've built this out in a similar way to
+
+938
+00:15:02,150 --> 00:15:02,160
+we've built this out in a similar way to
+ 
+
+939
+00:15:02,160 --> 00:15:04,069
+we've built this out in a similar way to
+OpenClaw where we've got things like the
+
+940
+00:15:04,069 --> 00:15:04,079
+OpenClaw where we've got things like the
+ 
+
+941
+00:15:04,079 --> 00:15:06,790
+OpenClaw where we've got things like the
+sold MD which feeds into how the agent
+
+942
+00:15:06,790 --> 00:15:06,800
+sold MD which feeds into how the agent
+ 
+
+943
+00:15:06,800 --> 00:15:08,870
+sold MD which feeds into how the agent
+works every single day with your tasks.
+
+944
+00:15:08,870 --> 00:15:08,880
+works every single day with your tasks.
+ 
+
+945
+00:15:08,880 --> 00:15:10,870
+works every single day with your tasks.
+And again, all super easy to edit and
+
+946
+00:15:10,870 --> 00:15:10,880
+And again, all super easy to edit and
+ 
+
+947
+00:15:10,880 --> 00:15:12,550
+And again, all super easy to edit and
+manage from this dashboard. And this is
+
+948
+00:15:12,550 --> 00:15:12,560
+manage from this dashboard. And this is
+ 
+
+949
+00:15:12,560 --> 00:15:14,470
+manage from this dashboard. And this is
+all done on a per client basis. So if I
+
+950
+00:15:14,470 --> 00:15:14,480
+all done on a per client basis. So if I
+ 
+
+951
+00:15:14,480 --> 00:15:16,550
+all done on a per client basis. So if I
+go back to the feed and filter by client
+
+952
+00:15:16,550 --> 00:15:16,560
+go back to the feed and filter by client
+ 
+
+953
+00:15:16,560 --> 00:15:18,949
+go back to the feed and filter by client
+one that has no brand context set up,
+
+954
+00:15:18,949 --> 00:15:18,959
+one that has no brand context set up,
+ 
+
+955
+00:15:18,959 --> 00:15:20,550
+one that has no brand context set up,
+then the docs are going to be relevant
+
+956
+00:15:20,550 --> 00:15:20,560
+then the docs are going to be relevant
+ 
+
+957
+00:15:20,560 --> 00:15:22,150
+then the docs are going to be relevant
+for client one only. So you can see
+
+958
+00:15:22,150 --> 00:15:22,160
+for client one only. So you can see
+ 
+
+959
+00:15:22,160 --> 00:15:23,590
+for client one only. So you can see
+there's very few docs available for
+
+960
+00:15:23,590 --> 00:15:23,600
+there's very few docs available for
+ 
+
+961
+00:15:23,600 --> 00:15:24,949
+there's very few docs available for
+client one, but they still have access
+
+962
+00:15:24,949 --> 00:15:24,959
+client one, but they still have access
+ 
+
+963
+00:15:24,959 --> 00:15:27,030
+client one, but they still have access
+to all the skills which are installed at
+
+964
+00:15:27,030 --> 00:15:27,040
+to all the skills which are installed at
+ 
+
+965
+00:15:27,040 --> 00:15:28,710
+to all the skills which are installed at
+the root level. We can switch back to
+
+966
+00:15:28,710 --> 00:15:28,720
+the root level. We can switch back to
+ 
+
+967
+00:15:28,720 --> 00:15:30,550
+the root level. We can switch back to
+root and see all of the tasks that are
+
+968
+00:15:30,550 --> 00:15:30,560
+root and see all of the tasks that are
+ 
+
+969
+00:15:30,560 --> 00:15:32,150
+root and see all of the tasks that are
+remaining. So that is the command
+
+970
+00:15:32,150 --> 00:15:32,160
+remaining. So that is the command
+ 
+
+971
+00:15:32,160 --> 00:15:33,750
+remaining. So that is the command
+center. You can think of this as one
+
+972
+00:15:33,750 --> 00:15:33,760
+center. You can think of this as one
+ 
+
+973
+00:15:33,760 --> 00:15:35,590
+center. You can think of this as one
+dashboard where you manage your goals
+
+974
+00:15:35,590 --> 00:15:35,600
+dashboard where you manage your goals
+ 
+
+975
+00:15:35,600 --> 00:15:37,590
+dashboard where you manage your goals
+instead of terminals. And like we said,
+
+976
+00:15:37,590 --> 00:15:37,600
+instead of terminals. And like we said,
+ 
+
+977
+00:15:37,600 --> 00:15:39,350
+instead of terminals. And like we said,
+we've got the business context built in.
+
+978
+00:15:39,350 --> 00:15:39,360
+we've got the business context built in.
+ 
+
+979
+00:15:39,360 --> 00:15:41,269
+we've got the business context built in.
+We've got scheduled tasks being built,
+
+980
+00:15:41,269 --> 00:15:41,279
+We've got scheduled tasks being built,
+ 
+
+981
+00:15:41,279 --> 00:15:43,110
+We've got scheduled tasks being built,
+all your skills management, your docs,
+
+982
+00:15:43,110 --> 00:15:43,120
+all your skills management, your docs,
+ 
+
+983
+00:15:43,120 --> 00:15:44,710
+all your skills management, your docs,
+multi-client support, and it's basically
+
+984
+00:15:44,710 --> 00:15:44,720
+multi-client support, and it's basically
+ 
+
+985
+00:15:44,720 --> 00:15:47,110
+multi-client support, and it's basically
+a way to work at a higher level and get
+
+986
+00:15:47,110 --> 00:15:47,120
+a way to work at a higher level and get
+ 
+
+987
+00:15:47,120 --> 00:15:49,110
+a way to work at a higher level and get
+more done faster without ever needing
+
+988
+00:15:49,110 --> 00:15:49,120
+more done faster without ever needing
+ 
+
+989
+00:15:49,120 --> 00:15:51,509
+more done faster without ever needing
+you to flick between multiple terminals
+
+990
+00:15:51,509 --> 00:15:51,519
+you to flick between multiple terminals
+ 
+
+991
+00:15:51,519 --> 00:15:53,110
+you to flick between multiple terminals
+as a business owner. So, let me wrap
+
+992
+00:15:53,110 --> 00:15:53,120
+as a business owner. So, let me wrap
+ 
+
+993
+00:15:53,120 --> 00:15:55,269
+as a business owner. So, let me wrap
+this up. The terminal was actually fine
+
+994
+00:15:55,269 --> 00:15:55,279
+this up. The terminal was actually fine
+ 
+
+995
+00:15:55,279 --> 00:15:56,790
+this up. The terminal was actually fine
+when we were running one claw code
+
+996
+00:15:56,790 --> 00:15:56,800
+when we were running one claw code
+ 
+
+997
+00:15:56,800 --> 00:15:58,629
+when we were running one claw code
+session at a time. But agents have
+
+998
+00:15:58,629 --> 00:15:58,639
+session at a time. But agents have
+ 
+
+999
+00:15:58,639 --> 00:16:00,310
+session at a time. But agents have
+actually got so good and they can handle
+
+1000
+00:16:00,310 --> 00:16:00,320
+actually got so good and they can handle
+ 
+
+1001
+00:16:00,320 --> 00:16:01,910
+actually got so good and they can handle
+so much more that now we need to
+
+1002
+00:16:01,910 --> 00:16:01,920
+so much more that now we need to
+ 
+
+1003
+00:16:01,920 --> 00:16:03,990
+so much more that now we need to
+abstract one layer higher to be able to
+
+1004
+00:16:03,990 --> 00:16:04,000
+abstract one layer higher to be able to
+ 
+
+1005
+00:16:04,000 --> 00:16:05,749
+abstract one layer higher to be able to
+actually leverage the productivity
+
+1006
+00:16:05,749 --> 00:16:05,759
+actually leverage the productivity
+ 
+
+1007
+00:16:05,759 --> 00:16:07,189
+actually leverage the productivity
+gains. And whether you use one of the
+
+1008
+00:16:07,189 --> 00:16:07,199
+gains. And whether you use one of the
+ 
+
+1009
+00:16:07,199 --> 00:16:09,509
+gains. And whether you use one of the
+tools I showed you like Vibe Camban or
+
+1010
+00:16:09,509 --> 00:16:09,519
+tools I showed you like Vibe Camban or
+ 
+
+1011
+00:16:09,519 --> 00:16:11,189
+tools I showed you like Vibe Camban or
+Pulsia or whether you build something
+
+1012
+00:16:11,189 --> 00:16:11,199
+Pulsia or whether you build something
+ 
+
+1013
+00:16:11,199 --> 00:16:12,870
+Pulsia or whether you build something
+custom like the command center for
+
+1014
+00:16:12,870 --> 00:16:12,880
+custom like the command center for
+ 
+
+1015
+00:16:12,880 --> 00:16:15,110
+custom like the command center for
+yourself, the point is still the same.
+
+1016
+00:16:15,110 --> 00:16:15,120
+yourself, the point is still the same.
+ 
+
+1017
+00:16:15,120 --> 00:16:16,949
+yourself, the point is still the same.
+We need to stop managing terminals and
+
+1018
+00:16:16,949 --> 00:16:16,959
+We need to stop managing terminals and
+ 
+
+1019
+00:16:16,959 --> 00:16:18,870
+We need to stop managing terminals and
+start managing goals to improve our
+
+1020
+00:16:18,870 --> 00:16:18,880
+start managing goals to improve our
+ 
+
+1021
+00:16:18,880 --> 00:16:20,389
+start managing goals to improve our
+outputs. So if you want to see how the
+
+1022
+00:16:20,389 --> 00:16:20,399
+outputs. So if you want to see how the
+ 
+
+1023
+00:16:20,399 --> 00:16:22,629
+outputs. So if you want to see how the
+Aentic OS works under the hood for
+
+1024
+00:16:22,629 --> 00:16:22,639
+Aentic OS works under the hood for
+ 
+
+1025
+00:16:22,639 --> 00:16:24,389
+Aentic OS works under the hood for
+powering this command center, then watch
+
+1026
+00:16:24,389 --> 00:16:24,399
+powering this command center, then watch
+ 
+
+1027
+00:16:24,399 --> 00:16:26,629
+powering this command center, then watch
+this next video or grab the whole system
+
+1028
+00:16:26,629 --> 00:16:26,639
+this next video or grab the whole system
+ 
+
+1029
+00:16:26,639 --> 00:16:28,389
+this next video or grab the whole system
+including the command center in the
+
+1030
+00:16:28,389 --> 00:16:28,399
+including the command center in the
+ 
+
+1031
+00:16:28,399 --> 00:16:29,910
+including the command center in the
+academy link in the description. The
+
+1032
+00:16:29,910 --> 00:16:29,920
+academy link in the description. The
+ 
+
+1033
+00:16:29,920 --> 00:16:31,350
+academy link in the description. The
+command center first version is
+
+1034
+00:16:31,350 --> 00:16:31,360
+command center first version is
+ 
+
+1035
+00:16:31,360 --> 00:16:33,920
+command center first version is
+launching next
+

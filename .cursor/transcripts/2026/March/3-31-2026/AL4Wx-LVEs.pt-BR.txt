@@ -1,0 +1,17 @@
+Falhas em “vibe coding” quase sempre voltam a um de dois problemas: **plano mal especificado** ou **más práticas de desenvolvimento**. A história dos dois touros no alto do morro ilustra **paciência e planejamento de longo prazo** versus correria — em vez de pular direto no próximo projeto, vale pausar: bons engenheiros planejam bem.
+
+A ferramenta em destaque é o **Context7** (já coberto no canal), especialmente o **Skill Wizard** novo. O Context7 mantém **documentação atualizada** para bibliotecas/frameworks, para que modelos e ferramentas de código usem versões **corretas e atuais** — evitando que o Claude Code/Codex trabalhem com APIs desatualizadas (ex.: **Drizzle ORM**).
+
+No demo, montam **autenticação com Clerk** (auth hospedada). No Context7 dá para ver quando a doc foi atualizada, padrões e **boas práticas oficiais**. O diferencial do vídeo: transformar essa documentação numa **skill à prova de falhas** — usar a tecnologia **como os autores pretendem**.
+
+Por que skills costumam ser problemáticas? Criar skill eficaz exige **conhecimento real** do assunto; metaprompting/research não cobrem o que você **não sabe que não sabe**. Três frentes: (1) domínio da biblioteca e práticas atuais; (2) **dos e don’ts** claros para o Claude Code; (3) a lib **evolui** — skills ficam defasadas, surgem padrões conflitantes e o projeto quebra. Por isso muita gente **não usa skills para libs** — e o Context7 endereça isso.
+
+Fluxo do Skill Wizard: copiar o comando da doc (link na descrição), colar no projeto, descrever a expertise (ex.: “Clerk authentication”), escolher a **fonte** (doc oficial Clerk), responder perguntas: stack (**Next.js**), estágio (primeira configuração), foco (não querer skill gigante que replique a doc inteira — ex.: **fluxos de sign-up e sign-in**). O wizard lê as fontes e gera skill alinhada ao que você pediu.
+
+Depois: **instalar a skill** no projeto; na pasta `skills` aparece algo como “clerk next.js authentication”. O arquivo estrutura **regras críticas**, **jeito errado vs. jeito certo** (ex.: onde vai o **provider** que envolve o app, rotas, **middleware**, variáveis de ambiente, páginas de auth), e **erros comuns** a evitar.
+
+Demo: homepage, signup e dashboard sem proteção — pedem ao Claude Code para **configurar sign-in/sign-up** para o dashboard exigir login. To-do list, instalação Clerk, env, etc. Resultado: redirect para Clerk, cadastro, perfil no dashboard. “Bulletproof” no sentido de **alinhado às práticas recomendadas pelo Clerk**.
+
+Rodando o wizard de novo: além do fluxo básico, dá para acrescentar **gestão de perfil/usuários**, **SSO/provedores sociais**, etc. — nova skill para a próxima etapa (server vs client components, dados do usuário). Dá para encadear **Supabase**, **Stripe**, billing ligado ao nível de acesso, etc., **via skills encadeadas**.
+
+Mensagem final: **“slow down to speed up”** — melhor vibe coding e menos “AI slop”. Fim do vídeo.

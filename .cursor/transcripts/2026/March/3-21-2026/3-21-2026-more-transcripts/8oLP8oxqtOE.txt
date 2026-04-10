@@ -1,0 +1,198 @@
+Title: Claude Code + CMUX: The Ultimate AI Coding Terminal
+Video ID: 8oLP8oxqtOE
+URL: https://www.youtube.com/watch?v=8oLP8oxqtOE
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] This is Semox, a terminal built for
+[00:02] coding agents that gives them the
+[00:03] ability to open and control a browser,
+[00:05] create sub aents in different panes,
+[00:07] send you custom notifications and much
+[00:10] much more through a CLI and a socket
+[00:12] API, but with so many other terminal
+[00:14] agents like warp, solit
+[00:19] Subscribe and let's get into it.
+[00:24] Despite its name, CMAX has nothing to do
+[00:27] with T-Max. It's a native Mac app built
+[00:30] on top of Lib Ghosty that uses a WebKit
+[00:32] browser and bondsplit for the layout.
+[00:35] So, tabs, panes, and so on. But the real
+[00:38] magic lies in the way the agent
+[00:40] communicates with the app. Let me show
+[00:42] you. So, after installing CMOX and
+[00:44] setting it up, we should see a regular
+[00:45] looking terminal that supports tabs. We
+[00:48] can do splits, either vertical or
+[00:50] horizontal ones, and we can have tabs
+[00:52] inside those splits if we want to as
+[00:55] well. Now, with CMX installed, we should
+[00:57] also have access to the CMAX CLI, which
+[00:59] gives us options for a bunch of things
+[01:01] like creating a new workspace and new
+[01:04] split panes, showing information like
+[01:06] logs and progress in the sidebar, and
+[01:09] even using T-Max compatible commands.
+[01:11] All this is thanks to the CMOX Unix
+[01:13] socket, which we'll talk about later.
+[01:15] But let's do something interesting.
+[01:17] First, I'm going to clear this. I'm
+[01:18] going to open up Claude Code, which we
+[01:20] can see has now changed the sidebar
+[01:22] title. We'll change the model to Haiku
+[01:24] so that I don't waste any tokens. And
+[01:26] then I'm going to ask Claude to use the
+[01:28] CMox CLI to open the browser in a new
+[01:30] split pane. Then navigate to google.com.
+[01:33] Type hello world into the input and do a
+[01:35] Google search. So, if I hit enter, then
+[01:37] Claude will do its thing. And here it's
+[01:39] learning how to use CMOX. It's opened
+[01:41] the new tab to Google. And let's see if
+[01:43] it does the search. Okay, it's starting
+[01:44] to struggle. And it's done search for
+[01:46] hello world and it's done the search
+[01:48] perfectly. And I can even ask it to
+[01:50] click on links. So let's say I wanted to
+[01:52] click on this IMDb link over here. I can
+[01:54] say click on the hello world link from
+[01:56] IMDb and Claude will go ahead and do
+[01:58] that. What's really cool is that even
+[02:00] inside this split pane browser, I have
+[02:02] access to the developer tools which will
+[02:04] help to debug pages that I'm working on.
+[02:06] All this is done with browser commands
+[02:08] that is similar to the API design of the
+[02:10] sales agent browser. So, the benefit of
+[02:12] having this side to side browser
+[02:14] terminal view is that the agent can
+[02:16] navigate through the browser, do
+[02:17] testing, and send back its results,
+[02:19] which you can see as a developer in real
+[02:21] time. Let's try something else. I'm
+[02:22] going to close this tab, clear all this
+[02:24] information. I'm going to ask Lord to
+[02:26] create two instances of itself in split
+[02:28] panes. One to understand the project and
+[02:31] another to analyze the code of this
+[02:33] project. And when they're done, they
+[02:34] should give the information back to the
+[02:36] main claw instance and then close the
+[02:39] pan. So, if we hit enter, it creates two
+[02:41] split panes and then it opens Claude in
+[02:44] both of them. And now we can see it's
+[02:46] giving them instructions, which is wild
+[02:48] to see in real time. Now, the panes that
+[02:50] aren't selected are a bit dark, so we
+[02:52] can click on them to make them brighter.
+[02:54] I'm going to fast forward this part of
+[02:55] the video since it's going to take a
+[02:57] while. And now that both splits are
+[02:59] done, Claude has closed them
+[03:00] automatically and has got information
+[03:02] from the first instance here and the
+[03:04] second instance down here, which is very
+[03:06] cool. And you can imagine so many uses
+[03:08] for this for checking permissions on
+[03:10] different sub aents to make sure they
+[03:11] don't get stuck. But one problem with
+[03:14] the demo I just went through is that
+[03:15] whenever one of them had a notification
+[03:17] or needed my help, there was no easy way
+[03:20] for me to know that. But luckily, Cmox
+[03:22] makes that easy. Let's try something
+[03:24] else. In a new Claude Code session, I'm
+[03:25] going to give it a prompt to create a
+[03:27] new instance of Claude in a split pane
+[03:29] using CMAX. And then in that plane, ask
+[03:32] it to study and suggest code
+[03:34] improvements for this project. Once it's
+[03:36] done, write an appropriate notification
+[03:38] using CMOX and run trigger flash to get
+[03:40] my attention. The trigger flash command
+[03:42] activates a blue flashing border on the
+[03:44] specified pane. So, while that's going,
+[03:46] I'm going to create a new workspace. And
+[03:47] in here, I'm going to run open code.
+[03:49] Now, the beauty of CMOX is that because
+[03:50] it's a CLI, it can run with any agent
+[03:53] harness. And just as I finish opening
+[03:55] open code, we can see we have a
+[03:56] notification from CMOX. If I click on
+[03:59] the bell, we can see the parallel
+[04:00] analysis has started. So, it hasn't
+[04:02] quite finished. But if I click on the
+[04:04] notification, it shows me the right pane
+[04:05] that has the information. Now, it didn't
+[04:07] quite do what I asked it to, so I'm
+[04:09] going to tell it to do it again. And
+[04:10] while that's going, let's actually go
+[04:12] back to Open Code and do what I was
+[04:13] going to do originally, which is to use
+[04:15] the CMAX CLI to add the name of the
+[04:17] project branch and use an appropriate
+[04:19] icon next to the name of that branch.
+[04:21] Now, I'm going to hit enter and let it
+[04:22] do its thing. And we can see we have a
+[04:24] notification from CMAX, which is the
+[04:27] parallel analysis has started. And it
+[04:29] looks like it started properly this
+[04:30] time. We can even see the message inside
+[04:31] the sidebar. So now it's done. I'm going
+[04:33] to ask it to close the split pane and
+[04:35] clear the sidebar text. And we can see
+[04:36] here it added the name of the branch
+[04:38] with an appropriate icon. And earlier I
+[04:41] said SF icons, but I actually meant SF
+[04:43] symbol. So I'm glad it's figured that
+[04:44] out. And we can see here it's closed the
+[04:46] split pane and removed the text that was
+[04:48] inside the sidebar. Now all of these
+[04:50] examples were really simple, but I hope
+[04:51] it gives you a glimpse into the powerful
+[04:53] things that the CMOS terminal can do
+[04:55] when an agent has control over it. And I
+[04:57] didn't even go through some awesome
+[04:58] features like being able to use a
+[05:00] progress bar, adding a custom color to
+[05:02] your workspace, using the agents to
+[05:04] rename tabs, showing all the options in
+[05:06] the command palette, and the fact that
+[05:08] cmox can read and apply your ghosty
+[05:10] configuration. Now, I used cmox without
+[05:12] any hooks or skills and I disabled the
+[05:14] sandbox in clawed code because I would
+[05:17] have got this error. But I highly
+[05:18] recommend you getting the core and
+[05:20] browser skill for cmox made by the
+[05:22] creator and also setting it up with
+[05:24] claude code hooks to automatically send
+[05:26] you notifications or even writing a
+[05:28] custom script. All this makes much more
+[05:31] useful. But I do wish there was an
+[05:32] easier way to set this up from scratch
+[05:34] instead of manually having to copy and
+[05:36] paste these skills and notifications in
+[05:38] place. Just like with skills.sh SH that
+[05:40] automatically detects what agent harness
+[05:42] you have and applies the skill to the
+[05:44] right directory. I wish Semox did the
+[05:46] same to help with setting the whole
+[05:48] thing up. But Semox is already an
+[05:50] awesome tool and I'm sure a setup script
+[05:52] can be added later on. I really like the
+[05:54] fact that it's a native Mac app which is
+[05:56] good for memory and performance and the
+[05:58] fact that the CLI communicates with the
+[06:00] app via JSON through Unix sockets which
+[06:02] helps make communication fast and
+[06:04] simple. Speaking of fast and simple, did
+[06:06] you know there's a database out there
+[06:08] 138 times faster than SQ Lite written in
+[06:12] Rust called Stolap? Yeah, funny name.
+[06:15] which you can learn all about in this
+[06:16] video from Andress.
+
+--- Plain text ---
+This is Semox, a terminal built for coding agents that gives them the ability to open and control a browser, create sub aents in different panes, send you custom notifications and much much more through a CLI and a socket API, but with so many other terminal agents like warp, solit Subscribe and let's get into it. Despite its name, CMAX has nothing to do with T-Max. It's a native Mac app built on top of Lib Ghosty that uses a WebKit browser and bondsplit for the layout. So, tabs, panes, and so on. But the real magic lies in the way the agent communicates with the app. Let me show you. So, after installing CMOX and setting it up, we should see a regular looking terminal that supports tabs. We can do splits, either vertical or horizontal ones, and we can have tabs inside those splits if we want to as well. Now, with CMX installed, we should also have access to the CMAX CLI, which gives us options for a bunch of things like creating a new workspace and new split panes, showing information like logs and progress in the sidebar, and even using T-Max compatible commands. All this is thanks to the CMOX Unix socket, which we'll talk about later. But let's do something interesting. First, I'm going to clear this. I'm going to open up Claude Code, which we can see has now changed the sidebar title. We'll change the model to Haiku so that I don't waste any tokens. And then I'm going to ask Claude to use the CMox CLI to open the browser in a new split pane. Then navigate to google.com. Type hello world into the input and do a Google search. So, if I hit enter, then Claude will do its thing. And here it's learning how to use CMOX. It's opened the new tab to Google. And let's see if it does the search. Okay, it's starting to struggle. And it's done search for hello world and it's done the search perfectly. And I can even ask it to click on links. So let's say I wanted to click on this IMDb link over here. I can say click on the hello world link from IMDb and Claude will go ahead and do that. What's really cool is that even inside this split pane browser, I have access to the developer tools which will help to debug pages that I'm working on. All this is done with browser commands that is similar to the API design of the sales agent browser. So, the benefit of having this side to side browser terminal view is that the agent can navigate through the browser, do testing, and send back its results, which you can see as a developer in real time. Let's try something else. I'm going to close this tab, clear all this information. I'm going to ask Lord to create two instances of itself in split panes. One to understand the project and another to analyze the code of this project. And when they're done, they should give the information back to the main claw instance and then close the pan. So, if we hit enter, it creates two split panes and then it opens Claude in both of them. And now we can see it's giving them instructions, which is wild to see in real time. Now, the panes that aren't selected are a bit dark, so we can click on them to make them brighter. I'm going to fast forward this part of the video since it's going to take a while. And now that both splits are done, Claude has closed them automatically and has got information from the first instance here and the second instance down here, which is very cool. And you can imagine so many uses for this for checking permissions on different sub aents to make sure they don't get stuck. But one problem with the demo I just went through is that whenever one of them had a notification or needed my help, there was no easy way for me to know that. But luckily, Cmox makes that easy. Let's try something else. In a new Claude Code session, I'm going to give it a prompt to create a new instance of Claude in a split pane using CMAX. And then in that plane, ask it to study and suggest code improvements for this project. Once it's done, write an appropriate notification using CMOX and run trigger flash to get my attention. The trigger flash command activates a blue flashing border on the specified pane. So, while that's going, I'm going to create a new workspace. And in here, I'm going to run open code. Now, the beauty of CMOX is that because it's a CLI, it can run with any agent harness. And just as I finish opening open code, we can see we have a notification from CMOX. If I click on the bell, we can see the parallel analysis has started. So, it hasn't quite finished. But if I click on the notification, it shows me the right pane that has the information. Now, it didn't quite do what I asked it to, so I'm going to tell it to do it again. And while that's going, let's actually go back to Open Code and do what I was going to do originally, which is to use the CMAX CLI to add the name of the project branch and use an appropriate icon next to the name of that branch. Now, I'm going to hit enter and let it do its thing. And we can see we have a notification from CMAX, which is the parallel analysis has started. And it looks like it started properly this time. We can even see the message inside the sidebar. So now it's done. I'm going to ask it to close the split pane and clear the sidebar text. And we can see here it added the name of the branch with an appropriate icon. And earlier I said SF icons, but I actually meant SF symbol. So I'm glad it's figured that out. And we can see here it's closed the split pane and removed the text that was inside the sidebar. Now all of these examples were really simple, but I hope it gives you a glimpse into the powerful things that the CMOS terminal can do when an agent has control over it. And I didn't even go through some awesome features like being able to use a progress bar, adding a custom color to your workspace, using the agents to rename tabs, showing all the options in the command palette, and the fact that cmox can read and apply your ghosty configuration. Now, I used cmox without any hooks or skills and I disabled the sandbox in clawed code because I would have got this error. But I highly recommend you getting the core and browser skill for cmox made by the creator and also setting it up with claude code hooks to automatically send you notifications or even writing a custom script. All this makes much more useful. But I do wish there was an easier way to set this up from scratch instead of manually having to copy and paste these skills and notifications in place. Just like with skills.sh SH that automatically detects what agent harness you have and applies the skill to the right directory. I wish Semox did the same to help with setting the whole thing up. But Semox is already an awesome tool and I'm sure a setup script can be added later on. I really like the fact that it's a native Mac app which is good for memory and performance and the fact that the CLI communicates with the app via JSON through Unix sockets which helps make communication fast and simple. Speaking of fast and simple, did you know there's a database out there 138 times faster than SQ Lite written in Rust called Stolap? Yeah, funny name. which you can learn all about in this video from Andress.

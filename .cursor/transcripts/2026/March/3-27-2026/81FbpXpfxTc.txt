@@ -1,0 +1,790 @@
+As an engineer, I've been using
+As an engineer, I've been using
+As an engineer, I've been using
+different forms of generative AI for
+different forms of generative AI for
+different forms of generative AI for
+years now. I could think of first it
+years now. I could think of first it
+years now. I could think of first it
+was, you know, a coding assistant in my
+was, you know, a coding assistant in my
+was, you know, a coding assistant in my
+IDE back in maybe 2022. And then, of
+IDE back in maybe 2022. And then, of
+IDE back in maybe 2022. And then, of
+course, that progressed to us getting
+course, that progressed to us getting
+course, that progressed to us getting
+those early versions of GPT back in
+those early versions of GPT back in
+those early versions of GPT back in
+2023. And then we were adding our data,
+2023. And then we were adding our data,
+2023. And then we were adding our data,
+right? We were doing techniques such as
+right? We were doing techniques such as
+right? We were doing techniques such as
+rag or retrieval augmented generation to
+rag or retrieval augmented generation to
+rag or retrieval augmented generation to
+pull in our PDFs and other data sources.
+pull in our PDFs and other data sources.
+pull in our PDFs and other data sources.
+And that led us to of course other types
+And that led us to of course other types
+And that led us to of course other types
+of APIs and services with agents and MCP
+of APIs and services with agents and MCP
+of APIs and services with agents and MCP
+back in 2025. And who knows what's going
+back in 2025. And who knows what's going
+back in 2025. And who knows what's going
+to happen in 2026 and the years after.
+to happen in 2026 and the years after.
+to happen in 2026 and the years after.
+The thing is, as I've been using all of
+The thing is, as I've been using all of
+The thing is, as I've been using all of
+these different AI models and AI
+these different AI models and AI
+these different AI models and AI
+services, all of this has been through
+services, all of this has been through
+services, all of this has been through
+public APIs and I've been both sending
+public APIs and I've been both sending
+public APIs and I've been both sending
+my data but also sending my money to
+my data but also sending my money to
+my data but also sending my money to
+thirdparty APIs in order to use their
+thirdparty APIs in order to use their
+thirdparty APIs in order to use their
+models. And now as organizations are
+models. And now as organizations are
+models. And now as organizations are
+looking to deploy their own private and
+looking to deploy their own private and
+looking to deploy their own private and
+sovereign AI solutions to power all of
+sovereign AI solutions to power all of
+sovereign AI solutions to power all of
+these applications like rag and agentic
+these applications like rag and agentic
+these applications like rag and agentic
+AI well how can they be sure that
+AI well how can they be sure that
+AI well how can they be sure that
+they're keeping firstly their cost down
+they're keeping firstly their cost down
+they're keeping firstly their cost down
+when they're deploying their own AI but
+when they're deploying their own AI but
+when they're deploying their own AI but
+also ensuring that they have that data
+also ensuring that they have that data
+also ensuring that they have that data
+privacy and sovereignty while also
+privacy and sovereignty while also
+privacy and sovereignty while also
+having governance and being able to
+having governance and being able to
+having governance and being able to
+scale this up to not only just a couple
+scale this up to not only just a couple
+scale this up to not only just a couple
+engineers but an entire team of
+engineers but an entire team of
+engineers but an entire team of
+developers and at the end of the day end
+developers and at the end of the day end
+developers and at the end of the day end
+users.
+users.
+users.
+Well, you probably know what's going to
+Well, you probably know what's going to
+Well, you probably know what's going to
+be the answer. It's a technique that's
+be the answer. It's a technique that's
+be the answer. It's a technique that's
+known as models as a service. So, just
+known as models as a service. So, just
+known as models as a service. So, just
+as we've had, you know, software as a
+as we've had, you know, software as a
+as we've had, you know, software as a
+service back in the day to provide us
+service back in the day to provide us
+service back in the day to provide us
+Gmail and storage and a lot of other
+Gmail and storage and a lot of other
+Gmail and storage and a lot of other
+utilities that we use every day, well,
+utilities that we use every day, well,
+utilities that we use every day, well,
+models as a service is kind of this new
+models as a service is kind of this new
+models as a service is kind of this new
+pattern that's emerging that's allowing
+pattern that's emerging that's allowing
+pattern that's emerging that's allowing
+us to serve multiple models, whether
+us to serve multiple models, whether
+us to serve multiple models, whether
+it's vision or language models through
+it's vision or language models through
+it's vision or language models through
+one singular API. an API that's
+one singular API. an API that's
+one singular API. an API that's
+providing us transparency behind the
+providing us transparency behind the
+providing us transparency behind the
+billing and cost of our GPU utilization,
+billing and cost of our GPU utilization,
+billing and cost of our GPU utilization,
+the data privacy and and sensitivity of
+the data privacy and and sensitivity of
+the data privacy and and sensitivity of
+our data and governance, but also
+our data and governance, but also
+our data and governance, but also
+observability all through this API
+observability all through this API
+observability all through this API
+gateway, right? Um, but we're also able
+gateway, right? Um, but we're also able
+gateway, right? Um, but we're also able
+to then share this to variety of
+to then share this to variety of
+to then share this to variety of
+different users and developers who will
+different users and developers who will
+different users and developers who will
+then be consuming the model. So the IT
+then be consuming the model. So the IT
+then be consuming the model. So the IT
+team here or platform engineers are
+team here or platform engineers are
+team here or platform engineers are
+serving these models and then the end
+serving these models and then the end
+serving these models and then the end
+developers or users here are the final
+developers or users here are the final
+developers or users here are the final
+consumers of these artifacts. And this
+consumers of these artifacts. And this
+consumers of these artifacts. And this
+my friends is what we call models as a
+my friends is what we call models as a
+my friends is what we call models as a
+service. And I'm really excited to show
+service. And I'm really excited to show
+service. And I'm really excited to show
+you how this works behind the scenes and
+you how this works behind the scenes and
+you how this works behind the scenes and
+why models as a service is becoming a de
+why models as a service is becoming a de
+why models as a service is becoming a de
+facto standard for how organizations can
+facto standard for how organizations can
+facto standard for how organizations can
+scale and deploy models where they work.
+scale and deploy models where they work.
+scale and deploy models where they work.
+In fact, I bet that you've already used
+In fact, I bet that you've already used
+In fact, I bet that you've already used
+models as a service in your own work.
+models as a service in your own work.
+models as a service in your own work.
+So, I want you to think about the AI
+So, I want you to think about the AI
+So, I want you to think about the AI
+giants, right? So, they're not actually
+giants, right? So, they're not actually
+giants, right? So, they're not actually
+giving you access to these huge data
+giving you access to these huge data
+giving you access to these huge data
+centers that they have, right? They're
+centers that they have, right? They're
+centers that they have, right? They're
+giving you access to individual models,
+giving you access to individual models,
+giving you access to individual models,
+but they're doing so in a way that's
+but they're doing so in a way that's
+but they're doing so in a way that's
+actually quite similar to models as a
+actually quite similar to models as a
+actually quite similar to models as a
+service. So, think about these different
+service. So, think about these different
+service. So, think about these different
+versions of models that you can access,
+versions of models that you can access,
+versions of models that you can access,
+right? You're not accessing them
+right? You're not accessing them
+right? You're not accessing them
+directly. you're going through some type
+directly. you're going through some type
+directly. you're going through some type
+of app or API for example uh just as we
+of app or API for example uh just as we
+of app or API for example uh just as we
+have the API gateway that we just
+have the API gateway that we just
+have the API gateway that we just
+mentioned earlier so that you can then
+mentioned earlier so that you can then
+mentioned earlier so that you can then
+you know uh ensure that you've got
+you know uh ensure that you've got
+you know uh ensure that you've got
+billing or authentication or or
+billing or authentication or or
+billing or authentication or or
+something like that that you need as a
+something like that that you need as a
+something like that that you need as a
+prerequisite to then access for example
+prerequisite to then access for example
+prerequisite to then access for example
+the app or the API. So our devs here can
+the app or the API. So our devs here can
+the app or the API. So our devs here can
+now use that API of the model to build
+now use that API of the model to build
+now use that API of the model to build
+out really cool applications maybe rag
+out really cool applications maybe rag
+out really cool applications maybe rag
+or agentic AI apps and then the users
+or agentic AI apps and then the users
+or agentic AI apps and then the users
+down here are you know our happy little
+down here are you know our happy little
+down here are you know our happy little
+users that are consuming the AI
+users that are consuming the AI
+users that are consuming the AI
+application and so this is exactly what
+application and so this is exactly what
+application and so this is exactly what
+models as a service is and it's already
+models as a service is and it's already
+models as a service is and it's already
+being used today but the only difference
+being used today but the only difference
+being used today but the only difference
+that we're talking about is that instead
+that we're talking about is that instead
+that we're talking about is that instead
+of renting thirdparty services and
+of renting thirdparty services and
+of renting thirdparty services and
+servers or paying for tokens you're able
+servers or paying for tokens you're able
+servers or paying for tokens you're able
+to run your own models as a service to
+to run your own models as a service to
+to run your own models as a service to
+maintain control over cost, the access
+maintain control over cost, the access
+maintain control over cost, the access
+of the models, and the maintenance of
+of the models, and the maintenance of
+of the models, and the maintenance of
+the models. And let me tell you that
+the models. And let me tell you that
+the models. And let me tell you that
+maintenance part is super important
+maintenance part is super important
+maintenance part is super important
+because for example, each time a new
+because for example, each time a new
+because for example, each time a new
+Frontier model is released, let's say a
+Frontier model is released, let's say a
+Frontier model is released, let's say a
+version seven or something of this
+version seven or something of this
+version seven or something of this
+model, the older versions are typically
+model, the older versions are typically
+model, the older versions are typically
+depreciated and sometimes it's with or
+depreciated and sometimes it's with or
+depreciated and sometimes it's with or
+without notice. So let's say for
+without notice. So let's say for
+without notice. So let's say for
+example, we get rid of that V5. And this
+example, we get rid of that V5. And this
+example, we get rid of that V5. And this
+means as a developer if your application
+means as a developer if your application
+means as a developer if your application
+is already or currently using that
+is already or currently using that
+is already or currently using that
+model, you're now forced to upgrade to a
+model, you're now forced to upgrade to a
+model, you're now forced to upgrade to a
+newer version of the model. But what
+newer version of the model. But what
+newer version of the model. But what
+happens if the prompt template for
+happens if the prompt template for
+happens if the prompt template for
+example for version five is different
+example for version five is different
+example for version five is different
+than that of the version six model?
+than that of the version six model?
+than that of the version six model?
+Well, as we know, the model behavior
+Well, as we know, the model behavior
+Well, as we know, the model behavior
+might change and those bugs are then
+might change and those bugs are then
+might change and those bugs are then
+going to impact the developer down here,
+going to impact the developer down here,
+going to impact the developer down here,
+which then he has to spend time or they
+which then he has to spend time or they
+which then he has to spend time or they
+have to spend time fixing their
+have to spend time fixing their
+have to spend time fixing their
+application for the users to consume at
+application for the users to consume at
+application for the users to consume at
+the end of the day. So, it kind of
+the end of the day. So, it kind of
+the end of the day. So, it kind of
+creates this downstream effect. And so,
+creates this downstream effect. And so,
+creates this downstream effect. And so,
+with models as a service, you're able to
+with models as a service, you're able to
+with models as a service, you're able to
+have full control over the models that
+have full control over the models that
+have full control over the models that
+you're releasing and the maintenance on
+you're releasing and the maintenance on
+you're releasing and the maintenance on
+how they are released in the life cycle.
+how they are released in the life cycle.
+how they are released in the life cycle.
+So if you want to go to hugging face and
+So if you want to go to hugging face and
+So if you want to go to hugging face and
+search for a new model, you can then add
+search for a new model, you can then add
+search for a new model, you can then add
+that here to your models as a service
+that here to your models as a service
+that here to your models as a service
+infrastructure with your IT team and be
+infrastructure with your IT team and be
+infrastructure with your IT team and be
+able to manage what's currently being
+able to manage what's currently being
+able to manage what's currently being
+used most by your teams and maybe
+used most by your teams and maybe
+used most by your teams and maybe
+depreciate of what you don't need
+depreciate of what you don't need
+depreciate of what you don't need
+anymore. Now I want you to think about
+anymore. Now I want you to think about
+anymore. Now I want you to think about
+environments that are sensitive. So for
+environments that are sensitive. So for
+environments that are sensitive. So for
+example when we typically think of data
+example when we typically think of data
+example when we typically think of data
+sensitive environments it's something
+sensitive environments it's something
+sensitive environments it's something
+like healthcare or say financial
+like healthcare or say financial
+like healthcare or say financial
+services where you have a lot of
+services where you have a lot of
+services where you have a lot of
+personally identifying information or
+personally identifying information or
+personally identifying information or
+PII and the data that is within these
+PII and the data that is within these
+PII and the data that is within these
+organizations need to be handled with uh
+organizations need to be handled with uh
+organizations need to be handled with uh
+a lot of scrutiny because one it's you
+a lot of scrutiny because one it's you
+a lot of scrutiny because one it's you
+know customer data but secondly there's
+know customer data but secondly there's
+know customer data but secondly there's
+a lot of government regulations and
+a lot of government regulations and
+a lot of government regulations and
+practices around the handling of that
+practices around the handling of that
+practices around the handling of that
+data. So, it's not easy to just, you
+data. So, it's not easy to just, you
+data. So, it's not easy to just, you
+know, go connect to some type of, you
+know, go connect to some type of, you
+know, go connect to some type of, you
+know, third-party LLM with that data,
+know, third-party LLM with that data,
+know, third-party LLM with that data,
+right? Because when we're going to a
+right? Because when we're going to a
+right? Because when we're going to a
+third party LM, what we're sending maybe
+third party LM, what we're sending maybe
+third party LM, what we're sending maybe
+what might not be sensitive data, but
+what might not be sensitive data, but
+what might not be sensitive data, but
+there could be risk of a data break or
+there could be risk of a data break or
+there could be risk of a data break or
+leakage. And so, all of this information
+leakage. And so, all of this information
+leakage. And so, all of this information
+is typically kept on premise. And it's
+is typically kept on premise. And it's
+is typically kept on premise. And it's
+not just the database, right? It's also
+not just the database, right? It's also
+not just the database, right? It's also
+the applications that are being used. It
+the applications that are being used. It
+the applications that are being used. It
+might also be the for example hardware
+might also be the for example hardware
+might also be the for example hardware
+so GPUs and CPUs. All of this can
+so GPUs and CPUs. All of this can
+so GPUs and CPUs. All of this can
+typically run on prem or maybe in a
+typically run on prem or maybe in a
+typically run on prem or maybe in a
+mixed hybrid cloud environment where
+mixed hybrid cloud environment where
+mixed hybrid cloud environment where
+it's onrem but also in the cloud and
+it's onrem but also in the cloud and
+it's onrem but also in the cloud and
+other data sources. But the cool part
+other data sources. But the cool part
+other data sources. But the cool part
+about models as a service is you become
+about models as a service is you become
+about models as a service is you become
+your own private AI provider. So in
+your own private AI provider. So in
+your own private AI provider. So in
+addition to the applications and the
+addition to the applications and the
+addition to the applications and the
+databases, we can also run these local
+databases, we can also run these local
+databases, we can also run these local
+large language models alongside of our
+large language models alongside of our
+large language models alongside of our
+applications so that we have this fully
+applications so that we have this fully
+applications so that we have this fully
+airgapped and disconnected environment
+airgapped and disconnected environment
+airgapped and disconnected environment
+so that we can deliver these secure uh
+so that we can deliver these secure uh
+so that we can deliver these secure uh
+LLMs but without having to uh depend on
+LLMs but without having to uh depend on
+LLMs but without having to uh depend on
+a public cloud provider but we still get
+a public cloud provider but we still get
+a public cloud provider but we still get
+the benefits of rag or retrieve
+the benefits of rag or retrieve
+the benefits of rag or retrieve
+augmented generation for private
+augmented generation for private
+augmented generation for private
+documentation with AI or aentic AI that
+documentation with AI or aentic AI that
+documentation with AI or aentic AI that
+can call our different services and it's
+can call our different services and it's
+can call our different services and it's
+all within in this disconnected
+all within in this disconnected
+all within in this disconnected
+environment. So how does this look in
+environment. So how does this look in
+environment. So how does this look in
+action? Well, let's architect it out
+action? Well, let's architect it out
+action? Well, let's architect it out
+starting with the base layer of
+starting with the base layer of
+starting with the base layer of
+infrastructure and orchestration using a
+infrastructure and orchestration using a
+infrastructure and orchestration using a
+technology like Open Shift or
+technology like Open Shift or
+technology like Open Shift or
+Kubernetes. So these are the open-source
+Kubernetes. So these are the open-source
+Kubernetes. So these are the open-source
+technologies that allow us to bring
+technologies that allow us to bring
+technologies that allow us to bring
+together a variety of different
+together a variety of different
+together a variety of different
+environments such as on prem for example
+environments such as on prem for example
+environments such as on prem for example
+or cloud providers or say for example
+or cloud providers or say for example
+or cloud providers or say for example
+edge if we're running our workloads and
+edge if we're running our workloads and
+edge if we're running our workloads and
+AI out there as well. So we can bring
+AI out there as well. So we can bring
+AI out there as well. So we can bring
+together for example GPUs all in one
+together for example GPUs all in one
+together for example GPUs all in one
+place to be able to dynamically scale
+place to be able to dynamically scale
+place to be able to dynamically scale
+them when needed. Now let's also talk
+them when needed. Now let's also talk
+them when needed. Now let's also talk
+about our AI platform layer. So the AI
+about our AI platform layer. So the AI
+about our AI platform layer. So the AI
+platform layer is really important in
+platform layer is really important in
+platform layer is really important in
+this situation because vanilla
+this situation because vanilla
+this situation because vanilla
+Kubernetes by itself can use additional
+Kubernetes by itself can use additional
+Kubernetes by itself can use additional
+capabilities such as inference engines
+capabilities such as inference engines
+capabilities such as inference engines
+with VLLM or other projects such as
+with VLLM or other projects such as
+with VLLM or other projects such as
+KSERve that allow us to uh orchestrate
+KSERve that allow us to uh orchestrate
+KSERve that allow us to uh orchestrate
+individual LLMs just like microservices.
+individual LLMs just like microservices.
+individual LLMs just like microservices.
+And this gives us a lot of flexibility
+And this gives us a lot of flexibility
+And this gives us a lot of flexibility
+when we're running AI workloads. And at
+when we're running AI workloads. And at
+when we're running AI workloads. And at
+this point, yes, technically we can run
+this point, yes, technically we can run
+this point, yes, technically we can run
+a model, but to expose the endpoints for
+a model, but to expose the endpoints for
+a model, but to expose the endpoints for
+our organization and teams to use in a
+our organization and teams to use in a
+our organization and teams to use in a
+standardized way. Well, this involves
+standardized way. Well, this involves
+standardized way. Well, this involves
+some type of API uh gateway. So the API
+some type of API uh gateway. So the API
+some type of API uh gateway. So the API
+gateway here is the way for us to add
+gateway here is the way for us to add
+gateway here is the way for us to add
+these additional enterprise
+these additional enterprise
+these additional enterprise
+capabilities. So for example, rate
+capabilities. So for example, rate
+capabilities. So for example, rate
+limiting or maybe authentication for our
+limiting or maybe authentication for our
+limiting or maybe authentication for our
+users or the ability to do usage
+users or the ability to do usage
+users or the ability to do usage
+tracking and much much more and have
+tracking and much much more and have
+tracking and much much more and have
+observability throughout this entire
+observability throughout this entire
+observability throughout this entire
+process, right? Because it's not just
+process, right? Because it's not just
+process, right? Because it's not just
+the kind of infrastructure itself but
+the kind of infrastructure itself but
+the kind of infrastructure itself but
+the observability for uh telemetry for
+the observability for uh telemetry for
+the observability for uh telemetry for
+example or logging or for example with
+example or logging or for example with
+example or logging or for example with
+AI applications we need to understand
+AI applications we need to understand
+AI applications we need to understand
+why did they make the decision they
+why did they make the decision they
+why did they make the decision they
+made. So this could be the traces of how
+made. So this could be the traces of how
+made. So this could be the traces of how
+the LM is going to an MCP server to call
+the LM is going to an MCP server to call
+the LM is going to an MCP server to call
+a database and get that information
+a database and get that information
+a database and get that information
+back. So all of this additional
+back. So all of this additional
+back. So all of this additional
+information is really important to have.
+information is really important to have.
+information is really important to have.
+But because of the open- source projects
+But because of the open- source projects
+But because of the open- source projects
+like Prometheus and Graphfana and Jerger
+like Prometheus and Graphfana and Jerger
+like Prometheus and Graphfana and Jerger
+and many more that we're pretty familiar
+and many more that we're pretty familiar
+and many more that we're pretty familiar
+with for traditional applications uh
+with for traditional applications uh
+with for traditional applications uh
+using open source technologies as well.
+using open source technologies as well.
+using open source technologies as well.
+Well, we're able to apply this to our AI
+Well, we're able to apply this to our AI
+Well, we're able to apply this to our AI
+applications and be able to get a more,
+applications and be able to get a more,
+applications and be able to get a more,
+you know, behindthe-scenes look when it
+you know, behindthe-scenes look when it
+you know, behindthe-scenes look when it
+comes to building AI apps. And with this
+comes to building AI apps. And with this
+comes to building AI apps. And with this
+centralized AI infrastructure, instead
+centralized AI infrastructure, instead
+centralized AI infrastructure, instead
+of having to work from a single model
+of having to work from a single model
+of having to work from a single model
+that we've maybe deployed from our IT
+that we've maybe deployed from our IT
+that we've maybe deployed from our IT
+team to a single team or user and have
+team to a single team or user and have
+team to a single team or user and have
+to do that multiple times and spread
+to do that multiple times and spread
+to do that multiple times and spread
+that across, well, we're able to
+that across, well, we're able to
+that across, well, we're able to
+individually uh call LLMs that are all
+individually uh call LLMs that are all
+individually uh call LLMs that are all
+managed by this, you know, models as a
+managed by this, you know, models as a
+managed by this, you know, models as a
+service infrastructure up here to be
+service infrastructure up here to be
+service infrastructure up here to be
+able to support various teams from our
+able to support various teams from our
+able to support various teams from our
+organization as they independently
+organization as they independently
+organization as they independently
+scale up their AI efforts, but also make
+scale up their AI efforts, but also make
+scale up their AI efforts, but also make
+sure that we have cost control in
+sure that we have cost control in
+sure that we have cost control in
+effect. We've got data privacy and full
+effect. We've got data privacy and full
+effect. We've got data privacy and full
+control over our AI adoption so that we
+control over our AI adoption so that we
+control over our AI adoption so that we
+can scale things up when we're using AI.
+can scale things up when we're using AI.
+can scale things up when we're using AI.
+So, models as a service, it's just one
+So, models as a service, it's just one
+So, models as a service, it's just one
+of the many approaches that you can use,
+of the many approaches that you can use,
+of the many approaches that you can use,
+but it's quickly becoming the standard
+but it's quickly becoming the standard
+but it's quickly becoming the standard
+for in-house and sovereign AI
+for in-house and sovereign AI
+for in-house and sovereign AI
+infrastructure. Now, if you learned
+infrastructure. Now, if you learned
+infrastructure. Now, if you learned
+something today, please be sure to like
+something today, please be sure to like
+something today, please be sure to like
+the video and hack the algorithm and
+the video and hack the algorithm and
+the video and hack the algorithm and
+stay subscribed for more content on AI
+stay subscribed for more content on AI
+stay subscribed for more content on AI
+and open-source technology. We'll see
+and open-source technology. We'll see
+and open-source technology. We'll see
+you.

@@ -1,0 +1,364 @@
+Title: Claude.md is RUINING Claude Code (w/ One Exception)
+Video ID: V3xDTx2XwGg
+URL: https://www.youtube.com/watch?v=V3xDTx2XwGg
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Your Claude MD file is making Claude
+[00:02] code dumber. And this isn't just my
+[00:04] opinion. This is coming from researchers
+[00:06] in ETHZurich where they tested this idea
+[00:08] with multiple agents against multiple
+[00:11] benchmarks. And the conclusion was
+[00:12] clear. These sorts of context files like
+[00:15] claw.md make our agents worse, not
+[00:18] better, and more expensive. So if that's
+[00:21] the case, why is everybody still telling
+[00:23] you that you need to start every project
+[00:25] with a claw.md file? and it's Claude
+[00:27] Code's latest update to slash and it
+[00:30] actually fixed anything. In this video,
+[00:31] we are going to cover all of that. I'm
+[00:33] also going to discuss the one exception
+[00:35] to this rule so you don't fall into this
+[00:38] common trap. So, let's start by very
+[00:39] quickly reviewing what claude.md files
+[00:42] even are so we're on the same page here.
+[00:44] So, claude.md files are just markdown
+[00:46] files aka text files. They are
+[00:48] instructions you write to give claude
+[00:50] persistent context. The idea is if I
+[00:53] have a project, I'm going to have a
+[00:55] claw.md file that lays out how the
+[00:58] project is essentially set up. It's
+[00:59] where I set conventions. You know, if I
+[01:01] ever want Claude to always do something
+[01:03] in a certain way every single time, the
+[01:05] idea is you would put this in claw.md
+[01:08] because claude code would always
+[01:09] reference it. Emphasis on the always
+[01:12] reference. Claw.md files essentially
+[01:14] become system prompts. So, think of it
+[01:16] this way. It's almost like every single
+[01:18] time you prompt claw code in a project
+[01:20] that has a claw.md file. It's like that
+[01:22] claw.md file gets appended to your
+[01:25] prompt every single time invisibly.
+[01:27] Think of it that way. And for/init is a
+[01:30] command inside of cloud code that will
+[01:31] create a cloud. MD file for you for your
+[01:33] project. It will go through your entire
+[01:35] setup, go through all your architecture
+[01:36] and figure out what should be in it. And
+[01:38] it does it all automatically. And some
+[01:39] sort of documentation like this makes
+[01:41] sense in theory, right? like if I always
+[01:42] want cloud code to use twospace
+[01:44] indentation or to run npm test before
+[01:47] committing and to have like some level
+[01:48] of consistency, right? It makes sense,
+[01:51] but what makes sense on paper doesn't
+[01:52] always play out in reality as evidenced
+[01:55] in this report from our researchers at
+[01:58] Zurich. So this report is called
+[01:59] evaluating agents.md. Think of agents.md
+[02:02] and claw.md as the same thing, right?
+[02:04] They're just context files that the AI
+[02:06] agents are supposed to read to help them
+[02:08] understand the codebase. And spoiler
+[02:10] alert, what did these guys find? They
+[02:12] found that across multiple coding agents
+[02:14] and large language models, we find that
+[02:16] context files tend to reduce task
+[02:18] success rates compared to providing no
+[02:21] repository context while also increasing
+[02:24] inference cost by over 20%. Ultimately,
+[02:27] we conclude that unnecessary
+[02:28] requirements from context files make
+[02:30] tasks harder and human written context
+[02:33] files should describe only minimal
+[02:35] requirements. What does that mean? Well,
+[02:37] that means in the eight tests they ran,
+[02:39] having no clawed MD file did better in
+[02:41] five of the tests. And across all of the
+[02:43] tests, if you had some sort of
+[02:46] Asians.mmd or claw.md, it ended up being
+[02:49] 20% more expensive. Though the obvious
+[02:51] follow-up from that is, well, why why is
+[02:53] it the case that when we give cla code
+[02:56] additional documentation? It actually
+[02:57] does worse. But before we jump into
+[02:59] that, just want to give a quick plug for
+[03:00] my cla code masterass. just came out a
+[03:03] couple weeks ago and since then we've
+[03:04] already updated 20 plus modules and
+[03:06] added an additional hour of content and
+[03:08] it's all about taking you from zero to
+[03:10] AI dev and basing it on real cloud code
+[03:14] use cases not just explaining features.
+[03:16] So if that sounds like something you're
+[03:17] interested in definitely check it out in
+[03:19] Chase AI plus there's a link to that in
+[03:20] the comments and as always I also have
+[03:22] the free Chase AI community links in the
+[03:25] description for that if you're just
+[03:26] getting started in the space. Now, back
+[03:29] to answering the question, why does the
+[03:32] Claude MD file hurt Claude code? Well,
+[03:34] there's actually a number of reasons for
+[03:36] this. The first is that these context
+[03:38] files actually don't provide effective
+[03:40] overviews. You would think if I gave
+[03:42] Claude code essentially a piece of paper
+[03:44] that says, "Here's where everything is.
+[03:46] Here's where you can find it." It would
+[03:47] be able to find the correct file
+[03:49] quicker. And that in fact was not the
+[03:51] case. In these tests they ran oftent
+[03:53] times it took as many steps or more
+[03:55] steps to actually find the correct files
+[03:58] based on whatever benchmark they were
+[04:00] running. And remember because each of
+[04:02] these AI system has to read that context
+[04:05] file in the first place. It was more
+[04:06] expensive for each and every step
+[04:08] because it's thinking more. The second
+[04:10] reason is that these context files are
+[04:11] redundant documentation. When I tell
+[04:14] cloud code to do something, what is it
+[04:16] going to do? It's already going to go
+[04:17] through the codebase. It's already going
+[04:19] to go through the search process and
+[04:20] find out what it needs. So, it's doing
+[04:22] that. Plus, it's taking a look at this
+[04:24] bloated document you gave it, right?
+[04:26] It's just excessive. It's not providing
+[04:28] anything new or novel. Now, these files
+[04:30] just aren't redundant. They cause
+[04:31] excessive tool calling behaviors. You
+[04:33] see that here. Adding context files
+[04:36] causes agents to use more repository
+[04:37] specific tooling, right? They also tend
+[04:40] to search more files, read more files,
+[04:41] and write more files. And the issue is
+[04:44] it's doing this for the sake of it. Why?
+[04:46] Well, it's because the instructions in
+[04:47] context files are typically followed.
+[04:50] These agent systems are trained to
+[04:51] follow the claw.md almost to a te,
+[04:54] right? It treats it like a system
+[04:55] prompt, which is great in theory, but in
+[04:57] reality, right, if you have a bunch of
+[04:59] conventions about a bunch of random
+[05:01] stuff and your particular prompt at that
+[05:03] time has nothing to do with 90% of
+[05:05] what's in your claw. MD, well, what's
+[05:07] the point? In fact, it's hurting it.
+[05:09] It's context pollution. And like we
+[05:11] mentioned before, all this extra
+[05:12] movement just requires more thinking,
+[05:13] which causes more tokens. And these
+[05:15] costs matter, especially if you're
+[05:17] outside of some mega subsidized
+[05:19] situation like cloud code. And what's
+[05:21] also interesting to know is that
+[05:22] stronger models didn't generate better
+[05:24] context files. So this isn't a situation
+[05:26] where it's like the actual content of
+[05:28] the file wasn't good enough or written
+[05:30] well enough for AI. It's just like the
+[05:32] architecture of it all. Even having it
+[05:33] in there is a problem. So what does this
+[05:35] actually mean for you and me? What sort
+[05:37] of practical steps are we supposed to
+[05:39] take now that we have this information?
+[05:41] Should we just be deleting claw.md
+[05:43] entirely, never using it, never running
+[05:44] slash in it? Well, I think the reality
+[05:47] is a bit more nuanced than that. So, the
+[05:50] researcher's conclusion was that these
+[05:52] context files have only a marginal
+[05:53] effect on agent behavior. Many times
+[05:55] it's negative and are likely only
+[05:57] desirable when manually written. The
+[05:59] idea is, hey, if it's going to be
+[06:01] reading this every single time and we
+[06:03] have issues with redundancy and we have
+[06:05] issues where it's just doing too much,
+[06:07] well, then we should have an actual
+[06:08] human being go in there. They create the
+[06:10] claw.md file and they make it sure it's
+[06:13] super super tight. They make sure this
+[06:14] global context only has to do with
+[06:17] things that claude code, for example,
+[06:20] wouldn't naturally figure out just by
+[06:21] going through the codebase. But that
+[06:23] requires a certain level of knowledge
+[06:24] and technical knowhow that many people
+[06:26] who are just stepping into the Vive
+[06:28] coding space with cloud code don't have,
+[06:29] right? They don't come from a technical
+[06:31] background. They're really just figuring
+[06:32] this all out. If that's you, then I
+[06:35] think the answer probably is delete the
+[06:37] cloud MD. you're probably better off
+[06:39] with nothing than the bloat the
+[06:41] normal/init route is going to give you
+[06:44] versus trying to rely on your own
+[06:46] technical know-how to get like the
+[06:47] perfect super tight cloudmd file. But I
+[06:50] think it also really depends on the sort
+[06:52] of project you're working on. And this
+[06:54] is where we kind of go into the
+[06:55] exception to this rule and this was kind
+[06:57] of buried here in the report. So what
+[06:59] they did with one test is they actually
+[07:01] manually removed all documentation from
+[07:04] a repository. So think of they removed
+[07:07] like any additional markdown files,
+[07:09] right? No example code folders, no like
+[07:12] read me. So there was no documentation
+[07:13] at all. And in those situations where
+[07:15] cloud.mmp was the only source of
+[07:18] documentation in the entire codebase,
+[07:20] LLM generated context files consistently
+[07:23] improved performance by about 2.7% on
+[07:26] average and also outperformed developer
+[07:29] written documentation. Now what is that
+[07:31] saying? That's saying, hey, in most of
+[07:32] these tests, there were sophisticated
+[07:34] code bases that already included some
+[07:37] level of documentation, even something
+[07:38] as simple as a readme. But if we
+[07:41] essentially take out all the
+[07:43] documentation, right, there's absolutely
+[07:45] nothing there, and we then put in
+[07:47] something like an agent.md or claw. MD,
+[07:50] then it actually improved it a little
+[07:51] bit. Well, that's kind of confusing,
+[07:52] right? So, you're saying the actual
+[07:53] claw.md files are useful in very
+[07:56] specific situations.
+[07:58] Yes, according to this, there are very
+[08:00] specific situations. Now, I think we
+[08:02] need to take this with a grain of salt.
+[08:04] All right, this sort of little test they
+[08:05] did. First of all, this was with rather
+[08:08] sophisticated code bases. This wasn't
+[08:10] with a codebase that you just threw two
+[08:11] prompts at it in one plan mode in cloud
+[08:13] code build. Those sorts of situations,
+[08:15] like the vast majority of situations you
+[08:17] will probably find yourself in, you
+[08:19] don't need a claw.md file. Cloud code
+[08:21] can already see the entire codebase and
+[08:22] all of its inner workings in a simple
+[08:24] pass and not use very many tokens. This
+[08:26] is for stuff that is huge. Also, when
+[08:29] we're talking about very large code
+[08:30] bases, the chances are that there is no
+[08:32] documentation in any form whatsoever in
+[08:34] there at all is highly unlikely. So,
+[08:38] this scenario is almost somewhat an
+[08:40] unrealistic scenario. But with that
+[08:42] being said, there is some stuff we can
+[08:44] pull out of that. And that's the idea
+[08:45] of, hey, cloud.MD files can work in
+[08:48] large repositories that don't already
+[08:50] include some level of context. And they
+[08:52] aren't some like rather simple project
+[08:54] someone's just spun up in a few prompts.
+[08:55] Well, what sort of scenario describes
+[08:56] that? Well, I think it's a scenario a
+[08:58] lot of people of you are actually in,
+[09:00] and that is personal assistant type
+[09:03] agents. And when I say personal
+[09:04] assistant type projects, I'm talking
+[09:06] about something like an Obsidian vault
+[09:08] that your Claude code is connected to.
+[09:10] Something like this where it's a giant
+[09:12] repository of a bunch of subfolders and
+[09:14] it's nothing but markdown files all the
+[09:16] way down. There's no real code
+[09:19] architecture for cloud code to traverse.
+[09:21] There's no readme for this thing. It's
+[09:23] actually just a very wide, very
+[09:26] populated, continually growing just like
+[09:28] sea of documents. Yet, there are some
+[09:30] conventions you would want Claude Code
+[09:32] to follow in this instance because it's
+[09:33] a personal assistant for you. It's
+[09:35] something that's very, very personal and
+[09:36] you probably have specific ways you want
+[09:39] cloud code to interact with you. This is
+[09:41] the perfect scenario for a cloud. MD
+[09:43] file, but it's also not one I would use
+[09:45] slashinit in, right? because what I want
+[09:47] claude code to do in this scenario
+[09:50] probably has less to do with how the
+[09:52] files themselves are built and more to
+[09:53] do again with like my communication
+[09:55] style, right? So that's a perfect use
+[09:58] case. Now speaking of slash in it,
+[10:00] Anthropic recently made some updates to
+[10:02] it. Now it's essentially an experimental
+[10:04] feature. You need to go into your
+[10:05] settings and actually flag it as true,
+[10:07] but Enthropic understands this problem
+[10:09] as well. So the new slash in it is an
+[10:12] interactive multi-phase flow. It's meant
+[10:14] to make it more minimal. It's meant to
+[10:16] push you more towards skills and hooks,
+[10:18] but again, like, does it actually solve
+[10:21] the issue? Inherently, not really. It's
+[10:24] definitely a step in the right
+[10:25] direction. And I think the idea of
+[10:27] getting you in the mindset of like, all
+[10:29] right, does it need to be a convention
+[10:31] that's in every single prompt, or is it
+[10:33] just something I want done in a specific
+[10:36] way at certain times? Right? If this
+[10:39] isn't something that you would add to
+[10:40] literally every single prompt, then why
+[10:42] aren't we making it a skill? Why aren't
+[10:44] we making it a hook? Like we already
+[10:46] have ways inside of cloud code to make
+[10:48] it do specific things in a specific way
+[10:51] skills, right? So, do you need the skill
+[10:54] invoked every time? No. Then don't put
+[10:55] it in cloud MD. Now, obviously, this is
+[10:57] a step in the right direction, but I
+[10:59] don't think it's a silver bullet. So, in
+[11:00] conclusion, less is more. You probably
+[11:04] don't need a claw.md file. There are
+[11:06] certain scenarios where Claude MD files
+[11:08] make sense. We talked about them.
+[11:09] Probably a personal assistant type
+[11:10] thing. But if you're doing a standard
+[11:12] normal coding project, unless you're
+[11:14] someone who really knows what they're
+[11:16] doing, I think the data points to just
+[11:18] staying away from it, right? It's not
+[11:20] really going to help you. Truth be told,
+[11:21] I think a lot of this just feels like a
+[11:23] relic of times past where these coding
+[11:25] agents just weren't as good at figuring
+[11:27] out what was going on in the codebase
+[11:28] without extra help, without extra
+[11:30] scaffolding. But now, like, we've gotten
+[11:31] to a point where they are so effective,
+[11:33] we don't need to hold its hand. Like,
+[11:35] it's good enough to see what's there and
+[11:37] what it needs to do. So, hopefully this
+[11:38] was able to shed some light on it. I
+[11:40] think this was a super interesting
+[11:41] report. I will put a link to it down
+[11:43] below. As always, let me know what you
+[11:45] thought. Make sure to check out Chase AI
+[11:47] Plus if you want to get your hands on
+[11:48] that master class. and I'll see you
+[11:50] around.
+
+--- Plain text ---
+Your Claude MD file is making Claude code dumber. And this isn't just my opinion. This is coming from researchers in ETHZurich where they tested this idea with multiple agents against multiple benchmarks. And the conclusion was clear. These sorts of context files like claw.md make our agents worse, not better, and more expensive. So if that's the case, why is everybody still telling you that you need to start every project with a claw.md file? and it's Claude Code's latest update to slash and it actually fixed anything. In this video, we are going to cover all of that. I'm also going to discuss the one exception to this rule so you don't fall into this common trap. So, let's start by very quickly reviewing what claude.md files even are so we're on the same page here. So, claude.md files are just markdown files aka text files. They are instructions you write to give claude persistent context. The idea is if I have a project, I'm going to have a claw.md file that lays out how the project is essentially set up. It's where I set conventions. You know, if I ever want Claude to always do something in a certain way every single time, the idea is you would put this in claw.md because claude code would always reference it. Emphasis on the always reference. Claw.md files essentially become system prompts. So, think of it this way. It's almost like every single time you prompt claw code in a project that has a claw.md file. It's like that claw.md file gets appended to your prompt every single time invisibly. Think of it that way. And for/init is a command inside of cloud code that will create a cloud. MD file for you for your project. It will go through your entire setup, go through all your architecture and figure out what should be in it. And it does it all automatically. And some sort of documentation like this makes sense in theory, right? like if I always want cloud code to use twospace indentation or to run npm test before committing and to have like some level of consistency, right? It makes sense, but what makes sense on paper doesn't always play out in reality as evidenced in this report from our researchers at Zurich. So this report is called evaluating agents.md. Think of agents.md and claw.md as the same thing, right? They're just context files that the AI agents are supposed to read to help them understand the codebase. And spoiler alert, what did these guys find? They found that across multiple coding agents and large language models, we find that context files tend to reduce task success rates compared to providing no repository context while also increasing inference cost by over 20%. Ultimately, we conclude that unnecessary requirements from context files make tasks harder and human written context files should describe only minimal requirements. What does that mean? Well, that means in the eight tests they ran, having no clawed MD file did better in five of the tests. And across all of the tests, if you had some sort of Asians.mmd or claw.md, it ended up being 20% more expensive. Though the obvious follow-up from that is, well, why why is it the case that when we give cla code additional documentation? It actually does worse. But before we jump into that, just want to give a quick plug for my cla code masterass. just came out a couple weeks ago and since then we've already updated 20 plus modules and added an additional hour of content and it's all about taking you from zero to AI dev and basing it on real cloud code use cases not just explaining features. So if that sounds like something you're interested in definitely check it out in Chase AI plus there's a link to that in the comments and as always I also have the free Chase AI community links in the description for that if you're just getting started in the space. Now, back to answering the question, why does the Claude MD file hurt Claude code? Well, there's actually a number of reasons for this. The first is that these context files actually don't provide effective overviews. You would think if I gave Claude code essentially a piece of paper that says, "Here's where everything is. Here's where you can find it." It would be able to find the correct file quicker. And that in fact was not the case. In these tests they ran oftent times it took as many steps or more steps to actually find the correct files based on whatever benchmark they were running. And remember because each of these AI system has to read that context file in the first place. It was more expensive for each and every step because it's thinking more. The second reason is that these context files are redundant documentation. When I tell cloud code to do something, what is it going to do? It's already going to go through the codebase. It's already going to go through the search process and find out what it needs. So, it's doing that. Plus, it's taking a look at this bloated document you gave it, right? It's just excessive. It's not providing anything new or novel. Now, these files just aren't redundant. They cause excessive tool calling behaviors. You see that here. Adding context files causes agents to use more repository specific tooling, right? They also tend to search more files, read more files, and write more files. And the issue is it's doing this for the sake of it. Why? Well, it's because the instructions in context files are typically followed. These agent systems are trained to follow the claw.md almost to a te, right? It treats it like a system prompt, which is great in theory, but in reality, right, if you have a bunch of conventions about a bunch of random stuff and your particular prompt at that time has nothing to do with 90% of what's in your claw. MD, well, what's the point? In fact, it's hurting it. It's context pollution. And like we mentioned before, all this extra movement just requires more thinking, which causes more tokens. And these costs matter, especially if you're outside of some mega subsidized situation like cloud code. And what's also interesting to know is that stronger models didn't generate better context files. So this isn't a situation where it's like the actual content of the file wasn't good enough or written well enough for AI. It's just like the architecture of it all. Even having it in there is a problem. So what does this actually mean for you and me? What sort of practical steps are we supposed to take now that we have this information? Should we just be deleting claw.md entirely, never using it, never running slash in it? Well, I think the reality is a bit more nuanced than that. So, the researcher's conclusion was that these context files have only a marginal effect on agent behavior. Many times it's negative and are likely only desirable when manually written. The idea is, hey, if it's going to be reading this every single time and we have issues with redundancy and we have issues where it's just doing too much, well, then we should have an actual human being go in there. They create the claw.md file and they make it sure it's super super tight. They make sure this global context only has to do with things that claude code, for example, wouldn't naturally figure out just by going through the codebase. But that requires a certain level of knowledge and technical knowhow that many people who are just stepping into the Vive coding space with cloud code don't have, right? They don't come from a technical background. They're really just figuring this all out. If that's you, then I think the answer probably is delete the cloud MD. you're probably better off with nothing than the bloat the normal/init route is going to give you versus trying to rely on your own technical know-how to get like the perfect super tight cloudmd file. But I think it also really depends on the sort of project you're working on. And this is where we kind of go into the exception to this rule and this was kind of buried here in the report. So what they did with one test is they actually manually removed all documentation from a repository. So think of they removed like any additional markdown files, right? No example code folders, no like read me. So there was no documentation at all. And in those situations where cloud.mmp was the only source of documentation in the entire codebase, LLM generated context files consistently improved performance by about 2.7% on average and also outperformed developer written documentation. Now what is that saying? That's saying, hey, in most of these tests, there were sophisticated code bases that already included some level of documentation, even something as simple as a readme. But if we essentially take out all the documentation, right, there's absolutely nothing there, and we then put in something like an agent.md or claw. MD, then it actually improved it a little bit. Well, that's kind of confusing, right? So, you're saying the actual claw.md files are useful in very specific situations. Yes, according to this, there are very specific situations. Now, I think we need to take this with a grain of salt. All right, this sort of little test they did. First of all, this was with rather sophisticated code bases. This wasn't with a codebase that you just threw two prompts at it in one plan mode in cloud code build. Those sorts of situations, like the vast majority of situations you will probably find yourself in, you don't need a claw.md file. Cloud code can already see the entire codebase and all of its inner workings in a simple pass and not use very many tokens. This is for stuff that is huge. Also, when we're talking about very large code bases, the chances are that there is no documentation in any form whatsoever in there at all is highly unlikely. So, this scenario is almost somewhat an unrealistic scenario. But with that being said, there is some stuff we can pull out of that. And that's the idea of, hey, cloud.MD files can work in large repositories that don't already include some level of context. And they aren't some like rather simple project someone's just spun up in a few prompts. Well, what sort of scenario describes that? Well, I think it's a scenario a lot of people of you are actually in, and that is personal assistant type agents. And when I say personal assistant type projects, I'm talking about something like an Obsidian vault that your Claude code is connected to. Something like this where it's a giant repository of a bunch of subfolders and it's nothing but markdown files all the way down. There's no real code architecture for cloud code to traverse. There's no readme for this thing. It's actually just a very wide, very populated, continually growing just like sea of documents. Yet, there are some conventions you would want Claude Code to follow in this instance because it's a personal assistant for you. It's something that's very, very personal and you probably have specific ways you want cloud code to interact with you. This is the perfect scenario for a cloud. MD file, but it's also not one I would use slashinit in, right? because what I want claude code to do in this scenario probably has less to do with how the files themselves are built and more to do again with like my communication style, right? So that's a perfect use case. Now speaking of slash in it, Anthropic recently made some updates to it. Now it's essentially an experimental feature. You need to go into your settings and actually flag it as true, but Enthropic understands this problem as well. So the new slash in it is an interactive multi-phase flow. It's meant to make it more minimal. It's meant to push you more towards skills and hooks, but again, like, does it actually solve the issue? Inherently, not really. It's definitely a step in the right direction. And I think the idea of getting you in the mindset of like, all right, does it need to be a convention that's in every single prompt, or is it just something I want done in a specific way at certain times? Right? If this isn't something that you would add to literally every single prompt, then why aren't we making it a skill? Why aren't we making it a hook? Like we already have ways inside of cloud code to make it do specific things in a specific way skills, right? So, do you need the skill invoked every time? No. Then don't put it in cloud MD. Now, obviously, this is a step in the right direction, but I don't think it's a silver bullet. So, in conclusion, less is more. You probably don't need a claw.md file. There are certain scenarios where Claude MD files make sense. We talked about them. Probably a personal assistant type thing. But if you're doing a standard normal coding project, unless you're someone who really knows what they're doing, I think the data points to just staying away from it, right? It's not really going to help you. Truth be told, I think a lot of this just feels like a relic of times past where these coding agents just weren't as good at figuring out what was going on in the codebase without extra help, without extra scaffolding. But now, like, we've gotten to a point where they are so effective, we don't need to hold its hand. Like, it's good enough to see what's there and what it needs to do. So, hopefully this was able to shed some light on it. I think this was a super interesting report. I will put a link to it down below. As always, let me know what you thought. Make sure to check out Chase AI Plus if you want to get your hands on that master class. and I'll see you around.

@@ -1,0 +1,2265 @@
+1
+00:00:00,320 --> 00:00:02,710
+
+There's a new AI model and it just got
+
+2
+00:00:02,710 --> 00:00:02,720
+There's a new AI model and it just got
+ 
+
+3
+00:00:02,720 --> 00:00:05,670
+There's a new AI model and it just got
+an update that changes everything. Most
+
+4
+00:00:05,670 --> 00:00:05,680
+an update that changes everything. Most
+ 
+
+5
+00:00:05,680 --> 00:00:07,190
+an update that changes everything. Most
+people haven't heard of it yet, but the
+
+6
+00:00:07,190 --> 00:00:07,200
+people haven't heard of it yet, but the
+ 
+
+7
+00:00:07,200 --> 00:00:09,030
+people haven't heard of it yet, but the
+ones who have, they're calling it one of
+
+8
+00:00:09,030 --> 00:00:09,040
+ones who have, they're calling it one of
+ 
+
+9
+00:00:09,040 --> 00:00:11,110
+ones who have, they're calling it one of
+the most interesting AI breakthroughs
+
+10
+00:00:11,110 --> 00:00:11,120
+the most interesting AI breakthroughs
+ 
+
+11
+00:00:11,120 --> 00:00:12,790
+the most interesting AI breakthroughs
+this year. It's not just a bigger model.
+
+12
+00:00:12,790 --> 00:00:12,800
+this year. It's not just a bigger model.
+ 
+
+13
+00:00:12,800 --> 00:00:14,629
+this year. It's not just a bigger model.
+It's not just a faster model. It
+
+14
+00:00:14,629 --> 00:00:14,639
+It's not just a faster model. It
+ 
+
+15
+00:00:14,639 --> 00:00:17,349
+It's not just a faster model. It
+literally rethinks how AI remembers
+
+16
+00:00:17,349 --> 00:00:17,359
+literally rethinks how AI remembers
+ 
+
+17
+00:00:17,359 --> 00:00:20,390
+literally rethinks how AI remembers
+things deep inside the network itself.
+
+18
+00:00:20,390 --> 00:00:20,400
+things deep inside the network itself.
+ 
+
+19
+00:00:20,400 --> 00:00:22,070
+things deep inside the network itself.
+And here's the wild part. It's open
+
+20
+00:00:22,070 --> 00:00:22,080
+And here's the wild part. It's open
+ 
+
+21
+00:00:22,080 --> 00:00:24,390
+And here's the wild part. It's open
+source. Anyone can use it right now for
+
+22
+00:00:24,390 --> 00:00:24,400
+source. Anyone can use it right now for
+ 
+
+23
+00:00:24,400 --> 00:00:26,230
+source. Anyone can use it right now for
+free. This model can read an entire
+
+24
+00:00:26,230 --> 00:00:26,240
+free. This model can read an entire
+ 
+
+25
+00:00:26,240 --> 00:00:28,230
+free. This model can read an entire
+book, a full codebase, a massive
+
+26
+00:00:28,230 --> 00:00:28,240
+book, a full codebase, a massive
+ 
+
+27
+00:00:28,240 --> 00:00:30,630
+book, a full codebase, a massive
+research document, all in one go, and
+
+28
+00:00:30,630 --> 00:00:30,640
+research document, all in one go, and
+ 
+
+29
+00:00:30,640 --> 00:00:32,229
+research document, all in one go, and
+still hold on to every single detail
+
+30
+00:00:32,229 --> 00:00:32,239
+still hold on to every single detail
+ 
+
+31
+00:00:32,239 --> 00:00:34,150
+still hold on to every single detail
+without losing the thread. It can run up
+
+32
+00:00:34,150 --> 00:00:34,160
+without losing the thread. It can run up
+ 
+
+33
+00:00:34,160 --> 00:00:36,470
+without losing the thread. It can run up
+to 100 AI agents at the same time in
+
+34
+00:00:36,470 --> 00:00:36,480
+to 100 AI agents at the same time in
+ 
+
+35
+00:00:36,480 --> 00:00:38,470
+to 100 AI agents at the same time in
+parallel, all working together on your
+
+36
+00:00:38,470 --> 00:00:38,480
+parallel, all working together on your
+ 
+
+37
+00:00:38,480 --> 00:00:40,950
+parallel, all working together on your
+tasks simultaneously. And the new update
+
+38
+00:00:40,950 --> 00:00:40,960
+tasks simultaneously. And the new update
+ 
+
+39
+00:00:40,960 --> 00:00:43,190
+tasks simultaneously. And the new update
+they just dropped, it fixes a flaw that
+
+40
+00:00:43,190 --> 00:00:43,200
+they just dropped, it fixes a flaw that
+ 
+
+41
+00:00:43,200 --> 00:00:45,430
+they just dropped, it fixes a flaw that
+every major AI model has had since the
+
+42
+00:00:45,430 --> 00:00:45,440
+every major AI model has had since the
+ 
+
+43
+00:00:45,440 --> 00:00:47,430
+every major AI model has had since the
+very beginning. A flaw so fundamental
+
+44
+00:00:47,430 --> 00:00:47,440
+very beginning. A flaw so fundamental
+ 
+
+45
+00:00:47,440 --> 00:00:49,510
+very beginning. A flaw so fundamental
+that most people in the AI world weren't
+
+46
+00:00:49,510 --> 00:00:49,520
+that most people in the AI world weren't
+ 
+
+47
+00:00:49,520 --> 00:00:51,270
+that most people in the AI world weren't
+even talking about it. By the end of
+
+48
+00:00:51,270 --> 00:00:51,280
+even talking about it. By the end of
+ 
+
+49
+00:00:51,280 --> 00:00:53,189
+even talking about it. By the end of
+this video, you're going to understand
+
+50
+00:00:53,189 --> 00:00:53,199
+this video, you're going to understand
+ 
+
+51
+00:00:53,199 --> 00:00:55,830
+this video, you're going to understand
+exactly what that flaw is, why this fix
+
+52
+00:00:55,830 --> 00:00:55,840
+exactly what that flaw is, why this fix
+ 
+
+53
+00:00:55,840 --> 00:00:57,910
+exactly what that flaw is, why this fix
+is a big deal, and how you can use a
+
+54
+00:00:57,910 --> 00:00:57,920
+is a big deal, and how you can use a
+ 
+
+55
+00:00:57,920 --> 00:00:59,750
+is a big deal, and how you can use a
+model like this in your actual business
+
+56
+00:00:59,750 --> 00:00:59,760
+model like this in your actual business
+ 
+
+57
+00:00:59,760 --> 00:01:02,150
+model like this in your actual business
+starting today. Stay with me. This one
+
+58
+00:01:02,150 --> 00:01:02,160
+starting today. Stay with me. This one
+ 
+
+59
+00:01:02,160 --> 00:01:06,230
+starting today. Stay with me. This one
+is genuinely worth your time. Hey, if we
+
+60
+00:01:06,230 --> 00:01:06,240
+is genuinely worth your time. Hey, if we
+ 
+
+61
+00:01:06,240 --> 00:01:08,390
+is genuinely worth your time. Hey, if we
+haven't met already, I'm the digital
+
+62
+00:01:08,390 --> 00:01:08,400
+haven't met already, I'm the digital
+ 
+
+63
+00:01:08,400 --> 00:01:11,429
+haven't met already, I'm the digital
+avatar of Julian Goldie, CEO of Goldie
+
+64
+00:01:11,429 --> 00:01:11,439
+avatar of Julian Goldie, CEO of Goldie
+ 
+
+65
+00:01:11,439 --> 00:01:13,990
+avatar of Julian Goldie, CEO of Goldie
+Agency. Whilst he's out helping clients
+
+66
+00:01:13,990 --> 00:01:14,000
+Agency. Whilst he's out helping clients
+ 
+
+67
+00:01:14,000 --> 00:01:15,830
+Agency. Whilst he's out helping clients
+get more leads and customers through
+
+68
+00:01:15,830 --> 00:01:15,840
+get more leads and customers through
+ 
+
+69
+00:01:15,840 --> 00:01:18,710
+get more leads and customers through
+SEO, I'm here to bring you the latest AI
+
+70
+00:01:18,710 --> 00:01:18,720
+SEO, I'm here to bring you the latest AI
+ 
+
+71
+00:01:18,720 --> 00:01:20,950
+SEO, I'm here to bring you the latest AI
+updates every single week. broken down,
+
+72
+00:01:20,950 --> 00:01:20,960
+updates every single week. broken down,
+ 
+
+73
+00:01:20,960 --> 00:01:23,830
+updates every single week. broken down,
+simply no fluff, no nonsense. Julian
+
+74
+00:01:23,830 --> 00:01:23,840
+simply no fluff, no nonsense. Julian
+ 
+
+75
+00:01:23,840 --> 00:01:25,429
+simply no fluff, no nonsense. Julian
+reads every comment personally, so make
+
+76
+00:01:25,429 --> 00:01:25,439
+reads every comment personally, so make
+ 
+
+77
+00:01:25,439 --> 00:01:27,350
+reads every comment personally, so make
+sure you drop one below and let him know
+
+78
+00:01:27,350 --> 00:01:27,360
+sure you drop one below and let him know
+ 
+
+79
+00:01:27,360 --> 00:01:29,109
+sure you drop one below and let him know
+what you want to see next. All right,
+
+80
+00:01:29,109 --> 00:01:29,119
+what you want to see next. All right,
+ 
+
+81
+00:01:29,119 --> 00:01:30,710
+what you want to see next. All right,
+let's get into it. So, first things
+
+82
+00:01:30,710 --> 00:01:30,720
+let's get into it. So, first things
+ 
+
+83
+00:01:30,720 --> 00:01:34,390
+let's get into it. So, first things
+first, what even is Kimmy K25? So, it's
+
+84
+00:01:34,390 --> 00:01:34,400
+first, what even is Kimmy K25? So, it's
+ 
+
+85
+00:01:34,400 --> 00:01:36,310
+first, what even is Kimmy K25? So, it's
+an open- source AI model built by a
+
+86
+00:01:36,310 --> 00:01:36,320
+an open- source AI model built by a
+ 
+
+87
+00:01:36,320 --> 00:01:38,550
+an open- source AI model built by a
+company called Moonshot AI, and it is
+
+88
+00:01:38,550 --> 00:01:38,560
+company called Moonshot AI, and it is
+ 
+
+89
+00:01:38,560 --> 00:01:40,630
+company called Moonshot AI, and it is
+not messing around. We're talking 1
+
+90
+00:01:40,630 --> 00:01:40,640
+not messing around. We're talking 1
+ 
+
+91
+00:01:40,640 --> 00:01:42,550
+not messing around. We're talking 1
+trillion total parameters. That is an
+
+92
+00:01:42,550 --> 00:01:42,560
+trillion total parameters. That is an
+ 
+
+93
+00:01:42,560 --> 00:01:44,630
+trillion total parameters. That is an
+enormous number. But here's the clever
+
+94
+00:01:44,630 --> 00:01:44,640
+enormous number. But here's the clever
+ 
+
+95
+00:01:44,640 --> 00:01:46,630
+enormous number. But here's the clever
+engineering behind it. It only uses
+
+96
+00:01:46,630 --> 00:01:46,640
+engineering behind it. It only uses
+ 
+
+97
+00:01:46,640 --> 00:01:48,870
+engineering behind it. It only uses
+around 32 billion of those parameters at
+
+98
+00:01:48,870 --> 00:01:48,880
+around 32 billion of those parameters at
+ 
+
+99
+00:01:48,880 --> 00:01:50,789
+around 32 billion of those parameters at
+any one time. Think of it like a giant
+
+100
+00:01:50,789 --> 00:01:50,799
+any one time. Think of it like a giant
+ 
+
+101
+00:01:50,799 --> 00:01:52,710
+any one time. Think of it like a giant
+library with millions of books. You
+
+102
+00:01:52,710 --> 00:01:52,720
+library with millions of books. You
+ 
+
+103
+00:01:52,720 --> 00:01:54,310
+library with millions of books. You
+don't read every single book every time
+
+104
+00:01:54,310 --> 00:01:54,320
+don't read every single book every time
+ 
+
+105
+00:01:54,320 --> 00:01:56,230
+don't read every single book every time
+someone asks you a question. You walk to
+
+106
+00:01:56,230 --> 00:01:56,240
+someone asks you a question. You walk to
+ 
+
+107
+00:01:56,240 --> 00:01:58,550
+someone asks you a question. You walk to
+the right shelf, pull the right books,
+
+108
+00:01:58,550 --> 00:01:58,560
+the right shelf, pull the right books,
+ 
+
+109
+00:01:58,560 --> 00:02:00,069
+the right shelf, pull the right books,
+and get the answer. That's exactly what
+
+110
+00:02:00,069 --> 00:02:00,079
+and get the answer. That's exactly what
+ 
+
+111
+00:02:00,079 --> 00:02:01,830
+and get the answer. That's exactly what
+this model does. It's efficient. It's
+
+112
+00:02:01,830 --> 00:02:01,840
+this model does. It's efficient. It's
+ 
+
+113
+00:02:01,840 --> 00:02:03,590
+this model does. It's efficient. It's
+fast, and it's incredibly powerful
+
+114
+00:02:03,590 --> 00:02:03,600
+fast, and it's incredibly powerful
+ 
+
+115
+00:02:03,600 --> 00:02:05,990
+fast, and it's incredibly powerful
+because of how it selects what it uses.
+
+116
+00:02:05,990 --> 00:02:06,000
+because of how it selects what it uses.
+ 
+
+117
+00:02:06,000 --> 00:02:08,309
+because of how it selects what it uses.
+It works with text, images, and video
+
+118
+00:02:08,309 --> 00:02:08,319
+It works with text, images, and video
+ 
+
+119
+00:02:08,319 --> 00:02:11,110
+It works with text, images, and video
+all natively inside one single model.
+
+120
+00:02:11,110 --> 00:02:11,120
+all natively inside one single model.
+ 
+
+121
+00:02:11,120 --> 00:02:12,790
+all natively inside one single model.
+You don't need to switch between tools.
+
+122
+00:02:12,790 --> 00:02:12,800
+You don't need to switch between tools.
+ 
+
+123
+00:02:12,800 --> 00:02:14,869
+You don't need to switch between tools.
+It's fully multimodal. and it has a
+
+124
+00:02:14,869 --> 00:02:14,879
+It's fully multimodal. and it has a
+ 
+
+125
+00:02:14,879 --> 00:02:17,990
+It's fully multimodal. and it has a
+256,000 token context window. To put
+
+126
+00:02:17,990 --> 00:02:18,000
+256,000 token context window. To put
+ 
+
+127
+00:02:18,000 --> 00:02:19,750
+256,000 token context window. To put
+that in perspective, that means you can
+
+128
+00:02:19,750 --> 00:02:19,760
+that in perspective, that means you can
+ 
+
+129
+00:02:19,760 --> 00:02:21,670
+that in perspective, that means you can
+drop in an entire business strategy
+
+130
+00:02:21,670 --> 00:02:21,680
+drop in an entire business strategy
+ 
+
+131
+00:02:21,680 --> 00:02:23,589
+drop in an entire business strategy
+document, a full transcript of every
+
+132
+00:02:23,589 --> 00:02:23,599
+document, a full transcript of every
+ 
+
+133
+00:02:23,599 --> 00:02:25,350
+document, a full transcript of every
+team meeting you've had this quarter,
+
+134
+00:02:25,350 --> 00:02:25,360
+team meeting you've had this quarter,
+ 
+
+135
+00:02:25,360 --> 00:02:27,030
+team meeting you've had this quarter,
+your competitor research, your audience
+
+136
+00:02:27,030 --> 00:02:27,040
+your competitor research, your audience
+ 
+
+137
+00:02:27,040 --> 00:02:29,030
+your competitor research, your audience
+data, right? And this model processes
+
+138
+00:02:29,030 --> 00:02:29,040
+data, right? And this model processes
+ 
+
+139
+00:02:29,040 --> 00:02:31,030
+data, right? And this model processes
+all of it in one go without losing
+
+140
+00:02:31,030 --> 00:02:31,040
+all of it in one go without losing
+ 
+
+141
+00:02:31,040 --> 00:02:32,710
+all of it in one go without losing
+anything. It also has something called
+
+142
+00:02:32,710 --> 00:02:32,720
+anything. It also has something called
+ 
+
+143
+00:02:32,720 --> 00:02:34,710
+anything. It also has something called
+agent swarm mode. This is where things
+
+144
+00:02:34,710 --> 00:02:34,720
+agent swarm mode. This is where things
+ 
+
+145
+00:02:34,720 --> 00:02:36,229
+agent swarm mode. This is where things
+start to get really interesting. You can
+
+146
+00:02:36,229 --> 00:02:36,239
+start to get really interesting. You can
+ 
+
+147
+00:02:36,239 --> 00:02:38,869
+start to get really interesting. You can
+run up to 100 AI sub agents working in
+
+148
+00:02:38,869 --> 00:02:38,879
+run up to 100 AI sub agents working in
+ 
+
+149
+00:02:38,879 --> 00:02:40,869
+run up to 100 AI sub agents working in
+parallel on a single task. Instead of
+
+150
+00:02:40,869 --> 00:02:40,879
+parallel on a single task. Instead of
+ 
+
+151
+00:02:40,879 --> 00:02:42,869
+parallel on a single task. Instead of
+doing everything one step at a time, you
+
+152
+00:02:42,869 --> 00:02:42,879
+doing everything one step at a time, you
+ 
+
+153
+00:02:42,879 --> 00:02:44,390
+doing everything one step at a time, you
+can run an entire pipeline
+
+154
+00:02:44,390 --> 00:02:44,400
+can run an entire pipeline
+ 
+
+155
+00:02:44,400 --> 00:02:46,869
+can run an entire pipeline
+simultaneously. Research here, writing
+
+156
+00:02:46,869 --> 00:02:46,879
+simultaneously. Research here, writing
+ 
+
+157
+00:02:46,879 --> 00:02:48,869
+simultaneously. Research here, writing
+there, analysis in the background,
+
+158
+00:02:48,869 --> 00:02:48,879
+there, analysis in the background,
+ 
+
+159
+00:02:48,879 --> 00:02:51,030
+there, analysis in the background,
+formatting at the same time, all of it
+
+160
+00:02:51,030 --> 00:02:51,040
+formatting at the same time, all of it
+ 
+
+161
+00:02:51,040 --> 00:02:53,030
+formatting at the same time, all of it
+happening at once. So already this is a
+
+162
+00:02:53,030 --> 00:02:53,040
+happening at once. So already this is a
+ 
+
+163
+00:02:53,040 --> 00:02:55,350
+happening at once. So already this is a
+model worth paying serious attention to.
+
+164
+00:02:55,350 --> 00:02:55,360
+model worth paying serious attention to.
+ 
+
+165
+00:02:55,360 --> 00:02:57,110
+model worth paying serious attention to.
+But the update they just released,
+
+166
+00:02:57,110 --> 00:02:57,120
+But the update they just released,
+ 
+
+167
+00:02:57,120 --> 00:02:59,190
+But the update they just released,
+that's where it gets genuinely insane.
+
+168
+00:02:59,190 --> 00:02:59,200
+that's where it gets genuinely insane.
+ 
+
+169
+00:02:59,200 --> 00:03:01,750
+that's where it gets genuinely insane.
+Quick pause right here because before we
+
+170
+00:03:01,750 --> 00:03:01,760
+Quick pause right here because before we
+ 
+
+171
+00:03:01,760 --> 00:03:03,910
+Quick pause right here because before we
+go deeper, I want to make sure you know
+
+172
+00:03:03,910 --> 00:03:03,920
+go deeper, I want to make sure you know
+ 
+
+173
+00:03:03,920 --> 00:03:06,070
+go deeper, I want to make sure you know
+about something that's going to help you
+
+174
+00:03:06,070 --> 00:03:06,080
+about something that's going to help you
+ 
+
+175
+00:03:06,080 --> 00:03:08,949
+about something that's going to help you
+actually apply tools like Kim Kum 5 in a
+
+176
+00:03:08,949 --> 00:03:08,959
+actually apply tools like Kim Kum 5 in a
+ 
+
+177
+00:03:08,959 --> 00:03:10,550
+actually apply tools like Kim Kum 5 in a
+way that makes a real difference. It's
+
+178
+00:03:10,550 --> 00:03:10,560
+way that makes a real difference. It's
+ 
+
+179
+00:03:10,560 --> 00:03:13,110
+way that makes a real difference. It's
+called the AI profit boardroom. Inside,
+
+180
+00:03:13,110 --> 00:03:13,120
+called the AI profit boardroom. Inside,
+ 
+
+181
+00:03:13,120 --> 00:03:15,750
+called the AI profit boardroom. Inside,
+we take the latest AI models, tools, and
+
+182
+00:03:15,750 --> 00:03:15,760
+we take the latest AI models, tools, and
+ 
+
+183
+00:03:15,760 --> 00:03:18,149
+we take the latest AI models, tools, and
+updates exactly like this one, and we
+
+184
+00:03:18,149 --> 00:03:18,159
+updates exactly like this one, and we
+ 
+
+185
+00:03:18,159 --> 00:03:20,070
+updates exactly like this one, and we
+show you how to plug them into real
+
+186
+00:03:20,070 --> 00:03:20,080
+show you how to plug them into real
+ 
+
+187
+00:03:20,080 --> 00:03:22,229
+show you how to plug them into real
+working business workflows, content
+
+188
+00:03:22,229 --> 00:03:22,239
+working business workflows, content
+ 
+
+189
+00:03:22,239 --> 00:03:24,390
+working business workflows, content
+creation, client research, lead
+
+190
+00:03:24,390 --> 00:03:24,400
+creation, client research, lead
+ 
+
+191
+00:03:24,400 --> 00:03:26,790
+creation, client research, lead
+generation, automation, community
+
+192
+00:03:26,790 --> 00:03:26,800
+generation, automation, community
+ 
+
+193
+00:03:26,800 --> 00:03:28,390
+generation, automation, community
+growth. We cover it all with
+
+194
+00:03:28,390 --> 00:03:28,400
+growth. We cover it all with
+ 
+
+195
+00:03:28,400 --> 00:03:30,789
+growth. We cover it all with
+step-by-step processes and readyto-use
+
+196
+00:03:30,789 --> 00:03:30,799
+step-by-step processes and readyto-use
+ 
+
+197
+00:03:30,799 --> 00:03:32,070
+step-by-step processes and readyto-use
+templates that you can implement
+
+198
+00:03:32,070 --> 00:03:32,080
+templates that you can implement
+ 
+
+199
+00:03:32,080 --> 00:03:35,030
+templates that you can implement
+immediately. No theory, no vague advice,
+
+200
+00:03:35,030 --> 00:03:35,040
+immediately. No theory, no vague advice,
+ 
+
+201
+00:03:35,040 --> 00:03:37,509
+immediately. No theory, no vague advice,
+practical workflows that work. The link
+
+202
+00:03:37,509 --> 00:03:37,519
+practical workflows that work. The link
+ 
+
+203
+00:03:37,519 --> 00:03:39,830
+practical workflows that work. The link
+is in the description. Go check it out
+
+204
+00:03:39,830 --> 00:03:39,840
+is in the description. Go check it out
+ 
+
+205
+00:03:39,840 --> 00:03:41,750
+is in the description. Go check it out
+when you're done with this video. Now,
+
+206
+00:03:41,750 --> 00:03:41,760
+when you're done with this video. Now,
+ 
+
+207
+00:03:41,760 --> 00:03:44,149
+when you're done with this video. Now,
+back to it. The new update is called
+
+208
+00:03:44,149 --> 00:03:44,159
+back to it. The new update is called
+ 
+
+209
+00:03:44,159 --> 00:03:46,149
+back to it. The new update is called
+attention residuals. Now, I know that
+
+210
+00:03:46,149 --> 00:03:46,159
+attention residuals. Now, I know that
+ 
+
+211
+00:03:46,159 --> 00:03:48,390
+attention residuals. Now, I know that
+sounds incredibly technical. Every AI
+
+212
+00:03:48,390 --> 00:03:48,400
+sounds incredibly technical. Every AI
+ 
+
+213
+00:03:48,400 --> 00:03:50,309
+sounds incredibly technical. Every AI
+model has layers. Think of those layers
+
+214
+00:03:50,309 --> 00:03:50,319
+model has layers. Think of those layers
+ 
+
+215
+00:03:50,319 --> 00:03:52,789
+model has layers. Think of those layers
+like floors in a skyscraper. Information
+
+216
+00:03:52,789 --> 00:03:52,799
+like floors in a skyscraper. Information
+ 
+
+217
+00:03:52,799 --> 00:03:54,390
+like floors in a skyscraper. Information
+starts at the ground floor and travels
+
+218
+00:03:54,390 --> 00:03:54,400
+starts at the ground floor and travels
+ 
+
+219
+00:03:54,400 --> 00:03:56,630
+starts at the ground floor and travels
+upward. Each floor processes what it
+
+220
+00:03:56,630 --> 00:03:56,640
+upward. Each floor processes what it
+ 
+
+221
+00:03:56,640 --> 00:03:58,789
+upward. Each floor processes what it
+receives, adds something new to it, and
+
+222
+00:03:58,789 --> 00:03:58,799
+receives, adds something new to it, and
+ 
+
+223
+00:03:58,799 --> 00:04:00,869
+receives, adds something new to it, and
+passes it up to the next level. By the
+
+224
+00:04:00,869 --> 00:04:00,879
+passes it up to the next level. By the
+ 
+
+225
+00:04:00,879 --> 00:04:02,550
+passes it up to the next level. By the
+time that information reaches the top
+
+226
+00:04:02,550 --> 00:04:02,560
+time that information reaches the top
+ 
+
+227
+00:04:02,560 --> 00:04:04,390
+time that information reaches the top
+floor, it's supposed to have the full
+
+228
+00:04:04,390 --> 00:04:04,400
+floor, it's supposed to have the full
+ 
+
+229
+00:04:04,400 --> 00:04:06,309
+floor, it's supposed to have the full
+complete picture. Here's the problem
+
+230
+00:04:06,309 --> 00:04:06,319
+complete picture. Here's the problem
+ 
+
+231
+00:04:06,319 --> 00:04:08,550
+complete picture. Here's the problem
+with how every model has worked up until
+
+232
+00:04:08,550 --> 00:04:08,560
+with how every model has worked up until
+ 
+
+233
+00:04:08,560 --> 00:04:10,710
+with how every model has worked up until
+now. Each floor just takes what came
+
+234
+00:04:10,710 --> 00:04:10,720
+now. Each floor just takes what came
+ 
+
+235
+00:04:10,720 --> 00:04:13,030
+now. Each floor just takes what came
+before it and adds a little bit on top.
+
+236
+00:04:13,030 --> 00:04:13,040
+before it and adds a little bit on top.
+ 
+
+237
+00:04:13,040 --> 00:04:15,110
+before it and adds a little bit on top.
+Uniformly, equally, without any
+
+238
+00:04:15,110 --> 00:04:15,120
+Uniformly, equally, without any
+ 
+
+239
+00:04:15,120 --> 00:04:17,349
+Uniformly, equally, without any
+filtering or judgment, no floor is
+
+240
+00:04:17,349 --> 00:04:17,359
+filtering or judgment, no floor is
+ 
+
+241
+00:04:17,359 --> 00:04:18,949
+filtering or judgment, no floor is
+treated as more important than any other
+
+242
+00:04:18,949 --> 00:04:18,959
+treated as more important than any other
+ 
+
+243
+00:04:18,959 --> 00:04:20,789
+treated as more important than any other
+floor. That means by the time you get to
+
+244
+00:04:20,789 --> 00:04:20,799
+floor. That means by the time you get to
+ 
+
+245
+00:04:20,799 --> 00:04:22,790
+floor. That means by the time you get to
+the very top of this skyscraper, the
+
+246
+00:04:22,790 --> 00:04:22,800
+the very top of this skyscraper, the
+ 
+
+247
+00:04:22,800 --> 00:04:24,390
+the very top of this skyscraper, the
+details from the ground floor and the
+
+248
+00:04:24,390 --> 00:04:24,400
+details from the ground floor and the
+ 
+
+249
+00:04:24,400 --> 00:04:25,990
+details from the ground floor and the
+early levels, they've basically
+
+250
+00:04:25,990 --> 00:04:26,000
+early levels, they've basically
+ 
+
+251
+00:04:26,000 --> 00:04:27,590
+early levels, they've basically
+disappeared. Their influence got washed
+
+252
+00:04:27,590 --> 00:04:27,600
+disappeared. Their influence got washed
+ 
+
+253
+00:04:27,600 --> 00:04:29,670
+disappeared. Their influence got washed
+out, diluted, lost on the way up.
+
+254
+00:04:29,670 --> 00:04:29,680
+out, diluted, lost on the way up.
+ 
+
+255
+00:04:29,680 --> 00:04:31,590
+out, diluted, lost on the way up.
+Attention residuals fixes this
+
+256
+00:04:31,590 --> 00:04:31,600
+Attention residuals fixes this
+ 
+
+257
+00:04:31,600 --> 00:04:33,510
+Attention residuals fixes this
+completely. Instead of treating every
+
+258
+00:04:33,510 --> 00:04:33,520
+completely. Instead of treating every
+ 
+
+259
+00:04:33,520 --> 00:04:35,590
+completely. Instead of treating every
+pass layer the same way, the model now
+
+260
+00:04:35,590 --> 00:04:35,600
+pass layer the same way, the model now
+ 
+
+261
+00:04:35,600 --> 00:04:37,749
+pass layer the same way, the model now
+uses an attention mechanism, not just
+
+262
+00:04:37,749 --> 00:04:37,759
+uses an attention mechanism, not just
+ 
+
+263
+00:04:37,759 --> 00:04:40,310
+uses an attention mechanism, not just
+across words or tokens like normal, but
+
+264
+00:04:40,310 --> 00:04:40,320
+across words or tokens like normal, but
+ 
+
+265
+00:04:40,320 --> 00:04:42,390
+across words or tokens like normal, but
+across the layers themselves. It
+
+266
+00:04:42,390 --> 00:04:42,400
+across the layers themselves. It
+ 
+
+267
+00:04:42,400 --> 00:04:44,550
+across the layers themselves. It
+selectively decides which earlier layers
+
+268
+00:04:44,550 --> 00:04:44,560
+selectively decides which earlier layers
+ 
+
+269
+00:04:44,560 --> 00:04:46,310
+selectively decides which earlier layers
+are actually most relevant to what it's
+
+270
+00:04:46,310 --> 00:04:46,320
+are actually most relevant to what it's
+ 
+
+271
+00:04:46,320 --> 00:04:47,830
+are actually most relevant to what it's
+doing right now. So it can look back
+
+272
+00:04:47,830 --> 00:04:47,840
+doing right now. So it can look back
+ 
+
+273
+00:04:47,840 --> 00:04:50,150
+doing right now. So it can look back
+through all those floors and say floor 9
+
+274
+00:04:50,150 --> 00:04:50,160
+through all those floors and say floor 9
+ 
+
+275
+00:04:50,160 --> 00:04:51,590
+through all those floors and say floor 9
+had something critical that directly
+
+276
+00:04:51,590 --> 00:04:51,600
+had something critical that directly
+ 
+
+277
+00:04:51,600 --> 00:04:53,189
+had something critical that directly
+applies here. I'm going to pull that
+
+278
+00:04:53,189 --> 00:04:53,199
+applies here. I'm going to pull that
+ 
+
+279
+00:04:53,199 --> 00:04:55,430
+applies here. I'm going to pull that
+forward and give it more weight. Floor
+
+280
+00:04:55,430 --> 00:04:55,440
+forward and give it more weight. Floor
+ 
+
+281
+00:04:55,440 --> 00:04:57,030
+forward and give it more weight. Floor
+three isn't relevant right now. I'll
+
+282
+00:04:57,030 --> 00:04:57,040
+three isn't relevant right now. I'll
+ 
+
+283
+00:04:57,040 --> 00:04:58,629
+three isn't relevant right now. I'll
+leave that one. It's the difference
+
+284
+00:04:58,629 --> 00:04:58,639
+leave that one. It's the difference
+ 
+
+285
+00:04:58,639 --> 00:05:01,270
+leave that one. It's the difference
+between a dumb filing system where every
+
+286
+00:05:01,270 --> 00:05:01,280
+between a dumb filing system where every
+ 
+
+287
+00:05:01,280 --> 00:05:03,830
+between a dumb filing system where every
+folder gets opened every single time and
+
+288
+00:05:03,830 --> 00:05:03,840
+folder gets opened every single time and
+ 
+
+289
+00:05:03,840 --> 00:05:05,510
+folder gets opened every single time and
+a smart assistant who already knows
+
+290
+00:05:05,510 --> 00:05:05,520
+a smart assistant who already knows
+ 
+
+291
+00:05:05,520 --> 00:05:07,510
+a smart assistant who already knows
+which drawer to go to. And the results
+
+292
+00:05:07,510 --> 00:05:07,520
+which drawer to go to. And the results
+ 
+
+293
+00:05:07,520 --> 00:05:10,150
+which drawer to go to. And the results
+back this up. They're seeing up to 1.25
+
+294
+00:05:10,150 --> 00:05:10,160
+back this up. They're seeing up to 1.25
+ 
+
+295
+00:05:10,160 --> 00:05:12,150
+back this up. They're seeing up to 1.25
+times the effective compute with less
+
+296
+00:05:12,150 --> 00:05:12,160
+times the effective compute with less
+ 
+
+297
+00:05:12,160 --> 00:05:14,710
+times the effective compute with less
+than 2% extra latency overhead. That
+
+298
+00:05:14,710 --> 00:05:14,720
+than 2% extra latency overhead. That
+ 
+
+299
+00:05:14,720 --> 00:05:16,469
+than 2% extra latency overhead. That
+means meaningfully more intelligence and
+
+300
+00:05:16,469 --> 00:05:16,479
+means meaningfully more intelligence and
+ 
+
+301
+00:05:16,479 --> 00:05:18,870
+means meaningfully more intelligence and
+capability for barely any extra cost to
+
+302
+00:05:18,870 --> 00:05:18,880
+capability for barely any extra cost to
+ 
+
+303
+00:05:18,880 --> 00:05:20,390
+capability for barely any extra cost to
+inference time. Let me make this
+
+304
+00:05:20,390 --> 00:05:20,400
+inference time. Let me make this
+ 
+
+305
+00:05:20,400 --> 00:05:22,629
+inference time. Let me make this
+concrete because technical updates only
+
+306
+00:05:22,629 --> 00:05:22,639
+concrete because technical updates only
+ 
+
+307
+00:05:22,639 --> 00:05:24,629
+concrete because technical updates only
+matter if they actually change what you
+
+308
+00:05:24,629 --> 00:05:24,639
+matter if they actually change what you
+ 
+
+309
+00:05:24,639 --> 00:05:26,790
+matter if they actually change what you
+can do in the real world. Say you're
+
+310
+00:05:26,790 --> 00:05:26,800
+can do in the real world. Say you're
+ 
+
+311
+00:05:26,800 --> 00:05:29,110
+can do in the real world. Say you're
+growing an online community like the AI
+
+312
+00:05:29,110 --> 00:05:29,120
+growing an online community like the AI
+ 
+
+313
+00:05:29,120 --> 00:05:30,950
+growing an online community like the AI
+profit boardroom. You've got audience
+
+314
+00:05:30,950 --> 00:05:30,960
+profit boardroom. You've got audience
+ 
+
+315
+00:05:30,960 --> 00:05:33,510
+profit boardroom. You've got audience
+research, brand guidelines, past content
+
+316
+00:05:33,510 --> 00:05:33,520
+research, brand guidelines, past content
+ 
+
+317
+00:05:33,520 --> 00:05:36,310
+research, brand guidelines, past content
+that performed well, FAQs, competitor
+
+318
+00:05:36,310 --> 00:05:36,320
+that performed well, FAQs, competitor
+ 
+
+319
+00:05:36,320 --> 00:05:39,029
+that performed well, FAQs, competitor
+analysis, all of it spread across
+
+320
+00:05:39,029 --> 00:05:39,039
+analysis, all of it spread across
+ 
+
+321
+00:05:39,039 --> 00:05:40,950
+analysis, all of it spread across
+different documents and folders. You
+
+322
+00:05:40,950 --> 00:05:40,960
+different documents and folders. You
+ 
+
+323
+00:05:40,960 --> 00:05:44,070
+different documents and folders. You
+drop all of it into Kim K2.5. Right? The
+
+324
+00:05:44,070 --> 00:05:44,080
+drop all of it into Kim K2.5. Right? The
+ 
+
+325
+00:05:44,080 --> 00:05:46,950
+drop all of it into Kim K2.5. Right? The
+two6k context window means it reads
+
+326
+00:05:46,950 --> 00:05:46,960
+two6k context window means it reads
+ 
+
+327
+00:05:46,960 --> 00:05:48,629
+two6k context window means it reads
+every single piece without cutting
+
+328
+00:05:48,629 --> 00:05:48,639
+every single piece without cutting
+ 
+
+329
+00:05:48,639 --> 00:05:50,550
+every single piece without cutting
+anything off. Nothing gets summarized
+
+330
+00:05:50,550 --> 00:05:50,560
+anything off. Nothing gets summarized
+ 
+
+331
+00:05:50,560 --> 00:05:52,550
+anything off. Nothing gets summarized
+away. Nothing gets ignored. Then you
+
+332
+00:05:52,550 --> 00:05:52,560
+away. Nothing gets ignored. Then you
+ 
+
+333
+00:05:52,560 --> 00:05:54,310
+away. Nothing gets ignored. Then you
+send a prompt. Here is everything about
+
+334
+00:05:54,310 --> 00:05:54,320
+send a prompt. Here is everything about
+ 
+
+335
+00:05:54,320 --> 00:05:56,550
+send a prompt. Here is everything about
+the AI profit boardroom. Our mission,
+
+336
+00:05:56,550 --> 00:05:56,560
+the AI profit boardroom. Our mission,
+ 
+
+337
+00:05:56,560 --> 00:05:58,070
+the AI profit boardroom. Our mission,
+our audience, our voice, our best
+
+338
+00:05:58,070 --> 00:05:58,080
+our audience, our voice, our best
+ 
+
+339
+00:05:58,080 --> 00:05:59,590
+our audience, our voice, our best
+performing content from the last 6
+
+340
+00:05:59,590 --> 00:05:59,600
+performing content from the last 6
+ 
+
+341
+00:05:59,600 --> 00:06:02,150
+performing content from the last 6
+months. Build a 30-day content calendar
+
+342
+00:06:02,150 --> 00:06:02,160
+months. Build a 30-day content calendar
+ 
+
+343
+00:06:02,160 --> 00:06:04,870
+months. Build a 30-day content calendar
+with post hooks, full copy, and email
+
+344
+00:06:04,870 --> 00:06:04,880
+with post hooks, full copy, and email
+ 
+
+345
+00:06:04,880 --> 00:06:07,189
+with post hooks, full copy, and email
+subject lines that would attract people
+
+346
+00:06:07,189 --> 00:06:07,199
+subject lines that would attract people
+ 
+
+347
+00:06:07,199 --> 00:06:09,270
+subject lines that would attract people
+who want to use AI automation to grow
+
+348
+00:06:09,270 --> 00:06:09,280
+who want to use AI automation to grow
+ 
+
+349
+00:06:09,280 --> 00:06:11,189
+who want to use AI automation to grow
+their business. And what comes back is a
+
+350
+00:06:11,189 --> 00:06:11,199
+their business. And what comes back is a
+ 
+
+351
+00:06:11,199 --> 00:06:13,909
+their business. And what comes back is a
+coherent onbrand full content plan
+
+352
+00:06:13,909 --> 00:06:13,919
+coherent onbrand full content plan
+ 
+
+353
+00:06:13,919 --> 00:06:15,990
+coherent onbrand full content plan
+because the model held on to all of your
+
+354
+00:06:15,990 --> 00:06:16,000
+because the model held on to all of your
+ 
+
+355
+00:06:16,000 --> 00:06:17,270
+because the model held on to all of your
+context throughout the entire
+
+356
+00:06:17,270 --> 00:06:17,280
+context throughout the entire
+ 
+
+357
+00:06:17,280 --> 00:06:19,270
+context throughout the entire
+generation. It didn't forget your brand
+
+358
+00:06:19,270 --> 00:06:19,280
+generation. It didn't forget your brand
+ 
+
+359
+00:06:19,280 --> 00:06:21,430
+generation. It didn't forget your brand
+voice halfway through. It didn't lose
+
+360
+00:06:21,430 --> 00:06:21,440
+voice halfway through. It didn't lose
+ 
+
+361
+00:06:21,440 --> 00:06:23,189
+voice halfway through. It didn't lose
+track of your audience. Nothing got
+
+362
+00:06:23,189 --> 00:06:23,199
+track of your audience. Nothing got
+ 
+
+363
+00:06:23,199 --> 00:06:25,430
+track of your audience. Nothing got
+diluted. That's attention residuals
+
+364
+00:06:25,430 --> 00:06:25,440
+diluted. That's attention residuals
+ 
+
+365
+00:06:25,440 --> 00:06:27,270
+diluted. That's attention residuals
+doing its job in the background even
+
+366
+00:06:27,270 --> 00:06:27,280
+doing its job in the background even
+ 
+
+367
+00:06:27,280 --> 00:06:28,870
+doing its job in the background even
+when you never think about the technical
+
+368
+00:06:28,870 --> 00:06:28,880
+when you never think about the technical
+ 
+
+369
+00:06:28,880 --> 00:06:31,189
+when you never think about the technical
+side at all. Or take this scenario.
+
+370
+00:06:31,189 --> 00:06:31,199
+side at all. Or take this scenario.
+ 
+
+371
+00:06:31,199 --> 00:06:33,110
+side at all. Or take this scenario.
+You're building a new landing page for
+
+372
+00:06:33,110 --> 00:06:33,120
+You're building a new landing page for
+ 
+
+373
+00:06:33,120 --> 00:06:35,270
+You're building a new landing page for
+the AI profit boardroom. You want it to
+
+374
+00:06:35,270 --> 00:06:35,280
+the AI profit boardroom. You want it to
+ 
+
+375
+00:06:35,280 --> 00:06:36,790
+the AI profit boardroom. You want it to
+clearly explain the value of AI
+
+376
+00:06:36,790 --> 00:06:36,800
+clearly explain the value of AI
+ 
+
+377
+00:06:36,800 --> 00:06:38,790
+clearly explain the value of AI
+automation. speak directly to business
+
+378
+00:06:38,790 --> 00:06:38,800
+automation. speak directly to business
+ 
+
+379
+00:06:38,800 --> 00:06:40,550
+automation. speak directly to business
+owners who want to save time and work
+
+380
+00:06:40,550 --> 00:06:40,560
+owners who want to save time and work
+ 
+
+381
+00:06:40,560 --> 00:06:42,629
+owners who want to save time and work
+smarter and convert visitors into
+
+382
+00:06:42,629 --> 00:06:42,639
+smarter and convert visitors into
+ 
+
+383
+00:06:42,639 --> 00:06:45,189
+smarter and convert visitors into
+community members. You feed Kimmy K25
+
+384
+00:06:45,189 --> 00:06:45,199
+community members. You feed Kimmy K25
+ 
+
+385
+00:06:45,199 --> 00:06:47,110
+community members. You feed Kimmy K25
+your offer details, your audience pain
+
+386
+00:06:47,110 --> 00:06:47,120
+your offer details, your audience pain
+ 
+
+387
+00:06:47,120 --> 00:06:48,629
+your offer details, your audience pain
+points, testimonials, competitor
+
+388
+00:06:48,629 --> 00:06:48,639
+points, testimonials, competitor
+ 
+
+389
+00:06:48,639 --> 00:06:50,629
+points, testimonials, competitor
+positioning, and your unique angle.
+
+390
+00:06:50,629 --> 00:06:50,639
+positioning, and your unique angle.
+ 
+
+391
+00:06:50,639 --> 00:06:52,309
+positioning, and your unique angle.
+Because the model can hold all of that
+
+392
+00:06:52,309 --> 00:06:52,319
+Because the model can hold all of that
+ 
+
+393
+00:06:52,319 --> 00:06:54,870
+Because the model can hold all of that
+in context and selectively surface what
+
+394
+00:06:54,870 --> 00:06:54,880
+in context and selectively surface what
+ 
+
+395
+00:06:54,880 --> 00:06:57,110
+in context and selectively surface what
+matters most at each point in the copy,
+
+396
+00:06:57,110 --> 00:06:57,120
+matters most at each point in the copy,
+ 
+
+397
+00:06:57,120 --> 00:06:59,110
+matters most at each point in the copy,
+you get output that is specific,
+
+398
+00:06:59,110 --> 00:06:59,120
+you get output that is specific,
+ 
+
+399
+00:06:59,120 --> 00:07:01,670
+you get output that is specific,
+relevant, and genuinely on brand, not
+
+400
+00:07:01,670 --> 00:07:01,680
+relevant, and genuinely on brand, not
+ 
+
+401
+00:07:01,680 --> 00:07:04,230
+relevant, and genuinely on brand, not
+generic AI filler. Actual copy built
+
+402
+00:07:04,230 --> 00:07:04,240
+generic AI filler. Actual copy built
+ 
+
+403
+00:07:04,240 --> 00:07:06,950
+generic AI filler. Actual copy built
+from your actual inputs. That's the real
+
+404
+00:07:06,950 --> 00:07:06,960
+from your actual inputs. That's the real
+ 
+
+405
+00:07:06,960 --> 00:07:08,950
+from your actual inputs. That's the real
+world power of smarter memory inside a
+
+406
+00:07:08,950 --> 00:07:08,960
+world power of smarter memory inside a
+ 
+
+407
+00:07:08,960 --> 00:07:11,830
+world power of smarter memory inside a
+model. This is not just a better model.
+
+408
+00:07:11,830 --> 00:07:11,840
+model. This is not just a better model.
+ 
+
+409
+00:07:11,840 --> 00:07:13,589
+model. This is not just a better model.
+It's a better idea about how models
+
+410
+00:07:13,589 --> 00:07:13,599
+It's a better idea about how models
+ 
+
+411
+00:07:13,599 --> 00:07:15,830
+It's a better idea about how models
+should work and better ideas compound
+
+412
+00:07:15,830 --> 00:07:15,840
+should work and better ideas compound
+ 
+
+413
+00:07:15,840 --> 00:07:18,629
+should work and better ideas compound
+over time. That's the video. I hope that
+
+414
+00:07:18,629 --> 00:07:18,639
+over time. That's the video. I hope that
+ 
+
+415
+00:07:18,639 --> 00:07:20,309
+over time. That's the video. I hope that
+gave you something real to think about.
+
+416
+00:07:20,309 --> 00:07:20,319
+gave you something real to think about.
+ 
+
+417
+00:07:20,319 --> 00:07:22,550
+gave you something real to think about.
+If two things before you go, first,
+
+418
+00:07:22,550 --> 00:07:22,560
+If two things before you go, first,
+ 
+
+419
+00:07:22,560 --> 00:07:24,230
+If two things before you go, first,
+well, if you want to use AI tools like
+
+420
+00:07:24,230 --> 00:07:24,240
+well, if you want to use AI tools like
+ 
+
+421
+00:07:24,240 --> 00:07:27,510
+well, if you want to use AI tools like
+Kim K 2.5 inside real business workflows
+
+422
+00:07:27,510 --> 00:07:27,520
+Kim K 2.5 inside real business workflows
+ 
+
+423
+00:07:27,520 --> 00:07:29,830
+Kim K 2.5 inside real business workflows
+with templates, SOPs, and step-by-step
+
+424
+00:07:29,830 --> 00:07:29,840
+with templates, SOPs, and step-by-step
+ 
+
+425
+00:07:29,840 --> 00:07:31,110
+with templates, SOPs, and step-by-step
+training that you can actually
+
+426
+00:07:31,110 --> 00:07:31,120
+training that you can actually
+ 
+
+427
+00:07:31,120 --> 00:07:33,270
+training that you can actually
+implement, come join the AI profit
+
+428
+00:07:33,270 --> 00:07:33,280
+implement, come join the AI profit
+ 
+
+429
+00:07:33,280 --> 00:07:35,029
+implement, come join the AI profit
+boardroom. We have everything you need
+
+430
+00:07:35,029 --> 00:07:35,039
+boardroom. We have everything you need
+ 
+
+431
+00:07:35,039 --> 00:07:37,830
+boardroom. We have everything you need
+to go from interesting update to this is
+
+432
+00:07:37,830 --> 00:07:37,840
+to go from interesting update to this is
+ 
+
+433
+00:07:37,840 --> 00:07:40,070
+to go from interesting update to this is
+running inside my business. Link is in
+
+434
+00:07:40,070 --> 00:07:40,080
+running inside my business. Link is in
+ 
+
+435
+00:07:40,080 --> 00:07:42,070
+running inside my business. Link is in
+the description. Second, if you want to
+
+436
+00:07:42,070 --> 00:07:42,080
+the description. Second, if you want to
+ 
+
+437
+00:07:42,080 --> 00:07:44,710
+the description. Second, if you want to
+start for free, join the AI success lab.
+
+438
+00:07:44,710 --> 00:07:44,720
+start for free, join the AI success lab.
+ 
+
+439
+00:07:44,720 --> 00:07:47,189
+start for free, join the AI success lab.
+It's our free community with over 40,000
+
+440
+00:07:47,189 --> 00:07:47,199
+It's our free community with over 40,000
+ 
+
+441
+00:07:47,199 --> 00:07:48,710
+It's our free community with over 40,000
+members. You'll get the full notes from
+
+442
+00:07:48,710 --> 00:07:48,720
+members. You'll get the full notes from
+ 
+
+443
+00:07:48,720 --> 00:07:50,950
+members. You'll get the full notes from
+this video. Over 100 AI use cases you
+
+444
+00:07:50,950 --> 00:07:50,960
+this video. Over 100 AI use cases you
+ 
+
+445
+00:07:50,960 --> 00:07:52,950
+this video. Over 100 AI use cases you
+can start applying today and a community
+
+446
+00:07:52,950 --> 00:07:52,960
+can start applying today and a community
+ 
+
+447
+00:07:52,960 --> 00:07:55,350
+can start applying today and a community
+of people who are genuinely using AI to
+
+448
+00:07:55,350 --> 00:07:55,360
+of people who are genuinely using AI to
+ 
+
+449
+00:07:55,360 --> 00:07:57,589
+of people who are genuinely using AI to
+build and grow real businesses. Links
+
+450
+00:07:57,589 --> 00:07:57,599
+build and grow real businesses. Links
+ 
+
+451
+00:07:57,599 --> 00:08:00,550
+build and grow real businesses. Links
+are in the comments and the description.
+
+452
+00:08:00,550 --> 00:08:00,560
+are in the comments and the description.
+ 
+
+453
+00:08:00,560 --> 00:08:03,759
+are in the comments and the description.
+See you in the next one.
+

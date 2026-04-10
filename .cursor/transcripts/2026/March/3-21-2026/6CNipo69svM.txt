@@ -1,0 +1,11 @@
+Title: Improve Customer Wait Times
+Video ID: 6CNipo69svM
+URL: https://www.youtube.com/watch?v=6CNipo69svM
+
+YouTube captions: not available (transcripts disabled / none published).
+Runtime: ~20s (full audio from YouTube).
+Below: English speech-to-text (faster-whisper, base model) on audio extracted from the video.
+These clips appear to be mostly music or on-screen text with little spoken dialogue.
+
+--- Transcript (STT) ---
+[00:00] Music

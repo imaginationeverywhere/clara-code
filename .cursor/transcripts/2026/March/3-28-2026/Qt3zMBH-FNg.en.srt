@@ -1,0 +1,6015 @@
+1
+00:00:00,000 --> 00:00:01,429
+
+Hey, so I think that these scissors are
+
+2
+00:00:01,429 --> 00:00:01,439
+Hey, so I think that these scissors are
+ 
+
+3
+00:00:01,439 --> 00:00:03,190
+Hey, so I think that these scissors are
+broken. These two different pieces came
+
+4
+00:00:03,190 --> 00:00:03,200
+broken. These two different pieces came
+ 
+
+5
+00:00:03,200 --> 00:00:04,390
+broken. These two different pieces came
+apart. Do you know how I might be able
+
+6
+00:00:04,390 --> 00:00:04,400
+apart. Do you know how I might be able
+ 
+
+7
+00:00:04,400 --> 00:00:06,550
+apart. Do you know how I might be able
+to fix this?
+
+8
+00:00:06,550 --> 00:00:06,560
+to fix this?
+ 
+
+9
+00:00:06,560 --> 00:00:09,190
+to fix this?
+>> I see. It looks like these are designed
+
+10
+00:00:09,190 --> 00:00:09,200
+>> I see. It looks like these are designed
+ 
+
+11
+00:00:09,200 --> 00:00:11,669
+>> I see. It looks like these are designed
+to come apart for cleaning. If you align
+
+12
+00:00:11,669 --> 00:00:11,679
+to come apart for cleaning. If you align
+ 
+
+13
+00:00:11,679 --> 00:00:13,990
+to come apart for cleaning. If you align
+the rivet on one blade with the slot on
+
+14
+00:00:13,990 --> 00:00:14,000
+the rivet on one blade with the slot on
+ 
+
+15
+00:00:14,000 --> 00:00:15,829
+the rivet on one blade with the slot on
+the other, they should slide back
+
+16
+00:00:15,829 --> 00:00:15,839
+the other, they should slide back
+ 
+
+17
+00:00:15,839 --> 00:00:18,070
+the other, they should slide back
+together securely. Can you give that a
+
+18
+00:00:18,070 --> 00:00:18,080
+together securely. Can you give that a
+ 
+
+19
+00:00:18,080 --> 00:00:19,029
+together securely. Can you give that a
+try?
+
+20
+00:00:19,029 --> 00:00:19,039
+try?
+ 
+
+21
+00:00:19,039 --> 00:00:23,029
+try?
+>> There we go. I think I got it working.
+
+22
+00:00:23,029 --> 00:00:23,039
+>> There we go. I think I got it working.
+ 
+
+23
+00:00:23,039 --> 00:00:24,870
+>> There we go. I think I got it working.
+>> Perfect. That's exactly how they
+
+24
+00:00:24,870 --> 00:00:24,880
+>> Perfect. That's exactly how they
+ 
+
+25
+00:00:24,880 --> 00:00:26,630
+>> Perfect. That's exactly how they
+connect. They look like they're working
+
+26
+00:00:26,630 --> 00:00:26,640
+connect. They look like they're working
+ 
+
+27
+00:00:26,640 --> 00:00:28,710
+connect. They look like they're working
+just fine now. Hey, so I was just
+
+28
+00:00:28,710 --> 00:00:28,720
+just fine now. Hey, so I was just
+ 
+
+29
+00:00:28,720 --> 00:00:29,910
+just fine now. Hey, so I was just
+scrolling through my school community
+
+30
+00:00:29,910 --> 00:00:29,920
+scrolling through my school community
+ 
+
+31
+00:00:29,920 --> 00:00:31,990
+scrolling through my school community
+and I was curious if you know you were
+
+32
+00:00:31,990 --> 00:00:32,000
+and I was curious if you know you were
+ 
+
+33
+00:00:32,000 --> 00:00:33,990
+and I was curious if you know you were
+able to see these different posts and
+
+34
+00:00:33,990 --> 00:00:34,000
+able to see these different posts and
+ 
+
+35
+00:00:34,000 --> 00:00:35,590
+able to see these different posts and
+specifically the one about the clawed
+
+36
+00:00:35,590 --> 00:00:35,600
+specifically the one about the clawed
+ 
+
+37
+00:00:35,600 --> 00:00:38,150
+specifically the one about the clawed
+usage limits.
+
+38
+00:00:38,150 --> 00:00:38,160
+usage limits.
+ 
+
+39
+00:00:38,160 --> 00:00:40,229
+usage limits.
+Yes, I can see the different posts in
+
+40
+00:00:40,229 --> 00:00:40,239
+Yes, I can see the different posts in
+ 
+
+41
+00:00:40,239 --> 00:00:43,190
+Yes, I can see the different posts in
+the AI automation society community. I
+
+42
+00:00:43,190 --> 00:00:43,200
+the AI automation society community. I
+ 
+
+43
+00:00:43,200 --> 00:00:46,229
+the AI automation society community. I
+see one from Vashal Chojik titled Claude
+
+44
+00:00:46,229 --> 00:00:46,239
+see one from Vashal Chojik titled Claude
+ 
+
+45
+00:00:46,239 --> 00:00:48,869
+see one from Vashal Chojik titled Claude
+limits me four times in 20 hours. Anyone
+
+46
+00:00:48,869 --> 00:00:48,879
+limits me four times in 20 hours. Anyone
+ 
+
+47
+00:00:48,879 --> 00:00:51,110
+limits me four times in 20 hours. Anyone
+else facing this? Is that the one you
+
+48
+00:00:51,110 --> 00:00:51,120
+else facing this? Is that the one you
+ 
+
+49
+00:00:51,120 --> 00:00:52,709
+else facing this? Is that the one you
+were referring to?
+
+50
+00:00:52,709 --> 00:00:52,719
+were referring to?
+ 
+
+51
+00:00:52,719 --> 00:00:54,310
+were referring to?
+>> Yeah. Wow. I scrolled past that really
+
+52
+00:00:54,310 --> 00:00:54,320
+>> Yeah. Wow. I scrolled past that really
+ 
+
+53
+00:00:54,320 --> 00:00:55,510
+>> Yeah. Wow. I scrolled past that really
+quick and you were still able to pull
+
+54
+00:00:55,510 --> 00:00:55,520
+quick and you were still able to pull
+ 
+
+55
+00:00:55,520 --> 00:00:57,110
+quick and you were still able to pull
+that out. All right, so Google just
+
+56
+00:00:57,110 --> 00:00:57,120
+that out. All right, so Google just
+ 
+
+57
+00:00:57,120 --> 00:00:59,270
+that out. All right, so Google just
+dropped Gemini 3.1 Flash Live, which is
+
+58
+00:00:59,270 --> 00:00:59,280
+dropped Gemini 3.1 Flash Live, which is
+ 
+
+59
+00:00:59,280 --> 00:01:01,430
+dropped Gemini 3.1 Flash Live, which is
+their latest voice model that has a lot
+
+60
+00:01:01,430 --> 00:01:01,440
+their latest voice model that has a lot
+ 
+
+61
+00:01:01,440 --> 00:01:03,270
+their latest voice model that has a lot
+of upgrades. In fact, you can even see
+
+62
+00:01:03,270 --> 00:01:03,280
+of upgrades. In fact, you can even see
+ 
+
+63
+00:01:03,280 --> 00:01:04,390
+of upgrades. In fact, you can even see
+right here in this video, they're
+
+64
+00:01:04,390 --> 00:01:04,400
+right here in this video, they're
+ 
+
+65
+00:01:04,400 --> 00:01:06,630
+right here in this video, they're
+calling it their biggest upgrade yet.
+
+66
+00:01:06,630 --> 00:01:06,640
+calling it their biggest upgrade yet.
+ 
+
+67
+00:01:06,640 --> 00:01:08,230
+calling it their biggest upgrade yet.
+The whole idea is that this is way more
+
+68
+00:01:08,230 --> 00:01:08,240
+The whole idea is that this is way more
+ 
+
+69
+00:01:08,240 --> 00:01:09,670
+The whole idea is that this is way more
+human because it's no longer doing
+
+70
+00:01:09,670 --> 00:01:09,680
+human because it's no longer doing
+ 
+
+71
+00:01:09,680 --> 00:01:11,750
+human because it's no longer doing
+speech to text and then text to speech.
+
+72
+00:01:11,750 --> 00:01:11,760
+speech to text and then text to speech.
+ 
+
+73
+00:01:11,760 --> 00:01:13,350
+speech to text and then text to speech.
+It's just straight up speech to speech
+
+74
+00:01:13,350 --> 00:01:13,360
+It's just straight up speech to speech
+ 
+
+75
+00:01:13,360 --> 00:01:15,109
+It's just straight up speech to speech
+and it can also see things as you guys
+
+76
+00:01:15,109 --> 00:01:15,119
+and it can also see things as you guys
+ 
+
+77
+00:01:15,119 --> 00:01:17,270
+and it can also see things as you guys
+saw in that quick demo beforehand. So,
+
+78
+00:01:17,270 --> 00:01:17,280
+saw in that quick demo beforehand. So,
+ 
+
+79
+00:01:17,280 --> 00:01:18,789
+saw in that quick demo beforehand. So,
+this model is said to have improved
+
+80
+00:01:18,789 --> 00:01:18,799
+this model is said to have improved
+ 
+
+81
+00:01:18,799 --> 00:01:21,109
+this model is said to have improved
+precision, lower latency, and just more
+
+82
+00:01:21,109 --> 00:01:21,119
+precision, lower latency, and just more
+ 
+
+83
+00:01:21,119 --> 00:01:23,590
+precision, lower latency, and just more
+fluid natural interactions. Now, this
+
+84
+00:01:23,590 --> 00:01:23,600
+fluid natural interactions. Now, this
+ 
+
+85
+00:01:23,600 --> 00:01:25,350
+fluid natural interactions. Now, this
+first benchmark is about multi-step
+
+86
+00:01:25,350 --> 00:01:25,360
+first benchmark is about multi-step
+ 
+
+87
+00:01:25,360 --> 00:01:26,630
+first benchmark is about multi-step
+function calling, which it has
+
+88
+00:01:26,630 --> 00:01:26,640
+function calling, which it has
+ 
+
+89
+00:01:26,640 --> 00:01:28,630
+function calling, which it has
+outperformed the previous Gemini 2.5
+
+90
+00:01:28,630 --> 00:01:28,640
+outperformed the previous Gemini 2.5
+ 
+
+91
+00:01:28,640 --> 00:01:31,429
+outperformed the previous Gemini 2.5
+Flash model by about 19% here, as you
+
+92
+00:01:31,429 --> 00:01:31,439
+Flash model by about 19% here, as you
+ 
+
+93
+00:01:31,439 --> 00:01:32,950
+Flash model by about 19% here, as you
+can see. And here's another one called
+
+94
+00:01:32,950 --> 00:01:32,960
+can see. And here's another one called
+ 
+
+95
+00:01:32,960 --> 00:01:34,630
+can see. And here's another one called
+Audio Multi- Challenge, where it's not
+
+96
+00:01:34,630 --> 00:01:34,640
+Audio Multi- Challenge, where it's not
+ 
+
+97
+00:01:34,640 --> 00:01:36,390
+Audio Multi- Challenge, where it's not
+only outperforming the previous Gemini
+
+98
+00:01:36,390 --> 00:01:36,400
+only outperforming the previous Gemini
+ 
+
+99
+00:01:36,400 --> 00:01:38,069
+only outperforming the previous Gemini
+models, but also different models from
+
+100
+00:01:38,069 --> 00:01:38,079
+models, but also different models from
+ 
+
+101
+00:01:38,079 --> 00:01:40,069
+models, but also different models from
+different providers. One thing that I
+
+102
+00:01:40,069 --> 00:01:40,079
+different providers. One thing that I
+ 
+
+103
+00:01:40,079 --> 00:01:41,109
+different providers. One thing that I
+think is really cool is this is
+
+104
+00:01:41,109 --> 00:01:41,119
+think is really cool is this is
+ 
+
+105
+00:01:41,119 --> 00:01:43,030
+think is really cool is this is
+apparently a huge step up when it comes
+
+106
+00:01:43,030 --> 00:01:43,040
+apparently a huge step up when it comes
+ 
+
+107
+00:01:43,040 --> 00:01:44,950
+apparently a huge step up when it comes
+to the agent being able to listen in
+
+108
+00:01:44,950 --> 00:01:44,960
+to the agent being able to listen in
+ 
+
+109
+00:01:44,960 --> 00:01:46,389
+to the agent being able to listen in
+noisy environments. Like if you're on
+
+110
+00:01:46,389 --> 00:01:46,399
+noisy environments. Like if you're on
+ 
+
+111
+00:01:46,399 --> 00:01:47,670
+noisy environments. Like if you're on
+the side of the road or if you're in a
+
+112
+00:01:47,670 --> 00:01:47,680
+the side of the road or if you're in a
+ 
+
+113
+00:01:47,680 --> 00:01:49,830
+the side of the road or if you're in a
+noisy restaurant or workspace, which
+
+114
+00:01:49,830 --> 00:01:49,840
+noisy restaurant or workspace, which
+ 
+
+115
+00:01:49,840 --> 00:01:51,109
+noisy restaurant or workspace, which
+obviously if you're in a real world
+
+116
+00:01:51,109 --> 00:01:51,119
+obviously if you're in a real world
+ 
+
+117
+00:01:51,119 --> 00:01:52,469
+obviously if you're in a real world
+environment and you want to set up voice
+
+118
+00:01:52,469 --> 00:01:52,479
+environment and you want to set up voice
+ 
+
+119
+00:01:52,479 --> 00:01:54,230
+environment and you want to set up voice
+agents for a business, that's probably
+
+120
+00:01:54,230 --> 00:01:54,240
+agents for a business, that's probably
+ 
+
+121
+00:01:54,240 --> 00:01:55,910
+agents for a business, that's probably
+really important. So here's a quick
+
+122
+00:01:55,910 --> 00:01:55,920
+really important. So here's a quick
+ 
+
+123
+00:01:55,920 --> 00:01:57,350
+really important. So here's a quick
+example and I'm going to call out some
+
+124
+00:01:57,350 --> 00:01:57,360
+example and I'm going to call out some
+ 
+
+125
+00:01:57,360 --> 00:01:58,709
+example and I'm going to call out some
+of the benefits. So we know that it's
+
+126
+00:01:58,709 --> 00:01:58,719
+of the benefits. So we know that it's
+ 
+
+127
+00:01:58,719 --> 00:02:00,469
+of the benefits. So we know that it's
+speech to speech. We know that there is
+
+128
+00:02:00,469 --> 00:02:00,479
+speech to speech. We know that there is
+ 
+
+129
+00:02:00,479 --> 00:02:02,069
+speech to speech. We know that there is
+less latency and we know that it can
+
+130
+00:02:02,069 --> 00:02:02,079
+less latency and we know that it can
+ 
+
+131
+00:02:02,079 --> 00:02:03,910
+less latency and we know that it can
+work in noisy environments. So there's
+
+132
+00:02:03,910 --> 00:02:03,920
+work in noisy environments. So there's
+ 
+
+133
+00:02:03,920 --> 00:02:05,350
+work in noisy environments. So there's
+the first one. You might hear, you know,
+
+134
+00:02:05,350 --> 00:02:05,360
+the first one. You might hear, you know,
+ 
+
+135
+00:02:05,360 --> 00:02:06,950
+the first one. You might hear, you know,
+on the side of the road, things like
+
+136
+00:02:06,950 --> 00:02:06,960
+on the side of the road, things like
+ 
+
+137
+00:02:06,960 --> 00:02:09,430
+on the side of the road, things like
+traffic, things like horns. I can look
+
+138
+00:02:09,430 --> 00:02:09,440
+traffic, things like horns. I can look
+ 
+
+139
+00:02:09,440 --> 00:02:11,430
+traffic, things like horns. I can look
+you up with your registration plate and
+
+140
+00:02:11,430 --> 00:02:11,440
+you up with your registration plate and
+ 
+
+141
+00:02:11,440 --> 00:02:13,270
+you up with your registration plate and
+postcode instead. Could you provide
+
+142
+00:02:13,270 --> 00:02:13,280
+postcode instead. Could you provide
+ 
+
+143
+00:02:13,280 --> 00:02:15,190
+postcode instead. Could you provide
+those for me, please?
+
+144
+00:02:15,190 --> 00:02:15,200
+those for me, please?
+ 
+
+145
+00:02:15,200 --> 00:02:17,750
+those for me, please?
+>> Whoa. And it's still able to be unfased
+
+146
+00:02:17,750 --> 00:02:17,760
+>> Whoa. And it's still able to be unfased
+ 
+
+147
+00:02:17,760 --> 00:02:19,670
+>> Whoa. And it's still able to be unfased
+by stuff like that. It also has a higher
+
+148
+00:02:19,670 --> 00:02:19,680
+by stuff like that. It also has a higher
+ 
+
+149
+00:02:19,680 --> 00:02:21,510
+by stuff like that. It also has a higher
+level of accuracy when it comes to alpha
+
+150
+00:02:21,510 --> 00:02:21,520
+level of accuracy when it comes to alpha
+ 
+
+151
+00:02:21,520 --> 00:02:23,750
+level of accuracy when it comes to alpha
+numeric strings. And because it's
+
+152
+00:02:23,750 --> 00:02:23,760
+numeric strings. And because it's
+ 
+
+153
+00:02:23,760 --> 00:02:25,670
+numeric strings. And because it's
+interpreting speech rather than speech
+
+154
+00:02:25,670 --> 00:02:25,680
+interpreting speech rather than speech
+ 
+
+155
+00:02:25,680 --> 00:02:27,830
+interpreting speech rather than speech
+being transcribed into text, there's way
+
+156
+00:02:27,830 --> 00:02:27,840
+being transcribed into text, there's way
+ 
+
+157
+00:02:27,840 --> 00:02:29,430
+being transcribed into text, there's way
+more contextual awareness because the
+
+158
+00:02:29,430 --> 00:02:29,440
+more contextual awareness because the
+ 
+
+159
+00:02:29,440 --> 00:02:30,949
+more contextual awareness because the
+audio is coming through and it can
+
+160
+00:02:30,949 --> 00:02:30,959
+audio is coming through and it can
+ 
+
+161
+00:02:30,959 --> 00:02:33,270
+audio is coming through and it can
+understand things like sarcasm or stress
+
+162
+00:02:33,270 --> 00:02:33,280
+understand things like sarcasm or stress
+ 
+
+163
+00:02:33,280 --> 00:02:35,430
+understand things like sarcasm or stress
+or frustration, which is obviously very
+
+164
+00:02:35,430 --> 00:02:35,440
+or frustration, which is obviously very
+ 
+
+165
+00:02:35,440 --> 00:02:36,550
+or frustration, which is obviously very
+important if you're setting up something
+
+166
+00:02:36,550 --> 00:02:36,560
+important if you're setting up something
+ 
+
+167
+00:02:36,560 --> 00:02:38,550
+important if you're setting up something
+like a customer support bot or maybe
+
+168
+00:02:38,550 --> 00:02:38,560
+like a customer support bot or maybe
+ 
+
+169
+00:02:38,560 --> 00:02:40,710
+like a customer support bot or maybe
+like a sales type of agent. Now, because
+
+170
+00:02:40,710 --> 00:02:40,720
+like a sales type of agent. Now, because
+ 
+
+171
+00:02:40,720 --> 00:02:42,390
+like a sales type of agent. Now, because
+of the reasoning and thinking and the
+
+172
+00:02:42,390 --> 00:02:42,400
+of the reasoning and thinking and the
+ 
+
+173
+00:02:42,400 --> 00:02:44,070
+of the reasoning and thinking and the
+tool calling ability, there's also this
+
+174
+00:02:44,070 --> 00:02:44,080
+tool calling ability, there's also this
+ 
+
+175
+00:02:44,080 --> 00:02:45,990
+tool calling ability, there's also this
+cool demo here where this person is
+
+176
+00:02:45,990 --> 00:02:46,000
+cool demo here where this person is
+ 
+
+177
+00:02:46,000 --> 00:02:48,869
+cool demo here where this person is
+talking to Gemini 3.1 Flash and the
+
+178
+00:02:48,869 --> 00:02:48,879
+talking to Gemini 3.1 Flash and the
+ 
+
+179
+00:02:48,879 --> 00:02:50,309
+talking to Gemini 3.1 Flash and the
+talking leads to things actually
+
+180
+00:02:50,309 --> 00:02:50,319
+talking leads to things actually
+ 
+
+181
+00:02:50,319 --> 00:02:51,589
+talking leads to things actually
+happening. So, in this case, they're
+
+182
+00:02:51,589 --> 00:02:51,599
+happening. So, in this case, they're
+ 
+
+183
+00:02:51,599 --> 00:02:53,190
+happening. So, in this case, they're
+basically vibe coding, which is their
+
+184
+00:02:53,190 --> 00:02:53,200
+basically vibe coding, which is their
+ 
+
+185
+00:02:53,200 --> 00:02:54,309
+basically vibe coding, which is their
+voice. They're saying to zoom in.
+
+186
+00:02:54,309 --> 00:02:54,319
+voice. They're saying to zoom in.
+ 
+
+187
+00:02:54,319 --> 00:02:55,589
+voice. They're saying to zoom in.
+They're saying to change the background.
+
+188
+00:02:55,589 --> 00:02:55,599
+They're saying to change the background.
+ 
+
+189
+00:02:55,599 --> 00:02:56,949
+They're saying to change the background.
+They're saying to do all these things.
+
+190
+00:02:56,949 --> 00:02:56,959
+They're saying to do all these things.
+ 
+
+191
+00:02:56,959 --> 00:02:59,270
+They're saying to do all these things.
+And on the side panel, the agent is
+
+192
+00:02:59,270 --> 00:02:59,280
+And on the side panel, the agent is
+ 
+
+193
+00:02:59,280 --> 00:03:01,030
+And on the side panel, the agent is
+actually coding as well. And I think
+
+194
+00:03:01,030 --> 00:03:01,040
+actually coding as well. And I think
+ 
+
+195
+00:03:01,040 --> 00:03:02,070
+actually coding as well. And I think
+it's really cool because I could
+
+196
+00:03:02,070 --> 00:03:02,080
+it's really cool because I could
+ 
+
+197
+00:03:02,080 --> 00:03:03,670
+it's really cool because I could
+definitely see a world where at some
+
+198
+00:03:03,670 --> 00:03:03,680
+definitely see a world where at some
+ 
+
+199
+00:03:03,680 --> 00:03:05,589
+definitely see a world where at some
+point our operating systems basically
+
+200
+00:03:05,589 --> 00:03:05,599
+point our operating systems basically
+ 
+
+201
+00:03:05,599 --> 00:03:07,750
+point our operating systems basically
+just work with voice. So, if you want to
+
+202
+00:03:07,750 --> 00:03:07,760
+just work with voice. So, if you want to
+ 
+
+203
+00:03:07,760 --> 00:03:08,869
+just work with voice. So, if you want to
+try this out, you can do it for
+
+204
+00:03:08,869 --> 00:03:08,879
+try this out, you can do it for
+ 
+
+205
+00:03:08,879 --> 00:03:10,949
+try this out, you can do it for
+completely free. Just go to Google AI
+
+206
+00:03:10,949 --> 00:03:10,959
+completely free. Just go to Google AI
+ 
+
+207
+00:03:10,959 --> 00:03:12,630
+completely free. Just go to Google AI
+Studio and then come to this screen that
+
+208
+00:03:12,630 --> 00:03:12,640
+Studio and then come to this screen that
+ 
+
+209
+00:03:12,640 --> 00:03:13,990
+Studio and then come to this screen that
+looks like this. And all you have to do
+
+210
+00:03:13,990 --> 00:03:14,000
+looks like this. And all you have to do
+ 
+
+211
+00:03:14,000 --> 00:03:15,190
+looks like this. And all you have to do
+is in the top right, you just have to
+
+212
+00:03:15,190 --> 00:03:15,200
+is in the top right, you just have to
+ 
+
+213
+00:03:15,200 --> 00:03:16,869
+is in the top right, you just have to
+find the model. So, by default, when you
+
+214
+00:03:16,869 --> 00:03:16,879
+find the model. So, by default, when you
+ 
+
+215
+00:03:16,879 --> 00:03:18,710
+find the model. So, by default, when you
+get in here, it might just be on all or
+
+216
+00:03:18,710 --> 00:03:18,720
+get in here, it might just be on all or
+ 
+
+217
+00:03:18,720 --> 00:03:19,830
+get in here, it might just be on all or
+whatever. You're going to go over here
+
+218
+00:03:19,830 --> 00:03:19,840
+whatever. You're going to go over here
+ 
+
+219
+00:03:19,840 --> 00:03:21,190
+whatever. You're going to go over here
+to live and then you're going to click
+
+220
+00:03:21,190 --> 00:03:21,200
+to live and then you're going to click
+ 
+
+221
+00:03:21,200 --> 00:03:24,550
+to live and then you're going to click
+on Gemini 3.1 Flash live preview. Now,
+
+222
+00:03:24,550 --> 00:03:24,560
+on Gemini 3.1 Flash live preview. Now,
+ 
+
+223
+00:03:24,560 --> 00:03:26,630
+on Gemini 3.1 Flash live preview. Now,
+yes, there are some prices down here,
+
+224
+00:03:26,630 --> 00:03:26,640
+yes, there are some prices down here,
+ 
+
+225
+00:03:26,640 --> 00:03:28,229
+yes, there are some prices down here,
+but you'll notice when I click on this,
+
+226
+00:03:28,229 --> 00:03:28,239
+but you'll notice when I click on this,
+ 
+
+227
+00:03:28,239 --> 00:03:30,149
+but you'll notice when I click on this,
+you can see that it says no API key. So,
+
+228
+00:03:30,149 --> 00:03:30,159
+you can see that it says no API key. So,
+ 
+
+229
+00:03:30,159 --> 00:03:31,589
+you can see that it says no API key. So,
+that means I'm on a free plan right now.
+
+230
+00:03:31,589 --> 00:03:31,599
+that means I'm on a free plan right now.
+ 
+
+231
+00:03:31,599 --> 00:03:32,869
+that means I'm on a free plan right now.
+I've not given it any billing
+
+232
+00:03:32,869 --> 00:03:32,879
+I've not given it any billing
+ 
+
+233
+00:03:32,879 --> 00:03:34,470
+I've not given it any billing
+information, and I could later switch to
+
+234
+00:03:34,470 --> 00:03:34,480
+information, and I could later switch to
+ 
+
+235
+00:03:34,480 --> 00:03:36,630
+information, and I could later switch to
+a paid API key to unlock higher quota
+
+236
+00:03:36,630 --> 00:03:36,640
+a paid API key to unlock higher quota
+ 
+
+237
+00:03:36,640 --> 00:03:38,309
+a paid API key to unlock higher quota
+and more features. But, right now, you
+
+238
+00:03:38,309 --> 00:03:38,319
+and more features. But, right now, you
+ 
+
+239
+00:03:38,319 --> 00:03:39,270
+and more features. But, right now, you
+can get in here and just play around
+
+240
+00:03:39,270 --> 00:03:39,280
+can get in here and just play around
+ 
+
+241
+00:03:39,280 --> 00:03:41,030
+can get in here and just play around
+with it for completely free. Now, the
+
+242
+00:03:41,030 --> 00:03:41,040
+with it for completely free. Now, the
+ 
+
+243
+00:03:41,040 --> 00:03:42,229
+with it for completely free. Now, the
+first thing I noticed when I started
+
+244
+00:03:42,229 --> 00:03:42,239
+first thing I noticed when I started
+ 
+
+245
+00:03:42,239 --> 00:03:44,789
+first thing I noticed when I started
+talking to this thing is that it is way
+
+246
+00:03:44,789 --> 00:03:44,799
+talking to this thing is that it is way
+ 
+
+247
+00:03:44,799 --> 00:03:47,110
+talking to this thing is that it is way
+quicker and that it actually lets you
+
+248
+00:03:47,110 --> 00:03:47,120
+quicker and that it actually lets you
+ 
+
+249
+00:03:47,120 --> 00:03:48,390
+quicker and that it actually lets you
+interrupt it. So, a lot of times with
+
+250
+00:03:48,390 --> 00:03:48,400
+interrupt it. So, a lot of times with
+ 
+
+251
+00:03:48,400 --> 00:03:49,830
+interrupt it. So, a lot of times with
+other voice agents, you get into this
+
+252
+00:03:49,830 --> 00:03:49,840
+other voice agents, you get into this
+ 
+
+253
+00:03:49,840 --> 00:03:51,750
+other voice agents, you get into this
+awkward like game of chicken of like
+
+254
+00:03:51,750 --> 00:03:51,760
+awkward like game of chicken of like
+ 
+
+255
+00:03:51,760 --> 00:03:53,110
+awkward like game of chicken of like
+who's going to speak or if you try to
+
+256
+00:03:53,110 --> 00:03:53,120
+who's going to speak or if you try to
+ 
+
+257
+00:03:53,120 --> 00:03:54,470
+who's going to speak or if you try to
+interrupt it, you guys both sort of like
+
+258
+00:03:54,470 --> 00:03:54,480
+interrupt it, you guys both sort of like
+ 
+
+259
+00:03:54,480 --> 00:03:56,309
+interrupt it, you guys both sort of like
+say, "Oh, sorry. No, you go. You go."
+
+260
+00:03:56,309 --> 00:03:56,319
+say, "Oh, sorry. No, you go. You go."
+ 
+
+261
+00:03:56,319 --> 00:03:58,070
+say, "Oh, sorry. No, you go. You go."
+And it's just like weird. But in this
+
+262
+00:03:58,070 --> 00:03:58,080
+And it's just like weird. But in this
+ 
+
+263
+00:03:58,080 --> 00:03:59,990
+And it's just like weird. But in this
+case, and I'll I'll show you guys when I
+
+264
+00:03:59,990 --> 00:04:00,000
+case, and I'll I'll show you guys when I
+ 
+
+265
+00:04:00,000 --> 00:04:01,670
+case, and I'll I'll show you guys when I
+start talking over it, it just stops
+
+266
+00:04:01,670 --> 00:04:01,680
+start talking over it, it just stops
+ 
+
+267
+00:04:01,680 --> 00:04:03,429
+start talking over it, it just stops
+like immediately and it feels a lot more
+
+268
+00:04:03,429 --> 00:04:03,439
+like immediately and it feels a lot more
+ 
+
+269
+00:04:03,439 --> 00:04:05,030
+like immediately and it feels a lot more
+human. So, I'm basically just going to
+
+270
+00:04:05,030 --> 00:04:05,040
+human. So, I'm basically just going to
+ 
+
+271
+00:04:05,040 --> 00:04:06,710
+human. So, I'm basically just going to
+go ahead and just do the talk. Earlier,
+
+272
+00:04:06,710 --> 00:04:06,720
+go ahead and just do the talk. Earlier,
+ 
+
+273
+00:04:06,720 --> 00:04:08,470
+go ahead and just do the talk. Earlier,
+you guys saw that I could do a webcam or
+
+274
+00:04:08,470 --> 00:04:08,480
+you guys saw that I could do a webcam or
+ 
+
+275
+00:04:08,480 --> 00:04:10,070
+you guys saw that I could do a webcam or
+share screen, but for right now, I'm
+
+276
+00:04:10,070 --> 00:04:10,080
+share screen, but for right now, I'm
+ 
+
+277
+00:04:10,080 --> 00:04:11,990
+share screen, but for right now, I'm
+just going to go ahead and talk. Now, it
+
+278
+00:04:11,990 --> 00:04:12,000
+just going to go ahead and talk. Now, it
+ 
+
+279
+00:04:12,000 --> 00:04:13,190
+just going to go ahead and talk. Now, it
+is listening to me right now. Hey,
+
+280
+00:04:13,190 --> 00:04:13,200
+is listening to me right now. Hey,
+ 
+
+281
+00:04:13,200 --> 00:04:16,310
+is listening to me right now. Hey,
+Gemini. How's it going? Can you hear me?
+
+282
+00:04:16,310 --> 00:04:16,320
+Gemini. How's it going? Can you hear me?
+ 
+
+283
+00:04:16,320 --> 00:04:18,789
+Gemini. How's it going? Can you hear me?
+Yes, I can hear you clearly. Things are
+
+284
+00:04:18,789 --> 00:04:18,799
+Yes, I can hear you clearly. Things are
+ 
+
+285
+00:04:18,799 --> 00:04:21,189
+Yes, I can hear you clearly. Things are
+going well here. Just ready to chat or
+
+286
+00:04:21,189 --> 00:04:21,199
+going well here. Just ready to chat or
+ 
+
+287
+00:04:21,199 --> 00:04:23,430
+going well here. Just ready to chat or
+help with whatever you need. How are you
+
+288
+00:04:23,430 --> 00:04:23,440
+help with whatever you need. How are you
+ 
+
+289
+00:04:23,440 --> 00:04:24,550
+help with whatever you need. How are you
+doing?
+
+290
+00:04:24,550 --> 00:04:24,560
+doing?
+ 
+
+291
+00:04:24,560 --> 00:04:25,990
+doing?
+>> Yeah, I mean the voice sounds really
+
+292
+00:04:25,990 --> 00:04:26,000
+>> Yeah, I mean the voice sounds really
+ 
+
+293
+00:04:26,000 --> 00:04:28,550
+>> Yeah, I mean the voice sounds really
+good. The latency is good. Um, once
+
+294
+00:04:28,550 --> 00:04:28,560
+good. The latency is good. Um, once
+ 
+
+295
+00:04:28,560 --> 00:04:30,790
+good. The latency is good. Um, once
+again, how are you doing?
+
+296
+00:04:30,790 --> 00:04:30,800
+again, how are you doing?
+ 
+
+297
+00:04:30,800 --> 00:04:31,590
+again, how are you doing?
+>> I'm doing great.
+
+298
+00:04:31,590 --> 00:04:31,600
+>> I'm doing great.
+ 
+
+299
+00:04:31,600 --> 00:04:32,550
+>> I'm doing great.
+>> Actually, you know what? I don't really
+
+300
+00:04:32,550 --> 00:04:32,560
+>> Actually, you know what? I don't really
+ 
+
+301
+00:04:32,560 --> 00:04:33,830
+>> Actually, you know what? I don't really
+care about how you're doing. Can you
+
+302
+00:04:33,830 --> 00:04:33,840
+care about how you're doing. Can you
+ 
+
+303
+00:04:33,840 --> 00:04:35,110
+care about how you're doing. Can you
+just tell me a little bit more about the
+
+304
+00:04:35,110 --> 00:04:35,120
+just tell me a little bit more about the
+ 
+
+305
+00:04:35,120 --> 00:04:37,189
+just tell me a little bit more about the
+voice model?
+
+306
+00:04:37,189 --> 00:04:37,199
+voice model?
+ 
+
+307
+00:04:37,199 --> 00:04:39,749
+voice model?
+>> Sure, I can tell you about it. it.
+
+308
+00:04:39,749 --> 00:04:39,759
+>> Sure, I can tell you about it. it.
+ 
+
+309
+00:04:39,759 --> 00:04:41,749
+>> Sure, I can tell you about it. it.
+>> Okay, so I was just a little rude, but
+
+310
+00:04:41,749 --> 00:04:41,759
+>> Okay, so I was just a little rude, but
+ 
+
+311
+00:04:41,759 --> 00:04:42,870
+>> Okay, so I was just a little rude, but
+basically what I was trying to show you
+
+312
+00:04:42,870 --> 00:04:42,880
+basically what I was trying to show you
+ 
+
+313
+00:04:42,880 --> 00:04:45,990
+basically what I was trying to show you
+is how fast it is and when I interrupted
+
+314
+00:04:45,990 --> 00:04:46,000
+is how fast it is and when I interrupted
+ 
+
+315
+00:04:46,000 --> 00:04:47,830
+is how fast it is and when I interrupted
+it, how fast it stopped talking, which I
+
+316
+00:04:47,830 --> 00:04:47,840
+it, how fast it stopped talking, which I
+ 
+
+317
+00:04:47,840 --> 00:04:49,510
+it, how fast it stopped talking, which I
+think was really impressive. Now, what
+
+318
+00:04:49,510 --> 00:04:49,520
+think was really impressive. Now, what
+ 
+
+319
+00:04:49,520 --> 00:04:51,189
+think was really impressive. Now, what
+you can do in here in Google AI Studio
+
+320
+00:04:51,189 --> 00:04:51,199
+you can do in here in Google AI Studio
+ 
+
+321
+00:04:51,199 --> 00:04:52,950
+you can do in here in Google AI Studio
+is basically just build your own little
+
+322
+00:04:52,950 --> 00:04:52,960
+is basically just build your own little
+ 
+
+323
+00:04:52,960 --> 00:04:54,710
+is basically just build your own little
+voice agents right in here because we're
+
+324
+00:04:54,710 --> 00:04:54,720
+voice agents right in here because we're
+ 
+
+325
+00:04:54,720 --> 00:04:56,550
+voice agents right in here because we're
+able to set up system instructions. So,
+
+326
+00:04:56,550 --> 00:04:56,560
+able to set up system instructions. So,
+ 
+
+327
+00:04:56,560 --> 00:04:58,150
+able to set up system instructions. So,
+right here, we can create instructions
+
+328
+00:04:58,150 --> 00:04:58,160
+right here, we can create instructions
+ 
+
+329
+00:04:58,160 --> 00:04:59,830
+right here, we can create instructions
+and we can save them. So, let's say in
+
+330
+00:04:59,830 --> 00:04:59,840
+and we can save them. So, let's say in
+ 
+
+331
+00:04:59,840 --> 00:05:03,110
+and we can save them. So, let's say in
+this one, I'm calling this my coach and
+
+332
+00:05:03,110 --> 00:05:03,120
+this one, I'm calling this my coach and
+ 
+
+333
+00:05:03,120 --> 00:05:05,270
+this one, I'm calling this my coach and
+in here I can give it tone and style
+
+334
+00:05:05,270 --> 00:05:05,280
+in here I can give it tone and style
+ 
+
+335
+00:05:05,280 --> 00:05:08,390
+in here I can give it tone and style
+instructions. So, I can say, "You are my
+
+336
+00:05:08,390 --> 00:05:08,400
+instructions. So, I can say, "You are my
+ 
+
+337
+00:05:08,400 --> 00:05:10,870
+instructions. So, I can say, "You are my
+personal um fitness coach. You will help
+
+338
+00:05:10,870 --> 00:05:10,880
+personal um fitness coach. You will help
+ 
+
+339
+00:05:10,880 --> 00:05:13,909
+personal um fitness coach. You will help
+me get on a plan to eat healthier, build
+
+340
+00:05:13,909 --> 00:05:13,919
+me get on a plan to eat healthier, build
+ 
+
+341
+00:05:13,919 --> 00:05:15,749
+me get on a plan to eat healthier, build
+muscle, stuff like that. And you also
+
+342
+00:05:15,749 --> 00:05:15,759
+muscle, stuff like that. And you also
+ 
+
+343
+00:05:15,759 --> 00:05:18,629
+muscle, stuff like that. And you also
+have a very strong Scottish accent."
+
+344
+00:05:18,629 --> 00:05:18,639
+have a very strong Scottish accent."
+ 
+
+345
+00:05:18,639 --> 00:05:20,629
+have a very strong Scottish accent."
+So, that is the new prompt here. This
+
+346
+00:05:20,629 --> 00:05:20,639
+So, that is the new prompt here. This
+ 
+
+347
+00:05:20,639 --> 00:05:21,909
+So, that is the new prompt here. This
+has been saved and we can create new
+
+348
+00:05:21,909 --> 00:05:21,919
+has been saved and we can create new
+ 
+
+349
+00:05:21,919 --> 00:05:25,029
+has been saved and we can create new
+ones. And now, if I go ahead and talk to
+
+350
+00:05:25,029 --> 00:05:25,039
+ones. And now, if I go ahead and talk to
+ 
+
+351
+00:05:25,039 --> 00:05:28,230
+ones. And now, if I go ahead and talk to
+my coach, let's hear it.
+
+352
+00:05:28,230 --> 00:05:28,240
+my coach, let's hear it.
+ 
+
+353
+00:05:28,240 --> 00:05:29,749
+my coach, let's hear it.
+Hey there. I'm thinking about taking a
+
+354
+00:05:29,749 --> 00:05:29,759
+Hey there. I'm thinking about taking a
+ 
+
+355
+00:05:29,759 --> 00:05:31,430
+Hey there. I'm thinking about taking a
+break from the gym for about three
+
+356
+00:05:31,430 --> 00:05:31,440
+break from the gym for about three
+ 
+
+357
+00:05:31,440 --> 00:05:34,070
+break from the gym for about three
+weeks. What do you think about that?
+
+358
+00:05:34,070 --> 00:05:34,080
+weeks. What do you think about that?
+ 
+
+359
+00:05:34,080 --> 00:05:36,870
+weeks. What do you think about that?
+>> Three weeks? Hey. Well, it depends on
+
+360
+00:05:36,870 --> 00:05:36,880
+>> Three weeks? Hey. Well, it depends on
+ 
+
+361
+00:05:36,880 --> 00:05:39,350
+>> Three weeks? Hey. Well, it depends on
+why you're taking the break. If it's for
+
+362
+00:05:39,350 --> 00:05:39,360
+why you're taking the break. If it's for
+ 
+
+363
+00:05:39,360 --> 00:05:40,469
+why you're taking the break. If it's for
+rest and recovery.
+
+364
+00:05:40,469 --> 00:05:40,479
+rest and recovery.
+ 
+
+365
+00:05:40,479 --> 00:05:42,710
+rest and recovery.
+>> Wow, you got a pretty strong accent out
+
+366
+00:05:42,710 --> 00:05:42,720
+>> Wow, you got a pretty strong accent out
+ 
+
+367
+00:05:42,720 --> 00:05:44,870
+>> Wow, you got a pretty strong accent out
+of nowhere.
+
+368
+00:05:44,870 --> 00:05:44,880
+of nowhere.
+ 
+
+369
+00:05:44,880 --> 00:05:47,270
+of nowhere.
+>> Ah, well, sometimes it just comes out
+
+370
+00:05:47,270 --> 00:05:47,280
+>> Ah, well, sometimes it just comes out
+ 
+
+371
+00:05:47,280 --> 00:05:49,590
+>> Ah, well, sometimes it just comes out
+stronger, you can. But back to your
+
+372
+00:05:49,590 --> 00:05:49,600
+stronger, you can. But back to your
+ 
+
+373
+00:05:49,600 --> 00:05:52,070
+stronger, you can. But back to your
+break. What's the reason behind it? Are
+
+374
+00:05:52,070 --> 00:05:52,080
+break. What's the reason behind it? Are
+ 
+
+375
+00:05:52,080 --> 00:05:54,070
+break. What's the reason behind it? Are
+you feeling burned out or is there
+
+376
+00:05:54,070 --> 00:05:54,080
+you feeling burned out or is there
+ 
+
+377
+00:05:54,080 --> 00:05:55,590
+you feeling burned out or is there
+something else going on?
+
+378
+00:05:55,590 --> 00:05:55,600
+something else going on?
+ 
+
+379
+00:05:55,600 --> 00:05:57,110
+something else going on?
+>> Okay, that was funny. I just had to show
+
+380
+00:05:57,110 --> 00:05:57,120
+>> Okay, that was funny. I just had to show
+ 
+
+381
+00:05:57,120 --> 00:05:59,590
+>> Okay, that was funny. I just had to show
+you guys though um how you're able to
+
+382
+00:05:59,590 --> 00:05:59,600
+you guys though um how you're able to
+ 
+
+383
+00:05:59,600 --> 00:06:01,510
+you guys though um how you're able to
+really quickly change a lot of the stuff
+
+384
+00:06:01,510 --> 00:06:01,520
+really quickly change a lot of the stuff
+ 
+
+385
+00:06:01,520 --> 00:06:03,270
+really quickly change a lot of the stuff
+about these agents. Yeah, let me just go
+
+386
+00:06:03,270 --> 00:06:03,280
+about these agents. Yeah, let me just go
+ 
+
+387
+00:06:03,280 --> 00:06:05,510
+about these agents. Yeah, let me just go
+ahead and do one more webcam example.
+
+388
+00:06:05,510 --> 00:06:05,520
+ahead and do one more webcam example.
+ 
+
+389
+00:06:05,520 --> 00:06:07,189
+ahead and do one more webcam example.
+Hey Gemini, how's it going? Just wanted
+
+390
+00:06:07,189 --> 00:06:07,199
+Hey Gemini, how's it going? Just wanted
+ 
+
+391
+00:06:07,199 --> 00:06:08,550
+Hey Gemini, how's it going? Just wanted
+to make sure you can see me and that we
+
+392
+00:06:08,550 --> 00:06:08,560
+to make sure you can see me and that we
+ 
+
+393
+00:06:08,560 --> 00:06:11,270
+to make sure you can see me and that we
+can have a conversation.
+
+394
+00:06:11,270 --> 00:06:11,280
+can have a conversation.
+ 
+
+395
+00:06:11,280 --> 00:06:13,510
+can have a conversation.
+>> I can see you. You're in a room with
+
+396
+00:06:13,510 --> 00:06:13,520
+>> I can see you. You're in a room with
+ 
+
+397
+00:06:13,520 --> 00:06:15,749
+>> I can see you. You're in a room with
+light gray walls, a shelf behind you
+
+398
+00:06:15,749 --> 00:06:15,759
+light gray walls, a shelf behind you
+ 
+
+399
+00:06:15,759 --> 00:06:17,830
+light gray walls, a shelf behind you
+with some trophies, and a microphone in
+
+400
+00:06:17,830 --> 00:06:17,840
+with some trophies, and a microphone in
+ 
+
+401
+00:06:17,840 --> 00:06:19,830
+with some trophies, and a microphone in
+front of you. Everything looks good from
+
+402
+00:06:19,830 --> 00:06:19,840
+front of you. Everything looks good from
+ 
+
+403
+00:06:19,840 --> 00:06:22,150
+front of you. Everything looks good from
+my end, ready to chat. What's on your
+
+404
+00:06:22,150 --> 00:06:22,160
+my end, ready to chat. What's on your
+ 
+
+405
+00:06:22,160 --> 00:06:22,870
+my end, ready to chat. What's on your
+mind?
+
+406
+00:06:22,870 --> 00:06:22,880
+mind?
+ 
+
+407
+00:06:22,880 --> 00:06:24,230
+mind?
+>> What kind of microphone do you think I
+
+408
+00:06:24,230 --> 00:06:24,240
+>> What kind of microphone do you think I
+ 
+
+409
+00:06:24,240 --> 00:06:26,790
+>> What kind of microphone do you think I
+have?
+
+410
+00:06:26,790 --> 00:06:26,800
+have?
+ 
+
+411
+00:06:26,800 --> 00:06:30,150
+have?
+>> That looks like a shore MV7.
+
+412
+00:06:30,150 --> 00:06:30,160
+>> That looks like a shore MV7.
+ 
+
+413
+00:06:30,160 --> 00:06:32,710
+>> That looks like a shore MV7.
+probably connected to that road arm. Is
+
+414
+00:06:32,710 --> 00:06:32,720
+probably connected to that road arm. Is
+ 
+
+415
+00:06:32,720 --> 00:06:33,670
+probably connected to that road arm. Is
+that right?
+
+416
+00:06:33,670 --> 00:06:33,680
+that right?
+ 
+
+417
+00:06:33,680 --> 00:06:34,790
+that right?
+>> Yeah, that is. You can see right here,
+
+418
+00:06:34,790 --> 00:06:34,800
+>> Yeah, that is. You can see right here,
+ 
+
+419
+00:06:34,800 --> 00:06:36,070
+>> Yeah, that is. You can see right here,
+I've got the road and you can see right
+
+420
+00:06:36,070 --> 00:06:36,080
+I've got the road and you can see right
+ 
+
+421
+00:06:36,080 --> 00:06:38,629
+I've got the road and you can see right
+here, this is the Shore M7. Well,
+
+422
+00:06:38,629 --> 00:06:38,639
+here, this is the Shore M7. Well,
+ 
+
+423
+00:06:38,639 --> 00:06:39,990
+here, this is the Shore M7. Well,
+actually, I don't even know if this is
+
+424
+00:06:39,990 --> 00:06:40,000
+actually, I don't even know if this is
+ 
+
+425
+00:06:40,000 --> 00:06:42,629
+actually, I don't even know if this is
+an MV7, but you probably know better
+
+426
+00:06:42,629 --> 00:06:42,639
+an MV7, but you probably know better
+ 
+
+427
+00:06:42,639 --> 00:06:43,350
+an MV7, but you probably know better
+than I do.
+
+428
+00:06:43,350 --> 00:06:43,360
+than I do.
+ 
+
+429
+00:06:43,360 --> 00:06:46,150
+than I do.
+>> Based on the design and the logo, it
+
+430
+00:06:46,150 --> 00:06:46,160
+>> Based on the design and the logo, it
+ 
+
+431
+00:06:46,160 --> 00:06:48,070
+>> Based on the design and the logo, it
+definitely looks like an MV7.
+
+432
+00:06:48,070 --> 00:06:48,080
+definitely looks like an MV7.
+ 
+
+433
+00:06:48,080 --> 00:06:49,189
+definitely looks like an MV7.
+>> I mean, I just think it's really cool
+
+434
+00:06:49,189 --> 00:06:49,199
+>> I mean, I just think it's really cool
+ 
+
+435
+00:06:49,199 --> 00:06:51,110
+>> I mean, I just think it's really cool
+because you think about like, okay, you
+
+436
+00:06:51,110 --> 00:06:51,120
+because you think about like, okay, you
+ 
+
+437
+00:06:51,120 --> 00:06:52,309
+because you think about like, okay, you
+know, there's still some flaws, but
+
+438
+00:06:52,309 --> 00:06:52,319
+know, there's still some flaws, but
+ 
+
+439
+00:06:52,319 --> 00:06:54,710
+know, there's still some flaws, but
+where is this headed? And where might we
+
+440
+00:06:54,710 --> 00:06:54,720
+where is this headed? And where might we
+ 
+
+441
+00:06:54,720 --> 00:06:56,550
+where is this headed? And where might we
+be able to at some point have like
+
+442
+00:06:56,550 --> 00:06:56,560
+be able to at some point have like
+ 
+
+443
+00:06:56,560 --> 00:06:58,950
+be able to at some point have like
+agents that we can talk to almost like
+
+444
+00:06:58,950 --> 00:06:58,960
+agents that we can talk to almost like
+ 
+
+445
+00:06:58,960 --> 00:07:00,230
+agents that we can talk to almost like
+it's a Zoom call? and we can see them
+
+446
+00:07:00,230 --> 00:07:00,240
+it's a Zoom call? and we can see them
+ 
+
+447
+00:07:00,240 --> 00:07:01,830
+it's a Zoom call? and we can see them
+and they can talk to us and it's just
+
+448
+00:07:01,830 --> 00:07:01,840
+and they can talk to us and it's just
+ 
+
+449
+00:07:01,840 --> 00:07:03,749
+and they can talk to us and it's just
+way more real feeling. And what other
+
+450
+00:07:03,749 --> 00:07:03,759
+way more real feeling. And what other
+ 
+
+451
+00:07:03,759 --> 00:07:05,670
+way more real feeling. And what other
+doors does that actually open? And then
+
+452
+00:07:05,670 --> 00:07:05,680
+doors does that actually open? And then
+ 
+
+453
+00:07:05,680 --> 00:07:07,029
+doors does that actually open? And then
+with the whole screen sharing thing and
+
+454
+00:07:07,029 --> 00:07:07,039
+with the whole screen sharing thing and
+ 
+
+455
+00:07:07,039 --> 00:07:08,629
+with the whole screen sharing thing and
+vision, think about like where we're
+
+456
+00:07:08,629 --> 00:07:08,639
+vision, think about like where we're
+ 
+
+457
+00:07:08,639 --> 00:07:10,550
+vision, think about like where we're
+also headed with computer use and the
+
+458
+00:07:10,550 --> 00:07:10,560
+also headed with computer use and the
+ 
+
+459
+00:07:10,560 --> 00:07:12,950
+also headed with computer use and the
+fact that now when the agent can
+
+460
+00:07:12,950 --> 00:07:12,960
+fact that now when the agent can
+ 
+
+461
+00:07:12,960 --> 00:07:14,629
+fact that now when the agent can
+actually take over your screen and take
+
+462
+00:07:14,629 --> 00:07:14,639
+actually take over your screen and take
+ 
+
+463
+00:07:14,639 --> 00:07:15,909
+actually take over your screen and take
+control of your browser and click on
+
+464
+00:07:15,909 --> 00:07:15,919
+control of your browser and click on
+ 
+
+465
+00:07:15,919 --> 00:07:18,070
+control of your browser and click on
+things, but it can also watch over you
+
+466
+00:07:18,070 --> 00:07:18,080
+things, but it can also watch over you
+ 
+
+467
+00:07:18,080 --> 00:07:19,990
+things, but it can also watch over you
+and you can talk to it at the same time.
+
+468
+00:07:19,990 --> 00:07:20,000
+and you can talk to it at the same time.
+ 
+
+469
+00:07:20,000 --> 00:07:21,670
+and you can talk to it at the same time.
+Like at some point we really might be
+
+470
+00:07:21,670 --> 00:07:21,680
+Like at some point we really might be
+ 
+
+471
+00:07:21,680 --> 00:07:23,430
+Like at some point we really might be
+able to just like throw out our
+
+472
+00:07:23,430 --> 00:07:23,440
+able to just like throw out our
+ 
+
+473
+00:07:23,440 --> 00:07:25,830
+able to just like throw out our
+keyboards, throw out our our mice and
+
+474
+00:07:25,830 --> 00:07:25,840
+keyboards, throw out our our mice and
+ 
+
+475
+00:07:25,840 --> 00:07:27,510
+keyboards, throw out our our mice and
+just be able to sit here, look at our
+
+476
+00:07:27,510 --> 00:07:27,520
+just be able to sit here, look at our
+ 
+
+477
+00:07:27,520 --> 00:07:29,749
+just be able to sit here, look at our
+screens and talk and things will just be
+
+478
+00:07:29,749 --> 00:07:29,759
+screens and talk and things will just be
+ 
+
+479
+00:07:29,759 --> 00:07:31,670
+screens and talk and things will just be
+happening and happening and like you can
+
+480
+00:07:31,670 --> 00:07:31,680
+happening and happening and like you can
+ 
+
+481
+00:07:31,680 --> 00:07:33,670
+happening and happening and like you can
+be so productive in that way. Now there
+
+482
+00:07:33,670 --> 00:07:33,680
+be so productive in that way. Now there
+ 
+
+483
+00:07:33,680 --> 00:07:34,629
+be so productive in that way. Now there
+are some other things you can do in
+
+484
+00:07:34,629 --> 00:07:34,639
+are some other things you can do in
+ 
+
+485
+00:07:34,639 --> 00:07:35,909
+are some other things you can do in
+here. You can see you can change the
+
+486
+00:07:35,909 --> 00:07:35,919
+here. You can see you can change the
+ 
+
+487
+00:07:35,919 --> 00:07:37,749
+here. You can see you can change the
+voice. If I end the session, we can
+
+488
+00:07:37,749 --> 00:07:37,759
+voice. If I end the session, we can
+ 
+
+489
+00:07:37,759 --> 00:07:38,790
+voice. If I end the session, we can
+change the voice right here. There's
+
+490
+00:07:38,790 --> 00:07:38,800
+change the voice right here. There's
+ 
+
+491
+00:07:38,800 --> 00:07:40,550
+change the voice right here. There's
+different ones to choose from. You can
+
+492
+00:07:40,550 --> 00:07:40,560
+different ones to choose from. You can
+ 
+
+493
+00:07:40,560 --> 00:07:42,710
+different ones to choose from. You can
+change the media resolution and you can
+
+494
+00:07:42,710 --> 00:07:42,720
+change the media resolution and you can
+ 
+
+495
+00:07:42,720 --> 00:07:44,950
+change the media resolution and you can
+also change whether they are low,
+
+496
+00:07:44,950 --> 00:07:44,960
+also change whether they are low,
+ 
+
+497
+00:07:44,960 --> 00:07:46,870
+also change whether they are low,
+medium, or high thinking or just no
+
+498
+00:07:46,870 --> 00:07:46,880
+medium, or high thinking or just no
+ 
+
+499
+00:07:46,880 --> 00:07:48,550
+medium, or high thinking or just no
+thinking at all, which is the default.
+
+500
+00:07:48,550 --> 00:07:48,560
+thinking at all, which is the default.
+ 
+
+501
+00:07:48,560 --> 00:07:49,909
+thinking at all, which is the default.
+You can also come in here and play with
+
+502
+00:07:49,909 --> 00:07:49,919
+You can also come in here and play with
+ 
+
+503
+00:07:49,919 --> 00:07:52,150
+You can also come in here and play with
+the session context. So there's a lot
+
+504
+00:07:52,150 --> 00:07:52,160
+the session context. So there's a lot
+ 
+
+505
+00:07:52,160 --> 00:07:54,309
+the session context. So there's a lot
+bigger max context as well as target
+
+506
+00:07:54,309 --> 00:07:54,319
+bigger max context as well as target
+ 
+
+507
+00:07:54,319 --> 00:07:56,390
+bigger max context as well as target
+context. And down here you can see that
+
+508
+00:07:56,390 --> 00:07:56,400
+context. And down here you can see that
+ 
+
+509
+00:07:56,400 --> 00:07:57,990
+context. And down here you can see that
+we have a few other things. We have
+
+510
+00:07:57,990 --> 00:07:58,000
+we have a few other things. We have
+ 
+
+511
+00:07:58,000 --> 00:07:59,909
+we have a few other things. We have
+function calling which you can turn on.
+
+512
+00:07:59,909 --> 00:07:59,919
+function calling which you can turn on.
+ 
+
+513
+00:07:59,919 --> 00:08:01,909
+function calling which you can turn on.
+You have automatic function response.
+
+514
+00:08:01,909 --> 00:08:01,919
+You have automatic function response.
+ 
+
+515
+00:08:01,919 --> 00:08:03,430
+You have automatic function response.
+And then we also have grounding with
+
+516
+00:08:03,430 --> 00:08:03,440
+And then we also have grounding with
+ 
+
+517
+00:08:03,440 --> 00:08:05,189
+And then we also have grounding with
+Google search which means when you're
+
+518
+00:08:05,189 --> 00:08:05,199
+Google search which means when you're
+ 
+
+519
+00:08:05,199 --> 00:08:07,110
+Google search which means when you're
+talking to it, it will do Google search
+
+520
+00:08:07,110 --> 00:08:07,120
+talking to it, it will do Google search
+ 
+
+521
+00:08:07,120 --> 00:08:08,309
+talking to it, it will do Google search
+on the back end to answer your
+
+522
+00:08:08,309 --> 00:08:08,319
+on the back end to answer your
+ 
+
+523
+00:08:08,319 --> 00:08:09,990
+on the back end to answer your
+questions. Now what you might notice in
+
+524
+00:08:09,990 --> 00:08:10,000
+questions. Now what you might notice in
+ 
+
+525
+00:08:10,000 --> 00:08:11,830
+questions. Now what you might notice in
+here is okay, giving it tools, giving it
+
+526
+00:08:11,830 --> 00:08:11,840
+here is okay, giving it tools, giving it
+ 
+
+527
+00:08:11,840 --> 00:08:12,950
+here is okay, giving it tools, giving it
+functions. That's awesome because you
+
+528
+00:08:12,950 --> 00:08:12,960
+functions. That's awesome because you
+ 
+
+529
+00:08:12,960 --> 00:08:14,070
+functions. That's awesome because you
+might want it to do things in your
+
+530
+00:08:14,070 --> 00:08:14,080
+might want it to do things in your
+ 
+
+531
+00:08:14,080 --> 00:08:16,230
+might want it to do things in your
+calendar or you know look at the emails
+
+532
+00:08:16,230 --> 00:08:16,240
+calendar or you know look at the emails
+ 
+
+533
+00:08:16,240 --> 00:08:17,909
+calendar or you know look at the emails
+or look at the support tickets or
+
+534
+00:08:17,909 --> 00:08:17,919
+or look at the support tickets or
+ 
+
+535
+00:08:17,919 --> 00:08:19,510
+or look at the support tickets or
+whatever it is. And so if we go ahead
+
+536
+00:08:19,510 --> 00:08:19,520
+whatever it is. And so if we go ahead
+ 
+
+537
+00:08:19,520 --> 00:08:21,430
+whatever it is. And so if we go ahead
+and try to turn this on and we click on
+
+538
+00:08:21,430 --> 00:08:21,440
+and try to turn this on and we click on
+ 
+
+539
+00:08:21,440 --> 00:08:24,150
+and try to turn this on and we click on
+edit we can basically define different
+
+540
+00:08:24,150 --> 00:08:24,160
+edit we can basically define different
+ 
+
+541
+00:08:24,160 --> 00:08:26,070
+edit we can basically define different
+functions but we would have to give it
+
+542
+00:08:26,070 --> 00:08:26,080
+functions but we would have to give it
+ 
+
+543
+00:08:26,080 --> 00:08:28,150
+functions but we would have to give it
+those actual you know code snippets or
+
+544
+00:08:28,150 --> 00:08:28,160
+those actual you know code snippets or
+ 
+
+545
+00:08:28,160 --> 00:08:30,070
+those actual you know code snippets or
+whatever it is. So if we go to the API
+
+546
+00:08:30,070 --> 00:08:30,080
+whatever it is. So if we go to the API
+ 
+
+547
+00:08:30,080 --> 00:08:31,909
+whatever it is. So if we go to the API
+documentation for examples, this is
+
+548
+00:08:31,909 --> 00:08:31,919
+documentation for examples, this is
+ 
+
+549
+00:08:31,919 --> 00:08:33,350
+documentation for examples, this is
+where we could understand how we can
+
+550
+00:08:33,350 --> 00:08:33,360
+where we could understand how we can
+ 
+
+551
+00:08:33,360 --> 00:08:35,829
+where we could understand how we can
+actually give our voice agent here in
+
+552
+00:08:35,829 --> 00:08:35,839
+actually give our voice agent here in
+ 
+
+553
+00:08:35,839 --> 00:08:38,870
+actually give our voice agent here in
+Gemini hands basically tools. And that's
+
+554
+00:08:38,870 --> 00:08:38,880
+Gemini hands basically tools. And that's
+ 
+
+555
+00:08:38,880 --> 00:08:41,029
+Gemini hands basically tools. And that's
+where the Gemini live API comes in
+
+556
+00:08:41,029 --> 00:08:41,039
+where the Gemini live API comes in
+ 
+
+557
+00:08:41,039 --> 00:08:43,110
+where the Gemini live API comes in
+because this lets us actually connect
+
+558
+00:08:43,110 --> 00:08:43,120
+because this lets us actually connect
+ 
+
+559
+00:08:43,120 --> 00:08:45,430
+because this lets us actually connect
+this voice model to different things
+
+560
+00:08:45,430 --> 00:08:45,440
+this voice model to different things
+ 
+
+561
+00:08:45,440 --> 00:08:47,590
+this voice model to different things
+like our websites or potentially even
+
+562
+00:08:47,590 --> 00:08:47,600
+like our websites or potentially even
+ 
+
+563
+00:08:47,600 --> 00:08:49,110
+like our websites or potentially even
+phone numbers and other things like that
+
+564
+00:08:49,110 --> 00:08:49,120
+phone numbers and other things like that
+ 
+
+565
+00:08:49,120 --> 00:08:51,110
+phone numbers and other things like that
+so that we're not just stuck to using it
+
+566
+00:08:51,110 --> 00:08:51,120
+so that we're not just stuck to using it
+ 
+
+567
+00:08:51,120 --> 00:08:53,269
+so that we're not just stuck to using it
+right here in Google AI Studio. Now in
+
+568
+00:08:53,269 --> 00:08:53,279
+right here in Google AI Studio. Now in
+ 
+
+569
+00:08:53,279 --> 00:08:54,550
+right here in Google AI Studio. Now in
+here you can see that it goes over some
+
+570
+00:08:54,550 --> 00:08:54,560
+here you can see that it goes over some
+ 
+
+571
+00:08:54,560 --> 00:08:56,070
+here you can see that it goes over some
+really nice use cases like e-commerce
+
+572
+00:08:56,070 --> 00:08:56,080
+really nice use cases like e-commerce
+ 
+
+573
+00:08:56,080 --> 00:08:58,150
+really nice use cases like e-commerce
+you know shopping assistance even gaming
+
+574
+00:08:58,150 --> 00:08:58,160
+you know shopping assistance even gaming
+ 
+
+575
+00:08:58,160 --> 00:09:01,110
+you know shopping assistance even gaming
+interactive NPCs nextG interfaces
+
+576
+00:09:01,110 --> 00:09:01,120
+interactive NPCs nextG interfaces
+ 
+
+577
+00:09:01,120 --> 00:09:03,670
+interactive NPCs nextG interfaces
+healthcare financial services education
+
+578
+00:09:03,670 --> 00:09:03,680
+healthcare financial services education
+ 
+
+579
+00:09:03,680 --> 00:09:05,590
+healthcare financial services education
+and something I think is really cool is
+
+580
+00:09:05,590 --> 00:09:05,600
+and something I think is really cool is
+ 
+
+581
+00:09:05,600 --> 00:09:07,990
+and something I think is really cool is
+multilingual support. So it has over 70
+
+582
+00:09:07,990 --> 00:09:08,000
+multilingual support. So it has over 70
+ 
+
+583
+00:09:08,000 --> 00:09:09,750
+multilingual support. So it has over 70
+supported languages which means not only
+
+584
+00:09:09,750 --> 00:09:09,760
+supported languages which means not only
+ 
+
+585
+00:09:09,760 --> 00:09:10,949
+supported languages which means not only
+could you talk to it in a different
+
+586
+00:09:10,949 --> 00:09:10,959
+could you talk to it in a different
+ 
+
+587
+00:09:10,959 --> 00:09:12,550
+could you talk to it in a different
+language but this thing could be a
+
+588
+00:09:12,550 --> 00:09:12,560
+language but this thing could be a
+ 
+
+589
+00:09:12,560 --> 00:09:14,310
+language but this thing could be a
+really good real-time translator which
+
+590
+00:09:14,310 --> 00:09:14,320
+really good real-time translator which
+ 
+
+591
+00:09:14,320 --> 00:09:16,070
+really good real-time translator which
+could be a very important use case. Now,
+
+592
+00:09:16,070 --> 00:09:16,080
+could be a very important use case. Now,
+ 
+
+593
+00:09:16,080 --> 00:09:17,269
+could be a very important use case. Now,
+all of this kind of stuff right here,
+
+594
+00:09:17,269 --> 00:09:17,279
+all of this kind of stuff right here,
+ 
+
+595
+00:09:17,279 --> 00:09:19,509
+all of this kind of stuff right here,
+the API documentation and, you know, the
+
+596
+00:09:19,509 --> 00:09:19,519
+the API documentation and, you know, the
+ 
+
+597
+00:09:19,519 --> 00:09:22,150
+the API documentation and, you know, the
+different SDKs or ADKs that you can
+
+598
+00:09:22,150 --> 00:09:22,160
+different SDKs or ADKs that you can
+ 
+
+599
+00:09:22,160 --> 00:09:24,389
+different SDKs or ADKs that you can
+actually use, this is where cloud code
+
+600
+00:09:24,389 --> 00:09:24,399
+actually use, this is where cloud code
+ 
+
+601
+00:09:24,399 --> 00:09:25,750
+actually use, this is where cloud code
+really comes in and makes this thing
+
+602
+00:09:25,750 --> 00:09:25,760
+really comes in and makes this thing
+ 
+
+603
+00:09:25,760 --> 00:09:28,150
+really comes in and makes this thing
+powerful because without cloud code or,
+
+604
+00:09:28,150 --> 00:09:28,160
+powerful because without cloud code or,
+ 
+
+605
+00:09:28,160 --> 00:09:29,350
+powerful because without cloud code or,
+you know, a different type of coding
+
+606
+00:09:29,350 --> 00:09:29,360
+you know, a different type of coding
+ 
+
+607
+00:09:29,360 --> 00:09:31,509
+you know, a different type of coding
+assistant or, you know, agent, you're
+
+608
+00:09:31,509 --> 00:09:31,519
+assistant or, you know, agent, you're
+ 
+
+609
+00:09:31,519 --> 00:09:34,470
+assistant or, you know, agent, you're
+kind of stuck to using Gemini 3.1 Flash
+
+610
+00:09:34,470 --> 00:09:34,480
+kind of stuck to using Gemini 3.1 Flash
+ 
+
+611
+00:09:34,480 --> 00:09:37,509
+kind of stuck to using Gemini 3.1 Flash
+Live in Google AI Studio. And so if you
+
+612
+00:09:37,509 --> 00:09:37,519
+Live in Google AI Studio. And so if you
+ 
+
+613
+00:09:37,519 --> 00:09:39,269
+Live in Google AI Studio. And so if you
+wanted to connect it to something else,
+
+614
+00:09:39,269 --> 00:09:39,279
+wanted to connect it to something else,
+ 
+
+615
+00:09:39,279 --> 00:09:41,190
+wanted to connect it to something else,
+you would have to be pretty technical to
+
+616
+00:09:41,190 --> 00:09:41,200
+you would have to be pretty technical to
+ 
+
+617
+00:09:41,200 --> 00:09:42,790
+you would have to be pretty technical to
+understand how to do that because of the
+
+618
+00:09:42,790 --> 00:09:42,800
+understand how to do that because of the
+ 
+
+619
+00:09:42,800 --> 00:09:44,310
+understand how to do that because of the
+way that this thing actually works on
+
+620
+00:09:44,310 --> 00:09:44,320
+way that this thing actually works on
+ 
+
+621
+00:09:44,320 --> 00:09:47,190
+way that this thing actually works on
+the back end with websockets.
+
+622
+00:09:47,190 --> 00:09:47,200
+the back end with websockets.
+ 
+
+623
+00:09:47,200 --> 00:09:49,350
+the back end with websockets.
+Now what I did is I gave my cloud code
+
+624
+00:09:49,350 --> 00:09:49,360
+Now what I did is I gave my cloud code
+ 
+
+625
+00:09:49,360 --> 00:09:51,430
+Now what I did is I gave my cloud code
+project all of this documentation and I
+
+626
+00:09:51,430 --> 00:09:51,440
+project all of this documentation and I
+ 
+
+627
+00:09:51,440 --> 00:09:52,790
+project all of this documentation and I
+had to do research and I had to figure
+
+628
+00:09:52,790 --> 00:09:52,800
+had to do research and I had to figure
+ 
+
+629
+00:09:52,800 --> 00:09:54,550
+had to do research and I had to figure
+out how this stuff works so that it
+
+630
+00:09:54,550 --> 00:09:54,560
+out how this stuff works so that it
+ 
+
+631
+00:09:54,560 --> 00:09:56,310
+out how this stuff works so that it
+could help me embed this into other
+
+632
+00:09:56,310 --> 00:09:56,320
+could help me embed this into other
+ 
+
+633
+00:09:56,320 --> 00:09:57,910
+could help me embed this into other
+things and it could help me set up tool
+
+634
+00:09:57,910 --> 00:09:57,920
+things and it could help me set up tool
+ 
+
+635
+00:09:57,920 --> 00:09:59,190
+things and it could help me set up tool
+calls and stuff like that. So let me
+
+636
+00:09:59,190 --> 00:09:59,200
+calls and stuff like that. So let me
+ 
+
+637
+00:09:59,200 --> 00:10:00,710
+calls and stuff like that. So let me
+show you two quick examples of what I
+
+638
+00:10:00,710 --> 00:10:00,720
+show you two quick examples of what I
+ 
+
+639
+00:10:00,720 --> 00:10:02,630
+show you two quick examples of what I
+was able to do with cloud code and this
+
+640
+00:10:02,630 --> 00:10:02,640
+was able to do with cloud code and this
+ 
+
+641
+00:10:02,640 --> 00:10:04,790
+was able to do with cloud code and this
+new model. Okay, so here's a first
+
+642
+00:10:04,790 --> 00:10:04,800
+new model. Okay, so here's a first
+ 
+
+643
+00:10:04,800 --> 00:10:06,790
+new model. Okay, so here's a first
+really simple example where we have this
+
+644
+00:10:06,790 --> 00:10:06,800
+really simple example where we have this
+ 
+
+645
+00:10:06,800 --> 00:10:08,630
+really simple example where we have this
+embedded into a fake website. This is
+
+646
+00:10:08,630 --> 00:10:08,640
+embedded into a fake website. This is
+ 
+
+647
+00:10:08,640 --> 00:10:10,310
+embedded into a fake website. This is
+called Apex. It's just like a keyboard
+
+648
+00:10:10,310 --> 00:10:10,320
+called Apex. It's just like a keyboard
+ 
+
+649
+00:10:10,320 --> 00:10:11,670
+called Apex. It's just like a keyboard
+website. Obviously, this thing looks
+
+650
+00:10:11,670 --> 00:10:11,680
+website. Obviously, this thing looks
+ 
+
+651
+00:10:11,680 --> 00:10:13,590
+website. Obviously, this thing looks
+very vibe coded and it is. And I just
+
+652
+00:10:13,590 --> 00:10:13,600
+very vibe coded and it is. And I just
+ 
+
+653
+00:10:13,600 --> 00:10:15,030
+very vibe coded and it is. And I just
+wanted to do a really quick demo. So,
+
+654
+00:10:15,030 --> 00:10:15,040
+wanted to do a really quick demo. So,
+ 
+
+655
+00:10:15,040 --> 00:10:16,310
+wanted to do a really quick demo. So,
+let's pretend that I wanted to embed
+
+656
+00:10:16,310 --> 00:10:16,320
+let's pretend that I wanted to embed
+ 
+
+657
+00:10:16,320 --> 00:10:18,550
+let's pretend that I wanted to embed
+this on my product website, right? I
+
+658
+00:10:18,550 --> 00:10:18,560
+this on my product website, right? I
+ 
+
+659
+00:10:18,560 --> 00:10:19,829
+this on my product website, right? I
+have this little button down here that I
+
+660
+00:10:19,829 --> 00:10:19,839
+have this little button down here that I
+ 
+
+661
+00:10:19,839 --> 00:10:23,110
+have this little button down here that I
+can now click on and I get a Gemini 3.1
+
+662
+00:10:23,110 --> 00:10:23,120
+can now click on and I get a Gemini 3.1
+ 
+
+663
+00:10:23,120 --> 00:10:27,670
+can now click on and I get a Gemini 3.1
+Flash agent. So, open this up.
+
+664
+00:10:27,670 --> 00:10:27,680
+Flash agent. So, open this up.
+ 
+
+665
+00:10:27,680 --> 00:10:29,030
+Flash agent. So, open this up.
+Hey, so can you tell me a little bit
+
+666
+00:10:29,030 --> 00:10:29,040
+Hey, so can you tell me a little bit
+ 
+
+667
+00:10:29,040 --> 00:10:31,910
+Hey, so can you tell me a little bit
+about Apex, like the brand and what I
+
+668
+00:10:31,910 --> 00:10:31,920
+about Apex, like the brand and what I
+ 
+
+669
+00:10:31,920 --> 00:10:33,910
+about Apex, like the brand and what I
+can do here?
+
+670
+00:10:33,910 --> 00:10:33,920
+can do here?
+ 
+
+671
+00:10:33,920 --> 00:10:36,310
+can do here?
+Welcome to Apex. We make premium
+
+672
+00:10:36,310 --> 00:10:36,320
+Welcome to Apex. We make premium
+ 
+
+673
+00:10:36,320 --> 00:10:37,910
+Welcome to Apex. We make premium
+mechanical keyboards with great
+
+674
+00:10:37,910 --> 00:10:37,920
+mechanical keyboards with great
+ 
+
+675
+00:10:37,920 --> 00:10:39,990
+mechanical keyboards with great
+switches, customizable features, and
+
+676
+00:10:39,990 --> 00:10:40,000
+switches, customizable features, and
+ 
+
+677
+00:10:40,000 --> 00:10:40,949
+switches, customizable features, and
+durable builds.
+
+678
+00:10:40,949 --> 00:10:40,959
+durable builds.
+ 
+
+679
+00:10:40,959 --> 00:10:42,550
+durable builds.
+>> Okay, cool. So, I don't really know that
+
+680
+00:10:42,550 --> 00:10:42,560
+>> Okay, cool. So, I don't really know that
+ 
+
+681
+00:10:42,560 --> 00:10:44,069
+>> Okay, cool. So, I don't really know that
+much about keyboards, but could you help
+
+682
+00:10:44,069 --> 00:10:44,079
+much about keyboards, but could you help
+ 
+
+683
+00:10:44,079 --> 00:10:45,350
+much about keyboards, but could you help
+me figure out which one might be best
+
+684
+00:10:45,350 --> 00:10:45,360
+me figure out which one might be best
+ 
+
+685
+00:10:45,360 --> 00:10:48,230
+me figure out which one might be best
+for me out of these four options?
+
+686
+00:10:48,230 --> 00:10:48,240
+for me out of these four options?
+ 
+
+687
+00:10:48,240 --> 00:10:50,230
+for me out of these four options?
+>> I'd love to help. To give you the best
+
+688
+00:10:50,230 --> 00:10:50,240
+>> I'd love to help. To give you the best
+ 
+
+689
+00:10:50,240 --> 00:10:51,910
+>> I'd love to help. To give you the best
+recommendation, are you looking for
+
+690
+00:10:51,910 --> 00:10:51,920
+recommendation, are you looking for
+ 
+
+691
+00:10:51,920 --> 00:10:54,310
+recommendation, are you looking for
+something for gaming, typing, or office
+
+692
+00:10:54,310 --> 00:10:54,320
+something for gaming, typing, or office
+ 
+
+693
+00:10:54,320 --> 00:10:54,550
+something for gaming, typing, or office
+work?
+
+694
+00:10:54,550 --> 00:10:54,560
+work?
+ 
+
+695
+00:10:54,560 --> 00:10:56,150
+work?
+>> Uh, no. I'm really just going to be
+
+696
+00:10:56,150 --> 00:10:56,160
+>> Uh, no. I'm really just going to be
+ 
+
+697
+00:10:56,160 --> 00:10:57,990
+>> Uh, no. I'm really just going to be
+working in my office, but I might be
+
+698
+00:10:57,990 --> 00:10:58,000
+working in my office, but I might be
+ 
+
+699
+00:10:58,000 --> 00:11:00,310
+working in my office, but I might be
+doing some traveling
+
+700
+00:11:00,310 --> 00:11:00,320
+doing some traveling
+ 
+
+701
+00:11:00,320 --> 00:11:01,590
+doing some traveling
+>> for office work and travel.
+
+702
+00:11:01,590 --> 00:11:01,600
+>> for office work and travel.
+ 
+
+703
+00:11:01,600 --> 00:11:02,310
+>> for office work and travel.
+>> Actually, you know what? I'm just going
+
+704
+00:11:02,310 --> 00:11:02,320
+>> Actually, you know what? I'm just going
+ 
+
+705
+00:11:02,320 --> 00:11:03,990
+>> Actually, you know what? I'm just going
+to go with the 60% mode, but can you
+
+706
+00:11:03,990 --> 00:11:04,000
+to go with the 60% mode, but can you
+ 
+
+707
+00:11:04,000 --> 00:11:05,750
+to go with the 60% mode, but can you
+tell me about the uh the shipping and
+
+708
+00:11:05,750 --> 00:11:05,760
+tell me about the uh the shipping and
+ 
+
+709
+00:11:05,760 --> 00:11:08,230
+tell me about the uh the shipping and
+how long is this going to take?
+
+710
+00:11:08,230 --> 00:11:08,240
+how long is this going to take?
+ 
+
+711
+00:11:08,240 --> 00:11:10,470
+how long is this going to take?
+>> Great choice. Free standard shipping
+
+712
+00:11:10,470 --> 00:11:10,480
+>> Great choice. Free standard shipping
+ 
+
+713
+00:11:10,480 --> 00:11:12,230
+>> Great choice. Free standard shipping
+takes 5 to seven business.
+
+714
+00:11:12,230 --> 00:11:12,240
+takes 5 to seven business.
+ 
+
+715
+00:11:12,240 --> 00:11:13,990
+takes 5 to seven business.
+>> Okay, so I was interrupting it there and
+
+716
+00:11:13,990 --> 00:11:14,000
+>> Okay, so I was interrupting it there and
+ 
+
+717
+00:11:14,000 --> 00:11:15,269
+>> Okay, so I was interrupting it there and
+I was just showing you that you can give
+
+718
+00:11:15,269 --> 00:11:15,279
+I was just showing you that you can give
+ 
+
+719
+00:11:15,279 --> 00:11:17,670
+I was just showing you that you can give
+it knowledge and that it feels super
+
+720
+00:11:17,670 --> 00:11:17,680
+it knowledge and that it feels super
+ 
+
+721
+00:11:17,680 --> 00:11:19,670
+it knowledge and that it feels super
+super conversational. So the second
+
+722
+00:11:19,670 --> 00:11:19,680
+super conversational. So the second
+ 
+
+723
+00:11:19,680 --> 00:11:22,389
+super conversational. So the second
+example is Arya and obviously this is
+
+724
+00:11:22,389 --> 00:11:22,399
+example is Arya and obviously this is
+ 
+
+725
+00:11:22,399 --> 00:11:23,990
+example is Arya and obviously this is
+you know a very ugly interface but I
+
+726
+00:11:23,990 --> 00:11:24,000
+you know a very ugly interface but I
+ 
+
+727
+00:11:24,000 --> 00:11:25,750
+you know a very ugly interface but I
+just wanted to show you guys what you
+
+728
+00:11:25,750 --> 00:11:25,760
+just wanted to show you guys what you
+ 
+
+729
+00:11:25,760 --> 00:11:28,069
+just wanted to show you guys what you
+can do. So this one is one where I
+
+730
+00:11:28,069 --> 00:11:28,079
+can do. So this one is one where I
+ 
+
+731
+00:11:28,079 --> 00:11:31,110
+can do. So this one is one where I
+actually gave it tools. So, it's able to
+
+732
+00:11:31,110 --> 00:11:31,120
+actually gave it tools. So, it's able to
+ 
+
+733
+00:11:31,120 --> 00:11:32,630
+actually gave it tools. So, it's able to
+look at my ClickUp and it's able to look
+
+734
+00:11:32,630 --> 00:11:32,640
+look at my ClickUp and it's able to look
+ 
+
+735
+00:11:32,640 --> 00:11:34,470
+look at my ClickUp and it's able to look
+at my calendar. So, this is obviously
+
+736
+00:11:34,470 --> 00:11:34,480
+at my calendar. So, this is obviously
+ 
+
+737
+00:11:34,480 --> 00:11:36,389
+at my calendar. So, this is obviously
+just a few examples, but showing you how
+
+738
+00:11:36,389 --> 00:11:36,399
+just a few examples, but showing you how
+ 
+
+739
+00:11:36,399 --> 00:11:38,069
+just a few examples, but showing you how
+you can build some functions around this
+
+740
+00:11:38,069 --> 00:11:38,079
+you can build some functions around this
+ 
+
+741
+00:11:38,079 --> 00:11:39,670
+you can build some functions around this
+in case you wanted to have your agent do
+
+742
+00:11:39,670 --> 00:11:39,680
+in case you wanted to have your agent do
+ 
+
+743
+00:11:39,680 --> 00:11:40,870
+in case you wanted to have your agent do
+things rather than just be
+
+744
+00:11:40,870 --> 00:11:40,880
+things rather than just be
+ 
+
+745
+00:11:40,880 --> 00:11:42,870
+things rather than just be
+conversational. So, I'm going to start
+
+746
+00:11:42,870 --> 00:11:42,880
+conversational. So, I'm going to start
+ 
+
+747
+00:11:42,880 --> 00:11:45,670
+conversational. So, I'm going to start
+talking to Arya.
+
+748
+00:11:45,670 --> 00:11:45,680
+talking to Arya.
+ 
+
+749
+00:11:45,680 --> 00:11:48,310
+talking to Arya.
+Hey there. How are you doing today?
+
+750
+00:11:48,310 --> 00:11:48,320
+Hey there. How are you doing today?
+ 
+
+751
+00:11:48,320 --> 00:11:50,150
+Hey there. How are you doing today?
+>> Hey, I'm doing pretty well. Thanks for
+
+752
+00:11:50,150 --> 00:11:50,160
+>> Hey, I'm doing pretty well. Thanks for
+ 
+
+753
+00:11:50,160 --> 00:11:52,150
+>> Hey, I'm doing pretty well. Thanks for
+asking. Just here ready to help with
+
+754
+00:11:52,150 --> 00:11:52,160
+asking. Just here ready to help with
+ 
+
+755
+00:11:52,160 --> 00:11:52,949
+asking. Just here ready to help with
+whatever you need.
+
+756
+00:11:52,949 --> 00:11:52,959
+whatever you need.
+ 
+
+757
+00:11:52,959 --> 00:11:54,230
+whatever you need.
+>> Yeah. So, the first thing I need you to
+
+758
+00:11:54,230 --> 00:11:54,240
+>> Yeah. So, the first thing I need you to
+ 
+
+759
+00:11:54,240 --> 00:11:55,670
+>> Yeah. So, the first thing I need you to
+do is can you look at my calendar for
+
+760
+00:11:55,670 --> 00:11:55,680
+do is can you look at my calendar for
+ 
+
+761
+00:11:55,680 --> 00:11:58,949
+do is can you look at my calendar for
+tomorrow?
+
+762
+00:11:58,949 --> 00:11:58,959
+
+ 
+
+763
+00:11:58,959 --> 00:12:01,350
+
+>> Sure thing. For tomorrow, Saturday,
+
+764
+00:12:01,350 --> 00:12:01,360
+>> Sure thing. For tomorrow, Saturday,
+ 
+
+765
+00:12:01,360 --> 00:12:03,110
+>> Sure thing. For tomorrow, Saturday,
+March 28th, you have two things
+
+766
+00:12:03,110 --> 00:12:03,120
+March 28th, you have two things
+ 
+
+767
+00:12:03,120 --> 00:12:05,110
+March 28th, you have two things
+scheduled. First, you've got a walk from
+
+768
+00:12:05,110 --> 00:12:05,120
+scheduled. First, you've got a walk from
+ 
+
+769
+00:12:05,120 --> 00:12:06,870
+scheduled. First, you've got a walk from
+9:00 a.m. to 10:00 a.m. and then a
+
+770
+00:12:06,870 --> 00:12:06,880
+9:00 a.m. to 10:00 a.m. and then a
+ 
+
+771
+00:12:06,880 --> 00:12:09,590
+9:00 a.m. to 10:00 a.m. and then a
+meeting from 12:30 p.m. to 1:30 p.m.
+
+772
+00:12:09,590 --> 00:12:09,600
+meeting from 12:30 p.m. to 1:30 p.m.
+ 
+
+773
+00:12:09,600 --> 00:12:11,110
+meeting from 12:30 p.m. to 1:30 p.m.
+Anything you'd like to add or look into
+
+774
+00:12:11,110 --> 00:12:11,120
+Anything you'd like to add or look into
+ 
+
+775
+00:12:11,120 --> 00:12:12,150
+Anything you'd like to add or look into
+more about those?
+
+776
+00:12:12,150 --> 00:12:12,160
+more about those?
+ 
+
+777
+00:12:12,160 --> 00:12:13,910
+more about those?
+>> Yeah. Can you block off 3:00 p.m. to
+
+778
+00:12:13,910 --> 00:12:13,920
+>> Yeah. Can you block off 3:00 p.m. to
+ 
+
+779
+00:12:13,920 --> 00:12:19,670
+>> Yeah. Can you block off 3:00 p.m. to
+5:00 p.m. and call it my research block?
+
+780
+00:12:19,670 --> 00:12:19,680
+
+ 
+
+781
+00:12:19,680 --> 00:12:21,509
+
+>> Done. I've added a research block to
+
+782
+00:12:21,509 --> 00:12:21,519
+>> Done. I've added a research block to
+ 
+
+783
+00:12:21,519 --> 00:12:23,269
+>> Done. I've added a research block to
+your calendar for tomorrow from 3 p.m.
+
+784
+00:12:23,269 --> 00:12:23,279
+your calendar for tomorrow from 3 p.m.
+ 
+
+785
+00:12:23,279 --> 00:12:25,030
+your calendar for tomorrow from 3 p.m.
+to 5:00 p.m. Anything else?
+
+786
+00:12:25,030 --> 00:12:25,040
+to 5:00 p.m. Anything else?
+ 
+
+787
+00:12:25,040 --> 00:12:26,550
+to 5:00 p.m. Anything else?
+>> Awesome. Yeah. So, for that research
+
+788
+00:12:26,550 --> 00:12:26,560
+>> Awesome. Yeah. So, for that research
+ 
+
+789
+00:12:26,560 --> 00:12:28,389
+>> Awesome. Yeah. So, for that research
+block, if you could go into my ClickUp
+
+790
+00:12:28,389 --> 00:12:28,399
+block, if you could go into my ClickUp
+ 
+
+791
+00:12:28,399 --> 00:12:30,550
+block, if you could go into my ClickUp
+and look up my research queue and see
+
+792
+00:12:30,550 --> 00:12:30,560
+and look up my research queue and see
+ 
+
+793
+00:12:30,560 --> 00:12:32,310
+and look up my research queue and see
+anything that I currently have to do,
+
+794
+00:12:32,310 --> 00:12:32,320
+anything that I currently have to do,
+ 
+
+795
+00:12:32,320 --> 00:12:34,150
+anything that I currently have to do,
+and also if you could go ahead and add
+
+796
+00:12:34,150 --> 00:12:34,160
+and also if you could go ahead and add
+ 
+
+797
+00:12:34,160 --> 00:12:36,790
+and also if you could go ahead and add
+another to-do in here called uh
+
+798
+00:12:36,790 --> 00:12:36,800
+another to-do in here called uh
+ 
+
+799
+00:12:36,800 --> 00:12:40,310
+another to-do in here called uh
+Microsoft.
+
+800
+00:12:40,310 --> 00:12:40,320
+
+ 
+
+801
+00:12:40,320 --> 00:12:42,629
+
+>> I can definitely do that. First, I need
+
+802
+00:12:42,629 --> 00:12:42,639
+>> I can definitely do that. First, I need
+ 
+
+803
+00:12:42,639 --> 00:12:44,230
+>> I can definitely do that. First, I need
+to navigate to your lists. Which
+
+804
+00:12:44,230 --> 00:12:44,240
+to navigate to your lists. Which
+ 
+
+805
+00:12:44,240 --> 00:12:46,310
+to navigate to your lists. Which
+workspace should I check? Up at AAI or
+
+806
+00:12:46,310 --> 00:12:46,320
+workspace should I check? Up at AAI or
+ 
+
+807
+00:12:46,320 --> 00:12:47,829
+workspace should I check? Up at AAI or
+rootrise media?
+
+808
+00:12:47,829 --> 00:12:47,839
+rootrise media?
+ 
+
+809
+00:12:47,839 --> 00:12:50,389
+rootrise media?
+>> Yeah, the Upai space. And it will be in
+
+810
+00:12:50,389 --> 00:12:50,399
+>> Yeah, the Upai space. And it will be in
+ 
+
+811
+00:12:50,399 --> 00:12:52,470
+>> Yeah, the Upai space. And it will be in
+um an upai consulting space. You're
+
+812
+00:12:52,470 --> 00:12:52,480
+um an upai consulting space. You're
+ 
+
+813
+00:12:52,480 --> 00:12:56,629
+um an upai consulting space. You're
+looking for research queue.
+
+814
+00:12:56,629 --> 00:12:56,639
+
+ 
+
+815
+00:12:56,639 --> 00:12:59,350
+
+All right, I've got it. In your up at AI
+
+816
+00:12:59,350 --> 00:12:59,360
+All right, I've got it. In your up at AI
+ 
+
+817
+00:12:59,360 --> 00:13:01,509
+All right, I've got it. In your up at AI
+consulting space, I found the research Q
+
+818
+00:13:01,509 --> 00:13:01,519
+consulting space, I found the research Q
+ 
+
+819
+00:13:01,519 --> 00:13:03,670
+consulting space, I found the research Q
+list. Currently, you have one task in
+
+820
+00:13:03,670 --> 00:13:03,680
+list. Currently, you have one task in
+ 
+
+821
+00:13:03,680 --> 00:13:05,750
+list. Currently, you have one task in
+there called Chipotle. I've also gone
+
+822
+00:13:05,750 --> 00:13:05,760
+there called Chipotle. I've also gone
+ 
+
+823
+00:13:05,760 --> 00:13:07,269
+there called Chipotle. I've also gone
+ahead and added a new task named
+
+824
+00:13:07,269 --> 00:13:07,279
+ahead and added a new task named
+ 
+
+825
+00:13:07,279 --> 00:13:10,150
+ahead and added a new task named
+Microsoft to that list. Anything else?
+
+826
+00:13:10,150 --> 00:13:10,160
+Microsoft to that list. Anything else?
+ 
+
+827
+00:13:10,160 --> 00:13:11,829
+Microsoft to that list. Anything else?
+>> Okay, so I went ahead and stopped that
+
+828
+00:13:11,829 --> 00:13:11,839
+>> Okay, so I went ahead and stopped that
+ 
+
+829
+00:13:11,839 --> 00:13:13,670
+>> Okay, so I went ahead and stopped that
+and I just wanted to show you guys that
+
+830
+00:13:13,670 --> 00:13:13,680
+and I just wanted to show you guys that
+ 
+
+831
+00:13:13,680 --> 00:13:15,350
+and I just wanted to show you guys that
+that works, right? But what you will
+
+832
+00:13:15,350 --> 00:13:15,360
+that works, right? But what you will
+ 
+
+833
+00:13:15,360 --> 00:13:18,790
+that works, right? But what you will
+notice is that there was pauses while it
+
+834
+00:13:18,790 --> 00:13:18,800
+notice is that there was pauses while it
+ 
+
+835
+00:13:18,800 --> 00:13:20,629
+notice is that there was pauses while it
+was actually calling those functions and
+
+836
+00:13:20,629 --> 00:13:20,639
+was actually calling those functions and
+ 
+
+837
+00:13:20,639 --> 00:13:22,230
+was actually calling those functions and
+that is a current limitation of this
+
+838
+00:13:22,230 --> 00:13:22,240
+that is a current limitation of this
+ 
+
+839
+00:13:22,240 --> 00:13:23,990
+that is a current limitation of this
+model. A lot of times what you want to
+
+840
+00:13:23,990 --> 00:13:24,000
+model. A lot of times what you want to
+ 
+
+841
+00:13:24,000 --> 00:13:25,590
+model. A lot of times what you want to
+do with voice agents is you want to have
+
+842
+00:13:25,590 --> 00:13:25,600
+do with voice agents is you want to have
+ 
+
+843
+00:13:25,600 --> 00:13:27,750
+do with voice agents is you want to have
+them keep talking as they are calling a
+
+844
+00:13:27,750 --> 00:13:27,760
+them keep talking as they are calling a
+ 
+
+845
+00:13:27,760 --> 00:13:29,269
+them keep talking as they are calling a
+function because they call the function
+
+846
+00:13:29,269 --> 00:13:29,279
+function because they call the function
+ 
+
+847
+00:13:29,279 --> 00:13:30,550
+function because they call the function
+and they have to wait for the response,
+
+848
+00:13:30,550 --> 00:13:30,560
+and they have to wait for the response,
+ 
+
+849
+00:13:30,560 --> 00:13:32,310
+and they have to wait for the response,
+right? And you can usually prompt them
+
+850
+00:13:32,310 --> 00:13:32,320
+right? And you can usually prompt them
+ 
+
+851
+00:13:32,320 --> 00:13:34,310
+right? And you can usually prompt them
+and have them working out so that they
+
+852
+00:13:34,310 --> 00:13:34,320
+and have them working out so that they
+ 
+
+853
+00:13:34,320 --> 00:13:36,310
+and have them working out so that they
+talk so there's not awkward silences.
+
+854
+00:13:36,310 --> 00:13:36,320
+talk so there's not awkward silences.
+ 
+
+855
+00:13:36,320 --> 00:13:38,790
+talk so there's not awkward silences.
+But right now with this Gemini 3.1 flash
+
+856
+00:13:38,790 --> 00:13:38,800
+But right now with this Gemini 3.1 flash
+ 
+
+857
+00:13:38,800 --> 00:13:40,550
+But right now with this Gemini 3.1 flash
+live, it doesn't do that. And I think
+
+858
+00:13:40,550 --> 00:13:40,560
+live, it doesn't do that. And I think
+ 
+
+859
+00:13:40,560 --> 00:13:41,829
+live, it doesn't do that. And I think
+that's just a matter of time till
+
+860
+00:13:41,829 --> 00:13:41,839
+that's just a matter of time till
+ 
+
+861
+00:13:41,839 --> 00:13:44,069
+that's just a matter of time till
+obviously it it can. But it's it's
+
+862
+00:13:44,069 --> 00:13:44,079
+obviously it it can. But it's it's
+ 
+
+863
+00:13:44,079 --> 00:13:44,949
+obviously it it can. But it's it's
+basically like you've got your
+
+864
+00:13:44,949 --> 00:13:44,959
+basically like you've got your
+ 
+
+865
+00:13:44,959 --> 00:13:46,790
+basically like you've got your
+asynchronous or synchronous. So that is
+
+866
+00:13:46,790 --> 00:13:46,800
+asynchronous or synchronous. So that is
+ 
+
+867
+00:13:46,800 --> 00:13:48,150
+asynchronous or synchronous. So that is
+one thing that you will need to keep in
+
+868
+00:13:48,150 --> 00:13:48,160
+one thing that you will need to keep in
+ 
+
+869
+00:13:48,160 --> 00:13:50,870
+one thing that you will need to keep in
+mind right now with this model is that
+
+870
+00:13:50,870 --> 00:13:50,880
+mind right now with this model is that
+ 
+
+871
+00:13:50,880 --> 00:13:53,110
+mind right now with this model is that
+when you call a function, the agent will
+
+872
+00:13:53,110 --> 00:13:53,120
+when you call a function, the agent will
+ 
+
+873
+00:13:53,120 --> 00:13:54,389
+when you call a function, the agent will
+not be speaking. It's just going to stop
+
+874
+00:13:54,389 --> 00:13:54,399
+not be speaking. It's just going to stop
+ 
+
+875
+00:13:54,399 --> 00:13:55,670
+not be speaking. It's just going to stop
+and it's going to wait till it gets a
+
+876
+00:13:55,670 --> 00:13:55,680
+and it's going to wait till it gets a
+ 
+
+877
+00:13:55,680 --> 00:13:57,670
+and it's going to wait till it gets a
+response. And also keep in mind that
+
+878
+00:13:57,670 --> 00:13:57,680
+response. And also keep in mind that
+ 
+
+879
+00:13:57,680 --> 00:13:59,590
+response. And also keep in mind that
+both of these sites and integrations
+
+880
+00:13:59,590 --> 00:13:59,600
+both of these sites and integrations
+ 
+
+881
+00:13:59,600 --> 00:14:01,910
+both of these sites and integrations
+were made in under 30 minutes with me
+
+882
+00:14:01,910 --> 00:14:01,920
+were made in under 30 minutes with me
+ 
+
+883
+00:14:01,920 --> 00:14:03,269
+were made in under 30 minutes with me
+just spinning up two different cloud
+
+884
+00:14:03,269 --> 00:14:03,279
+just spinning up two different cloud
+ 
+
+885
+00:14:03,279 --> 00:14:05,110
+just spinning up two different cloud
+sessions and saying, "Hey, in this one I
+
+886
+00:14:05,110 --> 00:14:05,120
+sessions and saying, "Hey, in this one I
+ 
+
+887
+00:14:05,120 --> 00:14:06,870
+sessions and saying, "Hey, in this one I
+want you to build me, you know, this use
+
+888
+00:14:06,870 --> 00:14:06,880
+want you to build me, you know, this use
+ 
+
+889
+00:14:06,880 --> 00:14:08,310
+want you to build me, you know, this use
+case and in this one I want you to build
+
+890
+00:14:08,310 --> 00:14:08,320
+case and in this one I want you to build
+ 
+
+891
+00:14:08,320 --> 00:14:10,710
+case and in this one I want you to build
+me this use case. Here are my API keys.
+
+892
+00:14:10,710 --> 00:14:10,720
+me this use case. Here are my API keys.
+ 
+
+893
+00:14:10,720 --> 00:14:12,470
+me this use case. Here are my API keys.
+Have at it." The point is once you
+
+894
+00:14:12,470 --> 00:14:12,480
+Have at it." The point is once you
+ 
+
+895
+00:14:12,480 --> 00:14:13,590
+Have at it." The point is once you
+actually sit down and you give it a
+
+896
+00:14:13,590 --> 00:14:13,600
+actually sit down and you give it a
+ 
+
+897
+00:14:13,600 --> 00:14:14,790
+actually sit down and you give it a
+structured plan and you iterate and
+
+898
+00:14:14,790 --> 00:14:14,800
+structured plan and you iterate and
+ 
+
+899
+00:14:14,800 --> 00:14:17,590
+structured plan and you iterate and
+iterate with cloud code, you can get way
+
+900
+00:14:17,590 --> 00:14:17,600
+iterate with cloud code, you can get way
+ 
+
+901
+00:14:17,600 --> 00:14:19,670
+iterate with cloud code, you can get way
+better outputs than this. So this is the
+
+902
+00:14:19,670 --> 00:14:19,680
+better outputs than this. So this is the
+ 
+
+903
+00:14:19,680 --> 00:14:21,910
+better outputs than this. So this is the
+project that I created just to spin up a
+
+904
+00:14:21,910 --> 00:14:21,920
+project that I created just to spin up a
+ 
+
+905
+00:14:21,920 --> 00:14:23,350
+project that I created just to spin up a
+few demos, right? And what I did
+
+906
+00:14:23,350 --> 00:14:23,360
+few demos, right? And what I did
+ 
+
+907
+00:14:23,360 --> 00:14:24,790
+few demos, right? And what I did
+basically is I opened up a fresh project
+
+908
+00:14:24,790 --> 00:14:24,800
+basically is I opened up a fresh project
+ 
+
+909
+00:14:24,800 --> 00:14:26,550
+basically is I opened up a fresh project
+of cloud code. I threw in the
+
+910
+00:14:26,550 --> 00:14:26,560
+of cloud code. I threw in the
+ 
+
+911
+00:14:26,560 --> 00:14:28,310
+of cloud code. I threw in the
+documentation like you know this API
+
+912
+00:14:28,310 --> 00:14:28,320
+documentation like you know this API
+ 
+
+913
+00:14:28,320 --> 00:14:30,230
+documentation like you know this API
+documentation, this one, the function
+
+914
+00:14:30,230 --> 00:14:30,240
+documentation, this one, the function
+ 
+
+915
+00:14:30,240 --> 00:14:31,829
+documentation, this one, the function
+calling. I gave it all this this
+
+916
+00:14:31,829 --> 00:14:31,839
+calling. I gave it all this this
+ 
+
+917
+00:14:31,839 --> 00:14:33,590
+calling. I gave it all this this
+information and then I just said hey I
+
+918
+00:14:33,590 --> 00:14:33,600
+information and then I just said hey I
+ 
+
+919
+00:14:33,600 --> 00:14:35,590
+information and then I just said hey I
+want you to analyze all this. And what
+
+920
+00:14:35,590 --> 00:14:35,600
+want you to analyze all this. And what
+ 
+
+921
+00:14:35,600 --> 00:14:37,110
+want you to analyze all this. And what
+you even could do is say hey create a
+
+922
+00:14:37,110 --> 00:14:37,120
+you even could do is say hey create a
+ 
+
+923
+00:14:37,120 --> 00:14:39,750
+you even could do is say hey create a
+resource guide in this folder called you
+
+924
+00:14:39,750 --> 00:14:39,760
+resource guide in this folder called you
+ 
+
+925
+00:14:39,760 --> 00:14:41,509
+resource guide in this folder called you
+know Gemini
+
+926
+00:14:41,509 --> 00:14:41,519
+know Gemini
+ 
+
+927
+00:14:41,519 --> 00:14:44,310
+know Gemini
+flash MD and just store all of this
+
+928
+00:14:44,310 --> 00:14:44,320
+flash MD and just store all of this
+ 
+
+929
+00:14:44,320 --> 00:14:45,670
+flash MD and just store all of this
+information so later you can reference
+
+930
+00:14:45,670 --> 00:14:45,680
+information so later you can reference
+ 
+
+931
+00:14:45,680 --> 00:14:47,430
+information so later you can reference
+it. And then from there I just started
+
+932
+00:14:47,430 --> 00:14:47,440
+it. And then from there I just started
+ 
+
+933
+00:14:47,440 --> 00:14:49,269
+it. And then from there I just started
+asking it questions. How does this work?
+
+934
+00:14:49,269 --> 00:14:49,279
+asking it questions. How does this work?
+ 
+
+935
+00:14:49,279 --> 00:14:50,870
+asking it questions. How does this work?
+What can you do? What should we do as a
+
+936
+00:14:50,870 --> 00:14:50,880
+What can you do? What should we do as a
+ 
+
+937
+00:14:50,880 --> 00:14:52,310
+What can you do? What should we do as a
+demo? And then it was able to help me
+
+938
+00:14:52,310 --> 00:14:52,320
+demo? And then it was able to help me
+ 
+
+939
+00:14:52,320 --> 00:14:53,670
+demo? And then it was able to help me
+come up with these two use cases that
+
+940
+00:14:53,670 --> 00:14:53,680
+come up with these two use cases that
+ 
+
+941
+00:14:53,680 --> 00:14:55,189
+come up with these two use cases that
+are kind of different. And you can see
+
+942
+00:14:55,189 --> 00:14:55,199
+are kind of different. And you can see
+ 
+
+943
+00:14:55,199 --> 00:14:56,870
+are kind of different. And you can see
+that everything has been organized into
+
+944
+00:14:56,870 --> 00:14:56,880
+that everything has been organized into
+ 
+
+945
+00:14:56,880 --> 00:14:58,310
+that everything has been organized into
+this project. So what I'm going to do is
+
+946
+00:14:58,310 --> 00:14:58,320
+this project. So what I'm going to do is
+ 
+
+947
+00:14:58,320 --> 00:15:00,230
+this project. So what I'm going to do is
+drop this exact folder, this whole
+
+948
+00:15:00,230 --> 00:15:00,240
+drop this exact folder, this whole
+ 
+
+949
+00:15:00,240 --> 00:15:01,910
+drop this exact folder, this whole
+project into my Free School community.
+
+950
+00:15:01,910 --> 00:15:01,920
+project into my Free School community.
+ 
+
+951
+00:15:01,920 --> 00:15:02,870
+project into my Free School community.
+The link for that is down in the
+
+952
+00:15:02,870 --> 00:15:02,880
+The link for that is down in the
+ 
+
+953
+00:15:02,880 --> 00:15:04,389
+The link for that is down in the
+description. It's completely free. So
+
+954
+00:15:04,389 --> 00:15:04,399
+description. It's completely free. So
+ 
+
+955
+00:15:04,399 --> 00:15:05,829
+description. It's completely free. So
+you guys can grab this and just kind of
+
+956
+00:15:05,829 --> 00:15:05,839
+you guys can grab this and just kind of
+ 
+
+957
+00:15:05,839 --> 00:15:07,509
+you guys can grab this and just kind of
+analyze it and ask questions about it.
+
+958
+00:15:07,509 --> 00:15:07,519
+analyze it and ask questions about it.
+ 
+
+959
+00:15:07,519 --> 00:15:09,269
+analyze it and ask questions about it.
+Now, along with that, I'll also attach a
+
+960
+00:15:09,269 --> 00:15:09,279
+Now, along with that, I'll also attach a
+ 
+
+961
+00:15:09,279 --> 00:15:10,389
+Now, along with that, I'll also attach a
+resource guide that basically says,
+
+962
+00:15:10,389 --> 00:15:10,399
+resource guide that basically says,
+ 
+
+963
+00:15:10,399 --> 00:15:12,069
+resource guide that basically says,
+"Hey, here's what the project does.
+
+964
+00:15:12,069 --> 00:15:12,079
+"Hey, here's what the project does.
+ 
+
+965
+00:15:12,079 --> 00:15:13,189
+"Hey, here's what the project does.
+Here's all the things you need to know
+
+966
+00:15:13,189 --> 00:15:13,199
+Here's all the things you need to know
+ 
+
+967
+00:15:13,199 --> 00:15:14,230
+Here's all the things you need to know
+about it. Here's where to find the
+
+968
+00:15:14,230 --> 00:15:14,240
+about it. Here's where to find the
+ 
+
+969
+00:15:14,240 --> 00:15:15,990
+about it. Here's where to find the
+things and stuff like that. Really, the
+
+970
+00:15:15,990 --> 00:15:16,000
+things and stuff like that. Really, the
+ 
+
+971
+00:15:16,000 --> 00:15:17,430
+things and stuff like that. Really, the
+best way to learn is just to get your
+
+972
+00:15:17,430 --> 00:15:17,440
+best way to learn is just to get your
+ 
+
+973
+00:15:17,440 --> 00:15:18,870
+best way to learn is just to get your
+hands dirty and to ask a ton of
+
+974
+00:15:18,870 --> 00:15:18,880
+hands dirty and to ask a ton of
+ 
+
+975
+00:15:18,880 --> 00:15:20,230
+hands dirty and to ask a ton of
+questions. Now that we're in here
+
+976
+00:15:20,230 --> 00:15:20,240
+questions. Now that we're in here
+ 
+
+977
+00:15:20,240 --> 00:15:21,430
+questions. Now that we're in here
+though, there are a few things that I
+
+978
+00:15:21,430 --> 00:15:21,440
+though, there are a few things that I
+ 
+
+979
+00:15:21,440 --> 00:15:23,030
+though, there are a few things that I
+wanted to tell you guys about. The first
+
+980
+00:15:23,030 --> 00:15:23,040
+wanted to tell you guys about. The first
+ 
+
+981
+00:15:23,040 --> 00:15:25,509
+wanted to tell you guys about. The first
+one is kind of about the pricing. So,
+
+982
+00:15:25,509 --> 00:15:25,519
+one is kind of about the pricing. So,
+ 
+
+983
+00:15:25,519 --> 00:15:27,590
+one is kind of about the pricing. So,
+yes, it is free, but what you'll notice
+
+984
+00:15:27,590 --> 00:15:27,600
+yes, it is free, but what you'll notice
+ 
+
+985
+00:15:27,600 --> 00:15:29,269
+yes, it is free, but what you'll notice
+is that if we're in the studio, you can
+
+986
+00:15:29,269 --> 00:15:29,279
+is that if we're in the studio, you can
+ 
+
+987
+00:15:29,279 --> 00:15:31,110
+is that if we're in the studio, you can
+see that it says switch to a paid API
+
+988
+00:15:31,110 --> 00:15:31,120
+see that it says switch to a paid API
+ 
+
+989
+00:15:31,120 --> 00:15:33,030
+see that it says switch to a paid API
+key to unlock higher quota and more
+
+990
+00:15:33,030 --> 00:15:33,040
+key to unlock higher quota and more
+ 
+
+991
+00:15:33,040 --> 00:15:34,389
+key to unlock higher quota and more
+features." So, what does that actually
+
+992
+00:15:34,389 --> 00:15:34,399
+features." So, what does that actually
+ 
+
+993
+00:15:34,399 --> 00:15:35,910
+features." So, what does that actually
+mean? So, here's what that pricing could
+
+994
+00:15:35,910 --> 00:15:35,920
+mean? So, here's what that pricing could
+ 
+
+995
+00:15:35,920 --> 00:15:37,750
+mean? So, here's what that pricing could
+look like once you start paying. It's
+
+996
+00:15:37,750 --> 00:15:37,760
+look like once you start paying. It's
+ 
+
+997
+00:15:37,760 --> 00:15:39,189
+look like once you start paying. It's
+still really, really cheap, which is
+
+998
+00:15:39,189 --> 00:15:39,199
+still really, really cheap, which is
+ 
+
+999
+00:15:39,199 --> 00:15:41,030
+still really, really cheap, which is
+great. But what's the difference? So,
+
+1000
+00:15:41,030 --> 00:15:41,040
+great. But what's the difference? So,
+ 
+
+1001
+00:15:41,040 --> 00:15:42,470
+great. But what's the difference? So,
+obviously, it's free or it's paper
+
+1002
+00:15:42,470 --> 00:15:42,480
+obviously, it's free or it's paper
+ 
+
+1003
+00:15:42,480 --> 00:15:44,949
+obviously, it's free or it's paper
+token. But on the free tier, your data
+
+1004
+00:15:44,949 --> 00:15:44,959
+token. But on the free tier, your data
+ 
+
+1005
+00:15:44,959 --> 00:15:46,470
+token. But on the free tier, your data
+is used by Google to improve the
+
+1006
+00:15:46,470 --> 00:15:46,480
+is used by Google to improve the
+ 
+
+1007
+00:15:46,480 --> 00:15:48,069
+is used by Google to improve the
+products. On the paid tier, it's not.
+
+1008
+00:15:48,069 --> 00:15:48,079
+products. On the paid tier, it's not.
+ 
+
+1009
+00:15:48,079 --> 00:15:49,749
+products. On the paid tier, it's not.
+So, you're getting enterprisegrade
+
+1010
+00:15:49,749 --> 00:15:49,759
+So, you're getting enterprisegrade
+ 
+
+1011
+00:15:49,759 --> 00:15:51,670
+So, you're getting enterprisegrade
+privacy. Your rate limits on the free
+
+1012
+00:15:51,670 --> 00:15:51,680
+privacy. Your rate limits on the free
+ 
+
+1013
+00:15:51,680 --> 00:15:53,590
+privacy. Your rate limits on the free
+tier are much lower. Um, I think you can
+
+1014
+00:15:53,590 --> 00:15:53,600
+tier are much lower. Um, I think you can
+ 
+
+1015
+00:15:53,600 --> 00:15:54,949
+tier are much lower. Um, I think you can
+only have like three active sessions
+
+1016
+00:15:54,949 --> 00:15:54,959
+only have like three active sessions
+ 
+
+1017
+00:15:54,959 --> 00:15:56,470
+only have like three active sessions
+going or something like that. You get
+
+1018
+00:15:56,470 --> 00:15:56,480
+going or something like that. You get
+ 
+
+1019
+00:15:56,480 --> 00:15:59,110
+going or something like that. You get
+obviously way more flexibility here if
+
+1020
+00:15:59,110 --> 00:15:59,120
+obviously way more flexibility here if
+ 
+
+1021
+00:15:59,120 --> 00:16:00,790
+obviously way more flexibility here if
+you are paying. You also get things like
+
+1022
+00:16:00,790 --> 00:16:00,800
+you are paying. You also get things like
+ 
+
+1023
+00:16:00,800 --> 00:16:03,350
+you are paying. You also get things like
+context caching and batch API. So, what
+
+1024
+00:16:03,350 --> 00:16:03,360
+context caching and batch API. So, what
+ 
+
+1025
+00:16:03,360 --> 00:16:04,790
+context caching and batch API. So, what
+does all that pricing and token stuff
+
+1026
+00:16:04,790 --> 00:16:04,800
+does all that pricing and token stuff
+ 
+
+1027
+00:16:04,800 --> 00:16:07,189
+does all that pricing and token stuff
+mean practically? So, for a 10-minute
+
+1028
+00:16:07,189 --> 00:16:07,199
+mean practically? So, for a 10-minute
+ 
+
+1029
+00:16:07,199 --> 00:16:08,870
+mean practically? So, for a 10-minute
+call, you're roughly going to be paying
+
+1030
+00:16:08,870 --> 00:16:08,880
+call, you're roughly going to be paying
+ 
+
+1031
+00:16:08,880 --> 00:16:10,629
+call, you're roughly going to be paying
+maybe about 14 cents. You have a
+
+1032
+00:16:10,629 --> 00:16:10,639
+maybe about 14 cents. You have a
+ 
+
+1033
+00:16:10,639 --> 00:16:11,990
+maybe about 14 cents. You have a
+different charge for your input tokens
+
+1034
+00:16:11,990 --> 00:16:12,000
+different charge for your input tokens
+ 
+
+1035
+00:16:12,000 --> 00:16:13,670
+different charge for your input tokens
+and a different charge for your output
+
+1036
+00:16:13,670 --> 00:16:13,680
+and a different charge for your output
+ 
+
+1037
+00:16:13,680 --> 00:16:15,189
+and a different charge for your output
+tokens. But, of course, if you're just
+
+1038
+00:16:15,189 --> 00:16:15,199
+tokens. But, of course, if you're just
+ 
+
+1039
+00:16:15,199 --> 00:16:16,069
+tokens. But, of course, if you're just
+playing around and you're testing
+
+1040
+00:16:16,069 --> 00:16:16,079
+playing around and you're testing
+ 
+
+1041
+00:16:16,079 --> 00:16:17,509
+playing around and you're testing
+things, definitely just stay on the free
+
+1042
+00:16:17,509 --> 00:16:17,519
+things, definitely just stay on the free
+ 
+
+1043
+00:16:17,519 --> 00:16:19,749
+things, definitely just stay on the free
+tier. Now, I will be honest, using a
+
+1044
+00:16:19,749 --> 00:16:19,759
+tier. Now, I will be honest, using a
+ 
+
+1045
+00:16:19,759 --> 00:16:21,590
+tier. Now, I will be honest, using a
+platform like 11 Labs or something else
+
+1046
+00:16:21,590 --> 00:16:21,600
+platform like 11 Labs or something else
+ 
+
+1047
+00:16:21,600 --> 00:16:23,670
+platform like 11 Labs or something else
+like that makes it so much easier to
+
+1048
+00:16:23,670 --> 00:16:23,680
+like that makes it so much easier to
+ 
+
+1049
+00:16:23,680 --> 00:16:25,189
+like that makes it so much easier to
+actually just embed a widget on a
+
+1050
+00:16:25,189 --> 00:16:25,199
+actually just embed a widget on a
+ 
+
+1051
+00:16:25,199 --> 00:16:27,670
+actually just embed a widget on a
+website because 11 Labs server basically
+
+1052
+00:16:27,670 --> 00:16:27,680
+website because 11 Labs server basically
+ 
+
+1053
+00:16:27,680 --> 00:16:29,670
+website because 11 Labs server basically
+manages all of that and just puts it
+
+1054
+00:16:29,670 --> 00:16:29,680
+manages all of that and just puts it
+ 
+
+1055
+00:16:29,680 --> 00:16:31,430
+manages all of that and just puts it
+onto your site. So, both of these two
+
+1056
+00:16:31,430 --> 00:16:31,440
+onto your site. So, both of these two
+ 
+
+1057
+00:16:31,440 --> 00:16:33,670
+onto your site. So, both of these two
+demos right here are local hosts and
+
+1058
+00:16:33,670 --> 00:16:33,680
+demos right here are local hosts and
+ 
+
+1059
+00:16:33,680 --> 00:16:35,030
+demos right here are local hosts and
+they're local hosts because it's really
+
+1060
+00:16:35,030 --> 00:16:35,040
+they're local hosts because it's really
+ 
+
+1061
+00:16:35,040 --> 00:16:37,269
+they're local hosts because it's really
+easy for me to then just connect the
+
+1062
+00:16:37,269 --> 00:16:37,279
+easy for me to then just connect the
+ 
+
+1063
+00:16:37,279 --> 00:16:39,990
+easy for me to then just connect the
+websocket with Gemini to my machine and
+
+1064
+00:16:39,990 --> 00:16:40,000
+websocket with Gemini to my machine and
+ 
+
+1065
+00:16:40,000 --> 00:16:41,509
+websocket with Gemini to my machine and
+it all talks to each other really nice
+
+1066
+00:16:41,509 --> 00:16:41,519
+it all talks to each other really nice
+ 
+
+1067
+00:16:41,519 --> 00:16:43,430
+it all talks to each other really nice
+and it works. So, if I wanted to then
+
+1068
+00:16:43,430 --> 00:16:43,440
+and it works. So, if I wanted to then
+ 
+
+1069
+00:16:43,440 --> 00:16:46,150
+and it works. So, if I wanted to then
+push this website to versel or you know
+
+1070
+00:16:46,150 --> 00:16:46,160
+push this website to versel or you know
+ 
+
+1071
+00:16:46,160 --> 00:16:47,910
+push this website to versel or you know
+somewhere live or if I already have a
+
+1072
+00:16:47,910 --> 00:16:47,920
+somewhere live or if I already have a
+ 
+
+1073
+00:16:47,920 --> 00:16:49,189
+somewhere live or if I already have a
+website that is live and I wanted to
+
+1074
+00:16:49,189 --> 00:16:49,199
+website that is live and I wanted to
+ 
+
+1075
+00:16:49,199 --> 00:16:50,790
+website that is live and I wanted to
+push you know this little widget onto
+
+1076
+00:16:50,790 --> 00:16:50,800
+push you know this little widget onto
+ 
+
+1077
+00:16:50,800 --> 00:16:53,590
+push you know this little widget onto
+that site, it's not just super super
+
+1078
+00:16:53,590 --> 00:16:53,600
+that site, it's not just super super
+ 
+
+1079
+00:16:53,600 --> 00:16:54,870
+that site, it's not just super super
+simple the same way that it would be
+
+1080
+00:16:54,870 --> 00:16:54,880
+simple the same way that it would be
+ 
+
+1081
+00:16:54,880 --> 00:16:56,710
+simple the same way that it would be
+with something like 11 Labs. It's still
+
+1082
+00:16:56,710 --> 00:16:56,720
+with something like 11 Labs. It's still
+ 
+
+1083
+00:16:56,720 --> 00:16:58,389
+with something like 11 Labs. It's still
+doable and cloud code will definitely be
+
+1084
+00:16:58,389 --> 00:16:58,399
+doable and cloud code will definitely be
+ 
+
+1085
+00:16:58,399 --> 00:16:59,990
+doable and cloud code will definitely be
+able to get you there if you give it the
+
+1086
+00:16:59,990 --> 00:17:00,000
+able to get you there if you give it the
+ 
+
+1087
+00:17:00,000 --> 00:17:01,990
+able to get you there if you give it the
+right planning information and you know
+
+1088
+00:17:01,990 --> 00:17:02,000
+right planning information and you know
+ 
+
+1089
+00:17:02,000 --> 00:17:03,749
+right planning information and you know
+you give it the right documentation. But
+
+1090
+00:17:03,749 --> 00:17:03,759
+you give it the right documentation. But
+ 
+
+1091
+00:17:03,759 --> 00:17:05,669
+you give it the right documentation. But
+I will just say it's not as simple. It's
+
+1092
+00:17:05,669 --> 00:17:05,679
+I will just say it's not as simple. It's
+ 
+
+1093
+00:17:05,679 --> 00:17:07,429
+I will just say it's not as simple. It's
+not one click of a button the same way
+
+1094
+00:17:07,429 --> 00:17:07,439
+not one click of a button the same way
+ 
+
+1095
+00:17:07,439 --> 00:17:09,270
+not one click of a button the same way
+that 11 Labs is. So that is what I
+
+1096
+00:17:09,270 --> 00:17:09,280
+that 11 Labs is. So that is what I
+ 
+
+1097
+00:17:09,280 --> 00:17:10,789
+that 11 Labs is. So that is what I
+wanted to end off this video talking
+
+1098
+00:17:10,789 --> 00:17:10,799
+wanted to end off this video talking
+ 
+
+1099
+00:17:10,799 --> 00:17:12,150
+wanted to end off this video talking
+about. So like we just talked about
+
+1100
+00:17:12,150 --> 00:17:12,160
+about. So like we just talked about
+ 
+
+1101
+00:17:12,160 --> 00:17:14,309
+about. So like we just talked about
+11labs basically handles everything.
+
+1102
+00:17:14,309 --> 00:17:14,319
+11labs basically handles everything.
+ 
+
+1103
+00:17:14,319 --> 00:17:15,909
+11labs basically handles everything.
+They host everything and it makes that
+
+1104
+00:17:15,909 --> 00:17:15,919
+They host everything and it makes that
+ 
+
+1105
+00:17:15,919 --> 00:17:17,829
+They host everything and it makes that
+persistent websocket connection easier.
+
+1106
+00:17:17,829 --> 00:17:17,839
+persistent websocket connection easier.
+ 
+
+1107
+00:17:17,839 --> 00:17:19,189
+persistent websocket connection easier.
+So you could basically just embed it
+
+1108
+00:17:19,189 --> 00:17:19,199
+So you could basically just embed it
+ 
+
+1109
+00:17:19,199 --> 00:17:21,909
+So you could basically just embed it
+anywhere. But with Gemini Live, it
+
+1110
+00:17:21,909 --> 00:17:21,919
+anywhere. But with Gemini Live, it
+ 
+
+1111
+00:17:21,919 --> 00:17:24,230
+anywhere. But with Gemini Live, it
+requires a persistent server process.
+
+1112
+00:17:24,230 --> 00:17:24,240
+requires a persistent server process.
+ 
+
+1113
+00:17:24,240 --> 00:17:25,669
+requires a persistent server process.
+And this isn't stuff I understood,
+
+1114
+00:17:25,669 --> 00:17:25,679
+And this isn't stuff I understood,
+ 
+
+1115
+00:17:25,679 --> 00:17:27,350
+And this isn't stuff I understood,
+right? this is stuff that I had at cloud
+
+1116
+00:17:27,350 --> 00:17:27,360
+right? this is stuff that I had at cloud
+ 
+
+1117
+00:17:27,360 --> 00:17:28,710
+right? this is stuff that I had at cloud
+code research for me based on all the
+
+1118
+00:17:28,710 --> 00:17:28,720
+code research for me based on all the
+ 
+
+1119
+00:17:28,720 --> 00:17:30,470
+code research for me based on all the
+documentation and figuring out how it
+
+1120
+00:17:30,470 --> 00:17:30,480
+documentation and figuring out how it
+ 
+
+1121
+00:17:30,480 --> 00:17:32,549
+documentation and figuring out how it
+works. So that's really the mindset
+
+1122
+00:17:32,549 --> 00:17:32,559
+works. So that's really the mindset
+ 
+
+1123
+00:17:32,559 --> 00:17:34,230
+works. So that's really the mindset
+shift here is a lot of things you're not
+
+1124
+00:17:34,230 --> 00:17:34,240
+shift here is a lot of things you're not
+ 
+
+1125
+00:17:34,240 --> 00:17:35,669
+shift here is a lot of things you're not
+going to understand and you need to
+
+1126
+00:17:35,669 --> 00:17:35,679
+going to understand and you need to
+ 
+
+1127
+00:17:35,679 --> 00:17:37,190
+going to understand and you need to
+understand them enough to understand how
+
+1128
+00:17:37,190 --> 00:17:37,200
+understand them enough to understand how
+ 
+
+1129
+00:17:37,200 --> 00:17:38,470
+understand them enough to understand how
+do you communicate things and what do
+
+1130
+00:17:38,470 --> 00:17:38,480
+do you communicate things and what do
+ 
+
+1131
+00:17:38,480 --> 00:17:39,590
+do you communicate things and what do
+you need to look into and how do you
+
+1132
+00:17:39,590 --> 00:17:39,600
+you need to look into and how do you
+ 
+
+1133
+00:17:39,600 --> 00:17:41,750
+you need to look into and how do you
+make things safe but when I'm teaching
+
+1134
+00:17:41,750 --> 00:17:41,760
+make things safe but when I'm teaching
+ 
+
+1135
+00:17:41,760 --> 00:17:44,070
+make things safe but when I'm teaching
+myself things I just have claude code or
+
+1136
+00:17:44,070 --> 00:17:44,080
+myself things I just have claude code or
+ 
+
+1137
+00:17:44,080 --> 00:17:46,549
+myself things I just have claude code or
+perplexity or some AI research it I
+
+1138
+00:17:46,549 --> 00:17:46,559
+perplexity or some AI research it I
+ 
+
+1139
+00:17:46,559 --> 00:17:47,669
+perplexity or some AI research it I
+prompt them in a way to make sure that
+
+1140
+00:17:47,669 --> 00:17:47,679
+prompt them in a way to make sure that
+ 
+
+1141
+00:17:47,679 --> 00:17:49,590
+prompt them in a way to make sure that
+it's not hallucinating I always you know
+
+1142
+00:17:49,590 --> 00:17:49,600
+it's not hallucinating I always you know
+ 
+
+1143
+00:17:49,600 --> 00:17:51,669
+it's not hallucinating I always you know
+am factchecking things as well but you
+
+1144
+00:17:51,669 --> 00:17:51,679
+am factchecking things as well but you
+ 
+
+1145
+00:17:51,679 --> 00:17:53,190
+am factchecking things as well but you
+just adopt this mindset of being
+
+1146
+00:17:53,190 --> 00:17:53,200
+just adopt this mindset of being
+ 
+
+1147
+00:17:53,200 --> 00:17:55,110
+just adopt this mindset of being
+genuinely curious and that's how you can
+
+1148
+00:17:55,110 --> 00:17:55,120
+genuinely curious and that's how you can
+ 
+
+1149
+00:17:55,120 --> 00:17:56,549
+genuinely curious and that's how you can
+push this stuff a lot farther so
+
+1150
+00:17:56,549 --> 00:17:56,559
+push this stuff a lot farther so
+ 
+
+1151
+00:17:56,559 --> 00:17:57,510
+push this stuff a lot farther so
+basically the point that I'm trying to
+
+1152
+00:17:57,510 --> 00:17:57,520
+basically the point that I'm trying to
+ 
+
+1153
+00:17:57,520 --> 00:18:00,310
+basically the point that I'm trying to
+communicate here is Gemini's 3.1 flash
+
+1154
+00:18:00,310 --> 00:18:00,320
+communicate here is Gemini's 3.1 flash
+ 
+
+1155
+00:18:00,320 --> 00:18:01,830
+communicate here is Gemini's 3.1 flash
+model is awesome And if you come into
+
+1156
+00:18:01,830 --> 00:18:01,840
+model is awesome And if you come into
+ 
+
+1157
+00:18:01,840 --> 00:18:03,669
+model is awesome And if you come into
+the playground in the studio, you can do
+
+1158
+00:18:03,669 --> 00:18:03,679
+the playground in the studio, you can do
+ 
+
+1159
+00:18:03,679 --> 00:18:05,909
+the playground in the studio, you can do
+a lot of cool stuff here with it. If you
+
+1160
+00:18:05,909 --> 00:18:05,919
+a lot of cool stuff here with it. If you
+ 
+
+1161
+00:18:05,919 --> 00:18:07,029
+a lot of cool stuff here with it. If you
+want to start to think about how you can
+
+1162
+00:18:07,029 --> 00:18:07,039
+want to start to think about how you can
+ 
+
+1163
+00:18:07,039 --> 00:18:09,110
+want to start to think about how you can
+embed it somewhere else or, you know,
+
+1164
+00:18:09,110 --> 00:18:09,120
+embed it somewhere else or, you know,
+ 
+
+1165
+00:18:09,120 --> 00:18:10,710
+embed it somewhere else or, you know,
+customize your own tools and stuff,
+
+1166
+00:18:10,710 --> 00:18:10,720
+customize your own tools and stuff,
+ 
+
+1167
+00:18:10,720 --> 00:18:12,549
+customize your own tools and stuff,
+cloud code helps you get there way
+
+1168
+00:18:12,549 --> 00:18:12,559
+cloud code helps you get there way
+ 
+
+1169
+00:18:12,559 --> 00:18:14,070
+cloud code helps you get there way
+faster, way easier with natural
+
+1170
+00:18:14,070 --> 00:18:14,080
+faster, way easier with natural
+ 
+
+1171
+00:18:14,080 --> 00:18:15,750
+faster, way easier with natural
+language. And then finally, if you want
+
+1172
+00:18:15,750 --> 00:18:15,760
+language. And then finally, if you want
+ 
+
+1173
+00:18:15,760 --> 00:18:17,190
+language. And then finally, if you want
+to push this all onto like a live
+
+1174
+00:18:17,190 --> 00:18:17,200
+to push this all onto like a live
+ 
+
+1175
+00:18:17,200 --> 00:18:18,549
+to push this all onto like a live
+production phone number or a live
+
+1176
+00:18:18,549 --> 00:18:18,559
+production phone number or a live
+ 
+
+1177
+00:18:18,559 --> 00:18:20,470
+production phone number or a live
+production website, cloud code once
+
+1178
+00:18:20,470 --> 00:18:20,480
+production website, cloud code once
+ 
+
+1179
+00:18:20,480 --> 00:18:21,909
+production website, cloud code once
+again will get you there, but you do
+
+1180
+00:18:21,909 --> 00:18:21,919
+again will get you there, but you do
+ 
+
+1181
+00:18:21,919 --> 00:18:23,110
+again will get you there, but you do
+have to go back and forth a little bit
+
+1182
+00:18:23,110 --> 00:18:23,120
+have to go back and forth a little bit
+ 
+
+1183
+00:18:23,120 --> 00:18:24,789
+have to go back and forth a little bit
+more and you have to be thinking about
+
+1184
+00:18:24,789 --> 00:18:24,799
+more and you have to be thinking about
+ 
+
+1185
+00:18:24,799 --> 00:18:26,390
+more and you have to be thinking about
+how you actually transfer over things
+
+1186
+00:18:26,390 --> 00:18:26,400
+how you actually transfer over things
+ 
+
+1187
+00:18:26,400 --> 00:18:29,190
+how you actually transfer over things
+like your keys and your connections and
+
+1188
+00:18:29,190 --> 00:18:29,200
+like your keys and your connections and
+ 
+
+1189
+00:18:29,200 --> 00:18:30,789
+like your keys and your connections and
+a few things like that. But anyways,
+
+1190
+00:18:30,789 --> 00:18:30,799
+a few things like that. But anyways,
+ 
+
+1191
+00:18:30,799 --> 00:18:31,909
+a few things like that. But anyways,
+that is going to do it for today's
+
+1192
+00:18:31,909 --> 00:18:31,919
+that is going to do it for today's
+ 
+
+1193
+00:18:31,919 --> 00:18:33,190
+that is going to do it for today's
+video. So, if you guys learned something
+
+1194
+00:18:33,190 --> 00:18:33,200
+video. So, if you guys learned something
+ 
+
+1195
+00:18:33,200 --> 00:18:34,630
+video. So, if you guys learned something
+new or if you enjoyed, please give it a
+
+1196
+00:18:34,630 --> 00:18:34,640
+new or if you enjoyed, please give it a
+ 
+
+1197
+00:18:34,640 --> 00:18:36,230
+new or if you enjoyed, please give it a
+like. It helps me out a ton. And as
+
+1198
+00:18:36,230 --> 00:18:36,240
+like. It helps me out a ton. And as
+ 
+
+1199
+00:18:36,240 --> 00:18:37,590
+like. It helps me out a ton. And as
+always, I appreciate you guys making it
+
+1200
+00:18:37,590 --> 00:18:37,600
+always, I appreciate you guys making it
+ 
+
+1201
+00:18:37,600 --> 00:18:39,110
+always, I appreciate you guys making it
+to the end of the video. I'll see you on
+
+1202
+00:18:39,110 --> 00:18:39,120
+to the end of the video. I'll see you on
+ 
+
+1203
+00:18:39,120 --> 00:18:43,039
+to the end of the video. I'll see you on
+the next one. Thanks everyone.
+

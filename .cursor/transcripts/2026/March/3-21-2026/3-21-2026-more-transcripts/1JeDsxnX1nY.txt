@@ -1,0 +1,2951 @@
+Title: Claude Code's New Agent Teams Are Insane (Opus 4.6)
+Video ID: 1JeDsxnX1nY
+URL: https://www.youtube.com/watch?v=1JeDsxnX1nY
+
+Source: YouTube captions (language=en, generated=False)
+
+--- Timestamps ---
+[00:00] Well hello there
+in this video i'm
+[00:02] gonna go over
+about 30 tips or
+[00:04] so of
+[00:05] agent teams
+basically
+[00:06] everything you
+need to know to
+[00:07] just have a pretty
+good
+[00:08] understanding of
+what it is how
+[00:11] you should use it
+when you should
+[00:12] use it and some
+kind of good use
+[00:14] cases that i
+found using
+[00:16] agent teams
+[00:17] now there's a lot
+of different
+[00:18] orchestration like
+solutions out
+[00:20] there but i
+always like to use
+[00:22] kind of the ones
+that were
+[00:23] developed by the
+tooling itself and
+[00:25] i've been having
+a lot of fun using
+[00:27] agent teams for
+work and also
+[00:28] just for my
+personal stuff
+[00:30] and I thought it
+would be a really
+[00:31] good video.
+Now if you
+[00:32] haven't seen my
+50 tips of just
+[00:34] general cloud
+code video I
+[00:35] recommend you
+to watch that but
+[00:37] this particular
+video is about
+[00:39] agent teams.
+So without
+[00:41] further ado let's
+get right into it.
+[00:43] So what is agent
+teams and why
+[00:45] should you
+use it? So at a
+[00:46] high level an
+agent team is
+[00:49] essentially an
+orchestrator of
+[00:51] sub-agents but
+there's a big
+[00:52] difference
+between
+[00:54] sub-agents and
+[00:55] how agent teams
+work and we're
+[00:57] going to get
+into that. Now if
+[00:58] you don't know
+what a
+[00:59] sub-agent is
+[01:01] at a high level
+you can just
+[01:02] think of it as
+another cloud
+[01:04] code instance
+that your main
+[01:05] cloud code
+instance spawns.
+[01:07] Oftentimes when
+you create a
+[01:09] sub-agent it
+usually has this
+[01:11] like colored text
+that's how you
+[01:13] can tell at least in
+cloud code that
+[01:14] you are
+spawning
+[01:15] a sub-agent.
+So in this quick
+[01:17] example I
+essentially had a
+[01:19] task and I had
+my architecture
+[01:21] and back-end
+and front-end
+[01:23] sub-agents
+essentially be all
+[01:25] coordinated this
+is my agent team
+[01:27] now you can
+have any agent
+[01:29] team any
+composition of it
+[01:31] essentially it's
+like unlimited
+[01:33] right i have
+this one
+[01:34] here for like code
+writing and i
+[01:36] have like another
+one for like
+[01:38] writing which
+helps me gather
+[01:39] context it helps
+me edit it has
+[01:42] like a writer so
+there's a bunch
+[01:43] of different
+things you
+[01:44] can do
+[01:45] but the high level
+idea the main
+[01:47] concept is that
+you have
+[01:48] one leader
+[01:49] who is kind of
+the orchestrator
+[01:51] and you have
+many
+[01:52] different
+teammates.
+[01:53] And you could
+have any
+[01:54] teammates that
+you
+[01:54] could imagine.
+Now, before we
+[01:56] move on,
+one important
+[01:57] thing is that all of
+this kind of
+[01:59] operates around
+a set of tasks.
+[02:02] And then the
+concept is you
+[02:04] have the leader
+who has all
+[02:05] the tasks,
+and then they
+[02:07] spawn all of
+these
+[02:07] agent teams,
+and then the
+[02:09] agents do
+individual tasks.
+[02:11] Now, one of the
+most important
+[02:12] things about
+team agents,
+[02:14] unlike just
+using
+[02:15] sub-agents,
+is that the
+[02:17] teammates talk
+to each other.
+[02:18] Let me try
+to demonstrate.
+[02:19] Can you work on
+the next set
+[02:21] of tasks? Let's do
+like five tasks or
+[02:24] so at a time so I
+can get a clear
+[02:26] picture of all the
+different things
+[02:27] you guys
+are doing.
+[02:28] For this project,
+I kind of like
+[02:30] created a bunch
+of tasks to save
+[02:31] some time.
+But ideally, in a
+[02:33] real
+world instance,
+[02:34] you would
+probably have a
+[02:35] plan mode,
+and then you're
+[02:37] just planning up
+some tasks.
+[02:38] You're essentially
+working with the
+[02:39] main agent,
+the orchestrator,
+[02:41] to create a set of
+plan for your
+[02:42] different
+sub-agents. Now,
+[02:44] One key thing
+here that you
+[02:46] need to know is
+that because the
+[02:48] agents talk to
+each other,
+[02:49] unlike
+sub agents,
+[02:51] the context is
+somewhat
+[02:53] shared. It's not
+fully shared the
+[02:55] way they
+actually do.
+[02:56] The sharing of
+the context is
+[02:57] they just use like
+messages to
+[02:59] each other.
+So you're not
+[03:00] actually getting
+[03:02] all of the context
+from the main
+[03:04] like orchestrator.
+It's really just
+[03:06] the messages.
+[03:07] So that's like a
+high level tip that
+[03:09] you need to
+think of. If you
+[03:10] ever feel like
+your sub agents
+[03:12] in your agent
+team is not
+[03:13] having
+enough context,
+[03:15] then you need to
+ask the
+[03:16] main agent
+[03:17] to send the
+additional
+[03:18] context, or you
+need to add
+[03:20] more context
+into the tasks
+[03:22] that
+you're creating.
+[03:23] So as you can
+see here, like my
+[03:25] context gather,
+my editor,
+[03:27] my writer,
+they're all kind of
+[03:28] like talking to
+each other.
+[03:30] And that's kind of
+the point.
+[03:32] They're,
+they're sending
+[03:33] messages to
+each other,
+[03:34] not strictly
+sharing
+[03:35] the context,
+but just sharing
+[03:36] what is needed
+for each other.
+[03:38] So the next big
+tip is that once
+[03:40] you have a
+sub agents,
+[03:41] bunch of
+sub agents,
+[03:42] you can talk to
+any teammate.
+[03:44] Now this is kind
+of messy and
+[03:45] very crazy. Uh,
+this is the split
+[03:48] pain view.
+[03:49] So I'm going to
+show you guys
+[03:50] how to do that,
+but let me bring
+[03:52] this other view.
+So it's easier to
+[03:54] see it. Can you
+run the agent
+[03:55] team to do
+another pass
+[03:58] of editing?
+But yeah,
+[03:59] essentially at a
+high level,
+[04:00] you can talk to
+any of
+[04:01] the teammates.
+You can talk to
+[04:02] the orchestrator.
+[04:04] So essentially
+you could guide
+[04:06] any of the agents
+for like, if you
+[04:07] created another
+cloud instance,
+[04:09] it's basically
+the same.
+[04:11] Now, the most
+important
+[04:12] difference
+between a
+[04:13] sub-agent and
+the agent team is
+[04:15] that the context
+is
+[04:15] completely
+protected
+[04:17] between the
+sub-agent and
+[04:18] the main agent.
+The sub-agent
+[04:20] doesn't know
+anything that the
+[04:21] main agent
+knows unless the
+[04:22] main agent sent
+an initial like
+[04:25] seed of stuff. And
+[04:26] the sub-agent,
+its only job is to
+[04:28] like essentially
+do some side
+[04:30] effects or send
+information
+[04:31] back. Now the
+agent team,
+[04:33] as I mentioned,
+they talk to
+[04:34] each other,
+they coordinate
+[04:35] each other,
+and they share a
+[04:37] common task.
+And the
+[04:38] orchestrator can
+control any of
+[04:40] these
+sub-agents.
+[04:41] That's like kind of
+the
+[04:41] big difference.
+So for tip
+[04:43] number four,
+essentially, if you
+[04:46] need just some
+very
+[04:47] quick results,
+use a sub-agent.
+[04:48] If you
+need
+[04:49] collaboration,
+[04:50] use an
+agent team.
+[04:51] Tip number five
+is that compared
+[04:53] to just using a
+single instance of
+[04:54] cloud code,
+agent team just
+[04:55] costs more.
+You're basically
+[04:57] doing
+parallel work.
+[04:58] So if you're not
+used to or
+[04:59] already doing
+like multiple
+[05:01] cloud instances,
+then the usage
+[05:03] might outpace
+what you're used
+[05:05] to normally.
+So the question
+[05:06] obviously is,
+when should you
+[05:08] use this? Like,
+what is it really
+[05:10] good for? So in
+my opinion,
+[05:11] the best use
+case for
+[05:14] agent teams so
+far has really
+[05:16] been when.
+I needed to
+[05:17] accomplish
+something,
+[05:18] some tasks that
+needed like
+[05:21] various different
+tasks to
+[05:23] be completed
+[05:24] in
+different
+[05:24] domains. So a
+really obvious
+[05:26] example for full
+stack is this
+[05:28] example that
+I had, which
+[05:30] is essentially a
+front end, a back
+[05:32] end and
+an architecture.
+[05:34] And in this
+particular
+[05:35] example,
+even created like
+[05:37] multiple
+front ends,
+[05:38] and because it
+recognized that
+[05:40] they were in
+like different
+[05:41] places. So it
+really speeds up
+[05:43] the execution.
+Now,
+[05:45] another really
+good use case,
+[05:46] at least for me
+[05:47] is for writing. So I
+have a
+[05:49] context gatherer,
+I have an editor,
+[05:51] and I have
+a writer,
+[05:52] the editor
+[05:53] essentially
+scores. A bunch
+[05:54] of things. And so
+just as edits,
+[05:56] the
+context gatherer,
+[05:57] like essentially
+gathers context
+[06:00] from my like
+local
+[06:01] vector memory.
+And a lot of my
+[06:03] writing I do with
+this flow before
+[06:05] what I had to do
+was I had to kind
+[06:07] of sequentially
+do these things.
+[06:09] And it took a lot
+longer time.
+[06:11] But now with
+agent teams,
+[06:12] I'm able to kind
+of do all of this
+[06:14] all at once.
+And then they
+[06:15] actually help
+each other
+[06:16] because
+sometimes
+[06:17] rather than
+writing the
+[06:18] entire thing,
+[06:20] it might go grab
+a context for like
+[06:22] a part of
+my writing.
+[06:23] For example,
+so tip number
+[06:25] seven is you
+should probably
+[06:26] skip using agent
+teams for
+[06:28] sequential work.
+This is actually
+[06:29] kind of a
+good example,
+[06:31] right here front
+end one front
+[06:32] end to front end
+[06:34] three, like most
+of the time if
+[06:35] you're working
+on the same
+[06:37] like pages,
+you probably
+[06:39] don't want to
+[06:40] have multiple
+front ends
+[06:41] because then like
+they could kind
+[06:43] of conflict with
+each other.
+[06:44] Unless you use
+like work trees or
+[06:46] something
+like that.
+[06:47] All right, so let's
+get started on
+[06:48] like installing it
+or like setting
+[06:50] it up.
+Because
+[06:51] depending on
+when you
+[06:51] watch this,
+it may not be out
+[06:53] of
+the
+[06:53] experimental.
+So I think right
+[06:55] now it's still in
+this like
+[06:56] experimental
+stage. So you
+[06:58] have to make
+some changes in
+[06:59] your settings.
+Alright, so tip
+[07:01] number eight is
+to set this up,
+[07:03] you actually just
+have to
+[07:04] change this
+[07:06] clock or
+experimental
+[07:07] agents thing.
+Now,
+[07:08] another like side
+tip from here is if
+[07:10] you don't want to
+like learn how to
+[07:12] do this kind
+of stuff, I'll link
+[07:13] the docs or the
+clock code like
+[07:15] agent teams
+thing and you
+[07:16] just have to
+paste it in and
+[07:18] ask clock to set it
+up and then you
+[07:20] just like
+[07:21] restart
+clock code.
+[07:22] But essentially
+you need this.
+[07:24] And then restart
+clock code.
+[07:25] And tip number
+nine is you just
+[07:27] use natural
+language
+[07:28] to define
+[07:29] the team that
+you want.
+[07:31] So let's try to
+create like a perf
+[07:34] agent team.
+So I'll say
+[07:35] something like,
+I want you to
+[07:37] create a
+performance
+[07:39] agent team.
+One is
+[07:41] specializing in
+UI performance.
+[07:44] So maybe
+looking for jank.
+[07:47] And we'll do
+another one that
+[07:49] is specializing in
+[07:51] looking
+for errors,
+[07:53] specializing in
+just debugging
+[07:54] and deep diving
+into errors.
+[07:56] And another one
+that like is
+[07:58] looking for like
+pixel perfect
+[08:00] changes like
+UX expert, like a
+[08:02] quality expert,
+I don't really
+[08:03] know if this is
+going to work.
+[08:04] But the high level
+idea is that you
+[08:07] can create a
+team to
+[08:08] do anything.
+Now, if you wait
+[08:09] to the end of
+the video,
+[08:10] there is a section
+where I kind of
+[08:12] cover some use
+cases that I think
+[08:13] is pretty useful.
+[08:15] So wait for that.
+All right,
+[08:16] looks like it's
+created it,
+[08:18] they created a UI
+perf agent as a
+[08:20] teammate lead,
+it created a
+[08:22] debugger
+right here. Nice,
+[08:23] so yeah,
+it's creating a
+[08:25] bunch of teams.
+Okay, this is not
+[08:26] doing it justice
+[08:28] because I can't
+really show you
+[08:29] guys here,
+but you could tell
+[08:30] that what's
+going on, right?
+[08:32] But I actually
+have like a huge
+[08:34] screen and in my
+huge screen,
+[08:35] it looks
+really nice.
+[08:36] But for the rest
+of the demo,
+[08:38] I'll probably use
+the other view
+[08:40] just so it's easier
+to see. Now,
+[08:42] tip number 10 is
+that you can
+[08:43] actually specify
+[08:45] what model each
+teammate
+[08:47] should run. Now,
+this is like a
+[08:48] really good tip if
+you're really
+[08:50] cost sensitive,
+if you don't have
+[08:51] unlimited tokens,
+which I think
+[08:53] most
+people don't.
+[08:54] But for example,
+you can say
+[08:56] something like,
+for the
+[08:57] agent teams,
+make sure the
+[08:59] debugger runs
+on Opus 4.6,
+[09:02] the UI perf runs
+on Sonnet,
+[09:05] and then the UX
+quality runs
+[09:07] on Haiku.
+[09:08] This is still
+definitely an
+[09:10] experimental
+feature.
+[09:12] I definitely
+notice it,
+[09:13] especially using
+it in Tmux.
+[09:15] We're gonna
+cover that a
+[09:16] little bit.
+But yeah,
+[09:17] essentially you
+can request that
+[09:19] and then we'll
+make
+[09:19] the changes.
+It needs to shut
+[09:21] down the agents
+to do that,
+[09:22] but anyways,
+we'll move on.
+[09:23] Okay, next,
+we're gonna
+[09:24] cover
+display modes.
+[09:26] Now, I already
+have been
+[09:27] showing you the
+two
+[09:28] display modes,
+[09:30] but this display
+mode that you
+[09:31] see right here,
+this is called the
+[09:34] split plane.
+And then it's
+[09:35] available
+in Tmux. I've only
+[09:38] been able to get
+it to work
+[09:39] on Tmux.
+They say that you
+[09:40] can get it to work
+on iTerns,
+[09:42] but personally,
+I haven't been
+[09:43] able to,
+even though I
+[09:44] installed all
+the stuff.
+[09:45] But this is a
+split plane.
+[09:47] And then the
+default mode
+[09:48] is the,
+[09:49] the in panel one,
+I think. The in
+[09:51] process one,
+the all in
+[09:52] one terminal,
+which is this one.
+[09:54] Let me show you
+guys again.
+[09:55] Let's split up our
+agents to write a
+[09:58] new article
+[10:00] on the latest
+AI news. Yeah,
+[10:02] let's talk about
+the GPT
+[10:04] five point,
+[10:05] the new GPT,
+I think it's 5.4.
+[10:07] Let's have
+a researcher,
+[10:09] which is like
+basically the
+[10:10] context gatherer,
+[10:12] the writer
+[10:13] and the editor
+as well. And just
+[10:16] write me a draft
+using my,
+[10:19] usual rules
+for writing.
+[10:20] By the way, as a
+side note, if you
+[10:22] guys are
+interested in
+[10:23] using clock code
+for writing,
+[10:24] which I actually
+think is the best
+[10:26] writing tool
+ever created,
+[10:27] let me know in
+the comments
+[10:28] and I'll do an
+entire
+[10:30] dedicated video
+[10:31] on how I write
+with clock code.
+[10:34] And it's actually a
+lot
+[10:35] more involved.
+[10:37] I sometimes
+[10:38] for my
+side project,
+[10:39] I actually use
+clock code more
+[10:42] for writing and
+gathering
+[10:44] research and all
+of that stuff
+[10:45] than coding.
+It's because I
+[10:46] code so much
+at work,
+[10:48] you know,
+[10:49] and I don't have
+that much time
+[10:50] for like side side
+projects that I
+[10:52] want to launch.
+I mean, I have,
+[10:54] I always have so
+many ideas,
+[10:55] but yeah.
+So you see, this is
+[10:56] the pain mode.
+You can
+[10:57] essentially go to
+it by hitting down
+[10:59] and then
+hitting enter.
+[11:01] And then you can
+see the different
+[11:03] agents and you
+can look at it and
+[11:05] you can guide it
+the way
+[11:06] you want.
+And then earlier I
+[11:08] showed you what
+the spit
+[11:09] pains are,
+but essentially
+[11:11] it's the
+same thing
+[11:13] as the, like the
+parallel in
+[11:15] panel thing,
+[11:16] but it's just split.
+And to do that,
+[11:18] you need
+to have,
+[11:19] so to get that like
+split mode. And if
+[11:21] you have a
+big window, big,
+[11:22] like 32
+inch monitor,
+[11:24] you probably can
+do that, but you
+[11:25] essentially need
+to do
+[11:27] a team mode and
+team X.
+[11:29] I'll show you.
+[11:30] So in
+your settings,
+[11:31] you have to
+change this to
+[11:33] team mode and
+team X.
+[11:34] So for this, all of
+these settings,
+[11:37] again, I think you
+should just have
+[11:38] clock code do it
+for you.
+[11:39] So I'm just
+showing you,
+[11:41] so you know
+where it is,
+[11:42] but yeah,
+[11:43] there's two
+different modes,
+[11:44] split pain
+[11:45] and then
+in process.
+[11:47] And then for,
+if you want the
+[11:48] split pain,
+you need to be in
+[11:50] team X. All right.
+So the next thing
+[11:51] that we're going
+to talk about a
+[11:52] little bit is just
+the high
+[11:53] level controls,
+you know,
+[11:55] the
+task
+[11:55] coordination,
+how does
+[11:56] that work?
+And like the
+[11:58] planning and the
+kind of the high
+[11:59] level life cycle of
+an agent team.
+[12:01] I think it's
+important
+[12:02] to know,
+cause you could
+[12:03] get into some
+weird states.
+[12:04] So at a high level,
+every single time
+[12:07] that an agent
+team wants to
+[12:09] start doing
+[12:10] something, it will
+create the agent
+[12:11] team and it will
+create essentially
+[12:13] a task list.
+[12:14] So as you can
+see here,
+[12:16] there was task
+number one,
+[12:17] which
+was assigned.
+[12:18] Signed by the
+team lead.
+[12:19] And it's
+essentially telling
+[12:21] the research that
+GPT five release
+[12:23] and gather
+writing context.
+[12:24] For example,
+you could
+[12:25] imagine this for
+any kind of like
+[12:26] coding tasks,
+right? And then
+[12:28] here there's task
+three to review
+[12:30] the GPT
+five essay.
+[12:32] Now these tasks
+lists are
+[12:34] essentially
+created by the
+[12:36] agent
+orchestrator,
+[12:37] but you yourself
+can be a lot more
+[12:39] like prescriptive,
+right? If you have
+[12:41] a very good idea
+on how you want
+[12:43] things to be
+[12:45] done, then you
+could kind of
+[12:46] work with the
+agent
+[12:47] team initially
+[12:49] to create
+the plan, which is
+[12:50] kind of the
+next thing.
+[12:51] So let's get
+to the, the tips.
+[12:53] So as
+I mentioned,
+[12:54] if you hit control
+T right there,
+[12:56] you should be
+able to see the
+[12:57] tasks and you
+can see that
+[12:59] these are the
+tasks that we're
+[13:00] doing for this
+particular high
+[13:03] level tasks that I
+gave you. Let me
+[13:04] do a coding one.
+So it's a little bit
+[13:05] more clear.
+All right,
+[13:06] let's work on the
+next project,
+[13:09] create one
+front end,
+[13:10] one backend and
+one architecture
+[13:12] agent team.
+And let's create a
+[13:15] set of tasks and
+execute on the
+[13:17] next step.
+Next thing that
+[13:18] we need to do,
+this is kind of a
+[13:20] side project that
+I'm just kind of
+[13:22] working on
+the side.
+[13:23] Essentially,
+I planned out a
+[13:25] bunch of things
+ahead of time.
+[13:26] So, and I like
+keep that
+[13:28] task list
+[13:30] locally saved.
+So anytime I
+[13:31] want to work
+on it, I just
+[13:32] kind of
+[13:33] tell it, Hey,
+what do I have to
+[13:35] do next?
+Because I can't
+[13:37] remember what I
+was working
+[13:38] on before,
+because.
+[13:40] I literally work on
+this like once a
+[13:41] week
+or something.
+[13:43] So I try to spend
+a lot of time
+[13:45] planning a pen,
+you know,
+[13:46] ahead of time.
+[13:47] And then I just
+save a bunch of
+[13:49] things to do.
+And I say, Hey,
+[13:50] let's get working
+on it. This is a
+[13:51] side project. So I
+don't really care
+[13:53] too much, but if
+it's for your like
+[13:55] main work,
+this strategy
+[13:57] probably
+won't work
+[13:59] that much.
+You need to
+[14:00] know what
+you're building.
+[14:01] But for me, this is
+like a pretty
+[14:03] simple crud app.
+So it works.
+[14:05] All right. So it
+created the plan
+[14:07] of like what to do
+[14:09] and it's spawning
+three agents
+[14:11] right now. I just
+think it's so cool.
+[14:12] Every time I see
+like the
+[14:14] different colors
+[14:15] of the agents.
+I don't know.
+[14:16] It just it's just.
+That's really cool.
+[14:18] So let's hit
+control T.
+[14:19] I'm telling you,
+it's still a
+[14:20] little buggy,
+but you can see
+[14:22] that it's every
+time I hit
+[14:23] control T.
+[14:26] Oh wow. Okay.
+So here's a three
+[14:28] sub agents and
+then I said
+[14:30] control T
+[14:32] control. T
+[14:34] control T
+[14:35] one eternity later
+control T. Okay.
+[14:40] I mean you could
+briefly see it like I
+[14:41] said it's
+still experimental
+[14:43] so
+[14:44] it doesn't work
+exactly but it is
+[14:46] kind of cool
+though because
+[14:47] you'll be able
+to see
+[14:49] these probably
+accepting tasks
+[14:51] and like sending
+messages to
+[14:52] each other if
+you're like
+[14:54] looking at it all
+right so this next
+[14:56] tip I don't think
+you need to
+[14:57] worry too much
+about it but
+[14:59] essentially as
+you're
+[15:01] monitoring these
+you'll notice that
+[15:03] some of them
+will start
+[15:03] going idle
+[15:05] then you can
+kind of just like
+[15:07] talk to it
+[15:08] here you can be
+like okay after
+[15:09] this also like
+quickly build a
+[15:12] cool flare when
+someone hits
+[15:14] like the
+[15:15] login button
+something like
+[15:16] that you could
+just like give it
+[15:18] additional things
+they're just sub
+[15:20] agents right
+they're
+[15:21] essentially
+instances of clock
+[15:22] code so you
+could just have it
+[15:23] do stuff you
+could also tell it
+[15:25] to go hey keep
+working on the
+[15:27] next task now
+the next tip is
+[15:29] that you don't
+have to manage
+[15:30] any of
+the messages
+[15:32] like there's no
+polling that
+[15:33] happens the
+teammates
+[15:34] automatically
+[15:35] receive messages
+and they also
+[15:37] automatically
+stop
+[15:39] and like
+essentially
+[15:40] the lead
+[15:41] gets notified
+when it's done.
+[15:42] So technically
+you don't really
+[15:44] need to go to
+these
+[15:45] different ones.
+You should just
+[15:46] be mainly
+looking at
+[15:47] this one. So like if
+you have that
+[15:48] split pane,
+it's easier to see
+[15:50] and guide the
+other things,
+[15:52] but a high level,
+you don't really
+[15:53] need to manage
+these other ones.
+[15:56] Tip number 17 is
+that you need a
+[15:57] plan before you
+do
+[15:59] any
+implementation.
+[16:00] So if you like to
+use clock kind of
+[16:02] like without plan
+mode and just
+[16:04] straight
+execution agent
+[16:05] teams is not
+for you. Now in
+[16:07] terms
+of guidance
+[16:08] for the overall,
+like the way the
+[16:10] task should do,
+you should really
+[16:12] lean on the
+main agent.
+[16:14] For example,
+I could say,
+[16:16] Hey, make sure
+you have a
+[16:17] very high
+[16:18] quality bar
+[16:20] for all of
+the code. So you
+[16:21] should tell all of
+the sub agents to
+[16:24] have this high
+quality bar,
+[16:26] for example,
+something
+[16:27] like that.
+So that's your
+[16:28] trickle down into
+your
+[16:29] agent teams.
+Sometimes when
+[16:30] you make these
+kinds of changes,
+[16:31] though,
+like model
+[16:32] changes and
+stuff like that,
+[16:33] it will probably
+try to shut off all
+[16:35] of the agent
+teams and then
+[16:36] like
+recreate them.
+[16:38] Now, tip number
+19 is that you
+[16:39] don't have to
+actually go
+[16:41] in individually,
+turn off all of
+[16:43] these agents.
+[16:44] They have
+life cycles.
+[16:45] So when they're
+idle for a certain
+[16:47] amount of time,
+they'll just like
+[16:49] kill itself.
+They will just like
+[16:51] destroy itself.
+One important
+[16:53] tip here is that
+because
+[16:54] these agents,
+they don't like
+[16:57] persist
+between
+[16:58] invocation. If
+[17:00] you are a
+developer who
+[17:01] likes to, kind of
+think of every
+[17:03] clock code
+instance as like
+[17:04] you're building
+up the context
+[17:06] in that
+[17:07] instance and you
+don't need to
+[17:09] actively work on
+it agent teams
+[17:10] might not be
+[17:12] like the best
+thing for you but
+[17:14] again i'm going
+to get to the use
+[17:15] cases which i
+think agent
+[17:16] teams are really
+good but yeah as
+[17:17] you can see right
+here you see how
+[17:19] these kind of
+grayed out that
+[17:21] means they're
+idle so after
+[17:22] they're done and
+idle for a while
+[17:25] clock code
+[17:26] will just like turn
+these off
+[17:27] automatically the
+main
+[17:28] orchestrator will
+turn it
+[17:29] off automatically.
+Now, if you
+[17:31] felt like one of
+these subagents
+[17:33] are
+not necessary,
+[17:34] like one of these
+teammates are
+[17:36] not necessary,
+[17:37] then you can
+actually tell your
+[17:39] orchestrator to
+clean up. I would
+[17:40] actually leverage
+the orchestrator
+[17:43] to do it because
+at least from
+[17:44] the docs, it says
+that you could
+[17:46] get into a really
+weird state
+[17:48] and probably like
+have some
+[17:49] memory leaks if
+you don't let the
+[17:51] main
+orchestrator turn
+[17:52] it off yourself.
+I mean, at the
+[17:54] end of the day,
+you could always
+[17:54] just turn your
+computer on and
+[17:56] back on again
+but yeah. Now if
+[17:58] you're used to
+hooks and I'll
+[18:00] show you a
+graphic of this
+[18:02] but essentially
+there's additional
+[18:03] hooks for
+teammate idle
+[18:05] and task
+complete so you
+[18:07] can do like things
+[18:09] when these
+events happen in
+[18:11] the life cycle.
+[18:12] So
+[18:13] I haven't found a
+lot of interesting
+[18:15] uses for this yet
+but they're there
+[18:18] for you if you like
+to
+[18:19] leverage hooks.
+I'm pretty sure
+[18:21] some people are
+going to find like
+[18:22] really cool
+[18:23] ways to use this
+maybe for like
+[18:25] task complete it
+could send
+[18:26] something into
+[18:28] like notion or
+something and
+[18:30] then like send
+something into
+[18:32] Jira or something
+or maybe a slack
+[18:34] message
+something
+[18:35] like that.
+[18:36] There's going to
+be someone who
+[18:37] like figures out
+something
+[18:38] interesting.
+But yeah going
+[18:39] back to it you can
+see the team
+[18:42] fully is shut down
+[18:43] and it kind of
+gives you a
+[18:44] summary what
+it did. All right so
+[18:46] for best practices
+in my opinion I
+[18:48] think a lot of the
+best practices
+[18:50] that I gave you
+for cloud code
+[18:52] still
+maintains true
+[18:54] and again
+context is king
+[18:56] context is best
+served fresh and
+[18:58] condensed but
+there's some like
+[19:00] high level
+concepts that's
+[19:02] kind of unique to
+agent teams that
+[19:04] we should
+go over. So one
+[19:05] thing you can
+leverage for each
+[19:07] of the
+teammates is
+[19:07] that they will
+load your
+[19:09] cloud code
+[19:10] like your
+main cloud.md
+[19:11] they'll also load
+your like mcp
+[19:13] servers and all of
+that stuff that
+[19:15] your main agent
+has access to but
+[19:17] it will not take
+your main
+[19:19] agent's
+conversation
+[19:20] history.
+So whatever
+[19:21] context that you
+built up in
+[19:24] before you like
+started the agent
+[19:26] swarm it will not
+have
+[19:27] that context. So if
+you want part
+[19:29] of that
+[19:31] context in
+[19:32] your agent teams
+there's like a few
+[19:33] ways to do it but
+the best way is to
+[19:36] ask your agent
+team to include
+[19:38] that into the task
+specific details.
+[19:40] You know you
+could just say
+[19:41] something like
+hey I want to
+[19:43] start working on
+the next set of
+[19:44] projects but can
+you embed
+[19:47] all of the
+important code
+[19:48] pointers that I've
+gathered so far
+[19:51] in this
+working session
+[19:53] into my tasks so
+that my agent
+[19:55] teams have
+good context.
+[19:57] Something
+like that. All right
+[19:58] and the next tip
+tip number 23 is
+[20:01] that you want to
+start with like
+[20:03] three to five
+teammates max.
+[20:06] I actually found
+like anything
+[20:07] more than three
+feels a little
+[20:09] overkill to be
+honest because
+[20:11] the tokens
+essentially scale
+[20:13] linearly to how
+many agents you
+[20:16] are running at
+the same time
+[20:18] and
+[20:18] I don't know I
+just found like
+[20:20] three maybe four
+agents are like
+[20:23] kind of the best.
+[20:24] Use of course
+you'll probably
+[20:25] find like many
+different use
+[20:27] cases for why
+you need
+[20:29] more but
+[20:30] my
+recommendation
+[20:31] here is to start
+with like just
+[20:32] three and then
+for each agent
+[20:35] like one like high
+level task you
+[20:37] really want to
+juggle like only
+[20:39] five or six
+[20:41] like tasks
+[20:42] within the
+larger task
+[20:44] like you don't
+want to have like
+[20:45] too crazy of a
+thing to do like
+[20:48] not all at once
+like it's okay
+[20:50] to plan out a
+bunch of
+[20:51] different things
+that has a lot
+[20:52] of subtasks.
+But then you
+[20:54] want to just like
+kick him off,
+[20:55] do one concise
+thing and then
+[20:58] bring them all
+back and then
+[21:00] start the
+next thing.
+[21:01] You don't want to
+do too much.
+[21:02] Right. So the plan
+mode here is
+[21:04] really important.
+You need to ask
+[21:05] the main
+orchestrator to
+[21:07] like delegate the
+work and like a
+[21:09] proper amount,
+like low
+[21:10] balance it.
+You know,
+[21:12] talking about
+things like this is
+[21:13] so funny. I feel
+like it's kind
+[21:14] of like
+[21:15] project
+management
+[21:16] and you're
+literally
+[21:17] orchestrating a
+team of
+[21:18] engineers and a
+lot of the best
+[21:20] practices that
+you would do for
+[21:21] like
+regular teams.
+[21:23] I feel like it kind
+of applies here.
+[21:25] Another really
+important thing,
+[21:26] and I think I kind
+of allured to this
+[21:29] with like
+front-end one,
+[21:30] front-end two,
+front-end three
+[21:32] in my like
+[21:33] earlier example,
+but basically you
+[21:35] don't really want
+the agents to be
+[21:36] touching the
+same files.
+[21:38] And my
+experiments with
+[21:39] like Git work
+trees and agent
+[21:42] teams didn't
+make sense
+[21:43] because you
+guys are all
+[21:44] trying to work on
+the same
+[21:45] high-level task
+at once.
+[21:47] So it's only really
+good if you
+[21:50] have like a very
+small app that
+[21:52] has front end
+and back end all
+[21:54] at once,
+and you're just
+[21:55] trying to do all of
+those things,
+[21:57] or if you're trying
+to review diffs,
+[21:58] or like if you're
+trying to
+[21:59] investigate
+things and you
+[22:01] want
+competing
+[22:02] arguments,
+[22:03] but yeah,
+like you don't
+[22:04] want it to touch
+the same files if
+[22:06] you can.
+[22:07] So really think
+about that when
+[22:09] you're creating
+your teams.
+[22:10] Tip number 26,
+and I ran into
+[22:12] this like once,
+that's why I'm
+[22:13] adding it here,
+but sometimes
+[22:14] like the leader
+will start like just
+[22:16] implementing
+stuff.
+[22:18] And so you have
+to like kind of
+[22:19] guide it and like
+tell it, hey, stop,
+[22:22] like delegate this
+out to your
+[22:23] teams or wait for
+your teams to
+[22:25] complete their
+task
+[22:26] before starting.
+[22:27] I think this is just
+inherently an
+[22:28] issue with this
+being
+[22:30] experimental,
+but yeah.
+[22:31] So that's just a
+side tip that I ran
+[22:33] into that I
+wanted to let
+[22:34] everyone know.
+Okay, so the next
+[22:36] thing is about
+use cases.
+[22:39] And I think I've
+been showing
+[22:41] you guys kind of
+the most like
+[22:42] common
+use case, right?
+[22:44] But let's also like
+kind of go over
+[22:45] some of the
+interesting ones
+[22:46] that I think you
+could use this for.
+[22:48] So for
+code reviews,
+[22:50] so we could do
+this right now.
+[22:51] Let's do a
+code review
+[22:53] on the latest
+changes that
+[22:54] you made.
+[22:55] I want one that is
+focused
+[22:57] on security.
+[22:58] I want one that's
+focused
+[22:58] on performance,
+[23:00] and I want one
+that is focused
+[23:01] on test coverage.
+Combine the
+[23:03] results of
+these reviews,
+[23:05] and then let's
+have one
+[23:06] really good
+[23:07] review. So this is
+actually a really
+[23:09] common
+use case.
+[23:10] And then I think
+one of the very
+[23:12] common things
+that people miss
+[23:13] about using
+cloud code,
+[23:15] and like Codex or
+any of these like
+[23:17] agentic systems,
+[23:18] they think that
+these agents can
+[23:20] like
+do everything
+[23:22] all at once.
+[23:24] And what I found
+to be true is that
+[23:26] they're incredible
+[23:27] at doing things,
+but you definitely
+[23:29] need to guide it,
+right? If you
+[23:32] don't guide it,
+you will get high
+[23:33] level
+broad answers.
+[23:35] But if you want it
+to go deep
+[23:37] into something,
+it can do that.
+[23:39] And I feel like
+[23:40] agent teams are
+really good
+[23:43] at doing all
+of these,
+[23:45] all at once,
+because they can
+[23:46] share a lot of
+context with
+[23:47] each other,
+but also
+[23:49] will not get like
+biased by the
+[23:53] other ones,
+right? If you try
+[23:54] to do this all
+in parallel,
+[23:56] like doing a
+security and a
+[23:57] performance and
+a test coverage,
+[24:00] all in the
+same thing,
+[24:01] sometimes the
+agents will
+[24:03] like be biased
+[24:05] because it has
+previous context
+[24:07] that it gathered.
+So that's why it's
+[24:08] like really good
+for this use case
+[24:10] and another
+use case, which is
+[24:11] competing
+hypothesis
+[24:13] for debugging.
+[24:14] So this is tip
+number eight.
+[24:15] Let's say that
+you're doing a
+[24:16] set of
+investigation and
+[24:17] then you came
+up with like
+[24:19] five theories,
+[24:20] like, or the agent
+came up with
+[24:21] five theories.
+[24:22] Instead of going
+through one by
+[24:24] one and
+investigating it,
+[24:26] you spawn five
+agent teams and
+[24:28] then you let it
+just go off. This is
+[24:30] really important
+because the bias,
+[24:32] like I'm
+telling you,
+[24:33] there is a thing
+about context.
+[24:35] As soon as it gets
+some part of the
+[24:37] context that it
+thinks that
+[24:38] is true,
+the agent will
+[24:40] lean towards
+thinking that
+[24:42] it's correct.
+[24:43] So using
+sub-agents to
+[24:45] protect the agent
+from each other,
+[24:48] right,
+because their
+[24:49] context is split
+when they're
+[24:50] in sub-agents,
+[24:51] it helps them
+[24:52] kind of have
+these
+[24:53] competing
+theories
+[24:55] and investigate it
+on bias. And then
+[24:57] when they
+come back,
+[24:58] then they can
+share notes.
+[24:59] Then the main
+agent has all the
+[25:01] notes and is able
+to kind of make
+[25:03] a holistic picture.
+And I found this
+[25:06] to be really
+useful for my
+[25:07] work when I'm
+like debugging.
+[25:09] Now, a good tip
+here when you're
+[25:11] exploring
+this parallel,
+[25:13] like path is like
+you should start
+[25:15] with like
+read-only tasks,
+[25:17] in my opinion,
+right?
+[25:18] Because this kind
+of goes with the
+[25:19] other tip about
+colliding issues.
+[25:22] But if you're just
+exploring
+[25:23] with this,
+read-only things
+[25:25] are really good
+ways to explore
+[25:27] because you
+don't have to
+[25:28] deal with like the
+file conflicts and
+[25:30] all that kind
+of stuff.
+[25:31] And that's why I
+kind of
+[25:32] mentioned the
+debugging
+[25:33] agent.
+[25:34] And another
+really good one
+[25:34] that I use is,
+and I showed
+[25:36] this already,
+but for
+[25:38] my writing,
+my like context
+[25:40] gatherer
+and researcher,
+[25:42] they're
+like read-only,
+[25:43] right?
+And they're
+[25:44] essentially like
+very important
+[25:46] for my writer.
+Another really
+[25:47] good use case
+that I've
+[25:48] been using
+[25:50] is essentially if
+you're doing
+[25:51] like Android
+[25:52] and you have like
+an
+[25:53] iOS counterpart,
+[25:55] and if you guys
+are sharing
+[25:56] like architecture,
+[25:58] for example,
+then you can
+[25:59] leverage that
+symmetry to be
+[26:01] able to
+essentially have
+[26:03] a parody agent
+[26:04] that's looking at
+the iOS code or
+[26:06] the Android code
+and then
+[26:08] creating tasks
+[26:09] like a task
+creator based
+[26:10] on those.
+[26:11] And then like,
+[26:13] executing agent.
+It's probably one
+[26:14] of the most
+efficient way
+[26:17] to have feature
+parody work,
+[26:19] as long as the
+architecture is
+[26:20] the same.
+[26:21] So that's like a
+really good use
+[26:23] case as well.
+All right, and my
+[26:24] final tip, and I
+kind of showed
+[26:25] this earlier,
+is that you still
+[26:27] want to monitor
+and steer their
+[26:29] agents from time
+to time.
+[26:31] If you have these
+things run
+[26:33] too long,
+unguided,
+[26:34] it can just go off
+the rails
+[26:37] and then you
+could be just
+[26:37] wasting a lot
+of tokens.
+[26:39] So constantly
+monitor them.
+[26:41] All right.
+That's my 30 tips
+[26:43] for agent teams.
+I hope this video
+[26:45] has been
+informative
+[26:46] to you.
+[26:47] If you like this
+kind of videos,
+[26:49] I did a bunch of
+ClockCode
+[26:50] videos, also this
+agentic
+[26:52] engineering
+video.
+[26:54] I actually think
+this agentic
+[26:55] engineering
+video is
+[26:57] really important,
+[26:58] like context for
+the next,
+[26:59] like this, the rest
+of this year.
+[27:01] I highly
+encourage you
+[27:02] guys to watch it.
+[27:03] And also the
+ClockCode 50 tips
+[27:05] video is, I think,
+just my best
+[27:07] video so far.
+It's just
+[27:08] like
+fundamentally,
+[27:09] I think covers
+everything you
+[27:11] need to know
+about
+[27:11] cloud code.
+Obviously not
+[27:13] this feature
+because I just
+[27:14] covered it,
+but yeah,
+[27:15] as more features
+come out, I will
+[27:17] cover them. Also,
+if you want to
+[27:19] learn about
+Codex
+[27:20] or OpenClaw,
+let me know.
+[27:22] There's just so
+many things to
+[27:23] cover in this
+whole new AI,
+[27:25] like coding,
+AI engineering,
+[27:27] like experience.
+It's wild honestly
+[27:31] the amount of
+things that have
+[27:32] been changed in
+the last three
+[27:34] months i think
+we really hit like
+[27:36] an inflection
+point and it's just
+[27:38] going like this
+like it's at work
+[27:41] it's like everyone
+i talk to maybe
+[27:43] i'm in a bubble
+with like tech
+[27:45] people
+or whatever
+[27:47] but it's
+absolutely nuts
+[27:49] but thanks for
+watching as
+[27:51] usual and until i
+see you guys on
+[27:53] the next one
+[27:55] bye
+
+--- Plain text ---
+Well hello there
+in this video i'm gonna go over
+about 30 tips or so of agent teams
+basically everything you
+need to know to just have a pretty
+good understanding of
+what it is how you should use it
+when you should use it and some
+kind of good use cases that i
+found using agent teams now there's a lot
+of different orchestration like
+solutions out there but i
+always like to use kind of the ones
+that were developed by the
+tooling itself and i've been having
+a lot of fun using agent teams for
+work and also just for my
+personal stuff and I thought it
+would be a really good video.
+Now if you haven't seen my
+50 tips of just general cloud
+code video I recommend you
+to watch that but this particular
+video is about agent teams.
+So without further ado let's
+get right into it. So what is agent
+teams and why should you
+use it? So at a high level an
+agent team is essentially an
+orchestrator of sub-agents but
+there's a big difference
+between sub-agents and how agent teams
+work and we're going to get
+into that. Now if you don't know
+what a sub-agent is at a high level
+you can just think of it as
+another cloud code instance
+that your main cloud code
+instance spawns. Oftentimes when
+you create a sub-agent it
+usually has this like colored text
+that's how you can tell at least in
+cloud code that you are
+spawning a sub-agent.
+So in this quick example I
+essentially had a task and I had
+my architecture and back-end
+and front-end sub-agents
+essentially be all coordinated this
+is my agent team now you can
+have any agent team any
+composition of it essentially it's
+like unlimited right i have
+this one here for like code
+writing and i have like another
+one for like writing which
+helps me gather context it helps
+me edit it has like a writer so
+there's a bunch of different
+things you can do but the high level
+idea the main concept is that
+you have one leader who is kind of
+the orchestrator and you have
+many different
+teammates. And you could
+have any teammates that
+you could imagine.
+Now, before we move on,
+one important thing is that all of
+this kind of operates around
+a set of tasks. And then the
+concept is you have the leader
+who has all the tasks,
+and then they spawn all of
+these agent teams,
+and then the agents do
+individual tasks. Now, one of the
+most important things about
+team agents, unlike just
+using sub-agents,
+is that the teammates talk
+to each other. Let me try
+to demonstrate. Can you work on
+the next set of tasks? Let's do
+like five tasks or so at a time so I
+can get a clear picture of all the
+different things you guys
+are doing. For this project,
+I kind of like created a bunch
+of tasks to save some time.
+But ideally, in a real
+world instance, you would
+probably have a plan mode,
+and then you're just planning up
+some tasks. You're essentially
+working with the main agent,
+the orchestrator, to create a set of
+plan for your different
+sub-agents. Now, One key thing
+here that you need to know is
+that because the agents talk to
+each other, unlike
+sub agents, the context is
+somewhat shared. It's not
+fully shared the way they
+actually do. The sharing of
+the context is they just use like
+messages to each other.
+So you're not actually getting all of the context
+from the main like orchestrator.
+It's really just the messages. So that's like a
+high level tip that you need to
+think of. If you ever feel like
+your sub agents in your agent
+team is not having
+enough context, then you need to
+ask the main agent to send the
+additional context, or you
+need to add more context
+into the tasks that
+you're creating. So as you can
+see here, like my context gather,
+my editor, my writer,
+they're all kind of like talking to
+each other. And that's kind of
+the point. They're,
+they're sending messages to
+each other, not strictly
+sharing the context,
+but just sharing what is needed
+for each other. So the next big
+tip is that once you have a
+sub agents, bunch of
+sub agents, you can talk to
+any teammate. Now this is kind
+of messy and very crazy. Uh,
+this is the split pain view. So I'm going to
+show you guys how to do that,
+but let me bring this other view.
+So it's easier to see it. Can you
+run the agent team to do
+another pass of editing?
+But yeah, essentially at a
+high level, you can talk to
+any of the teammates.
+You can talk to the orchestrator. So essentially
+you could guide any of the agents
+for like, if you created another
+cloud instance, it's basically
+the same. Now, the most
+important difference
+between a sub-agent and
+the agent team is that the context
+is completely
+protected between the
+sub-agent and the main agent.
+The sub-agent doesn't know
+anything that the main agent
+knows unless the main agent sent
+an initial like seed of stuff. And the sub-agent,
+its only job is to like essentially
+do some side effects or send
+information back. Now the
+agent team, as I mentioned,
+they talk to each other,
+they coordinate each other,
+and they share a common task.
+And the orchestrator can
+control any of these
+sub-agents. That's like kind of
+the big difference.
+So for tip number four,
+essentially, if you need just some
+very quick results,
+use a sub-agent. If you
+need collaboration, use an
+agent team. Tip number five
+is that compared to just using a
+single instance of cloud code,
+agent team just costs more.
+You're basically doing
+parallel work. So if you're not
+used to or already doing
+like multiple cloud instances,
+then the usage might outpace
+what you're used to normally.
+So the question obviously is,
+when should you use this? Like,
+what is it really good for? So in
+my opinion, the best use
+case for agent teams so
+far has really been when.
+I needed to accomplish
+something, some tasks that
+needed like various different
+tasks to be completed in
+different domains. So a
+really obvious example for full
+stack is this example that
+I had, which is essentially a
+front end, a back end and
+an architecture. And in this
+particular example,
+even created like multiple
+front ends, and because it
+recognized that they were in
+like different places. So it
+really speeds up the execution.
+Now, another really
+good use case, at least for me is for writing. So I
+have a context gatherer,
+I have an editor, and I have
+a writer, the editor essentially
+scores. A bunch of things. And so
+just as edits, the
+context gatherer, like essentially
+gathers context from my like
+local vector memory.
+And a lot of my writing I do with
+this flow before what I had to do
+was I had to kind of sequentially
+do these things. And it took a lot
+longer time. But now with
+agent teams, I'm able to kind
+of do all of this all at once.
+And then they actually help
+each other because
+sometimes rather than
+writing the entire thing, it might go grab
+a context for like a part of
+my writing. For example,
+so tip number seven is you
+should probably skip using agent
+teams for sequential work.
+This is actually kind of a
+good example, right here front
+end one front end to front end three, like most
+of the time if you're working
+on the same like pages,
+you probably don't want to have multiple
+front ends because then like
+they could kind of conflict with
+each other. Unless you use
+like work trees or something
+like that. All right, so let's
+get started on like installing it
+or like setting it up.
+Because depending on
+when you watch this,
+it may not be out of
+the experimental.
+So I think right now it's still in
+this like experimental
+stage. So you have to make
+some changes in your settings.
+Alright, so tip number eight is
+to set this up, you actually just
+have to change this clock or
+experimental agents thing.
+Now, another like side
+tip from here is if you don't want to
+like learn how to do this kind
+of stuff, I'll link the docs or the
+clock code like agent teams
+thing and you just have to
+paste it in and ask clock to set it
+up and then you just like restart
+clock code. But essentially
+you need this. And then restart
+clock code. And tip number
+nine is you just use natural
+language to define the team that
+you want. So let's try to
+create like a perf agent team.
+So I'll say something like,
+I want you to create a
+performance agent team.
+One is specializing in
+UI performance. So maybe
+looking for jank. And we'll do
+another one that is specializing in looking
+for errors, specializing in
+just debugging and deep diving
+into errors. And another one
+that like is looking for like
+pixel perfect changes like
+UX expert, like a quality expert,
+I don't really know if this is
+going to work. But the high level
+idea is that you can create a
+team to do anything.
+Now, if you wait to the end of
+the video, there is a section
+where I kind of cover some use
+cases that I think is pretty useful. So wait for that.
+All right, looks like it's
+created it, they created a UI
+perf agent as a teammate lead,
+it created a debugger
+right here. Nice, so yeah,
+it's creating a bunch of teams.
+Okay, this is not doing it justice because I can't
+really show you guys here,
+but you could tell that what's
+going on, right? But I actually
+have like a huge screen and in my
+huge screen, it looks
+really nice. But for the rest
+of the demo, I'll probably use
+the other view just so it's easier
+to see. Now, tip number 10 is
+that you can actually specify what model each
+teammate should run. Now,
+this is like a really good tip if
+you're really cost sensitive,
+if you don't have unlimited tokens,
+which I think most
+people don't. But for example,
+you can say something like,
+for the agent teams,
+make sure the debugger runs
+on Opus 4.6, the UI perf runs
+on Sonnet, and then the UX
+quality runs on Haiku. This is still
+definitely an experimental
+feature. I definitely
+notice it, especially using
+it in Tmux. We're gonna
+cover that a little bit.
+But yeah, essentially you
+can request that and then we'll
+make the changes.
+It needs to shut down the agents
+to do that, but anyways,
+we'll move on. Okay, next,
+we're gonna cover
+display modes. Now, I already
+have been showing you the
+two display modes, but this display
+mode that you see right here,
+this is called the split plane.
+And then it's available
+in Tmux. I've only been able to get
+it to work on Tmux.
+They say that you can get it to work
+on iTerns, but personally,
+I haven't been able to,
+even though I installed all
+the stuff. But this is a
+split plane. And then the
+default mode is the, the in panel one,
+I think. The in process one,
+the all in one terminal,
+which is this one. Let me show you
+guys again. Let's split up our
+agents to write a new article on the latest
+AI news. Yeah, let's talk about
+the GPT five point, the new GPT,
+I think it's 5.4. Let's have
+a researcher, which is like
+basically the context gatherer, the writer and the editor
+as well. And just write me a draft
+using my, usual rules
+for writing. By the way, as a
+side note, if you guys are
+interested in using clock code
+for writing, which I actually
+think is the best writing tool
+ever created, let me know in
+the comments and I'll do an
+entire dedicated video on how I write
+with clock code. And it's actually a
+lot more involved. I sometimes for my
+side project, I actually use
+clock code more for writing and
+gathering research and all
+of that stuff than coding.
+It's because I code so much
+at work, you know, and I don't have
+that much time for like side side
+projects that I want to launch.
+I mean, I have, I always have so
+many ideas, but yeah.
+So you see, this is the pain mode.
+You can essentially go to
+it by hitting down and then
+hitting enter. And then you can
+see the different agents and you
+can look at it and you can guide it
+the way you want.
+And then earlier I showed you what
+the spit pains are,
+but essentially it's the
+same thing as the, like the
+parallel in panel thing, but it's just split.
+And to do that, you need
+to have, so to get that like
+split mode. And if you have a
+big window, big, like 32
+inch monitor, you probably can
+do that, but you essentially need
+to do a team mode and
+team X. I'll show you. So in
+your settings, you have to
+change this to team mode and
+team X. So for this, all of
+these settings, again, I think you
+should just have clock code do it
+for you. So I'm just
+showing you, so you know
+where it is, but yeah, there's two
+different modes, split pain and then
+in process. And then for,
+if you want the split pain,
+you need to be in team X. All right.
+So the next thing that we're going
+to talk about a little bit is just
+the high level controls,
+you know, the
+task coordination,
+how does that work?
+And like the planning and the
+kind of the high level life cycle of
+an agent team. I think it's
+important to know,
+cause you could get into some
+weird states. So at a high level,
+every single time that an agent
+team wants to start doing something, it will
+create the agent team and it will
+create essentially a task list. So as you can
+see here, there was task
+number one, which
+was assigned. Signed by the
+team lead. And it's
+essentially telling the research that
+GPT five release and gather
+writing context. For example,
+you could imagine this for
+any kind of like coding tasks,
+right? And then here there's task
+three to review the GPT
+five essay. Now these tasks
+lists are essentially
+created by the agent
+orchestrator, but you yourself
+can be a lot more like prescriptive,
+right? If you have a very good idea
+on how you want things to be done, then you
+could kind of work with the
+agent team initially to create
+the plan, which is kind of the
+next thing. So let's get
+to the, the tips. So as
+I mentioned, if you hit control
+T right there, you should be
+able to see the tasks and you
+can see that these are the
+tasks that we're doing for this
+particular high level tasks that I
+gave you. Let me do a coding one.
+So it's a little bit more clear.
+All right, let's work on the
+next project, create one
+front end, one backend and
+one architecture agent team.
+And let's create a set of tasks and
+execute on the next step.
+Next thing that we need to do,
+this is kind of a side project that
+I'm just kind of working on
+the side. Essentially,
+I planned out a bunch of things
+ahead of time. So, and I like
+keep that task list locally saved.
+So anytime I want to work
+on it, I just kind of tell it, Hey,
+what do I have to do next?
+Because I can't remember what I
+was working on before,
+because. I literally work on
+this like once a week
+or something. So I try to spend
+a lot of time planning a pen,
+you know, ahead of time. And then I just
+save a bunch of things to do.
+And I say, Hey, let's get working
+on it. This is a side project. So I
+don't really care too much, but if
+it's for your like main work,
+this strategy probably
+won't work that much.
+You need to know what
+you're building. But for me, this is
+like a pretty simple crud app.
+So it works. All right. So it
+created the plan of like what to do and it's spawning
+three agents right now. I just
+think it's so cool. Every time I see
+like the different colors of the agents.
+I don't know. It just it's just.
+That's really cool. So let's hit
+control T. I'm telling you,
+it's still a little buggy,
+but you can see that it's every
+time I hit control T. Oh wow. Okay.
+So here's a three sub agents and
+then I said control T control. T control T one eternity later
+control T. Okay. I mean you could
+briefly see it like I said it's
+still experimental so it doesn't work
+exactly but it is kind of cool
+though because you'll be able
+to see these probably
+accepting tasks and like sending
+messages to each other if
+you're like looking at it all
+right so this next tip I don't think
+you need to worry too much
+about it but essentially as
+you're monitoring these
+you'll notice that some of them
+will start going idle then you can
+kind of just like talk to it here you can be
+like okay after this also like
+quickly build a cool flare when
+someone hits like the login button
+something like that you could
+just like give it additional things
+they're just sub agents right
+they're essentially
+instances of clock code so you
+could just have it do stuff you
+could also tell it to go hey keep
+working on the next task now
+the next tip is that you don't
+have to manage any of
+the messages like there's no
+polling that happens the
+teammates automatically receive messages
+and they also automatically
+stop and like
+essentially the lead gets notified
+when it's done. So technically
+you don't really need to go to
+these different ones.
+You should just be mainly
+looking at this one. So like if
+you have that split pane,
+it's easier to see and guide the
+other things, but a high level,
+you don't really need to manage
+these other ones. Tip number 17 is
+that you need a plan before you
+do any
+implementation. So if you like to
+use clock kind of like without plan
+mode and just straight
+execution agent teams is not
+for you. Now in terms
+of guidance for the overall,
+like the way the task should do,
+you should really lean on the
+main agent. For example,
+I could say, Hey, make sure
+you have a very high quality bar for all of
+the code. So you should tell all of
+the sub agents to have this high
+quality bar, for example,
+something like that.
+So that's your trickle down into
+your agent teams.
+Sometimes when you make these
+kinds of changes, though,
+like model changes and
+stuff like that, it will probably
+try to shut off all of the agent
+teams and then like
+recreate them. Now, tip number
+19 is that you don't have to
+actually go in individually,
+turn off all of these agents. They have
+life cycles. So when they're
+idle for a certain amount of time,
+they'll just like kill itself.
+They will just like destroy itself.
+One important tip here is that
+because these agents,
+they don't like persist
+between invocation. If you are a
+developer who likes to, kind of
+think of every clock code
+instance as like you're building
+up the context in that instance and you
+don't need to actively work on
+it agent teams might not be like the best
+thing for you but again i'm going
+to get to the use cases which i
+think agent teams are really
+good but yeah as you can see right
+here you see how these kind of
+grayed out that means they're
+idle so after they're done and
+idle for a while clock code will just like turn
+these off automatically the
+main orchestrator will
+turn it off automatically.
+Now, if you felt like one of
+these subagents are
+not necessary, like one of these
+teammates are not necessary, then you can
+actually tell your orchestrator to
+clean up. I would actually leverage
+the orchestrator to do it because
+at least from the docs, it says
+that you could get into a really
+weird state and probably like
+have some memory leaks if
+you don't let the main
+orchestrator turn it off yourself.
+I mean, at the end of the day,
+you could always just turn your
+computer on and back on again
+but yeah. Now if you're used to
+hooks and I'll show you a
+graphic of this but essentially
+there's additional hooks for
+teammate idle and task
+complete so you can do like things when these
+events happen in the life cycle. So I haven't found a
+lot of interesting uses for this yet
+but they're there for you if you like
+to leverage hooks.
+I'm pretty sure some people are
+going to find like really cool ways to use this
+maybe for like task complete it
+could send something into like notion or
+something and then like send
+something into Jira or something
+or maybe a slack message
+something like that. There's going to
+be someone who like figures out
+something interesting.
+But yeah going back to it you can
+see the team fully is shut down and it kind of
+gives you a summary what
+it did. All right so for best practices
+in my opinion I think a lot of the
+best practices that I gave you
+for cloud code still
+maintains true and again
+context is king context is best
+served fresh and condensed but
+there's some like high level
+concepts that's kind of unique to
+agent teams that we should
+go over. So one thing you can
+leverage for each of the
+teammates is that they will
+load your cloud code like your
+main cloud.md they'll also load
+your like mcp servers and all of
+that stuff that your main agent
+has access to but it will not take
+your main agent's
+conversation history.
+So whatever context that you
+built up in before you like
+started the agent swarm it will not
+have that context. So if
+you want part of that context in your agent teams
+there's like a few ways to do it but
+the best way is to ask your agent
+team to include that into the task
+specific details. You know you
+could just say something like
+hey I want to start working on
+the next set of projects but can
+you embed all of the
+important code pointers that I've
+gathered so far in this
+working session into my tasks so
+that my agent teams have
+good context. Something
+like that. All right and the next tip
+tip number 23 is that you want to
+start with like three to five
+teammates max. I actually found
+like anything more than three
+feels a little overkill to be
+honest because the tokens
+essentially scale linearly to how
+many agents you are running at
+the same time and I don't know I
+just found like three maybe four
+agents are like kind of the best. Use of course
+you'll probably find like many
+different use cases for why
+you need more but my
+recommendation here is to start
+with like just three and then
+for each agent like one like high
+level task you really want to
+juggle like only five or six like tasks within the
+larger task like you don't
+want to have like too crazy of a
+thing to do like not all at once
+like it's okay to plan out a
+bunch of different things
+that has a lot of subtasks.
+But then you want to just like
+kick him off, do one concise
+thing and then bring them all
+back and then start the
+next thing. You don't want to
+do too much. Right. So the plan
+mode here is really important.
+You need to ask the main
+orchestrator to like delegate the
+work and like a proper amount,
+like low balance it.
+You know, talking about
+things like this is so funny. I feel
+like it's kind of like project
+management and you're
+literally orchestrating a
+team of engineers and a
+lot of the best practices that
+you would do for like
+regular teams. I feel like it kind
+of applies here. Another really
+important thing, and I think I kind
+of allured to this with like
+front-end one, front-end two,
+front-end three in my like earlier example,
+but basically you don't really want
+the agents to be touching the
+same files. And my
+experiments with like Git work
+trees and agent teams didn't
+make sense because you
+guys are all trying to work on
+the same high-level task
+at once. So it's only really
+good if you have like a very
+small app that has front end
+and back end all at once,
+and you're just trying to do all of
+those things, or if you're trying
+to review diffs, or like if you're
+trying to investigate
+things and you want
+competing arguments, but yeah,
+like you don't want it to touch
+the same files if you can. So really think
+about that when you're creating
+your teams. Tip number 26,
+and I ran into this like once,
+that's why I'm adding it here,
+but sometimes like the leader
+will start like just implementing
+stuff. And so you have
+to like kind of guide it and like
+tell it, hey, stop, like delegate this
+out to your teams or wait for
+your teams to complete their
+task before starting. I think this is just
+inherently an issue with this
+being experimental,
+but yeah. So that's just a
+side tip that I ran into that I
+wanted to let everyone know.
+Okay, so the next thing is about
+use cases. And I think I've
+been showing you guys kind of
+the most like common
+use case, right? But let's also like
+kind of go over some of the
+interesting ones that I think you
+could use this for. So for
+code reviews, so we could do
+this right now. Let's do a
+code review on the latest
+changes that you made. I want one that is
+focused on security. I want one that's
+focused on performance, and I want one
+that is focused on test coverage.
+Combine the results of
+these reviews, and then let's
+have one really good review. So this is
+actually a really common
+use case. And then I think
+one of the very common things
+that people miss about using
+cloud code, and like Codex or
+any of these like agentic systems, they think that
+these agents can like
+do everything all at once. And what I found
+to be true is that they're incredible at doing things,
+but you definitely need to guide it,
+right? If you don't guide it,
+you will get high level
+broad answers. But if you want it
+to go deep into something,
+it can do that. And I feel like agent teams are
+really good at doing all
+of these, all at once,
+because they can share a lot of
+context with each other,
+but also will not get like
+biased by the other ones,
+right? If you try to do this all
+in parallel, like doing a
+security and a performance and
+a test coverage, all in the
+same thing, sometimes the
+agents will like be biased because it has
+previous context that it gathered.
+So that's why it's like really good
+for this use case and another
+use case, which is competing
+hypothesis for debugging. So this is tip
+number eight. Let's say that
+you're doing a set of
+investigation and then you came
+up with like five theories, like, or the agent
+came up with five theories. Instead of going
+through one by one and
+investigating it, you spawn five
+agent teams and then you let it
+just go off. This is really important
+because the bias, like I'm
+telling you, there is a thing
+about context. As soon as it gets
+some part of the context that it
+thinks that is true,
+the agent will lean towards
+thinking that it's correct. So using
+sub-agents to protect the agent
+from each other, right,
+because their context is split
+when they're in sub-agents, it helps them kind of have
+these competing
+theories and investigate it
+on bias. And then when they
+come back, then they can
+share notes. Then the main
+agent has all the notes and is able
+to kind of make a holistic picture.
+And I found this to be really
+useful for my work when I'm
+like debugging. Now, a good tip
+here when you're exploring
+this parallel, like path is like
+you should start with like
+read-only tasks, in my opinion,
+right? Because this kind
+of goes with the other tip about
+colliding issues. But if you're just
+exploring with this,
+read-only things are really good
+ways to explore because you
+don't have to deal with like the
+file conflicts and all that kind
+of stuff. And that's why I
+kind of mentioned the
+debugging agent. And another
+really good one that I use is,
+and I showed this already,
+but for my writing,
+my like context gatherer
+and researcher, they're
+like read-only, right?
+And they're essentially like
+very important for my writer.
+Another really good use case
+that I've been using is essentially if
+you're doing like Android and you have like
+an iOS counterpart, and if you guys
+are sharing like architecture, for example,
+then you can leverage that
+symmetry to be able to
+essentially have a parody agent that's looking at
+the iOS code or the Android code
+and then creating tasks like a task
+creator based on those. And then like, executing agent.
+It's probably one of the most
+efficient way to have feature
+parody work, as long as the
+architecture is the same. So that's like a
+really good use case as well.
+All right, and my final tip, and I
+kind of showed this earlier,
+is that you still want to monitor
+and steer their agents from time
+to time. If you have these
+things run too long,
+unguided, it can just go off
+the rails and then you
+could be just wasting a lot
+of tokens. So constantly
+monitor them. All right.
+That's my 30 tips for agent teams.
+I hope this video has been
+informative to you. If you like this
+kind of videos, I did a bunch of
+ClockCode videos, also this
+agentic engineering
+video. I actually think
+this agentic engineering
+video is really important, like context for
+the next, like this, the rest
+of this year. I highly
+encourage you guys to watch it. And also the
+ClockCode 50 tips video is, I think,
+just my best video so far.
+It's just like
+fundamentally, I think covers
+everything you need to know
+about cloud code.
+Obviously not this feature
+because I just covered it,
+but yeah, as more features
+come out, I will cover them. Also,
+if you want to learn about
+Codex or OpenClaw,
+let me know. There's just so
+many things to cover in this
+whole new AI, like coding,
+AI engineering, like experience.
+It's wild honestly the amount of
+things that have been changed in
+the last three months i think
+we really hit like an inflection
+point and it's just going like this
+like it's at work it's like everyone
+i talk to maybe i'm in a bubble
+with like tech people
+or whatever but it's
+absolutely nuts but thanks for
+watching as usual and until i
+see you guys on the next one bye

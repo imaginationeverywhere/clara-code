@@ -1,0 +1,80 @@
+YouTube transcript
+URL: https://youtu.be/rj7xi-s4Ssg
+Video ID: rj7xi-s4Ssg
+Title: Anthropic Just Dropped the Feature That Makes Sonnet Feel Like Opus
+Duration: 5:22
+Source: English captions (YouTube .en track) extracted via yt-dlp
+
+---
+
+Okay, so we have a brand new slash command added to Claude Code, which is likely preparing
+us for when Claude Myphos releases. So it's /advisor. So when you do /advisor, you can
+configure the advisor tool and it should take you to something like this. And essentially
+this is a tool that's built into Claude Code for when it requires stronger judgment about a
+particular problem. Now you can see right now we only have Sonnet and Opus. So if you're on
+Opus, ideally you want your main model in Claude Code to be on Sonnet. So you do /model and
+then pick Sonnet. And essentially when you're coding with the Sonnet model and it ends up
+getting stuck, then it would call the advisor tool to ask Opus a question. This is kind of
+similar to /model opusplan whereby Sonnet is used all the time except for when you're in
+planning mode, in which case Opus is used. So if you were to combine the two together, you
+would have a really good plan at the very beginning, then it would switch over to Sonnet for
+the actual execution. And if Sonnet ends up getting stuck with something, then it would call
+the advisor tool to ask Opus what the deal is here. Now right now with /advisor, you can
+only see that we have Opus 4.6 and Sonnet 4.6. So if you're already on Opus and you're using
+Opus as advisor, you'd probably not see much benefit to doing that over using a subagent of
+sorts. And if you're in Haiku, then you may want to use Sonnet 4.6. Now what they will
+likely be adding here in the future is like Myphos for their upcoming model, because chances
+are since it's so expensive, we won't be able to afford it most of the time. Until like
+prices come down and stuff in the future. So I imagine what many people will be doing in
+Claude Code is sticking to Opus and then having the advisor call Myphos with the entire like
+chat history and log to help it work around like a particularly hard problem. Now the way
+that it works behind the scenes is that essentially the tool description consults a stronger
+reviewer who sees your full conversation transcript. There are no parameters. When you call
+advisor(), your entire history — task, every tool call and result, your reasoning — is
+automatically forwarded. The advisor sees exactly what you've done. Now, of course, you can
+tell Claude Code to call this tool when you're stuck, but it says it will be called before
+any substantive work. So before writing, before committing to an interpretation, before
+building an assumption. And it's also called when the model believes the task is complete.
+So it's told to first make deliverable durable first and then actually call the advisor.
+When stuck, errors recurring, approaches not converging, results don't fit, or when
+considering a change of approach. Now guidance on frequency says, on tasks longer than a few
+steps, call it at least once before committing to an approach, and once declaring done. On
+short reactive tasks, skip it. Which means that if you ask Claude Code to change some colors
+around, then it will not call the advisor because it's too simple of a task. Now this is a
+part that's interesting. So how to weigh the advice. Give it serious weight, as you would
+expect. And if the empirical results contradict advisor advice, surface the conflict with
+another advisor call rather than silently switching. So I find this part particularly
+interesting. I'd like to see that in action. And now it's like a passing self-test is not
+evidence that the advice is wrong. Now this is a summary of the tool description. If you
+want to read the full one, then it will be down below in the pinned comment. Now let's see
+this in action. If I go to previous session and this is some bug that Claude Code found with
+the billing logic, if I wanted to call the advisor, I could either like tell it directly or
+Claude Code during the execution may realize that it needs to call the advisor. So we
+already have it set over here with Opus. And I will just say, hey, can you call the advisor
+to check that this will be the solution here? And then pressing enter, it now says advising
+using Opus 4.6. And the advisor basically flagged two things over here that we would want
+our Sonnet model to consider. Now it seems that there are some things to bear in mind when
+doing this. Firstly, it seems that the advisor like can't actually consult extra files on
+your machine. The entire chat history is being passed to the advisor. And then that result
+is being passed back into your session. So as they showed on Twitter, this is what it looks
+like. You have the main executor being Sonnet. You have the shared context that has been
+accumulated so far in the history, which is a conversation, tools, and so forth. And then
+the executor can call the advisor on demand. That advisor would send feedback and that would
+be added to shared context, which likely means that any future advisor can see any previous
+advice that previous advisors have given. Now, when it comes to benchmarking, they found
+that using this approach is slightly cheaper if you were paying for raw API tokens, but it
+would mean that it consumes less usage limits on your Claude Code plan as well. And you also
+do get slightly better performance on some of these benchmarks. Now I will personally not be
+using this that much because I use Opus all the time and I don't see any benefit in getting
+another Opus advisor with the same chat history so far to give advice. I'd rather get advice
+from a subagent that has an independent context. But I would see myself using this in the
+future whereby if Myphos is released, basically swapping this all around, I would have the
+main executor being Opus because it's still a very capable model. And then getting advice
+from Myphos instead. And this is probably one of the ways they're planning on making Myphos
+accessible to us once it is released, because apparently it will be really expensive. Now,
+if you do like this kind of stuff, then do subscribe to the channel because I do make the
+most comprehensive Claude Code videos here on YouTube. And if you want to stay ahead of the
+curve, then I also have a Claude Code newsletter whereby I share some of my own strategies
+and techniques like on a regular basis. Signing up will give you access to some free videos
+in my masterclass that you may find helpful as well. There will be a link down below if you
+are interested.

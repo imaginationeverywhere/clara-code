@@ -1,0 +1,3955 @@
+1
+00:00:00,000 --> 00:00:01,670
+
+Yet again, Enthropic just dropped
+
+2
+00:00:01,670 --> 00:00:01,680
+Yet again, Enthropic just dropped
+ 
+
+3
+00:00:01,680 --> 00:00:03,190
+Yet again, Enthropic just dropped
+another feature that I think a lot of
+
+4
+00:00:03,190 --> 00:00:03,200
+another feature that I think a lot of
+ 
+
+5
+00:00:03,200 --> 00:00:04,870
+another feature that I think a lot of
+people have been waiting for. Now, Cloud
+
+6
+00:00:04,870 --> 00:00:04,880
+people have been waiting for. Now, Cloud
+ 
+
+7
+00:00:04,880 --> 00:00:06,710
+people have been waiting for. Now, Cloud
+Code, it can now control your actual
+
+8
+00:00:06,710 --> 00:00:06,720
+Code, it can now control your actual
+ 
+
+9
+00:00:06,720 --> 00:00:08,629
+Code, it can now control your actual
+computer, your mouse, your keyboard,
+
+10
+00:00:08,629 --> 00:00:08,639
+computer, your mouse, your keyboard,
+ 
+
+11
+00:00:08,639 --> 00:00:10,549
+computer, your mouse, your keyboard,
+your screen. It will take screenshots.
+
+12
+00:00:10,549 --> 00:00:10,559
+your screen. It will take screenshots.
+ 
+
+13
+00:00:10,559 --> 00:00:11,830
+your screen. It will take screenshots.
+It'll figure out what is on your
+
+14
+00:00:11,830 --> 00:00:11,840
+It'll figure out what is on your
+ 
+
+15
+00:00:11,840 --> 00:00:13,509
+It'll figure out what is on your
+display, and it'll just click around and
+
+16
+00:00:13,509 --> 00:00:13,519
+display, and it'll just click around and
+ 
+
+17
+00:00:13,519 --> 00:00:14,789
+display, and it'll just click around and
+actually do things for you. Now, this
+
+18
+00:00:14,789 --> 00:00:14,799
+actually do things for you. Now, this
+ 
+
+19
+00:00:14,799 --> 00:00:16,470
+actually do things for you. Now, this
+will work in both Cloud Code and Cloud
+
+20
+00:00:16,470 --> 00:00:16,480
+will work in both Cloud Code and Cloud
+ 
+
+21
+00:00:16,480 --> 00:00:17,830
+will work in both Cloud Code and Cloud
+Co-Work, and it's available right now
+
+22
+00:00:17,830 --> 00:00:17,840
+Co-Work, and it's available right now
+ 
+
+23
+00:00:17,840 --> 00:00:19,990
+Co-Work, and it's available right now
+for any Pro and Max users on Mac. But
+
+24
+00:00:19,990 --> 00:00:20,000
+for any Pro and Max users on Mac. But
+ 
+
+25
+00:00:20,000 --> 00:00:20,950
+for any Pro and Max users on Mac. But
+here's where it actually gets
+
+26
+00:00:20,950 --> 00:00:20,960
+here's where it actually gets
+ 
+
+27
+00:00:20,960 --> 00:00:22,390
+here's where it actually gets
+interesting is that you can pair this
+
+28
+00:00:22,390 --> 00:00:22,400
+interesting is that you can pair this
+ 
+
+29
+00:00:22,400 --> 00:00:24,470
+interesting is that you can pair this
+with another feature called dispatch,
+
+30
+00:00:24,470 --> 00:00:24,480
+with another feature called dispatch,
+ 
+
+31
+00:00:24,480 --> 00:00:26,710
+with another feature called dispatch,
+which this will let you text Claude from
+
+32
+00:00:26,710 --> 00:00:26,720
+which this will let you text Claude from
+ 
+
+33
+00:00:26,720 --> 00:00:28,470
+which this will let you text Claude from
+your phone and it will do the work on
+
+34
+00:00:28,470 --> 00:00:28,480
+your phone and it will do the work on
+ 
+
+35
+00:00:28,480 --> 00:00:30,150
+your phone and it will do the work on
+your computer while you're away. So,
+
+36
+00:00:30,150 --> 00:00:30,160
+your computer while you're away. So,
+ 
+
+37
+00:00:30,160 --> 00:00:31,990
+your computer while you're away. So,
+let's say you're sitting down for lunch,
+
+38
+00:00:31,990 --> 00:00:32,000
+let's say you're sitting down for lunch,
+ 
+
+39
+00:00:32,000 --> 00:00:33,670
+let's say you're sitting down for lunch,
+you realize you forgot to export that
+
+40
+00:00:33,670 --> 00:00:33,680
+you realize you forgot to export that
+ 
+
+41
+00:00:33,680 --> 00:00:36,150
+you realize you forgot to export that
+report, you text Claude, it opens up the
+
+42
+00:00:36,150 --> 00:00:36,160
+report, you text Claude, it opens up the
+ 
+
+43
+00:00:36,160 --> 00:00:38,790
+report, you text Claude, it opens up the
+app, grabs the file, sends it off. So
+
+44
+00:00:38,790 --> 00:00:38,800
+app, grabs the file, sends it off. So
+ 
+
+45
+00:00:38,800 --> 00:00:39,990
+app, grabs the file, sends it off. So
+today I'm going to be showing you guys
+
+46
+00:00:39,990 --> 00:00:40,000
+today I'm going to be showing you guys
+ 
+
+47
+00:00:40,000 --> 00:00:41,590
+today I'm going to be showing you guys
+how to actually set this up, walk you
+
+48
+00:00:41,590 --> 00:00:41,600
+how to actually set this up, walk you
+ 
+
+49
+00:00:41,600 --> 00:00:43,270
+how to actually set this up, walk you
+through some real demos, talk about what
+
+50
+00:00:43,270 --> 00:00:43,280
+through some real demos, talk about what
+ 
+
+51
+00:00:43,280 --> 00:00:45,110
+through some real demos, talk about what
+it's actually good at, what it can't do
+
+52
+00:00:45,110 --> 00:00:45,120
+it's actually good at, what it can't do
+ 
+
+53
+00:00:45,120 --> 00:00:46,790
+it's actually good at, what it can't do
+yet, and a few use cases that I think
+
+54
+00:00:46,790 --> 00:00:46,800
+yet, and a few use cases that I think
+ 
+
+55
+00:00:46,800 --> 00:00:48,069
+yet, and a few use cases that I think
+are going to be really practical for
+
+56
+00:00:48,069 --> 00:00:48,079
+are going to be really practical for
+ 
+
+57
+00:00:48,079 --> 00:00:49,990
+are going to be really practical for
+anyone running a business or just doing
+
+58
+00:00:49,990 --> 00:00:50,000
+anyone running a business or just doing
+ 
+
+59
+00:00:50,000 --> 00:00:51,350
+anyone running a business or just doing
+any sort of knowledge work. So let's get
+
+60
+00:00:51,350 --> 00:00:51,360
+any sort of knowledge work. So let's get
+ 
+
+61
+00:00:51,360 --> 00:00:53,029
+any sort of knowledge work. So let's get
+into it. Here's the official blog post
+
+62
+00:00:53,029 --> 00:00:53,039
+into it. Here's the official blog post
+ 
+
+63
+00:00:53,039 --> 00:00:54,310
+into it. Here's the official blog post
+from Anthropic. They're calling this
+
+64
+00:00:54,310 --> 00:00:54,320
+from Anthropic. They're calling this
+ 
+
+65
+00:00:54,320 --> 00:00:55,510
+from Anthropic. They're calling this
+computer use, and it just went live
+
+66
+00:00:55,510 --> 00:00:55,520
+computer use, and it just went live
+ 
+
+67
+00:00:55,520 --> 00:00:57,350
+computer use, and it just went live
+yesterday as a research preview. Now,
+
+68
+00:00:57,350 --> 00:00:57,360
+yesterday as a research preview. Now,
+ 
+
+69
+00:00:57,360 --> 00:00:58,549
+yesterday as a research preview. Now,
+what's actually happening under the
+
+70
+00:00:58,549 --> 00:00:58,559
+what's actually happening under the
+ 
+
+71
+00:00:58,559 --> 00:00:59,830
+what's actually happening under the
+hood? It's pretty straightforward. So
+
+72
+00:00:59,830 --> 00:00:59,840
+hood? It's pretty straightforward. So
+ 
+
+73
+00:00:59,840 --> 00:01:01,189
+hood? It's pretty straightforward. So
+when you tell Claw to do something on
+
+74
+00:01:01,189 --> 00:01:01,199
+when you tell Claw to do something on
+ 
+
+75
+00:01:01,199 --> 00:01:02,869
+when you tell Claw to do something on
+your computer, it will follow a specific
+
+76
+00:01:02,869 --> 00:01:02,879
+your computer, it will follow a specific
+ 
+
+77
+00:01:02,879 --> 00:01:04,869
+your computer, it will follow a specific
+order. So first, it'll check if there's
+
+78
+00:01:04,869 --> 00:01:04,879
+order. So first, it'll check if there's
+ 
+
+79
+00:01:04,879 --> 00:01:06,550
+order. So first, it'll check if there's
+a direct integration. Like if you ask it
+
+80
+00:01:06,550 --> 00:01:06,560
+a direct integration. Like if you ask it
+ 
+
+81
+00:01:06,560 --> 00:01:08,230
+a direct integration. Like if you ask it
+to check your calendar, it'll just use
+
+82
+00:01:08,230 --> 00:01:08,240
+to check your calendar, it'll just use
+ 
+
+83
+00:01:08,240 --> 00:01:10,149
+to check your calendar, it'll just use
+Google calendar connector because that
+
+84
+00:01:10,149 --> 00:01:10,159
+Google calendar connector because that
+ 
+
+85
+00:01:10,159 --> 00:01:12,950
+Google calendar connector because that
+is faster and it's more reliable. Second
+
+86
+00:01:12,950 --> 00:01:12,960
+is faster and it's more reliable. Second
+ 
+
+87
+00:01:12,960 --> 00:01:14,870
+is faster and it's more reliable. Second
+is if the task needs a browser, it'll
+
+88
+00:01:14,870 --> 00:01:14,880
+is if the task needs a browser, it'll
+ 
+
+89
+00:01:14,880 --> 00:01:17,030
+is if the task needs a browser, it'll
+just use the quad in Chrome extension.
+
+90
+00:01:17,030 --> 00:01:17,040
+just use the quad in Chrome extension.
+ 
+
+91
+00:01:17,040 --> 00:01:18,710
+just use the quad in Chrome extension.
+And third, when neither of those can
+
+92
+00:01:18,710 --> 00:01:18,720
+And third, when neither of those can
+ 
+
+93
+00:01:18,720 --> 00:01:20,390
+And third, when neither of those can
+actually handle the job, does it fall
+
+94
+00:01:20,390 --> 00:01:20,400
+actually handle the job, does it fall
+ 
+
+95
+00:01:20,400 --> 00:01:22,390
+actually handle the job, does it fall
+back to actually controlling your
+
+96
+00:01:22,390 --> 00:01:22,400
+back to actually controlling your
+ 
+
+97
+00:01:22,400 --> 00:01:24,230
+back to actually controlling your
+screen. So taking screenshots, moving
+
+98
+00:01:24,230 --> 00:01:24,240
+screen. So taking screenshots, moving
+ 
+
+99
+00:01:24,240 --> 00:01:26,469
+screen. So taking screenshots, moving
+the mouse, clicking buttons, typing, all
+
+100
+00:01:26,469 --> 00:01:26,479
+the mouse, clicking buttons, typing, all
+ 
+
+101
+00:01:26,479 --> 00:01:28,630
+the mouse, clicking buttons, typing, all
+that stuff. So it's not just using
+
+102
+00:01:28,630 --> 00:01:28,640
+that stuff. So it's not just using
+ 
+
+103
+00:01:28,640 --> 00:01:30,149
+that stuff. So it's not just using
+screen control for everything because
+
+104
+00:01:30,149 --> 00:01:30,159
+screen control for everything because
+ 
+
+105
+00:01:30,159 --> 00:01:30,950
+screen control for everything because
+that would be a little bit more
+
+106
+00:01:30,950 --> 00:01:30,960
+that would be a little bit more
+ 
+
+107
+00:01:30,960 --> 00:01:32,390
+that would be a little bit more
+expensive. So it's actually being
+
+108
+00:01:32,390 --> 00:01:32,400
+expensive. So it's actually being
+ 
+
+109
+00:01:32,400 --> 00:01:34,710
+expensive. So it's actually being
+optimal. So that's just a design choice.
+
+110
+00:01:34,710 --> 00:01:34,720
+optimal. So that's just a design choice.
+ 
+
+111
+00:01:34,720 --> 00:01:36,550
+optimal. So that's just a design choice.
+screen control. It would be the backup
+
+112
+00:01:36,550 --> 00:01:36,560
+screen control. It would be the backup
+ 
+
+113
+00:01:36,560 --> 00:01:38,390
+screen control. It would be the backup
+option for things like any native apps,
+
+114
+00:01:38,390 --> 00:01:38,400
+option for things like any native apps,
+ 
+
+115
+00:01:38,400 --> 00:01:39,910
+option for things like any native apps,
+internal tools, or anything that just
+
+116
+00:01:39,910 --> 00:01:39,920
+internal tools, or anything that just
+ 
+
+117
+00:01:39,920 --> 00:01:42,310
+internal tools, or anything that just
+does not have a native API integration.
+
+118
+00:01:42,310 --> 00:01:42,320
+does not have a native API integration.
+ 
+
+119
+00:01:42,320 --> 00:01:43,590
+does not have a native API integration.
+So, to actually turn this on, you just
+
+120
+00:01:43,590 --> 00:01:43,600
+So, to actually turn this on, you just
+ 
+
+121
+00:01:43,600 --> 00:01:45,190
+So, to actually turn this on, you just
+need to simply go into your cloud
+
+122
+00:01:45,190 --> 00:01:45,200
+need to simply go into your cloud
+ 
+
+123
+00:01:45,200 --> 00:01:47,109
+need to simply go into your cloud
+settings. So, I'm on the cloud app
+
+124
+00:01:47,109 --> 00:01:47,119
+settings. So, I'm on the cloud app
+ 
+
+125
+00:01:47,119 --> 00:01:48,389
+settings. So, I'm on the cloud app
+currently. So, we'll just navigate over
+
+126
+00:01:48,389 --> 00:01:48,399
+currently. So, we'll just navigate over
+ 
+
+127
+00:01:48,399 --> 00:01:50,789
+currently. So, we'll just navigate over
+to our settings. And from here, we'll
+
+128
+00:01:50,789 --> 00:01:50,799
+to our settings. And from here, we'll
+ 
+
+129
+00:01:50,799 --> 00:01:52,630
+to our settings. And from here, we'll
+just scroll down to the desktop app
+
+130
+00:01:52,630 --> 00:01:52,640
+just scroll down to the desktop app
+ 
+
+131
+00:01:52,640 --> 00:01:54,469
+just scroll down to the desktop app
+section. You can go to general, and you
+
+132
+00:01:54,469 --> 00:01:54,479
+section. You can go to general, and you
+ 
+
+133
+00:01:54,479 --> 00:01:55,910
+section. You can go to general, and you
+scroll down, you should see computer
+
+134
+00:01:55,910 --> 00:01:55,920
+scroll down, you should see computer
+ 
+
+135
+00:01:55,920 --> 00:01:58,149
+scroll down, you should see computer
+use. You just have to enable this. So,
+
+136
+00:01:58,149 --> 00:01:58,159
+use. You just have to enable this. So,
+ 
+
+137
+00:01:58,159 --> 00:01:59,350
+use. You just have to enable this. So,
+it's going to give you a few
+
+138
+00:01:59,350 --> 00:01:59,360
+it's going to give you a few
+ 
+
+139
+00:01:59,360 --> 00:02:01,109
+it's going to give you a few
+disclaimers, all that sorts of stuff.
+
+140
+00:02:01,109 --> 00:02:01,119
+disclaimers, all that sorts of stuff.
+ 
+
+141
+00:02:01,119 --> 00:02:02,950
+disclaimers, all that sorts of stuff.
+And we'll just enable this. What I also
+
+142
+00:02:02,950 --> 00:02:02,960
+And we'll just enable this. What I also
+ 
+
+143
+00:02:02,960 --> 00:02:04,709
+And we'll just enable this. What I also
+want to do is going to keep our computer
+
+144
+00:02:04,709 --> 00:02:04,719
+want to do is going to keep our computer
+ 
+
+145
+00:02:04,719 --> 00:02:06,709
+want to do is going to keep our computer
+awake. This is going to allow us to make
+
+146
+00:02:06,709 --> 00:02:06,719
+awake. This is going to allow us to make
+ 
+
+147
+00:02:06,719 --> 00:02:08,389
+awake. This is going to allow us to make
+sure that, you know, our computer isn't
+
+148
+00:02:08,389 --> 00:02:08,399
+sure that, you know, our computer isn't
+ 
+
+149
+00:02:08,399 --> 00:02:09,990
+sure that, you know, our computer isn't
+going to go idle or anything. So, we can
+
+150
+00:02:09,990 --> 00:02:10,000
+going to go idle or anything. So, we can
+ 
+
+151
+00:02:10,000 --> 00:02:12,150
+going to go idle or anything. So, we can
+actually use our cloud code instance on
+
+152
+00:02:12,150 --> 00:02:12,160
+actually use our cloud code instance on
+ 
+
+153
+00:02:12,160 --> 00:02:13,510
+actually use our cloud code instance on
+the go and it's not going to go to sleep
+
+154
+00:02:13,510 --> 00:02:13,520
+the go and it's not going to go to sleep
+ 
+
+155
+00:02:13,520 --> 00:02:14,790
+the go and it's not going to go to sleep
+or anything like that. Now, if you're
+
+156
+00:02:14,790 --> 00:02:14,800
+or anything like that. Now, if you're
+ 
+
+157
+00:02:14,800 --> 00:02:16,390
+or anything like that. Now, if you're
+not seeing computer use, all you want to
+
+158
+00:02:16,390 --> 00:02:16,400
+not seeing computer use, all you want to
+ 
+
+159
+00:02:16,400 --> 00:02:18,150
+not seeing computer use, all you want to
+do just close out your application. So,
+
+160
+00:02:18,150 --> 00:02:18,160
+do just close out your application. So,
+ 
+
+161
+00:02:18,160 --> 00:02:20,229
+do just close out your application. So,
+again, I am using this inside of the
+
+162
+00:02:20,229 --> 00:02:20,239
+again, I am using this inside of the
+ 
+
+163
+00:02:20,239 --> 00:02:22,869
+again, I am using this inside of the
+desktop app. And what you want to do,
+
+164
+00:02:22,869 --> 00:02:22,879
+desktop app. And what you want to do,
+ 
+
+165
+00:02:22,879 --> 00:02:24,790
+desktop app. And what you want to do,
+just log back out, log back in, make
+
+166
+00:02:24,790 --> 00:02:24,800
+just log back out, log back in, make
+ 
+
+167
+00:02:24,800 --> 00:02:26,470
+just log back out, log back in, make
+sure you're updated on the latest
+
+168
+00:02:26,470 --> 00:02:26,480
+sure you're updated on the latest
+ 
+
+169
+00:02:26,480 --> 00:02:28,309
+sure you're updated on the latest
+instance, and you should be good to go.
+
+170
+00:02:28,309 --> 00:02:28,319
+instance, and you should be good to go.
+ 
+
+171
+00:02:28,319 --> 00:02:29,350
+instance, and you should be good to go.
+You'll be able to see it. All right, let
+
+172
+00:02:29,350 --> 00:02:29,360
+You'll be able to see it. All right, let
+ 
+
+173
+00:02:29,360 --> 00:02:30,390
+You'll be able to see it. All right, let
+me show you what this actually looks
+
+174
+00:02:30,390 --> 00:02:30,400
+me show you what this actually looks
+ 
+
+175
+00:02:30,400 --> 00:02:31,990
+me show you what this actually looks
+like. So, I have this PDF. This is just
+
+176
+00:02:31,990 --> 00:02:32,000
+like. So, I have this PDF. This is just
+ 
+
+177
+00:02:32,000 --> 00:02:33,670
+like. So, I have this PDF. This is just
+sitting in my downloads folder on my
+
+178
+00:02:33,670 --> 00:02:33,680
+sitting in my downloads folder on my
+ 
+
+179
+00:02:33,680 --> 00:02:35,190
+sitting in my downloads folder on my
+computer. And I want Claude to actually
+
+180
+00:02:35,190 --> 00:02:35,200
+computer. And I want Claude to actually
+ 
+
+181
+00:02:35,200 --> 00:02:37,030
+computer. And I want Claude to actually
+be able to send it as a DM to somebody
+
+182
+00:02:37,030 --> 00:02:37,040
+be able to send it as a DM to somebody
+ 
+
+183
+00:02:37,040 --> 00:02:39,030
+be able to send it as a DM to somebody
+on Slack. Also be able to email it off
+
+184
+00:02:39,030 --> 00:02:39,040
+on Slack. Also be able to email it off
+ 
+
+185
+00:02:39,040 --> 00:02:40,630
+on Slack. Also be able to email it off
+to somebody. Now, I don't have either of
+
+186
+00:02:40,630 --> 00:02:40,640
+to somebody. Now, I don't have either of
+ 
+
+187
+00:02:40,640 --> 00:02:42,070
+to somebody. Now, I don't have either of
+those applications open right now. So,
+
+188
+00:02:42,070 --> 00:02:42,080
+those applications open right now. So,
+ 
+
+189
+00:02:42,080 --> 00:02:44,630
+those applications open right now. So,
+I'm just going to go back to Claude. I'm
+
+190
+00:02:44,630 --> 00:02:44,640
+I'm just going to go back to Claude. I'm
+ 
+
+191
+00:02:44,640 --> 00:02:45,990
+I'm just going to go back to Claude. I'm
+going to say use computer use to find
+
+192
+00:02:45,990 --> 00:02:46,000
+going to say use computer use to find
+ 
+
+193
+00:02:46,000 --> 00:02:47,910
+going to say use computer use to find
+the client proposal PDF on my computer
+
+194
+00:02:47,910 --> 00:02:47,920
+the client proposal PDF on my computer
+ 
+
+195
+00:02:47,920 --> 00:02:50,630
+the client proposal PDF on my computer
+and send it as an email to this guy and
+
+196
+00:02:50,630 --> 00:02:50,640
+and send it as an email to this guy and
+ 
+
+197
+00:02:50,640 --> 00:02:53,589
+and send it as an email to this guy and
+DM it to Kave in Slack of a summary. So,
+
+198
+00:02:53,589 --> 00:02:53,599
+DM it to Kave in Slack of a summary. So,
+ 
+
+199
+00:02:53,599 --> 00:02:55,350
+DM it to Kave in Slack of a summary. So,
+we'll run this off. Now it is worth
+
+200
+00:02:55,350 --> 00:02:55,360
+we'll run this off. Now it is worth
+ 
+
+201
+00:02:55,360 --> 00:02:56,869
+we'll run this off. Now it is worth
+noting if you are running this for the
+
+202
+00:02:56,869 --> 00:02:56,879
+noting if you are running this for the
+ 
+
+203
+00:02:56,879 --> 00:02:58,229
+noting if you are running this for the
+first time using computer use for the
+
+204
+00:02:58,229 --> 00:02:58,239
+first time using computer use for the
+ 
+
+205
+00:02:58,239 --> 00:03:00,309
+first time using computer use for the
+first time it is going to require and
+
+206
+00:03:00,309 --> 00:03:00,319
+first time it is going to require and
+ 
+
+207
+00:03:00,319 --> 00:03:01,830
+first time it is going to require and
+request a few different permissions. So
+
+208
+00:03:01,830 --> 00:03:01,840
+request a few different permissions. So
+ 
+
+209
+00:03:01,840 --> 00:03:04,550
+request a few different permissions. So
+if you're you know asking it to access
+
+210
+00:03:04,550 --> 00:03:04,560
+if you're you know asking it to access
+ 
+
+211
+00:03:04,560 --> 00:03:06,550
+if you're you know asking it to access
+your downloads access your local
+
+212
+00:03:06,550 --> 00:03:06,560
+your downloads access your local
+ 
+
+213
+00:03:06,560 --> 00:03:08,309
+your downloads access your local
+computer you will have to first provide
+
+214
+00:03:08,309 --> 00:03:08,319
+computer you will have to first provide
+ 
+
+215
+00:03:08,319 --> 00:03:10,309
+computer you will have to first provide
+it with those permissions. So if you're
+
+216
+00:03:10,309 --> 00:03:10,319
+it with those permissions. So if you're
+ 
+
+217
+00:03:10,319 --> 00:03:13,830
+it with those permissions. So if you're
+asking it to go ahead go on Slack or
+
+218
+00:03:13,830 --> 00:03:13,840
+asking it to go ahead go on Slack or
+ 
+
+219
+00:03:13,840 --> 00:03:15,670
+asking it to go ahead go on Slack or
+record your screen anything like that
+
+220
+00:03:15,670 --> 00:03:15,680
+record your screen anything like that
+ 
+
+221
+00:03:15,680 --> 00:03:17,030
+record your screen anything like that
+you have to enable those system
+
+222
+00:03:17,030 --> 00:03:17,040
+you have to enable those system
+ 
+
+223
+00:03:17,040 --> 00:03:18,390
+you have to enable those system
+settings. So you only have to do that
+
+224
+00:03:18,390 --> 00:03:18,400
+settings. So you only have to do that
+ 
+
+225
+00:03:18,400 --> 00:03:20,630
+settings. So you only have to do that
+once. So right now it's asking to just
+
+226
+00:03:20,630 --> 00:03:20,640
+once. So right now it's asking to just
+ 
+
+227
+00:03:20,640 --> 00:03:22,309
+once. So right now it's asking to just
+read for this. So I'm going to give it
+
+228
+00:03:22,309 --> 00:03:22,319
+read for this. So I'm going to give it
+ 
+
+229
+00:03:22,319 --> 00:03:25,190
+read for this. So I'm going to give it
+permission. And next up, should be able
+
+230
+00:03:25,190 --> 00:03:25,200
+permission. And next up, should be able
+ 
+
+231
+00:03:25,200 --> 00:03:27,910
+permission. And next up, should be able
+to be able to actually read the entire
+
+232
+00:03:27,910 --> 00:03:27,920
+to be able to actually read the entire
+ 
+
+233
+00:03:27,920 --> 00:03:29,430
+to be able to actually read the entire
+proposal and then start sending the
+
+234
+00:03:29,430 --> 00:03:29,440
+proposal and then start sending the
+ 
+
+235
+00:03:29,440 --> 00:03:31,430
+proposal and then start sending the
+summaries, connects to Gmail, and also
+
+236
+00:03:31,430 --> 00:03:31,440
+summaries, connects to Gmail, and also
+ 
+
+237
+00:03:31,440 --> 00:03:32,630
+summaries, connects to Gmail, and also
+connects to Slack. All right, I've read
+
+238
+00:03:32,630 --> 00:03:32,640
+connects to Slack. All right, I've read
+ 
+
+239
+00:03:32,640 --> 00:03:34,789
+connects to Slack. All right, I've read
+the proposal. It's a 73,000 10E AI
+
+240
+00:03:34,789 --> 00:03:34,799
+the proposal. It's a 73,000 10E AI
+ 
+
+241
+00:03:34,799 --> 00:03:36,630
+the proposal. It's a 73,000 10E AI
+workflow automation engagement. Before I
+
+242
+00:03:36,630 --> 00:03:36,640
+workflow automation engagement. Before I
+ 
+
+243
+00:03:36,640 --> 00:03:38,149
+workflow automation engagement. Before I
+send anything, here's what I'll do. I'll
+
+244
+00:03:38,149 --> 00:03:38,159
+send anything, here's what I'll do. I'll
+ 
+
+245
+00:03:38,159 --> 00:03:40,550
+send anything, here's what I'll do. I'll
+email this guy and then I'll send the DM
+
+246
+00:03:40,550 --> 00:03:40,560
+email this guy and then I'll send the DM
+ 
+
+247
+00:03:40,560 --> 00:03:44,229
+email this guy and then I'll send the DM
+over to Slack. Can I proceed? I will say
+
+248
+00:03:44,229 --> 00:03:44,239
+over to Slack. Can I proceed? I will say
+ 
+
+249
+00:03:44,239 --> 00:03:45,910
+over to Slack. Can I proceed? I will say
+proceed. Let me create the Gmail draft
+
+250
+00:03:45,910 --> 00:03:45,920
+proceed. Let me create the Gmail draft
+ 
+
+251
+00:03:45,920 --> 00:03:47,910
+proceed. Let me create the Gmail draft
+and then send the DM to Khave in
+
+252
+00:03:47,910 --> 00:03:47,920
+and then send the DM to Khave in
+ 
+
+253
+00:03:47,920 --> 00:03:49,990
+and then send the DM to Khave in
+parallel. So right now it is just using
+
+254
+00:03:49,990 --> 00:03:50,000
+parallel. So right now it is just using
+ 
+
+255
+00:03:50,000 --> 00:03:51,910
+parallel. So right now it is just using
+the connector. So it's not even using
+
+256
+00:03:51,910 --> 00:03:51,920
+the connector. So it's not even using
+ 
+
+257
+00:03:51,920 --> 00:03:53,430
+the connector. So it's not even using
+computer use. So right now it is
+
+258
+00:03:53,430 --> 00:03:53,440
+computer use. So right now it is
+ 
+
+259
+00:03:53,440 --> 00:03:55,270
+computer use. So right now it is
+recognizing that it already has a
+
+260
+00:03:55,270 --> 00:03:55,280
+recognizing that it already has a
+ 
+
+261
+00:03:55,280 --> 00:03:57,110
+recognizing that it already has a
+connector. So it's going to be a bit
+
+262
+00:03:57,110 --> 00:03:57,120
+connector. So it's going to be a bit
+ 
+
+263
+00:03:57,120 --> 00:03:58,789
+connector. So it's going to be a bit
+more efficient, bit more practical
+
+264
+00:03:58,789 --> 00:03:58,799
+more efficient, bit more practical
+ 
+
+265
+00:03:58,799 --> 00:04:00,789
+more efficient, bit more practical
+because it's going to cost less tokens
+
+266
+00:04:00,789 --> 00:04:00,799
+because it's going to cost less tokens
+ 
+
+267
+00:04:00,799 --> 00:04:03,030
+because it's going to cost less tokens
+to actually interact and use computer
+
+268
+00:04:03,030 --> 00:04:03,040
+to actually interact and use computer
+ 
+
+269
+00:04:03,040 --> 00:04:04,949
+to actually interact and use computer
+use. Whereas the connector, it's much
+
+270
+00:04:04,949 --> 00:04:04,959
+use. Whereas the connector, it's much
+ 
+
+271
+00:04:04,959 --> 00:04:07,509
+use. Whereas the connector, it's much
+easier and there's a better procedure to
+
+272
+00:04:07,509 --> 00:04:07,519
+easier and there's a better procedure to
+ 
+
+273
+00:04:07,519 --> 00:04:09,030
+easier and there's a better procedure to
+actually be going about this. So let's
+
+274
+00:04:09,030 --> 00:04:09,040
+actually be going about this. So let's
+ 
+
+275
+00:04:09,040 --> 00:04:09,990
+actually be going about this. So let's
+go ahead and check that. All right. So
+
+276
+00:04:09,990 --> 00:04:10,000
+go ahead and check that. All right. So
+ 
+
+277
+00:04:10,000 --> 00:04:11,429
+go ahead and check that. All right. So
+you guys can see right here we have the
+
+278
+00:04:11,429 --> 00:04:11,439
+you guys can see right here we have the
+ 
+
+279
+00:04:11,439 --> 00:04:13,350
+you guys can see right here we have the
+draft. Please find the client proposal
+
+280
+00:04:13,350 --> 00:04:13,360
+draft. Please find the client proposal
+ 
+
+281
+00:04:13,360 --> 00:04:15,670
+draft. Please find the client proposal
+for Acme Corps operations team attached.
+
+282
+00:04:15,670 --> 00:04:15,680
+for Acme Corps operations team attached.
+ 
+
+283
+00:04:15,680 --> 00:04:17,349
+for Acme Corps operations team attached.
+This covers the full 10E engagement. Let
+
+284
+00:04:17,349 --> 00:04:17,359
+This covers the full 10E engagement. Let
+ 
+
+285
+00:04:17,359 --> 00:04:18,949
+This covers the full 10E engagement. Let
+me know if any revisions are needed. Not
+
+286
+00:04:18,949 --> 00:04:18,959
+me know if any revisions are needed. Not
+ 
+
+287
+00:04:18,959 --> 00:04:20,229
+me know if any revisions are needed. Not
+check slack. Cool. So we can see right
+
+288
+00:04:20,229 --> 00:04:20,239
+check slack. Cool. So we can see right
+ 
+
+289
+00:04:20,239 --> 00:04:21,749
+check slack. Cool. So we can see right
+here, hey Kjav, here's a quick summary
+
+290
+00:04:21,749 --> 00:04:21,759
+here, hey Kjav, here's a quick summary
+ 
+
+291
+00:04:21,759 --> 00:04:23,270
+here, hey Kjav, here's a quick summary
+of the Acme Corp client proposal I just
+
+292
+00:04:23,270 --> 00:04:23,280
+of the Acme Corp client proposal I just
+ 
+
+293
+00:04:23,280 --> 00:04:24,710
+of the Acme Corp client proposal I just
+sent over. So it's pretty much the same
+
+294
+00:04:24,710 --> 00:04:24,720
+sent over. So it's pretty much the same
+ 
+
+295
+00:04:24,720 --> 00:04:25,670
+sent over. So it's pretty much the same
+thing as the Gmail draft.
+
+296
+00:04:25,670 --> 00:04:25,680
+thing as the Gmail draft.
+ 
+
+297
+00:04:25,680 --> 00:04:27,189
+thing as the Gmail draft.
+Hypothetically, if Slack was not a
+
+298
+00:04:27,189 --> 00:04:27,199
+Hypothetically, if Slack was not a
+ 
+
+299
+00:04:27,199 --> 00:04:29,430
+Hypothetically, if Slack was not a
+connector, same with Gmail, then that is
+
+300
+00:04:29,430 --> 00:04:29,440
+connector, same with Gmail, then that is
+ 
+
+301
+00:04:29,440 --> 00:04:30,950
+connector, same with Gmail, then that is
+where it would be able to use computer
+
+302
+00:04:30,950 --> 00:04:30,960
+where it would be able to use computer
+ 
+
+303
+00:04:30,960 --> 00:04:32,550
+where it would be able to use computer
+use and actually interact. Let me show
+
+304
+00:04:32,550 --> 00:04:32,560
+use and actually interact. Let me show
+ 
+
+305
+00:04:32,560 --> 00:04:33,670
+use and actually interact. Let me show
+you where it's actually going to be
+
+306
+00:04:33,670 --> 00:04:33,680
+you where it's actually going to be
+ 
+
+307
+00:04:33,680 --> 00:04:35,110
+you where it's actually going to be
+using computer use. And before we do
+
+308
+00:04:35,110 --> 00:04:35,120
+using computer use. And before we do
+ 
+
+309
+00:04:35,120 --> 00:04:37,430
+using computer use. And before we do
+that, I have to introduce Dispatch. So
+
+310
+00:04:37,430 --> 00:04:37,440
+that, I have to introduce Dispatch. So
+ 
+
+311
+00:04:37,440 --> 00:04:39,189
+that, I have to introduce Dispatch. So
+dispatch, this is going to allow you to
+
+312
+00:04:39,189 --> 00:04:39,199
+dispatch, this is going to allow you to
+ 
+
+313
+00:04:39,199 --> 00:04:40,870
+dispatch, this is going to allow you to
+actually utilize Claude from your phone
+
+314
+00:04:40,870 --> 00:04:40,880
+actually utilize Claude from your phone
+ 
+
+315
+00:04:40,880 --> 00:04:43,510
+actually utilize Claude from your phone
+while your computer is elsewhere. So if
+
+316
+00:04:43,510 --> 00:04:43,520
+while your computer is elsewhere. So if
+ 
+
+317
+00:04:43,520 --> 00:04:45,430
+while your computer is elsewhere. So if
+you have not set up dispatch yet, just
+
+318
+00:04:45,430 --> 00:04:45,440
+you have not set up dispatch yet, just
+ 
+
+319
+00:04:45,440 --> 00:04:47,030
+you have not set up dispatch yet, just
+go ahead, navigate to dispatch. It's
+
+320
+00:04:47,030 --> 00:04:47,040
+go ahead, navigate to dispatch. It's
+ 
+
+321
+00:04:47,040 --> 00:04:48,390
+go ahead, navigate to dispatch. It's
+extremely simple. You'll just have to
+
+322
+00:04:48,390 --> 00:04:48,400
+extremely simple. You'll just have to
+ 
+
+323
+00:04:48,400 --> 00:04:50,390
+extremely simple. You'll just have to
+scan a QR code or just log into Claude
+
+324
+00:04:50,390 --> 00:04:50,400
+scan a QR code or just log into Claude
+ 
+
+325
+00:04:50,400 --> 00:04:52,070
+scan a QR code or just log into Claude
+on your phone and it'll be paired. It is
+
+326
+00:04:52,070 --> 00:04:52,080
+on your phone and it'll be paired. It is
+ 
+
+327
+00:04:52,080 --> 00:04:53,749
+on your phone and it'll be paired. It is
+as simple as that. It takes maybe 30
+
+328
+00:04:53,749 --> 00:04:53,759
+as simple as that. It takes maybe 30
+ 
+
+329
+00:04:53,759 --> 00:04:55,670
+as simple as that. It takes maybe 30
+seconds to set up. So, go to that now if
+
+330
+00:04:55,670 --> 00:04:55,680
+seconds to set up. So, go to that now if
+ 
+
+331
+00:04:55,680 --> 00:04:56,870
+seconds to set up. So, go to that now if
+you have not already. So, what I'm going
+
+332
+00:04:56,870 --> 00:04:56,880
+you have not already. So, what I'm going
+ 
+
+333
+00:04:56,880 --> 00:04:59,110
+you have not already. So, what I'm going
+to do is I'm just going to start a new
+
+334
+00:04:59,110 --> 00:04:59,120
+to do is I'm just going to start a new
+ 
+
+335
+00:04:59,120 --> 00:05:01,350
+to do is I'm just going to start a new
+message and I'm going to paste in use
+
+336
+00:05:01,350 --> 00:05:01,360
+message and I'm going to paste in use
+ 
+
+337
+00:05:01,360 --> 00:05:04,070
+message and I'm going to paste in use
+computer use to actually open up my
+
+338
+00:05:04,070 --> 00:05:04,080
+computer use to actually open up my
+ 
+
+339
+00:05:04,080 --> 00:05:05,990
+computer use to actually open up my
+notes app on my computer and create a
+
+340
+00:05:05,990 --> 00:05:06,000
+notes app on my computer and create a
+ 
+
+341
+00:05:06,000 --> 00:05:07,670
+notes app on my computer and create a
+new note summarizing today's meetings
+
+342
+00:05:07,670 --> 00:05:07,680
+new note summarizing today's meetings
+ 
+
+343
+00:05:07,680 --> 00:05:09,590
+new note summarizing today's meetings
+for my Google calendar. So, let's send
+
+344
+00:05:09,590 --> 00:05:09,600
+for my Google calendar. So, let's send
+ 
+
+345
+00:05:09,600 --> 00:05:10,950
+for my Google calendar. So, let's send
+that off. You can see I actually ran
+
+346
+00:05:10,950 --> 00:05:10,960
+that off. You can see I actually ran
+ 
+
+347
+00:05:10,960 --> 00:05:13,189
+that off. You can see I actually ran
+that earlier, but we should see on our
+
+348
+00:05:13,189 --> 00:05:13,199
+that earlier, but we should see on our
+ 
+
+349
+00:05:13,199 --> 00:05:15,189
+that earlier, but we should see on our
+computer that we will have this new
+
+350
+00:05:15,189 --> 00:05:15,199
+computer that we will have this new
+ 
+
+351
+00:05:15,199 --> 00:05:17,270
+computer that we will have this new
+request. So, it's going to log that,
+
+352
+00:05:17,270 --> 00:05:17,280
+request. So, it's going to log that,
+ 
+
+353
+00:05:17,280 --> 00:05:19,029
+request. So, it's going to log that,
+recognize the input. You know,
+
+354
+00:05:19,029 --> 00:05:19,039
+recognize the input. You know,
+ 
+
+355
+00:05:19,039 --> 00:05:20,550
+recognize the input. You know,
+everything's going to be hands off. So,
+
+356
+00:05:20,550 --> 00:05:20,560
+everything's going to be hands off. So,
+ 
+
+357
+00:05:20,560 --> 00:05:21,909
+everything's going to be hands off. So,
+you can see that I'm not actually
+
+358
+00:05:21,909 --> 00:05:21,919
+you can see that I'm not actually
+ 
+
+359
+00:05:21,919 --> 00:05:23,749
+you can see that I'm not actually
+controlling my computer in just a second
+
+360
+00:05:23,749 --> 00:05:23,759
+controlling my computer in just a second
+ 
+
+361
+00:05:23,759 --> 00:05:25,670
+controlling my computer in just a second
+where it will actually open up my notes
+
+362
+00:05:25,670 --> 00:05:25,680
+where it will actually open up my notes
+ 
+
+363
+00:05:25,680 --> 00:05:27,990
+where it will actually open up my notes
+here. This is where my notes app is now
+
+364
+00:05:27,990 --> 00:05:28,000
+here. This is where my notes app is now
+ 
+
+365
+00:05:28,000 --> 00:05:30,230
+here. This is where my notes app is now
+open. It says Claude is using your
+
+366
+00:05:30,230 --> 00:05:30,240
+open. It says Claude is using your
+ 
+
+367
+00:05:30,240 --> 00:05:31,990
+open. It says Claude is using your
+computer. And in a second, it should
+
+368
+00:05:31,990 --> 00:05:32,000
+computer. And in a second, it should
+ 
+
+369
+00:05:32,000 --> 00:05:33,749
+computer. And in a second, it should
+input everything, you know, the summary
+
+370
+00:05:33,749 --> 00:05:33,759
+input everything, you know, the summary
+ 
+
+371
+00:05:33,759 --> 00:05:35,670
+input everything, you know, the summary
+from my Google calendar, which there it
+
+372
+00:05:35,670 --> 00:05:35,680
+from my Google calendar, which there it
+ 
+
+373
+00:05:35,680 --> 00:05:37,909
+from my Google calendar, which there it
+was using a Google connector. So, that's
+
+374
+00:05:37,909 --> 00:05:37,919
+was using a Google connector. So, that's
+ 
+
+375
+00:05:37,919 --> 00:05:39,270
+was using a Google connector. So, that's
+just something that's natively set up
+
+376
+00:05:39,270 --> 00:05:39,280
+just something that's natively set up
+ 
+
+377
+00:05:39,280 --> 00:05:41,350
+just something that's natively set up
+inside of Claude. So, right now, it's
+
+378
+00:05:41,350 --> 00:05:41,360
+inside of Claude. So, right now, it's
+ 
+
+379
+00:05:41,360 --> 00:05:43,189
+inside of Claude. So, right now, it's
+just inputting everything in here. So
+
+380
+00:05:43,189 --> 00:05:43,199
+just inputting everything in here. So
+ 
+
+381
+00:05:43,199 --> 00:05:44,790
+just inputting everything in here. So
+here I have my morning routine from 8:00
+
+382
+00:05:44,790 --> 00:05:44,800
+here I have my morning routine from 8:00
+ 
+
+383
+00:05:44,800 --> 00:05:46,790
+here I have my morning routine from 8:00
+to 8:30. This is recurring. I have my
+
+384
+00:05:46,790 --> 00:05:46,800
+to 8:30. This is recurring. I have my
+ 
+
+385
+00:05:46,800 --> 00:05:48,870
+to 8:30. This is recurring. I have my
+team sync at 1:00 p.m. and then we have
+
+386
+00:05:48,870 --> 00:05:48,880
+team sync at 1:00 p.m. and then we have
+ 
+
+387
+00:05:48,880 --> 00:05:51,350
+team sync at 1:00 p.m. and then we have
+a call later in the day. So awesome.
+
+388
+00:05:51,350 --> 00:05:51,360
+a call later in the day. So awesome.
+ 
+
+389
+00:05:51,360 --> 00:05:52,870
+a call later in the day. So awesome.
+That is how we are actually utilizing
+
+390
+00:05:52,870 --> 00:05:52,880
+That is how we are actually utilizing
+ 
+
+391
+00:05:52,880 --> 00:05:54,710
+That is how we are actually utilizing
+the computer use. Hypothetically if we
+
+392
+00:05:54,710 --> 00:05:54,720
+the computer use. Hypothetically if we
+ 
+
+393
+00:05:54,720 --> 00:05:56,629
+the computer use. Hypothetically if we
+wanted to use it from our phone. So if
+
+394
+00:05:56,629 --> 00:05:56,639
+wanted to use it from our phone. So if
+ 
+
+395
+00:05:56,639 --> 00:05:58,469
+wanted to use it from our phone. So if
+we're away from our desk or anything
+
+396
+00:05:58,469 --> 00:05:58,479
+we're away from our desk or anything
+ 
+
+397
+00:05:58,479 --> 00:05:59,990
+we're away from our desk or anything
+else. So beyond what I just showed you,
+
+398
+00:05:59,990 --> 00:06:00,000
+else. So beyond what I just showed you,
+ 
+
+399
+00:06:00,000 --> 00:06:01,350
+else. So beyond what I just showed you,
+I mean there's a thousand different use
+
+400
+00:06:01,350 --> 00:06:01,360
+I mean there's a thousand different use
+ 
+
+401
+00:06:01,360 --> 00:06:02,870
+I mean there's a thousand different use
+cases that you can use this for. Lead
+
+402
+00:06:02,870 --> 00:06:02,880
+cases that you can use this for. Lead
+ 
+
+403
+00:06:02,880 --> 00:06:04,550
+cases that you can use this for. Lead
+generation, lead research, lead
+
+404
+00:06:04,550 --> 00:06:04,560
+generation, lead research, lead
+ 
+
+405
+00:06:04,560 --> 00:06:06,710
+generation, lead research, lead
+enrichment, whatever it may be. It
+
+406
+00:06:06,710 --> 00:06:06,720
+enrichment, whatever it may be. It
+ 
+
+407
+00:06:06,720 --> 00:06:08,550
+enrichment, whatever it may be. It
+doesn't have to be regarding to leads,
+
+408
+00:06:08,550 --> 00:06:08,560
+doesn't have to be regarding to leads,
+ 
+
+409
+00:06:08,560 --> 00:06:10,230
+doesn't have to be regarding to leads,
+but you can use this across departments
+
+410
+00:06:10,230 --> 00:06:10,240
+but you can use this across departments
+ 
+
+411
+00:06:10,240 --> 00:06:12,390
+but you can use this across departments
+for so many different use cases. So,
+
+412
+00:06:12,390 --> 00:06:12,400
+for so many different use cases. So,
+ 
+
+413
+00:06:12,400 --> 00:06:14,309
+for so many different use cases. So,
+just to expand and give you guys some
+
+414
+00:06:14,309 --> 00:06:14,319
+just to expand and give you guys some
+ 
+
+415
+00:06:14,319 --> 00:06:15,990
+just to expand and give you guys some
+ideas, first one, client deliverable
+
+416
+00:06:15,990 --> 00:06:16,000
+ideas, first one, client deliverable
+ 
+
+417
+00:06:16,000 --> 00:06:17,510
+ideas, first one, client deliverable
+prep. So, let's say you're just building
+
+418
+00:06:17,510 --> 00:06:17,520
+prep. So, let's say you're just building
+ 
+
+419
+00:06:17,520 --> 00:06:19,590
+prep. So, let's say you're just building
+out an automation or a project workflow
+
+420
+00:06:19,590 --> 00:06:19,600
+out an automation or a project workflow
+ 
+
+421
+00:06:19,600 --> 00:06:21,110
+out an automation or a project workflow
+for a client and you've got the proposal
+
+422
+00:06:21,110 --> 00:06:21,120
+for a client and you've got the proposal
+ 
+
+423
+00:06:21,120 --> 00:06:22,950
+for a client and you've got the proposal
+doc inside of Google Docs. You've got
+
+424
+00:06:22,950 --> 00:06:22,960
+doc inside of Google Docs. You've got
+ 
+
+425
+00:06:22,960 --> 00:06:25,110
+doc inside of Google Docs. You've got
+the scope spreadsheet in Excel and the
+
+426
+00:06:25,110 --> 00:06:25,120
+the scope spreadsheet in Excel and the
+ 
+
+427
+00:06:25,120 --> 00:06:27,189
+the scope spreadsheet in Excel and the
+contract PDF in your downloads folder.
+
+428
+00:06:27,189 --> 00:06:27,199
+contract PDF in your downloads folder.
+ 
+
+429
+00:06:27,199 --> 00:06:28,550
+contract PDF in your downloads folder.
+Now, normally you would have to spend
+
+430
+00:06:28,550 --> 00:06:28,560
+Now, normally you would have to spend
+ 
+
+431
+00:06:28,560 --> 00:06:29,830
+Now, normally you would have to spend
+about 10 minutes just jumping between
+
+432
+00:06:29,830 --> 00:06:29,840
+about 10 minutes just jumping between
+ 
+
+433
+00:06:29,840 --> 00:06:31,430
+about 10 minutes just jumping between
+apps, copying all that information,
+
+434
+00:06:31,430 --> 00:06:31,440
+apps, copying all that information,
+ 
+
+435
+00:06:31,440 --> 00:06:33,110
+apps, copying all that information,
+reformatting whatever it may be. But
+
+436
+00:06:33,110 --> 00:06:33,120
+reformatting whatever it may be. But
+ 
+
+437
+00:06:33,120 --> 00:06:34,710
+reformatting whatever it may be. But
+with computer use, you can just tell
+
+438
+00:06:34,710 --> 00:06:34,720
+with computer use, you can just tell
+ 
+
+439
+00:06:34,720 --> 00:06:36,390
+with computer use, you can just tell
+Claude to pull the key numbers from the
+
+440
+00:06:36,390 --> 00:06:36,400
+Claude to pull the key numbers from the
+ 
+
+441
+00:06:36,400 --> 00:06:38,390
+Claude to pull the key numbers from the
+spreadsheet, open the proposal, update
+
+442
+00:06:38,390 --> 00:06:38,400
+spreadsheet, open the proposal, update
+ 
+
+443
+00:06:38,400 --> 00:06:39,909
+spreadsheet, open the proposal, update
+the figures, and then attach everything
+
+444
+00:06:39,909 --> 00:06:39,919
+the figures, and then attach everything
+ 
+
+445
+00:06:39,919 --> 00:06:42,070
+the figures, and then attach everything
+to a single email draft. It will handle
+
+446
+00:06:42,070 --> 00:06:42,080
+to a single email draft. It will handle
+ 
+
+447
+00:06:42,080 --> 00:06:43,909
+to a single email draft. It will handle
+all the app switching automatically for
+
+448
+00:06:43,909 --> 00:06:43,919
+all the app switching automatically for
+ 
+
+449
+00:06:43,919 --> 00:06:45,749
+all the app switching automatically for
+you. Second is any overnight code
+
+450
+00:06:45,749 --> 00:06:45,759
+you. Second is any overnight code
+ 
+
+451
+00:06:45,759 --> 00:06:47,990
+you. Second is any overnight code
+reviews with scheduled tasks. So clawed
+
+452
+00:06:47,990 --> 00:06:48,000
+reviews with scheduled tasks. So clawed
+ 
+
+453
+00:06:48,000 --> 00:06:49,510
+reviews with scheduled tasks. So clawed
+code, it already has a scheduling
+
+454
+00:06:49,510 --> 00:06:49,520
+code, it already has a scheduling
+ 
+
+455
+00:06:49,520 --> 00:06:51,270
+code, it already has a scheduling
+feature you guys may already know about
+
+456
+00:06:51,270 --> 00:06:51,280
+feature you guys may already know about
+ 
+
+457
+00:06:51,280 --> 00:06:52,870
+feature you guys may already know about
+where you can just set prompts to run on
+
+458
+00:06:52,870 --> 00:06:52,880
+where you can just set prompts to run on
+ 
+
+459
+00:06:52,880 --> 00:06:55,029
+where you can just set prompts to run on
+a chrome. Now combine that with computer
+
+460
+00:06:55,029 --> 00:06:55,039
+a chrome. Now combine that with computer
+ 
+
+461
+00:06:55,039 --> 00:06:56,629
+a chrome. Now combine that with computer
+use. You can just set a task that runs
+
+462
+00:06:56,629 --> 00:06:56,639
+use. You can just set a task that runs
+ 
+
+463
+00:06:56,639 --> 00:06:58,230
+use. You can just set a task that runs
+at midnight, pulls up your staging
+
+464
+00:06:58,230 --> 00:06:58,240
+at midnight, pulls up your staging
+ 
+
+465
+00:06:58,240 --> 00:07:00,390
+at midnight, pulls up your staging
+environment in the iOS simulator and
+
+466
+00:07:00,390 --> 00:07:00,400
+environment in the iOS simulator and
+ 
+
+467
+00:07:00,400 --> 00:07:02,309
+environment in the iOS simulator and
+then clicks through the core user flows,
+
+468
+00:07:02,309 --> 00:07:02,319
+then clicks through the core user flows,
+ 
+
+469
+00:07:02,319 --> 00:07:04,230
+then clicks through the core user flows,
+screenshot anything that looks off and
+
+470
+00:07:04,230 --> 00:07:04,240
+screenshot anything that looks off and
+ 
+
+471
+00:07:04,240 --> 00:07:05,909
+screenshot anything that looks off and
+commits a bug report to your repo before
+
+472
+00:07:05,909 --> 00:07:05,919
+commits a bug report to your repo before
+ 
+
+473
+00:07:05,919 --> 00:07:08,150
+commits a bug report to your repo before
+you even wake up. Now third, and this
+
+474
+00:07:08,150 --> 00:07:08,160
+you even wake up. Now third, and this
+ 
+
+475
+00:07:08,160 --> 00:07:10,230
+you even wake up. Now third, and this
+one is very specific to agency owners. A
+
+476
+00:07:10,230 --> 00:07:10,240
+one is very specific to agency owners. A
+ 
+
+477
+00:07:10,240 --> 00:07:11,350
+one is very specific to agency owners. A
+lot of your clients, they're going to be
+
+478
+00:07:11,350 --> 00:07:11,360
+lot of your clients, they're going to be
+ 
+
+479
+00:07:11,360 --> 00:07:13,029
+lot of your clients, they're going to be
+running proprietary softwares that has
+
+480
+00:07:13,029 --> 00:07:13,039
+running proprietary softwares that has
+ 
+
+481
+00:07:13,039 --> 00:07:15,510
+running proprietary softwares that has
+zero API access. So you can think about
+
+482
+00:07:15,510 --> 00:07:15,520
+zero API access. So you can think about
+ 
+
+483
+00:07:15,520 --> 00:07:17,830
+zero API access. So you can think about
+like old clinic like dental practice
+
+484
+00:07:17,830 --> 00:07:17,840
+like old clinic like dental practice
+ 
+
+485
+00:07:17,840 --> 00:07:20,070
+like old clinic like dental practice
+management systems where they have local
+
+486
+00:07:20,070 --> 00:07:20,080
+management systems where they have local
+ 
+
+487
+00:07:20,080 --> 00:07:21,830
+management systems where they have local
+accounting tools or any niche industry
+
+488
+00:07:21,830 --> 00:07:21,840
+accounting tools or any niche industry
+ 
+
+489
+00:07:21,840 --> 00:07:24,230
+accounting tools or any niche industry
+platforms that were just built 15 years
+
+490
+00:07:24,230 --> 00:07:24,240
+platforms that were just built 15 years
+ 
+
+491
+00:07:24,240 --> 00:07:26,230
+platforms that were just built 15 years
+ago. They're legacy systems. There's no
+
+492
+00:07:26,230 --> 00:07:26,240
+ago. They're legacy systems. There's no
+ 
+
+493
+00:07:26,240 --> 00:07:28,309
+ago. They're legacy systems. There's no
+Zapier connector. There's no web hook.
+
+494
+00:07:28,309 --> 00:07:28,319
+Zapier connector. There's no web hook.
+ 
+
+495
+00:07:28,319 --> 00:07:29,909
+Zapier connector. There's no web hook.
+There's no API documentation. There's
+
+496
+00:07:29,909 --> 00:07:29,919
+There's no API documentation. There's
+ 
+
+497
+00:07:29,919 --> 00:07:31,589
+There's no API documentation. There's
+nothing. But those apps, they do have a
+
+498
+00:07:31,589 --> 00:07:31,599
+nothing. But those apps, they do have a
+ 
+
+499
+00:07:31,599 --> 00:07:34,150
+nothing. But those apps, they do have a
+GUI. And now Claude can interact with
+
+500
+00:07:34,150 --> 00:07:34,160
+GUI. And now Claude can interact with
+ 
+
+501
+00:07:34,160 --> 00:07:36,230
+GUI. And now Claude can interact with
+that GUI. So you can actually build
+
+502
+00:07:36,230 --> 00:07:36,240
+that GUI. So you can actually build
+ 
+
+503
+00:07:36,240 --> 00:07:38,309
+that GUI. So you can actually build
+automations around software that was
+
+504
+00:07:38,309 --> 00:07:38,319
+automations around software that was
+ 
+
+505
+00:07:38,319 --> 00:07:40,390
+automations around software that was
+previously impossible to integrate with
+
+506
+00:07:40,390 --> 00:07:40,400
+previously impossible to integrate with
+ 
+
+507
+00:07:40,400 --> 00:07:42,230
+previously impossible to integrate with
+and that opens up a whole new category
+
+508
+00:07:42,230 --> 00:07:42,240
+and that opens up a whole new category
+ 
+
+509
+00:07:42,240 --> 00:07:43,990
+and that opens up a whole new category
+of clients that you can now serve.
+
+510
+00:07:43,990 --> 00:07:44,000
+of clients that you can now serve.
+ 
+
+511
+00:07:44,000 --> 00:07:45,749
+of clients that you can now serve.
+Fourth is competitor research on
+
+512
+00:07:45,749 --> 00:07:45,759
+Fourth is competitor research on
+ 
+
+513
+00:07:45,759 --> 00:07:47,830
+Fourth is competitor research on
+autopilot. So you can schedule Claude to
+
+514
+00:07:47,830 --> 00:07:47,840
+autopilot. So you can schedule Claude to
+ 
+
+515
+00:07:47,840 --> 00:07:49,830
+autopilot. So you can schedule Claude to
+open a local note-taking app every
+
+516
+00:07:49,830 --> 00:07:49,840
+open a local note-taking app every
+ 
+
+517
+00:07:49,840 --> 00:07:51,670
+open a local note-taking app every
+single morning. Pull up three or four
+
+518
+00:07:51,670 --> 00:07:51,680
+single morning. Pull up three or four
+ 
+
+519
+00:07:51,680 --> 00:07:53,430
+single morning. Pull up three or four
+competitor websites using the Chrome
+
+520
+00:07:53,430 --> 00:07:53,440
+competitor websites using the Chrome
+ 
+
+521
+00:07:53,440 --> 00:07:55,270
+competitor websites using the Chrome
+extension. Screenshot their pricing
+
+522
+00:07:55,270 --> 00:07:55,280
+extension. Screenshot their pricing
+ 
+
+523
+00:07:55,280 --> 00:07:57,510
+extension. Screenshot their pricing
+pages. Compile a weekly comparison dock.
+
+524
+00:07:57,510 --> 00:07:57,520
+pages. Compile a weekly comparison dock.
+ 
+
+525
+00:07:57,520 --> 00:07:58,710
+pages. Compile a weekly comparison dock.
+And if you're running an agency and
+
+526
+00:07:58,710 --> 00:07:58,720
+And if you're running an agency and
+ 
+
+527
+00:07:58,720 --> 00:08:00,070
+And if you're running an agency and
+tracking how competitors are actually
+
+528
+00:08:00,070 --> 00:08:00,080
+tracking how competitors are actually
+ 
+
+529
+00:08:00,080 --> 00:08:02,390
+tracking how competitors are actually
+positioning, that is a task that a VA
+
+530
+00:08:02,390 --> 00:08:02,400
+positioning, that is a task that a VA
+ 
+
+531
+00:08:02,400 --> 00:08:04,629
+positioning, that is a task that a VA
+may have well taken like 30 minutes to
+
+532
+00:08:04,629 --> 00:08:04,639
+may have well taken like 30 minutes to
+ 
+
+533
+00:08:04,639 --> 00:08:06,790
+may have well taken like 30 minutes to
+perform. Now, it runs itself. And last
+
+534
+00:08:06,790 --> 00:08:06,800
+perform. Now, it runs itself. And last
+ 
+
+535
+00:08:06,800 --> 00:08:08,710
+perform. Now, it runs itself. And last
+but not least, and again, like these are
+
+536
+00:08:08,710 --> 00:08:08,720
+but not least, and again, like these are
+ 
+
+537
+00:08:08,720 --> 00:08:10,629
+but not least, and again, like these are
+not limited to just these use cases.
+
+538
+00:08:10,629 --> 00:08:10,639
+not limited to just these use cases.
+ 
+
+539
+00:08:10,639 --> 00:08:11,749
+not limited to just these use cases.
+There's so many more that you can be
+
+540
+00:08:11,749 --> 00:08:11,759
+There's so many more that you can be
+ 
+
+541
+00:08:11,759 --> 00:08:14,070
+There's so many more that you can be
+using this for. So, this is the one that
+
+542
+00:08:14,070 --> 00:08:14,080
+using this for. So, this is the one that
+ 
+
+543
+00:08:14,080 --> 00:08:15,350
+using this for. So, this is the one that
+I actually keep coming back to and what
+
+544
+00:08:15,350 --> 00:08:15,360
+I actually keep coming back to and what
+ 
+
+545
+00:08:15,360 --> 00:08:17,189
+I actually keep coming back to and what
+I have been using this over the past day
+
+546
+00:08:17,189 --> 00:08:17,199
+I have been using this over the past day
+ 
+
+547
+00:08:17,199 --> 00:08:19,110
+I have been using this over the past day
+is let's say you're on a sales call. The
+
+548
+00:08:19,110 --> 00:08:19,120
+is let's say you're on a sales call. The
+ 
+
+549
+00:08:19,120 --> 00:08:21,189
+is let's say you're on a sales call. The
+prospect is asking for a case study that
+
+550
+00:08:21,189 --> 00:08:21,199
+prospect is asking for a case study that
+ 
+
+551
+00:08:21,199 --> 00:08:22,710
+prospect is asking for a case study that
+you know is saved somewhere on your
+
+552
+00:08:22,710 --> 00:08:22,720
+you know is saved somewhere on your
+ 
+
+553
+00:08:22,720 --> 00:08:24,469
+you know is saved somewhere on your
+machine. So, maybe it's just a Google
+
+554
+00:08:24,469 --> 00:08:24,479
+machine. So, maybe it's just a Google
+ 
+
+555
+00:08:24,479 --> 00:08:26,550
+machine. So, maybe it's just a Google
+Slides saved on your computer. So
+
+556
+00:08:26,550 --> 00:08:26,560
+Slides saved on your computer. So
+ 
+
+557
+00:08:26,560 --> 00:08:28,150
+Slides saved on your computer. So
+instead of saying like, "Okay, let me
+
+558
+00:08:28,150 --> 00:08:28,160
+instead of saying like, "Okay, let me
+ 
+
+559
+00:08:28,160 --> 00:08:29,830
+instead of saying like, "Okay, let me
+find this after the call." You can pull
+
+560
+00:08:29,830 --> 00:08:29,840
+find this after the call." You can pull
+ 
+
+561
+00:08:29,840 --> 00:08:31,589
+find this after the call." You can pull
+it up right on the call. You can use
+
+562
+00:08:31,589 --> 00:08:31,599
+it up right on the call. You can use
+ 
+
+563
+00:08:31,599 --> 00:08:32,949
+it up right on the call. You can use
+dispatch saying, "Hey, I need you to
+
+564
+00:08:32,949 --> 00:08:32,959
+dispatch saying, "Hey, I need you to
+ 
+
+565
+00:08:32,959 --> 00:08:34,550
+dispatch saying, "Hey, I need you to
+find me this file." And then you can
+
+566
+00:08:34,550 --> 00:08:34,560
+find me this file." And then you can
+ 
+
+567
+00:08:34,560 --> 00:08:36,149
+find me this file." And then you can
+present it, show it on the call because
+
+568
+00:08:36,149 --> 00:08:36,159
+present it, show it on the call because
+ 
+
+569
+00:08:36,159 --> 00:08:37,350
+present it, show it on the call because
+you're going to have it in seconds. You
+
+570
+00:08:37,350 --> 00:08:37,360
+you're going to have it in seconds. You
+ 
+
+571
+00:08:37,360 --> 00:08:38,949
+you're going to have it in seconds. You
+don't have to be digging and finding it.
+
+572
+00:08:38,949 --> 00:08:38,959
+don't have to be digging and finding it.
+ 
+
+573
+00:08:38,959 --> 00:08:40,870
+don't have to be digging and finding it.
+Meanwhile, Claude, it will do all that
+
+574
+00:08:40,870 --> 00:08:40,880
+Meanwhile, Claude, it will do all that
+ 
+
+575
+00:08:40,880 --> 00:08:42,149
+Meanwhile, Claude, it will do all that
+for you. Now, to talk about some
+
+576
+00:08:42,149 --> 00:08:42,159
+for you. Now, to talk about some
+ 
+
+577
+00:08:42,159 --> 00:08:43,430
+for you. Now, to talk about some
+limitations of what you should know
+
+578
+00:08:43,430 --> 00:08:43,440
+limitations of what you should know
+ 
+
+579
+00:08:43,440 --> 00:08:45,190
+limitations of what you should know
+before you actually get too excited
+
+580
+00:08:45,190 --> 00:08:45,200
+before you actually get too excited
+ 
+
+581
+00:08:45,200 --> 00:08:46,550
+before you actually get too excited
+because there is some important
+
+582
+00:08:46,550 --> 00:08:46,560
+because there is some important
+ 
+
+583
+00:08:46,560 --> 00:08:49,509
+because there is some important
+disclaimers. So, first thing, this is a
+
+584
+00:08:49,509 --> 00:08:49,519
+disclaimers. So, first thing, this is a
+ 
+
+585
+00:08:49,519 --> 00:08:51,430
+disclaimers. So, first thing, this is a
+research preview. It works, but it is
+
+586
+00:08:51,430 --> 00:08:51,440
+research preview. It works, but it is
+ 
+
+587
+00:08:51,440 --> 00:08:53,829
+research preview. It works, but it is
+not bulletproof by any means. Like
+
+588
+00:08:53,829 --> 00:08:53,839
+not bulletproof by any means. Like
+ 
+
+589
+00:08:53,839 --> 00:08:55,829
+not bulletproof by any means. Like
+sometimes claude it will click the right
+
+590
+00:08:55,829 --> 00:08:55,839
+sometimes claude it will click the right
+ 
+
+591
+00:08:55,839 --> 00:08:57,190
+sometimes claude it will click the right
+button from what I have found. Sometimes
+
+592
+00:08:57,190 --> 00:08:57,200
+button from what I have found. Sometimes
+ 
+
+593
+00:08:57,200 --> 00:08:59,590
+button from what I have found. Sometimes
+it misreads the screenshot. It is early
+
+594
+00:08:59,590 --> 00:08:59,600
+it misreads the screenshot. It is early
+ 
+
+595
+00:08:59,600 --> 00:09:01,670
+it misreads the screenshot. It is early
+enthropic. They are saying that upfront
+
+596
+00:09:01,670 --> 00:09:01,680
+enthropic. They are saying that upfront
+ 
+
+597
+00:09:01,680 --> 00:09:02,949
+enthropic. They are saying that upfront
+and that is what I respect and
+
+598
+00:09:02,949 --> 00:09:02,959
+and that is what I respect and
+ 
+
+599
+00:09:02,959 --> 00:09:04,949
+and that is what I respect and
+appreciate about them. Second, it is Mac
+
+600
+00:09:04,949 --> 00:09:04,959
+appreciate about them. Second, it is Mac
+ 
+
+601
+00:09:04,959 --> 00:09:07,350
+appreciate about them. Second, it is Mac
+only right now. So it will come I'm sure
+
+602
+00:09:07,350 --> 00:09:07,360
+only right now. So it will come I'm sure
+ 
+
+603
+00:09:07,360 --> 00:09:08,949
+only right now. So it will come I'm sure
+for Windows pretty soon but for right
+
+604
+00:09:08,949 --> 00:09:08,959
+for Windows pretty soon but for right
+ 
+
+605
+00:09:08,959 --> 00:09:11,190
+for Windows pretty soon but for right
+now it's just Mac. And third, this is a
+
+606
+00:09:11,190 --> 00:09:11,200
+now it's just Mac. And third, this is a
+ 
+
+607
+00:09:11,200 --> 00:09:13,430
+now it's just Mac. And third, this is a
+big one. Browsers are very limited. You
+
+608
+00:09:13,430 --> 00:09:13,440
+big one. Browsers are very limited. You
+ 
+
+609
+00:09:13,440 --> 00:09:15,509
+big one. Browsers are very limited. You
+can't use Google Chrome. Claude can't
+
+610
+00:09:15,509 --> 00:09:15,519
+can't use Google Chrome. Claude can't
+ 
+
+611
+00:09:15,519 --> 00:09:17,750
+can't use Google Chrome. Claude can't
+click around, type in Safari, Chrome, or
+
+612
+00:09:17,750 --> 00:09:17,760
+click around, type in Safari, Chrome, or
+ 
+
+613
+00:09:17,760 --> 00:09:20,070
+click around, type in Safari, Chrome, or
+any browser through screen control. That
+
+614
+00:09:20,070 --> 00:09:20,080
+any browser through screen control. That
+ 
+
+615
+00:09:20,080 --> 00:09:21,829
+any browser through screen control. That
+is a deliberate security decision. So
+
+616
+00:09:21,829 --> 00:09:21,839
+is a deliberate security decision. So
+ 
+
+617
+00:09:21,839 --> 00:09:23,750
+is a deliberate security decision. So
+like web pages, they can contain hidden
+
+618
+00:09:23,750 --> 00:09:23,760
+like web pages, they can contain hidden
+ 
+
+619
+00:09:23,760 --> 00:09:25,190
+like web pages, they can contain hidden
+instructions that could trick an AI
+
+620
+00:09:25,190 --> 00:09:25,200
+instructions that could trick an AI
+ 
+
+621
+00:09:25,200 --> 00:09:27,190
+instructions that could trick an AI
+agent into doing something that you did
+
+622
+00:09:27,190 --> 00:09:27,200
+agent into doing something that you did
+ 
+
+623
+00:09:27,200 --> 00:09:29,750
+agent into doing something that you did
+not ask for. So for any browser tasks,
+
+624
+00:09:29,750 --> 00:09:29,760
+not ask for. So for any browser tasks,
+ 
+
+625
+00:09:29,760 --> 00:09:31,190
+not ask for. So for any browser tasks,
+you would have to use the claude in
+
+626
+00:09:31,190 --> 00:09:31,200
+you would have to use the claude in
+ 
+
+627
+00:09:31,200 --> 00:09:33,110
+you would have to use the claude in
+Chrome extension instead, which is a
+
+628
+00:09:33,110 --> 00:09:33,120
+Chrome extension instead, which is a
+ 
+
+629
+00:09:33,120 --> 00:09:34,389
+Chrome extension instead, which is a
+separate tool, or you could just
+
+630
+00:09:34,389 --> 00:09:34,399
+separate tool, or you could just
+ 
+
+631
+00:09:34,399 --> 00:09:36,870
+separate tool, or you could just
+download a different browser. So I don't
+
+632
+00:09:36,870 --> 00:09:36,880
+download a different browser. So I don't
+ 
+
+633
+00:09:36,880 --> 00:09:38,949
+download a different browser. So I don't
+know all the other ones available, but
+
+634
+00:09:38,949 --> 00:09:38,959
+know all the other ones available, but
+ 
+
+635
+00:09:38,959 --> 00:09:40,630
+know all the other ones available, but
+it will not be Chrome, it will not be
+
+636
+00:09:40,630 --> 00:09:40,640
+it will not be Chrome, it will not be
+ 
+
+637
+00:09:40,640 --> 00:09:42,710
+it will not be Chrome, it will not be
+Safari, all the big ones. You'll have to
+
+638
+00:09:42,710 --> 00:09:42,720
+Safari, all the big ones. You'll have to
+ 
+
+639
+00:09:42,720 --> 00:09:44,470
+Safari, all the big ones. You'll have to
+look for a different third party
+
+640
+00:09:44,470 --> 00:09:44,480
+look for a different third party
+ 
+
+641
+00:09:44,480 --> 00:09:46,470
+look for a different third party
+application, a different browser that
+
+642
+00:09:46,470 --> 00:09:46,480
+application, a different browser that
+ 
+
+643
+00:09:46,480 --> 00:09:48,470
+application, a different browser that
+you will have to use. Fourth is the
+
+644
+00:09:48,470 --> 00:09:48,480
+you will have to use. Fourth is the
+ 
+
+645
+00:09:48,480 --> 00:09:50,389
+you will have to use. Fourth is the
+financial apps and crypto wallets. These
+
+646
+00:09:50,389 --> 00:09:50,399
+financial apps and crypto wallets. These
+ 
+
+647
+00:09:50,399 --> 00:09:52,070
+financial apps and crypto wallets. These
+are blocked by default. So you can just
+
+648
+00:09:52,070 --> 00:09:52,080
+are blocked by default. So you can just
+ 
+
+649
+00:09:52,080 --> 00:09:54,070
+are blocked by default. So you can just
+add your own apps to the block list. And
+
+650
+00:09:54,070 --> 00:09:54,080
+add your own apps to the block list. And
+ 
+
+651
+00:09:54,080 --> 00:09:55,670
+add your own apps to the block list. And
+I mean this makes sense. Like you do not
+
+652
+00:09:55,670 --> 00:09:55,680
+I mean this makes sense. Like you do not
+ 
+
+653
+00:09:55,680 --> 00:09:57,590
+I mean this makes sense. Like you do not
+want an AI agent to be accidentally
+
+654
+00:09:57,590 --> 00:09:57,600
+want an AI agent to be accidentally
+ 
+
+655
+00:09:57,600 --> 00:09:59,509
+want an AI agent to be accidentally
+clicking around your training platform
+
+656
+00:09:59,509 --> 00:09:59,519
+clicking around your training platform
+ 
+
+657
+00:09:59,519 --> 00:10:01,670
+clicking around your training platform
+or your wallet. Fifth is computer use.
+
+658
+00:10:01,670 --> 00:10:01,680
+or your wallet. Fifth is computer use.
+ 
+
+659
+00:10:01,680 --> 00:10:03,750
+or your wallet. Fifth is computer use.
+It runs outside the normal sandbox. So
+
+660
+00:10:03,750 --> 00:10:03,760
+It runs outside the normal sandbox. So
+ 
+
+661
+00:10:03,760 --> 00:10:06,150
+It runs outside the normal sandbox. So
+usually when Claude works on files in
+
+662
+00:10:06,150 --> 00:10:06,160
+usually when Claude works on files in
+ 
+
+663
+00:10:06,160 --> 00:10:08,150
+usually when Claude works on files in
+co-work
+
+664
+00:10:08,150 --> 00:10:08,160
+co-work
+ 
+
+665
+00:10:08,160 --> 00:10:10,310
+co-work
+isolated virtual machine, but computer
+
+666
+00:10:10,310 --> 00:10:10,320
+isolated virtual machine, but computer
+ 
+
+667
+00:10:10,320 --> 00:10:11,910
+isolated virtual machine, but computer
+use, it actually breaks out of that
+
+668
+00:10:11,910 --> 00:10:11,920
+use, it actually breaks out of that
+ 
+
+669
+00:10:11,920 --> 00:10:13,430
+use, it actually breaks out of that
+where it's interacting with your actual
+
+670
+00:10:13,430 --> 00:10:13,440
+where it's interacting with your actual
+ 
+
+671
+00:10:13,440 --> 00:10:15,430
+where it's interacting with your actual
+desktop. So you should think of it like
+
+672
+00:10:15,430 --> 00:10:15,440
+desktop. So you should think of it like
+ 
+
+673
+00:10:15,440 --> 00:10:17,590
+desktop. So you should think of it like
+giving somebody remote desktop access.
+
+674
+00:10:17,590 --> 00:10:17,600
+giving somebody remote desktop access.
+ 
+
+675
+00:10:17,600 --> 00:10:19,110
+giving somebody remote desktop access.
+So you have to be intentional about what
+
+676
+00:10:19,110 --> 00:10:19,120
+So you have to be intentional about what
+ 
+
+677
+00:10:19,120 --> 00:10:20,710
+So you have to be intentional about what
+you actually let it touch. And this is
+
+678
+00:10:20,710 --> 00:10:20,720
+you actually let it touch. And this is
+ 
+
+679
+00:10:20,720 --> 00:10:22,550
+you actually let it touch. And this is
+where it's a little bit more similar to
+
+680
+00:10:22,550 --> 00:10:22,560
+where it's a little bit more similar to
+ 
+
+681
+00:10:22,560 --> 00:10:24,230
+where it's a little bit more similar to
+OpenClaw and where you might want to
+
+682
+00:10:24,230 --> 00:10:24,240
+OpenClaw and where you might want to
+ 
+
+683
+00:10:24,240 --> 00:10:25,990
+OpenClaw and where you might want to
+have a different computer specifically
+
+684
+00:10:25,990 --> 00:10:26,000
+have a different computer specifically
+ 
+
+685
+00:10:26,000 --> 00:10:27,509
+have a different computer specifically
+for this. So it's not going to mess up
+
+686
+00:10:27,509 --> 00:10:27,519
+for this. So it's not going to mess up
+ 
+
+687
+00:10:27,519 --> 00:10:29,110
+for this. So it's not going to mess up
+all your files or anything like that.
+
+688
+00:10:29,110 --> 00:10:29,120
+all your files or anything like that.
+ 
+
+689
+00:10:29,120 --> 00:10:31,030
+all your files or anything like that.
+And finally, this is only available on
+
+690
+00:10:31,030 --> 00:10:31,040
+And finally, this is only available on
+ 
+
+691
+00:10:31,040 --> 00:10:33,110
+And finally, this is only available on
+Pro and Max plans right now. So it's not
+
+692
+00:10:33,110 --> 00:10:33,120
+Pro and Max plans right now. So it's not
+ 
+
+693
+00:10:33,120 --> 00:10:35,190
+Pro and Max plans right now. So it's not
+on Teams or Enterprise. And the reason
+
+694
+00:10:35,190 --> 00:10:35,200
+on Teams or Enterprise. And the reason
+ 
+
+695
+00:10:35,200 --> 00:10:37,509
+on Teams or Enterprise. And the reason
+is that activity from computer use, it
+
+696
+00:10:37,509 --> 00:10:37,519
+is that activity from computer use, it
+ 
+
+697
+00:10:37,519 --> 00:10:39,750
+is that activity from computer use, it
+isn't captured in audit logs, which is
+
+698
+00:10:39,750 --> 00:10:39,760
+isn't captured in audit logs, which is
+ 
+
+699
+00:10:39,760 --> 00:10:41,190
+isn't captured in audit logs, which is
+something that enterprise customers
+
+700
+00:10:41,190 --> 00:10:41,200
+something that enterprise customers
+ 
+
+701
+00:10:41,200 --> 00:10:43,030
+something that enterprise customers
+would need for compliance. Now look, I
+
+702
+00:10:43,030 --> 00:10:43,040
+would need for compliance. Now look, I
+ 
+
+703
+00:10:43,040 --> 00:10:44,389
+would need for compliance. Now look, I
+mentioned this is still early, but what
+
+704
+00:10:44,389 --> 00:10:44,399
+mentioned this is still early, but what
+ 
+
+705
+00:10:44,399 --> 00:10:45,990
+mentioned this is still early, but what
+Enthropic just shipped here, it is
+
+706
+00:10:45,990 --> 00:10:46,000
+Enthropic just shipped here, it is
+ 
+
+707
+00:10:46,000 --> 00:10:47,910
+Enthropic just shipped here, it is
+pretty clear signal of where things are
+
+708
+00:10:47,910 --> 00:10:47,920
+pretty clear signal of where things are
+ 
+
+709
+00:10:47,920 --> 00:10:49,829
+pretty clear signal of where things are
+actually headed to. Like we're moving
+
+710
+00:10:49,829 --> 00:10:49,839
+actually headed to. Like we're moving
+ 
+
+711
+00:10:49,839 --> 00:10:52,069
+actually headed to. Like we're moving
+past the stage where AI just writes text
+
+712
+00:10:52,069 --> 00:10:52,079
+past the stage where AI just writes text
+ 
+
+713
+00:10:52,079 --> 00:10:54,069
+past the stage where AI just writes text
+in a chat. This is actually doing work
+
+714
+00:10:54,069 --> 00:10:54,079
+in a chat. This is actually doing work
+ 
+
+715
+00:10:54,079 --> 00:10:55,670
+in a chat. This is actually doing work
+on your computer while you can go live
+
+716
+00:10:55,670 --> 00:10:55,680
+on your computer while you can go live
+ 
+
+717
+00:10:55,680 --> 00:10:57,030
+on your computer while you can go live
+your life. You can pair that with
+
+718
+00:10:57,030 --> 00:10:57,040
+your life. You can pair that with
+ 
+
+719
+00:10:57,040 --> 00:10:59,190
+your life. You can pair that with
+dispatch from your phone and actually
+
+720
+00:10:59,190 --> 00:10:59,200
+dispatch from your phone and actually
+ 
+
+721
+00:10:59,200 --> 00:11:00,870
+dispatch from your phone and actually
+schedule tasks that run overnight and
+
+722
+00:11:00,870 --> 00:11:00,880
+schedule tasks that run overnight and
+ 
+
+723
+00:11:00,880 --> 00:11:02,310
+schedule tasks that run overnight and
+you basically have a digital employee
+
+724
+00:11:02,310 --> 00:11:02,320
+you basically have a digital employee
+ 
+
+725
+00:11:02,320 --> 00:11:04,389
+you basically have a digital employee
+that is always on for you. And for
+
+726
+00:11:04,389 --> 00:11:04,399
+that is always on for you. And for
+ 
+
+727
+00:11:04,399 --> 00:11:05,910
+that is always on for you. And for
+anyone running a service business or
+
+728
+00:11:05,910 --> 00:11:05,920
+anyone running a service business or
+ 
+
+729
+00:11:05,920 --> 00:11:07,829
+anyone running a service business or
+just an AI agency, like this is the
+
+730
+00:11:07,829 --> 00:11:07,839
+just an AI agency, like this is the
+ 
+
+731
+00:11:07,839 --> 00:11:09,670
+just an AI agency, like this is the
+stuff that should be on your radar. the
+
+732
+00:11:09,670 --> 00:11:09,680
+stuff that should be on your radar. the
+ 
+
+733
+00:11:09,680 --> 00:11:11,430
+stuff that should be on your radar. the
+use cases, they're only going to get
+
+734
+00:11:11,430 --> 00:11:11,440
+use cases, they're only going to get
+ 
+
+735
+00:11:11,440 --> 00:11:13,030
+use cases, they're only going to get
+better as this moves out of the research
+
+736
+00:11:13,030 --> 00:11:13,040
+better as this moves out of the research
+ 
+
+737
+00:11:13,040 --> 00:11:14,710
+better as this moves out of the research
+preview. Now, if you guys do want to
+
+738
+00:11:14,710 --> 00:11:14,720
+preview. Now, if you guys do want to
+ 
+
+739
+00:11:14,720 --> 00:11:16,150
+preview. Now, if you guys do want to
+stay up to date on how to actually use
+
+740
+00:11:16,150 --> 00:11:16,160
+stay up to date on how to actually use
+ 
+
+741
+00:11:16,160 --> 00:11:17,750
+stay up to date on how to actually use
+these tools in your business and
+
+742
+00:11:17,750 --> 00:11:17,760
+these tools in your business and
+ 
+
+743
+00:11:17,760 --> 00:11:19,590
+these tools in your business and
+practical AI strategies to starting and
+
+744
+00:11:19,590 --> 00:11:19,600
+practical AI strategies to starting and
+ 
+
+745
+00:11:19,600 --> 00:11:20,870
+practical AI strategies to starting and
+growing your business, then check out
+
+746
+00:11:20,870 --> 00:11:20,880
+growing your business, then check out
+ 
+
+747
+00:11:20,880 --> 00:11:23,350
+growing your business, then check out
+our free AI newsletter. We upload weekly
+
+748
+00:11:23,350 --> 00:11:23,360
+our free AI newsletter. We upload weekly
+ 
+
+749
+00:11:23,360 --> 00:11:25,110
+our free AI newsletter. We upload weekly
+sending you strategies on how to start
+
+750
+00:11:25,110 --> 00:11:25,120
+sending you strategies on how to start
+ 
+
+751
+00:11:25,120 --> 00:11:26,870
+sending you strategies on how to start
+and actually grow your business and our
+
+752
+00:11:26,870 --> 00:11:26,880
+and actually grow your business and our
+ 
+
+753
+00:11:26,880 --> 00:11:28,470
+and actually grow your business and our
+experience in the space. And before you
+
+754
+00:11:28,470 --> 00:11:28,480
+experience in the space. And before you
+ 
+
+755
+00:11:28,480 --> 00:11:30,470
+experience in the space. And before you
+guys go, we are hosting a live free
+
+756
+00:11:30,470 --> 00:11:30,480
+guys go, we are hosting a live free
+ 
+
+757
+00:11:30,480 --> 00:11:32,630
+guys go, we are hosting a live free
+workshop next Tuesday, breaking down how
+
+758
+00:11:32,630 --> 00:11:32,640
+workshop next Tuesday, breaking down how
+ 
+
+759
+00:11:32,640 --> 00:11:34,389
+workshop next Tuesday, breaking down how
+we use AI inside of our three companies,
+
+760
+00:11:34,389 --> 00:11:34,399
+we use AI inside of our three companies,
+ 
+
+761
+00:11:34,399 --> 00:11:36,630
+we use AI inside of our three companies,
+automating about 60 to 70% of our tasks
+
+762
+00:11:36,630 --> 00:11:36,640
+automating about 60 to 70% of our tasks
+ 
+
+763
+00:11:36,640 --> 00:11:37,829
+automating about 60 to 70% of our tasks
+currently and how we've been
+
+764
+00:11:37,829 --> 00:11:37,839
+currently and how we've been
+ 
+
+765
+00:11:37,839 --> 00:11:40,069
+currently and how we've been
+implementing AI, Claude Code, OpenClaw
+
+766
+00:11:40,069 --> 00:11:40,079
+implementing AI, Claude Code, OpenClaw
+ 
+
+767
+00:11:40,079 --> 00:11:41,829
+implementing AI, Claude Code, OpenClaw
+for all of our clients and the results
+
+768
+00:11:41,829 --> 00:11:41,839
+for all of our clients and the results
+ 
+
+769
+00:11:41,839 --> 00:11:43,430
+for all of our clients and the results
+that they have seen and how you can
+
+770
+00:11:43,430 --> 00:11:43,440
+that they have seen and how you can
+ 
+
+771
+00:11:43,440 --> 00:11:45,190
+that they have seen and how you can
+actually do that for yourself, your
+
+772
+00:11:45,190 --> 00:11:45,200
+actually do that for yourself, your
+ 
+
+773
+00:11:45,200 --> 00:11:47,430
+actually do that for yourself, your
+team, upskill your team, and install
+
+774
+00:11:47,430 --> 00:11:47,440
+team, upskill your team, and install
+ 
+
+775
+00:11:47,440 --> 00:11:48,710
+team, upskill your team, and install
+Claude inside of your guys'
+
+776
+00:11:48,710 --> 00:11:48,720
+Claude inside of your guys'
+ 
+
+777
+00:11:48,720 --> 00:11:50,150
+Claude inside of your guys'
+environments. So, if you are a business
+
+778
+00:11:50,150 --> 00:11:50,160
+environments. So, if you are a business
+ 
+
+779
+00:11:50,160 --> 00:11:51,430
+environments. So, if you are a business
+owner and you're looking to either drive
+
+780
+00:11:51,430 --> 00:11:51,440
+owner and you're looking to either drive
+ 
+
+781
+00:11:51,440 --> 00:11:53,110
+owner and you're looking to either drive
+leverage or increase your bottom line,
+
+782
+00:11:53,110 --> 00:11:53,120
+leverage or increase your bottom line,
+ 
+
+783
+00:11:53,120 --> 00:11:54,790
+leverage or increase your bottom line,
+then make sure to check out and sign up
+
+784
+00:11:54,790 --> 00:11:54,800
+then make sure to check out and sign up
+ 
+
+785
+00:11:54,800 --> 00:11:57,750
+then make sure to check out and sign up
+for that webinar next Tuesday. We'll be
+
+786
+00:11:57,750 --> 00:11:57,760
+for that webinar next Tuesday. We'll be
+ 
+
+787
+00:11:57,760 --> 00:11:59,590
+for that webinar next Tuesday. We'll be
+covering all of that. You guys do not
+
+788
+00:11:59,590 --> 00:11:59,600
+covering all of that. You guys do not
+ 
+
+789
+00:11:59,600 --> 00:12:00,710
+covering all of that. You guys do not
+want to miss it. But with that being
+
+790
+00:12:00,710 --> 00:12:00,720
+want to miss it. But with that being
+ 
+
+791
+00:12:00,720 --> 00:12:04,160
+want to miss it. But with that being
+said, thank you guys for watching.
+

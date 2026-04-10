@@ -1,0 +1,187 @@
+{
+  "version": "2.0.0",
+  "lastUpdated": "2026-04-05T01:30:00Z",
+  "portAllocationStrategy": {
+    "backend": {
+      "description": "Backend services use ODD numbers",
+      "range": [3001, 3999],
+      "pattern": "odd"
+    },
+    "frontend": {
+      "description": "Frontend services use EVEN numbers",
+      "range": [3000, 3998],
+      "pattern": "even"
+    },
+    "platform": {
+      "description": "Platform services (federation, monitoring) use 9000+ range",
+      "range": [9001, 9099],
+      "pattern": "odd"
+    }
+  },
+  "ec2Instance": {
+    "id": "i-0c851042b3e385682",
+    "name": "staging-modern-node-apps",
+    "ip": "98.83.4.34",
+    "type": "t3.medium",
+    "region": "us-east-1"
+  },
+  "allocatedPorts": {
+    "3001": {
+      "project": "dreamihaircare",
+      "service": "backend",
+      "ec2Port": 3008,
+      "ec2Status": "running",
+      "note": "EC2 drift — running on 3008, should be 3001. Needs correction.",
+      "location": "/Users/amenra/Native-Projects/clients/dreamihaircare",
+      "status": "active"
+    },
+    "3003": {
+      "project": "quiksession",
+      "service": "backend",
+      "ec2Status": "not-deployed",
+      "location": "/Users/amenra/Native-Projects/Quik-Nation/quiksession",
+      "status": "reserved"
+    },
+    "3004": {
+      "project": "quiksession",
+      "service": "frontend",
+      "status": "reserved"
+    },
+    "3006": {
+      "project": "quiknation",
+      "service": "frontend-main",
+      "status": "active"
+    },
+    "3008": {
+      "project": "quiknation",
+      "service": "frontend-investors",
+      "note": "DreamiHairCare backend is ALSO running on this port on EC2 — conflict",
+      "status": "conflict"
+    },
+    "3020": {
+      "project": "quiknation",
+      "service": "frontend-stripe",
+      "status": "active"
+    },
+    "3023": {
+      "project": "quikcarrental",
+      "service": "backend",
+      "ec2Port": 3023,
+      "ec2Status": "running",
+      "domain": "api-dev.quikcarrental.com",
+      "location": "/Users/amenra/Native-Projects/Quik-Nation/quikcarrental",
+      "status": "active"
+    },
+    "3025": {
+      "project": "empresss-eats",
+      "service": "backend",
+      "ec2Port": 3025,
+      "ec2Status": "running",
+      "location": "/Users/amenra/Native-Projects/clients/empresss-eats",
+      "status": "active"
+    },
+    "3027": {
+      "project": "quikvibes",
+      "service": "backend",
+      "ec2Status": "not-deployed",
+      "location": "/Users/amenra/Native-Projects/Quik-Nation/quikvibes",
+      "status": "reserved"
+    },
+    "3028": {
+      "project": "quikvibes",
+      "service": "frontend",
+      "status": "reserved"
+    },
+    "3035": {
+      "project": "fmo",
+      "service": "backend",
+      "ec2Port": 3035,
+      "ec2Status": "running",
+      "domain": "api-dev.findmyorganizer.com",
+      "location": "/Users/amenra/Native-Projects/clients/fmo",
+      "status": "active"
+    },
+    "3039": {
+      "project": "quikaction",
+      "service": "backend",
+      "ec2Port": 3039,
+      "ec2Status": "running",
+      "location": "/Users/amenra/Native-Projects/Quik-Nation/quikaction",
+      "status": "active"
+    },
+    "3041": {
+      "project": "world-cup-ready",
+      "service": "backend",
+      "ec2Port": 3041,
+      "ec2Status": "errored",
+      "note": "Schema drift — resolvers dont match schema. Needs code fix.",
+      "domain": "api-dev.worldcupready.com",
+      "location": "/Users/amenra/Native-Projects/clients/world-cup-ready",
+      "status": "active"
+    },
+    "3045": {
+      "project": "seeking-talent",
+      "service": "backend",
+      "ec2Port": 3045,
+      "ec2Status": "running",
+      "location": "/Users/amenra/Native-Projects/clients/seeking-talent",
+      "status": "active"
+    },
+    "3050": {
+      "project": "site962",
+      "service": "backend",
+      "ec2Port": 3050,
+      "ec2Status": "running",
+      "note": "EVEN port — violates odd convention. Should be 3049 or 3051.",
+      "location": "/Users/amenra/Native-Projects/Quik-Nation/site962",
+      "status": "active"
+    },
+    "3962": {
+      "project": "site962",
+      "service": "frontend",
+      "status": "active"
+    },
+    "4031": {
+      "project": "quiknation",
+      "service": "backend",
+      "ec2Port": 4031,
+      "ec2Status": "running",
+      "note": "Outside 3000 range. Consider moving to 3009 per EC2 registry.",
+      "domain": "api-dev.quiknation.com",
+      "location": "/Users/amenra/Native-Projects/Quik-Nation/quiknation",
+      "status": "active"
+    },
+    "8083": {
+      "project": "myvoyages",
+      "service": "backend",
+      "ec2Status": "not-deployed",
+      "location": "/Users/amenra/Native-Projects/clients/myvoyages",
+      "status": "reserved"
+    },
+    "9050": {
+      "project": "auset-platform",
+      "service": "feedback-federation-gateway",
+      "ec2Port": 9050,
+      "ec2Status": "running",
+      "note": "Platform service — aggregates feedback from all Heru backends",
+      "status": "active"
+    }
+  },
+  "portDriftReport": {
+    "generated": "2026-04-05",
+    "issues": [
+      "DreamiHairCare: registry=3001, EC2=3008 — MISMATCH",
+      "Site962 backend: port 3050 is EVEN — should be odd",
+      "QuikNation backend: port 4031 outside 3000 range — should be 3009",
+      "QuikNation frontend-investors (3008) conflicts with DreamiHairCare EC2 port"
+    ]
+  },
+  "nextAvailablePorts": {
+    "backend": 3007,
+    "frontend": 3010
+  },
+  "conflictResolution": {
+    "strategy": "auto-increment",
+    "description": "When a requested port is occupied, automatically suggest the next available odd port for backends, even for frontends"
+  }
+}

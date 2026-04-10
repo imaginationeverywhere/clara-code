@@ -1,0 +1,94 @@
+Source: https://youtu.be/nQLr1JGG0kY
+Title: 92 Updates in Two Releases? Here's What Actually Matters!
+Fetched: 2026-03-25T20:03:56.791Z
+Segments: 84
+
+--- Plain text ---
+12 new features, 52 bug fixes, and 28 improvements across two releases. Starting with Enterprise, the new bare flag strips cloud code down to just the API. No hooks, no plugins, no LSP, perfect for CI pipelines. Teams can now drop independent policy files into a manage settings directory. And a new sandbox setting exits with an error if the sandbox can't start instead of silently running unprotected. Two new hook events land in this release. CWD changed files when you switch directories and file change files when files update on disk. Perfect for tools like dire andv. Agents can now declare an initial prompt in their front matter to autosubmit their first turn. And key bindings for killing agents and toggling fast mode are now fully rebindable through your keybindings config. The channels flag now relays tool approval prompts directly to your phone. Previously, this had issues with team and enterprise orcs and would show a not available message after upgrades [music] both are fixed. Remote control sessions now generate a I titles within seconds of your first message and fixes for rename syncing, exit archiving, and a memory leak in long sessions. Voice mode gets six fixes this cycle. Silent retry failures, dropped websocket connections, a 1 to 8 second U, I freeze on startup, Linux audio errors, and a space key that got swallowed after hold to talk. Beyond voice transcript mode now supports search with slash pasted images insert number chips at your cursor and Ctrl XR E opens your external editor. MCP tool calls now collapse into a synced queried server line. Expand with control O or off add support for the client ID metadata document spec and the MCP config flag can no longer bypass manage server policies. Plugins load from disk cache on startup instead of refetching and duplicate MCP servers from or connectors are automatically suppressed. Bedrock cold start latency drops by overlapping the profile fetch with other boot work. Resuming large sessions uses less memory and starts faster. Print mode startup saves 600 milliseconds by skipping unauthenticated MCP server handshakes. The non-streaming fallback jumps from 21,000 to 64,000 tokens with a 5m minute timeout and web fetch uses less peak memory on large pages. Multiple concurrent sessions no longer require repeated reauthentication when one refreshes its oorthth token. On Mac, clawed code no longer hangs on exit and the caffeinate process now terminates properly. So your Mac can actually sleep. Background agents that became invisible after context compaction are fixed along with a session history loss bug in the SD key. In VS Code, Windows path inheritance for Git bash is restored. A 60-second backend timeout now shows a not responding spinner and session history reloads correctly. Scroll back no longer jumps when collapsed groups finish or when the model starts stinking. Interrupting a prompt now restores your input so you can edit and resubmit and status works mid response. Run clot update in your terminal to get everything. Over 75,000 developers are now building with clot code on GitHub. Subscribe for weekly updates on every new release.
+
+--- With timestamps ---
+
+[00:00] 12 new features, 52 bug fixes, and 28
+[00:03] improvements across two releases.
+[00:06] Starting with Enterprise, the new bare
+[00:08] flag strips cloud code down to just the
+[00:10] API. No hooks, no plugins, no LSP,
+[00:14] perfect for CI pipelines. Teams can now
+[00:17] drop independent policy files into a
+[00:20] manage settings directory. And a new
+[00:22] sandbox setting exits with an error if
+[00:25] the sandbox can't start instead of
+[00:27] silently running unprotected. Two new
+[00:30] hook events land in this release. CWD
+[00:33] changed files when you switch
+[00:34] directories and file change files when
+[00:37] files update on disk. Perfect for tools
+[00:40] like dire andv.
+[00:42] Agents can now declare an initial prompt
+[00:44] in their front matter to autosubmit
+[00:47] their first turn. And key bindings for
+[00:49] killing agents and toggling fast mode
+[00:51] are now fully rebindable through your
+[00:53] keybindings config.
+[00:59] The channels flag now relays tool
+[01:01] approval prompts directly to your phone.
+[01:05] Previously, this had issues with team
+[01:07] and enterprise orcs and would show a not
+[01:09] available message after upgrades [music]
+[01:12] both are fixed. Remote control sessions
+[01:15] now generate a I titles within seconds
+[01:18] of your first message and fixes for
+[01:20] rename syncing, exit archiving, and a
+[01:22] memory leak in long sessions. Voice mode
+[01:25] gets six fixes this cycle. Silent retry
+[01:29] failures, dropped websocket connections,
+[01:31] a 1 to 8 second U, I freeze on startup,
+[01:35] Linux audio errors, and a space key that
+[01:37] got swallowed after hold to talk. Beyond
+[01:40] voice transcript mode now supports
+[01:43] search with slash pasted images insert
+[01:45] number chips at your cursor and Ctrl XR
+[01:49] E opens your external editor. MCP tool
+[01:52] calls now collapse into a synced queried
+[01:55] server line. Expand with control O or
+[01:58] off add support for the client ID
+[02:00] metadata document spec and the MCP
+[02:03] config flag can no longer bypass manage
+[02:05] server policies. Plugins load from disk
+[02:07] cache on startup instead of refetching
+[02:10] and duplicate MCP servers from or
+[02:12] connectors are automatically suppressed.
+[02:15] Bedrock cold start latency drops by
+[02:17] overlapping the profile fetch with other
+[02:19] boot work. Resuming large sessions uses
+[02:22] less memory and starts faster. Print
+[02:24] mode startup saves 600 milliseconds by
+[02:27] skipping unauthenticated MCP server
+[02:30] handshakes. The non-streaming fallback
+[02:32] jumps from 21,000 to 64,000 tokens with
+[02:36] a 5m minute timeout and web fetch uses
+[02:38] less peak memory on large pages.
+[02:41] Multiple concurrent sessions no longer
+[02:43] require repeated reauthentication when
+[02:46] one refreshes its oorthth token. On Mac,
+[02:49] clawed code no longer hangs on exit and
+[02:52] the caffeinate process now terminates
+[02:54] properly. So your Mac can actually
+[02:56] sleep. Background agents that became
+[02:59] invisible after context compaction are
+[03:01] fixed along with a session history loss
+[03:03] bug in the SD key. In VS Code, Windows
+[03:06] path inheritance for Git bash is
+[03:09] restored. A 60-second backend timeout
+[03:11] now shows a not responding spinner and
+[03:14] session history reloads correctly.
+[03:17] Scroll back no longer jumps when
+[03:18] collapsed groups finish or when the
+[03:20] model starts stinking. Interrupting a
+[03:22] prompt now restores your input so you
+[03:24] can edit and resubmit and status works
+[03:27] mid response. Run clot update in your
+[03:30] terminal to get everything. Over 75,000
+[03:33] developers are now building with clot
+[03:35] code on GitHub. Subscribe for weekly
+[03:38] updates on every new release.

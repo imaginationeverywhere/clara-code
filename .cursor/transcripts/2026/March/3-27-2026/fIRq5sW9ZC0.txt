@@ -1,0 +1,613 @@
+Claude Code AutoDream was secretly just
+Claude Code AutoDream was secretly just
+Claude Code AutoDream was secretly just
+released and it is here to be the
+released and it is here to be the
+released and it is here to be the
+superhero we all need to save the world
+superhero we all need to save the world
+superhero we all need to save the world
+from the tsunami of AI slop. And if you
+from the tsunami of AI slop. And if you
+from the tsunami of AI slop. And if you
+haven't seen this before, it has quietly
+haven't seen this before, it has quietly
+haven't seen this before, it has quietly
+popped up inside of Cloud Code. So
+popped up inside of Cloud Code. So
+popped up inside of Cloud Code. So
+today, I just want to talk about what
+today, I just want to talk about what
+today, I just want to talk about what
+Autodream is and the big problem that it
+Autodream is and the big problem that it
+Autodream is and the big problem that it
+solves. I'm going to show you how you
+solves. I'm going to show you how you
+solves. I'm going to show you how you
+can turn it on and actually manually
+can turn it on and actually manually
+can turn it on and actually manually
+trigger it live. And then I'm just going
+trigger it live. And then I'm just going
+trigger it live. And then I'm just going
+to tell you why this changes everything
+to tell you why this changes everything
+to tell you why this changes everything
+for every Cloud Code user moving
+for every Cloud Code user moving
+for every Cloud Code user moving
+forward. You like building cool things
+forward. You like building cool things
+forward. You like building cool things
+with AI and want to start making some
+with AI and want to start making some
+with AI and want to start making some
+money? All of my templates, workflows,
+money? All of my templates, workflows,
+money? All of my templates, workflows,
+and challenges are available. The link's
+and challenges are available. The link's
+and challenges are available. The link's
+in the description. It's only $9. So,
+in the description. It's only $9. So,
+in the description. It's only $9. So,
+Claude Code has always had a memory
+Claude Code has always had a memory
+Claude Code has always had a memory
+system in the form of these Claude MD
+system in the form of these Claude MD
+system in the form of these Claude MD
+files. And a Claude MD file is a
+files. And a Claude MD file is a
+files. And a Claude MD file is a
+usercreated file that basically tells
+usercreated file that basically tells
+usercreated file that basically tells
+the system how you want it to behave.
+the system how you want it to behave.
+the system how you want it to behave.
+And a couple months ago, Claude Code
+And a couple months ago, Claude Code
+And a couple months ago, Claude Code
+released automemory, which is a memory
+released automemory, which is a memory
+released automemory, which is a memory
+file that Claude Code writes itself and
+file that Claude Code writes itself and
+file that Claude Code writes itself and
+automatically keeps up to date for you.
+automatically keeps up to date for you.
+automatically keeps up to date for you.
+If you don't know, there are actually
+If you don't know, there are actually
+If you don't know, there are actually
+two types of Claude MD files. one that
+two types of Claude MD files. one that
+two types of Claude MD files. one that
+lives at the global level that is
+lives at the global level that is
+lives at the global level that is
+accessed with everything that you do and
+accessed with everything that you do and
+accessed with everything that you do and
+the other one lives at the project level
+the other one lives at the project level
+the other one lives at the project level
+which is accessed individually per
+which is accessed individually per
+which is accessed individually per
+project. So the two user created files
+project. So the two user created files
+project. So the two user created files
+plus the cloud created memory file
+plus the cloud created memory file
+plus the cloud created memory file
+creates the problem. So what is
+creates the problem. So what is
+creates the problem. So what is
+happening is that automemory is
+happening is that automemory is
+happening is that automemory is
+basically constantly firing keeping
+basically constantly firing keeping
+basically constantly firing keeping
+track of all of the conversations you
+track of all of the conversations you
+track of all of the conversations you
+had all of the projects that you are
+had all of the projects that you are
+had all of the projects that you are
+doing. It is remembering everything and
+doing. It is remembering everything and
+doing. It is remembering everything and
+learning from you as it goes, which
+learning from you as it goes, which
+learning from you as it goes, which
+sounds really great because you would
+sounds really great because you would
+sounds really great because you would
+think that this would improve itself
+think that this would improve itself
+think that this would improve itself
+automatically over time without you
+automatically over time without you
+automatically over time without you
+having to do anything. And so this
+having to do anything. And so this
+having to do anything. And so this
+sounds all good and well and this is
+sounds all good and well and this is
+sounds all good and well and this is
+great to an extent. When you first get
+great to an extent. When you first get
+great to an extent. When you first get
+started, like you feel like things are
+started, like you feel like things are
+started, like you feel like things are
+working and the system is remembering
+working and the system is remembering
+working and the system is remembering
+things about you, but the more sessions
+things about you, but the more sessions
+things about you, but the more sessions
+you have, by session 20, you have
+you have, by session 20, you have
+you have, by session 20, you have
+overload. And this is a big problem with
+overload. And this is a big problem with
+overload. And this is a big problem with
+all of these AI coding tools right now.
+all of these AI coding tools right now.
+all of these AI coding tools right now.
+It's this idea of context rot. when you
+It's this idea of context rot. when you
+It's this idea of context rot. when you
+have too much information for the
+have too much information for the
+have too much information for the
+system, it doesn't know how to process
+system, it doesn't know how to process
+system, it doesn't know how to process
+it. And it actually does a worse job
+it. And it actually does a worse job
+it. And it actually does a worse job
+than if you had given it less. And so,
+than if you had given it less. And so,
+than if you had given it less. And so,
+if you don't know, inside of this hidden
+if you don't know, inside of this hidden
+if you don't know, inside of this hidden
+clawed folder inside of projects is
+clawed folder inside of projects is
+clawed folder inside of projects is
+basically all of your memory files. And
+basically all of your memory files. And
+basically all of your memory files. And
+this is a lot. If you go through here,
+this is a lot. If you go through here,
+this is a lot. If you go through here,
+you can see how many memories and
+you can see how many memories and
+you can see how many memories and
+transcripts and conversations and things
+transcripts and conversations and things
+transcripts and conversations and things
+that the system is storing. So, all of
+that the system is storing. So, all of
+that the system is storing. So, all of
+those files are everything that Claude
+those files are everything that Claude
+those files are everything that Claude
+remembers about you and the interactions
+remembers about you and the interactions
+remembers about you and the interactions
+you've had. So, who you are, what your
+you've had. So, who you are, what your
+you've had. So, who you are, what your
+role is, what your preferences are, any
+role is, what your preferences are, any
+role is, what your preferences are, any
+feedback or corrections that you've
+feedback or corrections that you've
+feedback or corrections that you've
+given it, any projects that you've
+given it, any projects that you've
+given it, any projects that you've
+worked on like goals, decisions,
+worked on like goals, decisions,
+worked on like goals, decisions,
+deadlines, things like that, and any
+deadlines, things like that, and any
+deadlines, things like that, and any
+references on where it should be looking
+references on where it should be looking
+references on where it should be looking
+for other things. And each one of these
+for other things. And each one of these
+for other things. And each one of these
+is stored in its own file, which is why
+is stored in its own file, which is why
+is stored in its own file, which is why
+it gets so overwhelming. So, in walks
+it gets so overwhelming. So, in walks
+it gets so overwhelming. So, in walks
+autodream to save the day. So, you can
+autodream to save the day. So, you can
+autodream to save the day. So, you can
+basically think of AutoDream as this
+basically think of AutoDream as this
+basically think of AutoDream as this
+little helper robot that sits between
+little helper robot that sits between
+little helper robot that sits between
+all of your memory files and like the
+all of your memory files and like the
+all of your memory files and like the
+ideal state. and its job is to go
+ideal state. and its job is to go
+ideal state. and its job is to go
+through all of your conversations and
+through all of your conversations and
+through all of your conversations and
+transcripts and keep the stuff that
+transcripts and keep the stuff that
+transcripts and keep the stuff that
+matters and get rid of the stuff that
+matters and get rid of the stuff that
+matters and get rid of the stuff that
+doesn't. So, in order to access
+doesn't. So, in order to access
+doesn't. So, in order to access
+autodream, all you have to do is type
+autodream, all you have to do is type
+autodream, all you have to do is type
+slashmemory when you're inside of the
+slashmemory when you're inside of the
+slashmemory when you're inside of the
+terminal working with cloud code. So,
+terminal working with cloud code. So,
+terminal working with cloud code. So,
+here you can see if I type /memory, now
+here you can see if I type /memory, now
+here you can see if I type /memory, now
+we have this autodream feature. And
+we have this autodream feature. And
+we have this autodream feature. And
+right now, it is set to never. So,
+right now, it is set to never. So,
+right now, it is set to never. So,
+automemory is set to on, which means
+automemory is set to on, which means
+automemory is set to on, which means
+it's going to keep track of all of our
+it's going to keep track of all of our
+it's going to keep track of all of our
+conversations. And autodream is
+conversations. And autodream is
+conversations. And autodream is
+currently set to off. So, what I'm going
+currently set to off. So, what I'm going
+currently set to off. So, what I'm going
+to do is I'll just hit enter to turn
+to do is I'll just hit enter to turn
+to do is I'll just hit enter to turn
+this on. But if you notice, they haven't
+this on. But if you notice, they haven't
+this on. But if you notice, they haven't
+actually rolled out this feature here.
+actually rolled out this feature here.
+actually rolled out this feature here.
+It says all you have to do is type
+It says all you have to do is type
+It says all you have to do is type
+slashdream to run. But if you come in
+slashdream to run. But if you come in
+slashdream to run. But if you come in
+here and type /dream, like you don't
+here and type /dream, like you don't
+here and type /dream, like you don't
+have access to it. But what's cool is
+have access to it. But what's cool is
+have access to it. But what's cool is
+that even though we don't have access to
+that even though we don't have access to
+that even though we don't have access to
+the slash command, you can actually just
+the slash command, you can actually just
+the slash command, you can actually just
+tell cloud code to use autodream. And so
+tell cloud code to use autodream. And so
+tell cloud code to use autodream. And so
+you can see here that this is starting
+you can see here that this is starting
+you can see here that this is starting
+to go through all of my files. And if
+to go through all of my files. And if
+to go through all of my files. And if
+you want to see it in action, all you
+you want to see it in action, all you
+you want to see it in action, all you
+have to do is type /tasks. So how does
+have to do is type /tasks. So how does
+have to do is type /tasks. So how does
+it work? So to make the comparison, you
+it work? So to make the comparison, you
+it work? So to make the comparison, you
+can basically think of cloud code like
+can basically think of cloud code like
+can basically think of cloud code like
+humans. like we go about our day
+humans. like we go about our day
+humans. like we go about our day
+committing things to short-term memory
+committing things to short-term memory
+committing things to short-term memory
+and then at night a bunch of things get
+and then at night a bunch of things get
+and then at night a bunch of things get
+dumped into long-term memory and all the
+dumped into long-term memory and all the
+dumped into long-term memory and all the
+waste gets removed which is pretty much
+waste gets removed which is pretty much
+waste gets removed which is pretty much
+why I can't remember what I had for
+why I can't remember what I had for
+why I can't remember what I had for
+lunch yesterday. And so this is funny.
+lunch yesterday. And so this is funny.
+lunch yesterday. And so this is funny.
+This actually says I'm not finding an
+This actually says I'm not finding an
+This actually says I'm not finding an
+autodream posting method anywhere. But
+autodream posting method anywhere. But
+autodream posting method anywhere. But
+if you look down here, this actually
+if you look down here, this actually
+if you look down here, this actually
+says that we are currently dreaming. So
+says that we are currently dreaming. So
+says that we are currently dreaming. So
+if I hit the down arrow and just hit
+if I hit the down arrow and just hit
+if I hit the down arrow and just hit
+enter to view the task, you can see that
+enter to view the task, you can see that
+enter to view the task, you can see that
+this memory consolidation is currently
+this memory consolidation is currently
+this memory consolidation is currently
+running. What it is doing, it is
+running. What it is doing, it is
+running. What it is doing, it is
+reviewing 97 sessions right now. And so
+reviewing 97 sessions right now. And so
+reviewing 97 sessions right now. And so
+Autodream works in four phases. First,
+Autodream works in four phases. First,
+Autodream works in four phases. First,
+it orients itself. Then it gathers
+it orients itself. Then it gathers
+it orients itself. Then it gathers
+signal. It consolidates everything. And
+signal. It consolidates everything. And
+signal. It consolidates everything. And
+then it prunes what's not needed and
+then it prunes what's not needed and
+then it prunes what's not needed and
+indexes everything so that it can
+indexes everything so that it can
+indexes everything so that it can
+retrieve it more easily later on. So
+retrieve it more easily later on. So
+retrieve it more easily later on. So
+when it's orienting, it's literally
+when it's orienting, it's literally
+when it's orienting, it's literally
+looking at everything. It's reading the
+looking at everything. It's reading the
+looking at everything. It's reading the
+entire index of all of those memory
+entire index of all of those memory
+entire index of all of those memory
+files that I showed you. It's skimming
+files that I showed you. It's skimming
+files that I showed you. It's skimming
+the existing topics. Basically, it's
+the existing topics. Basically, it's
+the existing topics. Basically, it's
+figuring out what it already knows. From
+figuring out what it already knows. From
+figuring out what it already knows. From
+there, it's going to drill down a level
+there, it's going to drill down a level
+there, it's going to drill down a level
+deeper. It's going to gather everything.
+deeper. It's going to gather everything.
+deeper. It's going to gather everything.
+It's going to look at all of your recent
+It's going to look at all of your recent
+It's going to look at all of your recent
+transcripts. It's going to identify any
+transcripts. It's going to identify any
+transcripts. It's going to identify any
+drifted or like stale memories that are
+drifted or like stale memories that are
+drifted or like stale memories that are
+just like not needed. It's going to
+just like not needed. It's going to
+just like not needed. It's going to
+figure out what's new, what's old, and
+figure out what's new, what's old, and
+figure out what's new, what's old, and
+any patterns across sessions so that
+any patterns across sessions so that
+any patterns across sessions so that
+we're removing redundancy. From there,
+we're removing redundancy. From there,
+we're removing redundancy. From there,
+it's going to consolidate everything.
+it's going to consolidate everything.
+it's going to consolidate everything.
+It's going to merge new information into
+It's going to merge new information into
+It's going to merge new information into
+existing topics and remove any
+existing topics and remove any
+existing topics and remove any
+contradictions or anything that is
+contradictions or anything that is
+contradictions or anything that is
+redundant and not needed. And then it's
+redundant and not needed. And then it's
+redundant and not needed. And then it's
+actively going to write and update your
+actively going to write and update your
+actively going to write and update your
+memory files. And the last thing it does
+memory files. And the last thing it does
+memory files. And the last thing it does
+is just going to remove all of the old
+is just going to remove all of the old
+is just going to remove all of the old
+entries that are no longer needed. It's
+entries that are no longer needed. It's
+entries that are no longer needed. It's
+going to keep the memory.md file like
+going to keep the memory.md file like
+going to keep the memory.md file like
+super concisely as an index that
+super concisely as an index that
+super concisely as an index that
+references everything else and it's just
+references everything else and it's just
+references everything else and it's just
+going to delete stuff that you don't
+going to delete stuff that you don't
+going to delete stuff that you don't
+need. For all of you security people out
+need. For all of you security people out
+need. For all of you security people out
+there, don't worry. Autodream only has
+there, don't worry. Autodream only has
+there, don't worry. Autodream only has
+read only access to your project code.
+read only access to your project code.
+read only access to your project code.
+So your project code is never actually
+So your project code is never actually
+So your project code is never actually
+touched. It can only read it just to
+touched. It can only read it just to
+touched. It can only read it just to
+kind of understand what's going on. It
+kind of understand what's going on. It
+kind of understand what's going on. It
+does have write access, but only to your
+does have write access, but only to your
+does have write access, but only to your
+memory files and nothing else. and it
+memory files and nothing else. and it
+memory files and nothing else. and it
+does operate in a locked file. So if
+does operate in a locked file. So if
+does operate in a locked file. So if
+you're operating like multiple cloud
+you're operating like multiple cloud
+you're operating like multiple cloud
+code sessions, AutoDream is only going
+code sessions, AutoDream is only going
+code sessions, AutoDream is only going
+to be running in one of those instances.
+to be running in one of those instances.
+to be running in one of those instances.
+So there isn't any conflicts. What's
+So there isn't any conflicts. What's
+So there isn't any conflicts. What's
+also cool is that this runs in the
+also cool is that this runs in the
+also cool is that this runs in the
+background. So you can actually continue
+background. So you can actually continue
+background. So you can actually continue
+your coding sessions without getting
+your coding sessions without getting
+your coding sessions without getting
+interrupted by Autodream. Autodream runs
+interrupted by Autodream. Autodream runs
+interrupted by Autodream. Autodream runs
+if it's been 24 hours since it last ran.
+if it's been 24 hours since it last ran.
+if it's been 24 hours since it last ran.
+And if you've completed five sessions
+And if you've completed five sessions
+And if you've completed five sessions
+since then, it's just going to happen
+since then, it's just going to happen
+since then, it's just going to happen
+automatically and totally run in the
+automatically and totally run in the
+automatically and totally run in the
+background. So you can now kind of think
+background. So you can now kind of think
+background. So you can now kind of think
+of your memory as like a heartbeat, like
+of your memory as like a heartbeat, like
+of your memory as like a heartbeat, like
+expanding and contracting over time. So,
+expanding and contracting over time. So,
+expanding and contracting over time. So,
+your first sessions are going to be
+your first sessions are going to be
+your first sessions are going to be
+super super clean. They're going to
+super super clean. They're going to
+super super clean. They're going to
+expand and get more cluttered and then
+expand and get more cluttered and then
+expand and get more cluttered and then
+autodream is going to come in to
+autodream is going to come in to
+autodream is going to come in to
+consolidate and clean everything up
+consolidate and clean everything up
+consolidate and clean everything up
+again so you can start back at the
+again so you can start back at the
+again so you can start back at the
+beginning of this cycle. So, if we hop
+beginning of this cycle. So, if we hop
+beginning of this cycle. So, if we hop
+back in here, you can see this worked
+back in here, you can see this worked
+back in here, you can see this worked
+for 2 minutes. This improved four of our
+for 2 minutes. This improved four of our
+for 2 minutes. This improved four of our
+memories from the session and everything
+memories from the session and everything
+memories from the session and everything
+is nice and clean and tidy and optimized
+is nice and clean and tidy and optimized
+is nice and clean and tidy and optimized
+moving forward. So, please join me in
+moving forward. So, please join me in
+moving forward. So, please join me in
+giving a big round of applause to
+giving a big round of applause to
+giving a big round of applause to
+Autodream for being the hero that Claude
+Autodream for being the hero that Claude
+Autodream for being the hero that Claude
+Code needs. If you want to see how I use
+Code needs. If you want to see how I use
+Code needs. If you want to see how I use
+Claude Code to gain 10,000 followers on
+Claude Code to gain 10,000 followers on
+Claude Code to gain 10,000 followers on
+LinkedIn and over a million impressions,
+LinkedIn and over a million impressions,
+LinkedIn and over a million impressions,
+just check out this video right here.

@@ -1,0 +1,9 @@
+{
+  "sessions": {},
+  "config": {
+    "heartbeatInterval": "30s",
+    "sessionTimeout": "5m",
+    "autoCleanupStale": true
+  },
+  "history": []
+}

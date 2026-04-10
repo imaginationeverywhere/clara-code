@@ -1,0 +1,1384 @@
+Today, I want to show you a workflow
+Today, I want to show you a workflow
+Today, I want to show you a workflow
+that I've been using more and more
+that I've been using more and more
+that I've been using more and more
+recently, and honestly, it's become one
+recently, and honestly, it's become one
+recently, and honestly, it's become one
+of my favorite ways to build out AI
+of my favorite ways to build out AI
+of my favorite ways to build out AI
+skills. It combines Notebook LM's deep
+skills. It combines Notebook LM's deep
+skills. It combines Notebook LM's deep
+research feature with Claude skill
+research feature with Claude skill
+research feature with Claude skill
+system. [music] And that result is
+system. [music] And that result is
+system. [music] And that result is
+basically a way to turn raw research on
+basically a way to turn raw research on
+basically a way to turn raw research on
+any topic into a working AI agent that
+any topic into a working AI agent that
+any topic into a working AI agent that
+actually knows what it's doing. Here's a
+actually knows what it's doing. Here's a
+actually knows what it's doing. Here's a
+problem I keep running into. Whenever I
+problem I keep running into. Whenever I
+problem I keep running into. Whenever I
+wanted to build a cloud skill for
+wanted to build a cloud skill for
+wanted to build a cloud skill for
+something specific, whether that was
+something specific, whether that was
+something specific, whether that was
+SEO, copywriting, a specific industry,
+SEO, copywriting, a specific industry,
+SEO, copywriting, a specific industry,
+whatever, I either have to write the
+whatever, I either have to write the
+whatever, I either have to write the
+whole knowledge base myself, which takes
+whole knowledge base myself, which takes
+whole knowledge base myself, which takes
+forever, or I just prompt Claude with
+forever, or I just prompt Claude with
+forever, or I just prompt Claude with
+vague instructions and hope for the
+vague instructions and hope for the
+vague instructions and hope for the
+best. Neither of those is great. What I
+best. Neither of those is great. What I
+best. Neither of those is great. What I
+really needed was a way to get deep,
+really needed was a way to get deep,
+really needed was a way to get deep,
+structured knowledge on a topic fast and
+structured knowledge on a topic fast and
+structured knowledge on a topic fast and
+then feed that directly into a skill
+then feed that directly into a skill
+then feed that directly into a skill
+that Claude can actually use. And that's
+that Claude can actually use. And that's
+that Claude can actually use. And that's
+exactly what this workflow does.
+exactly what this workflow does.
+exactly what this workflow does.
+Notebook LM does the research. Claude
+Notebook LM does the research. Claude
+Notebook LM does the research. Claude
+builds the skill and then you got an
+builds the skill and then you got an
+builds the skill and then you got an
+agent that can be dropped into any chat
+agent that can be dropped into any chat
+agent that can be dropped into any chat
+or used inside Claude code that actually
+or used inside Claude code that actually
+or used inside Claude code that actually
+knows the domain. Let me walk you
+knows the domain. Let me walk you
+knows the domain. Let me walk you
+through this whole thing. Before we get
+through this whole thing. Before we get
+through this whole thing. Before we get
+into notebook, let me quickly explain
+into notebook, let me quickly explain
+into notebook, let me quickly explain
+what a Claude skill actually is. Because
+what a Claude skill actually is. Because
+what a Claude skill actually is. Because
+if you haven't used them before, this is
+if you haven't used them before, this is
+if you haven't used them before, this is
+the piece that makes everything click. A
+the piece that makes everything click. A
+the piece that makes everything click. A
+skill in Claude is basically a
+skill in Claude is basically a
+skill in Claude is basically a
+structured knowledge file, usually a
+structured knowledge file, usually a
+structured knowledge file, usually a
+markdown document that tells Claude how
+markdown document that tells Claude how
+markdown document that tells Claude how
+to behave in a specific context. It's
+to behave in a specific context. It's
+to behave in a specific context. It's
+not just a system prompt. It's more like
+not just a system prompt. It's more like
+not just a system prompt. It's more like
+a domain brief. You define what the task
+a domain brief. You define what the task
+a domain brief. You define what the task
+is, what good output looks like, what
+is, what good output looks like, what
+is, what good output looks like, what
+patterns to follow, what to avoid, and
+patterns to follow, what to avoid, and
+patterns to follow, what to avoid, and
+you can include examples, frameworks,
+you can include examples, frameworks,
+you can include examples, frameworks,
+step-by-step instructions, all of it.
+step-by-step instructions, all of it.
+step-by-step instructions, all of it.
+When you load a skill into a project or
+When you load a skill into a project or
+When you load a skill into a project or
+point Claude code at a skill folder,
+point Claude code at a skill folder,
+point Claude code at a skill folder,
+Claude reads it and adapts his behavior
+Claude reads it and adapts his behavior
+Claude reads it and adapts his behavior
+accordingly. So, if you have a skill
+accordingly. So, if you have a skill
+accordingly. So, if you have a skill
+for, say, writing cold outreach emails,
+for, say, writing cold outreach emails,
+for, say, writing cold outreach emails,
+Claude isn't just guessing what that
+Claude isn't just guessing what that
+Claude isn't just guessing what that
+means, is working from a defined
+means, is working from a defined
+means, is working from a defined
+playbook. That's the whole point. You're
+playbook. That's the whole point. You're
+playbook. That's the whole point. You're
+basically training Claude to be really
+basically training Claude to be really
+basically training Claude to be really
+good at one specific thing without
+good at one specific thing without
+good at one specific thing without
+having to explain yourself from scratch
+having to explain yourself from scratch
+having to explain yourself from scratch
+every single session. Now, the question
+every single session. Now, the question
+every single session. Now, the question
+is, how do you build a good skill?
+is, how do you build a good skill?
+is, how do you build a good skill?
+That's where Notebook LM comes in.
+That's where Notebook LM comes in.
+That's where Notebook LM comes in.
+Notebook LM added deep research back in
+Notebook LM added deep research back in
+Notebook LM added deep research back in
+November. And if you haven't tried it
+November. And if you haven't tried it
+November. And if you haven't tried it
+yet, it's genuinely one of the more
+yet, it's genuinely one of the more
+yet, it's genuinely one of the more
+useful AI research tools available right
+useful AI research tools available right
+useful AI research tools available right
+now. And it's also free. Here's how it
+now. And it's also free. Here's how it
+now. And it's also free. Here's how it
+works. You go into notebookm, you go to
+works. You go into notebookm, you go to
+works. You go into notebookm, you go to
+the sources panel, you select web as
+the sources panel, you select web as
+the sources panel, you select web as
+your source type. And then you get two
+your source type. And then you get two
+your source type. And then you get two
+options. Fast research, which is a quick
+options. Fast research, which is a quick
+options. Fast research, which is a quick
+scan, and deep research, which is the
+scan, and deep research, which is the
+scan, and deep research, which is the
+one we want. You type in a question or
+one we want. You type in a question or
+one we want. You type in a question or
+topic, and notebook LM literally goes
+topic, and notebook LM literally goes
+topic, and notebook LM literally goes
+and browses hundreds of websites on your
+and browses hundreds of websites on your
+and browses hundreds of websites on your
+behalf. It creates a research plan,
+behalf. It creates a research plan,
+behalf. It creates a research plan,
+refineses a search as it goes, and then
+refineses a search as it goes, and then
+refineses a search as it goes, and then
+spits out a structured source grounded
+spits out a structured source grounded
+spits out a structured source grounded
+report in a few minutes. What makes it
+report in a few minutes. What makes it
+report in a few minutes. What makes it
+different from just googling or using
+different from just googling or using
+different from just googling or using
+another AI search tool is that the
+another AI search tool is that the
+another AI search tool is that the
+output doesn't disappear. The report and
+output doesn't disappear. The report and
+output doesn't disappear. The report and
+all the sources it pulled get added
+all the sources it pulled get added
+all the sources it pulled get added
+directly into your notebook LM. So now
+directly into your notebook LM. So now
+directly into your notebook LM. So now
+you got this rich knowledge base you can
+you got this rich knowledge base you can
+you got this rich knowledge base you can
+keep curing, adding to, and cross
+keep curing, adding to, and cross
+keep curing, adding to, and cross
+referencing. You can run multiple deeper
+referencing. You can run multiple deeper
+referencing. You can run multiple deeper
+research queries on the same topic layer
+research queries on the same topic layer
+research queries on the same topic layer
+in your own documents and build up a
+in your own documents and build up a
+in your own documents and build up a
+really comprehensive picture of whatever
+really comprehensive picture of whatever
+really comprehensive picture of whatever
+niche or subject you're working on. For
+niche or subject you're working on. For
+niche or subject you're working on. For
+our purposes building skills, this is
+our purposes building skills, this is
+our purposes building skills, this is
+incredibly useful because a good skill
+incredibly useful because a good skill
+incredibly useful because a good skill
+needs real domain knowledge. It needs to
+needs real domain knowledge. It needs to
+needs real domain knowledge. It needs to
+understand how professionals in that
+understand how professionals in that
+understand how professionals in that
+space actually think and work and deep
+space actually think and work and deep
+space actually think and work and deep
+research can pull that together for you
+research can pull that together for you
+research can pull that together for you
+in minutes instead of hours. Okay, so
+in minutes instead of hours. Okay, so
+in minutes instead of hours. Okay, so
+let me show you exactly how this works
+let me show you exactly how this works
+let me show you exactly how this works
+end to end. Step one, pick your niche or
+end to end. Step one, pick your niche or
+end to end. Step one, pick your niche or
+topic. For this demo, I'm going to use
+topic. For this demo, I'm going to use
+topic. For this demo, I'm going to use
+something concrete. Let's say you want
+something concrete. Let's say you want
+something concrete. Let's say you want
+to build a cloud skill for B2B sales
+to build a cloud skill for B2B sales
+to build a cloud skill for B2B sales
+prospecting. You want a skill that can
+prospecting. You want a skill that can
+prospecting. You want a skill that can
+help Claude write targeted outreach,
+help Claude write targeted outreach,
+help Claude write targeted outreach,
+research prospects, identify pain
+research prospects, identify pain
+research prospects, identify pain
+points, that kind of thing. Step two,
+points, that kind of thing. Step two,
+points, that kind of thing. Step two,
+run deep research in Notebook LM. I'm
+run deep research in Notebook LM. I'm
+run deep research in Notebook LM. I'm
+going to go into Notebook LM, open up a
+going to go into Notebook LM, open up a
+going to go into Notebook LM, open up a
+new notebook, go to the sources panel,
+new notebook, go to the sources panel,
+new notebook, go to the sources panel,
+select web, and hit deep research.
+select web, and hit deep research.
+select web, and hit deep research.
+My question is something like, "What are
+My question is something like, "What are
+My question is something like, "What are
+the most effective B2B sales prospecting
+the most effective B2B sales prospecting
+the most effective B2B sales prospecting
+strategies in 2026, including
+strategies in 2026, including
+strategies in 2026, including
+frameworks, outreach patterns, and show
+frameworks, outreach patterns, and show
+frameworks, outreach patterns, and show
+how top sales team identify and qualify
+how top sales team identify and qualify
+how top sales team identify and qualify
+leads?" You hit go, it runs in the
+leads?" You hit go, it runs in the
+leads?" You hit go, it runs in the
+background, and in a few minutes, you
+background, and in a few minutes, you
+background, and in a few minutes, you
+got a structured report or sources. Now,
+got a structured report or sources. Now,
+got a structured report or sources. Now,
+I'll usually run two or three research
+I'll usually run two or three research
+I'll usually run two or three research
+queries on the same topic to make sure
+queries on the same topic to make sure
+queries on the same topic to make sure
+I'm getting good coverage. Maybe one
+I'm getting good coverage. Maybe one
+I'm getting good coverage. Maybe one
+focused on frameworks and strategy, and
+focused on frameworks and strategy, and
+focused on frameworks and strategy, and
+one on tools and workflows, one on
+one on tools and workflows, one on
+one on tools and workflows, one on
+common mistakes, maybe. But each one
+common mistakes, maybe. But each one
+common mistakes, maybe. But each one
+pulls different sources and all of it
+pulls different sources and all of it
+pulls different sources and all of it
+gets layered into the same notebook.
+gets layered into the same notebook.
+gets layered into the same notebook.
+Before we continue, we just launched the
+Before we continue, we just launched the
+Before we continue, we just launched the
+universe of AI newsletter. If you want
+universe of AI newsletter. If you want
+universe of AI newsletter. If you want
+to stay on top of AI news without having
+to stay on top of AI news without having
+to stay on top of AI news without having
+to hunt for it, link is in the
+to hunt for it, link is in the
+to hunt for it, link is in the
+description. Don't miss out. Step three
+description. Don't miss out. Step three
+description. Don't miss out. Step three
+is to synthesize a notebook. LM. Now
+is to synthesize a notebook. LM. Now
+is to synthesize a notebook. LM. Now
+that I got all this research loaded in,
+that I got all this research loaded in,
+that I got all this research loaded in,
+if we take a look at this, we can see
+if we take a look at this, we can see
+if we take a look at this, we can see
+that this article over here at the top
+that this article over here at the top
+that this article over here at the top
+is a summary of all of these cited
+is a summary of all of these cited
+is a summary of all of these cited
+sources and it kind of shows us what
+sources and it kind of shows us what
+sources and it kind of shows us what
+database sales looks like, especially in
+database sales looks like, especially in
+database sales looks like, especially in
+2026 and how it is transitioning to AI
+2026 and how it is transitioning to AI
+2026 and how it is transitioning to AI
+intelligence and signal-driven
+intelligence and signal-driven
+intelligence and signal-driven
+frameworks. So, we have frameworks, we
+frameworks. So, we have frameworks, we
+frameworks. So, we have frameworks, we
+also have where it's heading and things
+also have where it's heading and things
+also have where it's heading and things
+like that. I can now start asking
+like that. I can now start asking
+like that. I can now start asking
+Notebook LM to help me organize it. I
+Notebook LM to help me organize it. I
+Notebook LM to help me organize it. I
+can ask it things like what are the core
+can ask it things like what are the core
+can ask it things like what are the core
+principles that come up across all these
+principles that come up across all these
+principles that come up across all these
+sources? What frameworks are mentioned
+sources? What frameworks are mentioned
+sources? What frameworks are mentioned
+most? What does good prospecting
+most? What does good prospecting
+most? What does good prospecting
+actually look like step by step? And
+actually look like step by step? And
+actually look like step by step? And
+notebook LM pulls from everything in the
+notebook LM pulls from everything in the
+notebook LM pulls from everything in the
+notebook and gives me grounded cited
+notebook and gives me grounded cited
+notebook and gives me grounded cited
+answers. This is the synthesis layer.
+answers. This is the synthesis layer.
+answers. This is the synthesis layer.
+I'm not actually writing the skill from
+I'm not actually writing the skill from
+I'm not actually writing the skill from
+scratch. I'm extracting structured
+scratch. I'm extracting structured
+scratch. I'm extracting structured
+insight from real research backed in by
+insight from real research backed in by
+insight from real research backed in by
+notebook LM. So we can see our notebook
+notebook LM. So we can see our notebook
+notebook LM. So we can see our notebook
+LM has imported all the sources. We have
+LM has imported all the sources. We have
+LM has imported all the sources. We have
+the summary document as well. We can see
+the summary document as well. We can see
+the summary document as well. We can see
+already that we also have top sales
+already that we also have top sales
+already that we also have top sales
+methodologies over here. If I wanted to
+methodologies over here. If I wanted to
+methodologies over here. If I wanted to
+just learn about them, I can learn about
+just learn about them, I can learn about
+just learn about them, I can learn about
+them over here. But for our purposes, we
+them over here. But for our purposes, we
+them over here. But for our purposes, we
+want to take all this information and
+want to take all this information and
+want to take all this information and
+feed it to Claude, especially for the
+feed it to Claude, especially for the
+feed it to Claude, especially for the
+skill file. So, I'm going to show you
+skill file. So, I'm going to show you
+skill file. So, I'm going to show you
+guys exactly how to do that. You have a
+guys exactly how to do that. You have a
+guys exactly how to do that. You have a
+couple of options. You can take this
+couple of options. You can take this
+couple of options. You can take this
+specific summary document, which
+specific summary document, which
+specific summary document, which
+summarizes all of your, you know,
+summarizes all of your, you know,
+summarizes all of your, you know,
+research from all the sources. But one
+research from all the sources. But one
+research from all the sources. But one
+thing you'll notice is that it's pretty
+thing you'll notice is that it's pretty
+thing you'll notice is that it's pretty
+vague, right? We have benchmarks, we
+vague, right? We have benchmarks, we
+vague, right? We have benchmarks, we
+have AI, automation, and things like
+have AI, automation, and things like
+have AI, automation, and things like
+that. Not specific frameworks,
+that. Not specific frameworks,
+that. Not specific frameworks,
+everything. So you could do something
+everything. So you could do something
+everything. So you could do something
+simple like this. You could ask it
+simple like this. You could ask it
+simple like this. You could ask it
+specific questions like what are the
+specific questions like what are the
+specific questions like what are the
+specific frameworks or strategies and
+specific frameworks or strategies and
+specific frameworks or strategies and
+take that information for our purposes.
+take that information for our purposes.
+take that information for our purposes.
+Let's say I want to learn about how to
+Let's say I want to learn about how to
+Let's say I want to learn about how to
+write targeted outreach, research
+write targeted outreach, research
+write targeted outreach, research
+prospects and identify pain points and
+prospects and identify pain points and
+prospects and identify pain points and
+build the skill around that. I'll ask
+build the skill around that. I'll ask
+build the skill around that. I'll ask
+that question and send it to Notebook LM
+that question and send it to Notebook LM
+that question and send it to Notebook LM
+and then it's going to go through all
+and then it's going to go through all
+and then it's going to go through all
+that research and give me a summary of
+that research and give me a summary of
+that research and give me a summary of
+how to do that specific skill. So it's
+how to do that specific skill. So it's
+how to do that specific skill. So it's
+going to do that and it's going to send
+going to do that and it's going to send
+going to do that and it's going to send
+us an answer. So you can see that we
+us an answer. So you can see that we
+us an answer. So you can see that we
+have an answer over here basically
+have an answer over here basically
+have an answer over here basically
+telling us that how to research
+telling us that how to research
+telling us that how to research
+prospects the five-minute habit
+prospects the five-minute habit
+prospects the five-minute habit
+identifying pain points what we need to
+identifying pain points what we need to
+identifying pain points what we need to
+do and how to write targeted outreach.
+do and how to write targeted outreach.
+do and how to write targeted outreach.
+So once you're in claude all you got to
+So once you're in claude all you got to
+So once you're in claude all you got to
+do is click on this sidebar click on
+do is click on this sidebar click on
+do is click on this sidebar click on
+that and then click on customize and
+that and then click on customize and
+that and then click on customize and
+then go to your skills and then click on
+then go to your skills and then click on
+then go to your skills and then click on
+creating one over here. You can do
+creating one over here. You can do
+creating one over here. You can do
+create with claude or you can write
+create with claude or you can write
+create with claude or you can write
+skill instructions. For first timers try
+skill instructions. For first timers try
+skill instructions. For first timers try
+to do create with cloud because it makes
+to do create with cloud because it makes
+to do create with cloud because it makes
+the whole process much easier. So we'll
+the whole process much easier. So we'll
+the whole process much easier. So we'll
+do that. You can see it gives you a
+do that. You can see it gives you a
+do that. You can see it gives you a
+prompt. Let's create a skill together
+prompt. Let's create a skill together
+prompt. Let's create a skill together
+using your skill creator skill. First,
+using your skill creator skill. First,
+using your skill creator skill. First,
+ask me what this skill should do. So,
+ask me what this skill should do. So,
+ask me what this skill should do. So,
+instead of us starting from scratch here
+instead of us starting from scratch here
+instead of us starting from scratch here
+where most people would when they're
+where most people would when they're
+where most people would when they're
+actually doing the skills, you now have
+actually doing the skills, you now have
+actually doing the skills, you now have
+research and methodologies that you can
+research and methodologies that you can
+research and methodologies that you can
+take from notebook LM and paste into
+take from notebook LM and paste into
+take from notebook LM and paste into
+cloud instead of you typing from
+cloud instead of you typing from
+cloud instead of you typing from
+scratch. So, we're going to take this
+scratch. So, we're going to take this
+scratch. So, we're going to take this
+and we're going to give it a name. Then,
+and we're going to give it a name. Then,
+and we're going to give it a name. Then,
+I'm going to create a section called
+I'm going to create a section called
+I'm going to create a section called
+processes knowledge. And what I'm going
+processes knowledge. And what I'm going
+processes knowledge. And what I'm going
+to do over here is paste in all the
+to do over here is paste in all the
+to do over here is paste in all the
+information that we got from over there.
+information that we got from over there.
+information that we got from over there.
+Then you might also want to specify how
+Then you might also want to specify how
+Then you might also want to specify how
+you want the output to be for this
+you want the output to be for this
+you want the output to be for this
+purposes. Obviously, I'm going to use
+purposes. Obviously, I'm going to use
+purposes. Obviously, I'm going to use
+this in multiple formats. But I can just
+this in multiple formats. But I can just
+this in multiple formats. But I can just
+tell it that in the output use the
+tell it that in the output use the
+tell it that in the output use the
+knowledge base that we have given it
+knowledge base that we have given it
+knowledge base that we have given it
+over here to help generate work that
+over here to help generate work that
+over here to help generate work that
+aligns with the research. We want to do
+aligns with the research. We want to do
+aligns with the research. We want to do
+that. Let's say if you're kind of
+that. Let's say if you're kind of
+that. Let's say if you're kind of
+creating a skill for a specific writing
+creating a skill for a specific writing
+creating a skill for a specific writing
+style, you could do some deep research
+style, you could do some deep research
+style, you could do some deep research
+on that writing style. Bring that in and
+on that writing style. Bring that in and
+on that writing style. Bring that in and
+tell it the same thing and it'll align
+tell it the same thing and it'll align
+tell it the same thing and it'll align
+your output to that. Or if you're trying
+your output to that. Or if you're trying
+your output to that. Or if you're trying
+to create an AI consultant, you can
+to create an AI consultant, you can
+to create an AI consultant, you can
+study all these frameworks and you can
+study all these frameworks and you can
+study all these frameworks and you can
+tell it to give you an output, specify
+tell it to give you an output, specify
+tell it to give you an output, specify
+the output like implementation plan,
+the output like implementation plan,
+the output like implementation plan,
+strategic takeaways, things like that.
+strategic takeaways, things like that.
+strategic takeaways, things like that.
+This is very customizable. So you can
+This is very customizable. So you can
+This is very customizable. So you can
+play around with this and you can
+play around with this and you can
+play around with this and you can
+duplicate your skills and change your
+duplicate your skills and change your
+duplicate your skills and change your
+output format. Or you don't have to
+output format. Or you don't have to
+output format. Or you don't have to
+specify how you want the output and can
+specify how you want the output and can
+specify how you want the output and can
+let Claude decide for yourself. But as I
+let Claude decide for yourself. But as I
+let Claude decide for yourself. But as I
+said, it's going to be dependent on the
+said, it's going to be dependent on the
+said, it's going to be dependent on the
+skill you're trying to create and the
+skill you're trying to create and the
+skill you're trying to create and the
+specific domain knowledge you're trying
+specific domain knowledge you're trying
+specific domain knowledge you're trying
+to understand as well. Right? So we'll
+to understand as well. Right? So we'll
+to understand as well. Right? So we'll
+do that. So I'm going to press enter.
+do that. So I'm going to press enter.
+do that. So I'm going to press enter.
+And what Claude going to do is going to
+And what Claude going to do is going to
+And what Claude going to do is going to
+use that skill creator that you can see
+use that skill creator that you can see
+use that skill creator that you can see
+over here that skill that it has. So
+over here that skill that it has. So
+over here that skill that it has. So
+right now we are in a skill seion.
+right now we are in a skill seion.
+right now we are in a skill seion.
+Basically it's using a skill file to
+Basically it's using a skill file to
+Basically it's using a skill file to
+create another skill file and then it's
+create another skill file and then it's
+create another skill file and then it's
+going to create that new skill which is
+going to create that new skill which is
+going to create that new skill which is
+going to be called outreach skill. You
+going to be called outreach skill. You
+going to be called outreach skill. You
+can see that it read that skill file but
+can see that it read that skill file but
+can see that it read that skill file but
+it's also asking some clarification
+it's also asking some clarification
+it's also asking some clarification
+question which is why sometimes building
+question which is why sometimes building
+question which is why sometimes building
+skills with claude is much easier
+skills with claude is much easier
+skills with claude is much easier
+because you know you might have missed
+because you know you might have missed
+because you know you might have missed
+something in your head that Claude kind
+something in your head that Claude kind
+something in your head that Claude kind
+of flags. For example, it's asking three
+of flags. For example, it's asking three
+of flags. For example, it's asking three
+questions. Which output types, cold
+questions. Which output types, cold
+questions. Which output types, cold
+email, LinkedIn, phone scripts, or full
+email, LinkedIn, phone scripts, or full
+email, LinkedIn, phone scripts, or full
+multi- channelannel? What inputs Claude
+multi- channelannel? What inputs Claude
+multi- channelannel? What inputs Claude
+should expect? How opinionated on
+should expect? How opinionated on
+should expect? How opinionated on
+structure? Very rigid, flexible, or
+structure? Very rigid, flexible, or
+structure? Very rigid, flexible, or
+loose. For our purposes, I'm going to
+loose. For our purposes, I'm going to
+loose. For our purposes, I'm going to
+select the full multi- channelannel
+select the full multi- channelannel
+select the full multi- channelannel
+sequence, which makes sense. Start off
+sequence, which makes sense. Start off
+sequence, which makes sense. Start off
+with email, then go to LinkedIn, and
+with email, then go to LinkedIn, and
+with email, then go to LinkedIn, and
+then phone. So, let's do that. And then
+then phone. So, let's do that. And then
+then phone. So, let's do that. And then
+the second question is, what should
+the second question is, what should
+the second question is, what should
+Claude need as input to use his skill?
+Claude need as input to use his skill?
+Claude need as input to use his skill?
+Prospect name from company, signals,
+Prospect name from company, signals,
+Prospect name from company, signals,
+triggers, your product, service,
+triggers, your product, service,
+triggers, your product, service,
+context, a target person, or ICP. Let's
+context, a target person, or ICP. Let's
+context, a target person, or ICP. Let's
+do your product or service context and
+do your product or service context and
+do your product or service context and
+prospect name plus company. So, I got to
+prospect name plus company. So, I got to
+prospect name plus company. So, I got to
+specify what I'm trying to sell and then
+specify what I'm trying to sell and then
+specify what I'm trying to sell and then
+the company and then cloud will do the
+the company and then cloud will do the
+the company and then cloud will do the
+rest. How opinionated should the skill
+rest. How opinionated should the skill
+rest. How opinionated should the skill
+be about structure? Very opinionated.
+be about structure? Very opinionated.
+be about structure? Very opinionated.
+Always follow the three-part structure.
+Always follow the three-part structure.
+Always follow the three-part structure.
+Context value as flexible. Suggest the
+Context value as flexible. Suggest the
+Context value as flexible. Suggest the
+framework but let context guided. Just
+framework but let context guided. Just
+framework but let context guided. Just
+apply the knowledge. Don't enforce a
+apply the knowledge. Don't enforce a
+apply the knowledge. Don't enforce a
+rigid template. So, this is really good
+rigid template. So, this is really good
+rigid template. So, this is really good
+because Claude is saying, "Okay, you
+because Claude is saying, "Okay, you
+because Claude is saying, "Okay, you
+provided me with this framework. Do you
+provided me with this framework. Do you
+provided me with this framework. Do you
+want me to stick to it all the time? Do
+want me to stick to it all the time? Do
+want me to stick to it all the time? Do
+you want me to be flexible or just apply
+you want me to be flexible or just apply
+you want me to be flexible or just apply
+the knowledge and don't enforce a rigid
+the knowledge and don't enforce a rigid
+the knowledge and don't enforce a rigid
+template? I'm going to do the middle
+template? I'm going to do the middle
+template? I'm going to do the middle
+ground which is kind of flexible suggest
+ground which is kind of flexible suggest
+ground which is kind of flexible suggest
+the framework but let me decide what I
+the framework but let me decide what I
+the framework but let me decide what I
+want. So now it's going to build that
+want. So now it's going to build that
+want. So now it's going to build that
+skill based off those clarification
+skill based off those clarification
+skill based off those clarification
+questions. So now what you're seeing is
+questions. So now what you're seeing is
+questions. So now what you're seeing is
+our whole skill packaged over here. We
+our whole skill packaged over here. We
+our whole skill packaged over here. We
+can see apply the skill whenever the
+can see apply the skill whenever the
+can see apply the skill whenever the
+user wants to write cold outreach, sales
+user wants to write cold outreach, sales
+user wants to write cold outreach, sales
+sequences, prospecting messages. You are
+sequences, prospecting messages. You are
+sequences, prospecting messages. You are
+an expert B2B sales strategist and
+an expert B2B sales strategist and
+an expert B2B sales strategist and
+copywriter. Your job is to help the user
+copywriter. Your job is to help the user
+copywriter. Your job is to help the user
+write outreach that is hyper relevant,
+write outreach that is hyper relevant,
+write outreach that is hyper relevant,
+signal driven, and structured for
+signal driven, and structured for
+signal driven, and structured for
+response, not volume. We already have
+response, not volume. We already have
+response, not volume. We already have
+this AI agent or AI skill that's going
+this AI agent or AI skill that's going
+this AI agent or AI skill that's going
+to help us a lot, save us a lot of time.
+to help us a lot, save us a lot of time.
+to help us a lot, save us a lot of time.
+And it says step one, assess what you
+And it says step one, assess what you
+And it says step one, assess what you
+have. Input available, prospect name,
+have. Input available, prospect name,
+have. Input available, prospect name,
+everything like that, action, skip, ask.
+everything like that, action, skip, ask.
+everything like that, action, skip, ask.
+So depending on what I give it, it also
+So depending on what I give it, it also
+So depending on what I give it, it also
+figures out what it needs to do. Step
+figures out what it needs to do. Step
+figures out what it needs to do. Step
+two, research mode when needed,
+two, research mode when needed,
+two, research mode when needed,
+leadership changes, funding round,
+leadership changes, funding round,
+leadership changes, funding round,
+strategic language, job posting,
+strategic language, job posting,
+strategic language, job posting,
+competitive moves depending on the
+competitive moves depending on the
+competitive moves depending on the
+situation, signal density rule, painoint
+situation, signal density rule, painoint
+situation, signal density rule, painoint
+deduction. So determine what the pain
+deduction. So determine what the pain
+deduction. So determine what the pain
+point is. I'll put right then this part
+point is. I'll put right then this part
+point is. I'll put right then this part
+is probably more relevant to us which is
+is probably more relevant to us which is
+is probably more relevant to us which is
+outreach writing core principles under
+outreach writing core principles under
+outreach writing core principles under
+125 words signal first opening outcome
+125 words signal first opening outcome
+125 words signal first opening outcome
+over features one ask only no buzzword
+over features one ask only no buzzword
+over features one ask only no buzzword
+and three-part structure context value
+and three-part structure context value
+and three-part structure context value
+as so it has all that framework that we
+as so it has all that framework that we
+as so it has all that framework that we
+applied from notebook LM and then you
+applied from notebook LM and then you
+applied from notebook LM and then you
+can build that sequence we can see day
+can build that sequence we can see day
+can build that sequence we can see day
+one channel day one LinkedIn day two
+one channel day one LinkedIn day two
+one channel day one LinkedIn day two
+email day four phone call day seven
+email day four phone call day seven
+email day four phone call day seven
+LinkedIn. So we have that you know
+LinkedIn. So we have that you know
+LinkedIn. So we have that you know
+length and everything like that. So, it
+length and everything like that. So, it
+length and everything like that. So, it
+has this sequence already built in for
+has this sequence already built in for
+has this sequence already built in for
+us. So, we can save a bunch of time and
+us. So, we can save a bunch of time and
+us. So, we can save a bunch of time and
+we have subject lines and everything
+we have subject lines and everything
+we have subject lines and everything
+like that. But you can see we now have
+like that. But you can see we now have
+like that. But you can see we now have
+access to this skill and we can just
+access to this skill and we can just
+access to this skill and we can just
+copy this to our skills and it's going
+copy this to our skills and it's going
+copy this to our skills and it's going
+to be available for us to deploy
+to be available for us to deploy
+to be available for us to deploy
+whenever we want. So, now what I'm going
+whenever we want. So, now what I'm going
+whenever we want. So, now what I'm going
+to do is actually put my skill to test.
+to do is actually put my skill to test.
+to do is actually put my skill to test.
+So, I've taken this snack company, a
+So, I've taken this snack company, a
+So, I've taken this snack company, a
+snack company that I love. Uh, this is
+snack company that I love. Uh, this is
+snack company that I love. Uh, this is
+like their product. They sell lotus
+like their product. They sell lotus
+like their product. They sell lotus
+seeds. So, they have all these flavors.
+seeds. So, they have all these flavors.
+seeds. So, they have all these flavors.
+And what I've done is I've created a
+And what I've done is I've created a
+And what I've done is I've created a
+simple hypothetical situation which is
+simple hypothetical situation which is
+simple hypothetical situation which is
+to build a cold email sequence for
+to build a cold email sequence for
+to build a cold email sequence for
+Airbloom uh a snack company struggling
+Airbloom uh a snack company struggling
+Airbloom uh a snack company struggling
+with order delivery and logistics. Then
+with order delivery and logistics. Then
+with order delivery and logistics. Then
+I'm also going to ask it to try to
+I'm also going to ask it to try to
+I'm also going to ask it to try to
+determine other pain points that they
+determine other pain points that they
+determine other pain points that they
+might have. So this is all hypothetical
+might have. So this is all hypothetical
+might have. So this is all hypothetical
+and I've given it a link and all I have
+and I've given it a link and all I have
+and I've given it a link and all I have
+to do is now if I just press this I have
+to do is now if I just press this I have
+to do is now if I just press this I have
+access to all my skills and then I can
+access to all my skills and then I can
+access to all my skills and then I can
+go to over here and then you have skill
+go to over here and then you have skill
+go to over here and then you have skill
+but we also have the outreach one. So
+but we also have the outreach one. So
+but we also have the outreach one. So
+we'll click on the one that we just
+we'll click on the one that we just
+we'll click on the one that we just
+created and we'll do that and then I'll
+created and we'll do that and then I'll
+created and we'll do that and then I'll
+just press enter. So right now what it's
+just press enter. So right now what it's
+just press enter. So right now what it's
+doing is actually reading the outreach
+doing is actually reading the outreach
+doing is actually reading the outreach
+skill. So now you don't have to repeat
+skill. So now you don't have to repeat
+skill. So now you don't have to repeat
+yourself multiple times or paste in
+yourself multiple times or paste in
+yourself multiple times or paste in
+frameworks all over again. You have
+frameworks all over again. You have
+frameworks all over again. You have
+access to this whenever. So now it's
+access to this whenever. So now it's
+access to this whenever. So now it's
+doing that and just based off of that it
+doing that and just based off of that it
+doing that and just based off of that it
+read the skill and it's given me
+read the skill and it's given me
+read the skill and it's given me
+everything I need. For example, we have
+everything I need. For example, we have
+everything I need. For example, we have
+these pain hypotheses which are like
+these pain hypotheses which are like
+these pain hypotheses which are like
+order fulfillment gaps, maybe fragile
+order fulfillment gaps, maybe fragile
+order fulfillment gaps, maybe fragile
+product in transit, cold change or
+product in transit, cold change or
+product in transit, cold change or
+seasonal demand spikes, returns or
+seasonal demand spikes, returns or
+seasonal demand spikes, returns or
+refund ops, everything like that. And
+refund ops, everything like that. And
+refund ops, everything like that. And
+then what I have over here is couple of
+then what I have over here is couple of
+then what I have over here is couple of
+emails that I can send to them. For
+emails that I can send to them. For
+emails that I can send to them. For
+example, a 14-day sequence. So 14 days
+example, a 14-day sequence. So 14 days
+example, a 14-day sequence. So 14 days
+worth of work is done now because of the
+worth of work is done now because of the
+worth of work is done now because of the
+skill I have built. Number one, day one,
+skill I have built. Number one, day one,
+skill I have built. Number one, day one,
+LinkedIn, what to say, what to do. Then
+LinkedIn, what to say, what to do. Then
+LinkedIn, what to say, what to do. Then
+an email chain. Then if I want to cold
+an email chain. Then if I want to cold
+an email chain. Then if I want to cold
+call them, what I can do is call them
+call them, what I can do is call them
+call them, what I can do is call them
+over here. Everything like that. Then I
+over here. Everything like that. Then I
+over here. Everything like that. Then I
+have another LinkedIn touch, another
+have another LinkedIn touch, another
+have another LinkedIn touch, another
+email point touch up with them and
+email point touch up with them and
+email point touch up with them and
+everything like that. So I have 14 days
+everything like that. So I have 14 days
+everything like that. So I have 14 days
+worth of work just laid out for me
+worth of work just laid out for me
+worth of work just laid out for me
+within a couple of seconds. And I also
+within a couple of seconds. And I also
+within a couple of seconds. And I also
+did a couple of personalization notes
+did a couple of personalization notes
+did a couple of personalization notes
+like who to target. So founder CEO is
+like who to target. So founder CEO is
+like who to target. So founder CEO is
+saying that it's likely a small team of
+saying that it's likely a small team of
+saying that it's likely a small team of
+one to three people. And right now it
+one to three people. And right now it
+one to three people. And right now it
+says that this person Dave White
+says that this person Dave White
+says that this person Dave White
+appeared in the searches. So I can use
+appeared in the searches. So I can use
+appeared in the searches. So I can use
+his contact to you know reach out to him
+his contact to you know reach out to him
+his contact to you know reach out to him
+whatever and then everything like that.
+whatever and then everything like that.
+whatever and then everything like that.
+And then also I asked it to do a full
+And then also I asked it to do a full
+And then also I asked it to do a full
+research on it. So this is the summary
+research on it. So this is the summary
+research on it. So this is the summary
+of what the product is and on the bonus
+of what the product is and on the bonus
+of what the product is and on the bonus
+pain points which I asked it to do
+pain points which I asked it to do
+pain points which I asked it to do
+beyond the stated delivery and
+beyond the stated delivery and
+beyond the stated delivery and
+logistical issues there are five other
+logistical issues there are five other
+logistical issues there are five other
+areas I found as well. So all of this
+areas I found as well. So all of this
+areas I found as well. So all of this
+work was done for me within couple of
+work was done for me within couple of
+work was done for me within couple of
+seconds and I have not only one day's
+seconds and I have not only one day's
+seconds and I have not only one day's
+worth of work done but 14 days worth of
+worth of work done but 14 days worth of
+worth of work done but 14 days worth of
+cold emails or messages set up and this
+cold emails or messages set up and this
+cold emails or messages set up and this
+was just in the chat feature. If you
+was just in the chat feature. If you
+was just in the chat feature. If you
+were to use the co-work feature in cloud
+were to use the co-work feature in cloud
+were to use the co-work feature in cloud
+as well you could do that. You could
+as well you could do that. You could
+as well you could do that. You could
+also use it in the code feature because
+also use it in the code feature because
+also use it in the code feature because
+you have access to this skill wherever
+you have access to this skill wherever
+you have access to this skill wherever
+in co-work hypothetically for example
+in co-work hypothetically for example
+in co-work hypothetically for example
+you can access your skills just like you
+you can access your skills just like you
+you can access your skills just like you
+would access everything in uh your
+would access everything in uh your
+would access everything in uh your
+normal chat feature but now you also
+normal chat feature but now you also
+normal chat feature but now you also
+have access to your calendar in co-work
+have access to your calendar in co-work
+have access to your calendar in co-work
+you have access to your actual email for
+you have access to your actual email for
+you have access to your actual email for
+it to send drafts and everything like
+it to send drafts and everything like
+it to send drafts and everything like
+that. You also have access to
+that. You also have access to
+that. You also have access to
+automations and schedule tasks and
+automations and schedule tasks and
+automations and schedule tasks and
+everything like that. So this skill once
+everything like that. So this skill once
+everything like that. So this skill once
+you have built it from notebook LM you
+you have built it from notebook LM you
+you have built it from notebook LM you
+have access to wherever you go in cloud
+have access to wherever you go in cloud
+have access to wherever you go in cloud
+even you can transfer the skill into
+even you can transfer the skill into
+even you can transfer the skill into
+other AI models like chatbt or even a
+other AI models like chatbt or even a
+other AI models like chatbt or even a
+Gemini as well but I personally like
+Gemini as well but I personally like
+Gemini as well but I personally like
+claude because of co-work and everything
+claude because of co-work and everything
+claude because of co-work and everything
+like that. So I've chosen claude today
+like that. So I've chosen claude today
+like that. So I've chosen claude today
+as my demo. So that's pretty much the
+as my demo. So that's pretty much the
+as my demo. So that's pretty much the
+full workflow. You use notebook's deep
+full workflow. You use notebook's deep
+full workflow. You use notebook's deep
+research to pull structured expert
+research to pull structured expert
+research to pull structured expert
+knowledge on any domain you want. Then
+knowledge on any domain you want. Then
+knowledge on any domain you want. Then
+you take that research into Claude and
+you take that research into Claude and
+you take that research into Claude and
+build a scale file that turns that
+build a scale file that turns that
+build a scale file that turns that
+knowledge into repeatable agent behavior
+knowledge into repeatable agent behavior
+knowledge into repeatable agent behavior
+and you end up with Claude that doesn't
+and you end up with Claude that doesn't
+and you end up with Claude that doesn't
+just kind of know your domain. It
+just kind of know your domain. It
+just kind of know your domain. It
+operates from a real knowledge base and
+operates from a real knowledge base and
+operates from a real knowledge base and
+gets better every time you update it.
+gets better every time you update it.
+gets better every time you update it.
+The library of skills you build up over
+The library of skills you build up over
+The library of skills you build up over
+time becomes genuinely valuable. And
+time becomes genuinely valuable. And
+time becomes genuinely valuable. And
+it's the difference between using Claude
+it's the difference between using Claude
+it's the difference between using Claude
+as a generic assistant and using it as a
+as a generic assistant and using it as a
+as a generic assistant and using it as a
+specialized agent that knows your work.
+specialized agent that knows your work.
+specialized agent that knows your work.
+If you want to see me apply this to a
+If you want to see me apply this to a
+If you want to see me apply this to a
+specific domain, drop it in the
+specific domain, drop it in the
+specific domain, drop it in the
+comments. I'll pick a few and maybe I'll
+comments. I'll pick a few and maybe I'll
+comments. I'll pick a few and maybe I'll
+do a dedicated walkthrough for that as
+do a dedicated walkthrough for that as
+do a dedicated walkthrough for that as
+well. But if you found this helpful,
+well. But if you found this helpful,
+well. But if you found this helpful,
+make sure you guys like the video and
+make sure you guys like the video and
+make sure you guys like the video and
+subscribe to the channel. But that's it
+subscribe to the channel. But that's it
+subscribe to the channel. But that's it
+for today's video. Make sure you guys
+for today's video. Make sure you guys
+for today's video. Make sure you guys
+are subscribed to the channel. Follow
+are subscribed to the channel. Follow
+are subscribed to the channel. Follow
+our new newsletter as well at
+our new newsletter as well at
+our new newsletter as well at
+universeai.behive.com
+universeai.behive.com
+universeai.behive.com
+as well as subscribe to the main channel
+as well as subscribe to the main channel
+as well as subscribe to the main channel
+World of AI and support us on X by
+World of AI and support us on X by
+World of AI and support us on X by
+following the Universe of AIZ as well.
+following the Universe of AIZ as well.
+following the Universe of AIZ as well.
+Until then, I'll see you guys in the
+Until then, I'll see you guys in the
+Until then, I'll see you guys in the
+next video.

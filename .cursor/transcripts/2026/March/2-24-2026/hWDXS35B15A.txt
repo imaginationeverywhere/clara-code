@@ -1,0 +1,306 @@
+Title: Claude Code MASSIVE Update! Claude Code OS, Computer Use, /Schedule, & More!
+Video ID: hWDXS35B15A
+URL: https://www.youtube.com/watch?v=hWDXS35B15A
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] Claude Code and their desktop app just
+[00:02] keeps getting better and better. And
+[00:04] today they dropped a major new feature
+[00:06] that honestly replaces a lot of what
+[00:09] tools like OpenClaw were trying to do,
+[00:11] but in a much more seamless way. With
+[00:13] the new Cloud Code desktop experience,
+[00:16] you can now delegate full tasks to
+[00:18] Claude. You can literally hand off
+[00:20] something and get back a polished
+[00:22] deliverable. But it even goes further
+[00:24] than that because you can now put Claw
+[00:26] to work directly on your computer,
+[00:28] letting it operate and complete tasks
+[00:31] autonomously, controlling your computer
+[00:33] to do anything. They also introduce a
+[00:35] few new commands that make everything
+[00:37] way easier to use. So, let's dive
+[00:39] straight into it. To start things off,
+[00:42] one of the biggest updates to Claude is
+[00:44] that you can actually use your computer
+[00:46] to complete tasks. inside Claude co-work
+[00:48] and Claude code. Claude can point,
+[00:51] click, and navigate your system just
+[00:53] like a real user. It has the capability
+[00:56] of opening files, browsing the web, and
+[00:58] even interacting with developer tools
+[01:00] all automatically with no setup
+[01:03] required. And it gets even more powerful
+[01:05] with their new dispatch feature. Cuz
+[01:07] dispatch lets you assign tasks to Claude
+[01:10] from anywhere, whether that's from your
+[01:12] desktop app or from your phone. You can
+[01:14] literally be away from your computer,
+[01:16] send a task, and Claude can handle it
+[01:18] for you in the background. Now, if
+[01:20] you're not familiar with dispatch, it's
+[01:22] basically something that acts like a
+[01:24] remote control for Claude. You assign it
+[01:26] a task, and Claude executes it for you
+[01:28] whenever it has access. Just take a look
+[01:31] at it live in action. This is where
+[01:33] Daniel Sand, which I highly recommend
+[01:35] that you follow on Twitter. He is
+[01:36] constantly posting new updates about
+[01:38] Cloud Code first amongst all of these
+[01:41] different developers, including myself.
+[01:43] And this is where he had literally just
+[01:45] controlled his computer from his phone
+[01:47] using the dispatch update. And this is
+[01:49] where he asked it to open Twitter and
+[01:52] like a claude post. It was able to do it
+[01:54] directly within a couple seconds. And
+[01:57] this is where it starts to get really
+[01:58] interesting because once you start
+[02:00] combining this with things like your
+[02:02] skills MD file, you can give clawed
+[02:05] structured instructions on how to use
+[02:07] different apps on your computer. So now
+[02:09] you're not just triggering oneoff
+[02:11] actions. You're giving it repeatable
+[02:13] capabilities across your entire system,
+[02:16] which is just powerful if you think
+[02:17] about it. This is a moment where AI
+[02:19] starts moving beyond just tools and onto
+[02:22] something that can actually operate
+[02:24] within environments that you set. If you
+[02:26] want the best AI tools, workflows, and
+[02:28] drops before everyone else, join my free
+[02:31] newsletter with the link in the
+[02:32] description below, which is completely
+[02:34] free. With this new capability, Claude
+[02:36] will always try to use your most precise
+[02:39] tool first. So, it has the access to
+[02:41] integrations like Slack, Google
+[02:43] Calendar, and it will use them directly.
+[02:46] But if those tools aren't available,
+[02:47] Claude doesn't just stop there cuz it
+[02:49] can actually take control of your
+[02:51] computer. It has the capability of
+[02:53] browsing using your mouse, keyboard, and
+[02:56] screen. And this is to complete a task
+[02:59] itself. It can scroll, click, open tabs,
+[03:02] and explore your system just like a
+[03:04] human would. And importantly, it always
+[03:06] asks for your permission before doing
+[03:08] any of this. And of course, with
+[03:10] something this powerful that controls
+[03:12] your computer, there's a lot of safety
+[03:14] concerns. And Enthropic clearly thought
+[03:16] about that and they actually built a
+[03:18] safeguard to minimize risk like prompt
+[03:20] injection attacks. The system is
+[03:22] actively monitoring what Claude is
+[03:24] doing, and it has the capability of
+[03:26] scanning for suspicious behaviors
+[03:28] autonomously. On top of that, you're
+[03:30] always fully in control, so you can stop
+[03:32] Claude at any time. It always requests
+[03:35] permission before accessing new apps or
+[03:38] taking sensitive action. Now, this is a
+[03:40] feature that is currently available in
+[03:42] research preview for Cloud Pro and Mac
+[03:45] users, and apparently the computer use
+[03:47] is only available right now for, I
+[03:50] believe, Mac OS users. Overall, I
+[03:52] believe this is a huge step forward in
+[03:54] truly autonomous AI agents that can
+[03:57] control your computer do any sort of
+[03:59] task. But think about the possibilities
+[04:02] of what you can do with this. With the
+[04:03] dispatch feature now also allowing you
+[04:06] to control your computer. You can
+[04:08] essentially have it schedule various
+[04:09] sorts of tasks for you, like pulling my
+[04:12] metrics from an analytics dashboard and
+[04:14] dropping them into a weekly report
+[04:16] template every Friday. having it
+[04:18] organize files while you're away from
+[04:20] your computer, building out spreadsheets
+[04:22] for you. You also have the ability to
+[04:23] have it work upon doing deep research
+[04:26] and then preparing a report for you,
+[04:28] analyzing notes for you, and the list
+[04:30] just keeps on going on and on. Now, if
+[04:33] you're on Mac and you want to access the
+[04:35] computer use, you're going to need to
+[04:36] actually download the latest update.
+[04:38] Just open up co-work and then relaunch
+[04:40] it, and then you should be able to now
+[04:42] access this new feature. Next is a
+[04:44] pretty cool feature that really stood
+[04:46] out to me, and that is the new schedule
+[04:48] command. This is honestly a gamecher if
+[04:51] you're into automation, cuz with the
+[04:53] schedule command, you can create
+[04:54] reoccurring cloud-based jobs for cloud
+[04:57] directly from your terminal. So instead
+[04:59] of just running tasks locally while your
+[05:01] computer is on, you can now have it set
+[05:03] up things that are running even after
+[05:06] you close your laptop. Think of it like
+[05:08] turning Claude into a persistent worker
+[05:11] that is always running in the
+[05:12] background. Internally, this is already
+[05:14] being used for some pretty powerful
+[05:16] workflows. For example, the teams at
+[05:18] Enthropic are using it automatically to
+[05:20] resolve CI failures, pushing
+[05:22] documentation, updates, and handling
+[05:25] repetitive dev tasks without any manual
+[05:27] intervention. So, instead of constantly
+[05:29] checking your pipeline or fixing small
+[05:31] issues, cloud is just going to take care
+[05:34] of that. And it is something that's
+[05:35] going to run on a schedule. And one of
+[05:37] the coolest use cases I've seen is that
+[05:39] there's actually a schedule Claude job
+[05:42] that is going to maintain a twin library
+[05:44] in Go for an active Python library. So
+[05:47] every time changes are made on this
+[05:49] Python side, Claude keeps the Go version
+[05:52] in sync automatically. That is something
+[05:54] that you can practically do with this
+[05:56] new assistant feature. Another quick but
+[05:59] important update is that loops can now
+[06:01] run for up to 7 days instead of just
+[06:04] three. So you can keep longer running
+[06:06] workflows going without interruption,
+[06:08] which is huge for complex and ongoing
+[06:10] automations. And if you're not familiar
+[06:12] with what loops are, you can use the
+[06:14] /loop command. And essentially that will
+[06:17] instruct the cloud to run a task
+[06:19] continuously or repeatedly until a goal
+[06:22] is reached or a condition is met based
+[06:24] off the interval that you set. Another
+[06:26] really useful and subtle update is that
+[06:29] you can now set the effort levels
+[06:30] directly inside skills and slash
+[06:33] commands. This basically controls how
+[06:35] long Claude thinks before giving you an
+[06:37] answer. So if you want something quick,
+[06:39] you can obviously set the effort low.
+[06:41] But if you're working on something more
+[06:43] complex like coding, debugging or
+[06:45] planning, you can increase this effort
+[06:48] by just using the slash command. And
+[06:50] this way it's going to get much more of
+[06:52] a thorough response. And the best part
+[06:54] is this overrides your session default.
+[06:57] So you won't actually constantly need to
+[06:59] change this global setting cuz you can
+[07:01] fine-tune intelligence and depth on per
+[07:03] task basis. This is a feature that's
+[07:05] more for the cloud code desktop users
+[07:08] cuz this is something that's going to
+[07:09] save a lot of you guys a lot of time cuz
+[07:11] especially if you're working on
+[07:13] front-end work. Cloud code desktop is
+[07:15] something that will now let you select
+[07:16] DOM elements directly. So instead of
+[07:19] just trying to describe that button on
+[07:20] the top right with a blue border, you
+[07:23] can just simply click it. Now once you
+[07:25] select the element, Claude gets
+[07:26] everything it needs. The HTML tag, the
+[07:29] classes, key styles, surrounding DOM
+[07:32] context, and even a crop screenshot of
+[07:34] that exact element. And if you're
+[07:37] working with React apps, it gets even
+[07:39] deeper cuz Claude can access the actual
+[07:41] source file, the component name, and
+[07:43] even the props before it passes it in.
+[07:46] This makes UI edits, debugging, and
+[07:49] iteration way faster because you're no
+[07:51] longer translating what you see in words
+[07:53] because you're actually just pointing it
+[07:55] out. Now, this is one of those small UX
+[07:57] improvements that actually makes a
+[07:59] massive difference in real workflows.
+[08:01] This is a quick performance update that
+[08:03] is quite subtle and it relates to cloud
+[08:05] AI and their desktop apps cuz it just
+[08:08] got significantly faster because they
+[08:09] moved from SSR to a static architecture
+[08:12] using wheat and tan stack router served
+[08:15] directly from the edge. This means time
+[08:17] to first bite is down 65%. Comps will
+[08:21] show up 50% faster and overall
+[08:23] navigation feels much snappier. Small
+[08:26] changes on the surface but huge upgrades
+[08:28] to the overall experience. Another cool
+[08:30] update they're testing out right now is
+[08:32] the improved initialization command. And
+[08:35] this is a new version that actually
+[08:37] interviews you to help set up claude
+[08:39] code inside your repo. This is including
+[08:41] things like skills hooks and configs. To
+[08:44] enable it, you just need to simply
+[08:46] launch Claude with the environment flag
+[08:48] with claude code new initialization set
+[08:51] to one. And this is where you can then
+[08:53] run the initialization command inside
+[08:55] your repo. It will then guide you
+[08:57] through the setup. This is a huge step
+[08:59] forward for making onboarding way
+[09:01] smoother, especially for new projects or
+[09:03] integrating Claude into existing
+[09:05] workflows. Lastly is the introduction of
+[09:08] projects and co-work. This is with
+[09:10] built-in memory across tasks, which is
+[09:12] super useful as it is going to have a
+[09:15] shared folder and connection setup for a
+[09:17] group of different tasks. If you like
+[09:19] this video and would love to support the
+[09:21] channel, you can consider donating to my
+[09:24] channel through the super thanks option
+[09:26] below. Or you can consider joining our
+[09:28] private Discord where you can access
+[09:30] multiple subscriptions to different AI
+[09:32] tools for free on a monthly basis, plus
+[09:35] daily AI news and exclusive content,
+[09:37] plus a lot more. But that's about it,
+[09:40] guys, for today's video on the new Cloud
+[09:42] Code updates. There are probably going
+[09:44] to be a lot of minuscule updates that I
+[09:46] forgot to cover. And if there is
+[09:48] something that you think would be worth
+[09:50] mentioning, please comment that in the
+[09:52] description below. So then I can
+[09:53] potentially highlight that and then
+[09:56] create a condensed list of the new
+[09:57] updates that were forgotten from this
+[10:00] video so that other people can get a
+[10:02] better idea of what happened in Claude
+[10:04] Code this past week. But that is
+[10:06] basically it guys. I hope you enjoyed
+[10:07] today's video and got some sort of
+[10:08] value. I'll leave all these links in the
+[10:10] description below so that you can easily
+[10:11] get started. But with that thought guys,
+[10:13] thank you guys so much for watching.
+[10:14] Make sure you go ahead and subscribe to
+[10:16] our second channel. Join the newsletter.
+[10:18] Join our Discord. Follow me on Twitter.
+[10:19] And lastly, make sure you go ahead and
+[10:21] subscribe to the main channel. Make sure
+[10:24] you take a look at our previous videos.
+[10:25] Turn on the notification bell, like this
+[10:27] video, and take a look at our previous
+[10:29] videos so that you can stay upto date
+[10:31] with the latest AI news. But with that
+[10:32] thought, guys, have an amazing day.
+[10:34] Spread positivity, and I'll see you guys
+[10:35] fairly shortly. He suffers.
+
+--- Plain text ---
+Claude Code and their desktop app just keeps getting better and better. And today they dropped a major new feature that honestly replaces a lot of what tools like OpenClaw were trying to do, but in a much more seamless way. With the new Cloud Code desktop experience, you can now delegate full tasks to Claude. You can literally hand off something and get back a polished deliverable. But it even goes further than that because you can now put Claw to work directly on your computer, letting it operate and complete tasks autonomously, controlling your computer to do anything. They also introduce a few new commands that make everything way easier to use. So, let's dive straight into it. To start things off, one of the biggest updates to Claude is that you can actually use your computer to complete tasks. inside Claude co-work and Claude code. Claude can point, click, and navigate your system just like a real user. It has the capability of opening files, browsing the web, and even interacting with developer tools all automatically with no setup required. And it gets even more powerful with their new dispatch feature. Cuz dispatch lets you assign tasks to Claude from anywhere, whether that's from your desktop app or from your phone. You can literally be away from your computer, send a task, and Claude can handle it for you in the background. Now, if you're not familiar with dispatch, it's basically something that acts like a remote control for Claude. You assign it a task, and Claude executes it for you whenever it has access. Just take a look at it live in action. This is where Daniel Sand, which I highly recommend that you follow on Twitter. He is constantly posting new updates about Cloud Code first amongst all of these different developers, including myself. And this is where he had literally just controlled his computer from his phone using the dispatch update. And this is where he asked it to open Twitter and like a claude post. It was able to do it directly within a couple seconds. And this is where it starts to get really interesting because once you start combining this with things like your skills MD file, you can give clawed structured instructions on how to use different apps on your computer. So now you're not just triggering oneoff actions. You're giving it repeatable capabilities across your entire system, which is just powerful if you think about it. This is a moment where AI starts moving beyond just tools and onto something that can actually operate within environments that you set. If you want the best AI tools, workflows, and drops before everyone else, join my free newsletter with the link in the description below, which is completely free. With this new capability, Claude will always try to use your most precise tool first. So, it has the access to integrations like Slack, Google Calendar, and it will use them directly. But if those tools aren't available, Claude doesn't just stop there cuz it can actually take control of your computer. It has the capability of browsing using your mouse, keyboard, and screen. And this is to complete a task itself. It can scroll, click, open tabs, and explore your system just like a human would. And importantly, it always asks for your permission before doing any of this. And of course, with something this powerful that controls your computer, there's a lot of safety concerns. And Enthropic clearly thought about that and they actually built a safeguard to minimize risk like prompt injection attacks. The system is actively monitoring what Claude is doing, and it has the capability of scanning for suspicious behaviors autonomously. On top of that, you're always fully in control, so you can stop Claude at any time. It always requests permission before accessing new apps or taking sensitive action. Now, this is a feature that is currently available in research preview for Cloud Pro and Mac users, and apparently the computer use is only available right now for, I believe, Mac OS users. Overall, I believe this is a huge step forward in truly autonomous AI agents that can control your computer do any sort of task. But think about the possibilities of what you can do with this. With the dispatch feature now also allowing you to control your computer. You can essentially have it schedule various sorts of tasks for you, like pulling my metrics from an analytics dashboard and dropping them into a weekly report template every Friday. having it organize files while you're away from your computer, building out spreadsheets for you. You also have the ability to have it work upon doing deep research and then preparing a report for you, analyzing notes for you, and the list just keeps on going on and on. Now, if you're on Mac and you want to access the computer use, you're going to need to actually download the latest update. Just open up co-work and then relaunch it, and then you should be able to now access this new feature. Next is a pretty cool feature that really stood out to me, and that is the new schedule command. This is honestly a gamecher if you're into automation, cuz with the schedule command, you can create reoccurring cloud-based jobs for cloud directly from your terminal. So instead of just running tasks locally while your computer is on, you can now have it set up things that are running even after you close your laptop. Think of it like turning Claude into a persistent worker that is always running in the background. Internally, this is already being used for some pretty powerful workflows. For example, the teams at Enthropic are using it automatically to resolve CI failures, pushing documentation, updates, and handling repetitive dev tasks without any manual intervention. So, instead of constantly checking your pipeline or fixing small issues, cloud is just going to take care of that. And it is something that's going to run on a schedule. And one of the coolest use cases I've seen is that there's actually a schedule Claude job that is going to maintain a twin library in Go for an active Python library. So every time changes are made on this Python side, Claude keeps the Go version in sync automatically. That is something that you can practically do with this new assistant feature. Another quick but important update is that loops can now run for up to 7 days instead of just three. So you can keep longer running workflows going without interruption, which is huge for complex and ongoing automations. And if you're not familiar with what loops are, you can use the /loop command. And essentially that will instruct the cloud to run a task continuously or repeatedly until a goal is reached or a condition is met based off the interval that you set. Another really useful and subtle update is that you can now set the effort levels directly inside skills and slash commands. This basically controls how long Claude thinks before giving you an answer. So if you want something quick, you can obviously set the effort low. But if you're working on something more complex like coding, debugging or planning, you can increase this effort by just using the slash command. And this way it's going to get much more of a thorough response. And the best part is this overrides your session default. So you won't actually constantly need to change this global setting cuz you can fine-tune intelligence and depth on per task basis. This is a feature that's more for the cloud code desktop users cuz this is something that's going to save a lot of you guys a lot of time cuz especially if you're working on front-end work. Cloud code desktop is something that will now let you select DOM elements directly. So instead of just trying to describe that button on the top right with a blue border, you can just simply click it. Now once you select the element, Claude gets everything it needs. The HTML tag, the classes, key styles, surrounding DOM context, and even a crop screenshot of that exact element. And if you're working with React apps, it gets even deeper cuz Claude can access the actual source file, the component name, and even the props before it passes it in. This makes UI edits, debugging, and iteration way faster because you're no longer translating what you see in words because you're actually just pointing it out. Now, this is one of those small UX improvements that actually makes a massive difference in real workflows. This is a quick performance update that is quite subtle and it relates to cloud AI and their desktop apps cuz it just got significantly faster because they moved from SSR to a static architecture using wheat and tan stack router served directly from the edge. This means time to first bite is down 65%. Comps will show up 50% faster and overall navigation feels much snappier. Small changes on the surface but huge upgrades to the overall experience. Another cool update they're testing out right now is the improved initialization command. And this is a new version that actually interviews you to help set up claude code inside your repo. This is including things like skills hooks and configs. To enable it, you just need to simply launch Claude with the environment flag with claude code new initialization set to one. And this is where you can then run the initialization command inside your repo. It will then guide you through the setup. This is a huge step forward for making onboarding way smoother, especially for new projects or integrating Claude into existing workflows. Lastly is the introduction of projects and co-work. This is with built-in memory across tasks, which is super useful as it is going to have a shared folder and connection setup for a group of different tasks. If you like this video and would love to support the channel, you can consider donating to my channel through the super thanks option below. Or you can consider joining our private Discord where you can access multiple subscriptions to different AI tools for free on a monthly basis, plus daily AI news and exclusive content, plus a lot more. But that's about it, guys, for today's video on the new Cloud Code updates. There are probably going to be a lot of minuscule updates that I forgot to cover. And if there is something that you think would be worth mentioning, please comment that in the description below. So then I can potentially highlight that and then create a condensed list of the new updates that were forgotten from this video so that other people can get a better idea of what happened in Claude Code this past week. But that is basically it guys. I hope you enjoyed today's video and got some sort of value. I'll leave all these links in the description below so that you can easily get started. But with that thought guys, thank you guys so much for watching. Make sure you go ahead and subscribe to our second channel. Join the newsletter. Join our Discord. Follow me on Twitter. And lastly, make sure you go ahead and subscribe to the main channel. Make sure you take a look at our previous videos. Turn on the notification bell, like this video, and take a look at our previous videos so that you can stay upto date with the latest AI news. But with that thought, guys, have an amazing day. Spread positivity, and I'll see you guys fairly shortly. He suffers.

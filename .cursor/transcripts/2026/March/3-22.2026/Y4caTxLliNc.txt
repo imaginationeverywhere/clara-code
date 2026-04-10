@@ -1,0 +1,409 @@
+Title: Claude Code vient de tuer OpenClaw (Claude Channels)
+Video ID: Y4caTxLliNc
+URL: https://www.youtube.com/watch?v=Y4caTxLliNc
+
+Note: YouTube caption/subtitle APIs were unavailable when this file was generated; text below is from offline ASR and may differ slightly from official captions.
+
+Source: Local speech-to-text (faster-whisper, model=base, language=en, probability=1.00)
+
+--- Timestamps ---
+[00:00] Anthropic comes to make a big face that will literally be open-close, because today,
+[00:06] look what I'm capable of doing since Telegram, I can contact Claude Cod to tell him
+[00:10] to do all of the interaction on my PC and everything 100% in distance.
+[00:14] I just send him a message and he will answer me in a few seconds.
+[00:18] I can do all of the interaction and everything.
+[00:20] Even if I'm not at home, he can be really happy on my PC and I can see everything in distance.
+[00:26] In this video, I will explain what this new functionality is.
+[00:30] Anthropic is to baptize the canals and concretes.
+[00:34] You can easily connect Telegram and Discord to communicate with Claude Cod at distance.
+[00:40] On the left you can see my classic Claude Cod with all the chat,
+[00:45] but you can see that we use a plugin called Telegram that will allow me to communicate with
+[00:50] Claude Cod directly on Telegram.
+[00:52] Here I can say, for example, thank you and we will ask him to do me a HTML page.
+[00:58] Another design with a frame to put this definition in front.
+[01:02] I will ask him to simply code a little page to show you.
+[01:05] And there he is gone.
+[01:06] He is in a boss' train, he is in a code train and I can look at the results.
+[01:12] He is told to do it, he is told to improve a result and everything in distance.
+[01:17] Even if I'm in a taxi, even if I'm far away from home,
+[01:21] I have to be open enough to be a boss' train.
+[01:25] And I will explain in this video how to leave your PC always open.
+[01:29] And there he comes to ask me the authorisation.
+[01:32] And here he comes to ask me literally not to play.
+[01:36] Another design with the definition of the AI.
+[01:39] I will tell him to turn this site into blog and edit a first article of blog on LiyaFort and LiyaFable.
+[01:45] I can see concretely that he is writing on my phone.
+[01:48] And he comes just to answer me with the page.
+[01:51] Okay, very, very nice.
+[01:53] I will show you more about it, but everything is fluid.
+[01:55] They see me literally everything that needs to be on my phone.
+[01:58] I can directly be at a distance and be able to discuss it with him.
+[02:02] And of course, the code code will impress us in terms of editing and code code.
+[02:08] Imagine that I'm not at home.
+[02:09] And that I know that my PC is open and that there is the miniature that I prepared for this video.
+[02:14] And that I'm not alone.
+[02:15] I just have to take directly to the code code.
+[02:18] Let me see the image on my blog that is called minime.gpg.
+[02:21] We have more inspiration than we do in 5 versions.
+[02:23] And there he comes to send me my miniature.
+[02:26] And I'm going to tell him to rename the Miniature Minimax.
+[02:29] And now this file is called Minimax.
+[02:31] And concretely, I can make it empty by saying it.
+[02:34] I'm going to do a research on the internet to look at minimaxm2.7.
+[02:38] Make me a PDF, I need to have the title of the video and the description.
+[02:42] And that's it, he just made me complete my PDF on minimax with the description of the characteristics.
+[02:47] And also, well, everything you need.
+[02:49] Now I'm not going to show you how to connect a channel.
+[02:52] So that is to say, telegram to the Discord directly to your code code directly on your PC.
+[02:57] So, I'm on Mac OS and I'm going to show you how to do it very easily.
+[03:02] And you're going to see that with the documentation of the code,
+[03:04] well, it's quite simple.
+[03:06] Here we have the code code of cloud.com, slash.doc and channels.
+[03:09] We're going to see all the steps.
+[03:11] In a very intuitive way to connect to the telegram, but also to Discord.
+[03:15] And we will be absolutely all for all to be configured.
+[03:18] Besides that, the whole amount of comments and the process of installation
+[03:22] that this is for Telegram and Discord.
+[03:24] Well, I have all the references that are here, it's exactly what I'm going to show you in this video.
+[03:27] I'm going to tell you about it 100% free.
+[03:29] It's finding descriptions.
+[03:31] It will be found on my school.
+[03:32] Where can you go on classroom?
+[03:34] Technical.
+[03:35] And you can find the video that you actually watch.
+[03:37] And you can find this complete guide to make all the comments and not to take off your head.
+[03:42] First thing, you have to pay attention to your cloud code version,
+[03:45] because there we only have the V2.1.80 on the minimum.
+[03:50] I'm going to go into your terminal and here you can do the command,
+[03:54] cloud update, to see the current version of cloud code.
+[03:58] I'm going to come to the update and we can start by marking the cloud for the light.
+[04:03] I'm going to go in and I'm directly on the cloud code.
+[04:07] I can say hello.
+[04:08] It's ready to help and update with me,
+[04:10] but obviously what I want to do is to configure it,
+[04:12] especially on Telegram to start.
+[04:14] And the first step to configure a channel on Telegram
+[04:17] is to create a bot on Telegram.
+[04:19] It's something very simple and it's the first step at all.
+[04:22] So you're going to run on Telegram.myslach.phaseur
+[04:26] and start a new conversation with this one.
+[04:28] You'll get on a conversation like this
+[04:32] and you'll be able to do the new bot.
+[04:34] It will ask you a year, for example, here I want to call it cloud code.
+[04:38] Tire du ba Julien, Tire du ba Ia
+[04:41] and then we're going to put our username.
+[04:44] It must end by bot.
+[04:45] So I'm going to do the same thing and I'm going to mark bot.
+[04:48] And there, because you can see, it's my code secret.
+[04:51] It's a token.
+[04:52] You don't have to share it, and obviously at the end of this video,
+[04:54] it will be destroyed.
+[04:55] Keep this window open and now go back to cloud code.
+[04:59] You have to download and install the plugin directly on Telegram.
+[05:04] We copy this little link and we do call it.
+[05:07] We're going to go in there, concretely.
+[05:09] We say, what he wants to install.
+[05:11] Well, what we have to install is our plugin and install it.
+[05:15] Now, we have to do Slash Reload plugins to be able to run.
+[05:20] If you don't find your plugin at this point,
+[05:22] close the terminal, open it and it will try.
+[05:24] Then what you're going to do, you're going to go on Telegram,
+[05:27] click on the little access code, click right,
+[05:31] copy the code here, copy this command and replace this little variable
+[05:37] by the code you just copied.
+[05:39] Once again, it is ultra-confidential, I will be surprised,
+[05:42] but obviously, it must be absolutely that you keep it and that you share it with someone.
+[05:46] I'm going to enter it, and obviously,
+[05:47] he does not recognize it, so I simply have to turn on the code.
+[05:50] He asks for the permission to access it to file without simply,
+[05:53] because it will be in local, I accept.
+[05:56] And there, he is able to configure everything.
+[05:58] I accept all the permissions and the creation of all the files.
+[06:01] Then, we will leave the session, we will do Slash Exit.
+[06:04] It will allow to release everything and to have all the properties.
+[06:07] We can even close the file.
+[06:09] And we will be able to copy, simply, this link of code,
+[06:13] okay, by clicking here, in the terminal,
+[06:16] and there, one, another, all that.
+[06:18] We do, okay.
+[06:19] Then, little verification,
+[06:21] we will open the terminal and very important.
+[06:24] We will copy this command,
+[06:27] restart with the keys, finally with the channels activated.
+[06:30] The key, I have already done it, and there, he is going to listen to what is happening
+[06:34] currently on your telegram bot.
+[06:36] We see no matter what message,
+[06:38] and we can simply copy this command and the key here.
+[06:42] I do okay, and then we have the configuration that is done.
+[06:46] Basically, we just come to lose all the code and our telegram bot.
+[06:51] And he just tells me that it is well done.
+[06:53] As you have seen, I have sent a few messages before receiving my Per code.
+[06:57] In fact, how did I find the solution?
+[06:58] I have just installed a good one.
+[07:01] I put all the commands here if I would never be interested.
+[07:03] And me, it is exactly for that that I do not receive my code of authentication.
+[07:07] And here it is, I can send messages on telegram,
+[07:10] and it arrives on CloudCode, as you can see.
+[07:13] We have all the actions that are realized,
+[07:15] we can see the text that arrives on my side.
+[07:18] I want you to give me the key of the AI,
+[07:19] and there, CloudCode can,
+[07:21] anyway, I answer exactly what I answer.
+[07:24] He says that to answer using the telegram plugin,
+[07:26] and here we just connect it,
+[07:28] well, just to telegram CloudCode and so connect to telegram.
+[07:31] Now we are going to do the same with Discord.
+[07:33] I will show you how to connect CloudCode with Discord.
+[07:36] First of all, you are going to turn on Discord
+[07:37] and you will create a new server.
+[07:39] For that, it is very simple.
+[07:40] You click on add a server, create the mine,
+[07:43] and you click for me and my friends, the Julien server server.
+[07:45] And you just create your server.
+[07:47] Then you go to Discord.com slash developer slash application.
+[07:51] You will create a new application and you will name it as you want.
+[07:54] I will name it CloudCode and I will create all that.
+[07:57] Then you will click on bot and you will click on message content intent.
+[08:02] You activate it, you will register and restart the token.
+[08:06] Here you need your password,
+[08:08] and it is exactly this code that we will use this token.
+[08:10] It is exactly the same thing with telegram.
+[08:12] Then you go to OS2 and you will click on bot.
+[08:16] Here you will put authorizations, for example,
+[08:18] add reactions, send messages, join files,
+[08:23] see the old messages,
+[08:25] and also why not send them without forgetting to send messages.
+[08:31] If not, then it will create a little problem.
+[08:33] So do not forget to click here
+[08:35] and above all, click on bot in the application channel.
+[08:39] We will be on a bot here.
+[08:40] So you click here, do not forget to activate.
+[08:43] Send messages in files.
+[08:44] Then you copy this link, you paste it in your browser
+[08:48] and it will allow you to invite this bot to join your server in the case,
+[08:52] and of course I just created it.
+[08:54] We put all the authorizations and we are gone.
+[08:56] The bot will join the Discord server,
+[08:59] we will launch the CloudCode and we will also
+[09:03] send this how to Slashplugging Install Discord.
+[09:07] Everything will be well noted, we are okay and we are gone.
+[09:11] We will do Slashredo plugins.
+[09:13] We will turn on the Discord page to see the token,
+[09:17] copy, wait, there is no need to share it,
+[09:20] and we will do the same.
+[09:21] We will simply take this how to Slash Discord 2.0
+[09:25] and take the token in the entire.
+[09:27] We will be able to paste it.
+[09:28] And here we are ready to configure all this.
+[09:31] Then we do Slashredo plugins.
+[09:34] Slash Exit.
+[09:36] We will paste CloudCode channel plugin to launch
+[09:39] simply the cost of this server.
+[09:42] This is precisely the command.
+[09:44] Then once we launch the Cloud with the active cost of the channel,
+[09:48] with Discord, we will be able to look here,
+[09:53] we ask ourselves the same,
+[09:54] to have this story of access, the access code to lose
+[09:57] to make the password between the CloudCode code and also Discord.
+[10:01] And when I return directly to my bot,
+[10:03] we can see that if I send a message,
+[10:05] now he tells me that the code is the following.
+[10:07] So I will copy it and go to the terminal,
+[10:10] paste it and the loss will be done.
+[10:12] We will be able to connect the two together.
+[10:16] I will authorize the same here, I will authorize it.
+[10:19] And that's it, that's it.
+[10:20] So if I say hello and I return to the terminal,
+[10:22] we can see that there is Linput, hello with my pseudo.
+[10:25] Hello, when I push you down today.
+[10:27] And here I'm going to say that you are going to create a Html file
+[10:30] of landing page of that for the transcription
+[10:32] of YouTube's YouTube video.
+[10:34] And that's it, Indie.
+[10:34] I generate that all the time.
+[10:36] And we can see that Linput is there.
+[10:37] We are good and good at what I told him.
+[10:40] And the answer is I generate that all the time.
+[10:42] And he is in a bosset.
+[10:43] Well, it means concretely that from my phone,
+[10:45] I can anywhere where I find myself in the world,
+[10:47] in condition.
+[10:48] And I say in condition that my PC is lit,
+[10:50] and I can simply turn it off.
+[10:52] To do it, bosset literally on my session.
+[10:54] And concretely, I'm going to make a completely effective page
+[10:57] for a sass, a sass page,
+[10:59] a landing page for a sass with the transcription
+[11:02] of YouTube's YouTube video.
+[11:03] Thanks to Lillard,
+[11:03] you have to invent everything.
+[11:04] And that's exactly what he has done,
+[11:06] as you can see.
+[11:07] We have all the code that is here.
+[11:09] And so I sent it.
+[11:10] Yes, I sent it to HTML directly on Discord.
+[11:12] So that's quite impressive.
+[11:13] And if I open it all,
+[11:15] well, we have something very nice.
+[11:18] Transcribe and import the YouTube video
+[11:19] in a second.
+[11:20] In a second, it would have been better.
+[11:22] But in short,
+[11:22] try to gratuitely see the demo.
+[11:24] And we also have here to commit the link,
+[11:27] the URL.
+[11:28] And we have the button,
+[11:29] transcribe and start gratuitely.
+[11:31] I am impressed with what he has been able to do.
+[11:32] And of course,
+[11:33] it is a completely effective page.
+[11:35] But imagine to do that
+[11:36] on the support videos you have prepared
+[11:38] at distance,
+[11:39] or,
+[11:39] of course,
+[11:40] of interfaces for clients
+[11:41] that you can do
+[11:42] in any way you find.
+[11:44] You can look at what he has done,
+[11:45] literary,
+[11:46] modified,
+[11:47] augmented,
+[11:48] well, some things.
+[11:49] So it's rather magic.
+[11:50] But what we have to say with the code,
+[11:52] is that
+[11:53] you have to turn the session,
+[11:54] your laptop is open.
+[11:57] And to avoid the window to be closed,
+[11:59] or at least that,
+[12:00] well, that your PC is closed,
+[12:02] you can go into the parameters
+[12:04] directly to the system,
+[12:05] and mark here,
+[12:06] screen to go into the screen,
+[12:08] and there,
+[12:09] we can never put in the option.
+[12:12] Well, when the screen on the adapter sector,
+[12:15] that is to say that when he is charging,
+[12:17] concretely,
+[12:18] we will never reach the screen.
+[12:20] And there, we will not be embedded.
+[12:22] The session will take a long time in permanence.
+[12:24] But do you also have any comments that you can do
+[12:26] directly with your terminal to be able
+[12:29] to navigate your screen?
+[12:30] In the case here for two hours,
+[12:32] either 7,200 seconds,
+[12:33] I can copy this little code,
+[12:35] which then allows you to go into the terminal,
+[12:38] by going out quickly,
+[12:40] I paste it there,
+[12:41] and there,
+[12:42] hop!
+[12:42] The Mac will be sent two hours,
+[12:44] that is to say that most of what happens,
+[12:46] we have the possibility to let it be sent.
+[12:48] Well, concretely,
+[12:49] the code is really
+[12:51] able to tap on the table
+[12:52] in 10 years,
+[12:53] that the button will not kill us,
+[12:54] and that we will copy,
+[12:55] in other words, the same features,
+[12:57] by giving the possibility to users
+[12:59] and to use.
+[13:00] Well, at distance,
+[13:01] their cloud cloud,
+[13:01] where is it a little bit complicated before?
+[13:03] Well, there, we can really
+[13:05] thanks to the channel, thanks to the cano,
+[13:07] to be able to multiply.
+[13:08] The different sources of messages
+[13:10] to the same image, in fact,
+[13:13] open-close.
+[13:13] Personally, I feel a lot more
+[13:15] without security in using
+[13:17] cloud cloud,
+[13:17] open-close.
+[13:18] Especially thanks to MCP
+[13:20] and all the processes,
+[13:21] in fact,
+[13:21] two notifications and security.
+[13:23] We will have a lot less chance
+[13:24] to have leaks
+[13:26] of APEA or something like that,
+[13:28] and that will allow us to
+[13:29] code a quick test,
+[13:30] just full.
+[13:32] Now, if you ever want to
+[13:33] really use lia to make
+[13:35] the money with a concrete business,
+[13:37] I invite you to go and see
+[13:38] the 100% free community,
+[13:40] a mentor who allows you
+[13:41] to learn to create your first
+[13:43] business,
+[13:43] there are tutorials,
+[13:44] well-technical,
+[13:45] and well-initien,
+[13:46] and this kind of thing.
+[13:47] I have a 10-day
+[13:48] business that I can create
+[13:50] and sell,
+[13:51] and I also put my
+[13:53] completely free strategy
+[13:54] that shows you how I do more than
+[13:56] 10,000 euros per month with my agency.
+[13:57] And how to create it too?
+[13:59] Your own agency is profitable,
+[14:01] and I even have doubts about it,
+[14:02] or do I really show
+[14:03] the agents that I sell
+[14:04] in 2005, in direct?
+[14:05] Do you see
+[14:06] sales to the client?
+[14:07] Do you see the client?
+[14:08] Meanwhile, the client says,
+[14:09] yes,
+[14:09] I tell you how we have done
+[14:10] several 10,000,000 euros
+[14:12] with our agency.
+[14:13] So do not hesitate to do a tour.
+[14:15] You will see that you will
+[14:16] really go out and grow.
+[14:17] Because beyond the code code
+[14:19] and the fact that we can
+[14:20] use it with on our PC,
+[14:22] we really see
+[14:23] the prices,
+[14:24] the agencies,
+[14:25] and the automated
+[14:26] measures for the boxes
+[14:28] in the need.
+[14:29] And if you're going further,
+[14:31] don't hesitate to watch,
+[14:31] I made a video 100% in which I explain
+[14:34] how to launch an agency
+[14:35] profitable today in
+[14:37] 2026
+[14:38] to increase to 5,000 euros per month.
+[14:40] I show you the three stages,
+[14:41] the three
+[14:42] piled up for the event
+[14:43] to know
+[14:45] to have an agency
+[14:46] profitable.
+[14:47] In any case, I hope
+[14:48] that this will take longer.
+[14:49] That you can use
+[14:51] the code code
+[14:52] better than before
+[14:53] and everything will go away
+[14:55] without taking your head
+[14:56] and we will see the next one for the next video.
+[14:57] Have a good time, if you haven't done it,
+[14:59] see you soon.
+
+--- Plain text ---
+Anthropic comes to make a big face that will literally be open-close, because today, look what I'm capable of doing since Telegram, I can contact Claude Cod to tell him to do all of the interaction on my PC and everything 100% in distance. I just send him a message and he will answer me in a few seconds. I can do all of the interaction and everything. Even if I'm not at home, he can be really happy on my PC and I can see everything in distance. In this video, I will explain what this new functionality is. Anthropic is to baptize the canals and concretes. You can easily connect Telegram and Discord to communicate with Claude Cod at distance. On the left you can see my classic Claude Cod with all the chat, but you can see that we use a plugin called Telegram that will allow me to communicate with Claude Cod directly on Telegram. Here I can say, for example, thank you and we will ask him to do me a HTML page. Another design with a frame to put this definition in front. I will ask him to simply code a little page to show you. And there he is gone. He is in a boss' train, he is in a code train and I can look at the results. He is told to do it, he is told to improve a result and everything in distance. Even if I'm in a taxi, even if I'm far away from home, I have to be open enough to be a boss' train. And I will explain in this video how to leave your PC always open. And there he comes to ask me the authorisation. And here he comes to ask me literally not to play. Another design with the definition of the AI. I will tell him to turn this site into blog and edit a first article of blog on LiyaFort and LiyaFable. I can see concretely that he is writing on my phone. And he comes just to answer me with the page. Okay, very, very nice. I will show you more about it, but everything is fluid. They see me literally everything that needs to be on my phone. I can directly be at a distance and be able to discuss it with him. And of course, the code code will impress us in terms of editing and code code. Imagine that I'm not at home. And that I know that my PC is open and that there is the miniature that I prepared for this video. And that I'm not alone. I just have to take directly to the code code. Let me see the image on my blog that is called minime.gpg. We have more inspiration than we do in 5 versions. And there he comes to send me my miniature. And I'm going to tell him to rename the Miniature Minimax. And now this file is called Minimax. And concretely, I can make it empty by saying it. I'm going to do a research on the internet to look at minimaxm2.7. Make me a PDF, I need to have the title of the video and the description. And that's it, he just made me complete my PDF on minimax with the description of the characteristics. And also, well, everything you need. Now I'm not going to show you how to connect a channel. So that is to say, telegram to the Discord directly to your code code directly on your PC. So, I'm on Mac OS and I'm going to show you how to do it very easily. And you're going to see that with the documentation of the code, well, it's quite simple. Here we have the code code of cloud.com, slash.doc and channels. We're going to see all the steps. In a very intuitive way to connect to the telegram, but also to Discord. And we will be absolutely all for all to be configured. Besides that, the whole amount of comments and the process of installation that this is for Telegram and Discord. Well, I have all the references that are here, it's exactly what I'm going to show you in this video. I'm going to tell you about it 100% free. It's finding descriptions. It will be found on my school. Where can you go on classroom? Technical. And you can find the video that you actually watch. And you can find this complete guide to make all the comments and not to take off your head. First thing, you have to pay attention to your cloud code version, because there we only have the V2.1.80 on the minimum. I'm going to go into your terminal and here you can do the command, cloud update, to see the current version of cloud code. I'm going to come to the update and we can start by marking the cloud for the light. I'm going to go in and I'm directly on the cloud code. I can say hello. It's ready to help and update with me, but obviously what I want to do is to configure it, especially on Telegram to start. And the first step to configure a channel on Telegram is to create a bot on Telegram. It's something very simple and it's the first step at all. So you're going to run on Telegram.myslach.phaseur and start a new conversation with this one. You'll get on a conversation like this and you'll be able to do the new bot. It will ask you a year, for example, here I want to call it cloud code. Tire du ba Julien, Tire du ba Ia and then we're going to put our username. It must end by bot. So I'm going to do the same thing and I'm going to mark bot. And there, because you can see, it's my code secret. It's a token. You don't have to share it, and obviously at the end of this video, it will be destroyed. Keep this window open and now go back to cloud code. You have to download and install the plugin directly on Telegram. We copy this little link and we do call it. We're going to go in there, concretely. We say, what he wants to install. Well, what we have to install is our plugin and install it. Now, we have to do Slash Reload plugins to be able to run. If you don't find your plugin at this point, close the terminal, open it and it will try. Then what you're going to do, you're going to go on Telegram, click on the little access code, click right, copy the code here, copy this command and replace this little variable by the code you just copied. Once again, it is ultra-confidential, I will be surprised, but obviously, it must be absolutely that you keep it and that you share it with someone. I'm going to enter it, and obviously, he does not recognize it, so I simply have to turn on the code. He asks for the permission to access it to file without simply, because it will be in local, I accept. And there, he is able to configure everything. I accept all the permissions and the creation of all the files. Then, we will leave the session, we will do Slash Exit. It will allow to release everything and to have all the properties. We can even close the file. And we will be able to copy, simply, this link of code, okay, by clicking here, in the terminal, and there, one, another, all that. We do, okay. Then, little verification, we will open the terminal and very important. We will copy this command, restart with the keys, finally with the channels activated. The key, I have already done it, and there, he is going to listen to what is happening currently on your telegram bot. We see no matter what message, and we can simply copy this command and the key here. I do okay, and then we have the configuration that is done. Basically, we just come to lose all the code and our telegram bot. And he just tells me that it is well done. As you have seen, I have sent a few messages before receiving my Per code. In fact, how did I find the solution? I have just installed a good one. I put all the commands here if I would never be interested. And me, it is exactly for that that I do not receive my code of authentication. And here it is, I can send messages on telegram, and it arrives on CloudCode, as you can see. We have all the actions that are realized, we can see the text that arrives on my side. I want you to give me the key of the AI, and there, CloudCode can, anyway, I answer exactly what I answer. He says that to answer using the telegram plugin, and here we just connect it, well, just to telegram CloudCode and so connect to telegram. Now we are going to do the same with Discord. I will show you how to connect CloudCode with Discord. First of all, you are going to turn on Discord and you will create a new server. For that, it is very simple. You click on add a server, create the mine, and you click for me and my friends, the Julien server server. And you just create your server. Then you go to Discord.com slash developer slash application. You will create a new application and you will name it as you want. I will name it CloudCode and I will create all that. Then you will click on bot and you will click on message content intent. You activate it, you will register and restart the token. Here you need your password, and it is exactly this code that we will use this token. It is exactly the same thing with telegram. Then you go to OS2 and you will click on bot. Here you will put authorizations, for example, add reactions, send messages, join files, see the old messages, and also why not send them without forgetting to send messages. If not, then it will create a little problem. So do not forget to click here and above all, click on bot in the application channel. We will be on a bot here. So you click here, do not forget to activate. Send messages in files. Then you copy this link, you paste it in your browser and it will allow you to invite this bot to join your server in the case, and of course I just created it. We put all the authorizations and we are gone. The bot will join the Discord server, we will launch the CloudCode and we will also send this how to Slashplugging Install Discord. Everything will be well noted, we are okay and we are gone. We will do Slashredo plugins. We will turn on the Discord page to see the token, copy, wait, there is no need to share it, and we will do the same. We will simply take this how to Slash Discord 2.0 and take the token in the entire. We will be able to paste it. And here we are ready to configure all this. Then we do Slashredo plugins. Slash Exit. We will paste CloudCode channel plugin to launch simply the cost of this server. This is precisely the command. Then once we launch the Cloud with the active cost of the channel, with Discord, we will be able to look here, we ask ourselves the same, to have this story of access, the access code to lose to make the password between the CloudCode code and also Discord. And when I return directly to my bot, we can see that if I send a message, now he tells me that the code is the following. So I will copy it and go to the terminal, paste it and the loss will be done. We will be able to connect the two together. I will authorize the same here, I will authorize it. And that's it, that's it. So if I say hello and I return to the terminal, we can see that there is Linput, hello with my pseudo. Hello, when I push you down today. And here I'm going to say that you are going to create a Html file of landing page of that for the transcription of YouTube's YouTube video. And that's it, Indie. I generate that all the time. And we can see that Linput is there. We are good and good at what I told him. And the answer is I generate that all the time. And he is in a bosset. Well, it means concretely that from my phone, I can anywhere where I find myself in the world, in condition. And I say in condition that my PC is lit, and I can simply turn it off. To do it, bosset literally on my session. And concretely, I'm going to make a completely effective page for a sass, a sass page, a landing page for a sass with the transcription of YouTube's YouTube video. Thanks to Lillard, you have to invent everything. And that's exactly what he has done, as you can see. We have all the code that is here. And so I sent it. Yes, I sent it to HTML directly on Discord. So that's quite impressive. And if I open it all, well, we have something very nice. Transcribe and import the YouTube video in a second. In a second, it would have been better. But in short, try to gratuitely see the demo. And we also have here to commit the link, the URL. And we have the button, transcribe and start gratuitely. I am impressed with what he has been able to do. And of course, it is a completely effective page. But imagine to do that on the support videos you have prepared at distance, or, of course, of interfaces for clients that you can do in any way you find. You can look at what he has done, literary, modified, augmented, well, some things. So it's rather magic. But what we have to say with the code, is that you have to turn the session, your laptop is open. And to avoid the window to be closed, or at least that, well, that your PC is closed, you can go into the parameters directly to the system, and mark here, screen to go into the screen, and there, we can never put in the option. Well, when the screen on the adapter sector, that is to say that when he is charging, concretely, we will never reach the screen. And there, we will not be embedded. The session will take a long time in permanence. But do you also have any comments that you can do directly with your terminal to be able to navigate your screen? In the case here for two hours, either 7,200 seconds, I can copy this little code, which then allows you to go into the terminal, by going out quickly, I paste it there, and there, hop! The Mac will be sent two hours, that is to say that most of what happens, we have the possibility to let it be sent. Well, concretely, the code is really able to tap on the table in 10 years, that the button will not kill us, and that we will copy, in other words, the same features, by giving the possibility to users and to use. Well, at distance, their cloud cloud, where is it a little bit complicated before? Well, there, we can really thanks to the channel, thanks to the cano, to be able to multiply. The different sources of messages to the same image, in fact, open-close. Personally, I feel a lot more without security in using cloud cloud, open-close. Especially thanks to MCP and all the processes, in fact, two notifications and security. We will have a lot less chance to have leaks of APEA or something like that, and that will allow us to code a quick test, just full. Now, if you ever want to really use lia to make the money with a concrete business, I invite you to go and see the 100% free community, a mentor who allows you to learn to create your first business, there are tutorials, well-technical, and well-initien, and this kind of thing. I have a 10-day business that I can create and sell, and I also put my completely free strategy that shows you how I do more than 10,000 euros per month with my agency. And how to create it too? Your own agency is profitable, and I even have doubts about it, or do I really show the agents that I sell in 2005, in direct? Do you see sales to the client? Do you see the client? Meanwhile, the client says, yes, I tell you how we have done several 10,000,000 euros with our agency. So do not hesitate to do a tour. You will see that you will really go out and grow. Because beyond the code code and the fact that we can use it with on our PC, we really see the prices, the agencies, and the automated measures for the boxes in the need. And if you're going further, don't hesitate to watch, I made a video 100% in which I explain how to launch an agency profitable today in 2026 to increase to 5,000 euros per month. I show you the three stages, the three piled up for the event to know to have an agency profitable. In any case, I hope that this will take longer. That you can use the code code better than before and everything will go away without taking your head and we will see the next one for the next video. Have a good time, if you haven't done it, see you soon.

@@ -1,0 +1,63 @@
+{
+  "env": {
+    "CLAUDE_CODE_TASK_LIST_ID": "quik-nation-ai-boilerplate",
+    "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
+    "FIRECRAWL_API_URL": "http://127.0.0.1:3002"
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/session-resume.sh",
+            "timeout": 8
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "FEED=~/auset-brain/Swarms/live-feed.md; MARK=/tmp/voice-read-mark; TOTAL=$(wc -l < \"$FEED\" 2>/dev/null | tr -d ' '); LAST=$(cat \"$MARK\" 2>/dev/null || echo \"$TOTAL\"); if [ \"$TOTAL\" -gt \"$LAST\" ]; then MSGS=$(tail -n +$((LAST+1)) \"$FEED\" | grep 'VOICE.*Mo' | sed 's/.*| Mo | //'); echo \"$TOTAL\" > \"$MARK\"; if [ -n \"$MSGS\" ]; then printf '{\"hookSpecificOutput\":{\"hookEventName\":\"UserPromptSubmit\",\"additionalContext\":\"VOICE FROM MO (said aloud before typing): %s\"}}' \"$MSGS\"; fi; fi",
+            "timeout": 3
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/telegraph-check.sh",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": ".claude/hooks/auto-memory.sh",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/voice-tts.sh",
+            "timeout": 30
+          },
+          {
+            "type": "command",
+            "command": ".claude/hooks/telegraph-check.sh",
+            "timeout": 3
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "playground@claude-plugins-official": true,
+    "frontend-design@claude-code-plugins": true
+  }
+}

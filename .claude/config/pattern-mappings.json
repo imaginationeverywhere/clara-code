@@ -1,0 +1,1468 @@
+{
+  "$schema": "./pattern-mappings.schema.json",
+  "version": "1.0.0",
+  "lastUpdated": "2025-12-24",
+  "description": "Agent/Skill matching configuration for Auto Claude boilerplate-detection plugin",
+
+  "patterns": {
+
+    "retail": {
+      "displayName": "E-Commerce / Retail",
+      "description": "Product catalog, shopping cart, checkout, order management",
+      "industries": [
+        "clothing-boutique", "jewelry-store", "electronics-store", "gift-shop",
+        "toy-store", "book-store", "convenience-store", "antique-store",
+        "art-gallery", "farmers-market", "craft-fair", "pop-up", "street-vendor"
+      ],
+      "agents": {
+        "primary": [
+          "stripe-connect-specialist",
+          "shadcn-ui-specialist",
+          "redux-persist-state-manager",
+          "graphql-apollo-frontend",
+          "nextjs-architecture-guide"
+        ],
+        "secondary": [
+          "shippo-shipping-integration",
+          "google-analytics-implementation-specialist",
+          "twilio-flex-communication-manager",
+          "clerk-auth-enforcer"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "checkout-flow-standard",
+          "clerk-auth-standard",
+          "admin-panel-standard"
+        ],
+        "recommended": [
+          "analytics-tracking-standard",
+          "email-notifications-standard",
+          "file-storage-standard"
+        ],
+        "optional": [
+          "caching-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "product-catalog",
+          "product-search-filters",
+          "shopping-cart",
+          "checkout-flow",
+          "order-management",
+          "customer-accounts"
+        ],
+        "recommended": [
+          "wishlist",
+          "product-reviews",
+          "inventory-tracking",
+          "discount-codes",
+          "shipping-integration",
+          "order-notifications"
+        ],
+        "advanced": [
+          "subscription-products",
+          "multi-vendor-marketplace",
+          "loyalty-program",
+          "abandoned-cart-recovery"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "products", "categories", "orders", "order_items",
+          "cart", "cart_items", "addresses", "payments"
+        ],
+        "optionalTables": [
+          "reviews", "wishlists", "discounts", "inventory", "shipping_rates"
+        ]
+      },
+      "timeline": {
+        "minimum": 30,
+        "typical": 45,
+        "complex": 60
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 15000,
+          "max": 35000
+        },
+        "customTier": {
+          "min": 35000,
+          "max": 75000
+        }
+      },
+      "platformFee": {
+        "default": 2.5,
+        "byTier": {
+          "selfService": 3.0,
+          "guidedCustom": 2.5,
+          "fullCustom": 2.0,
+          "enterprise": 1.5
+        },
+        "estimatedMonthlyGMV": {
+          "low": 25000,
+          "typical": 50000,
+          "high": 150000
+        },
+        "note": "Standard e-commerce transactions, $50-200 average order"
+      }
+    },
+
+    "booking": {
+      "displayName": "Service Booking / Appointments",
+      "description": "Calendar scheduling, availability management, service bookings",
+      "industries": [
+        "hair-salon", "barbershop", "nail-salon", "massage-therapy",
+        "personal-trainer", "yoga-studio", "fitness-trainer", "martial-arts",
+        "dog-groomer", "pet-sitter", "veterinarian", "tutor", "music-teacher",
+        "dance-instructor", "doctor", "dentist", "chiropractor", "therapist",
+        "consultant", "photographer", "dj", "event-planner"
+      ],
+      "agents": {
+        "primary": [
+          "shadcn-ui-specialist",
+          "graphql-apollo-frontend",
+          "clerk-auth-enforcer",
+          "nextjs-architecture-guide",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "stripe-connect-specialist",
+          "twilio-flex-communication-manager",
+          "google-analytics-implementation-specialist"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "email-notifications-standard"
+        ],
+        "recommended": [
+          "analytics-tracking-standard",
+          "checkout-flow-standard"
+        ],
+        "optional": [
+          "caching-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "availability-calendar",
+          "appointment-booking",
+          "service-menu",
+          "staff-profiles",
+          "booking-confirmation",
+          "customer-accounts"
+        ],
+        "recommended": [
+          "appointment-reminders",
+          "cancellation-policy",
+          "recurring-appointments",
+          "staff-scheduling",
+          "waitlist",
+          "deposit-payments"
+        ],
+        "advanced": [
+          "package-deals",
+          "membership-plans",
+          "multi-location",
+          "resource-booking",
+          "group-bookings"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "staff", "services", "appointments", "availability",
+          "time_slots", "locations"
+        ],
+        "optionalTables": [
+          "packages", "memberships", "reviews", "waitlist", "resources"
+        ]
+      },
+      "timeline": {
+        "minimum": 30,
+        "typical": 45,
+        "complex": 60
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 15000,
+          "max": 35000
+        },
+        "customTier": {
+          "min": 35000,
+          "max": 75000
+        }
+      },
+      "platformFee": {
+        "default": 2.5,
+        "byTier": {
+          "selfService": 3.0,
+          "guidedCustom": 2.5,
+          "fullCustom": 2.0,
+          "enterprise": 1.5
+        },
+        "estimatedMonthlyGMV": {
+          "low": 15000,
+          "typical": 45000,
+          "high": 100000
+        },
+        "note": "Service appointments $50-150 average, recurring clients boost GMV"
+      }
+    },
+
+    "property-rental": {
+      "displayName": "Property / Vehicle / Equipment Rental",
+      "description": "Listing management, search, availability calendars, rental workflows",
+      "industries": [
+        "real-estate", "vacation-rental", "car-rental", "equipment-rental",
+        "storage-facilities", "parking-lots", "party-rental", "boat-rental",
+        "rv-rental", "bike-rental", "tool-rental", "space-rental"
+      ],
+      "agents": {
+        "primary": [
+          "nextjs-architecture-guide",
+          "shadcn-ui-specialist",
+          "graphql-apollo-frontend",
+          "redux-persist-state-manager",
+          "stripe-connect-specialist"
+        ],
+        "secondary": [
+          "google-analytics-implementation-specialist",
+          "clerk-auth-enforcer",
+          "twilio-flex-communication-manager"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "file-storage-standard"
+        ],
+        "recommended": [
+          "checkout-flow-standard",
+          "email-notifications-standard",
+          "analytics-tracking-standard"
+        ],
+        "optional": [
+          "caching-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "listing-management",
+          "search-filters",
+          "availability-calendar",
+          "booking-workflow",
+          "owner-portal",
+          "renter-portal"
+        ],
+        "recommended": [
+          "photo-galleries",
+          "reviews-ratings",
+          "messaging-system",
+          "deposit-handling",
+          "damage-protection",
+          "pricing-rules"
+        ],
+        "advanced": [
+          "multi-property-management",
+          "dynamic-pricing",
+          "channel-manager",
+          "maintenance-tracking",
+          "key-handoff-digital"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "listings", "bookings", "availability", "pricing",
+          "photos", "amenities", "addresses"
+        ],
+        "optionalTables": [
+          "reviews", "messages", "maintenance", "payouts", "damage_claims"
+        ]
+      },
+      "timeline": {
+        "minimum": 45,
+        "typical": 60,
+        "complex": 90
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 25000,
+          "max": 50000
+        },
+        "customTier": {
+          "min": 50000,
+          "max": 100000
+        }
+      },
+      "platformFee": {
+        "default": 2.5,
+        "byTier": {
+          "selfService": 3.0,
+          "guidedCustom": 2.5,
+          "fullCustom": 2.0,
+          "enterprise": 1.5
+        },
+        "estimatedMonthlyGMV": {
+          "low": 30000,
+          "typical": 70000,
+          "high": 200000
+        },
+        "note": "Higher transaction values $100-500/rental, QuikCarRental reference"
+      }
+    },
+
+    "restaurant": {
+      "displayName": "Restaurant / Food Service",
+      "description": "Menu management, ordering, reservations, kitchen workflows",
+      "industries": [
+        "restaurant", "coffee-cafe", "food-truck", "bar", "bakery",
+        "deli", "pizza-shop", "juice-bar", "smoothie-shop", "food-kiosk",
+        "catering-truck", "ice-cream-truck", "caterer"
+      ],
+      "agents": {
+        "primary": [
+          "shadcn-ui-specialist",
+          "graphql-apollo-frontend",
+          "redux-persist-state-manager",
+          "nextjs-architecture-guide",
+          "stripe-connect-specialist"
+        ],
+        "secondary": [
+          "twilio-flex-communication-manager",
+          "google-analytics-implementation-specialist",
+          "clerk-auth-enforcer"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "checkout-flow-standard",
+          "admin-panel-standard",
+          "email-notifications-standard"
+        ],
+        "recommended": [
+          "clerk-auth-standard",
+          "analytics-tracking-standard"
+        ],
+        "optional": [
+          "caching-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "menu-management",
+          "online-ordering",
+          "order-tracking",
+          "payment-processing",
+          "kitchen-display",
+          "receipt-generation"
+        ],
+        "recommended": [
+          "table-reservations",
+          "delivery-integration",
+          "loyalty-program",
+          "menu-customization",
+          "order-history",
+          "promotional-pricing"
+        ],
+        "advanced": [
+          "multi-location",
+          "inventory-management",
+          "staff-scheduling",
+          "analytics-dashboard",
+          "third-party-delivery"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "menu_items", "categories", "orders", "order_items",
+          "payments", "locations"
+        ],
+        "optionalTables": [
+          "reservations", "tables", "inventory", "staff", "promotions", "loyalty"
+        ]
+      },
+      "timeline": {
+        "minimum": 30,
+        "typical": 45,
+        "complex": 60
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 15000,
+          "max": 35000
+        },
+        "customTier": {
+          "min": 35000,
+          "max": 75000
+        }
+      },
+      "platformFee": {
+        "default": 3.0,
+        "byTier": {
+          "selfService": 3.5,
+          "guidedCustom": 3.0,
+          "fullCustom": 2.5,
+          "enterprise": 2.0
+        },
+        "estimatedMonthlyGMV": {
+          "low": 10000,
+          "typical": 25000,
+          "high": 75000
+        },
+        "note": "Lower average order $25-75, higher fee compensates for volume"
+      }
+    },
+
+    "transportation": {
+      "displayName": "Transportation / Delivery",
+      "description": "Real-time tracking, driver management, route optimization, dispatch",
+      "industries": [
+        "taxi", "rideshare", "delivery", "moving", "courier",
+        "logistics", "freight", "shuttle"
+      ],
+      "agents": {
+        "primary": [
+          "nextjs-architecture-guide",
+          "redux-persist-state-manager",
+          "graphql-apollo-frontend",
+          "shadcn-ui-specialist",
+          "stripe-connect-specialist"
+        ],
+        "secondary": [
+          "twilio-flex-communication-manager",
+          "google-analytics-implementation-specialist",
+          "clerk-auth-enforcer"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect",
+          "nodejs-runtime-optimizer"
+        ],
+        "mobile": [
+          "multi-agent-orchestrator"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "email-notifications-standard"
+        ],
+        "recommended": [
+          "checkout-flow-standard",
+          "analytics-tracking-standard"
+        ],
+        "optional": [
+          "caching-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "real-time-tracking",
+          "driver-app",
+          "customer-app",
+          "dispatch-system",
+          "fare-calculation",
+          "payment-processing"
+        ],
+        "recommended": [
+          "driver-ratings",
+          "ride-history",
+          "route-optimization",
+          "eta-calculation",
+          "surge-pricing",
+          "driver-earnings"
+        ],
+        "advanced": [
+          "fleet-management",
+          "driver-scheduling",
+          "multi-stop-rides",
+          "corporate-accounts",
+          "analytics-dashboard"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "drivers", "vehicles", "rides", "locations",
+          "payments", "ratings"
+        ],
+        "optionalTables": [
+          "routes", "zones", "surge_pricing", "corporate_accounts", "driver_documents"
+        ]
+      },
+      "mobileRequired": true,
+      "timeline": {
+        "minimum": 60,
+        "typical": 90,
+        "complex": 120
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 45000,
+          "max": 75000
+        },
+        "customTier": {
+          "min": 75000,
+          "max": 150000
+        }
+      },
+      "platformFee": {
+        "default": 2.5,
+        "byTier": {
+          "selfService": 3.0,
+          "guidedCustom": 2.5,
+          "fullCustom": 2.0,
+          "enterprise": 1.5
+        },
+        "estimatedMonthlyGMV": {
+          "low": 20000,
+          "typical": 50000,
+          "high": 150000
+        },
+        "note": "Per-ride/delivery fees, high volume potential"
+      }
+    },
+
+    "marketplace": {
+      "displayName": "Multi-Vendor Marketplace",
+      "description": "Platform connecting buyers and sellers with Stripe Connect payouts",
+      "industries": [
+        "general-marketplace", "service-marketplace", "freelance-platform",
+        "handmade-marketplace", "local-marketplace", "b2b-marketplace"
+      ],
+      "agents": {
+        "primary": [
+          "stripe-connect-specialist",
+          "nextjs-architecture-guide",
+          "shadcn-ui-specialist",
+          "graphql-apollo-frontend",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "clerk-auth-enforcer",
+          "google-analytics-implementation-specialist",
+          "twilio-flex-communication-manager"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "checkout-flow-standard",
+          "admin-panel-standard"
+        ],
+        "recommended": [
+          "email-notifications-standard",
+          "analytics-tracking-standard",
+          "file-storage-standard"
+        ],
+        "optional": [
+          "caching-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "vendor-onboarding",
+          "product-listings",
+          "search-discovery",
+          "checkout-multi-vendor",
+          "split-payments",
+          "vendor-dashboard"
+        ],
+        "recommended": [
+          "reviews-ratings",
+          "messaging-system",
+          "dispute-resolution",
+          "payout-management",
+          "commission-tracking",
+          "featured-listings"
+        ],
+        "advanced": [
+          "vendor-tiers",
+          "advertising-system",
+          "analytics-per-vendor",
+          "api-for-vendors",
+          "white-label-storefronts"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "vendors", "products", "orders", "order_items",
+          "payments", "payouts", "commissions"
+        ],
+        "optionalTables": [
+          "reviews", "messages", "disputes", "subscriptions", "advertisements"
+        ]
+      },
+      "timeline": {
+        "minimum": 60,
+        "typical": 90,
+        "complex": 120
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 50000,
+          "max": 100000
+        },
+        "customTier": {
+          "min": 100000,
+          "max": 200000
+        }
+      },
+      "platformFee": {
+        "default": 2.0,
+        "byTier": {
+          "selfService": 2.5,
+          "guidedCustom": 2.0,
+          "fullCustom": 1.75,
+          "enterprise": 1.5
+        },
+        "splitPaymentModel": true,
+        "vendorTakeRate": {
+          "default": 10,
+          "range": { "min": 5, "max": 20 }
+        },
+        "estimatedMonthlyGMV": {
+          "low": 50000,
+          "typical": 150000,
+          "high": 500000
+        },
+        "note": "Platform fee on top of vendor commission, high GMV potential"
+      }
+    },
+
+    "subscription": {
+      "displayName": "Subscription / SaaS Platform",
+      "description": "Recurring billing, tiered plans, usage tracking, member portal",
+      "industries": [
+        "saas", "membership-site", "online-course", "content-subscription",
+        "software-platform", "api-service"
+      ],
+      "agents": {
+        "primary": [
+          "stripe-connect-specialist",
+          "clerk-auth-enforcer",
+          "nextjs-architecture-guide",
+          "shadcn-ui-specialist",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "google-analytics-implementation-specialist",
+          "twilio-flex-communication-manager",
+          "graphql-apollo-frontend"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "email-notifications-standard"
+        ],
+        "recommended": [
+          "analytics-tracking-standard",
+          "error-monitoring-standard"
+        ],
+        "optional": [
+          "caching-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "subscription-plans",
+          "recurring-billing",
+          "member-portal",
+          "usage-tracking",
+          "plan-upgrades",
+          "payment-management"
+        ],
+        "recommended": [
+          "trial-periods",
+          "proration",
+          "invoice-history",
+          "cancellation-flow",
+          "reactivation",
+          "usage-limits"
+        ],
+        "advanced": [
+          "metered-billing",
+          "team-accounts",
+          "enterprise-plans",
+          "api-access-tiers",
+          "white-labeling"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "subscriptions", "plans", "invoices", "payments",
+          "usage_records", "features"
+        ],
+        "optionalTables": [
+          "teams", "api_keys", "webhooks", "audit_logs"
+        ]
+      },
+      "timeline": {
+        "minimum": 45,
+        "typical": 60,
+        "complex": 90
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 35000,
+          "max": 60000
+        },
+        "customTier": {
+          "min": 60000,
+          "max": 120000
+        }
+      },
+      "platformFee": {
+        "default": 2.0,
+        "byTier": {
+          "selfService": 2.5,
+          "guidedCustom": 2.0,
+          "fullCustom": 1.75,
+          "enterprise": 1.5
+        },
+        "recurringBillingBonus": true,
+        "estimatedMonthlyGMV": {
+          "low": 20000,
+          "typical": 50000,
+          "high": 200000
+        },
+        "note": "Recurring subscriptions = predictable platform fee revenue"
+      }
+    },
+
+    "nonprofit": {
+      "displayName": "Nonprofit / Case Management",
+      "description": "Client management, program tracking, reporting, multi-tenant",
+      "industries": [
+        "nonprofit", "charity", "foundation", "social-services",
+        "community-organization", "advocacy-group"
+      ],
+      "agents": {
+        "primary": [
+          "shadcn-ui-specialist",
+          "clerk-auth-enforcer",
+          "nextjs-architecture-guide",
+          "graphql-apollo-frontend",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "google-analytics-implementation-specialist",
+          "twilio-flex-communication-manager"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "admin-dashboard-standard"
+        ],
+        "recommended": [
+          "email-notifications-standard",
+          "file-storage-standard"
+        ],
+        "optional": [
+          "analytics-tracking-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "client-management",
+          "program-tracking",
+          "enrollment-system",
+          "case-notes",
+          "staff-portal",
+          "reporting-dashboard"
+        ],
+        "recommended": [
+          "document-management",
+          "appointment-scheduling",
+          "outcome-tracking",
+          "volunteer-management",
+          "donor-management",
+          "grant-tracking"
+        ],
+        "advanced": [
+          "multi-tenant-architecture",
+          "cross-org-referrals",
+          "compliance-reporting",
+          "mobile-field-app",
+          "advanced-analytics"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "organizations", "clients", "programs", "enrollments",
+          "case_notes", "staff", "reports"
+        ],
+        "optionalTables": [
+          "volunteers", "donors", "grants", "documents", "outcomes", "referrals"
+        ]
+      },
+      "timeline": {
+        "minimum": 45,
+        "typical": 60,
+        "complex": 90
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 25000,
+          "max": 50000
+        },
+        "customTier": {
+          "min": 50000,
+          "max": 100000
+        }
+      },
+      "platformFee": {
+        "default": 1.5,
+        "byTier": {
+          "selfService": 2.0,
+          "guidedCustom": 1.5,
+          "fullCustom": 1.0,
+          "enterprise": 0.75
+        },
+        "donationProcessing": true,
+        "estimatedMonthlyGMV": {
+          "low": 5000,
+          "typical": 15000,
+          "high": 50000
+        },
+        "note": "Lower fee for nonprofits, donation processing, The G Code reference"
+      }
+    },
+
+    "construction": {
+      "displayName": "Construction / Contractor Management",
+      "description": "Project management, estimates, contracts, document handling",
+      "industries": [
+        "general-contractor", "home-builder", "remodeling", "commercial-construction",
+        "subcontractor-management", "construction-marketplace"
+      ],
+      "agents": {
+        "primary": [
+          "shadcn-ui-specialist",
+          "clerk-auth-enforcer",
+          "nextjs-architecture-guide",
+          "graphql-apollo-frontend",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "stripe-connect-specialist",
+          "twilio-flex-communication-manager",
+          "aws-cloud-services-orchestrator"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "file-storage-standard"
+        ],
+        "recommended": [
+          "email-notifications-standard",
+          "checkout-flow-standard"
+        ],
+        "optional": [
+          "analytics-tracking-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "project-management",
+          "estimate-generation",
+          "contract-management",
+          "document-storage",
+          "client-portal",
+          "contractor-portal"
+        ],
+        "recommended": [
+          "e-signatures",
+          "invoice-management",
+          "progress-tracking",
+          "photo-documentation",
+          "timeline-gantt",
+          "change-orders"
+        ],
+        "advanced": [
+          "subcontractor-marketplace",
+          "bid-management",
+          "permit-tracking",
+          "equipment-scheduling",
+          "cost-tracking"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "projects", "estimates", "contracts", "documents",
+          "clients", "contractors", "line_items"
+        ],
+        "optionalTables": [
+          "bids", "permits", "equipment", "timesheets", "change_orders", "photos"
+        ]
+      },
+      "timeline": {
+        "minimum": 60,
+        "typical": 75,
+        "complex": 120
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 35000,
+          "max": 75000
+        },
+        "customTier": {
+          "min": 75000,
+          "max": 150000
+        }
+      },
+      "platformFee": {
+        "default": 1.5,
+        "byTier": {
+          "selfService": 2.0,
+          "guidedCustom": 1.5,
+          "fullCustom": 1.25,
+          "enterprise": 1.0
+        },
+        "cap": 500,
+        "capNote": "Maximum $500 per transaction due to high project values",
+        "estimatedMonthlyGMV": {
+          "low": 50000,
+          "typical": 100000,
+          "high": 500000
+        },
+        "note": "High-value projects $5K-50K, capped fee, Pink Collar reference"
+      }
+    },
+
+    "healthcare": {
+      "displayName": "Healthcare / Medical Practice",
+      "description": "Patient management, appointments, HIPAA compliance, medical records",
+      "industries": [
+        "medical-practice", "dental-office", "therapy-practice", "clinic",
+        "telehealth", "specialist-practice"
+      ],
+      "agents": {
+        "primary": [
+          "clerk-auth-enforcer",
+          "shadcn-ui-specialist",
+          "nextjs-architecture-guide",
+          "graphql-apollo-frontend",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "twilio-flex-communication-manager",
+          "stripe-connect-specialist"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "admin-panel-standard",
+          "file-storage-standard"
+        ],
+        "recommended": [
+          "email-notifications-standard",
+          "checkout-flow-standard"
+        ],
+        "optional": [
+          "analytics-tracking-standard",
+          "error-monitoring-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "patient-portal",
+          "appointment-scheduling",
+          "medical-records",
+          "secure-messaging",
+          "provider-dashboard",
+          "hipaa-compliance"
+        ],
+        "recommended": [
+          "telehealth-video",
+          "prescription-management",
+          "insurance-verification",
+          "billing-integration",
+          "lab-results",
+          "appointment-reminders"
+        ],
+        "advanced": [
+          "ehr-integration",
+          "patient-intake-forms",
+          "referral-management",
+          "population-health",
+          "multi-location"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "patients", "providers", "appointments", "medical_records",
+          "messages", "audit_logs"
+        ],
+        "optionalTables": [
+          "prescriptions", "lab_results", "insurance", "invoices", "referrals"
+        ]
+      },
+      "compliance": ["HIPAA", "HITECH"],
+      "timeline": {
+        "minimum": 60,
+        "typical": 90,
+        "complex": 120
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 50000,
+          "max": 100000
+        },
+        "customTier": {
+          "min": 100000,
+          "max": 200000
+        }
+      },
+      "platformFee": {
+        "default": 2.0,
+        "byTier": {
+          "selfService": 2.5,
+          "guidedCustom": 2.0,
+          "fullCustom": 1.75,
+          "enterprise": 1.5
+        },
+        "estimatedMonthlyGMV": {
+          "low": 20000,
+          "typical": 50000,
+          "high": 150000
+        },
+        "note": "Medical payment processing, insurance billing, appointment deposits"
+      }
+    },
+
+    "fintech": {
+      "displayName": "Fintech / Financial Services",
+      "description": "Payment processing, money transfers, financial tracking, compliance",
+      "industries": [
+        "payment-platform", "money-transfer", "lending", "investment",
+        "banking", "financial-management"
+      ],
+      "agents": {
+        "primary": [
+          "stripe-connect-specialist",
+          "clerk-auth-enforcer",
+          "nextjs-architecture-guide",
+          "shadcn-ui-specialist",
+          "redux-persist-state-manager"
+        ],
+        "secondary": [
+          "twilio-flex-communication-manager",
+          "google-analytics-implementation-specialist"
+        ],
+        "backend": [
+          "graphql-backend-enforcer",
+          "sequelize-orm-optimizer",
+          "postgresql-database-architect",
+          "typescript-backend-enforcer",
+          "express-backend-architect",
+          "nodejs-runtime-optimizer"
+        ],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ]
+      },
+      "skills": {
+        "required": [
+          "clerk-auth-standard",
+          "checkout-flow-standard",
+          "admin-panel-standard"
+        ],
+        "recommended": [
+          "email-notifications-standard",
+          "error-monitoring-standard",
+          "analytics-tracking-standard"
+        ],
+        "optional": [
+          "caching-standard"
+        ]
+      },
+      "features": {
+        "core": [
+          "user-verification",
+          "payment-processing",
+          "transaction-history",
+          "balance-management",
+          "security-monitoring",
+          "compliance-tracking"
+        ],
+        "recommended": [
+          "multi-currency",
+          "recurring-payments",
+          "fraud-detection",
+          "reporting-dashboard",
+          "webhook-notifications",
+          "api-access"
+        ],
+        "advanced": [
+          "banking-integration",
+          "kyc-aml-compliance",
+          "investment-tracking",
+          "loan-management",
+          "white-label"
+        ]
+      },
+      "database": {
+        "requiredTables": [
+          "users", "accounts", "transactions", "balances", "verifications",
+          "audit_logs", "compliance_records"
+        ],
+        "optionalTables": [
+          "cards", "bank_accounts", "loans", "investments", "fraud_alerts"
+        ]
+      },
+      "compliance": ["PCI-DSS", "SOC2", "AML", "KYC"],
+      "timeline": {
+        "minimum": 90,
+        "typical": 120,
+        "complex": 180
+      },
+      "pricing": {
+        "templateTier": {
+          "min": 75000,
+          "max": 150000
+        },
+        "customTier": {
+          "min": 150000,
+          "max": 300000
+        }
+      },
+      "platformFee": {
+        "tiered": true,
+        "tiers": [
+          { "under": 1000, "rate": 1.75, "note": "Small transactions" },
+          { "under": 2000, "rate": 2.5, "note": "Medium transactions" },
+          { "over": 2000, "rate": 3.5, "note": "Premium tier" }
+        ],
+        "blendedRateEstimate": 2.2,
+        "estimatedMonthlyGMV": {
+          "low": 25000,
+          "typical": 100000,
+          "high": 500000
+        },
+        "note": "Tiered pricing like Tap-to-Tip, higher margins on premium users"
+      }
+    },
+
+    "custom": {
+      "displayName": "Full Custom",
+      "description": "Unique business model requiring custom PRD, design, and pattern definition",
+      "industries": ["any"],
+      "agents": {
+        "primary": [
+          "plan-mode-orchestrator",
+          "business-analyst-bridge",
+          "product-design-specialist",
+          "multi-agent-orchestrator"
+        ],
+        "secondary": [],
+        "backend": [],
+        "testing": [
+          "testing-automation-agent",
+          "playwright-test-executor"
+        ],
+        "note": "Agents defined during pattern definition phase based on requirements"
+      },
+      "skills": {
+        "required": [],
+        "recommended": [],
+        "optional": [],
+        "note": "Skills defined during pattern definition phase based on requirements"
+      },
+      "features": {
+        "core": [],
+        "recommended": [],
+        "advanced": [],
+        "note": "Features defined during PRD creation phase"
+      },
+      "database": {
+        "requiredTables": [],
+        "optionalTables": [],
+        "note": "Schema designed during discovery phase"
+      },
+      "requiresDiscovery": true,
+      "requiresPatternDefinition": true,
+      "timeline": {
+        "minimum": 60,
+        "typical": 90,
+        "complex": 180
+      },
+      "pricing": {
+        "discovery": {
+          "min": 1500,
+          "max": 15000
+        },
+        "design": {
+          "min": 2500,
+          "max": 35000
+        },
+        "patternDefinition": {
+          "min": 1000,
+          "max": 10000
+        },
+        "development": {
+          "min": 35000,
+          "max": 200000
+        }
+      },
+      "platformFee": {
+        "definedDuringDiscovery": true,
+        "defaultRange": {
+          "min": 1.5,
+          "max": 3.0
+        },
+        "byTier": {
+          "selfService": null,
+          "guidedCustom": null,
+          "fullCustom": "negotiated",
+          "enterprise": "negotiated"
+        },
+        "note": "Platform fee negotiated during discovery based on business model and transaction volume"
+      }
+    }
+  },
+
+  "agentRegistry": {
+    "description": "Complete list of available agents for pattern matching",
+    "categories": {
+      "frontend": [
+        "nextjs-architecture-guide",
+        "shadcn-ui-specialist",
+        "redux-persist-state-manager",
+        "graphql-apollo-frontend",
+        "tailwind-design-system-architect",
+        "typescript-frontend-enforcer",
+        "i18n-manager",
+        "ui-mockup-converter"
+      ],
+      "backend": [
+        "express-backend-architect",
+        "graphql-backend-enforcer",
+        "typescript-backend-enforcer",
+        "sequelize-orm-optimizer",
+        "postgresql-database-architect",
+        "nodejs-runtime-optimizer"
+      ],
+      "integrations": [
+        "stripe-connect-specialist",
+        "clerk-auth-enforcer",
+        "twilio-flex-communication-manager",
+        "shippo-shipping-integration",
+        "google-analytics-implementation-specialist",
+        "slack-bot-notification-manager"
+      ],
+      "infrastructure": [
+        "aws-cloud-services-orchestrator",
+        "docker-port-manager",
+        "ci-cd-pipeline-standard"
+      ],
+      "testing": [
+        "testing-automation-agent",
+        "playwright-test-executor",
+        "code-quality-reviewer"
+      ],
+      "planning": [
+        "plan-mode-orchestrator",
+        "business-analyst-bridge",
+        "product-design-specialist",
+        "project-management-bridge",
+        "multi-agent-orchestrator"
+      ],
+      "debugging": [
+        "app-troubleshooter",
+        "typescript-bug-fixer",
+        "graphql-bug-fixer"
+      ],
+      "documentation": [
+        "claude-context-documenter",
+        "git-commit-docs-manager"
+      ]
+    }
+  },
+
+  "skillRegistry": {
+    "description": "Complete list of available skills for pattern matching",
+    "skills": [
+      "admin-dashboard-standard",
+      "admin-panel-standard",
+      "analytics-tracking-standard",
+      "aws-deployment-standard",
+      "barbershop",
+      "caching-standard",
+      "checkout-flow-standard",
+      "ci-cd-pipeline-standard",
+      "clerk-auth-standard",
+      "code-generation-standard",
+      "construction",
+      "database-migration-standard",
+      "database-query-optimization-standard",
+      "debugging-standard",
+      "delivery",
+      "design-to-nextjs",
+      "developer-experience-standard",
+      "docker-containerization-standard",
+      "email-notifications-standard",
+      "error-monitoring-standard",
+      "events",
+      "federation",
+      "file-storage-standard",
+      "fintech",
+      "frontend-design",
+      "luxury"
+    ]
+  },
+
+  "mockupSources": {
+    "magic-patterns": {
+      "description": "AI-generated React components from Magic Patterns",
+      "expectedPath": "mockup/custom/{project-name}/",
+      "requiredFiles": ["src/", "package.json"],
+      "transformation": "vite-to-nextjs"
+    },
+    "existing-ui": {
+      "description": "Existing React/Next.js codebase",
+      "expectedPath": "reference to existing project path",
+      "requiredFiles": [],
+      "transformation": "adaptation"
+    },
+    "screenshot": {
+      "description": "Screenshots/mockups for conversion",
+      "expectedPath": "mockup/screenshots/{project-name}/",
+      "requiredFiles": ["*.png", "*.jpg"],
+      "transformation": "image-to-code"
+    },
+    "template": {
+      "description": "Use pre-built boilerplate template",
+      "expectedPath": "templates/{pattern}/",
+      "requiredFiles": [],
+      "transformation": "none"
+    }
+  }
+}

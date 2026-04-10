@@ -1,0 +1,53 @@
+{
+  "ultrathink": {
+    "enabled": true,
+    "version": "1.0.0",
+    "knowledgeGraphIntegration": {
+      "trackSyncPatterns": true,
+      "trackFileChanges": true,
+      "trackConflicts": true,
+      "trackPerformance": true
+    },
+    "entityExtraction": {
+      "agents": {
+        "extractMetadata": true,
+        "trackRelationships": true,
+        "trackCapabilities": true
+      },
+      "commands": {
+        "extractMetadata": true,
+        "trackWorkflows": true,
+        "trackDependencies": true
+      },
+      "skills": {
+        "extractPatterns": true,
+        "trackUsage": true,
+        "trackDomains": true
+      }
+    },
+    "syncAnalytics": {
+      "generateInsights": true,
+      "trackTrends": true,
+      "identifyAnomalies": true,
+      "predictConflicts": true
+    },
+    "registry": {
+      "path": ".ultrathink/sync-registry.json",
+      "updateOnSync": true,
+      "trackHistory": true,
+      "maxHistoryEntries": 100
+    }
+  },
+  "telemetry": {
+    "enabled": true,
+    "endpoint": "ultrathink://sync-metrics",
+    "batchSize": 10,
+    "flushInterval": 300000
+  },
+  "insights": {
+    "generateAfterSync": true,
+    "includeRecommendations": true,
+    "detectPatterns": true,
+    "predictIssues": true
+  }
+}

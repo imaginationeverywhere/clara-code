@@ -1,0 +1,705 @@
+{
+  "version": "1.6.0",
+  "lastUpdated": "2025-09-07T21:30:00Z",
+  "autoInstallEnabled": true,
+  "servers": {
+    "filesystem": {
+      "name": "@modelcontextprotocol/server-filesystem",
+      "version": "latest",
+      "description": "Secure filesystem operations with project scope",
+      "category": "development-core",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y @modelcontextprotocol/server-filesystem",
+      "configTemplate": "filesystem-config.json",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"]
+      },
+      "security": {
+        "allowedPaths": ["${PROJECT_ROOT}"],
+        "deniedPaths": ["node_modules", ".git", ".env*"]
+      }
+    },
+    "git": {
+      "name": "@modelcontextprotocol/server-git",
+      "version": "latest",
+      "description": "Git repository management and version control",
+      "category": "development-core",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y @modelcontextprotocol/server-git",
+      "configTemplate": "git-config.json",
+      "activationRules": {
+        "fileExists": [".git"],
+        "projectTypes": ["all"]
+      }
+    },
+    "memory": {
+      "name": "@modelcontextprotocol/server-memory",
+      "version": "latest",
+      "description": "Cross-session context and pattern storage",
+      "category": "development-core",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y @modelcontextprotocol/server-memory",
+      "configTemplate": "memory-config.json",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"]
+      }
+    },
+    "database": {
+      "name": "enhanced-postgres-mcp-server",
+      "version": "latest",
+      "description": "Enhanced PostgreSQL database with read/write capabilities (replaces deprecated official server)",
+      "category": "database",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y enhanced-postgres-mcp-server",
+      "configTemplate": "database-config.json",
+      "activationRules": {
+        "prdContains": ["PostgreSQL", "Database"],
+        "fileExists": ["package.json"],
+        "packageContains": ["sequelize", "prisma", "pg"]
+      },
+      "envRequired": ["DATABASE_URL"],
+      "status": "verified-working",
+      "lastTested": "2025-09-08",
+      "notes": "Replaces deprecated @modelcontextprotocol/server-postgres. Enhanced with read/write capabilities."
+    },
+    "postgres-enhanced": {
+      "name": "@henkey/postgres-mcp-server",
+      "version": "latest",
+      "description": "Comprehensive PostgreSQL management with 18 intelligent tools for schema, performance, and optimization",
+      "category": "database",
+      "autoInstall": false,
+      "autoActivate": false,
+      "installCommand": "npx -y @henkey/postgres-mcp-server",
+      "configTemplate": "postgres-enhanced-config.json",
+      "activationRules": {
+        "prdContains": ["PostgreSQL", "Database", "Performance", "Schema"],
+        "fileExists": ["package.json"],
+        "packageContains": ["sequelize", "prisma", "pg"]
+      },
+      "envRequired": ["DATABASE_URL"],
+      "status": "verified-working",
+      "lastTested": "2025-09-08",
+      "features": ["schema-management", "query-performance", "index-optimization", "user-permissions"],
+      "notes": "Advanced PostgreSQL management with performance analysis and optimization tools."
+    },
+    "postgres-fast": {
+      "name": "postgres-mcp",
+      "version": "latest",
+      "description": "Blazing fast, type-safe PostgreSQL MCP server for AI agents with multiple database support",
+      "category": "database",
+      "autoInstall": false,
+      "autoActivate": false,
+      "installCommand": "npx -y postgres-mcp",
+      "configTemplate": "postgres-fast-config.json",
+      "activationRules": {
+        "prdContains": ["PostgreSQL", "Database", "Performance"],
+        "fileExists": ["package.json"],
+        "packageContains": ["sequelize", "prisma", "pg"]
+      },
+      "envRequired": ["DATABASE_URL"],
+      "status": "verified-working",
+      "lastTested": "2025-09-08",
+      "features": ["high-performance", "type-safe", "multiple-databases", "ai-optimized"],
+      "notes": "High-performance PostgreSQL server optimized for AI agent interactions and real-time queries."
+    },
+    "http": {
+      "name": "@modelcontextprotocol/server-fetch",
+      "version": "latest",
+      "description": "HTTP requests and API testing",
+      "category": "api-integration",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @modelcontextprotocol/server-fetch",
+      "configTemplate": "http-config.json",
+      "activationRules": {
+        "prdContains": ["API", "REST", "HTTP"],
+        "fileExists": ["package.json"],
+        "packageContains": ["axios", "fetch", "node-fetch"]
+      }
+    },
+    "aws": {
+      "name": "@modelcontextprotocol/server-aws",
+      "version": "latest",
+      "description": "AWS cloud resource management",
+      "category": "cloud-deployment",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @modelcontextprotocol/server-aws",
+      "configTemplate": "aws-config.json",
+      "activationRules": {
+        "prdContains": ["AWS", "Amplify", "EC2"],
+        "fileExists": ["amplify.yml", "infrastructure/", "cdk.json"],
+        "packageContains": ["@aws-sdk", "aws-amplify"]
+      },
+      "envRequired": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY"]
+    },
+    "docker": {
+      "name": "@modelcontextprotocol/server-docker",
+      "version": "latest",
+      "description": "Docker container operations and management",
+      "category": "infrastructure",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @modelcontextprotocol/server-docker",
+      "configTemplate": "docker-config.json",
+      "activationRules": {
+        "fileExists": ["Dockerfile", "docker-compose.yml", "docker-compose.yaml"],
+        "prdContains": ["Docker", "Container"]
+      }
+    },
+    "github": {
+      "name": "@modelcontextprotocol/server-github",
+      "version": "latest",
+      "description": "GitHub repository and API integration (basic)",
+      "category": "development-tools",
+      "autoInstall": false,
+      "autoActivate": false,
+      "installCommand": "npx -y @modelcontextprotocol/server-github",
+      "configTemplate": "github-config.json",
+      "activationRules": {
+        "manual": true
+      },
+      "envRequired": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
+      "deprecated": "Use github-official for enhanced features"
+    },
+    "github-official": {
+      "name": "github-mcp-server",
+      "version": "latest",
+      "description": "Official GitHub MCP server with advanced repository management, issues, PRs, and workflow intelligence",
+      "category": "enterprise-github",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "claude mcp add github-official https://github.com/mcp",
+      "configTemplate": "github-official-config.json",
+      "activationRules": {
+        "gitRemoteContains": ["github.com"],
+        "fileExists": [".github/", "package.json"],
+        "prdContains": ["GitHub", "Git", "Repository"],
+        "always": true
+      },
+      "envRequired": ["GITHUB_PERSONAL_ACCESS_TOKEN"],
+      "features": [
+        "Repository management and code browsing",
+        "Issue and Pull Request automation",
+        "GitHub Actions workflow intelligence",
+        "Code security analysis and Dependabot alerts",
+        "Team collaboration and discussions",
+        "Multi-step agent workflows",
+        "OAuth and PAT authentication support"
+      ],
+      "enterprise": true
+    },
+    "testing": {
+      "name": "@modelcontextprotocol/server-testing",
+      "version": "latest",
+      "description": "Test execution and reporting",
+      "category": "quality-assurance",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @modelcontextprotocol/server-testing",
+      "configTemplate": "testing-config.json",
+      "activationRules": {
+        "packageContains": ["jest", "vitest", "playwright", "cypress"],
+        "fileExists": ["tests/", "__tests__/", "cypress/"]
+      }
+    },
+    "code-execution": {
+      "name": "@modelcontextprotocol/server-eval",
+      "version": "latest",
+      "description": "Secure code execution sandbox",
+      "category": "development-tools",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @modelcontextprotocol/server-eval",
+      "configTemplate": "code-execution-config.json",
+      "activationRules": {
+        "manual": true
+      },
+      "security": {
+        "sandboxed": true,
+        "allowedLanguages": ["javascript", "typescript", "python", "bash"]
+      }
+    },
+    "shadcn-ui": {
+      "name": "mcp-server-shadcn-ui",
+      "version": "latest",
+      "description": "shadcn/ui components integration with documentation and installation",
+      "category": "ui-components",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "claude mcp add shadcn https://www.shadcn.io/api/mcp",
+      "configTemplate": "shadcn-ui-config.json",
+      "activationRules": {
+        "prdContains": ["shadcn", "components", "UI", "React"],
+        "packageContains": ["@shadcn/ui", "shadcn-ui", "lucide-react", "radix-ui"],
+        "fileExists": ["components.json", "src/components/ui/"]
+      },
+      "features": [
+        "Browse all available components and templates",
+        "Search across component registries",
+        "Natural language component installation",
+        "Up-to-date component documentation"
+      ]
+    },
+    "playwright-automation": {
+      "name": "@microsoft/playwright-mcp",
+      "version": "latest",
+      "description": "Browser automation and testing with Playwright",
+      "category": "testing-automation",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "claude mcp add playwright mcp-server-playwright",
+      "configTemplate": "playwright-config.json",
+      "activationRules": {
+        "packageContains": ["@playwright/test", "playwright"],
+        "fileExists": ["playwright.config.js", "playwright.config.ts", "tests/", "e2e/"],
+        "prdContains": ["Playwright", "E2E", "Testing", "Browser"]
+      },
+      "features": [
+        "Automated browser testing and interaction",
+        "Web scraping and data extraction",
+        "Cross-browser compatibility testing",
+        "Visual regression testing"
+      ]
+    },
+    "memory-persistent": {
+      "name": "claude-project-memory-mcp",
+      "version": "latest",
+      "description": "Persistent memory and context storage across sessions",
+      "category": "memory-management",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y claude-project-memory-mcp",
+      "configTemplate": "memory-persistent-config.json",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"]
+      },
+      "features": [
+        "Cross-session memory persistence",
+        "Implementation pattern storage",
+        "Context optimization and caching",
+        "Development history tracking"
+      ]
+    },
+    "context7": {
+      "name": "context7-mcp",
+      "version": "latest",
+      "description": "Up-to-date documentation and library context for LLMs",
+      "category": "documentation",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y context7-mcp",
+      "configTemplate": "context7-config.json",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"]
+      },
+      "features": [
+        "Real-time documentation access",
+        "Library and framework information",
+        "API reference integration",
+        "Best practices and examples"
+      ]
+    },
+    "aws-cloud-control": {
+      "name": "aws-cloud-control-mcp",
+      "version": "latest",
+      "description": "AWS Cloud Control API for natural language infrastructure management",
+      "category": "enterprise-cloud",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y aws-cloud-control-mcp",
+      "configTemplate": "aws-cloud-control-config.json",
+      "activationRules": {
+        "prdContains": ["AWS", "Cloud", "Infrastructure", "CloudFormation"],
+        "fileExists": ["cdk.json", "cloudformation/", "infrastructure/"],
+        "packageContains": ["@aws-sdk", "aws-cdk", "@aws-cdk"]
+      },
+      "envRequired": ["AWS_ACCESS_KEY_ID", "AWS_SECRET_ACCESS_KEY", "AWS_DEFAULT_REGION"],
+      "features": [
+        "Natural language AWS resource management",
+        "CloudFormation stack operations",
+        "Infrastructure as code automation",
+        "Resource lifecycle management",
+        "Cost optimization insights",
+        "Security compliance checking"
+      ],
+      "enterprise": true
+    },
+    "apollo-graphql": {
+      "name": "apollo-mcp-server",
+      "version": "latest",
+      "description": "Apollo GraphQL server integration with schema management and federation",
+      "category": "enterprise-graphql",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @apollographql/mcp-server",
+      "configTemplate": "apollo-graphql-config.json",
+      "activationRules": {
+        "packageContains": ["apollo-server", "@apollo/server", "apollo-server-express", "@apollo/gateway"],
+        "fileExists": ["schema.graphql", "src/schema/", "graphql/"],
+        "prdContains": ["GraphQL", "Apollo", "Federation"]
+      },
+      "features": [
+        "GraphQL schema introspection and management",
+        "Apollo Federation support",
+        "Query performance analysis",
+        "Schema validation and linting",
+        "Resolver optimization suggestions",
+        "GraphQL security scanning"
+      ],
+      "enterprise": true
+    },
+    "clerk-auth": {
+      "name": "clerk-mcp-tools",
+      "version": "latest",
+      "description": "Clerk authentication integration with secure user management and RBAC",
+      "category": "enterprise-auth",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y @clerk/mcp-tools",
+      "configTemplate": "clerk-auth-config.json",
+      "activationRules": {
+        "packageContains": ["@clerk/nextjs", "@clerk/clerk-sdk-node", "@clerk/backend"],
+        "fileExists": ["middleware.ts", "src/middleware.ts"],
+        "prdContains": ["Clerk", "Authentication", "Auth", "User Management"],
+        "envContains": ["CLERK_SECRET_KEY", "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY"],
+        "always": true
+      },
+      "envRequired": ["CLERK_SECRET_KEY", "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY"],
+      "features": [
+        "User authentication and session management",
+        "Role-based access control (RBAC)",
+        "OAuth provider integration",
+        "User profile and metadata management",
+        "Webhook event handling",
+        "Multi-tenant organization support",
+        "Security audit and compliance"
+      ],
+      "enterprise": true,
+      "critical": true
+    },
+    "twilio-communications": {
+      "name": "twilio-mcp-server",
+      "version": "latest",
+      "description": "Twilio communication APIs for SMS, voice, video, and messaging workflows",
+      "category": "enterprise-communications",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @twilio-labs/mcp",
+      "configTemplate": "twilio-config.json",
+      "activationRules": {
+        "packageContains": ["twilio"],
+        "prdContains": ["Twilio", "SMS", "Voice", "Messaging", "Communication"],
+        "envContains": ["TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN"],
+        "always": true
+      },
+      "envRequired": ["TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN"],
+      "features": [
+        "SMS and MMS messaging automation",
+        "Voice call and conference management",
+        "Video calling and recording",
+        "WhatsApp and messaging channels",
+        "Phone number provisioning and management",
+        "Communication analytics and reporting",
+        "Webhook event processing"
+      ],
+      "enterprise": true,
+      "critical": true
+    },
+    "castplan-project": {
+      "name": "castplan-mcp",
+      "version": "latest",
+      "description": "AI-powered project management with living documentation and workflow intelligence",
+      "category": "specialized-planning",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y castplan-mcp",
+      "configTemplate": "castplan-config.json",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"],
+        "prdContains": ["project management", "documentation", "planning"]
+      },
+      "features": [
+        "BMAD project planning (transforms requirements to tasks)",
+        "Living documentation system (auto-updates with code changes)",
+        "Workflow intelligence and automation",
+        "Code pattern analysis and suggestions",
+        "Release note generation",
+        "Test suggestion automation",
+        "Project-specific AI context"
+      ],
+      "specialized": true,
+      "integration": {
+        "commands": ["process-todos", "create-plan-todo", "spec-workflow"],
+        "documentation": ["README.md", "docs/", "CHANGELOG.md"],
+        "workflows": ["git-commit-docs-command", "update-todos"]
+      }
+    },
+    "claude-historian": {
+      "name": "claude-historian-mcp",
+      "version": "latest",
+      "description": "Development history tracking and conversation search across Claude Code sessions",
+      "category": "specialized-history",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y claude-historian-mcp",
+      "configTemplate": "claude-historian-config.json",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"]
+      },
+      "features": [
+        "Search conversation history across projects",
+        "Track development patterns and solutions",
+        "Find similar previous implementations",
+        "Error solution history and reuse",
+        "Session continuity and context restoration",
+        "Tool usage pattern analysis",
+        "Technical knowledge base building"
+      ],
+      "specialized": true,
+      "privacy": {
+        "localOnly": true,
+        "noDataStorage": true,
+        "conversationAccess": "read-only"
+      },
+      "performance": {
+        "lruCaching": true,
+        "tfidfScoring": true,
+        "fuzzyMatching": true,
+        "parallelProcessing": true
+      }
+    },
+    "sentry-monitoring": {
+      "name": "sentry-mcp",
+      "version": "latest",
+      "description": "Error monitoring, debugging, and performance analysis with natural language queries",
+      "category": "specialized-monitoring",
+      "autoInstall": true,
+      "autoActivate": false,
+      "installCommand": "npx -y @sentry/mcp-server",
+      "configTemplate": "sentry-config.json",
+      "activationRules": {
+        "packageContains": ["@sentry/nextjs", "@sentry/node", "@sentry/react"],
+        "prdContains": ["Sentry", "Error monitoring", "Debugging", "Performance"],
+        "envContains": ["SENTRY_DSN", "SENTRY_AUTH_TOKEN"],
+        "fileExists": ["sentry.client.config.js", "sentry.server.config.js"]
+      },
+      "envRequired": ["SENTRY_DSN"],
+      "envOptional": ["SENTRY_AUTH_TOKEN", "OPENAI_API_KEY"],
+      "features": [
+        "Natural language error search and analysis",
+        "Performance monitoring and optimization insights",
+        "Error trend analysis and alerts",
+        "Debug session integration",
+        "Release health monitoring",
+        "User impact analysis",
+        "AI-powered error resolution suggestions"
+      ],
+      "specialized": true,
+      "ai": {
+        "naturalLanguageQueries": true,
+        "errorAnalysis": true,
+        "resolutionSuggestions": true
+      }
+    },
+    "knowledge-graph": {
+      "name": "mcp-knowledge-graph",
+      "version": "latest",
+      "description": "Advanced knowledge graph system with entity extraction, relationship mapping, and reasoning capabilities (ultrathink)",
+      "category": "specialized-knowledge",
+      "autoInstall": true,
+      "autoActivate": true,
+      "installCommand": "npx -y mcp-knowledge-graph",
+      "configTemplate": "mcp.json",
+      "configKey": "knowledge-graph",
+      "activationRules": {
+        "always": true,
+        "projectTypes": ["all"],
+        "prdContains": ["knowledge", "graph", "reasoning", "analysis", "research"]
+      },
+      "features": [
+        "Entity extraction and relationship mapping",
+        "Knowledge graph construction and visualization",
+        "Semantic reasoning and inference",
+        "Cross-reference analysis and pattern detection",
+        "Context-aware entity disambiguation",
+        "Multi-hop relationship queries",
+        "Knowledge base integration",
+        "Temporal knowledge tracking",
+        "Graph-based search and discovery"
+      ],
+      "specialized": true,
+      "useCases": [
+        "Complex codebase analysis and understanding",
+        "Architectural decision tracking and reasoning",
+        "Dependency relationship mapping",
+        "Technical documentation knowledge extraction",
+        "Code pattern detection and reuse",
+        "API integration relationship mapping",
+        "Business logic flow understanding",
+        "Cross-project knowledge synthesis"
+      ],
+      "integration": {
+        "commands": ["process-todos", "spec-workflow", "advanced-git"],
+        "documentation": ["docs/", "README.md", "technical/"],
+        "workflows": ["git-commit-docs-command", "create-plan-todo"]
+      },
+      "ai": {
+        "entityExtraction": true,
+        "relationshipInference": true,
+        "semanticReasoning": true,
+        "graphQuerying": true
+      },
+      "performance": {
+        "graphCaching": true,
+        "incrementalUpdates": true,
+        "indexedSearch": true
+      }
+    }
+  },
+  "categories": {
+    "development-core": {
+      "name": "Development Core",
+      "description": "Essential servers for basic development workflow",
+      "autoInstallAll": true
+    },
+    "database": {
+      "name": "Database Integration",
+      "description": "Database connectivity and query servers",
+      "autoInstallAll": true
+    },
+    "api-integration": {
+      "name": "API Integration",
+      "description": "HTTP, REST, and API testing servers",
+      "autoInstallAll": true
+    },
+    "cloud-deployment": {
+      "name": "Cloud & Deployment",
+      "description": "AWS, Azure, and cloud platform servers",
+      "autoInstallAll": false
+    },
+    "infrastructure": {
+      "name": "Infrastructure",
+      "description": "Docker, Kubernetes, and infrastructure servers",
+      "autoInstallAll": false
+    },
+    "development-tools": {
+      "name": "Development Tools",
+      "description": "GitHub, GitLab, and development platform servers",
+      "autoInstallAll": true
+    },
+    "quality-assurance": {
+      "name": "Quality Assurance",
+      "description": "Testing, linting, and code quality servers",
+      "autoInstallAll": true
+    },
+    "ui-components": {
+      "name": "UI Components & Design Systems",
+      "description": "Component libraries, design systems, and UI framework servers",
+      "autoInstallAll": true
+    },
+    "design-integration": {
+      "name": "Design Integration",
+      "description": "Design tokens and design-to-code workflow servers",
+      "autoInstallAll": false
+    },
+    "testing-automation": {
+      "name": "Testing & Browser Automation",
+      "description": "Playwright, browser testing, and E2E automation servers",
+      "autoInstallAll": false
+    },
+    "memory-management": {
+      "name": "Memory & Context Management",
+      "description": "Cross-session memory, context storage, and pattern recognition servers",
+      "autoInstallAll": true
+    },
+    "documentation": {
+      "name": "Documentation & Context",
+      "description": "Real-time documentation, API references, and library context servers",
+      "autoInstallAll": true
+    },
+    "enterprise-github": {
+      "name": "Enterprise GitHub Integration",
+      "description": "Official GitHub MCP server with advanced repository management, CI/CD, and team collaboration",
+      "autoInstallAll": true
+    },
+    "enterprise-cloud": {
+      "name": "Enterprise Cloud Management",
+      "description": "AWS Cloud Control API and infrastructure management servers",
+      "autoInstallAll": false
+    },
+    "enterprise-graphql": {
+      "name": "Enterprise GraphQL",
+      "description": "Apollo GraphQL server integration with schema management and federation",
+      "autoInstallAll": false
+    },
+    "enterprise-auth": {
+      "name": "Enterprise Authentication",
+      "description": "Clerk authentication integration with RBAC and user management - CRITICAL for all projects",
+      "autoInstallAll": true
+    },
+    "enterprise-communications": {
+      "name": "Enterprise Communications",
+      "description": "Twilio SMS, voice, video, and messaging integration - CRITICAL for all projects",
+      "autoInstallAll": true
+    },
+    "enterprise-email": {
+      "name": "Enterprise Email",
+      "description": "AWS SES transactional email — templates and campaigns (no third-party ESP in platform)",
+      "autoInstallAll": false
+    },
+    "specialized-planning": {
+      "name": "Specialized Project Planning",
+      "description": "Advanced project management, living documentation, and workflow intelligence",
+      "autoInstallAll": true
+    },
+    "specialized-history": {
+      "name": "Development History & Context",
+      "description": "Conversation history tracking, pattern analysis, and session continuity",
+      "autoInstallAll": true
+    },
+    "specialized-monitoring": {
+      "name": "Error Monitoring & Performance",
+      "description": "Sentry error tracking, performance analysis, and AI-powered debugging",
+      "autoInstallAll": false
+    },
+    "specialized-knowledge": {
+      "name": "Knowledge Graph & Reasoning",
+      "description": "Advanced knowledge graph systems with entity extraction, relationship mapping, and semantic reasoning",
+      "autoInstallAll": true
+    }
+  },
+  "installationProfiles": {
+    "minimal": {
+      "description": "Essential development servers only",
+      "servers": ["filesystem", "git", "memory"]
+    },
+    "standard": {
+      "description": "Core + critical enterprise servers + knowledge graph",
+      "servers": ["filesystem", "git", "memory", "clerk-auth", "twilio-communications", "http", "knowledge-graph", "aws-cloud-control"]
+    },
+    "full-stack": {
+      "description": "Complete development stack with knowledge graph",
+      "servers": ["filesystem", "git", "memory", "clerk-auth", "twilio-communications", "http", "database", "github-official", "testing", "shadcn-ui", "knowledge-graph", "aws-cloud-control"]
+    },
+    "enterprise": {
+      "description": "Enterprise-grade with all integrations including knowledge graph",
+      "servers": ["filesystem", "git", "memory", "clerk-auth", "twilio-communications", "github-official", "aws-cloud-control", "docker", "database", "graphql", "testing", "security", "monitoring", "knowledge-graph"]
+    },
+    "full": {
+      "description": "All available servers configured",
+      "servers": ["clerk-auth", "twilio-communications", "filesystem", "git", "memory", "github-official", "database", "http", "aws", "docker", "testing", "code-execution", "shadcn-ui", "playwright-automation", "memory-persistent", "context7", "aws-cloud-control", "apollo-graphql", "castplan-project", "claude-historian", "sentry-monitoring", "knowledge-graph"]
+    }
+  },
+  "totalServers": 40
+}

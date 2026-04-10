@@ -1,0 +1,402 @@
+Title: stop uploading files to AI (use this system instead)
+Video ID: SjqfDcGZOHg
+URL: https://www.youtube.com/watch?v=SjqfDcGZOHg
+
+Source: YouTube captions (language=en, generated=True)
+
+--- Timestamps ---
+[00:00] I've been seeing a lot of videos online
+[00:01] showing you how to use AI to grow your
+[00:03] business, build SAS, and so on. And a
+[00:06] lot of people think the more documents
+[00:07] that you upload, the smarter the AI will
+[00:10] get. And that works for simple chats,
+[00:13] but there's a new way of doing it that
+[00:15] works better with agents. Today, I'll
+[00:17] show you this cleaner system that works
+[00:19] better. It's with files and folders. And
+[00:22] I'll show you a special trick that I
+[00:25] came up with and I saw also other people
+[00:26] doing it online which is having a root
+[00:29] context file at the root of your
+[00:30] directory that explains to the agent
+[00:33] what is contained inside so it can
+[00:34] navigate very easily and save on tokens
+[00:36] and time. Let's jump straight into it.
+[00:39] This is what most people are using. They
+[00:41] open up JPT and they use a project which
+[00:45] is an amazing feature don't get me
+[00:46] wrong. Um and they put a lot of context
+[00:50] here. uh upload things from Google
+[00:52] Drive, Slack, everything, everything.
+[00:55] And the way this works in the background
+[00:57] is it's using the retrieval augmented
+[00:59] generation system with the vector
+[01:01] database. The way that a vector database
+[01:04] works is by similarity.
+[01:06] So when you query something, it's going
+[01:09] to search for anything that matches the
+[01:11] query or similar. It's going to return
+[01:14] some chunks and then AI is going to take
+[01:17] that those chunks and produce an answer
+[01:19] for you. This is an amazing system and
+[01:21] it gained its popularity when people
+[01:24] started imple implementing AI chatbots
+[01:26] for customer support. And think about it
+[01:29] in that case it works really well
+[01:31] because a customer might ask a very
+[01:34] rough or unstructured question but as
+[01:37] long as it includes keywords that the
+[01:40] rag system can find similarities to, it
+[01:43] can return a structured answer. But the
+[01:46] issue with the rag system is that when
+[01:48] you upload all of these documents,
+[01:51] there's no context about the
+[01:53] relationship between the documents.
+[01:55] Think about how your folder looks. You
+[01:58] have a folder, right? And within the
+[01:59] folder, you have some files and maybe
+[02:02] the files contain some text. And there's
+[02:04] a relationship here. if you upload all
+[02:07] of it to a rag, it's just considering
+[02:09] all the files in a like a flat level uh
+[02:12] on the same level of hierarchy. So the
+[02:15] the AI model has all of this knowledge
+[02:17] of uh the uploaded files but it doesn't
+[02:20] have the knowledge of the relationship
+[02:22] between them which is becoming
+[02:24] increasingly important for the reasons
+[02:25] that I will tell you soon. So, I want to
+[02:28] demonstrate a classic rag example here
+[02:30] with one um playful project I made in
+[02:33] Perplexity Spaces a while ago. And it's
+[02:37] u the Alex Hermoszi coach. You know who
+[02:40] Alex Hermosi is? He's a very famous uh
+[02:42] coach for uh businesses. And the way I
+[02:46] did this is that I extracted all of his
+[02:48] uh YouTube videos. I made the
+[02:50] transcripts and then I uploaded them as
+[02:53] a JSON format in the in the context of
+[02:56] the project. Naturally, this got saved
+[02:58] in the retrieval augmented uh generation
+[03:01] system. And now when I make a query
+[03:04] here, it's going to draw from that. So,
+[03:06] how do I keep my motivation
+[03:11] up even when times are hard?
+[03:15] You can see it's reviewing the source,
+[03:17] so it's probably making a query to the
+[03:19] raq database. Motivation is an outcome,
+[03:22] not an input. The idea that you need to
+[03:24] feel motivated before doing the work is
+[03:26] a lie. That's very in the fashion of
+[03:29] Alex or Mosi. But you can see here in
+[03:32] the references that it used the JSON
+[03:35] file that I uploaded. This is pure rag.
+[03:38] This is how it works. It found uh
+[03:40] something related to the keywords that I
+[03:42] wrote here and then it uh made a query.
+[03:46] It got some chunks back and uh
+[03:49] constructed a really nice sentence based
+[03:51] on it. So rag is great. But now let's
+[03:54] look at why it's not great. Um in the
+[03:57] Alexosi example, we had only one file,
+[04:00] but imagine if you had hundreds of
+[04:02] files. There's a lot of things that can
+[04:04] go wrong in that case. Rag will fail you
+[04:07] at a couple of different points here.
+[04:08] One is version friction. What if you
+[04:10] have files that you want to continuously
+[04:12] update? Does that mean that every time
+[04:14] you update something, you have to
+[04:16] re-upload it into the rag database? I
+[04:19] guess that can be solved, but it's very
+[04:21] annoying. Another thing is the lost
+[04:23] structure. So, as I said, there's no
+[04:25] relationship in between the files um
+[04:28] noted anywhere in the rack database.
+[04:30] Number three is no read order. Sometimes
+[04:33] you want your agents to gradually read
+[04:35] important things um one after the other
+[04:38] in a sequence and with rag that's kind
+[04:41] of not possible cuz it's going to make a
+[04:44] query for the chunks and it's going to
+[04:46] draw from the entire database at once.
+[04:48] Number four is interesting. It's mixed
+[04:50] consistency. Um when the agent does a
+[04:54] query to the database, it's not going to
+[04:57] make the same query and it's not going
+[04:58] to get the same chunks back each time.
+[05:01] Yes, it will be quite reliable based on
+[05:04] how reliable your documentation is, but
+[05:06] it's non-deterministic, which is
+[05:08] sometimes an issue with AI. And believe
+[05:11] me, we are moving into an age where
+[05:13] we're going to fuse together
+[05:15] deterministic algorithms with
+[05:17] non-deterministic AI and that's going to
+[05:20] be much more helpful and safe. Here's
+[05:22] another view of what the difference is
+[05:24] between file and folder structures and a
+[05:27] rag system. So on the left you can see
+[05:29] that the database is filled with
+[05:32] different types of unstructured data um
+[05:35] that's kind of in the same level of the
+[05:37] hierarchy and on the right you have the
+[05:40] agent which uh has at its disposal the
+[05:43] file and folder structure. So you can
+[05:45] see for example to reach this file over
+[05:48] here this Python file it has to go
+[05:51] through these folders. Why the hell am I
+[05:53] even speaking about agents and local
+[05:55] files? Who cares right? We'll just look
+[05:58] at the popularity of recent tools. First
+[06:01] of all, let's look at claude co-work
+[06:03] which has exploded in popularity. After
+[06:06] Entropic realized that so many people
+[06:08] are using cloud code for non-coding
+[06:11] tasks like managing files, writing them,
+[06:13] moving them, changing them, they made
+[06:15] this new product called co-work, which
+[06:17] is like cloud code but for knowledge
+[06:20] work. In cloud co-work you select a
+[06:22] folder you want to work in on your local
+[06:24] computer and it works really well but it
+[06:27] requires of you to know how to manage
+[06:30] agent context in the same way codeex has
+[06:33] made a similar shift they are you know
+[06:36] making skills for knowledge workers they
+[06:39] are uh really trying to capture this
+[06:41] part of the market I'm not even going to
+[06:43] mention open claw and how critical it is
+[06:46] for you to implement this here so let me
+[06:48] show you a practical example on how I
+[06:50] use that. Uh my Obsidian Vault is stored
+[06:54] locally on my computer, but it's also
+[06:56] synced with Google Cloud, so I can
+[06:58] access it from multiple devices, but
+[07:00] it's local and on cloud, but it's local.
+[07:03] Why rag wouldn't work for me in this
+[07:05] case is for this reason. So, for
+[07:08] example, I have my work projects folder
+[07:10] where I have all my businesses and
+[07:12] projects. Uh one of them is the AI
+[07:14] onboarding agency. And by the way, if
+[07:17] you're looking to stop running your
+[07:19] business and start actually growing it,
+[07:21] check out the link in the description.
+[07:23] We're going to be there for you to
+[07:24] transition to the new agent AIH. In my
+[07:28] AI onboarding folder, I have all these
+[07:30] different types of information including
+[07:32] for example the brand voice guidelines
+[07:34] and that defines the brand voice
+[07:36] guidelines of this company. But I have
+[07:38] another company or a brand which is my
+[07:41] personal brand. And for my personal
+[07:43] brand, I have a different brand voice.
+[07:46] But the actual instructions and even the
+[07:48] file title are similar. So if I were to
+[07:52] upload all of this into a rag system, if
+[07:56] an AI made a query, it would get results
+[07:59] from both files. Maybe, I don't know, it
+[08:02] wouldn't work really well. And the other
+[08:03] thing is I constantly update these
+[08:06] files. Sometimes I use AI to update it,
+[08:09] but mostly not. This wouldn't be easy to
+[08:11] do with a rack database. Now, looking at
+[08:13] this, you might be asking yourself,
+[08:15] Ante, what the hell is ante context?
+[08:18] Weird file name, right? Well, I'm glad
+[08:21] you asked because that's the next thing
+[08:22] I want to show you. So, if you're going
+[08:25] to be giving this your agent, um, you
+[08:28] want it to have it in context all the
+[08:31] time. So if you ask it a question or if
+[08:33] you tell it to find a file somewhere, it
+[08:36] needs to go there and be able to find it
+[08:38] and preferably needs to find it
+[08:40] efficiently and quickly. The antecontext
+[08:43] file solves just that. This is a file
+[08:46] that contains like a map to the rest of
+[08:49] the entire folder. Uh it's telling my
+[08:52] agent that this is my Obsidian vault
+[08:55] that it contains all these different
+[08:57] information about me and then it has a
+[08:59] vault structure. uh it's telling it
+[09:02] where it can find information about me,
+[09:04] about my projects, about content
+[09:06] creation, my journal. So imagine if that
+[09:10] you're an agent and you get instructions
+[09:13] to find something in the vault. You land
+[09:16] here and so far you don't know nothing,
+[09:18] right? The agent has to read something
+[09:20] to know something. Uh you land here and
+[09:23] the first thing you see is ant context
+[09:25] and you're like, "Okay, let's go read
+[09:27] that and see what's happening." You read
+[09:29] this and immediately you know where to
+[09:32] go. If your original instructions were
+[09:34] something like uh reference the brand
+[09:37] voice of AI on boarding um just by
+[09:41] looking at this folder structure here
+[09:43] you can't really tell where that is. But
+[09:46] once you ingest the antext uh file you
+[09:50] immediately know uh okay so it's
+[09:53] probably under work projects. CS AI on
+[09:55] boarding and then you as an agent open
+[09:58] the work projects you find AI on
+[10:00] boarding you find marketing um and brand
+[10:03] voice guidelines. I've seen people
+[10:05] online call this file like manifest MD
+[10:09] which is a good name I think and you see
+[10:12] how it works here in the illustration.
+[10:14] The agent reads the manifest MD first
+[10:17] and then it has the knowledge about all
+[10:19] these other uh files and folders and
+[10:22] knows where to go. So, not only does
+[10:24] this speed things up and makes it more
+[10:26] precise, but it also keeps your context
+[10:30] clean. If you didn't have this file, the
+[10:32] agent would go into the folder and it
+[10:34] would start to explore and naturally it
+[10:37] would make some mistakes and go in
+[10:39] places where it shouldn't even go. But
+[10:41] each time it makes a mistake, it
+[10:43] actually ingests information in its
+[10:46] context which is cluttering the context
+[10:48] window. So the way that I have this
+[10:50] structured is I put the scope and a
+[10:53] purpose um of uh the entire directory.
+[10:57] The folder architecture as you saw
+[11:00] always load versus on demand. This is
+[11:03] very useful because sometimes I wanted
+[11:05] to load certain things into context that
+[11:08] are really important. rules and
+[11:10] boundaries and the source of truth which
+[11:13] basically solidifies uh the fact that my
+[11:16] Obsidian vault should be the source of
+[11:18] truth and is the only thing that is
+[11:21] updated to the latest version. Just to
+[11:23] conclude so you understand the
+[11:25] difference between rag and files and
+[11:27] folders. So rag has a semantic search as
+[11:30] opposed to files that have an exact
+[11:32] retrieval. So if an agent is trying to
+[11:35] access a file, it's going to do a bash
+[11:37] command and it's going to get that exact
+[11:40] file name. Rag has fuzzy phrasing which
+[11:43] means that when it makes a query and
+[11:45] returns the chunks, the way it's going
+[11:47] to present information to you might not
+[11:49] be in the same exact way as the
+[11:51] information is written down. But with
+[11:53] files and folders, it can read the exact
+[11:55] thing. Rag has a high recall as opposed
+[11:58] to files and folders that are
+[11:59] deterministic. and Rack is great for
+[12:01] support bots, while files and folders
+[12:04] are for autonomous agents, which is why
+[12:07] I'm making this video. It's time for you
+[12:09] to prepare for this. Now, you again
+[12:11] might be thinking, "Yeah, this is great,
+[12:13] but it's a lot of work and I have to
+[12:16] update this file constantly and it's
+[12:19] annoying." Well, there's a great
+[12:22] workaround with that and it's by using
+[12:24] AI, of course. In this case, I'm using
+[12:27] the clawed co-workuler.
+[12:30] So, I have a scheduled task which is
+[12:32] called update anticontext file. I
+[12:35] pointed it there and the prompt is
+[12:37] something like this. This is my Obsidian
+[12:39] vault. Inside you'll see this content.
+[12:42] Your task is to scan the entire vault
+[12:44] and make sure its contents match the
+[12:46] antext file. This is run weekly, I
+[12:49] believe. And yes, this requires you to
+[12:52] keep your computer turned on, but I
+[12:54] don't have a problem with that because
+[12:55] I'm on my laptop that's constantly on
+[12:58] because of Open Claw. So, this is how
+[13:00] that looks in a illustration. We have
+[13:03] the sandbox, which is my Obsidian vault.
+[13:06] Uh, we have the anticontext or the
+[13:08] manifest MD all these different files
+[13:11] and folders and the AI agent is working
+[13:14] inside. And then we have this should be
+[13:16] like a claw logo here. uh the automated
+[13:20] synchronized checks done by claude
+[13:22] co-work which is updating the uh
+[13:25] manifest.mmd file continuously. You
+[13:28] might be asking why is this relevant for
+[13:30] me? I don't have an obsidian vault. I'm
+[13:32] not creating content. So why do I need
+[13:35] this? Well, you might not need this
+[13:37] right now, but it's going to get
+[13:39] increasingly popular. And already, for
+[13:42] example, if you if you have a codebase
+[13:44] that your agent is managing, you should
+[13:47] have a readme file with all the context
+[13:49] about the codebase and about the
+[13:51] project. But it shouldn't be a classic
+[13:53] readme file uh intended for humans. It
+[13:56] should be intended for agents. And if
+[13:58] you want your agents to autonomously
+[14:00] update your SAS business, you're going
+[14:03] to want to put a lot of information in
+[14:05] that readme file. So each time the agent
+[14:08] lands there, it knows what you want,
+[14:10] what your goals are, uh what it
+[14:12] shouldn't do, what it should do,
+[14:14] everything. And then you also have some
+[14:16] other use cases like uh team SOPs and
+[14:20] the repositories connected to that. You
+[14:22] have operations, documentation. All of
+[14:25] this is going to become much more
+[14:26] important in enterprise soon when older
+[14:29] people discover AI. So I hope that was
+[14:32] clear enough and that you learned
+[14:33] something in this video. Um, I hope you
+[14:36] understand the difference between rag
+[14:38] and files and folders. This video wasn't
+[14:40] against rag. I'm just saying that files
+[14:43] and folders are becoming increasingly
+[14:45] important in agent work. What I'd like
+[14:48] you to take away from this video is uh
+[14:50] to learn how to map your context within
+[14:53] files and folders. So, first organize
+[14:56] your files. I used Claude co-work to
+[14:59] create um most of the structure of my
+[15:02] Obsidian vault and then I did a lot of
+[15:04] editing myself. But it's important to
+[15:06] always think of it from the agent's
+[15:08] perspective uh from the perspective of
+[15:11] an agent that doesn't know uh about you
+[15:13] and about what you want. So you have to
+[15:15] think about how to gradually feed
+[15:17] context to your AI as it pro gradually
+[15:20] progresses through your folders and
+[15:22] files. Then uh create the root map
+[15:25] folder as I showed you. Some people call
+[15:27] it manifest.md
+[15:29] and map it. You can also bind the cloud
+[15:32] co-work automation with it so it stays
+[15:34] updated. And then you can run your agent
+[15:36] to read your files. It works like a
+[15:38] charm. So that's it. I hope it helped.
+[15:41] If you want to send me a DM, you have
+[15:43] the link to my LinkedIn in the
+[15:44] description. You can subscribe to my
+[15:46] free newsletter that I post uh weekly.
+[15:49] Uh, I post about these different
+[15:50] workflows and learnings that I that I
+[15:53] gain along the way. If you own a company
+[15:56] and you're looking to install an entire
+[15:58] AI operating system around your
+[16:00] business, then click the link in the
+[16:02] description. I own an AI agency called
+[16:04] AI on boarding. Like and subscribe and
+[16:07] all of that jazz and see you next time.
+
+--- Plain text ---
+I've been seeing a lot of videos online showing you how to use AI to grow your business, build SAS, and so on. And a lot of people think the more documents that you upload, the smarter the AI will get. And that works for simple chats, but there's a new way of doing it that works better with agents. Today, I'll show you this cleaner system that works better. It's with files and folders. And I'll show you a special trick that I came up with and I saw also other people doing it online which is having a root context file at the root of your directory that explains to the agent what is contained inside so it can navigate very easily and save on tokens and time. Let's jump straight into it. This is what most people are using. They open up JPT and they use a project which is an amazing feature don't get me wrong. Um and they put a lot of context here. uh upload things from Google Drive, Slack, everything, everything. And the way this works in the background is it's using the retrieval augmented generation system with the vector database. The way that a vector database works is by similarity. So when you query something, it's going to search for anything that matches the query or similar. It's going to return some chunks and then AI is going to take that those chunks and produce an answer for you. This is an amazing system and it gained its popularity when people started imple implementing AI chatbots for customer support. And think about it in that case it works really well because a customer might ask a very rough or unstructured question but as long as it includes keywords that the rag system can find similarities to, it can return a structured answer. But the issue with the rag system is that when you upload all of these documents, there's no context about the relationship between the documents. Think about how your folder looks. You have a folder, right? And within the folder, you have some files and maybe the files contain some text. And there's a relationship here. if you upload all of it to a rag, it's just considering all the files in a like a flat level uh on the same level of hierarchy. So the the AI model has all of this knowledge of uh the uploaded files but it doesn't have the knowledge of the relationship between them which is becoming increasingly important for the reasons that I will tell you soon. So, I want to demonstrate a classic rag example here with one um playful project I made in Perplexity Spaces a while ago. And it's u the Alex Hermoszi coach. You know who Alex Hermosi is? He's a very famous uh coach for uh businesses. And the way I did this is that I extracted all of his uh YouTube videos. I made the transcripts and then I uploaded them as a JSON format in the in the context of the project. Naturally, this got saved in the retrieval augmented uh generation system. And now when I make a query here, it's going to draw from that. So, how do I keep my motivation up even when times are hard? You can see it's reviewing the source, so it's probably making a query to the raq database. Motivation is an outcome, not an input. The idea that you need to feel motivated before doing the work is a lie. That's very in the fashion of Alex or Mosi. But you can see here in the references that it used the JSON file that I uploaded. This is pure rag. This is how it works. It found uh something related to the keywords that I wrote here and then it uh made a query. It got some chunks back and uh constructed a really nice sentence based on it. So rag is great. But now let's look at why it's not great. Um in the Alexosi example, we had only one file, but imagine if you had hundreds of files. There's a lot of things that can go wrong in that case. Rag will fail you at a couple of different points here. One is version friction. What if you have files that you want to continuously update? Does that mean that every time you update something, you have to re-upload it into the rag database? I guess that can be solved, but it's very annoying. Another thing is the lost structure. So, as I said, there's no relationship in between the files um noted anywhere in the rack database. Number three is no read order. Sometimes you want your agents to gradually read important things um one after the other in a sequence and with rag that's kind of not possible cuz it's going to make a query for the chunks and it's going to draw from the entire database at once. Number four is interesting. It's mixed consistency. Um when the agent does a query to the database, it's not going to make the same query and it's not going to get the same chunks back each time. Yes, it will be quite reliable based on how reliable your documentation is, but it's non-deterministic, which is sometimes an issue with AI. And believe me, we are moving into an age where we're going to fuse together deterministic algorithms with non-deterministic AI and that's going to be much more helpful and safe. Here's another view of what the difference is between file and folder structures and a rag system. So on the left you can see that the database is filled with different types of unstructured data um that's kind of in the same level of the hierarchy and on the right you have the agent which uh has at its disposal the file and folder structure. So you can see for example to reach this file over here this Python file it has to go through these folders. Why the hell am I even speaking about agents and local files? Who cares right? We'll just look at the popularity of recent tools. First of all, let's look at claude co-work which has exploded in popularity. After Entropic realized that so many people are using cloud code for non-coding tasks like managing files, writing them, moving them, changing them, they made this new product called co-work, which is like cloud code but for knowledge work. In cloud co-work you select a folder you want to work in on your local computer and it works really well but it requires of you to know how to manage agent context in the same way codeex has made a similar shift they are you know making skills for knowledge workers they are uh really trying to capture this part of the market I'm not even going to mention open claw and how critical it is for you to implement this here so let me show you a practical example on how I use that. Uh my Obsidian Vault is stored locally on my computer, but it's also synced with Google Cloud, so I can access it from multiple devices, but it's local and on cloud, but it's local. Why rag wouldn't work for me in this case is for this reason. So, for example, I have my work projects folder where I have all my businesses and projects. Uh one of them is the AI onboarding agency. And by the way, if you're looking to stop running your business and start actually growing it, check out the link in the description. We're going to be there for you to transition to the new agent AIH. In my AI onboarding folder, I have all these different types of information including for example the brand voice guidelines and that defines the brand voice guidelines of this company. But I have another company or a brand which is my personal brand. And for my personal brand, I have a different brand voice. But the actual instructions and even the file title are similar. So if I were to upload all of this into a rag system, if an AI made a query, it would get results from both files. Maybe, I don't know, it wouldn't work really well. And the other thing is I constantly update these files. Sometimes I use AI to update it, but mostly not. This wouldn't be easy to do with a rack database. Now, looking at this, you might be asking yourself, Ante, what the hell is ante context? Weird file name, right? Well, I'm glad you asked because that's the next thing I want to show you. So, if you're going to be giving this your agent, um, you want it to have it in context all the time. So if you ask it a question or if you tell it to find a file somewhere, it needs to go there and be able to find it and preferably needs to find it efficiently and quickly. The antecontext file solves just that. This is a file that contains like a map to the rest of the entire folder. Uh it's telling my agent that this is my Obsidian vault that it contains all these different information about me and then it has a vault structure. uh it's telling it where it can find information about me, about my projects, about content creation, my journal. So imagine if that you're an agent and you get instructions to find something in the vault. You land here and so far you don't know nothing, right? The agent has to read something to know something. Uh you land here and the first thing you see is ant context and you're like, "Okay, let's go read that and see what's happening." You read this and immediately you know where to go. If your original instructions were something like uh reference the brand voice of AI on boarding um just by looking at this folder structure here you can't really tell where that is. But once you ingest the antext uh file you immediately know uh okay so it's probably under work projects. CS AI on boarding and then you as an agent open the work projects you find AI on boarding you find marketing um and brand voice guidelines. I've seen people online call this file like manifest MD which is a good name I think and you see how it works here in the illustration. The agent reads the manifest MD first and then it has the knowledge about all these other uh files and folders and knows where to go. So, not only does this speed things up and makes it more precise, but it also keeps your context clean. If you didn't have this file, the agent would go into the folder and it would start to explore and naturally it would make some mistakes and go in places where it shouldn't even go. But each time it makes a mistake, it actually ingests information in its context which is cluttering the context window. So the way that I have this structured is I put the scope and a purpose um of uh the entire directory. The folder architecture as you saw always load versus on demand. This is very useful because sometimes I wanted to load certain things into context that are really important. rules and boundaries and the source of truth which basically solidifies uh the fact that my Obsidian vault should be the source of truth and is the only thing that is updated to the latest version. Just to conclude so you understand the difference between rag and files and folders. So rag has a semantic search as opposed to files that have an exact retrieval. So if an agent is trying to access a file, it's going to do a bash command and it's going to get that exact file name. Rag has fuzzy phrasing which means that when it makes a query and returns the chunks, the way it's going to present information to you might not be in the same exact way as the information is written down. But with files and folders, it can read the exact thing. Rag has a high recall as opposed to files and folders that are deterministic. and Rack is great for support bots, while files and folders are for autonomous agents, which is why I'm making this video. It's time for you to prepare for this. Now, you again might be thinking, "Yeah, this is great, but it's a lot of work and I have to update this file constantly and it's annoying." Well, there's a great workaround with that and it's by using AI, of course. In this case, I'm using the clawed co-workuler. So, I have a scheduled task which is called update anticontext file. I pointed it there and the prompt is something like this. This is my Obsidian vault. Inside you'll see this content. Your task is to scan the entire vault and make sure its contents match the antext file. This is run weekly, I believe. And yes, this requires you to keep your computer turned on, but I don't have a problem with that because I'm on my laptop that's constantly on because of Open Claw. So, this is how that looks in a illustration. We have the sandbox, which is my Obsidian vault. Uh, we have the anticontext or the manifest MD all these different files and folders and the AI agent is working inside. And then we have this should be like a claw logo here. uh the automated synchronized checks done by claude co-work which is updating the uh manifest.mmd file continuously. You might be asking why is this relevant for me? I don't have an obsidian vault. I'm not creating content. So why do I need this? Well, you might not need this right now, but it's going to get increasingly popular. And already, for example, if you if you have a codebase that your agent is managing, you should have a readme file with all the context about the codebase and about the project. But it shouldn't be a classic readme file uh intended for humans. It should be intended for agents. And if you want your agents to autonomously update your SAS business, you're going to want to put a lot of information in that readme file. So each time the agent lands there, it knows what you want, what your goals are, uh what it shouldn't do, what it should do, everything. And then you also have some other use cases like uh team SOPs and the repositories connected to that. You have operations, documentation. All of this is going to become much more important in enterprise soon when older people discover AI. So I hope that was clear enough and that you learned something in this video. Um, I hope you understand the difference between rag and files and folders. This video wasn't against rag. I'm just saying that files and folders are becoming increasingly important in agent work. What I'd like you to take away from this video is uh to learn how to map your context within files and folders. So, first organize your files. I used Claude co-work to create um most of the structure of my Obsidian vault and then I did a lot of editing myself. But it's important to always think of it from the agent's perspective uh from the perspective of an agent that doesn't know uh about you and about what you want. So you have to think about how to gradually feed context to your AI as it pro gradually progresses through your folders and files. Then uh create the root map folder as I showed you. Some people call it manifest.md and map it. You can also bind the cloud co-work automation with it so it stays updated. And then you can run your agent to read your files. It works like a charm. So that's it. I hope it helped. If you want to send me a DM, you have the link to my LinkedIn in the description. You can subscribe to my free newsletter that I post uh weekly. Uh, I post about these different workflows and learnings that I that I gain along the way. If you own a company and you're looking to install an entire AI operating system around your business, then click the link in the description. I own an AI agency called AI on boarding. Like and subscribe and all of that jazz and see you next time.

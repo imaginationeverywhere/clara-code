@@ -1,0 +1,241 @@
+{
+  "name": "Corporate Professional",
+  "version": "1.0.0",
+  "description": "Professional corporate styling for all Office document types",
+
+  "global": {
+    "primaryColor": "#1C2833",
+    "secondaryColor": "#2E4053",
+    "accentColor": "#2980B9",
+    "fontFamily": "Arial",
+    "fontSize": 11,
+    "lineSpacing": 1.5
+  },
+
+  "images": {
+    "logo": {
+      "position": "header-right",
+      "width": 120,
+      "height": 40
+    },
+    "defaults": {
+      "maxWidth": 600,
+      "quality": 85,
+      "format": "png"
+    }
+  },
+
+  "presentation": {
+    "theme": "corporate",
+    "slideWidth": 10,
+    "slideHeight": 5.625,
+    "colors": {
+      "background": "#FFFFFF",
+      "title": "#1C2833",
+      "subtitle": "#7F8C8D",
+      "body": "#2E4053",
+      "accent": "#2980B9",
+      "bullet": "#2980B9"
+    },
+    "fonts": {
+      "title": "Arial Black",
+      "subtitle": "Arial",
+      "body": "Arial",
+      "code": "Courier New"
+    },
+    "sizes": {
+      "title": 44,
+      "subtitle": 24,
+      "sectionHeader": 36,
+      "body": 20,
+      "bullet": 18,
+      "footer": 10
+    },
+    "master": {
+      "titleSlide": {
+        "titleY": "40%",
+        "subtitleY": "55%",
+        "logoPosition": "bottom-right"
+      },
+      "contentSlide": {
+        "headerY": 0.5,
+        "contentY": 1.5,
+        "footerY": 5.25
+      }
+    },
+    "charts": {
+      "colors": ["#2980B9", "#27AE60", "#E74C3C", "#F39C12", "#9B59B6", "#1ABC9C"],
+      "gridLines": true,
+      "legendPosition": "bottom"
+    },
+    "tables": {
+      "headerBg": "#1C2833",
+      "headerColor": "#FFFFFF",
+      "borderColor": "#BDC3C7",
+      "alternateRow": "#ECF0F1"
+    }
+  },
+
+  "document": {
+    "style": "professional",
+    "pageSize": "letter",
+    "orientation": "portrait",
+    "margins": {
+      "top": "1in",
+      "bottom": "1in",
+      "left": "1.25in",
+      "right": "1in"
+    },
+    "colors": {
+      "heading": "#1C2833",
+      "body": "#333333",
+      "link": "#2980B9",
+      "code": "#333333",
+      "codeBg": "#F5F5F5"
+    },
+    "fonts": {
+      "heading": "Arial",
+      "body": "Calibri",
+      "code": "Consolas"
+    },
+    "sizes": {
+      "title": 28,
+      "h1": 24,
+      "h2": 18,
+      "h3": 14,
+      "h4": 12,
+      "body": 11,
+      "code": 10,
+      "caption": 9
+    },
+    "spacing": {
+      "beforeH1": 24,
+      "afterH1": 12,
+      "beforeH2": 18,
+      "afterH2": 8,
+      "beforePara": 0,
+      "afterPara": 8,
+      "lineHeight": 1.5
+    },
+    "header": {
+      "enabled": true,
+      "text": "",
+      "alignment": "right",
+      "fontSize": 9
+    },
+    "footer": {
+      "enabled": true,
+      "text": "Page {PAGE} of {NUMPAGES}",
+      "alignment": "center",
+      "fontSize": 9
+    },
+    "tableOfContents": {
+      "enabled": false,
+      "depth": 3,
+      "pageNumbers": true
+    }
+  },
+
+  "spreadsheet": {
+    "style": "professional",
+    "defaultFont": {
+      "name": "Calibri",
+      "size": 11
+    },
+    "colors": {
+      "input": "#0000FF",
+      "formula": "#000000",
+      "crossRef": "#008000",
+      "external": "#FF0000",
+      "attention": "#FFFF00"
+    },
+    "header": {
+      "font": {
+        "bold": true,
+        "color": "#FFFFFF",
+        "size": 11
+      },
+      "fill": "#1C2833",
+      "border": {
+        "style": "thin",
+        "color": "#000000"
+      },
+      "alignment": "center"
+    },
+    "data": {
+      "border": {
+        "style": "thin",
+        "color": "#BDC3C7"
+      },
+      "alternateRow": "#F8F9FA"
+    },
+    "formats": {
+      "currency": "$#,##0;($#,##0);-",
+      "percentage": "0.0%",
+      "number": "#,##0",
+      "date": "MM/DD/YYYY",
+      "text": "@"
+    },
+    "columnWidths": {
+      "default": 12,
+      "narrow": 8,
+      "wide": 20,
+      "description": 40
+    }
+  },
+
+  "pdf": {
+    "pageSize": "letter",
+    "orientation": "portrait",
+    "margins": {
+      "top": 72,
+      "bottom": 72,
+      "left": 72,
+      "right": 72
+    },
+    "colors": {
+      "title": [28, 40, 51],
+      "heading": [28, 40, 51],
+      "body": [51, 51, 51],
+      "link": [41, 128, 185],
+      "code": [51, 51, 51],
+      "codeBg": [245, 245, 245]
+    },
+    "fonts": {
+      "title": "Helvetica-Bold",
+      "heading": "Helvetica-Bold",
+      "body": "Helvetica",
+      "code": "Courier"
+    },
+    "sizes": {
+      "title": 24,
+      "h1": 18,
+      "h2": 14,
+      "h3": 12,
+      "body": 11,
+      "code": 10,
+      "header": 9,
+      "footer": 9
+    },
+    "header": {
+      "enabled": true,
+      "height": 40,
+      "text": "",
+      "alignment": "right"
+    },
+    "footer": {
+      "enabled": true,
+      "height": 30,
+      "text": "Page {page} of {pages}",
+      "alignment": "center"
+    },
+    "watermark": {
+      "enabled": false,
+      "text": "",
+      "fontSize": 72,
+      "color": [200, 200, 200],
+      "opacity": 0.3,
+      "rotation": 45
+    }
+  }
+}

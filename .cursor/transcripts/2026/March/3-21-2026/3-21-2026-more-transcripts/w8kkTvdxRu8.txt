@@ -1,0 +1,365 @@
+Title: I Reverse-Engineered Vapi (And It's x10 Cheaper)
+Video ID: w8kkTvdxRu8
+URL: https://www.youtube.com/watch?v=w8kkTvdxRu8
+
+Source: User-provided transcript (pasted). Timestamps not included.
+
+--- Plain text ---
+
+I would like to book an appointment.
+
+Great choice.
+
+date
+
+24th February 2026
+
+confirm
+
+Gmail addressgmail.com
+
+to confirm
+
+Thai massage on 2026 0224
+
+That would be great.
+
+Thank you.
+
+Now, what you just saw was this AI agent book me an appointment speaking in the most conversational Hindi I've ever heard right into my calendar. Also send me a telegram message and the best part is that this does not use WPI retail synth flow or any of those softwares. No [redacted] no. We build this out from completely scratch and this can be applied to any business. Best part being that it only cost you 2 cents a minute.
+
+So in this video, if you want to stay with me till the end, I'll tell you how to set up the GitHub repo. I'll give you the exact GitHub repo which I'm using. I'll give you the access to it. I'll set it up for you. I'll teach you how to set it up from scratch and you can begin selling this to your clients and break the market because everyone and the mom is selling voice agents for 9 cents a minute, 15 cents a minute. Do you understand that? That's so much expensive. And we are selling this for potentially 2.5 cents a minute or two rupees a minute. This is the cheapest the market has ever seen.
+
+So if you're watching this video, I swear on my life there's no video like this on YouTube which will teach you and give you the most comprehensive guide on how to build this out from scratch. So without any further ado, let's get right into it.
+
+First things first is I'm going to run you. So first things first, let's talk about why VP the bland AI synth flow retail they are not the best choice. ideally start their AI voice agent agency. They go to the they go towards these platforms, right? So that's what I did. I went to WPI, I went to retail, I went to all these platforms, but then I realized they are extremely extremely expensive. Like bland, retail, they're all extremely expensive. And yeah, that's a general issue. I mean, you will end up paying them a lot a lot more money than you are supposed to pay them.
+
+And what they do is they have a simple back end which uses live kit. They have got the agent orchestration and stuff like that set up and that's what they charge for. They charge you for the convenience, the convenience of setting it up, simple login, simple testing and simple deployment. But when you deploy this into production, you realize, [redacted] that's very expensive, which is why I spent the last 7 days building this complete system out for you guys.
+
+So, you have seen how it works. Now, let's get right into building this.
+
+Now before that, if you want it to be built out for yourself because not everyone can do coding and stuff like that and you want it set up for your business, we at Rapid XAI do exactly that, set this up for you for extremely low cost. So you can enjoy the benefits of, you know, having this completely done for you without going through the headache of debugging and stuff like that. But yeah, if you want this links down below, we are accepting only a few slots every month. So you can just join us and we'll set this up for you. So yeah, again, that was a quick plug.
+
+But yeah, so as you can see, things that matter. Okay, so first things first is we'll just look at a quick comparison between all the platforms. And I'll be very straightforward. They're [redacted] expensive, which is why it's it later on later down the line, it makes sense to make your own platform than to keep using them. Okay, so that's what we are going to end up doing. We'll make our own platform.
+
+Okay, so now for this platform or to make our complete AI application, we'll need a few things. Okay, so let's go over that real quick. So if anyone has seen my last video of the outbound caller, you'll have a basic understanding of what all do we need. But still in this video, I'm going to run you through what all do we need again. And because this is a bit more elaborate in this video, we'll actually set this up on a backend server on a backend hosting a server. So that's going to be awesome.
+
+Again, uh here's a monetary um announcement. You might need upwards of 1,000 to 1,500 rupees to actually uh build this out because the VPS can cost you around 500 to 800 rupees a month and the phone number can cost you around 600 to 800 rupees a month. So you need to have that much cash or that much money on hand to actually follow along correctly or perfect or or the way the way you need to. Okay. Now for the VPS, you can get a free VPS, but yeah, again you can manage that out. I'm just letting you know you you need to have that much minimum capital required to replicate this build.
+
+So again, everything that I'm using right now right here will be available in the description of this video. So you don't need to look around. And again, I think I'm the only person who's giving all of this value away for free without funneling you into a paid school community. So again, please consider subscribing. It it means a lot. And please drop a like. Thank you.
+
+So when we're using an AI voice, right? So we need a way to connect to the AI voice agent. Now one is you know we can do it on the web but obviously that takes a lot again we can do it on the web. So when we when we're building out a voice agent or when we have built out a voice agent we need a way to contact it right. So for that we need you know a telephone or a UI to contact it. So right now in this case we'll be using a telephone.
+
+So for telephone we are going to use AI. Again they are the cheapest phone number provider. You can get Indian phone number. You can get Pakistani phone numbers. You can get Nepali. You can get American phone numbers. You can get everything from the platform. Again, uh great guys and uh yeah, they are the cheapest in the market. Uh unlike Viva Digitally or any other platform, they're the cheapest and they're the most easy to set up and the most responsive team I've ever found. Again, you can go check them out. So, we'll be using VOIS for telephoning. Uh we'll buy telephone numbers from from Vobis.
+
+And then we have live kit which we will use as the realtime audio pipeline and to orchestrate the STD and the TTS systems. Now ST stands for speech to text and TTS stands for texttospech. So here we have got these two systems but we need something to orchestrated which is why we're using live kit. So it's a orchestration platform.
+
+Now for now we using server for TTS and ST both. Now it understands Hindi English and speaks Hindi English. So it's the perfect and plus they give you free API keys to use and [redacted] around with. So we are using that.
+
+Now for the brain we're using GPD40 mini or we're using OpenAI here. Now obviously if you don't have OpenAI API keys you can replace this with Gro or any other free LLM provider or free AI provider but again we we are sticking to OpenAI GPD 40.
+
+Then we are using we are saving data in Superbase. So we can store all the data logs transcripts and call recordings as well. We're using superbase for all of this.
+
+And then we are using Koolifi on Hostinger to host it and it runs the agent 24x7.
+
+Then we have a telegram bot which sends us notification if the calendar is actually booked. And we're using cal.com to book the book the calendar in actuality.
+
+So this is our text stack. Again pretty simple, pretty straightforward.
+
+Again to run you through how the dashboard looks like. So this is our Koolifi deployment. Again I'll teach you how to do all of this from scratch. So as you can see this is our deployed application and I can also have a look at our dashboard. So this is our dashboard right here. It's very similar to WP and retail. So we have our calendar. So we can see all the bookings here. I can click and check. Okay, there's no bookings for today. No bookings for today. We have a dashboard. We have total calls, bookings made, average duration, booking rate is 2%. We have CRM contact. So we can see CRM who called and you know total calls you have done and you know because all these are my calls. I'm the person who has been calling this uh all the all these times.
+
+So yeah, we have call logs here. So you can see the transcript. We can also download the transcript if you want to. And yeah, we have API credentials. We can change the API credentials if you want to. We have models and voice. So you can change it to Rohan, Priya etc. Shri. You can change it to Hindi, English, Tamil, Canada. So again uh that's crazy on its own.
+
+And then we have our agent configuration something similar to WPI where we can change our first line which is the opening greeting and we can change the system prompt. So we can do all of these changes in right in our UI and it'll reflect to the back end. So that just makes it insane.
+
+Okay. So I'm just going to save agent settings because I I I didn't change anything. But you can also click on save agent settings and save it.
+
+Okay, we have listening sensitivity. So this listening sensitivity, it directly correlates to how sensitive your agent is when you're talking to it. For example, you know, if I touch the microphone and there's a very slight noise, then the agent will stop. So again, this needs to be configured or tweaked as per your use case. If you are going to call to people who are in crowded cities or who are in, you know, places where there's a lot of background noise in that in that case, you can keep it to keep it higher and stuff like that. But again, this is kind of what it is.
+
+Uh and yeah, this is right. This is what we have. So again, this is a UI as you just saw. And yeah, we'll be using server and you know, all the platforms for to build this out.
+
+So first things first is let's quickly collect our infinity stones like last time. So again first this is a com coolify VPS. This is uh like a quick uh rundown of how the system works. Obviously again I don't need to go through this because there's a lot of technical details. Uh I don't need to go through this being honest with you. But um yeah uh there are there's a bunch of uh more stuff that we have.
+
+And yeah this is the cost. Okay. So it cost almost 10 rupees for every 5 minute call. 5 minute AI call. It cost 10 rupees which you know if you can do basic division it cost you 2 rupees per minute. So yeah 10 rupees every 5 minute AI call.
+
+We have uh cost. So we have bullbull TTS. We're using V3 which is 15 rupees for 10k characters 10,000 characters. This is TTS. And then we have a server which is Koolifi ST. We are also using SARS V3. So we are using SUS for speech to text which is um it's the ear of the AI voice agent. It listens to speech conversion into text. So yeah that's kind of about it.
+
+And how to reduce TTS cost? We can also reduce these costs further. Right now we're using life kit for hosting and stuff like that. So we can host selfhost life kit and reduce the price further.
+
+Let's start with our first infinity stone which is phone number. So we need to grab a phone number real quick. So let's grab a phone number. So what you'll do is you'll open a new tab and search for vobis.ai.
+
+And this is the platform that we have here. Now you can just simply sign up and you know once you sign up you'll be redirected to this kind of platform. Now you'll obviously need to add some credits to this platform. Uh but yeah uh right now what I'll do is I'll go to the left hand side. Uh I can see the voice and you know total calls and success rate success rate and stuff like that. I can see all of this here.
+
+Now the cost for vis uh I'm pretty sure it's one pes per second. So once you buy the phone number the usage cost is one pes per second of call that you can converse with the person. So that's there uh which can go up to for example you know if a for a 1 minute call it would be half a pesa and stuff like that.
+
+So yeah um but yeah let's go under zip trunks. So again this is I'll just run you through the UI first. So we have dashboard we have voice so we can see the usage summary then we can we also can access recordings here. So right now recordings are not enabled which is why we cannot see it here. And then we have applications endpoints etc. Then we have SIP trunks. This is where we'll do most of our work. And then we have number dids. So in here you need to buy a DID.
+
+So right now I will not buy a DID because I already have two DIDs right here. But what you need to do is click on buy new DID and then you can buy any of these special series. So this is a Pakistan number. This is 140. This is 160 and this is uh 18. So you can just buy any of these numbers. So I can buy any of this. Now I don't need to buy a number. But for you you'll need to purchase one of these numbers. And once you purchase a number, you can click on proceed or you can just like close this.
+
+So I can let's buy this number which is uh plus 91 2271. So there's plus 22 series. You can buy any of these numbers. Again doesn't really matter. You can buy double one series is also there. So you can just you can just choose from any of these numbers. Again obviously we have a lot of these NCR region. Let's you can buy Karnataka number. So as you can see we have all these numbers here. So once you're in Wes and once you have topped up your account with some balance, you can click on buy this very first number. Just click on confirm and buy.
+
+And we just purchased a new number. So once we purchase a new number, what we need to do is go under SIP trunks and then go under inbound trunks. So once we are under inbound trunks, click on create new trunk and then let's name it as um local AI voice.
+
+and then let's select the URI. So for the to get the URI uh to get the primary URI go to live kit and then open the project which you just made and then go under telephone and then go under SIP trunks. Once you do that grab this SIP URI and go under vis and click on add new URI let's name it as local URI and then let's paste the URI here.
+
+Obviously, it should not have sip colon and verbus already removes it. But if you can just don't copy the sip colon, but this shouldn't be an issue. Now, let's create on create URI. Let's click on create URI. It says etc. It gives us a warning. Let's just say save anyway and done.
+
+So, it's done. Right now, under primary URI, let's select our recently created URI and let's click on create trunk.
+
+Once this is done, let's actually go to local AI voice and let's click on link numbers. So as you could see under numbers, we can select this number which has no link to. So let's just select this. Click here. Let's link one selected number. And now this number is linked inside this trunk for vis.
+
+Now what we need to do is just copy this number real quick. Copy. And let's go to testing YT. And then in this we can click on create new trunk. And under this let's add this number here. And let's name it as new testing trunk.
+
+Just to repeat what I just did. I linked the number linked a new number to an inbound trunk inside Viz. And that's kind of about it. And then obviously I added a new trunk inside life kit and added the numbers here. Then I clicked on create and we have our number right here.
+
+So this part is done. The next part the next part is we need to create a dispatch rule. Okay. Now this is where we need to activate our agent because if we don't activate our agent the dispatch rule will not be created. So to do that what we simply need to do is to add a dispatch rule. We need to first activate our agent else we cannot add a dispatch rule.
+
+So to do that, let's go to GitHub repo. Let's go to a GitHub repo I've given you guys right here. This is our GitHub repo. As you can see, it was last updated 46 minutes ago, which means it's extremely fresh. All you need to do is simply click on download zip and then go to the zip file and let's quickly just unzip this real quick. And then open Google Anti-gravity or any IDE of your choice. You can use cloud code, etc. I don't mind. And then once you're inside Google Anti-gravity, click on open folder and then go under downloads or wherever your folder is located and open inbound voice inbound AI voice- main 2.
+
+So once you've installed the code, once you have opened the code in your Google anti-gravity, the most important thing and the first thing you need to do is you need to add all these API keys right here. So obviously I'm going to change the name from environment.ample to environment directly because this is not this is not example. This is going to be our main environment file and all the API keys and everything like that should be stored here.
+
+Now, I will not tell you how to get your API keys because if you can't do that, then you are doomed because it's it's super simple. You need to go to all of these platforms. You need to go to LifeKit, get its API key. You need to go to OpenAI, gets it, get its API key. You need to go to server and get its API key and stuff like that. So, that should be super simple and I would leave that leave the getting the API key part to you. That's pretty simple. I'll tell you the hard parts, the hard API keys which you will need so that uh you know and you don't [redacted] up anything.
+
+So for superbase you need to go to superbase right here. So let let me close this. Uh so this is the S3 configuration. So this storage bucket is used to store recordings. Okay. So you must say sh what the hell you're talking about? Well I'll run you through this. I'll tell you everything in just a second.
+
+So first things first is for superbase you need your superbase URL superb basease key and you need your S3 access key and S3 secret key again you need all of that.
+
+Uh so yeah what we'll do first is let's get our superbase URL. So for that let's go under I think this is our superbase URL I'm pretty sure. So let's just copy this real quick. This is our superbase URL and paste our superbase URL right here. Uh let's still check. So this is our project ID. Now you can make this a superbase URL obviously. Then you have your superbase key. So it's a superbase an add-on key. So to get that you need to so so to get that you need to go under API keys go under legacy anon service role keys and grab this copy and paste this here.
+
+So this is your superbase credentials done. Now you need to get your superbase S3 access key. So to to do that you'll go under storage. You'll create a storage bucket which is named as call recordings. So what you'll do is obviously you you'll click on new bucket and name this as call recordings and that's kind of about it.
+
+Now once you do that you need to go under your S3 configurations and copy this endpoint first of all. So this is your endpoint. Paste it here.
+
+The is uh is different actually is uh AP southeast 2. So let's copy this real quick.
+
+And then obviously you need to copy the key ID. So, copy and uh yeah, this is secret key ID. My bad. Yeah, let's paste it here.
+
+And I think you need to create a new key because you cannot get through this without um cannot get the secret key without it. So, let's click on the secret access key right here. Copy this real quick. Paste it in your uh in your environment variables and let's copy the uh yeah access key ID. So, let's copy this real quick as well. You have your API keys done.
+
+Now for Telegram, it's pretty simple. You need to go to Telegram and you know get your bot ID and bot token. So for to get the Telegram tokens, you need to go and open Telegram real quick. Go to botfather. Let's click on SL. Let's type / newbot. Newbot. Let's name it as pingle pinging bot 9595 at the rate bot_bot.
+
+So we have creat created our bot. Often times we'll not find uh often times we'll not find your bot name exact bot name. If that's the case just change the name a bit. Now, let's just grab let's just grab the bot token right here. And then let's go down here and paste the bot token.
+
+Once that's done, we need to get the Telegram chat ID. Now, that's pretty simple as well. Let's go to let's let's open a new tab. And this is how you get your Telegram uh chat ID. So, I'll give you this exact URL which you need to go to. Now, after bot, add your bot uh bot key. So, I'll just paste it here. And let's enter this real quick. So it'll give us the updates on the bot.
+
+Okay. So I can just now once I go to this URL, let me just reload this once.
+
+Okay. Okay. And the result is true. This is because I have not texted the bot anything yet. So to text the bot, I'll go to the bot right here. I'll click on start. I'll say, "Hey, hi, sup." And after doing this, if I refresh this page, I'll get the ID. Uh, we don't need the update ID. We just need this ID. Copy this real quick. This is our chat ID. So, this is a chat ID between my profile and the bots's account. So, let's copy this real quick. Let's go back to our environment variables and let's paste it here. So, this is done.
+
+Okay. Let's let me just also help you with the wobbies. Uh so we don't need to set set this up. This is optional because we are taking inbound calls. So this is completely optional. We don't need to set this up at all. And transfer phone number. This is also optional. But you can add this to your own phone number or to some other phone number. So you can do this but that's not required as such.
+
+I'm I'm expecting you guys to get your API keys for Cal AI and all of this. These are this is pretty simple. I'll also get you the life kit. I'll show you how to get your life kit um API key as well. So let's go to life kit real quick.
+
+And under settings, you can go under API keys, create key. Let's name it as uh wait, let me just check uh testing YTM. Let's go in here. Let's name something. So, generate key.
+
+Let's copy the environment variables directly. And yeah, LifeKit makes it super simple for you. So, let's paste it here. And boom, it's done. Again, I'm expecting you to fetch your own OpenAI API key and server API key as well as a cal.com.
+
+Okay, I'll also do it for cal.com for bit.
+
+So, go to cal.com.
+
+So, once you go to cal.com, you can um make a new event. I did not make a new event obviously, but you can make a new event. Uh and once you let's just make a new event. Never mind. I'll just name it as um Medspa appointment and let's click on continue.
+
+Uh working hours. Uh I'll set this to default. So yeah, let's go back. Now as you can see this after the slash and between the question mark, this is your event ID. Let's copy this real quick. Go to cal.com. paste our event ID, event type ID right here.
+
+Then the next part is pretty simple. You go to settings in cal.com. Go to developer and then click on API keys and click on add a API key. Let's name it something something. Make sure it never expires. And let's click on copy.
+
+Now it's usually a good practice to properly name your keys, but I just didn't do it, but don't be like me and name your API keys properly.
+
+So once this is done uh again the basic setup is complete. We have our environment variable setup. Let's let me just quickly save this real see our uh API keys again because I just added my original API keys to make sure it works and I will I do not want to expose my OpenI API keys to any of you bastards. Uh but yeah, now let's toggle this panel and let's install Python and then let's let's run our agent.p.
+
+So for the people who do not know how to run Python and stuff like that um I've added everything right here for you to you know use and stuff like that. So this is um the complete Daisy Spa voice agent um setup guide. So we have you can download Python and stuff like that if you haven't installed Python. And to verify the Python version let's actually um grab this real quick. Not sure if this is for uh Mac or Windows but let's see paste it here. So we have Python installed. If you haven't installed Python yet, please do install Python and then we'll move on from there.
+
+Okay. So now what we need to do is uh we need to uh paste this command which is Mac Linux command which is Python 3.11- M vnv. VNV. Let's click on enter. So command not found. I think it's going to be python / m venv.ve and yep the virtual environment is successfully initiated.
+
+Okay. Now the next thing we'll do is we'll grab this code which is this command which is source.vnv/bin/activate and stuff. Let's click on enter.
+
+Okay, let's just simply do it. Uh let's I have to copy this. My bad.
+
+Copy.
+
+Paste it here. And the virtual environment is finally activated.
+
+The next thing we need to do is simply type the following command which is oops python agent. pydev.
+
+So as you can see I ran into an error. Now what did I [redacted] up? I did not pip install the requirements. So if you go towards the left hand side you will see there's a document which is called requirements.txt. Requirements.txt. Let me just find it real quick. There's so many of this requirements.txt. So we need to install all of this for our agent to work. Now why do why do we need to install this? Well, because they are requirements for a reason.
+
+So, let's do it like this. Let's um let's simply type pip install -ash r. So, dash r means that it needs to read the requirements file. L requirements dot txt.
+
+So, what it just is what what it's doing right now it is that it read the requirements.txt txt file and now it's installing all the requirements which were there in the requirements.txt file. Pretty simple, pretty straightforward.
+
+So once it it installs all of this, we would be able to run our agent right in this uh in this UI. So I think it's done. Let's type python uh is it done or not? Not sure yet. But okay, python agent. pydev.
+
+Okay. Okay. No, it's it's not done.
+
+Okay. No, it's going to take a while. It's downloading all the packages.
+
+So, once it's done, we'll we'll see this kind of uh line, this kind of command interface once it's done. So, I think it's almost done. Let's uh until then, let's open a new uh terminal. Let's wait for this to complete real quick.
+
+Let's wait for the requirements.txt to install. And yeah, it's done. Perfect.
+
+Now, I can just click on enter. I can type python agent. pydev and as you can see agent.p py is running now once we know this is running once this is running right and if I go to livekit right now if I go under agents and refresh this once. Why don't we have the agents yet? Oh yeah, we do have the agent here and it's working right now.
+
+So if we didn't run this, right, if we didn't run this on our local host, we will not see anything populate in here. So that's great at that it's populating.
+
+Now let's quickly copy let's go here. Let's copy the agent name real quick and then let's go under dispatch rules and then let's click and create a new dispatch rule. Let's name it as my rule. There's no need to do anything here. uh just like agent dispatch you need to type the agent name so it's uh my agent name and then under trunks let's select the trunk that's all you need to do and let's name this uh dispatch rule as my dispatch rule and that's kind of about it this is all you need to do so grab run the agent grab the agent name from the agents column from lifekit and create a new dispatch rule and add the name add the agent name in under dispatch rule And make sure you select the trunk and then click on create.
+
+And this is done. Now what I'll do is I'll ring the phone number which I just added. So yeah, let's actually go in here and let's go under calls.
+
+Let's go under phone numbers.
+
+Sorry. Let's go under safe trunks and let's type in the phone number. So 91 804 92 80319.
+
+Let's call this.
+
+And as you can see when we call this uh there should be some changes here. As you can see it's initializing everything.
+
+Hello.
+
+Hello. Yeah. So again we got a few errors. Nothing to be afraid of as such. above was a direct x blah blah blah.
+
+Okay, so what we'll do as people who don't know how to code, let's grab the whole freaking other and push this to our AI agent. Make sure it's claw sonnet because it's good at um claude is extremely good at Python and you know logic related tasks. So yeah, I'll say my I call my AI voice agent but it's not working. It's not function functioning. Can you do the required changes to make sure it it works? Thank you. Please do the changes. I'd appreciate that.
+
+So, it's thinking about it and it's going to do the changes right here. Looking at the errors, I can see salv which means okay, it's missing or incorrect. Let me just check that.
+
+Do we have a server API key? Oh yeah, my bad. I didn't save the environment variables. Oh [redacted] I'm so sorry.
+
+Okay, so I didn't save the environment variables, which is why it didn't work. Let's just run this again.
+
+This time it will work.
+
+Hello.
+
+Wait, I'm I'm pretty sure I have to run this again. My bad. Let's go to quickstart.mmd.
+
+So this teaches that teaches us that you should always save your uh your changes.
+
+So yeah, Python agent.dev agent pydev.
+
+Let's call the agent now. So as you can see, I've ran the code and now I'm going to drop a quick call on this phone number. So FYI, this is the same phone number we just purchased from. So I hope you can see it.
+
+Let's drop it a quick call. Hello. actually appointment.
+
+Thank you.
+
+So, I just concluded the call. Now, let's check uh let's wait for the WhatsApp message right here. So, I think it's going to take a while. Until then, let's actually go to cal.com and see if the meeting was booked or not.
+
+So, yeah, today's 24th and for 25th at 3 p.m. the meeting is booked. And yeah, we got a message here which says uh yeah, booking confirmed and stuff like that. So again, the booking is confirmed, which is great.
+
+Now, the now the reason why I got the ping on this bot and uh not on this spot is because I I changed or swapped the credentials in the env file with my own credentials, which is why this happened. This would not ideally happen uh if you would use this bot's uh API key and check ID. But yeah, keeping that all aside, uh, so again, I hope this is clear. Uh, we got a message, the booking is confirmed. And that's that.
+
+Now, obviously, the next thing I'll do is I'll show you how to set up or how to run the UI. So, to run the UI, I'll click on open a new terminal. And I'm going to name this uh first let's run our VNV source. Let's uh start our virtual environment real quick. So, let's go down. Uh first of all, let me just check. We have um yeah, let's um start a virtual environment real quick.
+
+So, scroll down. Yeah, let's copy this code. Paste it here. And then what I'll do is I'll give the following command. Python. Let's find the UI file real quick. It's UI server. Okay. So, UI server pydev.
+
+So I started running the UI UI server and as you can see the UV corn is running on this server. So I'm just going to follow this link and here we are. So this is the brand new server which is running on a local host. So this is what is this is to it uh there is to it.
+
+So yeah as you can see uh we are still so it is fetching data from my superbase account. So this is my original superbase data database but yeah this is where it's fetching all the data from. So that's kind of about it.
+
+Now there's a few things which you need to do in order to make sure this runs as it should. So we have a file for superbase setup which is the following which is superbase setup.mmarkdown. So in this file all you have to do is you have to grab this SQL query. So if you are making a new database for example which you would be doing cuz you will not have a initial database. So what you need to do is go to superbase. Uh you can use a free account doesn't really matter. For example let's just say this is a new project that I just made. So what you need to do here is go to the SQL editor and uh grab uh go under superbase.sql. You can use this particular uh file. We have an option here which is as follows. Superbase setup markdown. So you can just copy this whole SQL query from start to end.
+
+And yeah, once you do this, click on copy and go to the SQL editor and then add this here and then just simply click on run. This would initiate or add all the required SQL columns to your SQL database. Now, I cannot do this because I've already done this. So, you can do this if required, if you need to. And again, once you're creating a new database, you need to do this. You need to run this SQL query once.
+
+Once this is done, let's go towards the left hand side and let's go under storage. So now we need to create a storage bucket. The reason why we're creating a storage bucket is because we need to store the call recordings. So for that let's click on new bucket and then let's quickly go down here and just name the storage bucket as call recordings and paste it here and then click on create.
+
+Uh obviously once you do this uh you can it's better uh I'd recommend you to run this SQL query after you create the bucket. That's that would be way more effective. So yeah, let's paste it here again. Click on run and it will all uh already exist as you can see this already exists for me. But yeah, once you can create the bucket and then you do this after it, that's pretty simple as I shown you last time. Go into storage, grab the S3 configuration um details and then grab the add an add-on key and the and the project URL and that's done for you.
+
+So yeah, that's kind of about it. We also have deployed the UI right here. So you know how this works locally on your computer and I hope that's clear.
+
+The next thing we're going to do is we will deploy this on a Koolifi server so that we can access it whenever we want and we don't have to constantly run this on our own machine.
+
+So to do that let's first go to GitHub.
+
+Okay. So before you do any Kify deployment you need to make sure the GitHub repository of this code exists because Koolifi can then directly pull the code from the GitHub repository.
+
+So what we're going to do is click on new repository. Let's name this as AI inbound voice 2.
+
+So so I'm going to repeat myself so that I can make sure you guys are following. What we just did was we deployed this locally and we made sure it runs. It runs very well. Then we checked out the UI. The UI is working as well. Now what we're doing is we are making a GitHub repo to push the code to GitHub so that Koolifi or any cloud server can pull the code directly and start running it. So that's pretty straightforward.
+
+Right now we're creating a GitHub repository. So for that to create a repository you need to go to GitHub, sign into GitHub, then click on new repository and then again as you can see repository name is AI inbound voice 2. So just click on create repository. Pretty straightforward.
+
+So once it's done, you can go down here and you can just grab this um push existing command line etc. Just copy this uh particular uh code line of code or this line of commands and then let's give this to our AI agent and I'll tell our AI agent that I want you to push all the code and all the files to the following GitHub repository. Thank you. And let's click on enter. Now, what the AI agent would do is it would push all the code to GitHub.
+
+Okay, once let's let the AI agent do its thing. So, until then, we'll go to Hostinger and set up our server real quick.
+
+So, let's go to Hostinger. Again, I personally use Hostinger for all of my personal needs. And if you want to use Hostinger, you can use the link down below. It's a referral link and it helps me uh they gave me 10% commission. So, yeah, you can use this if you like it.
+
+So, whatever. Let's go to Hostinger real quick. And as you can see, uh, we have our server set up here. So, if you haven't bought a VPS already or if you don't have a VPS right here, all you need to do, all you need to do is go into VPS and then in here you can you can just create or you can just like buy a VPS right here. So, I'm pretty sure you can uh purchase a VPS. So, manage all. There should be an option to buy a yeah, get a new VPS plan. Click here and then and then click on KVM VPS. This is what we need.
+
+So once you're here, uh you'll be promp prompted to choose the area. So we are choosing India for the best latency. Make sure you have India selected as your best latency because if you select it to be US or somewhere else, then the latency increases to 383 milliseconds and this would directly impact the performance of your AI voice agent. Just making it very clear with you. Then click on next.
+
+And then in here uh we can choose a panel. So we have plain OS, we have docker application, we have control panel, we have application etc. So plane OS this can only be run through via command line and it's kind of complex to set up and use. So what we'll do instead is we'll go for a control panel. So control panel have a UI. These these guys have a UI and they let you easily navigate through the control panel or they just allow you to easily navigate through everything.
+
+So what you need to do here is click on coolify and then click on select and then obviously you can just set up a password. I'm just going to keep it my my password which whatever I want to click on next and malware can you don't need this next and then you can just buy this particular plan uh KVM2. So you can buy this maybe you can buy this for 12 months again uh because you're going to need it trust me or you can just buy it for 1 month like it doesn't really matter. You can also apply some rewards and see if you are eligible for some offers and stuff like that. But yeah, I usually stick with KVM 1, KVM 2 because it's it's a decent uh amount of power. So you can go with KVM2. That's the best. Also, KVM 4 and KVM 8 is there, but you don't need these two as such. So let's go with KVM2.
+
+Again, this is just too much power. You don't need this much. So select KVM 2, purchase this and once the purchase is complete and once the Coolify um Coolify OS is installed or once Coolifi is installed on your application or on your um particular server you can click on manage here and this is the screen you'll be greeted with.
+
+Obviously this is your um this is your dashboard after you have purchased the server and once you have installed Koolifi on it.
+
+Next thing you need to do is click on manage panel and this would redirect you to your Koolifi panel. Now if you have never logged into your Koolifi, so it's going to ask you to, you know, set up a username and password. So for me, it's pretty simple. I'm just going to use my username and password which I set up for Koolifi. If you're doing this for the first time, you'll need to set your username and password. Please do this. That's pretty simple. Click on login.
+
+Right now, as you can see again, if you're on you're on this dashboard. So what you need to do is you need to select on projects. Again this dashboard this is where we'll deploy our code. So you'll see here this there's nothing um in here to work with if you are doing this for the first time. So I'll run you through how to do everything. So don't worry about it.
+
+Click on projects right here and add a project. Let's let's name this as AI inbound voice med. And we don't need a description. Let's keep this as a description. And then click on continue. This doesn't really matter.
+
+Now the next thing you need to do is you need to add a resource. So click on add resource here. And then you need to add a p you need to click here which says private repository with a GitHub app. GitHub app. Once you do this, if you if you do not see anything here, you need to create a new GitHub app. I'm going to still do it. Let's name this as long lady etc. etc. etc. Doesn't really matter. Click on continue.
+
+Then let's click on register now. And it's going to take me to my to my GitHub account. I need to verify this via email. Obviously, I need to uh put my email ID here. It's going to quickly put the code from my email.
+
+So, as you can see, um it gives me an option to create a GitHub app, GitHub app. And I just created a GitHub app and it's pretty straightforward.
+
+Now, once this is done, you need to install repositories on GitHub. So, click here, click on continue, and yeah, just allow it to install. pretty straightforward.
+
+And boom, it's done. So, well done. Uh, we just, uh, did a did a rather challenging task. So, let's go back. Um, let's go back to our Koolifi server.
+
+As you can see, let's go to projects again and uh, let's click on this meta project. Let's click on add resource and then let's click on private repository again. This time, you'll see your particular GitHub connection. GitHub app populate here. So let's click on long lady which we just made right here and let's check if our GitHub repository has been populated with the code or not. Let's refresh this once and the code has been populated which means that the AI agent did its job well.
+
+So let's go back to our Koolifier dashboard and then we need to then we need to load a repository. So for this let's go back to our um to our GitHub and let's copy the name of the repository real quick. So copy go to Koolifi and paste the repository name here and we can see here as as you can see let's just simply click on load repository.
+
+Now the next thing you need you need to do here it's very important the branch configuration should be main and the build pack should be docker file nothing else. Please follow this very carefully because I was stuck on this page for like one day trying to figure out what the [redacted] this is. And yeah, this is kind of about it.
+
+And we are now on the configurations page.
+
+Okay, the next thing you need to do is also pretty important. Ports expose. It should be 8,000. Set this to 8,000 real quick. This is so that you can access your UI, your Python UI from this uh particular page.
+
+And under environment variables, you need to populate your environment variables. So I'm going to click on I'm going to click on developer view and I'm going to go on my code inside my code and I'm going to quickly grab all the data from my environment file and paste it here and then I'm going to click on save environment variables and then I'm going to finally deploy and the deployment should happen as smoothly as button.
+
+So as it says image not found which means that it's building a fresh image of this particular project. Again, nothing to worry about. It's pretty straightforward. And yeah, it's going to succeed gracefully.
+
+So, it's doing this. Let's uh go under logs here real quick. We have links. So, I can just click on this link and we'll be redirected to the page. Again, it's 404 not found. That's because it's still deploying. Let's wait for let's wait for deployment to complete. As it says, it's in progress.
+
+While that's in progress, I'm going to kill the deployments in our local host because if you make a call, right, so the AI agent doesn't know where to send the call to. Should should it send the call to the server or should it send the call to the local host? So, it doesn't know that, which is why we are turning off the local host and we're only keeping the the cloud server on. So, that's the reason why we're doing that.
+
+Let's um go into deployments. Let's go into logs and let's see what else remaining. So like a server ready to use and that's kind of about it and I think deployment is running.
+
+So congrats we are in. So now as you can see my local host deployment is uh not running as you can see and what I'm going to do is I'm just going to simply push a call and if the server is running the call should connect.
+
+Okay. So I'm just going to click here begin the call. appointment.
+
+So, as you can see, you can see all the logs here, and it's [redacted] insane. And we just deployed our own local AI voice agent onto a cloud hosted server.
+
+Congratulations. We just did one of the most We just covered so much inside coding and yeah, we just pulled off something crazy. So, I hope this was a good video and I don't know if uh I fumbled up something or if I was able to run you through through this correctly or not.
+
+Again, obviously if you followed through this far, I would love if you subscribe and let me just show me your support because figuring this out takes a while. Honestly, a lot of people will tell you, "Hey, just use server and life kit and whatever." And I'm like, bro, if it was that easy, everyone would have done it. I'm just trying to make this easier for everyone so that every AI automation agency can leverage this technology and disrupt the market.
+
+So, yeah, I hope this makes sense.
+
+Obviously, I'm going to run you through a few more things before I close the call. So, yeah, as you can see, uh this is how to reduce the HTTP cost. You can look into this as well. This is a topic which is insane. So, we can use MCube and stuff like that and you can sell force life kit stuff like that. You can use Bullbull V2 and you can just like use all of this. These are like nitty-g gritties to further reduce the cost because the quality is great. The the latency is 1,000 to 800 millconds. It's 1,00 to 800 millconds obvious like it it goes upwards to 1500 milliseconds but that's all that's the highest and in my opinion it works like a charm right now as you can see.
+
+And yeah cost versus human comparison. So, human call center agent per agent is this much and your AI voice agent it only costs you like 5 rupees per call. Uh, and this is actually uh some real numbers like you know 150 rupees to 250 rupees per call like not per call exactly but like per conversion like it's it's [redacted] they're [redacted] expensive.
+
+So cost per calls per month 690. So yeah I mean this is like this is how much you would be paying approximately but without AI voice agent you're just paying this much. ROI by business type. So Hback and Home Services, you're going to make a lot of money. Dental care is also going to make a lot of money with this solution.
+
+And this is not WP. This is not retail. This is not bland. This is none of that [redacted] This is some actual coded stuff. And just to make things very straightforward with you, those [redacted] are also using the same technology. They just they just don't tell you. Okay?
+
+So we just pulled it off again of you can work more on this. If I use 11 Labs and Deepgram Gram to this, it's going to blow. It's going to be the best in the market. Trust me, I just didn't do it because I wanted to optimize this for India. If you use deep gram or 11 laps with this, you are just going to kill it.
+
+So yeah, that's kind of about it. And uh you know, I mean, we just did what big companies are doing, but at a very cheaper cost.
+
+And yeah, as you can see, demo class booking, outbound follower properties. You can just like there's like so many use cases like do you understand? lead generation sales, outbound seasonal checkup campaigns, Hback home services, inbound services, and then like finance insurance, premium reminder calls, policy renewal, outbound, like you can do there's so many use cases for this.
+
+And again, if you're watching and if you own a business and if you think that, hey, this is a lot of [redacted] that shared and I cannot do this myself or you know, you don't have a time, you don't want to do this yourself. Again, that's what we specialize in. Feel free again there's a link down below. you can book a call with us and we'll take it for you and we'll give you a done for you service. Again, you don't have to worry about anything. It's all going to be done for you and yeah, we'll take care of everything that you're seeing right now and you're going to get a lot of [redacted] ROI with this.
+
+Again, on that note, everything's going to be in the description. You don't need to join any community as such. No school communities. Just pick it up from description. I don't mind. I would really greatly appreciate if you can drop a subscribe and yeah, drop a like, drop a follow. Also, follow me on Instagram which is ai.w.r.
+
+Thanks for watching and yeah, it's been an honor to have you guys on. I know this has been a it it has been a while since I posted a video, but this video if it doesn't blow up, I don't know what else will. Please share this with anyone and everyone who you think can benefit from this. And thanks for watching. I'll see you in the next one. Bye-bye. Cheers. Appreciated.

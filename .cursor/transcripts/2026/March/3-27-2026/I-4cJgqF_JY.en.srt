@@ -1,0 +1,4615 @@
+1
+00:00:00,240 --> 00:00:01,990
+
+Today, I want to show you a workflow
+
+2
+00:00:01,990 --> 00:00:02,000
+Today, I want to show you a workflow
+ 
+
+3
+00:00:02,000 --> 00:00:03,270
+Today, I want to show you a workflow
+that I've been using more and more
+
+4
+00:00:03,270 --> 00:00:03,280
+that I've been using more and more
+ 
+
+5
+00:00:03,280 --> 00:00:05,110
+that I've been using more and more
+recently, and honestly, it's become one
+
+6
+00:00:05,110 --> 00:00:05,120
+recently, and honestly, it's become one
+ 
+
+7
+00:00:05,120 --> 00:00:06,869
+recently, and honestly, it's become one
+of my favorite ways to build out AI
+
+8
+00:00:06,869 --> 00:00:06,879
+of my favorite ways to build out AI
+ 
+
+9
+00:00:06,879 --> 00:00:09,350
+of my favorite ways to build out AI
+skills. It combines Notebook LM's deep
+
+10
+00:00:09,350 --> 00:00:09,360
+skills. It combines Notebook LM's deep
+ 
+
+11
+00:00:09,360 --> 00:00:11,190
+skills. It combines Notebook LM's deep
+research feature with Claude skill
+
+12
+00:00:11,190 --> 00:00:11,200
+research feature with Claude skill
+ 
+
+13
+00:00:11,200 --> 00:00:12,950
+research feature with Claude skill
+system. [music] And that result is
+
+14
+00:00:12,950 --> 00:00:12,960
+system. [music] And that result is
+ 
+
+15
+00:00:12,960 --> 00:00:15,270
+system. [music] And that result is
+basically a way to turn raw research on
+
+16
+00:00:15,270 --> 00:00:15,280
+basically a way to turn raw research on
+ 
+
+17
+00:00:15,280 --> 00:00:18,230
+basically a way to turn raw research on
+any topic into a working AI agent that
+
+18
+00:00:18,230 --> 00:00:18,240
+any topic into a working AI agent that
+ 
+
+19
+00:00:18,240 --> 00:00:20,470
+any topic into a working AI agent that
+actually knows what it's doing. Here's a
+
+20
+00:00:20,470 --> 00:00:20,480
+actually knows what it's doing. Here's a
+ 
+
+21
+00:00:20,480 --> 00:00:22,470
+actually knows what it's doing. Here's a
+problem I keep running into. Whenever I
+
+22
+00:00:22,470 --> 00:00:22,480
+problem I keep running into. Whenever I
+ 
+
+23
+00:00:22,480 --> 00:00:24,230
+problem I keep running into. Whenever I
+wanted to build a cloud skill for
+
+24
+00:00:24,230 --> 00:00:24,240
+wanted to build a cloud skill for
+ 
+
+25
+00:00:24,240 --> 00:00:25,990
+wanted to build a cloud skill for
+something specific, whether that was
+
+26
+00:00:25,990 --> 00:00:26,000
+something specific, whether that was
+ 
+
+27
+00:00:26,000 --> 00:00:28,950
+something specific, whether that was
+SEO, copywriting, a specific industry,
+
+28
+00:00:28,950 --> 00:00:28,960
+SEO, copywriting, a specific industry,
+ 
+
+29
+00:00:28,960 --> 00:00:30,870
+SEO, copywriting, a specific industry,
+whatever, I either have to write the
+
+30
+00:00:30,870 --> 00:00:30,880
+whatever, I either have to write the
+ 
+
+31
+00:00:30,880 --> 00:00:32,790
+whatever, I either have to write the
+whole knowledge base myself, which takes
+
+32
+00:00:32,790 --> 00:00:32,800
+whole knowledge base myself, which takes
+ 
+
+33
+00:00:32,800 --> 00:00:35,030
+whole knowledge base myself, which takes
+forever, or I just prompt Claude with
+
+34
+00:00:35,030 --> 00:00:35,040
+forever, or I just prompt Claude with
+ 
+
+35
+00:00:35,040 --> 00:00:36,709
+forever, or I just prompt Claude with
+vague instructions and hope for the
+
+36
+00:00:36,709 --> 00:00:36,719
+vague instructions and hope for the
+ 
+
+37
+00:00:36,719 --> 00:00:39,670
+vague instructions and hope for the
+best. Neither of those is great. What I
+
+38
+00:00:39,670 --> 00:00:39,680
+best. Neither of those is great. What I
+ 
+
+39
+00:00:39,680 --> 00:00:41,670
+best. Neither of those is great. What I
+really needed was a way to get deep,
+
+40
+00:00:41,670 --> 00:00:41,680
+really needed was a way to get deep,
+ 
+
+41
+00:00:41,680 --> 00:00:43,830
+really needed was a way to get deep,
+structured knowledge on a topic fast and
+
+42
+00:00:43,830 --> 00:00:43,840
+structured knowledge on a topic fast and
+ 
+
+43
+00:00:43,840 --> 00:00:45,590
+structured knowledge on a topic fast and
+then feed that directly into a skill
+
+44
+00:00:45,590 --> 00:00:45,600
+then feed that directly into a skill
+ 
+
+45
+00:00:45,600 --> 00:00:47,910
+then feed that directly into a skill
+that Claude can actually use. And that's
+
+46
+00:00:47,910 --> 00:00:47,920
+that Claude can actually use. And that's
+ 
+
+47
+00:00:47,920 --> 00:00:49,830
+that Claude can actually use. And that's
+exactly what this workflow does.
+
+48
+00:00:49,830 --> 00:00:49,840
+exactly what this workflow does.
+ 
+
+49
+00:00:49,840 --> 00:00:51,910
+exactly what this workflow does.
+Notebook LM does the research. Claude
+
+50
+00:00:51,910 --> 00:00:51,920
+Notebook LM does the research. Claude
+ 
+
+51
+00:00:51,920 --> 00:00:53,670
+Notebook LM does the research. Claude
+builds the skill and then you got an
+
+52
+00:00:53,670 --> 00:00:53,680
+builds the skill and then you got an
+ 
+
+53
+00:00:53,680 --> 00:00:55,670
+builds the skill and then you got an
+agent that can be dropped into any chat
+
+54
+00:00:55,670 --> 00:00:55,680
+agent that can be dropped into any chat
+ 
+
+55
+00:00:55,680 --> 00:00:57,910
+agent that can be dropped into any chat
+or used inside Claude code that actually
+
+56
+00:00:57,910 --> 00:00:57,920
+or used inside Claude code that actually
+ 
+
+57
+00:00:57,920 --> 00:00:59,670
+or used inside Claude code that actually
+knows the domain. Let me walk you
+
+58
+00:00:59,670 --> 00:00:59,680
+knows the domain. Let me walk you
+ 
+
+59
+00:00:59,680 --> 00:01:01,750
+knows the domain. Let me walk you
+through this whole thing. Before we get
+
+60
+00:01:01,750 --> 00:01:01,760
+through this whole thing. Before we get
+ 
+
+61
+00:01:01,760 --> 00:01:04,149
+through this whole thing. Before we get
+into notebook, let me quickly explain
+
+62
+00:01:04,149 --> 00:01:04,159
+into notebook, let me quickly explain
+ 
+
+63
+00:01:04,159 --> 00:01:06,390
+into notebook, let me quickly explain
+what a Claude skill actually is. Because
+
+64
+00:01:06,390 --> 00:01:06,400
+what a Claude skill actually is. Because
+ 
+
+65
+00:01:06,400 --> 00:01:07,990
+what a Claude skill actually is. Because
+if you haven't used them before, this is
+
+66
+00:01:07,990 --> 00:01:08,000
+if you haven't used them before, this is
+ 
+
+67
+00:01:08,000 --> 00:01:10,230
+if you haven't used them before, this is
+the piece that makes everything click. A
+
+68
+00:01:10,230 --> 00:01:10,240
+the piece that makes everything click. A
+ 
+
+69
+00:01:10,240 --> 00:01:11,990
+the piece that makes everything click. A
+skill in Claude is basically a
+
+70
+00:01:11,990 --> 00:01:12,000
+skill in Claude is basically a
+ 
+
+71
+00:01:12,000 --> 00:01:13,910
+skill in Claude is basically a
+structured knowledge file, usually a
+
+72
+00:01:13,910 --> 00:01:13,920
+structured knowledge file, usually a
+ 
+
+73
+00:01:13,920 --> 00:01:16,149
+structured knowledge file, usually a
+markdown document that tells Claude how
+
+74
+00:01:16,149 --> 00:01:16,159
+markdown document that tells Claude how
+ 
+
+75
+00:01:16,159 --> 00:01:18,710
+markdown document that tells Claude how
+to behave in a specific context. It's
+
+76
+00:01:18,710 --> 00:01:18,720
+to behave in a specific context. It's
+ 
+
+77
+00:01:18,720 --> 00:01:20,950
+to behave in a specific context. It's
+not just a system prompt. It's more like
+
+78
+00:01:20,950 --> 00:01:20,960
+not just a system prompt. It's more like
+ 
+
+79
+00:01:20,960 --> 00:01:23,350
+not just a system prompt. It's more like
+a domain brief. You define what the task
+
+80
+00:01:23,350 --> 00:01:23,360
+a domain brief. You define what the task
+ 
+
+81
+00:01:23,360 --> 00:01:25,830
+a domain brief. You define what the task
+is, what good output looks like, what
+
+82
+00:01:25,830 --> 00:01:25,840
+is, what good output looks like, what
+ 
+
+83
+00:01:25,840 --> 00:01:27,990
+is, what good output looks like, what
+patterns to follow, what to avoid, and
+
+84
+00:01:27,990 --> 00:01:28,000
+patterns to follow, what to avoid, and
+ 
+
+85
+00:01:28,000 --> 00:01:30,149
+patterns to follow, what to avoid, and
+you can include examples, frameworks,
+
+86
+00:01:30,149 --> 00:01:30,159
+you can include examples, frameworks,
+ 
+
+87
+00:01:30,159 --> 00:01:32,550
+you can include examples, frameworks,
+step-by-step instructions, all of it.
+
+88
+00:01:32,550 --> 00:01:32,560
+step-by-step instructions, all of it.
+ 
+
+89
+00:01:32,560 --> 00:01:34,469
+step-by-step instructions, all of it.
+When you load a skill into a project or
+
+90
+00:01:34,469 --> 00:01:34,479
+When you load a skill into a project or
+ 
+
+91
+00:01:34,479 --> 00:01:36,630
+When you load a skill into a project or
+point Claude code at a skill folder,
+
+92
+00:01:36,630 --> 00:01:36,640
+point Claude code at a skill folder,
+ 
+
+93
+00:01:36,640 --> 00:01:38,710
+point Claude code at a skill folder,
+Claude reads it and adapts his behavior
+
+94
+00:01:38,710 --> 00:01:38,720
+Claude reads it and adapts his behavior
+ 
+
+95
+00:01:38,720 --> 00:01:40,789
+Claude reads it and adapts his behavior
+accordingly. So, if you have a skill
+
+96
+00:01:40,789 --> 00:01:40,799
+accordingly. So, if you have a skill
+ 
+
+97
+00:01:40,799 --> 00:01:43,030
+accordingly. So, if you have a skill
+for, say, writing cold outreach emails,
+
+98
+00:01:43,030 --> 00:01:43,040
+for, say, writing cold outreach emails,
+ 
+
+99
+00:01:43,040 --> 00:01:44,789
+for, say, writing cold outreach emails,
+Claude isn't just guessing what that
+
+100
+00:01:44,789 --> 00:01:44,799
+Claude isn't just guessing what that
+ 
+
+101
+00:01:44,799 --> 00:01:46,469
+Claude isn't just guessing what that
+means, is working from a defined
+
+102
+00:01:46,469 --> 00:01:46,479
+means, is working from a defined
+ 
+
+103
+00:01:46,479 --> 00:01:48,870
+means, is working from a defined
+playbook. That's the whole point. You're
+
+104
+00:01:48,870 --> 00:01:48,880
+playbook. That's the whole point. You're
+ 
+
+105
+00:01:48,880 --> 00:01:50,550
+playbook. That's the whole point. You're
+basically training Claude to be really
+
+106
+00:01:50,550 --> 00:01:50,560
+basically training Claude to be really
+ 
+
+107
+00:01:50,560 --> 00:01:52,469
+basically training Claude to be really
+good at one specific thing without
+
+108
+00:01:52,469 --> 00:01:52,479
+good at one specific thing without
+ 
+
+109
+00:01:52,479 --> 00:01:54,389
+good at one specific thing without
+having to explain yourself from scratch
+
+110
+00:01:54,389 --> 00:01:54,399
+having to explain yourself from scratch
+ 
+
+111
+00:01:54,399 --> 00:01:56,469
+having to explain yourself from scratch
+every single session. Now, the question
+
+112
+00:01:56,469 --> 00:01:56,479
+every single session. Now, the question
+ 
+
+113
+00:01:56,479 --> 00:01:58,709
+every single session. Now, the question
+is, how do you build a good skill?
+
+114
+00:01:58,709 --> 00:01:58,719
+is, how do you build a good skill?
+ 
+
+115
+00:01:58,719 --> 00:02:01,109
+is, how do you build a good skill?
+That's where Notebook LM comes in.
+
+116
+00:02:01,109 --> 00:02:01,119
+That's where Notebook LM comes in.
+ 
+
+117
+00:02:01,119 --> 00:02:03,350
+That's where Notebook LM comes in.
+Notebook LM added deep research back in
+
+118
+00:02:03,350 --> 00:02:03,360
+Notebook LM added deep research back in
+ 
+
+119
+00:02:03,360 --> 00:02:05,109
+Notebook LM added deep research back in
+November. And if you haven't tried it
+
+120
+00:02:05,109 --> 00:02:05,119
+November. And if you haven't tried it
+ 
+
+121
+00:02:05,119 --> 00:02:06,789
+November. And if you haven't tried it
+yet, it's genuinely one of the more
+
+122
+00:02:06,789 --> 00:02:06,799
+yet, it's genuinely one of the more
+ 
+
+123
+00:02:06,799 --> 00:02:08,869
+yet, it's genuinely one of the more
+useful AI research tools available right
+
+124
+00:02:08,869 --> 00:02:08,879
+useful AI research tools available right
+ 
+
+125
+00:02:08,879 --> 00:02:11,350
+useful AI research tools available right
+now. And it's also free. Here's how it
+
+126
+00:02:11,350 --> 00:02:11,360
+now. And it's also free. Here's how it
+ 
+
+127
+00:02:11,360 --> 00:02:13,510
+now. And it's also free. Here's how it
+works. You go into notebookm, you go to
+
+128
+00:02:13,510 --> 00:02:13,520
+works. You go into notebookm, you go to
+ 
+
+129
+00:02:13,520 --> 00:02:15,589
+works. You go into notebookm, you go to
+the sources panel, you select web as
+
+130
+00:02:15,589 --> 00:02:15,599
+the sources panel, you select web as
+ 
+
+131
+00:02:15,599 --> 00:02:17,270
+the sources panel, you select web as
+your source type. And then you get two
+
+132
+00:02:17,270 --> 00:02:17,280
+your source type. And then you get two
+ 
+
+133
+00:02:17,280 --> 00:02:19,750
+your source type. And then you get two
+options. Fast research, which is a quick
+
+134
+00:02:19,750 --> 00:02:19,760
+options. Fast research, which is a quick
+ 
+
+135
+00:02:19,760 --> 00:02:21,750
+options. Fast research, which is a quick
+scan, and deep research, which is the
+
+136
+00:02:21,750 --> 00:02:21,760
+scan, and deep research, which is the
+ 
+
+137
+00:02:21,760 --> 00:02:23,670
+scan, and deep research, which is the
+one we want. You type in a question or
+
+138
+00:02:23,670 --> 00:02:23,680
+one we want. You type in a question or
+ 
+
+139
+00:02:23,680 --> 00:02:25,589
+one we want. You type in a question or
+topic, and notebook LM literally goes
+
+140
+00:02:25,589 --> 00:02:25,599
+topic, and notebook LM literally goes
+ 
+
+141
+00:02:25,599 --> 00:02:27,430
+topic, and notebook LM literally goes
+and browses hundreds of websites on your
+
+142
+00:02:27,430 --> 00:02:27,440
+and browses hundreds of websites on your
+ 
+
+143
+00:02:27,440 --> 00:02:29,750
+and browses hundreds of websites on your
+behalf. It creates a research plan,
+
+144
+00:02:29,750 --> 00:02:29,760
+behalf. It creates a research plan,
+ 
+
+145
+00:02:29,760 --> 00:02:31,910
+behalf. It creates a research plan,
+refineses a search as it goes, and then
+
+146
+00:02:31,910 --> 00:02:31,920
+refineses a search as it goes, and then
+ 
+
+147
+00:02:31,920 --> 00:02:34,229
+refineses a search as it goes, and then
+spits out a structured source grounded
+
+148
+00:02:34,229 --> 00:02:34,239
+spits out a structured source grounded
+ 
+
+149
+00:02:34,239 --> 00:02:36,390
+spits out a structured source grounded
+report in a few minutes. What makes it
+
+150
+00:02:36,390 --> 00:02:36,400
+report in a few minutes. What makes it
+ 
+
+151
+00:02:36,400 --> 00:02:38,150
+report in a few minutes. What makes it
+different from just googling or using
+
+152
+00:02:38,150 --> 00:02:38,160
+different from just googling or using
+ 
+
+153
+00:02:38,160 --> 00:02:40,229
+different from just googling or using
+another AI search tool is that the
+
+154
+00:02:40,229 --> 00:02:40,239
+another AI search tool is that the
+ 
+
+155
+00:02:40,239 --> 00:02:42,550
+another AI search tool is that the
+output doesn't disappear. The report and
+
+156
+00:02:42,550 --> 00:02:42,560
+output doesn't disappear. The report and
+ 
+
+157
+00:02:42,560 --> 00:02:44,470
+output doesn't disappear. The report and
+all the sources it pulled get added
+
+158
+00:02:44,470 --> 00:02:44,480
+all the sources it pulled get added
+ 
+
+159
+00:02:44,480 --> 00:02:46,949
+all the sources it pulled get added
+directly into your notebook LM. So now
+
+160
+00:02:46,949 --> 00:02:46,959
+directly into your notebook LM. So now
+ 
+
+161
+00:02:46,959 --> 00:02:48,790
+directly into your notebook LM. So now
+you got this rich knowledge base you can
+
+162
+00:02:48,790 --> 00:02:48,800
+you got this rich knowledge base you can
+ 
+
+163
+00:02:48,800 --> 00:02:50,710
+you got this rich knowledge base you can
+keep curing, adding to, and cross
+
+164
+00:02:50,710 --> 00:02:50,720
+keep curing, adding to, and cross
+ 
+
+165
+00:02:50,720 --> 00:02:52,949
+keep curing, adding to, and cross
+referencing. You can run multiple deeper
+
+166
+00:02:52,949 --> 00:02:52,959
+referencing. You can run multiple deeper
+ 
+
+167
+00:02:52,959 --> 00:02:55,270
+referencing. You can run multiple deeper
+research queries on the same topic layer
+
+168
+00:02:55,270 --> 00:02:55,280
+research queries on the same topic layer
+ 
+
+169
+00:02:55,280 --> 00:02:57,509
+research queries on the same topic layer
+in your own documents and build up a
+
+170
+00:02:57,509 --> 00:02:57,519
+in your own documents and build up a
+ 
+
+171
+00:02:57,519 --> 00:02:59,589
+in your own documents and build up a
+really comprehensive picture of whatever
+
+172
+00:02:59,589 --> 00:02:59,599
+really comprehensive picture of whatever
+ 
+
+173
+00:02:59,599 --> 00:03:01,750
+really comprehensive picture of whatever
+niche or subject you're working on. For
+
+174
+00:03:01,750 --> 00:03:01,760
+niche or subject you're working on. For
+ 
+
+175
+00:03:01,760 --> 00:03:04,229
+niche or subject you're working on. For
+our purposes building skills, this is
+
+176
+00:03:04,229 --> 00:03:04,239
+our purposes building skills, this is
+ 
+
+177
+00:03:04,239 --> 00:03:06,710
+our purposes building skills, this is
+incredibly useful because a good skill
+
+178
+00:03:06,710 --> 00:03:06,720
+incredibly useful because a good skill
+ 
+
+179
+00:03:06,720 --> 00:03:09,110
+incredibly useful because a good skill
+needs real domain knowledge. It needs to
+
+180
+00:03:09,110 --> 00:03:09,120
+needs real domain knowledge. It needs to
+ 
+
+181
+00:03:09,120 --> 00:03:10,869
+needs real domain knowledge. It needs to
+understand how professionals in that
+
+182
+00:03:10,869 --> 00:03:10,879
+understand how professionals in that
+ 
+
+183
+00:03:10,879 --> 00:03:13,190
+understand how professionals in that
+space actually think and work and deep
+
+184
+00:03:13,190 --> 00:03:13,200
+space actually think and work and deep
+ 
+
+185
+00:03:13,200 --> 00:03:14,790
+space actually think and work and deep
+research can pull that together for you
+
+186
+00:03:14,790 --> 00:03:14,800
+research can pull that together for you
+ 
+
+187
+00:03:14,800 --> 00:03:17,990
+research can pull that together for you
+in minutes instead of hours. Okay, so
+
+188
+00:03:17,990 --> 00:03:18,000
+in minutes instead of hours. Okay, so
+ 
+
+189
+00:03:18,000 --> 00:03:19,750
+in minutes instead of hours. Okay, so
+let me show you exactly how this works
+
+190
+00:03:19,750 --> 00:03:19,760
+let me show you exactly how this works
+ 
+
+191
+00:03:19,760 --> 00:03:22,470
+let me show you exactly how this works
+end to end. Step one, pick your niche or
+
+192
+00:03:22,470 --> 00:03:22,480
+end to end. Step one, pick your niche or
+ 
+
+193
+00:03:22,480 --> 00:03:24,470
+end to end. Step one, pick your niche or
+topic. For this demo, I'm going to use
+
+194
+00:03:24,470 --> 00:03:24,480
+topic. For this demo, I'm going to use
+ 
+
+195
+00:03:24,480 --> 00:03:26,309
+topic. For this demo, I'm going to use
+something concrete. Let's say you want
+
+196
+00:03:26,309 --> 00:03:26,319
+something concrete. Let's say you want
+ 
+
+197
+00:03:26,319 --> 00:03:28,630
+something concrete. Let's say you want
+to build a cloud skill for B2B sales
+
+198
+00:03:28,630 --> 00:03:28,640
+to build a cloud skill for B2B sales
+ 
+
+199
+00:03:28,640 --> 00:03:30,630
+to build a cloud skill for B2B sales
+prospecting. You want a skill that can
+
+200
+00:03:30,630 --> 00:03:30,640
+prospecting. You want a skill that can
+ 
+
+201
+00:03:30,640 --> 00:03:32,630
+prospecting. You want a skill that can
+help Claude write targeted outreach,
+
+202
+00:03:32,630 --> 00:03:32,640
+help Claude write targeted outreach,
+ 
+
+203
+00:03:32,640 --> 00:03:34,789
+help Claude write targeted outreach,
+research prospects, identify pain
+
+204
+00:03:34,789 --> 00:03:34,799
+research prospects, identify pain
+ 
+
+205
+00:03:34,799 --> 00:03:37,350
+research prospects, identify pain
+points, that kind of thing. Step two,
+
+206
+00:03:37,350 --> 00:03:37,360
+points, that kind of thing. Step two,
+ 
+
+207
+00:03:37,360 --> 00:03:39,589
+points, that kind of thing. Step two,
+run deep research in Notebook LM. I'm
+
+208
+00:03:39,589 --> 00:03:39,599
+run deep research in Notebook LM. I'm
+ 
+
+209
+00:03:39,599 --> 00:03:41,910
+run deep research in Notebook LM. I'm
+going to go into Notebook LM, open up a
+
+210
+00:03:41,910 --> 00:03:41,920
+going to go into Notebook LM, open up a
+ 
+
+211
+00:03:41,920 --> 00:03:44,309
+going to go into Notebook LM, open up a
+new notebook, go to the sources panel,
+
+212
+00:03:44,309 --> 00:03:44,319
+new notebook, go to the sources panel,
+ 
+
+213
+00:03:44,319 --> 00:03:47,750
+new notebook, go to the sources panel,
+select web, and hit deep research.
+
+214
+00:03:47,750 --> 00:03:47,760
+select web, and hit deep research.
+ 
+
+215
+00:03:47,760 --> 00:03:49,589
+select web, and hit deep research.
+My question is something like, "What are
+
+216
+00:03:49,589 --> 00:03:49,599
+My question is something like, "What are
+ 
+
+217
+00:03:49,599 --> 00:03:51,990
+My question is something like, "What are
+the most effective B2B sales prospecting
+
+218
+00:03:51,990 --> 00:03:52,000
+the most effective B2B sales prospecting
+ 
+
+219
+00:03:52,000 --> 00:03:54,309
+the most effective B2B sales prospecting
+strategies in 2026, including
+
+220
+00:03:54,309 --> 00:03:54,319
+strategies in 2026, including
+ 
+
+221
+00:03:54,319 --> 00:03:56,630
+strategies in 2026, including
+frameworks, outreach patterns, and show
+
+222
+00:03:56,630 --> 00:03:56,640
+frameworks, outreach patterns, and show
+ 
+
+223
+00:03:56,640 --> 00:03:59,110
+frameworks, outreach patterns, and show
+how top sales team identify and qualify
+
+224
+00:03:59,110 --> 00:03:59,120
+how top sales team identify and qualify
+ 
+
+225
+00:03:59,120 --> 00:04:01,190
+how top sales team identify and qualify
+leads?" You hit go, it runs in the
+
+226
+00:04:01,190 --> 00:04:01,200
+leads?" You hit go, it runs in the
+ 
+
+227
+00:04:01,200 --> 00:04:02,869
+leads?" You hit go, it runs in the
+background, and in a few minutes, you
+
+228
+00:04:02,869 --> 00:04:02,879
+background, and in a few minutes, you
+ 
+
+229
+00:04:02,879 --> 00:04:05,270
+background, and in a few minutes, you
+got a structured report or sources. Now,
+
+230
+00:04:05,270 --> 00:04:05,280
+got a structured report or sources. Now,
+ 
+
+231
+00:04:05,280 --> 00:04:06,949
+got a structured report or sources. Now,
+I'll usually run two or three research
+
+232
+00:04:06,949 --> 00:04:06,959
+I'll usually run two or three research
+ 
+
+233
+00:04:06,959 --> 00:04:08,630
+I'll usually run two or three research
+queries on the same topic to make sure
+
+234
+00:04:08,630 --> 00:04:08,640
+queries on the same topic to make sure
+ 
+
+235
+00:04:08,640 --> 00:04:10,630
+queries on the same topic to make sure
+I'm getting good coverage. Maybe one
+
+236
+00:04:10,630 --> 00:04:10,640
+I'm getting good coverage. Maybe one
+ 
+
+237
+00:04:10,640 --> 00:04:12,789
+I'm getting good coverage. Maybe one
+focused on frameworks and strategy, and
+
+238
+00:04:12,789 --> 00:04:12,799
+focused on frameworks and strategy, and
+ 
+
+239
+00:04:12,799 --> 00:04:14,949
+focused on frameworks and strategy, and
+one on tools and workflows, one on
+
+240
+00:04:14,949 --> 00:04:14,959
+one on tools and workflows, one on
+ 
+
+241
+00:04:14,959 --> 00:04:16,789
+one on tools and workflows, one on
+common mistakes, maybe. But each one
+
+242
+00:04:16,789 --> 00:04:16,799
+common mistakes, maybe. But each one
+ 
+
+243
+00:04:16,799 --> 00:04:18,550
+common mistakes, maybe. But each one
+pulls different sources and all of it
+
+244
+00:04:18,550 --> 00:04:18,560
+pulls different sources and all of it
+ 
+
+245
+00:04:18,560 --> 00:04:21,030
+pulls different sources and all of it
+gets layered into the same notebook.
+
+246
+00:04:21,030 --> 00:04:21,040
+gets layered into the same notebook.
+ 
+
+247
+00:04:21,040 --> 00:04:23,110
+gets layered into the same notebook.
+Before we continue, we just launched the
+
+248
+00:04:23,110 --> 00:04:23,120
+Before we continue, we just launched the
+ 
+
+249
+00:04:23,120 --> 00:04:25,189
+Before we continue, we just launched the
+universe of AI newsletter. If you want
+
+250
+00:04:25,189 --> 00:04:25,199
+universe of AI newsletter. If you want
+ 
+
+251
+00:04:25,199 --> 00:04:27,189
+universe of AI newsletter. If you want
+to stay on top of AI news without having
+
+252
+00:04:27,189 --> 00:04:27,199
+to stay on top of AI news without having
+ 
+
+253
+00:04:27,199 --> 00:04:28,870
+to stay on top of AI news without having
+to hunt for it, link is in the
+
+254
+00:04:28,870 --> 00:04:28,880
+to hunt for it, link is in the
+ 
+
+255
+00:04:28,880 --> 00:04:31,030
+to hunt for it, link is in the
+description. Don't miss out. Step three
+
+256
+00:04:31,030 --> 00:04:31,040
+description. Don't miss out. Step three
+ 
+
+257
+00:04:31,040 --> 00:04:33,350
+description. Don't miss out. Step three
+is to synthesize a notebook. LM. Now
+
+258
+00:04:33,350 --> 00:04:33,360
+is to synthesize a notebook. LM. Now
+ 
+
+259
+00:04:33,360 --> 00:04:35,270
+is to synthesize a notebook. LM. Now
+that I got all this research loaded in,
+
+260
+00:04:35,270 --> 00:04:35,280
+that I got all this research loaded in,
+ 
+
+261
+00:04:35,280 --> 00:04:37,189
+that I got all this research loaded in,
+if we take a look at this, we can see
+
+262
+00:04:37,189 --> 00:04:37,199
+if we take a look at this, we can see
+ 
+
+263
+00:04:37,199 --> 00:04:39,030
+if we take a look at this, we can see
+that this article over here at the top
+
+264
+00:04:39,030 --> 00:04:39,040
+that this article over here at the top
+ 
+
+265
+00:04:39,040 --> 00:04:40,870
+that this article over here at the top
+is a summary of all of these cited
+
+266
+00:04:40,870 --> 00:04:40,880
+is a summary of all of these cited
+ 
+
+267
+00:04:40,880 --> 00:04:42,629
+is a summary of all of these cited
+sources and it kind of shows us what
+
+268
+00:04:42,629 --> 00:04:42,639
+sources and it kind of shows us what
+ 
+
+269
+00:04:42,639 --> 00:04:44,870
+sources and it kind of shows us what
+database sales looks like, especially in
+
+270
+00:04:44,870 --> 00:04:44,880
+database sales looks like, especially in
+ 
+
+271
+00:04:44,880 --> 00:04:48,390
+database sales looks like, especially in
+2026 and how it is transitioning to AI
+
+272
+00:04:48,390 --> 00:04:48,400
+2026 and how it is transitioning to AI
+ 
+
+273
+00:04:48,400 --> 00:04:49,909
+2026 and how it is transitioning to AI
+intelligence and signal-driven
+
+274
+00:04:49,909 --> 00:04:49,919
+intelligence and signal-driven
+ 
+
+275
+00:04:49,919 --> 00:04:51,909
+intelligence and signal-driven
+frameworks. So, we have frameworks, we
+
+276
+00:04:51,909 --> 00:04:51,919
+frameworks. So, we have frameworks, we
+ 
+
+277
+00:04:51,919 --> 00:04:54,070
+frameworks. So, we have frameworks, we
+also have where it's heading and things
+
+278
+00:04:54,070 --> 00:04:54,080
+also have where it's heading and things
+ 
+
+279
+00:04:54,080 --> 00:04:55,990
+also have where it's heading and things
+like that. I can now start asking
+
+280
+00:04:55,990 --> 00:04:56,000
+like that. I can now start asking
+ 
+
+281
+00:04:56,000 --> 00:04:58,310
+like that. I can now start asking
+Notebook LM to help me organize it. I
+
+282
+00:04:58,310 --> 00:04:58,320
+Notebook LM to help me organize it. I
+ 
+
+283
+00:04:58,320 --> 00:04:59,909
+Notebook LM to help me organize it. I
+can ask it things like what are the core
+
+284
+00:04:59,909 --> 00:04:59,919
+can ask it things like what are the core
+ 
+
+285
+00:04:59,919 --> 00:05:01,590
+can ask it things like what are the core
+principles that come up across all these
+
+286
+00:05:01,590 --> 00:05:01,600
+principles that come up across all these
+ 
+
+287
+00:05:01,600 --> 00:05:03,430
+principles that come up across all these
+sources? What frameworks are mentioned
+
+288
+00:05:03,430 --> 00:05:03,440
+sources? What frameworks are mentioned
+ 
+
+289
+00:05:03,440 --> 00:05:05,189
+sources? What frameworks are mentioned
+most? What does good prospecting
+
+290
+00:05:05,189 --> 00:05:05,199
+most? What does good prospecting
+ 
+
+291
+00:05:05,199 --> 00:05:07,029
+most? What does good prospecting
+actually look like step by step? And
+
+292
+00:05:07,029 --> 00:05:07,039
+actually look like step by step? And
+ 
+
+293
+00:05:07,039 --> 00:05:08,950
+actually look like step by step? And
+notebook LM pulls from everything in the
+
+294
+00:05:08,950 --> 00:05:08,960
+notebook LM pulls from everything in the
+ 
+
+295
+00:05:08,960 --> 00:05:11,029
+notebook LM pulls from everything in the
+notebook and gives me grounded cited
+
+296
+00:05:11,029 --> 00:05:11,039
+notebook and gives me grounded cited
+ 
+
+297
+00:05:11,039 --> 00:05:13,430
+notebook and gives me grounded cited
+answers. This is the synthesis layer.
+
+298
+00:05:13,430 --> 00:05:13,440
+answers. This is the synthesis layer.
+ 
+
+299
+00:05:13,440 --> 00:05:15,270
+answers. This is the synthesis layer.
+I'm not actually writing the skill from
+
+300
+00:05:15,270 --> 00:05:15,280
+I'm not actually writing the skill from
+ 
+
+301
+00:05:15,280 --> 00:05:17,270
+I'm not actually writing the skill from
+scratch. I'm extracting structured
+
+302
+00:05:17,270 --> 00:05:17,280
+scratch. I'm extracting structured
+ 
+
+303
+00:05:17,280 --> 00:05:19,430
+scratch. I'm extracting structured
+insight from real research backed in by
+
+304
+00:05:19,430 --> 00:05:19,440
+insight from real research backed in by
+ 
+
+305
+00:05:19,440 --> 00:05:21,909
+insight from real research backed in by
+notebook LM. So we can see our notebook
+
+306
+00:05:21,909 --> 00:05:21,919
+notebook LM. So we can see our notebook
+ 
+
+307
+00:05:21,919 --> 00:05:24,070
+notebook LM. So we can see our notebook
+LM has imported all the sources. We have
+
+308
+00:05:24,070 --> 00:05:24,080
+LM has imported all the sources. We have
+ 
+
+309
+00:05:24,080 --> 00:05:26,390
+LM has imported all the sources. We have
+the summary document as well. We can see
+
+310
+00:05:26,390 --> 00:05:26,400
+the summary document as well. We can see
+ 
+
+311
+00:05:26,400 --> 00:05:28,150
+the summary document as well. We can see
+already that we also have top sales
+
+312
+00:05:28,150 --> 00:05:28,160
+already that we also have top sales
+ 
+
+313
+00:05:28,160 --> 00:05:30,070
+already that we also have top sales
+methodologies over here. If I wanted to
+
+314
+00:05:30,070 --> 00:05:30,080
+methodologies over here. If I wanted to
+ 
+
+315
+00:05:30,080 --> 00:05:31,670
+methodologies over here. If I wanted to
+just learn about them, I can learn about
+
+316
+00:05:31,670 --> 00:05:31,680
+just learn about them, I can learn about
+ 
+
+317
+00:05:31,680 --> 00:05:33,990
+just learn about them, I can learn about
+them over here. But for our purposes, we
+
+318
+00:05:33,990 --> 00:05:34,000
+them over here. But for our purposes, we
+ 
+
+319
+00:05:34,000 --> 00:05:35,909
+them over here. But for our purposes, we
+want to take all this information and
+
+320
+00:05:35,909 --> 00:05:35,919
+want to take all this information and
+ 
+
+321
+00:05:35,919 --> 00:05:37,830
+want to take all this information and
+feed it to Claude, especially for the
+
+322
+00:05:37,830 --> 00:05:37,840
+feed it to Claude, especially for the
+ 
+
+323
+00:05:37,840 --> 00:05:39,350
+feed it to Claude, especially for the
+skill file. So, I'm going to show you
+
+324
+00:05:39,350 --> 00:05:39,360
+skill file. So, I'm going to show you
+ 
+
+325
+00:05:39,360 --> 00:05:41,189
+skill file. So, I'm going to show you
+guys exactly how to do that. You have a
+
+326
+00:05:41,189 --> 00:05:41,199
+guys exactly how to do that. You have a
+ 
+
+327
+00:05:41,199 --> 00:05:43,270
+guys exactly how to do that. You have a
+couple of options. You can take this
+
+328
+00:05:43,270 --> 00:05:43,280
+couple of options. You can take this
+ 
+
+329
+00:05:43,280 --> 00:05:45,110
+couple of options. You can take this
+specific summary document, which
+
+330
+00:05:45,110 --> 00:05:45,120
+specific summary document, which
+ 
+
+331
+00:05:45,120 --> 00:05:47,029
+specific summary document, which
+summarizes all of your, you know,
+
+332
+00:05:47,029 --> 00:05:47,039
+summarizes all of your, you know,
+ 
+
+333
+00:05:47,039 --> 00:05:49,189
+summarizes all of your, you know,
+research from all the sources. But one
+
+334
+00:05:49,189 --> 00:05:49,199
+research from all the sources. But one
+ 
+
+335
+00:05:49,199 --> 00:05:50,629
+research from all the sources. But one
+thing you'll notice is that it's pretty
+
+336
+00:05:50,629 --> 00:05:50,639
+thing you'll notice is that it's pretty
+ 
+
+337
+00:05:50,639 --> 00:05:52,870
+thing you'll notice is that it's pretty
+vague, right? We have benchmarks, we
+
+338
+00:05:52,870 --> 00:05:52,880
+vague, right? We have benchmarks, we
+ 
+
+339
+00:05:52,880 --> 00:05:55,270
+vague, right? We have benchmarks, we
+have AI, automation, and things like
+
+340
+00:05:55,270 --> 00:05:55,280
+have AI, automation, and things like
+ 
+
+341
+00:05:55,280 --> 00:05:56,950
+have AI, automation, and things like
+that. Not specific frameworks,
+
+342
+00:05:56,950 --> 00:05:56,960
+that. Not specific frameworks,
+ 
+
+343
+00:05:56,960 --> 00:05:58,550
+that. Not specific frameworks,
+everything. So you could do something
+
+344
+00:05:58,550 --> 00:05:58,560
+everything. So you could do something
+ 
+
+345
+00:05:58,560 --> 00:06:00,310
+everything. So you could do something
+simple like this. You could ask it
+
+346
+00:06:00,310 --> 00:06:00,320
+simple like this. You could ask it
+ 
+
+347
+00:06:00,320 --> 00:06:01,749
+simple like this. You could ask it
+specific questions like what are the
+
+348
+00:06:01,749 --> 00:06:01,759
+specific questions like what are the
+ 
+
+349
+00:06:01,759 --> 00:06:03,990
+specific questions like what are the
+specific frameworks or strategies and
+
+350
+00:06:03,990 --> 00:06:04,000
+specific frameworks or strategies and
+ 
+
+351
+00:06:04,000 --> 00:06:06,150
+specific frameworks or strategies and
+take that information for our purposes.
+
+352
+00:06:06,150 --> 00:06:06,160
+take that information for our purposes.
+ 
+
+353
+00:06:06,160 --> 00:06:07,430
+take that information for our purposes.
+Let's say I want to learn about how to
+
+354
+00:06:07,430 --> 00:06:07,440
+Let's say I want to learn about how to
+ 
+
+355
+00:06:07,440 --> 00:06:09,189
+Let's say I want to learn about how to
+write targeted outreach, research
+
+356
+00:06:09,189 --> 00:06:09,199
+write targeted outreach, research
+ 
+
+357
+00:06:09,199 --> 00:06:11,270
+write targeted outreach, research
+prospects and identify pain points and
+
+358
+00:06:11,270 --> 00:06:11,280
+prospects and identify pain points and
+ 
+
+359
+00:06:11,280 --> 00:06:13,189
+prospects and identify pain points and
+build the skill around that. I'll ask
+
+360
+00:06:13,189 --> 00:06:13,199
+build the skill around that. I'll ask
+ 
+
+361
+00:06:13,199 --> 00:06:15,350
+build the skill around that. I'll ask
+that question and send it to Notebook LM
+
+362
+00:06:15,350 --> 00:06:15,360
+that question and send it to Notebook LM
+ 
+
+363
+00:06:15,360 --> 00:06:16,629
+that question and send it to Notebook LM
+and then it's going to go through all
+
+364
+00:06:16,629 --> 00:06:16,639
+and then it's going to go through all
+ 
+
+365
+00:06:16,639 --> 00:06:18,550
+and then it's going to go through all
+that research and give me a summary of
+
+366
+00:06:18,550 --> 00:06:18,560
+that research and give me a summary of
+ 
+
+367
+00:06:18,560 --> 00:06:21,029
+that research and give me a summary of
+how to do that specific skill. So it's
+
+368
+00:06:21,029 --> 00:06:21,039
+how to do that specific skill. So it's
+ 
+
+369
+00:06:21,039 --> 00:06:22,150
+how to do that specific skill. So it's
+going to do that and it's going to send
+
+370
+00:06:22,150 --> 00:06:22,160
+going to do that and it's going to send
+ 
+
+371
+00:06:22,160 --> 00:06:23,990
+going to do that and it's going to send
+us an answer. So you can see that we
+
+372
+00:06:23,990 --> 00:06:24,000
+us an answer. So you can see that we
+ 
+
+373
+00:06:24,000 --> 00:06:25,749
+us an answer. So you can see that we
+have an answer over here basically
+
+374
+00:06:25,749 --> 00:06:25,759
+have an answer over here basically
+ 
+
+375
+00:06:25,759 --> 00:06:27,270
+have an answer over here basically
+telling us that how to research
+
+376
+00:06:27,270 --> 00:06:27,280
+telling us that how to research
+ 
+
+377
+00:06:27,280 --> 00:06:29,110
+telling us that how to research
+prospects the five-minute habit
+
+378
+00:06:29,110 --> 00:06:29,120
+prospects the five-minute habit
+ 
+
+379
+00:06:29,120 --> 00:06:30,950
+prospects the five-minute habit
+identifying pain points what we need to
+
+380
+00:06:30,950 --> 00:06:30,960
+identifying pain points what we need to
+ 
+
+381
+00:06:30,960 --> 00:06:32,950
+identifying pain points what we need to
+do and how to write targeted outreach.
+
+382
+00:06:32,950 --> 00:06:32,960
+do and how to write targeted outreach.
+ 
+
+383
+00:06:32,960 --> 00:06:34,550
+do and how to write targeted outreach.
+So once you're in claude all you got to
+
+384
+00:06:34,550 --> 00:06:34,560
+So once you're in claude all you got to
+ 
+
+385
+00:06:34,560 --> 00:06:36,390
+So once you're in claude all you got to
+do is click on this sidebar click on
+
+386
+00:06:36,390 --> 00:06:36,400
+do is click on this sidebar click on
+ 
+
+387
+00:06:36,400 --> 00:06:38,230
+do is click on this sidebar click on
+that and then click on customize and
+
+388
+00:06:38,230 --> 00:06:38,240
+that and then click on customize and
+ 
+
+389
+00:06:38,240 --> 00:06:40,390
+that and then click on customize and
+then go to your skills and then click on
+
+390
+00:06:40,390 --> 00:06:40,400
+then go to your skills and then click on
+ 
+
+391
+00:06:40,400 --> 00:06:42,390
+then go to your skills and then click on
+creating one over here. You can do
+
+392
+00:06:42,390 --> 00:06:42,400
+creating one over here. You can do
+ 
+
+393
+00:06:42,400 --> 00:06:43,749
+creating one over here. You can do
+create with claude or you can write
+
+394
+00:06:43,749 --> 00:06:43,759
+create with claude or you can write
+ 
+
+395
+00:06:43,759 --> 00:06:46,070
+create with claude or you can write
+skill instructions. For first timers try
+
+396
+00:06:46,070 --> 00:06:46,080
+skill instructions. For first timers try
+ 
+
+397
+00:06:46,080 --> 00:06:47,510
+skill instructions. For first timers try
+to do create with cloud because it makes
+
+398
+00:06:47,510 --> 00:06:47,520
+to do create with cloud because it makes
+ 
+
+399
+00:06:47,520 --> 00:06:49,510
+to do create with cloud because it makes
+the whole process much easier. So we'll
+
+400
+00:06:49,510 --> 00:06:49,520
+the whole process much easier. So we'll
+ 
+
+401
+00:06:49,520 --> 00:06:50,950
+the whole process much easier. So we'll
+do that. You can see it gives you a
+
+402
+00:06:50,950 --> 00:06:50,960
+do that. You can see it gives you a
+ 
+
+403
+00:06:50,960 --> 00:06:52,629
+do that. You can see it gives you a
+prompt. Let's create a skill together
+
+404
+00:06:52,629 --> 00:06:52,639
+prompt. Let's create a skill together
+ 
+
+405
+00:06:52,639 --> 00:06:54,629
+prompt. Let's create a skill together
+using your skill creator skill. First,
+
+406
+00:06:54,629 --> 00:06:54,639
+using your skill creator skill. First,
+ 
+
+407
+00:06:54,639 --> 00:06:56,710
+using your skill creator skill. First,
+ask me what this skill should do. So,
+
+408
+00:06:56,710 --> 00:06:56,720
+ask me what this skill should do. So,
+ 
+
+409
+00:06:56,720 --> 00:06:58,710
+ask me what this skill should do. So,
+instead of us starting from scratch here
+
+410
+00:06:58,710 --> 00:06:58,720
+instead of us starting from scratch here
+ 
+
+411
+00:06:58,720 --> 00:07:00,150
+instead of us starting from scratch here
+where most people would when they're
+
+412
+00:07:00,150 --> 00:07:00,160
+where most people would when they're
+ 
+
+413
+00:07:00,160 --> 00:07:02,230
+where most people would when they're
+actually doing the skills, you now have
+
+414
+00:07:02,230 --> 00:07:02,240
+actually doing the skills, you now have
+ 
+
+415
+00:07:02,240 --> 00:07:04,469
+actually doing the skills, you now have
+research and methodologies that you can
+
+416
+00:07:04,469 --> 00:07:04,479
+research and methodologies that you can
+ 
+
+417
+00:07:04,479 --> 00:07:06,710
+research and methodologies that you can
+take from notebook LM and paste into
+
+418
+00:07:06,710 --> 00:07:06,720
+take from notebook LM and paste into
+ 
+
+419
+00:07:06,720 --> 00:07:08,230
+take from notebook LM and paste into
+cloud instead of you typing from
+
+420
+00:07:08,230 --> 00:07:08,240
+cloud instead of you typing from
+ 
+
+421
+00:07:08,240 --> 00:07:09,909
+cloud instead of you typing from
+scratch. So, we're going to take this
+
+422
+00:07:09,909 --> 00:07:09,919
+scratch. So, we're going to take this
+ 
+
+423
+00:07:09,919 --> 00:07:11,909
+scratch. So, we're going to take this
+and we're going to give it a name. Then,
+
+424
+00:07:11,909 --> 00:07:11,919
+and we're going to give it a name. Then,
+ 
+
+425
+00:07:11,919 --> 00:07:13,029
+and we're going to give it a name. Then,
+I'm going to create a section called
+
+426
+00:07:13,029 --> 00:07:13,039
+I'm going to create a section called
+ 
+
+427
+00:07:13,039 --> 00:07:14,309
+I'm going to create a section called
+processes knowledge. And what I'm going
+
+428
+00:07:14,309 --> 00:07:14,319
+processes knowledge. And what I'm going
+ 
+
+429
+00:07:14,319 --> 00:07:16,390
+processes knowledge. And what I'm going
+to do over here is paste in all the
+
+430
+00:07:16,390 --> 00:07:16,400
+to do over here is paste in all the
+ 
+
+431
+00:07:16,400 --> 00:07:18,469
+to do over here is paste in all the
+information that we got from over there.
+
+432
+00:07:18,469 --> 00:07:18,479
+information that we got from over there.
+ 
+
+433
+00:07:18,479 --> 00:07:20,309
+information that we got from over there.
+Then you might also want to specify how
+
+434
+00:07:20,309 --> 00:07:20,319
+Then you might also want to specify how
+ 
+
+435
+00:07:20,319 --> 00:07:22,390
+Then you might also want to specify how
+you want the output to be for this
+
+436
+00:07:22,390 --> 00:07:22,400
+you want the output to be for this
+ 
+
+437
+00:07:22,400 --> 00:07:23,990
+you want the output to be for this
+purposes. Obviously, I'm going to use
+
+438
+00:07:23,990 --> 00:07:24,000
+purposes. Obviously, I'm going to use
+ 
+
+439
+00:07:24,000 --> 00:07:26,309
+purposes. Obviously, I'm going to use
+this in multiple formats. But I can just
+
+440
+00:07:26,309 --> 00:07:26,319
+this in multiple formats. But I can just
+ 
+
+441
+00:07:26,319 --> 00:07:28,070
+this in multiple formats. But I can just
+tell it that in the output use the
+
+442
+00:07:28,070 --> 00:07:28,080
+tell it that in the output use the
+ 
+
+443
+00:07:28,080 --> 00:07:29,510
+tell it that in the output use the
+knowledge base that we have given it
+
+444
+00:07:29,510 --> 00:07:29,520
+knowledge base that we have given it
+ 
+
+445
+00:07:29,520 --> 00:07:31,430
+knowledge base that we have given it
+over here to help generate work that
+
+446
+00:07:31,430 --> 00:07:31,440
+over here to help generate work that
+ 
+
+447
+00:07:31,440 --> 00:07:33,350
+over here to help generate work that
+aligns with the research. We want to do
+
+448
+00:07:33,350 --> 00:07:33,360
+aligns with the research. We want to do
+ 
+
+449
+00:07:33,360 --> 00:07:34,790
+aligns with the research. We want to do
+that. Let's say if you're kind of
+
+450
+00:07:34,790 --> 00:07:34,800
+that. Let's say if you're kind of
+ 
+
+451
+00:07:34,800 --> 00:07:36,710
+that. Let's say if you're kind of
+creating a skill for a specific writing
+
+452
+00:07:36,710 --> 00:07:36,720
+creating a skill for a specific writing
+ 
+
+453
+00:07:36,720 --> 00:07:38,469
+creating a skill for a specific writing
+style, you could do some deep research
+
+454
+00:07:38,469 --> 00:07:38,479
+style, you could do some deep research
+ 
+
+455
+00:07:38,479 --> 00:07:40,710
+style, you could do some deep research
+on that writing style. Bring that in and
+
+456
+00:07:40,710 --> 00:07:40,720
+on that writing style. Bring that in and
+ 
+
+457
+00:07:40,720 --> 00:07:42,390
+on that writing style. Bring that in and
+tell it the same thing and it'll align
+
+458
+00:07:42,390 --> 00:07:42,400
+tell it the same thing and it'll align
+ 
+
+459
+00:07:42,400 --> 00:07:44,150
+tell it the same thing and it'll align
+your output to that. Or if you're trying
+
+460
+00:07:44,150 --> 00:07:44,160
+your output to that. Or if you're trying
+ 
+
+461
+00:07:44,160 --> 00:07:45,990
+your output to that. Or if you're trying
+to create an AI consultant, you can
+
+462
+00:07:45,990 --> 00:07:46,000
+to create an AI consultant, you can
+ 
+
+463
+00:07:46,000 --> 00:07:47,430
+to create an AI consultant, you can
+study all these frameworks and you can
+
+464
+00:07:47,430 --> 00:07:47,440
+study all these frameworks and you can
+ 
+
+465
+00:07:47,440 --> 00:07:49,110
+study all these frameworks and you can
+tell it to give you an output, specify
+
+466
+00:07:49,110 --> 00:07:49,120
+tell it to give you an output, specify
+ 
+
+467
+00:07:49,120 --> 00:07:50,870
+tell it to give you an output, specify
+the output like implementation plan,
+
+468
+00:07:50,870 --> 00:07:50,880
+the output like implementation plan,
+ 
+
+469
+00:07:50,880 --> 00:07:52,790
+the output like implementation plan,
+strategic takeaways, things like that.
+
+470
+00:07:52,790 --> 00:07:52,800
+strategic takeaways, things like that.
+ 
+
+471
+00:07:52,800 --> 00:07:54,629
+strategic takeaways, things like that.
+This is very customizable. So you can
+
+472
+00:07:54,629 --> 00:07:54,639
+This is very customizable. So you can
+ 
+
+473
+00:07:54,639 --> 00:07:55,830
+This is very customizable. So you can
+play around with this and you can
+
+474
+00:07:55,830 --> 00:07:55,840
+play around with this and you can
+ 
+
+475
+00:07:55,840 --> 00:07:57,430
+play around with this and you can
+duplicate your skills and change your
+
+476
+00:07:57,430 --> 00:07:57,440
+duplicate your skills and change your
+ 
+
+477
+00:07:57,440 --> 00:07:59,189
+duplicate your skills and change your
+output format. Or you don't have to
+
+478
+00:07:59,189 --> 00:07:59,199
+output format. Or you don't have to
+ 
+
+479
+00:07:59,199 --> 00:08:00,950
+output format. Or you don't have to
+specify how you want the output and can
+
+480
+00:08:00,950 --> 00:08:00,960
+specify how you want the output and can
+ 
+
+481
+00:08:00,960 --> 00:08:03,350
+specify how you want the output and can
+let Claude decide for yourself. But as I
+
+482
+00:08:03,350 --> 00:08:03,360
+let Claude decide for yourself. But as I
+ 
+
+483
+00:08:03,360 --> 00:08:05,110
+let Claude decide for yourself. But as I
+said, it's going to be dependent on the
+
+484
+00:08:05,110 --> 00:08:05,120
+said, it's going to be dependent on the
+ 
+
+485
+00:08:05,120 --> 00:08:06,390
+said, it's going to be dependent on the
+skill you're trying to create and the
+
+486
+00:08:06,390 --> 00:08:06,400
+skill you're trying to create and the
+ 
+
+487
+00:08:06,400 --> 00:08:07,909
+skill you're trying to create and the
+specific domain knowledge you're trying
+
+488
+00:08:07,909 --> 00:08:07,919
+specific domain knowledge you're trying
+ 
+
+489
+00:08:07,919 --> 00:08:09,830
+specific domain knowledge you're trying
+to understand as well. Right? So we'll
+
+490
+00:08:09,830 --> 00:08:09,840
+to understand as well. Right? So we'll
+ 
+
+491
+00:08:09,840 --> 00:08:11,589
+to understand as well. Right? So we'll
+do that. So I'm going to press enter.
+
+492
+00:08:11,589 --> 00:08:11,599
+do that. So I'm going to press enter.
+ 
+
+493
+00:08:11,599 --> 00:08:13,350
+do that. So I'm going to press enter.
+And what Claude going to do is going to
+
+494
+00:08:13,350 --> 00:08:13,360
+And what Claude going to do is going to
+ 
+
+495
+00:08:13,360 --> 00:08:15,189
+And what Claude going to do is going to
+use that skill creator that you can see
+
+496
+00:08:15,189 --> 00:08:15,199
+use that skill creator that you can see
+ 
+
+497
+00:08:15,199 --> 00:08:16,869
+use that skill creator that you can see
+over here that skill that it has. So
+
+498
+00:08:16,869 --> 00:08:16,879
+over here that skill that it has. So
+ 
+
+499
+00:08:16,879 --> 00:08:18,550
+over here that skill that it has. So
+right now we are in a skill seion.
+
+500
+00:08:18,550 --> 00:08:18,560
+right now we are in a skill seion.
+ 
+
+501
+00:08:18,560 --> 00:08:20,550
+right now we are in a skill seion.
+Basically it's using a skill file to
+
+502
+00:08:20,550 --> 00:08:20,560
+Basically it's using a skill file to
+ 
+
+503
+00:08:20,560 --> 00:08:23,029
+Basically it's using a skill file to
+create another skill file and then it's
+
+504
+00:08:23,029 --> 00:08:23,039
+create another skill file and then it's
+ 
+
+505
+00:08:23,039 --> 00:08:24,629
+create another skill file and then it's
+going to create that new skill which is
+
+506
+00:08:24,629 --> 00:08:24,639
+going to create that new skill which is
+ 
+
+507
+00:08:24,639 --> 00:08:26,309
+going to create that new skill which is
+going to be called outreach skill. You
+
+508
+00:08:26,309 --> 00:08:26,319
+going to be called outreach skill. You
+ 
+
+509
+00:08:26,319 --> 00:08:27,990
+going to be called outreach skill. You
+can see that it read that skill file but
+
+510
+00:08:27,990 --> 00:08:28,000
+can see that it read that skill file but
+ 
+
+511
+00:08:28,000 --> 00:08:29,589
+can see that it read that skill file but
+it's also asking some clarification
+
+512
+00:08:29,589 --> 00:08:29,599
+it's also asking some clarification
+ 
+
+513
+00:08:29,599 --> 00:08:31,350
+it's also asking some clarification
+question which is why sometimes building
+
+514
+00:08:31,350 --> 00:08:31,360
+question which is why sometimes building
+ 
+
+515
+00:08:31,360 --> 00:08:33,430
+question which is why sometimes building
+skills with claude is much easier
+
+516
+00:08:33,430 --> 00:08:33,440
+skills with claude is much easier
+ 
+
+517
+00:08:33,440 --> 00:08:34,709
+skills with claude is much easier
+because you know you might have missed
+
+518
+00:08:34,709 --> 00:08:34,719
+because you know you might have missed
+ 
+
+519
+00:08:34,719 --> 00:08:36,230
+because you know you might have missed
+something in your head that Claude kind
+
+520
+00:08:36,230 --> 00:08:36,240
+something in your head that Claude kind
+ 
+
+521
+00:08:36,240 --> 00:08:38,310
+something in your head that Claude kind
+of flags. For example, it's asking three
+
+522
+00:08:38,310 --> 00:08:38,320
+of flags. For example, it's asking three
+ 
+
+523
+00:08:38,320 --> 00:08:39,990
+of flags. For example, it's asking three
+questions. Which output types, cold
+
+524
+00:08:39,990 --> 00:08:40,000
+questions. Which output types, cold
+ 
+
+525
+00:08:40,000 --> 00:08:41,750
+questions. Which output types, cold
+email, LinkedIn, phone scripts, or full
+
+526
+00:08:41,750 --> 00:08:41,760
+email, LinkedIn, phone scripts, or full
+ 
+
+527
+00:08:41,760 --> 00:08:43,589
+email, LinkedIn, phone scripts, or full
+multi- channelannel? What inputs Claude
+
+528
+00:08:43,589 --> 00:08:43,599
+multi- channelannel? What inputs Claude
+ 
+
+529
+00:08:43,599 --> 00:08:45,509
+multi- channelannel? What inputs Claude
+should expect? How opinionated on
+
+530
+00:08:45,509 --> 00:08:45,519
+should expect? How opinionated on
+ 
+
+531
+00:08:45,519 --> 00:08:47,190
+should expect? How opinionated on
+structure? Very rigid, flexible, or
+
+532
+00:08:47,190 --> 00:08:47,200
+structure? Very rigid, flexible, or
+ 
+
+533
+00:08:47,200 --> 00:08:48,790
+structure? Very rigid, flexible, or
+loose. For our purposes, I'm going to
+
+534
+00:08:48,790 --> 00:08:48,800
+loose. For our purposes, I'm going to
+ 
+
+535
+00:08:48,800 --> 00:08:49,990
+loose. For our purposes, I'm going to
+select the full multi- channelannel
+
+536
+00:08:49,990 --> 00:08:50,000
+select the full multi- channelannel
+ 
+
+537
+00:08:50,000 --> 00:08:51,750
+select the full multi- channelannel
+sequence, which makes sense. Start off
+
+538
+00:08:51,750 --> 00:08:51,760
+sequence, which makes sense. Start off
+ 
+
+539
+00:08:51,760 --> 00:08:53,190
+sequence, which makes sense. Start off
+with email, then go to LinkedIn, and
+
+540
+00:08:53,190 --> 00:08:53,200
+with email, then go to LinkedIn, and
+ 
+
+541
+00:08:53,200 --> 00:08:55,670
+with email, then go to LinkedIn, and
+then phone. So, let's do that. And then
+
+542
+00:08:55,670 --> 00:08:55,680
+then phone. So, let's do that. And then
+ 
+
+543
+00:08:55,680 --> 00:08:57,190
+then phone. So, let's do that. And then
+the second question is, what should
+
+544
+00:08:57,190 --> 00:08:57,200
+the second question is, what should
+ 
+
+545
+00:08:57,200 --> 00:08:59,190
+the second question is, what should
+Claude need as input to use his skill?
+
+546
+00:08:59,190 --> 00:08:59,200
+Claude need as input to use his skill?
+ 
+
+547
+00:08:59,200 --> 00:09:01,110
+Claude need as input to use his skill?
+Prospect name from company, signals,
+
+548
+00:09:01,110 --> 00:09:01,120
+Prospect name from company, signals,
+ 
+
+549
+00:09:01,120 --> 00:09:02,710
+Prospect name from company, signals,
+triggers, your product, service,
+
+550
+00:09:02,710 --> 00:09:02,720
+triggers, your product, service,
+ 
+
+551
+00:09:02,720 --> 00:09:05,750
+triggers, your product, service,
+context, a target person, or ICP. Let's
+
+552
+00:09:05,750 --> 00:09:05,760
+context, a target person, or ICP. Let's
+ 
+
+553
+00:09:05,760 --> 00:09:07,829
+context, a target person, or ICP. Let's
+do your product or service context and
+
+554
+00:09:07,829 --> 00:09:07,839
+do your product or service context and
+ 
+
+555
+00:09:07,839 --> 00:09:09,750
+do your product or service context and
+prospect name plus company. So, I got to
+
+556
+00:09:09,750 --> 00:09:09,760
+prospect name plus company. So, I got to
+ 
+
+557
+00:09:09,760 --> 00:09:11,590
+prospect name plus company. So, I got to
+specify what I'm trying to sell and then
+
+558
+00:09:11,590 --> 00:09:11,600
+specify what I'm trying to sell and then
+ 
+
+559
+00:09:11,600 --> 00:09:13,110
+specify what I'm trying to sell and then
+the company and then cloud will do the
+
+560
+00:09:13,110 --> 00:09:13,120
+the company and then cloud will do the
+ 
+
+561
+00:09:13,120 --> 00:09:15,030
+the company and then cloud will do the
+rest. How opinionated should the skill
+
+562
+00:09:15,030 --> 00:09:15,040
+rest. How opinionated should the skill
+ 
+
+563
+00:09:15,040 --> 00:09:17,350
+rest. How opinionated should the skill
+be about structure? Very opinionated.
+
+564
+00:09:17,350 --> 00:09:17,360
+be about structure? Very opinionated.
+ 
+
+565
+00:09:17,360 --> 00:09:18,870
+be about structure? Very opinionated.
+Always follow the three-part structure.
+
+566
+00:09:18,870 --> 00:09:18,880
+Always follow the three-part structure.
+ 
+
+567
+00:09:18,880 --> 00:09:21,269
+Always follow the three-part structure.
+Context value as flexible. Suggest the
+
+568
+00:09:21,269 --> 00:09:21,279
+Context value as flexible. Suggest the
+ 
+
+569
+00:09:21,279 --> 00:09:23,350
+Context value as flexible. Suggest the
+framework but let context guided. Just
+
+570
+00:09:23,350 --> 00:09:23,360
+framework but let context guided. Just
+ 
+
+571
+00:09:23,360 --> 00:09:24,870
+framework but let context guided. Just
+apply the knowledge. Don't enforce a
+
+572
+00:09:24,870 --> 00:09:24,880
+apply the knowledge. Don't enforce a
+ 
+
+573
+00:09:24,880 --> 00:09:26,630
+apply the knowledge. Don't enforce a
+rigid template. So, this is really good
+
+574
+00:09:26,630 --> 00:09:26,640
+rigid template. So, this is really good
+ 
+
+575
+00:09:26,640 --> 00:09:28,389
+rigid template. So, this is really good
+because Claude is saying, "Okay, you
+
+576
+00:09:28,389 --> 00:09:28,399
+because Claude is saying, "Okay, you
+ 
+
+577
+00:09:28,399 --> 00:09:30,310
+because Claude is saying, "Okay, you
+provided me with this framework. Do you
+
+578
+00:09:30,310 --> 00:09:30,320
+provided me with this framework. Do you
+ 
+
+579
+00:09:30,320 --> 00:09:31,829
+provided me with this framework. Do you
+want me to stick to it all the time? Do
+
+580
+00:09:31,829 --> 00:09:31,839
+want me to stick to it all the time? Do
+ 
+
+581
+00:09:31,839 --> 00:09:33,590
+want me to stick to it all the time? Do
+you want me to be flexible or just apply
+
+582
+00:09:33,590 --> 00:09:33,600
+you want me to be flexible or just apply
+ 
+
+583
+00:09:33,600 --> 00:09:35,190
+you want me to be flexible or just apply
+the knowledge and don't enforce a rigid
+
+584
+00:09:35,190 --> 00:09:35,200
+the knowledge and don't enforce a rigid
+ 
+
+585
+00:09:35,200 --> 00:09:36,790
+the knowledge and don't enforce a rigid
+template? I'm going to do the middle
+
+586
+00:09:36,790 --> 00:09:36,800
+template? I'm going to do the middle
+ 
+
+587
+00:09:36,800 --> 00:09:38,630
+template? I'm going to do the middle
+ground which is kind of flexible suggest
+
+588
+00:09:38,630 --> 00:09:38,640
+ground which is kind of flexible suggest
+ 
+
+589
+00:09:38,640 --> 00:09:40,790
+ground which is kind of flexible suggest
+the framework but let me decide what I
+
+590
+00:09:40,790 --> 00:09:40,800
+the framework but let me decide what I
+ 
+
+591
+00:09:40,800 --> 00:09:42,389
+the framework but let me decide what I
+want. So now it's going to build that
+
+592
+00:09:42,389 --> 00:09:42,399
+want. So now it's going to build that
+ 
+
+593
+00:09:42,399 --> 00:09:44,070
+want. So now it's going to build that
+skill based off those clarification
+
+594
+00:09:44,070 --> 00:09:44,080
+skill based off those clarification
+ 
+
+595
+00:09:44,080 --> 00:09:46,070
+skill based off those clarification
+questions. So now what you're seeing is
+
+596
+00:09:46,070 --> 00:09:46,080
+questions. So now what you're seeing is
+ 
+
+597
+00:09:46,080 --> 00:09:48,470
+questions. So now what you're seeing is
+our whole skill packaged over here. We
+
+598
+00:09:48,470 --> 00:09:48,480
+our whole skill packaged over here. We
+ 
+
+599
+00:09:48,480 --> 00:09:50,470
+our whole skill packaged over here. We
+can see apply the skill whenever the
+
+600
+00:09:50,470 --> 00:09:50,480
+can see apply the skill whenever the
+ 
+
+601
+00:09:50,480 --> 00:09:52,470
+can see apply the skill whenever the
+user wants to write cold outreach, sales
+
+602
+00:09:52,470 --> 00:09:52,480
+user wants to write cold outreach, sales
+ 
+
+603
+00:09:52,480 --> 00:09:55,030
+user wants to write cold outreach, sales
+sequences, prospecting messages. You are
+
+604
+00:09:55,030 --> 00:09:55,040
+sequences, prospecting messages. You are
+ 
+
+605
+00:09:55,040 --> 00:09:57,030
+sequences, prospecting messages. You are
+an expert B2B sales strategist and
+
+606
+00:09:57,030 --> 00:09:57,040
+an expert B2B sales strategist and
+ 
+
+607
+00:09:57,040 --> 00:09:59,430
+an expert B2B sales strategist and
+copywriter. Your job is to help the user
+
+608
+00:09:59,430 --> 00:09:59,440
+copywriter. Your job is to help the user
+ 
+
+609
+00:09:59,440 --> 00:10:01,829
+copywriter. Your job is to help the user
+write outreach that is hyper relevant,
+
+610
+00:10:01,829 --> 00:10:01,839
+write outreach that is hyper relevant,
+ 
+
+611
+00:10:01,839 --> 00:10:03,509
+write outreach that is hyper relevant,
+signal driven, and structured for
+
+612
+00:10:03,509 --> 00:10:03,519
+signal driven, and structured for
+ 
+
+613
+00:10:03,519 --> 00:10:05,350
+signal driven, and structured for
+response, not volume. We already have
+
+614
+00:10:05,350 --> 00:10:05,360
+response, not volume. We already have
+ 
+
+615
+00:10:05,360 --> 00:10:07,350
+response, not volume. We already have
+this AI agent or AI skill that's going
+
+616
+00:10:07,350 --> 00:10:07,360
+this AI agent or AI skill that's going
+ 
+
+617
+00:10:07,360 --> 00:10:09,430
+this AI agent or AI skill that's going
+to help us a lot, save us a lot of time.
+
+618
+00:10:09,430 --> 00:10:09,440
+to help us a lot, save us a lot of time.
+ 
+
+619
+00:10:09,440 --> 00:10:11,509
+to help us a lot, save us a lot of time.
+And it says step one, assess what you
+
+620
+00:10:11,509 --> 00:10:11,519
+And it says step one, assess what you
+ 
+
+621
+00:10:11,519 --> 00:10:13,829
+And it says step one, assess what you
+have. Input available, prospect name,
+
+622
+00:10:13,829 --> 00:10:13,839
+have. Input available, prospect name,
+ 
+
+623
+00:10:13,839 --> 00:10:16,630
+have. Input available, prospect name,
+everything like that, action, skip, ask.
+
+624
+00:10:16,630 --> 00:10:16,640
+everything like that, action, skip, ask.
+ 
+
+625
+00:10:16,640 --> 00:10:18,710
+everything like that, action, skip, ask.
+So depending on what I give it, it also
+
+626
+00:10:18,710 --> 00:10:18,720
+So depending on what I give it, it also
+ 
+
+627
+00:10:18,720 --> 00:10:20,470
+So depending on what I give it, it also
+figures out what it needs to do. Step
+
+628
+00:10:20,470 --> 00:10:20,480
+figures out what it needs to do. Step
+ 
+
+629
+00:10:20,480 --> 00:10:22,230
+figures out what it needs to do. Step
+two, research mode when needed,
+
+630
+00:10:22,230 --> 00:10:22,240
+two, research mode when needed,
+ 
+
+631
+00:10:22,240 --> 00:10:23,990
+two, research mode when needed,
+leadership changes, funding round,
+
+632
+00:10:23,990 --> 00:10:24,000
+leadership changes, funding round,
+ 
+
+633
+00:10:24,000 --> 00:10:25,590
+leadership changes, funding round,
+strategic language, job posting,
+
+634
+00:10:25,590 --> 00:10:25,600
+strategic language, job posting,
+ 
+
+635
+00:10:25,600 --> 00:10:27,269
+strategic language, job posting,
+competitive moves depending on the
+
+636
+00:10:27,269 --> 00:10:27,279
+competitive moves depending on the
+ 
+
+637
+00:10:27,279 --> 00:10:29,990
+competitive moves depending on the
+situation, signal density rule, painoint
+
+638
+00:10:29,990 --> 00:10:30,000
+situation, signal density rule, painoint
+ 
+
+639
+00:10:30,000 --> 00:10:31,590
+situation, signal density rule, painoint
+deduction. So determine what the pain
+
+640
+00:10:31,590 --> 00:10:31,600
+deduction. So determine what the pain
+ 
+
+641
+00:10:31,600 --> 00:10:34,389
+deduction. So determine what the pain
+point is. I'll put right then this part
+
+642
+00:10:34,389 --> 00:10:34,399
+point is. I'll put right then this part
+ 
+
+643
+00:10:34,399 --> 00:10:36,069
+point is. I'll put right then this part
+is probably more relevant to us which is
+
+644
+00:10:36,069 --> 00:10:36,079
+is probably more relevant to us which is
+ 
+
+645
+00:10:36,079 --> 00:10:38,150
+is probably more relevant to us which is
+outreach writing core principles under
+
+646
+00:10:38,150 --> 00:10:38,160
+outreach writing core principles under
+ 
+
+647
+00:10:38,160 --> 00:10:40,870
+outreach writing core principles under
+125 words signal first opening outcome
+
+648
+00:10:40,870 --> 00:10:40,880
+125 words signal first opening outcome
+ 
+
+649
+00:10:40,880 --> 00:10:43,990
+125 words signal first opening outcome
+over features one ask only no buzzword
+
+650
+00:10:43,990 --> 00:10:44,000
+over features one ask only no buzzword
+ 
+
+651
+00:10:44,000 --> 00:10:46,230
+over features one ask only no buzzword
+and three-part structure context value
+
+652
+00:10:46,230 --> 00:10:46,240
+and three-part structure context value
+ 
+
+653
+00:10:46,240 --> 00:10:47,750
+and three-part structure context value
+as so it has all that framework that we
+
+654
+00:10:47,750 --> 00:10:47,760
+as so it has all that framework that we
+ 
+
+655
+00:10:47,760 --> 00:10:49,509
+as so it has all that framework that we
+applied from notebook LM and then you
+
+656
+00:10:49,509 --> 00:10:49,519
+applied from notebook LM and then you
+ 
+
+657
+00:10:49,519 --> 00:10:51,590
+applied from notebook LM and then you
+can build that sequence we can see day
+
+658
+00:10:51,590 --> 00:10:51,600
+can build that sequence we can see day
+ 
+
+659
+00:10:51,600 --> 00:10:54,710
+can build that sequence we can see day
+one channel day one LinkedIn day two
+
+660
+00:10:54,710 --> 00:10:54,720
+one channel day one LinkedIn day two
+ 
+
+661
+00:10:54,720 --> 00:10:56,790
+one channel day one LinkedIn day two
+email day four phone call day seven
+
+662
+00:10:56,790 --> 00:10:56,800
+email day four phone call day seven
+ 
+
+663
+00:10:56,800 --> 00:10:58,630
+email day four phone call day seven
+LinkedIn. So we have that you know
+
+664
+00:10:58,630 --> 00:10:58,640
+LinkedIn. So we have that you know
+ 
+
+665
+00:10:58,640 --> 00:11:00,230
+LinkedIn. So we have that you know
+length and everything like that. So, it
+
+666
+00:11:00,230 --> 00:11:00,240
+length and everything like that. So, it
+ 
+
+667
+00:11:00,240 --> 00:11:01,750
+length and everything like that. So, it
+has this sequence already built in for
+
+668
+00:11:01,750 --> 00:11:01,760
+has this sequence already built in for
+ 
+
+669
+00:11:01,760 --> 00:11:03,829
+has this sequence already built in for
+us. So, we can save a bunch of time and
+
+670
+00:11:03,829 --> 00:11:03,839
+us. So, we can save a bunch of time and
+ 
+
+671
+00:11:03,839 --> 00:11:05,269
+us. So, we can save a bunch of time and
+we have subject lines and everything
+
+672
+00:11:05,269 --> 00:11:05,279
+we have subject lines and everything
+ 
+
+673
+00:11:05,279 --> 00:11:06,870
+we have subject lines and everything
+like that. But you can see we now have
+
+674
+00:11:06,870 --> 00:11:06,880
+like that. But you can see we now have
+ 
+
+675
+00:11:06,880 --> 00:11:08,710
+like that. But you can see we now have
+access to this skill and we can just
+
+676
+00:11:08,710 --> 00:11:08,720
+access to this skill and we can just
+ 
+
+677
+00:11:08,720 --> 00:11:10,470
+access to this skill and we can just
+copy this to our skills and it's going
+
+678
+00:11:10,470 --> 00:11:10,480
+copy this to our skills and it's going
+ 
+
+679
+00:11:10,480 --> 00:11:12,310
+copy this to our skills and it's going
+to be available for us to deploy
+
+680
+00:11:12,310 --> 00:11:12,320
+to be available for us to deploy
+ 
+
+681
+00:11:12,320 --> 00:11:14,550
+to be available for us to deploy
+whenever we want. So, now what I'm going
+
+682
+00:11:14,550 --> 00:11:14,560
+whenever we want. So, now what I'm going
+ 
+
+683
+00:11:14,560 --> 00:11:16,949
+whenever we want. So, now what I'm going
+to do is actually put my skill to test.
+
+684
+00:11:16,949 --> 00:11:16,959
+to do is actually put my skill to test.
+ 
+
+685
+00:11:16,959 --> 00:11:18,870
+to do is actually put my skill to test.
+So, I've taken this snack company, a
+
+686
+00:11:18,870 --> 00:11:18,880
+So, I've taken this snack company, a
+ 
+
+687
+00:11:18,880 --> 00:11:20,870
+So, I've taken this snack company, a
+snack company that I love. Uh, this is
+
+688
+00:11:20,870 --> 00:11:20,880
+snack company that I love. Uh, this is
+ 
+
+689
+00:11:20,880 --> 00:11:23,030
+snack company that I love. Uh, this is
+like their product. They sell lotus
+
+690
+00:11:23,030 --> 00:11:23,040
+like their product. They sell lotus
+ 
+
+691
+00:11:23,040 --> 00:11:24,790
+like their product. They sell lotus
+seeds. So, they have all these flavors.
+
+692
+00:11:24,790 --> 00:11:24,800
+seeds. So, they have all these flavors.
+ 
+
+693
+00:11:24,800 --> 00:11:26,949
+seeds. So, they have all these flavors.
+And what I've done is I've created a
+
+694
+00:11:26,949 --> 00:11:26,959
+And what I've done is I've created a
+ 
+
+695
+00:11:26,959 --> 00:11:29,269
+And what I've done is I've created a
+simple hypothetical situation which is
+
+696
+00:11:29,269 --> 00:11:29,279
+simple hypothetical situation which is
+ 
+
+697
+00:11:29,279 --> 00:11:30,949
+simple hypothetical situation which is
+to build a cold email sequence for
+
+698
+00:11:30,949 --> 00:11:30,959
+to build a cold email sequence for
+ 
+
+699
+00:11:30,959 --> 00:11:33,269
+to build a cold email sequence for
+Airbloom uh a snack company struggling
+
+700
+00:11:33,269 --> 00:11:33,279
+Airbloom uh a snack company struggling
+ 
+
+701
+00:11:33,279 --> 00:11:35,350
+Airbloom uh a snack company struggling
+with order delivery and logistics. Then
+
+702
+00:11:35,350 --> 00:11:35,360
+with order delivery and logistics. Then
+ 
+
+703
+00:11:35,360 --> 00:11:36,710
+with order delivery and logistics. Then
+I'm also going to ask it to try to
+
+704
+00:11:36,710 --> 00:11:36,720
+I'm also going to ask it to try to
+ 
+
+705
+00:11:36,720 --> 00:11:38,470
+I'm also going to ask it to try to
+determine other pain points that they
+
+706
+00:11:38,470 --> 00:11:38,480
+determine other pain points that they
+ 
+
+707
+00:11:38,480 --> 00:11:40,310
+determine other pain points that they
+might have. So this is all hypothetical
+
+708
+00:11:40,310 --> 00:11:40,320
+might have. So this is all hypothetical
+ 
+
+709
+00:11:40,320 --> 00:11:42,230
+might have. So this is all hypothetical
+and I've given it a link and all I have
+
+710
+00:11:42,230 --> 00:11:42,240
+and I've given it a link and all I have
+ 
+
+711
+00:11:42,240 --> 00:11:44,310
+and I've given it a link and all I have
+to do is now if I just press this I have
+
+712
+00:11:44,310 --> 00:11:44,320
+to do is now if I just press this I have
+ 
+
+713
+00:11:44,320 --> 00:11:45,990
+to do is now if I just press this I have
+access to all my skills and then I can
+
+714
+00:11:45,990 --> 00:11:46,000
+access to all my skills and then I can
+ 
+
+715
+00:11:46,000 --> 00:11:48,230
+access to all my skills and then I can
+go to over here and then you have skill
+
+716
+00:11:48,230 --> 00:11:48,240
+go to over here and then you have skill
+ 
+
+717
+00:11:48,240 --> 00:11:50,069
+go to over here and then you have skill
+but we also have the outreach one. So
+
+718
+00:11:50,069 --> 00:11:50,079
+but we also have the outreach one. So
+ 
+
+719
+00:11:50,079 --> 00:11:51,269
+but we also have the outreach one. So
+we'll click on the one that we just
+
+720
+00:11:51,269 --> 00:11:51,279
+we'll click on the one that we just
+ 
+
+721
+00:11:51,279 --> 00:11:53,350
+we'll click on the one that we just
+created and we'll do that and then I'll
+
+722
+00:11:53,350 --> 00:11:53,360
+created and we'll do that and then I'll
+ 
+
+723
+00:11:53,360 --> 00:11:55,509
+created and we'll do that and then I'll
+just press enter. So right now what it's
+
+724
+00:11:55,509 --> 00:11:55,519
+just press enter. So right now what it's
+ 
+
+725
+00:11:55,519 --> 00:11:57,269
+just press enter. So right now what it's
+doing is actually reading the outreach
+
+726
+00:11:57,269 --> 00:11:57,279
+doing is actually reading the outreach
+ 
+
+727
+00:11:57,279 --> 00:11:59,030
+doing is actually reading the outreach
+skill. So now you don't have to repeat
+
+728
+00:11:59,030 --> 00:11:59,040
+skill. So now you don't have to repeat
+ 
+
+729
+00:11:59,040 --> 00:12:00,790
+skill. So now you don't have to repeat
+yourself multiple times or paste in
+
+730
+00:12:00,790 --> 00:12:00,800
+yourself multiple times or paste in
+ 
+
+731
+00:12:00,800 --> 00:12:02,470
+yourself multiple times or paste in
+frameworks all over again. You have
+
+732
+00:12:02,470 --> 00:12:02,480
+frameworks all over again. You have
+ 
+
+733
+00:12:02,480 --> 00:12:04,550
+frameworks all over again. You have
+access to this whenever. So now it's
+
+734
+00:12:04,550 --> 00:12:04,560
+access to this whenever. So now it's
+ 
+
+735
+00:12:04,560 --> 00:12:06,710
+access to this whenever. So now it's
+doing that and just based off of that it
+
+736
+00:12:06,710 --> 00:12:06,720
+doing that and just based off of that it
+ 
+
+737
+00:12:06,720 --> 00:12:08,389
+doing that and just based off of that it
+read the skill and it's given me
+
+738
+00:12:08,389 --> 00:12:08,399
+read the skill and it's given me
+ 
+
+739
+00:12:08,399 --> 00:12:10,230
+read the skill and it's given me
+everything I need. For example, we have
+
+740
+00:12:10,230 --> 00:12:10,240
+everything I need. For example, we have
+ 
+
+741
+00:12:10,240 --> 00:12:12,150
+everything I need. For example, we have
+these pain hypotheses which are like
+
+742
+00:12:12,150 --> 00:12:12,160
+these pain hypotheses which are like
+ 
+
+743
+00:12:12,160 --> 00:12:14,389
+these pain hypotheses which are like
+order fulfillment gaps, maybe fragile
+
+744
+00:12:14,389 --> 00:12:14,399
+order fulfillment gaps, maybe fragile
+ 
+
+745
+00:12:14,399 --> 00:12:15,990
+order fulfillment gaps, maybe fragile
+product in transit, cold change or
+
+746
+00:12:15,990 --> 00:12:16,000
+product in transit, cold change or
+ 
+
+747
+00:12:16,000 --> 00:12:17,590
+product in transit, cold change or
+seasonal demand spikes, returns or
+
+748
+00:12:17,590 --> 00:12:17,600
+seasonal demand spikes, returns or
+ 
+
+749
+00:12:17,600 --> 00:12:19,829
+seasonal demand spikes, returns or
+refund ops, everything like that. And
+
+750
+00:12:19,829 --> 00:12:19,839
+refund ops, everything like that. And
+ 
+
+751
+00:12:19,839 --> 00:12:22,710
+refund ops, everything like that. And
+then what I have over here is couple of
+
+752
+00:12:22,710 --> 00:12:22,720
+then what I have over here is couple of
+ 
+
+753
+00:12:22,720 --> 00:12:24,150
+then what I have over here is couple of
+emails that I can send to them. For
+
+754
+00:12:24,150 --> 00:12:24,160
+emails that I can send to them. For
+ 
+
+755
+00:12:24,160 --> 00:12:26,629
+emails that I can send to them. For
+example, a 14-day sequence. So 14 days
+
+756
+00:12:26,629 --> 00:12:26,639
+example, a 14-day sequence. So 14 days
+ 
+
+757
+00:12:26,639 --> 00:12:28,550
+example, a 14-day sequence. So 14 days
+worth of work is done now because of the
+
+758
+00:12:28,550 --> 00:12:28,560
+worth of work is done now because of the
+ 
+
+759
+00:12:28,560 --> 00:12:30,310
+worth of work is done now because of the
+skill I have built. Number one, day one,
+
+760
+00:12:30,310 --> 00:12:30,320
+skill I have built. Number one, day one,
+ 
+
+761
+00:12:30,320 --> 00:12:32,629
+skill I have built. Number one, day one,
+LinkedIn, what to say, what to do. Then
+
+762
+00:12:32,629 --> 00:12:32,639
+LinkedIn, what to say, what to do. Then
+ 
+
+763
+00:12:32,639 --> 00:12:34,870
+LinkedIn, what to say, what to do. Then
+an email chain. Then if I want to cold
+
+764
+00:12:34,870 --> 00:12:34,880
+an email chain. Then if I want to cold
+ 
+
+765
+00:12:34,880 --> 00:12:37,110
+an email chain. Then if I want to cold
+call them, what I can do is call them
+
+766
+00:12:37,110 --> 00:12:37,120
+call them, what I can do is call them
+ 
+
+767
+00:12:37,120 --> 00:12:39,110
+call them, what I can do is call them
+over here. Everything like that. Then I
+
+768
+00:12:39,110 --> 00:12:39,120
+over here. Everything like that. Then I
+ 
+
+769
+00:12:39,120 --> 00:12:40,949
+over here. Everything like that. Then I
+have another LinkedIn touch, another
+
+770
+00:12:40,949 --> 00:12:40,959
+have another LinkedIn touch, another
+ 
+
+771
+00:12:40,959 --> 00:12:42,629
+have another LinkedIn touch, another
+email point touch up with them and
+
+772
+00:12:42,629 --> 00:12:42,639
+email point touch up with them and
+ 
+
+773
+00:12:42,639 --> 00:12:44,230
+email point touch up with them and
+everything like that. So I have 14 days
+
+774
+00:12:44,230 --> 00:12:44,240
+everything like that. So I have 14 days
+ 
+
+775
+00:12:44,240 --> 00:12:45,829
+everything like that. So I have 14 days
+worth of work just laid out for me
+
+776
+00:12:45,829 --> 00:12:45,839
+worth of work just laid out for me
+ 
+
+777
+00:12:45,839 --> 00:12:47,829
+worth of work just laid out for me
+within a couple of seconds. And I also
+
+778
+00:12:47,829 --> 00:12:47,839
+within a couple of seconds. And I also
+ 
+
+779
+00:12:47,839 --> 00:12:50,150
+within a couple of seconds. And I also
+did a couple of personalization notes
+
+780
+00:12:50,150 --> 00:12:50,160
+did a couple of personalization notes
+ 
+
+781
+00:12:50,160 --> 00:12:52,470
+did a couple of personalization notes
+like who to target. So founder CEO is
+
+782
+00:12:52,470 --> 00:12:52,480
+like who to target. So founder CEO is
+ 
+
+783
+00:12:52,480 --> 00:12:54,150
+like who to target. So founder CEO is
+saying that it's likely a small team of
+
+784
+00:12:54,150 --> 00:12:54,160
+saying that it's likely a small team of
+ 
+
+785
+00:12:54,160 --> 00:12:55,829
+saying that it's likely a small team of
+one to three people. And right now it
+
+786
+00:12:55,829 --> 00:12:55,839
+one to three people. And right now it
+ 
+
+787
+00:12:55,839 --> 00:12:57,590
+one to three people. And right now it
+says that this person Dave White
+
+788
+00:12:57,590 --> 00:12:57,600
+says that this person Dave White
+ 
+
+789
+00:12:57,600 --> 00:12:59,190
+says that this person Dave White
+appeared in the searches. So I can use
+
+790
+00:12:59,190 --> 00:12:59,200
+appeared in the searches. So I can use
+ 
+
+791
+00:12:59,200 --> 00:13:01,350
+appeared in the searches. So I can use
+his contact to you know reach out to him
+
+792
+00:13:01,350 --> 00:13:01,360
+his contact to you know reach out to him
+ 
+
+793
+00:13:01,360 --> 00:13:03,350
+his contact to you know reach out to him
+whatever and then everything like that.
+
+794
+00:13:03,350 --> 00:13:03,360
+whatever and then everything like that.
+ 
+
+795
+00:13:03,360 --> 00:13:05,670
+whatever and then everything like that.
+And then also I asked it to do a full
+
+796
+00:13:05,670 --> 00:13:05,680
+And then also I asked it to do a full
+ 
+
+797
+00:13:05,680 --> 00:13:07,350
+And then also I asked it to do a full
+research on it. So this is the summary
+
+798
+00:13:07,350 --> 00:13:07,360
+research on it. So this is the summary
+ 
+
+799
+00:13:07,360 --> 00:13:09,430
+research on it. So this is the summary
+of what the product is and on the bonus
+
+800
+00:13:09,430 --> 00:13:09,440
+of what the product is and on the bonus
+ 
+
+801
+00:13:09,440 --> 00:13:11,030
+of what the product is and on the bonus
+pain points which I asked it to do
+
+802
+00:13:11,030 --> 00:13:11,040
+pain points which I asked it to do
+ 
+
+803
+00:13:11,040 --> 00:13:12,389
+pain points which I asked it to do
+beyond the stated delivery and
+
+804
+00:13:12,389 --> 00:13:12,399
+beyond the stated delivery and
+ 
+
+805
+00:13:12,399 --> 00:13:13,990
+beyond the stated delivery and
+logistical issues there are five other
+
+806
+00:13:13,990 --> 00:13:14,000
+logistical issues there are five other
+ 
+
+807
+00:13:14,000 --> 00:13:15,990
+logistical issues there are five other
+areas I found as well. So all of this
+
+808
+00:13:15,990 --> 00:13:16,000
+areas I found as well. So all of this
+ 
+
+809
+00:13:16,000 --> 00:13:17,750
+areas I found as well. So all of this
+work was done for me within couple of
+
+810
+00:13:17,750 --> 00:13:17,760
+work was done for me within couple of
+ 
+
+811
+00:13:17,760 --> 00:13:20,150
+work was done for me within couple of
+seconds and I have not only one day's
+
+812
+00:13:20,150 --> 00:13:20,160
+seconds and I have not only one day's
+ 
+
+813
+00:13:20,160 --> 00:13:22,069
+seconds and I have not only one day's
+worth of work done but 14 days worth of
+
+814
+00:13:22,069 --> 00:13:22,079
+worth of work done but 14 days worth of
+ 
+
+815
+00:13:22,079 --> 00:13:24,389
+worth of work done but 14 days worth of
+cold emails or messages set up and this
+
+816
+00:13:24,389 --> 00:13:24,399
+cold emails or messages set up and this
+ 
+
+817
+00:13:24,399 --> 00:13:26,470
+cold emails or messages set up and this
+was just in the chat feature. If you
+
+818
+00:13:26,470 --> 00:13:26,480
+was just in the chat feature. If you
+ 
+
+819
+00:13:26,480 --> 00:13:28,310
+was just in the chat feature. If you
+were to use the co-work feature in cloud
+
+820
+00:13:28,310 --> 00:13:28,320
+were to use the co-work feature in cloud
+ 
+
+821
+00:13:28,320 --> 00:13:29,990
+were to use the co-work feature in cloud
+as well you could do that. You could
+
+822
+00:13:29,990 --> 00:13:30,000
+as well you could do that. You could
+ 
+
+823
+00:13:30,000 --> 00:13:31,829
+as well you could do that. You could
+also use it in the code feature because
+
+824
+00:13:31,829 --> 00:13:31,839
+also use it in the code feature because
+ 
+
+825
+00:13:31,839 --> 00:13:33,509
+also use it in the code feature because
+you have access to this skill wherever
+
+826
+00:13:33,509 --> 00:13:33,519
+you have access to this skill wherever
+ 
+
+827
+00:13:33,519 --> 00:13:35,190
+you have access to this skill wherever
+in co-work hypothetically for example
+
+828
+00:13:35,190 --> 00:13:35,200
+in co-work hypothetically for example
+ 
+
+829
+00:13:35,200 --> 00:13:36,870
+in co-work hypothetically for example
+you can access your skills just like you
+
+830
+00:13:36,870 --> 00:13:36,880
+you can access your skills just like you
+ 
+
+831
+00:13:36,880 --> 00:13:38,790
+you can access your skills just like you
+would access everything in uh your
+
+832
+00:13:38,790 --> 00:13:38,800
+would access everything in uh your
+ 
+
+833
+00:13:38,800 --> 00:13:40,870
+would access everything in uh your
+normal chat feature but now you also
+
+834
+00:13:40,870 --> 00:13:40,880
+normal chat feature but now you also
+ 
+
+835
+00:13:40,880 --> 00:13:42,790
+normal chat feature but now you also
+have access to your calendar in co-work
+
+836
+00:13:42,790 --> 00:13:42,800
+have access to your calendar in co-work
+ 
+
+837
+00:13:42,800 --> 00:13:44,550
+have access to your calendar in co-work
+you have access to your actual email for
+
+838
+00:13:44,550 --> 00:13:44,560
+you have access to your actual email for
+ 
+
+839
+00:13:44,560 --> 00:13:46,069
+you have access to your actual email for
+it to send drafts and everything like
+
+840
+00:13:46,069 --> 00:13:46,079
+it to send drafts and everything like
+ 
+
+841
+00:13:46,079 --> 00:13:47,750
+it to send drafts and everything like
+that. You also have access to
+
+842
+00:13:47,750 --> 00:13:47,760
+that. You also have access to
+ 
+
+843
+00:13:47,760 --> 00:13:49,670
+that. You also have access to
+automations and schedule tasks and
+
+844
+00:13:49,670 --> 00:13:49,680
+automations and schedule tasks and
+ 
+
+845
+00:13:49,680 --> 00:13:51,350
+automations and schedule tasks and
+everything like that. So this skill once
+
+846
+00:13:51,350 --> 00:13:51,360
+everything like that. So this skill once
+ 
+
+847
+00:13:51,360 --> 00:13:53,190
+everything like that. So this skill once
+you have built it from notebook LM you
+
+848
+00:13:53,190 --> 00:13:53,200
+you have built it from notebook LM you
+ 
+
+849
+00:13:53,200 --> 00:13:55,350
+you have built it from notebook LM you
+have access to wherever you go in cloud
+
+850
+00:13:55,350 --> 00:13:55,360
+have access to wherever you go in cloud
+ 
+
+851
+00:13:55,360 --> 00:13:57,110
+have access to wherever you go in cloud
+even you can transfer the skill into
+
+852
+00:13:57,110 --> 00:13:57,120
+even you can transfer the skill into
+ 
+
+853
+00:13:57,120 --> 00:14:00,310
+even you can transfer the skill into
+other AI models like chatbt or even a
+
+854
+00:14:00,310 --> 00:14:00,320
+other AI models like chatbt or even a
+ 
+
+855
+00:14:00,320 --> 00:14:02,389
+other AI models like chatbt or even a
+Gemini as well but I personally like
+
+856
+00:14:02,389 --> 00:14:02,399
+Gemini as well but I personally like
+ 
+
+857
+00:14:02,399 --> 00:14:03,990
+Gemini as well but I personally like
+claude because of co-work and everything
+
+858
+00:14:03,990 --> 00:14:04,000
+claude because of co-work and everything
+ 
+
+859
+00:14:04,000 --> 00:14:05,750
+claude because of co-work and everything
+like that. So I've chosen claude today
+
+860
+00:14:05,750 --> 00:14:05,760
+like that. So I've chosen claude today
+ 
+
+861
+00:14:05,760 --> 00:14:07,670
+like that. So I've chosen claude today
+as my demo. So that's pretty much the
+
+862
+00:14:07,670 --> 00:14:07,680
+as my demo. So that's pretty much the
+ 
+
+863
+00:14:07,680 --> 00:14:09,750
+as my demo. So that's pretty much the
+full workflow. You use notebook's deep
+
+864
+00:14:09,750 --> 00:14:09,760
+full workflow. You use notebook's deep
+ 
+
+865
+00:14:09,760 --> 00:14:11,430
+full workflow. You use notebook's deep
+research to pull structured expert
+
+866
+00:14:11,430 --> 00:14:11,440
+research to pull structured expert
+ 
+
+867
+00:14:11,440 --> 00:14:13,509
+research to pull structured expert
+knowledge on any domain you want. Then
+
+868
+00:14:13,509 --> 00:14:13,519
+knowledge on any domain you want. Then
+ 
+
+869
+00:14:13,519 --> 00:14:15,350
+knowledge on any domain you want. Then
+you take that research into Claude and
+
+870
+00:14:15,350 --> 00:14:15,360
+you take that research into Claude and
+ 
+
+871
+00:14:15,360 --> 00:14:17,030
+you take that research into Claude and
+build a scale file that turns that
+
+872
+00:14:17,030 --> 00:14:17,040
+build a scale file that turns that
+ 
+
+873
+00:14:17,040 --> 00:14:19,350
+build a scale file that turns that
+knowledge into repeatable agent behavior
+
+874
+00:14:19,350 --> 00:14:19,360
+knowledge into repeatable agent behavior
+ 
+
+875
+00:14:19,360 --> 00:14:21,030
+knowledge into repeatable agent behavior
+and you end up with Claude that doesn't
+
+876
+00:14:21,030 --> 00:14:21,040
+and you end up with Claude that doesn't
+ 
+
+877
+00:14:21,040 --> 00:14:22,629
+and you end up with Claude that doesn't
+just kind of know your domain. It
+
+878
+00:14:22,629 --> 00:14:22,639
+just kind of know your domain. It
+ 
+
+879
+00:14:22,639 --> 00:14:24,710
+just kind of know your domain. It
+operates from a real knowledge base and
+
+880
+00:14:24,710 --> 00:14:24,720
+operates from a real knowledge base and
+ 
+
+881
+00:14:24,720 --> 00:14:27,110
+operates from a real knowledge base and
+gets better every time you update it.
+
+882
+00:14:27,110 --> 00:14:27,120
+gets better every time you update it.
+ 
+
+883
+00:14:27,120 --> 00:14:28,949
+gets better every time you update it.
+The library of skills you build up over
+
+884
+00:14:28,949 --> 00:14:28,959
+The library of skills you build up over
+ 
+
+885
+00:14:28,959 --> 00:14:30,870
+The library of skills you build up over
+time becomes genuinely valuable. And
+
+886
+00:14:30,870 --> 00:14:30,880
+time becomes genuinely valuable. And
+ 
+
+887
+00:14:30,880 --> 00:14:32,550
+time becomes genuinely valuable. And
+it's the difference between using Claude
+
+888
+00:14:32,550 --> 00:14:32,560
+it's the difference between using Claude
+ 
+
+889
+00:14:32,560 --> 00:14:35,030
+it's the difference between using Claude
+as a generic assistant and using it as a
+
+890
+00:14:35,030 --> 00:14:35,040
+as a generic assistant and using it as a
+ 
+
+891
+00:14:35,040 --> 00:14:37,189
+as a generic assistant and using it as a
+specialized agent that knows your work.
+
+892
+00:14:37,189 --> 00:14:37,199
+specialized agent that knows your work.
+ 
+
+893
+00:14:37,199 --> 00:14:39,030
+specialized agent that knows your work.
+If you want to see me apply this to a
+
+894
+00:14:39,030 --> 00:14:39,040
+If you want to see me apply this to a
+ 
+
+895
+00:14:39,040 --> 00:14:40,870
+If you want to see me apply this to a
+specific domain, drop it in the
+
+896
+00:14:40,870 --> 00:14:40,880
+specific domain, drop it in the
+ 
+
+897
+00:14:40,880 --> 00:14:42,389
+specific domain, drop it in the
+comments. I'll pick a few and maybe I'll
+
+898
+00:14:42,389 --> 00:14:42,399
+comments. I'll pick a few and maybe I'll
+ 
+
+899
+00:14:42,399 --> 00:14:44,069
+comments. I'll pick a few and maybe I'll
+do a dedicated walkthrough for that as
+
+900
+00:14:44,069 --> 00:14:44,079
+do a dedicated walkthrough for that as
+ 
+
+901
+00:14:44,079 --> 00:14:45,829
+do a dedicated walkthrough for that as
+well. But if you found this helpful,
+
+902
+00:14:45,829 --> 00:14:45,839
+well. But if you found this helpful,
+ 
+
+903
+00:14:45,839 --> 00:14:47,269
+well. But if you found this helpful,
+make sure you guys like the video and
+
+904
+00:14:47,269 --> 00:14:47,279
+make sure you guys like the video and
+ 
+
+905
+00:14:47,279 --> 00:14:49,269
+make sure you guys like the video and
+subscribe to the channel. But that's it
+
+906
+00:14:49,269 --> 00:14:49,279
+subscribe to the channel. But that's it
+ 
+
+907
+00:14:49,279 --> 00:14:50,949
+subscribe to the channel. But that's it
+for today's video. Make sure you guys
+
+908
+00:14:50,949 --> 00:14:50,959
+for today's video. Make sure you guys
+ 
+
+909
+00:14:50,959 --> 00:14:52,949
+for today's video. Make sure you guys
+are subscribed to the channel. Follow
+
+910
+00:14:52,949 --> 00:14:52,959
+are subscribed to the channel. Follow
+ 
+
+911
+00:14:52,959 --> 00:14:54,550
+are subscribed to the channel. Follow
+our new newsletter as well at
+
+912
+00:14:54,550 --> 00:14:54,560
+our new newsletter as well at
+ 
+
+913
+00:14:54,560 --> 00:14:56,870
+our new newsletter as well at
+universeai.behive.com
+
+914
+00:14:56,870 --> 00:14:56,880
+universeai.behive.com
+ 
+
+915
+00:14:56,880 --> 00:14:58,470
+universeai.behive.com
+as well as subscribe to the main channel
+
+916
+00:14:58,470 --> 00:14:58,480
+as well as subscribe to the main channel
+ 
+
+917
+00:14:58,480 --> 00:15:00,949
+as well as subscribe to the main channel
+World of AI and support us on X by
+
+918
+00:15:00,949 --> 00:15:00,959
+World of AI and support us on X by
+ 
+
+919
+00:15:00,959 --> 00:15:03,189
+World of AI and support us on X by
+following the Universe of AIZ as well.
+
+920
+00:15:03,189 --> 00:15:03,199
+following the Universe of AIZ as well.
+ 
+
+921
+00:15:03,199 --> 00:15:04,870
+following the Universe of AIZ as well.
+Until then, I'll see you guys in the
+
+922
+00:15:04,870 --> 00:15:04,880
+Until then, I'll see you guys in the
+ 
+
+923
+00:15:04,880 --> 00:15:07,600
+Until then, I'll see you guys in the
+next video.
+

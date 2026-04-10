@@ -1,0 +1,138 @@
+YouTube transcript
+URL: https://youtu.be/KsYCtXeAGBg
+Video ID: KsYCtXeAGBg
+Title: Claude Code Skills Can Call Other Skills Now. This Changes Everything.
+Duration: 10:29
+Source: English captions (.en) extracted via yt-dlp
+
+---
+
+So, I was giving a claw code workshop the other week and someone asked, can you chain skills
+together? Meaning, can you run one skill that once it's done triggers another skill and
+another until you have one unified output from one single command? And initially, I said no.
+But after going back and forth with Cloud Code and looking through the documentation, I
+realized I was wrong. There is one line that you can add to any skill that lets you execute
+a series of skills in sequence from one single source. So, in this video, I'm going to show
+you the single most powerful way to use Claude Code skills that nobody's talking about.
+Let's get into it. All right. So, before we go into the how and the why, let's go through
+the what. Let's actually see it in action. So, I have a series of commands now that are
+chained. If I use this specific command, let's do launch offer. So this command is meant to
+take an idea, do market research on it, put together the sales copy for a landing page, and
+execute the entire funnel to give you the 8020 to get started. So given that myself and my
+agency, Prompt Advisors, we give all kinds of workshops to Fortune 500 companies, SMBs on
+using Cloud Code and Co-work, I will do the following. So I'll go right here and I'll say I
+want to be able to create perfect premium workshops for claude code and claude co-work that
+we deliver to companies of any industry and any size. So when we run this right away it
+should execute the first nested skill which should be the market scanner. This will use the
+web search tool to go and see similar offers as of 2026. So it's now going to search through
+and any moment now. There we go. It's reading the skill for launch offer and we should see
+the first of the multiple skills executed. So now that it briefed itself on all of the
+skills it'll have to execute in sequence. It's running the first one which is doing all of
+this web search as you can see here. Cloud code workshops pricing. It's looking for anything
+that's semantically similar to my original prompt. And now that it has the research, it goes
+and writes the market scan document. So the first output will be a document. That document
+will then trigger the next skill to take said document and create a sales landing page copy
+from it. And here's the part where step one is complete and it's moving immediately to the
+sales page. So now this is the second skill. And in this step two, it should load the sales
+page skill and then go from there. And now we have this sales copy asset as the output. It
+then takes that and it moves immediately to the email sequence. So now it writes using the
+skill for email sequences. And now we wait for step four which is now creating the social
+announcement on platforms like LinkedIn, like X, like YouTube. And then it'll go to the
+final stage which is stage five. And then step five is the launch brief PDF. So it goes
+through all of the market intelligence. It unifies everything together to give us one
+specific file. And the final output is something like this where we have all of the
+workshops, the executive summary, the pricing tiers, the competitive landscape, all the
+gaps, the sales copy, like I said, the email sequence, the social media copy, and this could
+be whatever you want. You can make this your own. I'll even show you later on in this video
+another skill that I call brain brief that will go through a particular topic and search
+different parts of my second brain in Obsidian. And by the way, if you enjoy my content and
+the way I teach, I've just released a brand new what I call living course in my community
+called the Claude Code Magic course. And the whole point of this is that if you've seen
+other creators, they will release a course and it will be static. And by the time that
+course is out, it will already be obsolete or deprecated. So my course really dials in the
+way of thinking in cloud code systems. How do you imagine what to do and what is worth doing
+in a world where you can build anything? And going through this course will give you every
+single thing that you need architecturally to self-s serve and use cloud code to its fullest
+potential. And as things get deprecated, I will be slotting in and slotting out brand new
+modules so that this course is always up to date with the latest and greatest. So if that
+interests you and you want to learn Claude Code from someone who's actually used it for
+close to a year and is actually teaching other clients and businesses how to use it as well,
+then check out the first link in the description below and I'll see you inside. Let's get
+back to the video. So now we'll go through the why and the how. So in terms of the why, out
+of the box, all of these skill files on their own are markdown files. And there are some
+cases where maybe you only want to use one particular skill at a specific time. But you also
+want to be able to have leverage when it makes sense to. So instead of having to always be
+the glue between different skills, especially if you want to run them in an order of
+operations, but it's not as deterministic as running them in a Python automation. You want
+to run it with some nuance, some human loop, some area where you can step in as the 20% to
+the 80/20 and add your own flavor. So although you can run one skill after the other and the
+context from the output from said skill will be in your context window, when you run them in
+sequence and each one is aware of the preceding skills output, you get a contextually better
+output from the collective working together. So, in a way, instead of using an army of
+agents, you're using a pseudo army of skills to create a cohesive output. And the one line
+that changes everything is something I've already gone over on this channel. But as a
+concept on its own, it's a boring concept. But boring is very helpful. In this case, when
+you write context fork, this one line in a skill file, it will run that skill in its own
+separate context window. Running it in that window, combining it with the ability to execute
+other commands that you can specify within the skill itself gives it a separate context
+window, a narrow focus on running these all one after the other and then bringing back the
+output, which is all you care about at the end of the day. So if we go back to the terminal
+and we run this very basic bash command to take a little preview at our skill and we go to
+the very top, this is what it looks like. And I will give you a copy of this and the other
+sample one in the second link in the description below. So you can see here we have the name
+launch offer. Then we have the description. Naturally we want the description to be as
+descriptive as possible but also really touch on the triggers. When should this skill be
+invoked? This will be extra helpful when you're chaining them. Then we add this magical line
+that's called context fork. This will run it in its own context window. And in terms of
+these two other parameters right here, these are optional. I like to write agent
+generalpurpose and I like to really specify which tools are allowed for this specific skill.
+And the real magic is here. So you can see we have the /market scan in the single quotes and
+we're just telling it to run each one in sequence. So this is step one, step two, and we're
+just naming the actual skill that lives on its own. And then after completion, it's good to
+specify what is the main thing we want back in our context window. So in this case, we are
+asking it to bring the PDF that I showed you earlier. And just to drive it home, I will walk
+through this diagram. So we have skill number one. It will write something. In this case, it
+will write the market scan MD file. Then we have sales page that will read number one. Then
+email sequence will read the outputs of number one and two. Each one of these is executing a
+markdown file. And at the end, we combine all of these outputs together to create one
+unified file. So you go from something like this to something like this. And you can even
+really map out all the reads and writes in your entire data flow. Now, just to show you
+another example, given how popular Obsidian is with Andre Carpathy's recent contributions,
+what if you hooked up your second brain using Obsidian and you had all of these different
+commands. Maybe you have one command that finds each and every note in your vault. Then you
+have one that extracts key insights and tasks and another one that synthesizes them. But
+what you care about is your general brain brief about a particular topic. So if we pop into
+the terminal and we write this brain brief and then we'll add some form of parameter. So in
+this case, can you go through and grab all the notes on how I like to structure my cloud
+code workshops. So this should be able to go through the entire vault in every folder and
+subfolder and bring back the overall synthesis. And right away it's executing step one,
+which is using the skill brain search. It will search the entire Obsidian vault
+comprehensively for everything related to the topic and it will use the command line
+interface if it needs a fallback. So now that step one completed after a few minutes it
+executes number two which extracts all the core insights from the search results and it
+initially created a full markdown file with deep research on every part of the vault that
+seemed contextually relevant. And you can see here that step two has also completed. And now
+we're doing the very last step which is synthesizing all the insight that were extracted
+from the initial search. And now you can see we have all we need for the pipeline to write
+the next part. And then we'll get one resulting response. And after it's done running, we
+have the full output of every single thing that happened. So we have the output of the
+general structure and then we have the three files produced. This is from each and every
+stage and it breaks down everything it found. And now it has full contextual awareness of
+the entire pipeline that ran. So to sum it up, all you have to do is create your
+orchestrator skill. This will have that line we specified context fork. If you want to be
+able to dictate full tool access, what has access, what doesn't have access, what it can or
+can't do, highly recommend it. And then in the body of the skill itself is primarily
+composed of what is step one through five or six and which command is executed with which
+step. So all you have to do is continue building your skills as you have been on their own.
+But where it makes sense and where you see opportunities for leverage, you can then combine
+them into one unified super skill. And that's pretty much it. So hopefully this shows you
+the power of creating these compound skills that you can bring to all kinds of processes
+that not necessarily need to be deterministic a toz that run hands-off but do need a level
+of human in the loop. And like I said, I'll make both of these skills available to you in
+the second link in the description below so you can use it, take advantage of it, and pretty
+much emulate my style and apply it to your processes. And again, for those interested in
+really taking their Claude Code prowess to the next level and doing it in a community that
+really supports you from a personnel standpoint, coaching, as well as content, check out the
+first link in the description below, and maybe I'll see you inside. And for those on the
+outside, if you found this video helpful, please let me know by leaving a like and a comment
+on the video. Subscribe if you haven't and I'll see you in the next
