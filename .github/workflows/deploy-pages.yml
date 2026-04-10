@@ -27,8 +27,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build web-ui
-        run: npm run build --workspace=packages/web-ui
+      - name: Build with next-on-pages
+        run: npm run pages:build -w packages/web-ui
         env:
           NODE_ENV: production
 
@@ -38,7 +38,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
           accountId: 4682eae9d50da54644c8f895ddad984f
           projectName: clara-code
-          directory: packages/web-ui/dist
+          directory: packages/web-ui/.vercel/output/static
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref_name }}
           wranglerVersion: '3'
