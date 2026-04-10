@@ -1,72 +1,304 @@
 /**
- * Clara Code — Single Design System
- * Used across both the marketing site (claracode.ai) and the desktop app interface.
+ * Clara Code — Design System Tokens
+ * Single source of truth for the marketing site (claracode.ai) AND the desktop IDE.
  *
- * This is a DESKTOP/TERMINAL APPLICATION aesthetic — not a web app, not mobile.
- * Think VS Code, Cursor, Warp, Linear. Dense. Dark. Precise.
- * Import in globals.css.
+ * AESTHETIC: VS Code / Cursor / Warp / Linear — dense, dark, precise.
+ * BRAND: Clara family sky blue (#7BCDD8) as the signature thread.
+ *        Marketing site surfaces the blues. IDE uses them as accents on terminal dark.
+ *
+ * SECTIONS
+ * ─────────────────────────────────────────────────────────────
+ * 1. Brand palette        — Clara blues, sculptural darks, family accents
+ * 2. Syntax highlighting  — Language tokens for the code editor
+ * 3. IDE dark mode        — Terminal-dark surface stack
+ * 4. Semantic aliases     — Surfaces, text, borders (map to dark by default)
+ * 5. Typography           — Font families + scale
+ * 6. Spacing & radii      — Border radius, spacing steps
+ * 7. Layout dimensions    — Sidebar, AI panel, topbar, voicebar
+ * 8. Shadows & glows      — Clara-blue and purple glow tokens
+ * 9. Transitions          — Timing functions
  */
 
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   §1  BRAND PALETTE
+   The Clara family lives here. All products share these values.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
 :root {
-  /* ━━━ Brand ━━━ */
-  --purple:        #7C3AED;
-  --purple-light:  #9F67F7;
-  --blue:          #4F8EF7;
-  --green:         #10B981;
 
-  /* ━━━ Backgrounds (dark terminal stack) ━━━ */
-  --bg-base:    #0D1117;   /* page / code editor */
-  --bg-raised:  #0F1318;   /* floating cards */
-  --bg-overlay: #0A0E14;   /* sidebars, top bar, voice bar */
-  --bg-sunken:  #070A0F;   /* inputs, code blocks, search */
+  /* Clara signature blues — extracted from logo background/glow */
+  --clara-blue-50:   #EBF8FA;   /* near-white tint, marketing sections */
+  --clara-blue-100:  #C8EEF3;   /* light backgrounds, light mode panels */
+  --clara-blue-200:  #A8DDE5;   /* logo glow / light element — lighter sky */
+  --clara-blue-300:  #7BCDD8;   /* PRIMARY brand: logo background, hero tint */
+  --clara-blue-400:  #54BDC9;   /* hover on blue surfaces */
+  --clara-blue-500:  #32AABB;   /* active/pressed blue */
+  --clara-blue-600:  #1F8A9A;   /* dark mode accent text, links */
+  --clara-blue-700:  #156B78;   /* deep accent, selected states in IDE */
+  --clara-blue-800:  #0D4A54;   /* very deep, rarely used directly */
+  --clara-blue-900:  #07282E;   /* near-black blue, code comment tint */
 
-  /* ━━━ Text ━━━ */
-  --text-1: rgba(255,255,255,0.90);   /* primary */
-  --text-2: rgba(255,255,255,0.60);   /* secondary */
-  --text-3: rgba(255,255,255,0.35);   /* muted */
-  --text-4: rgba(255,255,255,0.18);   /* ghost / line numbers */
+  /* Aliases — the names code should use */
+  --clara-blue:          var(--clara-blue-300);   /* #7BCDD8 — THE brand color */
+  --clara-blue-glow:     var(--clara-blue-200);   /* #A8DDE5 — logo glow element */
+  --clara-blue-active:   var(--clara-blue-400);   /* hover/active on blue */
+  --clara-blue-accent:   var(--clara-blue-600);   /* links, selected text in dark */
 
-  /* ━━━ Borders ━━━ */
-  --border-1: rgba(255,255,255,0.06);  /* panel dividers */
-  --border-2: rgba(255,255,255,0.10);  /* subtle elements */
-  --border-3: rgba(255,255,255,0.15);  /* hover states */
+  /* Sculptural dark tones — the carved wood face from the logo */
+  --sculpt-900:  #0F0905;   /* absolute darkest — near-black brown */
+  --sculpt-800:  #1A0E08;   /* deepest wood */
+  --sculpt-700:  #2B1810;   /* PRIMARY logo face: dark carved wood */
+  --sculpt-600:  #3D2318;   /* mid wood — hover on dark surfaces */
+  --sculpt-500:  #56321F;   /* lighter wood, rarely used */
 
-  /* ━━━ Syntax highlighting ━━━ */
-  --syn-keyword:   #7C3AED;
-  --syn-type:      #4F8EF7;
-  --syn-string:    #10B981;
-  --syn-jsx:       #F87171;
-  --syn-attribute: #FBBF24;
-  --syn-comment:   rgba(255,255,255,0.28);
-  --syn-plain:     rgba(255,255,255,0.85);
-  --syn-number:    #FB923C;
+  --sculpt-dark:  var(--sculpt-700);   /* #2B1810 — logo face color */
 
-  /* ━━━ Typography ━━━ */
-  --font-sans: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Brand accent spectrum — the code syntax palette elevated to brand status */
+  --brand-purple:       #7C3AED;   /* keyword purple — primary interactive */
+  --brand-purple-light: #9F67F7;   /* hover state */
+  --brand-purple-dim:   #5B2BB0;   /* pressed state */
+  --brand-purple-glow:  rgba(124, 58, 237, 0.40);
 
-  /* ━━━ Spacing ━━━ */
+  --brand-blue:         #4F8EF7;   /* type blue */
+  --brand-blue-light:   #7AABF9;   /* hover */
+  --brand-blue-dim:     #2F6FDB;   /* pressed */
+
+  --brand-green:        #10B981;   /* string green */
+  --brand-green-light:  #34D399;   /* hover */
+  --brand-green-dim:    #059669;   /* pressed */
+
+  /* Warm tones — JSX, numbers, attributes */
+  --brand-red:    #F87171;   /* JSX elements */
+  --brand-amber:  #FBBF24;   /* attribute yellow */
+  --brand-orange: #FB923C;   /* number literals */
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §2  SYNTAX HIGHLIGHTING
+     Language tokens used in the editor and marketing code samples.
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --syn-keyword:   var(--brand-purple);          /* const, return, if, async */
+  --syn-type:      var(--brand-blue);             /* string, number, React.FC */
+  --syn-string:    var(--brand-green);            /* "hello world" */
+  --syn-jsx:       var(--brand-red);              /* <Component /> */
+  --syn-attribute: var(--brand-amber);            /* className, onClick */
+  --syn-number:    var(--brand-orange);           /* 42, 3.14 */
+  --syn-comment:   rgba(255, 255, 255, 0.28);     /* // comments */
+  --syn-plain:     rgba(255, 255, 255, 0.85);     /* default code text */
+  --syn-operator:  rgba(255, 255, 255, 0.55);     /* = + - * . */
+  --syn-punctuation: rgba(255, 255, 255, 0.40);   /* { } ( ) ; */
+  --syn-variable:  #C4B5FD;                       /* purple-200 — variable names */
+  --syn-function:  var(--clara-blue-200);         /* fn names — Clara blue glow */
+  --syn-tag:       var(--clara-blue-300);         /* HTML/JSX tag names */
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §3  IDE DARK MODE — SURFACE STACK
+     Terminal-dark backgrounds. Think the void behind the code.
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --ide-base:       #0D1117;   /* code editor, page root */
+  --ide-raised:     #0F1318;   /* floating cards, modals */
+  --ide-overlay:    #0A0E14;   /* sidebars, topbar, voicebar */
+  --ide-sunken:     #070A0F;   /* inputs, code blocks, search wells */
+  --ide-panel:      #0B0F15;   /* secondary panels, output pane */
+  --ide-highlight:  #141A22;   /* current line, hover row */
+  --ide-selection:  rgba(124, 58, 237, 0.18);   /* text selection */
+  --ide-cursor:     var(--clara-blue-300);       /* blinking cursor — Clara blue */
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §4  SEMANTIC ALIASES
+     These are what component code should reach for.
+     They map to IDE dark by default (dark-first application).
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Backgrounds */
+  --bg-base:    var(--ide-base);       /* page / editor root */
+  --bg-raised:  var(--ide-raised);     /* cards, popovers */
+  --bg-overlay: var(--ide-overlay);    /* sidebars, top bar */
+  --bg-sunken:  var(--ide-sunken);     /* inputs, search, troughs */
+  --bg-panel:   var(--ide-panel);      /* secondary panes */
+  --bg-row:     var(--ide-highlight);  /* hovered rows, active lines */
+
+  /* Text opacity scale */
+  --text-1: rgba(255, 255, 255, 0.90);   /* primary content */
+  --text-2: rgba(255, 255, 255, 0.60);   /* secondary / labels */
+  --text-3: rgba(255, 255, 255, 0.35);   /* muted / placeholder */
+  --text-4: rgba(255, 255, 255, 0.18);   /* ghost / line numbers / disabled */
+  --text-5: rgba(255, 255, 255, 0.08);   /* nearly invisible / watermarks */
+
+  /* Clara-tinted text — for active states, links, AI responses */
+  --text-blue:   var(--clara-blue-200);          /* AI/Clara response text */
+  --text-purple: var(--brand-purple-light);      /* interactive, links */
+  --text-green:  var(--brand-green-light);       /* success states */
+  --text-red:    var(--brand-red);               /* errors */
+  --text-amber:  var(--brand-amber);             /* warnings */
+
+  /* Border opacity scale */
+  --border-1: rgba(255, 255, 255, 0.06);   /* panel dividers — barely there */
+  --border-2: rgba(255, 255, 255, 0.10);   /* card outlines */
+  --border-3: rgba(255, 255, 255, 0.15);   /* hover states */
+  --border-4: rgba(255, 255, 255, 0.22);   /* focused inputs */
+  --border-5: rgba(255, 255, 255, 0.35);   /* strong separators */
+
+  /* Clara-tinted borders — brand presence in dividers */
+  --border-blue:   rgba(123, 205, 216, 0.25);   /* Clara blue border */
+  --border-purple: rgba(124, 58, 237, 0.30);    /* interactive border */
+
+  /* Interactive / primary action */
+  --interactive:       var(--brand-purple);
+  --interactive-hover: var(--brand-purple-light);
+  --interactive-dim:   var(--brand-purple-dim);
+
+  /* Clara AI accent — used for AI response bubbles, Clara identity elements */
+  --clara-accent:       var(--clara-blue-300);
+  --clara-accent-hover: var(--clara-blue-400);
+  --clara-accent-soft:  rgba(123, 205, 216, 0.12);   /* Clara surface tint */
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §5  TYPOGRAPHY
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --font-display: 'Inter', system-ui, sans-serif;   /* headers, hero text */
+
+  /* Font sizes — desktop-dense, not web-spacious */
+  --text-xs:   11px;
+  --text-sm:   12px;
+  --text-base: 13px;   /* IDE default — tight like VS Code */
+  --text-md:   14px;
+  --text-lg:   15px;
+  --text-xl:   17px;
+  --text-2xl:  20px;
+  --text-3xl:  24px;
+  --text-4xl:  30px;
+  --text-5xl:  38px;
+
+  /* Line heights */
+  --leading-none:   1;
+  --leading-tight:  1.25;
+  --leading-snug:   1.375;
+  --leading-normal: 1.5;
+  --leading-code:   1.6;    /* editor line height */
+  --leading-loose:  1.75;
+
+  /* Font weights */
+  --weight-normal:   400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §6  SPACING & RADII
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Spacing scale — 4px base */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Border radius */
+  --radius-xs:   4px;
   --radius-sm:   6px;
   --radius-md:   10px;
   --radius-lg:   14px;
   --radius-xl:   18px;
+  --radius-2xl:  24px;
   --radius-pill: 9999px;
 
-  /* ━━━ App layout (desktop panels) ━━━ */
-  --sidebar-w:    13rem;    /* file tree */
-  --ai-panel-w:   18rem;    /* AI response panel */
-  --topbar-h:     2.75rem;  /* top bar */
-  --voicebar-h:   5rem;     /* bottom voice bar */
-  --tabbar-h:     2.25rem;  /* code panel tabs */
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §7  LAYOUT DIMENSIONS — DESKTOP IDE PANELS
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 
-  /* ━━━ Shadows / glows ━━━ */
-  --glow-purple:    0 0 32px rgba(124,58,237,0.40);
-  --glow-purple-sm: 0 0 16px rgba(124,58,237,0.30);
-  --glow-mic:       0 0 24px rgba(124,58,237,0.60);
-  --shadow-card:    0 40px 80px rgba(0,0,0,0.50);
-  --shadow-cta:     0 0 30px rgba(124,58,237,0.35);
+  --sidebar-w:       13rem;     /* file tree / nav sidebar */
+  --sidebar-w-sm:    10rem;     /* collapsed sidebar */
+  --ai-panel-w:      18rem;     /* AI response / Clara panel */
+  --ai-panel-w-lg:   22rem;     /* expanded AI panel */
+  --topbar-h:        2.75rem;   /* top bar */
+  --tabbar-h:        2.25rem;   /* editor tab strip */
+  --voicebar-h:      5rem;      /* bottom voice / status bar */
+  --statusbar-h:     1.5rem;    /* VS Code-style status line */
+  --breadcrumb-h:    2rem;      /* path breadcrumb row */
 
-  /* ━━━ Transitions ━━━ */
-  --t-fast: 120ms ease;
-  --t-base: 200ms ease;
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §8  SHADOWS & GLOWS
+     Two families: purple (interactive) and Clara blue (AI/brand).
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  /* Purple glows — interactive elements, buttons, focus rings */
+  --glow-purple:      0 0 32px rgba(124, 58, 237, 0.40);
+  --glow-purple-sm:   0 0 16px rgba(124, 58, 237, 0.30);
+  --glow-purple-lg:   0 0 48px rgba(124, 58, 237, 0.50);
+  --glow-mic:         0 0 24px rgba(124, 58, 237, 0.60);
+
+  /* Clara blue glows — AI responses, brand elements, cursor */
+  --glow-clara:       0 0 32px rgba(123, 205, 216, 0.35);
+  --glow-clara-sm:    0 0 16px rgba(123, 205, 216, 0.25);
+  --glow-clara-lg:    0 0 56px rgba(123, 205, 216, 0.45);
+  --glow-clara-code:  0 0 24px rgba(168, 221, 229, 0.50);   /* code syntax glow */
+
+  /* Surface shadows */
+  --shadow-card:   0 40px 80px rgba(0, 0, 0, 0.50);
+  --shadow-panel:  0 8px 32px rgba(0, 0, 0, 0.40);
+  --shadow-sm:     0 2px 8px rgba(0, 0, 0, 0.30);
+  --shadow-lg:     0 60px 120px rgba(0, 0, 0, 0.60);
+
+  /* CTA / hero glows */
+  --shadow-cta:    0 0 30px rgba(124, 58, 237, 0.35);
+  --shadow-hero:   0 0 80px rgba(123, 205, 216, 0.20);   /* marketing hero */
+
+  /* Focus ring */
+  --ring-purple: 0 0 0 2px rgba(124, 58, 237, 0.60);
+  --ring-clara:  0 0 0 2px rgba(123, 205, 216, 0.50);
+
+  /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+     §9  TRANSITIONS
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+  --t-instant: 80ms ease;
+  --t-fast:    120ms ease;
+  --t-base:    200ms ease;
+  --t-slow:    320ms ease;
+  --t-spring:  240ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --t-glow:    400ms ease;   /* glow pulse animations */
+
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   LIGHT MARKETING OVERRIDE
+   The marketing site (claracode.ai) surfaces the Clara blues
+   on a white/light background. IDE sections remain dark.
+   Apply .theme-marketing to the <html> or a section wrapper.
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+.theme-marketing {
+  --bg-base:    #FAFBFC;
+  --bg-raised:  #FFFFFF;
+  --bg-overlay: var(--clara-blue-50);
+  --bg-sunken:  #F0F4F5;
+  --bg-panel:   var(--clara-blue-100);
+  --bg-row:     var(--clara-blue-50);
+
+  --text-1: rgba(10, 14, 20, 0.92);
+  --text-2: rgba(10, 14, 20, 0.60);
+  --text-3: rgba(10, 14, 20, 0.40);
+  --text-4: rgba(10, 14, 20, 0.22);
+  --text-5: rgba(10, 14, 20, 0.10);
+
+  --border-1: rgba(10, 14, 20, 0.06);
+  --border-2: rgba(10, 14, 20, 0.10);
+  --border-3: rgba(10, 14, 20, 0.16);
+  --border-4: rgba(10, 14, 20, 0.24);
+  --border-5: rgba(10, 14, 20, 0.38);
+
+  --shadow-card: 0 20px 60px rgba(10, 14, 20, 0.12);
+  --shadow-hero: 0 0 80px rgba(123, 205, 216, 0.30);
 }

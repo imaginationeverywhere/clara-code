@@ -10,6 +10,16 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Clara Code — Code with your voice',
   description: 'Voice-first AI coding assistant. Open source.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+    shortcut: '/icon.png',
+  },
+  openGraph: {
+    title: 'Clara Code — Code with your voice',
+    description: 'Voice-first AI coding assistant. Open source.',
+    images: [{ url: '/logo-hero.png', width: 1024, height: 1024 }],
+  },
 }
 
 export default function RootLayout({
