@@ -38,3 +38,9 @@ plans/
 .pi/hf-sessions/
 .pi/hf-sessions-backup/
 collect.sh
+
+# Platform — never commit worktrees or local skill submodules
+.claude/worktrees/
+.cursor/skills/kepano-obsidian
+.claude/skills/kepano-obsidian
+memory/session-checkpoint.md
