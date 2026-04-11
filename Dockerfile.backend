@@ -70,11 +70,17 @@ COPY packages/mom/package.json ./packages/mom/
 COPY packages/tui/package.json ./packages/tui/
 
 ENV NODE_ENV=production
-ENV PORT=3001
-EXPOSE 3001
 
-HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
-  CMD curl -sf http://localhost:3001/health || exit 1
+# mom is a Slack Socket Mode bot — no HTTP server. Create workspace dir for coding agents.
+RUN mkdir -p /workspace
 
-CMD ["node", "packages/mom/dist/main.js"]
+# mom has no HTTP endpoint — health check verifies the main process (PID 1) is alive.
+# Signal 0 tests liveness without killing; always succeeds for PID 1 on Linux → use
+# /proc/1/status which exists only while the main process is running.
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
+  CMD test -f /proc/1/status || exit 1
+
+# Pass /workspace so mom doesn't print usage and exit immediately.
+# MOM_SLACK_APP_TOKEN and MOM_SLACK_BOT_TOKEN must be set via ECS secrets.
+CMD ["node", "packages/mom/dist/main.js", "/workspace"]
 # DevOps build trigger Sat Apr 11 02:11:06 EDT 2026
