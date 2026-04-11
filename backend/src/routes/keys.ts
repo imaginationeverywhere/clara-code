@@ -51,8 +51,12 @@ router.post("/", apiKeyCreateLimiter, async (req: AuthenticatedRequest, res: Res
 		}
 
 		const { name } = req.body as { name?: string };
-		if (!name) {
+		if (!name || typeof name !== "string") {
 			res.status(400).json({ error: "Key name is required" });
+			return;
+		}
+		if (name.length > 255) {
+			res.status(400).json({ error: "Key name must be 255 characters or fewer" });
 			return;
 		}
 

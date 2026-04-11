@@ -79,6 +79,12 @@ describe("routes /api/keys", () => {
 		expect(res.status).toBe(400);
 	});
 
+	it("POST / 400 when name exceeds 255 chars", async () => {
+		const res = await request(app).post("/api/keys").send({ name: "x".repeat(256) });
+		expect(res.status).toBe(400);
+		expect(res.body.error).toMatch(/255/);
+	});
+
 	it("POST / 500 on error", async () => {
 		(ApiKey.create as jest.Mock).mockRejectedValueOnce(new Error("fail"));
 		const res = await request(app).post("/api/keys").send({ name: "x" });
