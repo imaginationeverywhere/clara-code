@@ -1,0 +1,3 @@
+{
+  "installCommand": "echo 'Dependencies pre-installed by CI'"
+}
