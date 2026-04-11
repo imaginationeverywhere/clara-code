@@ -37,9 +37,6 @@ jobs:
       - name: Install all workspace dependencies
         run: npm install
 
-      - name: Force react@19 (override any react@18 hoisted by other workspace packages)
-        run: npm install react@19.0.0 react-dom@19.0.0 --no-save --no-package-lock --legacy-peer-deps
-
       - name: Build with next-on-pages
         working-directory: packages/web-ui
         run: npx @cloudflare/next-on-pages
