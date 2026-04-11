@@ -55,11 +55,15 @@ COPY --from=builder /app/packages/ai/dist ./packages/ai/dist
 COPY --from=builder /app/packages/agent/dist ./packages/agent/dist
 COPY --from=builder /app/packages/coding-agent/dist ./packages/coding-agent/dist
 COPY --from=builder /app/packages/mom/dist ./packages/mom/dist
+# packages/tui is a workspace package (@mariozechner/pi-tui) — coding-agent imports it at
+# runtime. The node_modules symlink points here; the dir must exist with built dist.
+COPY --from=builder /app/packages/tui/dist ./packages/tui/dist
 COPY package.json ./
 COPY packages/ai/package.json ./packages/ai/
 COPY packages/agent/package.json ./packages/agent/
 COPY packages/coding-agent/package.json ./packages/coding-agent/
 COPY packages/mom/package.json ./packages/mom/
+COPY packages/tui/package.json ./packages/tui/
 
 ENV NODE_ENV=production
 ENV PORT=3001
