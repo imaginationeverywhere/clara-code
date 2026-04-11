@@ -34,8 +34,10 @@ jobs:
           npm install -g typescript
           npx tsc -p packages/clara-code-surface-scripts/tsconfig.build.json
 
-      - name: Install all workspace dependencies
-        run: npm install
+      - name: Install web-ui workspace dependencies only
+        run: npm install --workspace packages/web-ui
+        # Install ONLY web-ui's deps (react@19) — root npm install pulls in
+        # react@18 from other workspace packages causing version mismatch
 
       - name: Build with next-on-pages
         working-directory: packages/web-ui
