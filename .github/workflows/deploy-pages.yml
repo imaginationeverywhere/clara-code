@@ -24,14 +24,13 @@ jobs:
           node-version: '20'
 
       - name: Build surface-scripts dependency
-        working-directory: packages/clara-code-surface-scripts
         run: |
-          npm install
-          npm run build || npx tsc -p tsconfig.build.json
+          npm install -g typescript
+          npx tsc -p packages/clara-code-surface-scripts/tsconfig.build.json
 
       - name: Install web-ui dependencies
         working-directory: packages/web-ui
-        run: npm install --legacy-peer-deps
+        run: npm install --no-package-lock --legacy-peer-deps
 
       - name: Build with next-on-pages
         working-directory: packages/web-ui
