@@ -3,10 +3,14 @@ import { unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import type { Command } from "commander";
-import { readClaraCredentials } from "../lib/credentials-store.js";
 import { playAudioFile } from "../lib/play-audio-file.js";
 
-const GREET_URL = "https://clara-code-backend-dev.ngrok.quiknation.com/api/voice/greet";
+const DEFAULT_CLARA_VOICE_URL = "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
+
+function voiceRespondUrl(): string {
+	const base = process.env.CLARA_VOICE_URL ?? DEFAULT_CLARA_VOICE_URL;
+	return `${base.replace(/\/$/, "")}/voice/respond`;
+}
 
 function extensionForContentType(contentType: string | null): string {
 	if (!contentType) {
@@ -33,23 +37,19 @@ export function registerGreetCommand(program: Command): void {
 		.command("greet")
 		.description("Request Clara's voice greeting from the API and play the audio")
 		.action(async () => {
-			const creds = readClaraCredentials();
-			if (!creds) {
-				console.error("No credentials found. Run `clara auth login` first.");
-				process.exitCode = 1;
-				return;
-			}
-
 			let res: Response;
 			try {
-				res = await fetch(GREET_URL, {
+				res = await fetch(voiceRespondUrl(), {
 					method: "POST",
 					headers: {
-						Authorization: `Bearer ${creds.token}`,
 						Accept: "audio/*,*/*;q=0.9",
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify({}),
+					body: JSON.stringify({
+						agent: "clara",
+						surface: "C1",
+						message: "",
+					}),
 				});
 			} catch (err) {
 				console.error("clara greet: network error");

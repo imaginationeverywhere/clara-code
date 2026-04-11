@@ -12,7 +12,7 @@ import { Header } from "./components/Header.js";
 import { InputBar } from "./components/InputBar.js";
 import { MessageFeed } from "./components/MessageFeed.js";
 import { StatusBar } from "./components/StatusBar.js";
-import { VoiceWave } from "./components/VoiceWave.js";
+import { CliVoiceBar } from "./components/CliVoiceBar.js";
 import { useVoice } from "./hooks/useVoice.js";
 import type { GatewayResult } from "./lib/gateway.js";
 import { loadConfig, saveConfig } from "./lib/config.js";
@@ -225,7 +225,7 @@ export function App({ version, userId, gatewayUrl, voiceOptIn }: AppProps) {
 				userId={userId}
 				voiceOptIn={voiceOptIn}
 			/>
-			{isMicActive ? <VoiceWave /> : null}
+			{isMicActive ? <CliVoiceBar state={isLoading ? "processing" : "listening"} /> : null}
 			<MessageFeed messages={messages} />
 			<InputBar
 				value={inputText}
