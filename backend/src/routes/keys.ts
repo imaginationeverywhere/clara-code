@@ -1,6 +1,7 @@
 import { requireAuth } from "@clerk/express";
 import { type Response, Router } from "express";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
+import { apiKeyCreateLimiter } from "@/middleware/rate-limit";
 import { ApiKey } from "@/models/ApiKey";
 import { logger } from "@/utils/logger";
 
@@ -41,7 +42,7 @@ router.get("/", async (req: AuthenticatedRequest, res: Response): Promise<void> 
 });
 
 // POST /api/keys — create new API key
-router.post("/", async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+router.post("/", apiKeyCreateLimiter, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
 	try {
 		const auth = await (req.auth?.() ?? null);
 		if (!auth?.userId) {

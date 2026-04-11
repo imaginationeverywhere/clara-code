@@ -21,7 +21,19 @@ const PORT = process.env.PORT || 3001;
 
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(compression());
-app.use(cors({ origin: process.env.FRONTEND_URL || "*", credentials: true }));
+
+const rawOrigins = process.env.FRONTEND_URL || "";
+const allowedOrigins = rawOrigins
+	.split(",")
+	.map((o) => o.trim())
+	.filter(Boolean);
+
+if (allowedOrigins.length === 0) {
+	logger.warn("FRONTEND_URL not set — defaulting CORS to claracode.com origins");
+	allowedOrigins.push("https://claracode.com", "https://www.claracode.com", "https://develop.claracode.com");
+}
+
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json({ limit: "10mb" }));
 
 if (process.env.CLERK_SECRET_KEY) {

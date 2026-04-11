@@ -1,13 +1,15 @@
+import { requireAuth } from "@clerk/express";
 import axios from "axios";
 import { type Request, type Response, Router } from "express";
+import { voiceLimiter } from "@/middleware/rate-limit";
 import { logger } from "@/utils/logger";
 
 const router = Router();
 
 const VOICE_URL = process.env.CLARA_VOICE_URL || "https://quik-nation--clara-voice-server-web.modal.run";
 
-// POST /api/voice/greet — generate Clara greeting
-router.post("/greet", async (req: Request, res: Response): Promise<void> => {
+// POST /api/voice/greet — generate Clara greeting (Clerk auth required)
+router.post("/greet", requireAuth(), voiceLimiter, async (req: Request, res: Response): Promise<void> => {
 	try {
 		const { text, voice_id } = req.body as { text?: string; voice_id?: string };
 		const response = await axios.post(
@@ -27,8 +29,8 @@ router.post("/greet", async (req: Request, res: Response): Promise<void> => {
 	}
 });
 
-// POST /api/voice/speak — general TTS
-router.post("/speak", async (req: Request, res: Response): Promise<void> => {
+// POST /api/voice/speak — general TTS (Clerk auth required)
+router.post("/speak", requireAuth(), voiceLimiter, async (req: Request, res: Response): Promise<void> => {
 	try {
 		const { text, voice_id } = req.body as { text?: string; voice_id?: string };
 		if (!text) {
@@ -39,10 +41,7 @@ router.post("/speak", async (req: Request, res: Response): Promise<void> => {
 		const response = await axios.post(
 			`${VOICE_URL}/tts`,
 			{ text, voice_id },
-			{
-				responseType: "arraybuffer",
-				timeout: 30000,
-			},
+			{ responseType: "arraybuffer", timeout: 30000 },
 		);
 
 		res.set("Content-Type", "audio/wav");

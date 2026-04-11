@@ -30,8 +30,9 @@ export const syncUserMiddleware = async (req: AuthenticatedRequest, res: Respons
 	try {
 		const auth = await (req.auth?.() ?? null);
 		if (auth?.userId) {
-			// Import User model (avoid circular import)
-			const { User } = await import("../models/User.js");
+			// CommonJS require to avoid circular dependency — no .js extension needed in CJS
+			// eslint-disable-next-line @typescript-eslint/no-require-imports
+			const { User } = require("../models/User") as typeof import("../models/User");
 
 			// Fetch user data from database
 			const user = await User.findByClerkId(auth.userId);

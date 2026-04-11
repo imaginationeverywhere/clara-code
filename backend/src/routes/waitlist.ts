@@ -1,15 +1,23 @@
 import { type Request, type Response, Router } from "express";
+import { waitlistLimiter } from "@/middleware/rate-limit";
 import { WaitlistEntry } from "@/models/WaitlistEntry";
 import { logger } from "@/utils/logger";
 
 const router = Router();
 
 // POST /api/waitlist — capture waitlist signup
-router.post("/", async (req: Request, res: Response): Promise<void> => {
+router.post("/", waitlistLimiter, async (req: Request, res: Response): Promise<void> => {
 	try {
 		const { email, name, role } = req.body as { email?: string; name?: string; role?: string };
 		if (!email) {
 			res.status(400).json({ error: "Email is required" });
+			return;
+		}
+
+		// Validate format before hitting DB — Sequelize errors are not user-friendly
+		const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		if (!emailRegex.test(email)) {
+			res.status(400).json({ error: "Invalid email address" });
 			return;
 		}
 
