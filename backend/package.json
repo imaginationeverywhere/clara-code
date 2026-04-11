@@ -12,7 +12,9 @@
     "clean": "rm -rf dist",
     "db:migrate": "sequelize-cli db:migrate",
     "db:seed": "sequelize-cli db:seed:all",
-    "db:reset": "sequelize-cli db:migrate:undo:all && npm run db:migrate"
+    "db:reset": "sequelize-cli db:migrate:undo:all && npm run db:migrate",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",

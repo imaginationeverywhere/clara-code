@@ -16,7 +16,7 @@ import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
 import { logger } from "@/utils/logger";
 
-const app = express();
+export const app = express();
 const PORT = process.env.PORT || 3001;
 
 app.use(helmet({ contentSecurityPolicy: false }));
@@ -58,7 +58,7 @@ app.use("/api", apiRoutes);
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
-async function bootstrap() {
+export async function bootstrap(): Promise<void> {
 	await server.start();
 
 	app.use(
@@ -83,7 +83,9 @@ async function bootstrap() {
 	});
 }
 
-bootstrap().catch((err: unknown) => {
-	logger.error("Failed to start server:", err);
-	process.exit(1);
-});
+if (process.env.NODE_ENV !== "test") {
+	void bootstrap().catch((err: unknown) => {
+		logger.error("Failed to start server:", err);
+		process.exit(1);
+	});
+}
