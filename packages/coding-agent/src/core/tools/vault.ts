@@ -37,7 +37,7 @@ function resolveVaultPath(relativePath: string): string {
 	const vaultRoot = getVaultRoot();
 	const candidate = relativePath.startsWith("/") ? relativePath : join(vaultRoot, relativePath);
 	const resolved = resolve(candidate);
-	if (!resolved.startsWith(vaultRoot + "/") && resolved !== vaultRoot) {
+	if (!resolved.startsWith(`${vaultRoot}/`) && resolved !== vaultRoot) {
 		throw new Error(`Path "${relativePath}" is outside the vault (~/auset-brain/).`);
 	}
 	return resolved;
