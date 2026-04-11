@@ -36,3 +36,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
   CMD curl -sf http://localhost:3001/health || exit 1
 
 CMD ["node", "packages/mom/dist/main.js"]
+# DevOps build trigger Sat Apr 11 02:11:06 EDT 2026
