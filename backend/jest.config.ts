@@ -23,7 +23,7 @@ const config: Config = {
 		"!src/database/config.js",
 		"!src/database/migrations/**",
 	],
-	coverageThreshold: { global: { lines: 80, functions: 80, statements: 80 } },
+	coverageThreshold: { global: { lines: 80, branches: 65, functions: 80, statements: 80 } },
 	coverageReporters: ["text", "json-summary"],
 	testTimeout: 30000,
 };

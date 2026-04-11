@@ -98,4 +98,10 @@ describe("routes /api/keys", () => {
 		const res = await request(app).delete("/api/keys/missing");
 		expect(res.status).toBe(404);
 	});
+
+	it("DELETE /:id 500 on db error", async () => {
+		(ApiKey.findOne as jest.Mock).mockRejectedValueOnce(new Error("db crash"));
+		const res = await request(app).delete("/api/keys/anid");
+		expect(res.status).toBe(500);
+	});
 });
