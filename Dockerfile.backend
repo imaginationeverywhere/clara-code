@@ -15,12 +15,12 @@ COPY packages/clara/package.json ./packages/clara/
 COPY packages/clara-code-surface-scripts/package.json ./packages/clara-code-surface-scripts/
 COPY packages/ide-extension/package.json ./packages/ide-extension/
 COPY packages/create-clara-app/package.json ./packages/create-clara-app/
-RUN npm install --omit=dev --prefer-offline
+RUN npm install --omit=dev
 
 FROM base AS builder
 COPY package.json package-lock.json ./
 COPY packages/ ./packages/
-RUN npm install --prefer-offline
+RUN npm install
 RUN npm run build
 
 FROM base AS runner
