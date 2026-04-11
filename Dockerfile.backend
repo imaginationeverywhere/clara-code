@@ -19,7 +19,8 @@ COPY packages/ide-extension/package.json ./packages/ide-extension/
 COPY packages/create-clara-app/package.json ./packages/create-clara-app/
 # Workspace sub-packages must not have own lockfiles — npm workspace resolution fails with them
 RUN find packages -mindepth 2 -name "package-lock.json" -delete 2>/dev/null || true
-RUN npm install --omit=dev
+# omit=dev skips husky; prepare still runs and would execute `husky` (not installed) without --ignore-scripts
+RUN npm install --omit=dev --ignore-scripts
 
 FROM base AS builder
 COPY package.json package-lock.json ./
