@@ -3,9 +3,12 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { Command } from "commander";
-import { render } from "ink";
-import React from "react";
-import { App } from "./tui.js";
+import { registerAskCommand } from "./commands/ask.js";
+import { registerAuthCommand } from "./commands/auth.js";
+import { registerConfigCommand } from "./commands/config.js";
+import { registerGreetCommand } from "./commands/greet.js";
+import { registerHelloCommand } from "./commands/hello.js";
+import { registerTuiCommand } from "./commands/tui.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgPath = join(__dirname, "..", "package.json");
@@ -13,7 +16,12 @@ const pkg = JSON.parse(readFileSync(pkgPath, "utf-8")) as { version: string };
 
 const program = new Command();
 
-program.name("clara").description("Clara Code — AI voice coding assistant").version(pkg.version);
+registerHelloCommand(program);
+registerAskCommand(program);
+registerConfigCommand(program);
+registerAuthCommand(program);
+registerGreetCommand(program);
+registerTuiCommand(program);
 
 program
 	.command("tui")

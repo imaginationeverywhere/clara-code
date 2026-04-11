@@ -45,10 +45,6 @@ export class VoiceBar implements Component {
 		return this.state;
 	}
 
-	/**
-	 * Call on a timer (e.g. every 100ms) to animate the waveform.
-	 * Returns true when a re-render is needed.
-	 */
 	tick(): boolean {
 		if (this.state === "idle") return false;
 		this._waveform = generateWaveform(16, this.state);
@@ -79,10 +75,6 @@ export class VoiceBar implements Component {
 
 		const line = `${activeColor}  ◉  ${waveStr}  ${stateLabel}${reset}`;
 		return [line];
-	}
-
-	handleInput(_data: string): void {
-		// Parent TUI handles keybindings; optional escape-to-idle can be wired there
 	}
 
 	invalidate(): void {

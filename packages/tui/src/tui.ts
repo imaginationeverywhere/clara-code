@@ -251,6 +251,9 @@ export class TUI extends Container {
 		focusOrder: number;
 	}[] = [];
 
+	private voiceBar: VoiceBar | null = null;
+	private voiceBarTimer: ReturnType<typeof setInterval> | null = null;
+
 	constructor(terminal: Terminal, showHardwareCursor?: boolean) {
 		super();
 		this.terminal = terminal;
@@ -417,6 +420,49 @@ export class TUI extends Container {
 	override invalidate(): void {
 		super.invalidate();
 		for (const overlay of this.overlayStack) overlay.component.invalidate?.();
+		this.voiceBar?.invalidate();
+	}
+
+	override render(width: number): string[] {
+		const lines = super.render(width);
+		if (this.voiceBar) {
+			lines.push(...this.voiceBar.render(width));
+		}
+		return lines;
+	}
+
+	/**
+	 * Mount a VoiceBar at the bottom of the TUI. The bar animates on a 100ms timer while not idle.
+	 */
+	setVoiceBar(voiceBar: VoiceBar): void {
+		if (this.voiceBarTimer) {
+			clearInterval(this.voiceBarTimer);
+			this.voiceBarTimer = null;
+		}
+		this.voiceBar = voiceBar;
+		this.voiceBarTimer = setInterval(() => {
+			if (voiceBar.tick()) {
+				this.requestRender();
+			}
+		}, 100);
+		this.requestRender();
+	}
+
+	clearVoiceBar(): void {
+		if (this.voiceBarTimer) {
+			clearInterval(this.voiceBarTimer);
+			this.voiceBarTimer = null;
+		}
+		this.voiceBar = null;
+		this.requestRender();
+	}
+
+	startVoiceListening(): void {
+		this.voiceBar?.setState("listening");
+	}
+
+	stopVoiceListening(): void {
+		this.voiceBar?.setState("idle");
 	}
 
 	/**

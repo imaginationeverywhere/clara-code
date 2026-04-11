@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Demo: Clara TUI Voice Bar
- * Run: npx tsx packages/tui/demo-voice.ts
+ * Run from repo root: npx tsx packages/tui/demo-voice.ts
  */
 import { VoiceBar } from "./src/components/voice-bar.js";
 
@@ -17,15 +17,14 @@ console.log(bar.render(60).join("\n"));
 console.log();
 
 setTimeout(() => {
-	console.log("State: listening (simulated)");
+	console.log("State: listening (Ctrl+Space triggered)");
 	bar.setState("listening");
 	let frames = 0;
 	const timer = setInterval(() => {
 		bar.tick();
 		process.stdout.write("\x1b[1A\x1b[2K");
 		console.log(bar.render(60).join("\n"));
-		frames += 1;
-		if (frames > 30) {
+		if (++frames > 30) {
 			clearInterval(timer);
 			bar.setState("processing");
 			console.log("\nState: processing (sending to Clara...)");

@@ -3,6 +3,13 @@ import { CLARA_CONFIG_DIR, CLARA_CONFIG_FILE } from "./paths.js";
 
 export type ClaraConfig = {
 	apiKey?: string;
+	gatewayUrl?: string;
+	userId?: string;
+	lastProject?: string;
+	lastSessionDate?: string;
+	/** Set after at least one completed Clara TUI session */
+	hasPriorSession?: boolean;
+	sixSideProjectsAsked?: boolean;
 };
 
 export function readClaraConfig(): ClaraConfig {
@@ -21,4 +28,8 @@ export function readClaraConfig(): ClaraConfig {
 export function writeClaraConfig(config: ClaraConfig): void {
 	mkdirSync(CLARA_CONFIG_DIR, { recursive: true });
 	writeFileSync(CLARA_CONFIG_FILE, `${JSON.stringify(config, null, 2)}\n`, "utf8");
+}
+
+export function patchClaraConfig(patch: Partial<ClaraConfig>): void {
+	writeClaraConfig({ ...readClaraConfig(), ...patch });
 }
