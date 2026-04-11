@@ -21,6 +21,10 @@ COPY packages/create-clara-app/package.json ./packages/create-clara-app/
 RUN find packages -mindepth 2 -name "package-lock.json" -delete 2>/dev/null || true
 # omit=dev skips husky; prepare still runs and would execute `husky` (not installed) without --ignore-scripts
 RUN npm install --omit=dev --ignore-scripts
+# cli-highlight@2.1.11 depends on chalk@^4 but its compiled theme.js uses chalk_1.default
+# (ESM-style pattern) which doesn't exist in chalk v4 CJS. Remove the nested chalk v4 so
+# cli-highlight falls through to the hoisted chalk v5 (from coding-agent) which has .default.
+RUN rm -rf node_modules/cli-highlight/node_modules/chalk
 
 FROM base AS builder
 # packages/ai devDependency `canvas` runs node-gyp (Python + Cairo headers on Alpine)
