@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.1",
+    "graphql": "^16.0.0",
     "@clara/clara-code-surface-scripts": "file:../clara-code-surface-scripts",
     "@clerk/nextjs": "^7.0.12",
     "next": "15.3.0",
