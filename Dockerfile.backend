@@ -1,5 +1,7 @@
 FROM node:20-alpine AS base
 WORKDIR /app
+# Pin npm to avoid workspace extraneous bug (npm 10.3.0-10.5.1, fixed in 10.5.2)
+RUN npm install -g npm@10.9.0 --quiet
 
 FROM base AS deps
 COPY package.json package-lock.json ./
