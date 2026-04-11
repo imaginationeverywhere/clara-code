@@ -1,12 +1,16 @@
 {
-  "name": "tauri-app",
+  "name": "clara-code-desktop",
   "private": true,
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build",
+    "build:voice-overlay": "esbuild src/main.ts --bundle --outfile=src-tauri/voice-overlay.js --platform=browser --format=iife --loader:.css=text",
     "tauri": "tauri"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^2"
+    "@tauri-apps/cli": "^2",
+    "esbuild": "^0.25.0"
   }
 }
