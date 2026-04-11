@@ -23,6 +23,17 @@ RUN find packages -mindepth 2 -name "package-lock.json" -delete 2>/dev/null || t
 RUN npm install --omit=dev --ignore-scripts
 
 FROM base AS builder
+# packages/ai devDependency `canvas` runs node-gyp (Python + Cairo headers on Alpine)
+ENV PYTHON=/usr/bin/python3
+RUN apk add --no-cache \
+    python3 \
+    build-base \
+    cairo-dev \
+    jpeg-dev \
+    pango-dev \
+    giflib-dev \
+    pixman-dev \
+    pkgconf
 COPY package.json package-lock.json ./
 COPY packages/ ./packages/
 # Workspace sub-packages must not have own lockfiles — npm workspace resolution fails with them
