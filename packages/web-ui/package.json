@@ -14,6 +14,7 @@
     "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
+    "@clara/clara-code-surface-scripts": "file:../clara-code-surface-scripts",
     "next": "15.3.0",
     "react": "19.0.0",
     "react-dom": "19.0.0"

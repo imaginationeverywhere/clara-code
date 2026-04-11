@@ -1,9 +1,4 @@
-import { appendFile } from "node:fs/promises";
 import { NextResponse } from "next/server";
-
-export const runtime = "nodejs";
-
-const WAITLIST_PATH = "/tmp/waitlist.json";
 
 type WaitlistBody = {
 	email?: unknown;
@@ -26,13 +21,30 @@ export async function POST(request: Request) {
 		return NextResponse.json({ success: false, error: "Valid email required" }, { status: 400 });
 	}
 
-	const line = `${JSON.stringify({
-		email,
-		name,
-		ts: new Date().toISOString(),
-	})}\n`;
+	const backendUrl = process.env.CLARA_CODE_BACKEND_URL?.trim();
+	if (!backendUrl) {
+		console.log("[waitlist]", JSON.stringify({ email, name, ts: new Date().toISOString(), mode: "log-only" }));
+		return NextResponse.json({ success: true });
+	}
 
-	await appendFile(WAITLIST_PATH, line, "utf8");
+	const target = `${backendUrl.replace(/\/$/, "")}/api/waitlist`;
 
-	return NextResponse.json({ success: true });
+	try {
+		const upstream = await fetch(target, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ email, name }),
+		});
+
+		const text = await upstream.text();
+		const contentType = upstream.headers.get("content-type") ?? "application/json";
+
+		return new NextResponse(text, {
+			status: upstream.status,
+			headers: { "Content-Type": contentType },
+		});
+	} catch (err) {
+		console.error("[waitlist] backend request failed", err);
+		return NextResponse.json({ success: false, error: "Waitlist unavailable" }, { status: 503 });
+	}
 }
