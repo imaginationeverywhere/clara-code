@@ -4,10 +4,7 @@ on:
   push:
     branches: [main, develop]
     paths:
-      - 'packages/mom/**'
-      - 'packages/ai/**'
-      - 'packages/agent/**'
-      - 'packages/coding-agent/**'
+      - 'backend/**'
       - 'Dockerfile.backend'
       - '.github/workflows/deploy-backend.yml'
 

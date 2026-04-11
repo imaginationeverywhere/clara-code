@@ -1,5 +1,5 @@
 /**
- * VRD-001 canonical path — re-exports Clara Code surface scripts.
- * Implementation package: @clara/clara-code-surface-scripts
+ * VRD-001 — Clara Code surface scripts ship as workspace package `@clara/clara-code-surface-scripts`.
+ * This API server does not bundle that package; clients depend on it via the monorepo workspace.
  */
-export * from "@clara/clara-code-surface-scripts";
+export {};

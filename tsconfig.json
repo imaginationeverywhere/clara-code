@@ -29,7 +29,8 @@
 			"@mariozechner/pi-agent-old/*": ["./packages/agent-old/src/*"],
 			"@clara/clara-code-surface-scripts": [
 				"./packages/clara-code-surface-scripts/src/index.ts"
-			]
+			],
+			"@/*": ["./backend/src/*"]
 		}
 	},
 	"include": [
