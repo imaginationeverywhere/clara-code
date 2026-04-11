@@ -23,7 +23,7 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Configure npm for monorepo build
+      - name: Configure npm (bypass lockfile bug)
         run: |
           echo "package-lock=false" >> .npmrc
           echo "legacy-peer-deps=true" >> .npmrc
@@ -34,9 +34,8 @@ jobs:
           npm install -g typescript
           npx tsc -p packages/clara-code-surface-scripts/tsconfig.build.json
 
-      - name: Install web-ui dependencies
-        working-directory: packages/web-ui
-        run: npm install --legacy-peer-deps --ignore-scripts
+      - name: Install all workspace dependencies
+        run: npm install
 
       - name: Build with next-on-pages
         working-directory: packages/web-ui
