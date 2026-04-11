@@ -1,0 +1,46 @@
+type User {
+  id: ID!
+  clerkId: String!
+  email: String!
+  plan: Plan!
+  createdAt: String!
+  agents: [Agent!]!
+  apiKeys: [ApiKey!]!
+}
+
+type Agent {
+  id: ID!
+  name: String!
+  soul: String
+  userId: String!
+  createdAt: String!
+  lastActive: String
+}
+
+type ApiKey {
+  id: ID!
+  name: String!
+  keyPrefix: String!
+  createdAt: String!
+  lastUsed: String
+  isActive: Boolean!
+}
+
+enum Plan {
+  FREE
+  PRO
+  BUSINESS
+}
+
+type Query {
+  me: User
+  myAgents: [Agent!]!
+  myApiKeys: [ApiKey!]!
+}
+
+type Mutation {
+  createApiKey(name: String!): ApiKey!
+  revokeApiKey(id: ID!): Boolean!
+  createAgent(name: String!, soul: String): Agent!
+  joinWaitlist(email: String!): Boolean!
+}

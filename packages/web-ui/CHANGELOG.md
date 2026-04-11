@@ -2,6 +2,15 @@
 
 ## [Unreleased]
 
+### Added
+
+- Next.js App Router pages for dashboard, pricing, API keys, settings, and Clerk-hosted sign-in/sign-up; Apollo Client provider and GraphQL operations; middleware for protected routes.
+- Dependencies: `@apollo/client`, `@clerk/nextjs`; `react` / `react-dom` pinned to `19.2.5` (aligned with monorepo overrides).
+
+### Fixed
+
+- `check` script: run `next lint` and `tsc` (removed duplicate `check` key in `package.json`).
+
 ## [0.66.1] - 2026-04-08
 
 ## [0.66.0] - 2026-04-08

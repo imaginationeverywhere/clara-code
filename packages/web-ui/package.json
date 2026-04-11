@@ -6,18 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "check": "tsc --noEmit -p tsconfig.app.json",
     "lint": "next lint",
-    "check": "npm run lint",
+    "check": "npm run lint && tsc --noEmit -p tsconfig.app.json",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:preview": "npx wrangler pages dev .vercel/output/static",
     "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
+    "@apollo/client": "^3.13.1",
     "@clara/clara-code-surface-scripts": "file:../clara-code-surface-scripts",
+    "@clerk/nextjs": "^7.0.12",
     "next": "15.3.0",
-    "react": "19.0.0",
-    "react-dom": "19.0.0"
+    "react": "19.2.5",
+    "react-dom": "19.2.5"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.4",

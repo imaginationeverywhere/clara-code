@@ -39,6 +39,9 @@ plans/
 .pi/hf-sessions-backup/
 collect.sh
 
+# Next.js (Clara web-ui and examples)
+**/.next/
+
 # Platform — never commit worktrees or local skill submodules
 .claude/worktrees/
 .cursor/skills/kepano-obsidian

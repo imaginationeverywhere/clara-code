@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- Regenerated `src/models.generated.ts` from upstream model sources (tool-capable model catalog).
+
 ### Fixed
 
 - Bumped default Antigravity User-Agent version to `1.21.9` ([#2901](https://github.com/badlogic/pi-mono/pull/2901) by [@aadishv](https://github.com/aadishv))
