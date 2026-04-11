@@ -8,6 +8,7 @@ import { registerAuthCommand } from "./commands/auth.js";
 import { registerConfigCommand } from "./commands/config.js";
 import { registerGreetCommand } from "./commands/greet.js";
 import { registerHelloCommand } from "./commands/hello.js";
+import { registerTuiCommand } from "./commands/tui.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const pkgPath = join(__dirname, "..", "package.json");
@@ -21,5 +22,6 @@ registerAskCommand(program);
 registerConfigCommand(program);
 registerAuthCommand(program);
 registerGreetCommand(program);
+registerTuiCommand(program);
 
 program.parse();
