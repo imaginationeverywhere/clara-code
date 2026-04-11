@@ -1,0 +1,22 @@
+{
+	"name": "create-clara-app",
+	"version": "0.66.1",
+	"description": "Scaffold a Clara app (scaffold stub)",
+	"type": "module",
+	"bin": {
+		"create-clara-app": "./bin/create-clara-app.js"
+	},
+	"files": [
+		"bin",
+		"README.md"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/badlogic/pi-mono.git",
+		"directory": "packages/create-clara-app"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	}
+}
