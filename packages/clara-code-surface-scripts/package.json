@@ -1,0 +1,20 @@
+{
+	"name": "@clara/clara-code-surface-scripts",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Clara Code canonical surface scripts (VRD-001 + voice playbook)",
+	"type": "module",
+	"main": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": "./dist/index.js"
+	},
+	"scripts": {
+		"build": "tsc -p tsconfig.build.json",
+		"check": "tsc --noEmit -p tsconfig.json"
+	},
+	"files": ["dist", "src"],
+	"devDependencies": {
+		"typescript": "^5.9.2"
+	}
+}

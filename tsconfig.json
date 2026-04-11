@@ -2,6 +2,8 @@
 	"extends": "./tsconfig.base.json",
 	"compilerOptions": {
 		"noEmit": true,
+		"jsx": "react-jsx",
+		"lib": ["ES2022", "DOM", "DOM.Iterable"],
 		"paths": {
 			"*": ["./*"],
 			"@mariozechner/pi-ai": ["./packages/ai/src/index.ts"],
@@ -23,9 +25,22 @@
 			"@mariozechner/pi-web-ui": ["./packages/web-ui/src/index.ts"],
 			"@mariozechner/pi-web-ui/*": ["./packages/web-ui/src/*"],
 			"@mariozechner/pi-agent-old": ["./packages/agent-old/src/index.ts"],
-			"@mariozechner/pi-agent-old/*": ["./packages/agent-old/src/*"]
+			"@mariozechner/pi-agent-old/*": ["./packages/agent-old/src/*"],
+			"@clara/clara-code-surface-scripts": [
+				"./packages/clara-code-surface-scripts/src/index.ts"
+			]
 		}
 	},
-	"include": ["packages/*/src/**/*", "packages/*/test/**/*", "packages/coding-agent/examples/**/*"],
-	"exclude": ["packages/web-ui/**/*", "**/dist/**"]
+	"include": [
+		"packages/*/src/**/*",
+		"packages/*/test/**/*",
+		"packages/coding-agent/examples/**/*",
+		"backend/**/*.ts"
+	],
+	"exclude": [
+		"packages/web-ui/**/*",
+		"packages/ide-extension/**/*",
+		"packages/cli/**/*",
+		"**/dist/**"
+	]
 }

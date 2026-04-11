@@ -24,6 +24,7 @@ import type { ChannelStore } from "./store.js";
 import { createMomTools, setUploadFunction } from "./tools/index.js";
 
 // Hardcoded model for now - TODO: make configurable (issue #63)
+// Optional Clara Gateway (Hermes): see hermes.ts and logHermesGatewayStatus() in main.ts — run loop still uses Anthropic until wired.
 const model = getModel("anthropic", "claude-sonnet-4-5");
 
 export interface PendingMessage {

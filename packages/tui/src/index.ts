@@ -27,6 +27,7 @@ export { type SettingItem, SettingsList, type SettingsListTheme } from "./compon
 export { Spacer } from "./components/spacer.js";
 export { Text } from "./components/text.js";
 export { TruncatedText } from "./components/truncated-text.js";
+export { VoiceBar, type VoiceBarTheme, type VoiceState } from "./components/voice-bar.js";
 // Editor component interface (for custom editors)
 export type { EditorComponent } from "./editor-component.js";
 // Fuzzy matching

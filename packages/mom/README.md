@@ -13,6 +13,20 @@ A Slack bot powered by an LLM that can execute bash commands, read/write files, 
 - **Working Memory & Custom Tools**: Mom remembers context across sessions and creates workflow-specific CLI tools ([aka "skills"](https://mariozechner.at/posts/2025-11-02-what-if-you-dont-need-mcp/)) for your tasks
 - **Thread-Based Details**: Clean main messages with verbose tool details in threads
 
+## Model routing
+
+By default, mom uses the Anthropic API directly (`claude-sonnet-4-5`).
+
+To probe Clara Gateway (Hermes — shared inference on Modal, e.g. Bedrock DeepSeek V3.2), set:
+
+```bash
+export HERMES_GATEWAY_URL=https://info-24346--hermes-gateway.modal.run
+```
+
+On startup, mom logs whether the gateway is reachable. The Slack agent run loop still uses Anthropic until Hermes is wired into the agent core; `HermesClient` in `src/hermes.ts` exposes `complete()` and `stream()` for that integration.
+
+Clara Gateway is the Quik Nation shared inference layer: shared rate limits across Clara products, and optional routing without per-user API keys for that path.
+
 ## Documentation
 
 - [Artifacts Server](docs/artifacts-server.md) - Share HTML/JS visualizations publicly with live reload

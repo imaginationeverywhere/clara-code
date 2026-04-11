@@ -4,6 +4,7 @@ import { join, resolve } from "path";
 import { type AgentRunner, getOrCreateRunner } from "./agent.js";
 import { downloadChannel } from "./download.js";
 import { createEventsWatcher } from "./events.js";
+import { logHermesGatewayStatus } from "./hermes.js";
 import * as log from "./log.js";
 import { parseSandboxArg, type SandboxConfig, validateSandbox } from "./sandbox.js";
 import { type MomHandler, type SlackBot, SlackBot as SlackBotClass, type SlackEvent } from "./slack.js";
@@ -77,6 +78,7 @@ if (!MOM_SLACK_APP_TOKEN || !MOM_SLACK_BOT_TOKEN) {
 }
 
 await validateSandbox(sandbox);
+await logHermesGatewayStatus();
 
 // ============================================================================
 // State (per channel)

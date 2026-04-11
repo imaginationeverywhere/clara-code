@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "check": "tsc --noEmit -p tsconfig.app.json",
     "lint": "next lint",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:preview": "npx wrangler pages dev .vercel/output/static",

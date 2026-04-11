@@ -1,0 +1,30 @@
+{
+	"name": "@clara/cli",
+	"version": "0.1.0",
+	"description": "Clara Code terminal voice interface",
+	"type": "module",
+	"bin": {
+		"clara": "./dist/index.js"
+	},
+	"scripts": {
+		"dev": "tsx src/index.ts",
+		"prebuild": "npm run build -w @clara/clara-code-surface-scripts",
+		"build": "tsup --config tsup.config.ts",
+		"tui": "tsx src/index.ts tui",
+		"typecheck": "tsc --noEmit",
+		"check": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@clara/clara-code-surface-scripts": "file:../clara-code-surface-scripts",
+		"commander": "^12.1.0",
+		"ink": "^5.0.1",
+		"react": "^18.3.0"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.5",
+		"@types/react": "^18.3.0",
+		"tsup": "^8.0.0",
+		"tsx": "^4.20.3",
+		"typescript": "^5.9.2"
+	}
+}

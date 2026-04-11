@@ -1,0 +1,113 @@
+{
+	"name": "clara-code",
+	"displayName": "Clara Code",
+	"description": "AI voice coding assistant powered by Clara",
+	"version": "0.1.0",
+	"publisher": "imaginationeverywhere",
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": ["AI", "Programming Languages", "Other"],
+	"icon": "assets/icon.png",
+	"activationEvents": ["onStartupFinished"],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"viewsContainers": {
+			"activitybar": [
+				{
+					"id": "clara-sidebar",
+					"title": "Clara",
+					"icon": "assets/clara-icon.svg"
+				}
+			]
+		},
+		"views": {
+			"clara-sidebar": [
+				{
+					"type": "webview",
+					"id": "clara.panel",
+					"name": "Clara Voice",
+					"retainContextWhenHidden": true
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "clara.start",
+				"title": "Clara: Open Panel",
+				"icon": "$(comment-discussion)"
+			},
+			{
+				"command": "clara.voice",
+				"title": "Clara: Toggle Voice",
+				"icon": "$(mic)"
+			},
+			{
+				"command": "clara.explain",
+				"title": "Clara: Explain Selection"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "clara.voice",
+				"key": "ctrl+shift+space",
+				"mac": "cmd+shift+space"
+			},
+			{
+				"command": "clara.explain",
+				"key": "ctrl+shift+e",
+				"mac": "cmd+shift+e",
+				"when": "editorHasSelection"
+			}
+		],
+		"configuration": {
+			"title": "Clara Code",
+			"properties": {
+				"claraCode.gatewayUrl": {
+					"type": "string",
+					"default": "https://info-24346--hermes-gateway.modal.run",
+					"description": "Clara voice gateway URL"
+				},
+				"claraCode.userId": {
+					"type": "string",
+					"default": "dev",
+					"description": "User ID sent to gateway"
+				},
+				"claraCode.panelMode": {
+					"type": "boolean",
+					"default": false,
+					"description": "Use 280px terminal-panel register (surface: panel) — ultra-short copy"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"precompile": "npm run build -w @clara/clara-code-surface-scripts",
+		"compile": "webpack --mode development",
+		"build": "webpack --mode production",
+		"watch": "webpack --mode development --watch",
+		"package": "vsce package",
+		"lint": "eslint src --ext ts,tsx",
+		"check": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.webview.json"
+	},
+	"devDependencies": {
+		"@types/react": "^18.3.0",
+		"@types/react-dom": "^18.3.0",
+		"@types/vscode": "^1.85.0",
+		"@typescript-eslint/eslint-plugin": "^6.21.0",
+		"@typescript-eslint/parser": "^6.21.0",
+		"@vscode/vsce": "^2.22.0",
+		"css-loader": "^6.11.0",
+		"eslint": "^8.57.0",
+		"style-loader": "^3.3.0",
+		"ts-loader": "^9.5.0",
+		"typescript": "^5.9.2",
+		"webpack": "^5.0.0",
+		"webpack-cli": "^5.0.0"
+	},
+	"dependencies": {
+		"@clara/clara-code-surface-scripts": "file:../clara-code-surface-scripts",
+		"react": "^18.3.0",
+		"react-dom": "^18.3.0"
+	}
+}

@@ -6,6 +6,7 @@ import * as fs from "node:fs";
 import * as os from "node:os";
 import * as path from "node:path";
 import { performance } from "node:perf_hooks";
+import type { VoiceBar } from "./components/voice-bar.js";
 import { isKeyRelease, matchesKey } from "./keys.js";
 import type { Terminal } from "./terminal.js";
 import { getCapabilities, isImageLine, setCellDimensions } from "./terminal-image.js";
@@ -237,6 +238,9 @@ export class TUI extends Container {
 	private fullRedrawCount = 0;
 	private stopped = false;
 
+	private voiceBar: VoiceBar | null = null;
+	private voiceBarTimer: ReturnType<typeof setInterval> | null = null;
+
 	// Overlay stack for modal components rendered on top of base content
 	private focusOrderCounter = 0;
 	private overlayStack: {
@@ -415,6 +419,46 @@ export class TUI extends Container {
 		for (const overlay of this.overlayStack) overlay.component.invalidate?.();
 	}
 
+	/**
+	 * Mount a VoiceBar at the bottom of the TUI (last child). Starts an animation tick (~100ms).
+	 */
+	setVoiceBar(voiceBar: VoiceBar): void {
+		if (this.voiceBar) {
+			this.removeChild(this.voiceBar);
+			if (this.voiceBarTimer) {
+				clearInterval(this.voiceBarTimer);
+				this.voiceBarTimer = null;
+			}
+		}
+		this.voiceBar = voiceBar;
+		this.addChild(voiceBar);
+		this.voiceBarTimer = setInterval(() => {
+			if (voiceBar.tick()) {
+				this.requestRender();
+			}
+		}, 100);
+	}
+
+	/** Remove voice bar and stop its animation timer. */
+	clearVoiceBar(): void {
+		if (this.voiceBar) {
+			this.removeChild(this.voiceBar);
+			this.voiceBar = null;
+		}
+		if (this.voiceBarTimer) {
+			clearInterval(this.voiceBarTimer);
+			this.voiceBarTimer = null;
+		}
+	}
+
+	startVoiceListening(): void {
+		this.voiceBar?.setState("listening");
+	}
+
+	stopVoiceListening(): void {
+		this.voiceBar?.setState("idle");
+	}
+
 	start(): void {
 		this.stopped = false;
 		this.terminal.start(
@@ -449,6 +493,10 @@ export class TUI extends Container {
 
 	stop(): void {
 		this.stopped = true;
+		if (this.voiceBarTimer) {
+			clearInterval(this.voiceBarTimer);
+			this.voiceBarTimer = null;
+		}
 		if (this.renderTimer) {
 			clearTimeout(this.renderTimer);
 			this.renderTimer = undefined;
