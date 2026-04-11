@@ -39,7 +39,14 @@ COPY packages/ ./packages/
 # Workspace sub-packages must not have own lockfiles — npm workspace resolution fails with them
 RUN find packages -mindepth 2 -name "package-lock.json" -delete 2>/dev/null || true
 RUN npm install
-RUN npm run build
+# Only build packages needed for server runtime — skip cli (tsup/rollup needs linux-musl native
+# binary not in macOS-generated lockfile), web-ui (Next.js frontend), pods (not runtime).
+# Runner stage only copies: ai/dist, agent/dist, coding-agent/dist, mom/dist.
+RUN cd packages/tui && npm run build && \
+    cd /app/packages/ai && npm run build && \
+    cd /app/packages/agent && npm run build && \
+    cd /app/packages/coding-agent && npm run build && \
+    cd /app/packages/mom && npm run build
 
 FROM base AS runner
 RUN apk add --no-cache curl
