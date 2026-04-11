@@ -4,7 +4,7 @@
 		"jsx": "react-jsx",
 		"noEmit": true,
 		"jsx": "react-jsx",
-		"lib": ["ES2022", "DOM", "DOM.Iterable"],
+		"lib": ["ES2024", "DOM", "DOM.Iterable"],
 		"paths": {
 			"*": ["./*"],
 			"@mariozechner/pi-ai": ["./packages/ai/src/index.ts"],
