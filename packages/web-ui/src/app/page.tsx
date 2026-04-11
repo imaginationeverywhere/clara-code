@@ -1,3 +1,5 @@
+import { VoiceBar } from '../components/voice/VoiceBar'
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0F0F0F]">
@@ -6,6 +8,10 @@ export default function Home() {
         <div className="text-center">
           <h1 className="text-6xl font-bold text-white">Code with your voice.</h1>
           <p className="mt-4 text-white/60">Clara Code — coming soon</p>
+          {/* Voice UX demo — mic, Enter to mute, S for Clara Radio */}
+          <div className="mt-8 flex justify-center">
+            <VoiceBar />
+          </div>
         </div>
       </section>
       {/* Features, Pricing sections go here */}
