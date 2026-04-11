@@ -23,8 +23,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Pin npm to v9 (avoid workspace file: bug in npm 10)
+        run: npm install -g npm@9
+
       - name: Install dependencies
         run: npm install --legacy-peer-deps
+
+      - name: Build surface-scripts (local workspace dep)
+        working-directory: packages/clara-code-surface-scripts
+        run: npm run build 2>/dev/null || npx tsc -p tsconfig.build.json
 
       - name: Build with next-on-pages
         working-directory: packages/web-ui
