@@ -23,22 +23,27 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Pin npm to v9 (avoid workspace file: bug in npm 10)
+      - name: Pin npm to v9
         run: npm install -g npm@9
 
       - name: Install dependencies
         run: npm install --legacy-peer-deps
 
-      - name: Build surface-scripts (local workspace dep)
+      - name: Build local workspace dep
         working-directory: packages/clara-code-surface-scripts
-        run: npm run build 2>/dev/null || npx tsc -p tsconfig.build.json
+        run: |
+          if npm run build; then
+            echo "Build script succeeded"
+          else
+            npx tsc -p tsconfig.build.json
+          fi
 
       - name: Build with next-on-pages
         working-directory: packages/web-ui
         run: npx @cloudflare/next-on-pages
         env:
           NODE_ENV: production
-          NEXT_TELEMETRY_DISABLED: 1
+          NEXT_TELEMETRY_DISABLED: "1"
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
