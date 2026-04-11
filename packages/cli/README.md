@@ -5,6 +5,49 @@ Terminal TUI for Clara Code (Ink). Text-first; `--voice` is reserved for future 
 ## Usage
 
 ```bash
+npm install -g @imaginationeverywhere/clara-cli
+```
+
+After installation, the `clara` binary is on your `PATH`.
+
+## Commands
+
+| Command | Description |
+|--------|-------------|
+| `clara --version` | Print the CLI version |
+| `clara hello` | Play Clara's voice greeting from the API (stub) |
+| `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
+| `clara config set api-key <key>` | Store the API key in `~/.clara/config.json` |
+| `clara config get api-key` | Print the stored API key (or empty line if unset) |
+| `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `--voice` placeholder |
+
+## Quickstart
+
+```bash
+clara --version
+clara config set api-key YOUR_API_KEY
+clara ask "What is Clara Code?"
+clara hello
+clara tui --gateway https://info-24346--hermes-gateway.modal.run
+```
+
+### TUI
+
+Text-first by default; optional `--voice` for future audio when the gateway supports it.
+
+- `Ctrl+Q` quit (saves session hint to `~/.clara/config.json`)
+- `Ctrl+M` toggle mic UI (recording placeholder; use typed input for messages)
+- `Enter` send
+
+Configuration is stored at `~/.clara/config.json`. The directory is created automatically when you run `clara config set`.
+
+## Development
+
+From the repository root:
+
+```bash
+cd packages/cli
+npm install
 npm run build
 node dist/index.js tui
 ```

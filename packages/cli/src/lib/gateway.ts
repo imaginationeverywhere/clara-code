@@ -1,26 +1,14 @@
-import type { PartnerType } from "@clara/clara-code-surface-scripts";
-
-export interface GatewayOptions {
-	gatewayUrl: string;
-	userId: string;
-	message: string;
-	partnerType: PartnerType;
-	sixSideProjectsAsked: boolean;
-	voiceOptIn: boolean;
-}
-
-export interface GatewayResult {
+export type GatewayResult = {
 	ok: boolean;
-	replyText: string;
-	fix?: string;
-	plainError?: string;
-}
+	reply: string;
+	fixHint?: string;
+};
 
 /**
- * Clara gateway client — Hermes on Modal.
+ * POST JSON to the Hermes / Clara gateway; returns structured text for TUI formatting (VRD §C3–C4).
  */
-export async function claraGateway(opts: GatewayOptions): Promise<GatewayResult> {
-	const response = await fetch(opts.gatewayUrl, {
+export async function claraGateway(gatewayUrl: string, userId: string, message: string): Promise<GatewayResult> {
+	const response = await fetch(gatewayUrl, {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
@@ -28,11 +16,8 @@ export async function claraGateway(opts: GatewayOptions): Promise<GatewayResult>
 		body: JSON.stringify({
 			platform: "tui",
 			surface: "cli",
-			user: opts.userId,
-			message: opts.message,
-			partnerType: opts.partnerType,
-			sixSideProjectsAsked: opts.sixSideProjectsAsked,
-			voiceOptIn: opts.voiceOptIn,
+			user: userId,
+			message,
 		}),
 	});
 
@@ -41,39 +26,27 @@ export async function claraGateway(opts: GatewayOptions): Promise<GatewayResult>
 	if (!response.ok) {
 		return {
 			ok: false,
-			replyText: "",
-			plainError: bodyText || response.statusText,
-			fix: "Check gateway URL and network.",
+			reply: bodyText || response.statusText || `HTTP ${response.status}`,
+			fixHint: "Check gateway URL and network, then retry.",
 		};
 	}
 
-	let data: {
-		reply?: string;
-		text?: string;
-		message?: string;
-		error?: boolean;
-		fix?: string;
-	};
+	let data: Record<string, unknown>;
 	try {
-		data = JSON.parse(bodyText) as typeof data;
+		data = JSON.parse(bodyText) as Record<string, unknown>;
 	} catch {
-		return {
-			ok: false,
-			replyText: "",
-			plainError: "Invalid JSON from gateway",
-			fix: "Retry the request.",
-		};
+		return { ok: true, reply: bodyText || "Clara has no response." };
 	}
 
-	if (data.error) {
-		return {
-			ok: false,
-			replyText: "",
-			plainError: data.reply ?? data.text ?? "Request failed",
-			fix: data.fix ?? "See gateway logs.",
-		};
-	}
+	const reply =
+		(typeof data.reply === "string" && data.reply) ||
+		(typeof data.text === "string" && data.text) ||
+		(typeof data.message === "string" && data.message) ||
+		bodyText ||
+		"Clara has no response.";
 
-	const reply = data.reply ?? data.text ?? data.message ?? "Clara has no response.";
-	return { ok: true, replyText: reply };
+	const ok = data.error !== true && data.ok !== false;
+	const fixHint = typeof data.fix === "string" ? data.fix : undefined;
+
+	return { ok, reply, fixHint };
 }

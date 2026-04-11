@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- `VoiceBar` terminal waveform component for voice listening/processing states, plus `TUI.setVoiceBar`, `clearVoiceBar`, `startVoiceListening`, and `stopVoiceListening` to mount it at the bottom of the layout.
+
 ### Fixed
 
 - Fixed `Container.render()` stack overflow on long sessions by replacing `Array.push(...spread)` with a loop-based push, preventing `RangeError: Maximum call stack size exceeded` when child output exceeds the V8 call stack argument limit ([#2651](https://github.com/badlogic/pi-mono/issues/2651))

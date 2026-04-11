@@ -17,15 +17,25 @@ import { mkdir, writeFile } from "fs/promises";
 import { homedir } from "os";
 import { join } from "path";
 import { createMomSettingsManager, syncLogToSessionManager } from "./context.js";
+import {
+	createHermesDisplayModel,
+	createHermesModelForConversion,
+	createMomHermesStreamFn,
+	getHermesGatewayUrl,
+	HermesClient,
+} from "./hermes.js";
 import * as log from "./log.js";
 import { createExecutor, type SandboxConfig } from "./sandbox.js";
 import type { ChannelInfo, SlackContext, UserInfo } from "./slack.js";
 import type { ChannelStore } from "./store.js";
 import { createMomTools, setUploadFunction } from "./tools/index.js";
 
-// Hardcoded model for now - TODO: make configurable (issue #63)
-// Optional Clara Gateway (Hermes): see hermes.ts and logHermesGatewayStatus() in main.ts — run loop still uses Anthropic until wired.
-const model = getModel("anthropic", "claude-sonnet-4-5");
+// Default: DeepSeek V3.2 via Hermes → Bedrock. Fallback: Claude Sonnet.
+const fallbackModel = getModel("anthropic", "claude-sonnet-4-5");
+const hermesGatewayUrl = getHermesGatewayUrl();
+const hermesClient = HermesClient.fromEnv();
+const hermesConvertModel = createHermesModelForConversion(hermesGatewayUrl);
+const hermesDisplayModel = createHermesDisplayModel(hermesGatewayUrl);
 
 export interface PendingMessage {
 	userName: string;
@@ -432,16 +442,26 @@ function createRunner(sandboxConfig: SandboxConfig, channelId: string, channelDi
 	const authStorage = AuthStorage.create(join(homedir(), ".pi", "mom", "auth.json"));
 	const modelRegistry = ModelRegistry.create(authStorage);
 
+	let agent!: Agent;
+	const streamFn = createMomHermesStreamFn(
+		hermesClient,
+		fallbackModel,
+		hermesConvertModel,
+		hermesDisplayModel,
+		() => agent,
+	);
+
 	// Create agent
-	const agent = new Agent({
+	agent = new Agent({
 		initialState: {
 			systemPrompt,
-			model,
+			model: hermesDisplayModel,
 			thinkingLevel: "off",
 			tools,
 		},
 		convertToLlm,
 		getApiKey: async () => getAnthropicApiKey(authStorage),
+		streamFn,
 	});
 
 	// Load existing messages
@@ -840,7 +860,7 @@ function createRunner(sandboxConfig: SandboxConfig, channelId: string, channelDi
 						lastAssistantMessage.usage.cacheRead +
 						lastAssistantMessage.usage.cacheWrite
 					: 0;
-				const contextWindow = model.contextWindow || 200000;
+				const contextWindow = agent.state.model.contextWindow || 200000;
 
 				const summary = log.logUsageSummary(runState.logCtx!, runState.totalUsage, contextTokens, contextWindow);
 				runState.queue.enqueue(() => ctx.respondInThread(summary), "usage summary");

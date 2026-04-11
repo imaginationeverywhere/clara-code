@@ -417,6 +417,15 @@ export class TUI extends Container {
 	override invalidate(): void {
 		super.invalidate();
 		for (const overlay of this.overlayStack) overlay.component.invalidate?.();
+		this.voiceBar?.invalidate();
+	}
+
+	override render(width: number): string[] {
+		const lines = super.render(width);
+		if (this.voiceBar) {
+			lines.push(...this.voiceBar.render(width));
+		}
+		return lines;
 	}
 
 	/**
