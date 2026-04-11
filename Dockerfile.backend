@@ -15,7 +15,7 @@ COPY packages/clara/package.json ./packages/clara/
 COPY packages/clara-code-surface-scripts/package.json ./packages/clara-code-surface-scripts/
 COPY packages/ide-extension/package.json ./packages/ide-extension/
 COPY packages/create-clara-app/package.json ./packages/create-clara-app/
-RUN npm ci --omit=dev
+RUN npm install --omit=dev --prefer-offline
 
 FROM base AS builder
 COPY package.json package-lock.json ./
