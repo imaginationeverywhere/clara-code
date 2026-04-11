@@ -7,6 +7,14 @@ COPY packages/ai/package.json ./packages/ai/
 COPY packages/agent/package.json ./packages/agent/
 COPY packages/coding-agent/package.json ./packages/coding-agent/
 COPY packages/mom/package.json ./packages/mom/
+COPY packages/tui/package.json ./packages/tui/
+COPY packages/cli/package.json ./packages/cli/
+COPY packages/pods/package.json ./packages/pods/
+COPY packages/web-ui/package.json ./packages/web-ui/
+COPY packages/clara/package.json ./packages/clara/
+COPY packages/clara-code-surface-scripts/package.json ./packages/clara-code-surface-scripts/
+COPY packages/ide-extension/package.json ./packages/ide-extension/
+COPY packages/create-clara-app/package.json ./packages/create-clara-app/
 RUN npm ci --omit=dev
 
 FROM base AS builder
