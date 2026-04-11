@@ -73,6 +73,23 @@ export {
 	truncateTail,
 } from "./truncate.js";
 export {
+	createVaultAppendTool,
+	createVaultAppendToolDefinition,
+	createVaultReadTool,
+	createVaultReadToolDefinition,
+	createVaultWriteTool,
+	createVaultWriteToolDefinition,
+	type VaultAppendToolInput,
+	type VaultReadToolInput,
+	type VaultWriteToolInput,
+	vaultAppendTool,
+	vaultAppendToolDefinition,
+	vaultReadTool,
+	vaultReadToolDefinition,
+	vaultWriteTool,
+	vaultWriteToolDefinition,
+} from "./vault.js";
+export {
 	createWriteTool,
 	createWriteToolDefinition,
 	type WriteOperations,
@@ -102,12 +119,34 @@ import {
 	readTool,
 	readToolDefinition,
 } from "./read.js";
+import {
+	createVaultAppendTool,
+	createVaultAppendToolDefinition,
+	createVaultReadTool,
+	createVaultReadToolDefinition,
+	createVaultWriteTool,
+	createVaultWriteToolDefinition,
+	vaultAppendTool,
+	vaultAppendToolDefinition,
+	vaultReadTool,
+	vaultReadToolDefinition,
+	vaultWriteTool,
+	vaultWriteToolDefinition,
+} from "./vault.js";
 import { createWriteTool, createWriteToolDefinition, writeTool, writeToolDefinition } from "./write.js";
 
 export type Tool = AgentTool<any>;
 export type ToolDef = ToolDefinition<any, any>;
 
-export const codingTools: Tool[] = [readTool, bashTool, editTool, writeTool];
+export const codingTools: Tool[] = [
+	readTool,
+	bashTool,
+	editTool,
+	writeTool,
+	vaultReadTool,
+	vaultWriteTool,
+	vaultAppendTool,
+];
 export const readOnlyTools: Tool[] = [readTool, grepTool, findTool, lsTool];
 
 export const allTools = {
@@ -118,6 +157,9 @@ export const allTools = {
 	grep: grepTool,
 	find: findTool,
 	ls: lsTool,
+	vault_read: vaultReadTool,
+	vault_write: vaultWriteTool,
+	vault_append: vaultAppendTool,
 };
 
 export const allToolDefinitions = {
@@ -128,6 +170,9 @@ export const allToolDefinitions = {
 	grep: grepToolDefinition,
 	find: findToolDefinition,
 	ls: lsToolDefinition,
+	vault_read: vaultReadToolDefinition,
+	vault_write: vaultWriteToolDefinition,
+	vault_append: vaultAppendToolDefinition,
 };
 
 export type ToolName = keyof typeof allTools;
@@ -164,6 +209,9 @@ export function createAllToolDefinitions(cwd: string, options?: ToolsOptions): R
 		grep: createGrepToolDefinition(cwd),
 		find: createFindToolDefinition(cwd),
 		ls: createLsToolDefinition(cwd),
+		vault_read: createVaultReadToolDefinition(),
+		vault_write: createVaultWriteToolDefinition(),
+		vault_append: createVaultAppendToolDefinition(),
 	};
 }
 
@@ -189,5 +237,8 @@ export function createAllTools(cwd: string, options?: ToolsOptions): Record<Tool
 		grep: createGrepTool(cwd),
 		find: createFindTool(cwd),
 		ls: createLsTool(cwd),
+		vault_read: createVaultReadTool(),
+		vault_write: createVaultWriteTool(),
+		vault_append: createVaultAppendTool(),
 	};
 }

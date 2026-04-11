@@ -1,5 +1,6 @@
-import { copyFileSync, existsSync, mkdirSync } from "node:fs";
-import { basename, join, resolve } from "node:path";
+import { copyFileSync, existsSync, mkdirSync, readFileSync } from "node:fs";
+import { homedir } from "node:os";
+import { basename, dirname, join, resolve } from "node:path";
 import type { AgentSession } from "./agent-session.js";
 import type { AgentSessionRuntimeDiagnostic, AgentSessionServices } from "./agent-session-services.js";
 import type { SessionStartEvent } from "./extensions/index.js";
@@ -32,6 +33,42 @@ export type CreateAgentSessionRuntimeFactory = (options: {
 	sessionManager: SessionManager;
 	sessionStartEvent?: SessionStartEvent;
 }) => Promise<CreateAgentSessionRuntimeResult>;
+
+/**
+ * Resolve the active pod/agent name from ~/.pi/pods.json.
+ * Falls back to "default" if the config is absent or unreadable.
+ */
+function getActiveAgentName(): string {
+	try {
+		const configPath = join(homedir(), ".pi", "pods.json");
+		if (existsSync(configPath)) {
+			const data = JSON.parse(readFileSync(configPath, "utf-8"));
+			if (data.active && data.pods?.[data.active]) {
+				return data.active;
+			}
+		}
+	} catch {
+		// ignore — fall through to default
+	}
+	return "default";
+}
+
+/**
+ * Write the current session branch to the Auset Brain vault.
+ * Path: ~/auset-brain/agents/<pod-name>/sessions/YYYY-MM-DD.jsonl
+ * Best-effort — errors are silently swallowed to avoid disrupting session teardown.
+ */
+function writeSessionToVault(session: AgentSession): void {
+	try {
+		const agentName = getActiveAgentName();
+		const date = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+		const vaultPath = join(homedir(), "auset-brain", "agents", agentName, "sessions", `${date}.jsonl`);
+		mkdirSync(dirname(vaultPath), { recursive: true });
+		session.exportToJsonl(vaultPath);
+	} catch {
+		// Best-effort — never crash on vault write
+	}
+}
 
 function extractUserMessageText(content: string | Array<{ type: string; text?: string }>): string {
 	if (typeof content === "string") {
@@ -111,6 +148,7 @@ export class AgentSessionRuntime {
 	}
 
 	private async teardownCurrent(): Promise<void> {
+		writeSessionToVault(this.session);
 		await emitSessionShutdownEvent(this.session.extensionRunner);
 		this.session.dispose();
 	}
@@ -285,6 +323,7 @@ export class AgentSessionRuntime {
 	}
 
 	async dispose(): Promise<void> {
+		writeSessionToVault(this.session);
 		await emitSessionShutdownEvent(this.session.extensionRunner);
 		this.session.dispose();
 	}

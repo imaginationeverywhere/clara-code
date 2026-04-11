@@ -8,6 +8,7 @@
     "start": "next start",
     "check": "tsc --noEmit -p tsconfig.app.json",
     "lint": "next lint",
+    "check": "npm run lint",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:preview": "npx wrangler pages dev .vercel/output/static",
     "pages:deploy": "npx wrangler pages deploy .vercel/output/static"

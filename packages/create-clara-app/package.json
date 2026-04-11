@@ -1,0 +1,38 @@
+{
+	"name": "create-clara-app",
+	"version": "0.1.0",
+	"description": "Create a new Clara AI coding agent project",
+	"type": "module",
+	"bin": {
+		"create-clara-app": "./dist/cli.js"
+	},
+	"scripts": {
+		"clean": "shx rm -rf dist",
+		"build": "tsgo -p tsconfig.build.json && shx chmod +x dist/cli.js",
+		"prepublishOnly": "npm run clean && npm run build"
+	},
+	"files": [
+		"dist",
+		"templates"
+	],
+	"keywords": [
+		"ai",
+		"agent",
+		"clara",
+		"create",
+		"llm",
+		"coding-agent"
+	],
+	"author": "Imagination Everywhere",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/imaginationeverywhere/clara-code.git",
+		"directory": "packages/create-clara-app"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"dependencies": {},
+	"devDependencies": {}
+}

@@ -14,6 +14,10 @@ const config: Config = {
         mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
       },
       colors: {
+        clara: {
+          DEFAULT: '#3B82F6',
+          500: '#3B82F6',
+        },
         brand: {
           purple: '#7C3AED',
           blue:   '#4F8EF7',
