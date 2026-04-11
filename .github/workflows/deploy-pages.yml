@@ -32,6 +32,12 @@ jobs:
         working-directory: packages/web-ui
         run: npm install --no-package-lock --legacy-peer-deps --ignore-scripts
 
+      - name: Configure npm for monorepo build
+        run: |
+          echo "workspaces=false" >> .npmrc
+          echo "ignore-scripts=true" >> .npmrc
+          echo "legacy-peer-deps=true" >> .npmrc
+
       - name: Build with next-on-pages
         working-directory: packages/web-ui
         run: npx @cloudflare/next-on-pages
