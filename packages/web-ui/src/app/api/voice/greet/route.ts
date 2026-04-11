@@ -1,3 +1,5 @@
+export const runtime = "edge";
+
 import { webScripts } from "@clara/clara-code-surface-scripts";
 import { NextResponse } from "next/server";
 
