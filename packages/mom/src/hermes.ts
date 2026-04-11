@@ -66,6 +66,17 @@ function forwardStream(
 	})();
 }
 
+function assistantMessageToEventStream(
+	stream: ReturnType<typeof createAssistantMessageEventStream>,
+	msg: AssistantMessage,
+): void {
+	stream.push({ type: "start", partial: { ...msg } });
+	const doneReason =
+		msg.stopReason === "toolUse" ? "toolUse" : msg.stopReason === "length" ? "length" : ("stop" as const);
+	stream.push({ type: "done", reason: doneReason, message: msg });
+	stream.end();
+}
+
 function mapFinishReason(reason: string | null | undefined): { stopReason: StopReason; errorMessage?: string } {
 	if (reason === null || reason === undefined) return { stopReason: "stop" };
 	switch (reason) {
@@ -231,121 +242,99 @@ export class HermesClient {
 	}
 
 	/**
-	 * Full agent turn: POST /v1/chat with OpenAI-shaped messages + optional tools.
+	 * POST /v1/chat and parse the assistant message. Throws {@link HermesChatError} on HTTP errors
+	 * (callers use {@link shouldFallbackToAnthropic} for 5xx / network / timeout → Claude fallback).
 	 */
-	streamChatCompletion(
+	async completeHermesTurn(
 		convertModel: Model<"openai-completions">,
 		displayModel: Model<Api>,
 		context: Context,
 		options?: SimpleStreamOptions,
 		surface?: string,
-	): ReturnType<typeof createAssistantMessageEventStream> {
-		const stream = createAssistantMessageEventStream();
+	): Promise<AssistantMessage> {
 		const url = `${this.baseUrl.replace(/\/$/, "")}/v1/chat`;
+		const output: AssistantMessage = {
+			role: "assistant",
+			content: [],
+			api: displayModel.api,
+			provider: displayModel.provider,
+			model: displayModel.id,
+			usage: {
+				input: 0,
+				output: 0,
+				cacheRead: 0,
+				cacheWrite: 0,
+				totalTokens: 0,
+				cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 },
+			},
+			stopReason: "stop",
+			timestamp: Date.now(),
+		};
 
-		void (async () => {
-			const output: AssistantMessage = {
-				role: "assistant",
-				content: [],
-				api: displayModel.api,
-				provider: displayModel.provider,
-				model: displayModel.id,
-				usage: {
-					input: 0,
-					output: 0,
-					cacheRead: 0,
-					cacheWrite: 0,
-					totalTokens: 0,
-					cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 },
-				},
-				stopReason: "stop",
-				timestamp: Date.now(),
-			};
+		const messages = convertMessages(convertModel, context, HERMES_OPENAI_COMPAT);
+		const body: Record<string, unknown> = {
+			model: HERMES_DEEPSEEK_MODEL_ID,
+			messages,
+		};
+		if (context.tools && context.tools.length > 0) {
+			body.tools = convertTools(context.tools, HERMES_OPENAI_COMPAT);
+			body.tool_choice = "auto";
+		}
+		if (surface !== undefined) body.surface = surface;
+		if (options?.maxTokens !== undefined) {
+			body.max_tokens = options.maxTokens;
+		}
+		if (options?.temperature !== undefined) {
+			body.temperature = options.temperature;
+		}
 
-			try {
-				const messages = convertMessages(convertModel, context, HERMES_OPENAI_COMPAT);
-				const body: Record<string, unknown> = {
-					model: HERMES_DEEPSEEK_MODEL_ID,
-					messages,
-				};
-				if (context.tools && context.tools.length > 0) {
-					body.tools = convertTools(context.tools, HERMES_OPENAI_COMPAT);
-					body.tool_choice = "auto";
-				}
-				if (surface !== undefined) body.surface = surface;
-				if (options?.maxTokens !== undefined) {
-					body.max_tokens = options.maxTokens;
-				}
-				if (options?.temperature !== undefined) {
-					body.temperature = options.temperature;
-				}
+		const response = await fetch(url, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(body),
+			signal: options?.signal,
+		});
 
-				const response = await fetch(url, {
-					method: "POST",
-					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify(body),
-					signal: options?.signal,
-				});
+		const rawText = await response.text();
+		if (!response.ok || response.status >= 500) {
+			throw new HermesChatError(response.status, rawText);
+		}
 
-				const rawText = await response.text();
-				if (!response.ok || response.status >= 500) {
-					throw new HermesChatError(response.status, rawText);
-				}
+		let data: Record<string, unknown>;
+		try {
+			data = JSON.parse(rawText) as Record<string, unknown>;
+		} catch {
+			throw new Error(`Hermes /v1/chat: invalid JSON: ${rawText.slice(0, 200)}`);
+		}
 
-				let data: Record<string, unknown>;
-				try {
-					data = JSON.parse(rawText) as Record<string, unknown>;
-				} catch {
-					throw new Error(`Hermes /v1/chat: invalid JSON: ${rawText.slice(0, 200)}`);
-				}
+		const choices = data.choices as
+			| Array<{
+					finish_reason?: string | null;
+					message?: {
+						content?: string | null;
+						tool_calls?: Array<{ id: string; function: { name: string; arguments: string } }>;
+					};
+			  }>
+			| undefined;
 
-				const choices = data.choices as
-					| Array<{
-							finish_reason?: string | null;
-							message?: {
-								content?: string | null;
-								tool_calls?: Array<{ id: string; function: { name: string; arguments: string } }>;
-							};
-					  }>
-					| undefined;
+		const usageRaw = data.usage as Parameters<typeof parseUsage>[0] | undefined;
+		const usage = usageRaw ? parseUsage(usageRaw) : output.usage;
 
-				const usageRaw = data.usage as Parameters<typeof parseUsage>[0] | undefined;
-				const usage = usageRaw ? parseUsage(usageRaw) : output.usage;
-
-				if (!choices?.[0]) {
-					const replyOnly = extractReplyString(data);
-					if (replyOnly) {
-						output.content = [{ type: "text", text: replyOnly }];
-						output.usage = usage;
-						output.stopReason = "stop";
-					} else {
-						throw new Error("Hermes /v1/chat: missing choices[0] in response");
-					}
-				} else {
-					const merged = assistantMessageFromOpenAiChoice(choices[0], displayModel, usage);
-					Object.assign(output, merged);
-				}
-
-				stream.push({ type: "start", partial: { ...output } });
-				stream.push({
-					type: "done",
-					reason: output.stopReason === "toolUse" ? "toolUse" : output.stopReason === "length" ? "length" : "stop",
-					message: output,
-				});
-				stream.end();
-			} catch (error) {
-				output.stopReason = options?.signal?.aborted ? "aborted" : "error";
-				output.errorMessage = error instanceof Error ? error.message : String(error);
-				stream.push({
-					type: "error",
-					reason: output.stopReason === "aborted" ? "aborted" : "error",
-					error: output,
-				});
-				stream.end(output);
+		if (!choices?.[0]) {
+			const replyOnly = extractReplyString(data);
+			if (replyOnly) {
+				output.content = [{ type: "text", text: replyOnly }];
+				output.usage = usage;
+				output.stopReason = "stop";
+			} else {
+				throw new Error("Hermes /v1/chat: missing choices[0] in response");
 			}
-		})();
+		} else {
+			const merged = assistantMessageFromOpenAiChoice(choices[0], displayModel, usage);
+			Object.assign(output, merged);
+		}
 
-		return stream;
+		return output;
 	}
 }
 
@@ -435,17 +424,49 @@ export function createMomHermesStreamFn(
 					forwardStream(stream, streamSimple(fallbackModel, context, options));
 					return;
 				}
-				const inner = hermes.streamChatCompletion(hermesConvertModel, hermesDisplayModel, context, options);
-				forwardStream(stream, inner);
-			} catch (error) {
-				if (shouldFallbackToAnthropic(error)) {
-					log.logWarning(
-						"Hermes request failed; falling back to Anthropic",
-						error instanceof Error ? error.message : String(error),
-					);
-					forwardStream(stream, streamSimple(fallbackModel, context, options));
-					return;
+				try {
+					const msg = await hermes.completeHermesTurn(hermesConvertModel, hermesDisplayModel, context, options);
+					assistantMessageToEventStream(stream, msg);
+				} catch (error) {
+					if (shouldFallbackToAnthropic(error)) {
+						log.logWarning(
+							"Hermes request failed; falling back to Anthropic",
+							error instanceof Error ? error.message : String(error),
+						);
+						forwardStream(stream, streamSimple(fallbackModel, context, options));
+						return;
+					}
+					const errMsg = error instanceof Error ? error.message : String(error);
+					const output: AssistantMessage = {
+						role: "assistant",
+						content: [],
+						api: hermesDisplayModel.api,
+						provider: hermesDisplayModel.provider,
+						model: hermesDisplayModel.id,
+						usage: {
+							input: 0,
+							output: 0,
+							cacheRead: 0,
+							cacheWrite: 0,
+							totalTokens: 0,
+							cost: { input: 0, output: 0, cacheRead: 0, cacheWrite: 0, total: 0 },
+						},
+						stopReason: options?.signal?.aborted ? "aborted" : "error",
+						errorMessage: errMsg,
+						timestamp: Date.now(),
+					};
+					stream.push({
+						type: "error",
+						reason: output.stopReason === "aborted" ? "aborted" : "error",
+						error: output,
+					});
+					stream.end(output);
 				}
+			} catch (error) {
+				log.logWarning(
+					"Hermes stream setup failed; falling back to Anthropic",
+					error instanceof Error ? error.message : String(error),
+				);
 				forwardStream(stream, streamSimple(fallbackModel, context, options));
 			}
 		})();
