@@ -23,6 +23,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Configure npm for monorepo build
+        run: |
+          echo "package-lock=false" >> .npmrc
+          echo "legacy-peer-deps=true" >> .npmrc
+          echo "ignore-scripts=true" >> .npmrc
+
       - name: Build surface-scripts dependency
         run: |
           npm install -g typescript
@@ -30,7 +36,7 @@ jobs:
 
       - name: Install web-ui dependencies
         working-directory: packages/web-ui
-        run: npm install --no-package-lock --legacy-peer-deps --ignore-scripts
+        run: npm install --legacy-peer-deps --ignore-scripts
 
       - name: Build with next-on-pages
         working-directory: packages/web-ui
