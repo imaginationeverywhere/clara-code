@@ -6,8 +6,8 @@ pages_build_output_dir = ".vercel/output/static"
 [env.production]
 name = "clara-code"
 
-[env.develop]
-name = "clara-code-dev"
+[env.preview]
+name = "clara-code-preview"
 
 # Cloudflare Pages config
 # Project: clara-code
