@@ -11,7 +11,7 @@ export default function OnboardingLayout() {
         contentStyle: { backgroundColor: CLARA.background },
       }}
     >
-      <Stack.Screen name="welcome" />
+      <Stack.Screen name="index" />
       <Stack.Screen name="voice-setup" />
       <Stack.Screen name="connect" />
     </Stack>

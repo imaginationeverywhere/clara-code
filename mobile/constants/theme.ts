@@ -1,6 +1,6 @@
 /** Clara Code mobile brand tokens */
 export const CLARA = {
-  background: '#0D1117',
+  background: '#0F172A',
   accent: '#7BC8D8',
   text: '#E8F4F8',
   textMuted: 'rgba(232, 244, 248, 0.65)',

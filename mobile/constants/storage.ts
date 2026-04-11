@@ -1,2 +1,4 @@
-/** SecureStore key for claracode.ai API token saved during onboarding */
-export const CLARA_API_KEY_STORAGE_KEY = 'clara_api_key';
+/** SecureStore key for Clara Code API token */
+export const CLARA_API_KEY_STORAGE_KEY = 'CLARA_API_KEY';
+
+export const CLARA_VOICE_PREFS_KEY = 'CLARA_VOICE_PREFS';

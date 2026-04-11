@@ -13,18 +13,28 @@ export default function WelcomeScreen() {
       <View style={styles.body}>
         <View style={styles.hero}>
           <ClaraLogo size={140} />
-          <Text style={styles.title}>Clara Code</Text>
           <Text style={styles.tagline}>Your AI coding companion</Text>
         </View>
 
-        <Pressable
-          style={({ pressed }) => [styles.primaryButton, pressed && styles.primaryButtonPressed]}
-          onPress={() => router.push('/(onboarding)/voice-setup')}
-          accessibilityRole="button"
-          accessibilityLabel="Get started"
-        >
-          <Text style={styles.primaryButtonLabel}>Get Started</Text>
-        </Pressable>
+        <View style={styles.actions}>
+          <Pressable
+            style={({ pressed }) => [styles.primaryButton, pressed && styles.primaryButtonPressed]}
+            onPress={() => router.push('/(onboarding)/voice-setup')}
+            accessibilityRole="button"
+            accessibilityLabel="Get started"
+          >
+            <Text style={styles.primaryButtonLabel}>Get Started</Text>
+          </Pressable>
+
+          <Pressable
+            style={({ pressed }) => [styles.secondaryButton, pressed && styles.secondaryPressed]}
+            onPress={() => router.push('/(onboarding)/connect')}
+            accessibilityRole="button"
+            accessibilityLabel="I have an API key"
+          >
+            <Text style={styles.secondaryButtonLabel}>I have an API key</Text>
+          </Pressable>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -45,19 +55,17 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: 16,
-  },
-  title: {
-    fontFamily: 'Inter_600SemiBold',
-    fontSize: 32,
-    color: CLARA.text,
-    marginTop: 8,
+    gap: 20,
   },
   tagline: {
     fontFamily: 'Inter_400Regular',
-    fontSize: 17,
+    fontSize: 18,
     color: CLARA.textMuted,
     textAlign: 'center',
+    paddingHorizontal: 12,
+  },
+  actions: {
+    gap: 12,
   },
   primaryButton: {
     backgroundColor: CLARA.accent,
@@ -72,5 +80,21 @@ const styles = StyleSheet.create({
     fontFamily: 'Inter_600SemiBold',
     fontSize: 17,
     color: CLARA.background,
+  },
+  secondaryButton: {
+    paddingVertical: 16,
+    borderRadius: 12,
+    alignItems: 'center',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: CLARA.border,
+    backgroundColor: CLARA.surface,
+  },
+  secondaryPressed: {
+    opacity: 0.88,
+  },
+  secondaryButtonLabel: {
+    fontFamily: 'Inter_600SemiBold',
+    fontSize: 17,
+    color: CLARA.text,
   },
 });

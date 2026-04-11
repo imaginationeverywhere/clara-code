@@ -21,7 +21,7 @@ module.exports = {
     splash: {
       image: brandIcon,
       resizeMode: 'contain',
-      backgroundColor: '#0D1117',
+      backgroundColor: '#0F172A',
     },
     ios: {
       supportsTablet: true,
@@ -34,7 +34,7 @@ module.exports = {
     android: {
       adaptiveIcon: {
         foregroundImage: brandIcon,
-        backgroundColor: '#0D1117',
+        backgroundColor: '#0F172A',
       },
     },
     web: {
