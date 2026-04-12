@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `next-env.d.ts`: reference `./.next/types/routes.d.ts` for generated App Router route types (Next.js 15).
+
 ### Added
 
 - Next.js App Router pages for dashboard, pricing, API keys, settings, and Clerk-hosted sign-in/sign-up; Apollo Client provider and GraphQL operations; middleware for protected routes.
