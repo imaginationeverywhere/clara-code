@@ -1,5 +1,5 @@
-import request from "supertest";
 import express from "express";
+import request from "supertest";
 
 jest.mock("@/middleware/rate-limit", () => ({
 	waitlistLimiter: (_req: unknown, _res: unknown, next: () => void) => {
@@ -14,8 +14,8 @@ jest.mock("@/utils/logger", () => ({
 	logger: { info: jest.fn(), error: jest.fn(), warn: jest.fn() },
 }));
 
-import waitlistRoutes from "@/routes/waitlist";
 import { WaitlistEntry } from "@/models/WaitlistEntry";
+import waitlistRoutes from "@/routes/waitlist";
 
 const app = express();
 app.use(express.json());
@@ -35,10 +35,7 @@ describe("POST /api/waitlist", () => {
 	});
 
 	it("200 on duplicate email", async () => {
-		(WaitlistEntry.findOrCreate as jest.Mock).mockResolvedValueOnce([
-			{ id: "abc", email: "test@test.com" },
-			false,
-		]);
+		(WaitlistEntry.findOrCreate as jest.Mock).mockResolvedValueOnce([{ id: "abc", email: "test@test.com" }, false]);
 		const res = await request(app).post("/api/waitlist").send({ email: "test@test.com" });
 		expect(res.status).toBe(200);
 		expect(res.body.message).toMatch(/already/i);

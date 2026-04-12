@@ -1,7 +1,6 @@
-import request from "supertest";
-import express from "express";
-
 import type { Request, Response } from "express";
+import express from "express";
+import request from "supertest";
 
 jest.mock("@/routes/keys", () => {
 	const { Router } = require("express");

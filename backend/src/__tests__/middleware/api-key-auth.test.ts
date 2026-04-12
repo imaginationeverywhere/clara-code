@@ -1,5 +1,5 @@
-import request from "supertest";
 import express from "express";
+import request from "supertest";
 
 jest.mock("@/models/ApiKey", () => ({
 	ApiKey: { findOne: jest.fn(), update: jest.fn() },

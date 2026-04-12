@@ -35,7 +35,7 @@ describe("clerk-auth middleware", () => {
 		});
 		const app = express();
 		app.use((req: AuthenticatedRequest, _res, next) => {
-			req.auth = async () => ({ userId: "user_clerk" } as never);
+			req.auth = async () => ({ userId: "user_clerk" }) as never;
 			next();
 		});
 		app.use(syncUserMiddleware);
@@ -51,7 +51,7 @@ describe("clerk-auth middleware", () => {
 		(User.findByClerkId as jest.Mock).mockResolvedValueOnce(null);
 		const app = express();
 		app.use((req: AuthenticatedRequest, _res, next) => {
-			req.auth = async () => ({ userId: "user_clerk" } as never);
+			req.auth = async () => ({ userId: "user_clerk" }) as never;
 			next();
 		});
 		app.use(syncUserMiddleware);
@@ -64,7 +64,7 @@ describe("clerk-auth middleware", () => {
 		(User.findByClerkId as jest.Mock).mockRejectedValueOnce(new Error("db"));
 		const app = express();
 		app.use((req: AuthenticatedRequest, _res, next) => {
-			req.auth = async () => ({ userId: "user_clerk" } as never);
+			req.auth = async () => ({ userId: "user_clerk" }) as never;
 			next();
 		});
 		app.use(syncUserMiddleware);
@@ -91,7 +91,7 @@ describe("clerk-auth middleware", () => {
 	it("requireRole 401 without userId", async () => {
 		const app = express();
 		app.use((req: AuthenticatedRequest, _res, next) => {
-			req.auth = async () => ({ userId: null } as never);
+			req.auth = async () => ({ userId: null }) as never;
 			next();
 		});
 		app.get("/admin", requireRole(["ADMIN"]), (_req, res) => res.json({ ok: true }));

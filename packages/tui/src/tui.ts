@@ -429,35 +429,29 @@ export class TUI extends Container {
 	}
 
 	/**
-	 * Mount a VoiceBar at the bottom of the TUI (last child). Starts an animation tick (~100ms).
+	 * Mount a VoiceBar at the bottom of the TUI. The bar animates on a 100ms timer while not idle.
 	 */
 	setVoiceBar(voiceBar: VoiceBar): void {
-		if (this.voiceBar) {
-			this.removeChild(this.voiceBar);
-			if (this.voiceBarTimer) {
-				clearInterval(this.voiceBarTimer);
-				this.voiceBarTimer = null;
-			}
+		if (this.voiceBarTimer) {
+			clearInterval(this.voiceBarTimer);
+			this.voiceBarTimer = null;
 		}
 		this.voiceBar = voiceBar;
-		this.addChild(voiceBar);
 		this.voiceBarTimer = setInterval(() => {
 			if (voiceBar.tick()) {
 				this.requestRender();
 			}
 		}, 100);
+		this.requestRender();
 	}
 
-	/** Remove voice bar and stop its animation timer. */
 	clearVoiceBar(): void {
-		if (this.voiceBar) {
-			this.removeChild(this.voiceBar);
-			this.voiceBar = null;
-		}
 		if (this.voiceBarTimer) {
 			clearInterval(this.voiceBarTimer);
 			this.voiceBarTimer = null;
 		}
+		this.voiceBar = null;
+		this.requestRender();
 	}
 
 	startVoiceListening(): void {
