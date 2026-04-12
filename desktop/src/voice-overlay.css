@@ -1,0 +1,70 @@
+#clara-voice-overlay-root {
+	position: fixed;
+	z-index: 2147483646;
+	inset: 0;
+	pointer-events: none;
+}
+
+#clara-voice-overlay-root .clara-voice-fab {
+	pointer-events: auto;
+	position: fixed;
+	right: 24px;
+	bottom: 24px;
+	width: 56px;
+	height: 56px;
+	padding: 0;
+	border: none;
+	border-radius: 9999px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(145deg, #6366f1 0%, #4f46e5 55%, #4338ca 100%);
+	color: #f8fafc;
+	box-shadow:
+		0 10px 25px rgba(15, 23, 42, 0.35),
+		0 0 0 1px rgba(255, 255, 255, 0.08) inset;
+	transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+#clara-voice-overlay-root .clara-voice-fab:hover {
+	transform: scale(1.05);
+	box-shadow:
+		0 14px 32px rgba(15, 23, 42, 0.45),
+		0 0 0 1px rgba(255, 255, 255, 0.12) inset;
+}
+
+#clara-voice-overlay-root .clara-voice-fab:focus-visible {
+	outline: 2px solid #a5b4fc;
+	outline-offset: 3px;
+}
+
+#clara-voice-overlay-root .clara-voice-fab:disabled {
+	opacity: 0.65;
+	cursor: not-allowed;
+	transform: none;
+}
+
+#clara-voice-overlay-root .clara-voice-fab svg {
+	width: 26px;
+	height: 26px;
+	flex-shrink: 0;
+}
+
+@keyframes clara-voice-pulse {
+	0%,
+	100% {
+		box-shadow:
+			0 10px 25px rgba(15, 23, 42, 0.35),
+			0 0 0 0 rgba(99, 102, 241, 0.55);
+	}
+	50% {
+		box-shadow:
+			0 14px 32px rgba(15, 23, 42, 0.45),
+			0 0 0 12px rgba(99, 102, 241, 0);
+	}
+}
+
+#clara-voice-overlay-root .clara-voice-fab--pulse {
+	animation: clara-voice-pulse 1.4s ease-in-out infinite;
+}
