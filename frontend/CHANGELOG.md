@@ -14,6 +14,7 @@
 ### Fixed
 
 - `check` script: run `next lint` and `tsc` (removed duplicate `check` key in `package.json`).
+- ESLint 9: `eslint.config.mjs` loads flat `eslint-config-next/core-web-vitals` (Next 16); dashboard API-key hydration from `localStorage` documents `react-hooks/set-state-in-effect` where needed.
 
 ## [0.66.1] - 2026-04-08
 

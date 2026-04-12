@@ -55,7 +55,8 @@ export default function DashboardPage() {
   const [voiceCloneStatus, setVoiceCloneStatus] = useState<'none' | 'pending' | 'ready'>('none')
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect -- hydrate from localStorage after mount
+    // Hydrate from localStorage after mount (browser-only).
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional one-time sync from external store
     setKeys(loadKeys())
   }, [])
 
