@@ -45,12 +45,8 @@ jobs:
           NEXT_TELEMETRY_DISABLED: "1"
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-          accountId: 4682eae9d50da54644c8f895ddad984f
-          projectName: clara-code
-          directory: packages/web-ui/.vercel/output/static
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref_name }}
-          wranglerVersion: '3'
+        working-directory: packages/web-ui
+        run: npx wrangler@4 pages deploy .vercel/output/static --project-name clara-code --branch ${{ github.ref_name }} --commit-hash ${{ github.sha }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 4682eae9d50da54644c8f895ddad984f
