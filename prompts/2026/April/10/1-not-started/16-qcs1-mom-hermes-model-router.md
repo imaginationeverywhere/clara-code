@@ -1,3 +1,9 @@
+## CURSOR AGENT — MCP NOTE
+**Figma MCP**: Skip if unavailable. Do NOT wait for it or ask about it. This prompt does NOT require Figma MCP. Proceed immediately with the implementation below.
+**Secrets**: All keys are in AWS SSM. Pull with: `aws ssm get-parameter --name '/quik-nation/shared/<KEY_NAME>' --with-decryption --query 'Parameter.Value' --output text`
+
+---
+
 # Prompt 16 — QCS1: mom Package — Register Clara Hermes Model Router
 **Author:** Carruthers (Tech Lead, Clara Code Team)
 **Task:** Add Clara Gateway (Hermes) as an optional model router in mom

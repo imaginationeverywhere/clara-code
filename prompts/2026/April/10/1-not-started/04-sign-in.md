@@ -1,3 +1,9 @@
+## CURSOR AGENT — MCP NOTE
+**Figma MCP**: Skip if unavailable. Do NOT wait for it or ask about it. This prompt does NOT require Figma MCP. Proceed immediately with the implementation below.
+**Secrets**: All keys are in AWS SSM. Pull with: `aws ssm get-parameter --name '/quik-nation/shared/<KEY_NAME>' --with-decryption --query 'Parameter.Value' --output text`
+
+---
+
 # Magic Patterns Prompt — Sign-In Page
 
 **File target:** `packages/web-ui/src/app/(auth)/sign-in/[[...sign-in]]/page.tsx`

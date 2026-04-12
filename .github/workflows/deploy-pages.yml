@@ -38,14 +38,14 @@ jobs:
         run: npm install
 
       - name: Build with next-on-pages
-        working-directory: packages/web-ui
+        working-directory: frontend
         run: npx @cloudflare/next-on-pages
         env:
           NODE_ENV: production
           NEXT_TELEMETRY_DISABLED: "1"
 
       - name: Deploy to Cloudflare Pages
-        working-directory: packages/web-ui
+        working-directory: frontend
         run: npx wrangler@4 pages deploy .vercel/output/static --project-name clara-code --branch ${{ github.ref_name }} --commit-hash ${{ github.sha }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}

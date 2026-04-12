@@ -56,7 +56,7 @@ I regularly publish my own `pi-mono` work sessions here:
 | **[@mariozechner/pi-coding-agent](packages/coding-agent)** | Interactive coding agent CLI |
 | **[@mariozechner/pi-mom](packages/mom)** | Slack bot that delegates messages to the pi coding agent |
 | **[@mariozechner/pi-tui](packages/tui)** | Terminal UI library with differential rendering |
-| **[@mariozechner/pi-web-ui](packages/web-ui)** | Web components for AI chat interfaces |
+| **[@mariozechner/pi-web-ui](frontend)** | Web components for AI chat interfaces; Next.js app (Clara marketing site) |
 | **[@mariozechner/pi-pods](packages/pods)** | CLI for managing vLLM deployments on GPU pods |
 
 ## Contributing
@@ -66,14 +66,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [AGENTS.m
 ## Development
 
 ```bash
-npm install          # Install all dependencies
-npm run build        # Build all packages
+npm install          # Install all dependencies (or `pnpm install` — root build uses pnpm)
+corepack enable pnpm # Ensures `pnpm` is available for `npm run build` / `pnpm run build`
+pnpm run build       # Build all packages (preferred; root `build` script uses pnpm)
 npm run check        # Lint, format, and type check
 ./test.sh            # Run tests (skips LLM-dependent tests without API keys)
 ./pi-test.sh         # Run pi from sources (can be run from any directory)
 ```
 
-> **Note:** `npm run check` requires `npm run build` to be run first. The web-ui package uses `tsc` which needs compiled `.d.ts` files from dependencies.
+> **Note:** `npm run check` requires a successful build first. The `frontend` package uses `tsc` which needs compiled `.d.ts` files from dependencies.
 
 ## License
 
