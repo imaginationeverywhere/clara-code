@@ -251,9 +251,6 @@ export class TUI extends Container {
 		focusOrder: number;
 	}[] = [];
 
-	private voiceBar: VoiceBar | null = null;
-	private voiceBarTimer: ReturnType<typeof setInterval> | null = null;
-
 	constructor(terminal: Terminal, showHardwareCursor?: boolean) {
 		super();
 		this.terminal = terminal;
@@ -455,46 +452,6 @@ export class TUI extends Container {
 		}
 		this.voiceBar = null;
 		this.requestRender();
-	}
-
-	startVoiceListening(): void {
-		this.voiceBar?.setState("listening");
-	}
-
-	stopVoiceListening(): void {
-		this.voiceBar?.setState("idle");
-	}
-
-	/**
-	 * Mount a VoiceBar at the bottom of the TUI (last child). Starts an animation tick (~100ms).
-	 */
-	setVoiceBar(voiceBar: VoiceBar): void {
-		if (this.voiceBar) {
-			this.removeChild(this.voiceBar);
-			if (this.voiceBarTimer) {
-				clearInterval(this.voiceBarTimer);
-				this.voiceBarTimer = null;
-			}
-		}
-		this.voiceBar = voiceBar;
-		this.addChild(voiceBar);
-		this.voiceBarTimer = setInterval(() => {
-			if (voiceBar.tick()) {
-				this.requestRender();
-			}
-		}, 100);
-	}
-
-	/** Remove voice bar and stop its animation timer. */
-	clearVoiceBar(): void {
-		if (this.voiceBar) {
-			this.removeChild(this.voiceBar);
-			this.voiceBar = null;
-		}
-		if (this.voiceBarTimer) {
-			clearInterval(this.voiceBarTimer);
-			this.voiceBarTimer = null;
-		}
 	}
 
 	startVoiceListening(): void {

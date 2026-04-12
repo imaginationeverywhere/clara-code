@@ -338,6 +338,10 @@ export class HermesClient {
 	}
 }
 
+export async function logHermesGatewayStatus(): Promise<void> {
+	await HermesClient.fromEnv().ping();
+}
+
 export class HermesChatError extends Error {
 	constructor(
 		public readonly status: number,

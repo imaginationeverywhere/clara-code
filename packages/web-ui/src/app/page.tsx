@@ -1,15 +1,19 @@
-import { CliDemo } from '@/app/(marketing)/components/CliDemo'
+import { Footer } from '@/components/marketing/Footer'
+import { FeaturesSection } from '@/components/marketing/FeaturesSection'
+import { Header } from '@/components/marketing/Header'
+import { HeroSection } from '@/components/marketing/HeroSection'
+import { InstallSection } from '@/components/marketing/InstallSection'
+import { PricingSection } from '@/components/marketing/PricingSection'
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#0F0F0F]">
-      <section id="hero" className="flex min-h-screen flex-col items-center justify-center px-4 py-16">
-        <div className="text-center">
-          <h1 className="text-5xl font-bold text-white md:text-6xl">Code with your voice.</h1>
-          <p className="mt-4 text-white/60">Clara Code — terminal-native CLI and IDE</p>
-        </div>
-        <CliDemo />
-      </section>
-    </main>
-  )
+	return (
+		<main className="min-h-screen bg-[#0D1117] text-white selection:bg-[#7C3AED]/30 selection:text-white">
+			<Header />
+			<HeroSection />
+			<FeaturesSection />
+			<InstallSection />
+			<PricingSection />
+			<Footer />
+		</main>
+	)
 }
