@@ -872,6 +872,98 @@ Before invoking code-quality-reviewer agent:
 - ✅ Per-file coverage calculated
 - ❌ If any check fails → BLOCK and exit
 
+## After a Passing Review: Archive Completed Prompts (NON-NEGOTIABLE)
+
+When a code review **passes** (grade A, A-, B+, or any result where the reviewer approves the
+work), you MUST archive the prompt(s) that produced this code to the HQ completed directory.
+
+This is the closing step of the Cursor agent prompt lifecycle:
+```
+1-not-started/ → 2-in-progress/ → [code written] → review-code passes → 3-completed/ (HQ)
+```
+
+### Step 1 — Identify the prompt source
+
+Find prompts that were executed and need archiving. Check in priority order:
+
+```bash
+YEAR=$(date +%Y)
+MONTH=$(date +%B)    # Full month name: April, May, etc.
+DAY=$(date +%-d)     # Day without leading zero
+
+# 1. Local repo 3-done/ (pickup-prompt moves here after execution)
+LOCAL_DONE="prompts/${YEAR}/${MONTH}/${DAY}/3-done"
+
+# 2. Local repo tasks/prompts/1-not-started/ (team-written prompts, manually placed)
+LOCAL_QUEUE="tasks/prompts/1-not-started"
+
+# 3. Local repo 2-in-progress/ (currently running)
+LOCAL_WIP="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
+
+ls "$LOCAL_DONE"/*.md 2>/dev/null
+ls "$LOCAL_QUEUE"/*.md 2>/dev/null
+ls "$LOCAL_WIP"/*.md 2>/dev/null
+```
+
+### Step 2 — Archive to HQ (quik-nation-ai-boilerplate)
+
+The canonical archive destination is the boilerplate's `3-completed/` directory:
+
+```bash
+HQ_DIR="/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+
+# On QCS1, HQ path is:
+# HQ_DIR="/Users/ayoungboy/Projects/quik-nation-ai-boilerplate/prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+
+mkdir -p "$HQ_DIR"
+
+# Archive from 3-done/ (preferred — already executed by pickup-prompt)
+for f in "$LOCAL_DONE"/*.md 2>/dev/null; do
+  [ -f "$f" ] || continue
+  cp "$f" "$HQ_DIR/"
+  echo "✅ Archived: $(basename $f) → HQ/3-completed/"
+done
+
+# Archive from tasks/prompts/1-not-started/ (team prompts, if review covered them)
+for f in "$LOCAL_QUEUE"/*.md 2>/dev/null; do
+  [ -f "$f" ] || continue
+  cp "$f" "$HQ_DIR/"
+  mv "$f" "$(dirname $f)/../3-done/$(basename $f)" 2>/dev/null || true
+  echo "✅ Archived + moved to 3-done: $(basename $f)"
+done
+```
+
+### Step 3 — Post to live feed
+
+```bash
+COUNT=$(ls "$HQ_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | PROMPTS ARCHIVED | ${COUNT} prompt(s) moved to HQ 3-completed/ after passing review" >> ~/auset-brain/Swarms/live-feed.md
+```
+
+### When NOT to archive
+
+- Review **fails** (C grade, CRITICAL issues, coverage below 80%) → do NOT archive. Prompts
+  stay in queue until the corrective work passes review.
+- A prompt is from a **prior day** and already in HQ → skip (check with `ls $HQ_DIR` first).
+- No prompts found in any source directory → skip silently (some reviews target ad-hoc diffs,
+  not prompt-driven work).
+
+### HQ Directory Structure
+
+```
+quik-nation-ai-boilerplate/
+└── prompts/
+    └── 2026/
+        └── April/
+            └── 12/
+                ├── 1-not-started/    ← New work queued by teams
+                ├── 2-in-progress/    ← Currently executing
+                ├── 3-done/           ← Execution complete (local heru repo)
+                └── 3-completed/      ← Review PASSED — final archive (HQ)
+```
+
+---
+
 ## Command Metadata
 
 ```yaml
@@ -882,12 +974,13 @@ output_type: markdown_document
 output_location: docs/review/
 token_cost: ~15,000 (includes test execution)
 token_savings: ~40,000 (per future reference)
-version: 2.0.0
+version: 2.1.0
 test_coverage_required: true
 minimum_coverage: 80%
 blocks_on_failure: true
 author: Quik Nation AI
 changelog:
+  - v2.1.0: Added post-review prompt archival to HQ 3-completed/ (NON-NEGOTIABLE)
   - v2.0.0: Added mandatory 80% test coverage requirement
   - v1.0.0: Initial release with code quality review
 ```

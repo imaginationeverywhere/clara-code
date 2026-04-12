@@ -1,10 +1,10 @@
 # /pickup-prompt — Find and Execute the Next Not-Started Prompt
 
-**Named after the pattern:** Cursor agents on QCS1 pick up prompts from `prompts/<yyyy>/<Month>/<dd>/1-not-started/` and execute them.
+**Named after the pattern:** Cursor agents on QCS1 pick up prompts from `prompts/<yyyy>/<Month>/<dd>/1-not-started/` and execute them in isolated git worktrees.
 
 ## What This Command Does
 
-Resolves today's date, finds the `1-not-started/` directory for that date, lists available prompts, and instructs the agent to execute the first one (or a specific one if named).
+Resolves today's date, finds the `1-not-started/` directory for that date, picks the first available prompt, moves it to `2-in-progress/`, creates a git worktree, executes the prompt, then moves it to `3-completed/` and pushes the branch to GitHub.
 
 ## Usage
 
@@ -66,43 +66,121 @@ if [ ! -f "$TARGET" ]; then
   exit 1
 fi
 
+PROMPT_NAME=$(basename "$TARGET" .md)
+
 echo ""
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-echo "EXECUTING PROMPT: $(basename $TARGET)"
+echo "PICKING UP PROMPT: $(basename $TARGET)"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 cat "$TARGET"
 ```
 
-### Step 4 — Mark as in-progress (move to 2-in-progress/)
+### Step 4 — Move to in-progress
 
 ```bash
 IN_PROGRESS_DIR="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
 mkdir -p "$IN_PROGRESS_DIR"
 mv "$TARGET" "$IN_PROGRESS_DIR/"
 echo ""
-echo "Moved to: ${IN_PROGRESS_DIR}/$(basename $TARGET)"
+echo "📋 Moved to: ${IN_PROGRESS_DIR}/$(basename $TARGET)"
 ```
 
-### Step 5 — Execute the prompt
+### Step 5 — Create a git worktree for the work
 
-Read the full prompt content and follow all instructions in it. The prompt contains the complete specification for what to build. Execute it now.
-
-After completion:
+Generate a branch name from the prompt filename and today's date, then create a worktree:
 
 ```bash
-DONE_DIR="prompts/${YEAR}/${MONTH}/${DAY}/3-done"
-mkdir -p "$DONE_DIR"
-mv "${IN_PROGRESS_DIR}/$(basename $TARGET)" "$DONE_DIR/"
+# Sanitize branch name: lowercase, replace non-alphanumeric with hyphens
+BRANCH_NAME="prompt/${YEAR}-$(date +%m)-$(date +%d)/${PROMPT_NAME}"
+BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9\/\-]/-/g' | sed 's/-\+/-/g')
+
+WORKTREE_PATH="/tmp/worktrees/${PROMPT_NAME}"
+mkdir -p "/tmp/worktrees"
+
+# Create worktree on a new branch
+git worktree add "$WORKTREE_PATH" -b "$BRANCH_NAME" 2>/dev/null || {
+  # Branch may already exist — use it
+  git worktree add "$WORKTREE_PATH" "$BRANCH_NAME" 2>/dev/null || {
+    echo "ERROR: Could not create worktree at $WORKTREE_PATH"
+    exit 1
+  }
+}
+
+echo "🌿 Worktree created: $WORKTREE_PATH (branch: $BRANCH_NAME)"
 echo ""
-echo "✅ Prompt complete. Moved to: ${DONE_DIR}/$(basename $TARGET)"
+echo "Working in: $WORKTREE_PATH"
 ```
 
-Then check for the next prompt:
+### Step 6 — Execute the prompt
+
+Read the full prompt content (from `2-in-progress/`) and follow all instructions in it.
+All file edits happen inside the worktree at `$WORKTREE_PATH`.
+
+After completion, commit the work in the worktree:
+
+```bash
+cd "$WORKTREE_PATH"
+
+# Stage all changes made during execution
+git add -A
+
+# Commit with prompt name as message
+git commit -m "feat: execute prompt ${PROMPT_NAME}
+
+Prompt source: prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress/$(basename $TARGET)
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>" 2>/dev/null || echo "(nothing to commit — prompt may have been docs-only)"
+```
+
+### Step 7 — Push the worktree branch to GitHub
+
+```bash
+cd "$WORKTREE_PATH"
+
+# Get the remote (default: origin)
+REMOTE=$(git remote | head -1)
+if [ -z "$REMOTE" ]; then
+  echo "⚠️  No git remote found — skipping push"
+else
+  git push "$REMOTE" "$BRANCH_NAME" 2>&1
+  echo ""
+  echo "🚀 Pushed branch: $BRANCH_NAME → $REMOTE"
+fi
+```
+
+### Step 8 — Move prompt to completed
+
+Back in the main repo, move the prompt from `2-in-progress/` to `3-completed/`:
+
+```bash
+COMPLETED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+mkdir -p "$COMPLETED_DIR"
+INPROGRESS_FILE="${IN_PROGRESS_DIR}/$(basename $TARGET)"
+mv "$INPROGRESS_FILE" "$COMPLETED_DIR/"
+echo ""
+echo "✅ Prompt complete. Moved to: ${COMPLETED_DIR}/$(basename $TARGET)"
+```
+
+### Step 9 — Clean up the worktree
+
+```bash
+# Remove the worktree (branch stays in git history)
+git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
+echo "🧹 Worktree cleaned up: $WORKTREE_PATH"
+```
+
+### Step 10 — Check for the next prompt
+
 ```bash
 NEXT=$(ls "${PROMPT_DIR}"/*.md 2>/dev/null | sort | head -1)
 if [ -n "$NEXT" ]; then
+  echo ""
   echo "Next prompt waiting: $(basename $NEXT)"
   echo "Run /pickup-prompt to continue."
+else
+  echo ""
+  echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | QUEUE EMPTY | All prompts complete for ${YEAR}/${MONTH}/${DAY}" >> ~/auset-brain/Swarms/live-feed.md
+  echo "Queue clear for today. Posting to live feed."
 fi
 ```
 
@@ -117,8 +195,32 @@ prompts/
             │   ├── 01-web-navbar.md
             │   ├── 02-ecs-deploy.md
             │   └── 03-test-fix.md
-            ├── 2-in-progress/     ← Moved here when agent starts
-            └── 3-done/            ← Moved here when complete
+            ├── 2-in-progress/     ← Moved here when agent starts work
+            └── 3-completed/       ← Moved here when work is done + pushed
+```
+
+## Worktree Convention
+
+```
+/tmp/worktrees/
+└── 01-web-navbar/                 ← One worktree per prompt (cleaned up after push)
+
+Branch naming:
+  prompt/2026-04-12/01-web-navbar
+```
+
+## Full Lifecycle Summary
+
+```
+1-not-started/   →   [pick up]   →   2-in-progress/
+                                          ↓
+                                   [create worktree]
+                                   [execute prompt]
+                                   [git commit]
+                                   [git push branch]
+                                          ↓
+                                     3-completed/
+                                   [worktree removed]
 ```
 
 ## Notes
@@ -126,7 +228,6 @@ prompts/
 - Prompts are numbered (01-, 02-) — lower number = higher priority
 - Each prompt is a complete Cursor agent task spec — self-contained instructions
 - Agents run one prompt at a time; pick up the next when done
-- If `1-not-started/` is empty, the agent's queue is clear — post to live feed:
-  ```bash
-  echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | QUEUE EMPTY | All prompts complete for $(date +%Y/%B/%-d)" >> ~/auset-brain/Swarms/live-feed.md
-  ```
+- The worktree branch stays in GitHub history as a record of what was done
+- PR creation (if needed) is handled by the Clara Code team's review workflow
+- If `1-not-started/` is empty, the agent's queue is clear — post to live feed
