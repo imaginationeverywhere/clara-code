@@ -1,5 +1,7 @@
 import { CliDemo } from '@/app/(marketing)/components/CliDemo'
 
+export const runtime = 'edge'
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-[#0F0F0F]">

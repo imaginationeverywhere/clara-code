@@ -2,6 +2,12 @@
 
 **EXECUTE IMMEDIATELY when invoked.** This is not documentation — this is a startup sequence. Run every step below NOW.
 
+## Automatic resume (before you run this command)
+
+On every Claude Code **session start** in this project, the **SessionStart** hook runs `.claude/hooks/session-resume.sh`. It injects `memory/session-checkpoint.md`, optional `memory/agent-checkpoints/<agent>.md` (per-agent tmux windows only), recent live-feed and Daily vault snippets, and recent `git log` — with instructions to **resume quietly** (no long re-intro or Family Standup unless Mo asks).
+
+`/session-start` is still the **full cold boot** (identity, org gate, Slack, standup, feed watcher, telegraph, etc.). Use it when you need the complete ritual; for a quick open, the hook already orients the agent.
+
 ## Execution Steps (DO ALL OF THESE)
 
 ### Step 1: Identify Who's Here
@@ -202,7 +208,22 @@ Clerk, User Profile, Admin Dashboard, CMS, CRM, Stripe, Shopping Cart, Checkout,
 
 ### Step 11: Join the Swarm Network (NON-NEGOTIABLE)
 
-Every Claude Code session is part of a **swarm coordination network**. Multiple sessions run simultaneously on the same machine, coordinating through a shared live feed and a real-time feed watcher.
+Every Claude Code session is part of a **swarm coordination network**. Multiple sessions run simultaneously on the same machine, coordinating through a shared live feed, real-time feed watcher, and tmux-based session management.
+
+**IMPORTANT: Launch sessions with the Swarm Launcher for reliable wake support.**
+Sessions launched via `swarm-launcher.sh` run inside tmux, which enables `tmux send-keys` to inject prompts into idle sessions instantly. Sessions launched as bare Terminal tabs can only be woken via fragile AppleScript fallback.
+
+```bash
+# Recommended: Launch via swarm-launcher.sh (enables reliable wake)
+.claude/scripts/swarm-launcher.sh start wcr /path/to/world-cup-ready
+.claude/scripts/swarm-launcher.sh start hq /path/to/boilerplate
+
+# List running swarm sessions
+.claude/scripts/swarm-launcher.sh list
+
+# Attach to a session (Ctrl+B, D to detach)
+.claude/scripts/swarm-launcher.sh attach wcr
+```
 
 **1. Read the live feed for messages from other sessions:**
 ```bash
@@ -262,7 +283,25 @@ HQ's feed watcher detects this instantly and will queue new tasks in the team re
 ```
 Shows pending deliveries, session liveness, and backoff state for each team.
 
-**How this works:** Two event-driven layers — (1) the feed watcher (`tail -f` on live-feed.md) detects events instantly and writes trigger files, (2) the inbox dispatcher (`fswatch` on /tmp/swarm-inboxes/) wakes target sessions the moment a message arrives. The telegraph-check hook surfaces messages on every UserPromptSubmit. Together = instant swarm coordination with zero polling.
+**How this works — the full delivery chain:**
+1. Team A sends: `.claude/scripts/swarm-telegraph.sh send pkgs "Fix the build"`
+2. Telegraph writes to `live-feed.md` (archive) + `/tmp/swarm-inboxes/pkgs.md` (delivery)
+3. Inbox Dispatcher (`fswatch`) detects the inbox write **instantly**
+4. Dispatcher calls `session-registry.sh wake pkgs "You have messages"`
+5. Registry discovers PKGS session:
+   - **tmux session found?** → `tmux send-keys -t swarm-pkgs "message" Enter` (instant, 100% reliable)
+   - **bare Terminal tab?** → AppleScript clipboard-paste fallback (fragile, but works)
+6. Claude Code in PKGS session receives the prompt and processes it
+7. Telegraph-check hook reads `/tmp/swarm-inboxes/pkgs.md` on the next turn
+
+**Wake reliability by launch method:**
+
+| Method | Idle Wake | Over SSH | Clipboard Safe | Focus Safe |
+|--------|-----------|----------|----------------|------------|
+| `swarm-launcher.sh` (tmux) | YES | YES | YES | YES |
+| Bare Terminal tab | NO* | NO | NO | NO |
+
+*Bare terminal sessions only see messages when the user types or the Stop hook fires.
 
 **NO CRON JOBS.** Do NOT create CronCreate jobs for feed checking. Crons waste tokens printing "Nothing new" every 5 minutes on idle sessions. The event-driven system handles everything.
 

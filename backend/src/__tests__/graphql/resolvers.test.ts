@@ -68,7 +68,7 @@ describe("GraphQL resolvers", () => {
 			{
 				id: "k1",
 				name: "n",
-				key: "sk-clara-" + "a".repeat(48),
+				key: `sk-clara-${"a".repeat(48)}`,
 				lastUsedAt: null,
 				createdAt: created,
 			},
@@ -92,9 +92,9 @@ describe("GraphQL resolvers", () => {
 	});
 
 	it("Mutation.createApiKey throws when unauthenticated", async () => {
-		await expect(resolvers.Mutation.createApiKey(null, { name: "n" }, { ...baseCtx, auth: { userId: null } })).rejects.toThrow(
-			"Unauthorized",
-		);
+		await expect(
+			resolvers.Mutation.createApiKey(null, { name: "n" }, { ...baseCtx, auth: { userId: null } }),
+		).rejects.toThrow("Unauthorized");
 	});
 
 	it("Mutation.createApiKey creates key", async () => {
@@ -104,9 +104,9 @@ describe("GraphQL resolvers", () => {
 	});
 
 	it("Mutation.revokeApiKey throws when unauthenticated", async () => {
-		await expect(resolvers.Mutation.revokeApiKey(null, { id: "x" }, { ...baseCtx, auth: { userId: null } })).rejects.toThrow(
-			"Unauthorized",
-		);
+		await expect(
+			resolvers.Mutation.revokeApiKey(null, { id: "x" }, { ...baseCtx, auth: { userId: null } }),
+		).rejects.toThrow("Unauthorized");
 	});
 
 	it("Mutation.revokeApiKey throws when key missing", async () => {

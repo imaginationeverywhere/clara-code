@@ -1,5 +1,5 @@
-import request from "supertest";
 import express from "express";
+import request from "supertest";
 
 jest.mock("@clerk/express", () => ({
 	requireAuth: () => (_req: unknown, _res: unknown, next: () => void) => {
@@ -22,8 +22,8 @@ jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
 }));
 
-import keysRoutes from "@/routes/keys";
 import { ApiKey } from "@/models/ApiKey";
+import keysRoutes from "@/routes/keys";
 
 const app = express();
 app.use(express.json());
@@ -41,7 +41,7 @@ describe("routes /api/keys", () => {
 			{
 				id: "k1",
 				name: "n",
-				key: "sk-clara-" + "b".repeat(48),
+				key: `sk-clara-${"b".repeat(48)}`,
 				lastUsedAt: null,
 				createdAt: new Date(),
 			},
@@ -80,7 +80,9 @@ describe("routes /api/keys", () => {
 	});
 
 	it("POST / 400 when name exceeds 255 chars", async () => {
-		const res = await request(app).post("/api/keys").send({ name: "x".repeat(256) });
+		const res = await request(app)
+			.post("/api/keys")
+			.send({ name: "x".repeat(256) });
 		expect(res.status).toBe(400);
 		expect(res.body.error).toMatch(/255/);
 	});

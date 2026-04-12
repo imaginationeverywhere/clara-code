@@ -10,34 +10,35 @@
 
 Check the argument: `$ARGUMENTS`
 
-### If argument is a NUMBER (15, 30, 45, or 60) → VOICE MODE
+### If argument is a NUMBER (5,10,15,20,25,30,35,40,45,50,55,60) → VOICE MODE with countdown
 
 Execute in EXACT order, no extra text:
 
-1. Print: "🎤 Mary listening... ($ARGUMENTSs)"
-2. Set duration and countdown:
+1. PAUSE music (don't kill — pick up where it left off): `pkill -STOP -f afplay 2>/dev/null; true`
+2. Flush stale transcripts: call `listen` with consume:true (discard old inbox).
+3. Print: "🎤 Mary listening... ($ARGUMENTSs)" — NO music during countdown (Mo is speaking).
+4. Run countdown (silent — no music while Mo talks):
    ```bash
    echo "$ARGUMENTS" > /tmp/clara-voice-record-seconds; DUR=$ARGUMENTS; for i in $(seq $DUR -1 1); do result=$(curl -s 'http://127.0.0.1:8789/peek'); count=$(echo "$result" | python3 -c "import json,sys; print(json.load(sys.stdin).get('count',0))" 2>/dev/null); if [ "$count" -gt "0" ]; then echo ""; echo "✅ Voice received!"; break; fi; if [ $((i % 5)) -eq 0 ] || [ "$i" -le 3 ]; then python3 -c "f=max(1,int($i*20/$DUR));e=20-f;print(f'🎙️  {chr(9608)*f}{chr(9617)*e}  {$i}s')"; fi; sleep 1; done
    ```
-3. Music: `bash -c 'while true; do afplay "/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/infrastructure/voice/tones/default-thinking.wav"; done' &`
-4. Call `listen` (peek).
-5. Stop music: `pkill -9 -f "afplay.*default-thinking" 2>/dev/null; pkill -9 -f "while true.*afplay" 2>/dev/null; killall afplay 2>/dev/null; true`
-6. Call `reply` with agent="mary". Respond as Mary — business, product, revenue, clients. 1-3 sentences. Then `listen` consume:true.
-7. Resume music: `bash -c 'while true; do afplay "/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/infrastructure/voice/tones/default-thinking.wav"; done' &`
+5. THINKING PHASE — UNPAUSE music (picks up where it left off): `pkill -CONT -f afplay 2>/dev/null; true`
+6. Call `listen` (peek) to get what Mo said.
+7. PAUSE music before speaking: `pkill -STOP -f afplay 2>/dev/null; true`
+8. Call `reply` with agent="mary". Respond as Mary — business, product, revenue, clients. 1-3 sentences. Then `listen` consume:true.
+9. UNPAUSE music after speaking (picks up where it left off): `pkill -CONT -f afplay 2>/dev/null; true`
 
-No extra text. Phone call energy. Music only stops when agent speaks.
+No extra text. Phone call energy. MUSIC RULES: PAUSE/UNPAUSE — never kill. Song picks up where it left off.
 
-### If argument is EMPTY or "voice" → VOICE MODE (no countdown)
+### If argument is EMPTY → VOICE MODE (no countdown, instant)
 
 Execute in EXACT order, no extra text:
 
-1. Music: `bash -c 'while true; do afplay "/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/infrastructure/voice/tones/default-thinking.wav"; done' &`
-2. Call `listen` (peek).
-3. Stop music: `pkill -9 -f "afplay.*default-thinking" 2>/dev/null; pkill -9 -f "while true.*afplay" 2>/dev/null; killall afplay 2>/dev/null; true`
-4. Call `reply` with agent="mary". Respond as Mary — business, product, revenue, clients. 1-3 sentences. Then `listen` consume:true.
-5. Resume music: `bash -c 'while true; do afplay "/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/infrastructure/voice/tones/default-thinking.wav"; done' &`
+1. Call `listen` (peek).
+2. PAUSE music: `pkill -STOP -f afplay 2>/dev/null; true`
+3. Call `reply` with agent="mary". Respond as Mary — business, product, revenue, clients. 1-3 sentences. Then `listen` consume:true.
+4. UNPAUSE music: `pkill -CONT -f afplay 2>/dev/null; true`
 
-No extra text. Phone call energy. Music only stops when agent speaks.
+No extra text. Phone call energy.
 
 ### If argument is TEXT (not a number) → TEXT MODE
 

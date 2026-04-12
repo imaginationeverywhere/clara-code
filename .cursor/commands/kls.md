@@ -6,6 +6,21 @@
 **Client:** King Luxury Services LLC — luxury transportation, concierge, private jets, airport transfers, weddings, corporate events
 **Repo:** `imaginationeverywhere/kingluxuryservicesllc`
 
+## Direct Communication (tmux send-keys)
+
+If arguments are provided, inject the message directly into the KLS tmux pane:
+
+```bash
+PANE_ID=$(tmux list-panes -a -F '#{pane_id} #{pane_title}' | grep -i 'kls' | grep -v 'CURSOR' | head -1 | awk '{print $1}')
+if [ -n "$PANE_ID" ]; then
+  tmux send-keys -t "$PANE_ID" "$ARGUMENTS" Enter
+  echo "Sent to Kings Luxury Services ($PANE_ID): $ARGUMENTS"
+else
+  echo "ERROR: KLS pane not found. Is the swarm running?"
+  tmux list-panes -a -F '#{pane_id} #{pane_title}' | head -20
+fi
+```
+
 ## Usage
 ```
 /kls                    # Send message to Kings Luxury session

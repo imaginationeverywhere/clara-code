@@ -43,6 +43,8 @@
 		"packages/web-ui/**/*",
 		"packages/ide-extension/**/*",
 		"packages/cli/**/*",
-		"**/dist/**"
+		"**/dist/**",
+		"backend/**/*.test.ts",
+		"backend/**/*.spec.ts"
 	]
 }

@@ -4,7 +4,24 @@
 **Project:** `imaginationeverywhere/quiknation-slack`
 **Mission:** Build the backend that powers conversational Slack agent bots — event handling, Auset Brain context, LLM responses, Block Kit UI, App Home tabs.
 
-When invoked with arguments:
+## Direct Communication (tmux send-keys)
+
+If arguments are provided, inject the message directly into the Slack Agents tmux pane:
+
+```bash
+PANE_ID=$(tmux list-panes -a -F '#{pane_id} #{pane_title}' | grep -i 'slk\|slack' | grep -v 'CURSOR' | head -1 | awk '{print $1}')
+if [ -n "$PANE_ID" ]; then
+  tmux send-keys -t "$PANE_ID" "$ARGUMENTS" Enter
+  echo "Sent to Slack Agents ($PANE_ID): $ARGUMENTS"
+else
+  echo "ERROR: Slack Agents pane not found. Is the swarm running?"
+  tmux list-panes -a -F '#{pane_id} #{pane_title}' | head -20
+fi
+```
+
+## Fallback — Session Registry
+
+If the tmux pane is not found, fall back to the session registry:
 
 1. **Show active sessions** so the caller knows who's online:
 ```bash
@@ -13,7 +30,7 @@ When invoked with arguments:
 
 2. **Wake the team** (this also logs the directive to the live feed for HQ visibility):
 ```bash
-.claude/scripts/session-registry.sh wake "Slack" "<arguments>"
+.claude/scripts/session-registry.sh wake "Slack" "$ARGUMENTS"
 ```
 
 3. **Confirm** with status: "Sent to Slack Agents. [Active on TTY X / NOT FOUND]"
