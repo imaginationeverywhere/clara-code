@@ -1,13 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 export function useVoiceMute() {
-	const [isMuted, setIsMuted] = useState(false);
-
-	useEffect(() => {
-		setIsMuted(sessionStorage.getItem("clara-muted") === "1");
-	}, []);
+	const [isMuted, setIsMuted] = useState(() => {
+		if (typeof window === "undefined") return false;
+		return sessionStorage.getItem("clara-muted") === "1";
+	});
 
 	const toggle = useCallback(() => {
 		setIsMuted((prev) => {
