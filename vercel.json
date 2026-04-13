@@ -1,1 +1,5 @@
-{}
+{
+  "rootDirectory": "frontend",
+  "installCommand": "echo 'Dependencies pre-installed by CI'",
+  "buildCommand": "cd frontend && npm run build"
+}
