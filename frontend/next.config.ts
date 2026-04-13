@@ -17,11 +17,10 @@ const nextConfig: NextConfig = {
   },
   turbopack: {
     // Point to repo root where npm workspaces hoists next/package.json in CI.
+    // Without this, Turbopack can't find next/package.json (it's hoisted to repo root
+    // by npm workspaces, outside the frontend/ boundary).
     root: repoRoot,
   },
-  // Must match turbopack.root — prevents outputFileTracingRoot mismatch error.
-  // outputFileTracingRoot is a top-level NextConfig field, not in experimental.
-  outputFileTracingRoot: repoRoot,
 }
 
 export default nextConfig
