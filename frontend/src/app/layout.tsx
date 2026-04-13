@@ -1,10 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
-// Required for Cloudflare Pages via @cloudflare/next-on-pages
 // next/font/google causes edge Worker crashes — Inter is loaded via globals.css @import
-export const runtime = 'edge'
-
 export const metadata: Metadata = {
   title: 'Clara Code — Code with your voice',
   description: 'Voice-first AI coding assistant. Open source.',
