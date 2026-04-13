@@ -1,5 +1,7 @@
 'use client'
 
+export const runtime = 'edge'
+
 import { useMutation, useQuery } from '@apollo/client/react'
 import Link from 'next/link'
 import {

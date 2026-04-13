@@ -426,6 +426,100 @@ Generate a structured review document with:
    git add docs/review/${TIMESTAMP}-code-review.md
    ```
 
+### Phase 4b: Generate Corrective Prompt (if issues found)
+
+**When the review finds CRITICAL, HIGH, or unresolved MEDIUM issues**, the reviewer MUST write a corrective prompt and queue it for a Cursor agent to execute. This is NON-NEGOTIABLE — a review that identifies issues is not done until the corrective prompt is saved.
+
+**Trigger:** Any review with grade below A-, OR any review with 1+ CRITICAL or HIGH issues.
+
+**Step 1 — Determine the next available prompt number:**
+```bash
+YEAR=$(date +%Y)
+MONTH=$(date +%B)
+DAY=$(date +%-d)
+QUEUE_DIR="prompts/${YEAR}/${MONTH}/${DAY}/1-not-started"
+mkdir -p "$QUEUE_DIR"
+
+# Auto-number: count existing prompts and add 1
+NEXT_NUM=$(ls "$QUEUE_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+NEXT_NUM=$(printf "%02d" $((NEXT_NUM + 1)))
+```
+
+**Step 2 — Write the corrective prompt file:**
+
+The prompt must be a complete, self-contained Cursor agent task. Write it to:
+```
+prompts/${YEAR}/${MONTH}/${DAY}/1-not-started/${NEXT_NUM}-fix-<short-description>.md
+```
+
+**Corrective prompt format:**
+```markdown
+# Fix: <Short description from review>
+
+**Source:** Code review `docs/review/<timestamp>-code-review.md`
+**Grade received:** <grade>
+**Issues to fix:** <count> critical, <count> high, <count> medium
+
+## Context
+
+<1-2 sentences describing what was reviewed and what the overall problem is>
+
+## Required Fixes
+
+### CRITICAL Issues (fix first)
+
+1. **[SECURITY/PERF/TYPE]** <Issue title>
+   - **File:** `<path/to/file.ts>:<line>`
+   - **Problem:** <Exact description from review>
+   - **Fix:** <Specific actionable fix the Cursor agent should make>
+
+2. ...
+
+### HIGH Issues
+
+1. **[category]** <Issue title>
+   - **File:** `<path/to/file.ts>:<line>`
+   - **Problem:** <description>
+   - **Fix:** <specific fix>
+
+### MEDIUM Issues (fix if time allows)
+
+<same format>
+
+## Acceptance Criteria
+
+- [ ] All CRITICAL issues resolved
+- [ ] All HIGH issues resolved
+- [ ] `npm run type-check` passes (zero errors)
+- [ ] `npm test` passes (zero failures)
+- [ ] Re-run `/review-code` — grade must be A or A-
+
+## Do NOT
+
+- Do not refactor code unrelated to these issues
+- Do not add new features
+- Fix only what the review identified
+```
+
+**Step 3 — Post to live feed:**
+```bash
+echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | CORRECTIVE PROMPT QUEUED | ${NEXT_NUM}-fix-<slug>.md | ${COUNT_CRITICAL} critical, ${COUNT_HIGH} high issues | Cursor agent: run /pickup-prompt" >> ~/auset-brain/Swarms/live-feed.md
+```
+
+**Step 4 — Report to the reviewer:**
+```
+📋 Corrective prompt queued:
+   prompts/${YEAR}/${MONTH}/${DAY}/1-not-started/${NEXT_NUM}-fix-<slug>.md
+
+   Issues captured: X critical, Y high, Z medium
+   QCS1 Cursor agent: run /pickup-prompt to execute fixes
+```
+
+**When NOT to write a corrective prompt:**
+- Review passes with grade A or A- and zero CRITICAL/HIGH issues → archive, no corrective needed
+- Only LOW/informational findings → note them in the review doc, no corrective prompt
+- Review is BLOCKED (coverage < 80%) → do NOT write a corrective prompt; the agent must fix tests first using the existing blocking message
+
 ### Phase 5: Display Summary
 
 Show concise summary to user:
@@ -894,14 +988,10 @@ DAY=$(date +%-d)     # Day without leading zero
 # 1. Local repo 3-done/ (pickup-prompt moves here after execution)
 LOCAL_DONE="prompts/${YEAR}/${MONTH}/${DAY}/3-done"
 
-# 2. Local repo tasks/prompts/1-not-started/ (team-written prompts, manually placed)
-LOCAL_QUEUE="tasks/prompts/1-not-started"
-
-# 3. Local repo 2-in-progress/ (currently running)
+# 2. Local repo 2-in-progress/ (currently running)
 LOCAL_WIP="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
 
 ls "$LOCAL_DONE"/*.md 2>/dev/null
-ls "$LOCAL_QUEUE"/*.md 2>/dev/null
 ls "$LOCAL_WIP"/*.md 2>/dev/null
 ```
 
@@ -942,8 +1032,9 @@ echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | PROMPTS ARCHIVED | ${COUNT} pro
 
 ### When NOT to archive
 
-- Review **fails** (C grade, CRITICAL issues, coverage below 80%) → do NOT archive. Prompts
-  stay in queue until the corrective work passes review.
+- Review **fails** (C grade, CRITICAL issues, coverage below 80%) → do NOT archive. Write a
+  corrective prompt (Phase 4b) and queue it in `1-not-started/`. The original prompt stays in
+  `3-done/` as a record; the corrective prompt is the new work item.
 - A prompt is from a **prior day** and already in HQ → skip (check with `ls $HQ_DIR` first).
 - No prompts found in any source directory → skip silently (some reviews target ad-hoc diffs,
   not prompt-driven work).
@@ -980,6 +1071,7 @@ minimum_coverage: 80%
 blocks_on_failure: true
 author: Quik Nation AI
 changelog:
+  - v2.2.0: Phase 4b — corrective prompt auto-generated to 1-not-started/ when review finds CRITICAL/HIGH issues
   - v2.1.0: Added post-review prompt archival to HQ 3-completed/ (NON-NEGOTIABLE)
   - v2.0.0: Added mandatory 80% test coverage requirement
   - v1.0.0: Initial release with code quality review

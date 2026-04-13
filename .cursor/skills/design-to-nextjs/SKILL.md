@@ -1,6 +1,6 @@
 ---
 name: design-to-nextjs
-description: Convert visual designs, mockups, and screenshots to production-ready Next.js 16 components with App Router patterns, Tailwind CSS styling, and ShadCN UI integration. Use when converting Figma designs, Magic Patterns exports, UI screenshots, wireframes, or any visual design to working Next.js code. Triggers on requests to convert design to code, implement mockup, build from screenshot, or create component from design.
+description: Convert visual designs, mockups, and screenshots to production-ready Next.js 16 components with App Router patterns, Tailwind CSS styling, and ShadCN UI integration. Use when converting Magic Patterns exports, UI screenshots, wireframes, or any visual design to working Next.js code. Triggers on requests to convert design to code, implement mockup, build from screenshot, or create component from design.
 ---
 
 # Design to Next.js Conversion

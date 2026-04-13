@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Header } from '@/components/marketing/Header'
 
+export const runtime = 'edge'
+
 export default async function CheckoutSuccessPage({
 	searchParams,
 }: {

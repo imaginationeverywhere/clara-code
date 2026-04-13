@@ -6,6 +6,7 @@ dist/
 *.tsbuildinfo
 # packages/*/node_modules/
 packages/*/dist/
+packages/cli/dist/
 packages/*/dist-chrome/
 packages/*/dist-firefox/
 *.cpuprofile
@@ -48,3 +49,9 @@ collect.sh
 .cursor/skills/kepano-obsidian
 .claude/skills/kepano-obsidian
 memory/session-checkpoint.md
+graphify-out/
+
+# Local deploy / framework caches (do not commit)
+.wrangler/
+packages/web-ui/.wrangler/
+packages/web-ui/.vercel/

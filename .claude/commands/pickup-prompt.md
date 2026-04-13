@@ -17,6 +17,18 @@ Resolves today's date, finds the `1-not-started/` directory for that date, picks
 
 ## Execution
 
+### Step 0 — Pull latest from remote
+
+Before looking for prompts, pull the latest from the remote so any prompts HQ queued are available:
+
+```bash
+echo "Pulling latest from remote..."
+git pull origin $(git branch --show-current) 2>&1
+echo ""
+```
+
+If the pull fails (e.g., merge conflict, dirty worktree), stop and report the error before proceeding.
+
 ### Step 1 — Resolve the prompt directory
 
 ```bash

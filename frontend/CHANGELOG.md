@@ -2,14 +2,23 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `next-env.d.ts`: reference `./.next/types/routes.d.ts` for generated App Router route types (Next.js 15).
+
 ### Added
+
+- `POST /api/voice/chat` proxies transcripts to the Hermes gateway (`HERMES_GATEWAY_URL`, server-only); IP rate limit 20/min; Vitest coverage in `src/__tests__/api/voice-chat.test.ts`.
+- `VoiceBar` sends final transcript to `/api/voice/chat`, optional `onResponse`, audio playback or browser TTS fallback, unsupported-browser notice.
 
 - Next.js App Router pages for dashboard, pricing, API keys, settings, and Clerk-hosted sign-in/sign-up; Apollo Client provider and GraphQL operations; middleware for protected routes.
 - Dependencies: `@apollo/client`, `@clerk/nextjs`; `react` / `react-dom` pinned to `19.2.5` (aligned with monorepo overrides).
 
 ### Fixed
 
+- Declared `clsx` and `tailwind-merge` (used by `src/lib/utils.ts`) so `tsc --noEmit -p tsconfig.app.json` resolves; build `packages/clara-code-surface-scripts` before typecheck when using a fresh worktree.
 - `check` script: run `next lint` and `tsc` (removed duplicate `check` key in `package.json`).
+- ESLint 9: `eslint.config.mjs` loads flat `eslint-config-next/core-web-vitals` (Next 16); dashboard API-key hydration from `localStorage` documents `react-hooks/set-state-in-effect` where needed.
 
 ## [0.66.1] - 2026-04-08
 

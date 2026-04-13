@@ -1,5 +1,10 @@
 # .claude/commands Changelog
 
+## [Unreleased] - 2026-04-12
+
+### Changed
+- **ossie.md** — Deployment/orchestration command doc updates (mirrored in `.cursor/commands/ossie.md`).
+
 ## [Unreleased]
 
 ### Added

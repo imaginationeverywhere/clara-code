@@ -9,30 +9,35 @@
     "start": "next start",
     "lint": "eslint .",
     "check": "npm run lint && tsc --noEmit -p tsconfig.app.json",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:preview": "npx wrangler pages dev .vercel/output/static",
-    "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
+    "test": "vitest --run",
+    "pages:build": "npx @opennextjs/cloudflare build",
+    "pages:preview": "npx wrangler pages dev .open-next/assets",
+    "pages:deploy": "npx wrangler pages deploy .open-next/assets"
   },
   "dependencies": {
     "@apollo/client": "^3.13.1",
-    "graphql": "^16.0.0",
     "@clara/clara-code-surface-scripts": "file:../packages/clara-code-surface-scripts",
     "@clerk/nextjs": "^7.0.12",
-    "next": "16.0.10",
+    "clsx": "^2.1.1",
+    "graphql": "^16.0.0",
+    "next": "16.2.3",
     "react": "19.2.5",
-    "react-dom": "19.2.5"
+    "react-dom": "19.2.5",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.4",
+    "@opennextjs/cloudflare": "^1.19.1",
+    "wrangler": "^4",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
-    "eslint-config-next": "16.0.10",
+    "eslint-config-next": "16.2.3",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
-    "vercel": "^39"
+    "vercel": "^39",
+    "vitest": "^3.2.4"
   }
 }

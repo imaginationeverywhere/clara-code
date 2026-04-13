@@ -20,8 +20,14 @@ interface VoiceBarProps {
   onTranscript?: (text: string) => void
   /** Called when Clara Radio mode is toggled */
   onRadioToggle?: (active: boolean) => void
+  /** Optional user id forwarded to Hermes via /api/voice/chat */
+  userId?: string
+  /** Called with Clara's text response and optional audio URL */
+  onResponse?: (text: string, audioUrl: string | null) => void
   className?: string
 }
+
+type SpeechRecCtor = new () => SpeechRecognition
 
 // ---------------------------------------------------------------------------
 // Inline SVG icons (no external dependency)
@@ -66,11 +72,20 @@ function RadioIcon({ size = 20 }: { size?: number }) {
 // VoiceBar component
 // ---------------------------------------------------------------------------
 
-export function VoiceBar({ onTranscript, onRadioToggle, className = '' }: VoiceBarProps) {
+export function VoiceBar({
+  onTranscript,
+  onRadioToggle,
+  userId,
+  onResponse,
+  className = '',
+}: VoiceBarProps) {
   const [isMicActive, setIsMicActive] = useState(false)
   const [isRadioActive, setIsRadioActive] = useState(false)
   const [liveTranscript, setLiveTranscript] = useState('')
-  const recognitionRef = useRef<any>(null)
+  const [isChatLoading, setIsChatLoading] = useState(false)
+  const [speechSupported, setSpeechSupported] = useState<boolean | null>(null)
+  const recognitionRef = useRef<SpeechRecognition | null>(null)
+  const transcriptRef = useRef('')
 
   const stopListening = useCallback(() => {
     if (recognitionRef.current) {
@@ -80,24 +95,70 @@ export function VoiceBar({ onTranscript, onRadioToggle, className = '' }: VoiceB
     setIsMicActive(false)
   }, [])
 
-  const startListening = useCallback(() => {
-    const SpeechRecognition =
-      (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
+  const sendToHermes = useCallback(
+    async (finalTranscript: string) => {
+      setIsChatLoading(true)
+      try {
+        const res = await fetch('/api/voice/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            message: finalTranscript,
+            ...(userId ? { userId } : {}),
+          }),
+        })
+        const data = (await res.json()) as {
+          text?: string
+          audio_url?: string | null
+        }
+        if (!res.ok) {
+          return
+        }
+        const text = typeof data.text === 'string' ? data.text : ''
+        const audioUrl =
+          data.audio_url === undefined || data.audio_url === null ? null : String(data.audio_url)
+        onTranscript?.(finalTranscript)
+        onResponse?.(text, audioUrl)
+        if (audioUrl) {
+          const audio = new Audio(audioUrl)
+          void audio.play().catch(() => {
+            if (text) {
+              window.speechSynthesis.speak(new SpeechSynthesisUtterance(text))
+            }
+          })
+        } else if (text) {
+          window.speechSynthesis.speak(new SpeechSynthesisUtterance(text))
+        }
+      } catch {
+        onResponse?.('Clara is unavailable right now.', null)
+      } finally {
+        setIsChatLoading(false)
+      }
+    },
+    [onTranscript, onResponse, userId],
+  )
 
-    if (!SpeechRecognition) {
+  const startListening = useCallback(() => {
+    const SpeechRecognitionCtor =
+      (window as unknown as { SpeechRecognition?: SpeechRecCtor; webkitSpeechRecognition?: SpeechRecCtor })
+        .SpeechRecognition ||
+      (window as unknown as { webkitSpeechRecognition?: SpeechRecCtor }).webkitSpeechRecognition
+
+    if (!SpeechRecognitionCtor) {
       console.warn('VoiceBar: Web Speech API not supported in this browser.')
       return
     }
 
-    const recognition = new SpeechRecognition()
+    const recognition = new SpeechRecognitionCtor()
     recognition.continuous = true
     recognition.interimResults = true
     recognition.lang = 'en-US'
 
-    recognition.onresult = (e: any) => {
-      const text = Array.from(e.results as SpeechRecognitionResultList)
-        .map((r) => (r as SpeechRecognitionResult)[0].transcript)
+    recognition.onresult = (e: SpeechRecognitionEvent) => {
+      const text = Array.from(e.results)
+        .map((r) => r[0]?.transcript ?? '')
         .join('')
+      transcriptRef.current = text
       setLiveTranscript(text)
       onTranscript?.(text)
     }
@@ -109,13 +170,19 @@ export function VoiceBar({ onTranscript, onRadioToggle, className = '' }: VoiceB
     recognition.onend = () => {
       setIsMicActive(false)
       recognitionRef.current = null
+      const finalText = transcriptRef.current.trim()
+      transcriptRef.current = ''
+      if (finalText) {
+        void sendToHermes(finalText)
+      }
     }
 
     recognitionRef.current = recognition
     recognition.start()
     setIsMicActive(true)
     setLiveTranscript('')
-  }, [onTranscript, stopListening])
+    transcriptRef.current = ''
+  }, [onTranscript, stopListening, sendToHermes])
 
   const toggleMic = useCallback(() => {
     if (isMicActive) {
@@ -132,6 +199,16 @@ export function VoiceBar({ onTranscript, onRadioToggle, className = '' }: VoiceB
       return next
     })
   }, [onRadioToggle])
+
+  useEffect(() => {
+    const ctor =
+      typeof window !== 'undefined'
+        ? (window as unknown as { SpeechRecognition?: SpeechRecCtor; webkitSpeechRecognition?: SpeechRecCtor })
+            .SpeechRecognition ||
+          (window as unknown as { webkitSpeechRecognition?: SpeechRecCtor }).webkitSpeechRecognition
+        : undefined
+    setSpeechSupported(!!ctor)
+  }, [])
 
   // Keyboard shortcuts: Enter = mute mic, S (unfocused) = Clara Radio
   useEffect(() => {
@@ -166,26 +243,37 @@ export function VoiceBar({ onTranscript, onRadioToggle, className = '' }: VoiceB
     }
   }, [])
 
+  const showMicPulse = isMicActive || isChatLoading
+
   return (
     <div className={`flex items-center gap-2 ${className}`} role="toolbar" aria-label="Voice controls">
+      {speechSupported === false && (
+        <span className="text-xs text-amber-400/90 max-w-[220px]">
+          Voice input needs a supported browser (e.g. Chrome) and HTTPS.
+        </span>
+      )}
+
       {/* Mic button */}
       <button
         type="button"
         onClick={toggleMic}
+        disabled={speechSupported === false || isChatLoading}
         aria-label={isMicActive ? 'Stop mic (or press Enter)' : 'Start mic'}
         aria-pressed={isMicActive}
+        aria-busy={isChatLoading}
         title={isMicActive ? 'Stop mic · Press Enter to mute' : 'Start mic'}
         className={[
           'relative flex items-center justify-center w-10 h-10 rounded-full transition-all duration-200',
           'border focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50',
-          isMicActive
+          showMicPulse
             ? 'bg-red-500/20 border-red-500/60 text-red-400 shadow-[0_0_12px_rgba(239,68,68,0.4)]'
             : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:text-white',
+          (speechSupported === false || isChatLoading) && 'opacity-50 cursor-not-allowed',
         ].join(' ')}
       >
         {isMicActive ? <MicOffIcon size={18} /> : <MicIcon size={18} />}
-        {/* Pulse ring while active */}
-        {isMicActive && (
+        {/* Pulse ring while recording or awaiting Hermes */}
+        {showMicPulse && (
           <span
             aria-hidden="true"
             className="absolute inset-0 rounded-full animate-ping border border-red-500/40"
