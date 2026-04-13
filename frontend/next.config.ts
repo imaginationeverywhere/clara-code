@@ -6,9 +6,8 @@ import type { NextConfig } from 'next'
 // finds routes-manifest.json at its expected location (CWD/.next/).
 // outputFileTracingRoot=repoRoot roots .nft.json traces at repo root where
 // npm workspaces hoist node_modules/.
-// Turbopack is intentionally NOT used: Turbopack skips .nft.json generation,
-// causing Vercel CLI to fall back to manual tracing which crashes on distDir
-// paths outside frontend/. Webpack generates .nft.json correctly.
+// webpack() forces webpack mode: Next.js 16 defaults to Turbopack which skips
+// .nft.json generation. Any webpack config key opts out of Turbopack.
 const repoRoot = path.resolve(process.cwd(), '..')
 
 const nextConfig: NextConfig = {
@@ -20,6 +19,10 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: repoRoot,
   // HERMES_GATEWAY_URL is read only in Route Handlers (server). Do not add it to `env` here —
   // Next.js would inline it into the client bundle.
+  // Forces webpack — Next.js 16 uses Turbopack by default. Turbopack skips
+  // .nft.json generation which causes Vercel CLI to crash during file tracing
+  // when distDir is outside the project directory.
+  webpack: (config) => config,
 }
 
 export default nextConfig
