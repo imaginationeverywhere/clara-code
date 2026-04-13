@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Header } from '@/components/marketing/Header'
 
+export const runtime = 'edge'
+
 type DocsPageProps = {
 	params: Promise<{ slug?: string[] }>
 }

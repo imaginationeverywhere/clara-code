@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import { Header } from '@/components/marketing/Header'
 
+export const runtime = 'edge'
+
 export default function SignUpPage() {
 	return (
 		<div className="min-h-screen bg-[#0D1117] text-white">
