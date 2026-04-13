@@ -1,12 +1,14 @@
 # Code Review Command
 
-**Version:** 2.0.0
+**Version:** 3.0.0
 **Agent:** code-quality-reviewer
 **Output:** `docs/review/{timestamp}-code-review.md`
 
 ## Purpose
 
 Automated code review that analyzes recent changes, identifies issues, and generates a comprehensive review document. **ENFORCES 80% MINIMUM TEST COVERAGE REQUIREMENT** - all code being reviewed must have passing unit tests with at least 80% coverage. Optimized for token efficiency by producing reusable review artifacts.
+
+**Also auto-detects open prompt PRs** (from `/pickup-prompt`), reviews each one, merges passing PRs into develop, and deletes the prompt branches — no manual PR management needed.
 
 ## ⚠️ CRITICAL REQUIREMENT: Test Coverage
 
@@ -187,6 +189,38 @@ review-code --since=HEAD~5
 ## Command Implementation
 
 When this command is invoked, Claude Code should:
+
+### Phase 0: Git Pull + Auto-Detect Prompt PRs (NEW — RUNS FIRST)
+
+**This phase always runs first, before any code review begins.**
+
+```bash
+echo "Pulling latest from remote..."
+git pull origin $(git branch --show-current) 2>&1
+echo ""
+
+echo "Scanning for open prompt PRs..."
+PROMPT_PRS=$(gh pr list --state open --json number,headRefName,title,url \
+  --jq '.[] | select(.headRefName | startswith("prompt/"))' 2>/dev/null)
+
+if [ -n "$PROMPT_PRS" ]; then
+  echo "Found prompt PRs to review:"
+  echo "$PROMPT_PRS" | jq -r '"  #\(.number): \(.headRefName) — \(.title)"'
+  echo ""
+  echo "These will be reviewed and merged (if passing) after code quality check."
+else
+  echo "No open prompt PRs found — reviewing current branch changes only."
+fi
+echo ""
+```
+
+**Store the list of prompt PRs** for use in Phase 6:
+```bash
+PROMPT_PR_NUMBERS=$(gh pr list --state open --json number,headRefName \
+  --jq '.[] | select(.headRefName | startswith("prompt/")) | .number' 2>/dev/null)
+PROMPT_PR_BRANCHES=$(gh pr list --state open --json number,headRefName \
+  --jq '.[] | select(.headRefName | startswith("prompt/")) | .headRefName' 2>/dev/null)
+```
 
 ### Phase 1: Collect Code Changes
 
@@ -587,6 +621,67 @@ Show concise summary to user:
 
 ⚠️  NO CODE REVIEW WILL BE PERFORMED UNTIL REQUIREMENTS ARE MET
 ```
+
+## Phase 6: Merge Prompt PRs and Delete Branches (NEW — RUNS AFTER REVIEW)
+
+**Runs after each passing review. For each prompt PR detected in Phase 0:**
+
+```bash
+# Loop over each prompt PR found in Phase 0
+for PR_NUMBER in $PROMPT_PR_NUMBERS; do
+  PR_INFO=$(gh pr view "$PR_NUMBER" --json headRefName,title,mergeable 2>/dev/null)
+  BRANCH=$(echo "$PR_INFO" | jq -r '.headRefName')
+  TITLE=$(echo "$PR_INFO" | jq -r '.title')
+  MERGEABLE=$(echo "$PR_INFO" | jq -r '.mergeable')
+
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "MERGING PROMPT PR: #${PR_NUMBER} — ${TITLE}"
+  echo "Branch: ${BRANCH}"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  if [ "$MERGEABLE" = "CONFLICTING" ]; then
+    echo "⚠️  PR #${PR_NUMBER} has merge conflicts — skipping auto-merge"
+    echo "   Resolve conflicts manually, then re-run /review-code"
+    continue
+  fi
+
+  # Merge the PR into develop (squash merge for clean history)
+  gh pr merge "$PR_NUMBER" \
+    --squash \
+    --delete-branch \
+    --subject "feat: ${TITLE}" \
+    2>&1
+
+  if [ $? -eq 0 ]; then
+    echo "✅ Merged: #${PR_NUMBER} → develop"
+    echo "✅ Branch deleted: ${BRANCH}"
+
+    # Also delete local branch if it exists
+    git branch -d "$BRANCH" 2>/dev/null || git branch -D "$BRANCH" 2>/dev/null || true
+
+    echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | PR MERGED | #${PR_NUMBER} | ${BRANCH} → develop | branch deleted" >> ~/auset-brain/Swarms/live-feed.md
+  else
+    echo "⚠️  Merge failed for #${PR_NUMBER} — check GitHub for details"
+  fi
+done
+
+# Pull develop to get the merged commits locally
+if [ -n "$PROMPT_PR_NUMBERS" ]; then
+  echo ""
+  echo "Pulling merged commits..."
+  git pull origin $(git branch --show-current) 2>&1
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "✅ All prompt PRs merged and branches cleaned up."
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+fi
+```
+
+**When NOT to merge:**
+- Review **fails** (coverage < 80%, CRITICAL issues blocking) → do NOT merge. Write corrective prompt and queue in `1-not-started/`.
+- PR has merge conflicts (`CONFLICTING` state) → skip with warning. Human must resolve.
+- No prompt PRs found in Phase 0 → Phase 6 is a no-op.
 
 ## Integration with UltraThink
 
@@ -1071,6 +1166,7 @@ minimum_coverage: 80%
 blocks_on_failure: true
 author: Quik Nation AI
 changelog:
+  - v3.0.0: Phase 0 (git pull + auto-detect prompt PRs) + Phase 6 (merge passing PRs into develop + delete branches)
   - v2.2.0: Phase 4b — corrective prompt auto-generated to 1-not-started/ when review finds CRITICAL/HIGH issues
   - v2.1.0: Added post-review prompt archival to HQ 3-completed/ (NON-NEGOTIABLE)
   - v2.0.0: Added mandatory 80% test coverage requirement
