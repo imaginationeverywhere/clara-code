@@ -1,31 +1,23 @@
 import path from 'path'
 import type { NextConfig } from 'next'
 
-// In CI, npm workspaces hoist `next` to the repo root node_modules/.
-// Turbopack requires turbopack.root to find next/package.json outside frontend/.
-// outputFileTracingRoot must equal turbopack.root — Next.js enforces they match.
-// Both point to repo root. @cloudflare/next-on-pages runs from repo root (via
-// vercel.json rootDirectory:"frontend") so Vercel CLI resolves paths from repo root
-// correctly — no frontend/frontend/.next/ doubling.
+// CI: `cd frontend && npm run build` runs next build with CWD=frontend/.
+// distDir:'../.next' writes output to repo root so vercel build (CWD=repo root)
+// finds routes-manifest.json at its expected location (CWD/.next/).
+// outputFileTracingRoot=repoRoot roots .nft.json traces at repo root where
+// npm workspaces hoist node_modules/.
+// Turbopack is intentionally NOT used: Turbopack skips .nft.json generation,
+// causing Vercel CLI to fall back to manual tracing which crashes on distDir
+// paths outside frontend/. Webpack generates .nft.json correctly.
 const repoRoot = path.resolve(process.cwd(), '..')
 
 const nextConfig: NextConfig = {
-  // @cloudflare/next-on-pages compatibility
-  // Note: edge runtime is set per-route via `export const runtime = 'edge'`
-  // in layout.tsx / page.tsx, not here
   typescript: {
-    // Type checking is handled by the CI workflow (npm run check / tsgo --noEmit)
-    // Workspace-local packages (@mariozechner/*) are not resolvable by Vercel CLI in CI
+    // Type checking handled by CI (npm run check / tsgo --noEmit)
     ignoreBuildErrors: true,
   },
-  // Write .next/ to repo root so vercel build (CWD=repo root) finds it at CWD.
-  // Without this, `cd frontend && npm run build` puts .next/ in frontend/.next/
-  // but Vercel CLI looks for routes-manifest.json at its CWD (repo root).
   distDir: '../.next',
   outputFileTracingRoot: repoRoot,
-  turbopack: {
-    root: repoRoot,
-  },
 }
 
 export default nextConfig
