@@ -43,6 +43,9 @@ jobs:
           NODE_ENV: production
           NEXT_TELEMETRY_DISABLED: "1"
 
+      - name: Prepare CF Pages assets (copy _worker.js)
+        run: cp frontend/.open-next/worker.js frontend/.open-next/assets/_worker.js
+
       - name: Deploy to Cloudflare Pages
         run: cd frontend && npx wrangler@4 pages deploy .open-next/assets --project-name clara-code --branch ${{ github.ref_name }} --commit-hash ${{ github.sha }}
         env:
