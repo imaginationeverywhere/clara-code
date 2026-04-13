@@ -4,6 +4,7 @@
 
 ### Added
 
+- **`@claracode/sdk`** — pointer: Hermes client package lives at `packages/sdk/` with README examples (`ask`, `stream`, voice). See root `CHANGELOG.md` and `packages/sdk/CHANGELOG.md`.
 - `cloudflare/NEXTJS-15-TO-16-UPGRADE-GUIDE.md` — step-by-step guide for upgrading from Next.js 15 to 16 in the CF Workers deployment context.
 - `cloudflare/NEXTJS-16-CLOUDFLARE-WORKERS-DEPLOYMENT.md` — complete deployment reference for Next.js 16 on Cloudflare Workers using `@opennextjs/cloudflare`.
 - `cloudflare/README.md` — Cloudflare docs index with links to all deployment and email setup guides.

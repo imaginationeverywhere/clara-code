@@ -51,6 +51,7 @@ I regularly publish my own `pi-mono` work sessions here:
 
 | Package | Description |
 |---------|-------------|
+| **[@claracode/sdk](packages/sdk)** | Hermes HTTP client (`ask`, `stream`, voice sessions, agents); ships ESM+CJS and a local stub |
 | **[@mariozechner/pi-ai](packages/ai)** | Unified multi-provider LLM API (OpenAI, Anthropic, Google, etc.) |
 | **[@mariozechner/pi-agent-core](packages/agent)** | Agent runtime with tool calling and state management |
 | **[@mariozechner/pi-coding-agent](packages/coding-agent)** | Interactive coding agent CLI |

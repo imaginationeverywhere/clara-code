@@ -14,7 +14,7 @@
   ],
   "scripts": {
     "clean": "npm run clean --workspaces",
-    "build": "pnpm -C packages/tui run build && pnpm -C packages/cli run build && pnpm -C packages/ai run build && pnpm -C packages/agent run build && pnpm -C packages/coding-agent run build && pnpm -C packages/mom run build && pnpm -C frontend run build && pnpm -C packages/pods run build",
+    "build": "pnpm -C packages/tui run build && pnpm -C packages/cli run build && pnpm -C packages/sdk run build && pnpm -C packages/ai run build && pnpm -C packages/agent run build && pnpm -C packages/coding-agent run build && pnpm -C packages/mom run build && pnpm -C frontend run build && pnpm -C packages/pods run build",
     "dev": "concurrently --names \"ai,agent,coding-agent,mom,frontend,tui\" --prefix-colors \"cyan,yellow,red,white,green,magenta\" \"cd packages/ai && npm run dev\" \"cd packages/agent && npm run dev\" \"cd packages/coding-agent && npm run dev\" \"cd packages/mom && npm run dev\" \"cd frontend && npm run dev\" \"cd packages/tui && npm run dev\"",
     "dev:tsc": "concurrently --names \"ai,frontend\" --prefix-colors \"cyan,green\" \"cd packages/ai && npm run dev:tsc\" \"cd frontend && npm run dev:tsc\"",
     "check": "biome check --write --error-on-warnings . && tsgo --noEmit && npm run check:browser-smoke && cd frontend && npm run check",
@@ -49,7 +49,7 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "version": "0.1.0",
+  "version": "0.1.1",
   "dependencies": {
     "@mariozechner/jiti": "^2.6.5",
     "@mariozechner/pi-coding-agent": "^0.30.2",
