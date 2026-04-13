@@ -9,16 +9,17 @@
     "start": "next start",
     "lint": "eslint .",
     "check": "npm run lint && tsc --noEmit -p tsconfig.app.json",
+    "test": "vitest --run",
     "pages:build": "npx @cloudflare/next-on-pages",
     "pages:preview": "npx wrangler pages dev .vercel/output/static",
     "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
   },
   "dependencies": {
     "@apollo/client": "^3.13.1",
-    "clsx": "^2.1.1",
-    "graphql": "^16.0.0",
     "@clara/clara-code-surface-scripts": "file:../packages/clara-code-surface-scripts",
     "@clerk/nextjs": "^7.0.12",
+    "clsx": "^2.1.1",
+    "graphql": "^16.0.0",
     "next": "15.5.9",
     "react": "19.2.5",
     "react-dom": "19.2.5",
@@ -35,6 +36,7 @@
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
     "typescript": "^5",
-    "vercel": "^39"
+    "vercel": "^39",
+    "vitest": "^3.2.4"
   }
 }

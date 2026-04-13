@@ -8,6 +8,9 @@
 
 ### Added
 
+- `POST /api/voice/chat` proxies transcripts to the Hermes gateway (`HERMES_GATEWAY_URL`, server-only); IP rate limit 20/min; Vitest coverage in `src/__tests__/api/voice-chat.test.ts`.
+- `VoiceBar` sends final transcript to `/api/voice/chat`, optional `onResponse`, audio playback or browser TTS fallback, unsupported-browser notice.
+
 - Next.js App Router pages for dashboard, pricing, API keys, settings, and Clerk-hosted sign-in/sign-up; Apollo Client provider and GraphQL operations; middleware for protected routes.
 - Dependencies: `@apollo/client`, `@clerk/nextjs`; `react` / `react-dom` pinned to `19.2.5` (aligned with monorepo overrides).
 

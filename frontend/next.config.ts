@@ -18,6 +18,8 @@ const nextConfig: NextConfig = {
   },
   distDir: '../.next',
   outputFileTracingRoot: repoRoot,
+  // HERMES_GATEWAY_URL is read only in Route Handlers (server). Do not add it to `env` here —
+  // Next.js would inline it into the client bundle.
 }
 
 export default nextConfig
