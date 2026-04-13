@@ -125,3 +125,13 @@ Post to the live feed so QCS1 Cursor agents know work is waiting:
 COUNT=$(ls "prompts/$(date +%Y)/$(date +%B)/$(date +%-d)/1-not-started/"*.md 2>/dev/null | wc -l | tr -d ' ')
 echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | QUEUE UPDATED | ${COUNT} prompt(s) waiting in today's 1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
 ```
+
+**Push to GitHub** so all sessions and QCS1 can see the prompts:
+
+```bash
+BRANCH=$(git branch --show-current)
+git add "prompts/"
+git commit -m "feat(prompts): queue ${COUNT} prompt(s) for Cursor agent execution [$(date +%Y-%m-%d)]"
+git push origin "$BRANCH"
+echo "✓ Prompts pushed to GitHub: $BRANCH"
+```
