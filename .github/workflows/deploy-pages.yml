@@ -37,6 +37,15 @@ jobs:
       - name: Install all workspace dependencies
         run: npm install
 
+      - name: Link next into frontend/node_modules (resolve hoisting)
+        run: |
+          # npm workspaces hoists `next` to repo root node_modules/.
+          # Turbopack looks for next/package.json relative to frontend/ boundary.
+          # Symlinking makes it discoverable without turbopack.root (which conflicts
+          # with vercel build's auto-inferred outputFileTracingRoot).
+          mkdir -p frontend/node_modules
+          ln -sfn "$(pwd)/node_modules/next" frontend/node_modules/next
+
       - name: Build with next-on-pages
         working-directory: frontend
         run: npx @cloudflare/next-on-pages
