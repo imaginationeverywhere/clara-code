@@ -1,7 +1,15 @@
+# OpenNext for Cloudflare Workers — use `wrangler deploy`, NOT `wrangler pages deploy`.
+# The worker.js imports sibling dirs (cloudflare/, middleware/, .build/) from .open-next/;
+# pages deploy strips those siblings. Workers deploy keeps the full .open-next/ tree.
+# https://opennext.js.org/cloudflare/get-started
 name = "clara-code"
+main = ".open-next/worker.js"
 compatibility_date = "2024-09-23"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".open-next/assets"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
 
 [env.production]
 name = "clara-code"
