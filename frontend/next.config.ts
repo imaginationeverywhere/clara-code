@@ -19,10 +19,9 @@ const nextConfig: NextConfig = {
     // Point to repo root where npm workspaces hoists next/package.json in CI.
     root: repoRoot,
   },
-  experimental: {
-    // Must match turbopack.root — prevents outputFileTracingRoot mismatch error.
-    outputFileTracingRoot: repoRoot,
-  },
+  // Must match turbopack.root — prevents outputFileTracingRoot mismatch error.
+  // outputFileTracingRoot is a top-level NextConfig field, not in experimental.
+  outputFileTracingRoot: repoRoot,
 }
 
 export default nextConfig
