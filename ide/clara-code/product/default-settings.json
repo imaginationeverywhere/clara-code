@@ -1,0 +1,11 @@
+{
+	"workbench.colorTheme": "Clara Dark",
+	"editor.codeLens": true,
+	"clara.ai.provider": "clara",
+	"clara.ai.hermesEndpoint": "https://hermes.claraagents.com",
+	"clara.voice.serverUrl": "",
+	"clara.codeLens.enabled": true,
+	"github.copilot.enable": false,
+	"github.copilot.editor.enableAutoCompletions": false,
+	"github.copilot.inlineSuggest.enable": false
+}

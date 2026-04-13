@@ -59,6 +59,10 @@ I regularly publish my own `pi-mono` work sessions here:
 | **[@mariozechner/pi-web-ui](frontend)** | Web components for AI chat interfaces; Next.js app (Clara marketing site) |
 | **[@mariozechner/pi-pods](packages/pods)** | CLI for managing vLLM deployments on GPU pods |
 
+## Clara Code IDE
+
+Editor scaffold based on **VSCodium** (branding, telemetry-safe `product.json` merge, built-in **clara-voice** extension). Build scripts and CI live under [`ide/clara-code/`](ide/clara-code/README.md).
+
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines and [AGENTS.md](AGENTS.md) for project-specific rules (for both humans and agents).

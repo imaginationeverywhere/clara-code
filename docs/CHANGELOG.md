@@ -16,6 +16,7 @@
 
 ### Added
 
+- Clara Code IDE documentation pointer: see `ide/clara-code/README.md` for VSCodium-based editor scaffold, Clara Voice extension, and `product.json` merge workflow.
 - `review/20260411-011808-web-ui-code-review.md` — web UI code review notes.
 - `review/20260411-080058-backend-code-review.md` — backend directory code review (coverage, structure, security).
 - `review/20260411-082334-backend-corrective-review.md` — follow-up corrective review for backend tests and routes.
