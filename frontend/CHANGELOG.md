@@ -13,6 +13,7 @@
 
 ### Fixed
 
+- Declared `clsx` and `tailwind-merge` (used by `src/lib/utils.ts`) so `tsc --noEmit -p tsconfig.app.json` resolves; build `packages/clara-code-surface-scripts` before typecheck when using a fresh worktree.
 - `check` script: run `next lint` and `tsc` (removed duplicate `check` key in `package.json`).
 - ESLint 9: `eslint.config.mjs` loads flat `eslint-config-next/core-web-vitals` (Next 16); dashboard API-key hydration from `localStorage` documents `react-hooks/set-state-in-effect` where needed.
 

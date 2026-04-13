@@ -15,12 +15,14 @@
   },
   "dependencies": {
     "@apollo/client": "^3.13.1",
+    "clsx": "^2.1.1",
     "graphql": "^16.0.0",
     "@clara/clara-code-surface-scripts": "file:../packages/clara-code-surface-scripts",
     "@clerk/nextjs": "^7.0.12",
     "next": "15.5.9",
     "react": "19.2.5",
-    "react-dom": "19.2.5"
+    "react-dom": "19.2.5",
+    "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.13.4",
