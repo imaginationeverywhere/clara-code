@@ -5,47 +5,210 @@ This is the **platform standard** — established from deploying claracode.ai an
 
 **NOT Cloudflare Pages.** Workers only. See `docs/cloudflare/NEXTJS-CLOUDFLARE-WORKERS-DEPLOYMENT.md`.
 
+---
+
 ## Usage
+
 ```
-/cloudflare-workers-setup <worker-name> <production-domain> [preview-domain]
+/cloudflare-workers-setup <worker-name> <production-domain> [preview-domain] [--from-amplify | --from-pages | --from-vercel | --new]
 ```
 
-**Examples:**
-```
-/cloudflare-workers-setup claraagents claraagents.com develop.claraagents.com
-/cloudflare-workers-setup clara-code claracode.ai develop.claracode.ai
-/cloudflare-workers-setup quiknation quiknation.com develop.quiknation.com
+### Migration Mode Flags (pick one — default is `--new`)
+
+| Flag | When to use |
+|------|-------------|
+| `--new` | Brand new Heru, no prior deployment (default) |
+| `--from-amplify` | Existing Heru currently live on AWS Amplify |
+| `--from-pages` | Existing Heru on Cloudflare Pages (claracode/claraagents pattern) |
+| `--from-vercel` | Existing Heru deployed on Vercel |
+
+### Examples
+
+```bash
+# New project, never deployed
+/cloudflare-workers-setup quiknation quiknation.com develop.quiknation.com --new
+
+# Migrating from Amplify (most common for existing Herus)
+/cloudflare-workers-setup site962 site962.com develop.site962.com --from-amplify
+
+# Migrating from Cloudflare Pages (what we did for claracode + claraagents)
+/cloudflare-workers-setup claraagents claraagents.com develop.claraagents.com --from-pages
+
+# Migrating from Vercel
+/cloudflare-workers-setup dreamihaircare dreamihaircare.com develop.dreamihaircare.com --from-vercel
 ```
 
-**Arguments:**
-- `<worker-name>` — Cloudflare Worker name (no spaces, use hyphens). Production worker = this name. Preview worker = `<name>-preview`.
-- `<production-domain>` — Primary domain (e.g. `claraagents.com`). Automatically adds `www.<domain>` too.
-- `[preview-domain]` — Optional preview domain (default: `develop.<production-domain>`).
+### Arguments
+
+- `<worker-name>` — Cloudflare Worker name (hyphens, no spaces). Preview worker = `<name>-preview`.
+- `<production-domain>` — Primary domain. `www.<domain>` is added automatically.
+- `[preview-domain]` — Defaults to `develop.<production-domain>` if omitted.
+- `[--flag]` — Migration mode. Defaults to `--new`.
 
 ---
 
-## Execution Steps
+## Phase 0: Pre-Flight (ALL MODES)
 
-When this command is invoked, execute ALL steps in order.
-
-### Step 0: Confirm Arguments
-
-Parse the arguments. Set variables:
+Parse arguments and set variables:
 ```
-WORKER_NAME = <worker-name>           # e.g. claraagents
-PROD_DOMAIN = <production-domain>     # e.g. claraagents.com
-PREVIEW_DOMAIN = <preview-domain>     # e.g. develop.claraagents.com
-FRONTEND_DIR = frontend/              # default, check if it exists — else use ./
+WORKER_NAME   = <worker-name>
+PROD_DOMAIN   = <production-domain>
+PREVIEW_DOMAIN = <preview-domain> (or develop.<PROD_DOMAIN>)
+MODE          = --new | --from-amplify | --from-pages | --from-vercel
+FRONTEND_DIR  = frontend/ (check if exists, else ./)
 ```
 
-If `PREVIEW_DOMAIN` not provided, default to `develop.<PROD_DOMAIN>`.
-
-Check the frontend directory exists:
+Detect `FRONTEND_DIR`:
 ```bash
-ls <FRONTEND_DIR>/package.json 2>/dev/null || ls package.json
+[ -f "frontend/package.json" ] && FRONTEND_DIR="frontend" || FRONTEND_DIR="."
 ```
 
-Report back: "Setting up Cloudflare Workers for `<WORKER_NAME>` → `<PROD_DOMAIN>` / `<PREVIEW_DOMAIN>`"
+Report:
+```
+Mode:     <MODE>
+Worker:   <WORKER_NAME> (production) / <WORKER_NAME>-preview (preview)
+Domains:  <PROD_DOMAIN>, www.<PROD_DOMAIN> (production)
+          <PREVIEW_DOMAIN> (preview)
+Frontend: <FRONTEND_DIR>/
+```
+
+---
+
+## Phase 1: Platform-Specific Pre-Work
+
+**Run ONLY the section matching the mode flag. Skip all others.**
+
+---
+
+### MODE: `--new` (No prior deployment)
+
+No pre-work needed. Proceed directly to Phase 2.
+
+---
+
+### MODE: `--from-amplify`
+
+**Goal: Keep Amplify live during migration. Cut over AFTER Worker is verified.**
+
+#### Step A: Inventory the Amplify app
+
+```bash
+# Find the Amplify app ID
+aws amplify list-apps --region us-east-1 --query 'apps[*].{name:name,appId:appId}' --output table
+
+# Get environment variables currently set in Amplify
+aws amplify get-app --app-id <APP_ID> --region us-east-1 \
+  --query 'app.environmentVariables' --output table
+```
+
+Note every env var — you will need to migrate them to Worker secrets in Phase 3.
+
+#### Step B: Archive amplify.yml
+
+```bash
+# Keep amplify.yml as a record but rename it
+cp amplify.yml amplify.yml.bak
+```
+
+Do NOT delete it yet — it's your rollback reference.
+
+#### Step C: Check GH Actions Amplify workflows
+
+```bash
+ls .github/workflows/ | grep -i amplify
+```
+
+If any Amplify-triggered workflows exist, note them. You will disable them AFTER the Worker is verified live (Phase 4, Step F). Do NOT disable now — Amplify is still the live backend.
+
+#### Step D: Migrate env vars to SSM (if not already there)
+
+For any Amplify env var that is NOT already in SSM:
+```bash
+aws ssm put-parameter \
+  --name "/quik-nation/<heru-name>/<VAR_NAME>" \
+  --value "<value>" \
+  --type SecureString \
+  --region us-east-1
+```
+
+#### → Proceed to Phase 2.
+
+---
+
+### MODE: `--from-pages`
+
+**Goal: Remove custom domains from CF Pages BEFORE deploying the Worker.**
+(CF cannot attach a custom domain to a Worker if it's already attached to a Pages project.)
+
+This is exactly what was done for `claracode.ai` and `claraagents.com` on April 13, 2026.
+
+#### Step A: Remove custom domains from CF Pages
+
+In the Cloudflare dashboard:
+1. Go to Workers & Pages → select the Pages project (e.g. `claraagents`)
+2. Settings → Custom Domains
+3. Remove `<PROD_DOMAIN>`, `www.<PROD_DOMAIN>`, and `<PREVIEW_DOMAIN>`
+
+Verify they are gone:
+```bash
+# After removal, this should return no custom domain entries
+npx wrangler pages project list 2>/dev/null | grep "<PROD_DOMAIN>"
+```
+
+#### Step B: Note the Pages project name
+
+```bash
+# Save the old Pages project name for cleanup later
+OLD_PAGES_PROJECT="<pages-project-name>"  # e.g. claraagents
+```
+
+#### Step C: Check if GH Actions uses Pages deploy
+
+```bash
+grep -r "wrangler pages\|cloudflare/pages-action\|CLOUDFLARE_PAGES" .github/workflows/ 2>/dev/null
+```
+
+If found, you will disable/replace these workflows in Phase 4, Step F.
+
+#### → Proceed to Phase 2.
+
+---
+
+### MODE: `--from-vercel`
+
+**Goal: Keep Vercel live during migration. Cut over AFTER Worker is verified.**
+
+#### Step A: Check Vercel env vars
+
+```bash
+# List what's set in Vercel (if vercel CLI is available)
+vercel env ls 2>/dev/null || echo "Check Vercel dashboard for env vars"
+```
+
+Note every env var — migrate any not in SSM to SSM (same as Amplify Step D above).
+
+#### Step B: Keep vercel.json as reference
+
+```bash
+cp vercel.json vercel.json.bak 2>/dev/null || true
+```
+
+#### Step C: Note any Vercel-specific config in next.config
+
+```bash
+grep -n "output\|serverless\|edge\|vercel" frontend/next.config.* 2>/dev/null || \
+grep -n "output\|serverless\|edge\|vercel" next.config.* 2>/dev/null
+```
+
+Remove any `output: 'standalone'` or `output: 'export'` — these conflict with OpenNext.
+
+#### → Proceed to Phase 2.
+
+---
+
+## Phase 2: Install & Configure
+
+These steps apply to ALL modes.
 
 ### Step 1: Install Dependencies
 
@@ -132,11 +295,7 @@ name = "BUCKET_CACHE_PURGE"
 class_name = "BucketCachePurge"
 ```
 
-Replace `<WORKER_NAME>`, `<PROD_DOMAIN>`, `<PREVIEW_DOMAIN>` with actual values.
-
 ### Step 3: Create `open-next.config.ts`
-
-Create `<FRONTEND_DIR>/open-next.config.ts`:
 
 ```ts
 import { defineCloudflareConfig } from '@opennextjs/cloudflare'
@@ -145,8 +304,6 @@ export default defineCloudflareConfig()
 ```
 
 ### Step 4: Add Scripts to `package.json`
-
-Add to the `scripts` section of `<FRONTEND_DIR>/package.json`:
 
 ```json
 "pages:build": "npx @opennextjs/cloudflare build",
@@ -158,7 +315,7 @@ Add to the `scripts` section of `<FRONTEND_DIR>/package.json`:
 
 ### Step 5: Remove `export const runtime = 'edge'`
 
-**CRITICAL** — This line causes `app-edge-has-no-entrypoint` in the manifest and a 500 on every request. OpenNext handles edge routing automatically; do not declare it in source files.
+**CRITICAL** — causes `app-edge-has-no-entrypoint` and a 500 on every request.
 
 ```bash
 cd <FRONTEND_DIR>
@@ -168,17 +325,18 @@ grep -r "export const runtime" app/ src/ --include="*.tsx" --include="*.ts" -l 2
 done
 ```
 
-Report how many files were cleaned.
-
 ### Step 6: Check for Apollo Client Issues
 
-If the project uses Apollo Client, check for module-level instantiation:
-
 ```bash
-grep -r "new ApolloClient\|new InMemoryCache" <FRONTEND_DIR>/app <FRONTEND_DIR>/src --include="*.ts" --include="*.tsx" -l 2>/dev/null
+grep -r "new ApolloClient\|new InMemoryCache" <FRONTEND_DIR>/app <FRONTEND_DIR>/src \
+  --include="*.ts" --include="*.tsx" -l 2>/dev/null
 ```
 
-If found, warn: "Apollo Client is instantiated at module level in these files — this will crash during Next.js prerendering. Use lazy singleton pattern (see `lib/apollo/client.ts` in claracode repo) and wrap Apollo hooks in components loaded with `next/dynamic({ ssr: false })`."
+If found: wrap Apollo hooks in components loaded with `next/dynamic({ ssr: false })` and use lazy singleton pattern for the client.
+
+---
+
+## Phase 3: Build, Test & Deploy
 
 ### Step 7: Build
 
@@ -187,10 +345,7 @@ cd <FRONTEND_DIR>
 npm run pages:build
 ```
 
-Watch for:
-- `Worker saved in .open-next/worker.js 🚀` = success
-- Any TypeScript/build errors = fix before proceeding
-- `app-edge-has-no-entrypoint` in the build output = Step 5 was incomplete, re-run it
+`Worker saved in .open-next/worker.js 🚀` = success. Any other terminal state = fix before proceeding.
 
 ### Step 8: Local Test
 
@@ -203,20 +358,13 @@ curl -s -o /dev/null -w "/ → %{http_code}\n" http://localhost:8788/
 kill $WPID 2>/dev/null
 ```
 
-If 200 → proceed. If 500 → read the wrangler dev output carefully for the stack trace.
+200 = proceed. 500 = read wrangler dev stack trace before continuing.
 
 ### Step 9: Deploy Preview
 
 ```bash
 cd <FRONTEND_DIR>
 npx wrangler deploy --env preview
-```
-
-Expected output:
-```
-Deployed <WORKER_NAME>-preview triggers
-  <PREVIEW_DOMAIN> (custom domain)
-Current Version ID: xxxx
 ```
 
 ### Step 10: Deploy Production
@@ -226,46 +374,27 @@ cd <FRONTEND_DIR>
 npx wrangler deploy --env production
 ```
 
-Expected output:
-```
-Deployed <WORKER_NAME> triggers
-  <PROD_DOMAIN> (custom domain)
-  www.<PROD_DOMAIN> (custom domain)
-Current Version ID: xxxx
-```
-
-### Step 11: Set Clerk Secrets (if project uses Clerk)
-
-Pull from SSM — **never use GitHub secrets or hardcode keys**.
+### Step 11: Set Secrets (Clerk + any migrated env vars)
 
 ```bash
 cd <FRONTEND_DIR>
 
-# Pull from SSM
+# Clerk dev keys from SSM
 PUBLISHABLE=$(aws ssm get-parameter \
   --name '/quik-nation/shared/CLERK_PUBLISHABLE_KEY_DEVELOP' \
   --with-decryption --query 'Parameter.Value' --output text --region us-east-1)
-
 SECRET=$(aws ssm get-parameter \
   --name '/quik-nation/shared/CLERK_SECRET_KEY_DEVELOP' \
   --with-decryption --query 'Parameter.Value' --output text --region us-east-1)
 
-# Set for preview
 echo "$PUBLISHABLE" | npx wrangler secret put NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY --env preview
-echo "$SECRET" | npx wrangler secret put CLERK_SECRET_KEY --env preview
-
-# Set for production (use prod keys when available, dev keys as fallback)
+echo "$SECRET"      | npx wrangler secret put CLERK_SECRET_KEY --env preview
 echo "$PUBLISHABLE" | npx wrangler secret put NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY --env production
-echo "$SECRET" | npx wrangler secret put CLERK_SECRET_KEY --env production
-```
+echo "$SECRET"      | npx wrangler secret put CLERK_SECRET_KEY --env production
 
-For production Clerk keys when available:
-```bash
-# Production Clerk keys (separate Clerk app)
-PROD_PK=$(aws ssm get-parameter --name '/quik-nation/<heru>/CLERK_PUBLISHABLE_KEY_PRODUCTION' ...)
-PROD_SK=$(aws ssm get-parameter --name '/quik-nation/<heru>/CLERK_SECRET_KEY_PRODUCTION' ...)
-echo "$PROD_PK" | npx wrangler secret put NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY --env production
-echo "$PROD_SK" | npx wrangler secret put CLERK_SECRET_KEY --env production
+# For any other env vars migrated from Amplify/Vercel:
+# aws ssm get-parameter --name '/quik-nation/<heru>/<VAR>' --with-decryption --query 'Parameter.Value' \
+#   --output text --region us-east-1 | npx wrangler secret put <VAR_NAME> --env production
 ```
 
 ### Step 12: Verify Live
@@ -275,19 +404,26 @@ curl -s -o /dev/null -w "<PROD_DOMAIN>: %{http_code}\n" https://<PROD_DOMAIN>/
 curl -s -o /dev/null -w "<PREVIEW_DOMAIN>: %{http_code}\n" https://<PREVIEW_DOMAIN>/
 ```
 
-Both should return 200. If 500, check:
-1. Are Clerk secrets set? (`npx wrangler secret list --env production`)
-2. Is there still `export const runtime = 'edge'` somewhere? (re-run Step 5)
-3. Run `npx wrangler tail --env production` and curl the URL to see live Worker logs
+Both 200 = verified. If 500, see Troubleshooting below.
 
-### Step 13: Commit
+---
+
+## Phase 4: Cutover & Cleanup
+
+**Run ONLY the section matching the mode flag. Skip all others.**
+
+---
+
+### MODE: `--new` Cleanup
+
+Nothing to cut over. Commit and ship:
 
 ```bash
 git add <FRONTEND_DIR>/wrangler.toml \
         <FRONTEND_DIR>/open-next.config.ts \
         <FRONTEND_DIR>/package.json \
         <FRONTEND_DIR>/package-lock.json \
-        <FRONTEND_DIR>/app/    # cleaned runtime= files
+        <FRONTEND_DIR>/app/
 
 git commit -m "feat(infra): add Cloudflare Workers deployment — <WORKER_NAME>
 
@@ -303,31 +439,193 @@ git push origin develop
 
 ---
 
+### MODE: `--from-amplify` Cleanup
+
+Worker is live and verified. Now cut over from Amplify.
+
+#### Step E: Update DNS (if using external DNS)
+
+If the domain's DNS is NOT on Cloudflare:
+- Point `<PROD_DOMAIN>` CNAME/ALIAS to the Worker's custom domain target
+- CF Workers Builds Git Integration is NOT used — deploy is manual via `wrangler deploy`
+
+If the domain IS on Cloudflare DNS (common):
+- Custom domain attachment in Step 10 already handled DNS. Nothing more needed.
+
+#### Step F: Disable Amplify (do NOT delete yet — wait 48h for DNS TTL)
+
+```bash
+# Disable Amplify auto-build (stops new deploys but keeps the app running as fallback)
+aws amplify update-branch \
+  --app-id <APP_ID> \
+  --branch-name main \
+  --enable-auto-build false \
+  --region us-east-1
+
+aws amplify update-branch \
+  --app-id <APP_ID> \
+  --branch-name develop \
+  --enable-auto-build false \
+  --region us-east-1
+```
+
+Disable any GH Actions Amplify workflows:
+```bash
+# In .github/workflows/ — add `if: false` to any Amplify deploy jobs
+# OR rename amplify-deploy.yml → amplify-deploy.yml.disabled
+```
+
+#### Step G: After 48h — Delete Amplify app
+
+After DNS TTL expires and Workers is confirmed stable:
+```bash
+aws amplify delete-app --app-id <APP_ID> --region us-east-1
+```
+
+#### Step H: Commit
+
+```bash
+git add <FRONTEND_DIR>/wrangler.toml \
+        <FRONTEND_DIR>/open-next.config.ts \
+        <FRONTEND_DIR>/package.json \
+        <FRONTEND_DIR>/package-lock.json \
+        amplify.yml.bak \
+        <FRONTEND_DIR>/app/ \
+        .github/workflows/
+
+git commit -m "feat(infra): migrate from Amplify to Cloudflare Workers — <WORKER_NAME>
+
+- wrangler.toml: Workers deploy, nodejs_compat, DO bindings, multi-env
+- open-next.config.ts: defineCloudflareConfig()
+- Remove export const runtime = 'edge' from all pages/routes
+- Add pages:build / pages:deploy scripts
+- Amplify auto-build disabled (app preserved for 48h rollback window)
+- Env vars migrated from Amplify to SSM → wrangler secrets
+- Live: <PROD_DOMAIN> (production), <PREVIEW_DOMAIN> (preview)"
+
+git push origin develop
+```
+
+---
+
+### MODE: `--from-pages` Cleanup
+
+Worker is live and verified. The Pages project still exists but has no custom domains.
+
+#### Step E: Disable old Pages GH Actions workflow
+
+```bash
+# Rename or disable any cloudflare/pages-action workflows
+ls .github/workflows/ | grep -i pages
+```
+
+Replace with a no-op comment (or delete the file):
+```yaml
+# Deployment handled by Cloudflare Workers (wrangler deploy).
+# This Pages workflow is retired as of <DATE>.
+# Run: cd frontend && npx wrangler deploy --env production
+```
+
+#### Step F: Optionally delete old CF Pages project
+
+In the Cloudflare dashboard:
+- Workers & Pages → select old Pages project → Settings → Delete project
+- OR keep it as a reference — it costs nothing without custom domains or active deploys
+
+#### Step G: Commit
+
+```bash
+git add <FRONTEND_DIR>/wrangler.toml \
+        <FRONTEND_DIR>/open-next.config.ts \
+        <FRONTEND_DIR>/package.json \
+        <FRONTEND_DIR>/package-lock.json \
+        <FRONTEND_DIR>/app/ \
+        .github/workflows/
+
+git commit -m "feat(infra): migrate from CF Pages to CF Workers — <WORKER_NAME>
+
+- wrangler.toml: Workers deploy (NOT pages deploy), nodejs_compat, DO bindings
+- open-next.config.ts: defineCloudflareConfig()
+- Remove export const runtime = 'edge' from all pages/routes
+- Retire cloudflare/pages-action GH Actions workflow
+- Secrets set via wrangler secret put (SSM-sourced, no GH secrets)
+- Live: <PROD_DOMAIN> (production), <PREVIEW_DOMAIN> (preview)"
+
+git push origin develop
+```
+
+---
+
+### MODE: `--from-vercel` Cleanup
+
+Worker is live and verified. Now cut over from Vercel.
+
+#### Step E: Remove domain from Vercel project
+
+In the Vercel dashboard:
+- Project → Settings → Domains → Remove `<PROD_DOMAIN>` and `<PREVIEW_DOMAIN>`
+- This allows CF to claim the domains fully
+
+#### Step F: Disable Vercel deploys (GH Integration)
+
+In Vercel dashboard:
+- Project → Settings → Git → Disconnect repository OR set Ignored Build Step to `exit 0`
+
+#### Step G: Commit
+
+```bash
+git add <FRONTEND_DIR>/wrangler.toml \
+        <FRONTEND_DIR>/open-next.config.ts \
+        <FRONTEND_DIR>/package.json \
+        <FRONTEND_DIR>/package-lock.json \
+        vercel.json.bak \
+        <FRONTEND_DIR>/app/
+
+git commit -m "feat(infra): migrate from Vercel to Cloudflare Workers — <WORKER_NAME>
+
+- wrangler.toml: Workers deploy, nodejs_compat, DO bindings, multi-env
+- open-next.config.ts: defineCloudflareConfig()
+- Remove export const runtime = 'edge' from all pages/routes
+- Vercel disconnected, domains transferred to CF Workers
+- Secrets migrated from Vercel env to SSM → wrangler secrets
+- Live: <PROD_DOMAIN> (production), <PREVIEW_DOMAIN> (preview)"
+
+git push origin develop
+```
+
+---
+
 ## Troubleshooting
 
 | Symptom | Cause | Fix |
 |---------|-------|-----|
-| `app-edge-has-no-entrypoint` | `export const runtime = 'edge'` in source | Re-run Step 5 grep+sed |
-| 500 after deploy | Clerk middleware crash (no keys) | Run Step 11 |
-| Worker startup 500, no Clerk | Apollo new ApolloClient() at module level | Lazy singleton + next/dynamic ssr:false |
-| `wrangler pages deploy` fails | Wrong command — this is Workers, not Pages | Use `wrangler deploy` (no `pages`) |
-| Custom domain not attaching | Domain already attached elsewhere | Remove old attachment in CF dashboard first |
-| Build fails: cannot find module | Missing dep | `npm install` in frontend/ |
+| `app-edge-has-no-entrypoint` | `export const runtime = 'edge'` still in source | Re-run Step 5 grep+sed |
+| 500 immediately after deploy | Clerk middleware crash — no keys set | Run Step 11 |
+| 500, no Clerk | Apollo `new ApolloClient()` at module level | Lazy singleton + `next/dynamic ssr:false` |
+| `wrangler pages deploy` fails | Wrong command — Workers not Pages | Use `wrangler deploy` (no `pages`) |
+| Custom domain not attaching | Domain still attached to Pages or Amplify | Remove from old platform first (Phase 1) |
+| Build fails: cannot find module | Missing dep | `npm install` in `<FRONTEND_DIR>/` |
+| DNS not resolving after cutover | TTL not expired | Wait up to 48h; check with `dig <PROD_DOMAIN>` |
+| Amplify still serving after disable | Old DNS record still cached | Flush local DNS + wait TTL |
 
 ---
 
 ## NEVER DO
 
 - `wrangler pages deploy` — breaks OpenNext sibling imports → 500
-- `export const runtime = 'edge'` in any page/route/layout
+- `export const runtime = 'edge'` in any page, route, or layout
 - GitHub secrets for Clerk/API keys — SSM only, piped to `wrangler secret put`
-- `cloudflare/pages-action@v1` in GH Actions — deprecated for this pattern
+- `cloudflare/pages-action@v1` in GH Actions — retired
 - Module-level `new ApolloClient()` — crashes during Next.js prerender
+- Delete the old platform immediately — wait 48h after verified live for rollback window
+- `--force` push to remote after any migration commit
 
 ---
 
 ## Reference
 
 - Platform standard doc: `docs/cloudflare/NEXTJS-CLOUDFLARE-WORKERS-DEPLOYMENT.md`
-- Deployed examples: claracode.ai (clara-code worker), claraagents.com (claraagents worker)
+- Deployed examples:
+  - `claracode.ai` → `clara-code` Worker (migrated from CF Pages, April 13 2026)
+  - `claraagents.com` → `claraagents` Worker (migrated from CF Pages, April 13 2026)
 - OpenNext docs: https://opennext.js.org/cloudflare/get-started
