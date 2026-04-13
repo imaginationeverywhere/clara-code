@@ -5,14 +5,14 @@
   "scripts": {
     "dev": "next dev",
     "dev:tsc": "tsc --noEmit -p tsconfig.app.json --watch --preserveWatchOutput",
-    "build": "next build --webpack",
+    "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "check": "npm run lint && tsc --noEmit -p tsconfig.app.json",
     "test": "vitest --run",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:preview": "npx wrangler pages dev .vercel/output/static",
-    "pages:deploy": "npx wrangler pages deploy .vercel/output/static"
+    "pages:build": "npx @opennextjs/cloudflare build",
+    "pages:preview": "npx wrangler pages dev .open-next/assets",
+    "pages:deploy": "npx wrangler pages deploy .open-next/assets"
   },
   "dependencies": {
     "@apollo/client": "^3.13.1",
@@ -26,7 +26,7 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
-    "@cloudflare/next-on-pages": "^1.13.4",
+    "@opennextjs/cloudflare": "^1.19.1",
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
