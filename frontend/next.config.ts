@@ -1,4 +1,10 @@
+import path from 'path'
 import type { NextConfig } from 'next'
+
+// In CI, npm workspaces hoist `next` to the repo root node_modules/.
+// Turbopack needs its root set to the repo root so it can resolve next/package.json.
+// outputFileTracingRoot must match so Next.js doesn't flag a root mismatch.
+const repoRoot = path.resolve(process.cwd(), '..')
 
 const nextConfig: NextConfig = {
   // @cloudflare/next-on-pages compatibility
@@ -10,10 +16,12 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
   turbopack: {
-    // Anchor Turbopack root to this directory (frontend/).
-    // Without this, Turbopack auto-detects the monorepo root via pnpm-lock.yaml
-    // and fails to resolve next/package.json in CI.
-    root: process.cwd(),
+    // Point to repo root where npm workspaces hoists next/package.json in CI.
+    root: repoRoot,
+  },
+  experimental: {
+    // Must match turbopack.root — prevents outputFileTracingRoot mismatch error.
+    outputFileTracingRoot: repoRoot,
   },
 }
 
