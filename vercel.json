@@ -1,4 +1,5 @@
 {
   "rootDirectory": "frontend",
-  "installCommand": "echo 'Dependencies pre-installed by CI'"
+  "installCommand": "echo 'Dependencies pre-installed by CI'",
+  "buildCommand": "npm --prefix frontend run build"
 }
