@@ -37,24 +37,13 @@ jobs:
       - name: Install all workspace dependencies
         run: npm install
 
-      - name: Link next into frontend/node_modules (resolve hoisting)
-        run: |
-          # npm workspaces hoists `next` to repo root node_modules/.
-          # Turbopack looks for next/package.json relative to frontend/ boundary.
-          # Symlinking makes it discoverable without turbopack.root (which conflicts
-          # with vercel build's auto-inferred outputFileTracingRoot).
-          mkdir -p frontend/node_modules
-          ln -sfn "$(pwd)/node_modules/next" frontend/node_modules/next
-
       - name: Build with next-on-pages
-        working-directory: frontend
         run: npx @cloudflare/next-on-pages
         env:
           NODE_ENV: production
           NEXT_TELEMETRY_DISABLED: "1"
 
       - name: Deploy to Cloudflare Pages
-        working-directory: frontend
         run: npx wrangler@4 pages deploy .vercel/output/static --project-name clara-code --branch ${{ github.ref_name }} --commit-hash ${{ github.sha }}
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
