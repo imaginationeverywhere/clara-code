@@ -18,6 +18,10 @@ const nextConfig: NextConfig = {
     // Workspace-local packages (@mariozechner/*) are not resolvable by Vercel CLI in CI
     ignoreBuildErrors: true,
   },
+  // Write .next/ to repo root so vercel build (CWD=repo root) finds it at CWD.
+  // Without this, `cd frontend && npm run build` puts .next/ in frontend/.next/
+  // but Vercel CLI looks for routes-manifest.json at its CWD (repo root).
+  distDir: '../.next',
   outputFileTracingRoot: repoRoot,
   turbopack: {
     root: repoRoot,
