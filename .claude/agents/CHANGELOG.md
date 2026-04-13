@@ -1,6 +1,11 @@
 # .claude/agents Changelog
 
-## [Unreleased] - 2026-04-06
+## [Unreleased] - 2026-04-12
+
+### Added
+- **Clara Code / cultural roster (partial list)** — New agent definitions including `aaron-douglas`, `alonzo-herndon`, `annie-easley`, `annie-malone`, `barbara-proctor`, `biddy-mason`, `carruthers`, `claude-barnett`, `claudia`, `david-blackwell`, `dick-gregory`, `don-cornelius`, `ethel-payne`, `eunice-johnson`, `gil-scott-heron`, `james-armistead-lafayette`, `jerry-lawson`, `john-hope`, `matthew-henson`, `melvin-van-peebles`, `miles`, `moss-kendrix`, `motley`, `romare-bearden`, `roy-clay`, `skip-ellis`, `solomon-fuller`, `vince-cullers`, `wendell-scott` (files under `.claude/agents/`; many mirrored under `.cursor/agents/`).
+
+### Previous — 2026-04-06
 
 ### Changed
 - **All 115 agent personas updated** — Agent `.md` files refreshed with latest platform context, team assignments, and voice capabilities. Agents can now be loaded independently via `claude --agent=<file>` for dedicated per-agent sessions.

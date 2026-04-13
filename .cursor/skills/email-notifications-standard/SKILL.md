@@ -1,11 +1,11 @@
 ---
 name: email-notifications-standard
-description: Implement production-grade email notifications with SendGrid, AWS SES, and intelligent provider routing. Use when building transactional emails, marketing campaigns, email templates, or notification systems. Triggers on requests for email sending, email templates, SendGrid integration, or AWS SES setup.
+description: Implement production-grade email notifications with AWS SES (v1/v2) only — templates, bulk sends, verified identities. Use when building transactional emails, marketing campaigns, or notification systems. Triggers on requests for email sending, SES setup, or templated mail.
 ---
 
 # Email Notifications Standard
 
-Production-grade email notification system following DreamiHairCare's battle-tested patterns with SendGrid, AWS SES, and intelligent provider routing.
+Production-grade email on the Auset platform uses **AWS SES only** (no third-party ESP in the boilerplate). Use `@aws-sdk/client-ses` / `@aws-sdk/client-sesv2` and verified identities (e.g. `info@quiknation.com`).
 
 ## Overview
 
