@@ -1,6 +1,6 @@
-import { NextResponse } from "next/server";
+export const dynamic = "force-dynamic";
 
-export const runtime = "edge";
+import { NextResponse } from "next/server";
 
 const DEFAULT_VOICE_BASE = "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
 

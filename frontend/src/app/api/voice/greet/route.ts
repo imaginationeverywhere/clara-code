@@ -1,4 +1,4 @@
-export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 import { webScripts } from "@clara/clara-code-surface-scripts";
 import { NextResponse } from "next/server";

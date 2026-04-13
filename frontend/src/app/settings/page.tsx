@@ -1,9 +1,9 @@
+export const dynamic = 'force-dynamic'
 import { currentUser } from '@clerk/nextjs/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { SettingsProfile } from '@/components/settings/SettingsProfile'
 
-export const runtime = 'edge'
 
 export default async function SettingsPage() {
   const user = await currentUser()

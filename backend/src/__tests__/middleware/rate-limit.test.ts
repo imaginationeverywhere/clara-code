@@ -66,5 +66,4 @@ describe("rate-limit middleware", () => {
 		expect(blocked.status).toBe(429);
 		expect(blocked.headers["retry-after"]).toBeDefined();
 	});
-
 });

@@ -1,8 +1,8 @@
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
 
 import { checkIpRateLimit } from "@/lib/ip-rate-limit";
-
-export const runtime = "edge";
 
 const DEFAULT_HERMES_GATEWAY_URL = "https://info-24346--hermes-gateway.modal.run";
 
