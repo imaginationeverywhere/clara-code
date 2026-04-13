@@ -6,6 +6,10 @@
 
 - **`create-clara-app` templates** — `packages/create-clara-app/templates/` (`open-next.config.ts`, `wrangler.toml`, `env.example`) documented in `packages/create-clara-app/README.md` and `packages/create-clara-app/CHANGELOG.md`.
 
+### Changed
+
+- **`create-clara-app`** — README expanded (usage, scaffold behavior, publish, build); package `0.1.1` → `0.1.2`. See `packages/create-clara-app/CHANGELOG.md`.
+
 - **`@claracode/sdk`** — pointer: Hermes client package lives at `packages/sdk/` with README examples (`ask`, `stream`, voice). See root `CHANGELOG.md` and `packages/sdk/CHANGELOG.md`.
 - `cloudflare/NEXTJS-15-TO-16-UPGRADE-GUIDE.md` — step-by-step guide for upgrading from Next.js 15 to 16 in the CF Workers deployment context.
 - `cloudflare/NEXTJS-16-CLOUDFLARE-WORKERS-DEPLOYMENT.md` — complete deployment reference for Next.js 16 on Cloudflare Workers using `@opennextjs/cloudflare`.

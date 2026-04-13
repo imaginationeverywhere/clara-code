@@ -30,6 +30,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 - **`create-clara-app` publish templates** — `packages/create-clara-app/templates/` (OpenNext config, Cloudflare `wrangler.toml`, `env.example` for Clerk + Hermes) plus package `CHANGELOG.md`, `.gitignore` for local `bin/index.js` shim. Package version `0.1.0` → `0.1.1`. See `packages/create-clara-app/CHANGELOG.md` and `docs/CHANGELOG.md`.
 
+### Changed
+
+- **`create-clara-app` `0.1.1` → `0.1.2`** — README documents full usage and scaffold steps; package changelog records README changes. See `packages/create-clara-app/CHANGELOG.md` and `docs/CHANGELOG.md`.
+
 - **`@claracode/sdk`** (`packages/sdk/`) — TypeScript client for Hermes-compatible HTTP APIs: `createClient`, `ask`, SSE `stream`, voice sessions, and agents; ESM+CJS builds, local `hermes-stub`, Vitest integration test. Root `npm run build` now includes `pnpm -C packages/sdk run build`. See `packages/sdk/README.md` and `packages/sdk/CHANGELOG.md`.
 - **Clara Code IDE** (`ide/clara-code/`): VSCodium-oriented scaffold — `clara-voice` VS Code extension (Clara Dark theme, status bar voice control, Code Lens), `product.json` merge tooling and defaults (Hermes/Copilot-off), build scripts, and GitHub Actions workflow `clara-code-ide.yml` to produce per-OS VSIX artifacts. See `ide/clara-code/README.md`, `ide/clara-code/CHANGELOG.md`, `.github/CHANGELOG.md`, and `docs/CHANGELOG.md`.
 - `docs/review/20260412-180043-code-review.md` — full Sprint 1/2 code review covering all 7 branches merged into develop (Grade B, 9 issues: 1 critical, 3 high, 4 medium, 1 low). Backend: 77/77 tests passing, 91% line coverage.

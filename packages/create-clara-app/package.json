@@ -1,6 +1,6 @@
 {
 	"name": "create-clara-app",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Scaffold a Next.js 15 app with Clara, Clerk, and Cloudflare (OpenNext)",
 	"type": "module",
 	"bin": {
