@@ -9,6 +9,12 @@ const nextConfig: NextConfig = {
     // Workspace-local packages (@mariozechner/*) are not resolvable by Vercel CLI in CI
     ignoreBuildErrors: true,
   },
+  turbopack: {
+    // Anchor Turbopack root to this directory (frontend/).
+    // Without this, Turbopack auto-detects the monorepo root via pnpm-lock.yaml
+    // and fails to resolve next/package.json in CI.
+    root: process.cwd(),
+  },
 }
 
 export default nextConfig
