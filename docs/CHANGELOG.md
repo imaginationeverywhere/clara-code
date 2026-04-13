@@ -4,6 +4,8 @@
 
 ### Added
 
+- `review/20260413-162351-code-review.md` — code review for 5 commits (IDE scaffold, `@claracode/sdk`, backend health fix, `create-clara-app` templates). Grade **B+**; 2 high issues (VoiceSession silent error, Express 4 async health handler), 3 medium, 4 low. Backend: 85/85 tests, 98% coverage.
+
 - **`create-clara-app` templates** — `packages/create-clara-app/templates/` (`open-next.config.ts`, `wrangler.toml`, `env.example`) documented in `packages/create-clara-app/README.md` and `packages/create-clara-app/CHANGELOG.md`.
 
 ### Changed
