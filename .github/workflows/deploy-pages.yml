@@ -42,6 +42,7 @@ jobs:
         env:
           NODE_ENV: production
           NEXT_TELEMETRY_DISABLED: "1"
+          NEXT_DISABLE_TURBOPACK: "1"
 
       - name: Deploy to Cloudflare Pages
         run: npx wrangler@4 pages deploy .vercel/output/static --project-name clara-code --branch ${{ github.ref_name }} --commit-hash ${{ github.sha }}
