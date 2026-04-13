@@ -36,6 +36,12 @@ if (allowedOrigins.length === 0) {
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(express.json({ limit: "10mb" }));
 
+// Health check MUST be before Clerk middleware — ECS health probes cannot carry auth tokens
+app.get("/health", async (_req, res) => {
+	const dbOk = await testConnection({ silent: true });
+	res.json({ status: "ok", db: dbOk ? "connected" : "error", service: "clara-code-backend" });
+});
+
 if (process.env.CLERK_SECRET_KEY) {
 	app.use(
 		clerkMiddleware({
@@ -48,11 +54,6 @@ if (process.env.CLERK_SECRET_KEY) {
 }
 
 app.use(withAuth);
-
-app.get("/health", async (_req, res) => {
-	const dbOk = await testConnection({ silent: true });
-	res.json({ status: "ok", db: dbOk ? "connected" : "error", service: "clara-code-backend" });
-});
 
 app.use("/api", apiRoutes);
 
