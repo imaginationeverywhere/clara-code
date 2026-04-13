@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased] - 2026-04-13
+
+### Added
+
+- `wrangler.toml`: custom domain routes for `claracode.ai`, `www.claracode.ai` (production) and `develop.claracode.ai` (preview) — CF Workers now routes correctly per environment.
+- `.env.example`: documented `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` and `STRIPE_SECRET_KEY` with notes that the publishable key is baked into the client bundle at build time and the secret key is runtime-only via Wrangler secrets. Pull live keys from SSM at `/clara-code/STRIPE_PUBLISHABLE_KEY` and `/clara-code/STRIPE_SECRET_KEY`.
+
+### Fixed
+
+- Root `wrangler.toml` replaced with reference comments — `frontend/wrangler.toml` is now the single deployment config for Workers.
+
 ## [Unreleased]
 
 ### Changed
