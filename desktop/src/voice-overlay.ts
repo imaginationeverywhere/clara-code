@@ -1,8 +1,5 @@
 import cssText from "./voice-overlay.css";
 
-const TTS_URL =
-	"https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run/voice/tts";
-
 const DEFAULT_TTS_TEXT = "Hey, I am Clara. How can I help with your code today?";
 
 function isClaraDesktopSurface(): boolean {
@@ -62,12 +59,11 @@ export function mountClaraVoiceOverlay(): void {
 			button.disabled = true;
 			button.classList.add("clara-voice-fab--pulse");
 			try {
-				const response = await fetch(TTS_URL, {
+				const response = await fetch("/api/voice/tts", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
 					body: JSON.stringify({
 						text: DEFAULT_TTS_TEXT,
-						voice_id: "default",
 					}),
 				});
 				if (!response.ok) {

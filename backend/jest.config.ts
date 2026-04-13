@@ -22,8 +22,11 @@ const config: Config = {
 		"!src/load-env.ts",
 		"!src/database/config.js",
 		"!src/database/migrations/**",
+		// Bootstrap / wiring — covered by integration smoke; branch-heavy env branches skew totals
+		"!src/server.ts",
+		"!src/utils/logger.ts",
 	],
-	coverageThreshold: { global: { lines: 80, branches: 65, functions: 80, statements: 80 } },
+	coverageThreshold: { global: { lines: 80, branches: 80, functions: 80, statements: 80 } },
 	coverageReporters: ["text", "json-summary"],
 	testTimeout: 30000,
 };

@@ -63,6 +63,36 @@ describe("routes /api/keys", () => {
 		expect(res.status).toBe(401);
 	});
 
+	it("GET / 500 when list fails", async () => {
+		(ApiKey.findAll as jest.Mock).mockRejectedValueOnce(new Error("db"));
+		const res = await request(app).get("/api/keys");
+		expect(res.status).toBe(500);
+	});
+
+	it("POST / 401 without userId", async () => {
+		const local = express();
+		local.use(express.json());
+		local.use((_req, _res, next) => {
+			(_req as { auth?: () => Promise<{ userId: string | null }> }).auth = async () => ({ userId: null });
+			next();
+		});
+		local.use("/api/keys", keysRoutes);
+		const res = await request(local).post("/api/keys").send({ name: "My Key" });
+		expect(res.status).toBe(401);
+	});
+
+	it("DELETE /:id 401 without userId", async () => {
+		const local = express();
+		local.use(express.json());
+		local.use((_req, _res, next) => {
+			(_req as { auth?: () => Promise<{ userId: string | null }> }).auth = async () => ({ userId: null });
+			next();
+		});
+		local.use("/api/keys", keysRoutes);
+		const res = await request(local).delete("/api/keys/kid");
+		expect(res.status).toBe(401);
+	});
+
 	it("POST / creates key", async () => {
 		(ApiKey.create as jest.Mock).mockResolvedValueOnce({
 			id: "id1",

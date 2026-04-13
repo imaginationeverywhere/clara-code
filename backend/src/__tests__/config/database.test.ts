@@ -1,4 +1,5 @@
 import { sequelize, testConnection } from "@/config/database";
+import { logger } from "@/utils/logger";
 
 describe("database", () => {
 	afterEach(() => {
@@ -18,5 +19,13 @@ describe("database", () => {
 	it("testConnection logs on success when not silent", async () => {
 		jest.spyOn(sequelize, "authenticate").mockResolvedValue(undefined);
 		await testConnection({ silent: false });
+	});
+
+	it("testConnection logs error when authenticate fails and not silent", async () => {
+		jest.spyOn(sequelize, "authenticate").mockRejectedValue(new Error("econnrefused"));
+		const errSpy = jest.spyOn(logger, "error").mockReturnValue(logger);
+		await expect(testConnection({ silent: false })).resolves.toBe(false);
+		expect(errSpy).toHaveBeenCalled();
+		errSpy.mockRestore();
 	});
 });
