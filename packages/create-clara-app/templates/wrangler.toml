@@ -1,0 +1,17 @@
+# Cloudflare Workers — OpenNext output (see https://opennext.js.org/cloudflare/get-started)
+name = "PROJECT_NAME_PLACEHOLDER"
+main = ".open-next/worker.js"
+compatibility_date = "2024-12-30"
+
+compatibility_flags = [
+	"nodejs_compat",
+	"global_fetch_strictly_public",
+]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+[[services]]
+binding = "WORKER_SELF_REFERENCE"
+service = "PROJECT_NAME_PLACEHOLDER"
