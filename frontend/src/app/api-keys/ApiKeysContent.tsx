@@ -15,6 +15,7 @@ import {
 } from '@/lib/apollo/operations'
 import { ApiKeyCard } from '@/components/dashboard/ApiKeyCard'
 import { CreateKeyModal } from '@/components/dashboard/CreateKeyModal'
+import { useAnalytics } from '@/hooks/useAnalytics'
 import { useState, useCallback } from 'react'
 
 export default function ApiKeysContent() {
@@ -27,6 +28,7 @@ export default function ApiKeysContent() {
 
 function ApiKeysInner() {
   const [modalOpen, setModalOpen] = useState(false)
+  const { track } = useAnalytics()
   const { data, loading, error, refetch } = useQuery<MyApiKeysQueryData>(MY_API_KEYS, {
     fetchPolicy: 'network-only',
   })
@@ -37,10 +39,14 @@ function ApiKeysInner() {
 
   const onCreate = useCallback(
     async (name: string) => {
+      const wasEmpty = keys.length === 0
       await createKey({ variables: { name } })
+      if (wasEmpty) {
+        track('first_api_key_created')
+      }
       await refetch()
     },
-    [createKey, refetch],
+    [createKey, keys.length, refetch, track],
   )
 
   const onRevoke = useCallback(

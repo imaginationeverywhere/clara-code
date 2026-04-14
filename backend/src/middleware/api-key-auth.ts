@@ -3,6 +3,7 @@ import { Op } from "sequelize";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
+import { gaClientIdFromUserId, sendGA4ServerEvent } from "@/utils/analytics";
 import { validateApiKeyAgainstHash } from "@/utils/api-key";
 import { logger } from "@/utils/logger";
 
@@ -39,6 +40,13 @@ export const requireApiKey = async (req: ApiKeyRequest, res: Response, next: Nex
 				return;
 			}
 
+			const priorUsed = await ApiKey.count({
+				where: { userId: apiKey.userId, lastUsedAt: { [Op.ne]: null } },
+			});
+			if (priorUsed === 0) {
+				void sendGA4ServerEvent(gaClientIdFromUserId(apiKey.userId), "first_api_call", {});
+			}
+
 			void ApiKey.update({ lastUsedAt: new Date() }, { where: { id: apiKey.id } }).catch((err: unknown) =>
 				logger.error("Failed to update lastUsedAt:", err),
 			);
@@ -66,6 +74,13 @@ export const requireApiKey = async (req: ApiKeyRequest, res: Response, next: Nex
 
 			for (const row of candidates) {
 				if (row.keyHash && (await validateApiKeyAgainstHash(rawKey, row.keyHash))) {
+					const priorUsed = await ApiKey.count({
+						where: { userId: row.userId, lastUsedAt: { [Op.ne]: null } },
+					});
+					if (priorUsed === 0) {
+						void sendGA4ServerEvent(gaClientIdFromUserId(row.userId), "first_api_call", {});
+					}
+
 					void ApiKey.update({ lastUsedAt: new Date() }, { where: { id: row.id } }).catch((err: unknown) =>
 						logger.error("Failed to update lastUsedAt:", err),
 					);
