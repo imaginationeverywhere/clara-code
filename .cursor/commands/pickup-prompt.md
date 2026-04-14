@@ -18,7 +18,7 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --all                    # List ALL Auset module prompts needed + queue missing ones
 
 # Standards flags (can be stacked)
-/pickup-prompt --clerk                  # Inject Clerk auth standard
+/pickup-prompt --clerk                  # Inject Clerk auth standard (ProfileWidget required on auth layouts)
 /pickup-prompt --stripe                 # Inject Stripe standard (dynamic pricing, webhooks)
 /pickup-prompt --graphql                # Inject GraphQL standard (DataLoader, auth guards, naming)
 /pickup-prompt --migrations             # Inject DB migrations standard (up/down, all 3 envs)
@@ -52,6 +52,11 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --analytics               # Inject GA4 analytics standard
 /pickup-prompt --admin                   # Inject admin panel standard (RBAC, audit log, data tables)
 
+# User and stack flags
+/pickup-prompt --profile                 # Inject user profile + wallet standard (Clerk sync, wallet top-up, avatar S3)
+/pickup-prompt --frontend                # Inject frontend stack standard (Next.js 16, TypeScript, Tailwind, Apollo, Clerk, Redux-Persist)
+/pickup-prompt --backend                 # Inject backend stack standard (Node/Express, Sequelize, GraphQL/Apollo, TypeScript)
+
 # App store submission flags
 /pickup-prompt --apple                   # Apple App Store submission (xcrun altool, metadata, screenshots)
 /pickup-prompt --google                  # Google Play Store submission (AAB, Play Console, staged rollout)
@@ -67,6 +72,9 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --eas --apple                                            # iOS build + submit
 /pickup-prompt --eas --google                                           # Android build + submit
 /pickup-prompt --eas --apple --google                                   # Both stores
+/pickup-prompt --frontend --clerk --profile                             # Full frontend auth + profile
+/pickup-prompt --backend --graphql --security --migrations              # Full backend feature
+/pickup-prompt --frontend --backend --clerk --profile                   # Full stack feature
 ```
 
 ## Flags
@@ -81,6 +89,7 @@ Use this flag for any prompt that involves:
 - Auth layouts
 - SSO/OAuth flows
 - Clerk-protected routes
+- Any authenticated navbar/header (ProfileWidget required)
 
 ```bash
 # Detect --clerk flag
@@ -88,14 +97,20 @@ CLERK_STANDARD=""
 if echo "$*" | grep -q "\-\-clerk"; then
   CLERK_STANDARD=$(cat .claude/standards/clerk-auth.md)
   echo "📋 Clerk Auth Standard loaded — applying mandatory constraints:"
-  echo "   ❌ No <SignIn> or <SignUp> embedded components"
+  echo "   ❌ No <SignIn> or <SignUp> embedded components — hooks required"
   echo "   ✅ useSignIn() / useSignUp() hooks required"
   echo "   ✅ SSO callback route required"
+  echo "   ✅ ProfileWidget required on every authenticated layout (navbar/header)"
+  echo "   ✅ ProfileWidget: avatar, name, tier badge, wallet balance, sign-out"
+  echo "   ✅ Provider order: ClerkProvider → AuthSetup → Apollo → Redux → PersistGate"
+  echo "   ✅ Webhook: Svix signature verification required"
+  echo "   ✅ RBAC via Clerk publicMetadata.role — never user-editable"
+  echo "   ✅ docs/standards/clerk.md must be created/updated"
   echo ""
 fi
 ```
 
-The loaded standard is prepended to the prompt context before execution. If the prompt says `<SignIn appearance={{...}} />` anywhere, the agent overrides it with the hook pattern from the standard.
+The loaded standard is prepended to the prompt context before execution. If the prompt says `<SignIn appearance={{...}} />` anywhere, the agent overrides it with the hook pattern from the standard. If an authenticated layout is missing a ProfileWidget, the agent adds one.
 
 ---
 
@@ -625,6 +640,96 @@ fi
 
 ---
 
+### `--profile`
+
+Loads `.claude/standards/profile.md`. Use for any prompt building user profiles, profile editing, or wallet features (balance, top-up, transaction history).
+
+```bash
+PROFILE_STANDARD=""
+if echo "$*" | grep -q "\-\-profile"; then
+  PROFILE_STANDARD=$(cat .claude/standards/profile.md)
+  echo "👤 User Profile Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Clerk is source of truth for identity — DB extends it"
+  echo "   ✅ User table: clerkId (unique), email, name, role, walletBalance (denormalized)"
+  echo "   ✅ WalletTransaction table: type, amount, balanceAfter, referenceId"
+  echo "   ✅ Wallet top-up via Stripe Checkout (not Elements)"
+  echo "   ✅ Top-up credited in checkout.session.completed webhook only"
+  echo "   ✅ Avatar upload via S3 presigned POST — never through backend"
+  echo "   ✅ Profile page sections: header, personal info, wallet summary, notification prefs, danger zone"
+  echo "   ✅ WalletSummaryCard component with Add funds button + transaction list"
+  echo "   ✅ PATCH /api/profile must never accept role or clerkId update"
+  echo "   ✅ docs/standards/profile.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--frontend`
+
+Loads `.claude/standards/frontend.md`. Use for any prompt scaffolding a new frontend, adding pages, or setting up the frontend stack. Enforces the exact stack — no substitutions.
+
+```bash
+FRONTEND_STANDARD=""
+if echo "$*" | grep -q "\-\-frontend"; then
+  FRONTEND_STANDARD=$(cat .claude/standards/frontend.md)
+  echo "⚛️  Frontend Stack Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Next.js 16 (App Router only — no Pages Router)"
+  echo "   ✅ React 19 + TypeScript strict mode"
+  echo "   ✅ Tailwind CSS with brand tokens (bg-brand-bg, text-brand-purple, etc.)"
+  echo "   ✅ Apollo Client @3.11 — no React Query"
+  echo "   ✅ @clerk/nextjs @6 — no other auth providers"
+  echo "   ✅ Redux Toolkit @2.3 + Redux-Persist @6 — no Zustand/MobX"
+  echo "   ✅ ShadCN UI — no Chakra/Material UI"
+  echo "   ✅ Server components by default — 'use client' only when needed"
+  echo "   ✅ Provider order: ClerkProvider → AuthSetup → ApolloProvider → Redux → PersistGate"
+  echo "   ✅ Redux-Persist: whitelist cart/preferences, blacklist auth"
+  echo "   ❌ No hardcoded hex colors in className — use brand-* tokens"
+  echo "   ✅ docs/standards/frontend.md must be created/updated"
+  echo ""
+fi
+```
+
+The loaded standard is prepended to the prompt context before execution. Key overrides:
+- If the prompt uses `useState` + `useEffect` for data fetching in a page component, the agent refactors to a server component with async/await
+- If any `bg-[#09090F]` hardcoded color appears, the agent replaces with `bg-brand-bg` and ensures the token is in `tailwind.config.ts`
+- If React Query or Zustand appear, the agent replaces with Apollo Client and Redux Toolkit
+
+---
+
+### `--backend`
+
+Loads `.claude/standards/backend.md`. Use for any prompt scaffolding a new backend, adding routes, or setting up the backend stack. Enforces the exact stack — no substitutions.
+
+```bash
+BACKEND_STANDARD=""
+if echo "$*" | grep -q "\-\-backend"; then
+  BACKEND_STANDARD=$(cat .claude/standards/backend.md)
+  echo "🖥️  Backend Stack Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Node.js 20 + Express @4 + TypeScript strict mode"
+  echo "   ✅ Apollo Server @4 for GraphQL — no REST-only APIs"
+  echo "   ✅ Sequelize @6 + PostgreSQL — no TypeORM/Prisma/Mongoose"
+  echo "   ✅ Middleware order: helmet → cors → compression → morgan → raw(Stripe) → json → rateLimit"
+  echo "   ✅ express.raw() for /api/webhooks/stripe — MUST come before express.json()"
+  echo "   ✅ Clerk JWT verification in auth middleware (requireAuth)"
+  echo "   ✅ GraphQL context: buildContext() wires userId + role + dataloaders"
+  echo "   ✅ requireAuthCtx() + requireAdminCtx() helpers — never trust args.userId"
+  echo "   ✅ DataLoader per request — no direct DB calls in resolvers"
+  echo "   ✅ DB env vars: backend/.env.local + .env.develop + .env.production"
+  echo "   ❌ No NestJS, TypeORM, Prisma, Mongoose"
+  echo "   ✅ docs/standards/backend.md must be created/updated"
+  echo ""
+fi
+```
+
+The loaded standard is prepended to the prompt context before execution. Key overrides:
+- If NestJS decorators appear, the agent refactors to Express
+- If Prisma schema or TypeORM entities appear, the agent replaces with Sequelize models
+- If resolvers query the DB directly without DataLoader, the agent refactors to use DataLoader
+- If Stripe webhook body is parsed with `express.json()`, the agent fixes it to `express.raw()`
+
+---
+
 ### `--status`
 
 Shows a dashboard of which standards are implemented in this Heru and which tech docs are missing.
@@ -669,6 +774,9 @@ if echo "$*" | grep -q "\-\-status"; then
   check_standard "apple-store" "ls docs/standards/apple-store.md 2>/dev/null"                       "--apple"
   check_standard "google-play" "ls docs/standards/google-play.md 2>/dev/null"                       "--google"
   check_standard "admin"       "grep -rl 'requireAdmin\|/api/admin' src/ backend/src/ 2>/dev/null"  "--admin"
+  check_standard "profile"     "grep -rl 'walletBalance\|WalletTransaction\|/api/profile' src/ backend/src/ 2>/dev/null" "--profile"
+  check_standard "frontend"    "grep -rl 'redux-persist\|@apollo/client\|@clerk/nextjs' frontend/src/ 2>/dev/null"       "--frontend"
+  check_standard "backend"     "grep -rl '@apollo/server\|sequelize\|requireAuth' backend/src/ 2>/dev/null"              "--backend"
 
   echo "  ──────────────────────────────────────────────────────────────"
   echo ""
@@ -1040,8 +1148,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.5.0
+version: 3.6.0
 changelog:
+  - v3.6.0: Added --profile (user profile + wallet), --frontend (Next.js 16 stack), --backend (Node/Express/Sequelize/Apollo stack); updated --clerk with ProfileWidget requirement; created clerk-auth.md standard (was missing)
   - v3.5.0: Added --shipping (Shippo), --analytics (GA4), --apple (App Store), --google (Play Store), --admin (admin panel) flags; updated --stripe with platform fees (min 7%), disputes, refunds, metadata requirements
   - v3.4.0: Added --twilio, --slack, --digital-pass, --apple-maps, --mapbox, --eas, --push, --neon, --cf flags (9 new integration standards)
   - v3.3.0: Added --design flag with surface variants (web/desktop/cli/mobile)
