@@ -4,7 +4,7 @@
 
 ## What This Command Does
 
-Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty. For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`.
+Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty (or use `--parallel N` for multiple headless agent slots). For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`. Use `--retry-failed` to move stranded prompts from `4-failed/` back to `1-not-started/` before processing.
 
 ## Usage
 
@@ -16,6 +16,10 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --status                 # Show standards dashboard: what's implemented vs missing in this Heru
 /pickup-prompt --requirements           # Discovery intake: collect Heru info, generate PRD/BRD/VRD
 /pickup-prompt --all                    # List ALL Auset module prompts needed + queue missing ones
+/pickup-prompt --parallel 6             # Run up to 6 headless Cursor agents simultaneously (QCS1 max)
+/pickup-prompt --parallel 3             # Run 3 agents simultaneously
+/pickup-prompt --retry-failed           # Re-queue prompts from 4-failed/ to 1-not-started/, then run
+/pickup-prompt --retry-failed --parallel 3   # Retry failed prompts with parallelism
 
 # Standards flags (can be stacked)
 /pickup-prompt --clerk                  # Inject Clerk auth standard (ProfileWidget required on auth layouts)
@@ -777,13 +781,43 @@ The loaded standard is prepended to the prompt context before execution. Key ove
 
 ---
 
+### `--parallel N`
+
+When `N` > 1, the execution script uses a **parallel dispatcher**: up to `N` background jobs each atomically `mv` one prompt to `2-in-progress/`, create a **unique** worktree path, optionally run `cursor agent -p --yolo` if the `cursor` CLI is available, then commit, push, and open a PR. Default `N=1` keeps the original sequential `while true` loop. **`SPECIFIC_PROMPT` single-file mode is not supported in parallel** — use sequential mode.
+
+---
+
+### `--retry-failed`
+
+When set, after Step 0.5, every `*.md` in `prompts/<date>/4-failed/` is moved back to `1-not-started/` so the main loop can pick them up. Does not delete files. Combine with `--parallel N` if desired.
+
+---
+
 ### `--status`
 
-Shows a full AI-timeline dashboard: which standards are implemented, how much machine time has been spent, what prompts to write next, and how long it will take to finish — with parallel agent batching.
+Shows a full AI-timeline dashboard: which standards are implemented, how much machine time has been spent, what prompts to write next, and how long it will take to finish — with parallel agent batching. If `4-failed/` contains prompts (push failures), a **warning block** is printed first.
 
 ```bash
 if echo "$*" | grep -q "\-\-status"; then
   HERU=$(basename $(pwd))
+  YEAR=$(date +%Y)
+  MONTH=$(date +%B)
+  DAY=$(date +%-d)
+
+  # ── 4-failed warning (push failures) ─────────────────────────────────────
+  FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
+  FAILED_COUNT=$(ls "${FAILED_DIR}"/*.md 2>/dev/null | wc -l | tr -d ' ')
+  if [ "${FAILED_COUNT:-0}" -gt 0 ]; then
+    echo ""
+    echo "⚠️  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    echo "⚠️  PUSH FAILURES: $FAILED_COUNT prompt(s) in 4-failed/"
+    echo "⚠️  Run: /pickup-prompt --retry-failed to re-queue them"
+    echo "⚠️  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    ls "${FAILED_DIR}"/*.md 2>/dev/null | while read -r F; do
+      echo "   ❌ $(basename "$F")"
+    done
+    echo ""
+  fi
 
   # ── AI time estimates per standard (minutes, based on /ai-estimate baselines) ──
   # format: "name|detection_pattern|flag|estimate_min|description"
@@ -1051,6 +1085,28 @@ echo "Looking in: ${PROMPT_DIR}"
 ls "${PROMPT_DIR}" 2>/dev/null || echo "No prompts directory found at ${PROMPT_DIR}"
 ```
 
+### Step 1b — Parse `--parallel N` and `--retry-failed`
+
+Run after Step 1 so `PROMPT_DIR` exists for `--retry-failed`. Does not remove other flags from `"$@"` (standards flags are handled by the agent, not this shell).
+
+```bash
+MAX_PARALLEL=1
+RETRY_FAILED=false
+argv=("$@")
+for ((i=0; i<${#argv[@]}; i++)); do
+  if [ "${argv[$i]}" = "--parallel" ]; then
+    n="${argv[$((i+1))]:-}"
+    if printf '%s' "$n" | grep -Eq '^[0-9]+$'; then
+      MAX_PARALLEL="$n"
+    else
+      MAX_PARALLEL=6
+    fi
+  elif [ "${argv[$i]}" = "--retry-failed" ]; then
+    RETRY_FAILED=true
+  fi
+done
+```
+
 ### Step 2 — Loop: process every prompt until the queue is empty
 
 **This is the main loop. Do NOT stop after one prompt. Do NOT ask the user to run the command again.**
@@ -1076,6 +1132,100 @@ if ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null | grep -q .; then
 fi
 # ─────────────────────────────────────────────────────────────────────────────
 
+# ── --retry-failed: re-queue prompts from 4-failed/ ─────────────────────────
+if [ "$RETRY_FAILED" = true ]; then
+  FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
+  if ls "${FAILED_DIR}"/*.md 2>/dev/null | grep -q .; then
+    FAILED_COUNT=$(ls "${FAILED_DIR}"/*.md 2>/dev/null | wc -l | tr -d ' ')
+    echo ""
+    echo "♻️  Retrying $FAILED_COUNT failed prompt(s) from 4-failed/:"
+    for FAILED_FILE in "${FAILED_DIR}"/*.md; do
+      [ -f "$FAILED_FILE" ] || continue
+      FNAME=$(basename "$FAILED_FILE")
+      mv "$FAILED_FILE" "$PROMPT_DIR/"
+      echo "   ↩️  $FNAME → 1-not-started/"
+    done
+    echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | RETRY FAILED | Moved $FAILED_COUNT prompt(s) back to 1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
+    echo ""
+  else
+    echo "✅ No failed prompts to retry in ${FAILED_DIR}"
+  fi
+fi
+
+if [ "${MAX_PARALLEL:-1}" -gt 1 ]; then
+  echo "🚀 Parallel mode: up to $MAX_PARALLEL agents (requires \`cursor\` CLI; \`SPECIFIC_PROMPT\` mode not supported)"
+  MAIN_DIR="$(pwd)"
+  PIDS=()
+  while true; do
+    while [ ${#PIDS[@]} -ge "$MAX_PARALLEL" ]; do
+      NEW_PIDS=()
+      for PID in "${PIDS[@]}"; do
+        kill -0 "$PID" 2>/dev/null && NEW_PIDS+=("$PID")
+      done
+      PIDS=("${NEW_PIDS[@]}")
+      [ ${#PIDS[@]} -ge "$MAX_PARALLEL" ] && sleep 3
+    done
+    TARGET=$(ls "${PROMPT_DIR}"/*.md 2>/dev/null | sort | head -1)
+    [ -z "$TARGET" ] || [ ! -f "$TARGET" ] && break
+    PROMPT_NAME=$(basename "$TARGET" .md)
+    IN_PROGRESS_DIR="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
+    mkdir -p "$IN_PROGRESS_DIR"
+    mv "$TARGET" "$IN_PROGRESS_DIR/" 2>/dev/null || continue
+    INPROGRESS_FILE="${IN_PROGRESS_DIR}/$(basename "$TARGET")"
+    WT_SUFFIX="$$-${#PIDS[@]}-$RANDOM"
+    WORKTREE_PATH="/tmp/worktrees/${PROMPT_NAME}-${WT_SUFFIX}"
+    echo "🔀 Spawning parallel slot for: $PROMPT_NAME ($WORKTREE_PATH)"
+    (
+      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null || true
+      rm -rf "$WORKTREE_PATH" 2>/dev/null || true
+      git worktree add --detach "$WORKTREE_PATH" 2>/dev/null || {
+        mv "$INPROGRESS_FILE" "${PROMPT_DIR}/$(basename "$INPROGRESS_FILE")"
+        exit 1
+      }
+      if command -v cursor >/dev/null 2>&1; then
+        cursor agent -p --yolo --workspace "$WORKTREE_PATH" "$(cat "$INPROGRESS_FILE")" 2>&1 | tee "/tmp/pickup-log-${PROMPT_NAME}.txt"
+      else
+        echo "⚠️  cursor CLI not found — complete the prompt in $WORKTREE_PATH manually."
+      fi
+      cd "$WORKTREE_PATH" || exit 1
+      BRANCH_NAME="prompt/${YEAR}-$(date +%m)-$(date +%d)/${PROMPT_NAME}"
+      BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9\/\-]/-/g' | sed 's/-\+/-/g')
+      git checkout -b "$BRANCH_NAME" 2>/dev/null || true
+      git add -A
+      git commit -m "feat: execute prompt ${PROMPT_NAME}
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>" 2>/dev/null || true
+      REMOTE=$(git remote | head -1)
+      if [ -n "$REMOTE" ]; then
+        git push "$REMOTE" "$BRANCH_NAME" 2>&1
+        PUSH_EXIT=$?
+        if [ "$PUSH_EXIT" -ne 0 ]; then
+          cd "$MAIN_DIR" || exit 1
+          git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
+          FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
+          mkdir -p "$FAILED_DIR"
+          mv "$INPROGRESS_FILE" "$FAILED_DIR/"
+          echo "$(date '+%H:%M:%S') | $(basename "$MAIN_DIR") | PUSH FAILED | ${PROMPT_NAME}" >> ~/auset-brain/Swarms/live-feed.md
+          exit 1
+        fi
+        cd "$WORKTREE_PATH" || exit 1
+        gh pr create \
+          --base develop \
+          --title "feat: ${PROMPT_NAME}" \
+          --body "Executed by /pickup-prompt --parallel" 2>/dev/null || true
+      fi
+      cd "$MAIN_DIR" || exit 1
+      COMPLETED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+      mkdir -p "$COMPLETED_DIR"
+      mv "$INPROGRESS_FILE" "$COMPLETED_DIR/"
+      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
+      echo "$(date '+%H:%M:%S') | $(basename "$MAIN_DIR") | PARALLEL COMPLETE | ${PROMPT_NAME}" >> ~/auset-brain/Swarms/live-feed.md
+    ) &
+    PIDS+=($!)
+  done
+  wait
+  echo "✅ Parallel batch finished."
+else
 while true; do
   # ── Find next prompt ──────────────────────────────────────────────────────
   if [ -n "$SPECIFIC_PROMPT" ]; then
@@ -1246,6 +1396,7 @@ Run \`/review-code\` to auto-detect this PR, review it, merge into develop, and 
   # Loop continues automatically to the next prompt
 
 done
+fi
 ```
 
 ## Directory Convention
@@ -1323,8 +1474,10 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.8.0
+version: 3.9.1
 changelog:
+  - v3.9.1: Add --retry-failed — re-queue 4-failed/ prompts to 1-not-started/. --status shows warning when 4-failed/ is non-empty.
+  - v3.9.0: Add --parallel N — optional headless Cursor agent slots (atomic mv lock); default sequential unchanged.
   - v3.8.0: Enhanced --status with /ai-estimate integration — AI timeline (hrs done/remaining/total), parallel batch math (6 agents/QCS1), prompt filenames to write with flags, cumulative time tracking, human equivalent
   - v3.7.0: Added --mobile flag (Expo SDK 52, Expo Router, NativeWind, Apollo, Clerk/expo, Redux-Persist/AsyncStorage, FlashList, expo-image, accessibility, deep linking, Platform.OS patterns)
   - v3.6.0: Added --profile (user profile + wallet), --frontend (Next.js 16 stack), --backend (Node/Express/Sequelize/Apollo stack); updated --clerk with ProfileWidget requirement; created clerk-auth.md standard (was missing)
