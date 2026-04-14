@@ -12,14 +12,19 @@ export default async function SettingsPage() {
   return (
     <main className="min-h-screen bg-[#09090F] p-8">
       <div className="mx-auto max-w-3xl">
-        <div className="mb-8 flex items-center justify-between">
+        <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div>
             <h1 className="text-3xl font-bold text-white">Settings</h1>
             <p className="mt-1 text-white/50">Plan and profile</p>
           </div>
-          <Link href="/dashboard" className="text-sm text-clara-blue hover:underline">
-            Dashboard
-          </Link>
+          <div className="flex gap-4">
+            <Link href="/account" className="text-sm text-clara-blue hover:underline">
+              Account
+            </Link>
+            <Link href="/dashboard" className="text-sm text-clara-blue hover:underline">
+              Dashboard
+            </Link>
+          </div>
         </div>
 
         <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-4">
