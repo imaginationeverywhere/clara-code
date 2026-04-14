@@ -1,0 +1,32 @@
+storage: /verdaccio/storage
+auth:
+  htpasswd:
+    file: /verdaccio/htpasswd
+    max_users: -1
+
+uplinks:
+  npmjs:
+    url: https://registry.npmjs.org/
+
+packages:
+  "@claracode/*":
+    access: $authenticated
+    publish: $authenticated
+    unpublish: $authenticated
+
+  "**":
+    access: $all
+    proxy: npmjs
+
+server:
+  keepAliveTimeout: 60
+
+middlewares:
+  audit:
+    enabled: true
+
+logs:
+  - { type: stdout, format: pretty, level: http }
+
+web:
+  enable: false
