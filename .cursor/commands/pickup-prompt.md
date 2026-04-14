@@ -26,11 +26,17 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --testing                # Inject testing standard (80% coverage, error paths, no DB mocks)
 /pickup-prompt --security               # Inject security standard (auth guards, rate limiting, CORS)
 /pickup-prompt --desktop                # Inject desktop app standard (VS Code ext, Electron, SecretStorage)
+/pickup-prompt --design                 # Inject design standard (Magic Patterns → web/desktop/CLI/mobile)
+/pickup-prompt --design web             # Web surface only (Next.js App Router)
+/pickup-prompt --design desktop         # Desktop surface only (VS Code webview / Electron)
+/pickup-prompt --design cli             # CLI/TUI surface only (Ink + chalk)
+/pickup-prompt --design mobile          # Mobile surface only (React Native + NativeWind)
 
 # Stack flags for complex prompts
 /pickup-prompt --graphql --migrations --multi-tenant --security   # Full backend feature
 /pickup-prompt --stripe --migrations --testing                    # Subscription with DB changes
 /pickup-prompt --clerk --security --testing                       # Auth feature
+/pickup-prompt --design web --testing --security                  # Full frontend feature with design
 ```
 
 ## Flags
@@ -215,6 +221,56 @@ fi
 
 ---
 
+### `--design`
+
+Loads `.claude/standards/design.md`. Use for any prompt that converts Magic Patterns exports to production components, builds new UI surfaces, or establishes the design system. Accepts an optional surface variant: `web` (default), `desktop`, `cli`, or `mobile`.
+
+```bash
+DESIGN_STANDARD=""
+DESIGN_SURFACE="web"  # default
+if echo "$*" | grep -q "\-\-design"; then
+  DESIGN_STANDARD=$(cat .claude/standards/design.md)
+  # Detect optional surface variant
+  if echo "$*" | grep -q "\-\-design desktop"; then DESIGN_SURFACE="desktop"
+  elif echo "$*" | grep -q "\-\-design cli"; then DESIGN_SURFACE="cli"
+  elif echo "$*" | grep -q "\-\-design mobile"; then DESIGN_SURFACE="mobile"
+  fi
+  echo "🎨 Design Standard loaded (surface: ${DESIGN_SURFACE}) — applying mandatory constraints:"
+  echo "   ✅ Read docs/design-system.md before writing any component"
+  echo "   ✅ Read mockups/${DESIGN_SURFACE}/ Magic Patterns export as the spec"
+  echo "   ✅ Extract design tokens into tailwind.config.ts — no hardcoded hex"
+  if [ "$DESIGN_SURFACE" = "web" ]; then
+    echo "   ✅ Next.js App Router: remove React imports, convert router, convert <img>"
+    echo "   ✅ Add 'use client' only for components using hooks/events"
+    echo "   ✅ 4 interactive states required: default, hover, active, disabled"
+    echo "   ✅ Mobile-first responsive (grid-cols-1 md:grid-cols-2)"
+  elif [ "$DESIGN_SURFACE" = "desktop" ]; then
+    echo "   ✅ VS Code CSS tokens: var(--vscode-editor-background) — never hex"
+    echo "   ✅ Webview CSP required: no unsafe-inline in production scripts"
+    echo "   ✅ JetBrains Mono for all code/terminal/path content"
+  elif [ "$DESIGN_SURFACE" = "cli" ]; then
+    echo "   ✅ Ink components only — not browser React"
+    echo "   ✅ Box-drawing layout: waveform top / chat middle / input bar bottom"
+    echo "   ✅ 16-color fallback: design must work with FORCE_COLOR=0"
+  elif [ "$DESIGN_SURFACE" = "mobile" ]; then
+    echo "   ✅ React Native: View/Text/Image/TouchableOpacity — no HTML elements"
+    echo "   ✅ SafeAreaView on every screen root"
+    echo "   ✅ 44pt minimum touch targets (iOS HIG)"
+    echo "   ✅ Platform.OS tokens for iOS/Android differences"
+  fi
+  echo "   ✅ docs/design-system.md must be created/updated"
+  echo ""
+fi
+```
+
+The loaded standard is prepended to the prompt context before execution. Key overrides:
+- If the prompt uses hardcoded hex colors (`#09090F`), the agent extracts them as Tailwind tokens first
+- If converting from Magic Patterns (Vite/React), the agent applies surface-specific conversion rules
+- If no `docs/design-system.md` exists, the agent creates it using the template in the standard
+- All 4 interactive states (default/hover/active/disabled) are required for every interactive component
+
+---
+
 ### `--status`
 
 Shows a dashboard of which standards are implemented in this Heru and which tech docs are missing.
@@ -244,6 +300,7 @@ if echo "$*" | grep -q "\-\-status"; then
   check_standard "testing"     "ls src/__tests__/**/*.test.ts 2>/dev/null || ls __tests__/**/*.test.ts 2>/dev/null" "--testing"
   check_standard "security"    "grep -rl 'helmet\|rateLimit' src/ backend/src/ 2>/dev/null"     "--security"
   check_standard "desktop"     "grep -rl 'SecretStorage\|contextBridge\|ipcMain' src/ 2>/dev/null" "--desktop"
+  check_standard "design"      "ls mockups/ 2>/dev/null && ls docs/design-system.md 2>/dev/null" "--design"
 
   echo "  ──────────────────────────────────────────────────────────────"
   echo ""
