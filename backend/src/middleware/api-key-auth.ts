@@ -8,7 +8,7 @@ import { logger } from "@/utils/logger";
 
 export interface ApiKeyRequest extends Request {
 	apiKeyUserId?: string;
-	claraUser?: { userId: string; tier: string; apiKeyId?: string };
+	claraUser?: { userId: string; tier: string; apiKeyId?: string; role?: string };
 }
 
 export type ClaraUser = NonNullable<ApiKeyRequest["claraUser"]>;
@@ -44,7 +44,12 @@ export const requireApiKey = async (req: ApiKeyRequest, res: Response, next: Nex
 			);
 
 			req.apiKeyUserId = apiKey.userId;
-			req.claraUser = { userId: apiKey.userId, tier: apiKey.tier, apiKeyId: apiKey.id };
+			req.claraUser = {
+				userId: apiKey.userId,
+				tier: apiKey.tier,
+				apiKeyId: apiKey.id,
+				role: apiKey.role ?? "user",
+			};
 			next();
 			return;
 		}
@@ -65,7 +70,12 @@ export const requireApiKey = async (req: ApiKeyRequest, res: Response, next: Nex
 						logger.error("Failed to update lastUsedAt:", err),
 					);
 					req.apiKeyUserId = row.userId;
-					req.claraUser = { userId: row.userId, tier: row.tier, apiKeyId: row.id };
+					req.claraUser = {
+						userId: row.userId,
+						tier: row.tier,
+						apiKeyId: row.id,
+						role: row.role ?? "user",
+					};
 					next();
 					return;
 				}
