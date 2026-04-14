@@ -1,0 +1,21 @@
+extend schema
+  @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])
+
+type Query {
+  authStatus: AuthStatus!
+  verifyToken(token: String!): TokenVerification!
+}
+
+type AuthStatus {
+  """
+  Whether the incoming request has a valid Clara service token.
+  This verifies the request is coming from Clara's gateway — not user identity.
+  """
+  gatewayVerified: Boolean!
+  timestamp: String!
+}
+
+type TokenVerification {
+  valid: Boolean!
+  message: String
+}
