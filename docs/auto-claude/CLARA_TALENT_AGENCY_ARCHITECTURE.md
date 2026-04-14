@@ -6,8 +6,8 @@
 **Status:** HQ APPROVED — use this as the single source of truth for all build work
 
 **Related docs:**
-- `docs/auto-claude/CLARA_TALENT_AGENCY.md` — Business model, pricing, commission
-- `docs/auto-claude/PRODUCT_PRD.md` — Subscription tiers, voice exchange definition
+- `docs/internal/CLARA_TALENT_AGENCY.md` — Business model, pricing, commission
+- `docs/internal/PRODUCT_PRD.md` — Subscription tiers, voice exchange definition
 
 ---
 

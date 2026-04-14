@@ -1,6 +1,6 @@
 # Apollo Router + Clara Core Subgraph
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
 **Depends on:** Prompt 01 must be merged first (`api_keys` table with tier must exist); Prompt 03 must be merged (`MODELS` registry must exist)
 **Branch:** `prompt/2026-04-14/06-apollo-router-clara-core-subgraph`
 **Scope:** `backend/src/` (new GraphQL endpoint + middleware) + `apollo-router/` (new top-level directory)
@@ -218,7 +218,7 @@ apollo-router/
 **`apollo-router/router.yaml`:**
 ```yaml
 # Apollo Router configuration — DO NOT edit manually (managed by Talent Registry service)
-# See docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md for full spec
+# See docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md for full spec
 
 supergraph:
   schema:

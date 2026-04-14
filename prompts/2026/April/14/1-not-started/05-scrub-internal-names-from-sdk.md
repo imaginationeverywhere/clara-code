@@ -1,6 +1,6 @@
 # Scrub Internal Infrastructure Names from SDK Public Surface
 
-**Source:** `docs/auto-claude/PRODUCT_PRD.md`
+**Source:** `docs/internal/PRODUCT_PRD.md`
 **Branch:** `prompt/2026-04-14/05-scrub-internal-names-from-sdk`
 **Scope:** `packages/sdk/src/` only
 

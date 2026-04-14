@@ -1,6 +1,6 @@
 # Named Model Routing — Mary, Maya, and Nikki
 
-**Source:** `docs/auto-claude/PRODUCT_PRD.md` — read this document before writing any code.
+**Source:** `docs/internal/PRODUCT_PRD.md` — read this document before writing any code.
 **Depends on:** Prompt 01 must be merged first (`api_keys` table with `tier` field must exist)
 **Branch:** `prompt/2026-04-14/03-named-model-routing-mary-maya-nikki`
 **Scope:** `backend/src/` only — no frontend changes
@@ -9,7 +9,7 @@
 
 ## Context
 
-Clara Code brands its AI models under human names. See `docs/auto-claude/PRODUCT_PRD.md` for the full model table. The underlying inference providers are not disclosed in the product — only the brand names are exposed to developers.
+Clara Code brands its AI models under human names. See `docs/internal/PRODUCT_PRD.md` for the full model table. The underlying inference providers are not disclosed in the product — only the brand names are exposed to developers.
 
 ## Model Definitions (from PRD)
 

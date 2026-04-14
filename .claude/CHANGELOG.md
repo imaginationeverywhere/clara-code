@@ -55,11 +55,11 @@
   - All content mirrored to `.cursor/` for Cursor IDE
 
 - **Auto Claude Task Management System** - Complete task lifecycle management workflow
-  - **agents/auto-claude-manager.md** - Task status tracking and coordination agent
+  - **agents/agent-manager.md** - Task status tracking and coordination agent
     - Manages task transitions: Planning → In Progress → AI Review → Human Review → Done
     - Monitors task progress, velocity, and stalled tasks
     - Coordinates between Auto Claude automation and manual development work
-    - Location: `.claude/agents/auto-claude-manager.md`
+    - Location: `.claude/agents/agent-manager.md`
   - **commands/ac-start.md** - Start working on a task manually
     - Moves task from Planning to In Progress
     - Claims task for manual implementation

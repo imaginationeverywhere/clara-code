@@ -1,6 +1,6 @@
 # Talent Registry — Database Tables + REST API
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
 **Depends on:** Prompt 01 must be merged (`subscriptions` + `api_keys` tables must exist); Prompt 06 must be merged (Apollo Router + subgraph must exist)
 **Branch:** `prompt/2026-04-14/07-talent-registry-db-and-rest-api`
 **Scope:** `backend/src/features/talent-registry/` (new feature module) + one new migration

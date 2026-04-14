@@ -1,6 +1,6 @@
 # Stripe Checkout + API Key Provisioning
 
-**Source:** `docs/auto-claude/PRODUCT_PRD.md` — read this document before writing any code.
+**Source:** `docs/internal/PRODUCT_PRD.md` — read this document before writing any code.
 **Branch:** `prompt/2026-04-14/01-stripe-checkout-and-api-key-provisioning`
 **Scope:** `backend/src/` only — no frontend changes in this prompt
 
@@ -8,7 +8,7 @@
 
 ## Context
 
-Clara Code is a voice-first developer tool. Developers subscribe to unlock their API key, which gates access to the SDK and voice features. This prompt wires the Stripe Checkout → subscription → API key lifecycle. See `docs/auto-claude/PRODUCT_PRD.md` for the full tier definitions.
+Clara Code is a voice-first developer tool. Developers subscribe to unlock their API key, which gates access to the SDK and voice features. This prompt wires the Stripe Checkout → subscription → API key lifecycle. See `docs/internal/PRODUCT_PRD.md` for the full tier definitions.
 
 ## Subscription Tiers (from PRD)
 

@@ -8,13 +8,13 @@ Execute these commands to gather data:
 
 ```bash
 # Check tasks.json for in-progress
-cat .auto-claude/tasks.json 2>/dev/null | jq '.tasks[] | select(.status == "in-progress" or .status == "manual")'
+cat .internal/tasks.json 2>/dev/null | jq '.tasks[] | select(.status == "in-progress" or .status == "manual")'
 
 # List git worktrees (Auto Claude uses worktrees)
 git worktree list
 
-# Check for auto-claude branches
-git branch -a | grep -E "auto-claude|ac-"
+# Check for agent branches
+git branch -a | grep -E "agent|ac-"
 
 # Check GitHub PRs in draft/progress
 gh pr list --state open --draft --json number,title,headRefName,updatedAt 2>/dev/null
