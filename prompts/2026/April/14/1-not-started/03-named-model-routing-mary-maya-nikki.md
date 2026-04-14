@@ -121,7 +121,7 @@ MARY_BACKEND_URL=
 NIKKI_BACKEND_URL=
 ```
 
-These will be populated by cp-team (Modal infrastructure). For now, stub them with the existing Hermes URL: `MAYA_BACKEND_URL=${HERMES_URL}` as default so existing voice calls continue working.
+These will be populated by the infrastructure team. For now, stub them with the existing gateway URL: `MAYA_BACKEND_URL=${GATEWAY_URL}` as default so existing voice calls continue working.
 
 ### 4. Models List Endpoint
 

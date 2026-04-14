@@ -37,7 +37,7 @@ The IDE and CLI are distribution, not product. The product is what happens insid
 
 ### Usage Unit
 
-The billing unit is **voice exchanges**, not tokens or completions. One voice exchange = one full voice round trip (user speaks → Clara responds). This unit reflects what the product delivers and what it costs to serve (Modal GPU inference + TTS synthesis on the cp-team infrastructure).
+The billing unit is **voice exchanges**, not tokens or completions. One voice exchange = one full voice round trip (user speaks → Clara responds). This unit reflects what the product delivers and what it costs to serve on Clara's voice infrastructure.
 
 ### Free Tier Enforcement
 

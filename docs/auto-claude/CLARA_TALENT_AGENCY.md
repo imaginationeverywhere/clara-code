@@ -112,7 +112,7 @@ These bootstrap the marketplace and serve as reference implementations:
 | Talent | Purpose | SDK Required |
 |---|---|---|
 | `@claracode/talent-clerk-auth` | User authentication for Talent developers | `@claracode/marketplace-sdk` |
-| `@claracode/talent-hermes-connect` | Standard Hermes gateway integration | `@claracode/marketplace-sdk` |
+| `@claracode/talent-gateway-connect` | Standard Clara gateway integration helper | `@claracode/marketplace-sdk` |
 | `@claracode/talent-stripe-billing` | Payment handling boilerplate | `@claracode/marketplace-sdk` |
 | `@claracode/talent-voice-utils` | Voice command parsing utilities | `@claracode/marketplace-sdk` |
 
