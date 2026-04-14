@@ -179,6 +179,25 @@ describe("stripeWebhookHandler events", () => {
 		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
 	});
 
+	it("checkout.session.completed developer_program does not activate when subscription id is missing", async () => {
+		mockConstructEvent.mockReturnValue({
+			type: "checkout.session.completed",
+			data: {
+				object: {
+					metadata: { type: "developer_program", userId: "user_dev" },
+					subscription: null,
+					customer: "cus_1",
+				},
+			},
+		});
+		const req = makeReq(Buffer.from("{}"));
+		const res = makeRes();
+		await stripeWebhookHandler(req, res);
+		const tr = getTalentRegistryService() as unknown as { activateDeveloperProgram: jest.Mock };
+		expect(tr.activateDeveloperProgram).not.toHaveBeenCalled();
+		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
+	});
+
 	it("processes customer.subscription.updated when tier changes", async () => {
 		mockConstructEvent.mockReturnValue({
 			type: "customer.subscription.updated",

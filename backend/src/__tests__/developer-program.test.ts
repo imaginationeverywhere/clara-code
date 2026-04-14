@@ -21,11 +21,20 @@ jest.mock("@/middleware/api-key-auth", () => ({
 			res.status(401).json({ error: "API key required" });
 			return;
 		}
-		(req as { claraUser?: { userId: string; tier: string; role: string } }).claraUser = {
-			userId: "user_1",
-			tier: "free",
-			role: "user",
-		};
+		const token = auth.slice(7);
+		if (token === "sk-clara-nouser") {
+			(req as { claraUser?: { userId: string; tier: string; role: string } }).claraUser = {
+				userId: "",
+				tier: "free",
+				role: "user",
+			};
+		} else {
+			(req as { claraUser?: { userId: string; tier: string; role: string } }).claraUser = {
+				userId: "user_1",
+				tier: "free",
+				role: "user",
+			};
+		}
 		next();
 	},
 }));
@@ -94,5 +103,64 @@ describe("Developer Program API", () => {
 		expect(res.status).toBe(200);
 		expect(res.body.enrolled).toBe(true);
 		expect(res.body.status).toBe("active");
+	});
+
+	it("POST /api/developer-program/enroll returns 500 when Stripe checkout throws", async () => {
+		mockQuery.mockResolvedValueOnce({ rowCount: 0, rows: [] });
+		mockCheckoutCreate.mockRejectedValueOnce(new Error("stripe down"));
+		const res = await request(app).post("/api/developer-program/enroll").set("Authorization", "Bearer sk-clara-x");
+		expect(res.status).toBe(500);
+		expect(res.body.error).toBe("internal_error");
+	});
+
+	it("POST /api/developer-program/enroll returns 500 when checkout session has no url", async () => {
+		mockQuery.mockResolvedValueOnce({ rowCount: 0, rows: [] });
+		mockCheckoutCreate.mockResolvedValueOnce({ url: null });
+		const res = await request(app).post("/api/developer-program/enroll").set("Authorization", "Bearer sk-clara-x");
+		expect(res.status).toBe(500);
+		expect(res.body.error).toBe("checkout_session_missing_url");
+	});
+
+	it("GET /api/developer-program/status returns 500 when the service errors", async () => {
+		mockQuery.mockRejectedValueOnce(new Error("db failure"));
+		const res = await request(app).get("/api/developer-program/status").set("Authorization", "Bearer sk-clara-x");
+		expect(res.status).toBe(500);
+		expect(res.body.error).toBe("internal_error");
+	});
+
+	it("POST /api/developer-program/enroll returns 503 when developer program price is not configured", async () => {
+		const prev = process.env.STRIPE_PRICE_DEVELOPER_PROGRAM;
+		delete process.env.STRIPE_PRICE_DEVELOPER_PROGRAM;
+		mockQuery.mockResolvedValueOnce({ rowCount: 0, rows: [] });
+		const res = await request(app).post("/api/developer-program/enroll").set("Authorization", "Bearer sk-clara-x");
+		expect(res.status).toBe(503);
+		expect(res.body.error).toBe("developer_program_price_not_configured");
+		process.env.STRIPE_PRICE_DEVELOPER_PROGRAM = prev ?? "price_dev_99";
+	});
+
+	it("POST /api/developer-program/enroll returns 503 when Stripe secret is not configured", async () => {
+		const prev = process.env.STRIPE_SECRET_KEY;
+		delete process.env.STRIPE_SECRET_KEY;
+		mockQuery.mockResolvedValueOnce({ rowCount: 0, rows: [] });
+		const res = await request(app).post("/api/developer-program/enroll").set("Authorization", "Bearer sk-clara-x");
+		expect(res.status).toBe(503);
+		expect(res.body.error).toBe("stripe_not_configured");
+		process.env.STRIPE_SECRET_KEY = prev ?? "sk_test";
+	});
+
+	it("POST /api/developer-program/enroll returns 401 when user id is missing", async () => {
+		const res = await request(app)
+			.post("/api/developer-program/enroll")
+			.set("Authorization", "Bearer sk-clara-nouser");
+		expect(res.status).toBe(401);
+		expect(res.body.error).toBe("unauthorized");
+	});
+
+	it("GET /api/developer-program/status returns 401 when user id is missing", async () => {
+		const res = await request(app)
+			.get("/api/developer-program/status")
+			.set("Authorization", "Bearer sk-clara-nouser");
+		expect(res.status).toBe(401);
+		expect(res.body.error).toBe("unauthorized");
 	});
 });
