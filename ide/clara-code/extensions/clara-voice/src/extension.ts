@@ -35,10 +35,12 @@ export function activate(context: vscode.ExtensionContext): void {
 
 	let socket: WebSocket | undefined;
 	let isRecording = false;
+	let isConnecting = false;
 
 	const toggle = async (): Promise<void> => {
 		const base = resolveVoiceServerUrl();
 		if (!isRecording) {
+			if (isConnecting) return;
 			if (base.length === 0) {
 				void vscode.window.showErrorMessage(
 					"Clara Voice: set clara.voice.serverUrl or CLARA_VOICE_SERVER_URL.",
@@ -46,21 +48,26 @@ export function activate(context: vscode.ExtensionContext): void {
 				return;
 			}
 			const wsUrl = toWebSocketUrl(base);
+			isConnecting = true;
 			try {
 				socket = new WebSocket(wsUrl);
 			} catch (e) {
+				isConnecting = false;
 				const message = e instanceof Error ? e.message : String(e);
 				void vscode.window.showErrorMessage(`Clara Voice: could not connect (${message}).`);
 				return;
 			}
 			socket.addEventListener("open", () => {
+				isConnecting = false;
 				isRecording = true;
 				updateStatusLabel(status, true);
 			});
 			socket.addEventListener("error", () => {
+				isConnecting = false;
 				void vscode.window.showWarningMessage("Clara Voice: connection error.");
 			});
 			socket.addEventListener("close", () => {
+				isConnecting = false;
 				isRecording = false;
 				updateStatusLabel(status, false);
 				socket = undefined;
