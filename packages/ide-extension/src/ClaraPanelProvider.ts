@@ -7,6 +7,7 @@ import {
 	sixSideProjectsQuestion,
 } from "@clara/clara-code-surface-scripts";
 import * as vscode from "vscode";
+import { DEFAULT_GATEWAY_URL, GATEWAY_SECRET_KEY } from "./constants";
 
 const GK = {
 	firstLaunchDone: "clara.firstLaunchDone",
@@ -70,9 +71,7 @@ export class ClaraPanelProvider implements vscode.WebviewViewProvider {
 			localResourceRoots: [this._extensionUri],
 		};
 
-		const config = vscode.workspace.getConfiguration("claraCode");
-		const gatewayUrl = config.get<string>("gatewayUrl", "https://info-24346--hermes-gateway.modal.run");
-		webviewView.webview.html = this._getHtmlContent(webviewView.webview, gatewayUrl);
+		webviewView.webview.html = this._getHtmlContent(webviewView.webview);
 
 		webviewView.webview.onDidReceiveMessage(
 			async (message: { type: string; text?: string; payload?: unknown }) => {
@@ -197,9 +196,8 @@ export class ClaraPanelProvider implements vscode.WebviewViewProvider {
 	}
 
 	private async _handleVoiceInput(text: string): Promise<void> {
-		const config = vscode.workspace.getConfiguration("claraCode");
-		const gatewayUrl = config.get<string>("gatewayUrl", "https://info-24346--hermes-gateway.modal.run");
-		const userId = config.get<string>("userId", "dev");
+		const gatewayUrl = (await this._context.secrets.get(GATEWAY_SECRET_KEY)) ?? DEFAULT_GATEWAY_URL;
+		const userId = vscode.workspace.getConfiguration("claraCode").get<string>("userId", "dev");
 		const surface = this._surface();
 
 		const count = this._context.globalState.get<number>(GK.userExchangeCount) ?? 0;
@@ -268,17 +266,23 @@ export class ClaraPanelProvider implements vscode.WebviewViewProvider {
 		this.postMessage("api-key", { key: key ?? "" });
 	}
 
-	private _getHtmlContent(webview: vscode.Webview, gatewayUrl: string): string {
+	private _getHtmlContent(webview: vscode.Webview): string {
 		const scriptUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "dist", "webview.js"));
 		const nonce = getNonce();
-		const connectSrc = new URL(gatewayUrl).origin;
+		const csp = [
+			"default-src 'none'",
+			`script-src 'nonce-${nonce}' ${webview.cspSource}`,
+			`style-src ${webview.cspSource} 'unsafe-inline'`,
+			"connect-src https: wss:",
+			`img-src ${webview.cspSource} https: data:`,
+		].join("; ");
 
 		return `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'nonce-${nonce}'; connect-src ${connectSrc} https:;" />
+  <meta http-equiv="Content-Security-Policy" content="${csp}" />
   <title>Clara</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
