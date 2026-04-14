@@ -71,7 +71,13 @@ const client = createClient({
 });
 
 const session = client.startVoice();
-await session.ready;
+try {
+	await session.ready;
+} catch (err) {
+	// Voice session creation failed (non-2xx or invalid response) — do not call send()
+	console.error(err);
+	return;
+}
 
 const msg = await session.send("What is Hermes?");
 console.log(msg.content, msg.voiceUrl);
