@@ -11,6 +11,8 @@ export interface ApiKeyRequest extends Request {
 	claraUser?: { userId: string; tier: string; apiKeyId?: string };
 }
 
+export type ClaraUser = NonNullable<ApiKeyRequest["claraUser"]>;
+
 /**
  * Validates Bearer sk-clara-* (legacy) or cc_live_* (bcrypt hashed) API keys.
  * Sets `req.apiKeyUserId` and `req.claraUser` on success.

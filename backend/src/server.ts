@@ -9,9 +9,11 @@ import express from "express";
 import helmet from "helmet";
 
 import { testConnection } from "@/config/database";
+import { createClaraCoreSubgraph } from "@/graphql/clara-core/server";
 import type { GraphQLContext } from "@/graphql/resolvers/index";
 import { resolvers } from "@/graphql/resolvers/index";
 import { typeDefs } from "@/graphql/schema/index";
+import { requireApiKey } from "@/middleware/api-key-auth";
 import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
 import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
@@ -70,6 +72,9 @@ app.use("/api", apiRoutes);
 const server = new ApolloServer({ typeDefs, resolvers });
 
 export async function bootstrap(): Promise<void> {
+	const claraCoreMiddleware = await createClaraCoreSubgraph();
+	app.use("/graphql/clara-core", requireApiKey, claraCoreMiddleware);
+
 	await server.start();
 
 	app.use(
