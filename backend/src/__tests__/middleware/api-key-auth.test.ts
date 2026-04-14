@@ -2,7 +2,7 @@ import express from "express";
 import request from "supertest";
 
 jest.mock("@/models/ApiKey", () => ({
-	ApiKey: { findOne: jest.fn(), update: jest.fn() },
+	ApiKey: { findOne: jest.fn(), findAll: jest.fn(), update: jest.fn() },
 }));
 jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
@@ -10,6 +10,7 @@ jest.mock("@/utils/logger", () => ({
 
 import { requireApiKey } from "@/middleware/api-key-auth";
 import { ApiKey } from "@/models/ApiKey";
+import { generateApiKey } from "@/utils/api-key";
 
 const app = express();
 app.use(express.json());
@@ -45,5 +46,26 @@ describe("requireApiKey", () => {
 		(ApiKey.findOne as jest.Mock).mockRejectedValueOnce(new Error("db"));
 		const res = await request(app).get("/protected").set("Authorization", "Bearer sk-clara-abc123");
 		expect(res.status).toBe(500);
+	});
+
+	it("passes with valid cc_live key (hashed)", async () => {
+		const { key, hash, prefix } = generateApiKey("pro");
+		(ApiKey.findAll as jest.Mock).mockResolvedValueOnce([
+			{ id: "1", userId: "user_x", keyHash: hash, keyPrefix: prefix, tier: "pro" },
+		]);
+		(ApiKey.update as jest.Mock).mockResolvedValueOnce([1]);
+		const res = await request(app).get("/protected").set("Authorization", `Bearer ${key}`);
+		expect(res.status).toBe(200);
+	});
+
+	it("401 when cc_live hash does not match", async () => {
+		const { hash, prefix } = generateApiKey("pro");
+		(ApiKey.findAll as jest.Mock).mockResolvedValueOnce([
+			{ id: "1", userId: "user_x", keyHash: hash, keyPrefix: prefix, tier: "pro" },
+		]);
+		const res = await request(app)
+			.get("/protected")
+			.set("Authorization", "Bearer cc_live_deadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeefdeadbeef");
+		expect(res.status).toBe(401);
 	});
 });
