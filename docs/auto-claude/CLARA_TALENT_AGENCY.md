@@ -157,5 +157,5 @@ Approved Talents receive the **"Clara Certified"** badge on their marketplace li
 
 ## Related Documents
 
-- `docs/auto-claude/PRODUCT_PRD.md` — Subscription tiers, pricing, voice exchange definition
-- `docs/auto-claude/MVP_PROGRESS.md` — Current build state
+- `docs/internal/PRODUCT_PRD.md` — Subscription tiers, pricing, voice exchange definition
+- `docs/internal/MVP_PROGRESS.md` — Current build state

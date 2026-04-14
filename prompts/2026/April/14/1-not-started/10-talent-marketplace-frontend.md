@@ -1,6 +1,6 @@
 # Talent Marketplace Frontend — `talent.claracode.ai`
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
 **Depends on:** Prompt 07 must be merged (`GET /api/talents` endpoint must exist)
 **Branch:** `prompt/2026-04-14/10-talent-marketplace-frontend`
 **Scope:** `packages/talent-marketplace/` (new Next.js 15 package in this monorepo)

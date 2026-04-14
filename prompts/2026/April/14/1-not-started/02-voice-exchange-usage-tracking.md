@@ -1,6 +1,6 @@
 # Voice Exchange Usage Tracking + Tier Enforcement
 
-**Source:** `docs/auto-claude/PRODUCT_PRD.md` — read this document before writing any code.
+**Source:** `docs/internal/PRODUCT_PRD.md` — read this document before writing any code.
 **Depends on:** Prompt 01 must be merged first (`subscriptions` and `api_keys` tables must exist)
 **Branch:** `prompt/2026-04-14/02-voice-exchange-usage-tracking`
 **Scope:** `backend/src/` only
@@ -9,7 +9,7 @@
 
 ## Context
 
-Clara Code is voice-first. The billing unit is a **voice exchange** — one full round trip (user speaks → Clara responds). See `docs/auto-claude/PRODUCT_PRD.md` for tier definitions.
+Clara Code is voice-first. The billing unit is a **voice exchange** — one full round trip (user speaks → Clara responds). See `docs/internal/PRODUCT_PRD.md` for tier definitions.
 
 Free tier = 100 voice exchanges/month. Pro and Business = unlimited. This prompt adds the middleware and DB tracking to enforce that limit.
 

@@ -1,6 +1,6 @@
 # Developer Portal Frontend — `developers.claracode.ai`
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
 **Depends on:** Prompt 08 must be merged (Developer Program billing endpoints must exist); Prompt 07 must be merged (Talent management endpoints must exist)
 **Branch:** `prompt/2026-04-14/11-developer-portal-frontend`
 **Scope:** `packages/developer-portal/` (new Next.js 15 package in this monorepo)

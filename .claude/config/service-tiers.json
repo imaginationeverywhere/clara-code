@@ -31,7 +31,7 @@
           "customization": "none"
         },
         "development": {
-          "type": "auto-claude-execution",
+          "type": "agent-execution",
           "humanOversight": "minimal",
           "revisionRounds": 2
         }
@@ -117,7 +117,7 @@
           "customization": "agent-skill-additions"
         },
         "development": {
-          "type": "auto-claude-with-oversight",
+          "type": "agent-with-oversight",
           "humanOversight": "regular",
           "revisionRounds": 3
         }

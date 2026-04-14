@@ -103,6 +103,6 @@ Monthly usage data is visible in the developer dashboard.
 
 ## Related Documents
 
-- `docs/auto-claude/CLARA_TALENT_AGENCY.md` — Talent marketplace architecture
-- `docs/auto-claude/MVP_PROGRESS.md` — Current sprint state
-- `docs/auto-claude/MVP_BLOCKERS.md` — Active blockers register
+- `docs/internal/CLARA_TALENT_AGENCY.md` — Talent marketplace architecture
+- `docs/internal/MVP_PROGRESS.md` — Current sprint state
+- `docs/internal/MVP_BLOCKERS.md` — Active blockers register

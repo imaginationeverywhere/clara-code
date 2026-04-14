@@ -18,9 +18,9 @@
 - `cloudflare/NEXTJS-16-CLOUDFLARE-WORKERS-DEPLOYMENT.md` — complete deployment reference for Next.js 16 on Cloudflare Workers using `@opennextjs/cloudflare`.
 - `cloudflare/README.md` — Cloudflare docs index with links to all deployment and email setup guides.
 - `cloudflare/STEP-BY-STEP-DEPLOYMENT-GUIDE.md` — end-to-end deployment walkthrough for claracode.ai.
-- `auto-claude/MVP_PROGRESS.md` — Clara Code MVP progress tracker (~52% complete); feature matrix covering web surface, backend API, voice layer, infrastructure.
-- `auto-claude/MVP_SPRINT_PLAN.md` — Sprint 3 backlog with prioritized tasks, owners, and sprint risks.
-- `auto-claude/MVP_BLOCKERS.md` — Active blockers register; BLK-01 (Stripe) resolved 2026-04-13.
+- `agent/MVP_PROGRESS.md` — Clara Code MVP progress tracker (~52% complete); feature matrix covering web surface, backend API, voice layer, infrastructure.
+- `agent/MVP_SPRINT_PLAN.md` — Sprint 3 backlog with prioritized tasks, owners, and sprint risks.
+- `agent/MVP_BLOCKERS.md` — Active blockers register; BLK-01 (Stripe) resolved 2026-04-13.
 
 ## [Unreleased]
 

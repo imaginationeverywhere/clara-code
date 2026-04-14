@@ -1,6 +1,6 @@
 # Private npm Registry — Verdaccio for Clara Talent Agency
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY.md` — read this document before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY.md` — read this document before writing any code.
 **Branch:** `prompt/2026-04-14/04-private-npm-registry-verdaccio`
 **Scope:** Root `docker-compose.yml`, new `registry/` directory, `backend/src/routes/registry-auth.ts`
 
@@ -8,7 +8,7 @@
 
 ## Context
 
-The Clara Talent Agency distributes gated `@claracode/` scoped packages through a private npm registry at `registry.claracode.ai`. Public npm packages are proxied transparently. See `docs/auto-claude/CLARA_TALENT_AGENCY.md` for the full distribution model.
+The Clara Talent Agency distributes gated `@claracode/` scoped packages through a private npm registry at `registry.claracode.ai`. Public npm packages are proxied transparently. See `docs/internal/CLARA_TALENT_AGENCY.md` for the full distribution model.
 
 Packages gated by this registry:
 - `@claracode/sdk` — requires active subscription (Pro or Business)

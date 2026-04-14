@@ -1,6 +1,6 @@
 # Marketplace SDK Scaffold — `@claracode/marketplace-sdk`
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md` — read this document before writing any code.
 **Depends on:** Prompt 04 must be merged (Verdaccio private registry must be running); Prompt 07 must be merged (Talent Registry types defined)
 **Branch:** `prompt/2026-04-14/09-marketplace-sdk-scaffold`
 **Scope:** `packages/marketplace-sdk/` (new package in this monorepo)

@@ -1,6 +1,6 @@
 # First-Party Talent Subgraphs — `gateway-connect` + `clerk-auth`
 
-**Source:** `docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md` and `docs/auto-claude/CLARA_TALENT_AGENCY.md` — read both documents before writing any code.
+**Source:** `docs/internal/CLARA_TALENT_AGENCY_ARCHITECTURE.md` and `docs/internal/CLARA_TALENT_AGENCY.md` — read both documents before writing any code.
 **Depends on:** Prompt 09 must be merged (`@claracode/marketplace-sdk` must be published to the private registry)
 **Branch:** `prompt/2026-04-14/12-first-party-talent-subgraphs`
 **Scope:** `packages/talents/` (new directory in this monorepo)

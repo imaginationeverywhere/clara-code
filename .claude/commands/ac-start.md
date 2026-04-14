@@ -44,7 +44,7 @@ Start working on an Auto Claude task manually. This moves a task from **Planning
 
 ```bash
 # Check task exists and is in Planning status
-cat .auto-claude/tasks.json | jq '.tasks[] | select(.id == "005")'
+cat .internal/tasks.json | jq '.tasks[] | select(.id == "005")'
 
 # Verify task is not already claimed
 # Check for blocking dependencies
@@ -55,7 +55,7 @@ cat .auto-claude/tasks.json | jq '.tasks[] | select(.id == "005")'
 ```bash
 # Update local config
 jq '.tasks[] |= if .id == "005" then .status = "in-progress" | .assignee = "manual" | .startedAt = now else . end' \
-  .auto-claude/tasks.json > tmp.json && mv tmp.json .auto-claude/tasks.json
+  .internal/tasks.json > tmp.json && mv tmp.json .internal/tasks.json
 
 # Update GitHub issue label
 gh issue edit [ISSUE_NUMBER] --remove-label "planning" --add-label "in-progress,manual"
