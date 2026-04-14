@@ -4,7 +4,7 @@
 
 ## What This Command Does
 
-Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty. For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done.
+Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty. For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`.
 
 ## Usage
 
@@ -580,7 +580,7 @@ Loads `.claude/standards/apple-store.md`. Use when preparing an iOS app for App 
 
 ```bash
 APPLE_STANDARD=""
-if echo "$*" | grep -q "\-\-apple"; then
+if echo " $* " | grep -q " \-\-apple "; then
   APPLE_STANDARD=$(cat .claude/standards/apple-store.md)
   echo "🍎 Apple App Store Standard loaded — applying mandatory constraints:"
   echo "   ✅ Build + submit on QCS1 only — xcrun altool (NOT eas submit)"
@@ -1055,7 +1055,27 @@ ls "${PROMPT_DIR}" 2>/dev/null || echo "No prompts directory found at ${PROMPT_D
 
 **This is the main loop. Do NOT stop after one prompt. Do NOT ask the user to run the command again.**
 
+After Step 1 sets `YEAR`, `MONTH`, `DAY`, and `PROMPT_DIR`, run orphan recovery, then enter the loop:
+
 ```bash
+# ── Step 0.5 — Recover orphaned prompts from crashed runs ────────────────────
+IN_PROGRESS_DIR="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
+if ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null | grep -q .; then
+  ORPHANED=$(ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null)
+  echo ""
+  echo "⚠️  ORPHANED PROMPTS DETECTED in 2-in-progress/ (from a previous crashed run):"
+  for f in $ORPHANED; do
+    echo "   → $(basename $f)"
+  done
+  echo ""
+  echo "   Moving them back to 1-not-started/ for re-execution..."
+  mv "${IN_PROGRESS_DIR}"/*.md "$PROMPT_DIR/" 2>/dev/null
+  echo "   ✅ $(echo "$ORPHANED" | wc -l | tr -d ' ') prompt(s) recovered."
+  echo ""
+  echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | ORPHAN RECOVERY | Moved $(ls "$PROMPT_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ') prompts back to 1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
+fi
+# ─────────────────────────────────────────────────────────────────────────────
+
 while true; do
   # ── Find next prompt ──────────────────────────────────────────────────────
   if [ -n "$SPECIFIC_PROMPT" ]; then
@@ -1105,7 +1125,7 @@ while true; do
     echo "ERROR: Could not create worktree at $WORKTREE_PATH"
     # Move prompt back to not-started on failure
     mv "$INPROGRESS_FILE" "$TARGET"
-    break
+    continue
   }
 
   echo "🌿 Detached worktree created: $WORKTREE_PATH"
@@ -1129,7 +1149,7 @@ while true; do
     cd - > /dev/null
     git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
     mv "$INPROGRESS_FILE" "$TARGET"
-    break
+    continue
   }
 
   echo "🌿 Branch created from worktree: $BRANCH_NAME"
@@ -1146,11 +1166,23 @@ Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>"
   git commit -m "$COMMIT_MSG" 2>/dev/null || echo "(nothing to commit — prompt may have been docs-only)"
 
   # ── Push the branch to GitHub ─────────────────────────────────────────────
+  PR_URL=""
   REMOTE=$(git remote | head -1)
   if [ -z "$REMOTE" ]; then
     echo "⚠️  No git remote found — skipping push and PR"
   else
     git push "$REMOTE" "$BRANCH_NAME" 2>&1
+    PUSH_EXIT=$?
+    if [ $PUSH_EXIT -ne 0 ]; then
+      echo "❌ Push FAILED (exit $PUSH_EXIT) — moving prompt to 4-failed/"
+      cd - > /dev/null
+      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
+      FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
+      mkdir -p "$FAILED_DIR"
+      mv "$INPROGRESS_FILE" "$FAILED_DIR/"
+      echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | PUSH FAILED | ${PROMPT_NAME} | Branch: ${BRANCH_NAME}" >> ~/auset-brain/Swarms/live-feed.md
+      continue
+    fi
     echo ""
     echo "🚀 Pushed branch: $BRANCH_NAME → $REMOTE"
 
@@ -1228,7 +1260,8 @@ prompts/
             │   ├── 02-ecs-deploy.md
             │   └── 03-test-fix.md
             ├── 2-in-progress/     ← Moved here when agent starts (one at a time)
-            └── 3-completed/       ← Moved here when work is done + PR opened
+            ├── 3-completed/       ← Moved here when work is done + PR opened
+            └── 4-failed/          ← Push failed — prompt preserved here for manual retry
 ```
 
 ## Worktree Convention
@@ -1257,10 +1290,10 @@ Step 0: git pull + delete merged prompt branches from last run
     ↓
 [git checkout -b <branch> inside worktree]
 [git commit]
-[git push origin <branch>]
+[git push origin <branch>]  → on failure: 4-failed/ + continue loop
 [gh pr create --base develop --head <branch>]
     ↓
-3-completed/
+3-completed/ (or 4-failed/ if push failed)
 [worktree removed]
     ↓
 [LOOP — pick up next prompt automatically]
@@ -1277,7 +1310,7 @@ Step 0: git pull + delete merged prompt branches from last run
 - **On next run, Step 0 cleans up merged PR branches** — `git pull` + delete merged `prompt/*` branches.
 - **All edits happen inside `$WORKTREE_PATH`** — never in the main checkout.
 - Prompts are numbered (01-, 02-) — lower number = higher priority.
-- If a worktree creation fails, the prompt is moved back to `1-not-started/` and the loop stops.
+- If a worktree or branch creation fails, the prompt is moved back to `1-not-started/` and the loop **continues** with the next prompt.
 
 ## Notes
 

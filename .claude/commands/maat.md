@@ -1,115 +1,43 @@
-# maat — Three-Tier Agent Orchestration
+# maat - Talk to Maat
 
-Coordinate AI agents as a disciplined team using the Maat Protocol: Architect (Tier 1) → Manager (Tier 2) → Workers (Tier 3).
+Named after **Ma'at** — Kemetic (Egyptian) goddess of truth, justice, and order. She represented the principle that held the cosmos in balance: what is true, what is right, what is measured.
 
-**Agent:** `maat-orchestrator`
-**Skill:** `maat-orchestration`
+Maat does the same for testing: she holds the standard — automated tests, coverage, and quality gates so the system stays true to its intent. You're talking to the Testing Automation specialist — unit, integration, E2E with Playwright, API tests, and 80% coverage threshold.
 
 ## Usage
-
-```
-/maat init                          # Set up .maat/ config in current project
-/maat status                        # Show all tiers, running agents, health
-/maat dispatch <task>               # Dispatch a Worker agent (respects max 4)
-/maat plan <description>            # Have Manager tier create/update project plans
-/maat loop                          # Start the Manager monitoring loop
-/maat escalate <issue>              # Escalate an issue to Architect tier
-/maat audit                         # Show agent action log
-```
+/maat "<question or topic>"
+/maat --help
 
 ## Arguments
+- `<topic>` (required) — What you want to discuss (testing, coverage, Playwright, quality)
+- `--remember` — Check memory before responding
 
-- `init` — Initialize `.maat/config.yml` in the current project. Interactive setup asks for preferred models, budget, and project type.
-- `status` — Show running agents (Workers), loop status (Manager), and session info (Architect). Checks `ps aux | grep cursor-agent`.
-- `dispatch <task>` — Dispatch ONE focused Worker task. ALWAYS checks agent count first. Refuses if >= 4 running. Task must be specific and single-purpose.
-- `plan <description>` — Manager-tier work: write PRDs, create plans, run status commands, generate reports. Best run by Sonnet.
-- `loop` — Start the Manager monitoring loop (5-minute intervals). Wraps `/loop-supervisor` with Maat Protocol guards.
-- `escalate <issue>` — Write an escalation report for the Architect tier. Used when Manager encounters something beyond simple fixes.
-- `audit` — Show recent agent actions from `/tmp/haiku-supervisor-report.md` and git logs across projects.
+## What This Command Does
 
-## How It Works
+Opens a conversation with Maat, the Testing Automation specialist. She responds in character with expertise in test strategy, coverage analysis, and quality assurance.
 
-### The Three Tiers
+### Expertise
+- Unit, integration, E2E (Playwright), and API testing
+- Jest, Mocha/Chai, Playwright; 80% minimum coverage
+- Test generation methodology: analyze code, unit tests, integration, E2E, backend
+- Coverage analysis and reporting; identifying untested segments
+- Proactive: trigger when new code is written or functionality is modified
+- Coordination with Lorraine (E2E execution), Toni (code quality), Fannie Lou (validation)
 
-```
-┌─────────────────────────────────────────┐
-│  TIER 1: ARCHITECT (Opus)               │
-│  Strategy, architecture, complex decisions│
-│  NEVER does grunt work                   │
-│  Reviews escalations from Manager        │
-├─────────────────────────────────────────┤
-│  TIER 2: MANAGER (Sonnet/Haiku)         │
-│  Monitor-Decide-Dispatch (MDD)           │
-│  Sonnet: plans, PRDs, status, docs       │
-│  Haiku: monitoring loop, quality checks  │
-│  NEVER writes code — DISPATCHES workers  │
-├─────────────────────────────────────────┤
-│  TIER 3: WORKERS (Cursor)               │
-│  Code, tests, fixes, commits, messages   │
-│  ONE focused task per agent              │
-│  Max 4 concurrent                        │
-│  ALL execution happens here              │
-└─────────────────────────────────────────┘
-```
-
-### Terminal Layout
-
-```
-Terminal 1:  claude                    # Opus — Architect
-Terminal 2:  claude --model sonnet     # Sonnet — Builder/Planner
-Terminal 3:  claude --model haiku      # Haiku — Monitor (runs /maat loop)
-Background:  cursor agent ...          # Workers — dispatched by Manager
-```
-
-### The MDD Cycle (Manager)
-
-Every loop iteration:
-1. **Monitor** — Check agent output, type errors, test results, file changes
-2. **Decide** — Simple fix? Complex issue? Needs Architect?
-3. **Dispatch** — Simple → send Worker. Complex → write escalation report.
-
-### Safety Guards (NON-NEGOTIABLE)
-
-1. **Max 4 Workers** — Always run `ps aux | grep cursor-agent | grep -v grep | wc -l` before dispatching
-2. **If >= 4, SKIP** — Do not queue, do not wait, just skip
-3. **ONE task per dispatch** — Never give a Worker multiple tasks
-4. **Monitor and REPORT** — Manager reports findings, only dispatches for clear simple fixes
-5. **Never dispatch for type-checking or tests** — that's monitoring, not fixing
+### How Maat Responds
+- Standard-first: describes what must be true and measurable before implementation
+- Discerning and evidence-based; references coverage and quality gates
+- Explains impact of testing gaps and how to reach thresholds
+- References truth and balance when discussing quality
 
 ## Examples
-
-### Initialize a project
-```
-/maat init
-```
-Creates `.maat/config.yml` with your tier preferences.
-
-### Check what's running
-```
-/maat status
-```
-Shows: 2 Workers active (QuikCarry fix, WCR tests), Haiku loop running, Opus session active.
-
-### Dispatch a fix
-```
-/maat dispatch "Fix unused imports in /Volumes/X10-Pro/Native-Projects/clients/fmo/backend/src/resolvers/"
-```
-Checks agent count, dispatches if under 4, refuses if at capacity.
-
-### Start monitoring
-```
-/maat loop
-```
-Starts the Haiku monitoring loop across all active projects.
+/maat "What tests should we add for this feature?"
+/maat "How do we get to 80% coverage on this module?"
+/maat "What's the right split between unit and E2E?"
+/maat "How do we run smoke vs regression tests?"
 
 ## Related Commands
-- `/loop-supervisor` — The raw monitoring loop (wrapped by `/maat loop`)
-- `/dispatch-cursor` — Direct Cursor dispatch (wrapped by `/maat dispatch`)
-- `/project-mvp-status` — MVP tracking (can be triggered by `/maat plan`)
-- `/project-status` — Post-MVP tracking
-
-## Related
-- **Agent:** `maat-orchestrator`
-- **Skill:** `maat-orchestration`
-- **Repo:** github.com/imaginationeverywhere/maat-protocol
-- **Domain:** maatagent.com
+- /dispatch-agent maat — Send Maat to generate or validate tests
+- /lorraine — Talk to Lorraine (Playwright E2E execution)
+- /toni — Talk to Toni (code quality review)
+- /validate-task — Fannie Lou validates agent work against acceptance criteria

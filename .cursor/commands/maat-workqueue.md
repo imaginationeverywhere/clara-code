@@ -248,9 +248,16 @@ git push origin develop
 **What happens automatically after push:**
 1. `.github/workflows/sync-workqueue-to-farm.yml` fires
 2. GitHub Action SCPs `tasks/maat-workqueue.md` to both EC2 farm instances (`/tmp/maat-workqueue.md`)
-3. EC2 cron (`phase0-workqueue-loop.sh`, every 2 min) reads the workqueue
-4. Haiku parses dependencies, finds dispatchable tasks, starts agents
-5. Workers execute, post to #maat-agents Slack, write status files
+3. GitHub Action uploads workqueue to `s3://quiknation-farm-status/workqueue/maat-workqueue.md`
+4. Quik Cloud (Mac M4 Pro) pulls from S3 every 2 min via `farm-sync` launchd
+5. All 3 farms' cron (`phase0-workqueue-loop.sh`, every 2 min) reads the workqueue
+6. Haiku parses dependencies, finds dispatchable tasks, starts agents
+7. Workers execute, post to #maat-agents Slack, write status files
+
+**Build farm targets (ALL THREE):**
+- **farm-1:** EC2 t3.large, 44.200.66.249 — SCP via GitHub Action
+- **farm-2:** EC2 t3.large, 100.55.154.135 — SCP via GitHub Action
+- **quik-cloud:** Mac M4 Pro (Tailscale) — S3 pull (GitHub can't SSH to Tailscale)
 
 **The commit message is the handoff. Sonnet commits, pushes, done. Haiku takes over autonomously.**
 
@@ -258,15 +265,16 @@ git push origin develop
 
 Report to user:
 ```
-Work queue UPDATED and PUSHED to Auset Platform repo
-- [N] tasks total ([done] done, [remaining] remaining)
-- [N] new tasks added (P## - P##)
-- [N] tasks marked done since last update
-- Manually-added entries preserved: [list any P## that came from manual adds]
+Work queue UPDATED and PUSHED to Auset Platform repo (develop branch)
+- [N] tasks total ([done] done, [remaining] remaining, [blocked] blocked)
+- [N] new tasks added: P## – P## ([brief description])
+- [N] tasks marked done in this session
 - Committed via /git-commit-docs — commit message contains full dispatch briefing for Haiku
-- Pushed to develop — GitHub Action syncs to farm EC2s within 5 minutes
-- EC2 cron dispatches within 2 minutes of sync
-- Total time from push to first agent running: ~7 minutes
+- Pushed to develop — GitHub Action syncs to ALL 3 FARMS:
+  - farm-1 (44.200.66.249) — SCP within ~5 min
+  - farm-2 (100.55.154.135) — SCP within ~5 min
+  - quik-cloud (Mac M4 Pro) — S3 pull within ~7 min
+- Cron dispatches within 2 min of sync arrival
 ```
 
 ## Rules

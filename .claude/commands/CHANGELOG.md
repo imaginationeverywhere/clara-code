@@ -1,29 +1,18 @@
 # .claude/commands Changelog
 
-## [Unreleased] - 2026-04-14
-
-### Added
-- **ai-estimate.md** — Machine-speed timeline estimation. Forces all agents to give hours, not sprints. QCS1 baselines, 6-agent parallel batching, 10-50x correction factor vs human estimates.
-
-### Changed
-- **pickup-prompt.md v3.8.0** — Enhanced `--status` with full /ai-estimate integration: AI timeline (hrs done/remaining/total), parallel batch math (6 agents/QCS1), prompt filenames to write with flags, cumulative time tracking, human equivalent.
-
-## [Unreleased] - 2026-04-12
-
-### Changed
-- **ossie.md** — Deployment/orchestration command doc updates (mirrored in `.cursor/commands/ossie.md`).
-
 ## [Unreleased]
 
 ### Added
-- **Persona-based and team commands** - New command set (mirrored in `.cursor/commands/`)
-  - Persona-named commands (e.g. a-philip, harriet, frederick, ida, maya, toni, zora) matching agent roster
-  - Team commands: aws-team, backend-team, business-team, creative-team, devops-team, frontend-team, mobile-team, qa-team, qc1-team, security-team, tech-team
-  - Session/vault: session-start, session-end, vault-sync, dev-sessions, brain-sync
-  - Project: heru-onboard, create-agent, dispatch-agent, council, family, ship, write-brd, write-prd, clara-research, legal-doc, security-scan
-  - Scripts: org-gate.sh (GitHub org gate), cloud-sync-herus.sh, wentworth-daily-scan.sh
+- **Named agent commands (Agent Naming Registry)** — 50+ command files in `.claude/commands/` mirrored to `.cursor/commands/`: achebe, assata, basquiat, benjamin, booker-t, charles, cheikh, chimamanda, clark, dessalines, dorothy, elijah, fela, gary, harriet, hugh, ida, imhotep, jesse, katherine, langston, lewis, lorraine, madam-cj, mae, mandela, marcus, mary-jackson, miriam, nandi, nina, oscar, ossie, phillis, rian, rosa, ruby, shirley, sojourner, thurgood, toni, toussaint, validate-task, wangari, wilma, zora. Aligned with `docs/AGENT_NAMING_REGISTRY.md`.
 
-### Added (previous)
+- **Dispatch, design, and platform commands**
+  - **dispatch-agent.md** — Dispatch tasks to Cursor/build farm (Bayard); references `.claude/commands/` and `.cursor/commands/`
+  - **n8n-create-workflows.md** — Create and manage n8n automation workflows
+  - **pencil-design.md** — Design and UI workflows with Pencil
+  - **swarm-manage.md** — Swarm/build farm management
+  - **vault-sync.md** — Vault synchronization workflows
+  - Location: `.claude/commands/` (mirrored in `.cursor/commands/`)
+
 - **Auset Orchestration & Platform Commands** - Cursor dispatch, sync, progress, gap analysis, dialogue, AI gateway
   - **dispatch-cursor.md**, **orchestrate.md** - Cursor Agent CLI orchestration
   - **sync-herus.md** - Push platform changes to all Heru projects

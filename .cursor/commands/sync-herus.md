@@ -39,22 +39,43 @@ Synchronize Auset platform files (commands, plans, agents, cheat sheets, skills)
 
 ### Step 1: Discover All Heru Projects
 
-Find all projects with `.claude` directories under the standard locations:
+**CRITICAL: Only sync to ROOT-LEVEL `.claude/` directories.** Some monorepo projects have nested `.claude/` dirs inside `frontend/`, `mobile/`, `admin/`, etc. — NEVER sync boilerplate commands to those. Only sync to the `.claude/` that is at the git repository root.
+
+Find all projects with `.claude` directories, then filter to git-root only:
 ```bash
-find /Volumes/X10-Pro/Native-Projects -maxdepth 4 -name ".claude" -type d \
+# Find .claude dirs, resolve to git root, only keep root-level .claude
+find /Volumes/X10-Pro/Native-Projects -maxdepth 4 -name ".claude" -type d 2>/dev/null \
   | grep -v node_modules \
   | grep -v ".git/" \
   | grep -v quik-nation-ai-boilerplate \
-  | sort
+  | while read CLAUDE_DIR; do
+    PROJECT=$(dirname "$CLAUDE_DIR")
+    GITROOT=$(cd "$PROJECT" && git rev-parse --show-toplevel 2>/dev/null)
+    # Only include if this .claude is at the git root (not nested in a subdirectory)
+    if [ -n "$GITROOT" ] && [ "$PROJECT" = "$GITROOT" ]; then
+      echo "$CLAUDE_DIR"
+    elif [ -z "$GITROOT" ]; then
+      # Not a git repo — still include if .claude is direct child of project
+      echo "$CLAUDE_DIR"
+    fi
+  done | sort
 ```
 
-Also check the secondary working directory:
+Also check the secondary working directory with the same git-root filter:
 ```bash
-find /Users/amenra/Native-Projects -maxdepth 4 -name ".claude" -type d \
+find /Users/amenra/Native-Projects -maxdepth 4 -name ".claude" -type d 2>/dev/null \
   | grep -v node_modules \
   | grep -v ".git/" \
   | grep -v quik-nation-ai-boilerplate \
-  | sort
+  | while read CLAUDE_DIR; do
+    PROJECT=$(dirname "$CLAUDE_DIR")
+    GITROOT=$(cd "$PROJECT" && git rev-parse --show-toplevel 2>/dev/null)
+    if [ -n "$GITROOT" ] && [ "$PROJECT" = "$GITROOT" ]; then
+      echo "$CLAUDE_DIR"
+    elif [ -z "$GITROOT" ]; then
+      echo "$CLAUDE_DIR"
+    fi
+  done | sort
 ```
 
 Deduplicate by project name. Report count.
