@@ -13,7 +13,36 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt 2026/April/12      # Specific date
 /pickup-prompt --list             # List all not-started prompts without executing
 /pickup-prompt 01-cc-web-full.md  # Execute a specific prompt by filename only
+/pickup-prompt --clerk            # Inject Clerk auth standard before executing (see below)
 ```
+
+## Flags
+
+### `--clerk`
+
+When this flag is present, the agent MUST read `.claude/standards/clerk-auth.md` before executing any prompt. The standard's rules become mandatory constraints for the entire execution — overriding any conflicting instruction in the prompt itself.
+
+Use this flag for any prompt that involves:
+- Sign-in pages
+- Sign-up pages
+- Auth layouts
+- SSO/OAuth flows
+- Clerk-protected routes
+
+```bash
+# Detect --clerk flag
+CLERK_STANDARD=""
+if echo "$*" | grep -q "\-\-clerk"; then
+  CLERK_STANDARD=$(cat .claude/standards/clerk-auth.md)
+  echo "📋 Clerk Auth Standard loaded — applying mandatory constraints:"
+  echo "   ❌ No <SignIn> or <SignUp> embedded components"
+  echo "   ✅ useSignIn() / useSignUp() hooks required"
+  echo "   ✅ SSO callback route required"
+  echo ""
+fi
+```
+
+The loaded standard is prepended to the prompt context before execution. If the prompt says `<SignIn appearance={{...}} />` anywhere, the agent overrides it with the hook pattern from the standard.
 
 ## Execution
 

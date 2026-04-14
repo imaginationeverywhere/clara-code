@@ -166,7 +166,7 @@ gh pr create --base develop --head [branch-name] --title "[Title]" --body "[Desc
 
 ### Auto-Claude Worktree Workflow
 
-For agent branches (from agent builds):
+For agent branches (from Auto Claude builds):
 
 ```bash
 # Find all agent branches

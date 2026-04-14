@@ -544,7 +544,7 @@ interface ComponentInventory {
 **CRITICAL**: Generate the master task file with command + agent + skill assignments:
 
 ```bash
-# Create the internal directory if it does not exist
+# Create the internal directory if it doesn't exist
 mkdir -p docs/internal
 ```
 
