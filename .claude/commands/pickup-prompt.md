@@ -779,57 +779,151 @@ The loaded standard is prepended to the prompt context before execution. Key ove
 
 ### `--status`
 
-Shows a dashboard of which standards are implemented in this Heru and which tech docs are missing.
+Shows a full AI-timeline dashboard: which standards are implemented, how much machine time has been spent, what prompts to write next, and how long it will take to finish — with parallel agent batching.
 
 ```bash
 if echo "$*" | grep -q "\-\-status"; then
+  HERU=$(basename $(pwd))
+
+  # ── AI time estimates per standard (minutes, based on /ai-estimate baselines) ──
+  # format: "name|detection_pattern|flag|estimate_min|description"
+  # Each entry is: standard_name | grep/ls detection | pickup-prompt flag | est minutes | what it covers
+  STANDARDS=(
+    "frontend|grep -rl 'redux-persist\|@apollo/client\|@clerk/nextjs' frontend/src/ 2>/dev/null|--frontend|90|Next.js 16 + Apollo + Clerk + Redux-Persist stack"
+    "backend|grep -rl '@apollo/server\|sequelize\|requireAuth' backend/src/ 2>/dev/null|--backend|90|Express + Apollo + Sequelize + TypeScript stack"
+    "clerk|grep -rl 'clerkMiddleware\|requireApiKey\|useSignIn' src/ frontend/src/ 2>/dev/null|--clerk|45|Auth pages, middleware, webhook, ProfileWidget"
+    "stripe|grep -rl 'webhooks/stripe\|constructEvent' backend/src/ 2>/dev/null|--stripe|60|Subscriptions, checkout, all 6 webhook events"
+    "graphql|grep -rl 'typeDefs\|ApolloServer\|resolvers' src/ backend/src/ 2>/dev/null|--graphql|90|Schema, resolvers, DataLoader, auth guards"
+    "migrations|ls migrations/*.js 2>/dev/null || ls backend/src/migrations/*.ts 2>/dev/null|--migrations|45|up/down migrations, indexes, all 3 envs"
+    "multi-tenant|grep -rl 'tenantId\|tenant_id' src/ backend/src/ 2>/dev/null|--multi-tenant|30|tenant_id on all tables, scoped queries"
+    "testing|ls src/__tests__/**/*.test.ts 2>/dev/null || ls __tests__/**/*.test.ts 2>/dev/null|--testing|90|80% coverage, error paths, no DB mocks"
+    "security|grep -rl 'helmet\|rateLimit' src/ backend/src/ 2>/dev/null|--security|30|Helmet, rate limiting, CORS, auth guards"
+    "neon|grep -rl 'neon\|@neondatabase\|neon.tech' backend/src/ 2>/dev/null|--neon|45|Neon branches, pooler, SSL, connection strings"
+    "cf|ls frontend/wrangler.toml 2>/dev/null|--cf|60|wrangler.toml, OpenNext, CF env vars, Clerk"
+    "admin|grep -rl 'requireAdmin\|/api/admin' src/ backend/src/ 2>/dev/null|--admin|45|Double-gate, RBAC, AuditLog, DataTable"
+    "profile|grep -rl 'walletBalance\|WalletTransaction\|/api/profile' src/ backend/src/ 2>/dev/null|--profile|45|Clerk sync, wallet, avatar S3, history"
+    "analytics|grep -rl 'GA4\|gtag\|MEASUREMENT_ID' src/ frontend/src/ 2>/dev/null|--analytics|30|GA4, 4-stage funnel, Measurement Protocol"
+    "design|ls mockups/ 2>/dev/null && ls docs/design-system.md 2>/dev/null|--design|60|Magic Patterns conversion, design tokens, states"
+    "twilio|grep -rl 'twilio\|getTwilioClient' src/ backend/src/ 2>/dev/null|--twilio|45|SMS/Voice/Video, webhook sig, singleton"
+    "slack|grep -rl 'WebClient\|getSlackClient\|slack' src/ backend/src/ 2>/dev/null|--slack|30|Bot, slash commands, Block Kit, rate limits"
+    "push|grep -rl 'expo-notifications\|Notifications\.' src/ 2>/dev/null|--push|45|APNs + FCM, device tokens, receipt processing"
+    "mobile|ls mobile/app/_layout.tsx 2>/dev/null || ls app/_layout.tsx 2>/dev/null|--mobile|90|Expo SDK 52, Expo Router, NativeWind, all providers"
+    "eas|ls eas.json 2>/dev/null|--eas|30|Build config, xcrun altool, EXPO_TOKEN, ASC issuer"
+    "shipping|grep -rl 'shippo\|getShippo\|SHIPPO' src/ backend/src/ 2>/dev/null|--shipping|45|Shippo rates, label, tracking webhook"
+    "digital-pass|grep -rl 'pkpass\|passkit\|PKPass\|GoogleWallet' src/ backend/src/ 2>/dev/null|--digital-pass|45|Apple Wallet + Google Wallet bridge"
+    "apple-maps|grep -rl 'PROVIDER_DEFAULT\|MapKit\|apple-maps' src/ 2>/dev/null|--apple-maps|30|iOS maps, Platform.OS gate, markers, directions"
+    "mapbox|grep -rl '@rnmapbox\|Mapbox\.' src/ 2>/dev/null|--mapbox|30|Android maps, GL rendering, Platform.OS gate"
+    "desktop|grep -rl 'SecretStorage\|contextBridge\|ipcMain' src/ 2>/dev/null|--desktop|60|PKCE auth, SecretStorage, contextBridge, signing"
+    "apple-store|ls docs/standards/apple-store.md 2>/dev/null|--apple|30|Metadata, screenshots, xcrun altool upload"
+    "google-play|ls docs/standards/google-play.md 2>/dev/null|--google|30|AAB, Data Safety form, staged rollout"
+  )
+
+  DONE_NAMES=()
+  DONE_TIMES=()
+  DONE_DESCS=()
+  MISSING_NAMES=()
+  MISSING_TIMES=()
+  MISSING_FLAGS=()
+  MISSING_DESCS=()
+  TOTAL_DONE=0
+  TOTAL_MISSING=0
+
+  for entry in "${STANDARDS[@]}"; do
+    IFS='|' read -r name pattern flag est_min desc <<< "$entry"
+    if eval "$pattern" 2>/dev/null | grep -q . 2>/dev/null || eval "$pattern" 2>/dev/null; then
+      DONE_NAMES+=("$name")
+      DONE_TIMES+=("$est_min")
+      DONE_DESCS+=("$desc")
+      TOTAL_DONE=$((TOTAL_DONE + est_min))
+    else
+      MISSING_NAMES+=("$name")
+      MISSING_TIMES+=("$est_min")
+      MISSING_FLAGS+=("$flag")
+      MISSING_DESCS+=("$desc")
+      TOTAL_MISSING=$((TOTAL_MISSING + est_min))
+    fi
+  done
+
+  TOTAL_ALL=$((TOTAL_DONE + TOTAL_MISSING))
+  DONE_HRS=$(echo "scale=1; $TOTAL_DONE / 60" | bc)
+  MISSING_HRS=$(echo "scale=1; $TOTAL_MISSING / 60" | bc)
+  TOTAL_HRS=$(echo "scale=1; $TOTAL_ALL / 60" | bc)
+
+  # Parallel estimate: ceil(missing_count / 6) batches × avg 45min
+  MISSING_COUNT=${#MISSING_NAMES[@]}
+  DONE_COUNT=${#DONE_NAMES[@]}
+  BATCHES=$(( (MISSING_COUNT + 5) / 6 ))
+  PARALLEL_HRS=$(echo "scale=1; $BATCHES * 0.75" | bc)
+
+  # Human equivalent (10x correction factor)
+  HUMAN_DONE_WKS=$(echo "scale=1; $TOTAL_DONE / 60 / 8 / 5 * 2" | bc)
+  HUMAN_LEFT_WKS=$(echo "scale=1; $TOTAL_MISSING / 60 / 8 / 5 * 2" | bc)
+
   echo ""
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "  STANDARDS STATUS — $(basename $(pwd))"
+  echo "  HERU STATUS — ${HERU}"
+  printf "  AI TIMELINE: %.1f hrs done ✅ | %.1f hrs remaining ⏳ | %.1f hrs total\n" "$DONE_HRS" "$MISSING_HRS" "$TOTAL_HRS"
+  printf "  PARALLEL:    %d batches × ~45min = ~%.1f hrs to finish (6 agents on QCS1)\n" "$BATCHES" "$PARALLEL_HRS"
+  printf "  HUMAN EQUIV: ~%.1f weeks done | ~%.1f weeks remaining\n" "$HUMAN_DONE_WKS" "$HUMAN_LEFT_WKS"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  printf "  %-18s %-14s %-12s %s\n" "Standard" "Implemented" "Tech Doc" "Run with"
-  echo "  ──────────────────────────────────────────────────────────────"
 
-  check_standard() {
-    local name=$1; local pattern=$2; local flag=$3
-    local impl="❌ Missing"; local doc="❌ Missing"
-    if eval "$pattern" 2>/dev/null | grep -q .; then impl="✅ Found"; fi
-    if [ -f "docs/standards/${name}.md" ]; then doc="✅ Found"; fi
-    printf "  %-18s %-14s %-12s %s\n" "$name" "$impl" "$doc" "$flag"
-  }
+  if [ ${#DONE_NAMES[@]} -gt 0 ]; then
+    echo ""
+    echo "  ✅ IMPLEMENTED (${DONE_COUNT} standards | ~${DONE_HRS} hrs of AI work done)"
+    echo "  ──────────────────────────────────────────────────────────────"
+    for i in "${!DONE_NAMES[@]}"; do
+      est="${DONE_TIMES[$i]}"
+      printf "  ✅  %-16s  ~%dmin   %s\n" "${DONE_NAMES[$i]}" "$est" "${DONE_DESCS[$i]}"
+    done
+  fi
 
-  check_standard "clerk"       "grep -rl 'clerkMiddleware\|requireApiKey' src/ 2>/dev/null"     "--clerk"
-  check_standard "stripe"      "grep -rl 'webhooks/stripe\|constructEvent' backend/src/ 2>/dev/null" "--stripe"
-  check_standard "graphql"     "grep -rl 'typeDefs\|ApolloServer\|resolvers' src/ 2>/dev/null" "--graphql"
-  check_standard "migrations"  "ls migrations/*.js 2>/dev/null || ls backend/src/migrations/*.ts 2>/dev/null" "--migrations"
-  check_standard "multi-tenant" "grep -rl 'tenantId\|tenant_id' src/ 2>/dev/null"              "--multi-tenant"
-  check_standard "testing"     "ls src/__tests__/**/*.test.ts 2>/dev/null || ls __tests__/**/*.test.ts 2>/dev/null" "--testing"
-  check_standard "security"    "grep -rl 'helmet\|rateLimit' src/ backend/src/ 2>/dev/null"     "--security"
-  check_standard "desktop"     "grep -rl 'SecretStorage\|contextBridge\|ipcMain' src/ 2>/dev/null" "--desktop"
-  check_standard "design"      "ls mockups/ 2>/dev/null && ls docs/design-system.md 2>/dev/null" "--design"
-  check_standard "twilio"      "grep -rl 'twilio\|getTwilioClient' src/ backend/src/ 2>/dev/null"  "--twilio"
-  check_standard "slack"       "grep -rl 'WebClient\|getSlackClient\|slack' src/ backend/src/ 2>/dev/null" "--slack"
-  check_standard "digital-pass" "grep -rl 'pkpass\|passkit\|PKPass\|GoogleWallet' src/ backend/src/ 2>/dev/null" "--digital-pass"
-  check_standard "apple-maps"  "grep -rl 'PROVIDER_DEFAULT\|MapKit\|apple-maps' src/ 2>/dev/null"  "--apple-maps"
-  check_standard "mapbox"      "grep -rl '@rnmapbox\|Mapbox\.' src/ 2>/dev/null"                   "--mapbox"
-  check_standard "eas"         "ls eas.json 2>/dev/null"                                            "--eas"
-  check_standard "push"        "grep -rl 'expo-notifications\|Notifications\.' src/ 2>/dev/null"   "--push"
-  check_standard "neon"        "grep -rl 'neon\|@neondatabase\|neon.tech' backend/src/ 2>/dev/null" "--neon"
-  check_standard "cf"          "ls frontend/wrangler.toml 2>/dev/null"                             "--cf"
-  check_standard "shipping"    "grep -rl 'shippo\|getShippo\|SHIPPO' src/ backend/src/ 2>/dev/null" "--shipping"
-  check_standard "analytics"   "grep -rl 'GA4\|gtag\|MEASUREMENT_ID' src/ frontend/src/ 2>/dev/null" "--analytics"
-  check_standard "apple-store" "ls docs/standards/apple-store.md 2>/dev/null"                       "--apple"
-  check_standard "google-play" "ls docs/standards/google-play.md 2>/dev/null"                       "--google"
-  check_standard "admin"       "grep -rl 'requireAdmin\|/api/admin' src/ backend/src/ 2>/dev/null"  "--admin"
-  check_standard "profile"     "grep -rl 'walletBalance\|WalletTransaction\|/api/profile' src/ backend/src/ 2>/dev/null" "--profile"
-  check_standard "frontend"    "grep -rl 'redux-persist\|@apollo/client\|@clerk/nextjs' frontend/src/ 2>/dev/null"       "--frontend"
-  check_standard "backend"     "grep -rl '@apollo/server\|sequelize\|requireAuth' backend/src/ 2>/dev/null"              "--backend"
-  check_standard "mobile"      "ls mobile/app/_layout.tsx 2>/dev/null || ls app/_layout.tsx 2>/dev/null"                "--mobile"
+  if [ ${#MISSING_NAMES[@]} -gt 0 ]; then
+    echo ""
+    echo "  ❌ MISSING — PROMPTS TO WRITE (${MISSING_COUNT} standards | ~${MISSING_HRS} hrs remaining)"
+    echo "  ──────────────────────────────────────────────────────────────"
+    for i in "${!MISSING_NAMES[@]}"; do
+      est="${MISSING_TIMES[$i]}"
+      flag="${MISSING_FLAGS[$i]}"
+      printf "  ❌  %-16s  ~%dmin   %s\n" "${MISSING_NAMES[$i]}" "$est" "${MISSING_DESCS[$i]}"
+    done
 
-  echo "  ──────────────────────────────────────────────────────────────"
+    echo ""
+    echo "  PARALLEL BATCHES (6 agents, QCS1 — pick up next):"
+    echo "  ──────────────────────────────────────────────────────────────"
+    BATCH_NUM=1
+    BATCH_ITEMS=()
+    for i in "${!MISSING_NAMES[@]}"; do
+      BATCH_ITEMS+=("${MISSING_NAMES[$i]}")
+      if [ ${#BATCH_ITEMS[@]} -eq 6 ] || [ $i -eq $((${#MISSING_NAMES[@]} - 1)) ]; then
+        printf "  Batch %d: %s\n" "$BATCH_NUM" "$(IFS=', '; echo "${BATCH_ITEMS[*]}")"
+        BATCH_NUM=$((BATCH_NUM + 1))
+        BATCH_ITEMS=()
+      fi
+    done
+
+    echo ""
+    echo "  PROMPT FILES TO WRITE (then run /pickup-prompt):"
+    echo "  ──────────────────────────────────────────────────────────────"
+    PAD=1
+    for i in "${!MISSING_NAMES[@]}"; do
+      NUM=$(printf "%02d" $PAD)
+      flag="${MISSING_FLAGS[$i]}"
+      echo "  ${NUM}-${MISSING_NAMES[$i]}.md   →  /pickup-prompt ${flag}"
+      PAD=$((PAD + 1))
+    done
+
+    echo ""
+    echo "  READY TO DISPATCH:"
+    echo "  Write the prompt files above → commit them → /pickup-prompt loops until done"
+    printf "  Estimated finish: ~%.1f hrs (parallel) or ~%.1f hrs (sequential)\n" "$PARALLEL_HRS" "$MISSING_HRS"
+  else
+    echo ""
+    echo "  🎉 ALL STANDARDS IMPLEMENTED — this Heru is fully Auset-standard!"
+  fi
+
   echo ""
-  echo "  Missing tech docs can be created with: /pickup-prompt --<name> on any prompt"
-  echo "  Tech docs live in: docs/standards/<name>.md (Heru-specific config)"
+  echo "  Tech docs: docs/standards/<name>.md (Heru-specific config per standard)"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   echo ""
   exit 0
 fi
@@ -1196,8 +1290,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.7.0
+version: 3.8.0
 changelog:
+  - v3.8.0: Enhanced --status with /ai-estimate integration — AI timeline (hrs done/remaining/total), parallel batch math (6 agents/QCS1), prompt filenames to write with flags, cumulative time tracking, human equivalent
   - v3.7.0: Added --mobile flag (Expo SDK 52, Expo Router, NativeWind, Apollo, Clerk/expo, Redux-Persist/AsyncStorage, FlashList, expo-image, accessibility, deep linking, Platform.OS patterns)
   - v3.6.0: Added --profile (user profile + wallet), --frontend (Next.js 16 stack), --backend (Node/Express/Sequelize/Apollo stack); updated --clerk with ProfileWidget requirement; created clerk-auth.md standard (was missing)
   - v3.5.0: Added --shipping (Shippo), --analytics (GA4), --apple (App Store), --google (Play Store), --admin (admin panel) flags; updated --stripe with platform fees (min 7%), disputes, refunds, metadata requirements
