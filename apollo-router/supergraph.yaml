@@ -5,3 +5,13 @@ subgraphs:
     routing_url: http://localhost:3001/graphql/clara-core
     schema:
       file: ./clara-core.graphql
+
+  gateway-connect:
+    routing_url: http://localhost:4001/graphql
+    schema:
+      file: ./gateway-connect.graphql
+
+  clerk-auth:
+    routing_url: http://localhost:4002/graphql
+    schema:
+      file: ./clerk-auth.graphql

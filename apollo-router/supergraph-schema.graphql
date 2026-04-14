@@ -28,10 +28,31 @@ type Agent
   name: String!
 }
 
+type AuthStatus
+  @join__type(graph: CLERK_AUTH)
+{
+  """
+  Whether the incoming request has a valid Clara service token.
+  This verifies the request is coming from Clara's gateway — not user identity.
+  """
+  gatewayVerified: Boolean!
+  timestamp: String!
+}
+
+type GatewayHealth
+  @join__type(graph: GATEWAY_CONNECT)
+{
+  status: String!
+  version: String!
+  timestamp: String!
+}
+
 scalar join__FieldSet
 
 enum join__Graph {
   CLARA_CORE @join__graph(name: "clara-core", url: "http://localhost:3001/graphql/clara-core")
+  CLERK_AUTH @join__graph(name: "clerk-auth", url: "http://localhost:4002/graphql")
+  GATEWAY_CONNECT @join__graph(name: "gateway-connect", url: "http://localhost:4001/graphql")
 }
 
 scalar link__Import
@@ -82,10 +103,24 @@ type Mutation
 
 type Query
   @join__type(graph: CLARA_CORE)
+  @join__type(graph: CLERK_AUTH)
+  @join__type(graph: GATEWAY_CONNECT)
 {
-  me: User
-  models: [Model!]!
-  agents: [Agent!]!
+  me: User @join__field(graph: CLARA_CORE)
+  models: [Model!]! @join__field(graph: CLARA_CORE)
+  agents: [Agent!]! @join__field(graph: CLARA_CORE)
+  authStatus: AuthStatus! @join__field(graph: CLERK_AUTH)
+  verifyToken(token: String!): TokenVerification! @join__field(graph: CLERK_AUTH)
+  gatewayHealth: GatewayHealth! @join__field(graph: GATEWAY_CONNECT)
+  sessionInfo: SessionInfo! @join__field(graph: GATEWAY_CONNECT)
+}
+
+type SessionInfo
+  @join__type(graph: GATEWAY_CONNECT)
+{
+  sessionToken: String!
+  voiceCommand: String!
+  requestedAt: String!
 }
 
 type StreamChunk
@@ -99,6 +134,13 @@ type Subscription
   @join__type(graph: CLARA_CORE)
 {
   stream(prompt: String!, model: ModelName): StreamChunk!
+}
+
+type TokenVerification
+  @join__type(graph: CLERK_AUTH)
+{
+  valid: Boolean!
+  message: String
 }
 
 type User

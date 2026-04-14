@@ -1,0 +1,22 @@
+import { gql } from "graphql-tag";
+
+export const typeDefs = gql`
+  extend schema @link(url: "https://specs.apollo.dev/federation/v2.3", import: ["@key"])
+
+  type Query {
+    gatewayHealth: GatewayHealth!
+    sessionInfo: SessionInfo!
+  }
+
+  type GatewayHealth {
+    status: String!
+    version: String!
+    timestamp: String!
+  }
+
+  type SessionInfo {
+    sessionToken: String!
+    voiceCommand: String!
+    requestedAt: String!
+  }
+`;
