@@ -23,8 +23,21 @@ jest.mock("@/utils/logger", () => ({
 }));
 
 jest.mock("@/middleware/api-key-auth", () => ({
-	requireClaraOrClerk: (_req: unknown, _res: unknown, next: () => void) => {
+	requireClaraOrClerk: (req: { claraUser?: { userId: string; tier: string } }, _res: unknown, next: () => void) => {
+		req.claraUser = { userId: "user_voice_test", tier: "free" };
 		next();
+	},
+}));
+
+jest.mock("@/middleware/voice-limit", () => ({
+	voiceLimitMiddleware: (_req: unknown, _res: unknown, next: () => void) => {
+		next();
+	},
+}));
+
+jest.mock("@/services/voice-usage.service", () => ({
+	voiceUsageService: {
+		incrementAfterSuccess: jest.fn().mockResolvedValue(undefined),
 	},
 }));
 
