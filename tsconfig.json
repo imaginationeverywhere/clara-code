@@ -44,6 +44,7 @@
 		"packages/cli/**/*",
 		"**/dist/**",
 		"backend/**/*.test.ts",
-		"backend/**/*.spec.ts"
+		"backend/**/*.spec.ts",
+		"packages/marketplace-sdk/test/**"
 	]
 }

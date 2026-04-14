@@ -1,5 +1,5 @@
 import { VoiceUsage } from "@/models/VoiceUsage";
-import { VoiceUsageService, getBillingMonthKey, getNextResetDateKey } from "@/services/voice-usage.service";
+import { getBillingMonthKey, getNextResetDateKey, VoiceUsageService } from "@/services/voice-usage.service";
 
 jest.mock("@/models/VoiceUsage", () => ({
 	VoiceUsage: {

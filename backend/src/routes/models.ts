@@ -1,7 +1,7 @@
 import { type Response, Router } from "express";
-import { DEFAULT_MODEL, MODELS, type ClaraModelName } from "@/config/models";
-import { resolveRequestTier } from "@/utils/request-tier";
+import { type ClaraModelName, DEFAULT_MODEL, MODELS } from "@/config/models";
 import { logger } from "@/utils/logger";
+import { resolveRequestTier } from "@/utils/request-tier";
 
 const router = Router();
 
