@@ -19,6 +19,7 @@ Install locally: `code --install-extension clara-code-0.1.0.vsix`
 
 ## Configuration
 
-- `claraCode.gatewayUrl` — Modal gateway (default: Hermes URL in manifest)
-- `claraCode.userId` — user id sent with requests
+- `claraCode.userId` — display name / user id sent with requests (non-secret; stored in settings)
 - `claraCode.panelMode` — use `surface: panel` and D1/D2 ultra-short copy
+
+The default gateway URL is compiled into the extension (not in user settings). To override it for development, assign a keybinding to the command `clara.setGatewayUrl` (Keyboard Shortcuts) or run it from the Command Palette after removing the palette suppression in `package.json` for local builds only. The value is stored in VS Code SecretStorage under `clara.gatewayUrl`, not in `settings.json`.
