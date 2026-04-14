@@ -1,0 +1,7 @@
+federation_version: =2.3.0
+
+subgraphs:
+  clara-core:
+    routing_url: http://localhost:3001/graphql/clara-core
+    schema:
+      file: ./clara-core.graphql

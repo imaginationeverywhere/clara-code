@@ -1,4 +1,5 @@
 import { Sequelize } from "sequelize-typescript";
+import { Agent } from "@/models/Agent";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
 import { User } from "@/models/User";
@@ -41,7 +42,7 @@ export const sequelize = new Sequelize(databaseUrl, {
 		acquire: 30000,
 		idle: 10000,
 	},
-	models: [User, ApiKey, Subscription, VoiceUsage, WaitlistEntry],
+	models: [User, ApiKey, Agent, Subscription, VoiceUsage, WaitlistEntry],
 	define: {
 		underscored: true,
 		timestamps: true,
