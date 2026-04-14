@@ -12,7 +12,7 @@ export interface ModelConfig {
 	requiredTier: ClaraTier;
 }
 
-const VOICE_FALLBACK = process.env.CLARA_VOICE_URL || "https://quik-nation--clara-voice-server-web.modal.run";
+const VOICE_FALLBACK = process.env.CLARA_VOICE_URL ?? "";
 
 export const MODELS: Record<ClaraModelName, ModelConfig> = {
 	maya: {
@@ -52,6 +52,9 @@ export function resolveModel(requested: string | undefined, tier: ClaraTier): Mo
 
 	if (TIER_RANK[tier] < TIER_RANK[model.requiredTier]) {
 		throw new ModelTierError(modelName, model.requiredTier, tier);
+	}
+	if (!model.inferenceBackend) {
+		throw new Error(`Clara voice service is not configured (${modelName})`);
 	}
 	return model;
 }

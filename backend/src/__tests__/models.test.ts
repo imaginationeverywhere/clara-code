@@ -1,7 +1,7 @@
 import express from "express";
 import request from "supertest";
 
-import { DEFAULT_MODEL, ModelTierError, resolveModel } from "@/config/models";
+import { DEFAULT_MODEL, MODELS, ModelTierError, resolveModel } from "@/config/models";
 
 jest.mock("@/utils/request-tier", () => ({
 	resolveRequestTier: jest.fn(),
@@ -85,6 +85,13 @@ describe("resolveModel", () => {
 	it("invalid name falls back to maya for pro", () => {
 		const m = resolveModel("invalid", "pro");
 		expect(m.name).toBe("maya");
+	});
+
+	it("throws when inferenceBackend is empty", () => {
+		const previous = MODELS.maya;
+		MODELS.maya = { ...MODELS.maya, inferenceBackend: "" };
+		expect(() => resolveModel("maya", "free")).toThrow("Clara voice service is not configured");
+		MODELS.maya = previous;
 	});
 });
 

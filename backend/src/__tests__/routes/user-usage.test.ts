@@ -53,4 +53,21 @@ describe("routes GET /api/user/usage", () => {
 		expect(res.body.voice_exchanges.unlimited).toBe(true);
 		expect(res.body.voice_exchanges.limit).toBeNull();
 	});
+
+	it("returns 401 when claraUser has no userId", async () => {
+		mockClara.mockImplementationOnce((req: ApiKeyRequest, _res: unknown, next: () => void) => {
+			req.claraUser = { userId: undefined as unknown as string, tier: "free" };
+			next();
+		});
+		const res = await request(app).get("/api/user/usage");
+		expect(res.status).toBe(401);
+		expect(res.body.error).toBe("Unauthorized");
+	});
+
+	it("returns 500 when service throws", async () => {
+		getUsage.mockRejectedValueOnce(new Error("db error"));
+		const res = await request(app).get("/api/user/usage");
+		expect(res.status).toBe(500);
+		expect(res.body.error).toBe("Failed to load usage");
+	});
 });
