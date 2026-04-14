@@ -73,14 +73,18 @@ class VoiceSessionImpl implements VoiceSession {
 	private _id = "";
 	private closed = false;
 	private readonly settleReady: () => void;
+	private readonly rejectReady: (err: Error) => void;
 	readonly ready: Promise<void>;
 
 	constructor(private readonly config: ClaraConfig) {
 		let settle!: () => void;
-		this.ready = new Promise<void>((r) => {
-			settle = r;
+		let reject!: (err: Error) => void;
+		this.ready = new Promise<void>((res, rej) => {
+			settle = res;
+			reject = rej;
 		});
 		this.settleReady = settle;
+		this.rejectReady = reject;
 		void this.create();
 	}
 
@@ -89,23 +93,25 @@ class VoiceSessionImpl implements VoiceSession {
 	}
 
 	private async create(): Promise<void> {
-		const url = joinHermesUrl(this.config.hermesUrl, "/v1/voice/sessions");
-		const res = await fetch(url, {
-			method: "POST",
-			headers: authHeaders(this.config),
-			body: JSON.stringify({}),
-		});
-		if (!res.ok) {
+		try {
+			const url = joinHermesUrl(this.config.hermesUrl, "/v1/voice/sessions");
+			const res = await fetch(url, {
+				method: "POST",
+				headers: authHeaders(this.config),
+				body: JSON.stringify({}),
+			});
+			if (!res.ok) {
+				throw new Error(`Hermes voice session failed (${res.status}): ${await readErrorBody(res)}`);
+			}
+			const data = (await res.json()) as { id?: unknown };
+			if (typeof data.id !== "string" || data.id.length === 0) {
+				throw new Error("Hermes voice session response missing id");
+			}
+			this._id = data.id;
 			this.settleReady();
-			throw new Error(`Hermes voice session failed (${res.status}): ${await readErrorBody(res)}`);
+		} catch (err) {
+			this.rejectReady(err instanceof Error ? err : new Error(String(err)));
 		}
-		const data = (await res.json()) as { id?: unknown };
-		if (typeof data.id !== "string" || data.id.length === 0) {
-			this.settleReady();
-			throw new Error("Hermes voice session response missing id");
-		}
-		this._id = data.id;
-		this.settleReady();
 	}
 
 	async send(text: string): Promise<ClaraMessage> {
@@ -178,7 +184,10 @@ async function* streamAgentChunks(config: ClaraConfig, agentId: string, prompt: 
 	const url = joinHermesUrl(config.hermesUrl, `/v1/agents/${encodeURIComponent(agentId)}/stream`);
 	const res = await fetch(url, {
 		method: "POST",
-		headers: authHeaders(config),
+		headers: {
+			...authHeaders(config),
+			Accept: "text/event-stream",
+		},
 		body: JSON.stringify({ prompt, model: config.model, voice: config.voice }),
 	});
 	if (!res.ok) {

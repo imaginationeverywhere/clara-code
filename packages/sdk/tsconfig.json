@@ -2,7 +2,6 @@
 	"extends": "../../tsconfig.base.json",
 	"compilerOptions": {
 		"noEmit": true,
-		"rootDir": "./src",
 		"lib": ["ES2024", "DOM"]
 	},
 	"include": ["src/**/*.ts", "test/**/*.ts"],
