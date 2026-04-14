@@ -56,6 +56,7 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --profile                 # Inject user profile + wallet standard (Clerk sync, wallet top-up, avatar S3)
 /pickup-prompt --frontend                # Inject frontend stack standard (Next.js 16, TypeScript, Tailwind, Apollo, Clerk, Redux-Persist)
 /pickup-prompt --backend                 # Inject backend stack standard (Node/Express, Sequelize, GraphQL/Apollo, TypeScript)
+/pickup-prompt --mobile                  # Inject mobile stack standard (Expo SDK 52, Expo Router, NativeWind, Apollo, Clerk, Redux-Persist)
 
 # App store submission flags
 /pickup-prompt --apple                   # Apple App Store submission (xcrun altool, metadata, screenshots)
@@ -66,7 +67,11 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --stripe --migrations --testing                          # Subscription with DB changes
 /pickup-prompt --clerk --security --testing                             # Auth feature
 /pickup-prompt --design web --testing --security                        # Full frontend feature with design
-/pickup-prompt --apple-maps --mapbox --push --eas                       # Full mobile feature
+/pickup-prompt --mobile --push --eas --apple-maps --mapbox              # Full cross-platform mobile feature
+/pickup-prompt --mobile --eas --apple                                   # iOS mobile + App Store
+/pickup-prompt --mobile --eas --google                                  # Android mobile + Play Store
+/pickup-prompt --mobile --push --eas --apple --google                   # Full mobile CI/CD pipeline
+/pickup-prompt --apple-maps --mapbox --push --eas                       # Mobile maps + push (no full stack)
 /pickup-prompt --neon --migrations --security                           # Database setup
 /pickup-prompt --stripe --shipping --analytics --admin                  # Full commerce stack
 /pickup-prompt --eas --apple                                            # iOS build + submit
@@ -697,6 +702,48 @@ The loaded standard is prepended to the prompt context before execution. Key ove
 
 ---
 
+### `--mobile`
+
+Loads `.claude/standards/mobile.md`. Use for any prompt building a React Native screen, component, or feature. Enforces the exact Expo stack — no substitutions. Stack with `--push`, `--eas`, `--apple-maps`, `--mapbox` for specific capabilities.
+
+```bash
+MOBILE_STANDARD=""
+if echo "$*" | grep -q "\-\-mobile"; then
+  MOBILE_STANDARD=$(cat .claude/standards/mobile.md)
+  echo "📱 Mobile Stack Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Expo SDK 52 + Expo Router (file-based — no React Navigation manual setup)"
+  echo "   ✅ NativeWind — no StyleSheet.create(), no inline style objects"
+  echo "   ✅ Brand tokens: bg-brand-bg, text-brand-purple, text-brand-teal, etc."
+  echo "   ✅ SafeAreaView on EVERY screen root — no exceptions"
+  echo "   ✅ FlashList for all lists — no ScrollView + .map()"
+  echo "   ✅ expo-image — not react-native Image"
+  echo "   ✅ Min touch target: min-h-11 (44pt iOS) on all Pressable elements"
+  echo "   ✅ accessibilityRole + accessibilityLabel on every interactive element"
+  echo "   ✅ Clerk via @clerk/clerk-expo + SecureStore token cache (not AsyncStorage)"
+  echo "   ✅ Redux-Persist with AsyncStorage (not localStorage)"
+  echo "   ✅ Provider order: GestureHandler → SafeArea → Clerk → AuthSetup → Apollo → Redux → PersistGate"
+  echo "   ✅ EXPO_PUBLIC_* prefix for env vars (not NEXT_PUBLIC_*)"
+  echo "   ✅ Platform.OS gates required for iOS/Android differences"
+  echo "   ✅ Haptic feedback (expo-haptics) on primary actions"
+  echo "   ✅ Deep link scheme in app.json (required for Clerk OAuth)"
+  echo "   ✅ Apollo Client: cache-and-network policy for offline reads"
+  echo "   ❌ No React Navigation manual setup — Expo Router only"
+  echo "   ❌ No StyleSheet.create() — NativeWind only"
+  echo "   ❌ No TouchableHighlight — always Pressable"
+  echo "   ✅ docs/standards/mobile.md must be created/updated"
+  echo ""
+fi
+```
+
+The loaded standard is prepended to the prompt context before execution. Key overrides:
+- If the prompt uses `StyleSheet.create()`, the agent refactors to NativeWind `className`
+- If `react-native Image` is imported, the agent replaces with `expo-image`
+- If `ScrollView` + `.map()` is used for a list, the agent replaces with `FlashList`
+- If any `Pressable` lacks `accessibilityRole`, the agent adds it
+- If a screen root is a bare `View`, the agent wraps it in `SafeAreaView`
+
+---
+
 ### `--backend`
 
 Loads `.claude/standards/backend.md`. Use for any prompt scaffolding a new backend, adding routes, or setting up the backend stack. Enforces the exact stack — no substitutions.
@@ -777,6 +824,7 @@ if echo "$*" | grep -q "\-\-status"; then
   check_standard "profile"     "grep -rl 'walletBalance\|WalletTransaction\|/api/profile' src/ backend/src/ 2>/dev/null" "--profile"
   check_standard "frontend"    "grep -rl 'redux-persist\|@apollo/client\|@clerk/nextjs' frontend/src/ 2>/dev/null"       "--frontend"
   check_standard "backend"     "grep -rl '@apollo/server\|sequelize\|requireAuth' backend/src/ 2>/dev/null"              "--backend"
+  check_standard "mobile"      "ls mobile/app/_layout.tsx 2>/dev/null || ls app/_layout.tsx 2>/dev/null"                "--mobile"
 
   echo "  ──────────────────────────────────────────────────────────────"
   echo ""
@@ -1148,8 +1196,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.6.0
+version: 3.7.0
 changelog:
+  - v3.7.0: Added --mobile flag (Expo SDK 52, Expo Router, NativeWind, Apollo, Clerk/expo, Redux-Persist/AsyncStorage, FlashList, expo-image, accessibility, deep linking, Platform.OS patterns)
   - v3.6.0: Added --profile (user profile + wallet), --frontend (Next.js 16 stack), --backend (Node/Express/Sequelize/Apollo stack); updated --clerk with ProfileWidget requirement; created clerk-auth.md standard (was missing)
   - v3.5.0: Added --shipping (Shippo), --analytics (GA4), --apple (App Store), --google (Play Store), --admin (admin panel) flags; updated --stripe with platform fees (min 7%), disputes, refunds, metadata requirements
   - v3.4.0: Added --twilio, --slack, --digital-pass, --apple-maps, --mapbox, --eas, --push, --neon, --cf flags (9 new integration standards)
