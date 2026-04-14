@@ -8,7 +8,11 @@ export interface ClaraMessage {
 
 export interface ClaraConfig {
 	apiKey: string;
-	hermesUrl: string;
+	/**
+	 * Clara API gateway URL. Defaults to https://api.claracode.ai
+	 * Most developers do not need to set this.
+	 */
+	gatewayUrl?: string;
 	model?: string;
 	voice?: string;
 }

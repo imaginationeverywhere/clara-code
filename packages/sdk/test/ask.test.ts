@@ -56,10 +56,10 @@ afterAll(async () => {
 	}
 });
 
-test("ask() against local Hermes stub", async () => {
+test("ask() against local API stub", async () => {
 	const client = createClient({
 		apiKey: "test-token",
-		hermesUrl: `http://127.0.0.1:${port}`,
+		gatewayUrl: `http://127.0.0.1:${port}`,
 	});
 	const msg = await client.ask("hello");
 	expect(msg.role).toBe("assistant");

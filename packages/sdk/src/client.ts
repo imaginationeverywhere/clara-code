@@ -1,7 +1,12 @@
 import type { Agent, ClaraClient, ClaraConfig, ClaraMessage, VoiceSession } from "./types.js";
-import { joinHermesUrl } from "./url.js";
+import { joinGatewayUrl } from "./url.js";
 
 const JSON_HEADERS = { "Content-Type": "application/json" } as const;
+
+const DEFAULT_GATEWAY_URL = "https://api.claracode.ai";
+
+/** Resolved config with required gateway base URL (internal). */
+type ResolvedClaraConfig = ClaraConfig & { gatewayUrl: string };
 
 function authHeaders(config: ClaraConfig): HeadersInit {
 	return {
@@ -12,16 +17,16 @@ function authHeaders(config: ClaraConfig): HeadersInit {
 
 function parseClaraMessage(data: unknown): ClaraMessage {
 	if (!data || typeof data !== "object") {
-		throw new Error("Hermes returned invalid JSON for message");
+		throw new Error("Clara API returned invalid JSON for message");
 	}
 	const o = data as Record<string, unknown>;
 	const role = o.role;
 	const content = o.content;
 	if (role !== "user" && role !== "assistant") {
-		throw new Error("Hermes message missing valid role");
+		throw new Error("Clara API message missing valid role");
 	}
 	if (typeof content !== "string") {
-		throw new Error("Hermes message missing content string");
+		throw new Error("Clara API message missing content string");
 	}
 	const voiceUrl = o.voiceUrl;
 	return {
@@ -76,7 +81,7 @@ class VoiceSessionImpl implements VoiceSession {
 	private readonly rejectReady: (err: Error) => void;
 	readonly ready: Promise<void>;
 
-	constructor(private readonly config: ClaraConfig) {
+	constructor(private readonly config: ResolvedClaraConfig) {
 		let settle!: () => void;
 		let reject!: (err: Error) => void;
 		this.ready = new Promise<void>((res, rej) => {
@@ -94,18 +99,18 @@ class VoiceSessionImpl implements VoiceSession {
 
 	private async create(): Promise<void> {
 		try {
-			const url = joinHermesUrl(this.config.hermesUrl, "/v1/voice/sessions");
+			const url = joinGatewayUrl(this.config.gatewayUrl, "/v1/voice/sessions");
 			const res = await fetch(url, {
 				method: "POST",
 				headers: authHeaders(this.config),
 				body: JSON.stringify({}),
 			});
 			if (!res.ok) {
-				throw new Error(`Hermes voice session failed (${res.status}): ${await readErrorBody(res)}`);
+				throw new Error(`Clara voice session failed (${res.status}): ${await readErrorBody(res)}`);
 			}
 			const data = (await res.json()) as { id?: unknown };
 			if (typeof data.id !== "string" || data.id.length === 0) {
-				throw new Error("Hermes voice session response missing id");
+				throw new Error("Clara voice session response missing id");
 			}
 			this._id = data.id;
 			this.settleReady();
@@ -117,18 +122,18 @@ class VoiceSessionImpl implements VoiceSession {
 	async send(text: string): Promise<ClaraMessage> {
 		await this.ready;
 		if (this.closed) throw new Error("Voice session is closed");
-		const url = joinHermesUrl(this.config.hermesUrl, `/v1/voice/sessions/${encodeURIComponent(this._id)}/messages`);
+		const url = joinGatewayUrl(this.config.gatewayUrl, `/v1/voice/sessions/${encodeURIComponent(this._id)}/messages`);
 		const res = await fetch(url, {
 			method: "POST",
 			headers: authHeaders(this.config),
 			body: JSON.stringify({ text: text.trim(), model: this.config.model, voice: this.config.voice }),
 		});
 		if (!res.ok) {
-			throw new Error(`Hermes voice message failed (${res.status}): ${await readErrorBody(res)}`);
+			throw new Error(`Clara voice message failed (${res.status}): ${await readErrorBody(res)}`);
 		}
 		const data = (await res.json()) as { message?: unknown };
 		if (!data.message) {
-			throw new Error("Hermes voice response missing message");
+			throw new Error("Clara voice response missing message");
 		}
 		return parseClaraMessage(data.message);
 	}
@@ -137,7 +142,7 @@ class VoiceSessionImpl implements VoiceSession {
 		await this.ready;
 		if (this.closed) return;
 		this.closed = true;
-		const url = joinHermesUrl(this.config.hermesUrl, `/v1/voice/sessions/${encodeURIComponent(this._id)}`);
+		const url = joinGatewayUrl(this.config.gatewayUrl, `/v1/voice/sessions/${encodeURIComponent(this._id)}`);
 		try {
 			await fetch(url, { method: "DELETE", headers: authHeaders(this.config) });
 		} catch {
@@ -151,11 +156,11 @@ class AgentImpl implements Agent {
 		readonly id: string,
 		readonly name: string,
 		readonly soul: string,
-		private readonly config: ClaraConfig,
+		private readonly config: ResolvedClaraConfig,
 	) {}
 
 	async ask(prompt: string): Promise<ClaraMessage> {
-		const url = joinHermesUrl(this.config.hermesUrl, `/v1/agents/${encodeURIComponent(this.id)}/ask`);
+		const url = joinGatewayUrl(this.config.gatewayUrl, `/v1/agents/${encodeURIComponent(this.id)}/ask`);
 		const res = await fetch(url, {
 			method: "POST",
 			headers: authHeaders(this.config),
@@ -166,10 +171,10 @@ class AgentImpl implements Agent {
 			}),
 		});
 		if (!res.ok) {
-			throw new Error(`Hermes agent ask failed (${res.status}): ${await readErrorBody(res)}`);
+			throw new Error(`Clara agent request failed (${res.status}): ${await readErrorBody(res)}`);
 		}
 		const data = (await res.json()) as { message?: unknown };
-		if (!data.message) throw new Error("Hermes agent ask response missing message");
+		if (!data.message) throw new Error("Clara agent response missing message");
 		return parseClaraMessage(data.message);
 	}
 
@@ -180,8 +185,8 @@ class AgentImpl implements Agent {
 	}
 }
 
-async function* streamAgentChunks(config: ClaraConfig, agentId: string, prompt: string): AsyncIterable<string> {
-	const url = joinHermesUrl(config.hermesUrl, `/v1/agents/${encodeURIComponent(agentId)}/stream`);
+async function* streamAgentChunks(config: ResolvedClaraConfig, agentId: string, prompt: string): AsyncIterable<string> {
+	const url = joinGatewayUrl(config.gatewayUrl, `/v1/agents/${encodeURIComponent(agentId)}/stream`);
 	const res = await fetch(url, {
 		method: "POST",
 		headers: {
@@ -191,7 +196,7 @@ async function* streamAgentChunks(config: ClaraConfig, agentId: string, prompt: 
 		body: JSON.stringify({ prompt, model: config.model, voice: config.voice }),
 	});
 	if (!res.ok) {
-		throw new Error(`Hermes agent stream failed (${res.status}): ${await readErrorBody(res)}`);
+		throw new Error(`Clara agent stream failed (${res.status}): ${await readErrorBody(res)}`);
 	}
 	for await (const chunk of parseSseTextStream(res.body)) {
 		yield chunk;
@@ -199,10 +204,10 @@ async function* streamAgentChunks(config: ClaraConfig, agentId: string, prompt: 
 }
 
 class ClaraClientImpl implements ClaraClient {
-	constructor(private readonly config: ClaraConfig) {}
+	constructor(private readonly config: ResolvedClaraConfig) {}
 
 	async ask(prompt: string): Promise<ClaraMessage> {
-		const url = joinHermesUrl(this.config.hermesUrl, "/v1/ask");
+		const url = joinGatewayUrl(this.config.gatewayUrl, "/v1/ask");
 		const res = await fetch(url, {
 			method: "POST",
 			headers: authHeaders(this.config),
@@ -213,10 +218,10 @@ class ClaraClientImpl implements ClaraClient {
 			}),
 		});
 		if (!res.ok) {
-			throw new Error(`Hermes ask failed (${res.status}): ${await readErrorBody(res)}`);
+			throw new Error(`Clara API ask failed (${res.status}): ${await readErrorBody(res)}`);
 		}
 		const data = (await res.json()) as { message?: unknown };
-		if (!data.message) throw new Error("Hermes ask response missing message");
+		if (!data.message) throw new Error("Clara API ask response missing message");
 		return parseClaraMessage(data.message);
 	}
 
@@ -230,25 +235,25 @@ class ClaraClientImpl implements ClaraClient {
 	}
 
 	async createAgent(name: string, soul: string): Promise<Agent> {
-		const url = joinHermesUrl(this.config.hermesUrl, "/v1/agents");
+		const url = joinGatewayUrl(this.config.gatewayUrl, "/v1/agents");
 		const res = await fetch(url, {
 			method: "POST",
 			headers: authHeaders(this.config),
 			body: JSON.stringify({ name: name.trim(), soul: soul.trim() }),
 		});
 		if (!res.ok) {
-			throw new Error(`Hermes createAgent failed (${res.status}): ${await readErrorBody(res)}`);
+			throw new Error(`Clara API createAgent failed (${res.status}): ${await readErrorBody(res)}`);
 		}
 		const data = (await res.json()) as { id?: unknown; name?: unknown; soul?: unknown };
 		if (typeof data.id !== "string" || typeof data.name !== "string" || typeof data.soul !== "string") {
-			throw new Error("Hermes createAgent response missing id, name, or soul");
+			throw new Error("Clara API createAgent response missing id, name, or soul");
 		}
 		return new AgentImpl(data.id, data.name, data.soul, this.config);
 	}
 }
 
-async function* streamChunks(config: ClaraConfig, prompt: string): AsyncIterable<string> {
-	const url = joinHermesUrl(config.hermesUrl, "/v1/stream");
+async function* streamChunks(config: ResolvedClaraConfig, prompt: string): AsyncIterable<string> {
+	const url = joinGatewayUrl(config.gatewayUrl, "/v1/stream");
 	const res = await fetch(url, {
 		method: "POST",
 		headers: {
@@ -258,7 +263,7 @@ async function* streamChunks(config: ClaraConfig, prompt: string): AsyncIterable
 		body: JSON.stringify({ prompt, model: config.model, voice: config.voice }),
 	});
 	if (!res.ok) {
-		throw new Error(`Hermes stream failed (${res.status}): ${await readErrorBody(res)}`);
+		throw new Error(`Clara API stream failed (${res.status}): ${await readErrorBody(res)}`);
 	}
 	for await (const chunk of parseSseTextStream(res.body)) {
 		yield chunk;
@@ -266,5 +271,9 @@ async function* streamChunks(config: ClaraConfig, prompt: string): AsyncIterable
 }
 
 export function createClient(config: ClaraConfig): ClaraClient {
-	return new ClaraClientImpl(config);
+	const resolved: ResolvedClaraConfig = {
+		...config,
+		gatewayUrl: config.gatewayUrl ?? DEFAULT_GATEWAY_URL,
+	};
+	return new ClaraClientImpl(resolved);
 }

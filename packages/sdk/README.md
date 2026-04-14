@@ -1,6 +1,6 @@
 # @claracode/sdk
 
-TypeScript client for the Clara **Hermes** HTTP API. All requests use `Authorization: Bearer <apiKey>` and target `config.hermesUrl`.
+TypeScript client for the Clara Code HTTP API. All requests use `Authorization: Bearer <apiKey>` and target the Clara API gateway (`gatewayUrl`, default `https://api.claracode.ai`).
 
 ## Install
 
@@ -16,7 +16,7 @@ npm install @claracode/sdk
 - `client.startVoice()` — `VoiceSession` (`ready`, `send`, `close`)
 - `client.createAgent(name, soul)` — `Promise<Agent>` with `ask` / `stream`
 
-Hermes routes used (relative to `hermesUrl`):
+Routes used (relative to `gatewayUrl`):
 
 | Method | Path | Purpose |
 |--------|------|---------|
@@ -36,7 +36,7 @@ import { createClient } from "@claracode/sdk";
 
 const client = createClient({
 	apiKey: process.env.CLARA_API_KEY!,
-	hermesUrl: "https://hermes.example.com",
+	// gatewayUrl defaults to https://api.claracode.ai — no need to set it
 	model: "claude-sonnet-4",
 });
 
@@ -51,7 +51,6 @@ import { createClient } from "@claracode/sdk";
 
 const client = createClient({
 	apiKey: process.env.CLARA_API_KEY!,
-	hermesUrl: "https://hermes.example.com",
 });
 
 for await (const chunk of client.stream("Write a haiku about terminals.")) {
@@ -66,7 +65,6 @@ import { createClient } from "@claracode/sdk";
 
 const client = createClient({
 	apiKey: process.env.CLARA_API_KEY!,
-	hermesUrl: "https://hermes.example.com",
 	voice: "default",
 });
 
@@ -79,13 +77,13 @@ try {
 	return;
 }
 
-const msg = await session.send("What is Hermes?");
+const msg = await session.send("What is Clara Code?");
 console.log(msg.content, msg.voiceUrl);
 
 await session.close();
 ```
 
-## Local Hermes stub
+## Local API stub
 
 After installing this package (or from the monorepo `packages/sdk`), run the stub (defaults to port `18765`, token `stub-api-key`):
 
@@ -100,7 +98,7 @@ Then:
 ```typescript
 const client = createClient({
 	apiKey: "stub-api-key",
-	hermesUrl: "http://127.0.0.1:18765",
+	gatewayUrl: "http://127.0.0.1:18765",
 });
 await client.ask("ping");
 ```
