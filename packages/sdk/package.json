@@ -1,7 +1,7 @@
 {
 	"name": "@claracode/sdk",
 	"version": "0.1.0",
-	"description": "TypeScript client for Clara Hermes gateway (ask, stream, voice, agents)",
+	"description": "TypeScript client for Clara Code API (ask, stream, voice, agents)",
 	"type": "module",
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -35,7 +35,6 @@
 	},
 	"keywords": [
 		"clara",
-		"hermes",
 		"ai",
 		"sdk"
 	],
