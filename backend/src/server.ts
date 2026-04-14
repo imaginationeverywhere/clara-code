@@ -7,10 +7,13 @@ import compression from "compression";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
-import { Pool } from "pg";
 import { testConnection } from "@/config/database";
-import { createTalentAdminRouter, createTalentRegistryRouter } from "@/features/talent-registry";
-import { TalentRegistryService } from "@/features/talent-registry/talent-registry.service";
+import {
+	createDeveloperProgramRouter,
+	createTalentAdminRouter,
+	createTalentRegistryRouter,
+	getTalentRegistryService,
+} from "@/features/talent-registry";
 import { createClaraCoreSubgraph } from "@/graphql/clara-core/server";
 import type { GraphQLContext } from "@/graphql/resolvers/index";
 import { resolvers } from "@/graphql/resolvers/index";
@@ -24,8 +27,7 @@ import { logger } from "@/utils/logger";
 export const app = express();
 const PORT = process.env.PORT || 3001;
 
-const talentPool = new Pool({ connectionString: process.env.DATABASE_URL });
-const talentRegistryService = new TalentRegistryService(talentPool);
+const talentRegistryService = getTalentRegistryService();
 
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(compression());
@@ -51,6 +53,7 @@ app.use(express.json({ limit: "10mb" }));
 
 app.use("/api/talents", createTalentRegistryRouter(talentRegistryService));
 app.use("/api/admin/talents", createTalentAdminRouter(talentRegistryService));
+app.use("/api/developer-program", createDeveloperProgramRouter(talentRegistryService));
 
 // Health check MUST be before Clerk middleware — ECS health probes cannot carry auth tokens
 app.get("/health", async (_req, res) => {

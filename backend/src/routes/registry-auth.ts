@@ -2,8 +2,8 @@ import { requireAuth } from "@clerk/express";
 import { type Response, Router } from "express";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Subscription } from "@/models/Subscription";
-import { fetchNpmTokenFromVerdaccio } from "@/utils/registry-token";
 import { logger } from "@/utils/logger";
+import { fetchNpmTokenFromVerdaccio } from "@/utils/registry-token";
 
 const router = Router();
 router.use(requireAuth());

@@ -7,9 +7,9 @@ jest.mock("@/utils/request-tier", () => ({
 	resolveRequestTier: jest.fn(),
 }));
 
-import { resolveRequestTier } from "@/utils/request-tier";
 import modelsRoutes from "@/routes/models";
 import voiceRoutes from "@/routes/voice";
+import { resolveRequestTier } from "@/utils/request-tier";
 
 jest.mock("@clerk/express", () => ({
 	requireAuth: () => (_req: unknown, _res: unknown, next: () => void) => {

@@ -31,8 +31,7 @@ describe("POST /api/registry/token", () => {
 	const app = express();
 	app.use(express.json());
 	app.use((req, _res, next) => {
-		(req as AuthenticatedRequest).auth = () =>
-			Promise.resolve({ userId: "user_test" } as unknown as ClerkAuthResult);
+		(req as AuthenticatedRequest).auth = () => Promise.resolve({ userId: "user_test" } as unknown as ClerkAuthResult);
 		next();
 	});
 	app.use("/api/registry", registryAuthRoutes);
@@ -63,8 +62,7 @@ describe("POST /api/registry/token", () => {
 		const app401 = express();
 		app401.use(express.json());
 		app401.use((req, _res, next) => {
-			(req as AuthenticatedRequest).auth = () =>
-				Promise.resolve({ userId: null } as unknown as ClerkAuthResult);
+			(req as AuthenticatedRequest).auth = () => Promise.resolve({ userId: null } as unknown as ClerkAuthResult);
 			next();
 		});
 		app401.use("/api/registry", registryAuthRoutes);

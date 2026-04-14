@@ -1,6 +1,7 @@
 import type { Request, Response } from "express";
 import { Op } from "sequelize";
 import Stripe from "stripe";
+import { getTalentRegistryService } from "@/features/talent-registry/talent-registry-instance";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
 import { generateApiKey } from "@/utils/api-key";
@@ -59,9 +60,22 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 
 	try {
 		const stripe = getStripe();
+		const talentRegistry = getTalentRegistryService();
+
 		switch (event.type) {
 			case "checkout.session.completed": {
 				const session = event.data.object as Stripe.Checkout.Session;
+				if (session.metadata?.type === "developer_program") {
+					const userId = session.metadata.userId;
+					const subId = typeof session.subscription === "string" ? session.subscription : session.subscription?.id;
+					if (!userId || !subId) {
+						logger.warn("checkout.session.completed developer_program missing userId or subscription");
+						break;
+					}
+					await talentRegistry.activateDeveloperProgram(userId, subId);
+					logger.info(`Developer Program activated for user ${userId}`);
+					break;
+				}
 				const userId = session.metadata?.clerk_user_id;
 				const tierMeta = session.metadata?.tier;
 				if (!userId || (tierMeta !== "pro" && tierMeta !== "business")) {
@@ -104,6 +118,12 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 			}
 			case "customer.subscription.updated": {
 				const stripeSub = event.data.object as Stripe.Subscription;
+				if (stripeSub.metadata?.type === "developer_program") {
+					if (stripeSub.status === "canceled") {
+						await talentRegistry.cancelDeveloperProgram(stripeSub.id);
+					}
+					break;
+				}
 				const userId = stripeSub.metadata?.clerk_user_id;
 				if (!userId) break;
 				const priceId = stripeSub.items.data[0]?.price?.id;
@@ -148,6 +168,10 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 			}
 			case "customer.subscription.deleted": {
 				const stripeSub = event.data.object as Stripe.Subscription;
+				if (stripeSub.metadata?.type === "developer_program") {
+					await talentRegistry.cancelDeveloperProgram(stripeSub.id);
+					break;
+				}
 				const userId = stripeSub.metadata?.clerk_user_id;
 				if (!userId) break;
 				await Subscription.update(

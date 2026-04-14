@@ -23,28 +23,28 @@ export const voiceLimitMiddleware = async (
 	res: Response,
 	next: NextFunction,
 ): Promise<void> => {
-		const userId = req.claraUser?.userId;
-		const tierRaw = req.claraUser?.tier ?? "free";
-		const tier = tierRaw as VoiceTier;
+	const userId = req.claraUser?.userId;
+	const tierRaw = req.claraUser?.tier ?? "free";
+	const tier = tierRaw as VoiceTier;
 
-		if (!userId) {
-			res.status(401).json({ error: "Authentication required" });
-			return;
-		}
+	if (!userId) {
+		res.status(401).json({ error: "Authentication required" });
+		return;
+	}
 
-		const allowed = await voiceUsageService.checkAndIncrement(userId, tier);
-		if (!allowed) {
-			const used = await voiceUsageService.getUsedCountForCurrentMonth(userId);
-			res.status(402).json({
-				error: "voice_limit_reached",
-				message: "You've used all 100 voice exchanges for this month.",
-				used,
-				limit: FREE_MONTHLY_LIMIT,
-				reset_date: getNextResetDateKey(),
-				upgrade_url: upgradeUrl(),
-			});
-			return;
-		}
+	const allowed = await voiceUsageService.checkAndIncrement(userId, tier);
+	if (!allowed) {
+		const used = await voiceUsageService.getUsedCountForCurrentMonth(userId);
+		res.status(402).json({
+			error: "voice_limit_reached",
+			message: "You've used all 100 voice exchanges for this month.",
+			used,
+			limit: FREE_MONTHLY_LIMIT,
+			reset_date: getNextResetDateKey(),
+			upgrade_url: upgradeUrl(),
+		});
+		return;
+	}
 
-		next();
+	next();
 };

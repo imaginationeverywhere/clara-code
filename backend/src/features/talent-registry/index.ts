@@ -1,3 +1,4 @@
+export { createDeveloperProgramRouter } from "./developer-program.routes";
 export { createTalentAdminRouter, createTalentRegistryRouter } from "./talent-registry.routes";
 export { TalentRegistryService } from "./talent-registry.service";
 export type {
@@ -8,3 +9,4 @@ export type {
 	TalentStatus,
 	VoiceCommandPattern,
 } from "./talent-registry.types";
+export { getTalentRegistryService } from "./talent-registry-instance";
