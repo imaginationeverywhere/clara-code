@@ -20,3 +20,19 @@ services:
       start_period: 60s
     restart: unless-stopped
     container_name: clara-code-backend
+
+  registry:
+    image: verdaccio/verdaccio:6
+    container_name: clara-registry
+    ports:
+      - "4873:4873"
+    volumes:
+      - ./registry/config.yaml:/verdaccio/conf/config.yaml:ro
+      - ./registry/htpasswd:/verdaccio/htpasswd:ro
+      - verdaccio_storage:/verdaccio/storage
+    environment:
+      - VERDACCIO_PORT=4873
+    restart: unless-stopped
+
+volumes:
+  verdaccio_storage:
