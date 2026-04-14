@@ -9,13 +9,28 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 ## Usage
 
 ```
-/pickup-prompt                    # Process ALL not-started prompts for today (loops automatically)
-/pickup-prompt 2026/April/12      # Specific date
-/pickup-prompt --list             # List all not-started prompts without executing
-/pickup-prompt 01-cc-web-full.md  # Execute a specific prompt by filename only
-/pickup-prompt --clerk            # Inject Clerk auth standard before executing (see below)
-/pickup-prompt --stripe           # Inject Stripe implementation standard before executing (see below)
-/pickup-prompt --clerk --stripe   # Inject both standards (auth + payments)
+/pickup-prompt                          # Process ALL not-started prompts for today (loops automatically)
+/pickup-prompt 2026/April/12            # Specific date
+/pickup-prompt --list                   # List all not-started prompts without executing
+/pickup-prompt 01-cc-web-full.md        # Execute a specific prompt by filename only
+/pickup-prompt --status                 # Show standards dashboard: what's implemented vs missing in this Heru
+/pickup-prompt --requirements           # Discovery intake: collect Heru info, generate PRD/BRD/VRD
+/pickup-prompt --all                    # List ALL Auset module prompts needed + queue missing ones
+
+# Standards flags (can be stacked)
+/pickup-prompt --clerk                  # Inject Clerk auth standard
+/pickup-prompt --stripe                 # Inject Stripe standard (dynamic pricing, webhooks)
+/pickup-prompt --graphql                # Inject GraphQL standard (DataLoader, auth guards, naming)
+/pickup-prompt --migrations             # Inject DB migrations standard (up/down, all 3 envs)
+/pickup-prompt --multi-tenant           # Inject multi-tenancy standard (tenant_id, PLATFORM/SITE_OWNER)
+/pickup-prompt --testing                # Inject testing standard (80% coverage, error paths, no DB mocks)
+/pickup-prompt --security               # Inject security standard (auth guards, rate limiting, CORS)
+/pickup-prompt --desktop                # Inject desktop app standard (VS Code ext, Electron, SecretStorage)
+
+# Stack flags for complex prompts
+/pickup-prompt --graphql --migrations --multi-tenant --security   # Full backend feature
+/pickup-prompt --stripe --migrations --testing                    # Subscription with DB changes
+/pickup-prompt --clerk --security --testing                       # Auth feature
 ```
 
 ## Flags
@@ -80,6 +95,250 @@ The loaded standard is prepended to the prompt context before execution. Key ove
 - If the prompt uses `process.env.STRIPE_PRICE_*` anywhere, the agent replaces it with `stripe.prices.list()` + metadata lookup
 - If the webhook body is parsed with `express.json()`, the agent fixes it to `express.raw()`
 - If no `/api/webhooks/stripe` endpoint exists, the agent creates one
+
+---
+
+### `--graphql`
+
+Loads `.claude/standards/graphql.md`. Use for any prompt touching resolvers, schema, or federation.
+
+```bash
+GRAPHQL_STANDARD=""
+if echo "$*" | grep -q "\-\-graphql"; then
+  GRAPHQL_STANDARD=$(cat .claude/standards/graphql.md)
+  echo "📊 GraphQL Standard loaded — applying mandatory constraints:"
+  echo "   ❌ No resolver without DataLoader for relationships"
+  echo "   ✅ Auth guard required: if (!ctx.auth?.userId) throw AuthenticationError"
+  echo "   ✅ Naming: PascalCase types, camelCase fields/queries, SCREAMING_SNAKE enums"
+  echo "   ✅ docs/standards/graphql.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--migrations`
+
+Loads `.claude/standards/migrations.md`. Use for any prompt creating or modifying DB schema.
+
+```bash
+MIGRATIONS_STANDARD=""
+if echo "$*" | grep -q "\-\-migrations"; then
+  MIGRATIONS_STANDARD=$(cat .claude/standards/migrations.md)
+  echo "🗄️  Migrations Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Every migration needs up() AND down()"
+  echo "   ❌ No DROP column — deprecate first, drop in next deploy"
+  echo "   ✅ Run on .env.local → .env.develop → .env.production"
+  echo "   ✅ Add index on every foreign key"
+  echo "   ✅ docs/standards/migrations.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--multi-tenant`
+
+Loads `.claude/standards/multi-tenant.md`. Use for any prompt touching DB queries or data access.
+
+```bash
+MULTITENANT_STANDARD=""
+if echo "$*" | grep -q "\-\-multi-tenant"; then
+  MULTITENANT_STANDARD=$(cat .claude/standards/multi-tenant.md)
+  echo "🏢 Multi-Tenancy Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Every DB query scoped to tenantId"
+  echo "   ❌ No mixing PLATFORM_OWNER and SITE_OWNER concerns"
+  echo "   ✅ All business tables have tenant_id column + index"
+  echo "   ✅ docs/standards/multi-tenant.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--testing`
+
+Loads `.claude/standards/testing.md`. Use for any prompt that adds features (tests are required with the feature).
+
+```bash
+TESTING_STANDARD=""
+if echo "$*" | grep -q "\-\-testing"; then
+  TESTING_STANDARD=$(cat .claude/standards/testing.md)
+  echo "🧪 Testing Standard loaded — applying mandatory constraints:"
+  echo "   ✅ 80% line/statement coverage minimum on changed files"
+  echo "   ✅ Error paths required: 401, 403, 404, 400, 500"
+  echo "   ❌ No mocking internal services — test through HTTP layer"
+  echo "   ✅ docs/standards/testing.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--security`
+
+Loads `.claude/standards/security.md`. Use for any prompt adding routes, file uploads, or auth logic.
+
+```bash
+SECURITY_STANDARD=""
+if echo "$*" | grep -q "\-\-security"; then
+  SECURITY_STANDARD=$(cat .claude/standards/security.md)
+  echo "🔒 Security Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Auth check on every protected route"
+  echo "   ✅ Parameterized queries (no string interpolation in SQL)"
+  echo "   ✅ Rate limiting on all public endpoints"
+  echo "   ✅ Helmet headers applied"
+  echo "   ✅ docs/standards/security.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--desktop`
+
+Loads `.claude/standards/desktop.md`. Use for any prompt touching the VS Code extension, Electron app, or Tauri desktop.
+
+```bash
+DESKTOP_STANDARD=""
+if echo "$*" | grep -q "\-\-desktop"; then
+  DESKTOP_STANDARD=$(cat .claude/standards/desktop.md)
+  echo "🖥️  Desktop Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Auth via PKCE + loopback — no web redirect flows"
+  echo "   ✅ Secrets in SecretStorage — not settings.json or localStorage"
+  echo "   ✅ IPC via contextBridge — never expose Node modules directly"
+  echo "   ✅ Signed builds only (notarized macOS, Authenticode Windows)"
+  echo "   ✅ docs/standards/desktop.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--status`
+
+Shows a dashboard of which standards are implemented in this Heru and which tech docs are missing.
+
+```bash
+if echo "$*" | grep -q "\-\-status"; then
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "  STANDARDS STATUS — $(basename $(pwd))"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  printf "  %-18s %-14s %-12s %s\n" "Standard" "Implemented" "Tech Doc" "Run with"
+  echo "  ──────────────────────────────────────────────────────────────"
+
+  check_standard() {
+    local name=$1; local pattern=$2; local flag=$3
+    local impl="❌ Missing"; local doc="❌ Missing"
+    if eval "$pattern" 2>/dev/null | grep -q .; then impl="✅ Found"; fi
+    if [ -f "docs/standards/${name}.md" ]; then doc="✅ Found"; fi
+    printf "  %-18s %-14s %-12s %s\n" "$name" "$impl" "$doc" "$flag"
+  }
+
+  check_standard "clerk"       "grep -rl 'clerkMiddleware\|requireApiKey' src/ 2>/dev/null"     "--clerk"
+  check_standard "stripe"      "grep -rl 'webhooks/stripe\|constructEvent' backend/src/ 2>/dev/null" "--stripe"
+  check_standard "graphql"     "grep -rl 'typeDefs\|ApolloServer\|resolvers' src/ 2>/dev/null" "--graphql"
+  check_standard "migrations"  "ls migrations/*.js 2>/dev/null || ls backend/src/migrations/*.ts 2>/dev/null" "--migrations"
+  check_standard "multi-tenant" "grep -rl 'tenantId\|tenant_id' src/ 2>/dev/null"              "--multi-tenant"
+  check_standard "testing"     "ls src/__tests__/**/*.test.ts 2>/dev/null || ls __tests__/**/*.test.ts 2>/dev/null" "--testing"
+  check_standard "security"    "grep -rl 'helmet\|rateLimit' src/ backend/src/ 2>/dev/null"     "--security"
+  check_standard "desktop"     "grep -rl 'SecretStorage\|contextBridge\|ipcMain' src/ 2>/dev/null" "--desktop"
+
+  echo "  ──────────────────────────────────────────────────────────────"
+  echo ""
+  echo "  Missing tech docs can be created with: /pickup-prompt --<name> on any prompt"
+  echo "  Tech docs live in: docs/standards/<name>.md (Heru-specific config)"
+  echo ""
+  exit 0
+fi
+```
+
+---
+
+### `--requirements`
+
+Discovery intake for NEW Herus or MIGRATIONS from existing projects. Collects business requirements and generates PRD/BRD/VRD documents. Use BEFORE running `--all` or `/bootstrap-project`.
+
+```bash
+if echo "$*" | grep -q "\-\-requirements"; then
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "  REQUIREMENTS INTAKE — $(basename $(pwd))"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  # Claude: ask the user for the following, then generate docs
+  echo "  Collecting business requirements. Answer each prompt:"
+  echo ""
+  echo "  1. Heru name (e.g., 'DreamiHairCare', 'QuikCarRental')"
+  echo "  2. Business type (e.g., 'salon booking', 'car rental marketplace')"
+  echo "  3. Existing website URL (or 'none')"
+  echo "  4. Target users (e.g., 'salon owners + their customers')"
+  echo "  5. Key features needed (bullet list)"
+  echo "  6. Is this a new project or migrating an existing one?"
+  echo "  7. Any existing tech stack to preserve?"
+  echo "  8. Notes / constraints / business goals"
+  echo ""
+  # Claude: gather answers, then:
+  # 1. Fetch and analyze existing website if URL provided
+  # 2. Run /analyze, /critically-think, /facts on the requirements
+  # 3. Generate docs/PRD.md (product requirements)
+  # 4. Generate docs/BRD.md (business requirements, if enough business context)
+  # 5. Generate docs/VRD.md (visual requirements, if enough design context or existing site)
+  # 6. Commit: feat(docs): generate PRD/BRD/VRD from requirements intake
+  # 7. Tell user: "Run /pickup-prompt --all to generate implementation prompts"
+  exit 0
+fi
+```
+
+---
+
+### `--all`
+
+Lists every Auset platform module and shows which are implemented vs missing. Queues missing modules as prompts. Use after `--requirements` on new/migrated projects.
+
+```bash
+if echo "$*" | grep -q "\-\-all"; then
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "  AUSET PLATFORM — FULL MODULE CHECKLIST"
+  echo "  $(basename $(pwd))"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  # Claude: check for each Auset Standard Module and output status:
+  # ✅ = implemented  ❌ = missing  ⚠️  = partial
+  #
+  # Core Platform
+  # [ ] Clerk auth (sign-in, sign-up, middleware, webhook sync)
+  # [ ] Stripe subscriptions (checkout, webhook, tier management)
+  # [ ] User profile widget
+  # [ ] Admin dashboard
+  # [ ] CMS (content management)
+  # [ ] CRM (customer management)
+  #
+  # Commerce
+  # [ ] Shopping cart
+  # [ ] Checkout flow
+  # [ ] Order management
+  # [ ] Product catalog
+  #
+  # Communications
+  # [ ] Email notifications (SendGrid)
+  # [ ] SMS notifications (Twilio)
+  # [ ] Push notifications
+  #
+  # Infrastructure
+  # [ ] Onboarding flow
+  # [ ] GA4 analytics
+  # [ ] Heru Feedback SDK
+  # [ ] S3 file storage
+  # [ ] Search
+  # [ ] i18n (internationalization)
+  # [ ] n8n automation workflows
+  # [ ] CI/CD pipeline
+  #
+  # After listing, ask: "Queue all missing modules as prompts? (y/n)"
+  # If y: generate prompt files in prompts/<date>/1-not-started/ for each missing module
+  exit 0
+fi
 
 ## Execution
 
@@ -356,8 +615,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.1.0
+version: 3.2.0
 changelog:
+  - v3.2.0: Added --graphql, --migrations, --multi-tenant, --testing, --security, --desktop flags; added --status dashboard; added --requirements intake; added --all Auset module checklist
   - v3.1.0: Added --stripe flag; Stripe standard enforces dynamic pricing, webhook pattern, ngrok URL convention, SSM secrets
   - v3.0.0: Auto-loop all prompts; worktree detached then branch; gh pr create; cleanup merged branches on Step 0
   - v2.1.0: Added Step 0 git pull
