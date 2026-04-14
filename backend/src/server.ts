@@ -14,6 +14,7 @@ import { resolvers } from "@/graphql/resolvers/index";
 import { typeDefs } from "@/graphql/schema/index";
 import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
+import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 import { logger } from "@/utils/logger";
 
 export const app = express();
@@ -34,6 +35,11 @@ if (allowedOrigins.length === 0) {
 }
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
+
+app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), (req, res): void => {
+	void stripeWebhookHandler(req, res);
+});
+
 app.use(express.json({ limit: "10mb" }));
 
 // Health check MUST be before Clerk middleware — ECS health probes cannot carry auth tokens

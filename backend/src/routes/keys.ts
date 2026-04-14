@@ -29,7 +29,7 @@ router.get("/", async (req: AuthenticatedRequest, res: Response): Promise<void> 
 		const maskedKeys = keys.map((k: ApiKey) => ({
 			id: k.id,
 			name: k.name,
-			key: `sk-clara-...${k.key.slice(-4)}`,
+			key: k.key ? `sk-clara-...${k.key.slice(-4)}` : k.keyPrefix ? `${k.keyPrefix}...` : "—",
 			lastUsedAt: k.lastUsedAt,
 			createdAt: k.createdAt,
 		}));

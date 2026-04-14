@@ -44,7 +44,7 @@ export const resolvers = {
 			return keys.map((k: ApiKey) => ({
 				id: k.id,
 				name: k.name,
-				keyPreview: `sk-clara-...${k.key.slice(-4)}`,
+				keyPreview: k.key ? `sk-clara-...${k.key.slice(-4)}` : k.keyPrefix ? `${k.keyPrefix}...` : "—",
 				lastUsedAt: k.lastUsedAt?.toISOString() ?? null,
 				createdAt: k.createdAt.toISOString(),
 			}));

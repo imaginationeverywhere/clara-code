@@ -22,6 +22,12 @@ jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
 }));
 
+jest.mock("@/middleware/api-key-auth", () => ({
+	requireClaraOrClerk: (_req: unknown, _res: unknown, next: () => void) => {
+		next();
+	},
+}));
+
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
 
