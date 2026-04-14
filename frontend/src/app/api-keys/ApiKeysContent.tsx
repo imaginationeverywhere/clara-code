@@ -25,7 +25,7 @@ export default function ApiKeysContent() {
   )
 }
 
-function ApiKeysInner() {
+export function ApiKeysInner({ embedded = false }: { embedded?: boolean }) {
   const [modalOpen, setModalOpen] = useState(false)
   const { data, loading, error, refetch } = useQuery<MyApiKeysQueryData>(MY_API_KEYS, {
     fetchPolicy: 'network-only',
@@ -55,9 +55,9 @@ function ApiKeysInner() {
     void navigator.clipboard.writeText(prefix).catch(() => {})
   }, [])
 
-  return (
-    <main className="min-h-screen bg-[#09090F] p-8">
-      <div className="mx-auto max-w-3xl">
+  const shell = (
+    <>
+      {!embedded && (
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <h1 className="text-3xl font-bold text-white">API keys</h1>
@@ -67,33 +67,43 @@ function ApiKeysInner() {
             Back to dashboard
           </Link>
         </div>
+      )}
 
-        <button
-          type="button"
-          onClick={() => setModalOpen(true)}
-          className="mb-8 rounded-lg bg-clara-blue px-4 py-2 text-sm font-medium text-white hover:bg-blue-600"
-        >
-          Create new key
-        </button>
+      <button
+        type="button"
+        onClick={() => setModalOpen(true)}
+        className={`rounded-lg bg-clara-blue px-4 py-2 text-sm font-medium text-white hover:bg-blue-600 ${embedded ? 'mb-6' : 'mb-8'}`}
+      >
+        Create new key
+      </button>
 
-        {loading && <p className="text-sm text-white/40">Loading keys…</p>}
-        {error && (
-          <p className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
-            Could not reach GraphQL ({error.message}). Keys will appear here when the backend is available.
-          </p>
+      {loading && <p className="text-sm text-white/40">Loading keys…</p>}
+      {error && (
+        <p className="mb-6 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-100">
+          Could not reach GraphQL ({error.message}). Keys will appear here when the backend is available.
+        </p>
+      )}
+
+      <div className="space-y-4">
+        {keys.length === 0 && !loading && (
+          <p className="text-sm text-white/40">No keys yet. Create one to get started.</p>
         )}
-
-        <div className="space-y-4">
-          {keys.length === 0 && !loading && (
-            <p className="text-sm text-white/40">No keys yet. Create one to get started.</p>
-          )}
-          {keys.map((k) => (
-            <ApiKeyCard key={k.id} apiKey={k} onRevoke={onRevoke} onCopyPrefix={onCopyPrefix} />
-          ))}
-        </div>
+        {keys.map((k) => (
+          <ApiKeyCard key={k.id} apiKey={k} onRevoke={onRevoke} onCopyPrefix={onCopyPrefix} />
+        ))}
       </div>
 
       <CreateKeyModal open={modalOpen} onClose={() => setModalOpen(false)} onCreate={onCreate} />
+    </>
+  )
+
+  if (embedded) {
+    return <div className="max-w-3xl space-y-6">{shell}</div>
+  }
+
+  return (
+    <main className="min-h-screen bg-[#09090F] p-8">
+      <div className="mx-auto max-w-3xl">{shell}</div>
     </main>
   )
 }
