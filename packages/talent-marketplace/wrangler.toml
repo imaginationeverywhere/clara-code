@@ -1,0 +1,9 @@
+name = "clara-talent-marketplace"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = ".next"
+
+[env.preview]
+vars = { NEXT_PUBLIC_BACKEND_URL = "https://api-dev.claracode.ai" }
+
+[env.production]
+vars = { NEXT_PUBLIC_BACKEND_URL = "https://api.claracode.ai" }

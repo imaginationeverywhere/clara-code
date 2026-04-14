@@ -40,6 +40,7 @@
 	],
 	"exclude": [
 		"frontend/**/*",
+		"packages/talent-marketplace/**/*",
 		"packages/ide-extension/**/*",
 		"packages/cli/**/*",
 		"**/dist/**",
