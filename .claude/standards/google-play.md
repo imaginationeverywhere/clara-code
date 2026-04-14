@@ -1,0 +1,197 @@
+# Google Play Store Submission Standard
+
+**Version:** 1.0.0
+**Enforced by:** `/pickup-prompt --google`
+
+> Android builds use EAS Build on QCS1. Submission to Google Play uses the Play Console or `bundletool`. NEVER use `eas submit` for Play Store (same 409 issue as iOS applies to auth flows).
+
+Covers: Google Play Console prep, AAB generation, signing, store listing, and submission workflow.
+
+---
+
+## CRITICAL RULES
+
+### 1. Build pipeline — QCS1, produce signed AAB
+
+```bash
+# ✅ Full Android submission workflow on QCS1
+ssh -i ~/.ssh/quik-cloud ayoungboy@100.113.53.80
+
+# Step 1: Build production AAB (Android App Bundle — required for Play Store)
+EXPO_TOKEN=$(cat ~/.expo_token) eas build --platform android --profile production
+
+# EAS outputs a signed .aab file
+# → Download from EAS dashboard: eas build:list --platform android
+# → or: EXPO_TOKEN=$(cat ~/.expo_token) eas build:download --id <build-id> --output ./build.aab
+
+# Step 2: Upload via Play Console web UI (recommended)
+# play.google.com/console → [App] → Production → Create new release → Upload AAB
+
+# Step 3: OR upload via fastlane supply (CLI alternative)
+# gem install fastlane
+# fastlane supply --aab ./build.aab --track production \
+#   --json_key_data "$GOOGLE_PLAY_SERVICE_ACCOUNT_JSON"
+
+# SSM: /[project]/GOOGLE_PLAY_SERVICE_ACCOUNT_JSON (base64 service account JSON)
+```
+
+---
+
+### 2. Version code — must increment with every release
+
+```javascript
+// app.config.js
+android: {
+  versionCode: Number(process.env.ANDROID_VERSION_CODE ?? 1),
+  // Must be higher than ALL previous Play Store builds (including internal tracks)
+  // Increment by 1: 1 → 2 → 3...
+}
+
+// ✅ Before building, check Play Console for current highest versionCode:
+// Play Console → [App] → App Bundle Explorer → highest versionCode shown
+
+// ❌ Reusing a versionCode = Play Console rejects the upload silently
+```
+
+---
+
+### 3. Store listing checklist (REQUIRED before submitting for review)
+
+```bash
+# Play Console → [App] → Store Presence → Main store listing
+
+# Required fields:
+✅ App name (max 30 chars)
+✅ Short description (max 80 chars)
+✅ Full description (max 4000 chars)
+✅ App icon (512×512 PNG)
+✅ Feature graphic (1024×500 PNG)
+✅ Screenshots — min 2, max 8 per form factor:
+   ✅ Phone (min 320px, max 3840px on longest side)
+   ✅ 7-inch tablet (if tablet supported)
+   ✅ 10-inch tablet (if tablet supported)
+
+# App content
+✅ Privacy policy URL — live and accessible
+✅ App category
+✅ Target audience (age group)
+✅ Content rating questionnaire completed (generates IARC rating)
+✅ Data safety form (what you collect, why, how you share it)
+```
+
+---
+
+### 4. Data Safety form — declare ALL data types
+
+```bash
+# Play Console → [App] → Store Presence → Data Safety
+# Under-declaring = policy violation + removal from Play Store
+
+# Minimum declarations for most Quik Nation apps:
+✅ Personal info: Email address (collected, required for account)
+✅ App activity: App interactions (usage analytics)
+✅ App info: Crash logs (diagnostics)
+✅ Device or other IDs: Device ID (for push notifications)
+
+# If collecting location:
+✅ Location: Approximate or Precise location (declare purpose)
+
+# If processing payments:
+✅ Financial info: Payment info (collected, encrypted in transit)
+# Note: if using Google Play Billing for digital goods, declare this
+
+# Data safety != privacy policy — both required
+```
+
+---
+
+### 5. Release tracks — use staged rollout
+
+```bash
+# ✅ Release track strategy:
+# Internal testing → Closed testing (alpha) → Open testing (beta) → Production
+
+# For every new release:
+# 1. Upload to Internal Testing first — instant review, Quik Nation team only
+# 2. Run 24-48 hour soak, verify crash-free
+# 3. Promote to Production with staged rollout: 10% → review → 100%
+
+# Staged rollout in Play Console:
+# Production → Create new release → Upload AAB → Set rollout % (e.g. 10%)
+# Monitor: Play Console → Android Vitals → Crashes / ANRs
+# If clean: increase rollout → 20% → 50% → 100%
+# If issues: halt rollout → fix → republish
+
+# ❌ Full 100% immediate rollout for major updates
+```
+
+---
+
+### 6. Google Play Billing — required for digital in-app purchases
+
+```typescript
+// ✅ Digital content consumed in the app MUST use Google Play Billing
+// (Same rule as Apple — physical goods = Stripe allowed)
+import { useIAP, InAppPurchase, requestPurchase } from "react-native-iap";
+
+// ✅ Physical goods, services, appointments = Stripe Checkout allowed
+// ❌ Subscriptions for app features (premium tiers) = must use Play Billing
+
+// Pattern: detect platform, use correct billing
+import { Platform } from "react-native";
+const useNativeBilling = Platform.OS === "ios" || Platform.OS === "android";
+// Use react-native-iap for in-app subscriptions/consumables
+```
+
+---
+
+### 7. App signing — use Play App Signing
+
+```bash
+# ✅ Enroll in Google Play App Signing (managed by Google)
+# EAS handles keystore generation and signs the AAB
+# Play Console → Setup → App signing → Managed by Google Play
+
+# ✅ Keystore generated by EAS — stored in EAS secrets, NOT local filesystem
+# EXPO_TOKEN=$(cat ~/.expo_token) eas credentials --platform android
+# → Shows keystore fingerprints and details
+
+# ❌ Managing your own keystore file locally — lost keystore = can never update the app
+# ❌ Committing keystore to git
+
+# SSM: /[project]/ANDROID_KEYSTORE_BASE64 (if managing yourself — EAS Secrets preferred)
+```
+
+---
+
+### 8. Target API level — must meet Google's current requirement
+
+```json
+// app.json / app.config.js
+{
+  "android": {
+    "compileSdkVersion": 35,
+    "targetSdkVersion": 35,
+    "minSdkVersion": 24
+  }
+}
+
+// Google requires apps to target within 1 year of latest Android release
+// Current minimum (2025): targetSdkVersion ≥ 34
+// New apps: targetSdkVersion ≥ 35
+// Check: developer.android.com/google/play/requirements/target-sdk
+```
+
+---
+
+### Heru-specific tech doc required
+
+Each Heru submitting to Google Play MUST have `docs/standards/google-play.md` documenting:
+- Google Play application ID (package name, e.g. `com.quiknation.app`)
+- Current versionCode on Play Store (track manually)
+- Release track strategy (internal → beta → production staged %)
+- Service account for Play Console API (stored in SSM)
+- Play Billing items (if any) — or explicit note that physical goods use Stripe
+- Screenshot dimensions generated and where stored
+
+If `docs/standards/google-play.md` does not exist, create it.

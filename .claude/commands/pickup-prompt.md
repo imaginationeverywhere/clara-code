@@ -32,11 +32,41 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --design cli             # CLI/TUI surface only (Ink + chalk)
 /pickup-prompt --design mobile          # Mobile surface only (React Native + NativeWind)
 
+# Integration flags
+/pickup-prompt --twilio                 # Inject Twilio standard (SMS/Voice/Video, webhook sig validation)
+/pickup-prompt --slack                  # Inject Slack standard (bot, slash commands, Block Kit)
+/pickup-prompt --digital-pass           # Inject PassKit standard (Apple Wallet + Google Wallet bridge)
+/pickup-prompt --push                   # Inject push notifications standard (APNs + FCM via expo-notifications)
+
+# Mobile map flags (iOS = Apple Maps, Android = Mapbox — use both for cross-platform)
+/pickup-prompt --apple-maps             # Apple Maps (iOS only, Platform.OS gate required)
+/pickup-prompt --mapbox                 # Mapbox (Android only, Platform.OS gate required)
+
+# Infrastructure flags
+/pickup-prompt --eas                    # EAS builds on QCS1 (xcrun altool, EXPO_TOKEN, ASC issuer)
+/pickup-prompt --neon                   # Neon PostgreSQL (provision prod + dev branches, pgbouncer)
+/pickup-prompt --cf                     # Cloudflare Pages frontend (wrangler.toml, CF env vars, OpenNext)
+
+# Commerce and business flags
+/pickup-prompt --shipping                # Inject Shippo shipping standard
+/pickup-prompt --analytics               # Inject GA4 analytics standard
+/pickup-prompt --admin                   # Inject admin panel standard (RBAC, audit log, data tables)
+
+# App store submission flags
+/pickup-prompt --apple                   # Apple App Store submission (xcrun altool, metadata, screenshots)
+/pickup-prompt --google                  # Google Play Store submission (AAB, Play Console, staged rollout)
+
 # Stack flags for complex prompts
-/pickup-prompt --graphql --migrations --multi-tenant --security   # Full backend feature
-/pickup-prompt --stripe --migrations --testing                    # Subscription with DB changes
-/pickup-prompt --clerk --security --testing                       # Auth feature
-/pickup-prompt --design web --testing --security                  # Full frontend feature with design
+/pickup-prompt --graphql --migrations --multi-tenant --security         # Full backend feature
+/pickup-prompt --stripe --migrations --testing                          # Subscription with DB changes
+/pickup-prompt --clerk --security --testing                             # Auth feature
+/pickup-prompt --design web --testing --security                        # Full frontend feature with design
+/pickup-prompt --apple-maps --mapbox --push --eas                       # Full mobile feature
+/pickup-prompt --neon --migrations --security                           # Database setup
+/pickup-prompt --stripe --shipping --analytics --admin                  # Full commerce stack
+/pickup-prompt --eas --apple                                            # iOS build + submit
+/pickup-prompt --eas --google                                           # Android build + submit
+/pickup-prompt --eas --apple --google                                   # Both stores
 ```
 
 ## Flags
@@ -93,6 +123,11 @@ if echo "$*" | grep -q "\-\-stripe"; then
   echo "   ✅ Local ngrok webhook endpoint required: https://[project]-backend-dev.ngrok.quiknation.com/api/webhooks/stripe"
   echo "   ✅ Hosted Checkout (not Elements) for subscription flows"
   echo "   ✅ Price lookup via Stripe metadata tags (clara_tier, clara_type)"
+  echo "   ✅ Platform fees: minimum 7%, passed to customer — never absorbed"
+  echo "   ✅ Metadata required on every Stripe object (session, charge, price)"
+  echo "   ✅ Disputes: charge.dispute.created + .closed events handled"
+  echo "   ✅ Refunds: POST /api/stripe/refund endpoint + charge.refunded event"
+  echo "   ✅ All 6 webhook events registered (checkout, subscription, dispute x2, refund)"
   echo ""
 fi
 ```
@@ -271,6 +306,325 @@ The loaded standard is prepended to the prompt context before execution. Key ove
 
 ---
 
+### `--twilio`
+
+Loads `.claude/standards/twilio.md`. Use for any prompt involving SMS, Voice, Video, or WhatsApp via Twilio.
+
+```bash
+TWILIO_STANDARD=""
+if echo "$*" | grep -q "\-\-twilio"; then
+  TWILIO_STANDARD=$(cat .claude/standards/twilio.md)
+  echo "📱 Twilio Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Credentials from SSM: TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN, TWILIO_PHONE_NUMBER"
+  echo "   ✅ Webhook: X-Twilio-Signature validated on every endpoint"
+  echo "   ✅ Body parser: express.urlencoded() — NOT express.json() for Twilio webhooks"
+  echo "   ✅ Rate limiting on SMS send: 5/min/IP"
+  echo "   ❌ No phone numbers in logs — log messageSid only"
+  echo "   ✅ getTwilioClient() singleton"
+  echo "   ✅ statusCallback URL required on all SMS creates"
+  echo "   ✅ docs/standards/twilio.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--slack`
+
+Loads `.claude/standards/slack.md`. Use for any prompt adding Slack notifications, slash commands, or event handlers.
+
+```bash
+SLACK_STANDARD=""
+if echo "$*" | grep -q "\-\-slack"; then
+  SLACK_STANDARD=$(cat .claude/standards/slack.md)
+  echo "💬 Slack Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Bot token and channel IDs from SSM"
+  echo "   ✅ Slash commands / events: validate X-Slack-Signature on every request"
+  echo "   ✅ getSlackClient() singleton"
+  echo "   ✅ Block Kit for structured messages"
+  echo "   ✅ Rate limiting: max 2 concurrent Slack calls (Tier 3 = 50/min)"
+  echo "   ❌ No PII in Slack messages — reference IDs + admin panel links only"
+  echo "   ✅ docs/standards/slack.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--digital-pass`
+
+Loads `.claude/standards/digital-pass.md`. Use for any prompt implementing Apple Wallet or Google Wallet passes. This is the bridge implementation — the native wallet is future work.
+
+```bash
+DIGITALPASS_STANDARD=""
+if echo "$*" | grep -q "\-\-digital-pass"; then
+  DIGITALPASS_STANDARD=$(cat .claude/standards/digital-pass.md)
+  echo "💳 Digital Pass Standard loaded (PassKit bridge) — applying mandatory constraints:"
+  echo "   ⚠️  BRIDGE implementation — native wallet is future work"
+  echo "   ✅ Pass signing certificates from SSM — never in git"
+  echo "   ✅ Use passkit-generator (node) — never manual zip"
+  echo "   ✅ Content-Type: application/vnd.apple.pkpass for delivery"
+  echo "   ✅ Register device tokens for push pass updates"
+  echo "   ✅ Google Wallet: JWT signed with service account from SSM"
+  echo "   ✅ docs/standards/digital-pass.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--apple-maps`
+
+Loads `.claude/standards/apple-maps.md`. Use for any iOS map prompt. **iOS only — must be gated behind `Platform.OS === 'ios'`.**
+
+```bash
+APPLEMAPS_STANDARD=""
+if echo "$*" | grep -q "\-\-apple-maps"; then
+  APPLEMAPS_STANDARD=$(cat .claude/standards/apple-maps.md)
+  echo "🗺️  Apple Maps Standard loaded (iOS only) — applying mandatory constraints:"
+  echo "   ✅ Platform.OS === 'ios' gate required on every map component"
+  echo "   ✅ PROVIDER_DEFAULT for react-native-maps on iOS"
+  echo "   ✅ NSLocationWhenInUseUsageDescription in Info.plist"
+  echo "   ✅ MapKit JS token from SSM — not in client bundle"
+  echo "   ✅ Clustering required for >50 markers"
+  echo "   ✅ Navigation: deep link to Apple Maps — don't reimplement"
+  echo "   ✅ docs/standards/apple-maps.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--mapbox`
+
+Loads `.claude/standards/mapbox.md`. Use for any Android map prompt. **Android only — must be gated behind `Platform.OS === 'android'`.**
+
+```bash
+MAPBOX_STANDARD=""
+if echo "$*" | grep -q "\-\-mapbox"; then
+  MAPBOX_STANDARD=$(cat .claude/standards/mapbox.md)
+  echo "🗺️  Mapbox Standard loaded (Android only) — applying mandatory constraints:"
+  echo "   ✅ Platform.OS === 'android' gate required on every Mapbox component"
+  echo "   ✅ Access token from SSM — never hardcoded"
+  echo "   ✅ Mapbox.setAccessToken() once at app root — not per component"
+  echo "   ✅ ACCESS_FINE_LOCATION in AndroidManifest.xml"
+  echo "   ✅ ShapeSource + cluster for >50 points"
+  echo "   ✅ Navigation: deep link to Google Maps — don't reimplement"
+  echo "   ✅ docs/standards/mapbox.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--eas`
+
+Loads `.claude/standards/eas.md`. Use for any prompt involving mobile app builds or TestFlight/Play Store submissions.
+
+```bash
+EAS_STANDARD=""
+if echo "$*" | grep -q "\-\-eas"; then
+  EAS_STANDARD=$(cat .claude/standards/eas.md)
+  echo "📦 EAS Build Standard loaded — applying mandatory constraints:"
+  echo "   ✅ ALL builds on QCS1 (M4 Pro) — never local"
+  echo "   ✅ Unlock keychain BEFORE build: security unlock-keychain"
+  echo "   ✅ EXPO_TOKEN from ~/.expo_token"
+  echo "   ✅ ASC Issuer: 14c760ad-a824-4520-8f71-78efdda81029 (NOT 69a6de96...)"
+  echo "   ✅ TestFlight: xcrun altool — NOT eas submit (permanent 409 bug)"
+  echo "   ✅ Build number must be HIGHER than current TestFlight"
+  echo "   ❌ No --clear-cache on FMO without explicit authorization"
+  echo "   ✅ docs/standards/eas.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--push`
+
+Loads `.claude/standards/push.md`. Use for any prompt adding push notifications (iOS APNs or Android FCM).
+
+```bash
+PUSH_STANDARD=""
+if echo "$*" | grep -q "\-\-push"; then
+  PUSH_STANDARD=$(cat .claude/standards/push.md)
+  echo "🔔 Push Notifications Standard loaded — applying mandatory constraints:"
+  echo "   ✅ APNs .p8 key from SSM — never in source or git"
+  echo "   ✅ FCM service account JSON from SSM"
+  echo "   ✅ Notifications.setNotificationHandler() at app root before render"
+  echo "   ✅ POST /api/notifications/register for device token storage"
+  echo "   ✅ DELETE /api/notifications/register on logout"
+  echo "   ✅ expo-server-sdk for delivery (handles APNs + FCM routing)"
+  echo "   ✅ Receipt processing: remove DeviceNotRegistered tokens"
+  echo "   ✅ docs/standards/push.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--neon`
+
+Loads `.claude/standards/neon.md`. Use for any prompt setting up or migrating a Neon PostgreSQL database.
+
+```bash
+NEON_STANDARD=""
+if echo "$*" | grep -q "\-\-neon"; then
+  NEON_STANDARD=$(cat .claude/standards/neon.md)
+  echo "🐘 Neon Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Connection strings from SSM — never hardcoded"
+  echo "   ✅ Two branches required: main (prod) + dev"
+  echo "   ✅ App uses pooler URL (pgbouncer) — never the direct URL"
+  echo "   ✅ Migrations use direct URL — NOT the pooler"
+  echo "   ✅ SSL required: ssl: { rejectUnauthorized: false }"
+  echo "   ✅ Serverless: use @neondatabase/serverless driver (not pg Pool)"
+  echo "   ✅ docs/standards/neon.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--cf`
+
+Loads `.claude/standards/cf.md`. Use for any prompt deploying or configuring the frontend on Cloudflare Pages. (Not the AI gateway — use `/setup-ai-gateway` for that.)
+
+```bash
+CF_STANDARD=""
+if echo "$*" | grep -q "\-\-cf"; then
+  CF_STANDARD=$(cat .claude/standards/cf.md)
+  echo "☁️  Cloudflare Pages Standard loaded — applying mandatory constraints:"
+  echo "   ✅ frontend/wrangler.toml is the deployment config (root deprecated)"
+  echo "   ✅ Build: opennextjs-cloudflare build (not next export)"
+  echo "   ✅ Secrets in CF dashboard — NOT in wrangler.toml"
+  echo "   ✅ NEXT_PUBLIC_* vars pulled from SSM BEFORE build"
+  echo "   ✅ Production: main branch → custom domain"
+  echo "   ✅ Preview: develop branch → develop.* subdomain"
+  echo "   ✅ Clerk vars (PUBLISHABLE_KEY + SECRET_KEY) set in CF dashboard for both envs"
+  echo "   ✅ docs/standards/cf.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--shipping`
+
+Loads `.claude/standards/shipping.md`. Use for any prompt adding shipping rate calculation, label generation, or tracking.
+
+```bash
+SHIPPING_STANDARD=""
+if echo "$*" | grep -q "\-\-shipping"; then
+  SHIPPING_STANDARD=$(cat .claude/standards/shipping.md)
+  echo "📦 Shipping Standard loaded (Shippo) — applying mandatory constraints:"
+  echo "   ✅ SHIPPO_API_KEY from SSM (test: shippo_test_... / live: shippo_live_...)"
+  echo "   ✅ getShippo() singleton"
+  echo "   ✅ Live rate calculation at checkout — never hardcoded shipping prices"
+  echo "   ✅ Address validation before label purchase"
+  echo "   ✅ Label via transaction.label_url — correct MIME type in response"
+  echo "   ✅ track_updated webhook registered and handled"
+  echo "   ✅ Parcel templates in config — not inline per-request"
+  echo "   ✅ docs/standards/shipping.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--analytics`
+
+Loads `.claude/standards/analytics.md`. Use for any prompt adding GA4 tracking, event instrumentation, or conversion funnels. Reference implementation: DreamiHairCare (salon booking + e-commerce funnel).
+
+```bash
+ANALYTICS_STANDARD=""
+if echo "$*" | grep -q "\-\-analytics"; then
+  ANALYTICS_STANDARD=$(cat .claude/standards/analytics.md)
+  echo "📊 Analytics Standard loaded (GA4) — applying mandatory constraints:"
+  echo "   ✅ GA4_MEASUREMENT_ID from SSM — separate dev + prod properties"
+  echo "   ✅ Script loaded via next/script afterInteractive — not blocking"
+  echo "   ✅ GA4 recommended event names (purchase, begin_checkout, view_item, etc.)"
+  echo "   ✅ Full 4-stage funnel: view_item → begin_checkout → add_payment_info → purchase"
+  echo "   ✅ Server-side Measurement Protocol for purchase confirmation (Stripe webhook)"
+  echo "   ❌ No PII in GA4 events (no email, phone, name)"
+  echo "   ✅ DreamiHairCare pattern: booking_initiated + purchase for service bookings"
+  echo "   ✅ docs/standards/analytics.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--apple`
+
+Loads `.claude/standards/apple-store.md`. Use when preparing an iOS app for App Store submission. Covers metadata, screenshots, review guidelines, and xcrun altool upload.
+
+```bash
+APPLE_STANDARD=""
+if echo "$*" | grep -q "\-\-apple"; then
+  APPLE_STANDARD=$(cat .claude/standards/apple-store.md)
+  echo "🍎 Apple App Store Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Build + submit on QCS1 only — xcrun altool (NOT eas submit)"
+  echo "   ✅ ASC Issuer: 14c760ad-a824-4520-8f71-78efdda81029"
+  echo "   ✅ Build number higher than ALL previous TestFlight + App Store builds"
+  echo "   ✅ xcrun altool --validate-app before --upload-app"
+  echo "   ✅ TestFlight 24-48hr soak before submitting for review"
+  echo "   ✅ Privacy policy URL live and linked in App Store Connect"
+  echo "   ✅ App Privacy (data types) declared in App Store Connect"
+  echo "   ✅ Screenshots: iPhone 6.9\" + 6.5\" required; iPad 12.9\" if tablet supported"
+  echo "   ✅ Physical goods = Stripe OK; digital in-app content = Apple IAP required"
+  echo "   ✅ docs/standards/apple-store.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--google`
+
+Loads `.claude/standards/google-play.md`. Use when preparing an Android app for Google Play Store submission. Covers AAB generation, Play Console, staged rollout, and Play Billing rules.
+
+```bash
+GOOGLE_STANDARD=""
+if echo "$*" | grep -q "\-\-google"; then
+  GOOGLE_STANDARD=$(cat .claude/standards/google-play.md)
+  echo "🤖 Google Play Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Build signed AAB via EAS on QCS1: eas build --platform android --profile production"
+  echo "   ✅ versionCode must increment with every release"
+  echo "   ✅ Data Safety form filled in Play Console"
+  echo "   ✅ Internal testing track → production staged rollout (start at 10%)"
+  echo "   ✅ targetSdkVersion ≥ 34 (Google 2025 requirement)"
+  echo "   ✅ Play App Signing enrolled — managed by Google"
+  echo "   ✅ Physical goods = Stripe OK; digital subscriptions/consumables = Play Billing required"
+  echo "   ✅ docs/standards/google-play.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
+### `--admin`
+
+Loads `.claude/standards/admin.md`. Use for any prompt building admin dashboards, admin-only routes, user management, or internal tooling.
+
+```bash
+ADMIN_STANDARD=""
+if echo "$*" | grep -q "\-\-admin"; then
+  ADMIN_STANDARD=$(cat .claude/standards/admin.md)
+  echo "🔐 Admin Panel Standard loaded — applying mandatory constraints:"
+  echo "   ✅ Double-gated: requireAuth middleware + role === 'admin' check"
+  echo "   ✅ All admin routes under /api/admin/* with shared requireAdmin middleware"
+  echo "   ✅ Admin role set via Clerk publicMetadata — never user-editable"
+  echo "   ✅ Server-side pagination on all data tables (max 100 rows/page)"
+  echo "   ✅ AuditLog entry on every destructive action"
+  echo "   ✅ Standard pages: /admin (dashboard), /admin/users, /admin/orders, /admin/settings"
+  echo "   ✅ ShadCN DataTable pattern for admin lists"
+  echo "   ✅ docs/standards/admin.md must be created/updated"
+  echo ""
+fi
+```
+
+---
+
 ### `--status`
 
 Shows a dashboard of which standards are implemented in this Heru and which tech docs are missing.
@@ -301,6 +655,20 @@ if echo "$*" | grep -q "\-\-status"; then
   check_standard "security"    "grep -rl 'helmet\|rateLimit' src/ backend/src/ 2>/dev/null"     "--security"
   check_standard "desktop"     "grep -rl 'SecretStorage\|contextBridge\|ipcMain' src/ 2>/dev/null" "--desktop"
   check_standard "design"      "ls mockups/ 2>/dev/null && ls docs/design-system.md 2>/dev/null" "--design"
+  check_standard "twilio"      "grep -rl 'twilio\|getTwilioClient' src/ backend/src/ 2>/dev/null"  "--twilio"
+  check_standard "slack"       "grep -rl 'WebClient\|getSlackClient\|slack' src/ backend/src/ 2>/dev/null" "--slack"
+  check_standard "digital-pass" "grep -rl 'pkpass\|passkit\|PKPass\|GoogleWallet' src/ backend/src/ 2>/dev/null" "--digital-pass"
+  check_standard "apple-maps"  "grep -rl 'PROVIDER_DEFAULT\|MapKit\|apple-maps' src/ 2>/dev/null"  "--apple-maps"
+  check_standard "mapbox"      "grep -rl '@rnmapbox\|Mapbox\.' src/ 2>/dev/null"                   "--mapbox"
+  check_standard "eas"         "ls eas.json 2>/dev/null"                                            "--eas"
+  check_standard "push"        "grep -rl 'expo-notifications\|Notifications\.' src/ 2>/dev/null"   "--push"
+  check_standard "neon"        "grep -rl 'neon\|@neondatabase\|neon.tech' backend/src/ 2>/dev/null" "--neon"
+  check_standard "cf"          "ls frontend/wrangler.toml 2>/dev/null"                             "--cf"
+  check_standard "shipping"    "grep -rl 'shippo\|getShippo\|SHIPPO' src/ backend/src/ 2>/dev/null" "--shipping"
+  check_standard "analytics"   "grep -rl 'GA4\|gtag\|MEASUREMENT_ID' src/ frontend/src/ 2>/dev/null" "--analytics"
+  check_standard "apple-store" "ls docs/standards/apple-store.md 2>/dev/null"                       "--apple"
+  check_standard "google-play" "ls docs/standards/google-play.md 2>/dev/null"                       "--google"
+  check_standard "admin"       "grep -rl 'requireAdmin\|/api/admin' src/ backend/src/ 2>/dev/null"  "--admin"
 
   echo "  ──────────────────────────────────────────────────────────────"
   echo ""
@@ -672,8 +1040,11 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.2.0
+version: 3.5.0
 changelog:
+  - v3.5.0: Added --shipping (Shippo), --analytics (GA4), --apple (App Store), --google (Play Store), --admin (admin panel) flags; updated --stripe with platform fees (min 7%), disputes, refunds, metadata requirements
+  - v3.4.0: Added --twilio, --slack, --digital-pass, --apple-maps, --mapbox, --eas, --push, --neon, --cf flags (9 new integration standards)
+  - v3.3.0: Added --design flag with surface variants (web/desktop/cli/mobile)
   - v3.2.0: Added --graphql, --migrations, --multi-tenant, --testing, --security, --desktop flags; added --status dashboard; added --requirements intake; added --all Auset module checklist
   - v3.1.0: Added --stripe flag; Stripe standard enforces dynamic pricing, webhook pattern, ngrok URL convention, SSM secrets
   - v3.0.0: Auto-loop all prompts; worktree detached then branch; gh pr create; cleanup merged branches on Step 0
