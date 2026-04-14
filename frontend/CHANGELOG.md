@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-13
 
+### Changed
+
+- Design tokens: extended `tailwind.config.ts` with Clara/brand/surface/sculpt/text/border/syntax/chrome/mac colors, waveform/fadeIn animations; replaced arbitrary `bg-[#…]` / `text-[#…]` classes across marketing and app shells with semantic utilities; added `docs/design-system.md`.
+
 ### Added
 
 - `wrangler.toml`: custom domain routes for `claracode.ai`, `www.claracode.ai` (production) and `develop.claracode.ai` (preview) — CF Workers now routes correctly per environment.

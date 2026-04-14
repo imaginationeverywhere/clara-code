@@ -10,7 +10,7 @@ export default async function SettingsPage() {
   if (!user) redirect('/sign-in')
 
   return (
-    <main className="min-h-screen bg-[#09090F] p-8">
+    <main className="min-h-screen bg-bg-terminal p-8">
       <div className="mx-auto max-w-3xl">
         <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
           <div>

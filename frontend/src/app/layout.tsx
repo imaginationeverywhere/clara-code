@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" className="dark">
-        <body className="font-sans bg-[#0F0F0F] text-white antialiased">
+        <body className="font-sans bg-bg-base text-white antialiased">
           {GA_ID ? (
             <>
               <Script

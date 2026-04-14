@@ -30,7 +30,7 @@ export function CreateKeyModal({ open, onClose, onCreate }: CreateKeyModalProps)
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4" role="dialog" aria-modal>
-      <div className="w-full max-w-md rounded-2xl border border-white/10 bg-[#111827] p-6 shadow-xl">
+      <div className="w-full max-w-md rounded-2xl border border-white/10 bg-gray-900 p-6 shadow-xl">
         <h2 className="text-lg font-semibold text-white">Create API key</h2>
         <p className="mt-1 text-sm text-white/50">Choose a label you will recognize later.</p>
         <form onSubmit={submit} className="mt-6 space-y-4">
