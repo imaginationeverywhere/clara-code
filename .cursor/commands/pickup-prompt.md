@@ -14,6 +14,8 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --list             # List all not-started prompts without executing
 /pickup-prompt 01-cc-web-full.md  # Execute a specific prompt by filename only
 /pickup-prompt --clerk            # Inject Clerk auth standard before executing (see below)
+/pickup-prompt --stripe           # Inject Stripe implementation standard before executing (see below)
+/pickup-prompt --clerk --stripe   # Inject both standards (auth + payments)
 ```
 
 ## Flags
@@ -43,6 +45,41 @@ fi
 ```
 
 The loaded standard is prepended to the prompt context before execution. If the prompt says `<SignIn appearance={{...}} />` anywhere, the agent overrides it with the hook pattern from the standard.
+
+---
+
+### `--stripe`
+
+When this flag is present, the agent MUST read `.claude/standards/stripe.md` before executing any prompt. The standard's rules become mandatory constraints for the entire execution — overriding any conflicting instruction in the prompt itself.
+
+Use this flag for any prompt that involves:
+- Checkout flows or subscription creation
+- Webhook handlers (`/api/webhooks/stripe`)
+- Subscription tier resolution or upgrades/downgrades
+- Price/plan lookup
+- API key issuance tied to subscription status
+- Any `stripe.` call anywhere in the codebase
+
+```bash
+# Detect --stripe flag
+STRIPE_STANDARD=""
+if echo "$*" | grep -q "\-\-stripe"; then
+  STRIPE_STANDARD=$(cat .claude/standards/stripe.md)
+  echo "💳 Stripe Standard loaded — applying mandatory constraints:"
+  echo "   ❌ No STRIPE_PRICE_* env vars — dynamic pricing only"
+  echo "   ✅ express.raw() required for webhook body parsing"
+  echo "   ✅ STRIPE_WEBHOOK_SECRET from SSM — never hardcoded"
+  echo "   ✅ Local ngrok webhook endpoint required: https://[project]-backend-dev.ngrok.quiknation.com/api/webhooks/stripe"
+  echo "   ✅ Hosted Checkout (not Elements) for subscription flows"
+  echo "   ✅ Price lookup via Stripe metadata tags (clara_tier, clara_type)"
+  echo ""
+fi
+```
+
+The loaded standard is prepended to the prompt context before execution. Key overrides:
+- If the prompt uses `process.env.STRIPE_PRICE_*` anywhere, the agent replaces it with `stripe.prices.list()` + metadata lookup
+- If the webhook body is parsed with `express.json()`, the agent fixes it to `express.raw()`
+- If no `/api/webhooks/stripe` endpoint exists, the agent creates one
 
 ## Execution
 
@@ -319,8 +356,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.0.0
+version: 3.1.0
 changelog:
+  - v3.1.0: Added --stripe flag; Stripe standard enforces dynamic pricing, webhook pattern, ngrok URL convention, SSM secrets
   - v3.0.0: Auto-loop all prompts; worktree detached then branch; gh pr create; cleanup merged branches on Step 0
   - v2.1.0: Added Step 0 git pull
   - v2.0.0: Worktree lifecycle (create → execute → push → cleanup)
