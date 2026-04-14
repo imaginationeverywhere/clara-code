@@ -27,12 +27,12 @@ export function registerTuiCommand(program: Command): void {
 			const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as { version: string };
 
 			render(
-				React.createElement(App, {
-					userId,
-					gatewayUrl,
-					version: pkg.version,
-					voiceAudioEnabled: opts.voice === true,
-				}),
+				<App
+					userId={userId}
+					gatewayUrl={gatewayUrl}
+					version={pkg.version}
+					voiceAudioEnabled={opts.voice === true}
+				/>,
 			);
 		});
 }
