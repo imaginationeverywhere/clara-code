@@ -29,6 +29,9 @@ export class ApiKey extends Model {
 	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "free" })
 	declare tier: string;
 
+	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "user" })
+	declare role: string;
+
 	@Column({ type: DataType.DATE, allowNull: true })
 	declare lastUsedAt: Date | null;
 
