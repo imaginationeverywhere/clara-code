@@ -2,7 +2,9 @@ import axios from "axios";
 import { type Response, Router } from "express";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
+import { voiceLimitMiddleware } from "@/middleware/voice-limit";
 import { voiceLimiter } from "@/middleware/rate-limit";
+import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 
 const router = Router();
@@ -14,6 +16,7 @@ router.post(
 	"/greet",
 	requireClaraOrClerk,
 	voiceLimiter,
+	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const { text, voice_id } = req.body as { text?: string; voice_id?: string };
@@ -25,6 +28,12 @@ router.post(
 				},
 				{ responseType: "arraybuffer", timeout: 30000 },
 			);
+
+			const userId = req.claraUser?.userId;
+			const tier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			if (userId) {
+				await voiceUsageService.incrementAfterSuccess(userId, tier);
+			}
 
 			res.set("Content-Type", "audio/wav");
 			res.send(Buffer.from(response.data as ArrayBuffer));
@@ -40,6 +49,7 @@ router.post(
 	"/speak",
 	requireClaraOrClerk,
 	voiceLimiter,
+	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const { text, voice_id } = req.body as { text?: string; voice_id?: string };
@@ -53,6 +63,12 @@ router.post(
 				{ text, voice_id },
 				{ responseType: "arraybuffer", timeout: 30000 },
 			);
+
+			const userId = req.claraUser?.userId;
+			const tier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			if (userId) {
+				await voiceUsageService.incrementAfterSuccess(userId, tier);
+			}
 
 			res.set("Content-Type", "audio/wav");
 			res.send(Buffer.from(response.data as ArrayBuffer));
