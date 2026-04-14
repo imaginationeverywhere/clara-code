@@ -34,10 +34,7 @@ export class VoiceUsageService {
 		return row?.exchangeCount ?? 0;
 	}
 
-	async getUsage(
-		userId: string,
-		tier: VoiceTier,
-	): Promise<{ used: number; limit: number | null; resetDate: string }> {
+	async getUsage(userId: string, tier: VoiceTier): Promise<{ used: number; limit: number | null; resetDate: string }> {
 		const used = await this.getUsedCountForCurrentMonth(userId);
 		const resetDate = getNextResetDateKey();
 		if (tier === "pro" || tier === "business") {
@@ -62,7 +59,11 @@ export class VoiceUsageService {
 	 * Records a completed successful voice exchange (increments analytics counter).
 	 * Call only after the upstream voice request succeeds.
 	 */
-	async incrementAfterSuccess(userId: string, _tier: VoiceTier, options?: { transaction?: Transaction }): Promise<void> {
+	async incrementAfterSuccess(
+		userId: string,
+		_tier: VoiceTier,
+		options?: { transaction?: Transaction },
+	): Promise<void> {
 		const billingMonth = this.getBillingMonth();
 		const transaction = options?.transaction;
 		const findOpts =
@@ -77,11 +78,9 @@ export class VoiceUsageService {
 						defaults: { userId, billingMonth, exchangeCount: 0 },
 					};
 		const [row] = await VoiceUsage.findOrCreate(findOpts);
-		const incOpts =
-			transaction !== undefined ? { by: 1 as const, transaction } : { by: 1 as const };
+		const incOpts = transaction !== undefined ? { by: 1 as const, transaction } : { by: 1 as const };
 		await row.increment("exchangeCount", incOpts);
 	}
-
 }
 
 export const voiceUsageService = new VoiceUsageService();

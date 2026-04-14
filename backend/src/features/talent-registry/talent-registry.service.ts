@@ -70,6 +70,44 @@ export class TalentRegistryService {
 		return (result.rowCount ?? 0) > 0;
 	}
 
+	async getDeveloperProgramStatus(userId: string): Promise<{
+		enrolled: boolean;
+		status: string | null;
+		expiresAt: Date | null;
+	}> {
+		const result = await this.db.query(`SELECT status, expires_at FROM developer_programs WHERE user_id = $1`, [
+			userId,
+		]);
+		const row = result.rows[0] as { status?: string; expires_at?: Date | string } | undefined;
+		if (!row) {
+			return { enrolled: false, status: null, expiresAt: null };
+		}
+		const expiresAt = row.expires_at instanceof Date ? row.expires_at : new Date(String(row.expires_at));
+		const active = row.status === "active" && expiresAt > new Date();
+		return { enrolled: active, status: row.status ?? null, expiresAt };
+	}
+
+	async activateDeveloperProgram(userId: string, stripeSubscriptionId: string): Promise<void> {
+		const expiresAt = new Date();
+		expiresAt.setFullYear(expiresAt.getFullYear() + 1);
+
+		await this.db.query(
+			`INSERT INTO developer_programs (user_id, stripe_subscription_id, status, expires_at)
+     VALUES ($1, $2, 'active', $3)
+     ON CONFLICT (user_id) DO UPDATE
+     SET stripe_subscription_id = EXCLUDED.stripe_subscription_id,
+         status = 'active',
+         expires_at = EXCLUDED.expires_at`,
+			[userId, stripeSubscriptionId, expiresAt],
+		);
+	}
+
+	async cancelDeveloperProgram(stripeSubscriptionId: string): Promise<void> {
+		await this.db.query(`UPDATE developer_programs SET status = 'canceled' WHERE stripe_subscription_id = $1`, [
+			stripeSubscriptionId,
+		]);
+	}
+
 	async submitTalent(
 		developerUserId: string,
 		data: {

@@ -7,6 +7,16 @@ import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 const mockConstructEvent = jest.fn();
 const mockRetrieve = jest.fn();
 
+jest.mock("@/features/talent-registry/talent-registry-instance", () => {
+	const talentRegistrySvc = {
+		activateDeveloperProgram: jest.fn().mockResolvedValue(undefined),
+		cancelDeveloperProgram: jest.fn().mockResolvedValue(undefined),
+	};
+	return {
+		getTalentRegistryService: jest.fn(() => talentRegistrySvc),
+	};
+});
+
 jest.mock("stripe", () =>
 	jest.fn().mockImplementation(() => ({
 		webhooks: {
@@ -35,9 +45,10 @@ jest.mock("@/models/ApiKey", () => ({
 }));
 
 jest.mock("@/utils/logger", () => ({
-	logger: { error: jest.fn(), warn: jest.fn() },
+	logger: { error: jest.fn(), warn: jest.fn(), info: jest.fn() },
 }));
 
+import { getTalentRegistryService } from "@/features/talent-registry/talent-registry-instance";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
 
@@ -47,6 +58,12 @@ describe("stripeWebhookHandler events", () => {
 
 	beforeEach(() => {
 		jest.clearAllMocks();
+		const tr = getTalentRegistryService() as unknown as {
+			activateDeveloperProgram: jest.Mock;
+			cancelDeveloperProgram: jest.Mock;
+		};
+		tr.activateDeveloperProgram.mockResolvedValue(undefined);
+		tr.cancelDeveloperProgram.mockResolvedValue(undefined);
 		process.env.STRIPE_WEBHOOK_SECRET = "whsec_test";
 		process.env.STRIPE_SECRET_KEY = "sk_test";
 		process.env.STRIPE_PRICE_PRO = "price_pro";
@@ -116,6 +133,49 @@ describe("stripeWebhookHandler events", () => {
 		const res = makeRes();
 		await stripeWebhookHandler(req, res);
 		expect(Subscription.update).toHaveBeenCalled();
+		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
+	});
+
+	it("checkout.session.completed activates Developer Program when metadata.type is developer_program", async () => {
+		mockConstructEvent.mockReturnValue({
+			type: "checkout.session.completed",
+			data: {
+				object: {
+					metadata: { type: "developer_program", userId: "user_dev" },
+					subscription: "sub_dev",
+					customer: "cus_1",
+				},
+			},
+		});
+		const req = makeReq(Buffer.from("{}"));
+		const res = makeRes();
+		await stripeWebhookHandler(req, res);
+		const tr = getTalentRegistryService() as unknown as {
+			activateDeveloperProgram: jest.Mock;
+			cancelDeveloperProgram: jest.Mock;
+		};
+		expect(tr.activateDeveloperProgram).toHaveBeenCalledWith("user_dev", "sub_dev");
+		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
+	});
+
+	it("customer.subscription.deleted cancels Developer Program when metadata.type is developer_program", async () => {
+		mockConstructEvent.mockReturnValue({
+			type: "customer.subscription.deleted",
+			data: {
+				object: {
+					id: "sub_dev",
+					metadata: { type: "developer_program", userId: "user_dev" },
+				},
+			},
+		});
+		const req = makeReq(Buffer.from("{}"));
+		const res = makeRes();
+		await stripeWebhookHandler(req, res);
+		const tr2 = getTalentRegistryService() as unknown as {
+			activateDeveloperProgram: jest.Mock;
+			cancelDeveloperProgram: jest.Mock;
+		};
+		expect(tr2.cancelDeveloperProgram).toHaveBeenCalledWith("sub_dev");
 		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
 	});
 

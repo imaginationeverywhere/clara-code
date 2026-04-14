@@ -33,12 +33,17 @@ describe("voiceLimitMiddleware", () => {
 	it("calls next when under limit", async () => {
 		checkAndIncrement.mockResolvedValueOnce(true);
 		const app = express();
-		app.post("/t", (req, _res, next) => {
-			(req as ApiKeyRequest).claraUser = { userId: "u1", tier: "free" };
-			next();
-		}, voiceLimitMiddleware, (_req, res) => {
-			res.sendStatus(200);
-		});
+		app.post(
+			"/t",
+			(req, _res, next) => {
+				(req as ApiKeyRequest).claraUser = { userId: "u1", tier: "free" };
+				next();
+			},
+			voiceLimitMiddleware,
+			(_req, res) => {
+				res.sendStatus(200);
+			},
+		);
 		const res = await request(app).post("/t").send();
 		expect(res.status).toBe(200);
 	});
@@ -47,12 +52,17 @@ describe("voiceLimitMiddleware", () => {
 		checkAndIncrement.mockResolvedValueOnce(false);
 		getUsedCountForCurrentMonth.mockResolvedValueOnce(100);
 		const app = express();
-		app.post("/t", (req, _res, next) => {
-			(req as ApiKeyRequest).claraUser = { userId: "u1", tier: "free" };
-			next();
-		}, voiceLimitMiddleware, (_req, res) => {
-			res.sendStatus(200);
-		});
+		app.post(
+			"/t",
+			(req, _res, next) => {
+				(req as ApiKeyRequest).claraUser = { userId: "u1", tier: "free" };
+				next();
+			},
+			voiceLimitMiddleware,
+			(_req, res) => {
+				res.sendStatus(200);
+			},
+		);
 		const res = await request(app).post("/t").send();
 		expect(res.status).toBe(402);
 		expect(res.body.error).toBe("voice_limit_reached");
