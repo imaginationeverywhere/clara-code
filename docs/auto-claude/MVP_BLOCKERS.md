@@ -32,6 +32,8 @@
    - `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up`
 3. Re-enable middleware in `frontend/src/middleware.ts` (replace passthrough with Clerk's `clerkMiddleware()`)
 4. Add `develop.claracode.ai` to Clerk's allowed origins
+5. Trigger a CF Pages re-deploy (any push to develop branch will do it — the Clerk keys bake into the build)
+6. After deploy: test sign-in at https://develop.claracode.ai/sign-in
 **Owner**: Mo (Amen Ra)
 
 ---
