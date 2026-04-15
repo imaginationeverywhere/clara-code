@@ -4,7 +4,7 @@
 
 ## What This Command Does
 
-Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty (or use `--parallel N` for multiple headless agent slots). For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`. Use `--retry-failed` to move stranded prompts from `4-failed/` back to `1-not-started/` before processing.
+Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty (or use `--parallel N` for multiple headless agent slots). For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`. **Prompts left unstarted in ANY previous date directory are automatically backfilled into today's queue** — no prompt is ever silently abandoned. Use `--retry-failed` to also re-queue prompts from `4-failed/`.
 
 ## Usage
 
@@ -1132,6 +1132,34 @@ if ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null | grep -q .; then
 fi
 # ─────────────────────────────────────────────────────────────────────────────
 
+# ── Step 0.6 — Backfill not-started prompts from previous dates ──────────────
+# Scan ALL past date directories under prompts/ for any 1-not-started/*.md files.
+# Moves them into today's queue so the main loop picks them up.
+BACKFILL_COUNT=0
+while IFS= read -r OLD_PROMPT; do
+  [ -f "$OLD_PROMPT" ] || continue
+  BASENAME=$(basename "$OLD_PROMPT")
+  DEST="$PROMPT_DIR/$BASENAME"
+  # Handle name collisions by prefixing with the source date
+  if [ -f "$DEST" ]; then
+    OLD_DATE=$(echo "$OLD_PROMPT" | grep -oE '[0-9]{4}/[A-Za-z]+/[0-9]{1,2}' | head -1)
+    SAFE_DATE=$(echo "$OLD_DATE" | tr '/' '-')
+    DEST="$PROMPT_DIR/${SAFE_DATE}-${BASENAME}"
+  fi
+  mv "$OLD_PROMPT" "$DEST"
+  echo "   📥 $(basename $(dirname $(dirname $OLD_PROMPT)))/$(basename $(dirname $OLD_PROMPT))/$(basename $OLD_PROMPT) → today"
+  ((BACKFILL_COUNT++))
+done < <(find "prompts" -path "*/1-not-started/*.md" \
+  ! -path "prompts/${YEAR}/${MONTH}/${DAY}/*" 2>/dev/null | sort)
+
+if [ $BACKFILL_COUNT -gt 0 ]; then
+  echo ""
+  echo "📥 Backfilled $BACKFILL_COUNT prompt(s) from previous dates → today's queue"
+  echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | BACKFILL | $BACKFILL_COUNT prompts from past dates moved to ${YEAR}/${MONTH}/${DAY}/1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
+  echo ""
+fi
+# ─────────────────────────────────────────────────────────────────────────────
+
 # ── --retry-failed: re-queue prompts from 4-failed/ ─────────────────────────
 if [ "$RETRY_FAILED" = true ]; then
   FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
@@ -1476,6 +1504,7 @@ Step 0: git pull + delete merged prompt branches from last run
 name: pickup-prompt
 version: 3.9.1
 changelog:
+  - v3.9.2: Step 0.6 — historical backfill: scans ALL past date directories for 1-not-started/*.md and moves them into today's queue. No prompt is ever silently abandoned across day boundaries.
   - v3.9.1: Add --retry-failed — re-queue 4-failed/ prompts to 1-not-started/. --status shows warning when 4-failed/ is non-empty.
   - v3.9.0: Add --parallel N — optional headless Cursor agent slots (atomic mv lock); default sequential unchanged.
   - v3.8.0: Enhanced --status with /ai-estimate integration — AI timeline (hrs done/remaining/total), parallel batch math (6 agents/QCS1), prompt filenames to write with flags, cumulative time tracking, human equivalent
