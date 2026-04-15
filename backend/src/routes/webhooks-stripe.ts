@@ -4,6 +4,7 @@ import Stripe from "stripe";
 import { getTalentRegistryService } from "@/features/talent-registry/talent-registry-instance";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
+import { gaClientIdFromUserId, sendGA4ServerEvent } from "@/utils/analytics";
 import { generateApiKey } from "@/utils/api-key";
 import { logger } from "@/utils/logger";
 
@@ -114,6 +115,11 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 					currentPeriodEnd: stripeSub.current_period_end ? new Date(stripeSub.current_period_end * 1000) : null,
 				});
 				await issueSubscriptionApiKey(userId, tierMeta);
+				void sendGA4ServerEvent(gaClientIdFromUserId(userId), "purchase", {
+					currency: "USD",
+					value: (session.amount_total ?? 0) / 100,
+					items: [{ item_name: tierMeta }],
+				});
 				break;
 			}
 			case "customer.subscription.updated": {

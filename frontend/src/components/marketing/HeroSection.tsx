@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { VoiceGreeting } from '@/app/(marketing)/components/VoiceGreeting'
+import { HeroPrimaryCta } from '@/components/analytics/HeroPrimaryCta'
 
 const WAVE_HEIGHTS_PX = [8, 14, 22, 28, 24, 18, 28, 20, 12, 26, 22, 16, 10, 24, 18, 12]
 
@@ -35,12 +36,7 @@ export function HeroSection() {
 				</p>
 
 				<div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-					<Link
-						href="#install"
-						className="rounded-full bg-[#7C3AED] px-8 py-4 text-[15px] font-semibold text-white shadow-[0_4px_30px_rgba(124,58,237,0.4)] transition hover:bg-[#6D28D9]"
-					>
-						Get started
-					</Link>
+					<HeroPrimaryCta />
 					<a
 						href="https://github.com/imaginationeverywhere/clara-code"
 						target="_blank"
