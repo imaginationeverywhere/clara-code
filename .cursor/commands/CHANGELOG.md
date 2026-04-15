@@ -1,5 +1,13 @@
 # .claude/commands Changelog
 
+## [Unreleased] - 2026-04-15
+
+### Changed
+- **pickup-prompt.md v3.9.3** — Fix `--parallel N` on QCS1: (1) Step 1b: replaced broken `argv=("$@")` parsing with explicit AI-substitution instruction; (2) Parallel block: inline PID loop replaced with call to `~/bin/pickup-dispatch.sh`; (3) Keychain unlock added before cursor spawn.
+
+### Added
+- **.claude/scripts/pickup-dispatch.sh** — Standalone parallel Cursor dispatcher. Real bash forking + PID management + keychain unlock. Install: `cp .claude/scripts/pickup-dispatch.sh ~/bin/ && chmod +x ~/bin/pickup-dispatch.sh`. Usage: `cd <project> && pickup-dispatch.sh 5`.
+
 ## [Unreleased] - 2026-04-14
 
 ### Added

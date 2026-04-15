@@ -1085,26 +1085,19 @@ echo "Looking in: ${PROMPT_DIR}"
 ls "${PROMPT_DIR}" 2>/dev/null || echo "No prompts directory found at ${PROMPT_DIR}"
 ```
 
-### Step 1b — Parse `--parallel N` and `--retry-failed`
+### Step 1b — Set `MAX_PARALLEL` and `RETRY_FAILED` from ARGUMENTS
 
-Run after Step 1 so `PROMPT_DIR` exists for `--retry-failed`. Does not remove other flags from `"$@"` (standards flags are handled by the agent, not this shell).
+**CRITICAL: Do NOT use `$@` in bash — it is always empty when Claude/Cursor executes code blocks.**
+**Instead: read the ARGUMENTS field directly and substitute the values into the bash block below.**
+
+- If ARGUMENTS contains `--parallel N` (e.g., `--parallel 5`), substitute N for the `1` below
+- If ARGUMENTS contains `--retry-failed`, change `false` to `true` below
+- Default: `MAX_PARALLEL=1`, `RETRY_FAILED=false`
 
 ```bash
-MAX_PARALLEL=1
-RETRY_FAILED=false
-argv=("$@")
-for ((i=0; i<${#argv[@]}; i++)); do
-  if [ "${argv[$i]}" = "--parallel" ]; then
-    n="${argv[$((i+1))]:-}"
-    if printf '%s' "$n" | grep -Eq '^[0-9]+$'; then
-      MAX_PARALLEL="$n"
-    else
-      MAX_PARALLEL=6
-    fi
-  elif [ "${argv[$i]}" = "--retry-failed" ]; then
-    RETRY_FAILED=true
-  fi
-done
+# AI MUST substitute the actual values from ARGUMENTS before running this block:
+MAX_PARALLEL=1       # ← replace with N from --parallel N (e.g. 5 if --parallel 5)
+RETRY_FAILED=false   # ← set to true if --retry-failed appears in ARGUMENTS
 ```
 
 ### Step 2 — Loop: process every prompt until the queue is empty
@@ -1181,78 +1174,20 @@ if [ "$RETRY_FAILED" = true ]; then
 fi
 
 if [ "${MAX_PARALLEL:-1}" -gt 1 ]; then
-  echo "🚀 Parallel mode: up to $MAX_PARALLEL agents (requires \`cursor\` CLI; \`SPECIFIC_PROMPT\` mode not supported)"
-  MAIN_DIR="$(pwd)"
-  PIDS=()
-  while true; do
-    while [ ${#PIDS[@]} -ge "$MAX_PARALLEL" ]; do
-      NEW_PIDS=()
-      for PID in "${PIDS[@]}"; do
-        kill -0 "$PID" 2>/dev/null && NEW_PIDS+=("$PID")
-      done
-      PIDS=("${NEW_PIDS[@]}")
-      [ ${#PIDS[@]} -ge "$MAX_PARALLEL" ] && sleep 3
-    done
-    TARGET=$(ls "${PROMPT_DIR}"/*.md 2>/dev/null | sort | head -1)
-    [ -z "$TARGET" ] || [ ! -f "$TARGET" ] && break
-    PROMPT_NAME=$(basename "$TARGET" .md)
-    IN_PROGRESS_DIR="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
-    mkdir -p "$IN_PROGRESS_DIR"
-    mv "$TARGET" "$IN_PROGRESS_DIR/" 2>/dev/null || continue
-    INPROGRESS_FILE="${IN_PROGRESS_DIR}/$(basename "$TARGET")"
-    WT_SUFFIX="$$-${#PIDS[@]}-$RANDOM"
-    WORKTREE_PATH="/tmp/worktrees/${PROMPT_NAME}-${WT_SUFFIX}"
-    echo "🔀 Spawning parallel slot for: $PROMPT_NAME ($WORKTREE_PATH)"
-    (
-      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null || true
-      rm -rf "$WORKTREE_PATH" 2>/dev/null || true
-      git worktree add --detach "$WORKTREE_PATH" 2>/dev/null || {
-        mv "$INPROGRESS_FILE" "${PROMPT_DIR}/$(basename "$INPROGRESS_FILE")"
-        exit 1
-      }
-      if command -v cursor >/dev/null 2>&1; then
-        cursor agent -p --yolo --workspace "$WORKTREE_PATH" "$(cat "$INPROGRESS_FILE")" 2>&1 | tee "/tmp/pickup-log-${PROMPT_NAME}.txt"
-      else
-        echo "⚠️  cursor CLI not found — complete the prompt in $WORKTREE_PATH manually."
-      fi
-      cd "$WORKTREE_PATH" || exit 1
-      BRANCH_NAME="prompt/${YEAR}-$(date +%m)-$(date +%d)/${PROMPT_NAME}"
-      BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9\/\-]/-/g' | sed 's/-\+/-/g')
-      git checkout -b "$BRANCH_NAME" 2>/dev/null || true
-      git add -A
-      git commit -m "feat: execute prompt ${PROMPT_NAME}
-
-Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>" 2>/dev/null || true
-      REMOTE=$(git remote | head -1)
-      if [ -n "$REMOTE" ]; then
-        git push "$REMOTE" "$BRANCH_NAME" 2>&1
-        PUSH_EXIT=$?
-        if [ "$PUSH_EXIT" -ne 0 ]; then
-          cd "$MAIN_DIR" || exit 1
-          git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
-          FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
-          mkdir -p "$FAILED_DIR"
-          mv "$INPROGRESS_FILE" "$FAILED_DIR/"
-          echo "$(date '+%H:%M:%S') | $(basename "$MAIN_DIR") | PUSH FAILED | ${PROMPT_NAME}" >> ~/auset-brain/Swarms/live-feed.md
-          exit 1
-        fi
-        cd "$WORKTREE_PATH" || exit 1
-        gh pr create \
-          --base develop \
-          --title "feat: ${PROMPT_NAME}" \
-          --body "Executed by /pickup-prompt --parallel" 2>/dev/null || true
-      fi
-      cd "$MAIN_DIR" || exit 1
-      COMPLETED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
-      mkdir -p "$COMPLETED_DIR"
-      mv "$INPROGRESS_FILE" "$COMPLETED_DIR/"
-      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
-      echo "$(date '+%H:%M:%S') | $(basename "$MAIN_DIR") | PARALLEL COMPLETE | ${PROMPT_NAME}" >> ~/auset-brain/Swarms/live-feed.md
-    ) &
-    PIDS+=($!)
-  done
-  wait
-  echo "✅ Parallel batch finished."
+  echo "🚀 Parallel mode: $MAX_PARALLEL agents → pickup-dispatch.sh"
+  # Unlock macOS keychain (required for cursor CLI)
+  KEYCHAIN_PASS=$(cat ~/.agent-creds/keychain-password 2>/dev/null)
+  [ -n "$KEYCHAIN_PASS" ] && security unlock-keychain -p "$KEYCHAIN_PASS" 2>/dev/null && echo "🔑 Keychain unlocked"
+  # Delegate to standalone dispatch script (handles real bash forking + PID management)
+  DISPATCH_SCRIPT=~/bin/pickup-dispatch.sh
+  if [ -f "$DISPATCH_SCRIPT" ]; then
+    bash "$DISPATCH_SCRIPT" "$MAX_PARALLEL"
+  else
+    echo "❌ pickup-dispatch.sh not found at ~/bin/"
+    echo "   Install it: copy from boilerplate .claude/scripts/pickup-dispatch.sh"
+    echo "   Or run: ssh quik-cloud 'curl -s <url> > ~/bin/pickup-dispatch.sh && chmod +x ~/bin/pickup-dispatch.sh'"
+    exit 1
+  fi
 else
 while true; do
   # ── Find next prompt ──────────────────────────────────────────────────────
@@ -1502,8 +1437,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.9.1
+version: 3.9.3
 changelog:
+  - v3.9.3: Fix --parallel N on QCS1 — replaced broken $@ arg parsing (always empty in AI-executed bash) with explicit AI substitution in Step 1b; delegated parallel dispatch to ~/bin/pickup-dispatch.sh (real bash forking); added keychain unlock before cursor spawn.
   - v3.9.2: Step 0.6 — historical backfill: scans ALL past date directories for 1-not-started/*.md and moves them into today's queue. No prompt is ever silently abandoned across day boundaries.
   - v3.9.1: Add --retry-failed — re-queue 4-failed/ prompts to 1-not-started/. --status shows warning when 4-failed/ is non-empty.
   - v3.9.0: Add --parallel N — optional headless Cursor agent slots (atomic mv lock); default sequential unchanged.
