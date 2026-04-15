@@ -81,32 +81,38 @@ run-migrations [OPTIONS]
 - Backend Sequelize configuration (`src/config/sequelize.config.js`)
 - Environment files (`.env.local`, `.env.develop`, `.env.production`)
 
-## Setup as Shell Alias
+## Quick Commands
 
-To use as a simple command from anywhere:
+**From any Heru root directory:**
 
-### 1. Add to ~/.zshrc
 ```bash
-echo 'alias run-migrations="bash ~/.local/bin/run-migrations-all-environments.sh"' >> ~/.zshrc
+# All environments (local + develop) — interactive
+cd backend && ./scripts/run-migrations-all-environments.sh
+
+# Include production — auto-confirm
+cd backend && ./scripts/run-migrations-all-environments.sh --production -y
 ```
 
-### 2. Copy script to ~/.local/bin
+**Shell aliases (in ~/.zshrc):**
+
 ```bash
-mkdir -p ~/.local/bin
-cp scripts/run-migrations-all-environments.sh ~/.local/bin/
-chmod +x ~/.local/bin/run-migrations-all-environments.sh
+migrate       # cd backend && ./scripts/run-migrations-all-environments.sh
+migrate-prod  # cd backend && ./scripts/run-migrations-all-environments.sh --production -y
 ```
 
-### 3. Reload shell
+**For Cursor agents — paste this directly:**
+
 ```bash
-source ~/.zshrc
+cd backend && ./scripts/run-migrations-all-environments.sh
 ```
 
-### 4. Use from anywhere
+Or with production:
+
 ```bash
-cd path/to/backend
-run-migrations --seed
+cd backend && ./scripts/run-migrations-all-environments.sh --production -y
 ```
+
+**IMPORTANT (from CLAUDE.md):** Migrations MUST run on all environments: `.env.local`, `.env.develop`, AND `.env.production`.
 
 ## Troubleshooting
 

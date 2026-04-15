@@ -1,5 +1,18 @@
 # .claude/commands Changelog
 
+## [Unreleased] - 2026-04-14
+
+### Added
+- **ai-estimate.md** — Machine-speed timeline estimation. Forces all agents to give hours, not sprints. QCS1 baselines, 6-agent parallel batching, 10-50x correction factor vs human estimates.
+
+### Changed
+- **pickup-prompt.md v3.8.0** — Enhanced `--status` with full /ai-estimate integration: AI timeline (hrs done/remaining/total), parallel batch math (6 agents/QCS1), prompt filenames to write with flags, cumulative time tracking, human equivalent.
+
+## [Unreleased] - 2026-04-12
+
+### Changed
+- **ossie.md** — Deployment/orchestration command doc updates (mirrored in `.cursor/commands/ossie.md`).
+
 ## [Unreleased]
 
 ### Added

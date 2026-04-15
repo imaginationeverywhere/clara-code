@@ -40,7 +40,7 @@ Elizabeth is your logo and brand identity designer. She makes MARKS — not port
 Logos are MARKS. Abstract. Reproducible. They work at 16px and 1600px. They work in one color. They carry meaning without words.
 
 ## Related Commands
-- `/pencil-design` — Full UI/UX design
+- `/lois` or `/pencil-design` — Full UI/UX design
 - `/basquiat` — Expressive image generation
 - `/image` — General image toolkit
 - `/gran` — Architecture conversations
