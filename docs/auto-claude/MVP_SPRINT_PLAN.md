@@ -1,37 +1,58 @@
-# Sprint 3 Plan — Clara Code
+# Sprint 4 Plan — Clara Code
 
-> **Sprint Dates**: 2026-04-13 onward
-> **Sprint Goal**: Unblock sign-in, dispatch IDE/CLI surfaces, start Stripe clock
+> **Sprint Dates**: 2026-04-14 onward
+> **Sprint Goal**: Wire Clerk to CF env, ship develop→main release, dispatch IDE/CLI, start Stripe checkout
 
 ---
 
-## Sprint Backlog
+## Sprint 3 Retrospective (2026-04-14)
 
-### Priority 1 — Must Complete (Unblocks Everything)
+**25 PRs merged. Grade A- overall. 208 tests. 90.79% coverage.**
 
-| Task | Command | Notes |
-|------|---------|-------|
-| Wire Clerk keys to CF Workers env | DevOps (Mo) | `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` + `CLERK_SECRET_KEY` in CF dashboard |
-| Submit Stripe merchant account | Mo | Start 5-10 day approval window |
-| Dispatch S2-IDE prompt to Cursor on QCS1 | Carruthers | `packages/ide-extension/` — sidebar webview, voice bar, surface scripts |
-| Dispatch S2-CLI/TUI prompt to Cursor on QCS1 | Carruthers | `packages/tui/`, `packages/coding-agent/` — full-screen voice TUI |
+| Delivered | Status |
+|-----------|--------|
+| Desktop SecretStorage (gateway URL hidden) | ✅ PR #29 A- |
+| Dashboard real API (localStorage eliminated) | ✅ PR #30 A |
+| GA4 analytics install funnel | ✅ PR #31 A |
+| Design system tokens (tailwind + docs) | ✅ PR #32 A- |
+| `/account` page with delete account flow | ✅ (in PR #30) |
 
-### Priority 2 — Should Complete
+---
 
-| Task | Command | Notes |
-|------|---------|-------|
-| Wire dashboard to `/api/keys` backend | Motley | Replace localStorage mock with `GET /api/keys` |
-| Add Svix webhook verification (HIGH-04) | Miles | `backend/src/routes/webhooks.ts` — required before Stripe live |
-| Set DNS for `develop.claracode.ai` | DevOps | CF Workers custom domain; needed for Clerk OAuth redirects |
-| Resume `/review-code` on voice API auth changes | Carruthers | Voice route + dashboard page coverage ≥80% |
+## Sprint 4 Backlog
 
-### Priority 3 — Stretch
+### Priority 1 — Must Complete (Mo Actions)
 
-| Task | Command | Notes |
-|------|---------|-------|
-| Dispatch S2-Desktop (Tauri) prompt | Carruthers | `desktop/` Tauri app voice layer |
-| Wire checkout page — Stripe Elements | Motley | Requires Stripe approval first |
-| Add Stripe checkout API route (`/api/checkout`) | Miles | Blocked until merchant approved |
+| Task | Owner | Notes |
+|------|-------|-------|
+| Add `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` + `CLERK_SECRET_KEY` to CF Workers env | Mo | CF Dashboard → Workers & Pages → clara-code / clara-code-preview → Settings → Env Vars |
+| Add `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in` + `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up` | Mo | Same CF env vars step |
+| Export `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` from SSM, run `npm run pages:build` | Mo | Required before next CF deploy has Stripe |
+
+### Priority 2 — Carruthers (Tech Lead)
+
+| Task | Notes |
+|------|-------|
+| Create `develop → main` release PR | 220 commits; full Sprint 1-3 output to production |
+| Dispatch S2-IDE prompt to Cursor on QCS1 | `packages/ide-extension/` — sidebar, voice panel, activation |
+| Dispatch S2-CLI/TUI prompt to Cursor on QCS1 | `packages/tui/`, `packages/coding-agent/` — full-screen voice TUI |
+| Re-enable Clerk middleware in `frontend/src/middleware.ts` after Clerk keys wired | Replace passthrough with `clerkMiddleware()` |
+
+### Priority 3 — Miles (Backend)
+
+| Task | Notes |
+|------|-------|
+| Build Stripe checkout flow (prompt 06 from archive) | Live keys in SSM; `STRIPE_WEBHOOK_SECRET` needed |
+| Add Svix webhook verification to `backend/src/routes/webhooks.ts` | Required before Stripe events are trusted in production |
+| Add `develop.claracode.ai` custom domain to Clerk allowed origins | Needed for OAuth redirects |
+
+### Priority 4 — Motley (Frontend)
+
+| Task | Notes |
+|------|-------|
+| Verify sculpt scale 400–100 against `mockups/app/src/index.css` | PR #32 only has 5 stops; spec said 900–100 |
+| Wire checkout success page to Stripe session | Currently placeholder |
+| Settings page functionality | Profile update, notification prefs |
 
 ---
 
@@ -49,10 +70,11 @@ These upstream PRs are open against `develop` — review before merging to avoid
 
 ---
 
-## Sprint Risks
+## Sprint 4 Risks
 
 | Risk | Probability | Impact | Mitigation |
 |------|-------------|--------|------------|
-| Stripe approval delayed | High | High | Start immediately; use test mode |
-| CF Workers build breaks during IDE/CLI dispatch | Medium | Medium | Test CF build before dispatching more prompts |
-| Clerk wiring reveals more env issues | Low | Medium | Test sign-in immediately after wiring |
+| Clerk wiring reveals additional CF env gaps | Low | Medium | Test sign-in immediately after setting vars |
+| Sculpt scale gap (400–100) may require design rework | Medium | Low | Verify against mockup source before adding stops |
+| IDE/CLI dispatch creates merge conflicts with develop | Low | Medium | Rebase prompt branches against latest develop |
+| Stripe checkout prompt needs to match dynamic pricing policy | Low | High | Prompt must use `stripe.prices.list()` + metadata — NO env var price IDs |
