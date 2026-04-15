@@ -62,7 +62,7 @@ function ApiKeysInner() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-[#09090F] p-8">
+    <main className="min-h-screen bg-bg-terminal p-8">
       <div className="mx-auto max-w-3xl">
         <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div>

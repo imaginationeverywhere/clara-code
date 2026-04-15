@@ -69,7 +69,7 @@ export function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#0a0a0b] text-white">
+    <div className="min-h-screen bg-bg-overlay text-white">
       <header className="border-b border-white/10 bg-black/40 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
           <span className="text-lg font-semibold tracking-tight text-clara">Clara Code</span>
@@ -139,7 +139,7 @@ export function LandingPage() {
             <h2 className="text-2xl font-semibold md:text-3xl">Install</h2>
             <p className="mt-2 text-white/55">CLI scaffold — npm package listing coming soon.</p>
             <div className="mt-8 flex max-w-2xl flex-col gap-4">
-              <div className="flex flex-wrap items-stretch gap-3 rounded-xl border border-white/10 bg-[#0f0f10] p-4 font-mono text-sm md:items-center">
+              <div className="flex flex-wrap items-stretch gap-3 rounded-xl border border-white/10 bg-bg-overlay p-4 font-mono text-sm md:items-center">
                 <code className="min-w-0 flex-1 break-all text-clara">{installCommand}</code>
                 <button
                   type="button"

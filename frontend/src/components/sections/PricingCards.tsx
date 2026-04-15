@@ -60,7 +60,7 @@ export function PricingCards() {
                 'relative flex flex-col rounded-2xl border p-6',
                 tier.highlight
                   ? 'border-clara-blue bg-clara-surface shadow-[0_0_0_1px_rgba(59,130,246,0.35)]'
-                  : 'border-white/5 bg-[#0c0c14]',
+                  : 'border-white/5 bg-bg-raised',
               )}
             >
               {tier.highlight && (

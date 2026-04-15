@@ -18,12 +18,12 @@ export function InstallCTA() {
   const [tab, setTab] = useState<Tab>('npm')
 
   return (
-    <section className="border-t border-white/5 bg-[#07070c] py-20">
+    <section className="border-t border-white/5 bg-bg-sunken py-20">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <h2 className="text-center text-2xl font-semibold text-white sm:text-3xl">Install</h2>
         <p className="mt-2 text-center text-white/50">Pick your package manager or grab the extension.</p>
 
-        <div className="mt-8 overflow-hidden rounded-xl border border-white/10 bg-[#0a0a12] shadow-card">
+        <div className="mt-8 overflow-hidden rounded-xl border border-white/10 bg-bg-overlay shadow-card">
           <div className="flex flex-wrap gap-1 border-b border-white/5 p-2">
             {(['npm', 'pnpm', 'brew', 'vscode'] as const).map((id) => (
               <button

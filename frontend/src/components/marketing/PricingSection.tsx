@@ -4,7 +4,7 @@ const GITHUB = 'https://github.com/imaginationeverywhere/clara-code'
 
 export function PricingSection() {
 	return (
-		<section id="pricing" className="bg-[#0D1117] py-28">
+		<section id="pricing" className="bg-bg-base py-28">
 			<div className="mx-auto max-w-4xl px-6">
 				<div className="mb-16 text-center">
 					<p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/30">Pricing</p>
@@ -13,7 +13,7 @@ export function PricingSection() {
 				</div>
 
 				<div className="grid grid-cols-1 items-start gap-5 md:grid-cols-3">
-					<div className="rounded-2xl border border-white/8 bg-[#0A0E14] p-7">
+					<div className="rounded-2xl border border-white/8 bg-bg-overlay p-7">
 						<p className="mb-4 text-sm uppercase tracking-wide text-white/50">Free</p>
 						<p className="text-white">
 							<span className="text-[44px] font-bold">$0</span>
@@ -37,16 +37,16 @@ export function PricingSection() {
 						</Link>
 					</div>
 
-					<div className="relative rounded-2xl border border-[#7C3AED]/30 bg-gradient-to-b from-[#7C3AED]/8 to-[#0A0E14] p-7 shadow-[0_0_60px_rgba(124,58,237,0.15)] ring-1 ring-[#7C3AED]/40">
-						<div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-[#7C3AED] px-4 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+					<div className="relative rounded-2xl border border-brand-purple/30 bg-gradient-to-b from-brand-purple/8 to-bg-overlay p-7 shadow-[0_0_60px_rgba(124,58,237,0.15)] ring-1 ring-brand-purple/40">
+						<div className="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-brand-purple px-4 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
 							Most Popular
 						</div>
-						<p className="mb-4 text-sm uppercase tracking-wide text-[#7C3AED]">Pro</p>
+						<p className="mb-4 text-sm uppercase tracking-wide text-brand-purple">Pro</p>
 						<p className="text-white">
 							<span className="text-[44px] font-bold">$20</span>
 							<span className="ml-1 text-base text-white/45">/month</span>
 						</p>
-						<div className="my-6 border-t border-[#7C3AED]/15" />
+						<div className="my-6 border-t border-brand-purple/15" />
 						<ul className="space-y-3 text-sm text-white/70">
 							<li>✓ Everything in Free</li>
 							<li>✓ Voice + cloud sync</li>
@@ -58,13 +58,13 @@ export function PricingSection() {
 						</ul>
 						<Link
 							href="/checkout/pro"
-							className="mt-6 block w-full rounded-xl bg-[#7C3AED] py-3 text-center text-sm font-semibold text-white shadow-[0_4px_20px_rgba(124,58,237,0.4)] transition hover:bg-[#6D28D9]"
+							className="mt-6 block w-full rounded-xl bg-brand-purple py-3 text-center text-sm font-semibold text-white shadow-[0_4px_20px_rgba(124,58,237,0.4)] transition hover:bg-brand-purple-hover"
 						>
 							Start Free Trial
 						</Link>
 					</div>
 
-					<div className="rounded-2xl border border-white/8 bg-[#0A0E14] p-7">
+					<div className="rounded-2xl border border-white/8 bg-bg-overlay p-7">
 						<p className="mb-4 text-sm uppercase tracking-wide text-white/50">Team</p>
 						<p className="text-white">
 							<span className="text-[44px] font-bold">$99</span>
@@ -91,7 +91,7 @@ export function PricingSection() {
 
 				<p className="mt-12 text-center text-[12px] text-white/25">
 					All plans include CLI access · Prices in USD · Cancel anytime ·{' '}
-					<a href={GITHUB} className="text-[#7BCDD8]/80 hover:underline">
+					<a href={GITHUB} className="text-clara/80 hover:underline">
 						Source on GitHub
 					</a>
 				</p>
