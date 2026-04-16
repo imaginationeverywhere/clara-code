@@ -1,5 +1,17 @@
 # .claude/commands Changelog
 
+## [1.35.1] - 2026-04-16
+
+### Added
+- **pickup-prompt v3.14.0 + queue-prompt** — `--bedrock` loads `setup/bedrock.md` and `/setup-bedrock`; requires `docs/standards/AI-MODEL-ROUTING.md` for routing changes.
+- **pickup-prompt v3.13.0 + queue-prompt** — `--migrate-amplify-to-cf` loads the Amplify→Cloudflare Workers + DNS playbook (`setup/migrate-amplify-to-cf.md` + `/migrate-amplify-to-cf`).
+- **`/git-sweep`** — `.claude/commands/git-sweep.md` + `.claude/scripts/git-sweep.sh` (mirrored `.cursor/commands/git-sweep.md`): prune merged branches and orphaned worktrees across Herus.
+- **open-qcs1.md** — Related Commands: link to `/open-tabs`.
+
+### Changed
+- **`/git-sweep`** — `--apply` (interactive apply; confirms when >20 operations), `--yes` (apply without prompts); `--merged-only` skips worktree prune and dangling `worktree-agent-*` deletes on apply; single-repo mode exits with an error outside a git repo; prints recent **active** branches; macOS Bash 3.2 + `set -u` safe empty-array handling.
+- **`.claude/settings.json`** — Session / Stop / Subagent hooks resolve `PROJ` via `git rev-parse --show-toplevel` and run hook scripts with `bash "${PROJ}/.claude/hooks/…"`.
+
 ## [1.35.0] - 2026-04-15 (evening)
 
 ### Added
@@ -24,7 +36,7 @@
 - **docs/prompts/** — Discoverable prompt library (mirrors command templates).
 
 ### Changed
-- **`open-tabs.sh` (`--cursor-qcs1`)** — H2b follow-up (`129-fix-open-tabs-qcs1-cd-regression.md`): the H2 `ssh … bash -lc` wrapper broke remote `cd` (`~/` escaped; `&&` parsed before `bash -lc`). Remote command is now `ssh %q -t %q` with unquoted `cd ${RHOST}` after `validate_remote_path`; message still `printf %q`. Root `CHANGELOG.md` [Unreleased] **Fixed** entry.
+- **`open-tabs.sh` (`--cursor-qcs1`)** — H2b follow-up (`129-fix-open-tabs-qcs1-cd-regression.md`): the H2 `ssh … bash -lc` wrapper broke remote `cd` (`~/` escaped; `&&` parsed before `bash -lc`). Remote command is now `ssh %q -t %q` with unquoted `cd ${RHOST}` after `validate_remote_path`; message still `printf %q`. Root `CHANGELOG.md` **[1.35.1]** **Fixed** entry.
 - **pickup-prompt.md v3.9.3** — Fix `--parallel N` on QCS1: (1) Step 1b: replaced broken `argv=("$@")` parsing with explicit AI-substitution instruction; (2) Parallel block: inline PID loop replaced with call to `~/bin/pickup-dispatch.sh`; (3) Keychain unlock added before cursor spawn.
 
 ### Added (earlier same day)
