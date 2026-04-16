@@ -1,11 +1,33 @@
 # .claude/commands Changelog
 
-## [Unreleased] - 2026-04-15
-
-### Changed
-- **pickup-prompt.md v3.9.3** — Fix `--parallel N` on QCS1: (1) Step 1b: replaced broken `argv=("$@")` parsing with explicit AI-substitution instruction; (2) Parallel block: inline PID loop replaced with call to `~/bin/pickup-dispatch.sh`; (3) Keychain unlock added before cursor spawn.
+## [1.35.0] - 2026-04-15 (evening)
 
 ### Added
+- **.claude/hooks/auto-memory.sh, voice-tts.sh, telegraph-check.sh** — No-op stub scripts to silence "missing script" Stop-hook errors that were spamming every session pause. Settings.json no longer fails on Stop events.
+- **.claude/scripts/inject-target-repo.py** — Idempotent classifier that scans `prompts/<date>/1-not-started/` and prepends `**TARGET REPO:**` headers based on filename pattern matching. Used April 15 to classify 92 prompts; 1 marked REVIEW_NEEDED. STRIKE-WORTHY rule that prompts must declare target repo before queue entry.
+
+### Changed
+- **.claude/commands/grill-me.md + .cursor/commands/grill-me.md** — Refactored requirement-interrogation flow (-78 / +60 lines, cleaner branching).
+- **.claude/scripts/pickup-dispatch.sh** — One-line fix.
+
+## [Unreleased] - 2026-04-15
+
+### Added
+- **`/setup-bedrock`** — `.claude/commands/setup-bedrock.md` (+ `.cursor/commands/setup-bedrock.md`): AWS Bedrock for Ra Intelligence, DeepSeek default, SSM/IAM. Setup template `prompts/setup/bedrock.md`. **`pickup-prompt` / `queue-prompt`:** `--bedrock` (v3.14.0). Backend: `backend/src/config/bedrock.ts`, `backend/src/features/ai/bedrock/`, `RaIntelligence` integration. Docs: `docs/standards/AI-MODEL-ROUTING.md`, `docs/technical/AI_INTEGRATION.md` (Bedrock section). Agent: `.claude/agents/cloudflare-ai-gateway.md` (Bedrock primary vs CF supplementary).
+- **`open-tabs.sh` (security)** — H1/H2 shell-injection fixes: `printf %q` for Claude team strings and SSH remote body; `validate_remote_path` (`^[~/a-zA-Z0-9._/+-]+$`); `ssh %q -t bash -lc %q` wrapper; numeric validation for `--cursor-qcs1` + interactive; self-contained `usage()` (prompt `129-fix-open-tabs-shell-injection.md`).
+- **`/open-tabs`** — `.claude/commands/open-tabs.md` + `.claude/scripts/open-tabs.sh`: spawn Claude Code and/or Cursor agent **windows** (tabs) or **panes** in the **current** tmux session; `--claude`, `--cursor` (count or prompt ids), `--cursor-qcs1`, `--layout tabs|panes`, `--project` + named aliases, `--dry-run`, confirmation at 6+ spawns, `.heru-skip` guard, live-feed line. Mirrored `.cursor/commands/open-tabs.md`. See `docs/standards/swarm-accountability-rules.md` (additive /open-tabs note).
+- **`/migrate-amplify-to-cf`** — `.claude/commands/migrate-amplify-to-cf.md`: Amplify → Cloudflare Workers + Route53→CF DNS playbook (`--dry-run`, `--frontend-only`, `--dns-only`, `--rollback`). Setup template `prompts/setup/migrate-amplify-to-cf.md`. Docs: `docs/cloudflare/AMPLIFY-TO-CLOUDFLARE-MIGRATION.md`, `docs/migrations/README.md`. **`pickup-prompt` / `queue-prompt`:** `--migrate-amplify-to-cf` (v3.13.0). **`sync-herus --standards`:** includes new cloudflare + migrations index paths.
+- **pickup-prompt.md v3.12.0 — `--filter <regex>`** — Limits execution to queued prompts whose **basename** matches `grep -E` (e.g. alternation). Sequential loop and `pickup-dispatch.sh` (arg2 or `PICKUP_FILTER` env). Stops when no more matches remain; non-matching files stay in `1-not-started/`.
+- **sync-herus.md — `--standards`** — Syncs `docs/standards/*`, deployment + Cloudflare docs, full `docs/prompts/`, and root `CONTEXT_EFFICIENCY.md` to every Heru (git-root `.claude` discovery unchanged). Composes with `--dry-run` and `--push`; commit step stages `docs/` + `CONTEXT_EFFICIENCY.md` when this flag was used.
+- **queue-prompt.md** — Documented **symmetric** flag parity with `/pickup-prompt` (standards, setup, prompt-type flags); Step 3b for generating queued files from flags.
+- **pickup-prompt.md v3.11.0** — Clara Code **8-step setup** flags + `.claude/commands/prompts/setup/` template library (`--source-control`, provider aliases, `--vite`, `--angular`, `--aws-deploy`, `--gcp`, `--azure`, `--cloudflare`, `--react-native` / `--expo`, `--electron`, `--nextjs`).
+- **docs/prompts/** — Discoverable prompt library (mirrors command templates).
+
+### Changed
+- **`open-tabs.sh` (`--cursor-qcs1`)** — H2b follow-up (`129-fix-open-tabs-qcs1-cd-regression.md`): the H2 `ssh … bash -lc` wrapper broke remote `cd` (`~/` escaped; `&&` parsed before `bash -lc`). Remote command is now `ssh %q -t %q` with unquoted `cd ${RHOST}` after `validate_remote_path`; message still `printf %q`. Root `CHANGELOG.md` [Unreleased] **Fixed** entry.
+- **pickup-prompt.md v3.9.3** — Fix `--parallel N` on QCS1: (1) Step 1b: replaced broken `argv=("$@")` parsing with explicit AI-substitution instruction; (2) Parallel block: inline PID loop replaced with call to `~/bin/pickup-dispatch.sh`; (3) Keychain unlock added before cursor spawn.
+
+### Added (earlier same day)
 - **.claude/scripts/pickup-dispatch.sh** — Standalone parallel Cursor dispatcher. Real bash forking + PID management + keychain unlock. Install: `cp .claude/scripts/pickup-dispatch.sh ~/bin/ && chmod +x ~/bin/pickup-dispatch.sh`. Usage: `cd <project> && pickup-dispatch.sh 5`.
 
 ## [Unreleased] - 2026-04-14

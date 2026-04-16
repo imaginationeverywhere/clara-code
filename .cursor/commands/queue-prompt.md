@@ -21,6 +21,38 @@ Use this command whenever you — or a team — write a Cursor implementation pr
 /queue-prompt --create "02-web-navbar"    # Create a new numbered placeholder in today's queue
 ```
 
+### Symmetric flags (same param universe as `/pickup-prompt`)
+
+`/queue-prompt` accepts **every** flag `/pickup-prompt` accepts. Instead of executing work, the agent **writes** a new markdown file under `prompts/<date>/1-not-started/` whose body is:
+
+1. **Prepended sections** — For each flag, the same content `/pickup-prompt` would load (standards from `.claude/standards/*.md`, setup templates from `.claude/commands/prompts/setup/*.md`, page/component templates from `.claude/commands/prompts/*.md`).
+2. **Task section** — Optional user text from the command line (the quoted `"..."` after flags), or a default line: `Execute the scoped work per prepended templates; open a PR against develop.`
+
+**Symmetry rule**
+
+```
+/queue-prompt --clerk "Document Clerk redirect URLs for staging"   → writes queued prompt
+/pickup-prompt --clerk                                              → executes next matching / any queued prompt when combined with filename
+```
+
+Stacking is identical to pickup: `/queue-prompt --frontend --clerk --security "Implement auth layout"`.
+
+**8-step setup flags (queue the same names as pickup)**
+
+`--source-control` · `--github` · `--gitlab` · `--bitbucket` · `--azure-devops` · `--frontend` · `--nextjs` · `--vite` · `--angular` · `--backend` · `--clerk` · `--feedback-widget` · `--react-native` · `--expo` · `--electron` · `--aws-deploy` · `--gcp` · `--azure` · `--cloudflare` · `--migrate-amplify-to-cf` · `--bedrock`
+
+**Standards / integration / stack flags** — same list as `/pickup-prompt` Usage block (`--stripe`, `--graphql`, `--design`, `--mobile`, `--cf`, etc.).
+
+**Clara prompt-type flags** — `--privacy-policy`, `--tos`, `--about-us`, `--contact-us`, `--nav-bar`, `--hero-section`, `--footer`, `--feedback-widget`, `--user-journey`, `--rbac`.
+
+**Meta flags** — `/queue-prompt` does **not** implement `--parallel`, `--status`, `--retry-failed`, or `--list` from pickup; those remain execute-only on `/pickup-prompt`.
+
+### Queue file naming
+
+When creating from flags, use: `NN-<short-slug>.md` where `NN` is the next two-digit sequence in the folder and `short-slug` derives from the first flag + topic (e.g. `07-clerk-staging-urls.md`).
+
+Discoverability: see `docs/prompts/README.md`.
+
 ---
 
 ## Execution
@@ -80,6 +112,23 @@ echo "# Prompt: ${SLUG}" > "$FILENAME"
 echo "Created placeholder: ${FILENAME}"
 echo "Edit it, then run /pickup-prompt to execute."
 ```
+
+### Step 3b — When ARGUMENTS include `/pickup-prompt` flags (symmetric queue)
+
+The executing agent MUST:
+
+1. Resolve `QUEUE_DIR` (same as Step 1).
+2. Compute the next `NN-` prefix (two digits, lowest unused).
+3. For **each** flag that `/pickup-prompt` would honor, load the **same** file(s): `.claude/standards/*.md` for standards flags, `.claude/commands/prompts/setup/*.md` for 8-step flags, `.claude/commands/prompts/*.md` for page/component flags — see `.claude/commands/pickup-prompt.md` and `.claude/commands/prompts/README.md`.
+4. Prepend those sections into a single markdown document (clear horizontal rules between sections).
+5. Append a `## Task` section containing the user's quoted text, or a one-line default task if none provided.
+6. Write `QUEUE_DIR/NN-<slug>.md` and print the absolute path.
+
+**`--clerk`:** prepend both `setup/clerk.md` and `.claude/standards/clerk-auth.md` (same effective constraints as pickup).
+
+**`--migrate-amplify-to-cf`:** prepend `setup/migrate-amplify-to-cf.md`, `.claude/commands/migrate-amplify-to-cf.md`, and ensure **`docs/cloudflare/AMPLIFY-TO-CLOUDFLARE-MIGRATION.md`** is in context (same as pickup).
+
+**`--bedrock`:** prepend `setup/bedrock.md` and `.claude/commands/setup-bedrock.md` (same as pickup); include **`docs/standards/AI-MODEL-ROUTING.md`** when editing routing.
 
 ---
 
