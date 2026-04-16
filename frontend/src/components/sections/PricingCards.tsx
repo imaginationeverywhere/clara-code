@@ -23,7 +23,7 @@ const tiers = [
       'Priority support',
     ],
     cta: 'Get Pro',
-    href: '/sign-up',
+    href: '/checkout/pro',
     highlight: true,
   },
   {
@@ -38,8 +38,8 @@ const tiers = [
       'SLA',
       'Custom voice',
     ],
-    cta: 'Contact Sales',
-    href: '/sign-up',
+    cta: 'Get Business',
+    href: '/checkout/business',
     highlight: false,
   },
 ]

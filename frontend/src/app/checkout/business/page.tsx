@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Header } from "@/components/marketing/Header";
 
-export default function CheckoutProPage() {
+export default function CheckoutBusinessPage() {
 	const [error, setError] = useState<string | null>(null);
 	const router = useRouter();
 
@@ -14,7 +14,7 @@ export default function CheckoutProPage() {
 				const res = await fetch("/api/checkout/create-session", {
 					method: "POST",
 					headers: { "Content-Type": "application/json" },
-					body: JSON.stringify({ tier: "pro" }),
+					body: JSON.stringify({ tier: "business" }),
 				});
 				const data = (await res.json()) as { url?: string; error?: string };
 				if (!res.ok || !data.url) {

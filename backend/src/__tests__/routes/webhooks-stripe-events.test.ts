@@ -6,6 +6,7 @@ import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 
 const mockConstructEvent = jest.fn();
 const mockRetrieve = jest.fn();
+const mockPriceRetrieve = jest.fn();
 
 jest.mock("@/features/talent-registry/talent-registry-instance", () => {
 	const talentRegistrySvc = {
@@ -24,6 +25,9 @@ jest.mock("stripe", () =>
 		},
 		subscriptions: {
 			retrieve: (...args: unknown[]) => mockRetrieve(...args),
+		},
+		prices: {
+			retrieve: (...args: unknown[]) => mockPriceRetrieve(...args),
 		},
 	})),
 );
@@ -66,8 +70,6 @@ describe("stripeWebhookHandler events", () => {
 		tr.cancelDeveloperProgram.mockResolvedValue(undefined);
 		process.env.STRIPE_WEBHOOK_SECRET = "whsec_test";
 		process.env.STRIPE_SECRET_KEY = "sk_test";
-		process.env.STRIPE_PRICE_PRO = "price_pro";
-		process.env.STRIPE_PRICE_BUSINESS = "price_bus";
 	});
 
 	afterEach(() => {
@@ -204,7 +206,7 @@ describe("stripeWebhookHandler events", () => {
 			data: {
 				object: {
 					id: "sub_x",
-					metadata: { clerk_user_id: "user_c" },
+					metadata: { clerk_user_id: "user_c", tier: "pro" },
 					customer: "cus_c",
 					status: "active",
 					items: { data: [{ price: { id: "price_pro" } }] },

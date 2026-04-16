@@ -13,9 +13,13 @@ function getStripe(): Stripe | null {
 	return new Stripe(key, { apiVersion: "2023-10-16" });
 }
 
-function priceIdForTier(tier: "pro" | "business"): string | undefined {
-	const id = tier === "pro" ? process.env.STRIPE_PRICE_PRO : process.env.STRIPE_PRICE_BUSINESS;
-	return id?.trim() || undefined;
+async function getPriceForTier(stripe: Stripe, tier: "pro" | "business"): Promise<string> {
+	const prices = await stripe.prices.list({ active: true, limit: 100 });
+	const match = prices.data.find((p) => p.metadata?.clara_tier === tier && p.type === "recurring");
+	if (!match) {
+		throw new Error(`No active recurring Stripe price found with metadata clara_tier=${tier}`);
+	}
+	return match.id;
 }
 
 router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, res: Response): Promise<void> => {
@@ -39,9 +43,11 @@ router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, 
 			return;
 		}
 
-		const priceId = priceIdForTier(tier);
-		if (!priceId) {
-			res.status(503).json({ error: "Stripe price ID not configured for this tier" });
+		let priceId: string;
+		try {
+			priceId = await getPriceForTier(stripe, tier);
+		} catch {
+			res.status(503).json({ error: "No active plan found for this tier — contact support" });
 			return;
 		}
 
@@ -70,7 +76,7 @@ router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, 
 			mode: "subscription",
 			customer: customerId,
 			line_items: [{ price: priceId, quantity: 1 }],
-			success_url: `${frontendUrl}/settings?checkout=success`,
+			success_url: `${frontendUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
 			cancel_url: `${frontendUrl}/pricing`,
 			metadata: {
 				clerk_user_id: auth.userId,

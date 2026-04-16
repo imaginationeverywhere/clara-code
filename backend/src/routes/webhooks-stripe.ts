@@ -132,17 +132,30 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 				}
 				const userId = stripeSub.metadata?.clerk_user_id;
 				if (!userId) break;
-				const priceId = stripeSub.items.data[0]?.price?.id;
-				const pro = process.env.STRIPE_PRICE_PRO;
-				const bus = process.env.STRIPE_PRICE_BUSINESS;
+
 				let tier: "pro" | "business" | null = null;
-				if (priceId && priceId === pro) tier = "pro";
-				else if (priceId && priceId === bus) tier = "business";
-				else if (stripeSub.metadata?.tier === "pro" || stripeSub.metadata?.tier === "business") {
+
+				if (stripeSub.metadata?.tier === "pro" || stripeSub.metadata?.tier === "business") {
 					tier = stripeSub.metadata.tier as "pro" | "business";
+				} else {
+					const priceItem = stripeSub.items.data[0];
+					const rawPrice = priceItem?.price;
+					const priceId = typeof rawPrice === "string" ? rawPrice : rawPrice?.id;
+					if (priceId) {
+						try {
+							const price = await stripe.prices.retrieve(priceId);
+							const claraTier = price.metadata?.clara_tier;
+							if (claraTier === "pro" || claraTier === "business") {
+								tier = claraTier;
+							}
+						} catch {
+							logger.warn("subscription.updated could not retrieve price for tier resolution");
+						}
+					}
 				}
+
 				if (!tier) {
-					logger.warn("subscription.updated could not resolve tier");
+					logger.warn("customer.subscription.updated: cannot resolve tier, skipping");
 					break;
 				}
 				const subRow = await Subscription.findOne({ where: { userId } });
