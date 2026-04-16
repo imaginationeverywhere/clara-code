@@ -1,13 +1,23 @@
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
-// Clerk middleware is disabled until NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY
-// and CLERK_SECRET_KEY are set in GH Actions / CF Pages env vars.
-// Without keys, clerkMiddleware throws at startup → 500 on every route.
-// TODO: Replace with clerkMiddleware once keys are wired.
-export function middleware(_req: NextRequest) {
-	return NextResponse.next();
-}
+const isProtectedRoute = createRouteMatcher(["/dashboard(.*)", "/account(.*)"]);
+
+// NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY is baked into the CF Pages build at build time.
+// When Mo adds the key to CF Pages env vars and CF re-builds, CLERK_ENABLED becomes true.
+// This guard prevents a startup crash when keys are absent (e.g., local dev without .env.local).
+const CLERK_ENABLED = Boolean(process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY);
+
+export default CLERK_ENABLED
+	? clerkMiddleware(async (auth, req) => {
+			if (isProtectedRoute(req)) {
+				await auth.protect();
+			}
+		})
+	: function passthrough(_req: NextRequest) {
+			return NextResponse.next();
+		};
 
 export const config = {
 	matcher: [
