@@ -50,6 +50,10 @@
 			{
 				"command": "clara.explain",
 				"title": "Clara: Explain Selection"
+			},
+			{
+				"command": "clara.setGatewayUrl",
+				"title": "Clara: Set Gateway URL (Dev)"
 			}
 		],
 		"menus": {
