@@ -1,5 +1,15 @@
 # .claude Directory Changelog
 
+## [1.35.2] - 2026-04-16
+
+### Added
+
+- **`/branch-cleanup`** — `commands/branch-cleanup.md` + `scripts/branch-cleanup.sh` (mirrored in `.cursor/`). Replaces `/git-sweep` and `/merge-all`. Full detail: `.claude/commands/CHANGELOG.md` **[1.35.2]**.
+
+### Removed
+
+- **`/git-sweep`, `/merge-all`** — Removed command docs and scripts superseded by `/branch-cleanup`.
+
 ## [1.33.1] - 2026-04-06
 
 ### Added

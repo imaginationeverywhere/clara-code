@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased] - 2026-04-16
+
+### Changed
+
+- **Tests** — `src/__tests__/middleware.test.ts`: Vitest import grouped after Next/Clerk imports (formatting only).
+
 ## [Unreleased] - 2026-04-13
 
 ### Changed

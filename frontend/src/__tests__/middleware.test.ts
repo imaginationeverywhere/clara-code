@@ -1,7 +1,6 @@
-import { afterEach, describe, expect, test, vi } from "vitest";
-
 import { createRouteMatcher } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
+import { afterEach, describe, expect, test, vi } from "vitest";
 
 const protectedPatterns = ["/dashboard(.*)", "/account(.*)"];
 

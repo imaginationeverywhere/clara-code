@@ -160,9 +160,7 @@ describe("customer.subscription.updated tier resolution", () => {
 
 		const res = makeRes();
 		await stripeWebhookHandler(makeReq(Buffer.from("{}")), res);
-		expect(mockWarn).toHaveBeenCalledWith(
-			"customer.subscription.updated: cannot resolve tier, skipping",
-		);
+		expect(mockWarn).toHaveBeenCalledWith("customer.subscription.updated: cannot resolve tier, skipping");
 		expect((Subscription.findOne as jest.Mock).mock.calls.length).toBe(0);
 		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
 	});

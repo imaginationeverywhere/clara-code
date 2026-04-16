@@ -1,8 +1,17 @@
 # .claude/commands Changelog
 
+## [1.35.2] - 2026-04-16
+
+### Changed
+- **`/branch-cleanup`** — Preserves the branch named **`origin`** on the remote (`origin/origin`): not merged into `develop` and not deleted (same class as `main` / `develop`).
+
+### Added
+- **`/branch-cleanup`** — `.claude/commands/branch-cleanup.md` + `.claude/scripts/branch-cleanup.sh` (mirrored `.cursor/commands/branch-cleanup.md` + `.cursor/scripts/branch-cleanup.sh`): `git fetch --all --prune`; `git worktree prune` and delete dangling local `worktree-agent-*` branches not checked out in any worktree; `git checkout develop` and `git pull` (fallback `git pull origin develop`); merge each `origin/*` into `develop` with `git merge --no-ff` except `main` / `develop`; on conflict `git merge --abort` and retain branch for manual resolution; `git push origin develop`; delete remaining local and remote branches except `main`, `develop`, and conflict branches. Replaces **`/git-sweep`** and **`/merge-all`**.
+
 ## [1.35.1] - 2026-04-16
 
 ### Added
+- **`/merge-all`** — `.claude/commands/merge-all.md` + `.claude/scripts/merge-all.sh` (mirrored `.cursor/commands/merge-all.md`): fetch, merge every `origin/*` branch into `develop` (except `main` / `develop` / `backup/*` / `HEAD`), always push `develop`, delete other local and remote branches; conflicts abort and those branches are kept for manual rebase.
 - **pickup-prompt v3.14.0 + queue-prompt** — `--bedrock` loads `setup/bedrock.md` and `/setup-bedrock`; requires `docs/standards/AI-MODEL-ROUTING.md` for routing changes.
 - **pickup-prompt v3.13.0 + queue-prompt** — `--migrate-amplify-to-cf` loads the Amplify→Cloudflare Workers + DNS playbook (`setup/migrate-amplify-to-cf.md` + `/migrate-amplify-to-cf`).
 - **`/git-sweep`** — `.claude/commands/git-sweep.md` + `.claude/scripts/git-sweep.sh` (mirrored `.cursor/commands/git-sweep.md`): prune merged branches and orphaned worktrees across Herus.

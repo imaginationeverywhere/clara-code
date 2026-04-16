@@ -171,7 +171,7 @@ cp "$SRC/.claude/commands/"*.md "$PROJECT/.claude/commands/" 2>/dev/null
 cp "$SRC/.claude/COMMAND_CHEAT_SHEET.md" "$PROJECT/.claude/" 2>/dev/null
 
 # Scripts (shell implementations that commands reference — NEW in v1.1)
-# Without this, commands like /open-tabs, /git-sweep, /migrate-amplify-to-cf
+# Without this, commands like /open-tabs, /branch-cleanup, /migrate-amplify-to-cf
 # land in Herus as dead .md files because their .sh implementations aren't there.
 mkdir -p "$PROJECT/.claude/scripts"
 cp "$SRC/.claude/scripts/"*.sh "$PROJECT/.claude/scripts/" 2>/dev/null

@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased] - 2026-04-16
+
+### Added
+
+- **Voice Coding / VRD** — Root `README.md` documents the public attribution record for Voice Coding and VRD; `VRD-TEMPLATE.md` at repo root for voice-first product specs. See root `CHANGELOG.md` **[Unreleased] - 2026-04-16**.
+
+### Changed
+
+- **`sync-herus` command docs** — `.claude/commands/sync-herus.md` and `.cursor/commands/sync-herus.md`: comment lists `/branch-cleanup` instead of `/git-sweep` for script copy guidance.
+
 ## [Unreleased] - 2026-04-13
 
 ### Added

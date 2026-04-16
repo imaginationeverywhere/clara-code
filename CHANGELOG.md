@@ -2,6 +2,28 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-16
+
+### Added
+
+- **Voice Coding and VRD attribution** — Root `README.md` reframed as the canonical public record for **Voice Coding** and **VRD** (Voice Requirements Document), with attribution to Amen Ra (April 2026). Added `VRD-TEMPLATE.md` plus companion drafts `linkedin-article.md` and `x-thread.md` for distribution.
+- **`/branch-cleanup`** — Replaces `/git-sweep` and `/merge-all`; `.claude/commands/branch-cleanup.md` + `.claude/scripts/branch-cleanup.sh` (mirrored under `.cursor/`). See `.claude/commands/CHANGELOG.md` and `.cursor/commands/CHANGELOG.md` **[1.35.2]**.
+- **Prompt queue** — `prompts/2026/April/16/1-not-started/` — QCS1 voice, desktop, CLI, and Hermes backlog prompts.
+
+### Changed
+
+- **`sync-herus`** — Comment now references `/branch-cleanup` instead of `/git-sweep` when listing shell scripts copied to Herus.
+- Monorepo root version `0.1.2` → `0.1.3`.
+- **Directory changelogs** — `docs/CHANGELOG.md`, `frontend/CHANGELOG.md`, `.claude/CHANGELOG.md` updated; command-level notes in `.claude/commands/CHANGELOG.md` and `.cursor/commands/CHANGELOG.md` **[1.35.2]**.
+
+### Removed
+
+- **`/git-sweep` and `/merge-all`** — Commands and scripts removed; workflow superseded by `/branch-cleanup`. Details in `.claude/commands/CHANGELOG.md` **[1.35.2]**.
+
+### Fixed
+
+- **Tests** — Formatting-only updates in `backend/src/__tests__/routes/webhooks-stripe-tier-resolution.test.ts` and `frontend/src/__tests__/middleware.test.ts` (expect call wrapping, Vitest import order).
+
 ## [0.1.0] - 2026-04-13
 
 ### Added
