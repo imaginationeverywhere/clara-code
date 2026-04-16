@@ -8,6 +8,8 @@ import { registerVoiceCommand } from "./commands/voice";
 export function activate(context: vscode.ExtensionContext): void {
 	const provider = new ClaraPanelProvider(context.extensionUri, context);
 
+	registerDevCommands(context);
+
 	context.subscriptions.push(
 		vscode.window.registerWebviewViewProvider("clara.panel", provider, {
 			webviewOptions: { retainContextWhenHidden: true },

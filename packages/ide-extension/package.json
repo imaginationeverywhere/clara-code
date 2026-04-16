@@ -33,6 +33,11 @@
 		},
 		"commands": [
 			{
+				"command": "clara.setGatewayUrl",
+				"title": "Clara: Set Gateway URL (Dev)",
+				"category": "Clara"
+			},
+			{
 				"command": "clara.start",
 				"title": "Clara: Open Panel",
 				"icon": "$(comment-discussion)"
@@ -45,10 +50,6 @@
 			{
 				"command": "clara.explain",
 				"title": "Clara: Explain Selection"
-			},
-			{
-				"command": "clara.setGatewayUrl",
-				"title": "Clara: Set Gateway URL (Dev)"
 			}
 		],
 		"menus": {
