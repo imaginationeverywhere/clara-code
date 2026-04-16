@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link'
 
 export function SubscriptionSection({ planLabel }: { planLabel: string }) {
 	return (
@@ -15,5 +15,5 @@ export function SubscriptionSection({ planLabel }: { planLabel: string }) {
 				Manage billing (placeholder)
 			</Link>
 		</section>
-	);
+	)
 }

@@ -1,35 +1,35 @@
-"use client";
+'use client'
 
-import { useAuth } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useAuth } from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 export function DangerZone() {
-	const { signOut } = useAuth();
-	const router = useRouter();
-	const [open, setOpen] = useState(false);
-	const [busy, setBusy] = useState(false);
-	const [err, setErr] = useState<string | null>(null);
+	const { signOut } = useAuth()
+	const router = useRouter()
+	const [open, setOpen] = useState(false)
+	const [busy, setBusy] = useState(false)
+	const [err, setErr] = useState<string | null>(null)
 
 	const onDelete = async () => {
-		setBusy(true);
-		setErr(null);
+		setBusy(true)
+		setErr(null)
 		try {
-			const res = await fetch("/api/account/delete", { method: "POST" });
+			const res = await fetch('/api/account/delete', { method: 'POST' })
 			if (!res.ok) {
-				const body = (await res.json().catch(() => ({}))) as { error?: string };
-				setErr(body.error ?? `Request failed (${res.status})`);
-				return;
+				const body = (await res.json().catch(() => ({}))) as { error?: string }
+				setErr(body.error ?? `Request failed (${res.status})`)
+				return
 			}
-			await signOut();
-			router.push("/sign-in");
+			await signOut()
+			router.push('/sign-in')
 		} catch {
-			setErr("Could not delete account.");
+			setErr('Could not delete account.')
 		} finally {
-			setBusy(false);
-			setOpen(false);
+			setBusy(false)
+			setOpen(false)
 		}
-	};
+	}
 
 	return (
 		<section className="space-y-4 rounded-2xl border border-red-500/25 bg-red-500/5 p-6">
@@ -67,12 +67,12 @@ export function DangerZone() {
 								onClick={() => void onDelete()}
 								className="rounded-lg bg-red-600 px-3 py-2 text-sm font-medium text-white hover:bg-red-500 disabled:opacity-50"
 							>
-								{busy ? "Deleting…" : "Delete account"}
+								{busy ? 'Deleting…' : 'Delete account'}
 							</button>
 						</div>
 					</div>
 				</div>
 			)}
 		</section>
-	);
+	)
 }

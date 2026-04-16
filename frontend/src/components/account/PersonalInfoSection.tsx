@@ -1,39 +1,39 @@
-"use client";
+'use client'
 
-import { useUser } from "@clerk/nextjs";
-import { useCallback, useEffect, useState } from "react";
+import { useUser } from '@clerk/nextjs'
+import { useCallback, useEffect, useState } from 'react'
 
 export function PersonalInfoSection() {
-	const { user, isLoaded } = useUser();
-	const [first, setFirst] = useState("");
-	const [last, setLast] = useState("");
-	const [saving, setSaving] = useState(false);
-	const [msg, setMsg] = useState<string | null>(null);
+	const { user, isLoaded } = useUser()
+	const [first, setFirst] = useState('')
+	const [last, setLast] = useState('')
+	const [saving, setSaving] = useState(false)
+	const [msg, setMsg] = useState<string | null>(null)
 
 	useEffect(() => {
-		if (!user) return;
-		setFirst(user.firstName ?? "");
-		setLast(user.lastName ?? "");
-	}, [user]);
+		if (!user) return
+		setFirst(user.firstName ?? '')
+		setLast(user.lastName ?? '')
+	}, [user])
 
-	const email = user?.primaryEmailAddress?.emailAddress ?? "";
+	const email = user?.primaryEmailAddress?.emailAddress ?? ''
 
 	const onSave = useCallback(async () => {
-		if (!user) return;
-		setSaving(true);
-		setMsg(null);
+		if (!user) return
+		setSaving(true)
+		setMsg(null)
 		try {
-			await user.update({ firstName: first.trim() || undefined, lastName: last.trim() || undefined });
-			setMsg("Saved.");
+			await user.update({ firstName: first.trim() || undefined, lastName: last.trim() || undefined })
+			setMsg('Saved.')
 		} catch {
-			setMsg("Could not update profile.");
+			setMsg('Could not update profile.')
 		} finally {
-			setSaving(false);
+			setSaving(false)
 		}
-	}, [first, last, user]);
+	}, [first, last, user])
 
 	if (!isLoaded) {
-		return <p className="text-sm text-white/45">Loading…</p>;
+		return <p className="text-sm text-white/45">Loading…</p>
 	}
 
 	return (
@@ -65,7 +65,7 @@ export function PersonalInfoSection() {
 			</div>
 			<div>
 				<label className="text-xs text-white/45">Email</label>
-				<p className="mt-1 text-sm text-white/70">{email || "—"}</p>
+				<p className="mt-1 text-sm text-white/70">{email || '—'}</p>
 				<p className="mt-1 text-xs text-white/35">Email changes use Clerk account settings.</p>
 			</div>
 			<button
@@ -74,9 +74,9 @@ export function PersonalInfoSection() {
 				disabled={saving}
 				className="rounded-lg bg-clara px-4 py-2 text-sm font-medium text-white hover:bg-clara/90 disabled:opacity-50"
 			>
-				{saving ? "Saving…" : "Save name"}
+				{saving ? 'Saving…' : 'Save name'}
 			</button>
 			{msg && <p className="text-sm text-white/55">{msg}</p>}
 		</section>
-	);
+	)
 }
