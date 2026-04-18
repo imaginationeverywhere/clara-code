@@ -1,5 +1,14 @@
 {
   "mcpServers": {
+    "knowledge-graph": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-knowledge-graph",
+        "--memory-path",
+        "${PROJECT_ROOT}/.aim/"
+      ]
+    },
     "clara-brain": {
       "command": "npx",
       "args": ["-y", "@quiknation/clara-brain-mcp"],
