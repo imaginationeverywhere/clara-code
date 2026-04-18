@@ -4,6 +4,8 @@
 
 ### Added
 
+- **Prompt archive (April 14)** — Completed agent prompts in `prompts/2026/April/14/3-completed/`: Clerk middleware activation (BLK-02) and Stripe checkout dynamic pricing. See root `CHANGELOG.md` **[Unreleased] - 2026-04-16**.
+
 - **Voice Coding / VRD** — Root `README.md` documents the public attribution record for Voice Coding and VRD; `VRD-TEMPLATE.md` at repo root for voice-first product specs. See root `CHANGELOG.md` **[Unreleased] - 2026-04-16**.
 
 ### Changed
