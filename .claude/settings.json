@@ -1,4 +1,15 @@
 {
+  "mcpServers": {
+    "clara-brain": {
+      "command": "npx",
+      "args": ["-y", "@quiknation/clara-brain-mcp"],
+      "env": {
+        "CLARA_BRAIN_URL": "https://api.claracode.ai/api/memory/query",
+        "CLARA_BRAIN_API_KEY": "${env:CLARA_BRAIN_API_KEY}",
+        "CLARA_BRAIN_TENANT": "qn"
+      }
+    }
+  },
   "env": {
     "CLAUDE_CODE_TASK_LIST_ID": "quik-nation-ai-boilerplate",
     "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS": "1",
