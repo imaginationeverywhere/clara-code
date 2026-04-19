@@ -1,5 +1,7 @@
 # Prompt 06 — Stripe Checkout: Dynamic Pricing + Wire Frontend
 
+**Status:** Completed on `develop` before this queue move: `backend/src/routes/checkout.ts` uses `getPriceForTier()` + `stripe.prices.list()` + `metadata.clara_tier`; `webhooks-stripe.ts` resolves tier from subscription metadata or `prices.retrieve`; frontend checkout/pro|business, `api/checkout/create-session` proxy, and success page are wired; tests in `backend/src/__tests__/routes/checkout.test.ts` and `webhooks-stripe-tier-resolution.test.ts`. `.env.local.example` no longer lists `STRIPE_PRICE_PRO` / `STRIPE_PRICE_BUSINESS` (developer program still uses `STRIPE_PRICE_DEVELOPER_PROGRAM`).
+
 **Date**: 2026-04-14
 **Branch**: `prompt/2026-04-14/06-stripe-checkout-dynamic-pricing`
 **Flags**: `--stripe --testing --security`
