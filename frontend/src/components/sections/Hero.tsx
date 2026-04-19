@@ -32,11 +32,21 @@ async function postGreet(body: {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   })
-  const data = (await res.json()) as GreetResponse & { error?: string }
-  if (!res.ok && !('text' in data && data.text)) {
+  const contentType = res.headers.get('content-type') ?? ''
+  if (res.ok && (contentType.startsWith('audio/') || contentType === 'application/octet-stream')) {
+    const blob = await res.blob()
+    const audioUrl = URL.createObjectURL(blob)
+    return { text: '', audioUrl }
+  }
+  try {
+    const data = (await res.json()) as GreetResponse & { error?: string }
+    if (!res.ok && !('text' in data && data.text)) {
+      return { text: '', audioUrl: null }
+    }
+    return { text: data.text ?? '', audioUrl: data.audioUrl ?? null, fallback: data.fallback }
+  } catch {
     return { text: '', audioUrl: null }
   }
-  return { text: data.text ?? '', audioUrl: data.audioUrl ?? null, fallback: data.fallback }
 }
 
 export function Hero() {
