@@ -13,7 +13,7 @@ function getStripe(): Stripe | null {
 	return new Stripe(key, { apiVersion: "2023-10-16" });
 }
 
-async function getPriceForTier(stripe: Stripe, tier: "basic" | "pro" | "business"): Promise<string> {
+async function getPriceForTier(stripe: Stripe, tier: "basic" | "pro" | "max" | "business"): Promise<string> {
 	const prices = await stripe.prices.list({ active: true, limit: 100 });
 	const match = prices.data.find((p) => p.metadata?.clara_tier === tier && p.type === "recurring");
 	if (!match) {
@@ -38,14 +38,14 @@ router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, 
 
 		const body = req.body as { tier?: string };
 		const tier = body.tier;
-		if (tier !== "basic" && tier !== "pro" && tier !== "business") {
-			res.status(400).json({ error: "tier must be basic, pro, or business" });
+		if (tier !== "basic" && tier !== "pro" && tier !== "max" && tier !== "business") {
+			res.status(400).json({ error: "tier must be basic, pro, max, or business" });
 			return;
 		}
 
 		let priceId: string;
 		try {
-			priceId = await getPriceForTier(stripe, tier as "basic" | "pro" | "business");
+			priceId = await getPriceForTier(stripe, tier as "basic" | "pro" | "max" | "business");
 		} catch {
 			res.status(503).json({ error: "No active plan found for this tier — contact support" });
 			return;
