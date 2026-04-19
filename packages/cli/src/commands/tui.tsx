@@ -5,7 +5,9 @@ import { Command } from "commander";
 import { render } from "ink";
 import React from "react";
 import { App } from "../tui.js";
+import { resolveBackendUrl, voiceDevStubEnabled } from "../lib/backend.js";
 import { patchClaraConfig, readClaraConfig } from "../lib/config-store.js";
+import { readClaraCredentials } from "../lib/credentials-store.js";
 
 function resolveGatewayUrl(opts: { gateway?: string }): string {
 	const fromOpt = opts.gateway?.trim();
@@ -15,37 +17,58 @@ function resolveGatewayUrl(opts: { gateway?: string }): string {
 	return readClaraConfig().gatewayUrl?.trim() ?? "";
 }
 
+export type LaunchTuiOptions = {
+	user?: string;
+	gateway?: string;
+	backend?: string;
+	voice?: boolean;
+};
+
+export function launchTui(opts: LaunchTuiOptions): void {
+	const cfg = readClaraConfig();
+	const userId = opts.user ?? cfg.userId ?? "dev";
+	// Gateway URL may be empty on first run — the TUI still launches so the user can paste a token
+	// via the first-run prompt; gateway calls surface their own "not configured" error if missing.
+	const gatewayUrl = resolveGatewayUrl(opts);
+	const backend = resolveBackendUrl(opts.backend);
+	patchClaraConfig({
+		userId,
+		backendUrl: backend.url,
+		...(gatewayUrl ? { gatewayUrl } : {}),
+	});
+
+	const creds = readClaraCredentials();
+	const initialToken = creds?.token ?? null;
+
+	const __dirname = dirname(fileURLToPath(import.meta.url));
+	const pkgPath = join(__dirname, "..", "..", "package.json");
+	const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as { version: string };
+
+	render(
+		<App
+			userId={userId}
+			gatewayUrl={gatewayUrl}
+			backendUrl={backend.url}
+			version={pkg.version}
+			voiceAudioEnabled={opts.voice === true}
+			initialToken={initialToken}
+			devStubMode={voiceDevStubEnabled()}
+		/>,
+	);
+}
+
 export function registerTuiCommand(program: Command): void {
 	program
 		.command("tui")
 		.description("Launch full-screen Clara Code TUI (Ink)")
 		.option("-u, --user <name>", "User id sent to gateway")
 		.option("-g, --gateway <url>", "Clara gateway URL (default: HERMES_GATEWAY_URL or ~/.clara/config.json)")
+		.option(
+			"-b, --backend <url>",
+			"Clara backend URL hosting /api/voice/stt and /api/voice/tts (default: CLARA_BACKEND_URL or https://api.claracode.ai)",
+		)
 		.option("--voice", "Opt in to audio when the gateway supports it (placeholder)", false)
-		.action((opts: { user?: string; gateway?: string; voice?: boolean }) => {
-			const cfg = readClaraConfig();
-			const userId = opts.user ?? cfg.userId ?? "dev";
-			const gatewayUrl = resolveGatewayUrl(opts);
-			if (!gatewayUrl) {
-				console.error(
-					"clara tui: set HERMES_GATEWAY_URL, add gatewayUrl to ~/.clara/config.json, or pass --gateway <url>",
-				);
-				process.exitCode = 1;
-				return;
-			}
-			patchClaraConfig({ userId, gatewayUrl });
-
-			const __dirname = dirname(fileURLToPath(import.meta.url));
-			const pkgPath = join(__dirname, "..", "..", "package.json");
-			const pkg = JSON.parse(readFileSync(pkgPath, "utf8")) as { version: string };
-
-			render(
-				<App
-					userId={userId}
-					gatewayUrl={gatewayUrl}
-					version={pkg.version}
-					voiceAudioEnabled={opts.voice === true}
-				/>,
-			);
+		.action((opts: LaunchTuiOptions) => {
+			launchTui(opts);
 		});
 }

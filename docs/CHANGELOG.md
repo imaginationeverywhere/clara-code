@@ -4,11 +4,14 @@
 
 ### Added
 
+- **`docs/voice-dev-stub.md`** — Backend-side reference for `CLARA_VOICE_DEV_STUB=1`: endpoints (`/api/voice/stt`, `/api/voice/tts`), request/response shapes, stub vs real-mode URL resolution (`HERMES_GATEWAY_URL` → `CLARA_VOICE_URL` → 503), local CLI workflow, and the deletion path for PR #3. Lands alongside PR #1 (backend voice dev stub).
+- **`docs/cli-voice-loop.md`** — CLI-side reference for PR #2: diagram of the `Ctrl+Space → sox → /stt → gateway` loop, key-binding table, first-run prompt UX, session transcript format (`.clara/session-YYYY-MM-DD.log`), env knobs (`CLARA_BACKEND_URL`, `CLARA_VOICE_DEV_STUB`, `HERMES_GATEWAY_URL`), zero-hardware local recipe, Ink 5 / React 19 known issue, and the PR #2 test inventory.
 - **Backend (SES + Clerk)** — `POST /api/webhooks/clerk` with Svix verification; welcome email on `user.created`; first-API-key confirmation email after `POST /api/keys` when Clerk is configured; tests in `backend/src/__tests__/email.service.test.ts` and extended keys tests. See root `CHANGELOG.md` and `@clara-code/backend` `1.0.1` → `1.0.2`.
 - **mom / Hermes** — Optional `HERMES_GATEWAY_URL`; no implicit default gateway URL; startup routing logs. See `packages/mom/CHANGELOG.md`.
 
 ### Changed
 
+- **`backend/.env.example`** — documents `HERMES_GATEWAY_URL` fallback for voice routes and `CLARA_VOICE_DEV_STUB` flag with a NEVER-in-prod warning.
 - Monorepo root version `0.1.3` → `0.1.4`.
 
 ## [Unreleased] - 2026-04-16

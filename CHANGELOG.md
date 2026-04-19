@@ -6,15 +6,18 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **CLI — Voice loop on dev stub (PR #2 of CLI-first MVP)** — `packages/cli` now has a working speech→transcript→gateway loop: `src/lib/stt-client.ts` (POST `/api/voice/stt`, base64 audio, Bearer token, `x-clara-stub-text` passthrough), `src/lib/audio-capture.ts` (spawns `sox`/`rec` when installed; noop fallback so the dev-stub loop still closes without a mic), `src/lib/session-log.ts` (append-only `<cwd>/.clara/session-YYYY-MM-DD.log`), `src/lib/backend.ts` (`CLARA_BACKEND_URL` resolution), and `src/components/FirstRunPrompt.tsx` (token prompt linking `https://claracode.ai`). `src/hooks/useVoice.ts` rewritten with `startListening` / `stopAndSend` / `cancel` phases and `AbortController` support. `src/tui.tsx` wired to `Ctrl+Space` (primary, `Ctrl+M` alias) and `Escape` (cancel). `src/index.ts` default action launches the TUI so `clara` with no args runs the full experience. New `@clara/cli` test script (`node --test` + `tsx`) with 16 passing cases in `packages/cli/test/`. Docs: `docs/cli-voice-loop.md`.
+- **Backend — Voice dev stub (PR #1 of CLI-first MVP)** — `POST /api/voice/stt` and `POST /api/voice/tts` in `backend/src/routes/voice.ts`. When `CLARA_VOICE_DEV_STUB=1`, `/stt` returns a mock transcript (`x-clara-stub-text` header, `body.stubText`, or default) without calling Modal, and `/tts` returns a 1-second silence WAV via `backend/src/utils/silence-wav.ts`. Real mode proxies to `HERMES_GATEWAY_URL` (fallback `CLARA_VOICE_URL`) and 503s when neither is set. Unblocks CLI voice loop (PR #2) while `cp-team` finalizes the Modal URL. Docs: `docs/voice-dev-stub.md`. Tests: `backend/src/__tests__/routes/voice.test.ts` (+9 cases: dev stub + real mode + 503 path).
 - **Backend — AWS SES email** — `backend/src/services/email.service.ts`, templates under `backend/src/emails/` (welcome + first API key), HTML escaping for user-controlled fragments. **Clerk webhook** `POST /api/webhooks/clerk` (raw body, Svix `CLERK_WEBHOOK_SIGNING_SECRET` / `CLERK_WEBHOOK_SECRET`). Welcome email on `user.created`. **First key email** after successful `POST /api/keys` when the user had no prior keys and `CLERK_SECRET_KEY` is set. Jest coverage in `backend/src/__tests__/email.service.test.ts`; keys route tests updated.
 - **Prompt queue** — April 19 batch prompts `10`–`17` moved from `prompts/2026/April/19/1-not-started/` to `prompts/2026/April/19/3-completed/`.
 
 ### Changed
 
-- **`@clara-code/backend`** — `1.0.1` → `1.0.2`. `backend/.env.example` documents Clerk, webhook signing secret, SES, and existing voice URL notes.
+- **`@clara-code/backend`** — `1.0.1` → `1.0.2`. `backend/.env.example` documents Clerk, webhook signing secret, SES, existing voice URL notes, and the new `HERMES_GATEWAY_URL` / `CLARA_VOICE_DEV_STUB` flags.
 - **mom (Clara Gateway)** — `HERMES_GATEWAY_URL` optional; `createHermesFromEnv()`; Hermes-free Anthropic streaming when unset; startup logs; `packages/mom/README.md` and `.env.example` no longer embed a default Modal gateway URL. Details: `packages/mom/CHANGELOG.md`.
+- **`@clara/cli`** — CLI voice loop wired to `/api/voice/stt` with `Ctrl+Space` / `Escape` keybindings, first-run token prompt, and project-local session logs. Details: `packages/cli/CHANGELOG.md`.
 - Monorepo root version `0.1.3` → `0.1.4`.
-- **Directory changelogs** — `docs/CHANGELOG.md`, `packages/mom/CHANGELOG.md` updated; see sections above.
+- **Directory changelogs** — `docs/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, `packages/mom/CHANGELOG.md` updated; see sections above.
 
 ## [Unreleased] - 2026-04-16
 

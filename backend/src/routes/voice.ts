@@ -15,8 +15,21 @@ import { voiceLimitMiddleware } from "@/middleware/voice-limit";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
 import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
+import { silenceWav } from "@/utils/silence-wav";
 
 const router = Router();
+
+function voiceDevStubEnabled(): boolean {
+	const v = process.env.CLARA_VOICE_DEV_STUB;
+	return v === "1" || v === "true";
+}
+
+function hermesVoiceBase(): string | undefined {
+	const hermes = process.env.HERMES_GATEWAY_URL?.trim();
+	if (hermes) return hermes.replace(/\/$/, "");
+	const legacy = voiceEnvBase();
+	return legacy ? legacy.replace(/\/$/, "") : undefined;
+}
 
 function voiceEnvBase(): string | undefined {
 	return process.env.CLARA_VOICE_URL?.trim();
@@ -138,6 +151,102 @@ router.post(
 		} catch (error) {
 			logger.error("Voice speak error:", error);
 			res.status(500).json({ error: "Voice generation failed" });
+		}
+	},
+);
+
+// POST /api/voice/stt — Clerk session or Clara API key. Speech-to-text.
+// Request body (JSON): { audioBase64: string, mimeType?: string, stubText?: string }
+// Dev stub (CLARA_VOICE_DEV_STUB=1): returns { transcript } from
+// `x-clara-stub-text` header, body.stubText, or a default. No Modal call.
+// Real mode: proxies to HERMES_GATEWAY_URL/stt (cp-team owned).
+router.post(
+	"/stt",
+	requireClaraOrClerk,
+	voiceLimiter,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		try {
+			if (voiceDevStubEnabled()) {
+				const headerStub = req.get("x-clara-stub-text");
+				const body = (req.body ?? {}) as { stubText?: string };
+				const transcript =
+					(typeof headerStub === "string" && headerStub.length > 0 ? headerStub : undefined) ??
+					(typeof body.stubText === "string" && body.stubText.length > 0 ? body.stubText : undefined) ??
+					"add a hello world function to this file";
+				res.json({ transcript, stub: true });
+				return;
+			}
+
+			const body = (req.body ?? {}) as { audioBase64?: string; mimeType?: string };
+			if (typeof body.audioBase64 !== "string" || body.audioBase64.length === 0) {
+				res.status(400).json({ error: "audioBase64 is required" });
+				return;
+			}
+			const base = hermesVoiceBase();
+			if (!base) {
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
+			const response = await axios.post(
+				`${base}/stt`,
+				{ audio_base64: body.audioBase64, mime_type: body.mimeType ?? "audio/wav" },
+				{ timeout: 30_000 },
+			);
+			const data = response.data as { transcript?: string };
+			res.json({ transcript: data.transcript ?? "", stub: false });
+		} catch (error) {
+			logger.error("Voice stt error:", error);
+			res.status(502).json({ error: "Speech recognition failed" });
+		}
+	},
+);
+
+// POST /api/voice/tts — Clerk session or Clara API key. Text-to-speech.
+// Request body: { text: string, voice_id?: string }
+// Dev stub: returns a 1-second silence WAV so callers can exercise audio plumbing.
+// Real mode: proxies to HERMES_GATEWAY_URL/tts.
+router.post(
+	"/tts",
+	requireClaraOrClerk,
+	voiceLimiter,
+	voiceLimitMiddleware,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		try {
+			const { text, voice_id } = (req.body ?? {}) as { text?: string; voice_id?: string };
+			if (!text) {
+				res.status(400).json({ error: "text is required" });
+				return;
+			}
+
+			if (voiceDevStubEnabled()) {
+				res.set("Content-Type", "audio/wav");
+				res.set("x-clara-voice-stub", "1");
+				res.send(silenceWav(1));
+				return;
+			}
+
+			const base = hermesVoiceBase();
+			if (!base) {
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
+			const response = await axios.post(
+				`${base}/tts`,
+				{ text, voice_id: voice_id ?? "clara" },
+				{ responseType: "arraybuffer", timeout: 30_000 },
+			);
+
+			const userId = req.claraUser?.userId;
+			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			if (userId) {
+				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+			}
+
+			res.set("Content-Type", "audio/wav");
+			res.send(Buffer.from(response.data as ArrayBuffer));
+		} catch (error) {
+			logger.error("Voice tts error:", error);
+			res.status(502).json({ error: "Text-to-speech failed" });
 		}
 	},
 );

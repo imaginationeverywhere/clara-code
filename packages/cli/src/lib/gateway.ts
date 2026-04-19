@@ -8,6 +8,13 @@ export type GatewayResult = {
  * POST JSON to the Hermes / Clara gateway; returns structured text for TUI formatting (VRD §C3–C4).
  */
 export async function claraGateway(gatewayUrl: string, userId: string, message: string): Promise<GatewayResult> {
+	if (!gatewayUrl || gatewayUrl.trim().length === 0) {
+		return {
+			ok: false,
+			reply: "Gateway URL is not configured.",
+			fixHint: "Set HERMES_GATEWAY_URL, run `clara config set gatewayUrl <url>`, or pass --gateway.",
+		};
+	}
 	const response = await fetch(gatewayUrl, {
 		method: "POST",
 		headers: {

@@ -12,7 +12,8 @@
 		"build": "tsup --config tsup.config.ts",
 		"tui": "tsx src/index.ts tui",
 		"typecheck": "tsc --noEmit",
-		"check": "tsc --noEmit"
+		"check": "tsc --noEmit",
+		"test": "node --test --import tsx test/*.test.ts"
 	},
 	"dependencies": {
 		"commander": "^13.1.0",

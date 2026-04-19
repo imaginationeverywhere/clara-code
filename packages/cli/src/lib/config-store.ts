@@ -4,6 +4,8 @@ import { CLARA_CONFIG_DIR, CLARA_CONFIG_FILE } from "./paths.js";
 export type ClaraConfig = {
 	apiKey?: string;
 	gatewayUrl?: string;
+	/** Clara backend base URL hosting /api/voice/{stt,tts}. See lib/backend.ts for resolution. */
+	backendUrl?: string;
 	userId?: string;
 	lastProject?: string;
 	lastSessionDate?: string;
