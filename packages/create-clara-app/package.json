@@ -1,17 +1,18 @@
 {
 	"name": "create-clara-app",
-	"version": "0.1.0",
-	"description": "Create a new Clara AI coding agent project",
+	"version": "0.1.2",
+	"description": "Scaffold a Next.js 15 app with Clara, Clerk, and Cloudflare (OpenNext)",
 	"type": "module",
 	"bin": {
-		"create-clara-app": "./dist/cli.js"
+		"create-clara-app": "./bin/index.js"
 	},
 	"scripts": {
 		"clean": "shx rm -rf dist",
-		"build": "tsgo -p tsconfig.build.json && shx chmod +x dist/cli.js",
+		"build": "tsgo -p tsconfig.build.json && shx chmod +x bin/index.js",
 		"prepublishOnly": "npm run clean && npm run build"
 	},
 	"files": [
+		"bin",
 		"dist",
 		"templates"
 	],
@@ -19,9 +20,10 @@
 		"ai",
 		"agent",
 		"clara",
+		"claracode",
 		"create",
-		"llm",
-		"coding-agent"
+		"nextjs",
+		"cloudflare"
 	],
 	"author": "Imagination Everywhere",
 	"license": "MIT",
@@ -30,9 +32,16 @@
 		"url": "git+https://github.com/imaginationeverywhere/clara-code.git",
 		"directory": "packages/create-clara-app"
 	},
+	"publishConfig": {
+		"access": "public"
+	},
 	"engines": {
 		"node": ">=20.0.0"
 	},
 	"dependencies": {},
-	"devDependencies": {}
+	"devDependencies": {
+		"@types/node": "^22.10.5",
+		"shx": "^0.4.0",
+		"typescript": "^5.9.2"
+	}
 }

@@ -1,0 +1,159 @@
+schema
+  @link(url: "https://specs.apollo.dev/link/v1.0")
+  @link(url: "https://specs.apollo.dev/join/v0.3", for: EXECUTION)
+{
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
+
+directive @join__enumValue(graph: join__Graph!) repeatable on ENUM_VALUE
+
+directive @join__field(graph: join__Graph, requires: join__FieldSet, provides: join__FieldSet, type: String, external: Boolean, override: String, usedOverridden: Boolean) repeatable on FIELD_DEFINITION | INPUT_FIELD_DEFINITION
+
+directive @join__graph(name: String!, url: String!) on ENUM_VALUE
+
+directive @join__implements(graph: join__Graph!, interface: String!) repeatable on OBJECT | INTERFACE
+
+directive @join__type(graph: join__Graph!, key: join__FieldSet, extension: Boolean! = false, resolvable: Boolean! = true, isInterfaceObject: Boolean! = false) repeatable on OBJECT | INTERFACE | UNION | ENUM | INPUT_OBJECT | SCALAR
+
+directive @join__unionMember(graph: join__Graph!, member: String!) repeatable on UNION
+
+directive @link(url: String, as: String, for: link__Purpose, import: [link__Import]) repeatable on SCHEMA
+
+type Agent
+  @join__type(graph: CLARA_CORE)
+{
+  id: ID!
+  name: String!
+}
+
+type AuthStatus
+  @join__type(graph: CLERK_AUTH)
+{
+  """
+  Whether the incoming request has a valid Clara service token.
+  This verifies the request is coming from Clara's gateway — not user identity.
+  """
+  gatewayVerified: Boolean!
+  timestamp: String!
+}
+
+type GatewayHealth
+  @join__type(graph: GATEWAY_CONNECT)
+{
+  status: String!
+  version: String!
+  timestamp: String!
+}
+
+scalar join__FieldSet
+
+enum join__Graph {
+  CLARA_CORE @join__graph(name: "clara-core", url: "http://localhost:3001/graphql/clara-core")
+  CLERK_AUTH @join__graph(name: "clerk-auth", url: "http://localhost:4002/graphql")
+  GATEWAY_CONNECT @join__graph(name: "gateway-connect", url: "http://localhost:4001/graphql")
+}
+
+scalar link__Import
+
+enum link__Purpose {
+  """
+  `SECURITY` features provide metadata necessary to securely resolve fields.
+  """
+  SECURITY
+
+  """
+  `EXECUTION` features provide metadata necessary for operation execution.
+  """
+  EXECUTION
+}
+
+type Message
+  @join__type(graph: CLARA_CORE)
+{
+  role: String!
+  content: String!
+  voiceUrl: String
+}
+
+type Model
+  @join__type(graph: CLARA_CORE)
+{
+  name: ModelName!
+  displayName: String!
+  thinking: Boolean!
+}
+
+enum ModelName
+  @join__type(graph: CLARA_CORE)
+{
+  MARY @join__enumValue(graph: CLARA_CORE)
+  MAYA @join__enumValue(graph: CLARA_CORE)
+  NIKKI @join__enumValue(graph: CLARA_CORE)
+}
+
+type Mutation
+  @join__type(graph: CLARA_CORE)
+{
+  ask(prompt: String!, model: ModelName): Message!
+  startVoiceSession: VoiceSession!
+  createAgent(name: String!, soul: String!): Agent!
+}
+
+type Query
+  @join__type(graph: CLARA_CORE)
+  @join__type(graph: CLERK_AUTH)
+  @join__type(graph: GATEWAY_CONNECT)
+{
+  me: User @join__field(graph: CLARA_CORE)
+  models: [Model!]! @join__field(graph: CLARA_CORE)
+  agents: [Agent!]! @join__field(graph: CLARA_CORE)
+  authStatus: AuthStatus! @join__field(graph: CLERK_AUTH)
+  verifyToken(token: String!): TokenVerification! @join__field(graph: CLERK_AUTH)
+  gatewayHealth: GatewayHealth! @join__field(graph: GATEWAY_CONNECT)
+  sessionInfo: SessionInfo! @join__field(graph: GATEWAY_CONNECT)
+}
+
+type SessionInfo
+  @join__type(graph: GATEWAY_CONNECT)
+{
+  sessionToken: String!
+  voiceCommand: String!
+  requestedAt: String!
+}
+
+type StreamChunk
+  @join__type(graph: CLARA_CORE)
+{
+  text: String!
+  done: Boolean!
+}
+
+type Subscription
+  @join__type(graph: CLARA_CORE)
+{
+  stream(prompt: String!, model: ModelName): StreamChunk!
+}
+
+type TokenVerification
+  @join__type(graph: CLERK_AUTH)
+{
+  valid: Boolean!
+  message: String
+}
+
+type User
+  @join__type(graph: CLARA_CORE)
+{
+  id: ID!
+  tier: String!
+  voiceExchangesUsed: Int!
+  voiceExchangesLimit: Int
+}
+
+type VoiceSession
+  @join__type(graph: CLARA_CORE)
+{
+  id: ID!
+}

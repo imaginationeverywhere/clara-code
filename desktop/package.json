@@ -4,13 +4,16 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "start": "npm run dev",
     "dev": "tauri dev",
     "build": "tauri build",
     "build:voice-overlay": "esbuild src/main.ts --bundle --outfile=src-tauri/voice-overlay.js --platform=browser --format=iife --loader:.css=text",
+    "shell:serve": "serve shell -p 1420",
     "tauri": "tauri"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "serve": "^14.2.6"
   }
 }

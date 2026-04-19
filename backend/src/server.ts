@@ -7,17 +7,28 @@ import compression from "compression";
 import cors from "cors";
 import express from "express";
 import helmet from "helmet";
-
 import { testConnection } from "@/config/database";
+import {
+	createDeveloperProgramRouter,
+	createTalentAdminRouter,
+	createTalentRegistryRouter,
+	getTalentRegistryService,
+} from "@/features/talent-registry";
+import { createClaraCoreSubgraph } from "@/graphql/clara-core/server";
 import type { GraphQLContext } from "@/graphql/resolvers/index";
 import { resolvers } from "@/graphql/resolvers/index";
 import { typeDefs } from "@/graphql/schema/index";
+import { requireApiKey } from "@/middleware/api-key-auth";
 import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
+import { clerkWebhookHandler } from "@/routes/webhooks-clerk";
+import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 import { logger } from "@/utils/logger";
 
 export const app = express();
 const PORT = process.env.PORT || 3001;
+
+const talentRegistryService = getTalentRegistryService();
 
 app.use(helmet({ contentSecurityPolicy: false }));
 app.use(compression());
@@ -34,7 +45,30 @@ if (allowedOrigins.length === 0) {
 }
 
 app.use(cors({ origin: allowedOrigins, credentials: true }));
+
+app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), (req, res): void => {
+	void stripeWebhookHandler(req, res);
+});
+
+app.post("/api/webhooks/clerk", express.raw({ type: "application/json" }), (req, res): void => {
+	void clerkWebhookHandler(req, res);
+});
+
 app.use(express.json({ limit: "10mb" }));
+
+app.use("/api/talents", createTalentRegistryRouter(talentRegistryService));
+app.use("/api/admin/talents", createTalentAdminRouter(talentRegistryService));
+app.use("/api/developer-program", createDeveloperProgramRouter(talentRegistryService));
+
+// Health check MUST be before Clerk middleware — ECS health probes cannot carry auth tokens
+app.get("/health", async (_req, res) => {
+	try {
+		const dbOk = await testConnection({ silent: true });
+		res.json({ status: "ok", db: dbOk ? "connected" : "error", service: "clara-code-backend" });
+	} catch {
+		res.status(503).json({ status: "error", db: "unreachable", service: "clara-code-backend" });
+	}
+});
 
 if (process.env.CLERK_SECRET_KEY) {
 	app.use(
@@ -49,16 +83,14 @@ if (process.env.CLERK_SECRET_KEY) {
 
 app.use(withAuth);
 
-app.get("/health", async (_req, res) => {
-	const dbOk = await testConnection({ silent: true });
-	res.json({ status: "ok", db: dbOk ? "connected" : "error", service: "clara-code-backend" });
-});
-
 app.use("/api", apiRoutes);
 
 const server = new ApolloServer({ typeDefs, resolvers });
 
 export async function bootstrap(): Promise<void> {
+	const claraCoreMiddleware = await createClaraCoreSubgraph();
+	app.use("/graphql/clara-core", requireApiKey, claraCoreMiddleware);
+
 	await server.start();
 
 	app.use(

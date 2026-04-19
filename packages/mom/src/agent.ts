@@ -19,10 +19,9 @@ import { join } from "path";
 import { createMomSettingsManager, syncLogToSessionManager } from "./context.js";
 import {
 	createHermesDisplayModel,
+	createHermesFromEnv,
 	createHermesModelForConversion,
 	createMomHermesStreamFn,
-	getHermesGatewayUrl,
-	HermesClient,
 } from "./hermes.js";
 import * as log from "./log.js";
 import { createExecutor, type SandboxConfig } from "./sandbox.js";
@@ -30,12 +29,24 @@ import type { ChannelInfo, SlackContext, UserInfo } from "./slack.js";
 import type { ChannelStore } from "./store.js";
 import { createMomTools, setUploadFunction } from "./tools/index.js";
 
-// Default: DeepSeek V3.2 via Hermes → Bedrock. Fallback: Claude Sonnet.
+// Default: DeepSeek V3.2 via Hermes → Bedrock when HERMES_GATEWAY_URL is set. Fallback: Claude Sonnet.
 const fallbackModel = getModel("anthropic", "claude-sonnet-4-5");
-const hermesGatewayUrl = getHermesGatewayUrl();
-const hermesClient = HermesClient.fromEnv();
+const hermesClient = createHermesFromEnv();
+const hermesGatewayUrl = hermesClient?.baseUrl ?? "http://127.0.0.1:1";
 const hermesConvertModel = createHermesModelForConversion(hermesGatewayUrl);
 const hermesDisplayModel = createHermesDisplayModel(hermesGatewayUrl);
+
+if (hermesClient) {
+	void hermesClient.ping().then((ok) => {
+		if (ok) {
+			log.logInfo("Model router: Clara Gateway (Hermes) — Bedrock DeepSeek V3.2");
+		} else {
+			log.logWarning("HERMES_GATEWAY_URL set but gateway unreachable — falling back to Anthropic");
+		}
+	});
+} else {
+	log.logInfo("Model router: Anthropic claude-sonnet-4-5 (direct). Set HERMES_GATEWAY_URL for Clara Gateway.");
+}
 
 export interface PendingMessage {
 	userName: string;

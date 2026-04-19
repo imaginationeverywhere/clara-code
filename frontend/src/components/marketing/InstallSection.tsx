@@ -22,7 +22,7 @@ export function InstallSection() {
 	}
 
 	return (
-		<section id="install" className="bg-[#080C12] py-24">
+		<section id="install" className="bg-bg-sunken py-24">
 			<div className="mx-auto max-w-3xl px-6 text-center">
 				<div className="mb-12">
 					<div className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/30">Get started</div>
@@ -33,15 +33,15 @@ export function InstallSection() {
 				<div className="grid grid-cols-1 gap-6 text-left md:grid-cols-2">
 					<div>
 						<div className="mb-4 flex items-center gap-2">
-							<IconTerminal className="h-4 w-4 text-[#7BCDD8]" />
+							<IconTerminal className="h-4 w-4 text-clara" />
 							<span className="font-mono text-[13px] font-semibold text-white">Command Line</span>
 							<span className="font-mono text-[13px] text-white/30">· for terminal purists</span>
 						</div>
 
-						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#070A0F]">
+						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-bg-sunken">
 							<div className="border-b border-white/[0.06] px-5 py-4">
 								<div className="mb-3 flex items-center gap-2">
-									<span className="rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[#7C3AED]">
+									<span className="rounded-full border border-brand-purple/30 bg-brand-purple/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-brand-purple">
 										Coming Soon
 									</span>
 								</div>
@@ -55,7 +55,7 @@ export function InstallSection() {
 								<div className="flex items-center justify-between">
 									<div className="font-mono text-sm">
 										<span className="text-white/25">$ </span>
-										<span className="text-[#10B981]">{betaCmd}</span>
+										<span className="text-brand-green">{betaCmd}</span>
 									</div>
 									<button
 										type="button"
@@ -64,8 +64,8 @@ export function InstallSection() {
 									>
 										{copied ? (
 											<>
-												<IconCheckCircle className="h-4 w-4 text-[#10B981]" />
-												<span className="font-mono text-[12px] text-[#10B981]">Copied!</span>
+												<IconCheckCircle className="h-4 w-4 text-brand-green" />
+												<span className="font-mono text-[12px] text-brand-green">Copied!</span>
 											</>
 										) : (
 											<>
@@ -83,7 +83,7 @@ export function InstallSection() {
 									href={GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="flex items-center gap-1 font-mono text-[11px] text-[#7BCDD8] hover:underline"
+									className="flex items-center gap-1 font-mono text-[11px] text-clara hover:underline"
 								>
 									<IconGithub className="h-3 w-3" />
 									Star us on GitHub →
@@ -94,16 +94,16 @@ export function InstallSection() {
 
 					<div>
 						<div className="mb-4 flex items-center gap-2">
-							<IconMonitor className="h-4 w-4 text-[#7C3AED]" />
+							<IconMonitor className="h-4 w-4 text-brand-purple" />
 							<span className="font-mono text-[13px] font-semibold text-white">Desktop IDE</span>
 							<span className="font-mono text-[13px] text-white/30">· VS Code, voice-first</span>
 						</div>
 
-						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-[#0A0E14]">
+						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-bg-overlay">
 							<div className="p-5">
 								<div className="mb-4 flex items-center gap-2">
 									<span className="text-[15px] font-semibold text-white">Clara Code IDE</span>
-									<span className="rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-[#7C3AED]">
+									<span className="rounded-full border border-brand-purple/30 bg-brand-purple/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-brand-purple">
 										Coming Soon
 									</span>
 								</div>
@@ -112,7 +112,7 @@ export function InstallSection() {
 									href={GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-[#7C3AED] py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-colors hover:bg-[#6D28D9]"
+									className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-purple py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-colors hover:bg-brand-purple-hover"
 								>
 									<IconGithub className="h-4 w-4" />
 									View on GitHub
@@ -126,7 +126,7 @@ export function InstallSection() {
 									href={GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
-									className="font-mono text-[11px] text-[#7BCDD8] hover:underline"
+									className="font-mono text-[11px] text-clara hover:underline"
 								>
 									View on GitHub →
 								</a>

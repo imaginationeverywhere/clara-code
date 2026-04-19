@@ -38,13 +38,13 @@ export function Header() {
 	return (
 		<header
 			className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-200 ${
-				scrolled ? 'border-white/[0.07] bg-[#0D1117]/95 backdrop-blur-md' : 'border-transparent bg-transparent'
+				scrolled ? 'border-white/[0.07] bg-bg-base/95 backdrop-blur-md' : 'border-transparent bg-transparent'
 			}`}
 		>
 			<div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 				<Link href="/" className="flex items-center gap-0.5">
 					<span className="text-lg font-bold tracking-tight text-white">Clara</span>
-					<span className="font-mono text-lg font-bold tracking-tight text-[#4F8EF7]">Code</span>
+					<span className="font-mono text-lg font-bold tracking-tight text-brand-blue">Code</span>
 				</Link>
 
 				<nav className="flex items-center gap-6 md:gap-8">
@@ -81,7 +81,7 @@ export function Header() {
 						href={GITHUB_REPO}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="rounded-full bg-[#7C3AED] px-5 py-2 text-sm font-medium text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition hover:bg-[#6D28D9]"
+						className="rounded-full bg-brand-purple px-5 py-2 text-sm font-medium text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition hover:bg-brand-purple-hover"
 					>
 						Get Early Access
 					</a>

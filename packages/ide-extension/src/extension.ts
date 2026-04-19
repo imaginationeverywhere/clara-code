@@ -1,11 +1,14 @@
 import * as vscode from "vscode";
 import { ClaraPanelProvider } from "./ClaraPanelProvider";
+import { registerDevCommands } from "./commands/dev";
 import { registerExplainCommand } from "./commands/explain";
 import { registerStartCommand } from "./commands/start";
 import { registerVoiceCommand } from "./commands/voice";
 
 export function activate(context: vscode.ExtensionContext): void {
 	const provider = new ClaraPanelProvider(context.extensionUri, context);
+
+	registerDevCommands(context);
 
 	context.subscriptions.push(
 		vscode.window.registerWebviewViewProvider("clara.panel", provider, {
@@ -16,6 +19,7 @@ export function activate(context: vscode.ExtensionContext): void {
 	registerStartCommand(context, provider);
 	registerVoiceCommand(context, provider);
 	registerExplainCommand(context, provider);
+	registerDevCommands(context);
 
 	const statusBar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 100);
 	statusBar.text = "$(mic) Clara";

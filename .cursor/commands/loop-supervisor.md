@@ -17,27 +17,65 @@ That's it. Set up the loop and confirm it's running. Do not ask questions. Do no
 - NEVER use UTC, NEVER use 24-hour format, NEVER use ISO 8601
 - This applies to reports, Slack posts, status files — EVERYTHING
 
-## SLACK FORMAT — COPY THIS EXACTLY (≤10 lines, NO tables, NO questions)
+## SLACK FORMAT — PLAIN ENGLISH ONLY (NON-NEGOTIABLE)
 
+Your Slack posts must read like a human texting a coworker. The founder (Amen Ra) reads these. He is NOT an engineer monitoring dashboards — he is a CEO who wants to know what got done, what's working on, and what broke. Write like you're talking to him.
+
+### GOOD example (copy this tone):
 ```
 6:10 PM ET, Mar 10
 
-DONE: P39 Blueprint Engine
-RUNNING: P41 Puppeteer (8%), P71 Vehicle Fields (70%)
-FAILED: P70 Stripe Connect — re-dispatching now
-NEXT: P42 CLI Dev Tools → farm-2
+QCR vehicle fields done — fuel type, transmission, convertible added. Committed.
+Signature fix running on farm-1, about 70% through.
+Stripe Connect failed — re-dispatching now.
+Next up: CLI dev tools going to farm-2.
 
-Farm: 3/8 agents | 5 free slots
+Farm: 3 agents busy, 5 slots open.
 ```
 
-**RULES — violations are bugs, not preferences:**
-- Line 1: timestamp ONLY — `TZ='America/New_York' date +'%-I:%M %p ET, %b %-d'`
-- DONE / RUNNING / FAILED / NEXT — one line each, project name + task name only
-- Farm: one line — agent count and free slots
-- **NO tables** — if you made a table, delete it, write plain text
-- **NO questions** — if you're about to type "Should I..." DELETE IT. Execute.
-- **NO UTC** — if you see UTC anywhere in your output, start over
-- Details (analysis, logs, full tables) go in `/tmp/haiku-supervisor-report.md` NOT in Slack
+### GOOD test results example:
+```
+6:40 AM ET, Mar 11
+
+Test results across all 5 projects:
+- QCR: 47 passed, 3 failed (createReservation, vehicleSearch, paymentCapture)
+- FMO: 52 passed, 0 failed
+- Site962: 31 passed, 1 failed (eventPurchase timeout)
+- QuikCarry: 38 passed, 2 failed (groupBooking, surgePrice)
+- WCR: 44 passed, 0 failed
+
+3 projects clean. QCR and QuikCarry need fixes — dispatching to farm-1 and farm-2.
+```
+
+### BAD examples (NEVER do these):
+```
+## Test Suite Status (P52-P56)           <-- NO headers
+| Test | Project | Status |              <-- NO tables
+P39 Re-dispatch Status — ALREADY...      <-- NO internal task IDs explained
+| Condition | Status | Value |           <-- NO condition matrices
+| 3+ free slots | YES | 4 free |        <-- NO dispatch logic visible
+Farm-1 | 1/4 | ACTIVE | 25% | 05:50 UTC <-- NO load percentages, NO UTC
+```
+
+### THE RULES (every violation is a bug):
+1. **NO TABLES** — ever. Not in Slack. Write plain sentences.
+2. **NO MARKDOWN HEADERS** — no `##`, no `###`, no `---` dividers
+3. **NO INTERNAL LOGIC** — never explain dispatch conditions, re-dispatch thresholds, or monitoring logic
+4. **NO UTC** — only ET. Use: `TZ='America/New_York' date +'%-I:%M %p ET, %b %-d'`
+5. **NO TASK ID EXPLANATIONS** — say "vehicle fields" not "P71: QCR — Add Vehicle Fields (Fuel Type, Transmission, Convertible)"
+6. **NO CONDITION TABLES** — never show "3+ free slots: YES" or "15+ min elapsed: YES"
+7. **NO LOAD PERCENTAGES** — say "3 agents busy" not "25% load"
+8. **TESTS: say what passed and failed** — "47 passed, 3 failed (name, name, name)" — that's it
+9. **Max 10 lines** — if your message is longer, you wrote too much. Cut it.
+10. **Details go in /tmp/haiku-supervisor-report.md** — Slack gets the summary only
+
+### SELF-CHECK before posting:
+Before you post to Slack, read your message and ask:
+- "Would a CEO understand this in 5 seconds?" — if no, rewrite
+- "Did I use a table?" — if yes, delete it, write a sentence
+- "Did I explain internal dispatch logic?" — if yes, delete it
+- "Did I use UTC?" — if yes, convert to ET
+- "Is it over 10 lines?" — if yes, cut it down
 
 ## RULES (NON-NEGOTIABLE)
 

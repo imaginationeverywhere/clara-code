@@ -33,6 +33,11 @@
 		},
 		"commands": [
 			{
+				"command": "clara.setGatewayUrl",
+				"title": "Clara: Set Gateway URL (Dev)",
+				"category": "Clara"
+			},
+			{
 				"command": "clara.start",
 				"title": "Clara: Open Panel",
 				"icon": "$(comment-discussion)"
@@ -45,8 +50,20 @@
 			{
 				"command": "clara.explain",
 				"title": "Clara: Explain Selection"
+			},
+			{
+				"command": "clara.setGatewayUrl",
+				"title": "Clara: Set Gateway URL (Dev)"
 			}
 		],
+		"menus": {
+			"commandPalette": [
+				{
+					"command": "clara.setGatewayUrl",
+					"when": "false"
+				}
+			]
+		},
 		"keybindings": [
 			{
 				"command": "clara.voice",
@@ -63,15 +80,10 @@
 		"configuration": {
 			"title": "Clara Code",
 			"properties": {
-				"claraCode.gatewayUrl": {
-					"type": "string",
-					"default": "https://info-24346--hermes-gateway.modal.run",
-					"description": "Clara voice gateway URL"
-				},
 				"claraCode.userId": {
 					"type": "string",
 					"default": "dev",
-					"description": "User ID sent to gateway"
+					"description": "Display name / user id sent to the gateway (non-secret)"
 				},
 				"claraCode.panelMode": {
 					"type": "boolean",

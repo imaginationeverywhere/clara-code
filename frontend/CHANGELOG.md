@@ -1,5 +1,32 @@
 # Changelog
 
+## [Unreleased] - 2026-04-16
+
+### Added
+
+- **App shell** — `AppHeader` + `ProfileWidget` (Clerk avatar, tier badge, account/dashboard/sign out); `(app)/layout.tsx` wraps dashboard, account, API keys, and settings; `next.config.ts` `images.remotePatterns` for Clerk avatars.
+- **Legal** — Server-rendered `/privacy` and `/terms` pages (Header + Footer), footer links, root `metadata.alternates.canonical`.
+
+### Changed
+
+- **Voice / gateway** — Removed hardcoded voice and Hermes gateway URLs; Edge/API routes require `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` from the environment (503 or graceful fallback when unset). `.env.example` uses placeholder hosts only.
+- **Tests** — `src/__tests__/middleware.test.ts`: Vitest import grouped after Next/Clerk imports (formatting only); public-route coverage includes `/privacy` and `/terms`.
+
+## [Unreleased] - 2026-04-13
+
+### Changed
+
+- Design tokens: extended `tailwind.config.ts` with Clara/brand/surface/sculpt/text/border/syntax/chrome/mac colors, waveform/fadeIn animations; replaced arbitrary `bg-[#…]` / `text-[#…]` classes across marketing and app shells with semantic utilities; added `docs/design-system.md`.
+
+### Added
+
+- `wrangler.toml`: custom domain routes for `claracode.ai`, `www.claracode.ai` (production) and `develop.claracode.ai` (preview) — CF Workers now routes correctly per environment.
+- `.env.example`: documented `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` and `STRIPE_SECRET_KEY` with notes that the publishable key is baked into the client bundle at build time and the secret key is runtime-only via Wrangler secrets. Pull live keys from SSM at `/clara-code/STRIPE_PUBLISHABLE_KEY` and `/clara-code/STRIPE_SECRET_KEY`.
+
+### Fixed
+
+- Root `wrangler.toml` replaced with reference comments — `frontend/wrangler.toml` is now the single deployment config for Workers.
+
 ## [Unreleased]
 
 ### Changed

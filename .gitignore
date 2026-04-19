@@ -55,3 +55,7 @@ graphify-out/
 .wrangler/
 packages/web-ui/.wrangler/
 packages/web-ui/.vercel/
+
+# OpenNext build output
+.open-next/
+frontend/.open-next/

@@ -14,6 +14,18 @@ jest.mock("@/routes/waitlist", () => {
 	r.get("/", (_req: Request, res: Response) => res.json({ route: "waitlist" }));
 	return r;
 });
+jest.mock("@/routes/models", () => {
+	const { Router } = require("express");
+	const r = Router();
+	r.get("/", (_req: Request, res: Response) => res.json({ route: "models" }));
+	return r;
+});
+jest.mock("@/routes/registry-auth", () => {
+	const { Router } = require("express");
+	const r = Router();
+	r.post("/token", (_req: Request, res: Response) => res.json({ route: "registry-token" }));
+	return r;
+});
 jest.mock("@/routes/voice", () => {
 	const { Router } = require("express");
 	const r = Router();
@@ -27,8 +39,10 @@ const app = express();
 app.use("/api", apiRoutes);
 
 describe("routes index", () => {
-	it("mounts keys, waitlist, voice", async () => {
+	it("mounts keys, models, registry, waitlist, voice", async () => {
 		expect((await request(app).get("/api/keys/")).body.route).toBe("keys");
+		expect((await request(app).get("/api/models/")).body.route).toBe("models");
+		expect((await request(app).post("/api/registry/token").send({})).body.route).toBe("registry-token");
 		expect((await request(app).get("/api/waitlist/")).body.route).toBe("waitlist");
 		expect((await request(app).get("/api/voice/")).body.route).toBe("voice");
 	});

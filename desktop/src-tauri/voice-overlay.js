@@ -4,7 +4,6 @@
   var voice_overlay_default = "#clara-voice-overlay-root {\n	position: fixed;\n	z-index: 2147483646;\n	inset: 0;\n	pointer-events: none;\n}\n\n#clara-voice-overlay-root .clara-voice-fab {\n	pointer-events: auto;\n	position: fixed;\n	right: 24px;\n	bottom: 24px;\n	width: 56px;\n	height: 56px;\n	padding: 0;\n	border: none;\n	border-radius: 9999px;\n	cursor: pointer;\n	display: flex;\n	align-items: center;\n	justify-content: center;\n	background: linear-gradient(145deg, #6366f1 0%, #4f46e5 55%, #4338ca 100%);\n	color: #f8fafc;\n	box-shadow:\n		0 10px 25px rgba(15, 23, 42, 0.35),\n		0 0 0 1px rgba(255, 255, 255, 0.08) inset;\n	transition: transform 0.15s ease, box-shadow 0.15s ease;\n}\n\n#clara-voice-overlay-root .clara-voice-fab:hover {\n	transform: scale(1.05);\n	box-shadow:\n		0 14px 32px rgba(15, 23, 42, 0.45),\n		0 0 0 1px rgba(255, 255, 255, 0.12) inset;\n}\n\n#clara-voice-overlay-root .clara-voice-fab:focus-visible {\n	outline: 2px solid #a5b4fc;\n	outline-offset: 3px;\n}\n\n#clara-voice-overlay-root .clara-voice-fab:disabled {\n	opacity: 0.65;\n	cursor: not-allowed;\n	transform: none;\n}\n\n#clara-voice-overlay-root .clara-voice-fab svg {\n	width: 26px;\n	height: 26px;\n	flex-shrink: 0;\n}\n\n@keyframes clara-voice-pulse {\n	0%,\n	100% {\n		box-shadow:\n			0 10px 25px rgba(15, 23, 42, 0.35),\n			0 0 0 0 rgba(99, 102, 241, 0.55);\n	}\n	50% {\n		box-shadow:\n			0 14px 32px rgba(15, 23, 42, 0.45),\n			0 0 0 12px rgba(99, 102, 241, 0);\n	}\n}\n\n#clara-voice-overlay-root .clara-voice-fab--pulse {\n	animation: clara-voice-pulse 1.4s ease-in-out infinite;\n}\n";
 
   // src/voice-overlay.ts
-  var TTS_URL = "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run/voice/tts";
   var DEFAULT_TTS_TEXT = "Hey, I am Clara. How can I help with your code today?";
   function isClaraDesktopSurface() {
     const { hostname } = window.location;
@@ -29,6 +28,9 @@
 </svg>`.trim();
   }
   function mountClaraVoiceOverlay() {
+    if (document.documentElement.hasAttribute("data-clara-desktop-shell")) {
+      return;
+    }
     if (!isClaraDesktopSurface()) {
       return;
     }
@@ -56,12 +58,11 @@
         button.disabled = true;
         button.classList.add("clara-voice-fab--pulse");
         try {
-          const response = await fetch(TTS_URL, {
+          const response = await fetch("/api/voice/tts", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              text: DEFAULT_TTS_TEXT,
-              voice_id: "default"
+              text: DEFAULT_TTS_TEXT
             })
           });
           if (!response.ok) {

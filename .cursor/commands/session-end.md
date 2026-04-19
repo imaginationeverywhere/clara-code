@@ -1,118 +1,141 @@
-# /session-end — Close Session and Sync Everything
+# session-end - Close a Session and Preserve Context
 
-**EXECUTE IMMEDIATELY when invoked.** This is not documentation — this is a shutdown sequence. Run every step below NOW.
+Every great session deserves a proper ending. Not an abrupt stop — a deliberate close. Write down what happened. Flag what's unfinished. Set the next session up for success.
+
+## Usage
+```
+/session-end
+/session-end "Good session, QCR pickup flow is done"
+/session-end --exit
+```
 
 ## Arguments
-- No args — Full shutdown with vault sync
-- `--quick` — Just update tracker and checkpoint, skip S3/Slack
-- `"<summary>"` — Use this as the session summary instead of auto-generating
+- `<notes>` (optional) — Any final thoughts or notes to include in the checkpoint
+- `--exit` — After writing the checkpoint, exit Claude Code. The session is over.
 
-## Execution Steps (DO ALL OF THESE)
+## What This Command Does
 
-### Step 1: Generate Session Summary
-Review what was done in this session:
-- What files were changed (`git diff --stat` or `git log` since session start)
-- What commands were run
-- What decisions were made
-- What feedback was received from Amen Ra
+### 1. Gather Session Context
+Review the conversation to identify:
+- **What was done** — Features built, bugs fixed, decisions made, files changed
+- **Decisions made** — Any architectural, strategic, or priority decisions
+- **What's pending** — Unfinished work, blocked items, next steps
+- **New facts learned** — Anything Amen Ra said that should be in memory but isn't yet
 
-Write a concise 1-3 line summary.
+### 2. Write to Obsidian Vault (PRIMARY — Carter's system)
+Create or update today's daily note in the vault:
 
-### Step 2: Update Session Tracker
-Read `~/auset-brain/session-tracker.md` and append a new row to the "Most Recent Sessions" table:
+**a) Write daily note:**
+```
+auset-brain/Daily/YYYY-MM-DD.md
+```
+Use the template at `auset-brain/Templates/Daily Note.md`. Include:
+- Session summary (what was done)
+- Decisions made (with `[[wikilinks]]` to Decisions/ notes)
+- Pending items for next session
+- Links to relevant notes
+
+**b) Write any new Feedback/Decision/Project notes to vault:**
+- Corrections from Amen Ra → `auset-brain/Feedback/feedback-<topic>.md`
+- Architectural decisions → `auset-brain/Decisions/<topic>.md`
+- New project facts → `auset-brain/Projects/<topic>.md`
+- New people info → `auset-brain/People/<name>.md`
+Each with YAML frontmatter and `[[wikilinks]]`.
+
+**c) Update MOC.md if new notes were added:**
+Add links to any new notes in the appropriate section of `auset-brain/MOC.md`.
+
+### 2b. Write Flat Memory Checkpoint (backward compat)
+Also update `memory/session-checkpoint.md` — the flat system still works as fallback:
+
 ```markdown
-| <today's date> | <machine> | <project-name> | <summary> | Done |
+# Session Checkpoint — [Date]
+
+## What Was Done
+- [Concrete accomplishments]
+
+## Decisions Made
+- [Key decisions with context]
+
+## Pending
+- [ ] [Unfinished items]
+- [ ] [Blocked items with reason]
+
+## New Context
+- [Anything important that came up]
+
+## Next Session Should
+- [Recommended first actions]
 ```
 
-### Step 3: Update or Create Daily Note
-Check if `~/auset-brain/Daily/<today YYYY-MM-DD>.md` exists:
-- **Exists** → Append this session's work under a new project header
-- **Doesn't exist** → Create it with today's date, log this session
+### 3. Write Any Pending Memory Files
+If Amen Ra shared new facts, corrections, or feedback during the session that haven't been saved yet — write them to BOTH systems NOW:
 
-Include: project name, what was completed, decisions made, feedback received, what's next.
+**Vault (primary):**
+- Corrections → `auset-brain/Feedback/feedback-<topic>.md`
+- Project facts → `auset-brain/Projects/project-<topic>.md`
+- People info → `auset-brain/People/<name>.md`
+- Resources → `auset-brain/Decisions/reference-<topic>.md`
 
-### Step 4: Update Session Checkpoint
-Write `memory/session-checkpoint.md` with:
-- What was done this session
-- What's pending/next
-- Key decisions made
-- Any blockers
-- Timestamp
+**Flat memory (fallback):**
+- `memory/feedback-*.md`, `memory/project-*.md`, `memory/user-*.md`, `memory/reference-*.md`
 
-### Step 5: Push Vault to S3 (Founders Only)
-```bash
-aws s3 sync ~/auset-brain/ s3://auset-brain-vault/ --exclude ".git/*" --exclude ".gate-token" --exclude "*.sh" --quiet
+### 4. Session Summary
+Display a clean closing report:
+
+```
+SESSION END — March 15, 2026
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ACCOMPLISHED:
+  - [what got done]
+
+DECISIONS:
+  - [what was decided]
+
+PENDING:
+  - [what's left]
+
+MEMORY UPDATED:
+  - session-checkpoint.md (updated)
+  - [any new memory files written]
+
+NEXT SESSION:
+  - [recommended first actions]
+
+Session saved. Context preserved.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### Step 6: Archive Prompts to HQ (NON-NEGOTIABLE)
+### 5. Exit (if --exit flag)
+If `--exit` was passed, after writing everything, exit Claude Code cleanly.
 
-**No team should have prompts lingering in their Heru repo after session end.** Prompts are classified IP — they live at HQ.
+## What This Command Does NOT Do
+- Does NOT commit code (use `/git-commit-docs` for that)
+- Does NOT push to remote
+- Does NOT post to Slack
+- Does NOT dispatch any agents
 
-Check if this project has a `prompts/` directory with any files:
-```bash
-PROMPT_COUNT=$(find prompts/ -name "*.md" 2>/dev/null | wc -l | tr -d ' ')
+This is PRESERVATION. Saving context so the next session doesn't start from zero.
+
+## Why --exit Exists
+
+Sometimes you're done for the night. You don't want to type `/session-end` and then also type `/exit`. One command, clean close:
+
+```
+/session-end --exit "Good night. QCR pickup done, start on FMO tomorrow."
 ```
 
-If `PROMPT_COUNT > 0`:
-1. Determine the team alias from `$SWARM_TEAM` or project name (e.g., wcr, qcr, fmo, s962, st, qn, qcarry, pgcmc, trackit, slk)
-2. Create the archive directory at HQ:
-   ```bash
-   mkdir -p /Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/prompts/archive/<team-alias>/
-   ```
-3. Copy all prompts to HQ:
-   ```bash
-   cp -r prompts/* /Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/prompts/archive/<team-alias>/
-   ```
-4. Remove prompts from the Heru (they now live at HQ):
-   ```bash
-   rm -rf prompts/
-   ```
-5. Report: "Archived <N> prompts to HQ"
+Checkpoint written. Memory saved. Claude exits. Done.
 
-If `PROMPT_COUNT == 0` or no `prompts/` directory exists, skip this step.
+## Why This Matters
 
-**HQ sessions (boilerplate) skip this step** — HQ IS the archive destination.
+**The self-improving loop depends on this.** If sessions end without checkpoints, the next session starts blind. Every uncheckpointed session is context permanently lost.
 
-### Step 7: Report to Headquarters via Live Feed (NON-NEGOTIABLE)
-Post a structured completion report to the live feed so HQ knows what you accomplished:
-```bash
-echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | SESSION END | ${SWARM_TEAM:-Unknown} | Completed: <1-2 line summary of what was done> | Next: <what the next session should pick up>" >> ~/auset-brain/Swarms/live-feed.md
-```
-This is how HQ tracks every team. If you don't report, HQ doesn't know you're done. NO EXCEPTIONS.
-
-### Step 8: Post to Slack (if significant work)
-If substantial work was done, post summary to #maat-brain:
-```bash
-SLACK_TOKEN=$(aws ssm get-parameter --name '/quik-nation/shared/SLACK_BOT_TOKEN' --with-decryption --query 'Parameter.Value' --output text --region us-east-1)
-curl -s -X POST "https://slack.com/api/chat.postMessage" -H "Authorization: Bearer $SLACK_TOKEN" -H "Content-Type: application/json" -d "{\"channel\":\"C0AKANS4UNB\",\"text\":\"Session ended: $PROJECT — $SUMMARY\"}"
-```
-
-### Step 9: Show Shutdown Report
-```
-SESSION ENDED
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  Project: <project-name>
-  Machine: <hostname>
-
-  Completed:
-  - <bullet list of what was done>
-
-  Vault: Synced to S3 ✓
-  Daily note: Updated ✓
-  Session tracker: Updated ✓
-  Checkpoint: Written ✓
-
-  Next session pickup:
-  - <what to do next>
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
-
-## For Developers (Non-Founders)
-- Write session log to `~/auset-brain/developers/<username>/sessions/<today>.md`
-- Track: project, commands used, files changed, commits made
-- No vault push, no Slack post
+The AI takes notes on itself so compaction never loses critical context. This command is half of that loop. `/session-start` is the other half.
 
 ## Related Commands
-- `/session-start` — Initialize session with full context
-- `/vault-sync` — Manual vault sync
-- `/brain-sync` — Push vault to all channels
+- `/session-start` — Begin a session with full context recovery
+- `/gran` — Talk to Granville (architecture)
+- `/mary` — Talk to Mary (product/business)
+- `/council` — Talk to both Granville and Mary

@@ -1,0 +1,19 @@
+# Apollo Router configuration — DO NOT edit manually (managed by Talent Registry service)
+# See docs/auto-claude/CLARA_TALENT_AGENCY_ARCHITECTURE.md for full spec
+
+supergraph:
+  schema:
+    source: file
+    file: ./supergraph-schema.graphql
+
+headers:
+  all:
+    request:
+      - propagate:
+          named: authorization
+      - insert:
+          name: x-clara-service-token
+          value: "${env.CLARA_SERVICE_TOKEN}"
+
+include_subgraph_errors:
+  all: true

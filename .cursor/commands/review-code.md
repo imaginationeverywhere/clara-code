@@ -540,6 +540,15 @@ prompts/${YEAR}/${MONTH}/${DAY}/1-not-started/${NEXT_NUM}-fix-<short-description
 echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | CORRECTIVE PROMPT QUEUED | ${NEXT_NUM}-fix-<slug>.md | ${COUNT_CRITICAL} critical, ${COUNT_HIGH} high issues | Cursor agent: run /pickup-prompt" >> ~/auset-brain/Swarms/live-feed.md
 ```
 
+**Step 3b — Push prompt to GitHub** so QCS1 and all sessions can see it:
+```bash
+BRANCH=$(git branch --show-current)
+git add "prompts/"
+git commit -m "feat(prompts): queue corrective prompt ${NEXT_NUM}-fix-<slug>.md — ${COUNT_CRITICAL} critical, ${COUNT_HIGH} high issues"
+git push origin "$BRANCH"
+echo "✓ Corrective prompt pushed to GitHub: $BRANCH"
+```
+
 **Step 4 — Report to the reviewer:**
 ```
 📋 Corrective prompt queued:
@@ -547,6 +556,7 @@ echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | CORRECTIVE PROMPT QUEUED | ${NE
 
    Issues captured: X critical, Y high, Z medium
    QCS1 Cursor agent: run /pickup-prompt to execute fixes
+   GitHub: pushed to $BRANCH ✓
 ```
 
 **When NOT to write a corrective prompt:**

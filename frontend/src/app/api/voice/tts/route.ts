@@ -1,15 +1,13 @@
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
-
-export const runtime = "edge";
-
-const DEFAULT_VOICE_BASE = "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
 
 function getVoiceBaseUrl(): string {
 	const fromEnv = process.env.CLARA_VOICE_URL ?? process.env.NEXT_PUBLIC_CLARA_VOICE_URL;
 	if (fromEnv && fromEnv.length > 0) {
 		return fromEnv.replace(/\/$/, "");
 	}
-	return DEFAULT_VOICE_BASE;
+	return "";
 }
 
 export async function POST(req: Request) {
@@ -25,7 +23,12 @@ export async function POST(req: Request) {
 
 		const voiceId = body.voice === "clara" || body.voice === undefined ? "clara" : body.voice;
 
-		const response = await fetch(`${getVoiceBaseUrl()}/voice/tts`, {
+		const base = getVoiceBaseUrl();
+		if (!base) {
+			return NextResponse.json({ error: "Voice service is not available" }, { status: 503 });
+		}
+
+		const response = await fetch(`${base}/voice/tts`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({ text, voice_id: voiceId }),

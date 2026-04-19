@@ -37,17 +37,17 @@
         "hooks": [
           {
             "type": "command",
-            "command": ".claude/hooks/auto-memory.sh",
+            "command": "PROJ=$(git -C \"${CLAUDE_PROJECT_DIR:-$(pwd)}\" rev-parse --show-toplevel 2>/dev/null) && bash \"${PROJ}/.claude/hooks/auto-memory.sh\"",
             "timeout": 5
           },
           {
             "type": "command",
-            "command": ".claude/hooks/voice-tts.sh",
+            "command": "PROJ=$(git -C \"${CLAUDE_PROJECT_DIR:-$(pwd)}\" rev-parse --show-toplevel 2>/dev/null) && bash \"${PROJ}/.claude/hooks/voice-tts.sh\"",
             "timeout": 30
           },
           {
             "type": "command",
-            "command": ".claude/hooks/telegraph-check.sh",
+            "command": "PROJ=$(git -C \"${CLAUDE_PROJECT_DIR:-$(pwd)}\" rev-parse --show-toplevel 2>/dev/null) && bash \"${PROJ}/.claude/hooks/telegraph-check.sh\"",
             "timeout": 3
           }
         ]

@@ -1,0 +1,47 @@
+name: Clara Code IDE
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ide/clara-code/**"
+      - ".github/workflows/clara-code-ide.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-matrix:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            platform: darwin
+          - os: ubuntu-latest
+            platform: linux
+          - os: windows-latest
+            platform: win32
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: ide/clara-code/extensions/clara-voice/package-lock.json
+
+      - name: Build Clara Voice VSIX
+        shell: bash
+        run: bash ide/clara-code/scripts/build-platform.sh "${{ matrix.platform }}"
+
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
+        with:
+          name: clara-voice-${{ matrix.platform }}
+          path: ide/clara-code/dist/clara-voice-${{ matrix.platform }}.vsix
+          if-no-files-found: error

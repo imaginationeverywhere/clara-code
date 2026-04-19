@@ -2,6 +2,14 @@
 
 ## [Unreleased]
 
+### Added
+
+- **Hermes gateway from env only** — `createHermesFromEnv()` returns `null` when `HERMES_GATEWAY_URL` is unset; `createMomHermesStreamFn` accepts `HermesClient | null` and uses Anthropic-only streaming when Hermes is not configured. Startup logs indicate Clara Gateway vs direct Anthropic.
+
+### Changed
+
+- **Documentation** — `README.md` and `.env.example`: gateway URL must come from deployment/SSM; removed example Modal URL. `HermesClient.ping()` no longer logs the raw gateway URL on success.
+
 ## [0.66.1] - 2026-04-08
 
 ## [0.66.0] - 2026-04-08

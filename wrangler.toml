@@ -1,16 +1,10 @@
-name = "clara-code"
-compatibility_date = "2024-01-01"
-compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".vercel/output/static"
-
-[env.production]
-name = "clara-code"
-
-[env.preview]
-name = "clara-code-preview"
-
-# Cloudflare Pages config
-# Project: clara-code
-# Custom domain: claracode.ai
-# Account: 4682eae9d50da54644c8f895ddad984f
-# Zone: c85d0ebc12b64c6dedfb303596e7defe
+# DEPRECATED: Use frontend/wrangler.toml for OpenNext Workers deployment
+# This file is kept only for reference.
+#
+# Cloudflare Account Info:
+# - Account: 4682eae9d50da54644c8f895ddad984f
+# - Zone: c85d0ebc12b64c6dedfb303596e7defe
+# - Custom domains: claracode.ai, develop.claracode.ai
+#
+# Deploy from frontend/ directory:
+#   cd frontend && npm run pages:build && npx wrangler deploy

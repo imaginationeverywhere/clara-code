@@ -1,0 +1,81 @@
+{
+	"name": "clara-voice",
+	"displayName": "Clara Voice",
+	"description": "Voice input bar and Clara Code Lens integration; connects to Clara Voice Server.",
+	"version": "0.1.0",
+	"publisher": "clara",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imaginationeverywhere/clara-code.git"
+	},
+	"engines": {
+		"vscode": "^1.85.0"
+	},
+	"categories": ["Other"],
+	"activationEvents": ["onStartupFinished"],
+	"main": "./out/extension.js",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Clara Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/clara-dark.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "clara.voice.toggle",
+				"title": "Clara: Toggle Voice Input"
+			},
+			{
+				"command": "clara.codeLens.open",
+				"title": "Clara: Code Lens"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "clara.voice.toggle",
+				"key": "ctrl+shift+v",
+				"mac": "cmd+shift+v"
+			}
+		],
+		"configuration": {
+			"title": "Clara",
+			"properties": {
+				"clara.voice.serverUrl": {
+					"type": "string",
+					"default": "",
+					"description": "Base URL for Clara Voice Server (overridden by CLARA_VOICE_SERVER_URL when set)."
+				},
+				"clara.ai.provider": {
+					"type": "string",
+					"enum": ["clara"],
+					"default": "clara",
+					"description": "Default AI provider for Clara Code (Hermes)."
+				},
+				"clara.ai.hermesEndpoint": {
+					"type": "string",
+					"default": "https://hermes.claraagents.com",
+					"description": "Hermes API base URL for Clara AI features."
+				},
+				"clara.codeLens.enabled": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show Clara Code Lens on every file."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"package": "npm run compile && vsce package --no-dependencies"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.5",
+		"@types/vscode": "^1.85.0",
+		"@vscode/vsce": "^3.2.2",
+		"typescript": "^5.9.2"
+	}
+}

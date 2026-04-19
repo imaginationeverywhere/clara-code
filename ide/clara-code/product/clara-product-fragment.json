@@ -1,0 +1,26 @@
+{
+	"nameShort": "Clara Code",
+	"nameLong": "Clara Code",
+	"applicationName": "clara-code",
+	"dataFolderName": ".clara-code",
+	"win32AppUserModelId": "ClaraCode",
+	"win32MutexName": "claracode",
+	"darwinBundleIdentifier": "com.clara.code",
+	"linuxIconName": "clara-code",
+	"urlProtocol": "clara-code",
+	"serverApplicationName": "clara-code-server",
+	"serverDataFolderName": ".clara-code-server",
+	"tunnelApplicationName": "clara-code-tunnel",
+	"tunnelApplicationSupport": "clara-code-tunnel",
+	"statsigClientKey": null,
+	"telemetryEndpoint": null,
+	"telemetrySampleRate": 0,
+	"removeTelemetryMachineId": true,
+	"skipWelcome": false,
+	"extensionsGallery": {
+		"serviceUrl": "https://open-vsx.org/vscode/gallery",
+		"itemUrl": "https://open-vsx.org/vscode/item",
+		"controlUrl": "",
+		"recommendationsUrl": ""
+	}
+}

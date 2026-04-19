@@ -1,10 +1,8 @@
+export const dynamic = "force-dynamic";
+
 import { NextResponse } from "next/server";
 
 import { checkIpRateLimit } from "@/lib/ip-rate-limit";
-
-export const runtime = "edge";
-
-const DEFAULT_HERMES_GATEWAY_URL = "https://info-24346--hermes-gateway.modal.run";
 
 const FALLBACK_BODY = {
 	text: "Clara is unavailable right now.",
@@ -13,7 +11,7 @@ const FALLBACK_BODY = {
 
 function hermesBaseUrl(): string {
 	const raw = process.env.HERMES_GATEWAY_URL?.trim();
-	return raw && raw.length > 0 ? raw : DEFAULT_HERMES_GATEWAY_URL;
+	return raw && raw.length > 0 ? raw : "";
 }
 
 function clientIp(request: Request): string {
@@ -58,6 +56,9 @@ export async function POST(request: Request): Promise<NextResponse> {
 	const user = typeof userIdRaw === "string" && userIdRaw.trim().length > 0 ? userIdRaw.trim() : "guest";
 
 	const base = hermesBaseUrl().replace(/\/$/, "");
+	if (!base) {
+		return NextResponse.json({ ...FALLBACK_BODY }, { status: 200 });
+	}
 
 	try {
 		const upstream = await fetch(base, {

@@ -1,0 +1,21 @@
+{
+	"name": "Clara Dark",
+	"colors": {
+		"editor.background": "#09090F",
+		"editor.foreground": "#E4E4E7",
+		"sideBar.background": "#09090F",
+		"sideBar.foreground": "#A1A1AA",
+		"activityBar.background": "#0C0C14",
+		"activityBar.foreground": "#E4E4E7",
+		"statusBar.background": "#0C0C14",
+		"statusBar.foreground": "#E4E4E7",
+		"statusBar.noFolderBackground": "#0C0C14",
+		"titleBar.activeBackground": "#09090F",
+		"titleBar.inactiveBackground": "#09090F",
+		"panel.background": "#09090F",
+		"terminal.background": "#09090F",
+		"tab.inactiveBackground": "#0C0C14",
+		"editorGroupHeader.tabsBackground": "#09090F"
+	},
+	"tokenColors": []
+}

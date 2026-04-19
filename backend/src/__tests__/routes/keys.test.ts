@@ -16,14 +16,32 @@ jest.mock("@/models/ApiKey", () => ({
 		findAll: jest.fn(),
 		create: jest.fn(),
 		findOne: jest.fn(),
+		count: jest.fn(),
 	},
 }));
 jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
 }));
 
+jest.mock("@clerk/backend", () => ({
+	createClerkClient: jest.fn(() => ({
+		users: {
+			getUser: jest.fn().mockResolvedValue({
+				emailAddresses: [{ emailAddress: "user@example.com" }],
+				firstName: "Test",
+			}),
+		},
+	})),
+}));
+
+jest.mock("@/services/email.service", () => ({
+	sendEmail: jest.fn().mockResolvedValue(undefined),
+}));
+
+import { createClerkClient } from "@clerk/backend";
 import { ApiKey } from "@/models/ApiKey";
 import keysRoutes from "@/routes/keys";
+import { sendEmail } from "@/services/email.service";
 
 const app = express();
 app.use(express.json());
@@ -94,6 +112,7 @@ describe("routes /api/keys", () => {
 	});
 
 	it("POST / creates key", async () => {
+		(ApiKey.count as jest.Mock).mockResolvedValueOnce(1);
 		(ApiKey.create as jest.Mock).mockResolvedValueOnce({
 			id: "id1",
 			name: "My Key",
@@ -102,6 +121,25 @@ describe("routes /api/keys", () => {
 		const res = await request(app).post("/api/keys").send({ name: "My Key" });
 		expect(res.status).toBe(201);
 		expect(res.body.key).toContain("sk-clara-");
+	});
+
+	it("POST / first key queues confirmation email when Clerk is configured", async () => {
+		const prevSecret = process.env.CLERK_SECRET_KEY;
+		process.env.CLERK_SECRET_KEY = "sk_test_clerk";
+		(ApiKey.count as jest.Mock).mockResolvedValueOnce(0);
+		(ApiKey.create as jest.Mock).mockResolvedValueOnce({
+			id: "id1",
+			name: "First",
+			key: "sk-clara-firstkey123456789012",
+		});
+		const res = await request(app).post("/api/keys").send({ name: "First" });
+		expect(res.status).toBe(201);
+		await Promise.resolve();
+		await Promise.resolve();
+		expect(sendEmail).toHaveBeenCalled();
+		expect(createClerkClient).toHaveBeenCalledWith({ secretKey: "sk_test_clerk" });
+		process.env.CLERK_SECRET_KEY = prevSecret;
+		jest.mocked(sendEmail).mockClear();
 	});
 
 	it("POST / 400 without name", async () => {

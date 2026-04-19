@@ -50,8 +50,8 @@ Review and merge one or more pull requests into the develop branch.
 gh pr list --repo [owner]/[repo] --base develop --state open \
   --json number,title,state,mergeable,reviewDecision,headRefName,baseRefName,commits,additions,deletions,changedFiles,statusCheckRollup,reviews,labels,author
 
-# Also identify PRs from worktrees/auto-claude
-gh pr list --repo [owner]/[repo] --state open --search "auto-claude in:head" \
+# Also identify PRs from worktrees/agent
+gh pr list --repo [owner]/[repo] --state open --search "agent in:head" \
   --json number,title,headRefName,reviewDecision,mergeable
 ```
 
@@ -104,7 +104,7 @@ For each PR, analyze:
 
 ### PR #[NUMBER]: [TITLE]
 - **Branch:** [head] → develop
-- **Type:** [feature/fix/chore/auto-claude]
+- **Type:** [feature/fix/chore/agent]
 - **Status:** [APPROVED/PENDING/READY]
 - **Checks:** [PASSING/FAILING/PENDING]
 - **Mergeable:** [YES/NO/CONFLICTS]
@@ -166,17 +166,17 @@ gh pr create --base develop --head [branch-name] --title "[Title]" --body "[Desc
 
 ### Auto-Claude Worktree Workflow
 
-For auto-claude branches (from Auto Claude builds):
+For agent branches (from Auto Claude builds):
 
 ```bash
-# Find all auto-claude branches
-git branch -a | grep "auto-claude/"
+# Find all agent branches
+git branch -a | grep "agent/"
 
 # Check each for QA completion
 # Look for qa_report.md with "PASSED" status
 
 # Create PRs for completed branches
-for branch in $(git branch | grep "auto-claude/"); do
+for branch in $(git branch | grep "agent/"); do
   gh pr create --base develop --head $branch --fill
 done
 ```
@@ -206,7 +206,7 @@ PR #203: fix: Database connection handling
   ❌ Has merge conflicts
   🔧 Needs conflict resolution
 
-PR #204: auto-claude/008-donation-model
+PR #204: agent/008-donation-model
   ✅ Targeting develop
   ✅ All checks passing
   ✅ QA sign-off found
@@ -261,8 +261,8 @@ gh pr list --base develop --state open --json number,reviewDecision,mergeable \
 ### Merge All Auto-Claude PRs with QA Sign-off
 
 ```bash
-# Find auto-claude PRs
-gh pr list --base develop --state open --search "auto-claude in:title" --json number,title
+# Find agent PRs
+gh pr list --base develop --state open --search "agent in:title" --json number,title
 ```
 
 ## Detailed Review for Blocked PRs
@@ -278,7 +278,7 @@ When a PR cannot be merged, generate a detailed review report:
 - **Title:** [TITLE]
 - **Author:** @[author]
 - **Branch:** [head] → develop
-- **Type:** [feature/fix/chore/auto-claude]
+- **Type:** [feature/fix/chore/agent]
 - **Created:** [date]
 - **Last Updated:** [date]
 
@@ -361,13 +361,13 @@ git push
 - **Changes:** +345 -12 (8 files)
 - **Action:** Ready for `/merge-to-develop 201`
 
-#### PR #204: auto-claude/008-donation-model
+#### PR #204: agent/008-donation-model
 - **Status:** All checks passing, QA sign-off
 - **Changes:** +234 -0 (6 files)
 - **Source:** Auto-Claude worktree
 - **Action:** Ready for `/merge-to-develop 204`
 
-#### PR #207: auto-claude/012-payment-integration
+#### PR #207: agent/012-payment-integration
 - **Status:** All checks passing, QA sign-off
 - **Changes:** +567 -45 (12 files)
 - **Source:** Auto-Claude worktree

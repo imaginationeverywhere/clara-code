@@ -222,8 +222,8 @@ After dispatching all 5:
 1. Wait 15 minutes
 2. Check logs: `ls -la /tmp/cursor-cloud-test-*.log`
 3. Check result files: `cat /tmp/test-results-*.md 2>/dev/null`
-4. If any agent failed, re-dispatch with clearer instructions (max 2 re-dispatches per agent)
-5. If an agent fails 3 times, mark it as BLOCKED and report to HQ — do not keep retrying
+4. If any agent failed, re-dispatch with clearer instructions
+5. Repeat until all 5 report results
 
 ### Step 4: Quality Report
 After all agents complete, write to `/tmp/haiku-test-quality-report.md` (this is the detailed file for Opus).

@@ -2,11 +2,31 @@
 
 ## [Unreleased]
 
+### Added
+
+- **Cold-start "warming up…" UX (PR #3 of CLI-first MVP)** — `src/hooks/useVoice.ts` now exposes `warming: boolean`. A 4 s timer arms when `/api/voice/stt` is first called; if no response by then, the input bar in `src/tui.tsx` flips to `warming up Clara's voice model (cold start, up to ~2m)…` so first-hit-after-idle doesn't look frozen. The threshold is driven by cp-team's handoff note that Modal's A10G scales to zero and Whisper+XTTS cold-load takes 60–120 s. `Escape` still aborts mid-warmup. `phaseLabel()` signature gains a `warming` param. No new env vars; no CLI-side changes to auth (the `HERMES_API_KEY` swap happens at the backend edge per Option B).
+- **CLI voice loop on dev stub (PR #2 of CLI-first MVP)** — end-to-end speech → transcript → gateway loop backed by the backend's `/api/voice/stt` dev stub.
+  - `src/lib/stt-client.ts` — `requestTranscript()` POSTs base64 audio with Bearer auth; forwards `x-clara-stub-text` header and `stubText` body field when supplied; supports `AbortController`.
+  - `src/lib/audio-capture.ts` — spawns `sox`/`rec` when available (16 kHz mono 16-bit WAV on stdout); noop fallback so the dev-stub loop still closes without a microphone.
+  - `src/lib/session-log.ts` — append-only `<cwd>/.clara/session-YYYY-MM-DD.log` with `HH:MM:SS role: text` lines; newline-sanitized.
+  - `src/lib/backend.ts` — `resolveBackendUrl()` with `--backend` → `CLARA_BACKEND_URL` → `~/.clara/config.json.backendUrl` → default priority; `voiceDevStubEnabled()` reads `CLARA_VOICE_DEV_STUB`.
+  - `src/components/FirstRunPrompt.tsx` — full-screen token prompt (links `https://claracode.ai`) shown when `~/.clara/credentials.json` is missing.
+  - `src/hooks/useVoice.ts` rewritten — phases (`idle` / `listening` / `transcribing` / `sending`), `startListening` / `stopAndSend` / `cancel` / `sendText` API, abortable STT and gateway calls, optional `onTranscript` callback.
+  - `src/tui.tsx` — `Ctrl+Space` primary toggle (`Ctrl+M` alias for NUL-eating terminals), `Escape` cancels mid-phase, first-run prompt gating, session logging on every message, unified `phaseLabel` placeholder, fixed broken `<VoiceWave />` reference (now `<CliVoiceBar />`).
+  - `src/commands/tui.tsx` — new `--backend` flag; launch no longer hard-fails on missing gateway (first-run prompt still renders so the user can paste their token); `launchTui` exported for reuse.
+  - `src/index.ts` — default action (no subcommand) launches the TUI so `clara` = `clara tui`; matches the `npx claracode@latest` zero-config AC.
+  - `src/lib/gateway.ts` — returns a structured `GatewayResult` with `fixHint` when `gatewayUrl` is empty instead of crashing on `fetch("")`.
+  - `src/lib/config-store.ts` — `backendUrl` field added to `ClaraConfig`.
+- **Test suite** — new `node --test` + `tsx` harness (`npm test -w @clara/cli`): 16 cases in `test/stt-client.test.ts` (5), `test/session-log.test.ts` (4), `test/audio-capture.test.ts` (2), `test/backend.test.ts` (5).
+
 ### Fixed
 
+- **Ink upgrade (PR #4 of CLI-first MVP)** — `ink@^5.0.1` → `ink@^6.8.0`. Fixes the React 19 boot crash (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`) that prevented the TUI from mounting. Verified end-to-end via `tmux new-session -d -s clara-boot -x 100 -y 30 && npx tsx src/index.ts tui` — the `FirstRunPrompt` now renders without any stack trace. React bumped `^19.0.0` → `^19.2.0` to match Ink 6's peer requirement (`react >= 19.0.0`, already resolved to 19.2.5 by the monorepo lockfile). We deliberately did **not** jump to `ink@7` because it requires Node 22 at runtime, which would break `npx claracode@latest` on any Node 20 installation — Ink 6 matches our Node 20 floor. The Node 22 / Ink 7 bump is a future task once we raise `engines.node` accordingly.
+- **`engines.node` in manifest** — `package.json` now declares `engines.node` `>=20.0.0` so npm/npx warns on incompatible Node versions before obscure runtime failures (follow-up to PR #4 code review).
 - Removed duplicate `tui` subcommand in `src/index.ts` that called Ink `render`/`React`/`App` without imports; `registerTuiCommand` in `commands/tui.tsx` is the single registration.
 - Removed duplicate `@types/react` key in `package.json` devDependencies.
 
 ### Changed
 
+- `greet` and `tui` no longer embed default deployment URLs; set `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` (or `gatewayUrl` in `~/.clara/config.json` for TUI) before use.
 - Build no longer fails on `tsup: command not found` when the monorepo lockfile and `npm install` are in sync (see root `CHANGELOG.md`).

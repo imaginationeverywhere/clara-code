@@ -86,11 +86,11 @@ export function VoiceGreeting() {
 				{showPulse ? (
 					<>
 						<span
-							className="pointer-events-none absolute inset-0 scale-90 rounded-full bg-[#7C3AED]/30 opacity-60 animate-[clara-pulse-ring_1.5s_ease-out_infinite]"
+							className="pointer-events-none absolute inset-0 scale-90 rounded-full bg-brand-purple/30 opacity-60 animate-[clara-pulse-ring_1.5s_ease-out_infinite]"
 							aria-hidden
 						/>
 						<span
-							className="pointer-events-none absolute inset-0 scale-90 rounded-full bg-[#7C3AED]/20 opacity-60 animate-[clara-pulse-ring_1.5s_ease-out_infinite] [animation-delay:0.5s]"
+							className="pointer-events-none absolute inset-0 scale-90 rounded-full bg-brand-purple/20 opacity-60 animate-[clara-pulse-ring_1.5s_ease-out_infinite] [animation-delay:0.5s]"
 							aria-hidden
 						/>
 					</>
@@ -99,7 +99,7 @@ export function VoiceGreeting() {
 					type="button"
 					onClick={onClick}
 					disabled={isMuted || status === 'loading' || status === 'playing'}
-					className="relative flex h-16 w-16 items-center justify-center rounded-full bg-[#7C3AED] text-white shadow-[0_0_40px_rgba(124,58,237,0.45)] transition hover:bg-[#6D28D9] disabled:cursor-not-allowed disabled:opacity-70"
+					className="relative flex h-16 w-16 items-center justify-center rounded-full bg-brand-purple text-white shadow-[0_0_40px_rgba(124,58,237,0.45)] transition hover:bg-brand-purple-hover disabled:cursor-not-allowed disabled:opacity-70"
 					aria-label={isMuted ? 'Voice muted' : 'Play Clara greeting'}
 				>
 					{status === 'loading' ? (
@@ -117,13 +117,13 @@ export function VoiceGreeting() {
 							{[0, 1, 2, 3, 4].map((i) => (
 								<span
 									key={i}
-									className="w-1 rounded-sm bg-[#7BCDD8] animate-[clara-waveform_0.8s_ease-in-out_infinite]"
+									className="w-1 rounded-sm bg-clara animate-[clara-waveform_0.8s_ease-in-out_infinite]"
 									style={{ animationDelay: `${i * 0.1}s` }}
 								/>
 							))}
 						</span>
 					) : status === 'done' ? (
-						<span className="text-2xl text-[#10B981]" aria-hidden>
+						<span className="text-2xl text-brand-green" aria-hidden>
 							✓
 						</span>
 					) : status === 'error' ? (

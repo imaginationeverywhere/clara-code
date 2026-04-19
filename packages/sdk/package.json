@@ -1,0 +1,60 @@
+{
+	"name": "@claracode/sdk",
+	"version": "0.1.0",
+	"description": "TypeScript client for Clara Code API (ask, stream, voice, agents)",
+	"type": "module",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			}
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"CHANGELOG.md",
+		"scripts/hermes-stub.mjs"
+	],
+	"scripts": {
+		"clean": "shx rm -rf dist",
+		"build": "tsup --config tsup.config.mjs",
+		"typecheck": "tsc --noEmit -p tsconfig.json",
+		"check": "tsc --noEmit -p tsconfig.json",
+		"test": "vitest --run",
+		"hermes-stub": "node ./scripts/hermes-stub.mjs",
+		"prepublishOnly": "npm run clean && npm run build"
+	},
+	"keywords": [
+		"clara",
+		"ai",
+		"sdk"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/imaginationeverywhere/clara-code.git",
+		"directory": "packages/sdk"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"engines": {
+		"node": ">=20.0.0"
+	},
+	"devDependencies": {
+		"@types/node": "^22.10.5",
+		"shx": "^0.4.0",
+		"tsup": "^8.0.0",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	}
+}

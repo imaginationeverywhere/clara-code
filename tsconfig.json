@@ -3,7 +3,6 @@
 	"compilerOptions": {
 		"jsx": "react-jsx",
 		"noEmit": true,
-		"jsx": "react-jsx",
 		"lib": ["ES2024", "DOM", "DOM.Iterable"],
 		"paths": {
 			"*": ["./*"],
@@ -41,10 +40,13 @@
 	],
 	"exclude": [
 		"frontend/**/*",
+		"packages/developer-portal/**/*",
+		"packages/talent-marketplace/**/*",
 		"packages/ide-extension/**/*",
 		"packages/cli/**/*",
 		"**/dist/**",
 		"backend/**/*.test.ts",
-		"backend/**/*.spec.ts"
+		"backend/**/*.spec.ts",
+		"packages/marketplace-sdk/test/**"
 	]
 }

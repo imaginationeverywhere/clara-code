@@ -1,0 +1,2 @@
+# Local dev shim; published bin is dist/cli.js (see package.json "bin")
+bin/index.js

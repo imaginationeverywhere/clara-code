@@ -1,13 +1,18 @@
 import type { Metadata } from 'next'
+import { ClerkProvider } from '@clerk/nextjs'
+import Script from 'next/script'
+import { SignUpAnalytics } from '@/components/analytics/SignUpAnalytics'
 import './globals.css'
 
-// Required for Cloudflare Pages via @cloudflare/next-on-pages
-// next/font/google causes edge Worker crashes — Inter is loaded via globals.css @import
-export const runtime = 'edge'
+const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID
 
+// next/font/google causes edge Worker crashes — Inter is loaded via globals.css @import
 export const metadata: Metadata = {
   title: 'Clara Code — Code with your voice',
   description: 'Voice-first AI coding assistant. Open source.',
+  alternates: {
+    canonical: 'https://claracode.ai',
+  },
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
@@ -26,10 +31,29 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="font-sans bg-[#0F0F0F] text-white antialiased">
-        {children}
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en" className="dark">
+        <body className="font-sans bg-bg-base text-white antialiased">
+          {GA_ID ? (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                strategy="afterInteractive"
+              />
+              <Script id="ga4-init" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_ID}', { send_page_view: true });
+                `}
+              </Script>
+            </>
+          ) : null}
+          <SignUpAnalytics />
+          {children}
+        </body>
+      </html>
+    </ClerkProvider>
   )
 }

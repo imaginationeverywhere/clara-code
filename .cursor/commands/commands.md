@@ -60,6 +60,7 @@ Then show the relevant commands for that category.
 /specify            — Create executable specifications
 /spec-workflow      — Full spec-kit workflow (specify -> plan -> tasks)
 /add-feature        — Scaffold a new Auset Platform feature
+/auset-generate     — Generate feature implementation from Ptah template (Story 16.8)
 /brainstorm-domains — Generate creative domain name ideas
 /create-plan-todo   — Create local planning todos
 ```
@@ -139,6 +140,7 @@ Then show the relevant commands for that category.
 ```
 /auset-activate     — Activate a dormant feature module
 /auset-status       — Show feature activation status across all categories
+/auset-generate     — Scaffold feature implementation from _template (schema, resolvers, service, routes, migrations, tests)
 /add-feature        — Scaffold a new feature (config, service, schema, resolvers, tests)
 /progress           — Quick progress against micro plans
 /gap-analysis       — Deep analysis against micro plans
@@ -232,7 +234,7 @@ When the user asks "what command should I use?" without invoking `/commands`, us
 | Asking about progress | `/progress`, `/gap-analysis`, `/project-mvp-status` |
 | Ready to deploy | `/deploy-ops`, `/quick-deploy`, `/verify-deployment-setup` |
 | Need tests | `/test-automation`, `/vibe-test`, `/regression-testing-setup` |
-| Working on Auset features | `/auset-activate`, `/auset-status`, `/add-feature` |
+| Working on Auset features | `/auset-activate`, `/auset-status`, `/auset-generate`, `/add-feature` |
 | Creating documents | `/create-presentation`, `/create-pdf`, `/create-document` |
 | Git operations | `/git-commit-docs`, `/create-pr`, `/merge-to-develop` |
 | Exploring or unsure where to start | `/explore`, `/research`, `/commands` |

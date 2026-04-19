@@ -22,6 +22,25 @@ jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
 }));
 
+jest.mock("@/middleware/api-key-auth", () => ({
+	requireClaraOrClerk: (req: { claraUser?: { userId: string; tier: string } }, _res: unknown, next: () => void) => {
+		req.claraUser = { userId: "user_voice_test", tier: "free" };
+		next();
+	},
+}));
+
+jest.mock("@/middleware/voice-limit", () => ({
+	voiceLimitMiddleware: (_req: unknown, _res: unknown, next: () => void) => {
+		next();
+	},
+}));
+
+jest.mock("@/services/voice-usage.service", () => ({
+	voiceUsageService: {
+		incrementAfterSuccess: jest.fn().mockResolvedValue(undefined),
+	},
+}));
+
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
 
@@ -29,8 +48,24 @@ const app = express();
 app.use(express.json());
 app.use("/api/voice", voiceRoutes);
 
+const TEST_CLARA_VOICE_URL = "https://voice.test.example/graphql";
+
 describe("routes /api/voice", () => {
-	beforeEach(() => jest.clearAllMocks());
+	beforeEach(() => {
+		jest.clearAllMocks();
+		process.env.CLARA_VOICE_URL = TEST_CLARA_VOICE_URL;
+	});
+
+	it("POST /greet returns 503 when CLARA_VOICE_URL is unset", async () => {
+		const prevMaya = process.env.MAYA_BACKEND_URL;
+		delete process.env.CLARA_VOICE_URL;
+		delete process.env.MAYA_BACKEND_URL;
+		const res = await request(app).post("/api/voice/greet").send({});
+		expect(res.status).toBe(503);
+		expect(res.body.error).toBe("Voice service is not available");
+		if (prevMaya !== undefined) process.env.MAYA_BACKEND_URL = prevMaya;
+		else delete process.env.MAYA_BACKEND_URL;
+	});
 
 	it("POST /greet returns audio buffer", async () => {
 		(axios.post as jest.Mock).mockResolvedValueOnce({ data: new ArrayBuffer(8) });
@@ -60,5 +95,146 @@ describe("routes /api/voice", () => {
 		(axios.post as jest.Mock).mockRejectedValueOnce(new Error("x"));
 		const res = await request(app).post("/api/voice/speak").send({ text: "hi" });
 		expect(res.status).toBe(500);
+	});
+
+	describe("dev stub (CLARA_VOICE_DEV_STUB=1)", () => {
+		let prevStub: string | undefined;
+		beforeEach(() => {
+			prevStub = process.env.CLARA_VOICE_DEV_STUB;
+			process.env.CLARA_VOICE_DEV_STUB = "1";
+		});
+		afterEach(() => {
+			if (prevStub === undefined) delete process.env.CLARA_VOICE_DEV_STUB;
+			else process.env.CLARA_VOICE_DEV_STUB = prevStub;
+		});
+
+		it("POST /stt returns a mock transcript without calling Modal", async () => {
+			const res = await request(app).post("/api/voice/stt").send({ stubText: "write a hello function" });
+			expect(res.status).toBe(200);
+			expect(res.body.transcript).toBe("write a hello function");
+			expect(res.body.stub).toBe(true);
+			expect(axios.post).not.toHaveBeenCalled();
+		});
+
+		it("POST /stt honors x-clara-stub-text header over body", async () => {
+			const res = await request(app)
+				.post("/api/voice/stt")
+				.set("x-clara-stub-text", "header wins")
+				.send({ stubText: "body loses" });
+			expect(res.status).toBe(200);
+			expect(res.body.transcript).toBe("header wins");
+		});
+
+		it("POST /stt falls back to a default transcript when no stub text provided", async () => {
+			const res = await request(app).post("/api/voice/stt").send({});
+			expect(res.status).toBe(200);
+			expect(typeof res.body.transcript).toBe("string");
+			expect(res.body.transcript.length).toBeGreaterThan(0);
+		});
+
+		it("POST /tts returns a silence WAV without calling Modal", async () => {
+			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
+			expect(res.status).toBe(200);
+			expect(res.headers["content-type"]).toMatch(/audio\/wav/);
+			expect(res.headers["x-clara-voice-stub"]).toBe("1");
+			expect(res.body).toBeInstanceOf(Buffer);
+			expect((res.body as Buffer).slice(0, 4).toString()).toBe("RIFF");
+			expect(axios.post).not.toHaveBeenCalled();
+		});
+
+		it("POST /tts 400 when text missing even in stub mode", async () => {
+			const res = await request(app).post("/api/voice/tts").send({});
+			expect(res.status).toBe(400);
+		});
+	});
+
+	describe("real mode (no stub)", () => {
+		let prevStub: string | undefined;
+		let prevHermesKey: string | undefined;
+		beforeEach(() => {
+			prevStub = process.env.CLARA_VOICE_DEV_STUB;
+			delete process.env.CLARA_VOICE_DEV_STUB;
+			prevHermesKey = process.env.HERMES_API_KEY;
+			process.env.HERMES_API_KEY = "test-hermes-key";
+		});
+		afterEach(() => {
+			if (prevStub !== undefined) process.env.CLARA_VOICE_DEV_STUB = prevStub;
+			if (prevHermesKey === undefined) delete process.env.HERMES_API_KEY;
+			else process.env.HERMES_API_KEY = prevHermesKey;
+		});
+
+		it("POST /stt proxies to HERMES_GATEWAY_URL/voice/stt with Bearer HERMES_API_KEY", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			(axios.post as jest.Mock).mockResolvedValueOnce({ data: { transcript: "real" } });
+			const res = await request(app).post("/api/voice/stt").send({ audioBase64: "AAAA", mimeType: "audio/wav" });
+			expect(res.status).toBe(200);
+			expect(res.body.transcript).toBe("real");
+			expect(res.body.stub).toBe(false);
+			expect(axios.post).toHaveBeenCalledWith(
+				"https://hermes.test.example/voice/stt",
+				expect.objectContaining({ audio_base64: "AAAA" }),
+				expect.objectContaining({
+					headers: expect.objectContaining({ Authorization: "Bearer test-hermes-key" }),
+				}),
+			);
+			const call = (axios.post as jest.Mock).mock.calls[0];
+			expect(call[2].timeout).toBeGreaterThanOrEqual(120_000);
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
+
+		it("POST /stt 503 when HERMES_API_KEY is missing in real mode", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			delete process.env.HERMES_API_KEY;
+			const res = await request(app).post("/api/voice/stt").send({ audioBase64: "AAAA" });
+			expect(res.status).toBe(503);
+			expect(axios.post).not.toHaveBeenCalled();
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
+
+		it("POST /stt 400 when audioBase64 missing", async () => {
+			const res = await request(app).post("/api/voice/stt").send({});
+			expect(res.status).toBe(400);
+		});
+
+		it("POST /tts proxies to /voice/tts with Bearer and cold-start timeout", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			(axios.post as jest.Mock).mockResolvedValueOnce({ data: new ArrayBuffer(8) });
+			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
+			expect(res.status).toBe(200);
+			expect(res.headers["content-type"]).toMatch(/audio/);
+			const call = (axios.post as jest.Mock).mock.calls[0];
+			expect(call[0]).toBe("https://hermes.test.example/voice/tts");
+			expect(call[2].headers.Authorization).toBe("Bearer test-hermes-key");
+			expect(call[2].timeout).toBeGreaterThanOrEqual(120_000);
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
+
+		it("POST /tts 503 when no voice URL is configured", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			const prevVoice = process.env.CLARA_VOICE_URL;
+			delete process.env.HERMES_GATEWAY_URL;
+			delete process.env.CLARA_VOICE_URL;
+			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
+			expect(res.status).toBe(503);
+			if (prevHermes !== undefined) process.env.HERMES_GATEWAY_URL = prevHermes;
+			if (prevVoice !== undefined) process.env.CLARA_VOICE_URL = prevVoice;
+		});
+
+		it("POST /tts 503 when HERMES_API_KEY is missing in real mode", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			delete process.env.HERMES_API_KEY;
+			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
+			expect(res.status).toBe(503);
+			expect(axios.post).not.toHaveBeenCalled();
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
 	});
 });

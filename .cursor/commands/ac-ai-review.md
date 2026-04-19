@@ -8,7 +8,7 @@ Execute these commands to gather data:
 
 ```bash
 # Check tasks.json for ai-review status
-cat .auto-claude/tasks.json 2>/dev/null | jq '.tasks[] | select(.status == "ai-review")'
+cat .internal/tasks.json 2>/dev/null | jq '.tasks[] | select(.status == "ai-review")'
 
 # Check GitHub PRs with CI running
 gh pr list --state open --json number,title,headRefName,statusCheckRollup 2>/dev/null

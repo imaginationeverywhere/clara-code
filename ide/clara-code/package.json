@@ -1,0 +1,12 @@
+{
+	"name": "clara-code-ide",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build:extension": "bash scripts/build-extension.sh",
+		"build:mac": "bash scripts/build-platform.sh darwin",
+		"build:linux": "bash scripts/build-platform.sh linux",
+		"build:win": "bash scripts/build-platform.sh win32",
+		"merge-product": "node scripts/merge-product.mjs"
+	}
+}

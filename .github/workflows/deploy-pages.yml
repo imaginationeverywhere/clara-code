@@ -1,53 +1,32 @@
-name: Deploy to Cloudflare Pages
+# Deployment handled by Cloudflare Workers Builds (Git Integration).
+# No GitHub secrets needed — CF connects directly to this repo via the dashboard.
+#
+# Setup (one-time, in CF dashboard):
+#   Workers & Pages → Create → Connect to Git → select imaginationeverywhere/clara-code
+#   Build command:  npm install --ignore-scripts && npx tsc -p packages/clara-code-surface-scripts/tsconfig.build.json && npm install && cd frontend && npx @opennextjs/cloudflare build
+#   Root directory: / (repo root)
+#   Branch:         develop (preview) / main (production)
+#   Environment variables (set in CF dashboard, not GH secrets):
+#     NODE_ENV=production
+#     NEXT_TELEMETRY_DISABLED=1
+#
+# This file is intentionally a no-op. Delete or re-enable if switching back to GH Actions.
+name: Deploy to Cloudflare Workers
 
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Why are you running this manually?'
+        required: true
 
 jobs:
-  deploy:
-    name: Deploy claracode.ai
+  noop:
+    name: Workers Builds handles deployment
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      deployments: write
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Configure npm (bypass lockfile bug)
+      - name: Info
         run: |
-          echo "package-lock=false" >> .npmrc
-          echo "legacy-peer-deps=true" >> .npmrc
-          echo "ignore-scripts=true" >> .npmrc
-
-      - name: Build surface-scripts dependency
-        run: |
-          npm install -g typescript
-          npx tsc -p packages/clara-code-surface-scripts/tsconfig.build.json
-
-      - name: Install all workspace dependencies
-        run: npm install
-
-      - name: Build with OpenNext (Cloudflare)
-        run: cd frontend && npx @opennextjs/cloudflare build
-        env:
-          NODE_ENV: production
-          NEXT_TELEMETRY_DISABLED: "1"
-
-      - name: Prepare CF Pages assets (copy _worker.js)
-        run: cp frontend/.open-next/worker.js frontend/.open-next/assets/_worker.js
-
-      - name: Deploy to Cloudflare Pages
-        run: cd frontend && npx wrangler@4 pages deploy .open-next/assets --project-name clara-code --branch ${{ github.ref_name }} --commit-hash ${{ github.sha }}
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: 4682eae9d50da54644c8f895ddad984f
+          echo "Deployment is handled by Cloudflare Workers Builds (Git Integration)."
+          echo "No action needed here. Configure in the CF dashboard."
+          echo "See comment at top of this file for setup instructions."

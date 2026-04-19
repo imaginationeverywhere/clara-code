@@ -1,10 +1,68 @@
+# OpenNext for Cloudflare Workers — use `wrangler deploy`, NOT `wrangler pages deploy`.
+# The worker.js imports sibling dirs (cloudflare/, middleware/, .build/) from .open-next/;
+# pages deploy strips those siblings. Workers deploy keeps the full .open-next/ tree.
+# https://opennext.js.org/cloudflare/get-started
 name = "clara-code"
-compatibility_date = "2024-09-23"
+main = ".open-next/worker.js"
+compatibility_date = "2025-05-05"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".open-next/assets"
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
+
+# Durable Objects required by OpenNext for ISR/caching
+[[durable_objects.bindings]]
+name = "NEXT_CACHE_DO_QUEUE"
+class_name = "DOQueueHandler"
+
+[[durable_objects.bindings]]
+name = "NEXT_TAG_CACHE_DO_SHARDED"
+class_name = "DOShardedTagCache"
+
+[[durable_objects.bindings]]
+name = "BUCKET_CACHE_PURGE"
+class_name = "BucketCachePurge"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["DOQueueHandler", "DOShardedTagCache", "BucketCachePurge"]
 
 [env.production]
 name = "clara-code"
+routes = [
+  { pattern = "claracode.ai", custom_domain = true },
+  { pattern = "www.claracode.ai", custom_domain = true }
+]
+
+# Inherit DO bindings in production
+[[env.production.durable_objects.bindings]]
+name = "NEXT_CACHE_DO_QUEUE"
+class_name = "DOQueueHandler"
+
+[[env.production.durable_objects.bindings]]
+name = "NEXT_TAG_CACHE_DO_SHARDED"
+class_name = "DOShardedTagCache"
+
+[[env.production.durable_objects.bindings]]
+name = "BUCKET_CACHE_PURGE"
+class_name = "BucketCachePurge"
 
 [env.preview]
 name = "clara-code-preview"
+routes = [
+  { pattern = "develop.claracode.ai", custom_domain = true }
+]
+
+# Inherit DO bindings in preview
+[[env.preview.durable_objects.bindings]]
+name = "NEXT_CACHE_DO_QUEUE"
+class_name = "DOQueueHandler"
+
+[[env.preview.durable_objects.bindings]]
+name = "NEXT_TAG_CACHE_DO_SHARDED"
+class_name = "DOShardedTagCache"
+
+[[env.preview.durable_objects.bindings]]
+name = "BUCKET_CACHE_PURGE"
+class_name = "BucketCachePurge"
