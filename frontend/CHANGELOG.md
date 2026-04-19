@@ -4,6 +4,7 @@
 
 ### Added
 
+- **App shell** — `AppHeader` + `ProfileWidget` (Clerk avatar, tier badge, account/dashboard/sign out); `(app)/layout.tsx` wraps dashboard, account, API keys, and settings; `next.config.ts` `images.remotePatterns` for Clerk avatars.
 - **Legal** — Server-rendered `/privacy` and `/terms` pages (Header + Footer), footer links, root `metadata.alternates.canonical`.
 
 ### Changed
