@@ -14,6 +14,14 @@ export function Footer() {
 				<Link href="/docs" className="text-clara hover:underline">
 					Docs
 				</Link>
+				{' · '}
+				<Link href="/privacy" className="text-sm text-text-muted hover:text-text-secondary">
+					Privacy
+				</Link>
+				{' · '}
+				<Link href="/terms" className="text-sm text-text-muted hover:text-text-secondary">
+					Terms
+				</Link>
 			</p>
 		</footer>
 	)

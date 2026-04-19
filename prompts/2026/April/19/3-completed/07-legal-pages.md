@@ -1,5 +1,7 @@
 # Prompt 07 — Privacy Policy + Terms of Service Pages
 
+**Status:** Implemented: `frontend/src/app/privacy/page.tsx`, `frontend/src/app/terms/page.tsx` (server components), `Footer` links, `layout.tsx` `alternates.canonical`, middleware tests for public `/privacy` and `/terms`.
+
 **Date**: 2026-04-15
 **Branch**: `prompt/2026-04-15/07-legal-pages`
 **Flags**: `--frontend --design web`

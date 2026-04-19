@@ -2,9 +2,13 @@
 
 ## [Unreleased] - 2026-04-16
 
+### Added
+
+- **Legal** — Server-rendered `/privacy` and `/terms` pages (Header + Footer), footer links, root `metadata.alternates.canonical`.
+
 ### Changed
 
-- **Tests** — `src/__tests__/middleware.test.ts`: Vitest import grouped after Next/Clerk imports (formatting only).
+- **Tests** — `src/__tests__/middleware.test.ts`: Vitest import grouped after Next/Clerk imports (formatting only); public-route coverage includes `/privacy` and `/terms`.
 
 ## [Unreleased] - 2026-04-13
 

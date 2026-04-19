@@ -10,6 +10,9 @@ const GA_ID = process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID
 export const metadata: Metadata = {
   title: 'Clara Code — Code with your voice',
   description: 'Voice-first AI coding assistant. Open source.',
+  alternates: {
+    canonical: 'https://claracode.ai',
+  },
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
