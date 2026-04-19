@@ -13,6 +13,7 @@
  */
 
 import { describe, expect, it } from "vitest";
+import type { MODELS } from "../src/models.generated.js";
 import { getModel } from "../src/models.js";
 import { complete } from "../src/stream.js";
 import type { Api, Context, Model, StreamOptions, Usage } from "../src/types.js";
@@ -517,7 +518,7 @@ describe("totalTokens field", () => {
 			"meta-llama/llama-4-maverick - should return totalTokens equal to sum of components",
 			{ retry: 3, timeout: 60000 },
 			async () => {
-				const llm = getModel("openrouter", "meta-llama/llama-4-maverick");
+				const llm = getModel("openrouter", "meta-llama/llama-4-maverick" as keyof typeof MODELS.openrouter);
 
 				console.log(`\nOpenRouter / ${llm.id}:`);
 				const { first, second } = await testTotalTokensWithCache(llm, { apiKey: process.env.OPENROUTER_API_KEY });

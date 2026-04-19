@@ -14,6 +14,7 @@
 import type { ChildProcess } from "child_process";
 import { execSync, spawn } from "child_process";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import type { MODELS } from "../src/models.generated.js";
 import { getModel } from "../src/models.js";
 import { complete } from "../src/stream.js";
 import type { AssistantMessage, Context, Model, Usage } from "../src/types.js";
@@ -528,7 +529,7 @@ describe("Context overflow error handling", () => {
 
 		// Meta/Llama backend
 		it("meta-llama/llama-4-maverick via OpenRouter - should detect overflow via isContextOverflow", async () => {
-			const model = getModel("openrouter", "meta-llama/llama-4-maverick");
+			const model = getModel("openrouter", "meta-llama/llama-4-maverick" as keyof typeof MODELS.openrouter);
 			const result = await testContextOverflow(model, process.env.OPENROUTER_API_KEY!);
 			logResult(result);
 
