@@ -61,6 +61,11 @@ describe("POST /checkout/create-session", () => {
 					metadata: { clara_tier: "pro" },
 				},
 				{
+					id: "price_max_dyn",
+					type: "recurring",
+					metadata: { clara_tier: "max" },
+				},
+				{
 					id: "price_bus_dyn",
 					type: "recurring",
 					metadata: { clara_tier: "business" },
@@ -88,6 +93,18 @@ describe("POST /checkout/create-session", () => {
 		expect(mockCreateSession).toHaveBeenCalledWith(
 			expect.objectContaining({
 				line_items: [{ price: "price_pro_dyn", quantity: 1 }],
+			}),
+		);
+	});
+
+	it("POST /create-session accepts tier=max", async () => {
+		const res = await request(app).post("/checkout/create-session").send({ tier: "max" });
+		expect(res.status).not.toBe(400);
+		expect(res.status).toBe(200);
+		expect(mockCreateSession).toHaveBeenCalledWith(
+			expect.objectContaining({
+				line_items: [{ price: "price_max_dyn", quantity: 1 }],
+				metadata: expect.objectContaining({ tier: "max" }),
 			}),
 		);
 	});
