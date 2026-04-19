@@ -1,8 +1,11 @@
 # Cursor Agent Prompt — Voice Greeting Component
-**TARGET REPO:** `/Volumes/X10-Pro/Native-Projects/AI/clara-code`  
-_(Auto-classified 2026-04-15. If wrong, edit this line before dispatch.)_
 
-**File target:** `packages/web-ui/src/app/(marketing)/components/VoiceGreeting.tsx`
+**Implemented in this repo:** `frontend/src/app/(marketing)/components/VoiceGreeting.tsx` (marketing site uses `frontend/`, not `packages/web-ui`).  
+**Hook:** `frontend/src/app/(marketing)/hooks/useVoiceMute.ts`
+
+**TARGET REPO:** [imaginationeverywhere/clara-code](https://github.com/imaginationeverywhere/clara-code)
+
+**File target (original spec):** `packages/web-ui/src/app/(marketing)/components/VoiceGreeting.tsx`
 **Type:** `"use client"` component
 
 ---
