@@ -9,4 +9,5 @@
 
 ### Changed
 
+- `greet` and `tui` no longer embed default deployment URLs; set `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` (or `gatewayUrl` in `~/.clara/config.json` for TUI) before use.
 - Build no longer fails on `tsup: command not found` when the monorepo lockfile and `npm install` are in sync (see root `CHANGELOG.md`).

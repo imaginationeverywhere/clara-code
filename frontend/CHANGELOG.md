@@ -9,6 +9,7 @@
 
 ### Changed
 
+- **Voice / gateway** — Removed hardcoded voice and Hermes gateway URLs; Edge/API routes require `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` from the environment (503 or graceful fallback when unset). `.env.example` uses placeholder hosts only.
 - **Tests** — `src/__tests__/middleware.test.ts`: Vitest import grouped after Next/Clerk imports (formatting only); public-route coverage includes `/privacy` and `/terms`.
 
 ## [Unreleased] - 2026-04-13

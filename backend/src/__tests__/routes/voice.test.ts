@@ -48,8 +48,24 @@ const app = express();
 app.use(express.json());
 app.use("/api/voice", voiceRoutes);
 
+const TEST_CLARA_VOICE_URL = "https://voice.test.example/graphql";
+
 describe("routes /api/voice", () => {
-	beforeEach(() => jest.clearAllMocks());
+	beforeEach(() => {
+		jest.clearAllMocks();
+		process.env.CLARA_VOICE_URL = TEST_CLARA_VOICE_URL;
+	});
+
+	it("POST /greet returns 503 when CLARA_VOICE_URL is unset", async () => {
+		const prevMaya = process.env.MAYA_BACKEND_URL;
+		delete process.env.CLARA_VOICE_URL;
+		delete process.env.MAYA_BACKEND_URL;
+		const res = await request(app).post("/api/voice/greet").send({});
+		expect(res.status).toBe(503);
+		expect(res.body.error).toBe("Voice service is not available");
+		if (prevMaya !== undefined) process.env.MAYA_BACKEND_URL = prevMaya;
+		else delete process.env.MAYA_BACKEND_URL;
+	});
 
 	it("POST /greet returns audio buffer", async () => {
 		(axios.post as jest.Mock).mockResolvedValueOnce({ data: new ArrayBuffer(8) });

@@ -13,7 +13,7 @@ export interface ClaraConfig {
 const CONFIG_PATH = join(homedir(), ".clara", "config.json");
 
 const DEFAULTS: ClaraConfig = {
-	gatewayUrl: "https://info-24346--hermes-gateway.modal.run",
+	gatewayUrl: "",
 	userId: "dev",
 };
 

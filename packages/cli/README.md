@@ -66,7 +66,7 @@ clara --help
 
 ```json
 {
-  "gatewayUrl": "https://info-24346--hermes-gateway.modal.run",
+  "gatewayUrl": "https://your-gateway.example.com",
   "userId": "your-name",
   "lastSessionDate": "2026-04-10",
   "lastProject": "my-app",

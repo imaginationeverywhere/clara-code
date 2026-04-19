@@ -18,12 +18,20 @@ import { logger } from "@/utils/logger";
 
 const router = Router();
 
-const VOICE_FALLBACK =
-	process.env.CLARA_VOICE_URL || "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
+function voiceEnvBase(): string | undefined {
+	return process.env.CLARA_VOICE_URL?.trim();
+}
+
+if (!voiceEnvBase()) {
+	logger.warn("CLARA_VOICE_URL is not set — voice endpoints will fail gracefully");
+}
 
 function ttsBaseUrl(inferenceBackend: string): string {
 	const base = inferenceBackend.trim().replace(/\/$/, "");
-	return base.length > 0 ? base : VOICE_FALLBACK;
+	if (base.length > 0) return base;
+	const v = voiceEnvBase();
+	if (!v) return "";
+	return v.replace(/\/$/, "");
 }
 
 // POST /api/voice/greet — Clerk session or Clara API key (sk-clara / cc_live)
@@ -44,9 +52,17 @@ router.post(
 					res.status(403).json(modelTierErrorResponse(error));
 					return;
 				}
+				if (error instanceof Error && error.message.includes("Clara voice service is not configured")) {
+					res.status(503).json({ error: "Voice service is not available" });
+					return;
+				}
 				throw error;
 			}
 			const base = ttsBaseUrl(resolvedModel.inferenceBackend);
+			if (!base) {
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
 			const response = await axios.post(
 				`${base}/tts`,
 				{
@@ -94,9 +110,17 @@ router.post(
 					res.status(403).json(modelTierErrorResponse(error));
 					return;
 				}
+				if (error instanceof Error && error.message.includes("Clara voice service is not configured")) {
+					res.status(503).json({ error: "Voice service is not available" });
+					return;
+				}
 				throw error;
 			}
 			const base = ttsBaseUrl(resolvedModel.inferenceBackend);
+			if (!base) {
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
 			const response = await axios.post(
 				`${base}/tts`,
 				{ text, voice_id },
@@ -132,7 +156,11 @@ router.post("/clone", requireAuth(), async (req: AuthenticatedRequest, res: Resp
 			return;
 		}
 
-		const base = ttsBaseUrl(VOICE_FALLBACK);
+		const base = ttsBaseUrl("");
+		if (!base) {
+			res.status(503).json({ error: "Voice service is not available" });
+			return;
+		}
 		const voiceId = `${auth.userId}-custom`;
 		const cloneUrl = `${base}/voice/clone`;
 

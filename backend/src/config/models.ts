@@ -12,27 +12,39 @@ export interface ModelConfig {
 	requiredTier: ClaraTier;
 }
 
-const VOICE_FALLBACK = process.env.CLARA_VOICE_URL ?? "";
+function resolveInferenceBackend(name: ClaraModelName): string {
+	const voice = process.env.CLARA_VOICE_URL?.trim() ?? "";
+	switch (name) {
+		case "maya":
+			return (process.env.MAYA_BACKEND_URL ?? "").trim() || voice;
+		case "mary":
+			return (process.env.MARY_BACKEND_URL ?? "").trim() || (process.env.MAYA_BACKEND_URL ?? "").trim() || voice;
+		case "nikki":
+			return (process.env.NIKKI_BACKEND_URL ?? "").trim() || (process.env.MAYA_BACKEND_URL ?? "").trim() || voice;
+		default:
+			return voice;
+	}
+}
 
 export const MODELS: Record<ClaraModelName, ModelConfig> = {
 	maya: {
 		name: "maya",
 		displayName: "Maya",
-		inferenceBackend: process.env.MAYA_BACKEND_URL || VOICE_FALLBACK,
+		inferenceBackend: "",
 		thinking: false,
 		requiredTier: "free",
 	},
 	mary: {
 		name: "mary",
 		displayName: "Mary",
-		inferenceBackend: process.env.MARY_BACKEND_URL || process.env.MAYA_BACKEND_URL || VOICE_FALLBACK,
+		inferenceBackend: "",
 		thinking: true,
 		requiredTier: "pro",
 	},
 	nikki: {
 		name: "nikki",
 		displayName: "Nikki",
-		inferenceBackend: process.env.NIKKI_BACKEND_URL || process.env.MAYA_BACKEND_URL || VOICE_FALLBACK,
+		inferenceBackend: "",
 		thinking: false,
 		requiredTier: "pro",
 	},
@@ -53,10 +65,11 @@ export function resolveModel(requested: string | undefined, tier: ClaraTier): Mo
 	if (TIER_RANK[tier] < TIER_RANK[model.requiredTier]) {
 		throw new ModelTierError(modelName, model.requiredTier, tier);
 	}
-	if (!model.inferenceBackend) {
+	const inferenceBackend = resolveInferenceBackend(model.name);
+	if (!inferenceBackend) {
 		throw new Error(`Clara voice service is not configured (${modelName})`);
 	}
-	return model;
+	return { ...model, inferenceBackend };
 }
 
 export class ModelTierError extends Error {

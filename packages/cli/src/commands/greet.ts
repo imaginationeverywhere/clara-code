@@ -5,10 +5,9 @@ import { join } from "node:path";
 import type { Command } from "commander";
 import { playAudioFile } from "../lib/play-audio-file.js";
 
-const DEFAULT_CLARA_VOICE_URL = "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
-
-function voiceRespondUrl(): string {
-	const base = process.env.CLARA_VOICE_URL ?? DEFAULT_CLARA_VOICE_URL;
+function voiceRespondUrl(): string | null {
+	const base = process.env.CLARA_VOICE_URL?.trim();
+	if (!base) return null;
 	return `${base.replace(/\/$/, "")}/voice/respond`;
 }
 
@@ -37,9 +36,15 @@ export function registerGreetCommand(program: Command): void {
 		.command("greet")
 		.description("Request Clara's voice greeting from the API and play the audio")
 		.action(async () => {
+			const url = voiceRespondUrl();
+			if (!url) {
+				console.error("clara greet: set CLARA_VOICE_URL to your voice service base URL");
+				process.exitCode = 1;
+				return;
+			}
 			let res: Response;
 			try {
-				res = await fetch(voiceRespondUrl(), {
+				res = await fetch(url, {
 					method: "POST",
 					headers: {
 						Accept: "audio/*,*/*;q=0.9",

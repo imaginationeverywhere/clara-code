@@ -7,7 +7,7 @@ import {
 	sixSideProjectsQuestion,
 } from "@clara/clara-code-surface-scripts";
 import * as vscode from "vscode";
-import { DEFAULT_GATEWAY_URL, GATEWAY_SECRET_KEY } from "./constants";
+import { GATEWAY_SECRET_KEY, gatewayUrlFromEnv } from "./constants";
 
 const GK = {
 	firstLaunchDone: "clara.firstLaunchDone",
@@ -102,7 +102,9 @@ export class ClaraPanelProvider implements vscode.WebviewViewProvider {
 	}
 
 	private async _getGatewayUrl(): Promise<string> {
-		return (await this._context.secrets.get(GATEWAY_SECRET_KEY)) ?? DEFAULT_GATEWAY_URL;
+		const stored = await this._context.secrets.get(GATEWAY_SECRET_KEY);
+		if (stored?.trim()) return stored.trim();
+		return gatewayUrlFromEnv();
 	}
 
 	postMessage(type: string, payload?: unknown): void {

@@ -2,8 +2,6 @@ export const runtime = "edge";
 
 import { MISSION_LINE, WEB_TEXT_OVERLAY_LINES, webScripts } from "@clara/clara-code-surface-scripts";
 
-const DEFAULT_VOICE_BASE = "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
-
 /** VRD-001 one-line greeting — used for GET and as default when body has no script match. */
 const GREETING = "Hey, welcome. I'm Clara — what are you building?";
 
@@ -12,7 +10,7 @@ function getVoiceBaseUrl(): string {
 	if (fromEnv && fromEnv.length > 0) {
 		return fromEnv.replace(/\/$/, "");
 	}
-	return DEFAULT_VOICE_BASE;
+	return "";
 }
 
 type GreetBody = {
@@ -62,6 +60,12 @@ function resolveTtsText(body: GreetBody | null): string {
 
 async function proxyTts(text: string, cacheControl: string | null): Promise<Response> {
 	const base = getVoiceBaseUrl();
+	if (!base) {
+		return new Response(JSON.stringify({ error: "Voice service is not available" }), {
+			status: 503,
+			headers: { "Content-Type": "application/json" },
+		});
+	}
 	const response = await fetch(`${base}/voice/tts`, {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },

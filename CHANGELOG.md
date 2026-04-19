@@ -12,6 +12,7 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
+- **Security** — Removed hardcoded Modal/Hermes deployment URLs from app source; voice and gateway endpoints require `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` (see `backend/.env.example`, `frontend/.env.example`). CLI, IDE extension, and TUI resolve gateways from env or user config only.
 - **`sync-herus`** — Comment now references `/branch-cleanup` instead of `/git-sweep` when listing shell scripts copied to Herus.
 - Monorepo root version `0.1.2` → `0.1.3`.
 - **Directory changelogs** — `docs/CHANGELOG.md`, `frontend/CHANGELOG.md`, `.claude/CHANGELOG.md` updated; command-level notes in `.claude/commands/CHANGELOG.md` and `.cursor/commands/CHANGELOG.md` **[1.35.2]**.
