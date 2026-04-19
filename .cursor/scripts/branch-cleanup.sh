@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# branch-cleanup.sh — merge all branches into develop, delete everything except main + develop.
-# Replaces: git-sweep.sh + merge-all.sh
+# branch-cleanup.sh — merge all branches into develop; delete everything else.
+# Preserves: main, develop, and branch named origin (origin/origin). Replaces git-sweep.sh + merge-all.sh.
 #
 # What it does:
 #   1. git fetch --all --prune

@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "clara-brain": {
+      "command": "node",
+      "args": [
+        "/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/infrastructure/mcp/clara-brain/dist/index.js"
+      ],
+      "env": {
+        "CLARA_BRAIN_URL": "https://brain-api-dev.quiknation.com/query",
+        "AWS_REGION": "us-east-1"
+      }
+    }
+  }
+}

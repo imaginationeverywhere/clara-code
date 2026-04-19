@@ -52,7 +52,7 @@ bash .cursor/scripts/branch-cleanup.sh
 
 ```yaml
 name: branch-cleanup
-version: 1.0.1
+version: 1.0.0
 implementation: .claude/scripts/branch-cleanup.sh
 replaces: [git-sweep, merge-all]
 ```
