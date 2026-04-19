@@ -14,7 +14,7 @@ cd my-app && npm run dev
 From this repo (after `npm run build` in `packages/create-clara-app`):
 
 ```bash
-node packages/create-clara-app/bin/index.js my-app
+node packages/create-clara-app/dist/cli.js my-app
 ```
 
 ## What it does
@@ -37,4 +37,4 @@ Package name is `create-clara-app` (unscoped). Publish from `packages/create-cla
 npm run build
 ```
 
-Output: `dist/cli.js`, run via `bin/index.js`.
+Output: `dist/cli.js` (executable bit set by the build script). The npm `bin` entry points at this file.

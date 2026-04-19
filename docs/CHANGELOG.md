@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-19
 
+### Fixed
+
+- **`create-clara-app` (cross-reference)** — build/bin alignment and `0.1.3` release notes; see `packages/create-clara-app/CHANGELOG.md` and root `CHANGELOG.md`.
+
 ### Added
 
 - **`docs/review/20260419-035221-pr4-ink6-review.md`** — Code review for PR #4 (Ink 5→6, TUI boot fix); records approval and the `engines.node` follow-up now addressed in `packages/cli/package.json`.

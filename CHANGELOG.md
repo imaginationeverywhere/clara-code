@@ -6,6 +6,7 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Fixed
 
+- **`create-clara-app` — bin path matches build output** — `package.json` `bin` and the post-build `chmod` now target `dist/cli.js` (TypeScript emits to `dist/` per `tsconfig.build.json`). Removes the broken `bin/index.js` assumption that caused `npm run build` to fail in CI. Obsolete `bin/create-clara-app.js` stub removed; `files` no longer lists `bin`. Package `0.1.2` → `0.1.3`. Details: `packages/create-clara-app/CHANGELOG.md`.
 - **CLI — Ink upgrade unblocks TUI boot (PR #4 of CLI-first MVP)** — `packages/cli` bumps `ink` `^5.0.1` → `^6.8.0` and `react` `^19.0.0` → `^19.2.0`. Fixes the `Cannot read properties of undefined (reading 'ReactCurrentOwner')` crash that `react-reconciler@0.29.x` (shipped with Ink 5) hit on React 19 at boot. Verified with `tmux`: `FirstRunPrompt` now renders cleanly, 16/16 CLI unit tests green, 17/17 backend voice tests green. Ink 7 was rejected because it requires Node 22 — that would break `npx claracode@latest` for every Node 20 user; Ink 6 keeps `engines: node >= 20`. Closes the last in-our-court blocker on the CLI-first MVP acceptance criteria (`npx claracode@latest installs and runs clara in fullscreen TUI mode`).
 - **CLI — `engines.node` in package manifest (PR #4 review follow-up)** — `packages/cli/package.json` declares `engines.node` `>=20.0.0` so npm/npx surfaces an engine warning on Node 18 and below before obscure runtime failures. Doc touch: `docs/cli-voice-loop.md`. Details: `packages/cli/CHANGELOG.md`.
 
