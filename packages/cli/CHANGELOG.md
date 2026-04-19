@@ -19,12 +19,9 @@
   - `src/lib/config-store.ts` — `backendUrl` field added to `ClaraConfig`.
 - **Test suite** — new `node --test` + `tsx` harness (`npm test -w @clara/cli`): 16 cases in `test/stt-client.test.ts` (5), `test/session-log.test.ts` (4), `test/audio-capture.test.ts` (2), `test/backend.test.ts` (5).
 
-### Known issues
-
-- `ink@^5.0.1` + `react-reconciler@0.29.x` crash on React 19 at TUI boot (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`). Pre-existing; does not affect the PR #2/#3 unit tests (which do not boot Ink). Upgrade to `ink@^7.0.1` is the last unblocked CLI-first MVP task. Documented in `docs/cli-voice-loop.md`.
-
 ### Fixed
 
+- **Ink upgrade (PR #4 of CLI-first MVP)** — `ink@^5.0.1` → `ink@^6.8.0`. Fixes the React 19 boot crash (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`) that prevented the TUI from mounting. Verified end-to-end via `tmux new-session -d -s clara-boot -x 100 -y 30 && npx tsx src/index.ts tui` — the `FirstRunPrompt` now renders without any stack trace. React bumped `^19.0.0` → `^19.2.0` to match Ink 6's peer requirement (`react >= 19.0.0`, already resolved to 19.2.5 by the monorepo lockfile). We deliberately did **not** jump to `ink@7` because it requires Node 22 at runtime, which would break `npx claracode@latest` on any Node 20 installation — Ink 6 keeps `engines: node >= 20` and unblocks today. The Node 22 / Ink 7 bump is a future task once we set `engines.node` in this package.
 - Removed duplicate `tui` subcommand in `src/index.ts` that called Ink `render`/`React`/`App` without imports; `registerTuiCommand` in `commands/tui.tsx` is the single registration.
 - Removed duplicate `@types/react` key in `package.json` devDependencies.
 

@@ -17,8 +17,8 @@
 	},
 	"dependencies": {
 		"commander": "^13.1.0",
-		"ink": "^5.0.1",
-		"react": "^19.0.0"
+		"ink": "^6.8.0",
+		"react": "^19.2.0"
 	},
 	"devDependencies": {
 		"@types/node": "^22.10.5",

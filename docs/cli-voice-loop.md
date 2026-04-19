@@ -115,13 +115,17 @@ audio is captured and base64'd onto the request. Without sox, the CLI falls
 back to an empty-audio noop — the dev stub still returns a transcript, so
 the whole loop still works for wiring tests.
 
-## Known issues (out of scope for PR #3)
+## Ink / Node version
 
-- **Ink 5 vs React 19 runtime crash** — `packages/cli/package.json` pins
-  `ink@^5.0.1` which uses `react-reconciler@0.29.x` and crashes on React 19
-  at launch (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`).
-  Upgrading to `ink@^7.0.1` is the last unblocked CLI-first MVP task; code
-  paths added in PR #2/#3 are validated by `npm test` (which does not boot Ink).
+`packages/cli` pins `ink@^6.8.0` and `react@^19.2.0`. Ink 6 was chosen over
+Ink 7 because Ink 7 requires **Node 22** at runtime, which would break
+`npx claracode@latest` for any user still on Node 20. Ink 6 keeps
+`engines: node >= 20` and resolves the React 19 boot crash that Ink 5's
+`react-reconciler@0.29.x` hit (`Cannot read properties of undefined (reading
+'ReactCurrentOwner')`).
+
+When we decide to require Node 22 across the board (and set `engines.node`
+accordingly on this package), bumping to Ink 7 is a drop-in upgrade.
 
 ## Tests
 

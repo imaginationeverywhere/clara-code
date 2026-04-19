@@ -4,6 +4,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-19
 
+### Fixed
+
+- **CLI — Ink upgrade unblocks TUI boot (PR #4 of CLI-first MVP)** — `packages/cli` bumps `ink` `^5.0.1` → `^6.8.0` and `react` `^19.0.0` → `^19.2.0`. Fixes the `Cannot read properties of undefined (reading 'ReactCurrentOwner')` crash that `react-reconciler@0.29.x` (shipped with Ink 5) hit on React 19 at boot. Verified with `tmux`: `FirstRunPrompt` now renders cleanly, 16/16 CLI unit tests green, 17/17 backend voice tests green. Ink 7 was rejected because it requires Node 22 — that would break `npx claracode@latest` for every Node 20 user; Ink 6 keeps `engines: node >= 20`. Closes the last in-our-court blocker on the CLI-first MVP acceptance criteria (`npx claracode@latest installs and runs clara in fullscreen TUI mode`).
+
 ### Added
 
 - **Backend — Hermes/Modal voice wire-up (PR #3 of CLI-first MVP)** — `backend/src/routes/voice.ts` now proxies `/api/voice/stt` → `${HERMES_GATEWAY_URL}/voice/stt` and `/api/voice/tts` → `${HERMES_GATEWAY_URL}/voice/tts` with `Authorization: Bearer ${HERMES_API_KEY}` (Option B auth per cp-team handoff 2026-04-19: edge validates Clerk JWT / sk-clara key, then swaps in the internal key; Modal never sees user tokens). 150 s axios timeout accommodates the Modal A10G cold-start (60–120 s Whisper + XTTS load). Refuses to call Modal when `HERMES_API_KEY` is missing (503 instead of anonymous proxy). SSM source: `/clara-code/HERMES_GATEWAY_URL` (String) + `/clara-code/HERMES_API_KEY` (SecureString). `CLARA_VOICE_DEV_STUB=1` still short-circuits the proxy for offline local dev. Tests: `backend/src/__tests__/routes/voice.test.ts` +3 cases for path, bearer header, timeout, and missing-key 503 — 17/17 voice tests green.
