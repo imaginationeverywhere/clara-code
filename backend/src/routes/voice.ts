@@ -31,6 +31,23 @@ function hermesVoiceBase(): string | undefined {
 	return legacy ? legacy.replace(/\/$/, "") : undefined;
 }
 
+function hermesApiKey(): string | undefined {
+	const k = process.env.HERMES_API_KEY?.trim();
+	return k && k.length > 0 ? k : undefined;
+}
+
+// Modal A10G GPU scales to zero; first request after idle loads Whisper + XTTS (60–120s).
+// Give ourselves headroom so the CLI's warmup UX is what the user sees, not an axios timeout.
+const HERMES_TIMEOUT_MS = 150_000;
+
+function hermesHeaders(extra?: Record<string, string>): Record<string, string> {
+	const key = hermesApiKey();
+	return {
+		...(extra ?? {}),
+		...(key ? { Authorization: `Bearer ${key}` } : {}),
+	};
+}
+
 function voiceEnvBase(): string | undefined {
 	return process.env.CLARA_VOICE_URL?.trim();
 }
@@ -157,9 +174,14 @@ router.post(
 
 // POST /api/voice/stt — Clerk session or Clara API key. Speech-to-text.
 // Request body (JSON): { audioBase64: string, mimeType?: string, stubText?: string }
+//
+// Auth scheme (Option B, cp-team handoff 2026-04-19):
+//   1. Edge validates Clerk JWT / sk-clara key via `requireClaraOrClerk`.
+//   2. Edge injects HERMES_API_KEY as Bearer for the Modal call. Modal never sees the user token.
+//
 // Dev stub (CLARA_VOICE_DEV_STUB=1): returns { transcript } from
 // `x-clara-stub-text` header, body.stubText, or a default. No Modal call.
-// Real mode: proxies to HERMES_GATEWAY_URL/stt (cp-team owned).
+// Real mode: proxies to HERMES_GATEWAY_URL/voice/stt (Whisper on Modal, cp-team owned).
 router.post(
 	"/stt",
 	requireClaraOrClerk,
@@ -187,10 +209,15 @@ router.post(
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
+			if (!hermesApiKey()) {
+				logger.error("HERMES_API_KEY is not set — refusing to proxy to Modal");
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
 			const response = await axios.post(
-				`${base}/stt`,
+				`${base}/voice/stt`,
 				{ audio_base64: body.audioBase64, mime_type: body.mimeType ?? "audio/wav" },
-				{ timeout: 30_000 },
+				{ timeout: HERMES_TIMEOUT_MS, headers: hermesHeaders() },
 			);
 			const data = response.data as { transcript?: string };
 			res.json({ transcript: data.transcript ?? "", stub: false });
@@ -203,8 +230,12 @@ router.post(
 
 // POST /api/voice/tts — Clerk session or Clara API key. Text-to-speech.
 // Request body: { text: string, voice_id?: string }
+//
+// Auth: same Option B scheme as /stt — edge validates the user's Clerk/Clara key, then swaps in
+// HERMES_API_KEY when calling Modal.
+//
 // Dev stub: returns a 1-second silence WAV so callers can exercise audio plumbing.
-// Real mode: proxies to HERMES_GATEWAY_URL/tts.
+// Real mode: proxies to HERMES_GATEWAY_URL/voice/tts (XTTS on Modal, cp-team owned).
 router.post(
 	"/tts",
 	requireClaraOrClerk,
@@ -230,10 +261,15 @@ router.post(
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
+			if (!hermesApiKey()) {
+				logger.error("HERMES_API_KEY is not set — refusing to proxy to Modal");
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
 			const response = await axios.post(
-				`${base}/tts`,
+				`${base}/voice/tts`,
 				{ text, voice_id: voice_id ?? "clara" },
-				{ responseType: "arraybuffer", timeout: 30_000 },
+				{ responseType: "arraybuffer", timeout: HERMES_TIMEOUT_MS, headers: hermesHeaders() },
 			);
 
 			const userId = req.claraUser?.userId;

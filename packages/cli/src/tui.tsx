@@ -50,7 +50,10 @@ function formatAssistantMessage(result: GatewayResult): string {
 	return `${done}\n\nWhat's next?`;
 }
 
-function phaseLabel(phase: VoicePhase): string {
+function phaseLabel(phase: VoicePhase, warming: boolean): string {
+	if (warming && phase === "transcribing") {
+		return "warming up Clara's voice model (cold start, up to ~2m)…";
+	}
 	switch (phase) {
 		case "listening":
 			return "listening";
@@ -163,7 +166,7 @@ export function App({
 		[appendMessage],
 	);
 
-	const { phase, isMicActive, isLoading, startListening, stopAndSend, cancel, sendText } = useVoice({
+	const { phase, isMicActive, isLoading, warming, startListening, stopAndSend, cancel, sendText } = useVoice({
 		gatewayUrl,
 		backendUrl,
 		token: token ?? "",
@@ -297,7 +300,7 @@ export function App({
 					isMicActive
 						? "Ctrl+Space to send — Esc to cancel"
 						: isLoading
-							? phaseLabel(phase)
+							? phaseLabel(phase, warming)
 							: inputPlaceholder
 				}
 			/>

@@ -4,6 +4,7 @@
 
 ### Added
 
+- **Cold-start "warming up…" UX (PR #3 of CLI-first MVP)** — `src/hooks/useVoice.ts` now exposes `warming: boolean`. A 4 s timer arms when `/api/voice/stt` is first called; if no response by then, the input bar in `src/tui.tsx` flips to `warming up Clara's voice model (cold start, up to ~2m)…` so first-hit-after-idle doesn't look frozen. The threshold is driven by cp-team's handoff note that Modal's A10G scales to zero and Whisper+XTTS cold-load takes 60–120 s. `Escape` still aborts mid-warmup. `phaseLabel()` signature gains a `warming` param. No new env vars; no CLI-side changes to auth (the `HERMES_API_KEY` swap happens at the backend edge per Option B).
 - **CLI voice loop on dev stub (PR #2 of CLI-first MVP)** — end-to-end speech → transcript → gateway loop backed by the backend's `/api/voice/stt` dev stub.
   - `src/lib/stt-client.ts` — `requestTranscript()` POSTs base64 audio with Bearer auth; forwards `x-clara-stub-text` header and `stubText` body field when supplied; supports `AbortController`.
   - `src/lib/audio-capture.ts` — spawns `sox`/`rec` when available (16 kHz mono 16-bit WAV on stdout); noop fallback so the dev-stub loop still closes without a microphone.
@@ -20,7 +21,7 @@
 
 ### Known issues
 
-- `ink@^5.0.1` + `react-reconciler@0.29.x` crash on React 19 at TUI boot (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`). Pre-existing; does not affect the PR #2 unit tests (which do not boot Ink). Upgrade to `ink@^7.0.1` is tracked as a follow-up before PR #3. Documented in `docs/cli-voice-loop.md`.
+- `ink@^5.0.1` + `react-reconciler@0.29.x` crash on React 19 at TUI boot (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`). Pre-existing; does not affect the PR #2/#3 unit tests (which do not boot Ink). Upgrade to `ink@^7.0.1` is the last unblocked CLI-first MVP task. Documented in `docs/cli-voice-loop.md`.
 
 ### Fixed
 

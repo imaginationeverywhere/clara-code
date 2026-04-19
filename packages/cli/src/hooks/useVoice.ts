@@ -21,11 +21,21 @@ export interface UseVoiceReturn {
 	phase: VoicePhase;
 	isMicActive: boolean;
 	isLoading: boolean;
+	/**
+	 * True when the current `transcribing` call has been running long enough that we suspect
+	 * the Modal GPU is doing a cold-start load (A10G scales to zero, Whisper+XTTS load = 60–120s
+	 * per the cp-team handoff). The TUI surfaces this as a "warming up…" message so the user
+	 * doesn't think we froze.
+	 */
+	warming: boolean;
 	startListening: () => void;
 	stopAndSend: () => Promise<void>;
 	cancel: () => void;
 	sendText: (text: string) => Promise<void>;
 }
+
+/** Show the warmup message if transcription takes longer than this. */
+const WARMUP_HINT_MS = 4_000;
 
 /**
  * End-to-end voice loop for the Clara CLI:
@@ -41,8 +51,25 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 	const { gatewayUrl, backendUrl, token, userId, stubText, onGatewayResult, onError, onTranscript } = options;
 
 	const [phase, setPhase] = useState<VoicePhase>("idle");
+	const [warming, setWarming] = useState(false);
 	const captureRef = useRef<AudioCapture | null>(null);
 	const abortRef = useRef<AbortController | null>(null);
+	const warmupTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+	const clearWarmup = useCallback(() => {
+		if (warmupTimerRef.current) {
+			clearTimeout(warmupTimerRef.current);
+			warmupTimerRef.current = null;
+		}
+		setWarming(false);
+	}, []);
+
+	const armWarmup = useCallback(() => {
+		clearWarmup();
+		warmupTimerRef.current = setTimeout(() => {
+			setWarming(true);
+		}, WARMUP_HINT_MS);
+	}, [clearWarmup]);
 
 	const cleanupCapture = useCallback(() => {
 		captureRef.current?.cancel();
@@ -63,8 +90,9 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 	const cancel = useCallback(() => {
 		cleanupCapture();
 		abortInFlight();
+		clearWarmup();
 		setPhase("idle");
-	}, [abortInFlight, cleanupCapture]);
+	}, [abortInFlight, cleanupCapture, clearWarmup]);
 
 	const sendGatewayMessage = useCallback(
 		async (text: string): Promise<void> => {
@@ -105,6 +133,7 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 
 		const controller = new AbortController();
 		abortRef.current = controller;
+		armWarmup();
 		let transcriptResult: SttResult;
 		try {
 			transcriptResult = await requestTranscript({
@@ -117,6 +146,7 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 			});
 		} catch (err) {
 			abortRef.current = null;
+			clearWarmup();
 			if ((err as Error)?.name === "AbortError") {
 				setPhase("idle");
 				return;
@@ -126,6 +156,7 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 			return;
 		}
 		abortRef.current = null;
+		clearWarmup();
 
 		if (onTranscript) onTranscript(transcriptResult);
 		if (!transcriptResult.transcript) {
@@ -134,7 +165,7 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 		}
 
 		await sendGatewayMessage(transcriptResult.transcript);
-	}, [backendUrl, onError, onTranscript, sendGatewayMessage, stubText, token]);
+	}, [armWarmup, backendUrl, clearWarmup, onError, onTranscript, sendGatewayMessage, stubText, token]);
 
 	const sendText = useCallback(
 		async (text: string): Promise<void> => {
@@ -146,5 +177,5 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 	const isMicActive = phase === "listening";
 	const isLoading = phase === "transcribing" || phase === "sending";
 
-	return { phase, isMicActive, isLoading, startListening, stopAndSend, cancel, sendText };
+	return { phase, isMicActive, isLoading, warming, startListening, stopAndSend, cancel, sendText };
 }

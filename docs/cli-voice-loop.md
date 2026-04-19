@@ -1,8 +1,10 @@
-# CLI Voice Loop (PR #2 — CLI-first MVP)
+# CLI Voice Loop (PR #2 + PR #3 — CLI-first MVP)
 
 This document describes the speech-in → code-change loop implemented in
-`packages/cli`. It drives against the backend dev stub from PR #1
-(`docs/voice-dev-stub.md`) until `cp-team` delivers the Hermes Modal endpoint.
+`packages/cli`. PR #2 wired it against the backend dev stub; PR #3 wires the
+backend to real Hermes/Modal via `HERMES_GATEWAY_URL` + `HERMES_API_KEY`. The
+`CLARA_VOICE_DEV_STUB=1` flag is still the preferred path for local dev (no
+GPU cost, no network, no cold-starts).
 
 ## The loop
 
@@ -67,7 +69,26 @@ next to the code Clara touched.
 | --- | --- | --- |
 | `CLARA_BACKEND_URL` | `https://api.claracode.ai` | Base URL for `/api/voice/stt` and `/api/voice/tts` |
 | `CLARA_VOICE_DEV_STUB` | unset | When `1`, CLI forwards `stubText` to the backend and the backend bypasses Modal |
-| `HERMES_GATEWAY_URL` | unset | Hermes gateway called after STT produces a transcript |
+| `HERMES_GATEWAY_URL` | backend-side | Hermes Modal voice server; backend proxies `/voice/stt` and `/voice/tts` here |
+| `HERMES_API_KEY` | backend-side | Internal key the backend injects as `Bearer` when calling Hermes (Option B, never seen by CLI) |
+
+The CLI never reads `HERMES_GATEWAY_URL` or `HERMES_API_KEY`; those are
+backend-only. The CLI talks to the backend with the user's Clerk JWT or
+`sk-clara-` key; the backend validates it and swaps in `HERMES_API_KEY` for the
+Modal hop.
+
+## Cold-start + warming-up UX
+
+Modal's A10G GPU scales to zero. First request after idle loads Whisper + XTTS
+(60–120 s per cp-team). Two mitigations in the CLI:
+
+- The backend's HTTP timeout to Hermes is 150 s (so axios doesn't bail first).
+- `useVoice` arms a 4 s warmup timer when it starts the STT call. If the call
+  hasn't returned by then, the input bar flips to `warming up Clara's voice
+  model (cold start, up to ~2m)…`. `Escape` still aborts.
+
+For sprint demos, pre-warm ~2 minutes before you go live (one silly `/voice/tts`
+call will do it).
 
 ## Local end-to-end (no hardware, no Modal)
 
@@ -94,16 +115,13 @@ audio is captured and base64'd onto the request. Without sox, the CLI falls
 back to an empty-audio noop — the dev stub still returns a transcript, so
 the whole loop still works for wiring tests.
 
-## Known issues (out of scope for PR #2)
+## Known issues (out of scope for PR #3)
 
 - **Ink 5 vs React 19 runtime crash** — `packages/cli/package.json` pins
   `ink@^5.0.1` which uses `react-reconciler@0.29.x` and crashes on React 19
   at launch (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`).
-  Upgrading to `ink@^7.0.1` is a follow-up that should land before PR #3. This
-  is pre-existing and not introduced here; the code paths added in PR #2 are
-  validated by `npm test` (which does not boot Ink).
-- **Modal endpoint** — blocked on cp-team populating
-  `/clara-code/HERMES_GATEWAY_URL` in SSM. PR #3 removes the stub flag.
+  Upgrading to `ink@^7.0.1` is the last unblocked CLI-first MVP task; code
+  paths added in PR #2/#3 are validated by `npm test` (which does not boot Ink).
 
 ## Tests
 

@@ -1,9 +1,18 @@
-# Voice Dev Stub (PR #1 — CLI-first MVP)
+# Voice: dev stub + Hermes wire-up (PR #1 → PR #3)
 
-The CLI voice loop (`packages/coding-agent`) needs a real HTTP surface to build
-against while the Hermes/Modal voice endpoint is still being provisioned by
-`cp-team`. This document describes the stub we landed in the backend so that
-CLI work can proceed without being hard-blocked.
+The CLI voice loop (`packages/cli`) needs a real HTTP surface to build against.
+`cp-team` owns the Hermes/Modal voice server; this service owns the edge
+(`backend/src/routes/voice.ts`) that fronts it.
+
+This doc covers both layers:
+
+- **Dev stub** — `CLARA_VOICE_DEV_STUB=1` short-circuits Modal entirely for local
+  development (no GPU cost, no network, no cold-starts).
+- **Real mode** — the production wire-up to Modal via `HERMES_GATEWAY_URL` +
+  `HERMES_API_KEY`. Landed in PR #3.
+
+Full auth/ownership spec lives in
+[`docs/clara-platform/voice-auth-scheme.md`](./clara-platform/voice-auth-scheme.md).
 
 ## Endpoints
 
@@ -15,9 +24,13 @@ session JWT or a `sk-clara-…` / `cc_live_…` API key.
 
 Speech-to-text.
 
-**Real mode** (default) proxies to `${HERMES_GATEWAY_URL}/stt` with:
+**Real mode** (default) proxies to `${HERMES_GATEWAY_URL}/voice/stt` with:
 
-```json
+```http
+POST ${HERMES_GATEWAY_URL}/voice/stt
+Authorization: Bearer ${HERMES_API_KEY}
+Content-Type: application/json
+
 { "audio_base64": "<base64>", "mime_type": "audio/wav" }
 ```
 
@@ -32,50 +45,100 @@ mock transcript chosen in this order:
 
 Response shape: `{ "transcript": "...", "stub": true }`.
 
-This lets the CLI exercise the full listen → send-audio → render-transcript →
-apply-diff loop deterministically.
-
 ### `POST /api/voice/tts`
 
 Text-to-speech.
 
 Request body: `{ "text": "...", "voice_id"?: "clara" }` (400 if `text` missing).
 
-**Real mode** proxies to `${HERMES_GATEWAY_URL}/tts` and returns the raw
-`audio/wav` body from Hermes.
+**Real mode** proxies to `${HERMES_GATEWAY_URL}/voice/tts` with the same
+`Authorization: Bearer ${HERMES_API_KEY}` header and returns the raw `audio/wav`
+body from Hermes.
 
 **Dev stub** returns a 1-second silence WAV (16-bit PCM mono, 8 kHz) with the
-header `x-clara-voice-stub: 1`. Enough to feed a speaker pipeline; nothing
-audible, which keeps dev loops quiet.
+header `x-clara-voice-stub: 1`.
 
-## URL resolution
+## Auth scheme (Option B)
 
-`HERMES_GATEWAY_URL` (preferred) → `CLARA_VOICE_URL` (legacy fallback) → 503.
+The CLI/web client sends its user token (Clerk JWT or `sk-clara-`) to this
+service. This service:
 
-The stub flag short-circuits this resolution entirely.
+1. validates the user token (`requireClaraOrClerk`),
+2. **swaps it out** for the internal `HERMES_API_KEY`,
+3. forwards to Modal with `Authorization: Bearer ${HERMES_API_KEY}`.
+
+Modal never sees user tokens. See
+[`voice-auth-scheme.md`](./clara-platform/voice-auth-scheme.md) for the full
+rationale and cp-team handoff notes.
+
+## URL & key resolution
+
+| Var                  | Source                                          | Required        |
+|----------------------|-------------------------------------------------|-----------------|
+| `HERMES_GATEWAY_URL` | SSM `/clara-code/HERMES_GATEWAY_URL`            | real mode       |
+| `HERMES_API_KEY`     | SSM `/clara-code/HERMES_API_KEY` (SecureString) | real mode       |
+| `CLARA_VOICE_URL`    | SSM `/clara-code/CLARA_VOICE_URL`               | legacy fallback |
+
+Resolution order for the base URL: `HERMES_GATEWAY_URL` → `CLARA_VOICE_URL` → 503.
+
+In real mode, **`HERMES_API_KEY` is required**. If it is missing while
+`HERMES_GATEWAY_URL` is set, the routes respond `503 Voice service is not
+available` (and log the misconfiguration) rather than call Modal anonymously.
+
+The `CLARA_VOICE_DEV_STUB=1` flag short-circuits both of these — no key or URL
+is needed.
+
+## Cold-start (Modal A10G)
+
+Modal scales the voice container to zero when idle. First request after idle
+loads Whisper + XTTS, which takes **60–120 s**. Two consequences:
+
+- **Timeout.** The axios calls to Hermes use a **150 s** timeout (`HERMES_TIMEOUT_MS`
+  in `voice.ts`) so axios doesn't bail before Modal finishes warming.
+- **UX.** The CLI's `useVoice` hook starts a 4 s warmup timer; if `/stt` hasn't
+  responded by then, the input bar flips to `warming up Clara's voice model
+  (cold start, up to ~2m)…`. See `docs/cli-voice-loop.md` for the full UX flow.
+
+Pre-warm before a sprint demo by hitting `/voice/tts` with trivial text ~2 min
+before you go live.
 
 ## Local CLI workflow
+
+### Against the stub (no Modal, no network)
 
 ```bash
 # Terminal 1 — backend
 cd backend
 CLARA_VOICE_DEV_STUB=1 npm run dev
 
-# Terminal 2 — CLI (once PR #2 lands)
+# Terminal 2 — CLI
 clara
-# Press ctrl+space, say anything; the CLI will POST to /api/voice/stt,
-# receive the default stub transcript, and apply the diff pipeline.
+# Press ctrl+space, speak (or don't); /api/voice/stt returns the default
+# stub transcript and we drive the diff pipeline from there.
 ```
 
-## Removing the stub
+### Against real Modal (staging)
 
-When `cp-team` delivers the Modal endpoint and SSM parameter, PR #3 deletes
-the `voiceDevStubEnabled()` branches in `backend/src/routes/voice.ts`. Nothing
-outside that file depends on the stub, so the diff will be localized.
+```bash
+cd backend
+HERMES_GATEWAY_URL=https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run \
+HERMES_API_KEY=... \
+npm run dev
+```
+
+In production, both values come from SSM via the ECS task definition env vars —
+no `.env` needed.
 
 ## Tests
 
 See `backend/src/__tests__/routes/voice.test.ts`:
 
-- `dev stub (CLARA_VOICE_DEV_STUB=1)` — 5 cases
-- `real mode (no stub)` — 4 cases (including the 503 path)
+- **Dev stub (`CLARA_VOICE_DEV_STUB=1`)** — 5 cases (header priority, body
+  fallback, default, silence WAV, missing-text 400).
+- **Real mode** — 6 cases:
+  - `/stt` proxies to `/voice/stt` with `Bearer HERMES_API_KEY` and cold-start timeout
+  - `/stt` 503 when `HERMES_API_KEY` is missing
+  - `/stt` 400 when `audioBase64` is missing
+  - `/tts` proxies to `/voice/tts` with Bearer + timeout
+  - `/tts` 503 when no voice URL is configured
+  - `/tts` 503 when `HERMES_API_KEY` is missing

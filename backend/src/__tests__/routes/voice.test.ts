@@ -150,15 +150,20 @@ describe("routes /api/voice", () => {
 
 	describe("real mode (no stub)", () => {
 		let prevStub: string | undefined;
+		let prevHermesKey: string | undefined;
 		beforeEach(() => {
 			prevStub = process.env.CLARA_VOICE_DEV_STUB;
 			delete process.env.CLARA_VOICE_DEV_STUB;
+			prevHermesKey = process.env.HERMES_API_KEY;
+			process.env.HERMES_API_KEY = "test-hermes-key";
 		});
 		afterEach(() => {
 			if (prevStub !== undefined) process.env.CLARA_VOICE_DEV_STUB = prevStub;
+			if (prevHermesKey === undefined) delete process.env.HERMES_API_KEY;
+			else process.env.HERMES_API_KEY = prevHermesKey;
 		});
 
-		it("POST /stt proxies to HERMES_GATEWAY_URL when configured", async () => {
+		it("POST /stt proxies to HERMES_GATEWAY_URL/voice/stt with Bearer HERMES_API_KEY", async () => {
 			const prevHermes = process.env.HERMES_GATEWAY_URL;
 			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
 			(axios.post as jest.Mock).mockResolvedValueOnce({ data: { transcript: "real" } });
@@ -167,10 +172,25 @@ describe("routes /api/voice", () => {
 			expect(res.body.transcript).toBe("real");
 			expect(res.body.stub).toBe(false);
 			expect(axios.post).toHaveBeenCalledWith(
-				"https://hermes.test.example/stt",
+				"https://hermes.test.example/voice/stt",
 				expect.objectContaining({ audio_base64: "AAAA" }),
-				expect.any(Object),
+				expect.objectContaining({
+					headers: expect.objectContaining({ Authorization: "Bearer test-hermes-key" }),
+				}),
 			);
+			const call = (axios.post as jest.Mock).mock.calls[0];
+			expect(call[2].timeout).toBeGreaterThanOrEqual(120_000);
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
+
+		it("POST /stt 503 when HERMES_API_KEY is missing in real mode", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			delete process.env.HERMES_API_KEY;
+			const res = await request(app).post("/api/voice/stt").send({ audioBase64: "AAAA" });
+			expect(res.status).toBe(503);
+			expect(axios.post).not.toHaveBeenCalled();
 			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
 			else process.env.HERMES_GATEWAY_URL = prevHermes;
 		});
@@ -180,13 +200,17 @@ describe("routes /api/voice", () => {
 			expect(res.status).toBe(400);
 		});
 
-		it("POST /tts proxies audio when HERMES_GATEWAY_URL set", async () => {
+		it("POST /tts proxies to /voice/tts with Bearer and cold-start timeout", async () => {
 			const prevHermes = process.env.HERMES_GATEWAY_URL;
 			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
 			(axios.post as jest.Mock).mockResolvedValueOnce({ data: new ArrayBuffer(8) });
 			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
 			expect(res.status).toBe(200);
 			expect(res.headers["content-type"]).toMatch(/audio/);
+			const call = (axios.post as jest.Mock).mock.calls[0];
+			expect(call[0]).toBe("https://hermes.test.example/voice/tts");
+			expect(call[2].headers.Authorization).toBe("Bearer test-hermes-key");
+			expect(call[2].timeout).toBeGreaterThanOrEqual(120_000);
 			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
 			else process.env.HERMES_GATEWAY_URL = prevHermes;
 		});
@@ -200,6 +224,17 @@ describe("routes /api/voice", () => {
 			expect(res.status).toBe(503);
 			if (prevHermes !== undefined) process.env.HERMES_GATEWAY_URL = prevHermes;
 			if (prevVoice !== undefined) process.env.CLARA_VOICE_URL = prevVoice;
+		});
+
+		it("POST /tts 503 when HERMES_API_KEY is missing in real mode", async () => {
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			delete process.env.HERMES_API_KEY;
+			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
+			expect(res.status).toBe(503);
+			expect(axios.post).not.toHaveBeenCalled();
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
 		});
 	});
 });
