@@ -1,3 +1,4 @@
+import { requireAuth } from "@clerk/express";
 import axios from "axios";
 import { type Response, Router } from "express";
 import {
@@ -11,12 +12,14 @@ import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-au
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { voiceLimiter } from "@/middleware/rate-limit";
 import { voiceLimitMiddleware } from "@/middleware/voice-limit";
+import { UserVoiceClone } from "@/models/UserVoiceClone";
 import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 
 const router = Router();
 
-const VOICE_FALLBACK = process.env.CLARA_VOICE_URL || "https://quik-nation--clara-voice-server-web.modal.run";
+const VOICE_FALLBACK =
+	process.env.CLARA_VOICE_URL || "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run";
 
 function ttsBaseUrl(inferenceBackend: string): string {
 	const base = inferenceBackend.trim().replace(/\/$/, "");
@@ -114,5 +117,65 @@ router.post(
 		}
 	},
 );
+
+// POST /api/voice/clone — Clerk session only (onboarding voice clone)
+router.post("/clone", requireAuth(), async (req: AuthenticatedRequest, res: Response): Promise<void> => {
+	try {
+		const auth = await (req.auth?.() ?? null);
+		if (!auth?.userId) {
+			res.status(401).json({ error: "Unauthorized" });
+			return;
+		}
+		const body = req.body as { audioBase64?: string };
+		if (typeof body.audioBase64 !== "string" || body.audioBase64.length === 0) {
+			res.status(400).json({ error: "audioBase64 required" });
+			return;
+		}
+
+		const base = ttsBaseUrl(VOICE_FALLBACK);
+		const voiceId = `${auth.userId}-custom`;
+		const cloneUrl = `${base}/voice/clone`;
+
+		await axios.post(
+			cloneUrl,
+			{
+				voice_id: voiceId,
+				audio_base64: body.audioBase64,
+				sample_rate: 16000,
+			},
+			{ timeout: 120_000 },
+		);
+
+		const existingClone = await UserVoiceClone.findByUserId(auth.userId);
+		if (existingClone) {
+			await existingClone.update({ voiceId, sampleUrl: null, isDefault: true });
+		} else {
+			await UserVoiceClone.create({
+				userId: auth.userId,
+				voiceId,
+				sampleUrl: null,
+				isDefault: true,
+			});
+		}
+
+		const ttsResponse = await axios.post(
+			`${base}/voice/tts`,
+			{
+				text: "That sounded just like you.",
+				voice_id: voiceId,
+			},
+			{ responseType: "arraybuffer", timeout: 30_000 },
+		);
+
+		const mime = (ttsResponse.headers["content-type"] as string | undefined) ?? "audio/mpeg";
+		const b64 = Buffer.from(ttsResponse.data as ArrayBuffer).toString("base64");
+		const playbackUrl = `data:${mime};base64,${b64}`;
+
+		res.json({ voiceId, playbackUrl });
+	} catch (error) {
+		logger.error("Voice clone error:", error);
+		res.status(502).json({ error: "Voice clone failed" });
+	}
+});
 
 export default router;
