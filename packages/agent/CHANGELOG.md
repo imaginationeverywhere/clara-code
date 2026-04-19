@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- Declared `@sinclair/typebox` as a direct dependency so TypeScript resolves imports in `src/types.ts` and tests under strict pnpm layouts (fixes CI `TS2307`).
+
 ## [0.66.1] - 2026-04-08
 
 ## [0.66.0] - 2026-04-08
