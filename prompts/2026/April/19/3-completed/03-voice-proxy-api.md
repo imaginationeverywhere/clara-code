@@ -1,5 +1,8 @@
 # Prompt 03 — Voice Proxy API Route
-**TARGET REPO:** `/Volumes/X10-Pro/Native-Projects/AI/clara-code`  
+
+**Implemented:** `frontend/src/app/api/voice/greet/route.ts` — Edge runtime, `GET` + `POST` proxy to `${CLARA_VOICE_URL}/voice/tts` (Modal URL not exposed to clients). `Hero.tsx` and `PostOAuthVoice.tsx` updated to play `audio/*` responses.
+
+**TARGET REPO:** [imaginationeverywhere/clara-code](https://github.com/imaginationeverywhere/clara-code)  
 _(Auto-classified 2026-04-15. If wrong, edit this line before dispatch.)_
 **Author:** Miles (Backend Engineer, Clara Code Team)
 **Task:** POST /api/voice/greet — proxy to Modal TTS

@@ -32,6 +32,18 @@ export function PostOAuthVoice({ isFreshSession, githubUsername }: PostOAuthVoic
             userName: githubUsername ?? undefined,
           }),
         })
+        const contentType = res.headers.get('content-type') ?? ''
+        if (
+          res.ok &&
+          (contentType.startsWith('audio/') || contentType === 'application/octet-stream')
+        ) {
+          const blob = await res.blob()
+          const audioUrl = URL.createObjectURL(blob)
+          const audio = new Audio(audioUrl)
+          audio.onended = () => URL.revokeObjectURL(audioUrl)
+          void audio.play().catch(() => {})
+          return
+        }
         const data = (await res.json()) as { audioUrl?: string | null; text?: string }
         if (data.audioUrl) {
           const audio = new Audio(data.audioUrl)
