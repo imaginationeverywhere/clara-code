@@ -1,5 +1,7 @@
 # Prompt 09 — Remove Internal Voice URL from Source Code
 
+**Status:** Done: no `modal.run` / internal hostnames in `backend/src`, `frontend/src`, or `packages/` source; voice and Hermes URLs come from `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` only; `resolveInferenceBackend()` reads env at request time; 503 with `Voice service is not available` when unset; `.env.example` files use placeholders; desktop Tauri HTTP scope `https://**`; Jest mocks include `ApiKey.count` where needed.
+
 **Date**: 2026-04-15
 **Branch**: `prompt/2026-04-15/09-voice-url-ssm`
 **Flags**: `--security --testing`

@@ -49,9 +49,7 @@
   },
   "plugins": {
     "http": {
-      "scope": [
-        "https://info-24346--clara-voice-server-voiceserver-fastapi-app.modal.run/*"
-      ]
+      "scope": ["https://**"]
     }
   }
 }

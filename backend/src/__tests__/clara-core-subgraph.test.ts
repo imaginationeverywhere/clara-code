@@ -2,7 +2,7 @@ import express from "express";
 import request from "supertest";
 
 jest.mock("@/models/ApiKey", () => ({
-	ApiKey: { findOne: jest.fn(), findAll: jest.fn(), update: jest.fn() },
+	ApiKey: { findOne: jest.fn(), findAll: jest.fn(), update: jest.fn(), count: jest.fn().mockResolvedValue(0) },
 }));
 jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
