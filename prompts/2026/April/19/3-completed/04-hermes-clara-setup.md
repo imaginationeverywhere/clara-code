@@ -1,5 +1,8 @@
 # Prompt 04 — Hermes + Clara Backend Setup
-**TARGET REPO:** `/Volumes/X10-Pro/Native-Projects/AI/clara-code`  
+
+**Operator checklist (this repo):** [`docs/platform/hermes-clara-gateway-bootstrap.md`](../../../../docs/platform/hermes-clara-gateway-bootstrap.md) — Hermes gateway code and `~/.hermes/` live outside `clara-code`; this doc ties integration points to the full prompt below.
+
+**TARGET REPO:** [imaginationeverywhere/clara-code](https://github.com/imaginationeverywhere/clara-code)  
 _(Auto-classified 2026-04-15. If wrong, edit this line before dispatch.)_
 **Date:** 2026-04-08
 **Status:** NOT STARTED — Pending Mo approval
