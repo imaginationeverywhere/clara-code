@@ -1,5 +1,7 @@
 # Clara Code — design system
 
+**Magic Patterns:** Full typography, color names, icon pin list, brand rules, and component generation prompts for [magicpatterns.com](https://magicpatterns.com) are in [`magic-patterns-clara-code-setup.md`](./magic-patterns-clara-code-setup.md). Use that file when creating or refreshing the Magic Patterns design system; this document stays aligned with the same token hex values for code.
+
 Source of truth for color tokens: `mockups/app/src/index.css` (`:root` variables). Tailwind mirrors these in `frontend/tailwind.config.ts` — use semantic classes in components, not raw hex in `className`.
 
 ## Brand & Clara

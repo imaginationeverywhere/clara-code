@@ -1,6 +1,8 @@
 # Clara Code — Magic Patterns Design System Setup
-**TARGET REPO:** `/Volumes/X10-Pro/Native-Projects/AI/clara-code`  
-_(Auto-classified 2026-04-15. If wrong, edit this line before dispatch.)_
+
+**TARGET REPO:** [imaginationeverywhere/clara-code](https://github.com/imaginationeverywhere/clara-code) (this repository).
+
+**Related:** Token summary and Tailwind mapping live in [`docs/design-system.md`](../../../../docs/design-system.md). Paste the sections below into each area of your **Clara Code** design system on Magic Patterns.
 
 Paste these values directly into each section of your "Clara Code" design system in Magic Patterns.
 
