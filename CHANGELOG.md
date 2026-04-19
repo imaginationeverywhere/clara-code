@@ -2,6 +2,20 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-19
+
+### Added
+
+- **Backend — AWS SES email** — `backend/src/services/email.service.ts`, templates under `backend/src/emails/` (welcome + first API key), HTML escaping for user-controlled fragments. **Clerk webhook** `POST /api/webhooks/clerk` (raw body, Svix `CLERK_WEBHOOK_SIGNING_SECRET` / `CLERK_WEBHOOK_SECRET`). Welcome email on `user.created`. **First key email** after successful `POST /api/keys` when the user had no prior keys and `CLERK_SECRET_KEY` is set. Jest coverage in `backend/src/__tests__/email.service.test.ts`; keys route tests updated.
+- **Prompt queue** — April 19 batch prompts `10`–`17` moved from `prompts/2026/April/19/1-not-started/` to `prompts/2026/April/19/3-completed/`.
+
+### Changed
+
+- **`@clara-code/backend`** — `1.0.1` → `1.0.2`. `backend/.env.example` documents Clerk, webhook signing secret, SES, and existing voice URL notes.
+- **mom (Clara Gateway)** — `HERMES_GATEWAY_URL` optional; `createHermesFromEnv()`; Hermes-free Anthropic streaming when unset; startup logs; `packages/mom/README.md` and `.env.example` no longer embed a default Modal gateway URL. Details: `packages/mom/CHANGELOG.md`.
+- Monorepo root version `0.1.3` → `0.1.4`.
+- **Directory changelogs** — `docs/CHANGELOG.md`, `packages/mom/CHANGELOG.md` updated; see sections above.
+
 ## [Unreleased] - 2026-04-16
 
 ### Added

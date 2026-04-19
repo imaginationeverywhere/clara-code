@@ -18,8 +18,6 @@ import * as log from "./log.js";
 /** POST body uses this model id (Hermes routes to Bedrock DeepSeek V3.2). */
 export const HERMES_DEEPSEEK_MODEL_ID = "deepseek.v3.2";
 
-const DEFAULT_HERMES_GATEWAY_URL = "http://localhost:3031";
-
 const HERMES_OPENAI_COMPAT: Required<OpenAICompletionsCompat> = {
 	supportsStore: false,
 	supportsDeveloperRole: false,
@@ -37,9 +35,16 @@ const HERMES_OPENAI_COMPAT: Required<OpenAICompletionsCompat> = {
 	supportsStrictMode: true,
 };
 
-export function getHermesGatewayUrl(): string {
+/** Base URL from `HERMES_GATEWAY_URL`, or `null` when unset (no implicit default). */
+export function getHermesGatewayUrl(): string | null {
 	const raw = process.env.HERMES_GATEWAY_URL?.trim();
-	return raw && raw.length > 0 ? raw.replace(/\/$/, "") : DEFAULT_HERMES_GATEWAY_URL;
+	return raw && raw.length > 0 ? raw.replace(/\/$/, "") : null;
+}
+
+/** Returns a client when `HERMES_GATEWAY_URL` is set; otherwise `null`. */
+export function createHermesFromEnv(): HermesClient | null {
+	const url = getHermesGatewayUrl();
+	return url ? new HermesClient(url) : null;
 }
 
 function convertTools(tools: Tool[], compat: Required<OpenAICompletionsCompat>) {
@@ -179,10 +184,6 @@ function extractReplyString(data: Record<string, unknown>): string {
 export class HermesClient {
 	constructor(public readonly baseUrl: string) {}
 
-	static fromEnv(): HermesClient {
-		return new HermesClient(getHermesGatewayUrl());
-	}
-
 	/**
 	 * Lightweight reachability check (short timeout). Used before routing to Hermes.
 	 * Bedrock DeepSeek V3.2 via Hermes (full routing to Bedrock).
@@ -194,11 +195,7 @@ export class HermesClient {
 				method: "GET",
 				signal: AbortSignal.timeout(timeoutMs),
 			});
-			const ok = response.status < 500;
-			log.logInfo(
-				`Hermes gateway ${url}: ${response.status} — Bedrock DeepSeek V3.2 (full routing via Hermes → Bedrock)`,
-			);
-			return ok;
+			return response.status < 500;
 		} catch (err) {
 			const msg = err instanceof Error ? err.message : String(err);
 			log.logWarning("Hermes gateway ping failed", msg);
@@ -339,7 +336,8 @@ export class HermesClient {
 }
 
 export async function logHermesGatewayStatus(): Promise<void> {
-	await HermesClient.fromEnv().ping();
+	const c = createHermesFromEnv();
+	if (c) await c.ping();
 }
 
 export class HermesChatError extends Error {
@@ -399,7 +397,7 @@ export function createHermesDisplayModel(gatewayUrl: string): Model<Api> {
  * otherwise uses Claude Sonnet. Per-request fallback on HTTP 5xx / timeout / network errors.
  */
 export function createMomHermesStreamFn(
-	hermes: HermesClient,
+	hermes: HermesClient | null,
 	fallbackModel: Model<Api>,
 	hermesConvertModel: Model<"openai-completions">,
 	hermesDisplayModel: Model<Api>,
@@ -409,6 +407,7 @@ export function createMomHermesStreamFn(
 	let pingPromise: Promise<boolean> | undefined;
 
 	async function resolvePing(): Promise<boolean> {
+		if (!hermes) return false;
 		if (pingResolved !== undefined) return pingResolved;
 		pingPromise ??= hermes.ping();
 		const ok = await pingPromise;
@@ -423,6 +422,10 @@ export function createMomHermesStreamFn(
 		const stream = createAssistantMessageEventStream();
 		void (async () => {
 			try {
+				if (!hermes) {
+					forwardStream(stream, streamSimple(fallbackModel, context, options));
+					return;
+				}
 				const ok = await resolvePing();
 				if (!ok) {
 					forwardStream(stream, streamSimple(fallbackModel, context, options));

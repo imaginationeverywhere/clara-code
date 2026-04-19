@@ -1,5 +1,16 @@
 # Changelog
 
+## [Unreleased] - 2026-04-19
+
+### Added
+
+- **Backend (SES + Clerk)** — `POST /api/webhooks/clerk` with Svix verification; welcome email on `user.created`; first-API-key confirmation email after `POST /api/keys` when Clerk is configured; tests in `backend/src/__tests__/email.service.test.ts` and extended keys tests. See root `CHANGELOG.md` and `@clara-code/backend` `1.0.1` → `1.0.2`.
+- **mom / Hermes** — Optional `HERMES_GATEWAY_URL`; no implicit default gateway URL; startup routing logs. See `packages/mom/CHANGELOG.md`.
+
+### Changed
+
+- Monorepo root version `0.1.3` → `0.1.4`.
+
 ## [Unreleased] - 2026-04-16
 
 ### Added

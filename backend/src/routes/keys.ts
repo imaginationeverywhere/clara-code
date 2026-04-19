@@ -1,8 +1,11 @@
+import { createClerkClient } from "@clerk/backend";
 import { requireAuth } from "@clerk/express";
 import { type Response, Router } from "express";
+import { apiKeyCreatedEmail } from "@/emails/api-key-created";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { apiKeyCreateLimiter } from "@/middleware/rate-limit";
 import { ApiKey } from "@/models/ApiKey";
+import { sendEmail } from "@/services/email.service";
 import { logger } from "@/utils/logger";
 
 const router = Router();
@@ -60,6 +63,7 @@ router.post("/", apiKeyCreateLimiter, async (req: AuthenticatedRequest, res: Res
 			return;
 		}
 
+		const priorCount = await ApiKey.count({ where: { userId: auth.userId } });
 		const key = await ApiKey.create({ userId: auth.userId, name });
 
 		// Return the FULL key only on creation — never shown again
@@ -69,6 +73,27 @@ router.post("/", apiKeyCreateLimiter, async (req: AuthenticatedRequest, res: Res
 			key: key.key,
 			message: "Save this key — it will not be shown again",
 		});
+
+		const clerkSecret = process.env.CLERK_SECRET_KEY;
+		if (priorCount === 0 && clerkSecret) {
+			const userId = auth.userId;
+			void (async () => {
+				try {
+					const clerk = createClerkClient({ secretKey: clerkSecret });
+					const user = await clerk.users.getUser(userId);
+					const email = user.emailAddresses[0]?.emailAddress;
+					const displayName = user.firstName ?? "there";
+					const rawKey = key.key ?? "";
+					const prefix = rawKey.slice(0, 12);
+					if (email && prefix.length > 0) {
+						const { subject, html, text } = apiKeyCreatedEmail(displayName, prefix);
+						await sendEmail({ to: email, subject, html, text });
+					}
+				} catch (err) {
+					logger.error("First API key confirmation email failed:", err);
+				}
+			})();
+		}
 	} catch (error) {
 		logger.error("Create API key error:", error);
 		res.status(500).json({ error: "Failed to create key" });

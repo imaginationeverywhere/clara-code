@@ -21,6 +21,7 @@ import { typeDefs } from "@/graphql/schema/index";
 import { requireApiKey } from "@/middleware/api-key-auth";
 import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
+import { clerkWebhookHandler } from "@/routes/webhooks-clerk";
 import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 import { logger } from "@/utils/logger";
 
@@ -47,6 +48,10 @@ app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), (req, res): void => {
 	void stripeWebhookHandler(req, res);
+});
+
+app.post("/api/webhooks/clerk", express.raw({ type: "application/json" }), (req, res): void => {
+	void clerkWebhookHandler(req, res);
 });
 
 app.use(express.json({ limit: "10mb" }));

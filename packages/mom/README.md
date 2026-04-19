@@ -17,13 +17,13 @@ A Slack bot powered by an LLM that can execute bash commands, read/write files, 
 
 By default, mom uses the Anthropic API directly (`claude-sonnet-4-5`).
 
-To probe Clara Gateway (Hermes — shared inference on Modal, e.g. Bedrock DeepSeek V3.2), set:
+To route through Clara Gateway (Hermes — shared inference, e.g. Bedrock DeepSeek V3.2), set the gateway base URL from your environment (for example AWS SSM `/quik-nation/shared/CLARA_GATEWAY_URL` or your deployment’s secret store):
 
 ```bash
-export HERMES_GATEWAY_URL=https://info-24346--hermes-gateway.modal.run
+export HERMES_GATEWAY_URL=<your-clara-gateway-base-url>
 ```
 
-On startup, mom logs whether the gateway is reachable. The Slack agent run loop still uses Anthropic until Hermes is wired into the agent core; `HermesClient` in `src/hermes.ts` exposes `complete()` and `stream()` for that integration.
+On startup, mom logs whether the gateway is reachable when `HERMES_GATEWAY_URL` is set. If it is unset, mom uses Anthropic directly. `HermesClient` in `src/hermes.ts` implements the gateway HTTP client.
 
 Clara Gateway is the Quik Nation shared inference layer: shared rate limits across Clara products, and optional routing without per-user API keys for that path.
 
