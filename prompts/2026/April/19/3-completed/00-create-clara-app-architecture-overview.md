@@ -1,6 +1,7 @@
 # create-clara-app — Architecture Overview & Prompt Index
-**TARGET REPO:** `/Volumes/X10-Pro/Native-Projects/AI/clara-code`  
-_(Auto-classified 2026-04-15. If wrong, edit this line before dispatch.)_
+
+**Canonical doc:** [`docs/architecture/create-clara-app-prompt-index.md`](../../../../docs/architecture/create-clara-app-prompt-index.md)  
+**TARGET REPO:** [imaginationeverywhere/clara-code](https://github.com/imaginationeverywhere/clara-code)
 
 **Author:** Granville T. Woods (HQ Architect)
 **Date:** April 7, 2026
