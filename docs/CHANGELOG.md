@@ -4,6 +4,8 @@
 
 ### Added
 
+- **`docs/review/20260419-035221-pr4-ink6-review.md`** — Code review for PR #4 (Ink 5→6, TUI boot fix); records approval and the `engines.node` follow-up now addressed in `packages/cli/package.json`.
+- **Prompt drafts** — `prompts/2026/April/19/1-not-started/20-pricing-ui-vault-sync.md`, `21-checkout-routes-fix.md` (checkout routing and pricing UI work queued from vault).
 - **`docs/clara-platform/voice-auth-scheme.md`** — Edge-side summary of the Option B auth contract ratified by cp-team 2026-04-19: CLI/IDE ships Clerk JWT or `sk-clara-` key, the clara-code edge validates it and swaps in `HERMES_API_KEY` as Bearer before calling `${HERMES_GATEWAY_URL}/voice/{stt,tts}`. Points at the full spec in the `claraagents` repo. Documents SSM sources (`/clara-code/HERMES_GATEWAY_URL`, `/clara-code/HERMES_API_KEY`), cold-start expectation (60–120 s), and the exact test cases that guard the contract.
 - **`docs/voice-dev-stub.md`** — Reference for the backend voice surface. Covers both the `CLARA_VOICE_DEV_STUB=1` path (used locally to bypass Modal) and the PR #3 real-mode wire-up (Modal paths `/voice/stt` and `/voice/tts`, `Bearer HERMES_API_KEY`, 150 s cold-start timeout, 503 when the key is missing). Includes the 6-case real-mode test inventory.
 - **`docs/cli-voice-loop.md`** — CLI-side reference for PR #2 + PR #3 + PR #4: diagram of the `Ctrl+Space → sox → /stt → gateway` loop, key-binding table, first-run prompt UX, session transcript format (`.clara/session-YYYY-MM-DD.log`), env knobs (`CLARA_BACKEND_URL`, `CLARA_VOICE_DEV_STUB`, backend-only `HERMES_GATEWAY_URL` / `HERMES_API_KEY`), zero-hardware local recipe, cold-start "warming up…" UX, and Ink 6 / Node 20 versioning rationale (PR #4 replaces the earlier Ink 5 known-issue section).
@@ -13,6 +15,7 @@
 ### Changed
 
 - **`backend/.env.example`** — documents `HERMES_GATEWAY_URL` + `HERMES_API_KEY` (both sourced from SSM under `/clara-code/*`, the key as `SecureString`), the cold-start heads-up, `CLARA_VOICE_URL` fallback, and `CLARA_VOICE_DEV_STUB=1` with the NEVER-in-prod warning.
+- **`docs/cli-voice-loop.md`** — documents that `packages/cli/package.json` declares `engines.node` `>=20.0.0` (PR #4 review follow-up).
 - Monorepo root version `0.1.3` → `0.1.4`.
 
 ## [Unreleased] - 2026-04-16

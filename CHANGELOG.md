@@ -7,9 +7,11 @@ All notable changes to this monorepo are recorded here. Package-specific details
 ### Fixed
 
 - **CLI — Ink upgrade unblocks TUI boot (PR #4 of CLI-first MVP)** — `packages/cli` bumps `ink` `^5.0.1` → `^6.8.0` and `react` `^19.0.0` → `^19.2.0`. Fixes the `Cannot read properties of undefined (reading 'ReactCurrentOwner')` crash that `react-reconciler@0.29.x` (shipped with Ink 5) hit on React 19 at boot. Verified with `tmux`: `FirstRunPrompt` now renders cleanly, 16/16 CLI unit tests green, 17/17 backend voice tests green. Ink 7 was rejected because it requires Node 22 — that would break `npx claracode@latest` for every Node 20 user; Ink 6 keeps `engines: node >= 20`. Closes the last in-our-court blocker on the CLI-first MVP acceptance criteria (`npx claracode@latest installs and runs clara in fullscreen TUI mode`).
+- **CLI — `engines.node` in package manifest (PR #4 review follow-up)** — `packages/cli/package.json` declares `engines.node` `>=20.0.0` so npm/npx surfaces an engine warning on Node 18 and below before obscure runtime failures. Doc touch: `docs/cli-voice-loop.md`. Details: `packages/cli/CHANGELOG.md`.
 
 ### Added
 
+- **Docs — PR #4 review artifact and prompt queue** — `docs/review/20260419-035221-pr4-ink6-review.md`; new prompt drafts `prompts/2026/April/19/1-not-started/20-pricing-ui-vault-sync.md` and `21-checkout-routes-fix.md`. See `docs/CHANGELOG.md`.
 - **Backend — Hermes/Modal voice wire-up (PR #3 of CLI-first MVP)** — `backend/src/routes/voice.ts` now proxies `/api/voice/stt` → `${HERMES_GATEWAY_URL}/voice/stt` and `/api/voice/tts` → `${HERMES_GATEWAY_URL}/voice/tts` with `Authorization: Bearer ${HERMES_API_KEY}` (Option B auth per cp-team handoff 2026-04-19: edge validates Clerk JWT / sk-clara key, then swaps in the internal key; Modal never sees user tokens). 150 s axios timeout accommodates the Modal A10G cold-start (60–120 s Whisper + XTTS load). Refuses to call Modal when `HERMES_API_KEY` is missing (503 instead of anonymous proxy). SSM source: `/clara-code/HERMES_GATEWAY_URL` (String) + `/clara-code/HERMES_API_KEY` (SecureString). `CLARA_VOICE_DEV_STUB=1` still short-circuits the proxy for offline local dev. Tests: `backend/src/__tests__/routes/voice.test.ts` +3 cases for path, bearer header, timeout, and missing-key 503 — 17/17 voice tests green.
 - **CLI — Cold-start warm-up UX (PR #3)** — `packages/cli/src/hooks/useVoice.ts` now exposes `warming: boolean`. If `/api/voice/stt` hasn't responded within 4 s, the input bar flips to `warming up Clara's voice model (cold start, up to ~2m)…` so the first call after idle doesn't look frozen. `Escape` still aborts. No new env vars — purely a UX upgrade. 16/16 CLI tests green.
 - **Docs — Voice auth scheme (PR #3)** — `docs/clara-platform/voice-auth-scheme.md` (edge-side summary of the Option B contract, pointing at the full spec in the `claraagents` repo), updated `docs/voice-dev-stub.md` and `docs/cli-voice-loop.md` for the final wire-up + cold-start behaviour, and `backend/.env.example` documents `HERMES_API_KEY` and the SSM source for both params.
@@ -24,7 +26,7 @@ All notable changes to this monorepo are recorded here. Package-specific details
 - **mom (Clara Gateway)** — `HERMES_GATEWAY_URL` optional; `createHermesFromEnv()`; Hermes-free Anthropic streaming when unset; startup logs; `packages/mom/README.md` and `.env.example` no longer embed a default Modal gateway URL. Details: `packages/mom/CHANGELOG.md`.
 - **`@clara/cli`** — CLI voice loop wired to `/api/voice/stt` with `Ctrl+Space` / `Escape` keybindings, first-run token prompt, and project-local session logs. Details: `packages/cli/CHANGELOG.md`.
 - Monorepo root version `0.1.3` → `0.1.4`.
-- **Directory changelogs** — `docs/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, `packages/mom/CHANGELOG.md` updated; see sections above.
+- **Directory changelogs** — `docs/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, `packages/mom/CHANGELOG.md` updated; see sections above (including PR #4 `engines.node` follow-up).
 
 ## [Unreleased] - 2026-04-16
 

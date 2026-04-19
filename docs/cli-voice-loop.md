@@ -124,8 +124,11 @@ Ink 7 because Ink 7 requires **Node 22** at runtime, which would break
 `react-reconciler@0.29.x` hit (`Cannot read properties of undefined (reading
 'ReactCurrentOwner')`).
 
-When we decide to require Node 22 across the board (and set `engines.node`
-accordingly on this package), bumping to Ink 7 is a drop-in upgrade.
+`packages/cli/package.json` declares `engines.node` `>=20.0.0` so installs on
+older Node versions surface an engine warning before runtime failures.
+
+When we decide to require Node 22 across the board (and bump `engines.node`
+accordingly on this package), upgrading to Ink 7 is a drop-in change.
 
 ## Tests
 
