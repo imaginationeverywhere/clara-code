@@ -13,7 +13,7 @@ function getStripe(): Stripe | null {
 	return new Stripe(key, { apiVersion: "2023-10-16" });
 }
 
-async function getPriceForTier(stripe: Stripe, tier: "pro" | "business"): Promise<string> {
+async function getPriceForTier(stripe: Stripe, tier: "basic" | "pro" | "business"): Promise<string> {
 	const prices = await stripe.prices.list({ active: true, limit: 100 });
 	const match = prices.data.find((p) => p.metadata?.clara_tier === tier && p.type === "recurring");
 	if (!match) {
@@ -38,14 +38,14 @@ router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, 
 
 		const body = req.body as { tier?: string };
 		const tier = body.tier;
-		if (tier !== "pro" && tier !== "business") {
-			res.status(400).json({ error: "tier must be pro or business" });
+		if (tier !== "basic" && tier !== "pro" && tier !== "business") {
+			res.status(400).json({ error: "tier must be basic, pro, or business" });
 			return;
 		}
 
 		let priceId: string;
 		try {
-			priceId = await getPriceForTier(stripe, tier);
+			priceId = await getPriceForTier(stripe, tier as "basic" | "pro" | "business");
 		} catch {
 			res.status(503).json({ error: "No active plan found for this tier — contact support" });
 			return;
@@ -72,11 +72,16 @@ router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, 
 			}
 		}
 
+		const successUrl =
+			tier === "basic"
+				? `${frontendUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}&onboarding=1`
+				: `${frontendUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`;
+
 		const session = await stripe.checkout.sessions.create({
 			mode: "subscription",
 			customer: customerId,
 			line_items: [{ price: priceId, quantity: 1 }],
-			success_url: `${frontendUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+			success_url: successUrl,
 			cancel_url: `${frontendUrl}/pricing`,
 			metadata: {
 				clerk_user_id: auth.userId,

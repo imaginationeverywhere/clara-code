@@ -112,6 +112,11 @@ export const resolvers = {
 				userId: ctx.user.userId,
 				name: args.name,
 				soul: args.soul,
+				slotIndex: 0,
+				role: "frontend",
+				voiceId: null,
+				modelTier: "fast",
+				isActive: true,
 			});
 			return { id: row.id, name: row.name };
 		},

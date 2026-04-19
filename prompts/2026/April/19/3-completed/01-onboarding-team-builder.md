@@ -1,4 +1,7 @@
 # Cursor Agent Prompt — Onboarding: Voice Clone + Team Builder + $39 Activation
+
+**Implementation:** Backend `POST /api/voice/clone`, `POST /api/onboarding/team`, `POST /api/onboarding/activate`; Stripe `basic` tier + `onboarding=1` success URL; frontend `/onboarding/*` wizard and API proxies.
+
 **TARGET REPO:** `imaginationeverywhere/clara-code`
 _(Auto-classified 2026-04-19. If wrong, edit this line before dispatch.)_
 
