@@ -1,4 +1,4 @@
-//! Clara Code desktop shell: loads claracode.ai (release) or a local dev server (development).
+//! Clara Code desktop shell: loads static `shell/` (see `tauri.conf.json` `devUrl` / `frontendDist`).
 //!
 //! ## Scaffolds (not wired yet)
 //! - **System tray menu** — tray icon is declared in `tauri.conf.json` (`app.trayIcon`). Menu items
