@@ -18,11 +18,12 @@ describe("middleware route protection patterns", () => {
 		expect(isProtectedRoute(makeNextRequest("/account/billing"))).toBe(true);
 	});
 
-	test("public route paths do not match /, /pricing, /sign-in, /sign-up", () => {
+	test("public route paths do not match /, /pricing, /sign-in, /sign-up, /docs", () => {
 		expect(isProtectedRoute(makeNextRequest("/"))).toBe(false);
 		expect(isProtectedRoute(makeNextRequest("/pricing"))).toBe(false);
 		expect(isProtectedRoute(makeNextRequest("/sign-in"))).toBe(false);
 		expect(isProtectedRoute(makeNextRequest("/sign-up"))).toBe(false);
+		expect(isProtectedRoute(makeNextRequest("/docs"))).toBe(false);
 	});
 });
 

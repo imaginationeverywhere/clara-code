@@ -1,5 +1,7 @@
 # Prompt 05 — Activate Clerk Auth Middleware (BLK-02)
 
+**Status:** Implemented in `frontend/src/middleware.ts` (build-time `CLERK_ENABLED`); tests in `frontend/src/__tests__/middleware.test.ts`. `.env.example` and BLK-02 steps were already aligned.
+
 **Date**: 2026-04-14
 **Branch**: `prompt/2026-04-14/05-clerk-auth-activate`
 **Flags**: `--clerk --security --testing`
