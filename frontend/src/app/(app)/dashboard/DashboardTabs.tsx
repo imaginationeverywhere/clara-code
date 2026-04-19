@@ -151,7 +151,7 @@ function DashboardTabsInner({
 	)
 
 	return (
-		<div className="flex min-h-screen bg-[#0a0a0b] text-white">
+		<div className="flex min-h-[calc(100vh-3.5rem)] bg-bg-base text-white">
 			<aside className="flex w-60 shrink-0 flex-col border-r border-white/10 bg-black/40">
 				<div className="border-b border-white/10 px-5 py-4">
 					<Link href="/" className="text-sm font-semibold text-clara hover:underline">

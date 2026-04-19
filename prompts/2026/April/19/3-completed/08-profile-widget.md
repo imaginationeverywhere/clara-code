@@ -1,5 +1,7 @@
 # Prompt 08 — ProfileWidget for Authenticated Dashboard Header
 
+**Status:** Implemented: `frontend/src/components/app/AppHeader.tsx`, `ProfileWidget.tsx`; authenticated routes grouped under `frontend/src/app/(app)/` with shared layout (`pt-14` + fixed header). Tier badge reads `publicMetadata.tier` or maps `publicMetadata.plan` (PRO/BUSINESS/FREE). `next.config.ts` allows Clerk avatar hostnames for `next/image`.
+
 **Date**: 2026-04-15
 **Branch**: `prompt/2026-04-15/08-profile-widget`
 **Flags**: `--clerk --profile --design web`
