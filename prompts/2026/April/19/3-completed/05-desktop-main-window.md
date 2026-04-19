@@ -1,4 +1,7 @@
 # Prompt 05 — Desktop: Main Window Layout
+
+**Status:** Delivered for **Tauri v2** (this repo has no Electron/`forge.config.ts`). Static shell: `desktop/shell/index.html` (`data-clara-desktop-shell` skips the injected voice FAB). `src-tauri/tauri.conf.json` uses `http://localhost:1420` in dev (`npm run shell:serve`) and `frontendDist: ../shell` for release builds. Window size set to 800×600 (min 600×500).
+
 **TARGET REPO:** `/Volumes/X10-Pro/Native-Projects/AI/clara-code`  
 _(Auto-classified 2026-04-15. If wrong, edit this line before dispatch.)_
 **Author:** Matthew Henson (Mobile/Desktop Engineer, Clara Agents Team)

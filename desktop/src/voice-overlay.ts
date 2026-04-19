@@ -27,6 +27,9 @@ function micIconSvg(): string {
 }
 
 export function mountClaraVoiceOverlay(): void {
+	if (document.documentElement.hasAttribute("data-clara-desktop-shell")) {
+		return;
+	}
 	if (!isClaraDesktopSurface()) {
 		return;
 	}
