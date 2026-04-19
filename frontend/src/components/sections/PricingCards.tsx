@@ -3,43 +3,48 @@ import { cn } from '@/lib/utils'
 
 const tiers = [
   {
-    name: 'Free',
-    price: '$0',
+    name: 'Basic',
+    price: '$39',
     period: '/mo',
-    features: ['100 voice exchanges/mo', '1 agent', 'CLI access', 'Community support'],
-    cta: 'Start Free',
+    features: ['3 agent slots', 'Talk to Clara — conversation on us', 'Voice + project memory', 'CLI access'],
+    cta: 'Talk to Clara',
     href: '/sign-up',
-    highlight: false,
-  },
-  {
-    name: 'Pro',
-    price: '$29',
-    period: '/mo',
-    features: [
-      'Unlimited exchanges',
-      '5 agents',
-      'API access',
-      'Vault memory',
-      'Priority support',
-    ],
-    cta: 'Get Pro',
-    href: '/checkout/pro',
     highlight: true,
   },
   {
-    name: 'Business',
+    name: 'Pro',
+    price: '$59',
+    period: '/mo',
+    features: ['6 agent slots', 'Everything in Basic', 'API access', 'Priority support'],
+    cta: 'Get Pro',
+    href: '/sign-up?plan=pro',
+    highlight: false,
+  },
+  {
+    name: 'Max',
     price: '$99',
     period: '/mo',
-    features: [
-      'Unlimited everything',
-      '25 agents',
-      'SSO',
-      'Audit logs',
-      'SLA',
-      'Custom voice',
-    ],
+    features: ['9 agent slots', 'Everything in Pro', 'Higher throughput', 'Dedicated success'],
+    cta: 'Get Max',
+    href: '/sign-up?plan=max',
+    highlight: false,
+  },
+  {
+    name: 'Small Business',
+    price: '$299',
+    period: '/mo',
+    features: ['24 agent slots', 'Team workflows', 'Admin controls', 'Shared vault'],
     cta: 'Get Business',
-    href: '/checkout/business',
+    href: '/sign-up?plan=business',
+    highlight: false,
+  },
+  {
+    name: 'Enterprise',
+    price: '$4,000',
+    period: '/mo',
+    features: ['360 agent slots', 'SSO + audit', 'SLA', 'Custom integrations'],
+    cta: 'Contact Sales',
+    href: 'mailto:team@claracode.ai',
     highlight: false,
   },
 ]
@@ -50,9 +55,9 @@ export function PricingCards() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <h2 className="text-center text-2xl font-semibold text-white sm:text-3xl">Pricing</h2>
         <p className="mx-auto mt-3 max-w-xl text-center text-white/50">
-          Start free. Upgrade when you need more agents, API access, and memory.
+          Talk to Clara. Build your team. Activate for $39.
         </p>
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {tiers.map((tier) => (
             <div
               key={tier.name}
@@ -81,17 +86,31 @@ export function PricingCards() {
                   </li>
                 ))}
               </ul>
-              <Link
-                href={tier.href}
-                className={cn(
-                  'mt-8 block rounded-lg py-2.5 text-center text-sm font-semibold transition',
-                  tier.highlight
-                    ? 'bg-clara-blue text-white hover:bg-blue-600'
-                    : 'border border-white/10 text-white hover:bg-white/5',
-                )}
-              >
-                {tier.cta}
-              </Link>
+              {tier.href.startsWith('mailto:') ? (
+                <a
+                  href={tier.href}
+                  className={cn(
+                    'mt-8 block rounded-lg py-2.5 text-center text-sm font-semibold transition',
+                    tier.highlight
+                      ? 'bg-clara-blue text-white hover:bg-blue-600'
+                      : 'border border-white/10 text-white hover:bg-white/5',
+                  )}
+                >
+                  {tier.cta}
+                </a>
+              ) : (
+                <Link
+                  href={tier.href}
+                  className={cn(
+                    'mt-8 block rounded-lg py-2.5 text-center text-sm font-semibold transition',
+                    tier.highlight
+                      ? 'bg-clara-blue text-white hover:bg-blue-600'
+                      : 'border border-white/10 text-white hover:bg-white/5',
+                  )}
+                >
+                  {tier.cta}
+                </Link>
+              )}
             </div>
           ))}
         </div>

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { useState, type FormEvent } from 'react'
 import { VoiceButton } from '@/components/VoiceButton'
+import { PricingCards } from '@/components/sections/PricingCards'
 
 const FEATURES = [
   {
@@ -153,45 +154,7 @@ export function LandingPage() {
           </div>
         </section>
 
-        <section id="pricing" className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="text-center text-2xl font-semibold md:text-3xl">Pricing</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-center text-white/55">
-            Start free. Scale when voice and reasoning tasks become your default.
-          </p>
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
-            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-              <h3 className="text-lg font-semibold">Free</h3>
-              <p className="mt-4 text-3xl font-bold">$0</p>
-              <ul className="mt-6 flex-1 space-y-3 text-sm text-white/65">
-                <li>Conversations unlimited</li>
-                <li>1 reasoning task</li>
-              </ul>
-            </div>
-            <div className="relative flex flex-col rounded-2xl border-2 border-clara bg-clara/5 p-8 shadow-lg shadow-clara/10">
-              <span className="absolute right-4 top-4 rounded-full bg-clara px-2 py-0.5 text-xs font-medium text-white">
-                Popular
-              </span>
-              <h3 className="text-lg font-semibold">Pro</h3>
-              <p className="mt-4 text-3xl font-bold">
-                $29<span className="text-lg font-normal text-white/50">/mo</span>
-              </p>
-              <ul className="mt-6 flex-1 space-y-3 text-sm text-white/65">
-                <li>50 reasoning tasks</li>
-                <li>Priority voice routing</li>
-              </ul>
-            </div>
-            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-              <h3 className="text-lg font-semibold">Business</h3>
-              <p className="mt-4 text-3xl font-bold">
-                $99<span className="text-lg font-normal text-white/50">/mo</span>
-              </p>
-              <ul className="mt-6 flex-1 space-y-3 text-sm text-white/65">
-                <li>Unlimited reasoning tasks</li>
-                <li>Org controls &amp; audit (roadmap)</li>
-              </ul>
-            </div>
-          </div>
-        </section>
+        <PricingCards />
 
         <section className="border-t border-white/10 bg-gradient-to-b from-clara/10 to-transparent py-20">
           <div className="mx-auto max-w-lg px-6 text-center">
