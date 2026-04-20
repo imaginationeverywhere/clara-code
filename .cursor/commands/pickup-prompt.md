@@ -4,7 +4,7 @@
 
 ## What This Command Does
 
-Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty (or use `--parallel N` for multiple headless agent slots). With **`--filter <regex>`**, only prompt files whose **basename** matches the extended regex are processed; other files stay in the queue for a later run without a filter. For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`. **Prompts left unstarted in ANY previous date directory are automatically backfilled into today's queue** — no prompt is ever silently abandoned. Use `--retry-failed` to also re-queue prompts from `4-failed/`.
+Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them in a loop — one by one — until the queue is empty (or use `--parallel N` for multiple headless agent slots). For each prompt: creates a detached worktree, executes the prompt, creates a branch FROM the worktree when done, pushes the branch, opens a PR, moves the prompt to `3-completed/`, and removes the worktree. **You do not need to re-run this command.** It loops automatically until all prompts are done. On startup, any prompts orphaned in `2-in-progress/` from a crashed run are automatically recovered to `1-not-started/`. Use `--retry-failed` to move stranded prompts from `4-failed/` back to `1-not-started/` before processing.
 
 ## Usage
 
@@ -20,8 +20,6 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --parallel 3             # Run 3 agents simultaneously
 /pickup-prompt --retry-failed           # Re-queue prompts from 4-failed/ to 1-not-started/, then run
 /pickup-prompt --retry-failed --parallel 3   # Retry failed prompts with parallelism
-/pickup-prompt --parallel 3 --filter "23-00-ossie-bedrock|23-15-ossie-amplify|23-30-URGENT"   # Only matching basenames
-/pickup-prompt --filter '^01-.*'              # Sequential: only prompts whose filename starts 01-
 
 # Standards flags (can be stacked)
 /pickup-prompt --clerk                  # Inject Clerk auth standard (ProfileWidget required on auth layouts)
@@ -64,39 +62,6 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --backend                 # Inject backend stack standard (Node/Express, Sequelize, GraphQL/Apollo, TypeScript)
 /pickup-prompt --mobile                  # Inject mobile stack standard (Expo SDK 52, Expo Router, NativeWind, Apollo, Clerk, Redux-Persist)
 
-# Clara Code 8-step setup (templates in .claude/commands/prompts/setup/)
-/pickup-prompt --source-control          # Step 1: Git hosting, branch protection, CODEOWNERS
-/pickup-prompt --github                  # Step 1 (alias: GitHub)
-/pickup-prompt --gitlab                  # Step 1 (variant: GitLab)
-/pickup-prompt --bitbucket               # Step 1 (variant: Bitbucket)
-/pickup-prompt --azure-devops            # Step 1 (variant: Azure DevOps)
-/pickup-prompt --nextjs                  # Step 2 (alias of --frontend)
-/pickup-prompt --vite                    # Step 2 alt: Vite + React
-/pickup-prompt --angular                 # Step 2 alt: Angular SPA
-/pickup-prompt --clerk                   # Step 4: Clerk (also in standards — loads clerk-auth.md)
-/pickup-prompt --feedback-widget         # Step 5 + component library (see templates)
-/pickup-prompt --react-native            # Step 6 (alias: --expo)
-/pickup-prompt --expo                    # Step 6: Expo + RN
-/pickup-prompt --electron                # Step 7: Electron / desktop shell
-/pickup-prompt --aws-deploy              # Step 8: AWS default deploy path
-/pickup-prompt --gcp                     # Step 8 alt: GCP
-/pickup-prompt --azure                   # Step 8 alt: Azure (hosting; not DevOps git)
-/pickup-prompt --cloudflare              # Step 8 alt: Cloudflare Pages/Workers (see also --cf)
-/pickup-prompt --migrate-amplify-to-cf   # Amplify → CF Workers + DNS playbook (domain in prompt; see § flag)
-/pickup-prompt --bedrock                 # AWS Bedrock + DeepSeek default for Ra Intelligence (see /setup-bedrock)
-
-# Clara Code prompt types (page / component / architecture templates)
-/pickup-prompt --privacy-policy           # Privacy Policy page template (GDPR/CCPA/COPPA-aware)
-/pickup-prompt --tos                      # Terms of Service template (multi-tenant SaaS)
-/pickup-prompt --about-us                 # About Us page template
-/pickup-prompt --contact-us               # Contact Us page + routing template
-/pickup-prompt --nav-bar                  # Responsive accessible nav + RBAC visibility
-/pickup-prompt --hero-section             # Hero module + CTAs + optional media
-/pickup-prompt --footer                   # Footer + legal links
-/pickup-prompt --feedback-widget          # Heru Feedback SDK integration template
-/pickup-prompt --user-journey             # Onboarding / authenticated journey map + flows
-/pickup-prompt --rbac                     # RBAC scaffolding (PLATFORM_ADMIN, SITE_ADMIN, MEMBER, GUEST)
-
 # App store submission flags
 /pickup-prompt --apple                   # Apple App Store submission (xcrun altool, metadata, screenshots)
 /pickup-prompt --google                  # Google Play Store submission (AAB, Play Console, staged rollout)
@@ -119,103 +84,7 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --frontend --clerk --profile                             # Full frontend auth + profile
 /pickup-prompt --backend --graphql --security --migrations              # Full backend feature
 /pickup-prompt --frontend --backend --clerk --profile                   # Full stack feature
-/pickup-prompt --privacy-policy --frontend --clerk --security           # Legal page + web stack + auth
-/pickup-prompt --nav-bar --footer --frontend --design web               # Marketing shell
-/pickup-prompt --rbac --backend --graphql --multi-tenant --security      # RBAC + API layer
-/pickup-prompt --source-control --frontend --backend --clerk --aws-deploy  # Full SaaS scaffold (8-step)
 ```
-
-## Prompt type flags (Clara Code template library)
-
-These flags load **prompt templates** from `.claude/commands/prompts/*.md` (not `.claude/standards`). The loaded template is **prepended** to the queued prompt context, same as standards injection. Templates are **IP-safe** for Voice Coders and Herus (no proprietary runtime internals).
-
-| Flag | Template file |
-|------|----------------|
-| `--privacy-policy` | `privacy-policy.md` |
-| `--tos` | `tos.md` |
-| `--about-us` | `about-us.md` |
-| `--contact-us` | `contact-us.md` |
-| `--nav-bar` | `nav-bar.md` |
-| `--hero-section` | `hero-section.md` |
-| `--footer` | `footer.md` |
-| `--feedback-widget` | `feedback-widget.md` |
-| `--user-journey` | `user-journey.md` |
-| `--rbac` | `rbac.md` |
-
-```bash
-PROMPT_TYPE_LIB=".claude/commands/prompts"
-PROMPT_TYPE_STANDARD=""
-# Example: --privacy-policy
-if echo "$*" | grep -q "\-\-privacy-policy"; then
-  PROMPT_TYPE_STANDARD=$(cat "${PROMPT_TYPE_LIB}/privacy-policy.md")
-  echo "📄 Prompt type loaded: privacy-policy — prepended to execution context"
-fi
-# Repeat pattern for: --tos, --about-us, --contact-us, --nav-bar, --hero-section,
-# --footer, --feedback-widget, --user-journey, --rbac (each loads its template file)
-```
-
-**Rules:** Combine with stack flags (`--frontend`, `--backend`, `--mobile`) and standards (`--clerk`, `--multi-tenant`, etc.). Every template reminds executors to scope persisted data with `tenant_id` where applicable.
-
-See `.claude/commands/prompts/README.md` for the index.
-
----
-
-## 8-step setup flags (Clara Code — template library)
-
-These flags load **setup templates** from `.claude/commands/prompts/setup/*.md` and **prepend** them to the execution context (same as standards). **Aliases** must match `/queue-prompt` exactly.
-
-| Flag / alias | Template file |
-|----------------|---------------|
-| `--source-control`, `--github`, `--gitlab`, `--bitbucket`, `--azure-devops` | `setup/source-control.md` (note provider in task name or body) |
-| `--frontend`, `--nextjs` | `setup/frontend-nextjs.md` |
-| `--vite` | `setup/frontend-vite.md` |
-| `--angular` | `setup/frontend-angular.md` |
-| `--backend` | `setup/backend-node-express.md` |
-| `--clerk` | `setup/clerk.md` **and** mandatory `.claude/standards/clerk-auth.md` |
-| `--react-native`, `--expo` | `setup/react-native.md` |
-| `--electron` | `setup/electron.md` |
-| `--aws-deploy` | `setup/aws-deploy.md` |
-| `--gcp` | `setup/gcp.md` |
-| `--azure` | `setup/azure.md` (hosting; git variant uses `--azure-devops`) |
-| `--cloudflare` | `setup/cloudflare.md` (see also `--cf` for the Pages standard doc) |
-| `--migrate-amplify-to-cf` | `setup/migrate-amplify-to-cf.md` **and** prepend `.claude/commands/migrate-amplify-to-cf.md` (domain must appear in queued prompt title or body) |
-| `--bedrock` | `setup/bedrock.md` **and** prepend `.claude/commands/setup-bedrock.md` |
-
-**`--feedback-widget`** continues to load the **page/component** template `.claude/commands/prompts/feedback-widget.md` (shared with Step 5).
-
-```bash
-SETUP_LIB=".claude/commands/prompts/setup"
-# Example: --source-control (any of the provider aliases)
-if echo "$*" | grep -qE '\-\-source-control|\-\-github|\-\-gitlab|\-\-bitbucket|\-\-azure-devops'; then
-  SETUP_SOURCE_CONTROL=$(cat "${SETUP_LIB}/source-control.md")
-  echo "📄 Setup template: source-control — prepended"
-fi
-# Repeat for each setup flag using the table above (AI: load all matching templates for stacked flags).
-```
-
-### `--migrate-amplify-to-cf`
-
-When present, the agent MUST:
-
-1. Load `setup/migrate-amplify-to-cf.md` and **`.claude/commands/migrate-amplify-to-cf.md`** (full playbook).
-2. Load **`docs/cloudflare/AMPLIFY-TO-CLOUDFLARE-MIGRATION.md`** as reference.
-3. Resolve **`<domain>`** from the queued prompt filename or first line (e.g. `imworldcupready.com`).
-
-Use for any task that **migrates a live Amplify Heru** to Cloudflare Workers and moves DNS from Route53 to Cloudflare. Pair with `--cf` or `--frontend` when the prompt also needs stack standards.
-
-**Does not** replace hands-on AWS/CF registrar access — the executor must run or hand off CLI steps.
-
-### `--bedrock`
-
-When present, the agent MUST:
-
-1. Load `setup/bedrock.md` and **`.claude/commands/setup-bedrock.md`**.
-2. Read **`docs/standards/AI-MODEL-ROUTING.md`** before changing Ra Intelligence or Bedrock wiring.
-3. Keep **Cloudflare AI Gateway** and **Anthropic SDK** as documented fallbacks when Bedrock is disabled or exhausted.
-
-Use for tasks that configure **Amazon Bedrock** (DeepSeek default, fallback chain, SSM/IAM). Pair with `--backend` when the prompt also needs the backend stack standard.
-
----
 
 ## Flags
 
@@ -918,34 +787,6 @@ When `N` > 1, the execution script uses a **parallel dispatcher**: up to `N` bac
 
 ---
 
-### `--filter <regex>`
-
-Limits processing to prompt files in `1-not-started/` whose **basename** (e.g. `23-00-ossie-bedrock.md`) matches **extended regex** (`grep -E`). Alternation is supported: `a|b|c`.
-
-- **Sequential:** Picks the **first** file in sort order that matches; when no file matches anymore, stops even if non-matching files remain (they stay queued).
-- **Parallel:** Same rule inside `pickup-dispatch.sh` (optional **second argument** after `N`, or env `PICKUP_FILTER`).
-- **Combines with** `--parallel N` and `--retry-failed`.
-- **Does not apply** to `--status`, `--requirements`, `--all`, or `--list`.
-
-```bash
-# AI-substituted from ARGUMENTS:
-FILTER_REGEX=""   # e.g. '23-00-ossie-bedrock|23-15-ossie-amplify' or leave empty
-
-pick_next_prompt_file() {
-  local dir="$1"
-  local pattern="$2"
-  local f
-  for f in $(ls "${dir}"/*.md 2>/dev/null | sort); do
-    [ -f "$f" ] || continue
-    if [ -z "$pattern" ]; then echo "$f"; return 0; fi
-    if echo "$(basename "$f")" | grep -qE "$pattern"; then echo "$f"; return 0; fi
-  done
-  return 1
-}
-```
-
----
-
 ### `--retry-failed`
 
 When set, after Step 0.5, every `*.md` in `prompts/<date>/4-failed/` is moved back to `1-not-started/` so the main loop can pick them up. Does not delete files. Combine with `--parallel N` if desired.
@@ -1009,6 +850,25 @@ if echo "$*" | grep -q "\-\-status"; then
     "desktop|grep -rl 'SecretStorage\|contextBridge\|ipcMain' src/ 2>/dev/null|--desktop|60|PKCE auth, SecretStorage, contextBridge, signing"
     "apple-store|ls docs/standards/apple-store.md 2>/dev/null|--apple|30|Metadata, screenshots, xcrun altool upload"
     "google-play|ls docs/standards/google-play.md 2>/dev/null|--google|30|AAB, Data Safety form, staged rollout"
+    "feedback|grep -rl 'FeedbackWidget\|heru-feedback\|integrate-heru-feedback' src/ frontend/src/ backend/src/ 2>/dev/null|--feedback|45|Heru Feedback SDK — FAB widget, onboarding tour, contact mode, GraphQL endpoint, classification tiers (P0-P3), Slack #maat-agents notifs, vault task generation, admin dashboard"
+    "vrd|ls docs/vrd/*.md 2>/dev/null || ls docs/VRD-*.md 2>/dev/null|--vrd|30|Voice Requirements Document authoring — Amen Ra's invention (needs attribution), canonical VRD-001 format, question inventory, voice-first flow design BEFORE any cloning or TTS"
+    "voice|grep -rl 'voxtral\|Voxtral\|clara-voice\|modal.run/tts\|modal.run/stt\|modal.run/clone' src/ backend/src/ infrastructure/voice/ 2>/dev/null|--voice|60|Voxtral implementation — Modal serverless GPU (A10G), /tts /stt /clone endpoints, <3s latency budget, consent flow, free-clone-on-signup gate, Clara Voice Server at modal.run"
+    "rbac|grep -rl 'hasRole\|requirePermission\|Permission\\.\|permissions\\.\|RoleGate\|hasPermission' src/ backend/src/ frontend/src/ 2>/dev/null|--rbac|45|Role-Based Access Control — role definitions, permission matrices, tenant-scoped roles, UI conditional rendering, backend guards, audit trail on permission changes"
+    "user-journey|ls docs/user-journeys/*.md 2>/dev/null || ls docs/journeys/*.md 2>/dev/null || ls docs/journey-*.md 2>/dev/null|--user-journey|30|User journey mapping — personas, entry/exit points, emotional states, decision gates, success metrics. Authored BEFORE mockups/design to validate flow before visual design starts"
+    "cms|grep -rl 'contentful\|strapi\|payload\|sanity\|CMS\|PageBuilder\|ContentType\|Block\[\]' src/ backend/src/ frontend/src/ 2>/dev/null|--cms|60|Content Management — page builder, content types, media library with S3, scheduled publishing, SEO per page, preview mode, versioning + rollback, multi-author workflows"
+    "crm|grep -rl 'Contact\|Lead\|Deal\|Pipeline\|Segment\|ActivityLog\|contactStage' backend/src/ src/ 2>/dev/null|--crm|60|Customer Relationship — contacts + leads + deals tables, pipelines with stages, activity timeline, segments + tags, email sync (Gmail/Outlook), automation rules (webhook on stage change)"
+    "booking|grep -rl 'Appointment\|Booking\|scheduleSlot\|availableSlots\|calendarSlot' src/ backend/src/ 2>/dev/null|--booking|60|Appointment scheduling — calendar grid, available slots with buffers, cancellation + rescheduling, reminders (email/SMS/push), no-show handling, waitlist, recurring bookings"
+    "marketplace|grep -rl 'Vendor\|Seller\|commission\|payoutCycle\|Marketplace' backend/src/ src/ 2>/dev/null|--marketplace|60|Marketplace — vendor onboarding + KYC, commission splits, payout cycles via Stripe Connect, vendor dashboards, dispute resolution, vendor-facing analytics"
+    "reviews|grep -rl 'Review\|Rating\|helpfulVotes\|verifiedPurchase' src/ backend/src/ 2>/dev/null|--reviews|45|Reviews + ratings — 1-5 star + text, moderation queue, verified-purchase badges, helpful/not-helpful votes, vendor response, abuse reporting"
+    "notifications-inbox|grep -rl 'NotificationCenter\|NotificationInbox\|markAllRead\|unreadCount' src/ frontend/src/ 2>/dev/null|--notifications-inbox|45|In-app notification center — bell + unread badge, grouped list, mark-all-read, filter by type, delete/archive, deep-link to source. Distinct from push delivery + Slack outbound"
+    "i18n|grep -rl 'useTranslations\|next-intl\|i18next\|formatMessage' src/ frontend/src/ 2>/dev/null|--i18n|45|Internationalization — locale detection, next-intl message catalogs, date/currency/number formatting per locale, RTL support, translation workflow, fallback chains"
+    "webhooks|grep -rl 'webhookSecret\|verifySignature\|webhook_event\|idempotencyKey' backend/src/ 2>/dev/null|--webhooks|60|Generic webhook infra — inbound receive with signature verify + idempotency + replay protection, outbound send with retry + dead-letter queue + observability. Beyond stripe-specific"
+    "audit-log|grep -rl 'AuditLog\|audit_event\|auditTrail\|recordAudit' backend/src/ src/ 2>/dev/null|--audit-log|30|Audit trail — immutable event log (actor, action, target, diff, timestamp), admin UI with filter/export, retention policy, compliance export (CSV/JSON), signed log chain for tamper evidence"
+    "onboarding|grep -rl 'OnboardingFlow\|WelcomeStep\|firstRun\|hasCompletedOnboarding' src/ frontend/src/ 2>/dev/null|--onboarding|45|First-run onboarding — splash + value prop, permission requests (camera/mic/push), account setup wizard, team-builder (for Clara), skip + resume, success state with next-action prompt"
+    "search|grep -rl 'search_query\|useSearch\|Algolia\|meilisearch\|tsvector\|to_tsquery' src/ backend/src/ 2>/dev/null|--search|45|Full-text + faceted search — tsvector/GIN on PG or Algolia/Meilisearch, filter facets, sort options, pagination, highlighted matches, empty + no-results states, synonym handling"
+    "job-queue|grep -rl 'BullMQ\|@bull\|SQS\|worker\\.ts\|jobQueue\|processJob' backend/src/ 2>/dev/null|--job-queue|45|Background jobs — BullMQ on Redis (or SQS), retry with exponential backoff, dead-letter queue, job scheduling (cron + delayed), progress reporting, observability per job type"
+    "video|grep -rl 'hls\\.js\\|@mux/\\|cloudflare-stream\\|video\\.js\\|shaka-player\\|VideoPlayer\\|bunny' src/ frontend/src/ backend/src/ 2>/dev/null|--video|60|Video playback + streaming — HLS/DASH adaptive bitrate, CDN hosting (Cloudflare Stream / Mux / Bunny), S3 upload + transcoding (MediaConvert or FFmpeg), thumbnail generation, captions/subtitles (WebVTT), chapters, player UX (PiP, keyboard shortcuts, autoplay-muted), completion analytics. Distinct from Remotion (which creates videos)"
+    "animation|grep -rl 'framer-motion\\|lottie\\|gsap\\|@react-spring\\|useSpring\\|motion\\.' src/ frontend/src/ 2>/dev/null|--animation|45|UI animation patterns — Framer Motion for React, Lottie for designer-authored vector, GSAP for timeline-heavy sequences, scroll-triggered reveals, page transitions, gesture-driven motion, prefers-reduced-motion accessibility gate, 60fps GPU-accelerated transforms, avoid layout thrashing"
   )
 
   DONE_NAMES=()
@@ -1244,21 +1104,26 @@ echo "Looking in: ${PROMPT_DIR}"
 ls "${PROMPT_DIR}" 2>/dev/null || echo "No prompts directory found at ${PROMPT_DIR}"
 ```
 
-### Step 1b — Set `MAX_PARALLEL` and `RETRY_FAILED` from ARGUMENTS
+### Step 1b — Parse `--parallel N` and `--retry-failed`
 
-**CRITICAL: Do NOT use `$@` in bash — it is always empty when Claude/Cursor executes code blocks.**
-**Instead: read the ARGUMENTS field directly and substitute the values into the bash block below.**
-
-- If ARGUMENTS contains `--parallel N` (e.g., `--parallel 5`), substitute N for the `1` below
-- If ARGUMENTS contains `--retry-failed`, change `false` to `true` below
-- If ARGUMENTS contains `--filter 'PATTERN'`, set `FILTER_REGEX` to that pattern (empty string if absent)
-- Default: `MAX_PARALLEL=1`, `RETRY_FAILED=false`, `FILTER_REGEX=""`
+Run after Step 1 so `PROMPT_DIR` exists for `--retry-failed`. Does not remove other flags from `"$@"` (standards flags are handled by the agent, not this shell).
 
 ```bash
-# AI MUST substitute the actual values from ARGUMENTS before running this block:
-MAX_PARALLEL=1       # ← replace with N from --parallel N (e.g. 5 if --parallel 5)
-RETRY_FAILED=false   # ← set to true if --retry-failed appears in ARGUMENTS
-FILTER_REGEX=""      # ← e.g. 23-00-ossie|23-15-ossie — extended regex on basename only
+MAX_PARALLEL=1
+RETRY_FAILED=false
+argv=("$@")
+for ((i=0; i<${#argv[@]}; i++)); do
+  if [ "${argv[$i]}" = "--parallel" ]; then
+    n="${argv[$((i+1))]:-}"
+    if printf '%s' "$n" | grep -Eq '^[0-9]+$'; then
+      MAX_PARALLEL="$n"
+    else
+      MAX_PARALLEL=6
+    fi
+  elif [ "${argv[$i]}" = "--retry-failed" ]; then
+    RETRY_FAILED=true
+  fi
+done
 ```
 
 ### Step 2 — Loop: process every prompt until the queue is empty
@@ -1286,35 +1151,6 @@ if ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null | grep -q .; then
 fi
 # ─────────────────────────────────────────────────────────────────────────────
 
-# ── Step 0.6 — Backfill not-started prompts from previous dates ──────────────
-# Scan ALL past date directories under prompts/ for any 1-not-started/*.md files.
-# Moves them into today's queue so the main loop picks them up.
-# Caution: large trees may match 100+ files—preview `find ... | wc -l` before moving.
-BACKFILL_COUNT=0
-while IFS= read -r OLD_PROMPT; do
-  [ -f "$OLD_PROMPT" ] || continue
-  BASENAME=$(basename "$OLD_PROMPT")
-  DEST="$PROMPT_DIR/$BASENAME"
-  # Handle name collisions by prefixing with the source date
-  if [ -f "$DEST" ]; then
-    OLD_DATE=$(echo "$OLD_PROMPT" | grep -oE '[0-9]{4}/[A-Za-z]+/[0-9]{1,2}' | head -1)
-    SAFE_DATE=$(echo "$OLD_DATE" | tr '/' '-')
-    DEST="$PROMPT_DIR/${SAFE_DATE}-${BASENAME}"
-  fi
-  mv "$OLD_PROMPT" "$DEST"
-  echo "   📥 $(basename $(dirname $(dirname $OLD_PROMPT)))/$(basename $(dirname $OLD_PROMPT))/$(basename $OLD_PROMPT) → today"
-  ((BACKFILL_COUNT++))
-done < <(find "prompts" -path "*/1-not-started/*.md" \
-  ! -path "prompts/${YEAR}/${MONTH}/${DAY}/*" 2>/dev/null | sort)
-
-if [ $BACKFILL_COUNT -gt 0 ]; then
-  echo ""
-  echo "📥 Backfilled $BACKFILL_COUNT prompt(s) from previous dates → today's queue"
-  echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | BACKFILL | $BACKFILL_COUNT prompts from past dates moved to ${YEAR}/${MONTH}/${DAY}/1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
-  echo ""
-fi
-# ─────────────────────────────────────────────────────────────────────────────
-
 # ── --retry-failed: re-queue prompts from 4-failed/ ─────────────────────────
 if [ "$RETRY_FAILED" = true ]; then
   FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
@@ -1336,21 +1172,78 @@ if [ "$RETRY_FAILED" = true ]; then
 fi
 
 if [ "${MAX_PARALLEL:-1}" -gt 1 ]; then
-  echo "🚀 Parallel mode: $MAX_PARALLEL agents → pickup-dispatch.sh"
-  [ -n "$FILTER_REGEX" ] && echo "🔎 Filter (basename grep -E): $FILTER_REGEX"
-  # Unlock macOS keychain (required for cursor CLI)
-  KEYCHAIN_PASS=$(cat ~/.agent-creds/keychain-password 2>/dev/null)
-  [ -n "$KEYCHAIN_PASS" ] && security unlock-keychain -p "$KEYCHAIN_PASS" 2>/dev/null && echo "🔑 Keychain unlocked"
-  # Delegate to standalone dispatch script (handles real bash forking + PID management)
-  DISPATCH_SCRIPT=~/bin/pickup-dispatch.sh
-  if [ -f "$DISPATCH_SCRIPT" ]; then
-    PICKUP_FILTER="$FILTER_REGEX" bash "$DISPATCH_SCRIPT" "$MAX_PARALLEL" "$FILTER_REGEX"
-  else
-    echo "❌ pickup-dispatch.sh not found at ~/bin/"
-    echo "   Install it: copy from boilerplate .claude/scripts/pickup-dispatch.sh"
-    echo "   Or run: ssh quik-cloud 'curl -s <url> > ~/bin/pickup-dispatch.sh && chmod +x ~/bin/pickup-dispatch.sh'"
-    exit 1
-  fi
+  echo "🚀 Parallel mode: up to $MAX_PARALLEL agents (requires \`cursor\` CLI; \`SPECIFIC_PROMPT\` mode not supported)"
+  MAIN_DIR="$(pwd)"
+  PIDS=()
+  while true; do
+    while [ ${#PIDS[@]} -ge "$MAX_PARALLEL" ]; do
+      NEW_PIDS=()
+      for PID in "${PIDS[@]}"; do
+        kill -0 "$PID" 2>/dev/null && NEW_PIDS+=("$PID")
+      done
+      PIDS=("${NEW_PIDS[@]}")
+      [ ${#PIDS[@]} -ge "$MAX_PARALLEL" ] && sleep 3
+    done
+    TARGET=$(ls "${PROMPT_DIR}"/*.md 2>/dev/null | sort | head -1)
+    [ -z "$TARGET" ] || [ ! -f "$TARGET" ] && break
+    PROMPT_NAME=$(basename "$TARGET" .md)
+    IN_PROGRESS_DIR="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
+    mkdir -p "$IN_PROGRESS_DIR"
+    mv "$TARGET" "$IN_PROGRESS_DIR/" 2>/dev/null || continue
+    INPROGRESS_FILE="${IN_PROGRESS_DIR}/$(basename "$TARGET")"
+    WT_SUFFIX="$$-${#PIDS[@]}-$RANDOM"
+    WORKTREE_PATH="/tmp/worktrees/${PROMPT_NAME}-${WT_SUFFIX}"
+    echo "🔀 Spawning parallel slot for: $PROMPT_NAME ($WORKTREE_PATH)"
+    (
+      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null || true
+      rm -rf "$WORKTREE_PATH" 2>/dev/null || true
+      git worktree add --detach "$WORKTREE_PATH" 2>/dev/null || {
+        mv "$INPROGRESS_FILE" "${PROMPT_DIR}/$(basename "$INPROGRESS_FILE")"
+        exit 1
+      }
+      if command -v cursor >/dev/null 2>&1; then
+        cursor agent -p --yolo --workspace "$WORKTREE_PATH" "$(cat "$INPROGRESS_FILE")" 2>&1 | tee "/tmp/pickup-log-${PROMPT_NAME}.txt"
+      else
+        echo "⚠️  cursor CLI not found — complete the prompt in $WORKTREE_PATH manually."
+      fi
+      cd "$WORKTREE_PATH" || exit 1
+      BRANCH_NAME="prompt/${YEAR}-$(date +%m)-$(date +%d)/${PROMPT_NAME}"
+      BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9\/\-]/-/g' | sed 's/-\+/-/g')
+      git checkout -b "$BRANCH_NAME" 2>/dev/null || true
+      git add -A
+      git commit -m "feat: execute prompt ${PROMPT_NAME}
+
+Co-Authored-By: Claude Sonnet 4.6 <noreply@anthropic.com>" 2>/dev/null || true
+      REMOTE=$(git remote | head -1)
+      if [ -n "$REMOTE" ]; then
+        git push "$REMOTE" "$BRANCH_NAME" 2>&1
+        PUSH_EXIT=$?
+        if [ "$PUSH_EXIT" -ne 0 ]; then
+          cd "$MAIN_DIR" || exit 1
+          git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
+          FAILED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/4-failed"
+          mkdir -p "$FAILED_DIR"
+          mv "$INPROGRESS_FILE" "$FAILED_DIR/"
+          echo "$(date '+%H:%M:%S') | $(basename "$MAIN_DIR") | PUSH FAILED | ${PROMPT_NAME}" >> ~/auset-brain/Swarms/live-feed.md
+          exit 1
+        fi
+        cd "$WORKTREE_PATH" || exit 1
+        gh pr create \
+          --base develop \
+          --title "feat: ${PROMPT_NAME}" \
+          --body "Executed by /pickup-prompt --parallel" 2>/dev/null || true
+      fi
+      cd "$MAIN_DIR" || exit 1
+      COMPLETED_DIR="prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+      mkdir -p "$COMPLETED_DIR"
+      mv "$INPROGRESS_FILE" "$COMPLETED_DIR/"
+      git worktree remove "$WORKTREE_PATH" --force 2>/dev/null
+      echo "$(date '+%H:%M:%S') | $(basename "$MAIN_DIR") | PARALLEL COMPLETE | ${PROMPT_NAME}" >> ~/auset-brain/Swarms/live-feed.md
+    ) &
+    PIDS+=($!)
+  done
+  wait
+  echo "✅ Parallel batch finished."
 else
 while true; do
   # ── Find next prompt ──────────────────────────────────────────────────────
@@ -1360,22 +1253,10 @@ while true; do
     [[ "$SPECIFIC_PROMPT" != *.md ]] && TARGET="${TARGET}.md"
     SPECIFIC_PROMPT=""  # only run specific once
   else
-    TARGET=""
-    for f in $(ls "${PROMPT_DIR}"/*.md 2>/dev/null | sort); do
-      [ -f "$f" ] || continue
-      if [ -z "${FILTER_REGEX:-}" ]; then TARGET="$f"; break; fi
-      if echo "$(basename "$f")" | grep -qE "${FILTER_REGEX}"; then TARGET="$f"; break; fi
-    done
+    TARGET=$(ls "${PROMPT_DIR}"/*.md 2>/dev/null | sort | head -1)
   fi
 
   if [ -z "$TARGET" ] || [ ! -f "$TARGET" ]; then
-    REMAINING_UNFILTERED=$(ls "${PROMPT_DIR}"/*.md 2>/dev/null | wc -l | tr -d ' ')
-    if [ -n "${FILTER_REGEX:-}" ] && [ "${REMAINING_UNFILTERED:-0}" -gt 0 ]; then
-      echo ""
-      echo "✅ No more prompts matching --filter (${FILTER_REGEX}). ${REMAINING_UNFILTERED} file(s) left in 1-not-started/ (non-matching)."
-      echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | FILTER EXHAUSTED | ${FILTER_REGEX}" >> ~/auset-brain/Swarms/live-feed.md
-      break
-    fi
     echo ""
     echo "✅ Queue empty — all prompts processed for ${YEAR}/${MONTH}/${DAY}"
     echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | QUEUE EMPTY | All prompts complete for ${YEAR}/${MONTH}/${DAY}" >> ~/auset-brain/Swarms/live-feed.md
@@ -1592,7 +1473,7 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ## Key Rules
 
-- **Never stop after one prompt.** Loop until `1-not-started/` is empty — **unless** `--filter` is set; then stop when no **matching** file remains (non-matching files may remain).
+- **Never stop after one prompt.** Loop until `1-not-started/` is empty.
 - **Worktree is created DETACHED** — no branch at creation time.
 - **Branch is created FROM the worktree AFTER work is done** — `git checkout -b` inside the worktree.
 - **Worktree is deleted after the PR is opened** — the branch lives in GitHub.
@@ -1612,16 +1493,8 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.14.0
+version: 3.9.1
 changelog:
-  - v3.14.0: Add --bedrock (setup template + /setup-bedrock + Ra Intelligence Bedrock module + docs/standards/AI-MODEL-ROUTING.md).
-  - v3.13.0: Add --migrate-amplify-to-cf (setup template + migrate-amplify-to-cf command + AMPLIFY-TO-CLOUDFLARE-MIGRATION.md) for Amplify→Workers+DNS migrations.
-  - v3.12.0: Add --filter <regex> (grep -E on prompt basename) for sequential and parallel runs; pickup-dispatch.sh accepts optional pattern as arg2 or PICKUP_FILTER env; exits when filter exhausted with non-matching files still queued.
-  - v3.11.0: Add Clara Code 8-step setup flags (source-control + provider aliases, nextjs/vite/angular, aws-deploy/gcp/azure/cloudflare, react-native/expo, electron) with template library in .claude/commands/prompts/setup/; symmetric with /queue-prompt.
-  - v3.10.1: Step 0.6 backfill — document caution when `find` matches very many prompt files (preview count before mv).
-  - v3.10.0: Add 10 Clara Code prompt-type flags (--privacy-policy, --tos, --about-us, --contact-us, --nav-bar, --hero-section, --footer, --feedback-widget, --user-journey, --rbac) with template library in .claude/commands/prompts/; documented combination with stack/standards flags.
-  - v3.9.3: Fix --parallel N on QCS1 — replaced broken $@ arg parsing (always empty in AI-executed bash) with explicit AI substitution in Step 1b; delegated parallel dispatch to ~/bin/pickup-dispatch.sh (real bash forking); added keychain unlock before cursor spawn.
-  - v3.9.2: Step 0.6 — historical backfill: scans ALL past date directories for 1-not-started/*.md and moves them into today's queue. No prompt is ever silently abandoned across day boundaries.
   - v3.9.1: Add --retry-failed — re-queue 4-failed/ prompts to 1-not-started/. --status shows warning when 4-failed/ is non-empty.
   - v3.9.0: Add --parallel N — optional headless Cursor agent slots (atomic mv lock); default sequential unchanged.
   - v3.8.0: Enhanced --status with /ai-estimate integration — AI timeline (hrs done/remaining/total), parallel batch math (6 agents/QCS1), prompt filenames to write with flags, cumulative time tracking, human equivalent

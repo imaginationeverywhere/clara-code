@@ -12,100 +12,117 @@ That's what this command does. It prepares the mind before the work begins.
 ```
 
 ## Arguments
-- `<focus>` (optional) — What you plan to work on this session. Helps prioritize which memory to surface.
-- `--quick` — Skip Slack check, just load memory and checkpoint. Fast start.
-- `--full` — Full startup: memory + checkpoint + Slack + boilerplate update check + task list review.
+- `<focus>` (optional) — What you plan to work on this session. Used as an extra `brain_query` topic.
+- `--quick` — Skip Slack check; still load checkpoint, daily note, MOC snippet, and brain queries.
+- `--full` — Full startup: everything below + Slack + (if configured) boilerplate/task checks.
 
 ## What This Command Does
 
-Runs the session startup ritual in this order:
+Run the startup ritual **in this order**. Prefer **`brain_query`** (MCP tool `brain_query` from server `clara-brain`) for priorities and focus — do **not** load `memory/MEMORY.md` wholesale; it is a short index only (see repo `memory/MEMORY.md`).
 
-### 1. Read Obsidian Vault (PRIMARY — Carter's system)
-Read from the Obsidian vault at `auset-brain/` — this is the platform's persistent second brain:
+### 1. Read `memory/session-checkpoint.md`
 
-**a) Read MOC (Map of Content) — the master index:**
-```
-auset-brain/MOC.md
-```
-This replaces `memory/MEMORY.md`. It has LESSONS LEARNED at the top, links to all Decisions, Feedback, Projects, People, and Agents notes via `[[wikilinks]]`.
+Repo-local handoff: what happened last session, pending work, decisions to preserve.
 
-**b) Read today's daily note (if it exists):**
-```
-auset-brain/Daily/YYYY-MM-DD.md
-```
-This replaces `memory/session-checkpoint.md`. Contains last session's summary, decisions, and pending items.
+### 2. Read today’s daily note (vault)
 
-**c) Read yesterday's daily note (if today's doesn't exist yet):**
+Path pattern (expand `~`):
+
 ```
-auset-brain/Daily/YYYY-MM-DD.md  (yesterday's date)
+~/auset-brain/Daily/YYYY-MM-DD.md
 ```
 
-**d) If `<focus>` was provided, search the vault:**
+If today’s file does not exist yet, read **yesterday’s** daily note instead.
+
+### 3. Read **only** the LESSONS LEARNED / top section of `auset-brain/MOC.md`
+
+Target ~20–40 lines — the map of content and “read first” links, not the entire vault.
+
+### 4. `brain_query` — current priorities
+
+Invoke:
+
+```text
+brain_query({ topic: "current priorities active pending work sprint", k: 10 })
+```
+
+Use results as the primary “what matters now” signal.
+
+### 5. `brain_query` — optional focus
+
+If the user passed `<focus>`, also run:
+
+```text
+brain_query({ topic: "<focus>", k: 5 })
+```
+
+### 6. Degraded mode (brain unreachable)
+
+If `brain_query` fails (HTTP 5xx, timeout **5s**, missing API key, or MCP error):
+
+- Say clearly: **DEGRADED MODE — brain API unavailable; using vault grep fallback.**
+- Fallback: search the vault for the focus keyword:
+
 ```bash
-grep -rl "<focus keyword>" auset-brain/ --include="*.md" | head -10
+grep -Rl "keyword" auset-brain/ --include='*.md' 2>/dev/null | head -10
 ```
-Read the most relevant notes for the topic.
 
-**Display:** Brief summary of where we left off + lessons loaded.
+Read the best-matching notes. Do **not** silently pretend the brain responded.
 
-### 1b. Fallback: Read Flat Memory (if vault is empty or missing)
-If `auset-brain/MOC.md` doesn't exist or is empty, fall back to the old system:
-- Read `memory/session-checkpoint.md`
-- Read `memory/MEMORY.md` and LESSONS LEARNED section
-- Load topic-specific memory files if `<focus>` was provided
+### 7. Slack `#maat-discuss` (unless `--quick`)
 
-This ensures backward compatibility during the transition period.
+Read the last 10 messages from `#maat-discuss` (C0AKQ8J63CN):
 
-### 3. Check Slack #maat-discuss (unless --quick)
-Read the last 10 messages from `#maat-discuss` (C0AKQ8J63CN) — Amen Ra's direct line:
 ```bash
 SLACK_TOKEN=$(aws ssm get-parameter --name '/quik-nation/shared/SLACK_BOT_TOKEN' --with-decryption --query 'Parameter.Value' --output text --region us-east-1) && curl -s "https://slack.com/api/conversations.history?channel=C0AKQ8J63CN&limit=10" -H "Authorization: Bearer $SLACK_TOKEN"
 ```
-Summarize any flagged items, priorities, blockers, or decisions.
 
-### 4. Report to User
-Display a clean startup report:
+Summarize flagged items, priorities, blockers, or decisions.
+
+### 8. Report to user
+
+Display a **compact** startup report (aim for minimal token use vs. dumping large files):
 
 ```
-SESSION START — March 15, 2026
+SESSION START — [date]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-LAST SESSION:
-  [2-3 line summary of what happened]
+CHECKPOINT:
+  [2-3 lines from session-checkpoint / daily note]
 
-PENDING:
-  - [unfinished items from checkpoint]
+BRAIN (priorities):
+  [short bullet summary from brain_query OR degraded-mode notice]
 
-LESSONS LOADED: [count] rules active
+FOCUS QUERY:
+  [if focus provided — short summary from brain_query or fallback]
 
 SLACK (#maat-discuss):
-  [any flagged items, or "No new items"]
-
-FOCUS: [whatever the user said, or "General session"]
+  [flagged items, or "No new items" / skipped if --quick]
 
 Ready. What are we building?
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### 5. Initialize Session Tracking
+### 9. Initialize session tracking
+
 Start tracking significant actions for the checkpoint update cycle (~every 10 actions).
 
 ## What This Command Does NOT Do
-- Does NOT run boilerplate update checks (that's `session-startup-handler`)
-- Does NOT create tasks or plans
-- Does NOT start any agents or dispatch work
-- Does NOT write any code
 
-This is PREPARATION. Gathering context. Becoming ready.
+- Does not load all of `auset-brain/MEMORY.md` or the full MOC into context — use `brain_query` + targeted reads.
+- Does not run boilerplate update checks (see dedicated handlers/commands).
+- Does not create tasks or plans by itself.
+- Does not start agents or dispatch work.
+- Does not write code.
+
+This is **preparation**: gather context, then build.
 
 ## Why This Matters
 
-Context loss is the #1 killer of productivity across Claude sessions. Every session starts from zero unless we actively recover state. This command is the antidote.
-
-**Without `/session-start`:** "What were we working on?" → 10 minutes of archaeology.
-**With `/session-start`:** Full context in 15 seconds. Start building immediately.
+Context loss is the #1 killer of productivity across sessions. **`brain_query`** pulls what matters; the vault index and `memory/MEMORY.md` stay thin.
 
 ## Related Commands
+
 - `/session-end` — Close the session, write checkpoint, preserve context
 - `/gran` — Talk to Granville (architecture)
 - `/mary` — Talk to Mary (product/business)

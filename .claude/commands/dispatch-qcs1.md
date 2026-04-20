@@ -32,7 +32,56 @@ Alias:    ssh quik-cloud
 Key:      ~/.ssh/quik-cloud
 Max agents: 6 concurrent Cursor agents
 Has:      Xcode, EAS CLI, xcrun altool, git, node, npm, Cursor CLI
+Binary:   ~/.local/bin/cursor-agent  (also: ~/.local/bin/agent symlink)
 ```
+
+---
+
+## Keychain Prerequisite (AUTOMATIC — non-negotiable)
+
+QCS1's macOS **login keychain auto-locks after idle time**. Non-interactive SSH sessions start with a locked keychain, which makes `cursor-agent` fail immediately with:
+
+```
+Error: Your macOS login keychain is locked.
+Run security unlock-keychain and try again.
+```
+
+**Every dispatch MUST unlock the keychain inline within the same SSH session that runs cursor-agent** — unlock state does NOT persist across separate SSH sessions (each is a new security context on macOS).
+
+### Prerequisites (run once at dispatch start)
+
+```bash
+# Fetch QCS1 login password from SSM (local machine only — QCS1 has no AWS CLI)
+QC1_PASS=$(aws ssm get-parameter \
+  --name "/quik-nation/quik-cloud/login-password" \
+  --with-decryption \
+  --query 'Parameter.Value' \
+  --output text \
+  --region us-east-1)
+
+if [ -z "$QC1_PASS" ]; then
+  echo "ERROR: Failed to fetch QCS1 password from SSM. Check /quik-nation/quik-cloud/login-password exists."
+  exit 1
+fi
+```
+
+### Build the composite SSH command
+
+Every `cursor-agent` invocation must be prefixed with `security unlock-keychain` **in the same SSH payload**:
+
+```bash
+UNLOCK="security unlock-keychain -p '$QC1_PASS' ~/Library/Keychains/login.keychain-db 2>/dev/null"
+PARTITION="security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k '$QC1_PASS' ~/Library/Keychains/login.keychain-db 2>/dev/null"
+AGENT_CMD="$UNLOCK && $PARTITION && cd '$PROJECT' && ~/.local/bin/cursor-agent -p --force --trust $MODEL_FLAG $WORKTREE_FLAGS '$PROMPT'"
+```
+
+The `set-key-partition-list` step prevents `errSecInternalComponent` on any codesign operations the agent may trigger (matters for mobile builds). Harmless overhead for non-mobile tasks.
+
+**Never** run `security unlock-keychain` in a separate SSH session expecting it to persist — it will not. Bundle it with the cursor-agent command every time.
+
+### Reference
+- Full context: `~/auset-brain/Feedback/feedback-qc1-keychain-partition-list.md`
+- Password SSM key: `/quik-nation/quik-cloud/login-password` (SecureString, us-east-1)
 
 ---
 
@@ -65,12 +114,27 @@ PANE=$(tmux display-message -t "swarm:$WINDOW" -p "#{pane_id}")
 
 ### Step 3: SSH into QCS1 and Run Cursor Agent
 
-The `-t` flag allocates a pseudo-TTY so Mo sees the output in real-time:
+The `-t` flag allocates a pseudo-TTY so Mo sees the output in real-time. **The keychain unlock MUST be bundled into the same SSH payload** (see Keychain Prerequisite section above):
 
 ```bash
-CMD="ssh -t quik-cloud 'cd \"$PROJECT\" && cursor agent -p --yolo --workspace \"$PROJECT\" \"$PROMPT\"'"
+# Fetch password once per dispatch batch
+QC1_PASS=$(aws ssm get-parameter --name "/quik-nation/quik-cloud/login-password" \
+  --with-decryption --query 'Parameter.Value' --output text --region us-east-1)
+
+# Compose the remote command: unlock → cd → cursor-agent
+REMOTE="security unlock-keychain -p '$QC1_PASS' ~/Library/Keychains/login.keychain-db 2>/dev/null && \
+security set-key-partition-list -S apple-tool:,apple:,codesign: -s -k '$QC1_PASS' ~/Library/Keychains/login.keychain-db 2>/dev/null && \
+cd '$PROJECT' && \
+~/.local/bin/cursor-agent -p --force --trust --model $MODEL --worktree $WORKTREE_NAME --worktree-base $BASE_BRANCH '$PROMPT'"
+
+# Send to the tmux pane (Mo watches it run)
+CMD="ssh -t quik-cloud \"$REMOTE\""
 tmux send-keys -t "$PANE" "$CMD" Enter
 ```
+
+**Default model:** `--model auto` (Cursor Ultra unlimited pool). Use named models (`claude-4.6-sonnet-medium`, `claude-opus-4-7-high`, etc.) only when the task specifically needs a premium model.
+
+**Binary path:** Always `~/.local/bin/cursor-agent` (non-interactive SSH does not load `~/.zshrc`, so bare `cursor-agent` will not be in PATH).
 
 ### Step 4: Log to Live Feed
 

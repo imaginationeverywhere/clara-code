@@ -4,7 +4,7 @@
 This Claude Code custom command automatically generates a comprehensive technical plan and implementation todo file for any software project, using project context from your PRD.md, leveraging existing work summaries, and integrating mockup templates for frontend features.
 
 ## Prerequisites
-⚠️ **REQUIRED**:
+⚠️ **REQUIRED**: 
 1. A `docs/PRD.md` file must exist (copy from `docs/PRD-TEMPLATE.md` if needed)
 2. For frontend features: Select a mockup template or provide custom mockup in `mockup/custom/`
 
@@ -20,7 +20,7 @@ When you invoke this command, Claude will:
 
 2. **Ask you for feature details**:
    - Feature name
-   - Brief description
+   - Brief description  
    - Complexity level (Simple/Medium/Complex/Enterprise)
    - Related existing features (if any)
    - For frontend: Mockup template selection
@@ -149,7 +149,7 @@ When relationships are found:
 The command automatically calculates estimates based on complexity:
 
 - **Simple (1-3 days)**: 1-2 weeks total, 1-2 developers
-- **Medium (1-2 weeks)**: 2-4 weeks total, 2-3 developers
+- **Medium (1-2 weeks)**: 2-4 weeks total, 2-3 developers  
 - **Complex (2-4 weeks)**: 4-8 weeks total, 3-4 developers
 - **Enterprise (1-3 months)**: 8-12 weeks total, 4-6 developers
 
@@ -217,7 +217,7 @@ The command automatically calculates estimates based on complexity:
    - `[BUSINESS_LOGIC]` adapts workflows to your domain
 
 4. **Custom Mockup Support**:
-   - Place your design exports in `mockup/custom/`
+   - Place your Figma/design exports in `mockup/custom/`
    - Must include standard structure (pages, components, layouts)
    - System validates and transforms like built-in templates
    - Preserves your unique design while adding tech stack
@@ -313,7 +313,7 @@ If your project uses different conventions, Claude will ask where to place the f
 
 ## PRD Requirement
 
-⚠️ **IMPORTANT**: This command will not work without a `docs/PRD.md` file.
+⚠️ **IMPORTANT**: This command will not work without a `docs/PRD.md` file. 
 
 If you don't have one:
 1. Copy `docs/PRD-TEMPLATE.md` to `docs/PRD.md`
@@ -322,7 +322,7 @@ If you don't have one:
 
 The PRD provides essential context that makes this command much more powerful by automatically including your project's:
 - Technology choices
-- Team structure
+- Team structure  
 - Business requirements
 - Security needs
 - Performance targets
