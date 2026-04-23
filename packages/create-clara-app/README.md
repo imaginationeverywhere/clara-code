@@ -2,7 +2,7 @@
 
 Scaffolds a **Next.js 15** app (App Router, TypeScript, Tailwind), adds **Cloudflare Workers / OpenNext** (`wrangler.toml`, `open-next.config.ts`), **Clerk**, **`@claracode/sdk`**, and scripts for local dev and Cloudflare deploys.
 
-**Note:** The monorepo already has `packages/cli` as `@clara/cli` (voice TUI). This package is `packages/create-clara-app` so the npm binary name stays `create-clara-app`.
+**Note:** The monorepo has `packages/cli` published on npm as **`clara`** (voice TUI and voice-converse default). This package is `packages/create-clara-app` so the npm binary name stays `create-clara-app`.
 
 ## Usage
 

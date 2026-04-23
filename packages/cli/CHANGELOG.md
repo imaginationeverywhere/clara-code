@@ -4,6 +4,9 @@
 
 ### Added
 
+- **Default: `/voice/converse` voice mode** — `clara` with no subcommand runs `playCanonicalGreeting` then an Ink screen for push-to-turn (Space to start `sox` capture, Space to stop and `postVoiceConverse` with the same `session_id`). TUI: `clara tui` (unchanged). `src/launch-voice-converse.ts`, `src/voice-converse-app.tsx`, `lib/canonical-greeting.ts` shared with `greet`.
+- **npm: public package name `clara`** — unscoped `name: "clara"`, `publishConfig.access: "public"`, `repository` in `package.json` for `npm i -g clara@latest`.
+
 - **`@imaginationeverywhere/clara-voice-client` + `greet` cache** — `clara greet` uses shared `readGreetingFromCache` / `writeGreetingToCache` and `CLARA_VOICE_URL` → `…/voice/respond` (see `packages/clara-voice-client/README.md`). Dependency: `workspace:*` on the new package.
 
 - **Cold-start "warming up…" UX (PR #3 of CLI-first MVP)** — `src/hooks/useVoice.ts` now exposes `warming: boolean`. A 4 s timer arms when `/api/voice/stt` is first called; if no response by then, the input bar in `src/tui.tsx` flips to `warming up Clara's voice model (cold start, up to ~2m)…` so first-hit-after-idle doesn't look frozen. The threshold is driven by cp-team's handoff note that Modal's A10G scales to zero and Whisper+XTTS cold-load takes 60–120 s. `Escape` still aborts mid-warmup. `phaseLabel()` signature gains a `warming` param. No new env vars; no CLI-side changes to auth (the `HERMES_API_KEY` swap happens at the backend edge per Option B).
@@ -19,7 +22,7 @@
   - `src/index.ts` — default action (no subcommand) launches the TUI so `clara` = `clara tui`; matches the `npx claracode@latest` zero-config AC.
   - `src/lib/gateway.ts` — returns a structured `GatewayResult` with `fixHint` when `gatewayUrl` is empty instead of crashing on `fetch("")`.
   - `src/lib/config-store.ts` — `backendUrl` field added to `ClaraConfig`.
-- **Test suite** — new `node --test` + `tsx` harness (`npm test -w @clara/cli`): 16 cases in `test/stt-client.test.ts` (5), `test/session-log.test.ts` (4), `test/audio-capture.test.ts` (2), `test/backend.test.ts` (5).
+- **Test suite** — new `node --test` + `tsx` harness (`npm test` from `packages/cli`, or `npm test -w clara` from repo root): 16 cases in `test/stt-client.test.ts` (5), `test/session-log.test.ts` (4), `test/audio-capture.test.ts` (2), `test/backend.test.ts` (5).
 
 ### Fixed
 
@@ -30,6 +33,7 @@
 
 ### Changed
 
-- **`clara greet` prefers `POST /voice/converse`** — `packages/cli/src/commands/greet.ts` calls `postVoiceConverse` from `@imaginationeverywhere/clara-voice-client` first; when the response includes `reply_audio_base64`, audio is played and the canonical greeting cache is updated. Optional `CLARA_VOICE_API_KEY` sets the Bearer token for the converse endpoint. If the converse path returns no audio or errors, the command **falls back** to legacy `POST …/voice/respond` (unchanged body) so existing deployments keep working until quikvoice is fully wired.
+- **`greet` implementation** — `src/commands/greet.ts` delegates to `playCanonicalGreeting` in `lib/canonical-greeting.ts`.
+- **`clara greet` prefers `POST /voice/converse`** — `greet` calls `postVoiceConverse` from `@imaginationeverywhere/clara-voice-client` first; when the response includes `reply_audio_base64`, audio is played and the canonical greeting cache is updated. Optional `CLARA_VOICE_API_KEY` sets the Bearer token for the converse endpoint. If the converse path returns no audio or errors, the command **falls back** to legacy `POST …/voice/respond` (unchanged body) so existing deployments keep working until quikvoice is fully wired.
 - `greet` and `tui` no longer embed default deployment URLs; set `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` (or `gatewayUrl` in `~/.clara/config.json` for TUI) before use.
 - Build no longer fails on `tsup: command not found` when the monorepo lockfile and `npm install` are in sync (see root `CHANGELOG.md`).

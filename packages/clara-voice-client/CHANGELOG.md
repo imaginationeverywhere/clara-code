@@ -4,7 +4,7 @@
 
 ### Added
 
-- Initial release: `postVoiceConverse` and `resolveConverseUrl` for `POST {base}/voice/converse` with offline-safe error handling; Node `readGreetingFromCache` / `writeGreetingToCache` with XDG or `~/.cache/clara-code` layout. Consumed by `@clara/cli` `greet` (see `packages/cli/CHANGELOG.md`).
+- Initial release: `postVoiceConverse` and `resolveConverseUrl` for `POST {base}/voice/converse` with offline-safe error handling; Node `readGreetingFromCache` / `writeGreetingToCache` with XDG or `~/.cache/clara-code` layout. Consumed by the `clara` package `greet` and default voice entry (see `packages/cli/CHANGELOG.md`).
 
 ## [Unreleased]
 

@@ -46,7 +46,7 @@ export function InstallSection() {
 									</span>
 								</div>
 								<div className="font-mono text-sm text-white/40">
-									<span className="text-white/25"># </span>npm install -g @clara/cli
+									<span className="text-white/25"># </span>npm install -g clara@latest
 								</div>
 							</div>
 

@@ -141,4 +141,4 @@ accordingly on this package), upgrading to Ink 7 is a drop-in change.
 - `audio-capture.test.ts` — contract tests for `stop()` / `cancel()`.
 - `backend.test.ts` — `resolveBackendUrl` priority and `voiceDevStubEnabled`.
 
-Run `npm test -w @clara/cli`.
+Run `npm test -w clara` (from the repo root; the workspace package name is `clara`).

@@ -32,7 +32,7 @@ export function CliDemo() {
 						<p className="h-7" />
 						<p>
 							<span className="text-brand-purple">⠹ </span>
-							<span className="text-white/45">Downloading @clara/cli@1.0.0...</span>
+							<span className="text-white/45">Downloading clara@1.0.0...</span>
 						</p>
 						<p className="text-white/30">  + @clara/core@1.0.0</p>
 						<p className="text-white/30">  + @clara/voice@1.0.0</p>

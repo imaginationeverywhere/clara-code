@@ -68,7 +68,7 @@ CLARA_SERVICE_TOKEN=   # Provided in your Clara Developer Dashboard
 Use the Clara CLI to submit your manifest for review:
 
 ```bash
-npx @clara/cli talent submit
+npx clara talent submit
 ```
 
 See the [developer documentation](https://developers.claracode.ai/docs) for the full submission guide.
