@@ -2,15 +2,13 @@ import { randomBytes } from "node:crypto";
 import { unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import { readGreetingFromCache, writeGreetingToCache } from "@imaginationeverywhere/clara-voice-client";
+import {
+	postVoiceConverse,
+	readGreetingFromCache,
+	writeGreetingToCache,
+} from "@imaginationeverywhere/clara-voice-client";
 import type { Command } from "commander";
 import { playAudioFile } from "../lib/play-audio-file.js";
-
-function voiceRespondUrl(): string | null {
-	const base = process.env.CLARA_VOICE_URL?.trim();
-	if (!base) return null;
-	return `${base.replace(/\/$/, "")}/voice/respond`;
-}
 
 function extensionForContentType(contentType: string | null): string {
 	if (!contentType) {
@@ -32,13 +30,21 @@ function extensionForContentType(contentType: string | null): string {
 	return ".bin";
 }
 
+/**
+ * Optional Bearer token for `POST /voice/converse` (quikvoice / cp-team).
+ */
+function voiceApiKey(): string | undefined {
+	const k = process.env.CLARA_VOICE_API_KEY?.trim();
+	return k && k.length > 0 ? k : undefined;
+}
+
 export function registerGreetCommand(program: Command): void {
 	program
 		.command("greet")
 		.description("Request Clara's voice greeting from the API and play the audio")
 		.action(async () => {
-			const url = voiceRespondUrl();
-			if (!url) {
+			const base = process.env.CLARA_VOICE_URL?.trim();
+			if (!base) {
 				console.error("clara greet: set CLARA_VOICE_URL to your voice service base URL");
 				process.exitCode = 1;
 				return;
@@ -57,9 +63,39 @@ export function registerGreetCommand(program: Command): void {
 				return;
 			}
 
+			const apiKey = voiceApiKey();
+			const converse = await postVoiceConverse(base, { text: "" }, { apiKey });
+
+			if (converse.ok && typeof converse.reply_audio_base64 === "string" && converse.reply_audio_base64.length > 0) {
+				const buf = Buffer.from(converse.reply_audio_base64, "base64");
+				const mimeHeader = (converse.mime_type ?? "audio/mpeg").split(";")[0]!.trim();
+				const outPath = join(
+					tmpdir(),
+					`clara-greet-converse-${randomBytes(8).toString("hex")}${extensionForContentType(mimeHeader)}`,
+				);
+				await writeFile(outPath, buf);
+				try {
+					await writeGreetingToCache({
+						bytes: buf,
+						contentType: mimeHeader.length > 0 ? mimeHeader : "audio/mpeg",
+					});
+				} catch {
+					// best-effort cache
+				}
+				try {
+					await playAudioFile(outPath);
+				} finally {
+					await unlink(outPath).catch(() => {});
+				}
+				return;
+			}
+
+			// Legacy: `POST …/voice/respond` (audio body) when /voice/converse has no audio or returns an error.
+			const respondUrl = `${base.replace(/\/$/, "")}/voice/respond`;
+
 			let res: Response;
 			try {
-				res = await fetch(url, {
+				res = await fetch(respondUrl, {
 					method: "POST",
 					headers: {
 						Accept: "audio/*,*/*;q=0.9",
@@ -75,6 +111,9 @@ export function registerGreetCommand(program: Command): void {
 				console.error("clara greet: network error");
 				if (err instanceof Error) {
 					console.error(err.message);
+				}
+				if (!converse.ok) {
+					console.error(`clara greet: (converse) ${converse.error}`);
 				}
 				process.exitCode = 1;
 				return;
@@ -100,6 +139,9 @@ export function registerGreetCommand(program: Command): void {
 					}
 				}
 				console.error(`clara greet: request failed (${res.status}): ${message}`);
+				if (!converse.ok) {
+					console.error(`clara greet: (converse) ${converse.error}`);
+				}
 				process.exitCode = 1;
 				return;
 			}
