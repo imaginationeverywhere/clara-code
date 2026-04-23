@@ -9,7 +9,7 @@ import userUsageRoutes from "./user-usage";
 import voiceRoutes from "./voice";
 import waitlistRoutes from "./waitlist";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 router.use("/checkout", checkoutRoutes);
 router.use("/onboarding", onboardingRoutes);

@@ -2,6 +2,22 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-23
+
+### Fixed
+
+- **Stray merge markers** — Removed `<<<<<<<` / `=======` / `>>>>>>>` blocks accidentally left in `package.json` (broke pnpm/JSON), `.claude/commands/CHANGELOG.md`, `.cursor/commands/CHANGELOG.md`, `queue-prompt.md`, and `branch-cleanup.md`. Reconciled `1.35.3` (commands bundle) with `1.35.2` (preserve remote branch named `origin` in `/branch-cleanup`); `package.json` `version` stays `0.1.4`.
+- **Backend — Clara Core subgraph** — `createClaraCoreSubgraph` in `backend/src/graphql/clara-core/server.ts` now declares an explicit `Promise<RequestHandler>` return type so `tsc` does not emit `TS2742` (inferred type depending on `@types/qs`).
+- **Backend — express `tsgo` (TS2742)** — `export const app` in `server.ts` is typed as `Application`; all `const router` route modules use `ReturnType<typeof Router>` so the root `tsgo` check does not require naming inferred types from `@types/express-serve-static-core`.
+
+### Added
+
+- **Claude / Cursor commands** — `/hotfix-to-main` (Mo-gated emergency merge to `main` + backport); shared **`.claude/commands/prompts/`** (and Cursor mirror) for setup and product-page prompt stubs; `node:test` **contract tests** in `.claude/commands/__tests__/session-start.contract.test.mjs` to guard `session-start.md` content. See `.claude/commands/CHANGELOG.md` and `.cursor/commands/CHANGELOG.md` **[1.35.3]**; directory notes in `.claude/CHANGELOG.md` **[1.35.3]**.
+
+### Changed
+
+- **Auto Claude + platform command docs** — Task JSON examples in `ac-*.md` use **`.internal/tasks.json`** instead of `.auto-claude/tasks.json` (aligns with `.internal/plans/` and planning-task paths). **`/review-code` v3.0.0** pulls first and auto-detects open `prompt/*` PRs. Mirrored updates under `.claude/commands/` and `.cursor/commands/` (sync, merge, migrations, project lifecycle, design, and pickup/dispatch). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-23**.
+
 ## [Unreleased] - 2026-04-19
 
 ### Fixed

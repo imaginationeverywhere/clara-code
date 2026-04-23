@@ -1,5 +1,11 @@
 # Changelog
 
+## [Unreleased] - 2026-04-23
+
+### Added (cross-reference)
+
+- **Clara Code boilerplate commands** — `/hotfix-to-main`, `commands/prompts/` template library, `session-start` contract test. No `docs/*` rewrites in that batch; see root `CHANGELOG.md` **\[Unreleased\] - 2026-04-23** and `.claude/commands/CHANGELOG.md` **[1.35.3]**.
+
 ## [Unreleased] - 2026-04-19
 
 ### Added

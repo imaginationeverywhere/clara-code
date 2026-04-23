@@ -1,351 +1,96 @@
-# Merge PRs to Main
+# /merge-to-main — Release promotion (develop → main ONLY)
 
-Review and merge one or more pull requests into the main branch.
+**Mo-authorized release command.** This command exists for ONE purpose: promote `develop` to `main`.
+
+## Hard rules (non-negotiable)
+
+1. **ONLY accepts one shape of PR:** base = `main`, head = `develop`. Anything else is REJECTED.
+2. **Requires explicit Mo authorization in-session** for the specific repo. Not standing authorization. Every invocation is a new ask.
+3. **Not for hotfixes.** Hotfixes use `/hotfix-to-main`.
+4. **Not for feature PRs.** Feature PRs → `develop` via `/merge-to-develop`.
 
 ## Usage
 
 ```bash
-# By PR numbers
-/merge-to-main [PR_NUMBERS]
-/merge-to-main 123
-/merge-to-main 123 456 789
-
-# By GitHub URL - analyzes ALL open PRs
-/merge-to-main https://github.com/org/repo/pulls
-/merge-to-main https://github.com/imaginationeverywhere/ppsv-charities/pulls
-
-# Auto-find approved PRs
-/merge-to-main --all-approved
-
-# Review only (no merge)
-/merge-to-main --review-only https://github.com/org/repo/pulls
+# Mo-invoked in session:
+/merge-to-main [repo-name-or-url]
+/merge-to-main imaginationeverywhere/quikvoice
+/merge-to-main https://github.com/imaginationeverywhere/quikvoice
 ```
-
-## Arguments
-
-- `PR_NUMBERS` - Space-separated list of PR numbers to review and merge
-- `URL` - GitHub pulls URL (e.g., `https://github.com/org/repo/pulls`) - fetches ALL open PRs
-- `--all-approved` - Find and merge all approved PRs targeting main
-- `--review-only` - Analyze and report on PRs without merging any
-- `--dry-run` - Review PRs without merging
-- `--squash` - Squash commits when merging (default)
-- `--no-squash` - Create merge commit instead of squashing
 
 ## Workflow
 
-### Step 0: Parse Input (URL or PR Numbers)
+### Step 0: Authorization gate
 
-#### If GitHub URL provided:
-```bash
-# Extract owner and repo from URL
-# URL: https://github.com/imaginationeverywhere/ppsv-charities/pulls
-# → owner: imaginationeverywhere
-# → repo: ppsv-charities
+Confirm in session:
+- **"Did Mo explicitly authorize this `develop → main` promotion for this repo in THIS session?"**
+- If no → STOP. Reply with "Release promotion requires explicit Mo authorization. Not proceeding."
+- If yes → continue.
 
-# Fetch ALL open PRs targeting main
-gh pr list --repo [owner]/[repo] --base main --state open \
-  --json number,title,state,mergeable,reviewDecision,headRefName,baseRefName,commits,additions,deletions,changedFiles,statusCheckRollup,reviews,labels
-
-# Also fetch PRs targeting develop that may need attention
-gh pr list --repo [owner]/[repo] --state open \
-  --json number,title,baseRefName,reviewDecision,mergeable
-```
-
-### Step 1: Fetch PR Information
-
-For each PR number provided (or from URL):
+### Step 1: Base branch gate
 
 ```bash
-# Get PR details
-gh pr view [PR_NUMBER] --json number,title,state,mergeable,reviewDecision,headRefName,baseRefName,commits,additions,deletions,changedFiles
-
-# Get PR diff for review
-gh pr diff [PR_NUMBER]
-
-# Get PR checks status
-gh pr checks [PR_NUMBER]
+# Find the develop → main PR (there should be exactly one)
+gh pr list --repo [owner]/[repo] --base main --head develop --state open \
+  --json number,title,mergeable,reviewDecision,headRefName,baseRefName
 ```
 
-### Step 2: Review Each PR
+Validate:
+- Exactly ONE open PR where `baseRefName == "main"` AND `headRefName == "develop"`
+- If zero → create one: `gh pr create --base main --head develop --title "release: develop → main" --body "Release PR. Authorized by Mo in session."`
+- If more than one matching PR → ABORT, flag to Mo (indicates bad repo state)
+- If any OTHER open PR targets main (not from develop) → FLAG in report but don't merge them; those belong to `/hotfix-to-main`
 
-For each PR, analyze:
+### Step 2: Pre-merge checks
 
-1. **Merge Target Validation**
-   - Confirm base branch is `main`
-   - If not targeting main, warn and skip
+For the develop→main PR:
+- All CI checks must pass
+- No merge conflicts (`mergeable == MERGEABLE`)
+- If either fails → STOP, report to Mo, do not merge
 
-2. **Status Checks**
-   - All CI checks must pass
-   - No failing or pending required checks
+### Step 3: Diff summary
 
-3. **Review Status**
-   - Must have at least one approval
-   - No changes requested
-   - No pending required reviews
+Produce a short report Mo can scan:
+- Commits count being promoted
+- Files changed, lines +/−
+- CHANGELOG.md / version-bump entries detected
+- Breaking changes flagged in commit messages
 
-4. **Merge Conflicts**
-   - Check `mergeable` status
-   - If conflicts exist, report and skip
+### Step 4: Final confirmation
 
-5. **Code Review**
-   - Review the diff for:
-     - Breaking changes
-     - Security concerns
-     - Missing tests
-     - Documentation updates needed
+Ask Mo: **"Ready to promote develop → main on [repo]? Say yes to execute."**
 
-### Step 3: Generate Review Report
-
-```markdown
-## PR Merge Review Report
-
-### PR #[NUMBER]: [TITLE]
-- **Branch:** [head] → main
-- **Status:** [APPROVED/PENDING/BLOCKED]
-- **Checks:** [PASSING/FAILING]
-- **Mergeable:** [YES/NO]
-- **Changes:** +[additions] -[deletions] ([files] files)
-- **Review Notes:** [Any concerns or observations]
-
-### Summary
-- Ready to merge: [X] PRs
-- Blocked: [Y] PRs
-- Skipped (wrong target): [Z] PRs
-```
-
-### Step 4: Merge Approved PRs
-
-For each PR that passes all checks:
+Only on explicit "yes":
 
 ```bash
-# Squash merge (default)
-gh pr merge [PR_NUMBER] --squash --delete-branch
-
-# Or merge commit
-gh pr merge [PR_NUMBER] --merge --delete-branch
+gh pr merge [PR_NUMBER] --merge --repo [owner]/[repo]
+# NO --delete-branch — develop stays; it's long-lived
 ```
 
-### Step 5: Post-Merge Actions
-
-After successful merges:
+### Step 5: Post-merge
 
 ```bash
-# Update local main
 git fetch origin main
-git checkout main
-git pull origin main
-
-# Verify merge
-git log --oneline -5
+git checkout main && git pull origin main
+# Tag only if Mo directs: git tag v[X.Y.Z] && git push origin v[X.Y.Z]
 ```
 
-## Example Output
+Report back: PR # merged, commit SHA now on main, link to release diff.
 
-```
-Reviewing 3 PRs for merge to main...
+## REJECTS
 
-PR #123: feat: Add user authentication
-  ✅ Targeting main
-  ✅ All checks passing (4/4)
-  ✅ Approved by 2 reviewers
-  ✅ No merge conflicts
-  ✅ Ready to merge
+- PRs where base ≠ main
+- PRs where head ≠ develop
+- Any invocation without explicit in-session Mo authorization
+- Hotfix branches (those use `/hotfix-to-main`)
+- Any flag to bypass checks (`--force`, `--no-verify`, etc.)
 
-PR #124: fix: Database connection timeout
-  ✅ Targeting main
-  ✅ All checks passing (4/4)
-  ✅ Approved by 1 reviewer
-  ✅ No merge conflicts
-  ✅ Ready to merge
+## Related
 
-PR #125: docs: Update README
-  ❌ Targeting develop (not main)
-  ⏭️ Skipping - wrong target branch
+- `/merge-to-develop` — feature branches & agent PRs → develop (normal flow)
+- `/hotfix-to-main` — emergency fixes → main directly (Mo-approved only)
+- `/repo-cleanup` — merge agent worktree PRs to develop + cleanup
 
-Summary:
-  Ready: 2 PRs (#123, #124)
-  Blocked: 0 PRs
-  Skipped: 1 PR (#125)
+## Why this exists
 
-Proceed with merge? [Y/n]
-
-Merging PR #123... ✅ Merged
-Merging PR #124... ✅ Merged
-
-All merges complete. Main branch updated.
-```
-
-## Detailed Review for Blocked PRs
-
-When a PR cannot be merged, generate a detailed review report:
-
-### Blocked PR Review Template
-
-```markdown
-## 🔍 Detailed Review: PR #[NUMBER]
-
-### Basic Info
-- **Title:** [TITLE]
-- **Author:** @[author]
-- **Branch:** [head] → main
-- **Created:** [date]
-- **Last Updated:** [date]
-
-### ❌ Blocking Issues
-
-#### 1. CI/CD Status
-| Check | Status | Details |
-|-------|--------|---------|
-| build | ❌ Failed | Error in src/components/Auth.tsx:45 |
-| tests | ⏳ Pending | Waiting for build |
-| lint | ✅ Passed | - |
-
-**Required Action:** Fix build error before merge
-
-#### 2. Review Status
-- **Approvals:** 0/1 required
-- **Changes Requested:** 1
-  - @reviewer1: "Please add error handling for edge case"
-- **Pending Reviews:** @reviewer2 (assigned 2 days ago)
-
-**Required Action:** Address review feedback and get approval
-
-#### 3. Merge Conflicts
-**Conflicting Files:**
-- `src/utils/helpers.ts` (modified in both branches)
-- `package.json` (version conflict)
-
-**Resolution Steps:**
-```bash
-gh pr checkout [NUMBER]
-git merge main
-# Resolve conflicts in:
-#   - src/utils/helpers.ts
-#   - package.json
-git add .
-git commit -m "Resolve merge conflicts with main"
-git push
-```
-
-#### 4. Code Quality Observations
-- **Large PR:** 847 lines changed (consider splitting)
-- **Missing Tests:** New `AuthService` class has no tests
-- **Documentation:** Public API changes not documented
-
-### 📋 Action Items Checklist
-- [ ] Fix CI build error in Auth.tsx:45
-- [ ] Address @reviewer1's feedback on error handling
-- [ ] Resolve 2 merge conflicts
-- [ ] Add tests for AuthService
-- [ ] Update API documentation
-
-### 🔗 Quick Links
-- [View PR](https://github.com/[owner]/[repo]/pull/[NUMBER])
-- [View Checks](https://github.com/[owner]/[repo]/pull/[NUMBER]/checks)
-- [View Files Changed](https://github.com/[owner]/[repo]/pull/[NUMBER]/files)
-```
-
-### URL Analysis Output Example
-
-```markdown
-## Repository Analysis: imaginationeverywhere/ppsv-charities
-
-**URL:** https://github.com/imaginationeverywhere/ppsv-charities/pulls
-**Analysis Date:** 2025-12-29
-
-### Summary
-| Category | Count | PRs |
-|----------|-------|-----|
-| ✅ Ready to Merge | 2 | #45, #48 |
-| ⏳ Needs Review | 3 | #42, #44, #47 |
-| ❌ Has Issues | 2 | #41, #46 |
-| ⚠️ Wrong Target | 1 | #43 (targets develop) |
-
----
-
-### ✅ Ready to Merge (2 PRs)
-
-#### PR #45: feat: Add donation tracking
-- **Status:** All checks passing, 2 approvals
-- **Changes:** +234 -12 (8 files)
-- **Action:** Ready for `/merge-to-main 45`
-
-#### PR #48: fix: Payment processing timeout
-- **Status:** All checks passing, 1 approval
-- **Changes:** +45 -23 (3 files)
-- **Action:** Ready for `/merge-to-main 48`
-
----
-
-### ⏳ Needs Review (3 PRs)
-
-#### PR #42: feat: User dashboard redesign
-- **Blocking:** Awaiting review (no reviewers assigned)
-- **Changes:** +567 -89 (24 files)
-- **Suggestion:** Assign reviewers: `gh pr edit 42 --add-reviewer @team-lead`
-
-#### PR #44: chore: Update dependencies
-- **Blocking:** 1 approval needed (has 0)
-- **Changes:** +89 -76 (2 files)
-- **Suggestion:** Request review from maintainer
-
-#### PR #47: docs: API documentation update
-- **Blocking:** Review in progress
-- **Changes:** +123 -0 (5 files)
-- **Suggestion:** Follow up with @reviewer
-
----
-
-### ❌ Has Issues (2 PRs)
-
-[Detailed review for PR #41]
-[Detailed review for PR #46]
-
----
-
-### Recommended Actions
-
-1. **Merge ready PRs:**
-   ```bash
-   /merge-to-main 45 48
-   ```
-
-2. **Assign reviewers to unreviewed PRs:**
-   ```bash
-   gh pr edit 42 --add-reviewer @team-lead
-   ```
-
-3. **Fix issues in blocked PRs:**
-   - PR #41: Resolve merge conflicts
-   - PR #46: Fix failing CI checks
-```
-
-## Safety Checks
-
-- Never force merge PRs with failing checks
-- Always verify target branch is main
-- Require at least one approval
-- Check for merge conflicts before attempting merge
-- Delete source branch after successful merge
-- Report any PRs that couldn't be merged
-
-## Find All Approved PRs
-
-To find all PRs ready to merge to main:
-
-```bash
-gh pr list --base main --state open --json number,title,reviewDecision,mergeable | jq '.[] | select(.reviewDecision == "APPROVED" and .mergeable == "MERGEABLE")'
-```
-
-## Integration with CI/CD
-
-After merging to main:
-- Production deployment may be triggered automatically
-- Monitor deployment status
-- Be prepared to rollback if issues arise
-
-## Related Commands
-
-- `/merge-to-develop` - Merge PRs to develop branch
-- `/create-pr` - Create new pull requests
-- `/pr-status` - Check PR status without merging
+Locked 2026-04-23 per Mo: "One major rule for any repo I must explicitly give permission to merge develop into main." See memory `feedback-develop-to-main-merge-requires-mo-permission.md`.

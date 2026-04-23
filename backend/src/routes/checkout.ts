@@ -5,7 +5,7 @@ import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Subscription } from "@/models/Subscription";
 import { logger } from "@/utils/logger";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 function getStripe(): Stripe | null {
 	const key = process.env.STRIPE_SECRET_KEY;

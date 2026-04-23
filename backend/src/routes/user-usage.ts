@@ -5,7 +5,7 @@ import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 router.get(
 	"/usage",

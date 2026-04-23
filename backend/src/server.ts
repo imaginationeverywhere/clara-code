@@ -5,7 +5,7 @@ import { expressMiddleware } from "@apollo/server/express4";
 import { clerkMiddleware, getAuth } from "@clerk/express";
 import compression from "compression";
 import cors from "cors";
-import express from "express";
+import express, { type Application } from "express";
 import helmet from "helmet";
 import { testConnection } from "@/config/database";
 import {
@@ -25,7 +25,7 @@ import { clerkWebhookHandler } from "@/routes/webhooks-clerk";
 import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 import { logger } from "@/utils/logger";
 
-export const app = express();
+export const app: Application = express();
 const PORT = process.env.PORT || 3001;
 
 const talentRegistryService = getTalentRegistryService();

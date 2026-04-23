@@ -17,7 +17,7 @@ import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.servic
 import { logger } from "@/utils/logger";
 import { silenceWav } from "@/utils/silence-wav";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 function voiceDevStubEnabled(): boolean {
 	const v = process.env.CLARA_VOICE_DEV_STUB;

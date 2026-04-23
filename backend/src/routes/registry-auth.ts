@@ -5,7 +5,7 @@ import { Subscription } from "@/models/Subscription";
 import { logger } from "@/utils/logger";
 import { fetchNpmTokenFromVerdaccio } from "@/utils/registry-token";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 router.use(requireAuth());
 
 type RegistryPackage = "@claracode/sdk" | "@claracode/marketplace-sdk";

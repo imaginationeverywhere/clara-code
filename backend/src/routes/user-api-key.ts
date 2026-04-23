@@ -7,7 +7,7 @@ import { Subscription } from "@/models/Subscription";
 import { type ApiKeyTier, generateApiKey } from "@/utils/api-key";
 import { logger } from "@/utils/logger";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 router.use(requireAuth());
 
 router.get("/api-key", async (req: AuthenticatedRequest, res: Response): Promise<void> => {

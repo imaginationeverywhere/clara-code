@@ -4,7 +4,7 @@ import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Agent, type AgentModelTier, type AgentRole } from "@/models/Agent";
 import { logger } from "@/utils/logger";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 const NAME_REGEX = /^[a-zA-Z0-9 -]{1,40}$/;
 

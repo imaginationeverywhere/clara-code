@@ -3,7 +3,7 @@ import { waitlistLimiter } from "@/middleware/rate-limit";
 import { WaitlistEntry } from "@/models/WaitlistEntry";
 import { logger } from "@/utils/logger";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 // POST /api/waitlist — capture waitlist signup
 router.post("/", waitlistLimiter, async (req: Request, res: Response): Promise<void> => {

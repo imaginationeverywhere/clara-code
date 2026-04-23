@@ -1,11 +1,17 @@
-# /open-heru-tabs — Open Heru Team Tabs in Local Swarm + QCS1
+# /open-heru-tabs — Open LOCAL Claude Code Team Sessions
 
-Standardizes opening Claude Code team sessions across the local `swarm` tmux session (on Mo's MacBook) and the `heru-2` tmux session on QCS1 (where all project code lives). One command, multiple teams, idempotent.
+Opens **local** Claude Code sessions for one or more teams in the `swarm` tmux session on Mo's MacBook. Each team gets a pane that `cd`s into its LOCAL project directory under `/Volumes/X10-Pro/Native-Projects/clients/<project>` (or equivalent) and launches `claude`.
 
-**Architecture:**
-- **Local `swarm` session** (MacBook) — coordination + split-pane views into QCS1 team windows
-- **QCS1 `heru-2` session** (`ayoungboy@100.113.53.80` via `ssh quik-cloud`) — where `claude` actually runs in each project dir
-- **One-to-many mapping:** one local `heru-N` window can host multiple split panes, each SSH-attached to a different QCS1 team window
+**Architecture (locked 2026-04-19, see `feedback-open-heru-tabs-vs-open-qcs1`):**
+- **`/open-heru-tabs` → LOCAL Claude Code sessions.** The team (Mo + agents) writes prompts here, on this Mac. Zero SSH. Zero QCS1 interaction.
+- **`/open-qcs1` → REMOTE QCS1 tmux windows** for Cursor agents to EXECUTE the prompts written locally. Separate command, separate layer.
+
+**Do NOT:**
+- SSH into QCS1 from panes opened by this command
+- Attach local panes to QCS1's `heru-2` tmux session
+- Run `claude` on QCS1 as part of this command
+
+These are the exact mistakes the memory corrects. If a future version of this doc re-describes SSH behavior, the memory supersedes and this doc must be fixed.
 
 ## Usage
 
@@ -30,23 +36,24 @@ Standardizes opening Claude Code team sessions across the local `swarm` tmux ses
 | `--no-claude` | Don't auto-start `claude` in QCS1 windows. Leaves bare shell at project dir. |
 | `--rename` | When exactly 1 team is passed, rename the local window to the team name instead of `heru-N`. |
 
-## Team → Project Mapping
+## Team → Project Mapping (LOCAL paths on Mo's Mac)
 
-| Code | Project | QCS1 Path |
-|------|---------|-----------|
-| `ST` | seeking-talent | `~/projects/seeking-talent` |
-| `WCR` | world-cup-ready | `~/projects/world-cup-ready` |
-| `QCR` | quikcarrental | `~/projects/quikcarrental` |
-| `FMO` | fmo | `~/projects/fmo` |
-| `QN` | quiknation | `~/projects/quiknation` |
-| `QCarry` | quikcarry | `~/projects/quikcarry` |
-| `TRK` | trackit | `~/projects/trackit` |
-| `KLS` | kingluxuryservices-v2 | `~/projects/kingluxuryservices-v2` |
-| `S962` | site962 | `~/projects/site962` |
-| `CA` | claraagents | `~/projects/claraagents` |
-| `CC` | clara-code | `~/projects/clara-code` |
-| `PKGS` | quik-nation-packages | `~/projects/quik-nation-packages` |
-| `BP` | quik-nation-ai-boilerplate | `~/projects/quik-nation-ai-boilerplate` |
+| Code | Project | Local Path |
+|------|---------|------------|
+| `ST` | seeking-talent | `/Volumes/X10-Pro/Native-Projects/clients/seeking-talent` |
+| `WCR` | world-cup-ready | `/Volumes/X10-Pro/Native-Projects/clients/world-cup-ready` |
+| `QCR` | quikcarrental | `/Volumes/X10-Pro/Native-Projects/Quik-Nation/quikcarrental` |
+| `FMO` | fmo | `/Volumes/X10-Pro/Native-Projects/clients/fmo` |
+| `QN` | quiknation | `/Volumes/X10-Pro/Native-Projects/Quik-Nation/quiknation` |
+| `QCarry` | quikcarry | `/Volumes/X10-Pro/Native-Projects/Quik-Nation/quikcarry` |
+| `TRK` | trackit | `/Volumes/X10-Pro/Native-Projects/clients/trackit` |
+| `TRK_POC` | trackit-poc | `/Volumes/X10-Pro/Native-Projects/clients/trackit-poc` (same team roster as TRK) |
+| `KLS` | kingluxuryservices | `/Volumes/X10-Pro/Native-Projects/clients/kls` |
+| `S962` | site962 | `/Volumes/X10-Pro/Native-Projects/Quik-Nation/site962` |
+| `CA` | claraagents | `/Volumes/X10-Pro/Native-Projects/AI/claraagents` |
+| `CC` | clara-code | `/Volumes/X10-Pro/Native-Projects/AI/clara-code` |
+| `PKGS` | auset-packages | `/Volumes/X10-Pro/Native-Projects/AI/auset-packages` |
+| `BP` | quik-nation-ai-boilerplate | `/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate` |
 
 Codes are **case-insensitive** (`st`, `ST`, `St` all map to ST).
 
@@ -99,6 +106,7 @@ resolve_path() {
     QN)     echo "~/projects/quiknation" ;;
     QCARRY) echo "~/projects/quikcarry" ;;
     TRK)    echo "~/projects/trackit" ;;
+    TRK_POC|TRKPOC|TRK-POC) echo "~/projects/trackit-poc" ;;
     KLS)    echo "~/projects/kingluxuryservices-v2" ;;
     S962)   echo "~/projects/site962" ;;
     CA)     echo "~/projects/claraagents" ;;

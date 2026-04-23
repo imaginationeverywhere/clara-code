@@ -8,7 +8,7 @@ import { ApiKey } from "@/models/ApiKey";
 import { sendEmail } from "@/services/email.service";
 import { logger } from "@/utils/logger";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 // All key routes require authentication
 router.use(requireAuth());

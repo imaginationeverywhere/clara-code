@@ -3,7 +3,7 @@ import { type ClaraModelName, DEFAULT_MODEL, MODELS } from "@/config/models";
 import { logger } from "@/utils/logger";
 import { resolveRequestTier } from "@/utils/request-tier";
 
-const router = Router();
+const router: ReturnType<typeof Router> = Router();
 
 router.get("/", async (req, res: Response): Promise<void> => {
 	try {

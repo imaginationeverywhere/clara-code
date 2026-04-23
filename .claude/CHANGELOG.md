@@ -1,5 +1,15 @@
 # .claude Directory Changelog
 
+## [1.35.3] - 2026-04-23
+
+### Added
+
+- **Commands** — `/hotfix-to-main`; `commands/prompts/` template library; `commands/__tests__/session-start.contract.test.mjs` for `session-start.md` contracts. Full detail: `.claude/commands/CHANGELOG.md` **[1.35.3]**.
+
+### Changed
+
+- **Commands** — Auto Claude local task file path **`.internal/tasks.json`** in `ac-*.md` (replaces `.auto-claude/`); `review-code` v3.0.0 (prompt PR detection + pull-first); large mirrored refresh under `.cursor/commands/`. See `.claude/commands/CHANGELOG.md` **[1.35.3]**.
+
 ## [1.35.2] - 2026-04-16
 
 ### Added

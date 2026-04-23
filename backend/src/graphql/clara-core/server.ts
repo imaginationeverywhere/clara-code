@@ -1,13 +1,14 @@
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { buildSubgraphSchema } from "@apollo/subgraph";
+import type { RequestHandler } from "express";
 
 import type { ClaraCoreContext } from "@/graphql/clara-core/context";
 import type { ApiKeyRequest } from "@/middleware/api-key-auth";
 import { resolvers } from "./resolvers";
 import { typeDefs } from "./schema";
 
-export async function createClaraCoreSubgraph() {
+export async function createClaraCoreSubgraph(): Promise<RequestHandler> {
 	const server = new ApolloServer({
 		schema: buildSubgraphSchema({ typeDefs, resolvers: resolvers as never }),
 		introspection: true,
