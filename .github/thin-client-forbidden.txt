@@ -1,0 +1,74 @@
+# Thin-client forbidden marker list
+# One pattern per line. Lines starting with # are comments.
+# CI scans every diff to develop for these strings. Any match blocks the merge.
+# Add new markers here as new voice IDs, persona markers, or model configs are minted.
+#
+# WHY THIS FILE EXISTS:
+# Clara Code (CLI, desktop IDE, website) is a thin HTTP client.
+# All intelligence — personas, prompts, model routing, voice IDs, culture packs —
+# lives server-side at api.claracode.ai / api.claraagents.com.
+# Shipping intelligence in the client would expose the moat.
+# See CONTRIBUTING.md §Thin-client discipline.
+
+# ── Persona / heritage markers ──────────────────────────────────────────────
+Villarosa
+villarosa
+AAVE
+culture.pack
+culture_pack
+slang.rule
+slang_rule
+VSL_slang
+vsl_slang
+
+# ── System prompts / prompt templates ───────────────────────────────────────
+system_prompt
+systemPrompt
+You are Clara
+You are an AI assistant
+SOUL.md
+soul_config
+persona_config
+personaConfig
+
+# ── Model IDs / provider routing ────────────────────────────────────────────
+claude-3
+claude-opus
+claude-sonnet
+claude-haiku
+gpt-4
+gpt-3.5
+deepseek-
+qwen-
+llama-3
+maverick-
+openrouter.ai/api
+api.openai.com
+api.anthropic.com
+
+# ── Voice IDs / TTS catalog ──────────────────────────────────────────────────
+voice_id
+voiceId
+elevenlabs.io
+cartesia.ai
+play.ht
+rime.ai
+
+# ── Brain Proxy / agent internals ────────────────────────────────────────────
+brain_proxy
+brainProxy
+brain.proxy
+agent_soul
+agentSoul
+hermes-gateway
+hermes.gateway
+HERMES_GATEWAY_URL
+modal.run
+
+# ── Subscription-tier decisions (server-side only) ───────────────────────────
+feature_gate
+featureGate
+tier.==
+==.tier
+plan.*free.*gate
+plan.*pro.*gate

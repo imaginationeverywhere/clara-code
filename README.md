@@ -73,6 +73,18 @@ https://github.com/mojaray2k/clara-code
 
 ---
 
+## Clara Code — Open CLI, Closed Intelligence
+
+`npm install -g clara` installs the Clara Code CLI. The source is public. That is intentional and safe.
+
+The CLI is a thin HTTP client. It captures audio, sends it to `api.claracode.ai`, plays back the response. The intelligence — Clara's persona, voice, model routing, culture — lives entirely server-side. Publishing the client source exposes nothing proprietary, because the proprietary layer never leaves our infrastructure.
+
+This is the same model as Claude Code (`npm install -g @anthropic-ai/claude-code`), the Stripe CLI, and the Vercel CLI: the tool is open, the platform is the product. A valid subscription is required to make the API respond. Without it, the CLI is an empty shell.
+
+See `CONTRIBUTING.md` for the full thin-client discipline rules that govern what may and may not appear in this repository's client-side code.
+
+---
+
 ## About the Author
 
 **Amen Ra** — CTO and co-founder of [Quik Nation, Inc.](https://quiknation.com) Bethune-Cookman University graduate. 18+ years in enterprise IT. Builder of voice-first AI products.

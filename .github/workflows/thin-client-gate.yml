@@ -1,0 +1,121 @@
+name: Thin-client gate
+
+# Scans every PR diff targeting develop for intelligence that must live server-side.
+# Any match in CLI / desktop / frontend source blocks the merge.
+# Extend .github/thin-client-forbidden.txt as new markers are minted.
+
+on:
+  pull_request:
+    branches: [develop, main]
+    paths:
+      - "packages/cli/**"
+      - "desktop/**"
+      - "frontend/**"
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  scan:
+    name: Thin-client intelligence scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+
+      - name: Fetch base branch
+        run: git fetch origin ${{ github.base_ref }}
+
+      - name: Build diff of client-only files
+        id: diff
+        run: |
+          git diff origin/${{ github.base_ref }}...HEAD \
+            -- "packages/cli/**" "desktop/**" "frontend/**" \
+            > /tmp/client-diff.txt
+          LINES=$(wc -l < /tmp/client-diff.txt)
+          echo "diff_lines=$LINES" >> "$GITHUB_OUTPUT"
+          echo "Diff captured: $LINES lines"
+
+      - name: Load forbidden marker list
+        id: load
+        run: |
+          # Strip comments and blank lines
+          grep -v '^\s*#' .github/thin-client-forbidden.txt \
+            | grep -v '^\s*$' \
+            > /tmp/forbidden-clean.txt
+          COUNT=$(wc -l < /tmp/forbidden-clean.txt)
+          echo "marker_count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "Loaded $COUNT forbidden markers"
+
+      - name: Scan diff for forbidden markers
+        id: scan
+        run: |
+          HITS=""
+          while IFS= read -r MARKER; do
+            # Only scan added lines (starting with +), not removed lines or context
+            MATCH=$(grep -n "^+" /tmp/client-diff.txt | grep -F "$MARKER" || true)
+            if [ -n "$MATCH" ]; then
+              HITS="${HITS}\n### \`${MARKER}\`\n\`\`\`\n${MATCH}\n\`\`\`\n"
+            fi
+          done < /tmp/forbidden-clean.txt
+
+          if [ -n "$HITS" ]; then
+            echo "violations_found=true" >> "$GITHUB_OUTPUT"
+            # Write hits to file for the PR comment step
+            printf '%b' "$HITS" > /tmp/violations.txt
+            echo ""
+            echo "VIOLATIONS FOUND:"
+            cat /tmp/violations.txt
+          else
+            echo "violations_found=false" >> "$GITHUB_OUTPUT"
+            echo "CLEAN — no forbidden markers in client diff."
+          fi
+
+      - name: Comment on PR (violations)
+        if: steps.scan.outputs.violations_found == 'true'
+        uses: actions/github-script@60a0d83039c74a4aee543508d2ffcb1c3799cdea
+        with:
+          script: |
+            const fs = require('fs');
+            const violations = fs.readFileSync('/tmp/violations.txt', 'utf8');
+            const body = `## ❌ Thin-client gate: intelligence found in client source
+
+The Clara Code rule: **CLI / desktop / website are thin HTTP clients. All intelligence lives server-side at \`api.claracode.ai\` / \`api.claraagents.com\`.**
+
+The following forbidden markers were added in this PR:
+
+${violations}
+
+**Required action:** move the flagged logic to the backend API. The client must call an endpoint, not embed the intelligence directly.
+
+See \`CONTRIBUTING.md\` §Thin-client discipline and \`.github/thin-client-forbidden.txt\`.
+
+> "The API is the moat. The API is the IP."`;
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body,
+            });
+
+      - name: Fail build on violations
+        if: steps.scan.outputs.violations_found == 'true'
+        run: |
+          echo ""
+          echo "╔══════════════════════════════════════════════════════════╗"
+          echo "║  THIN-CLIENT GATE: MERGE BLOCKED                        ║"
+          echo "║  Intelligence detected in client source.                 ║"
+          echo "║  Move flagged logic server-side before merging.          ║"
+          echo "║  See .github/thin-client-forbidden.txt for the list.    ║"
+          echo "╚══════════════════════════════════════════════════════════╝"
+          exit 1
+
+      - name: Pass confirmation
+        if: steps.scan.outputs.violations_found == 'false'
+        run: |
+          echo "✅ Thin-client gate PASSED — no forbidden markers in client diff."
