@@ -10,4 +10,4 @@
 
 ### Added
 
-- _No entries yet._
+- `converse-browser` subpath export: `postVoiceConverse` and types only, for Tauri `webview` and other browser bundles that must not import Node `fs` (greeting cache remains on the main entry).

@@ -1,7 +1,10 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-	entry: ["src/index.ts"],
+	entry: {
+		index: "src/index.ts",
+		"converse-browser": "src/converse-browser.ts",
+	},
 	format: ["esm"],
 	dts: true,
 	outDir: "dist",

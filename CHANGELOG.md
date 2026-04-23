@@ -6,7 +6,17 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Clara — desktop, marketing, and release** — Tauri `desktop/` two-column shell with voice side panel (bundled `converse-browser`, `/voice/converse` greeting + PTT; `docs/distribution-pipeline.md` and `.github/workflows/*`). Marketing: `VoiceGreeting` TTS autoplay with tap-to-play on autoplay block; `InstallSection` `npm install -g clara@latest`, `NEXT_PUBLIC_CLARA_DESKTOP_DMG_URL` for the macOS download CTA (`frontend/CHANGELOG.md`, `frontend/.env.example`). `packages/clara-voice-client`: `./converse-browser` export for webview-only builds.
+
+### Changed
+
+- **Monorepo version** — root `package.json` `0.2.1` → **`0.2.2`**.
+
 - **Review** — `docs/review/20260421-pr55-clara-distribution-review.md` (PR #55 clara-distribution: coverage findings, `InstallSection` beta path, `packages/clara/bin/clara.mjs` shim). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
+### Added (cross-reference: directory changelogs)
+
+- See **`frontend/CHANGELOG.md`**, **`packages/clara-voice-client/CHANGELOG.md`**, **`docs/CHANGELOG.md`**, **`.github/CHANGELOG.md`**, and **`desktop/CHANGELOG.md`**.
 
 ### Added (prompts)
 

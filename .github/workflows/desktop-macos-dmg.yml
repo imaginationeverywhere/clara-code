@@ -1,0 +1,61 @@
+# Reproducible Tauri (macOS) build — uploads .dmg as a CI artifact (R2 + marketing link is a separate step).
+
+name: Desktop (macOS dmg)
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - "desktop/**"
+      - "packages/clara-voice-client/**"
+      - ".github/workflows/desktop-macos-dmg.yml"
+  pull_request:
+    paths:
+      - "desktop/**"
+      - "packages/clara-voice-client/**"
+      - ".github/workflows/desktop-macos-dmg.yml"
+  workflow_dispatch: {}
+
+concurrency:
+  group: desktop-dmg-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@1e80f3fd79adfb34ff8149ff434c7ae99f0f91d4
+        with:
+          toolchain: stable
+
+      - name: Build clara-voice-client and desktop
+        run: |
+          set -euo pipefail
+          cd packages/clara-voice-client
+          npm install
+          npm run build
+          cd ../../desktop
+          npm ci
+          npm run build
+
+      - name: Upload dmg
+        uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
+        with:
+          name: clara-code-macos
+          path: |
+            desktop/src-tauri/target/release/bundle/dmg/*.dmg
+          if-no-files-found: warn

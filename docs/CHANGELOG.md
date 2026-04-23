@@ -4,6 +4,8 @@
 
 ### Added (cross-reference)
 
+- **`docs/distribution-pipeline.md`** — tag-based releases: npm (`clara` + `clara-voice-client`), desktop `.dmg`, optional R2, Cloudflare; secret names; rollback. Cross-ref: root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**, `.github/CHANGELOG.md`, `desktop/CHANGELOG.md`.
+- **`.github/workflows/desktop-macos-dmg.yml`**, **`.github/workflows/release-on-tag.yml`** — see `.github/CHANGELOG.md`.
 - **`docs/review/20260421-pr55-clara-distribution-review.md`** — code review for PR #55 (clara-distribution / marketing install). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 - **`prompts/2026/April/21/1-not-started/05-unblock-pr54-pr55.md`** — work prompt to unblock PR #54 and #55 (tests, `reply` alias, install path fixes, etc.).
 

@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { IconMic } from '@/components/marketing/icons'
 
 const CLARA_GREETING =
@@ -12,6 +12,8 @@ export function VoiceGreeting() {
 	const [status, setStatus] = useState<VoiceStatus>('idle')
 	const [hasGreetedBefore, setHasGreetedBefore] = useState(false)
 	const [isMuted, setIsMuted] = useState(false)
+	const [autoplayBlocked, setAutoplayBlocked] = useState(false)
+	const autoplayAttempted = useRef(false)
 
 	useEffect(() => {
 		const sync = () => {
@@ -23,8 +25,12 @@ export function VoiceGreeting() {
 		return () => window.removeEventListener('clara-muted-change', sync)
 	}, [])
 
-	const playTts = useCallback(async () => {
+	const playOnce = useCallback(async (isAutoplay: boolean) => {
+		if (isMuted) {
+			return
+		}
 		setStatus('loading')
+		setAutoplayBlocked(false)
 		try {
 			const response = await fetch('/api/voice/tts', {
 				method: 'POST',
@@ -38,7 +44,6 @@ export function VoiceGreeting() {
 			const blob = await response.blob()
 			const url = URL.createObjectURL(blob)
 			const audio = new Audio(url)
-			setStatus('playing')
 			audio.onended = () => {
 				URL.revokeObjectURL(url)
 				sessionStorage.setItem('clara-greeted', '1')
@@ -49,23 +54,71 @@ export function VoiceGreeting() {
 				URL.revokeObjectURL(url)
 				setStatus('error')
 			}
-			await audio.play()
+			setStatus('playing')
+			const playP = audio.play()
+			if (playP) {
+				try {
+					await playP
+				} catch (e) {
+					URL.revokeObjectURL(url)
+					const err = e
+					if (
+						err &&
+						typeof err === 'object' &&
+						'name' in err &&
+						(err as { name?: string }).name === 'NotAllowedError'
+					) {
+						if (isAutoplay) {
+							setAutoplayBlocked(true)
+							setStatus('idle')
+							return
+						}
+					}
+					setStatus('error')
+					return
+				}
+			}
 		} catch {
 			setStatus('error')
 		}
-	}, [])
+	}, [isMuted])
+
+	useEffect(() => {
+		if (autoplayAttempted.current) {
+			return
+		}
+		if (typeof window === 'undefined') {
+			return
+		}
+		if (sessionStorage.getItem('clara-muted') === '1') {
+			return
+		}
+		if (sessionStorage.getItem('clara-greeted') === '1') {
+			return
+		}
+		autoplayAttempted.current = true
+		queueMicrotask(() => {
+			void playOnce(true)
+		})
+	}, [playOnce])
 
 	const onClick = () => {
-		if (isMuted) return
-		if (status === 'loading' || status === 'playing') return
-		void playTts()
+		if (isMuted) {
+			return
+		}
+		if (status === 'loading' || status === 'playing') {
+			return
+		}
+		void playOnce(false)
 	}
 
-	const showPulse = !hasGreetedBefore && status === 'idle'
+	const showPulse = !hasGreetedBefore && status === 'idle' && !isMuted
 
 	let caption: string
 	if (isMuted) {
 		caption = 'Voice muted — unmute in the header to hear Clara'
+	} else if (autoplayBlocked && !hasGreetedBefore) {
+		caption = "Autoplay was blocked — tap to hear Clara's greeting"
 	} else if (status === 'idle' && !hasGreetedBefore) {
 		caption = 'Clara is here — tap to hear her'
 	} else if (status === 'idle') {

@@ -8,8 +8,12 @@
     "dev": "tauri dev",
     "build": "tauri build",
     "build:voice-overlay": "esbuild src/main.ts --bundle --outfile=src-tauri/voice-overlay.js --platform=browser --format=iife --loader:.css=text",
+    "build:shell-voice": "npm --prefix ../packages/clara-voice-client run build && esbuild src/shell-voice-converse.ts --bundle --outfile=shell/voice-converse-bundled.js --platform=browser --format=iife --target=es2022",
     "shell:serve": "serve shell -p 1420",
     "tauri": "tauri"
+  },
+  "dependencies": {
+    "@imaginationeverywhere/clara-voice-client": "file:../packages/clara-voice-client"
   },
   "devDependencies": {
     "@tauri-apps/cli": "^2",

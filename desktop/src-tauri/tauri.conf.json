@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "identifier": "ai.claracode.desktop",
   "build": {
-    "beforeDevCommand": "npm run build:voice-overlay && npm run shell:serve",
-    "beforeBuildCommand": "npm run build:voice-overlay",
+    "beforeDevCommand": "npm run build:voice-overlay && npm run build:shell-voice && npm run shell:serve",
+    "beforeBuildCommand": "npm run build:voice-overlay && npm run build:shell-voice",
     "devUrl": "http://localhost:1420",
     "frontendDist": "../shell"
   },
@@ -22,9 +22,9 @@
         "label": "main",
         "create": false,
         "title": "Clara Code",
-        "width": 800,
-        "height": 600,
-        "minWidth": 600,
+        "width": 1100,
+        "height": 700,
+        "minWidth": 800,
         "minHeight": 500,
         "resizable": true,
         "center": true,
