@@ -43,6 +43,7 @@ jest.mock("@/services/voice-usage.service", () => ({
 
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
+import { voiceUsageService } from "@/services/voice-usage.service";
 
 const app = express();
 app.use(express.json());
@@ -235,6 +236,125 @@ describe("routes /api/voice", () => {
 			expect(axios.post).not.toHaveBeenCalled();
 			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
 			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
+	});
+
+	describe("POST /api/voice/converse", () => {
+		let prevHermes: string | undefined;
+		let prevHermesKey: string | undefined;
+		let prevVoiceServer: string | undefined;
+		let prevConverseKey: string | undefined;
+
+		beforeEach(() => {
+			prevHermes = process.env.HERMES_GATEWAY_URL;
+			prevHermesKey = process.env.HERMES_API_KEY;
+			prevVoiceServer = process.env.VOICE_SERVER_URL;
+			prevConverseKey = process.env.CLARA_VOICE_API_KEY;
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			process.env.HERMES_API_KEY = "test-hermes-key";
+			delete process.env.VOICE_SERVER_URL;
+			delete process.env.CLARA_VOICE_API_KEY;
+		});
+
+		afterEach(() => {
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+			if (prevHermesKey === undefined) delete process.env.HERMES_API_KEY;
+			else process.env.HERMES_API_KEY = prevHermesKey;
+			if (prevVoiceServer === undefined) delete process.env.VOICE_SERVER_URL;
+			else process.env.VOICE_SERVER_URL = prevVoiceServer;
+			if (prevConverseKey === undefined) delete process.env.CLARA_VOICE_API_KEY;
+			else process.env.CLARA_VOICE_API_KEY = prevConverseKey;
+		});
+
+		it("400 when audio_base64 is missing", async () => {
+			const res = await request(app).post("/api/voice/converse").send({});
+			expect(res.status).toBe(400);
+			expect(res.body.error).toMatch(/audio_base64/);
+		});
+
+		it("503 when no voice server URL is configured", async () => {
+			delete process.env.HERMES_GATEWAY_URL;
+			delete process.env.CLARA_VOICE_URL;
+			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
+			expect(res.status).toBe(503);
+		});
+
+		it("503 when no API key is configured", async () => {
+			delete process.env.HERMES_API_KEY;
+			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
+			expect(res.status).toBe(503);
+			expect(axios.post).not.toHaveBeenCalled();
+		});
+
+		it("200 and proxies response on success", async () => {
+			const mockData = { transcript: "write a test", response_text: "Sure!", audio_base64: "MP3DATA==" };
+			(axios.post as jest.Mock).mockResolvedValueOnce({ data: mockData });
+			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA", voice_id: "clara" });
+			expect(res.status).toBe(200);
+			expect(res.body.transcript).toBe("write a test");
+			expect(res.body.response_text).toBe("Sure!");
+			expect(res.body.audio_base64).toBe("MP3DATA==");
+			expect(axios.post).toHaveBeenCalledWith(
+				"https://hermes.test.example/voice/converse",
+				expect.objectContaining({ audio_base64: "AAAA", voice_id: "clara" }),
+				expect.objectContaining({ headers: expect.objectContaining({ Authorization: "Bearer test-hermes-key" }) }),
+			);
+		});
+
+		it("prefers VOICE_SERVER_URL and CLARA_VOICE_API_KEY when both are set", async () => {
+			process.env.VOICE_SERVER_URL = "https://voice.specific.example";
+			process.env.CLARA_VOICE_API_KEY = "specific-key";
+			(axios.post as jest.Mock).mockResolvedValueOnce({
+				data: { transcript: "x", response_text: "y", audio_base64: "z" },
+			});
+			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "BBBB" });
+			expect(res.status).toBe(200);
+			expect(axios.post).toHaveBeenCalledWith(
+				"https://voice.specific.example/voice/converse",
+				expect.anything(),
+				expect.objectContaining({ headers: expect.objectContaining({ Authorization: "Bearer specific-key" }) }),
+			);
+		});
+
+		it("502 when upstream throws", async () => {
+			(axios.post as jest.Mock).mockRejectedValueOnce(new Error("network"));
+			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "CCCC" });
+			expect(res.status).toBe(502);
+		});
+
+		it("increments voice usage after successful converse", async () => {
+			(axios.post as jest.Mock).mockResolvedValueOnce({
+				data: { transcript: "hi", response_text: "hello", audio_base64: "z" },
+			});
+			await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
+			expect(voiceUsageService.incrementAfterSuccess).toHaveBeenCalledWith("user_voice_test", "free");
+		});
+	});
+
+	describe("GET /api/voice/health", () => {
+		it("200 and forwards voice server status when reachable", async () => {
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			const mockHealth = { status: "ok", model: "xtts-v2" };
+			(axios.get as jest.Mock) = jest.fn().mockResolvedValueOnce({ data: mockHealth });
+			const res = await request(app).get("/api/voice/health");
+			expect(res.status).toBe(200);
+			expect(res.body.voice_server).toEqual(mockHealth);
+		});
+
+		it("503 when voice server is unreachable", async () => {
+			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
+			(axios.get as jest.Mock) = jest.fn().mockRejectedValueOnce(new Error("ECONNREFUSED"));
+			const res = await request(app).get("/api/voice/health");
+			expect(res.status).toBe(503);
+		});
+
+		it("503 when no voice server URL is configured", async () => {
+			delete process.env.HERMES_GATEWAY_URL;
+			delete process.env.VOICE_SERVER_URL;
+			delete process.env.CLARA_VOICE_URL;
+			const res = await request(app).get("/api/voice/health");
+			expect(res.status).toBe(503);
 		});
 	});
 });
