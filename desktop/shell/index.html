@@ -4,6 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clara Code</title>
+  <!-- Set your voice service base (same as CLARA_VOICE_URL for CLI) before building for production, or use a local Tauri init script. -->
+  <meta name="clara-voice-base" content="" />
+  <meta name="clara-voice-api-key" content="" />
   <style>
     :root {
       --bg: #0A0A0A;
@@ -63,20 +66,79 @@
       background: #4ade80;
       box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
     }
-    .main {
+    .shell-canvas {
       flex: 1;
+      display: flex;
+      flex-direction: row;
+      min-height: 0;
+      min-width: 0;
+    }
+    .shell-workspace {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 20px 24px;
+      gap: 12px;
+      background: #0C0C0C;
+    }
+    .shell-workspace h1 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ccc;
+    }
+    .editor-placeholder {
+      flex: 1;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      min-height: 200px;
+      color: var(--muted);
+      font-size: 13px;
+      padding: 16px;
+      -webkit-app-region: no-drag;
+    }
+    .clara-voice {
+      width: 400px;
+      min-width: 300px;
+      max-width: min(100vw, 480px);
+      display: flex;
+      flex-direction: column;
+      border-left: 1px solid var(--border);
+      background: var(--bg);
+      -webkit-app-region: no-drag;
+    }
+    .clara-voice__header {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+      font-weight: 600;
+      color: #ccc;
+    }
+    .clara-voice__messages {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 13px;
+    }
+    .clara-voice-msg { line-height: 1.45; }
+    .clara-voice-msg--user { color: #a8d4de; }
+    .clara-voice-msg--clara { color: #f0f0f0; }
+    .clara-voice__controls {
+      border-top: 1px solid var(--border);
+      padding: 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      padding: 24px;
-      gap: 32px;
-      overflow: auto;
+      gap: 12px;
     }
     .mic-container {
       position: relative;
-      width: 200px;
-      height: 200px;
+      width: 100px;
+      height: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -90,8 +152,8 @@
       animation: ping 3s ease-in-out infinite;
     }
     .mic-circle {
-      width: 160px;
-      height: 160px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%;
       background: var(--clara-blue);
       display: flex;
@@ -99,88 +161,57 @@
       justify-content: center;
       cursor: pointer;
       transition: transform 0.2s;
-      box-shadow: 0 0 60px rgba(123,200,216,0.2);
+      box-shadow: 0 0 40px rgba(123,200,216,0.2);
       position: relative;
       z-index: 1;
+      -webkit-app-region: no-drag;
     }
     .mic-circle:hover { transform: scale(1.05); }
     .mic-circle.listening {
       animation: pulse 1s ease-in-out infinite;
       background: linear-gradient(135deg, var(--clara-blue), #A8DDE8);
     }
-    .mic-icon { width: 64px; height: 64px; color: #0A0A0A; }
+    .mic-icon { width: 32px; height: 32px; color: #0A0A0A; }
     @keyframes ping {
       0%, 100% { transform: scale(1); opacity: 0.15; }
-      50% { transform: scale(1.2); opacity: 0.05; }
+      50% { transform: scale(1.1); opacity: 0.05; }
     }
     @keyframes pulse {
-      0%, 100% { box-shadow: 0 0 30px rgba(123,200,216,0.4); }
-      50% { box-shadow: 0 0 80px rgba(123,200,216,0.6); }
+      0%, 100% { box-shadow: 0 0 20px rgba(123,200,216,0.4); }
+      50% { box-shadow: 0 0 50px rgba(123,200,216,0.6); }
     }
-    .status-text {
-      color: var(--muted);
-      font-size: 14px;
+    .clara-voice__status {
       text-align: center;
+      color: var(--muted);
+      font-size: 12px;
     }
-    .status-text.listening { color: var(--clara-blue); }
-    .input-area {
-      width: 100%;
-      max-width: 600px;
+    .clara-voice__status.speaking { color: var(--clara-blue); }
+    .clara-voice__input-row {
       display: flex;
       gap: 8px;
+      width: 100%;
     }
-    .text-input {
+    .clara-voice__input {
       flex: 1;
       background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 12px 16px;
+      border-radius: 10px;
+      padding: 10px 12px;
       color: var(--text);
-      font-size: 14px;
+      font-size: 13px;
       outline: none;
-      transition: border-color 0.2s;
     }
-    .text-input:focus { border-color: var(--clara-blue); }
-    .text-input::placeholder { color: var(--muted); }
-    .send-btn {
+    .clara-voice__input:focus { border-color: var(--clara-blue); }
+    .clara-voice__send {
       background: linear-gradient(135deg, var(--clara-blue), #A8DDE8);
       border: none;
-      border-radius: 12px;
-      padding: 12px 20px;
+      border-radius: 10px;
+      padding: 10px 14px;
       color: #0A0A0A;
       font-weight: 600;
+      font-size: 12px;
       cursor: pointer;
-      font-size: 14px;
-      transition: transform 0.2s;
-      -webkit-app-region: no-drag;
     }
-    .send-btn:hover { transform: scale(1.03); }
-    .mic-circle { -webkit-app-region: no-drag; }
-    .text-input { -webkit-app-region: no-drag; }
-    .recent {
-      width: 100%;
-      max-width: 600px;
-    }
-    .recent-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-    .recent-item {
-      padding: 8px 12px;
-      border-radius: 8px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 4px;
-      cursor: pointer;
-      transition: border-color 0.2s;
-      -webkit-app-region: no-drag;
-    }
-    .recent-item:hover { border-color: var(--clara-blue); color: var(--text); }
   </style>
 </head>
 <body>
@@ -190,68 +221,34 @@
     <span class="titlebar-status"><span class="status-dot" aria-hidden="true"></span> Online</span>
   </div>
 
-  <div class="main">
-    <div class="mic-container">
-      <div class="mic-ring" id="micRing"></div>
-      <button type="button" class="mic-circle" id="micCircle" aria-label="Toggle listening">
-        <svg class="mic-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/>
-        </svg>
-      </button>
+  <div class="shell-canvas">
+    <div class="shell-workspace" aria-label="Editor workspace (placeholder)">
+      <h1>Workspace</h1>
+      <p class="editor-placeholder">Editor area. Open a folder in a future build; voice lives in the Clara column.</p>
     </div>
 
-    <p class="status-text" id="statusText">Clara is ready</p>
-
-    <div class="input-area">
-      <input type="text" class="text-input" id="messageInput"
-             placeholder="Say something or type here..."
-             autocomplete="off"/>
-      <button type="button" class="send-btn" id="sendBtn">Send</button>
-    </div>
-
-    <div class="recent">
-      <div class="recent-label">Recent</div>
-      <div class="recent-item">"What's on my schedule today?" — 2 min ago</div>
-      <div class="recent-item">"Draft an email to the team" — 15 min ago</div>
-      <div class="recent-item">"Remind me about the QCR launch at 3pm" — 1 hr ago</div>
-    </div>
+    <section class="clara-voice" id="clara-voice" aria-label="Clara voice panel">
+      <div class="clara-voice__header">Clara</div>
+      <div class="clara-voice__messages" id="clara-messages"></div>
+      <div class="clara-voice__controls">
+        <p class="clara-voice__status" id="clara-status" aria-live="polite">Starting…</p>
+        <div class="mic-container" aria-label="Push to talk control">
+          <div class="mic-ring" id="clara-mic-ring" aria-hidden="true"></div>
+          <button type="button" class="mic-circle" id="clara-mic" aria-pressed="false" aria-label="Start or stop recording; click twice: record then send">
+            <svg class="mic-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round"
+                d="M12 18.75a6 6 0 006-6v-1.5m-6 7.5a6 6 0 01-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 01-3-3V4.5a3 3 0 116 0v8.25a3 3 0 01-3 3z"/>
+            </svg>
+          </button>
+        </div>
+        <div class="clara-voice__input-row">
+          <input class="clara-voice__input" id="clara-text" type="text" placeholder="Type a message" autocomplete="off" />
+          <button type="button" class="clara-voice__send" id="clara-send">Send</button>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <script>
-    let isListening = false;
-
-    function toggleListening() {
-      isListening = !isListening;
-      const circle = document.getElementById('micCircle');
-      const status = document.getElementById('statusText');
-      if (!circle || !status) return;
-      if (isListening) {
-        circle.classList.add('listening');
-        status.textContent = 'Clara is listening...';
-        status.classList.add('listening');
-        window.setTimeout(() => { if (isListening) toggleListening(); }, 8000);
-      } else {
-        circle.classList.remove('listening');
-        status.textContent = 'Clara is ready';
-        status.classList.remove('listening');
-      }
-    }
-
-    function sendMessage() {
-      const input = document.getElementById('messageInput');
-      if (!input) return;
-      const text = input.value.trim();
-      if (!text) return;
-      console.log('Sending message:', text);
-      input.value = '';
-    }
-
-    document.getElementById('micCircle')?.addEventListener('click', toggleListening);
-    document.getElementById('sendBtn')?.addEventListener('click', sendMessage);
-    document.getElementById('messageInput')?.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter') sendMessage();
-    });
-  </script>
+  <script src="voice-converse-bundled.js" defer></script>
 </body>
 </html>

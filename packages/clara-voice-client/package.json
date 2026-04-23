@@ -9,6 +9,10 @@
 		".": {
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.js"
+		},
+		"./converse-browser": {
+			"types": "./dist/converse-browser.d.ts",
+			"import": "./dist/converse-browser.js"
 		}
 	},
 	"files": ["dist", "README.md", "CHANGELOG.md"],

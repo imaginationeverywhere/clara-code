@@ -4,6 +4,7 @@
 
 ### Added
 
+- **Marketing** — `VoiceGreeting`: TTS autoplay on first visit when the browser allows; **NotAllowedError** shows tap-to-play copy. **InstallSection**: `NEXT_PUBLIC_CLARA_DESKTOP_DMG_URL` drives the macOS `.dmg` button; `npm install -g clara@latest` is the primary CLI path with a copy action; npx-from-Git kept as a beta path. `.env.example` documents the DMG URL.
 - **App shell** — `AppHeader` + `ProfileWidget` (Clerk avatar, tier badge, account/dashboard/sign out); `(app)/layout.tsx` wraps dashboard, account, API keys, and settings; `next.config.ts` `images.remotePatterns` for Clerk avatars.
 - **Legal** — Server-rendered `/privacy` and `/terms` pages (Header + Footer), footer links, root `metadata.alternates.canonical`.
 
