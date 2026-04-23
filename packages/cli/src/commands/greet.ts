@@ -2,6 +2,7 @@ import { randomBytes } from "node:crypto";
 import { unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { readGreetingFromCache, writeGreetingToCache } from "@imaginationeverywhere/clara-voice-client";
 import type { Command } from "commander";
 import { playAudioFile } from "../lib/play-audio-file.js";
 
@@ -42,6 +43,20 @@ export function registerGreetCommand(program: Command): void {
 				process.exitCode = 1;
 				return;
 			}
+
+			const fromCache = await readGreetingFromCache();
+			if (fromCache) {
+				const ext = extensionForContentType(fromCache.contentType);
+				const outPath = join(tmpdir(), `clara-greet-cached-${randomBytes(8).toString("hex")}${ext}`);
+				await writeFile(outPath, fromCache.bytes);
+				try {
+					await playAudioFile(outPath);
+				} finally {
+					await unlink(outPath).catch(() => {});
+				}
+				return;
+			}
+
 			let res: Response;
 			try {
 				res = await fetch(url, {
@@ -98,6 +113,13 @@ export function registerGreetCommand(program: Command): void {
 			const ext = extensionForContentType(contentType);
 			const outPath = join(tmpdir(), `clara-greet-${randomBytes(8).toString("hex")}${ext}`);
 			await writeFile(outPath, buf);
+			const mimeForCache =
+				contentType && contentType.length > 0 ? contentType.split(";")[0]!.trim() : "application/octet-stream";
+			try {
+				await writeGreetingToCache({ bytes: buf, contentType: mimeForCache });
+			} catch {
+				// best-effort cache
+			}
 			try {
 				await playAudioFile(outPath);
 			} finally {
