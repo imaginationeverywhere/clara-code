@@ -45,3 +45,116 @@ void test("postVoiceConverse is offline-safe on bad host", async () => {
 		assert.equal(r.offline, true);
 	}
 });
+
+void test("postVoiceConverse returns {ok:false} on HTTP 4xx", async (t) => {
+	const server: Server = createServer((_req, res) => {
+		res.statusCode = 400;
+		res.setHeader("Content-Type", "application/json");
+		res.end(JSON.stringify({ error: "bad request" }));
+	});
+	const port: number = await new Promise((resolve) => {
+		server.listen(0, "127.0.0.1", () => {
+			const a = server.address();
+			assert.ok(a && typeof a === "object" && "port" in a);
+			resolve((a as { port: number }).port);
+		});
+	});
+	t.after(
+		() =>
+			new Promise<void>((r) => {
+				server.close(() => r());
+			}),
+	);
+
+	const result = await postVoiceConverse(`http://127.0.0.1:${port}`, { text: "x" });
+	assert.equal(result.ok, false);
+});
+
+void test("postVoiceConverse maps Hermes 'reply' field", async (t) => {
+	const server: Server = createServer((_req, res) => {
+		res.setHeader("Content-Type", "application/json");
+		res.end(JSON.stringify({ reply: "hello from hermes" }));
+	});
+	const port: number = await new Promise((resolve) => {
+		server.listen(0, "127.0.0.1", () => {
+			const a = server.address();
+			assert.ok(a && typeof a === "object" && "port" in a);
+			resolve((a as { port: number }).port);
+		});
+	});
+	t.after(
+		() =>
+			new Promise<void>((r) => {
+				server.close(() => r());
+			}),
+	);
+
+	const result = await postVoiceConverse(`http://127.0.0.1:${port}`, { text: "ping" });
+	assert.equal(result.ok, true);
+	if (result.ok) {
+		assert.equal(result.reply_text, "hello from hermes");
+	}
+});
+
+void test("postVoiceConverse maps 'replyText' camelCase alias", async (t) => {
+	const server: Server = createServer((_req, res) => {
+		res.setHeader("Content-Type", "application/json");
+		res.end(JSON.stringify({ replyText: "camel case reply" }));
+	});
+	const port: number = await new Promise((resolve) => {
+		server.listen(0, "127.0.0.1", () => {
+			const a = server.address();
+			assert.ok(a && typeof a === "object" && "port" in a);
+			resolve((a as { port: number }).port);
+		});
+	});
+	t.after(
+		() =>
+			new Promise<void>((r) => {
+				server.close(() => r());
+			}),
+	);
+
+	const result = await postVoiceConverse(`http://127.0.0.1:${port}`, { text: "ping" });
+	assert.equal(result.ok, true);
+	if (result.ok) {
+		assert.equal(result.reply_text, "camel case reply");
+	}
+});
+
+void test("postVoiceConverse with empty base returns configuration error", async () => {
+	const result = await postVoiceConverse("", { text: "x" });
+	assert.equal(result.ok, false);
+	if (!result.ok) {
+		assert.ok(result.error.length > 0);
+		assert.equal(result.offline, undefined);
+	}
+});
+
+void test("postVoiceConverse respects abort signal", async (t) => {
+	const server: Server = createServer(() => {
+		// Deliberately never send a response; abort cancels the fetch
+	});
+	const port: number = await new Promise((resolve) => {
+		server.listen(0, "127.0.0.1", () => {
+			const a = server.address();
+			assert.ok(a && typeof a === "object" && "port" in a);
+			resolve((a as { port: number }).port);
+		});
+	});
+	t.after(
+		() =>
+			new Promise<void>((r) => {
+				server.close(() => r());
+			}),
+	);
+
+	const ac = new AbortController();
+	const promise = postVoiceConverse(`http://127.0.0.1:${port}`, { text: "x" }, { signal: ac.signal });
+	ac.abort();
+	const result = await promise;
+	assert.equal(result.ok, false);
+	if (!result.ok) {
+		assert.equal(result.error, "Aborted");
+	}
+});

@@ -8,6 +8,11 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- `postVoiceConverse` maps Hermes `reply` field to `reply_text` (with existing aliases); aligns with clara-voice / Hermes gateway responses.
+
 ### Added
 
 - `converse-browser` subpath export: `postVoiceConverse` and types only, for Tauri `webview` and other browser bundles that must not import Node `fs` (greeting cache remains on the main entry).
+- Test coverage: `converse` (4xx, `reply`, `replyText`, empty base, abort) and `greeting-cache` roundtrip and edge cases in `test/greeting-cache.test.ts`.

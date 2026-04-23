@@ -8,8 +8,7 @@ import {
 	IconMonitor,
 	IconTerminal,
 } from '@/components/marketing/icons'
-
-const GITHUB_REPO = 'https://github.com/imaginationeverywhere/clara-code'
+import { MARKETING_GITHUB_REPO } from '@/lib/marketing-install-constants'
 
 const NPM_GLOBAL = 'npm install -g clara@latest'
 
@@ -57,7 +56,7 @@ export function InstallSection() {
 									<p className="mt-1 text-[12px] text-white/30">After install, run: clara (default voice) or clara tui (full TUI)</p>
 								</div>
 								<div className="mt-2 flex items-center justify-between">
-									<span className="font-mono text-sm text-white/25">Node.js 20+ recommended</span>
+									<span className="font-mono text-sm text-white/25">Node.js 20+ required</span>
 									<button
 										type="button"
 										onClick={handleCopyNpm}
@@ -108,7 +107,7 @@ export function InstallSection() {
 							<div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
 								<span className="font-mono text-[11px] text-white/25">Package: clara</span>
 								<a
-									href={GITHUB_REPO}
+									href={MARKETING_GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-1 font-mono text-[11px] text-clara hover:underline"
@@ -149,7 +148,7 @@ export function InstallSection() {
 									</a>
 								) : null}
 								<a
-									href={GITHUB_REPO}
+									href={MARKETING_GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/20 hover:text-white"
@@ -167,7 +166,7 @@ export function InstallSection() {
 							<div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
 								<span className="font-mono text-[11px] text-white/25">MIT Licensed · Open Source</span>
 								<a
-									href={GITHUB_REPO}
+									href={MARKETING_GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="font-mono text-[11px] text-clara hover:underline"

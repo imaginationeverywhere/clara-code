@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-16
 
+### Fixed
+
+- **Install** — Removed the broken `npx github:imaginationeverywhere/clara-code` beta line (monorepo root has no `bin`). Install copy is centralized in `lib/marketing-install-constants.ts` with Vitest guards against regressions.
+
 ### Added
 
 - **Tests** — `VoiceGreeting.test.tsx` (Vitest + jsdom) covers the marketing TTS gate (`/api/voice/tts` POST, no duplicate fetch on re-render) and `NotAllowedError` handling. Dev dependencies: `@testing-library/react`, `@testing-library/jest-dom`, `jsdom`.
