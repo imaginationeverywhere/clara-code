@@ -30,5 +30,6 @@
 
 ### Changed
 
+- **`clara greet` prefers `POST /voice/converse`** — `packages/cli/src/commands/greet.ts` calls `postVoiceConverse` from `@imaginationeverywhere/clara-voice-client` first; when the response includes `reply_audio_base64`, audio is played and the canonical greeting cache is updated. Optional `CLARA_VOICE_API_KEY` sets the Bearer token for the converse endpoint. If the converse path returns no audio or errors, the command **falls back** to legacy `POST …/voice/respond` (unchanged body) so existing deployments keep working until quikvoice is fully wired.
 - `greet` and `tui` no longer embed default deployment URLs; set `CLARA_VOICE_URL` / `HERMES_GATEWAY_URL` (or `gatewayUrl` in `~/.clara/config.json` for TUI) before use.
 - Build no longer fails on `tsup: command not found` when the monorepo lockfile and `npm install` are in sync (see root `CHANGELOG.md`).
