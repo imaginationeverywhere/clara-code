@@ -16,6 +16,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 - **Monorepo version** — root `package.json` `0.2.0` → **`0.2.1`** (docs + planning artifacts; no app code in this commit).
 
+- **Root `.gitignore` — Tauri** — `desktop/shell/voice-converse-bundled.js` ignored (esbuild output for optional `build:shell-voice`). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**. No `package.json` version bump (chore).
+
 ## [Unreleased] - 2026-04-24
 
 ### Added

@@ -59,3 +59,6 @@ packages/web-ui/.vercel/
 # OpenNext build output
 .open-next/
 frontend/.open-next/
+
+# Tauri desktop: optional esbuild of shell voice (when `desktop` has `build:shell-voice`)
+desktop/shell/voice-converse-bundled.js
