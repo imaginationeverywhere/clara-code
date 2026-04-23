@@ -1,26 +1,11 @@
-'use client'
-
-import { useState } from 'react'
 import {
-	IconCheckCircle,
-	IconCopy,
 	IconGithub,
 	IconMonitor,
 	IconTerminal,
 } from '@/components/marketing/icons'
-
-const GITHUB_REPO = 'https://github.com/imaginationeverywhere/clara-code'
+import { CLI_INSTALL_PLACEHOLDER, MARKETING_GITHUB_REPO } from '@/lib/marketing-install-constants'
 
 export function InstallSection() {
-	const [copied, setCopied] = useState(false)
-	const betaCmd = 'npx github:imaginationeverywhere/clara-code'
-
-	const handleCopy = () => {
-		void navigator.clipboard.writeText(betaCmd)
-		setCopied(true)
-		setTimeout(() => setCopied(false), 2000)
-	}
-
 	return (
 		<section id="install" className="bg-bg-sunken py-24">
 			<div className="mx-auto max-w-3xl px-6 text-center">
@@ -46,41 +31,15 @@ export function InstallSection() {
 									</span>
 								</div>
 								<div className="font-mono text-sm text-white/40">
-									<span className="text-white/25"># </span>npm install -g @clara/cli
-								</div>
-							</div>
-
-							<div className="px-5 py-4">
-								<div className="mb-2 font-mono text-[11px] uppercase tracking-wider text-white/30">Try the beta</div>
-								<div className="flex items-center justify-between">
-									<div className="font-mono text-sm">
-										<span className="text-white/25">$ </span>
-										<span className="text-brand-green">{betaCmd}</span>
-									</div>
-									<button
-										type="button"
-										onClick={handleCopy}
-										className="ml-3 flex shrink-0 items-center gap-1.5 transition-colors"
-									>
-										{copied ? (
-											<>
-												<IconCheckCircle className="h-4 w-4 text-brand-green" />
-												<span className="font-mono text-[12px] text-brand-green">Copied!</span>
-											</>
-										) : (
-											<>
-												<IconCopy className="h-4 w-4 text-white/35 hover:text-white/60" />
-												<span className="font-mono text-[12px] text-white/35 hover:text-white/60">Copy</span>
-											</>
-										)}
-									</button>
+									<span className="text-white/25"># </span>
+									{CLI_INSTALL_PLACEHOLDER}
 								</div>
 							</div>
 
 							<div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
 								<span className="font-mono text-[11px] text-white/25">Node.js 18+ required</span>
 								<a
-									href={GITHUB_REPO}
+									href={MARKETING_GITHUB_REPO}
 									target="_blank"
 									rel="noopener noreferrer"
 									className="flex items-center gap-1 font-mono text-[11px] text-clara hover:underline"
@@ -109,27 +68,27 @@ export function InstallSection() {
 								</div>
 
 								<a
-									href={GITHUB_REPO}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-purple py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-colors hover:bg-brand-purple-hover"
-								>
-									<IconGithub className="h-4 w-4" />
-									View on GitHub
-								</a>
+							href={MARKETING_GITHUB_REPO}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-purple py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-colors hover:bg-brand-purple-hover"
+						>
+							<IconGithub className="h-4 w-4" />
+							View on GitHub
+						</a>
 								<div className="mt-2 text-center font-mono text-[11px] text-white/30">Star the repo to be notified at launch</div>
 							</div>
 
 							<div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
 								<span className="font-mono text-[11px] text-white/25">MIT Licensed · Open Source</span>
 								<a
-									href={GITHUB_REPO}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="font-mono text-[11px] text-clara hover:underline"
-								>
-									View on GitHub →
-								</a>
+							href={MARKETING_GITHUB_REPO}
+							target="_blank"
+							rel="noopener noreferrer"
+							className="font-mono text-[11px] text-clara hover:underline"
+						>
+							View on GitHub →
+						</a>
 							</div>
 						</div>
 					</div>

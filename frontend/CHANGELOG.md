@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-16
 
+### Fixed
+
+- **Install** — Removed the broken `npx github:imaginationeverywhere/clara-code` beta line (monorepo root has no `bin`). Install copy is centralized in `lib/marketing-install-constants.ts` with Vitest guards against regressions.
+
 ### Added
 
 - **App shell** — `AppHeader` + `ProfileWidget` (Clerk avatar, tier badge, account/dashboard/sign out); `(app)/layout.tsx` wraps dashboard, account, API keys, and settings; `next.config.ts` `images.remotePatterns` for Clerk avatars.

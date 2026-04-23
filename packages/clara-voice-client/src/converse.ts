@@ -82,6 +82,7 @@ export async function postVoiceConverse(
 			if (data && typeof data === "object" && !Array.isArray(data)) {
 				const o = data as Record<string, unknown>;
 				const reply_text =
+					(typeof o.reply === "string" && o.reply) ||
 					(typeof o.reply_text === "string" && o.reply_text) ||
 					(typeof o.replyText === "string" && o.replyText) ||
 					(typeof o.text === "string" && o.text) ||
