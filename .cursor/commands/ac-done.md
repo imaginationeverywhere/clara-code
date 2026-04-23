@@ -8,13 +8,13 @@ Execute these commands to gather data:
 
 ```bash
 # Check tasks.json for done status
-cat .internal/tasks.json 2>/dev/null | jq '.tasks[] | select(.status == "done")'
+cat .auto-claude/tasks.json 2>/dev/null | jq '.tasks[] | select(.status == "done")'
 
-# Check merged PRs with agent label
-gh pr list --state merged --label "agent" --json number,title,mergedAt,headRefName --limit 20 2>/dev/null
+# Check merged PRs with auto-claude label
+gh pr list --state merged --label "auto-claude" --json number,title,mergedAt,headRefName --limit 20 2>/dev/null
 
 # Check closed issues
-gh issue list --state closed --label "agent" --json number,title,closedAt --limit 20 2>/dev/null
+gh issue list --state closed --label "auto-claude" --json number,title,closedAt --limit 20 2>/dev/null
 
 # Check completed todo files
 ls todo/ac-manual/archive/*.md 2>/dev/null

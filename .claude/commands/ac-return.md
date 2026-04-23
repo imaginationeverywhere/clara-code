@@ -85,11 +85,11 @@ EOF
 # Update local config
 jq '.tasks[] |= if .id == "005" then
   .status = "planning" |
-  .assignee = "agent" |
+  .assignee = "auto-claude" |
   .returnedAt = now |
   .progress = 60 |
   .handoffNotes = "[notes]"
-else . end' .internal/tasks.json > tmp.json && mv tmp.json .internal/tasks.json
+else . end' .auto-claude/tasks.json > tmp.json && mv tmp.json .auto-claude/tasks.json
 
 # Update GitHub
 gh issue edit [NUMBER] --remove-label "in-progress,manual,paused" --add-label "planning"

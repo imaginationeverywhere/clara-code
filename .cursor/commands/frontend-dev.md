@@ -363,7 +363,7 @@ This command benefits from:
 - **Mockup Template**: Selected UI/UX baseline for development
 - **GraphQL Schema**: Backend GraphQL API documentation
 - **AWS Amplify Access**: Deployment configuration and credentials
-- **Design Assets**: Mockups, screenshots, or design system documentation
+- **Design Assets**: Figma files, mockups, or design system documentation
 
 ## Multi-Agent Orchestrator Benefits
 

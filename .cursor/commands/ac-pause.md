@@ -44,7 +44,7 @@ Pause work on an Auto Claude task you've been working on manually. The task rema
 
 ```bash
 # Check task is in-progress and assigned to you
-cat .internal/tasks.json | jq '.tasks[] | select(.id == "005" and .status == "in-progress" and .assignee == "manual")'
+cat .auto-claude/tasks.json | jq '.tasks[] | select(.id == "005" and .status == "in-progress" and .assignee == "manual")'
 ```
 
 ### Step 2: Save Progress State
@@ -63,7 +63,7 @@ git commit -m "WIP: AC-005 [task name] - paused"
 ```bash
 # Update local config
 jq '.tasks[] |= if .id == "005" then .status = "paused" | .pausedAt = now | .pauseReason = "[reason]" else . end' \
-  .internal/tasks.json > tmp.json && mv tmp.json .internal/tasks.json
+  .auto-claude/tasks.json > tmp.json && mv tmp.json .auto-claude/tasks.json
 
 # Update GitHub issue
 gh issue edit [NUMBER] --add-label "paused"

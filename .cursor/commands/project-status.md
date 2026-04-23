@@ -12,7 +12,7 @@ Track post-MVP milestones and **generate all future tasks** for the project. Thi
 
 ## Generated Files
 
-This command generates/updates the following files in `docs/internal/`:
+This command generates/updates the following files in `docs/auto-claude/`:
 
 | File | Purpose |
 |------|---------|
@@ -518,7 +518,7 @@ project-status --retro
 
 The command gathers status from:
 
-1. **`docs/internal/MASTER_TASKS.md`** - PRIMARY SOURCE: Task definitions, completion status, agent assignments
+1. **`docs/auto-claude/MASTER_TASKS.md`** - PRIMARY SOURCE: Task definitions, completion status, agent assignments
 2. **`.claude/config/pattern-mappings.json`** - Pattern configuration, platform fee calculations
 3. **`docs/PRD.md`** - Original requirements baseline
 4. **`docs/CLIENT_PROPOSAL.md`** - Milestones and deliverables
@@ -534,7 +534,7 @@ The command reads MASTER_TASKS.md to track ongoing work:
 
 ```javascript
 // 1. Parse completed MVP tasks for certification
-const mvpTasks = parseMasterTasks('docs/internal/MASTER_TASKS.md');
+const mvpTasks = parseMasterTasks('docs/auto-claude/MASTER_TASKS.md');
 const mvpComplete = mvpTasks.every(t => t.phase <= 5 && t.status === 'completed');
 
 // 2. Identify Phase 2+ tasks from pattern.features.recommended
@@ -581,7 +581,7 @@ Phase 2+ tasks are added to MASTER_TASKS.md as the project progresses:
 
 ## Plan File Structures
 
-When `project-status` runs, it generates/updates these files in `docs/internal/`:
+When `project-status` runs, it generates/updates these files in `docs/auto-claude/`:
 
 ### ROADMAP_TASKS.md Structure
 
@@ -1082,7 +1082,7 @@ Auto-Claude runs from `$HOME/Auto-Claude` but works directly on the project dire
 ```
 Auto-Claude Location:  $HOME/Auto-Claude/
 Project Location:      {project-path}/
-Plan Location:         {project-path}/.internal/plans/roadmap-plan.md
+Plan Location:         {project-path}/.auto-claude/plans/roadmap-plan.md
 ```
 
 ### Plan Location
@@ -1090,7 +1090,7 @@ Plan Location:         {project-path}/.internal/plans/roadmap-plan.md
 When `project-status` runs, it generates the roadmap plan directly in the project:
 
 ```
-{project}/.internal/plans/
+{project}/.auto-claude/plans/
 ├── mvp-plan.md        ← From project-mvp-status (if exists)
 └── roadmap-plan.md    ← Auto-Claude reads this directly
 ```
@@ -1145,13 +1145,13 @@ The generated `roadmap-plan.md` follows this format:
    ```
 
 2. **Review Generated Plans**:
-   - Roadmap tasks: `docs/internal/ROADMAP_TASKS.md`
-   - Quarterly plan: `docs/internal/QUARTERLY_PLAN.md`
-   - Execution plan: `.internal/plans/roadmap-plan.md`
+   - Roadmap tasks: `docs/auto-claude/ROADMAP_TASKS.md`
+   - Quarterly plan: `docs/auto-claude/QUARTERLY_PLAN.md`
+   - Execution plan: `.auto-claude/plans/roadmap-plan.md`
 
 3. **Execute with Auto-Claude**:
    - Auto-Claude opens the project directory
-   - Reads `.internal/plans/roadmap-plan.md`
+   - Reads `.auto-claude/plans/roadmap-plan.md`
    - Executes the sessions
 
 4. **Monitor Progress**:

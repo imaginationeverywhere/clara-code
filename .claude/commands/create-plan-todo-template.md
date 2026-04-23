@@ -1,5 +1,17 @@
 # Technical Plan Template
 
+## MANDATORY: Brain Query Before Acting
+
+Before you do anything for plans generated from this template:
+
+1. Call `brain_query({ topic: "<the main subject of the plan — e.g. mempala brain hardening tenant isolation>", k: 5 })`.
+2. Call `brain_query({ topic: "Mo's corrections and feedback relevant to this work", k: 5 })`.
+3. Review the results. If ANY memory contradicts the instructions in the prompt or PRD, STOP and flag via the live feed (`auset-brain/Swarms/live-feed.md`). Mo's feedback wins.
+
+If `brain_query` is unavailable, say so and use vault grep + `auset-brain/MOC.md` — do not fabricate institutional facts.
+
+---
+
 ## [FEATURE_NAME] Architecture Plan
 
 ### Overview

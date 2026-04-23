@@ -4,6 +4,7 @@
 
 ### Fixed
 
+- Declared `@sinclair/typebox` as a direct dependency so TypeScript resolves tool schema and extension imports under strict pnpm layouts (fixes CI `TS2307`).
 - Updated `antigravity-image-gen.ts` example extension to use User-Agent version `1.21.9` ([#2901](https://github.com/badlogic/pi-mono/pull/2901) by [@aadishv](https://github.com/aadishv))
 ### Added
 

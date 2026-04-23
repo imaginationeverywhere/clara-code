@@ -97,7 +97,7 @@ Directly change the status of Auto Claude tasks. This is the power-user command 
 
 ```bash
 # Get current status
-CURRENT=$(cat .internal/tasks.json | jq -r '.tasks[] | select(.id == "005") | .status')
+CURRENT=$(cat .auto-claude/tasks.json | jq -r '.tasks[] | select(.id == "005") | .status')
 
 # Validate transition is allowed
 # (unless --force is used)
@@ -112,7 +112,7 @@ jq --arg status "[new-status]" --arg notes "[notes]" '
     .status = $status |
     .statusHistory += [{"status": $status, "at": now, "notes": $notes}]
   else . end
-' .internal/tasks.json > tmp.json && mv tmp.json .internal/tasks.json
+' .auto-claude/tasks.json > tmp.json && mv tmp.json .auto-claude/tasks.json
 
 # Update GitHub labels
 gh issue edit [NUMBER] \

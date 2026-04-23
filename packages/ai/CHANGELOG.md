@@ -8,6 +8,8 @@
 
 ### Fixed
 
+- OpenRouter tests: cast `meta-llama/llama-4-maverick` to `keyof typeof MODELS.openrouter` when calling `getModel` — TypeScript’s inferred second-parameter union for large catalogs omits some string literal keys (`TS2345` in `tsgo`).
+- Declared `@smithy/node-http-handler` as a direct dependency so TypeScript can resolve the Bedrock proxy and HTTP/1.1 request handler imports under strict pnpm layouts.
 - Bumped default Antigravity User-Agent version to `1.21.9` ([#2901](https://github.com/badlogic/pi-mono/pull/2901) by [@aadishv](https://github.com/aadishv))
 - Fixed thinking levels for Gemma 4 models to use `thinkingLevel` and map Pi reasoning levels to the model's supported thinking levels ([#2903](https://github.com/badlogic/pi-mono/pull/2903) by [@aadishv](https://github.com/aadishv))
 

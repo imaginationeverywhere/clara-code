@@ -4,6 +4,7 @@
   "type": "module",
   "packageManager": "pnpm@9.15.4",
   "workspaces": [
+    "backend",
     "frontend",
     "frontend/example",
     "packages/*",
@@ -18,7 +19,7 @@
     "build": "pnpm -C packages/tui run build && pnpm -C packages/cli run build && pnpm -C packages/sdk run build && pnpm -C packages/create-clara-app run build && pnpm -C packages/ai run build && pnpm -C packages/agent run build && pnpm -C packages/coding-agent run build && pnpm -C packages/mom run build && pnpm -C frontend run build && pnpm -C packages/pods run build",
     "dev": "concurrently --names \"ai,agent,coding-agent,mom,frontend,tui\" --prefix-colors \"cyan,yellow,red,white,green,magenta\" \"cd packages/ai && npm run dev\" \"cd packages/agent && npm run dev\" \"cd packages/coding-agent && npm run dev\" \"cd packages/mom && npm run dev\" \"cd frontend && npm run dev\" \"cd packages/tui && npm run dev\"",
     "dev:tsc": "concurrently --names \"ai,frontend\" --prefix-colors \"cyan,green\" \"cd packages/ai && npm run dev:tsc\" \"cd frontend && npm run dev:tsc\"",
-    "check": "biome check --write --error-on-warnings . && tsgo --noEmit && npm run check:browser-smoke && cd frontend && npm run check",
+    "check": "biome check --write --error-on-warnings . && tsgo --noEmit && pnpm -C backend run type-check && npm run check:browser-smoke && cd frontend && npm run check",
     "check:browser-smoke": "node scripts/check-browser-smoke.mjs",
     "router:compose": "npx --yes @apollo/rover supergraph compose --config apollo-router/supergraph.yaml > apollo-router/supergraph-schema.graphql",
     "router:start": "cd apollo-router && APOLLO_ROUTER_PORT=${APOLLO_ROUTER_PORT:-4000} ./router --config router.yaml",
@@ -52,7 +53,7 @@
   "engines": {
     "node": ">=20.0.0"
   },
-  "version": "0.1.4",
+  "version": "0.1.8",
   "dependencies": {
     "@mariozechner/jiti": "^2.6.5",
     "@mariozechner/pi-coding-agent": "^0.30.2",

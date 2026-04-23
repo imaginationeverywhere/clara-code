@@ -136,7 +136,7 @@ In development mode (no Clerk), access is unrestricted.
 
 ## Related Commands
 
-- **`project-mvp-status`** - Detailed MVP tracking (generates plans in docs/internal/)
+- **`project-mvp-status`** - Detailed MVP tracking (generates plans in docs/auto-claude/)
 - **`project-status`** - Post-MVP milestone tracking
 - **`git-commit-docs`** - Git workflow with documentation updates
 - **`bootstrap-project`** - Project initialization

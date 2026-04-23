@@ -8,6 +8,18 @@
 
 ## [Unreleased] - 2026-04-19
 
+### Fixed
+
+- **`@mariozechner/pi-ai` OpenRouter tests (cross-reference)** — `getModel("openrouter", …)` uses `keyof typeof MODELS.openrouter` assertion for `meta-llama/llama-4-maverick` to satisfy `tsgo`. See `packages/ai/CHANGELOG.md` and root `CHANGELOG.md`.
+
+- **Root TypeScript check (cross-reference)** — `backend` is a pnpm workspace package; root `tsgo` excludes `backend/**` and `check` runs `pnpm -C backend run type-check`. Excludes optional sandbox example from root `tsgo`. See root `CHANGELOG.md`.
+
+- **`@mariozechner/pi-agent-core` / `@mariozechner/pi-coding-agent` (cross-reference)** — declared `@sinclair/typebox` as a direct dependency so TypeScript resolves imports under pnpm (fixes CI `TS2307`). See `packages/agent/CHANGELOG.md`, `packages/coding-agent/CHANGELOG.md`, and root `CHANGELOG.md`.
+
+- **`@mariozechner/pi-ai` (cross-reference)** — declared `@smithy/node-http-handler` as a direct dependency so `packages/ai` TypeScript resolves Bedrock proxy / HTTP/1.1 handler imports under pnpm (fixes CI `TS2307`). See `packages/ai/CHANGELOG.md` and root `CHANGELOG.md`.
+
+- **`create-clara-app` (cross-reference)** — build/bin alignment and `0.1.3` release notes; see `packages/create-clara-app/CHANGELOG.md` and root `CHANGELOG.md`.
+
 ### Added
 
 - **`docs/review/20260419-035221-pr4-ink6-review.md`** — Code review for PR #4 (Ink 5→6, TUI boot fix); records approval and the `engines.node` follow-up now addressed in `packages/cli/package.json`.
@@ -22,7 +34,7 @@
 
 - **`backend/.env.example`** — documents `HERMES_GATEWAY_URL` + `HERMES_API_KEY` (both sourced from SSM under `/clara-code/*`, the key as `SecureString`), the cold-start heads-up, `CLARA_VOICE_URL` fallback, and `CLARA_VOICE_DEV_STUB=1` with the NEVER-in-prod warning.
 - **`docs/cli-voice-loop.md`** — documents that `packages/cli/package.json` declares `engines.node` `>=20.0.0` (PR #4 review follow-up).
-- Monorepo root version `0.1.3` → `0.1.4`.
+- Monorepo root version `0.1.3` → `0.1.8` (includes `0.1.4` CLI/Ink through `0.1.8` pi-ai OpenRouter test typing; see root `CHANGELOG.md`).
 
 ## [Unreleased] - 2026-04-16
 
