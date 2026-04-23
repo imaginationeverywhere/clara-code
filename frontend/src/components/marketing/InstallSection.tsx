@@ -37,7 +37,7 @@ export function InstallSection() {
 							</div>
 
 							<div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
-								<span className="font-mono text-[11px] text-white/25">Node.js 18+ required</span>
+								<span className="font-mono text-[11px] text-white/25">Node.js 20+ required</span>
 								<a
 									href={MARKETING_GITHUB_REPO}
 									target="_blank"
