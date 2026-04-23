@@ -1,4 +1,4 @@
-import type { Express } from "express";
+import type { Application } from "express";
 import request from "supertest";
 
 jest.mock("@clerk/express", () => ({
@@ -8,7 +8,7 @@ jest.mock("@clerk/express", () => ({
 }));
 
 describe("server app", () => {
-	let app: Express;
+	let app: Application;
 
 	beforeAll(async () => {
 		const { sequelize } = await import("@/config/database");
