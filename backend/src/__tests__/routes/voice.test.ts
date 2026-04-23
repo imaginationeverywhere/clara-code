@@ -43,6 +43,7 @@ jest.mock("@/services/voice-usage.service", () => ({
 
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
+import { voiceUsageService } from "@/services/voice-usage.service";
 
 const app = express();
 app.use(express.json());
@@ -320,6 +321,14 @@ describe("routes /api/voice", () => {
 			(axios.post as jest.Mock).mockRejectedValueOnce(new Error("network"));
 			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "CCCC" });
 			expect(res.status).toBe(502);
+		});
+
+		it("increments voice usage after successful converse", async () => {
+			(axios.post as jest.Mock).mockResolvedValueOnce({
+				data: { transcript: "hi", response_text: "hello", audio_base64: "z" },
+			});
+			await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
+			expect(voiceUsageService.incrementAfterSuccess).toHaveBeenCalledWith("user_voice_test", "free");
 		});
 	});
 

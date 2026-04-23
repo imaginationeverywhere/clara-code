@@ -348,6 +348,11 @@ router.post(
 					headers: { Authorization: `Bearer ${apiKey}` },
 				},
 			);
+			const userId = req.claraUser?.userId;
+			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			if (userId) {
+				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+			}
 			res.json(response.data);
 		} catch (error) {
 			logger.error("[voice/converse] proxy error:", error);
