@@ -2,6 +2,20 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-25
+
+### Added
+
+- **Review** — `docs/review/20260421-pr55-clara-distribution-review.md` (PR #55 clara-distribution: coverage findings, `InstallSection` beta path, `packages/clara/bin/clara.mjs` shim). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
+### Added (prompts)
+
+- **`05-unblock-pr54-pr55.md`** — `prompts/2026/April/21/1-not-started/05-unblock-pr54-pr55.md` to execute fixes and tests so PRs #54 (voice) and #55 (distribution) can land.
+
+### Changed
+
+- **Monorepo version** — root `package.json` `0.2.0` → **`0.2.1`** (docs + planning artifacts; no app code in this commit).
+
 ## [Unreleased] - 2026-04-24
 
 ### Added
