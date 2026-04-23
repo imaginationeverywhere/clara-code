@@ -1,11 +1,13 @@
-# @clara/cli
+# `clara` (packages/cli)
 
-Terminal TUI for Clara Code (Ink). Text-first; `--voice` is reserved for future audio hooks.
+Published on npm as **`clara`**: voice greeting and **POST /voice/converse** loop by default. Full terminal IDE: **`clara tui`**.
+
+**Env (voice default):** `CLARA_VOICE_URL` (quikvoice base), optional `CLARA_VOICE_API_KEY` (Bearer).
 
 ## Usage
 
 ```bash
-npm install -g @imaginationeverywhere/clara-cli
+npm install -g clara@latest
 ```
 
 After installation, the `clara` binary is on your `PATH`.
@@ -14,12 +16,13 @@ After installation, the `clara` binary is on your `PATH`.
 
 | Command | Description |
 |--------|-------------|
+| `clara` (no args) | Plays the canonical greeting, then Space twice for push-to-turn audio over `/voice/converse` |
 | `clara --version` | Print the CLI version |
 | `clara hello` | Play Clara's voice greeting from the API (stub) |
 | `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
 | `clara config set api-key <key>` | Store the API key in `~/.clara/config.json` |
 | `clara config get api-key` | Print the stored API key (or empty line if unset) |
-| `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `--voice` placeholder |
+| `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `Ctrl+Space` voice, `--voice` placeholder |
 
 ## Quickstart
 

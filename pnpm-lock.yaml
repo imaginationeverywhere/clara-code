@@ -505,7 +505,7 @@ importers:
     dependencies:
       '@mariozechner/pi-coding-agent':
         specifier: ^0.66.1
-        version: 0.66.1(ws@8.20.0)(zod@4.3.6)
+        version: 0.66.1(ws@8.20.0)(zod@3.25.76)
 
   packages/clara-code-surface-scripts:
     devDependencies:
@@ -852,7 +852,7 @@ importers:
     dependencies:
       '@mariozechner/pi-agent-core':
         specifier: ^0.66.1
-        version: 0.66.1(ws@8.20.0)(zod@4.3.6)
+        version: 0.66.1(ws@8.20.0)(zod@3.25.76)
       chalk:
         specifier: ^5.5.0
         version: 5.6.2
@@ -10287,6 +10287,12 @@ snapshots:
     optionalDependencies:
       zod: 3.25.76
 
+  '@anthropic-ai/sdk@0.73.0(zod@3.25.76)':
+    dependencies:
+      json-schema-to-ts: 3.1.1
+    optionalDependencies:
+      zod: 3.25.76
+
   '@anthropic-ai/sdk@0.73.0(zod@4.3.6)':
     dependencies:
       json-schema-to-ts: 3.1.1
@@ -13052,6 +13058,18 @@ snapshots:
       - ws
       - zod
 
+  '@mariozechner/pi-agent-core@0.66.1(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@3.25.76)
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
   '@mariozechner/pi-agent-core@0.66.1(ws@8.20.0)(zod@4.3.6)':
     dependencies:
       '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@4.3.6)
@@ -13078,6 +13096,30 @@ snapshots:
       zod-to-json-schema: 3.25.2(zod@3.25.76)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
+  '@mariozechner/pi-ai@0.66.1(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@anthropic-ai/sdk': 0.73.0(zod@3.25.76)
+      '@aws-sdk/client-bedrock-runtime': 3.1027.0
+      '@google/genai': 1.49.0
+      '@mistralai/mistralai': 1.14.1
+      '@sinclair/typebox': 0.34.49
+      ajv: 8.18.0
+      ajv-formats: 3.0.1(ajv@8.18.0)
+      chalk: 5.6.2
+      openai: 6.26.0(ws@8.20.0)(zod@3.25.76)
+      partial-json: 0.1.7
+      proxy-agent: 6.5.0
+      undici: 7.24.7
+      zod-to-json-schema: 3.25.2(zod@3.25.76)
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
       - bufferutil
       - supports-color
       - utf-8-validate
@@ -13147,6 +13189,39 @@ snapshots:
       marked: 15.0.12
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
+  '@mariozechner/pi-coding-agent@0.66.1(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@mariozechner/jiti': 2.6.5
+      '@mariozechner/pi-agent-core': 0.66.1(ws@8.20.0)(zod@3.25.76)
+      '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@3.25.76)
+      '@mariozechner/pi-tui': 0.66.1
+      '@silvia-odwyer/photon-node': 0.3.4
+      ajv: 8.18.0
+      chalk: 5.6.2
+      cli-highlight: 2.1.11
+      diff: 8.0.4
+      extract-zip: 2.0.1
+      file-type: 21.3.4
+      glob: 13.0.6
+      hosted-git-info: 9.0.2
+      ignore: 7.0.5
+      marked: 15.0.12
+      minimatch: 10.2.5
+      proper-lockfile: 4.1.2
+      strip-ansi: 7.2.0
+      undici: 7.24.7
+      yaml: 2.8.3
+    optionalDependencies:
+      '@mariozechner/clipboard': 0.3.2
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
       - bufferutil
       - supports-color
       - utf-8-validate
@@ -19571,6 +19646,11 @@ snapshots:
       wsl-utils: 0.1.0
 
   openai@6.10.0(ws@8.20.0)(zod@3.25.76):
+    optionalDependencies:
+      ws: 8.20.0
+      zod: 3.25.76
+
+  openai@6.26.0(ws@8.20.0)(zod@3.25.76):
     optionalDependencies:
       ws: 8.20.0
       zod: 3.25.76

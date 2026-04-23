@@ -1,10 +1,18 @@
 {
-	"name": "@clara/cli",
+	"name": "clara",
 	"version": "0.1.0",
-	"description": "Clara Code terminal voice interface",
+	"description": "Clara Code terminal voice interface (npm install -g clara@latest)",
 	"type": "module",
 	"bin": {
 		"clara": "./dist/index.js"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imaginationeverywhere/clara-code.git",
+		"directory": "packages/cli"
 	},
 	"scripts": {
 		"dev": "tsx src/index.ts",
