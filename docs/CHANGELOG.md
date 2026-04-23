@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased] - 2026-04-26
+
+### Added (cross-reference)
+
+- **`docs/review/20260423-pr03-voice-converse-default-review.md`** — code review for PR #03 (voice `converse` default, ~40 files); coverage and `@ts-nocheck` follow-ups. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-26**.
+- **`prompts/2026/April/23/1-not-started/07-unblock-pr03-tests-and-ts.md`** — work prompt to add tests and fix TypeScript issues for PR #03.
+
 ## [Unreleased] - 2026-04-25
 
 ### Added (cross-reference)

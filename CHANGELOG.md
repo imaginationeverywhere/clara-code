@@ -2,6 +2,18 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-26
+
+### Added
+
+- **Review** — `docs/review/20260423-pr03-voice-converse-default-review.md` (PR #03: voice shell, marketing, CI, coverage gaps on `canonical-greeting`, `voice-converse-app`, `VoiceGreeting`, etc.). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-26**.
+
+- **Prompt** — `prompts/2026/April/23/1-not-started/07-unblock-pr03-tests-and-ts.md` to unblock review (tests, TS) for that branch.
+
+### Changed
+
+- **Monorepo version** — root `package.json` `0.2.2` → **`0.2.3`** (docs + review artifacts only in this commit).
+
 ## [Unreleased] - 2026-04-25
 
 ### Added
