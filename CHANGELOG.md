@@ -2,6 +2,19 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-24
+
+### Added
+
+- **`@imaginationeverywhere/clara-voice-client` (workspace `packages/clara-voice-client/`)** — HTTP client for `POST /voice/converse` (`postVoiceConverse`, `resolveConverseUrl`); **greeting cache** for Node: `readGreetingFromCache` / `writeGreetingToCache` (XDG `~/.cache` or `~/.cache/clara-code`). `node:test` coverage; see `packages/clara-voice-client/CHANGELOG.md` and `README.md`.
+- **CLI** — `clara greet` uses the shared voice client and cache; declares `workspace:*` on `@imaginationeverywhere/clara-voice-client`. See `packages/cli/CHANGELOG.md`.
+- **Monorepo version** — root `package.json` `0.1.8` → **`0.2.0`** (new package + published surface area; lockstep for workspace consumers).
+
+### Added (docs / prompts / review)
+
+- **Review** — `docs/review/20260421-pr54-clara-voice-client-review.md` (PR #54 pickup).
+- **Prompts** — `prompts/2026/April/21/1-not-started/` (CLI / desktop / website / distribution around voice; four stubs). See `docs/CHANGELOG.md` cross-ref.
+
 ## [Unreleased] - 2026-04-23
 
 ### Fixed

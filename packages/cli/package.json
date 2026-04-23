@@ -16,6 +16,7 @@
 		"test": "node --test --import tsx test/*.test.ts"
 	},
 	"dependencies": {
+		"@imaginationeverywhere/clara-voice-client": "workspace:*",
 		"commander": "^13.1.0",
 		"ink": "^6.8.0",
 		"react": "^19.2.0"

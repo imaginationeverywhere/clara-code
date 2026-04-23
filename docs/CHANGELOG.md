@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased] - 2026-04-24
+
+### Added (cross-reference)
+
+- **`@imaginationeverywhere/clara-voice-client` + `clara greet`** — new workspace package and CLI integration. See `packages/clara-voice-client/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-24**.
+- **`docs/review/20260421-pr54-clara-voice-client-review.md`** — code review for PR #54.
+- **Prompts** — `prompts/2026/April/21/1-not-started/` (four voice-related stubs).
+
 ## [Unreleased] - 2026-04-23
 
 ### Added (cross-reference)
