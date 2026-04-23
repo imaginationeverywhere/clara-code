@@ -8,7 +8,7 @@
 	},
 	"scripts": {
 		"dev": "tsx src/index.ts",
-		"prebuild": "npm run build -w @clara/clara-code-surface-scripts",
+		"prebuild": "npm run build -w @imaginationeverywhere/clara-voice-client && npm run build -w @clara/clara-code-surface-scripts",
 		"build": "tsup --config tsup.config.ts",
 		"tui": "tsx src/index.ts tui",
 		"typecheck": "tsc --noEmit",
@@ -16,6 +16,7 @@
 		"test": "node --test --import tsx test/*.test.ts"
 	},
 	"dependencies": {
+		"@imaginationeverywhere/clara-voice-client": "0.1.0",
 		"commander": "^13.1.0",
 		"ink": "^6.8.0",
 		"react": "^19.2.0"
