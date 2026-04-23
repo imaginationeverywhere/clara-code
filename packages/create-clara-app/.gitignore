@@ -1,2 +1,4 @@
 # Build output (see tsconfig.build.json)
 dist/
+# Local shim (not in package `files`; published bin is `dist/cli.js` only)
+bin/

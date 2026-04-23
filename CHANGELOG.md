@@ -4,6 +4,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-25
 
+### Fixed
+
+- **`create-clara-app` repository hygiene** — `packages/create-clara-app/.gitignore` now includes `bin/` so optional local shims (not in npm `package.json` `files`) are not left untracked. See `packages/create-clara-app/CHANGELOG.md` and `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 ### Added
 
 - **Clara — desktop, marketing, and release** — Tauri `desktop/` two-column shell with voice side panel (bundled `converse-browser`, `/voice/converse` greeting + PTT; `docs/distribution-pipeline.md` and `.github/workflows/*`). Marketing: `VoiceGreeting` TTS autoplay with tap-to-play on autoplay block; `InstallSection` `npm install -g clara@latest`, `NEXT_PUBLIC_CLARA_DESKTOP_DMG_URL` for the macOS download CTA (`frontend/CHANGELOG.md`, `frontend/.env.example`). `packages/clara-voice-client`: `./converse-browser` export for webview-only builds.

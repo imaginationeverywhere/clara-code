@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- **Git ignore** — `bin/` is ignored in the worktree. The published npm `bin` is `./dist/cli.js` only; a stray `bin/index.js` shim (e.g. from local experiments) is not part of the package `files` field and must not be committed.
+
 ### Added
 
 - `templates/` — OpenNext (`open-next.config.ts`), Cloudflare `wrangler.toml`, and `env.example` (Clerk + Hermes) for bundled publishes (`package.json` `files`).

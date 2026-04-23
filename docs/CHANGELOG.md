@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Fixed (cross-reference)
+
+- **`create-clara-app` gitignore** — `packages/create-clara-app/bin/` ignored; publish surface remains `dist/` + `templates/`. See `packages/create-clara-app/CHANGELOG.md` and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 ### Added (cross-reference)
 
 - **`docs/distribution-pipeline.md`** — tag-based releases: npm (`clara` + `clara-voice-client`), desktop `.dmg`, optional R2, Cloudflare; secret names; rollback. Cross-ref: root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**, `.github/CHANGELOG.md`, `desktop/CHANGELOG.md`.
