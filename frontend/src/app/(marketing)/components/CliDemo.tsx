@@ -80,7 +80,7 @@ export function CliDemo() {
 								Pro
 							</span>
 							<span className="text-white/20">·</span>
-							<span className="font-mono text-[11px] text-white/25">claude-sonnet-4-6</span>
+							<span className="font-mono text-[11px] text-white/25">clara (API)</span>
 						</div>
 					</div>
 					<div className="relative min-h-[320px] bg-bg-terminal p-0 pb-8 font-mono text-[13px] leading-7">
