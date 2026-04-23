@@ -73,3 +73,21 @@ Save them in `clara-code/prompts/2026/April/23/1-not-started/` alongside this di
 ---
 
 **Scope rule:** Ship CLI first (lowest complexity, highest Mo-satisfaction). Then Desktop. Then Website. Then pipeline. Don't parallelize prematurely.
+
+---
+
+## Status (pickup-prompt, `develop` 2026-04-23)
+
+**This file is a parent directive, not a single build task.** It was decomposed into smaller prompts on a feature branch. On **`develop` (this checkout)**, the end-state in Mo’s “Acceptance” is **not yet fully on `main`/`develop`** without merging the branch that contains `03`–`06` follow-ups (e.g. `clara` npm name, Tauri side voice bundle, `release-on-tag` / `desktop-macos-dmg` workflows, marketing `NEXT_PUBLIC_CLARA_DESKTOP_DMG_URL` + TTS autoplay, `docs/distribution-pipeline.md`).
+
+| # | Area | `develop` snapshot | Follow-up |
+|---|------|-------------------|-----------|
+| 1 | `clara-voice-client` | Package exists (`postVoiceConverse`, cache). | Full publish + `converse-browser` source path: merge feature or release. |
+| 2 | CLI | `packages/cli` is **`@clara/cli`**; binary `clara`. | Rename/publish as **`clara`** for `npm i -g clara@latest` (see clara-distribution work). |
+| 3 | Desktop | Tauri shell + **voice overlay**; not the full “editor + **side** voice” webview in all branches. | Land side panel + `build:shell-voice` + optional dmg CI. |
+| 4 | Website | Marketing **VoiceGreeting** (push-to-play), **InstallSection** exists; autoplay + dmg URL may be on another branch. | Merge marketing changes + set CF `NEXT_PUBLIC_*` for download URL. |
+| 5 | Distribution | CF often via **Git integration** (`deploy-pages` no-op). | Add optional `release-on-tag` + doc’d secrets when ready. |
+
+**E2E:** Requires cp-team **`/voice/converse` + API** for live loop; TTS on site uses `POST /api/voice/tts` when `CLARA_VOICE_URL` (or proxy) is set in the Workers env.
+
+**Directive record:** `pickup-prompt` moved this file to `3-completed/` to clear `1-not-started/`. Ongoing work continues via PRs from feature branches, not the daily queue.
