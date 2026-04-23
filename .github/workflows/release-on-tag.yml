@@ -1,6 +1,6 @@
-# v*.*.* → Tauri .dmg + GitHub Release assets only.
-# CLI and voice-client are NOT published to npm — distribution is gated post-checkout via claracode.ai.
-# See docs/distribution-pipeline.md for subscriber delivery (curl script / dashboard download).
+# v*.*.* → npm publish (clara + clara-voice-client) + Tauri .dmg + GitHub Release assets.
+# Distribution model: npm install -g clara@latest → first run gates on token from claracode.ai.
+# The subscription gate is authentication, not installation location (same model as Claude Code).
 
 name: Release on tag
 
@@ -14,8 +14,47 @@ concurrency:
 
 permissions:
   contents: write
+  id-token: write
 
 jobs:
+  publish-npm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        with:
+          node-version: "22"
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Build voice client
+        run: pnpm -C packages/clara-voice-client run build
+
+      - name: Build clara CLI
+        run: pnpm -C packages/cli run build
+
+      - name: Publish to npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "${NPM_TOKEN}" ]; then
+            echo "NPM_TOKEN not set — skipping npm publish (add repo secret to enable)"
+            exit 0
+          fi
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          pnpm --filter @imaginationeverywhere/clara-voice-client publish --access public --no-git-checks
+          pnpm --filter clara publish --access public --no-git-checks
+
   build-desktop:
     runs-on: macos-latest
     steps:
