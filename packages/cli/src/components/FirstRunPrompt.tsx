@@ -1,5 +1,4 @@
-// @ts-nocheck — Ink vs @types/react JSX typing drift; mirrors tui.tsx convention.
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Text, useInput } from "ink";
 
 export type FirstRunPromptProps = {

@@ -1,5 +1,4 @@
-// @ts-nocheck — Ink vs @types/react JSX component typing (ReactNode bigint) until Ink types align
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Text } from "ink";
 
 const WAVE_CHARS = ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"];

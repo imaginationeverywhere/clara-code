@@ -1,5 +1,3 @@
-// @ts-nocheck — Ink vs @types/react JSX component typing (ReactNode bigint) until Ink types align
-import React from "react";
 import { Box, Static, Text } from "ink";
 import type { Message } from "../tui.js";
 

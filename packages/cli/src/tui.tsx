@@ -1,5 +1,4 @@
-// @ts-nocheck — Ink vs @types/react JSX component typing (ReactNode bigint) until Ink types align
-import React, { useCallback, useEffect, useMemo, useRef, useState, type PropsWithChildren } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type PropsWithChildren } from "react";
 import { Box, useApp, useInput } from "ink";
 import { CliVoiceBar } from "./components/CliVoiceBar.js";
 import { FirstRunPrompt } from "./components/FirstRunPrompt.js";
@@ -10,7 +9,7 @@ import { StatusBar } from "./components/StatusBar.js";
 import { useVoice, type VoicePhase } from "./hooks/useVoice.js";
 import { SIX_SIDE_PROJECTS_QUESTION } from "./lib/clara-code-surface-scripts.js";
 import { patchClaraConfig, readClaraConfig } from "./lib/config-store.js";
-import { readClaraCredentials, writeClaraCredentials } from "./lib/credentials-store.js";
+import { writeClaraCredentials } from "./lib/credentials-store.js";
 import type { GatewayResult } from "./lib/gateway.js";
 import { createSessionLogger, type SessionLogger } from "./lib/session-log.js";
 
