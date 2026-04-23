@@ -4,6 +4,7 @@
 
 ### Added
 
+- **Install section** — Document `npm install -g clara@latest`, `npx clara@latest`, and scoped `npm i -g @clara/cli`; add `id="download"` on the desktop IDE block for `claracode.ai#download` links. Cross-ref: [docs/distribution/cli-npm.md](../docs/distribution/cli-npm.md) and the `packages/clara` npm shim.
 - **App shell** — `AppHeader` + `ProfileWidget` (Clerk avatar, tier badge, account/dashboard/sign out); `(app)/layout.tsx` wraps dashboard, account, API keys, and settings; `next.config.ts` `images.remotePatterns` for Clerk avatars.
 - **Legal** — Server-rendered `/privacy` and `/terms` pages (Header + Footer), footer links, root `metadata.alternates.canonical`.
 

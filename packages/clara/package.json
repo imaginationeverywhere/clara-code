@@ -1,42 +1,29 @@
 {
-	"name": "@ie/clara",
+	"name": "clara",
 	"version": "0.1.0",
-	"description": "Clara — the AI coding agent SDK by Imagination Everywhere",
+	"description": "Clara Code CLI (npm install -g clara) — delegates to @clara/cli",
+	"license": "MIT",
 	"type": "module",
-	"exports": {
-		".": {
-			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js"
-		}
-	},
-	"scripts": {
-		"clean": "shx rm -rf dist",
-		"build": "tsgo -p tsconfig.build.json",
-		"prepublishOnly": "npm run clean && npm run build"
+	"bin": {
+		"clara": "./bin/clara.mjs"
 	},
 	"files": [
-		"dist"
+		"bin",
+		"README.md",
+		"CHANGELOG.md"
 	],
-	"keywords": [
-		"ai",
-		"agent",
-		"coding",
-		"clara",
-		"llm",
-		"deepseek"
-	],
-	"author": "Imagination Everywhere",
-	"license": "MIT",
+	"dependencies": {
+		"@clara/cli": "workspace:*"
+	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/imaginationeverywhere/clara-code.git",
+		"url": "https://github.com/imaginationeverywhere/clara-code.git",
 		"directory": "packages/clara"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"engines": {
 		"node": ">=20.0.0"
-	},
-	"dependencies": {
-		"@mariozechner/pi-coding-agent": "^0.66.1"
-	},
-	"devDependencies": {}
+	}
 }

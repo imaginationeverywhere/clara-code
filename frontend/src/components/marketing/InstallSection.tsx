@@ -45,8 +45,17 @@ export function InstallSection() {
 										Coming Soon
 									</span>
 								</div>
-								<div className="font-mono text-sm text-white/40">
-									<span className="text-white/25"># </span>npm install -g @clara/cli
+								<div className="space-y-2 font-mono text-sm text-white/40">
+									<div>
+										<span className="text-white/25"># </span>npm install -g clara@latest
+									</div>
+									<div>
+										<span className="text-white/25"># </span>npx clara@latest
+									</div>
+									<div className="text-white/30">
+										<span className="text-white/25"># </span>npm i -g @clara/cli
+										<span className="pl-1 text-white/20">(scoped, same binary)</span>
+									</div>
 								</div>
 							</div>
 
@@ -92,7 +101,7 @@ export function InstallSection() {
 						</div>
 					</div>
 
-					<div>
+					<div id="download">
 						<div className="mb-4 flex items-center gap-2">
 							<IconMonitor className="h-4 w-4 text-brand-purple" />
 							<span className="font-mono text-[13px] font-semibold text-white">Desktop IDE</span>

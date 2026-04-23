@@ -503,9 +503,9 @@ importers:
 
   packages/clara:
     dependencies:
-      '@mariozechner/pi-coding-agent':
-        specifier: ^0.66.1
-        version: 0.66.1(ws@8.20.0)(zod@4.3.6)
+      '@clara/cli':
+        specifier: workspace:*
+        version: link:../cli
 
   packages/clara-code-surface-scripts:
     devDependencies:
@@ -852,7 +852,7 @@ importers:
     dependencies:
       '@mariozechner/pi-agent-core':
         specifier: ^0.66.1
-        version: 0.66.1(ws@8.20.0)(zod@4.3.6)
+        version: 0.66.1(ws@8.20.0)(zod@3.25.76)
       chalk:
         specifier: ^5.5.0
         version: 5.6.2
@@ -10287,6 +10287,12 @@ snapshots:
     optionalDependencies:
       zod: 3.25.76
 
+  '@anthropic-ai/sdk@0.73.0(zod@3.25.76)':
+    dependencies:
+      json-schema-to-ts: 3.1.1
+    optionalDependencies:
+      zod: 3.25.76
+
   '@anthropic-ai/sdk@0.73.0(zod@4.3.6)':
     dependencies:
       json-schema-to-ts: 3.1.1
@@ -13052,6 +13058,18 @@ snapshots:
       - ws
       - zod
 
+  '@mariozechner/pi-agent-core@0.66.1(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@3.25.76)
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
   '@mariozechner/pi-agent-core@0.66.1(ws@8.20.0)(zod@4.3.6)':
     dependencies:
       '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@4.3.6)
@@ -13078,6 +13096,30 @@ snapshots:
       zod-to-json-schema: 3.25.2(zod@3.25.76)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
+  '@mariozechner/pi-ai@0.66.1(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@anthropic-ai/sdk': 0.73.0(zod@3.25.76)
+      '@aws-sdk/client-bedrock-runtime': 3.1027.0
+      '@google/genai': 1.49.0
+      '@mistralai/mistralai': 1.14.1
+      '@sinclair/typebox': 0.34.49
+      ajv: 8.18.0
+      ajv-formats: 3.0.1(ajv@8.18.0)
+      chalk: 5.6.2
+      openai: 6.26.0(ws@8.20.0)(zod@3.25.76)
+      partial-json: 0.1.7
+      proxy-agent: 6.5.0
+      undici: 7.24.7
+      zod-to-json-schema: 3.25.2(zod@3.25.76)
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
       - bufferutil
       - supports-color
       - utf-8-validate
@@ -19571,6 +19613,11 @@ snapshots:
       wsl-utils: 0.1.0
 
   openai@6.10.0(ws@8.20.0)(zod@3.25.76):
+    optionalDependencies:
+      ws: 8.20.0
+      zod: 3.25.76
+
+  openai@6.26.0(ws@8.20.0)(zod@3.25.76):
     optionalDependencies:
       ws: 8.20.0
       zod: 3.25.76
