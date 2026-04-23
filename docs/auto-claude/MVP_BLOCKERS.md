@@ -1,112 +1,59 @@
 # MVP Blockers — Clara Code
 
-> **Updated**: 2026-04-14
+> **Updated**: 2026-04-23
 
 ---
 
-## BLK-01 — Stripe Merchant Account (Critical)
+## Active Blockers
 
-**Status**: ✅ RESOLVED — 2026-04-13
-**Impact**: ~~Blocks checkout, subscriptions, agent provisioning on purchase~~
-**Resolution**: Merchant account approved. Live keys stored in SSM:
-- `/clara-code/STRIPE_PUBLISHABLE_KEY` (SecureString)
-- `/clara-code/STRIPE_SECRET_KEY` (SecureString)
-- `/clara-code/prod/STRIPE_PUBLISHABLE_KEY` (SecureString)
-- `/clara-code/prod/STRIPE_SECRET_KEY` (SecureString)
-**Wrangler secrets set**: `STRIPE_SECRET_KEY` on `clara-code` (production) and `clara-code-preview`
-**Next**: Build Stripe checkout — prompt queued at `prompts/2026/April/13/1-not-started/06-stripe-checkout-and-subscriptions.md`
-**Note**: `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` must be exported from SSM before running `npm run pages:build` — it's baked into the client bundle at build time
+### BLK-PR59 — PR #59 BLOCKED: No tests + @ts-nocheck
+**Severity**: Critical
+**Affects**: Voice greeting, voice converse TUI, Tauri .dmg, npm release CI
+**Owner**: Cursor agent executing prompt 07
+**Resolution**: `prompts/2026/April/23/1-not-started/07-unblock-pr03-tests-and-ts.md`
 
----
+PR #59 contains the most critical new logic but fails review gate:
+- `canonical-greeting.ts` (~120 lines) — 0 tests (8 required)
+- `voice-converse-app.tsx` — `// @ts-nocheck` at line 1 (all TS suppressed)
+- `VoiceGreeting.tsx` — 0 tests (4 required)
+- Branch predates PR #56 merge (-10 voice-client tests, -2 frontend tests regression)
 
-## BLK-02 — Clerk Keys Not Wired to CF Workers (Critical)
+Steps to unblock:
+1. Merge PR #56 to develop first
+2. Rebase PR #59 onto develop
+3. Remove @ts-nocheck, fix TypeScript errors
+4. Write 8 tests for canonical-greeting.ts
+5. Write 4 Vitest tests for VoiceGreeting.tsx
+6. Add E2E gap doc for shell-voice-converse.ts
+7. Push → /review-code → merge
 
-**Status**: 🚫 Active
-**Impact**: Sign-in and sign-up are broken in the CF Pages staging environment. Middleware is a passthrough (`NextResponse.next()`) intentionally until keys are set.
-**Resolution**:
-1. Go to Cloudflare Workers & Pages → clara-code → Settings → Environment Variables
-2. Add (encrypted):
-   - `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY`
-   - `CLERK_SECRET_KEY`
-   - `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in`
-   - `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up`
-3. Re-enable middleware in `frontend/src/middleware.ts` (replace passthrough with Clerk's `clerkMiddleware()`)
-4. Add `develop.claracode.ai` to Clerk's allowed origins
-5. Trigger a CF Pages re-deploy (any push to develop branch will do it — the Clerk keys bake into the build)
-6. After deploy: test sign-in at https://develop.claracode.ai/sign-in
-**Owner**: Mo (Amen Ra)
+### BLK-TAURI — Desktop macOS CI Build Failing
+**Severity**: High
+**Affects**: .dmg distribution
+**Depends on**: BLK-PR59 (likely TS errors causing build fail)
+**Resolution**: Fix BLK-PR59 first, then investigate Tauri-specific errors
 
----
-
-## BLK-03 — Stripe Webhook Missing Svix Verification (High)
-
-**Status**: ⚠️ Security Gap
-**Impact**: Webhook handler accepts any POST — allows spoofed events in production
-**File**: `backend/src/routes/webhooks.ts`
-**Resolution**: Add Svix signature verification before going live:
-```ts
-import { Webhook } from "svix";
-const wh = new Webhook(process.env.STRIPE_WEBHOOK_SECRET!);
-wh.verify(rawBody, headers);
-```
-**Owner**: Miles
-**Note**: Not blocking until Stripe is live, but must be done before merchant account activates
+### BLK-NPM — npm publish `clara@latest` blocked
+**Severity**: High
+**Affects**: `npm install -g clara@latest` (primary MVP user flow)
+**Resolution**: BLK-PR59 → merge → `git tag v1.0.0-beta.1` → release-on-tag.yml
 
 ---
 
-## BLK-04 — IDE / CLI / Desktop Voice Surfaces Not Dispatched (High)
+## Resolved Today (2026-04-23)
 
-**Status**: ⏳ Waiting for dispatch
-**Impact**: Clara Code's core product differentiator (voice-in-your-IDE) is not yet built
-**Packages ready**:
-- `packages/ide-extension/` — VS Code fork sidebar + voice panel
-- `packages/tui/` v0.66.1 — Ink-based terminal UI
-- `packages/coding-agent/` v0.66.1 — coding agent harness
-- `desktop/` — Tauri app scaffold
-**Resolution**: Queue and dispatch S2-IDE, S2-CLI, S2-Desktop Cursor prompts on QCS1
-**Owner**: Carruthers
+| Blocker | Fix |
+|---------|-----|
+| /converse missing usage tracking (H1) | Fixed directly on PR #57 — 5 lines + 1 test |
+| Pre-existing server.test.ts TS2739 | Confirmed pre-existing on develop, not blocking new work |
 
 ---
 
-## BLK-05 — Dashboard UI Not Connected to Backend (Medium)
+## Legacy Blockers (from Sprint 3 — for reference)
 
-**Status**: ✅ RESOLVED — 2026-04-14 (PR #30)
-**Impact**: ~~Dashboard shows localStorage fake data~~
-**Resolution**: localStorage completely removed. `DashboardTabs.tsx` now uses Apollo `useQuery(MY_API_KEYS)`. Server component shell with `currentUser()` from Clerk. `/account` page added with `PersonalInfoSection`, `SubscriptionSection`, `DangerZone` (delete account). `DangerZone` calls `DELETE /api/account/delete` which calls `clerkClient().users.deleteUser(userId)`.
-**Files changed**: `frontend/src/app/dashboard/page.tsx`, `DashboardTabs.tsx`, new `/account/page.tsx`, new `/api/account/delete/route.ts`
-
----
-
-## BLK-06 — Develop 220 Commits Ahead of Main (High)
-
-**Status**: 🚫 Active
-**Impact**: All Sprint 1–3 work is on `develop` only. Production (`main`) is 220 commits behind. Nothing from the past 3 sprints is in production.
-**Resolution**: Create release PR `develop → main`, review, merge. Then trigger CF Workers production deployment.
-**Owner**: Carruthers
-**Note**: This is the path to `claracode.ai` showing the full product vs the stale main branch
-
----
-
-## BLK-07 — SDK npm Publish Needs Auth Token (Medium)
-
-**Status**: ⚠️ Pending
-**Impact**: `@claracode/sdk` cannot be published to npm without an npm auth token configured in CI/CD
-**Note**: Per product strategy, `@claracode/sdk` is NOT a public npm package — it's gated behind API key + subscription. The CLI (`claracode` or `npx claracode@latest`) is the public npm artifact. SDK distribution is via authenticated download. This blocker only applies if/when we decide to publish the CLI package.
-**Owner**: Miles
-
----
-
-## Resolved Blockers
-
-| Blocker | Resolved | By |
-|---------|----------|----|
-| BLK-01 Stripe merchant account | 2026-04-13 | Mo (SSM + Wrangler secrets) |
-| BLK-05 Dashboard localStorage | 2026-04-14 | PR #30 (Apollo + server component) |
-| CF Pages 500 (Turbopack/hoisting) | 2026-04-12 | Carruthers |
-| CRIT-01 — billing portal URL exposure | 2026-04-12 | S2-05 |
-| HIGH-01 — mobile hardcoded ngrok URL | 2026-04-12 | S2-05 |
-| HIGH-02 — backend branch coverage < 80% | 2026-04-13 | Backend test suite |
-| HIGH-03 — cli/dist tracked in git | 2026-04-12 | S2-05 |
-| @opennextjs/cloudflare migration | 2026-04-12 | Carruthers |
-| Hermes/Modal gateway URL in `package.json` | 2026-04-14 | PR #29 (context.secrets) |
-| Standards gaps (desktop/profile/analytics/design) | 2026-04-14 | PRs #29–32 |
+| ID | Status | Note |
+|----|--------|------|
+| BLK-01 (Stripe merchant) | Resolved | Live keys in SSM |
+| BLK-02 (Clerk CF Workers env) | Resolved | Keys wired |
+| BLK-03 (Svix webhook verification) | Resolved | HIGH-04 closed |
+| BLK-05 (package-lock.json) | Closed | pnpm purity |

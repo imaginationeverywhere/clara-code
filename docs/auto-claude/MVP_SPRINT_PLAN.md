@@ -1,80 +1,64 @@
 # Sprint 4 Plan — Clara Code
 
-> **Sprint Dates**: 2026-04-14 onward
-> **Sprint Goal**: Wire Clerk to CF env, ship develop→main release, dispatch IDE/CLI, start Stripe checkout
+> **Sprint Dates**: 2026-04-23 onward
+> **Sprint Goal**: Ship voice converse end-to-end — merge #56 + #57, unblock #59, tag beta
 
 ---
 
-## Sprint 3 Retrospective (2026-04-14)
+## Priority 1 — Merge Today (no code work)
 
-**25 PRs merged. Grade A- overall. 208 tests. 90.79% coverage.**
+| Task | How | Status |
+|------|-----|--------|
+| Merge PR #57 (backend converse, 239 tests) | `gh pr merge 57 --squash` | ✅ APPROVED |
+| Merge PR #56 (voice client, 13 tests) | `gh pr merge 56 --squash` | ✅ APPROVED |
+| Merge PR #61 (directive archive) | `gh pr merge 61 --squash` | CI pass |
 
-| Delivered | Status |
-|-----------|--------|
-| Desktop SecretStorage (gateway URL hidden) | ✅ PR #29 A- |
-| Dashboard real API (localStorage eliminated) | ✅ PR #30 A |
-| GA4 analytics install funnel | ✅ PR #31 A |
-| Design system tokens (tailwind + docs) | ✅ PR #32 A- |
-| `/account` page with delete account flow | ✅ (in PR #30) |
+## Priority 2 — Unblock PR #59
 
----
+| Task | Prompt | Status |
+|------|--------|--------|
+| Rebase #59 onto develop (after #56 merges) | manual | ⏳ after P1 |
+| Remove @ts-nocheck + fix TS | `07-unblock-pr03-tests-and-ts.md` | ⏳ |
+| 8 tests for canonical-greeting.ts | `07-unblock-pr03-tests-and-ts.md` | ⏳ |
+| 4 Vitest tests for VoiceGreeting.tsx | `07-unblock-pr03-tests-and-ts.md` | ⏳ |
+| E2E gap doc for shell-voice-converse.ts | `07-unblock-pr03-tests-and-ts.md` | ⏳ |
+| /review-code → merge PR #59 | `/review-code` | ⏳ after above |
 
-## Sprint 4 Backlog
+## Priority 3 — Ship Beta
 
-### Priority 1 — Must Complete (Mo Actions)
-
-| Task | Owner | Notes |
-|------|-------|-------|
-| Add `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` + `CLERK_SECRET_KEY` to CF Workers env | Mo | CF Dashboard → Workers & Pages → clara-code / clara-code-preview → Settings → Env Vars |
-| Add `NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in` + `NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up` | Mo | Same CF env vars step |
-| Export `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` from SSM, run `npm run pages:build` | Mo | Required before next CF deploy has Stripe |
-
-### Priority 2 — Carruthers (Tech Lead)
-
-| Task | Notes |
-|------|-------|
-| Create `develop → main` release PR | 220 commits; full Sprint 1-3 output to production |
-| Dispatch S2-IDE prompt to Cursor on QCS1 | `packages/ide-extension/` — sidebar, voice panel, activation |
-| Dispatch S2-CLI/TUI prompt to Cursor on QCS1 | `packages/tui/`, `packages/coding-agent/` — full-screen voice TUI |
-| Re-enable Clerk middleware in `frontend/src/middleware.ts` after Clerk keys wired | Replace passthrough with `clerkMiddleware()` |
-
-### Priority 3 — Miles (Backend)
-
-| Task | Notes |
-|------|-------|
-| Build Stripe checkout flow (prompt 06 from archive) | Live keys in SSM; `STRIPE_WEBHOOK_SECRET` needed |
-| Add Svix webhook verification to `backend/src/routes/webhooks.ts` | Required before Stripe events are trusted in production |
-| Add `develop.claracode.ai` custom domain to Clerk allowed origins | Needed for OAuth redirects |
-
-### Priority 4 — Motley (Frontend)
-
-| Task | Notes |
-|------|-------|
-| Verify sculpt scale 400–100 against `mockups/app/src/index.css` | PR #32 only has 5 stops; spec said 900–100 |
-| Wire checkout success page to Stripe session | Currently placeholder |
-| Settings page functionality | Profile update, notification prefs |
+| Task | Notes | Status |
+|------|-------|--------|
+| `git tag v1.0.0-beta.1` | Triggers release-on-tag.yml → npm + .dmg | ⏳ after #59 |
+| Smoke test: `npm install -g clara@latest && clara` | Manual | ⏳ |
+| Execute prompt 06 (Motley voice bar) | `06-motley-wire-voice-bar-frontend.md` | ⏳ |
 
 ---
 
-## Open PRs (community, from upstream fork)
+## Critical Path
 
-These upstream PRs are open against `develop` — review before merging to avoid conflicts with our sprint work:
-
-| PR | Description | Action |
-|----|-------------|--------|
-| #3111 | `feat(tui): super keybinding (kitty)` | Review — may affect packages/tui |
-| #3106 | `fix(tui): md trailing spaces` | Low risk — merge when convenient |
-| #3105 | `fix(tui): offscreen spinner redraw` | Low risk |
-| #3099 | `feat(coding-agent): inline extension factories` | Review architecture impact |
-| #3072 | `fix(coding-agent): custom models + list-models` | Useful — review |
+```
+Merge PR #56 + #57 (10 min)
+       ↓
+Rebase PR #59 + execute prompt 07 (60-90 min)
+       ↓
+/review-code on rebased PR #59
+       ↓
+Merge PR #59
+       ↓
+git tag v1.0.0-beta.1 → release-on-tag.yml
+       ↓
+npm install -g clara@latest && clara  ← MVP SHIPPED
+       ↓
+Prompt 06 (Motley): Ctrl+Space voice bar in web IDE
+```
 
 ---
 
-## Sprint 4 Risks
+## Next Sprint Preview
 
-| Risk | Probability | Impact | Mitigation |
-|------|-------------|--------|------------|
-| Clerk wiring reveals additional CF env gaps | Low | Medium | Test sign-in immediately after setting vars |
-| Sculpt scale gap (400–100) may require design rework | Medium | Low | Verify against mockup source before adding stops |
-| IDE/CLI dispatch creates merge conflicts with develop | Low | Medium | Rebase prompt branches against latest develop |
-| Stripe checkout prompt needs to match dynamic pricing policy | Low | High | Prompt must use `stripe.prices.list()` + metadata — NO env var price IDs |
+| Task | Prompt | Priority |
+|------|--------|----------|
+| Voice bar in web IDE | `06-motley-wire-voice-bar-frontend.md` | High |
+| Shim tests (packages/clara) | from pr56/06-unblock | Medium |
+| Tauri IPC for API key (vs meta tag) | before GA | Medium |
+| server.test.ts TS2739 fix (pre-existing) | standalone | Low |
