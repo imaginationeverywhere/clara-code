@@ -3,6 +3,7 @@ import { unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import {
+	type ConverseResult,
 	postVoiceConverse,
 	readGreetingFromCache,
 	writeGreetingToCache,
@@ -36,23 +37,45 @@ function voiceApiKey(): string | undefined {
 
 export type GreetingResult = { ok: true } | { ok: false; message: string };
 
+/** Injected for tests; default uses the real @claracode/voice-client + `globalThis.fetch`. */
+export type GreetingDeps = {
+	postVoiceConverse: typeof postVoiceConverse;
+	readGreetingFromCache: typeof readGreetingFromCache;
+	writeGreetingToCache: typeof writeGreetingToCache;
+	playAudioFile: typeof playAudioFile;
+	fetch: typeof globalThis.fetch;
+};
+
+const defaultGreetingDeps = (): GreetingDeps => ({
+	postVoiceConverse,
+	readGreetingFromCache,
+	writeGreetingToCache,
+	playAudioFile,
+	fetch: globalThis.fetch,
+});
+
+export type PlayGreetingOptions = { refresh?: boolean; deps?: Partial<GreetingDeps> };
+
 /**
  * Fetches and plays the canonical greeting (cache → /voice/converse → /voice/respond).
  * Shared by `clara greet` and the default voice-converse entry.
  */
-export async function playCanonicalGreeting(): Promise<GreetingResult> {
+export async function playCanonicalGreeting(options?: PlayGreetingOptions): Promise<GreetingResult> {
+	const d: GreetingDeps = { ...defaultGreetingDeps(), ...options?.deps };
 	const base = process.env.CLARA_VOICE_URL?.trim();
 	if (!base) {
 		return { ok: false, message: "set CLARA_VOICE_URL to your voice service base URL" };
 	}
 
-	const fromCache = await readGreetingFromCache();
+	const fromCache = options?.refresh ? null : await d.readGreetingFromCache();
 	if (fromCache) {
 		const ext = extensionForContentType(fromCache.contentType);
 		const outPath = join(tmpdir(), `clara-greet-cached-${randomBytes(8).toString("hex")}${ext}`);
 		await writeFile(outPath, fromCache.bytes);
 		try {
-			await playAudioFile(outPath);
+			await d.playAudioFile(outPath);
+		} catch {
+			return { ok: false, message: "audio playback failed" };
 		} finally {
 			await unlink(outPath).catch(() => {});
 		}
@@ -60,7 +83,7 @@ export async function playCanonicalGreeting(): Promise<GreetingResult> {
 	}
 
 	const apiKey = voiceApiKey();
-	const converse = await postVoiceConverse(base, { text: "" }, { apiKey });
+	const converse: ConverseResult = await d.postVoiceConverse(base, { text: "" }, { apiKey });
 
 	if (converse.ok && typeof converse.reply_audio_base64 === "string" && converse.reply_audio_base64.length > 0) {
 		const buf = Buffer.from(converse.reply_audio_base64, "base64");
@@ -71,7 +94,7 @@ export async function playCanonicalGreeting(): Promise<GreetingResult> {
 		);
 		await writeFile(outPath, buf);
 		try {
-			await writeGreetingToCache({
+			await d.writeGreetingToCache({
 				bytes: buf,
 				contentType: mimeHeader.length > 0 ? mimeHeader : "audio/mpeg",
 			});
@@ -79,7 +102,9 @@ export async function playCanonicalGreeting(): Promise<GreetingResult> {
 			// best-effort cache
 		}
 		try {
-			await playAudioFile(outPath);
+			await d.playAudioFile(outPath);
+		} catch {
+			return { ok: false, message: "audio playback failed" };
 		} finally {
 			await unlink(outPath).catch(() => {});
 		}
@@ -89,7 +114,7 @@ export async function playCanonicalGreeting(): Promise<GreetingResult> {
 	const respondUrl = `${base.replace(/\/$/, "")}/voice/respond`;
 	let res: Response;
 	try {
-		res = await fetch(respondUrl, {
+		res = await d.fetch(respondUrl, {
 			method: "POST",
 			headers: {
 				Accept: "audio/*,*/*;q=0.9",
@@ -138,16 +163,24 @@ export async function playCanonicalGreeting(): Promise<GreetingResult> {
 
 	const ext = extensionForContentType(contentType);
 	const outPath = join(tmpdir(), `clara-greet-${randomBytes(8).toString("hex")}${ext}`);
-	await writeFile(outPath, buf);
+	try {
+		await writeFile(outPath, buf);
+	} catch {
+		return { ok: false, message: "greeting I/O failed" };
+	}
 	const mimeForCache =
 		contentType && contentType.length > 0 ? contentType.split(";")[0]!.trim() : "application/octet-stream";
 	try {
-		await writeGreetingToCache({ bytes: buf, contentType: mimeForCache });
-	} catch {
-		// best-effort cache
-	}
-	try {
-		await playAudioFile(outPath);
+		try {
+			await d.writeGreetingToCache({ bytes: buf, contentType: mimeForCache });
+		} catch {
+			// best-effort cache
+		}
+		try {
+			await d.playAudioFile(outPath);
+		} catch {
+			return { ok: false, message: "audio playback failed" };
+		}
 	} finally {
 		await unlink(outPath).catch(() => {});
 	}

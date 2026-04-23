@@ -1,11 +1,10 @@
-// @ts-nocheck — Ink vs @types/react JSX
 import { randomBytes } from "node:crypto";
 import { unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { postVoiceConverse } from "@imaginationeverywhere/clara-voice-client";
-import { Box, Text, useApp, useInput } from "ink";
+import { type ConverseResult, postVoiceConverse } from "@imaginationeverywhere/clara-voice-client";
+import { type Key, useInput, Box, Text, useApp } from "ink";
+import { useCallback, useEffect, useRef, useState, type ReactElement } from "react";
 import { playCanonicalGreeting } from "./lib/canonical-greeting.js";
 import { playAudioFile } from "./lib/play-audio-file.js";
 import { startCapture, type AudioCapture } from "./lib/audio-capture.js";
@@ -19,7 +18,7 @@ function voiceKey(): string | undefined {
 	return k && k.length > 0 ? k : undefined;
 }
 
-export function VoiceConverseApp(): React.ReactElement {
+export function VoiceConverseApp(): ReactElement {
 	const { exit } = useApp();
 	const [greet, setGreet] = useState<"loading" | "ready" | "failed">("loading");
 	const [greetErr, setGreetErr] = useState("");
@@ -54,7 +53,7 @@ export function VoiceConverseApp(): React.ReactElement {
 		setBusy(true);
 		setStatus("Sending to /voice/converse…");
 		const b64 = wav.length > 0 ? wav.toString("base64") : undefined;
-		const res = await postVoiceConverse(
+		const res: ConverseResult = await postVoiceConverse(
 			base,
 			{
 				session_id: sessionIdRef.current,
@@ -90,7 +89,7 @@ export function VoiceConverseApp(): React.ReactElement {
 	}, []);
 
 	useInput(
-		(_input, key) => {
+		(input: string, key: Key) => {
 			if (key.escape) {
 				exit();
 				return;
@@ -98,7 +97,8 @@ export function VoiceConverseApp(): React.ReactElement {
 			if (greet === "loading" || busy) {
 				return;
 			}
-			if (greet === "failed" || !key.space) {
+			// Ink: space bar is the single character " " (Key has no `space` flag in Ink 6+)
+			if (greet === "failed" || input !== " ") {
 				return;
 			}
 			if (!listening) {

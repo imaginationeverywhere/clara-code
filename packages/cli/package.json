@@ -21,7 +21,7 @@
 		"tui": "tsx src/index.ts tui",
 		"typecheck": "tsc --noEmit",
 		"check": "tsc --noEmit",
-		"test": "node --test --import tsx test/*.test.ts"
+		"test": "node --test --import tsx test/*.test.ts test/lib/*.test.ts"
 	},
 	"dependencies": {
 		"@imaginationeverywhere/clara-voice-client": "workspace:*",

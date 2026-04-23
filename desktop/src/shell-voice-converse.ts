@@ -1,3 +1,6 @@
+// Unit tests: not applicable — this module uses browser-only APIs (MediaRecorder,
+// getUserMedia, AudioContext, Audio). Covered by E2E testing in Tauri webview context.
+// See docs/testing/desktop-voice-e2e-plan.md for planned test scenarios.
 import {
 	type ConverseResult,
 	postVoiceConverse,
