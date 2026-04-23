@@ -287,6 +287,90 @@ router.post(
 	},
 );
 
+function converseVoiceBase(): string | undefined {
+	const specific = process.env.VOICE_SERVER_URL?.trim();
+	if (specific) return specific.replace(/\/$/, "");
+	return hermesVoiceBase();
+}
+
+function converseApiKey(): string | undefined {
+	const specific = process.env.CLARA_VOICE_API_KEY?.trim();
+	if (specific && specific.length > 0) return specific;
+	return hermesApiKey();
+}
+
+// POST /api/voice/converse — single-round-trip voice: audio in → STT → LLM → TTS → audio out
+// Request body: { audio_base64: string (required), voice_id?, history?, max_tokens? }
+// Response: { transcript, response_text, audio_base64 } — proxied from voice server
+// Auth scheme: same as /stt — edge validates Clerk/Clara key, injects CLARA_VOICE_API_KEY server-side
+router.post(
+	"/converse",
+	requireClaraOrClerk,
+	voiceLimiter,
+	voiceLimitMiddleware,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const {
+			audio_base64,
+			voice_id = "clara",
+			history = [],
+			max_tokens = 300,
+		} = (req.body ?? {}) as {
+			audio_base64?: string;
+			voice_id?: string;
+			history?: unknown[];
+			max_tokens?: number;
+		};
+
+		if (typeof audio_base64 !== "string" || audio_base64.length === 0) {
+			res.status(400).json({ error: "audio_base64 is required" });
+			return;
+		}
+
+		const base = converseVoiceBase();
+		if (!base) {
+			res.status(503).json({ error: "Voice service is not available" });
+			return;
+		}
+
+		const apiKey = converseApiKey();
+		if (!apiKey) {
+			logger.error("CLARA_VOICE_API_KEY / HERMES_API_KEY is not set — refusing to proxy to voice server");
+			res.status(503).json({ error: "Voice service is not available" });
+			return;
+		}
+
+		try {
+			const response = await axios.post(
+				`${base}/voice/converse`,
+				{ audio_base64, voice_id, history, max_tokens },
+				{
+					timeout: HERMES_TIMEOUT_MS,
+					headers: { Authorization: `Bearer ${apiKey}` },
+				},
+			);
+			res.json(response.data);
+		} catch (error) {
+			logger.error("[voice/converse] proxy error:", error);
+			res.status(502).json({ error: "Voice server unreachable" });
+		}
+	},
+);
+
+// GET /api/voice/health — no auth required, proxies to voice server health check
+router.get("/health", async (_req, res: Response): Promise<void> => {
+	const base = converseVoiceBase();
+	if (!base) {
+		res.status(503).json({ voice_server: "unreachable", reason: "not configured" });
+		return;
+	}
+	try {
+		const upstream = await axios.get(`${base}/voice/health`, { timeout: 5_000 });
+		res.json({ voice_server: upstream.data });
+	} catch {
+		res.status(503).json({ voice_server: "unreachable" });
+	}
+});
+
 // POST /api/voice/clone — Clerk session only (onboarding voice clone)
 router.post("/clone", requireAuth(), async (req: AuthenticatedRequest, res: Response): Promise<void> => {
 	try {
