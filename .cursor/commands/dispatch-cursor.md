@@ -1,15 +1,14 @@
-# dispatch-cursor - Remote Control Cursor Agent from Claude Code
+# /dispatch-cursor — DEPRECATED
 
-Dispatch tasks to Cursor Agent CLI without opening the IDE. Claude Code thinks, Cursor Agent builds. Save Max plan messages for architecture — let Cursor Ultra handle the scaffolding.
+This command has been split into three clear, machine-specific commands.
 
-**Agent:** `cursor-orchestrator`
-**Skill:** `cursor-orchestration`
+Use the right one for your target:
 
-**Why this matters:**
-- Cursor Ultra = unlimited usage, Claude Max = hourly/weekly limits
-- No IDE open = saves CPU/RAM (Cursor GUI eats ~1GB+ RAM)
-- Claude Code orchestrates, Cursor Agent executes — parallel across Herus
-- One brain (Opus), many hands (Cursor agents)
+| Command | Target | Use For |
+|---------|--------|---------|
+| `/dispatch-local` | This machine | Quick tasks, frontend prototypes |
+| `/dispatch-qcs1` | QCS1 (Mac M4 Pro) | PRIMARY builds, iOS/Android, sustained work |
+| `/dispatch-aws` | AWS EC2 | Deployments, migrations, infra tasks |
 
 ## Usage
 ```

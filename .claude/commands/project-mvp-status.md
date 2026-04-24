@@ -8,11 +8,11 @@
 
 ## Purpose
 
-Track progress during MVP development phase and **generate MVP progress plans** in `docs/auto-claude/`. This command provides a comprehensive view of what has been accomplished toward the MVP and what remains, including blockers, risks, and timeline health.
+Track progress during MVP development phase and **generate MVP progress plans** in `docs/internal/`. This command provides a comprehensive view of what has been accomplished toward the MVP and what remains, including blockers, risks, and timeline health.
 
 ## Generated Files
 
-This command generates/updates the following files in `docs/auto-claude/`:
+This command generates/updates the following files in `docs/internal/`:
 
 | File | Purpose |
 |------|---------|
@@ -260,7 +260,7 @@ interface SprintFocus {
 
 The command gathers status from:
 
-1. **`docs/auto-claude/MASTER_TASKS.md`** - PRIMARY SOURCE: Task definitions with command/agent/skill assignments
+1. **`docs/internal/MASTER_TASKS.md`** - PRIMARY SOURCE: Task definitions with command/agent/skill assignments
 2. **`docs/PRD.md`** - Feature requirements and acceptance criteria
 3. **`.claude/config/pattern-mappings.json`** - Pattern configuration, agents, skills, platform fees
 4. **`docs/CLIENT_PROPOSAL.md`** - Timeline and milestones (if generated)
@@ -275,7 +275,7 @@ The command reads MASTER_TASKS.md to:
 
 ```javascript
 // 1. Parse task status from MASTER_TASKS.md
-const tasks = parseMasterTasks('docs/auto-claude/MASTER_TASKS.md');
+const tasks = parseMasterTasks('docs/internal/MASTER_TASKS.md');
 
 // 2. Calculate phase progress
 const phases = {
@@ -532,7 +532,7 @@ Auto-Claude runs from `$HOME/Auto-Claude` but works directly on the project dire
 ```
 Auto-Claude Location:  $HOME/Auto-Claude/
 Project Location:      {project-path}/
-Plan Location:         {project-path}/.auto-claude/plans/mvp-plan.md
+Plan Location:         {project-path}/.internal/plans/mvp-plan.md
 ```
 
 ### Plan Location
@@ -540,7 +540,7 @@ Plan Location:         {project-path}/.auto-claude/plans/mvp-plan.md
 When `project-mvp-status` runs, it generates the MVP plan directly in the project:
 
 ```
-{project}/.auto-claude/plans/
+{project}/.internal/plans/
 └── mvp-plan.md    ← Auto-Claude reads this directly
 ```
 
@@ -590,12 +590,12 @@ The generated `mvp-plan.md` follows this format:
    ```
 
 2. **Review Generated Plan**:
-   - Status dashboard: `docs/auto-claude/MVP_PROGRESS.md`
-   - Execution plan: `.auto-claude/plans/mvp-plan.md`
+   - Status dashboard: `docs/internal/MVP_PROGRESS.md`
+   - Execution plan: `.internal/plans/mvp-plan.md`
 
 3. **Execute with Auto-Claude**:
    - Auto-Claude opens the project directory
-   - Reads `.auto-claude/plans/mvp-plan.md`
+   - Reads `.internal/plans/mvp-plan.md`
    - Executes the sessions
 
 4. **Monitor Progress**:

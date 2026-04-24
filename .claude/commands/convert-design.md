@@ -16,7 +16,6 @@ Convert visual designs to working Next.js code with:
 | Type | Source | Example |
 |------|--------|---------|
 | Screenshots | Local files | `/path/to/screenshot.png` |
-| Figma designs | URL or export | `figma.com/file/...` |
 | Magic Patterns | Vite/React export | `mockup/magic-patterns/` |
 | Wireframes | Image files | `/path/to/wireframe.jpg` |
 | Custom mockups | Local directory | `mockup/custom/` |
@@ -30,9 +29,6 @@ Convert visual designs to working Next.js code with:
 
 # Convert specific file
 /convert-design --input="/path/to/design.png"
-
-# Convert from Figma
-/convert-design --figma="https://figma.com/file/..."
 
 # Convert Magic Patterns export
 /convert-design --magic-patterns="mockup/magic-patterns/"
@@ -52,7 +48,6 @@ Convert visual designs to working Next.js code with:
 | Parameter | Description | Default |
 |-----------|-------------|---------|
 | `--input` | Path to design file or URL | - |
-| `--figma` | Figma file URL | - |
 | `--magic-patterns` | Magic Patterns export directory | - |
 | `--mockup` | Custom mockup directory | - |
 | `--output` | Output directory for components | `src/components` |

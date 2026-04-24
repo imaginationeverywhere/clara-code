@@ -5,10 +5,8 @@
 # Install: cp .claude/scripts/pickup-dispatch.sh ~/bin/ && chmod +x ~/bin/pickup-dispatch.sh
 #
 # Usage (from within project dir):
-#   pickup-dispatch.sh <parallel_count> [filter_regex]
+#   pickup-dispatch.sh <parallel_count>
 #   pickup-dispatch.sh 5      # run up to 5 cursor agents simultaneously
-#   pickup-dispatch.sh 3 '23-00-foo|23-15-bar'   # only prompt basenames matching grep -E
-# Env: PICKUP_FILTER overrides arg2 if set.
 #
 # Requirements:
 #   - cursor CLI on PATH
@@ -18,21 +16,7 @@
 set -o pipefail
 
 MAX_PARALLEL="${1:-3}"
-FILTER_REGEX="${PICKUP_FILTER:-$2}"
 PROJECT_DIR="$(pwd)"
-
-# First queued file whose basename matches FILTER_REGEX (or any file if empty)
-pick_next_prompt() {
-  local dir="$1"
-  local pattern="$2"
-  local f
-  for f in $(ls "$dir"/*.md 2>/dev/null | sort); do
-    [ -f "$f" ] || continue
-    if [ -z "$pattern" ]; then echo "$f"; return 0; fi
-    if echo "$(basename "$f")" | grep -qE "$pattern"; then echo "$f"; return 0; fi
-  done
-  return 1
-}
 
 # ── Unlock macOS keychain (required for cursor CLI on QCS1) ──────────────────
 KEYCHAIN_PASS=$(cat ~/.agent-creds/keychain-password 2>/dev/null)
@@ -59,7 +43,6 @@ mkdir -p "$IN_PROGRESS_DIR" "$COMPLETED_DIR" "$FAILED_DIR"
 QUEUE_COUNT=$(ls "$PROMPT_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
 echo ""
 echo "🚀 Parallel dispatch — up to $MAX_PARALLEL agents | $QUEUE_COUNT prompts in queue"
-[ -n "$FILTER_REGEX" ] && echo "🔎 Filter (basename grep -E): $FILTER_REGEX"
 echo "📁 Project: $PROJECT_DIR"
 echo "📋 Queue: $PROMPT_DIR"
 echo ""
@@ -80,25 +63,14 @@ while true; do
   done
 
   # ── Claim next prompt (atomic mv = mutex lock) ───────────────────────────────
-  TARGET=$(pick_next_prompt "$PROMPT_DIR" "$FILTER_REGEX") || true
-  if [ -z "$TARGET" ] || [ ! -f "$TARGET" ]; then
-    if [ ${#PIDS[@]} -gt 0 ]; then
-      echo "⏳ No matching prompt to claim — waiting for ${#PIDS[@]} running agent(s)..."
-      sleep 2
-      continue
-    fi
-    RLEFT=$(ls "$PROMPT_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
-    if [ -n "$FILTER_REGEX" ] && [ "${RLEFT:-0}" -gt 0 ]; then
-      echo "✅ Filter exhausted — $RLEFT non-matching prompt(s) remain in 1-not-started/"
-    fi
-    break
-  fi
+  TARGET=$(ls "$PROMPT_DIR"/*.md 2>/dev/null | sort | head -1)
+  [ -z "$TARGET" ] || [ ! -f "$TARGET" ] && break
 
   PROMPT_NAME=$(basename "$TARGET" .md)
   mv "$TARGET" "$IN_PROGRESS_DIR/" 2>/dev/null || continue
   INPROGRESS_FILE="$IN_PROGRESS_DIR/$(basename "$TARGET")"
 
-  WT_SUFFIX="$$-${#PIDS[@]}-$RANDOM"
+  WT_SUFFIX="${$}-${#PIDS[@]}-$RANDOM"
   WORKTREE_PATH="/tmp/worktrees/${PROMPT_NAME}-${WT_SUFFIX}"
 
   echo "🔀 Slot $((${#PIDS[@]}+1))/$MAX_PARALLEL: $PROMPT_NAME → $WORKTREE_PATH"
