@@ -1,4 +1,5 @@
 import React, { useEffect, useState, memo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Github, Mic, Check } from 'lucide-react';
 import { ClaraLogo } from '../components/ClaraLogo';
 const waveformHeights = [
@@ -7,6 +8,7 @@ const waveformHeights = [
 
 export function SignUp() {
   const [phase, setPhase] = useState<1 | 2>(1);
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = 'Create Account — Clara Code';
   }, []);
@@ -18,12 +20,15 @@ export function SignUp() {
 
         <div className="max-w-sm w-full mx-auto flex flex-col">
           {/* Clara Code Mark */}
-          <div className="flex items-center gap-3">
+          <Link
+            to="/"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            
             <ClaraLogo size={40} />
             <span className="font-sans font-semibold text-[22px] text-white tracking-tight">
               Clara Code
             </span>
-          </div>
+          </Link>
 
           <div className="h-8" />
 
@@ -74,12 +79,22 @@ export function SignUp() {
       <div className="flex flex-col justify-center w-full lg:w-[55%] bg-[#0D1117] px-6 py-12">
         <div className="max-w-sm w-full mx-auto flex flex-col">
           {/* Mobile Branding */}
-          <div className="flex lg:hidden items-center gap-3 mb-12">
+          <Link
+            to="/"
+            className="flex lg:hidden items-center gap-3 mb-8 hover:opacity-80 transition-opacity">
+            
             <ClaraLogo size={32} />
             <span className="font-sans font-semibold text-xl text-white tracking-tight">
               Clara Code
             </span>
-          </div>
+          </Link>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-8">
+            
+            <span>←</span>
+            <span>Back to home</span>
+          </Link>
 
           {/* PHASE 1 — Sign-Up Form */}
           {phase === 1 &&
@@ -89,12 +104,12 @@ export function SignUp() {
               </h2>
               <p className="text-sm text-white/55">
                 Already have an account?{' '}
-                <a
-                href="/sign-in"
-                className="text-[#7BCDD8] hover:underline focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
+                <Link
+                to="/sign-in"
+                className="text-[#7BCDD8] hover:underline focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
                 
                   Sign in
-                </a>
+                </Link>
               </p>
 
               <div className="h-8" />
@@ -109,7 +124,7 @@ export function SignUp() {
                 <div className="w-full flex flex-col">
                   {/* GitHub OAuth Button */}
                   <button
-                  className="h-10 w-full bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] rounded-full flex items-center justify-center gap-3 transition-colors focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0A0E14]"
+                  className="h-10 w-full bg-white/[0.08] hover:bg-white/[0.12] border border-white/[0.12] rounded-full flex items-center justify-center gap-3 transition-colors focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0A0E14]"
                   onClick={() => setPhase(2)}>
                   
                     <Github className="w-4 h-4 text-white" />
@@ -127,14 +142,38 @@ export function SignUp() {
                     <hr className="flex-1 border-white/[0.08]" />
                   </div>
 
-                  {/* Email Input Skeleton */}
-                  <div className="h-10 w-full bg-white/[0.08] rounded-xl mb-3 animate-pulse" />
+                  {/* Email Input */}
+                  <div className="mb-3">
+                    <label className="block text-sm font-medium text-white/70 mb-1.5">
+                      Email address
+                    </label>
+                    <input
+                    type="email"
+                    placeholder="you@example.com"
+                    className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
+                  
+                  </div>
 
-                  {/* Password Input Skeleton */}
-                  <div className="h-10 w-full bg-white/[0.08] rounded-xl mb-6 animate-pulse" />
+                  {/* Password Input */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-white/70 mb-1.5">
+                      Password
+                    </label>
+                    <input
+                    type="password"
+                    placeholder="Min. 8 characters"
+                    className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
+                  
+                  </div>
 
-                  {/* Submit Button Skeleton */}
-                  <div className="h-10 w-full bg-[#7C3AED]/60 rounded-full animate-pulse" />
+                  {/* Submit Button */}
+                  <button
+                  type="submit"
+                  onClick={() => setPhase(2)}
+                  className="h-10 w-full bg-[#5CE0D8] hover:bg-[#4BCBC3] text-[#0D1117] text-sm font-semibold rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0A0E14] shadow-[0_0_20px_rgba(92,224,216,0.3)]">
+                  
+                    Create Account
+                  </button>
                 </div>
               </div>
 
@@ -206,9 +245,9 @@ export function SignUp() {
                 <div className="flex flex-col items-center">
                   <button
                   aria-label="Record voice sample"
-                  className="w-16 h-16 rounded-full bg-[#7C3AED] shadow-[0_0_30px_rgba(124,58,237,0.35)] flex items-center justify-center hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0A0E14]">
+                  className="w-16 h-16 rounded-full bg-[#5CE0D8] shadow-[0_0_30px_rgba(92,224,216,0.35)] flex items-center justify-center hover:scale-105 transition-transform focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0A0E14]">
                   
-                    <Mic className="w-6 h-6 text-white" />
+                    <Mic className="w-6 h-6 text-[#0D1117]" />
                   </button>
                   <span className="mt-3 text-[13px] text-white/30 text-center">
                     Tap to record 10 seconds
@@ -225,14 +264,20 @@ export function SignUp() {
               <div className="h-6" />
 
               {/* Skip link */}
-              <button className="w-full text-sm text-white/30 text-center hover:text-white/55 underline transition-colors focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
+              <button
+              onClick={() => navigate('/settings')}
+              className="w-full text-sm text-white/30 text-center hover:text-white/55 underline transition-colors focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
+              
                 Skip for now — I'll do this later
               </button>
 
               <div className="h-4" />
 
               {/* CTA Button */}
-              <button className="h-11 w-full rounded-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold text-sm shadow-[0_0_30px_rgba(124,58,237,0.35)] transition-colors focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
+              <button
+              onClick={() => navigate('/settings')}
+              className="h-11 w-full rounded-full bg-[#5CE0D8] hover:bg-[#4BCBC3] text-[#0D1117] font-semibold text-sm shadow-[0_0_30px_rgba(92,224,216,0.35)] transition-colors focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
+              
                 Go to Dashboard
               </button>
             </div>

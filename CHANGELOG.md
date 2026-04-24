@@ -4,6 +4,19 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-25
 
+### Added
+
+- **Pricing and platform policy docs** — `pricing/` and mirroring `.cursor/pricing/`: new `abuse-protection.md`, `cogs-and-unit-economics.md`, `customer-facing-page.md`, `ip-ownership-and-ejection.md`, `model-routing-strategy.md`. Updated `combined-examples.md`, `marketplace-pricing.md`, `voice-tiers.md`; removed `reseller-pricing.md`.
+- **MVP and product under `docs/status/`** — content relocated from `docs/auto-claude/` (removed): `MVP_*.md`, `PRODUCT_PRD.md`, `CLARA_TALENT_AGENCY*.md` now live under `docs/status/`.
+- **Product prompts (April 23)** — `prompts/2026/April/23/1-not-started/` expanded with roadmap and platform stubs (agent messaging, standup, usage limits, IP firewall, model routing, billing, ejection, etc.); `03-thin-client-non-negotiable-ip-hygiene.md` completed under `3-completed/`. Older duplicate prompt paths under April 19/21 removed in favor of the April 23 tree.
+- **Mockups site assets** — `mockups/site/public/clara-ai-icon-1024-cyan.png`, `final2-v3-wavy-voice-v3.png`; `mockups/site/package-lock.json` for reproducible install.
+
+### Changed
+
+- **Marketing mockup app (`mockups/site/`)** — `App` shell and `HeroSection`, `Header`, `InstallSection`, `FeaturesSection`, `PricingSection`, auth and checkout pages refreshed; `ClaraLogo` and global styles in `index.css` (dropped `clara-brand-tokens.css`). Replaced 2D/3D clara-code logos with new art direction.
+- **TypeScript base** — `tsconfig.base.json`, root `tsconfig.json`, and `packages/sdk/tsconfig.json` use `ES2023` instead of `ES2024` for `target` / `lib` to align with supported runtimes. See `packages/sdk/CHANGELOG.md` for SDK.
+- **Monorepo version** — root `package.json` `0.2.2` → **`0.2.3`**.
+
 ### Fixed
 
 - **`create-clara-app` repository hygiene** — `packages/create-clara-app/.gitignore` now includes `bin/` so optional local shims (not in npm `package.json` `files`) are not left untracked. See `packages/create-clara-app/CHANGELOG.md` and `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

@@ -4,6 +4,7 @@
 
 ### Changed
 
+- **TypeScript** — `tsconfig.json` `lib` uses `ES2023` instead of `ES2024` to match the monorepo `tsconfig.base.json` target. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25** (cross-ref).
 - Public config: optional `gatewayUrl` (default `https://api.claracode.ai`) replaces required `hermesUrl`; error strings and URLs use Clara branding only on the public SDK surface.
 
 ### Added

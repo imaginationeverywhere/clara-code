@@ -164,7 +164,7 @@ export function InstallSection() {
           {/* RIGHT — IDE Download */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <Monitor className="w-4 h-4 text-[#7C3AED]" />
+              <Monitor className="w-4 h-4 text-[#5CE0D8]" />
               <span className="text-[13px] font-semibold text-white font-mono">
                 Desktop IDE
               </span>
@@ -176,15 +176,21 @@ export function InstallSection() {
             <div className="bg-[#0A0E14] border border-white/[0.08] rounded-xl overflow-hidden">
               {/* Top Section */}
               <div className="p-5">
-                <div className="text-[15px] font-semibold text-white">
-                  Clara Code IDE
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-8 h-8 rounded-lg bg-[#5CE0D8]/10 flex items-center justify-center">
+                    <Monitor className="w-4 h-4 text-[#5CE0D8]" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white">
+                    Clara Code IDE
+                  </h3>
                 </div>
                 <div className="text-[12px] font-mono text-white/30 mt-0.5">
                   v1.0.0 · Stable
                 </div>
 
-                <button className="mt-4 w-full bg-[#7C3AED] hover:bg-[#6D28D9] text-white rounded-xl py-3 flex items-center justify-center gap-2 font-semibold text-sm shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-colors">
-                  <Apple className="w-4 h-4" />
+                {/* Primary Download */}
+                <button className="mt-4 w-full bg-[#5CE0D8] hover:bg-[#4BCBC3] text-[#0D1117] rounded-xl py-3 flex items-center justify-center gap-2 font-semibold text-sm shadow-[0_0_20px_rgba(92,224,216,0.3)] transition-colors">
+                  <Download className="w-4 h-4" />
                   Download for macOS
                 </button>
                 <div className="text-[11px] font-mono text-white/30 text-center mt-2">

@@ -19,14 +19,12 @@
 
 /* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
 
-@import './clara-brand-tokens.css';
-
 :root {
-  --clara-blue: #7BC8D8;
+  --clara-blue: #7BCDD8;
   --clara-blue-glow: A8DDE5;
   --clara-blue-grow: #A8DDE5;
   --clara-blue-accent: #4DDDFF;
-  --purple: #7C3AED;
+  --purple: #5CE0D8;
   --purple-hoover: #6D28D9;
   --blue: #4F8EF7;
   --green: #10B981;
@@ -51,11 +49,11 @@
   --border-hover: #1F1F1F;
   --border-focus: #333333;
   --border-strong: #4D4D4D;
-  --syn-keyword: #7C3AED;
+  --syn-keyword: #5CE0D8;
   --syn-type: #4F8EF7;
   --syn-string: #10B981;
   --syn-funcion: #A8DDE5;
-  --syn-tag: #7BC8D8;
+  --syn-tag: #7BCDD8;
   --syn-atribute: #FBBF24;
   --syn-comment: #4D4D4D;
 }

@@ -1,45 +1,41 @@
 import React from 'react';
 import { Github, Mic } from 'lucide-react';
+import { Link } from 'react-router-dom';
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center bg-[#0D1117] pt-24 pb-12 overflow-hidden">
-      {/* Background Texture */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        {/* Dot grid */}
-        <div
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-            'radial-gradient(rgba(124, 58, 237, 0.08) 1.5px, transparent 1.5px)',
-            backgroundSize: '28px 28px'
-          }} />
-        
-        {/* Radial glows */}
-        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full bg-[#7C3AED] opacity-10 blur-[140px]" />
-        <div className="absolute bottom-[-20%] right-[-10%] w-[70%] h-[70%] rounded-full bg-[#4F8EF7] opacity-[0.07] blur-[140px]" />
+    <section className="relative w-full pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden flex flex-col items-center justify-center">
+      {/* Background Effects */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
+        <div className="absolute top-[-20%] left-[-10%] w-[70%] h-[70%] rounded-full bg-[#5CE0D8] opacity-10 blur-[140px]" />
+        <div className="absolute bottom-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-[#4F8EF7] opacity-10 blur-[120px]" />
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMiIgY3k9IjIiIHI9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4wNSkiLz48L3N2Zz4=')] [mask-image:radial-gradient(ellipse_at_center,black_40%,transparent_80%)]" />
       </div>
 
-      <div className="relative z-10 w-full max-w-3xl mx-auto px-6 text-center flex flex-col items-center">
-        {/* Eyebrow */}
-        <div className="inline-flex items-center border border-[#7C3AED]/30 bg-[#7C3AED]/[0.08] text-[#7C3AED] text-xs font-semibold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full mb-6">
-          Now in Beta
+      <div className="relative z-10 max-w-4xl mx-auto px-6 flex flex-col items-center text-center">
+        {/* Eyebrow Badge */}
+        <div className="inline-flex items-center border border-[#5CE0D8]/30 bg-[#5CE0D8]/[0.08] text-[#5CE0D8] text-xs font-semibold tracking-[0.15em] uppercase px-4 py-1.5 rounded-full mb-6">
+          <span className="relative flex h-2 w-2 mr-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#5CE0D8] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#5CE0D8]"></span>
+          </span>
+          Open Source · MIT Licensed
+          <div className="absolute inset-0 bg-gradient-to-tr from-[#5CE0D8] to-[#4F8EF7] opacity-20 blur-2xl rounded-full" />
         </div>
 
         {/* 3D Logo */}
-        <div className="relative mb-6">
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#7C3AED] to-[#4F8EF7] opacity-20 blur-2xl rounded-full" />
+        <div className="mb-8 relative">
           <img
-            src="/clara-code-logo-3d.png"
+            src="/final2-v3-wavy-voice-v3.png"
             alt="Clara Code"
             className="relative w-[120px] md:w-[160px] h-auto drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]" />
           
         </div>
 
-        {/* H1 */}
-        <h1 className="text-[48px] md:text-[64px] font-bold leading-[1.08] tracking-tight flex flex-col items-center mb-5">
-          <span className="text-white">Your voice.</span>
-          <span className="bg-gradient-to-r from-[#7C3AED] to-[#4F8EF7] bg-clip-text text-transparent">
-            Your code.
+        {/* Headline */}
+        <h1 className="text-[56px] md:text-[80px] font-bold text-white leading-[1.05] tracking-tight mb-6">
+          Code with your <br className="hidden md:block" />
+          <span className="bg-gradient-to-r from-[#5CE0D8] to-[#4F8EF7] bg-clip-text text-transparent">
+            voice.
           </span>
         </h1>
 
@@ -49,15 +45,21 @@ export function HeroSection() {
           implementation.
         </p>
 
-        {/* CTA Row */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 w-full sm:w-auto mb-8">
-          <button className="w-full sm:w-auto bg-[#7C3AED] hover:bg-[#6D28D9] transition-colors text-white rounded-full px-7 py-3.5 text-[15px] font-semibold shadow-[0_0_30px_rgba(124,58,237,0.35)]">
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto mb-16">
+          <Link
+            to="/sign-up"
+            className="w-full sm:w-auto bg-[#5CE0D8] hover:bg-[#4BCBC3] transition-colors text-[#0D1117] rounded-full px-7 py-3.5 text-[15px] font-semibold shadow-[0_0_30px_rgba(92,224,216,0.35)] text-center">
+            
             Get Early Access
-          </button>
-          <button className="w-full sm:w-auto border border-white/15 hover:border-white/30 transition-colors text-white/70 hover:text-white rounded-full px-7 py-3.5 text-[15px] flex items-center justify-center gap-2 font-medium">
+          </Link>
+          <a
+            href="#"
+            className="w-full sm:w-auto border border-white/15 hover:border-white/30 transition-colors text-white/70 hover:text-white rounded-full px-7 py-3.5 text-[15px] flex items-center justify-center gap-2 font-medium">
+            
             <Github className="w-4 h-4" />
             View on GitHub
-          </button>
+          </a>
         </div>
 
         {/* Social Proof */}
@@ -136,15 +138,12 @@ export function HeroSection() {
               </div>
             </div>
 
-            {/* Mic button */}
-            <div className="relative flex flex-col items-center mt-2">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80px] h-[80px] rounded-full ring-4 ring-[#7C3AED]/20 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]" />
-              <button className="relative z-10 w-[80px] h-[80px] rounded-full bg-[#7C3AED] shadow-[0_0_40px_rgba(124,58,237,0.5)] flex items-center justify-center hover:bg-[#6D28D9] transition-colors group">
-                <Mic className="w-7 h-7 text-white group-hover:scale-110 transition-transform duration-300" />
+            {/* Mic Button */}
+            <div className="relative mt-8">
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80px] h-[80px] rounded-full ring-4 ring-[#5CE0D8]/20 animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite]" />
+              <button className="relative z-10 w-[80px] h-[80px] rounded-full bg-[#5CE0D8] shadow-[0_0_40px_rgba(92,224,216,0.5)] flex items-center justify-center hover:bg-[#4BCBC3] transition-colors group">
+                <Mic className="w-8 h-8 text-[#0D1117] group-hover:scale-110 transition-transform duration-300" />
               </button>
-              <div className="mt-5 text-xs text-white/25 tracking-widest font-semibold">
-                HOLD TO SPEAK
-              </div>
             </div>
           </div>
         </div>
