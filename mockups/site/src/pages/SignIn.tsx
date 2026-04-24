@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Github } from 'lucide-react';
 import { ClaraLogo } from '../components/ClaraLogo';
 export function SignIn() {
+  const navigate = useNavigate();
   useEffect(() => {
     document.title = 'Sign In — Clara Code';
   }, []);
@@ -14,12 +16,15 @@ export function SignIn() {
 
         <div className="max-w-sm w-full mx-auto flex flex-col">
           {/* Clara Code Mark */}
-          <div className="flex items-center gap-3">
+          <Link
+            to="/"
+            className="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            
             <ClaraLogo size={40} />
             <span className="font-sans font-semibold text-[22px] text-white tracking-tight">
               Clara Code
             </span>
-          </div>
+          </Link>
           <div className="h-8" /> {/* 32px gap */}
           <h1 className="text-[32px] font-bold text-white leading-[1.2]">
             Your AI is waiting.
@@ -61,23 +66,33 @@ export function SignIn() {
       <div className="flex flex-col justify-center w-full lg:w-[55%] bg-[#0D1117] px-6 py-12">
         <div className="max-w-sm w-full mx-auto flex flex-col">
           {/* Mobile Branding (Hidden on Desktop) */}
-          <div className="flex lg:hidden items-center gap-3 mb-12">
+          <Link
+            to="/"
+            className="flex lg:hidden items-center gap-3 mb-8 hover:opacity-80 transition-opacity">
+            
             <ClaraLogo size={32} />
             <span className="font-sans font-semibold text-[20px] text-white tracking-tight">
               Clara Code
             </span>
-          </div>
+          </Link>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-1.5 text-sm text-white/40 hover:text-white/70 transition-colors mb-8">
+            
+            <span>←</span>
+            <span>Back to home</span>
+          </Link>
           <h2 className="text-[28px] font-bold text-white mb-2">
             Welcome back
           </h2>
           <p className="text-[14px] text-white/55">
             Don't have an account?{' '}
-            <a
-              href="#"
-              className="text-[#7BCDD8] hover:underline focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
+            <Link
+              to="/sign-up"
+              className="text-[#7BCDD8] hover:underline focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
               
               Sign up
-            </a>
+            </Link>
           </p>
           <div className="h-8" /> {/* 32px gap */}
           {/* CLERK SIGN-IN SLOT */}
@@ -90,7 +105,10 @@ export function SignIn() {
             {/* Placeholder Content */}
             <div className="w-full flex flex-col">
               {/* GitHub OAuth Button */}
-              <button className="h-10 w-full bg-white/8 hover:bg-white/12 border border-white/12 rounded-full flex items-center justify-center gap-3 transition-colors focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0A0E14]">
+              <button
+                onClick={() => navigate('/settings')}
+                className="h-10 w-full bg-white/8 hover:bg-white/12 border border-white/12 rounded-full flex items-center justify-center gap-3 transition-colors focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0A0E14]">
+                
                 <Github className="w-4 h-4 text-white" />
                 <span className="text-[14px] font-medium text-white">
                   Continue with GitHub
@@ -106,14 +124,48 @@ export function SignIn() {
                 <hr className="flex-1 border-white/8" />
               </div>
 
-              {/* Email Input Skeleton */}
-              <div className="h-10 w-full bg-white/8 rounded-lg mb-4 animate-pulse" />
+              {/* Email Input */}
+              <div className="mb-4">
+                <label className="block text-sm font-medium text-white/70 mb-1.5">
+                  Email address
+                </label>
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
+                
+              </div>
 
-              {/* Password Input Skeleton */}
-              <div className="h-10 w-full bg-white/8 rounded-lg mb-6 animate-pulse" />
+              {/* Password Input */}
+              <div className="mb-2">
+                <div className="flex items-center justify-between mb-1.5">
+                  <label className="block text-sm font-medium text-white/70">
+                    Password
+                  </label>
+                  <a
+                    href="#"
+                    className="text-xs text-[#7BCDD8] hover:underline">
+                    
+                    Forgot password?
+                  </a>
+                </div>
+                <input
+                  type="password"
+                  placeholder="••••••••"
+                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
+                
+              </div>
 
-              {/* Submit Button Skeleton */}
-              <div className="h-10 w-full bg-[#7C3AED]/50 rounded-full animate-pulse" />
+              <div className="h-4" />
+
+              {/* Submit Button */}
+              <button
+                type="submit"
+                onClick={() => navigate('/settings')}
+                className="h-10 w-full bg-[#5CE0D8] hover:bg-[#4BCBC3] text-[#0D1117] text-sm font-semibold rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0A0E14] shadow-[0_0_20px_rgba(92,224,216,0.3)]">
+                
+                Sign In
+              </button>
             </div>
           </div>
           <div className="h-6" /> {/* 24px gap */}

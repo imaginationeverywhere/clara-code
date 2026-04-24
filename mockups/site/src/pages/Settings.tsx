@@ -86,9 +86,9 @@ const navSections: {
 export function Settings() {
   const [activeItem, setActiveItem] = useState('api-keys');
   return (
-    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#7C3AED]/30 selection:text-white">
+    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#5CE0D8]/30 selection:text-white">
       {/* HEADER */}
-      <header className="fixed top-0 left-0 right-0 h-14 bg-[#070A0F] border-b border-white/[0.06] px-6 flex items-center justify-between z-40">
+      <header className="fixed top-0 left-0 right-0 h-14 bg-[#070A0F] border-b border-white/5 z-50 flex items-center justify-between px-4 lg:px-6">
         <div className="flex items-center">
           <div className="flex items-center gap-2.5">
             <ClaraLogo size={28} />
@@ -107,8 +107,8 @@ export function Settings() {
           </button>
 
           <button className="flex items-center gap-1.5">
-            <div className="w-8 h-8 rounded-full bg-[#7C3AED]/30 border border-[#7C3AED]/40 flex items-center justify-center">
-              <span className="text-xs font-semibold text-[#7C3AED]">AR</span>
+            <div className="w-8 h-8 rounded-full bg-[#5CE0D8]/30 border border-[#5CE0D8]/40 flex items-center justify-center">
+              <span className="text-xs font-semibold text-[#5CE0D8]">AR</span>
             </div>
             <ChevronDown className="w-3 h-3 text-white/40" />
           </button>
@@ -123,7 +123,7 @@ export function Settings() {
         <button
           key={item.id}
           onClick={() => setActiveItem(item.id)}
-          className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors ${activeItem === item.id ? 'bg-[#7C3AED]/15 text-white font-medium' : 'text-white/50 hover:bg-white/5 hover:text-white/80'}`}>
+          className={`px-3 py-1.5 text-xs rounded-lg whitespace-nowrap transition-colors ${activeItem === item.id ? 'bg-[#5CE0D8]/15 text-white font-medium' : 'text-white/50 hover:bg-white/5 hover:text-white/80'}`}>
           
               {item.label}
             </button>
@@ -149,15 +149,15 @@ export function Settings() {
                   <button
                     key={item.id}
                     onClick={() => setActiveItem(item.id)}
-                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl transition-colors relative group ${isActive ? 'bg-[#7C3AED]/15' : 'hover:bg-white/5'}`}
+                    className={`w-full flex items-center gap-3 px-3 py-2 rounded-xl transition-colors relative group ${isActive ? 'bg-[#5CE0D8]/15' : 'hover:bg-white/5'}`}
                     title={item.label} // Tooltip for collapsed state
                   >
                       {isActive &&
-                    <div className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-[#7C3AED]" />
+                    <div className="absolute left-0 top-2 bottom-2 w-0.5 rounded-full bg-[#5CE0D8]" />
                     }
 
                       <Icon
-                      className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#7C3AED]' : 'text-white/35 group-hover:text-white/60'}`} />
+                      className={`w-4 h-4 shrink-0 ${isActive ? 'text-[#5CE0D8]' : 'text-white/35 group-hover:text-white/60'}`} />
                     
 
                       <span
@@ -187,29 +187,23 @@ export function Settings() {
 
         {/* NAV FOOTER */}
         <div className="hidden lg:block mt-auto p-3 border-t border-white/[0.06]">
-          <div className="bg-[#0A0E14] rounded-xl border border-[#7C3AED]/20 p-3">
+          <div className="bg-[#0A0E14] rounded-xl border border-[#5CE0D8]/20 p-3">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs font-semibold text-white/50">
-                Free Plan
-              </span>
-              <button className="bg-[#7C3AED] hover:bg-[#6D28D9] text-white text-xs font-semibold px-2.5 py-1 rounded-lg transition-colors">
+              <span className="text-xs font-semibold text-white">Pro Plan</span>
+              <button className="bg-[#5CE0D8] hover:bg-[#4BCBC3] text-[#0D1117] text-xs font-semibold px-2.5 py-1 rounded-lg transition-colors">
                 Upgrade
               </button>
             </div>
-
-            <div>
-              <div className="flex justify-between mb-1">
-                <span className="text-[10px] text-white/30">API Calls</span>
-                <span className="text-[10px] text-white/50">47 / 100</span>
-              </div>
-              <div className="h-1.5 w-full rounded-full bg-white/[0.08] overflow-hidden">
-                <div
-                  className="h-full bg-[#7C3AED] rounded-full"
-                  style={{
-                    width: '47%'
-                  }} />
-                
-              </div>
+            <p className="text-[11px] text-white/50 mb-3">
+              You've used 80% of your API limit this month.
+            </p>
+            <div className="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-[#5CE0D8] rounded-full"
+                style={{
+                  width: '80%'
+                }} />
+              
             </div>
           </div>
         </div>

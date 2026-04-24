@@ -2,6 +2,12 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Added (cross-reference)
+
+- **`docs/status/`** — MVP sprint, blockers, demo checklist, product PRD, and Clara talent agency docs (moved from `docs/auto-claude/`; those paths removed). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+- **Pricing and `.cursor` mirrors** — `abuse-protection.md`, `cogs-and-unit-economics.md`, `customer-facing-page.md`, `ip-ownership-and-ejection.md`, `model-routing-strategy.md` under `pricing/` and `.cursor/pricing/`; `reseller-pricing.md` removed. Cross-ref: root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+- **Prompts** — `prompts/2026/April/23/1-not-started/` (and `3-completed/`) as the active tree; April 19/21 duplicate paths removed. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 ### Fixed (cross-reference)
 
 - **`create-clara-app` gitignore** — `packages/create-clara-app/bin/` ignored; publish surface remains `dist/` + `templates/`. See `packages/create-clara-app/CHANGELOG.md` and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

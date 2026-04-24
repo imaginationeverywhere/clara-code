@@ -112,6 +112,7 @@ Once the tab is open and SSHed to QCS1:
 - Use `--list` to see what's already running before opening more
 
 ## Related Commands
+- `/open-tabs` — Ad-hoc multiple Claude Code + local/QCS1 Cursor tabs or panes in the **current** tmux session (`.claude/scripts/open-tabs.sh`)
 - `/session-start` — Initialize the swarm session
 - `/dispatch-cursor` — Dispatch a Cursor agent prompt to an existing tab
 - `/sync-herus` — Sync platform files across all Herus

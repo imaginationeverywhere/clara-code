@@ -1,29 +1,38 @@
 #!/bin/bash
-# Wake Session v2 — Send a prompt to a Claude Code session (Cursor-safe)
+# Wake Session — Send a prompt to an idle Claude Code session via AppleScript
+# Usage: wake-session.sh <tty> <message>
+# Example: wake-session.sh s002 "Check the live feed for directives"
 #
-# Thin wrapper around session-registry.sh wake.
-# Registry ONLY sends to Claude panes (type=claude). Cursor panes are hard-blocked.
-#
-# Usage:
-#   wake-session.sh <team> <message>
-#   wake-session.sh wcr "Check the live feed for directives"
-#   wake-session.sh all "HQ has new tasks"
+# This is the Multiplex Telegraph — sessions communicating across terminals.
 
-TEAM="${1:-}"
+TTY_TARGET="${1:-}"
 MESSAGE="${2:-Check the live feed for team updates}"
-SCRIPTS_DIR="$(cd "$(dirname "$0")" && pwd)"
 
-if [ -z "$TEAM" ]; then
-    echo "Usage: $0 <team> <message>"
-    echo "Example: $0 wcr 'Check the live feed for directives'"
-    echo ""
-    echo "Claude panes: send-keys (instant). Cursor panes: BLOCKED."
-    echo "Teams: hq, pkgs, wcr, qcr, fmo, s962, devops, trackit, st, qcarry, qn, slk, pgcmc"
+if [ -z "$TTY_TARGET" ]; then
+    echo "Usage: $0 <tty> <message>"
+    echo "Example: $0 s002 'Check the live feed for directives'"
     exit 1
 fi
 
-if [ "$TEAM" = "all" ]; then
-    "$SCRIPTS_DIR/session-registry.sh" wake-all "$MESSAGE"
+osascript -e "
+tell application \"Terminal\"
+    set targetTab to missing value
+    repeat with w in windows
+        repeat with t in tabs of w
+            if tty of t contains \"${TTY_TARGET}\" then
+                set targetTab to t
+                exit repeat
+            end if
+        end repeat
+    end repeat
+    if targetTab is not missing value then
+        do script \"${MESSAGE}\" in targetTab
+    end if
+end tell
+" 2>/dev/null
+
+if [ $? -eq 0 ]; then
+    echo "Sent to ${TTY_TARGET}: ${MESSAGE}"
 else
-    "$SCRIPTS_DIR/session-registry.sh" wake "$TEAM" "$MESSAGE"
+    echo "Failed to send to ${TTY_TARGET}"
 fi

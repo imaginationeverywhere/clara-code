@@ -11,7 +11,7 @@ import { Settings } from './pages/Settings';
 import { Checkout, CheckoutSuccess } from './pages/Checkout';
 function MarketingPage() {
   return (
-    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#7C3AED]/30 selection:text-white">
+    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#5CE0D8]/30 selection:text-white">
       <Header />
       <main>
         <HeroSection />

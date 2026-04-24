@@ -1,12 +1,14 @@
 # Code Review Command
 
-**Version:** 2.0.0
+**Version:** 3.0.0
 **Agent:** code-quality-reviewer
 **Output:** `docs/review/{timestamp}-code-review.md`
 
 ## Purpose
 
 Automated code review that analyzes recent changes, identifies issues, and generates a comprehensive review document. **ENFORCES 80% MINIMUM TEST COVERAGE REQUIREMENT** - all code being reviewed must have passing unit tests with at least 80% coverage. Optimized for token efficiency by producing reusable review artifacts.
+
+**Also auto-detects open prompt PRs** (from `/pickup-prompt`), reviews each one, merges passing PRs into develop, and deletes the prompt branches — no manual PR management needed.
 
 ## ⚠️ CRITICAL REQUIREMENT: Test Coverage
 
@@ -187,6 +189,38 @@ review-code --since=HEAD~5
 ## Command Implementation
 
 When this command is invoked, Claude Code should:
+
+### Phase 0: Git Pull + Auto-Detect Prompt PRs (NEW — RUNS FIRST)
+
+**This phase always runs first, before any code review begins.**
+
+```bash
+echo "Pulling latest from remote..."
+git pull origin $(git branch --show-current) 2>&1
+echo ""
+
+echo "Scanning for open prompt PRs..."
+PROMPT_PRS=$(gh pr list --state open --json number,headRefName,title,url \
+  --jq '.[] | select(.headRefName | startswith("prompt/"))' 2>/dev/null)
+
+if [ -n "$PROMPT_PRS" ]; then
+  echo "Found prompt PRs to review:"
+  echo "$PROMPT_PRS" | jq -r '"  #\(.number): \(.headRefName) — \(.title)"'
+  echo ""
+  echo "These will be reviewed and merged (if passing) after code quality check."
+else
+  echo "No open prompt PRs found — reviewing current branch changes only."
+fi
+echo ""
+```
+
+**Store the list of prompt PRs** for use in Phase 6:
+```bash
+PROMPT_PR_NUMBERS=$(gh pr list --state open --json number,headRefName \
+  --jq '.[] | select(.headRefName | startswith("prompt/")) | .number' 2>/dev/null)
+PROMPT_PR_BRANCHES=$(gh pr list --state open --json number,headRefName \
+  --jq '.[] | select(.headRefName | startswith("prompt/")) | .headRefName' 2>/dev/null)
+```
 
 ### Phase 1: Collect Code Changes
 
@@ -426,6 +460,110 @@ Generate a structured review document with:
    git add docs/review/${TIMESTAMP}-code-review.md
    ```
 
+### Phase 4b: Generate Corrective Prompt (if issues found)
+
+**When the review finds CRITICAL, HIGH, or unresolved MEDIUM issues**, the reviewer MUST write a corrective prompt and queue it for a Cursor agent to execute. This is NON-NEGOTIABLE — a review that identifies issues is not done until the corrective prompt is saved.
+
+**Trigger:** Any review with grade below A-, OR any review with 1+ CRITICAL or HIGH issues.
+
+**Step 1 — Determine the next available prompt number:**
+```bash
+YEAR=$(date +%Y)
+MONTH=$(date +%B)
+DAY=$(date +%-d)
+QUEUE_DIR="prompts/${YEAR}/${MONTH}/${DAY}/1-not-started"
+mkdir -p "$QUEUE_DIR"
+
+# Auto-number: count existing prompts and add 1
+NEXT_NUM=$(ls "$QUEUE_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+NEXT_NUM=$(printf "%02d" $((NEXT_NUM + 1)))
+```
+
+**Step 2 — Write the corrective prompt file:**
+
+The prompt must be a complete, self-contained Cursor agent task. Write it to:
+```
+prompts/${YEAR}/${MONTH}/${DAY}/1-not-started/${NEXT_NUM}-fix-<short-description>.md
+```
+
+**Corrective prompt format:**
+```markdown
+# Fix: <Short description from review>
+
+**Source:** Code review `docs/review/<timestamp>-code-review.md`
+**Grade received:** <grade>
+**Issues to fix:** <count> critical, <count> high, <count> medium
+
+## Context
+
+<1-2 sentences describing what was reviewed and what the overall problem is>
+
+## Required Fixes
+
+### CRITICAL Issues (fix first)
+
+1. **[SECURITY/PERF/TYPE]** <Issue title>
+   - **File:** `<path/to/file.ts>:<line>`
+   - **Problem:** <Exact description from review>
+   - **Fix:** <Specific actionable fix the Cursor agent should make>
+
+2. ...
+
+### HIGH Issues
+
+1. **[category]** <Issue title>
+   - **File:** `<path/to/file.ts>:<line>`
+   - **Problem:** <description>
+   - **Fix:** <specific fix>
+
+### MEDIUM Issues (fix if time allows)
+
+<same format>
+
+## Acceptance Criteria
+
+- [ ] All CRITICAL issues resolved
+- [ ] All HIGH issues resolved
+- [ ] `npm run type-check` passes (zero errors)
+- [ ] `npm test` passes (zero failures)
+- [ ] Re-run `/review-code` — grade must be A or A-
+
+## Do NOT
+
+- Do not refactor code unrelated to these issues
+- Do not add new features
+- Fix only what the review identified
+```
+
+**Step 3 — Post to live feed:**
+```bash
+echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | CORRECTIVE PROMPT QUEUED | ${NEXT_NUM}-fix-<slug>.md | ${COUNT_CRITICAL} critical, ${COUNT_HIGH} high issues | Cursor agent: run /pickup-prompt" >> ~/auset-brain/Swarms/live-feed.md
+```
+
+**Step 3b — Push prompt to GitHub** so QCS1 and all sessions can see it:
+```bash
+BRANCH=$(git branch --show-current)
+git add "prompts/"
+git commit -m "feat(prompts): queue corrective prompt ${NEXT_NUM}-fix-<slug>.md — ${COUNT_CRITICAL} critical, ${COUNT_HIGH} high issues"
+git push origin "$BRANCH"
+echo "✓ Corrective prompt pushed to GitHub: $BRANCH"
+```
+
+**Step 4 — Report to the reviewer:**
+```
+📋 Corrective prompt queued:
+   prompts/${YEAR}/${MONTH}/${DAY}/1-not-started/${NEXT_NUM}-fix-<slug>.md
+
+   Issues captured: X critical, Y high, Z medium
+   QCS1 Cursor agent: run /pickup-prompt to execute fixes
+   GitHub: pushed to $BRANCH ✓
+```
+
+**When NOT to write a corrective prompt:**
+- Review passes with grade A or A- and zero CRITICAL/HIGH issues → archive, no corrective needed
+- Only LOW/informational findings → note them in the review doc, no corrective prompt
+- Review is BLOCKED (coverage < 80%) → do NOT write a corrective prompt; the agent must fix tests first using the existing blocking message
+
 ### Phase 5: Display Summary
 
 Show concise summary to user:
@@ -493,6 +631,67 @@ Show concise summary to user:
 
 ⚠️  NO CODE REVIEW WILL BE PERFORMED UNTIL REQUIREMENTS ARE MET
 ```
+
+## Phase 6: Merge Prompt PRs and Delete Branches (NEW — RUNS AFTER REVIEW)
+
+**Runs after each passing review. For each prompt PR detected in Phase 0:**
+
+```bash
+# Loop over each prompt PR found in Phase 0
+for PR_NUMBER in $PROMPT_PR_NUMBERS; do
+  PR_INFO=$(gh pr view "$PR_NUMBER" --json headRefName,title,mergeable 2>/dev/null)
+  BRANCH=$(echo "$PR_INFO" | jq -r '.headRefName')
+  TITLE=$(echo "$PR_INFO" | jq -r '.title')
+  MERGEABLE=$(echo "$PR_INFO" | jq -r '.mergeable')
+
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "MERGING PROMPT PR: #${PR_NUMBER} — ${TITLE}"
+  echo "Branch: ${BRANCH}"
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+
+  if [ "$MERGEABLE" = "CONFLICTING" ]; then
+    echo "⚠️  PR #${PR_NUMBER} has merge conflicts — skipping auto-merge"
+    echo "   Resolve conflicts manually, then re-run /review-code"
+    continue
+  fi
+
+  # Merge the PR into develop (squash merge for clean history)
+  gh pr merge "$PR_NUMBER" \
+    --squash \
+    --delete-branch \
+    --subject "feat: ${TITLE}" \
+    2>&1
+
+  if [ $? -eq 0 ]; then
+    echo "✅ Merged: #${PR_NUMBER} → develop"
+    echo "✅ Branch deleted: ${BRANCH}"
+
+    # Also delete local branch if it exists
+    git branch -d "$BRANCH" 2>/dev/null || git branch -D "$BRANCH" 2>/dev/null || true
+
+    echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | PR MERGED | #${PR_NUMBER} | ${BRANCH} → develop | branch deleted" >> ~/auset-brain/Swarms/live-feed.md
+  else
+    echo "⚠️  Merge failed for #${PR_NUMBER} — check GitHub for details"
+  fi
+done
+
+# Pull develop to get the merged commits locally
+if [ -n "$PROMPT_PR_NUMBERS" ]; then
+  echo ""
+  echo "Pulling merged commits..."
+  git pull origin $(git branch --show-current) 2>&1
+  echo ""
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+  echo "✅ All prompt PRs merged and branches cleaned up."
+  echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+fi
+```
+
+**When NOT to merge:**
+- Review **fails** (coverage < 80%, CRITICAL issues blocking) → do NOT merge. Write corrective prompt and queue in `1-not-started/`.
+- PR has merge conflicts (`CONFLICTING` state) → skip with warning. Human must resolve.
+- No prompt PRs found in Phase 0 → Phase 6 is a no-op.
 
 ## Integration with UltraThink
 
@@ -872,6 +1071,95 @@ Before invoking code-quality-reviewer agent:
 - ✅ Per-file coverage calculated
 - ❌ If any check fails → BLOCK and exit
 
+## After a Passing Review: Archive Completed Prompts (NON-NEGOTIABLE)
+
+When a code review **passes** (grade A, A-, B+, or any result where the reviewer approves the
+work), you MUST archive the prompt(s) that produced this code to the HQ completed directory.
+
+This is the closing step of the Cursor agent prompt lifecycle:
+```
+1-not-started/ → 2-in-progress/ → [code written] → review-code passes → 3-completed/ (HQ)
+```
+
+### Step 1 — Identify the prompt source
+
+Find prompts that were executed and need archiving. Check in priority order:
+
+```bash
+YEAR=$(date +%Y)
+MONTH=$(date +%B)    # Full month name: April, May, etc.
+DAY=$(date +%-d)     # Day without leading zero
+
+# 1. Local repo 3-done/ (pickup-prompt moves here after execution)
+LOCAL_DONE="prompts/${YEAR}/${MONTH}/${DAY}/3-done"
+
+# 2. Local repo 2-in-progress/ (currently running)
+LOCAL_WIP="prompts/${YEAR}/${MONTH}/${DAY}/2-in-progress"
+
+ls "$LOCAL_DONE"/*.md 2>/dev/null
+ls "$LOCAL_WIP"/*.md 2>/dev/null
+```
+
+### Step 2 — Archive to HQ (quik-nation-ai-boilerplate)
+
+The canonical archive destination is the boilerplate's `3-completed/` directory:
+
+```bash
+HQ_DIR="/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+
+# On QCS1, HQ path is:
+# HQ_DIR="/Users/ayoungboy/Projects/quik-nation-ai-boilerplate/prompts/${YEAR}/${MONTH}/${DAY}/3-completed"
+
+mkdir -p "$HQ_DIR"
+
+# Archive from 3-done/ (preferred — already executed by pickup-prompt)
+for f in "$LOCAL_DONE"/*.md 2>/dev/null; do
+  [ -f "$f" ] || continue
+  cp "$f" "$HQ_DIR/"
+  echo "✅ Archived: $(basename $f) → HQ/3-completed/"
+done
+
+# Archive from tasks/prompts/1-not-started/ (team prompts, if review covered them)
+for f in "$LOCAL_QUEUE"/*.md 2>/dev/null; do
+  [ -f "$f" ] || continue
+  cp "$f" "$HQ_DIR/"
+  mv "$f" "$(dirname $f)/../3-done/$(basename $f)" 2>/dev/null || true
+  echo "✅ Archived + moved to 3-done: $(basename $f)"
+done
+```
+
+### Step 3 — Post to live feed
+
+```bash
+COUNT=$(ls "$HQ_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ')
+echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | PROMPTS ARCHIVED | ${COUNT} prompt(s) moved to HQ 3-completed/ after passing review" >> ~/auset-brain/Swarms/live-feed.md
+```
+
+### When NOT to archive
+
+- Review **fails** (C grade, CRITICAL issues, coverage below 80%) → do NOT archive. Write a
+  corrective prompt (Phase 4b) and queue it in `1-not-started/`. The original prompt stays in
+  `3-done/` as a record; the corrective prompt is the new work item.
+- A prompt is from a **prior day** and already in HQ → skip (check with `ls $HQ_DIR` first).
+- No prompts found in any source directory → skip silently (some reviews target ad-hoc diffs,
+  not prompt-driven work).
+
+### HQ Directory Structure
+
+```
+quik-nation-ai-boilerplate/
+└── prompts/
+    └── 2026/
+        └── April/
+            └── 12/
+                ├── 1-not-started/    ← New work queued by teams
+                ├── 2-in-progress/    ← Currently executing
+                ├── 3-done/           ← Execution complete (local heru repo)
+                └── 3-completed/      ← Review PASSED — final archive (HQ)
+```
+
+---
+
 ## Command Metadata
 
 ```yaml
@@ -882,12 +1170,15 @@ output_type: markdown_document
 output_location: docs/review/
 token_cost: ~15,000 (includes test execution)
 token_savings: ~40,000 (per future reference)
-version: 2.0.0
+version: 2.1.0
 test_coverage_required: true
 minimum_coverage: 80%
 blocks_on_failure: true
 author: Quik Nation AI
 changelog:
+  - v3.0.0: Phase 0 (git pull + auto-detect prompt PRs) + Phase 6 (merge passing PRs into develop + delete branches)
+  - v2.2.0: Phase 4b — corrective prompt auto-generated to 1-not-started/ when review finds CRITICAL/HIGH issues
+  - v2.1.0: Added post-review prompt archival to HQ 3-completed/ (NON-NEGOTIABLE)
   - v2.0.0: Added mandatory 80% test coverage requirement
   - v1.0.0: Initial release with code quality review
 ```

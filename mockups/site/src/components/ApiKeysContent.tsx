@@ -28,7 +28,7 @@ export function ApiKeysContent() {
         </div>
         <button
           onClick={() => setModalState('create')}
-          className="bg-[#7C3AED] hover:bg-[#6D28D9] rounded-xl px-4 py-2 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.25)] transition-colors whitespace-nowrap">
+          className="bg-[#5CE0D8] hover:bg-[#4BCBC3] rounded-xl px-4 py-2 text-sm font-semibold text-[#0D1117] shadow-[0_0_20px_rgba(92,224,216,0.25)] transition-colors whitespace-nowrap">
           
           Create API Key
         </button>

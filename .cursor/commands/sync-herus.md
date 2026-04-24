@@ -11,11 +11,14 @@ Synchronize Auset platform files (commands, plans, agents, cheat sheets, skills)
 /sync-herus --plans                  # Only sync .claude/plans/micro/
 /sync-herus --cheat-sheet            # Only sync COMMAND_CHEAT_SHEET.md
 /sync-herus --agents                 # Only sync .claude/agents/
+/sync-herus --standards              # Sync standards docs, deployment docs, docs/prompts/, CONTEXT_EFFICIENCY.md
 /sync-herus --dry-run                # Show what would be synced without doing it
 /sync-herus --list                   # List all Heru projects found
 /sync-herus --file <path>            # Sync a specific file to all Herus
 /sync-herus --push                   # Sync files AND git push to remote repos
 /sync-herus --commands --push        # Sync commands then push all Herus to remote
+/sync-herus --standards --push       # Sync standards bundle then push each Heru
+/sync-herus --standards --dry-run    # Preview standards file copies only
 /sync-herus --push-only              # Skip file sync, just git commit+push each Heru
 ```
 
@@ -26,6 +29,7 @@ Synchronize Auset platform files (commands, plans, agents, cheat sheets, skills)
 - `--cheat-sheet` — Sync `.claude/COMMAND_CHEAT_SHEET.md` only
 - `--agents` — Sync `.claude/agents/*.md` files only
 - `--skills` — Sync `.claude/skills/` directory
+- `--standards` — Sync the **standards bundle** from boilerplate into each Heru **repository root** (see list below). Does not replace project-specific `CLAUDE.md` or app code.
 - `--file <relative-path>` — Sync one specific file (e.g., `.claude/commands/progress.md`)
 - `--dry-run` — Preview what would be synced, don't copy
 - `--list` — List all discovered Heru projects
@@ -52,6 +56,10 @@ find /Volumes/X10-Pro/Native-Projects -maxdepth 4 -name ".claude" -type d 2>/dev
     PROJECT=$(dirname "$CLAUDE_DIR")
     GITROOT=$(cd "$PROJECT" && git rev-parse --show-toplevel 2>/dev/null)
     # Only include if this .claude is at the git root (not nested in a subdirectory)
+    # Honor .heru-skip exclusion marker (drop a .heru-skip file at the repo root to opt out)
+    if [ -f "$PROJECT/.heru-skip" ]; then
+      continue
+    fi
     if [ -n "$GITROOT" ] && [ "$PROJECT" = "$GITROOT" ]; then
       echo "$CLAUDE_DIR"
     elif [ -z "$GITROOT" ]; then
@@ -89,6 +97,63 @@ Deduplicate by project name. Report count.
 
 **With flags — sync only what's specified.**
 
+**`--standards` — sync this explicit bundle** (paths relative to boilerplate root `SRC`):
+
+```
+docs/standards/CORE-TECH-STACK.md
+docs/standards/STANDARDIZATION_STRATEGY.md
+docs/standards/swarm-accountability-rules.md
+docs/standards/README.md
+docs/standards/CHANGELOG.md
+docs/cloudflare/NEXTJS-CLOUDFLARE-WORKERS-DEPLOYMENT.md
+docs/cloudflare/AMPLIFY-TO-CLOUDFLARE-MIGRATION.md
+docs/migrations/README.md
+docs/deployment/AMPLIFY-DEPLOYMENT.md
+docs/deployment/APP_RUNNER_DOCKER_DEPLOYMENT.md
+docs/deployment/AWS-OIDC-GITHUB-ACTIONS.md
+docs/deployment/DYNAMIC-IP-DEPLOYMENT.md
+docs/deployment/EC2-PM2-DEPLOYMENT-DEBUGGING.md
+docs/deployment/GITHUB-ACTIONS-SELF-HOSTED-RUNNERS.md
+docs/deployment/MOBILE-DEPLOYMENT-EXPO.md
+docs/deployment/MOBILE-DEPLOYMENT-REACT-NATIVE-CLI.md
+docs/deployment/MULTI-APP-EC2-DEPLOYMENT-SUMMARY.md
+docs/deployment/PRODUCTION_DEPLOYMENT_CHECKLIST.md
+docs/deployment/QUIKNATION_DEPLOYMENT_GUIDE.md
+docs/deployment/README.md
+docs/prompts/   # entire tree (recursive)
+CONTEXT_EFFICIENCY.md
+```
+
+Implementation pattern (for each Heru `PROJECT`):
+
+```bash
+SRC="/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate"
+
+sync_one() {
+  local rel="$1"
+  local src="$SRC/$rel"
+  local dst="$PROJECT/$rel"
+  if [ ! -e "$src" ]; then
+    echo "MISSING (skip): $rel"
+    return
+  fi
+  mkdir -p "$(dirname "$dst")"
+  if [ -d "$src" ]; then
+    rm -rf "$dst" 2>/dev/null
+    cp -R "$src" "$dst"
+  else
+    cp "$src" "$dst"
+  fi
+  echo "OK $rel → $(basename "$PROJECT")"
+}
+
+# If DRY_RUN: print sync_one targets only, do not cp
+```
+
+Log **per file** (or per top-level path for `docs/prompts/`) so troubleshooting is easy.
+
+**Composability:** `--standards --dry-run` lists planned copies only. `--standards --push` runs the copy pass then **Step 5** with a commit message like `chore(auset): sync standards + prompt docs from boilerplate`.
+
 Source is always: `/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate/`
 
 ### Step 3: Sync to Each Heru
@@ -105,12 +170,25 @@ mkdir -p "$PROJECT/.claude/commands"
 cp "$SRC/.claude/commands/"*.md "$PROJECT/.claude/commands/" 2>/dev/null
 cp "$SRC/.claude/COMMAND_CHEAT_SHEET.md" "$PROJECT/.claude/" 2>/dev/null
 
+# Scripts (shell implementations that commands reference — NEW in v1.1)
+# Without this, commands like /open-tabs, /branch-cleanup, /migrate-amplify-to-cf
+# land in Herus as dead .md files because their .sh implementations aren't there.
+mkdir -p "$PROJECT/.claude/scripts"
+cp "$SRC/.claude/scripts/"*.sh "$PROJECT/.claude/scripts/" 2>/dev/null
+chmod +x "$PROJECT/.claude/scripts/"*.sh 2>/dev/null
+
 # Mirror to .cursor if it exists and --no-cursor not set
 if [ -d "$PROJECT/.cursor" ]; then
-  mkdir -p "$PROJECT/.cursor/commands"
+  mkdir -p "$PROJECT/.cursor/commands" "$PROJECT/.cursor/scripts"
   cp "$SRC/.claude/commands/"*.md "$PROJECT/.cursor/commands/" 2>/dev/null
+  cp "$SRC/.claude/scripts/"*.sh "$PROJECT/.cursor/scripts/" 2>/dev/null
+  chmod +x "$PROJECT/.cursor/scripts/"*.sh 2>/dev/null
   cp "$SRC/.claude/COMMAND_CHEAT_SHEET.md" "$PROJECT/.cursor/" 2>/dev/null
 fi
+
+# When --standards: also copy docs/standards, docs/cloudflare file, docs/deployment files,
+# docs/prompts tree, and CONTEXT_EFFICIENCY.md (see Step 2 list). Stage these in Step 5 with:
+#   git add docs/ CONTEXT_EFFICIENCY.md
 ```
 
 ### Step 4: Report Results
@@ -190,8 +268,10 @@ COMMIT_MSG="${CUSTOM_MSG:-chore(auset): sync platform commands from boilerplate}
 
 cd "$PROJECT"
 
-# Stage only .claude/ and .cursor/ changes (never stage project code)
+# Stage only platform-sync paths (never stage unrelated app code)
 git add .claude/ .cursor/ 2>/dev/null
+# If the last sync included --standards, also stage:
+git add docs/standards docs/cloudflare docs/deployment docs/migrations docs/prompts CONTEXT_EFFICIENCY.md 2>/dev/null
 
 # Check if there's anything to commit
 if git diff --cached --quiet; then
@@ -224,16 +304,19 @@ done
 
 ### SYNCED (Platform-level, shared across all Herus)
 - `.claude/commands/*.md` — All commands
+- `.claude/scripts/*.sh` — Shell implementations backing those commands (NEW in v1.1)
 - `.claude/COMMAND_CHEAT_SHEET.md` — Quick reference
 - `.claude/plans/micro/*.md` — Micro plans (when using --plans)
 - `.claude/agents/*.md` — Agent definitions (when using --agents)
+- **With `--standards`:** `docs/standards/*`, selected `docs/deployment/*.md`, `docs/cloudflare/NEXTJS-CLOUDFLARE-WORKERS-DEPLOYMENT.md`, `docs/cloudflare/AMPLIFY-TO-CLOUDFLARE-MIGRATION.md`, `docs/migrations/README.md`, full `docs/prompts/`, root `CONTEXT_EFFICIENCY.md` (see Step 2 list)
 
 ### NEVER SYNCED (Project-specific)
 - `.claude/settings.json` — Per-project settings
 - `.claude/config/` — Per-project configuration
 - `CLAUDE.md` — Root project instructions (project-specific)
 - `.claude/plans/` (non-micro) — Project-specific plans
-- `docs/`, `backend/`, `frontend/` — All project code
+- `backend/`, `frontend/`, `mobile/` — Application source (unless `--file` targets a specific path)
+- Other `docs/**` not listed in `--standards` (e.g. project PRDs)
 
 ## Examples
 
@@ -270,6 +353,9 @@ done
 
 # Push only with custom message
 /sync-herus --push-only --commit-message "chore(auset): sync platform updates"
+
+# Standards + prompt library docs to all Herus, then push
+/sync-herus --standards --push
 ```
 
 ## Related Commands

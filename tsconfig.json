@@ -3,7 +3,7 @@
 	"compilerOptions": {
 		"jsx": "react-jsx",
 		"noEmit": true,
-		"lib": ["ES2024", "DOM", "DOM.Iterable"],
+		"lib": ["ES2023", "DOM", "DOM.Iterable"],
 		"paths": {
 			"*": ["./*"],
 			"@mariozechner/pi-ai": ["./packages/ai/src/index.ts"],

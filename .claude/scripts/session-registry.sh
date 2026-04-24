@@ -1,222 +1,170 @@
 #!/bin/bash
-# Session Registry v3 — Feed + Inbox ONLY. Zero send-keys.
+# Session Registry — Maps team names to active Claude Code TTYs
+# Discovers sessions dynamically by scanning running processes
+# Usage: session-registry.sh list|find <team>|wake <team> <message>
 #
-# RULE: NEVER use tmux send-keys for inter-agent communication.
-#   tmux send-keys injects keystrokes into the active prompt.
-#   If ANYONE is typing, their input gets destroyed. Not safe. Period.
-#
-# The ONLY code that uses send-keys is vtalk (voice-to-swarm.sh)
-# because Mo deliberately chooses when to send voice input.
-#
-# All agent-to-agent messages go to:
-#   1. Live feed (~/auset-brain/Swarms/live-feed.md) — audit trail
-#   2. Inbox file (/tmp/swarm-inboxes/<team>.md) — per-team delivery
-#   Agents read their inbox on their next turn (pull model).
-#
-# Usage:
-#   session-registry.sh list                 List discovered sessions
-#   session-registry.sh find <team>          Print tmux target for a team
-#   session-registry.sh wake <team> <msg>    Write to inbox + feed (NO send-keys)
-#   session-registry.sh wake-all <msg>       Notify all teams (except HQ)
-#   session-registry.sh discover             Re-scan and count sessions
+# No hardcoded TTYs. Discovers fresh every time.
 
-SESSION="swarm"
-CURSOR_SESSION="cursor-swarm"
 REGISTRY_FILE="$HOME/auset-brain/Swarms/.session-registry"
-INBOX_DIR="/tmp/swarm-inboxes"
-FEED="$HOME/auset-brain/Swarms/live-feed.md"
 
-mkdir -p "$(dirname "$REGISTRY_FILE")" "$INBOX_DIR" 2>/dev/null
-
-resolve_alias() {
-    case "$(echo "$1" | tr '[:upper:]' '[:lower:]')" in
-        hq|headquarters) echo "hq" ;;
-        pkgs|packages)   echo "pkgs" ;;
-        qn)              echo "qn" ;;
-        wcr)             echo "wcr" ;;
-        qcr)             echo "qcr" ;;
-        fmo)             echo "fmo" ;;
-        st)              echo "st" ;;
-        s962|962)        echo "s962" ;;
-        slk|slack)       echo "slk" ;;
-        qcarry)          echo "qcarry" ;;
-        devops)          echo "devops" ;;
-        trackit)         echo "trackit" ;;
-        pgcmc)           echo "pgcmc" ;;
-        *)               echo "$1" ;;
-    esac
-}
-
-# Map pane title (set by Claude Code / launcher) → short team alias.
-# Claude sets titles like "✳ World Cup Ready Team" or "✳ Headquarters".
-pane_title_to_team() {
-    local t="$1"
-    case "$t" in
-        *[Hh]eadquarters*)                   echo "hq" ;;
-        *[Pp]ackage*|*[Pp]kgs*)              echo "pkgs" ;;
-        *FMO*|*fmo*)                          echo "fmo" ;;
-        *[Ww]orld*[Cc]up*[Rr]eady*|*WCR*)   echo "wcr" ;;
-        *[Qq]uik*[Cc]ar*[Rr]ental*|*QCR*)   echo "qcr" ;;
-        *[Qq]uik*[Nn]ation*|*quiknation*)    echo "qn" ;;
-        *[Ss]eeking*[Tt]alent*)              echo "st" ;;
-        *[Ss]ite962*|*s962*)                 echo "s962" ;;
-        *[Ss]liplink*)                       echo "slk" ;;
-        *[Qq]uik[Cc]arry*)                   echo "qcarry" ;;
-        *[Dd]ev[Oo]ps*)                      echo "devops" ;;
-        *[Tt]rack[Ii]t*)                     echo "trackit" ;;
-        *PGCMC*|*pgcmc*)                     echo "pgcmc" ;;
-        *)                                   echo "" ;;
-    esac
-}
-
+# Scan running Claude Code processes and build registry
 discover() {
-    > "$REGISTRY_FILE"
+    > "$REGISTRY_FILE"  # Clear registry
 
-    command -v tmux &>/dev/null || { echo "0"; return; }
+    # Find Claude Code AND Cursor Agent CLI sessions
+    ps aux | grep -E "(claude.*--dangerously-skip-permissions|\.local/bin/agent)" | grep -v grep | while read -r line; do
+        PID=$(echo "$line" | awk '{print $2}')
+        TTY=$(echo "$line" | awk '{print $7}')
 
-    # Claude Code (swarm:*) — scan PANES, not just windows.
-    # After tri-swarm-layout.sh, multiple teams live as panes inside one window (e.g. hq).
-    # We register each pane by its team alias → swarm:window.pane_index
-    if tmux has-session -t "$SESSION" 2>/dev/null; then
-        tmux list-panes -t "$SESSION" -a -F '#{window_name}|#{pane_index}|#{pane_title}' 2>/dev/null | while IFS='|' read -r wname pidx ptitle; do
-            local TEAM
-            TEAM=$(pane_title_to_team "$ptitle")
-            if [ -n "$TEAM" ]; then
-                if ! grep -qi "^${TEAM}|" "$REGISTRY_FILE" 2>/dev/null; then
-                    echo "${TEAM}|claude|${SESSION}:${wname}.${pidx}" >> "$REGISTRY_FILE"
-                fi
-            else
-                # Unrecognized title — register by window name (single-pane fallback)
-                if ! grep -qi "^${wname}|" "$REGISTRY_FILE" 2>/dev/null; then
-                    echo "${wname}|claude|${SESSION}:${wname}" >> "$REGISTRY_FILE"
-                fi
-            fi
-        done
-    fi
+        # Extract session name from -n flag (Claude Code)
+        NAME=$(echo "$line" | sed -E 's/.*-n ([^-]+).*/\1/' | sed 's/ *$//')
 
-    # Cursor Agent windows (cursor-swarm:*) → type=cursor (NEVER wake-able)
-    if tmux has-session -t "$CURSOR_SESSION" 2>/dev/null; then
-        tmux list-panes -t "$CURSOR_SESSION" -a -F '#{window_name}|#{pane_index}|#{pane_title}' 2>/dev/null | while IFS='|' read -r wname pidx ptitle; do
-            local TEAM
-            TEAM=$(pane_title_to_team "$ptitle")
-            [ -z "$TEAM" ] && TEAM="$wname"
-            if ! grep -qi "^${TEAM}|" "$REGISTRY_FILE" 2>/dev/null; then
-                echo "${TEAM}|cursor|${CURSOR_SESSION}:${wname}.${pidx}" >> "$REGISTRY_FILE"
-            fi
-        done
-    fi
+        # If no -n flag found (Cursor), use TTY as identifier
+        if echo "$NAME" | grep -q "dangerously\|agent\|index.js"; then
+            NAME="Cursor-${TTY}"
+        fi
 
-    # Legacy separate sessions (swarm-<team>), skip anything cursor-swarm*
-    tmux list-sessions -F '#{session_name}' 2>/dev/null | grep "^${SESSION}-" | while read -r sname; do
-        [[ "$sname" == "${CURSOR_SESSION}" || "$sname" == "${CURSOR_SESSION}-"* ]] && continue
-        local TEAM
-        TEAM=$(echo "$sname" | sed "s/^${SESSION}-//")
-        if ! grep -qi "^${TEAM}|" "$REGISTRY_FILE" 2>/dev/null; then
-            echo "${TEAM}|claude|${sname}" >> "$REGISTRY_FILE"
+        if [ -n "$NAME" ] && [ -n "$TTY" ] && [ "$TTY" != "??" ]; then
+            echo "${NAME}|${TTY}|${PID}" >> "$REGISTRY_FILE"
         fi
     done
 
+    # Return count
     wc -l < "$REGISTRY_FILE" 2>/dev/null | tr -d ' '
 }
 
+# List all active sessions
 list_sessions() {
     discover > /dev/null
 
     if [ ! -s "$REGISTRY_FILE" ]; then
-        echo "No active sessions found."
-        echo "Launch: hq / wcr / pkgs (Claude) or c-fmo / c-wcr (Cursor)"
+        echo "No active Claude Code sessions found"
         return 1
     fi
 
-    echo "Session Registry v3 (feed + inbox only — zero send-keys):"
-    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-    while IFS='|' read -r NAME TYPE ID; do
-        local INBOX_COUNT=0
-        local INBOX_FILE="$INBOX_DIR/${NAME}.md"
-        [ -f "$INBOX_FILE" ] && [ -s "$INBOX_FILE" ] && INBOX_COUNT=$(wc -l < "$INBOX_FILE" | tr -d ' ')
-        local INBOX_TAG=""
-        [ "$INBOX_COUNT" -gt 0 ] && INBOX_TAG=" [${INBOX_COUNT} msg]"
-
-        if [ "$TYPE" = "claude" ]; then
-            printf "  %-15s %-8s %-22s%s\n" "$NAME" "[claude]" "$ID" "$INBOX_TAG"
-        else
-            printf "  %-15s %-8s %-22s (protected — no wake)\n" "$NAME" "[cursor]" "$ID"
-        fi
+    echo "Active Claude Code Sessions:"
+    echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+    while IFS='|' read -r NAME TTY PID; do
+        printf "  %-25s TTY: %-6s PID: %s\n" "$NAME" "$TTY" "$PID"
     done < "$REGISTRY_FILE"
 }
 
+# Find TTY for a team name (partial match)
 find_session() {
     discover > /dev/null
-    local SEARCH
-    SEARCH=$(resolve_alias "$1")
-    grep -i "^${SEARCH}|claude|" "$REGISTRY_FILE" 2>/dev/null | head -1 | cut -d'|' -f3
+    local SEARCH="$1"
+
+    grep -i "$SEARCH" "$REGISTRY_FILE" 2>/dev/null | head -1 | cut -d'|' -f2
 }
 
+# Wake a session by team name
 wake_session() {
     local SEARCH="$1"
     local MESSAGE="${2:-Check the live feed for directives from HQ}"
+    local FEED="$HOME/auset-brain/Swarms/live-feed.md"
 
-    SEARCH=$(resolve_alias "$SEARCH")
+    # Map common aliases to full session names
+    case "$(echo "$SEARCH" | tr '[:upper:]' '[:lower:]')" in
+        hq)         SEARCH="Headquarters" ;;
+        pkgs)       SEARCH="Packages" ;;
+        qn)         SEARCH="Quik Nation" ;;
+        wcr)        SEARCH="World Cup" ;;
+        qcr)        SEARCH="QuikCar" ;;
+        fmo)        SEARCH="FMO" ;;
+        st)         SEARCH="Seeking" ;;
+        s962|962)   SEARCH="962" ;;
+        slk|slack)  SEARCH="Slack" ;;
+        qcarry)     SEARCH="QuikCarry" ;;
+        devops)     SEARCH="DevOps" ;;
+        trackit)    SEARCH="TrackIt" ;;
+        pgcmc)      SEARCH="PGCMC" ;;
+    esac
+
     discover > /dev/null
 
-    local MATCH
-    MATCH=$(grep -i "^${SEARCH}|" "$REGISTRY_FILE" 2>/dev/null | head -1)
+    local MATCH=$(grep -i "$SEARCH" "$REGISTRY_FILE" 2>/dev/null | head -1)
 
     if [ -z "$MATCH" ]; then
         echo "No session found matching: $SEARCH"
+        echo "Active sessions:"
+        list_sessions
+        # Log failed dispatch to feed
         echo "$(date '+%H:%M:%S') | DISPATCH FAILED | TO:${SEARCH} | Session not found | ${MESSAGE}" >> "$FEED" 2>/dev/null
         return 1
     fi
 
-    local NAME TYPE ID
-    NAME=$(echo "$MATCH" | cut -d'|' -f1)
-    TYPE=$(echo "$MATCH" | cut -d'|' -f2)
-    ID=$(echo "$MATCH" | cut -d'|' -f3)
+    local NAME=$(echo "$MATCH" | cut -d'|' -f1)
+    local TTY=$(echo "$MATCH" | cut -d'|' -f2)
 
-    # 1. Write to team inbox (agents read on next turn)
-    local TIMESTAMP
-    TIMESTAMP=$(date '+%H:%M:%S')
-    echo "[${TIMESTAMP}] ${MESSAGE}" >> "$INBOX_DIR/${NAME}.md"
+    # Log directive to live feed — HQ sees all dispatches
+    echo "$(date '+%H:%M:%S') | DISPATCH | TO:${NAME} | ${MESSAGE}" >> "$FEED" 2>/dev/null
 
-    # 2. Log to live feed (audit trail for HQ)
-    echo "${TIMESTAMP} | DISPATCH | TO:${NAME} | via inbox | ${MESSAGE}" >> "$FEED" 2>/dev/null
+    # Use AppleScript to send message to the terminal tab
+    # Strategy: clipboard paste + Enter — works for both Claude Code and Cursor Agent CLI
+    # 1. Save current clipboard, 2. Set clipboard to message, 3. Focus tab, 4. Paste, 5. Enter, 6. Restore clipboard
+    local OLD_CLIPBOARD=$(pbpaste 2>/dev/null)
+    echo -n "${MESSAGE}" | pbcopy
 
-    echo "Notified '${NAME}' (inbox: ${INBOX_DIR}/${NAME}.md): ${MESSAGE}"
-    return 0
+    osascript -e "
+    tell application \"Terminal\"
+        set targetTab to missing value
+        set targetWindow to missing value
+        repeat with w in windows
+            repeat with t in tabs of w
+                if tty of t contains \"${TTY}\" then
+                    set targetTab to t
+                    set targetWindow to w
+                    exit repeat
+                end if
+            end repeat
+            if targetTab is not missing value then exit repeat
+        end repeat
+        if targetTab is not missing value then
+            set selected of targetTab to true
+            set frontmost of targetWindow to true
+            activate
+            delay 0.3
+            tell application \"System Events\"
+                keystroke \"v\" using command down
+                delay 0.2
+                keystroke return
+            end tell
+        end if
+    end tell
+    " 2>/dev/null
+
+    # Restore clipboard
+    echo -n "${OLD_CLIPBOARD}" | pbcopy 2>/dev/null
+
+    if [ $? -eq 0 ]; then
+        echo "Woke '${NAME}' (${TTY}): ${MESSAGE}"
+    else
+        echo "Failed to wake '${NAME}' (${TTY})"
+        echo "$(date '+%H:%M:%S') | DISPATCH FAILED | TO:${NAME} | AppleScript error | ${MESSAGE}" >> "$FEED" 2>/dev/null
+    fi
 }
 
+# Wake ALL sessions
 wake_all() {
     local MESSAGE="${1:-Check the live feed for directives from HQ}"
 
     discover > /dev/null
 
-    while IFS='|' read -r NAME TYPE ID; do
-        [ "$TYPE" = "claude" ] || continue
-        local NAME_LOWER
-        NAME_LOWER=$(echo "$NAME" | tr '[:upper:]' '[:lower:]')
-        [[ "$NAME_LOWER" == "hq" || "$NAME_LOWER" == "headquarters" ]] && continue
+    while IFS='|' read -r NAME TTY PID; do
+        # Skip HQ — don't wake yourself
+        if echo "$NAME" | grep -qi "headquarters"; then
+            continue
+        fi
         wake_session "$NAME" "$MESSAGE"
-        sleep 0.5
+        sleep 1  # Small delay between wakes
     done < "$REGISTRY_FILE"
 }
 
 case "${1:-list}" in
-    list)       list_sessions ;;
-    find)       find_session "$2" ;;
-    wake)       wake_session "$2" "$3" ;;
-    wake-all)   wake_all "$2" ;;
-    discover)   COUNT=$(discover); echo "Discovered $COUNT sessions" ;;
-    *)
-        echo "Session Registry v3 — Feed + inbox only (zero send-keys)"
-        echo ""
-        echo "Usage:"
-        echo "  $0 list                    List all sessions"
-        echo "  $0 find <team>             Find tmux target for a team"
-        echo "  $0 wake <team> <message>   Write to team inbox + live feed"
-        echo "  $0 wake-all <message>      Notify all teams (except HQ)"
-        echo "  $0 discover                Re-scan sessions"
-        echo ""
-        echo "RULE: tmux send-keys is BANNED for agent dispatch."
-        echo "Only vtalk (voice-to-swarm.sh) uses send-keys — Mo controls that."
-        ;;
+    list)     list_sessions ;;
+    find)     find_session "$2" ;;
+    wake)     wake_session "$2" "$3" ;;
+    wake-all) wake_all "$2" ;;
+    discover) COUNT=$(discover); echo "Discovered $COUNT sessions" ;;
+    *)        echo "Usage: $0 {list|find <team>|wake <team> <message>|wake-all <message>|discover}" ;;
 esac

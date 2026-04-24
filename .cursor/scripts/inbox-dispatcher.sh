@@ -1,15 +1,25 @@
 #!/bin/bash
-# Inbox Dispatcher v3 — Event-driven inbox writer + dashboard
-# Named after Granville T. Woods' automatic air brake system
+# Inbox Dispatcher — Event-driven replacement for the 5-minute cron job
+# Named after Granville T. Woods' automatic air brake system — acts only when needed
 #
-# Writes to team inbox files. Companion panes (tail -f) display messages
-# in real-time. ZERO send-keys. Agents read their inbox on next turn.
+# WHY: The old cron fired every 5 minutes regardless of messages or live sessions.
+#      This watches /tmp/swarm-inboxes/ with fswatch and ONLY wakes sessions when
+#      a message actually arrives. Zero wasted cycles.
+#
+# HOW:
+#   1. fswatch monitors /tmp/swarm-inboxes/ for new/modified files
+#   2. On change: checks if the inbox file has content (skip empty creates)
+#   3. Looks up the session in the registry
+#   4. Wakes ONLY that session
+#   5. If wake fails: exponential backoff retry (10s → 20s → 40s → cap 5min)
+#   6. If session is dead: skip + log, don't retry
+#   7. Self-cleans orphaned inboxes for sessions that no longer exist
 #
 # Usage:
-#   inbox-dispatcher.sh start     Start the event-driven dispatcher
-#   inbox-dispatcher.sh stop      Stop the dispatcher
-#   inbox-dispatcher.sh status    Show status + pending deliveries
-#   inbox-dispatcher.sh drain     One-shot: process all pending messages
+#   inbox-dispatcher.sh start     # Start the event-driven dispatcher
+#   inbox-dispatcher.sh stop      # Stop the dispatcher
+#   inbox-dispatcher.sh status    # Show status + pending deliveries
+#   inbox-dispatcher.sh drain     # One-shot: deliver all pending messages now
 
 INBOX_DIR="/tmp/swarm-inboxes"
 PID_FILE="/tmp/inbox-dispatcher.pid"
@@ -24,7 +34,7 @@ log() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') | $*" >> "$LOG_FILE"
 }
 
-is_claude_session_alive() {
+is_session_alive() {
     local team="$1"
     local tty
     tty=$("$SCRIPTS_DIR/session-registry.sh" find "$team" 2>/dev/null)
@@ -35,9 +45,11 @@ get_backoff_seconds() {
     local team="$1"
     local backoff_file="$BACKOFF_DIR/$team"
     local current=10
+
     if [ -f "$backoff_file" ]; then
         current=$(cat "$backoff_file" 2>/dev/null || echo "10")
     fi
+
     echo "$current"
 }
 
@@ -47,9 +59,12 @@ increase_backoff() {
     local current
     current=$(get_backoff_seconds "$team")
     local next=$((current * 2))
+
+    # Cap at 5 minutes
     [ "$next" -gt 300 ] && next=300
+
     echo "$next" > "$backoff_file"
-    log "BACKOFF | $team | ${current}s -> ${next}s"
+    log "BACKOFF | $team | ${current}s → ${next}s"
 }
 
 reset_backoff() {
@@ -65,7 +80,7 @@ deliver_to_team() {
         return 0
     fi
 
-    if ! is_claude_session_alive "$team"; then
+    if ! is_session_alive "$team"; then
         log "SKIP | $team | session not found (inbox has $(wc -l < "$inbox" | tr -d ' ') msgs)"
         return 1
     fi
@@ -74,9 +89,18 @@ deliver_to_team() {
     msg_count=$(wc -l < "$inbox" | tr -d ' ')
     log "DELIVER | $team | $msg_count message(s)"
 
-    log "READY | $team | $msg_count message(s) in inbox — visible via companion pane (tail -f)"
-    reset_backoff "$team"
-    return 0
+    "$SCRIPTS_DIR/session-registry.sh" wake "$team" \
+        "You have $msg_count message(s) in your telegraph inbox. Run: .claude/scripts/swarm-telegraph.sh check $team" 2>/dev/null
+
+    if [ $? -eq 0 ]; then
+        reset_backoff "$team"
+        log "DELIVERED | $team | success"
+        return 0
+    else
+        increase_backoff "$team"
+        log "FAILED | $team | wake failed, will retry with backoff"
+        return 1
+    fi
 }
 
 retry_failed() {
@@ -111,11 +135,12 @@ start_dispatcher() {
         return 0
     fi
 
-    echo "Starting Inbox Dispatcher v3 (inbox-only, no send-keys)..."
+    echo "Starting Inbox Dispatcher (event-driven, replaces cron)..."
     echo "Watching: $INBOX_DIR/"
     log "STARTED"
 
     (
+        # Drain any pending messages on startup
         for inbox in "$INBOX_DIR"/*.md; do
             [ -f "$inbox" ] && [ -s "$inbox" ] || continue
             local team
@@ -123,7 +148,10 @@ start_dispatcher() {
             deliver_to_team "$team"
         done
 
+        # Main loop: fswatch for new inbox messages + periodic retry for failed deliveries
+        # fswatch triggers on file create/modify in the inbox dir
         fswatch -o --event Created --event Updated "$INBOX_DIR" 2>/dev/null | while read -r _; do
+            # Small debounce — multiple writes may happen in quick succession
             sleep 1
 
             for inbox in "$INBOX_DIR"/*.md; do
@@ -131,6 +159,7 @@ start_dispatcher() {
                 local team
                 team=$(basename "$inbox" .md)
 
+                # Skip if we're in backoff for this team
                 if [ -f "$BACKOFF_DIR/$team" ]; then
                     continue
                 fi
@@ -141,10 +170,12 @@ start_dispatcher() {
 
         local FSWATCH_PID=$!
 
+        # Secondary loop: retry failed deliveries (checks every 30s, but only acts if backoff expired)
         while true; do
             sleep 30
             retry_failed
 
+            # Self-terminate if no sessions are alive and no messages pending
             local has_messages=false
             for inbox in "$INBOX_DIR"/*.md; do
                 if [ -f "$inbox" ] && [ -s "$inbox" ]; then
@@ -157,7 +188,7 @@ start_dispatcher() {
                 local session_count
                 session_count=$("$SCRIPTS_DIR/session-registry.sh" discover 2>/dev/null | grep -oE '[0-9]+' || echo "0")
                 if [ "$session_count" = "0" ]; then
-                    log "AUTO-STOP | No sessions alive, no pending messages."
+                    log "AUTO-STOP | No sessions alive, no pending messages. Shutting down."
                     kill "$FSWATCH_PID" 2>/dev/null
                     rm -f "$PID_FILE"
                     exit 0
@@ -169,8 +200,7 @@ start_dispatcher() {
     ) &
 
     echo $! > "$PID_FILE"
-    echo "Inbox Dispatcher v3 started (PID $(cat "$PID_FILE"))"
-    echo "Display: companion panes (tail -f) show messages in real-time"
+    echo "Inbox Dispatcher started (PID $(cat "$PID_FILE"))"
 }
 
 stop_dispatcher() {
@@ -193,7 +223,7 @@ stop_dispatcher() {
 }
 
 status_dispatcher() {
-    echo "━━━ Inbox Dispatcher v3 (inbox-only, tail -f display) ━━━"
+    echo "━━━ Inbox Dispatcher Status ━━━"
     echo ""
 
     if [ -f "$PID_FILE" ] && kill -0 "$(cat "$PID_FILE")" 2>/dev/null; then
@@ -212,7 +242,7 @@ status_dispatcher() {
         local count
         count=$(wc -l < "$inbox" | tr -d ' ')
         local alive="dead"
-        is_claude_session_alive "$team" && alive="alive"
+        is_session_alive "$team" && alive="alive"
 
         local backoff_info=""
         if [ -f "$BACKOFF_DIR/$team" ]; then
@@ -237,7 +267,7 @@ status_dispatcher() {
 }
 
 drain_now() {
-    echo "Processing all pending inbox messages..."
+    echo "Draining all pending messages..."
     local delivered=0
     for inbox in "$INBOX_DIR"/*.md; do
         [ -f "$inbox" ] && [ -s "$inbox" ] || continue
@@ -256,15 +286,12 @@ case "${1:-status}" in
     status)  status_dispatcher ;;
     drain)   drain_now ;;
     *)
-        echo "Inbox Dispatcher v3 — Event-driven inbox management (zero send-keys)"
+        echo "Inbox Dispatcher — Event-driven session wake (replaces cron)"
         echo ""
         echo "Usage:"
-        echo "  inbox-dispatcher.sh start    Start the event-driven watcher"
-        echo "  inbox-dispatcher.sh stop     Stop the watcher"
-        echo "  inbox-dispatcher.sh status   Show status + pending messages"
-        echo "  inbox-dispatcher.sh drain    One-shot: process all pending"
-        echo ""
-        echo "Display: companion panes with tail -f show messages in real-time."
-        echo "Agents: read inbox on next turn. No prompt injection."
+        echo "  inbox-dispatcher.sh start    Start the event-driven dispatcher"
+        echo "  inbox-dispatcher.sh stop     Stop the dispatcher"
+        echo "  inbox-dispatcher.sh status   Show status + pending deliveries"
+        echo "  inbox-dispatcher.sh drain    One-shot: deliver all pending now"
         ;;
 esac

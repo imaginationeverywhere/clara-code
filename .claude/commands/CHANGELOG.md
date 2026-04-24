@@ -1,27 +1,5 @@
 # .claude/commands Changelog
 
-## [1.35.3] - 2026-04-23
-
-### Added
-
-- **`/hotfix-to-main`** — `.claude/commands/hotfix-to-main.md` (mirrored `.cursor/commands/hotfix-to-main.md`): Mo-approved emergency PR path straight to `main` with `gh` gates, backport to `develop`, and explicit non-interchangeability with `/merge-to-main` / standard develop flow.
-- **Command prompt template library** — `.claude/commands/prompts/` (mirrored `.cursor/commands/prompts/`): `README.md`, product/legal stubs (`nav-bar`, `rbac`, `footer`, `tos`, `privacy-policy`, `contact-us`, `user-journey`, `hero-section`, `about-us`, `feedback-widget`), and `setup/*` (Next.js, Vite, Angular, React Native, Electron, source control, Clerk, cloud providers, Bedrock, backend Express, migrate-amplify-to-cf).
-- **`__tests__/session-start.contract.test.mjs`** — Node `node:test` contract: `session-start.md` must still reference `auset-brain/`, MOC, MEMORY/session-checkpoint, and the “does not do” section.
-
-### Changed
-
-- **Auto Claude task file location** — All `ac-*.md` task examples now use **`.internal/tasks.json`** (was `.auto-claude/tasks.json`); `ac-planning.md` / bootstrap / project status docs reference `.internal/planning-tasks/` and `.internal/plans/` consistently.
-- **`/review-code` v3.0.0** — Phase 0: `git pull` first; scans open `prompt/*` PRs with `gh pr list`, then reviews/merges in later phases; output path unchanged under `docs/review/`.
-- **Broad command sync** — `sync-herus.md`, `merge-to-main.md`, `merge-to-develop.md`, `run-migrations.md`, `queue-prompt.md`, `project-status.md`, `project-mvp-status.md`, `project-playground.md`, `bootstrap-project.md`, `convert-design.md`, `frontend-dev.md`, `grill-me.md`, `open-heru-tabs.md`, `open-qcs1.md`, `pickup-prompt.md`, `dispatch-cursor.md`, `create-plan-todo.md`, `branch-cleanup.md` — doc alignment, examples, and cross-refs (mirrored under `.cursor/commands/`).
-
-## [1.35.2] - 2026-04-16
-
-### Changed
-- **`/branch-cleanup`** — Preserves the branch named **`origin`** on the remote (`origin/origin`): not merged into `develop` and not deleted (same class as `main` / `develop`).
-
-### Added
-- **`/branch-cleanup`** — `.claude/commands/branch-cleanup.md` + `.claude/scripts/branch-cleanup.sh` (mirrored `.cursor/commands/branch-cleanup.md` + `.cursor/scripts/branch-cleanup.sh`): `git fetch --all --prune`; `git worktree prune` and delete dangling local `worktree-agent-*` branches not checked out in any worktree; `git checkout develop` and `git pull` (fallback `git pull origin develop`); merge each `origin/*` into `develop` with `git merge --no-ff` except `main` / `develop` / **`origin` (the branch name)**; on conflict `git merge --abort` and retain branch for manual resolution; `git push origin develop`; delete remaining local and remote branches except `main`, `develop`, **`origin`**, and conflict branches. Replaces **`/git-sweep`** and **`/merge-all`**.
-
 ## [1.35.1] - 2026-04-16
 
 ### Added

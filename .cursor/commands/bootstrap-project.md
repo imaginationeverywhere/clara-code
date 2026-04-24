@@ -199,7 +199,6 @@ Accept UI templates from Magic Patterns in any of these formats:
 | Format | Location | How to Analyze |
 |--------|----------|----------------|
 | **Screenshot** | `mockup/screenshots/` | Visual analysis, identify components |
-| **Figma File** | `mockup/figma/` | Inspect layers, design tokens |
 | **React/Vite Zip** | `mockup/react-vite/` | Code analysis, component structure |
 | **Prompt Code** | `mockup/prompt-export.tsx` | Parse JSX/TSX, identify components |
 
@@ -282,17 +281,41 @@ The UI templates MUST include at minimum:
 - **Project Name**: Extracted from PRD `[PROJECT_NAME]`
 - **Project Key**: Extracted from PRD `[PROJECT_KEY]` (e.g., "PROJ")
 - **Domain Name**: User provides (e.g., `empresseats.com`)
-- **Neon PostgreSQL URL**: User provides
+- **Neon PostgreSQL URL**: ✅ **AUTO-PROVISIONED via Neon CLI** (see below)
 - **Clerk Keys**: User provides (publishable + secret)
 - **GitHub Repository**: User provides (e.g., `org/repo`)
 
 **AUTOMATIC CONFIGURATION**:
+- ✅ **Neon Database**: Auto-provisioned via `neonctl` CLI (org: `org-young-hall-74190661`)
 - ✅ **EC2 Instance**: i-0c851042b3e385682 (shared staging)
 - ✅ **Quik Dollars Stripe**: Development keys pre-configured
 - ✅ **Port Assignment**: Automatic from registry
 - ✅ **nginx Configuration**: Auto-generated
 - ✅ **SSL Certificates**: Via Let's Encrypt
 - ✅ **PM2 Process Management**: Auto-configured
+
+### Neon Database Auto-Provisioning (NEW — March 28, 2026)
+
+**Agents no longer need Mo to create databases.** The Neon CLI handles it automatically:
+
+```bash
+# 1. Create the Neon project for this Heru
+neonctl projects create --name "${PROJECT_NAME}" --region-id aws-us-east-1 --org-id org-young-hall-74190661 --output json
+
+# 2. Get the connection string (DATABASE_URL)
+neonctl connection-string --project-id <new-project-id> --org-id org-young-hall-74190661
+
+# 3. Write to all .env files
+echo "DATABASE_URL=<connection-string>" >> backend/.env.local
+echo "DATABASE_URL=<connection-string>" >> backend/.env.develop
+
+# 4. For production, create a separate branch
+neonctl branches create --name production --project-id <project-id> --org-id org-young-hall-74190661
+neonctl connection-string --project-id <project-id> --branch production --org-id org-young-hall-74190661
+echo "DATABASE_URL=<prod-connection-string>" >> backend/.env.production
+```
+
+**Important:** Always use `--org-id org-young-hall-74190661` (Quik Nation org). Without it, projects go to the personal org.
 
 ## 🚨 CRITICAL: Deployment-First Approach
 
@@ -351,9 +374,8 @@ docs/
 
 mockup/
 ├── screenshots/    # Option 1: Screenshot images
-├── figma/          # Option 2: Figma export
-├── react-vite/     # Option 3: React/Vite zip
-└── prompt-export.tsx  # Option 4: Single file code export
+├── react-vite/     # Option 2: React/Vite zip
+└── prompt-export.tsx  # Option 3: Single file code export
 ```
 
 **Validation Checklist**:
@@ -373,15 +395,6 @@ Use visual analysis to identify:
 - UI components (forms, tables, cards, navigation)
 - Interactive elements (buttons, modals, dropdowns)
 - Layout patterns (responsive, sidebar, grid)
-```
-
-**For Figma Files** (`mockup/figma/`):
-```
-Inspect layers to extract:
-- Design tokens (colors, typography, spacing)
-- Component hierarchy
-- Page structure
-- Interactive states
 ```
 
 **For React/Vite Code** (`mockup/react-vite/` or `mockup/prompt-export.tsx`):
@@ -526,13 +539,13 @@ interface ComponentInventory {
 }
 ```
 
-### Step 0.5: Generate docs/auto-claude/MASTER_TASKS.md
+### Step 0.5: Generate docs/internal/MASTER_TASKS.md
 
 **CRITICAL**: Generate the master task file with command + agent + skill assignments:
 
 ```bash
-# Create the auto-claude directory if it doesn't exist
-mkdir -p docs/auto-claude
+# Create the internal directory if it doesn't exist
+mkdir -p docs/internal
 ```
 
 **Generate MASTER_TASKS.md with this structure**:
@@ -556,7 +569,7 @@ mkdir -p docs/auto-claude
 | Setting | Value |
 |---------|-------|
 | MOCKUP_TEMPLATE_CHOICE | [pattern] |
-| MOCKUP_SOURCE | [magic-patterns/figma/existing-ui/screenshot/template] |
+| MOCKUP_SOURCE | [magic-patterns/existing-ui/screenshot/template] |
 | MOCKUP_PATH | [path to mockup files] |
 
 ### Pattern Configuration (from pattern-mappings.json)
@@ -1698,7 +1711,7 @@ Auto-Claude runs from `$HOME/Auto-Claude` but works directly on the project dire
 ```
 Auto-Claude Location:  $HOME/Auto-Claude/
 Project Location:      {project-path}/
-Plan Location:         {project-path}/.auto-claude/plans/bootstrap-plan.md
+Plan Location:         {project-path}/.internal/plans/bootstrap-plan.md
 ```
 
 ### Plan Location
@@ -1706,7 +1719,7 @@ Plan Location:         {project-path}/.auto-claude/plans/bootstrap-plan.md
 When `bootstrap-project` runs, it generates plans directly in the project:
 
 ```
-{project}/.auto-claude/plans/
+{project}/.internal/plans/
 └── bootstrap-plan.md    ← Auto-Claude reads this directly
 ```
 
@@ -1780,19 +1793,19 @@ The generated `bootstrap-plan.md` follows this format:
 
 4. **Execute with Auto-Claude**:
    - Auto-Claude opens the project directory
-   - Reads `.auto-claude/plans/bootstrap-plan.md`
+   - Reads `.internal/plans/bootstrap-plan.md`
    - Executes the sessions
 
 5. **Transition to MVP Development**:
    - Once bootstrap is complete, use `project-mvp-status`
-   - New plan generated: `.auto-claude/plans/mvp-plan.md`
+   - New plan generated: `.internal/plans/mvp-plan.md`
 
 ### Integration with Other Commands
 
 The project lifecycle uses plans in the same location:
 
 ```
-{project}/.auto-claude/plans/
+{project}/.internal/plans/
 ├── bootstrap-plan.md   ← bootstrap-project generates
 ├── mvp-plan.md         ← project-mvp-status generates
 └── roadmap-plan.md     ← project-status generates
@@ -1806,8 +1819,8 @@ All plans stay in the project. Auto-Claude reads them directly.
 
 - **v4.4.0** (Current): Simplified Auto-Claude Integration
   - Plans now stay in project directory only (no central copy)
-  - Removed `$HOME/Auto-Claude/.auto-claude/planning-tasks/` complexity
-  - Auto-Claude reads directly from `{project}/.auto-claude/plans/`
+  - Removed `$HOME/Auto-Claude/.internal/planning-tasks/` complexity
+  - Auto-Claude reads directly from `{project}/.internal/plans/`
   - Simpler, no sync issues, cleaner approach
 - **v4.2.0**: Three-Tier Revenue Model
   - **TIER 1**: Internal Unicorn Products (10-20%+ margin)

@@ -26,22 +26,36 @@ type PlanConfig = {
   features: string[];
 };
 const plans: Record<string, PlanConfig> = {
-  pro: {
-    name: 'Pro',
-    price: '$49',
-    priceNum: '$49.00',
+  starter: {
+    name: 'Starter',
+    price: '$39',
+    priceNum: '$39.00',
     period: '/month',
     trial: '14-day free trial included',
-    trialDate: 'May 10, 2026',
+    trialDate: 'May 7, 2026',
+    features: [
+    'Full CLI access',
+    'Voice input — local processing',
+    '1 AI agent',
+    '500 API calls / month',
+    'Community support']
+
+  },
+  pro: {
+    name: 'Pro',
+    price: '$69',
+    priceNum: '$69.00',
+    period: '/month',
+    trial: '14-day free trial included',
+    trialDate: 'May 7, 2026',
     badge: 'Most Popular',
     features: [
-    'Unlimited API calls',
-    '5 AI agents with memory',
-    '3 voice clones',
-    'Priority model access',
-    'Advanced analytics',
-    'Team collaboration (up to 5)',
-    'Email + chat support']
+    'Everything in Starter',
+    'Voice + cloud sync',
+    'Clara vault (encrypted)',
+    '3 AI agents with memory',
+    '1 voice clone included',
+    'Priority support']
 
   },
   team: {
@@ -50,14 +64,30 @@ const plans: Record<string, PlanConfig> = {
     priceNum: '$99.00',
     period: '/month',
     trial: '14-day free trial included',
-    trialDate: 'May 10, 2026',
+    trialDate: 'May 7, 2026',
     features: [
     'Everything in Pro',
     'Shared team vault',
     'Up to 6 agent personas',
     'Admin dashboard',
     'SSO (Clerk teams)',
-    'SLA + dedicated support']
+    'Priority chat support']
+
+  },
+  business: {
+    name: 'Business',
+    price: '$299',
+    priceNum: '$299.00',
+    period: '/month',
+    trial: '14-day free trial included',
+    trialDate: 'May 7, 2026',
+    features: [
+    'Everything in Team',
+    'Unlimited agents & clones',
+    'Custom model fine-tuning',
+    'Advanced analytics',
+    'Dedicated account manager',
+    'SLA + 99.9% uptime']
 
   }
 };
@@ -79,7 +109,7 @@ export function Checkout() {
     }, 2000);
   };
   return (
-    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#7C3AED]/30 selection:text-white">
+    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#5CE0D8]/30 selection:text-white">
       {/* HEADER */}
       <header className="h-14 bg-[#070A0F] border-b border-white/[0.06] px-6 flex items-center justify-between">
         {/* Left — Wordmark */}
@@ -92,15 +122,15 @@ export function Checkout() {
         <div className="hidden sm:flex items-center gap-0">
           {/* Step 1 — Plan (done) */}
           <div className="flex flex-col items-center">
-            <div className="w-6 h-6 rounded-full bg-[#7C3AED] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-[#5CE0D8] flex items-center justify-center">
               <Check className="w-3 h-3 text-white" />
             </div>
             <span className="text-[10px] text-white/40 mt-1">Plan</span>
           </div>
-          <div className="w-12 h-px bg-[#7C3AED]/40 -mt-3" />
+          <div className="w-12 h-px bg-[#5CE0D8]/40 -mt-3" />
           {/* Step 2 — Payment (current) */}
           <div className="flex flex-col items-center">
-            <div className="w-6 h-6 rounded-full bg-[#7C3AED] border-2 border-[#7C3AED] flex items-center justify-center">
+            <div className="w-6 h-6 rounded-full bg-[#5CE0D8] border-2 border-[#5CE0D8] flex items-center justify-center">
               <span className="text-[10px] font-bold text-white">2</span>
             </div>
             <span className="text-[10px] text-white/40 mt-1">Payment</span>
@@ -245,7 +275,7 @@ export function Checkout() {
                 <input
                   type="text"
                   placeholder="Alex"
-                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 focus:border-[#7C3AED]/50" />
+                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
                 
               </div>
               <div>
@@ -255,7 +285,7 @@ export function Checkout() {
                 <input
                   type="text"
                   placeholder="Rivera"
-                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 focus:border-[#7C3AED]/50" />
+                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
                 
               </div>
             </div>
@@ -289,7 +319,7 @@ export function Checkout() {
                 <input
                   type="text"
                   placeholder="California"
-                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 focus:border-[#7C3AED]/50" />
+                  className="w-full h-10 bg-[#070A0F] border border-white/[0.12] rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
                 
               </div>
             </div>
@@ -304,7 +334,7 @@ export function Checkout() {
               className="bg-[#0A0E14] rounded-2xl border border-white/10 p-5 mb-6">
               
               {/* Stripe <PaymentElement /> mounts here with dark appearance override */}
-              {/* stripeAppearance: { theme: 'night', variables: { colorPrimary: '#7C3AED', colorBackground: '#070A0F', colorText: '#ffffff', colorTextSecondary: 'rgba(255,255,255,0.5)', colorDanger: '#EF4444', borderRadius: '12px', fontFamily: 'Inter, sans-serif' } } */}
+              {/* stripeAppearance: { theme: 'night', variables: { colorPrimary: '#5CE0D8', colorBackground: '#070A0F', colorText: '#ffffff', colorTextSecondary: 'rgba(255,255,255,0.5)', colorDanger: '#EF4444', borderRadius: '12px', fontFamily: 'Inter, sans-serif' } } */}
 
               {/* Placeholder UI */}
               <div className="space-y-4">
@@ -354,7 +384,7 @@ export function Checkout() {
               <input
                 type="text"
                 placeholder="Enter code"
-                className="flex-1 h-9 bg-[#070A0F] border border-white/10 rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/50 focus:border-[#7C3AED]/50" />
+                className="flex-1 h-9 bg-[#070A0F] border border-white/10 rounded-xl px-3 text-sm text-white placeholder:text-white/25 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8]/50 focus:border-[#5CE0D8]/50" />
               
               <button
                 type="button"
@@ -368,7 +398,7 @@ export function Checkout() {
             <button
               type="submit"
               disabled={isProcessing}
-              className={`w-full h-12 rounded-2xl text-white font-semibold text-base transition-all flex items-center justify-center gap-2 ${isProcessing ? 'bg-[#6D28D9]/70 cursor-not-allowed' : 'bg-[#7C3AED] hover:bg-[#6D28D9] shadow-[0_0_40px_rgba(124,58,237,0.4)]'}`}>
+              className={`w-full h-12 rounded-2xl text-white font-semibold text-base transition-all flex items-center justify-center gap-2 ${isProcessing ? 'bg-[#4BCBC3]/70 cursor-not-allowed' : 'bg-[#5CE0D8] hover:bg-[#4BCBC3] shadow-[0_0_40px_rgba(92,224,216,0.4)]'}`}>
               
               {isProcessing ?
               <>
@@ -378,7 +408,7 @@ export function Checkout() {
 
               <>
                   <Lock className="w-4 h-4" />
-                  Start Free Trial — No charge today
+                  Subscribe to {planDetails.name}
                 </>
               }
             </button>
@@ -434,7 +464,7 @@ export function CheckoutSuccess() {
     document.title = `Welcome to ${plan.name} — Clara Code`;
   }, [plan.name]);
   return (
-    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#7C3AED]/30 selection:text-white">
+    <div className="min-h-screen bg-[#0D1117] text-white font-sans selection:bg-[#5CE0D8]/30 selection:text-white">
       {/* Header */}
       <header className="h-14 bg-[#070A0F] border-b border-white/[0.06] px-6 flex items-center justify-between">
         <div className="flex items-center gap-2.5">
@@ -472,7 +502,7 @@ export function CheckoutSuccess() {
         id="confetti-mount"
         className="fixed inset-0 pointer-events-none z-10">
         
-        {/* Canvas-confetti fires here on mount — purple #7C3AED and Clara Blue #7BCDD8 colors, 3-second burst */}
+        {/* Canvas-confetti fires here on mount — cyan #5CE0D8 and Clara Blue #7BCDD8 colors, 3-second burst */}
       </div>
 
       {/* Main Content */}
@@ -500,7 +530,7 @@ export function CheckoutSuccess() {
 
         {/* Primary CTA */}
         <div className="mt-10">
-          <button className="w-full max-w-xs sm:max-w-xs mx-auto h-14 rounded-2xl bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-semibold text-base shadow-[0_0_40px_rgba(124,58,237,0.4)] transition-colors flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
+          <button className="w-full max-w-xs sm:max-w-xs mx-auto h-14 rounded-2xl bg-[#5CE0D8] hover:bg-[#4BCBC3] text-[#0D1117] font-semibold text-base shadow-[0_0_40px_rgba(92,224,216,0.4)] transition-colors flex items-center justify-center gap-3 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
             <svg
               className="w-[18px] h-[18px]"
               fill="none"
@@ -523,7 +553,7 @@ export function CheckoutSuccess() {
             Don't have it yet?{' '}
             <a
               href="#"
-              className="text-[#7BCDD8] hover:underline focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
+              className="text-[#7BCDD8] hover:underline focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117] rounded-sm">
               
               Download Clara Code
             </a>
@@ -545,10 +575,10 @@ export function CheckoutSuccess() {
           <a
             href="#"
             aria-label="Download Clara Code — opens downloads page"
-            className="bg-[#0A0E14] rounded-2xl border border-white/[0.08] p-5 text-left flex items-start gap-4 hover:border-white/[0.16] hover:bg-[#0A0E14]/80 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
+            className="bg-[#0A0E14] rounded-2xl border border-white/[0.08] p-5 text-left flex items-start gap-4 hover:border-white/[0.16] hover:bg-[#0A0E14]/80 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
             
-            <div className="w-8 h-8 rounded-full bg-[#7C3AED]/20 border border-[#7C3AED]/30 flex items-center justify-center shrink-0">
-              <span className="text-sm font-bold text-[#7C3AED]">1</span>
+            <div className="w-8 h-8 rounded-full bg-[#5CE0D8]/20 border border-[#5CE0D8]/30 flex items-center justify-center shrink-0">
+              <span className="text-sm font-bold text-[#5CE0D8]">1</span>
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-1">
@@ -590,10 +620,10 @@ export function CheckoutSuccess() {
           <a
             href="/settings"
             aria-label="Create your first API key — opens Settings API Keys"
-            className="bg-[#0A0E14] rounded-2xl border border-white/[0.08] p-5 text-left flex items-start gap-4 hover:border-white/[0.16] hover:bg-[#0A0E14]/80 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
+            className="bg-[#0A0E14] rounded-2xl border border-white/[0.08] p-5 text-left flex items-start gap-4 hover:border-white/[0.16] hover:bg-[#0A0E14]/80 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
             
-            <div className="w-8 h-8 rounded-full bg-[#7C3AED]/20 border border-[#7C3AED]/30 flex items-center justify-center shrink-0">
-              <span className="text-sm font-bold text-[#7C3AED]">2</span>
+            <div className="w-8 h-8 rounded-full bg-[#5CE0D8]/20 border border-[#5CE0D8]/30 flex items-center justify-center shrink-0">
+              <span className="text-sm font-bold text-[#5CE0D8]">2</span>
             </div>
             <div className="flex-1 min-w-0">
               <div className="flex items-center justify-between mb-1">
@@ -631,7 +661,7 @@ export function CheckoutSuccess() {
           <a
             href="/settings"
             aria-label="Clone your voice — opens Settings Voice"
-            className="bg-[#0A0E14] rounded-2xl border border-white/[0.08] p-5 text-left flex items-start gap-4 hover:border-[#7BCDD8]/20 hover:bg-[#0A0E14]/80 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#7C3AED] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
+            className="bg-[#0A0E14] rounded-2xl border border-white/[0.08] p-5 text-left flex items-start gap-4 hover:border-[#7BCDD8]/20 hover:bg-[#0A0E14]/80 transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#5CE0D8] focus:ring-offset-2 focus:ring-offset-[#0D1117]">
             
             <div className="w-8 h-8 rounded-full bg-[#7BCDD8]/15 border border-[#7BCDD8]/25 flex items-center justify-center shrink-0">
               <span className="text-sm font-bold text-[#7BCDD8]">3</span>
