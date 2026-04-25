@@ -3,7 +3,7 @@ import request from "supertest";
 import type { ApiKeyRequest } from "@/middleware/api-key-auth";
 
 const mockClara = jest.fn((req: ApiKeyRequest, _res: unknown, next: () => void) => {
-	req.claraUser = { userId: "u_ht", tier: "free" };
+	req.claraUser = { userId: "u_ht", tier: "basic" };
 	next();
 });
 

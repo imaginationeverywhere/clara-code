@@ -7,7 +7,7 @@ jest.mock("@/utils/logger", () => ({ logger: { info: jest.fn(), warn: jest.fn(),
 const oldEnv = { ...process.env };
 const ctx: RoutingContext = {
 	userId: "u1",
-	tier: "free",
+	tier: "basic",
 	taskType: "voice_convo",
 	inputTokenEstimate: 100,
 	userHasDeepestPlugin: false,

@@ -38,8 +38,8 @@ export class ConfigAgentService {
 			throw new Error(`harness_limit_reached:${String(cap)}`);
 		}
 
-		if (limits.skillsPerAgent !== null && input.skillIds.length > limits.skillsPerAgent) {
-			throw new Error(`skills_per_agent_exceeded:${limits.skillsPerAgent}`);
+		if (limits.talentsPerAgent !== null && input.skillIds.length > limits.talentsPerAgent) {
+			throw new Error(`talents_per_agent_exceeded:${limits.talentsPerAgent}`);
 		}
 
 		const template = await AgentTemplate.findByPk(input.templateId);

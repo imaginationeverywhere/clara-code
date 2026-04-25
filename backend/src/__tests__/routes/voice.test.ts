@@ -24,7 +24,7 @@ jest.mock("@/utils/logger", () => ({
 
 jest.mock("@/middleware/api-key-auth", () => ({
 	requireClaraOrClerk: (req: { claraUser?: { userId: string; tier: string } }, _res: unknown, next: () => void) => {
-		req.claraUser = { userId: "user_voice_test", tier: "free" };
+		req.claraUser = { userId: "user_voice_test", tier: "basic" };
 		next();
 	},
 }));
@@ -428,16 +428,8 @@ describe("routes /api/voice", () => {
 				data: { transcript: "hi", response_text: "hello", audio_base64: "z" },
 			});
 			await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
-			expect(voiceUsageService.incrementAfterSuccess).toHaveBeenCalledWith("user_voice_test", "free");
+			expect(voiceUsageService.incrementAfterSuccess).toHaveBeenCalledWith("user_voice_test", "basic");
 			expect(applyOperationCreditUsage).toHaveBeenCalled();
-		});
-
-		it("402 when free tier has exhausted 100 voice exchanges", async () => {
-			(voiceUsageService.getUsedCountForCurrentMonth as jest.Mock).mockResolvedValueOnce(100);
-			const res = await request(app).post("/api/voice/converse").send({ text: "hello" });
-			expect(res.status).toBe(402);
-			expect(res.body.error).toBe("free_tier_exhausted");
-			expect(axios.post).not.toHaveBeenCalled();
 		});
 
 		it("402 when operation credits are blocked", async () => {

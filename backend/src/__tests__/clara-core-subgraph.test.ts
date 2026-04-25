@@ -44,8 +44,8 @@ describe("Clara Core subgraph /graphql/clara-core", () => {
 	it("POST me with valid free-tier sk-clara key returns user", async () => {
 		(ApiKey.findOne as jest.Mock).mockResolvedValueOnce({
 			id: "k1",
-			userId: "user_free",
-			tier: "free",
+			userId: "user_basic",
+			tier: "basic",
 		});
 		(ApiKey.update as jest.Mock).mockResolvedValueOnce([1]);
 
@@ -57,8 +57,8 @@ describe("Clara Core subgraph /graphql/clara-core", () => {
 		expect(res.status).toBe(200);
 		expect(res.body.errors).toBeUndefined();
 		expect(res.body.data.me).toEqual({
-			id: "user_free",
-			tier: "free",
+			id: "user_basic",
+			tier: "basic",
 			voiceExchangesUsed: 2,
 		});
 	});
@@ -66,8 +66,8 @@ describe("Clara Core subgraph /graphql/clara-core", () => {
 	it("POST models with free-tier key returns only MAYA", async () => {
 		(ApiKey.findOne as jest.Mock).mockResolvedValueOnce({
 			id: "k1",
-			userId: "user_free",
-			tier: "free",
+			userId: "user_basic",
+			tier: "basic",
 		});
 		(ApiKey.update as jest.Mock).mockResolvedValueOnce([1]);
 

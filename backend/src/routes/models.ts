@@ -8,7 +8,7 @@ const router: ReturnType<typeof Router> = Router();
 router.get("/", async (req, res: Response): Promise<void> => {
 	try {
 		const tier = await resolveRequestTier(req);
-		const names: ClaraModelName[] = tier === "free" ? ["maya"] : ["maya", "mary", "nikki"];
+		const names: ClaraModelName[] = tier === "base" ? ["maya"] : ["maya", "mary", "nikki"];
 		const models = names.map((n) => {
 			const m = MODELS[n];
 			return { name: m.name, displayName: m.displayName, thinking: m.thinking };

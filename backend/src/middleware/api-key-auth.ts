@@ -128,7 +128,7 @@ export const requireClaraOrClerk = async (
 			return;
 		}
 		const sub = await Subscription.findOne({ where: { userId: auth.userId } });
-		const tier = sub?.tier ?? "free";
+		const tier = sub?.tier ?? "basic";
 		req.claraUser = { userId: auth.userId, tier };
 		next();
 	} catch (error) {

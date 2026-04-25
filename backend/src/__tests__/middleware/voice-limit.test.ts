@@ -9,7 +9,7 @@ describe("voiceLimitMiddleware (deprecated no-op)", () => {
 		app.post(
 			"/t",
 			(req, _res, next) => {
-				(req as ApiKeyRequest).claraUser = { userId: "u1", tier: "free" };
+				(req as ApiKeyRequest).claraUser = { userId: "u1", tier: "basic" };
 				next();
 			},
 			voiceLimitMiddleware,

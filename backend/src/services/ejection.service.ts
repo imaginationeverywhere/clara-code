@@ -14,7 +14,6 @@ import { type PlanTier, toPlanTier } from "@/services/plan-limits";
 import { logger } from "@/utils/logger";
 
 const EJECTION_CAPS: Record<PlanTier, number | null> = {
-	free: 0,
 	basic: 1,
 	pro: 3,
 	max: 6,

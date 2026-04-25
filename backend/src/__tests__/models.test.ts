@@ -44,7 +44,7 @@ jest.mock("axios", () => ({
 
 jest.mock("@/middleware/api-key-auth", () => ({
 	requireClaraOrClerk: (req: { claraUser?: { userId: string; tier: string } }, _res: unknown, next: () => void) => {
-		req.claraUser = { userId: "user_models_test", tier: "free" };
+		req.claraUser = { userId: "user_models_test", tier: "base" };
 		next();
 	},
 }));
@@ -55,16 +55,16 @@ const mockResolveTier = resolveRequestTier as jest.MockedFunction<typeof resolve
 
 describe("resolveModel", () => {
 	it("returns maya for free", () => {
-		const m = resolveModel("maya", "free");
+		const m = resolveModel("maya", "base");
 		expect(m.name).toBe("maya");
 	});
 
 	it("throws for mary on free", () => {
-		expect(() => resolveModel("mary", "free")).toThrow(ModelTierError);
+		expect(() => resolveModel("mary", "base")).toThrow(ModelTierError);
 	});
 
 	it("throws for nikki on free", () => {
-		expect(() => resolveModel("nikki", "free")).toThrow(ModelTierError);
+		expect(() => resolveModel("nikki", "base")).toThrow(ModelTierError);
 	});
 
 	it("returns mary for pro", () => {
@@ -78,7 +78,7 @@ describe("resolveModel", () => {
 	});
 
 	it("defaults undefined to maya", () => {
-		const m = resolveModel(undefined, "free");
+		const m = resolveModel(undefined, "base");
 		expect(m.name).toBe(DEFAULT_MODEL);
 	});
 
@@ -92,7 +92,7 @@ describe("resolveModel", () => {
 		const prevMaya = process.env.MAYA_BACKEND_URL;
 		delete process.env.CLARA_VOICE_URL;
 		delete process.env.MAYA_BACKEND_URL;
-		expect(() => resolveModel("maya", "free")).toThrow("Clara voice service is not configured");
+		expect(() => resolveModel("maya", "base")).toThrow("Clara voice service is not configured");
 		if (prevVoice !== undefined) process.env.CLARA_VOICE_URL = prevVoice;
 		else delete process.env.CLARA_VOICE_URL;
 		if (prevMaya !== undefined) process.env.MAYA_BACKEND_URL = prevMaya;
@@ -108,7 +108,7 @@ describe("GET /api/models", () => {
 	beforeEach(() => jest.clearAllMocks());
 
 	it("returns only maya for free tier", async () => {
-		mockResolveTier.mockResolvedValueOnce("free");
+		mockResolveTier.mockResolvedValueOnce("base");
 		const res = await request(app).get("/api/models");
 		expect(res.status).toBe(200);
 		expect(res.body.default).toBe("maya");

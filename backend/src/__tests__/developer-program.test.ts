@@ -25,13 +25,13 @@ jest.mock("@/middleware/api-key-auth", () => ({
 		if (token === "sk-clara-nouser") {
 			(req as { claraUser?: { userId: string; tier: string; role: string } }).claraUser = {
 				userId: "",
-				tier: "free",
+				tier: "basic",
 				role: "user",
 			};
 		} else {
 			(req as { claraUser?: { userId: string; tier: string; role: string } }).claraUser = {
 				userId: "user_1",
-				tier: "free",
+				tier: "basic",
 				role: "user",
 			};
 		}

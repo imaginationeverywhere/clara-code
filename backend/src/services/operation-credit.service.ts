@@ -26,7 +26,7 @@ export type CreditGateResult = {
 };
 
 /**
- * @returns 0 = no paid credits, `null` = unlimited, positive = monthly cap
+ * @returns `null` = Custom (Enterprise / Business no-cap); positive = monthly cap.
  */
 function budgetFor(tier: PlanTier): number | null {
 	const b = CREDIT_BUDGETS[tier];

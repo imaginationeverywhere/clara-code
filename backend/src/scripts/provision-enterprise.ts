@@ -16,7 +16,7 @@ function parseArg(name: string): string | null {
 async function main(): Promise<void> {
 	const user = parseArg("user");
 	if (!user) {
-		console.error("Usage: --user=<clerk_id> [--seats=N] [--builds-cap=unlimited] [--monthly=6000] [--eject-cap=N]");
+		console.error("Usage: --user=<clerk_id> [--seats=N] [--builds-cap=N|custom] [--monthly=6000] [--eject-cap=N]");
 		process.exit(1);
 	}
 	const seats = parseArg("seats") ? Number(parseArg("seats")) : null;

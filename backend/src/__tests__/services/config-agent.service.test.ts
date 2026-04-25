@@ -49,7 +49,7 @@ describe("ConfigAgentService", () => {
 	});
 
 	it("rejects when harness agent cap reached for tier", async () => {
-		mockUserAgent.count.mockResolvedValue(4);
+		mockUserAgent.count.mockResolvedValue(6);
 		await expect(
 			configAgentService.configure({
 				userId: "u",
@@ -62,17 +62,17 @@ describe("ConfigAgentService", () => {
 		).rejects.toThrow(/harness_limit_reached/);
 	});
 
-	it("rejects when skill count exceeds skillsPerAgent for tier", async () => {
+	it("rejects when talent count exceeds talentsPerAgent for tier", async () => {
 		await expect(
 			configAgentService.configure({
 				userId: "u",
-				tier: "free",
+				tier: "basic",
 				templateId: "frontend-engineer",
 				name: "Pat",
 				voice: { source: "library", voiceId: "clara-default" },
-				skillIds: ["a", "b", "c", "d"],
+				skillIds: ["a", "b", "c", "d", "e", "f"],
 			}),
-		).rejects.toThrow(/skills_per_agent_exceeded/);
+		).rejects.toThrow(/talents_per_agent_exceeded/);
 	});
 
 	it("clones voice via voiceCloneService when voice.source is clone", async () => {

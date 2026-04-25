@@ -5,11 +5,11 @@ import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
 import { validateApiKeyAgainstHash } from "@/utils/api-key";
 
-export type RequestTier = "free" | "pro" | "business";
+export type RequestTier = "base" | "pro" | "business";
 
 /**
  * Resolves subscription tier for tier-gated public routes (e.g. `GET /api/models`).
- * Never returns 401 — invalid or missing auth maps to `free`.
+ * Never returns 401 — invalid or missing auth maps to the public `base` access bucket.
  */
 export async function resolveRequestTier(req: Request): Promise<RequestTier> {
 	const header = req.headers.authorization ?? "";
@@ -19,7 +19,7 @@ export async function resolveRequestTier(req: Request): Promise<RequestTier> {
 			const apiKey = await ApiKey.findOne({
 				where: { key: rawKey, isActive: true },
 			});
-			return (apiKey?.tier as RequestTier) ?? "free";
+			return (apiKey?.tier as RequestTier) ?? "base";
 		}
 		if (rawKey.startsWith("cc_live_")) {
 			const prefix = rawKey.slice(0, 16);
@@ -35,7 +35,7 @@ export async function resolveRequestTier(req: Request): Promise<RequestTier> {
 					return row.tier as RequestTier;
 				}
 			}
-			return "free";
+			return "base";
 		}
 	}
 
@@ -44,10 +44,10 @@ export async function resolveRequestTier(req: Request): Promise<RequestTier> {
 		const auth = await (authReq.auth?.() ?? null);
 		if (auth?.userId) {
 			const sub = await Subscription.findOne({ where: { userId: auth.userId } });
-			return (sub?.tier as RequestTier) ?? "free";
+			return (sub?.tier as RequestTier) ?? "base";
 		}
 	} catch {
 		// optional auth
 	}
-	return "free";
+	return "base";
 }

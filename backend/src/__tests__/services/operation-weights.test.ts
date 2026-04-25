@@ -33,7 +33,7 @@ describe("operation-weights", () => {
 	});
 
 	it("CREDIT_BUDGETS keys every PlanTier", () => {
-		const tiers: PlanTier[] = ["free", "basic", "pro", "max", "business", "enterprise"];
+		const tiers: PlanTier[] = ["basic", "pro", "max", "business", "enterprise"];
 		for (const t of tiers) {
 			expect(CREDIT_BUDGETS[t] !== undefined).toBe(true);
 		}

@@ -41,7 +41,7 @@ router.post("/token", async (req: AuthenticatedRequest, res: Response): Promise<
 		}
 
 		const sub = await Subscription.findOne({ where: { userId: auth.userId } });
-		const tier = sub?.tier ?? "free";
+		const tier = sub?.tier ?? "basic";
 		if (!hasRegistryAccess(tier)) {
 			const message =
 				pkg === "@claracode/sdk"

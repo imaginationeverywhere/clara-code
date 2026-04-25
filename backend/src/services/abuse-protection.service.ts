@@ -93,7 +93,7 @@ export class AbuseProtectionService {
 			return { allowed: false, reason: "rate_limit", retryAfter: 60 };
 		}
 
-		const limits = PLAN_LIMITS[t] ?? PLAN_LIMITS.free;
+		const limits = PLAN_LIMITS[t] ?? PLAN_LIMITS.basic;
 		if (limits.monthlyCogsHardCap !== null) {
 			const monthKey = utcYyyyLL();
 			const cogsK = `usage:${userId}:${monthKey}:cogs_usd`;
@@ -195,7 +195,7 @@ export class AbuseProtectionService {
 		} else {
 			await UserUsage.create({
 				userId,
-				tier: "free",
+				tier: "basic",
 				monthKey: mk,
 				activeHours: 0,
 				cogsUsd: 0,

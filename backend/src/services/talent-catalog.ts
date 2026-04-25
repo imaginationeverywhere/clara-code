@@ -18,10 +18,8 @@ export interface TalentDef {
 
 /**
  * Per-tier max Talents attached to one harness `user_agent`. Enterprise = null (contract).
- * Free tier: compact exploration cap.
  */
 export const TALENTS_PER_AGENT_BY_TIER: Record<PlanTier, number | null> = {
-	free: 3,
 	basic: 5,
 	pro: 7,
 	max: 10,

@@ -137,16 +137,16 @@ describe("TalentService", () => {
 	});
 
 	describe("attach", () => {
-		it("throws at tier cap (free=3)", async () => {
+		it("throws at tier cap (basic=5)", async () => {
 			mockCatalogFindByPk.mockResolvedValue(catalogRow({ id: "x" }));
-			mockCountAttach.mockResolvedValue(3);
-			await expect(svc.attach(userId, "free", "ag", "x")).rejects.toThrow("talents_per_agent_cap_reached:3");
+			mockCountAttach.mockResolvedValue(5);
+			await expect(svc.attach(userId, "basic", "ag", "x")).rejects.toThrow("talents_per_agent_cap_reached:5");
 		});
 
 		it("allows when under cap", async () => {
 			mockCatalogFindByPk.mockResolvedValue(catalogRow({ id: "scheduling" }));
 			mockCountAttach.mockResolvedValue(2);
-			await svc.attach(userId, "free", "ag", "scheduling");
+			await svc.attach(userId, "basic", "ag", "scheduling");
 			expect(AgentTalentAttachment.create).toHaveBeenCalled();
 		});
 	});

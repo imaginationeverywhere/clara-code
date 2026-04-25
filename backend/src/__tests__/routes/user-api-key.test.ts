@@ -51,22 +51,28 @@ describe("user api-key routes", () => {
 		expect(res.body.prefix).toBe("cc_live_abcdefgh");
 	});
 
-	it("GET /api-key returns free when no key row", async () => {
+	it("GET /api-key returns basic when no key row", async () => {
 		(Subscription.findOne as jest.Mock).mockResolvedValueOnce(null);
 		(ApiKey.findOne as jest.Mock).mockResolvedValueOnce(null);
 		const res = await request(app).get("/user/api-key");
 		expect(res.status).toBe(200);
-		expect(res.body).toEqual({ prefix: null, tier: "free" });
+		expect(res.body).toEqual({ prefix: null, tier: "basic" });
 	});
 
-	it("POST /api-key/regenerate 403 on free tier", async () => {
-		(Subscription.findOne as jest.Mock).mockResolvedValueOnce({ tier: "free" });
+	it("POST /api-key/regenerate 403 when no active subscription", async () => {
+		(Subscription.findOne as jest.Mock).mockResolvedValueOnce(null);
 		const res = await request(app).post("/user/api-key/regenerate").send({});
 		expect(res.status).toBe(403);
 	});
 
-	it("POST /api-key/regenerate returns new key for pro", async () => {
-		(Subscription.findOne as jest.Mock).mockResolvedValueOnce({ tier: "pro" });
+	it("POST /api-key/regenerate 403 when subscription not active", async () => {
+		(Subscription.findOne as jest.Mock).mockResolvedValueOnce({ tier: "pro", status: "incomplete" });
+		const res = await request(app).post("/user/api-key/regenerate").send({});
+		expect(res.status).toBe(403);
+	});
+
+	it("POST /api-key/regenerate returns new key for active pro", async () => {
+		(Subscription.findOne as jest.Mock).mockResolvedValueOnce({ tier: "pro", status: "active" });
 		(ApiKey.update as jest.Mock).mockResolvedValueOnce([1]);
 		(ApiKey.create as jest.Mock).mockResolvedValueOnce({});
 		const res = await request(app).post("/user/api-key/regenerate").send({});

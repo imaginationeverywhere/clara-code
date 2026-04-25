@@ -62,8 +62,8 @@ router.post("/checkout", requireAuth(), async (req: AuthenticatedRequest, res: R
 			subRow = await Subscription.create({
 				userId: auth.userId,
 				stripeCustomerId: customerId,
-				tier: "free",
-				status: "active",
+				tier: "basic",
+				status: "incomplete",
 			});
 		}
 	}
@@ -243,11 +243,11 @@ router.post("/refund", requireAuth(), async (req: AuthenticatedRequest, res: Res
 		await stripe.subscriptions.cancel(sub.stripeSubscriptionId);
 		await sub.update({
 			status: "canceled",
-			tier: "free",
+			tier: "basic",
 			stripeSubscriptionId: null,
 			trialEndsAt: null,
 		});
-		await syncClerkMetadata(auth.userId, "free");
+		await syncClerkMetadata(auth.userId, "basic");
 		res.json({ refunded: false, trial_ended: true });
 		return;
 	}
@@ -274,10 +274,10 @@ router.post("/refund", requireAuth(), async (req: AuthenticatedRequest, res: Res
 	}
 	await sub.update({
 		status: "canceled",
-		tier: "free",
+		tier: "basic",
 		stripeSubscriptionId: null,
 	});
-	await syncClerkMetadata(auth.userId, "free");
+	await syncClerkMetadata(auth.userId, "basic");
 	res.json({ refunded: true });
 });
 

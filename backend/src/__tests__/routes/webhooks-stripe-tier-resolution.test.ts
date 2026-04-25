@@ -102,7 +102,7 @@ describe("customer.subscription.updated tier resolution", () => {
 			},
 		});
 		(Subscription.findOne as jest.Mock).mockResolvedValueOnce({
-			tier: "free",
+			tier: "basic",
 			update: jest.fn().mockResolvedValue(undefined),
 		});
 

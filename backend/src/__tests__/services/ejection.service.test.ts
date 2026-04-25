@@ -46,13 +46,6 @@ describe("EjectionService", () => {
 		await expect(ejectionService.requestEjection("u1", "basic", "a1")).rejects.toThrow("ejection_cap_reached:1");
 	});
 
-	it("rejects free tier (cap 0)", async () => {
-		jest.spyOn(Ejection, "count").mockResolvedValue(0);
-		await expect(ejectionService.requestEjection("u1", "free", "a1")).rejects.toThrow(
-			"ejection_not_available_on_tier",
-		);
-	});
-
 	it("throws agent_not_found when no user agent", async () => {
 		jest.spyOn(Ejection, "count").mockResolvedValue(0);
 		jest.spyOn(UserAgent, "findOne").mockResolvedValue(null);

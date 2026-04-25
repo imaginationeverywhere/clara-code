@@ -21,7 +21,6 @@ import {
 	abuseModelFromModelChoice,
 	abuseProtectionService,
 } from "@/services/abuse-protection.service";
-import { buildConversionPrompt } from "@/services/clara-conversion.service";
 import { hermesClient } from "@/services/hermes-client.service";
 import { hookBus } from "@/services/hook-bus.service";
 import { inferenceCache } from "@/services/inference-cache.service";
@@ -30,7 +29,7 @@ import { type ModelChoice, modelRouter } from "@/services/model-router.service";
 import { applyOperationCreditUsage, canUseOperationCredits } from "@/services/operation-credit.service";
 import { classifyOperation } from "@/services/operation-weights";
 import { type PlanTier, toPlanTier } from "@/services/plan-limits";
-import { FREE_MONTHLY_LIMIT, type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
+import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 import { silenceWav } from "@/utils/silence-wav";
 
@@ -132,7 +131,7 @@ router.post(
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const { text, voice_id, model } = req.body as { text?: string; voice_id?: string; model?: string };
-			const tier = (req.claraUser?.tier ?? "free") as ClaraTier;
+			const tier = (req.claraUser?.tier ?? "base") as ClaraTier;
 			let resolvedModel: ModelConfig;
 			try {
 				resolvedModel = resolveModel(model, tier);
@@ -162,7 +161,7 @@ router.post(
 			);
 
 			const userId = req.claraUser?.userId;
-			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			const usageTier = (req.claraUser?.tier ?? "basic") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
 				await abuseProtectionService.recordUsage({
@@ -200,7 +199,7 @@ router.post(
 				return;
 			}
 
-			const tier = (req.claraUser?.tier ?? "free") as ClaraTier;
+			const tier = (req.claraUser?.tier ?? "base") as ClaraTier;
 			let resolvedModel: ModelConfig;
 			try {
 				resolvedModel = resolveModel(model, tier);
@@ -227,7 +226,7 @@ router.post(
 			);
 
 			const userId = req.claraUser?.userId;
-			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			const usageTier = (req.claraUser?.tier ?? "basic") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
 				await abuseProtectionService.recordUsage({
@@ -390,7 +389,7 @@ router.post(
 			);
 
 			const userId = req.claraUser?.userId;
-			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+			const usageTier = (req.claraUser?.tier ?? "basic") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
 				await abuseProtectionService.recordUsage({
@@ -502,18 +501,6 @@ router.post(
 		const userMessageForCredits = typeof body.text === "string" ? body.text : "";
 		const opCategory = classifyOperation(userMessageForCredits);
 		if (userId) {
-			if (planTier === "free") {
-				const used = await voiceUsageService.getUsedCountForCurrentMonth(userId);
-				if (used >= FREE_MONTHLY_LIMIT) {
-					res.status(402).json({
-						error: "free_tier_exhausted",
-						message: buildConversionPrompt(used),
-						credits_remaining: 0,
-						upgrade_url: "https://claracode.ai/pricing",
-					});
-					return;
-				}
-			}
 			const creditCheck = await canUseOperationCredits(userId, agent_id, planTier, opCategory);
 			if (!creditCheck.allowed) {
 				res.status(402).json({
@@ -526,7 +513,7 @@ router.post(
 			}
 		}
 		const sessionId = session_id ?? (userId ? `${userId}-${agent_id}-fallback` : "anonymous");
-		const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+		const usageTier = (req.claraUser?.tier ?? "basic") as VoiceTier;
 
 		const deploymentIdFromBody =
 			typeof body.deployment_id === "string" && body.deployment_id.length > 0 ? body.deployment_id : null;
@@ -536,7 +523,7 @@ router.post(
 			sessionId,
 			turnId: randomUUID(),
 			...(deploymentIdFromBody ? { deploymentId: deploymentIdFromBody } : {}),
-			tier: (req.claraUser?.tier ?? "free") as string,
+			tier: (req.claraUser?.tier ?? "basic") as string,
 			metadata: {
 				agentName:
 					typeof body.agent_name === "string" && body.agent_name.length > 0 ? body.agent_name : "your agent",

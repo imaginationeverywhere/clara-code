@@ -222,7 +222,7 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 				await Subscription.update(
 					{
 						status: "canceled",
-						tier: "free",
+						tier: "basic",
 						stripeSubscriptionId: null,
 						cancelAtPeriodEnd: false,
 						trialEndsAt: null,
@@ -230,7 +230,7 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 					{ where: { userId } },
 				);
 				await ApiKey.update({ isActive: false }, { where: { userId, keyHash: { [Op.ne]: null } } });
-				await syncClerkMetadata(userId, "free");
+				await syncClerkMetadata(userId, "basic");
 				break;
 			}
 			case "invoice.payment_failed": {

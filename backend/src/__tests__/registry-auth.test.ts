@@ -51,8 +51,8 @@ describe("POST /api/registry/token", () => {
 		expect(res.body.registry).toBe("http://localhost:4873");
 	});
 
-	it("returns 403 for free user", async () => {
-		findOne.mockResolvedValueOnce({ tier: "free" });
+	it("returns 403 for basic user (registry requires pro)", async () => {
+		findOne.mockResolvedValueOnce({ tier: "basic" });
 		const res = await request(app).post("/api/registry/token").send({ package: "@claracode/sdk" });
 		expect(res.status).toBe(403);
 		expect(res.body.error).toBe("package_access_denied");

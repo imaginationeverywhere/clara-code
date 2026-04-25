@@ -1,10 +1,8 @@
 import type { Transaction } from "sequelize";
 import { VoiceUsage } from "@/models/VoiceUsage";
-import { type PlanTier, toPlanTier } from "@/services/plan-limits";
+import { toPlanTier } from "@/services/plan-limits";
 
 export type VoiceTier = string;
-
-const FREE_MONTHLY_LIMIT = 100;
 
 function getBillingMonthKey(date: Date = new Date()): string {
 	const y = date.getUTCFullYear();
@@ -36,8 +34,8 @@ export class VoiceUsageService {
 	}
 
 	/**
-	 * Free tier: 100 voice exchanges / month, then `buildConversionPrompt` in API responses.
-	 * Paid tiers: no app-facing cap (`limit: null`); `used` is still recorded for product analytics.
+	 * All paid tiers: no app-facing cap (`limit: null`); `used` is recorded for product
+	 * analytics. Abuse protection (rate limit, COGS) lives in `AbuseProtectionService`.
 	 */
 	async getUsage(
 		userId: string,
@@ -49,28 +47,21 @@ export class VoiceUsageService {
 	}> {
 		const used = await this.getUsedCountForCurrentMonth(userId);
 		const resetDate = getNextResetDateKey();
-		const plan = toPlanTier(tierRaw as string);
-		const limit: number | null = plan === "free" ? FREE_MONTHLY_LIMIT : null;
-		return { used, limit, resetDate };
+		// Resolve tier defensively in case callers pass an alias.
+		toPlanTier(tierRaw as string);
+		return { used, limit: null, resetDate };
 	}
 
-	/**
-	 * Whether a new voice *exchange* is allowed (free: under monthly cap; paid: always true).
-	 */
+	/** Always allowed at this layer; abuse limits enforced upstream. */
 	async canAddExchange(_userId: string, _tier: VoiceTier): Promise<boolean> {
-		return this.checkAndIncrement(_userId, _tier);
+		return true;
 	}
 
 	/**
 	 * @deprecated use `canAddExchange`
 	 */
-	async checkAndIncrement(userId: string, tier: VoiceTier): Promise<boolean> {
-		const plan = toPlanTier(tier as string) as PlanTier;
-		if (plan !== "free") {
-			return true;
-		}
-		const used = await this.getUsedCountForCurrentMonth(userId);
-		return used < FREE_MONTHLY_LIMIT;
+	async checkAndIncrement(_userId: string, _tier: VoiceTier): Promise<boolean> {
+		return true;
 	}
 
 	/**
@@ -102,4 +93,4 @@ export class VoiceUsageService {
 
 export const voiceUsageService = new VoiceUsageService();
 
-export { getBillingMonthKey, getNextResetDateKey, FREE_MONTHLY_LIMIT };
+export { getBillingMonthKey, getNextResetDateKey };

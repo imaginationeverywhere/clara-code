@@ -14,7 +14,7 @@ export class Subscription extends Model {
 	@Column({ type: DataType.STRING(255), allowNull: true })
 	declare stripeSubscriptionId: string | null;
 
-	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "free" })
+	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "basic" })
 	declare tier: string;
 
 	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "active" })

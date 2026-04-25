@@ -26,7 +26,7 @@ export class ApiKey extends Model {
 	@Column({ type: DataType.STRING(20), allowNull: true })
 	declare keyPrefix: string | null;
 
-	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "free" })
+	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "basic" })
 	declare tier: string;
 
 	@Column({ type: DataType.STRING(50), allowNull: false, defaultValue: "user" })

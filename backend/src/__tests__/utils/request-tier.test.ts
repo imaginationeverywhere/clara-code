@@ -26,11 +26,11 @@ describe("resolveRequestTier", () => {
 		expect(tier).toBe("pro");
 	});
 
-	it("returns free when sk-clara- key is not found", async () => {
+	it("returns base when sk-clara- key is not found", async () => {
 		(ApiKey.findOne as jest.Mock).mockResolvedValueOnce(null);
 		const req = { headers: { authorization: "Bearer sk-clara-notfound" } };
 		const tier = await resolveRequestTier(req as never);
-		expect(tier).toBe("free");
+		expect(tier).toBe("base");
 	});
 
 	it("resolves cc_live_ key to its tier via hash", async () => {
@@ -41,19 +41,19 @@ describe("resolveRequestTier", () => {
 		expect(tier).toBe("business");
 	});
 
-	it("returns free when cc_live_ hash does not match", async () => {
+	it("returns base when cc_live_ hash does not match", async () => {
 		(ApiKey.findAll as jest.Mock).mockResolvedValueOnce([{ tier: "pro", keyHash: "hashvalue" }]);
 		(validateApiKeyAgainstHash as jest.Mock).mockResolvedValueOnce(false);
 		const req = { headers: { authorization: "Bearer cc_live_abcdefghijklmno" } };
 		const tier = await resolveRequestTier(req as never);
-		expect(tier).toBe("free");
+		expect(tier).toBe("base");
 	});
 
-	it("returns free when cc_live_ has no matching candidates", async () => {
+	it("returns base when cc_live_ has no matching candidates", async () => {
 		(ApiKey.findAll as jest.Mock).mockResolvedValueOnce([]);
 		const req = { headers: { authorization: "Bearer cc_live_abcdefghijklmno" } };
 		const tier = await resolveRequestTier(req as never);
-		expect(tier).toBe("free");
+		expect(tier).toBe("base");
 	});
 
 	it("resolves Clerk session to subscription tier", async () => {
@@ -66,28 +66,28 @@ describe("resolveRequestTier", () => {
 		expect(tier).toBe("pro");
 	});
 
-	it("returns free when Clerk user has no subscription", async () => {
+	it("returns base when Clerk user has no subscription", async () => {
 		(Subscription.findOne as jest.Mock).mockResolvedValueOnce(null);
 		const req = {
 			headers: { authorization: "" },
 			auth: jest.fn().mockResolvedValueOnce({ userId: "clerk_user_no_sub" }),
 		};
 		const tier = await resolveRequestTier(req as never);
-		expect(tier).toBe("free");
+		expect(tier).toBe("base");
 	});
 
-	it("returns free when no Authorization header", async () => {
+	it("returns base when no Authorization header", async () => {
 		const req = { headers: {} };
 		const tier = await resolveRequestTier(req as never);
-		expect(tier).toBe("free");
+		expect(tier).toBe("base");
 	});
 
-	it("returns free when auth() throws", async () => {
+	it("returns base when auth() throws", async () => {
 		const req = {
 			headers: { authorization: "" },
 			auth: jest.fn().mockRejectedValueOnce(new Error("auth failure")),
 		};
 		const tier = await resolveRequestTier(req as never);
-		expect(tier).toBe("free");
+		expect(tier).toBe("base");
 	});
 });

@@ -30,7 +30,7 @@ describe("Clara Core subgraph resolvers", () => {
 	});
 
 	it("Query.models returns only MAYA for free tier", async () => {
-		const out = await resolvers.Query.models(null, {}, baseCtx("free"));
+		const out = await resolvers.Query.models(null, {}, baseCtx("base"));
 		expect(out.map((m: { name: string }) => m.name)).toEqual(["MAYA"]);
 	});
 
@@ -45,7 +45,7 @@ describe("Clara Core subgraph resolvers", () => {
 			ok: true,
 			json: async () => ({ message: { content: "ok" }, voiceUrl: null }),
 		});
-		const r = await resolvers.Mutation.ask(null, { prompt: "hi", model: "NOT_A_MODEL" }, baseCtx("free"));
+		const r = await resolvers.Mutation.ask(null, { prompt: "hi", model: "NOT_A_MODEL" }, baseCtx("base"));
 		expect(r.content).toBe("ok");
 		expect(global.fetch).toHaveBeenCalled();
 		const body = JSON.parse((global.fetch as jest.Mock).mock.calls[0][1].body as string);
@@ -53,23 +53,23 @@ describe("Clara Core subgraph resolvers", () => {
 	});
 
 	it("Mutation.ask throws FORBIDDEN when free tier requests a pro model", async () => {
-		await expect(resolvers.Mutation.ask(null, { prompt: "hi", model: "MARY" }, baseCtx("free"))).rejects.toThrow(
+		await expect(resolvers.Mutation.ask(null, { prompt: "hi", model: "MARY" }, baseCtx("base"))).rejects.toThrow(
 			GraphQLError,
 		);
 	});
 
 	it("Mutation.ask throws when Clara API response is not ok", async () => {
 		(global.fetch as jest.Mock).mockResolvedValueOnce({ ok: false, status: 502 });
-		await expect(resolvers.Mutation.ask(null, { prompt: "hi", model: "MAYA" }, baseCtx("free"))).rejects.toThrow(
+		await expect(resolvers.Mutation.ask(null, { prompt: "hi", model: "MAYA" }, baseCtx("base"))).rejects.toThrow(
 			/Clara API request failed/,
 		);
 	});
 
 	it("Query.me returns usage fields", async () => {
-		const row = await resolvers.Query.me(null, {}, baseCtx("free"));
+		const row = await resolvers.Query.me(null, {}, baseCtx("base"));
 		expect(row).toMatchObject({
 			id: "user_cc",
-			tier: "free",
+			tier: "base",
 			voiceExchangesUsed: 1,
 			voiceExchangesLimit: 100,
 		});
@@ -82,7 +82,7 @@ describe("Clara Core subgraph resolvers", () => {
 	});
 
 	it("Mutation.createAgent persists an agent", async () => {
-		const row = await resolvers.Mutation.createAgent(null, { name: "Z", soul: "{}" }, baseCtx("free"));
+		const row = await resolvers.Mutation.createAgent(null, { name: "Z", soul: "{}" }, baseCtx("base"));
 		expect(row).toEqual({ id: "a1", name: "Agent" });
 		expect(Agent.create).toHaveBeenCalled();
 	});
@@ -92,13 +92,13 @@ describe("Clara Core subgraph resolvers", () => {
 			ok: true,
 			json: async () => ({ id: "vs_1" }),
 		});
-		const row = await resolvers.Mutation.startVoiceSession(null, {}, baseCtx("free"));
+		const row = await resolvers.Mutation.startVoiceSession(null, {}, baseCtx("base"));
 		expect(row).toEqual({ id: "vs_1" });
 	});
 
 	it("Mutation.startVoiceSession throws when response is not ok", async () => {
 		(global.fetch as jest.Mock).mockResolvedValueOnce({ ok: false, status: 500 });
-		await expect(resolvers.Mutation.startVoiceSession(null, {}, baseCtx("free"))).rejects.toThrow(
+		await expect(resolvers.Mutation.startVoiceSession(null, {}, baseCtx("base"))).rejects.toThrow(
 			/voice session failed/,
 		);
 	});
@@ -108,7 +108,7 @@ describe("Clara Core subgraph resolvers", () => {
 			ok: true,
 			json: async () => ({ id: "" }),
 		});
-		await expect(resolvers.Mutation.startVoiceSession(null, {}, baseCtx("free"))).rejects.toThrow(/missing id/);
+		await expect(resolvers.Mutation.startVoiceSession(null, {}, baseCtx("base"))).rejects.toThrow(/missing id/);
 	});
 
 	it("Subscription.stream yields a terminal event", async () => {

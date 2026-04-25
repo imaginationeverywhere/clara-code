@@ -14,7 +14,7 @@ import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.servic
 
 const GATEWAY_BASE = (process.env.CLARA_GATEWAY_URL || "https://api.claracode.ai").replace(/\/$/, "");
 
-const TIER_RANK: Record<ClaraTier, number> = { free: 0, pro: 1, business: 2 };
+const TIER_RANK: Record<ClaraTier, number> = { base: 0, pro: 1, business: 2 };
 
 function modelEnumToInternal(name: string | undefined): ClaraModelName | undefined {
 	if (!name) return undefined;

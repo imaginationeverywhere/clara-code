@@ -14,18 +14,12 @@ describe("operation-credit.service", () => {
 	});
 
 	it("canUse: passive/light are always allowed without DB", async () => {
-		const a = await canUseOperationCredits("u1", "a1", "free", "passive");
+		const a = await canUseOperationCredits("u1", "a1", "basic", "passive");
 		expect(a.allowed).toBe(true);
 		expect(a.creditsRemaining).toBeNull();
-		const b = await canUseOperationCredits("u1", "a1", "free", "light");
+		const b = await canUseOperationCredits("u1", "a1", "basic", "light");
 		expect(b.allowed).toBe(true);
 		expect(OperationCredits.findOne).not.toHaveBeenCalled();
-	});
-
-	it("canUse: free blocks medium+ with zero budget", async () => {
-		const c = await canUseOperationCredits("u1", "a1", "free", "medium");
-		expect(c.allowed).toBe(false);
-		expect(c.creditsRemaining).toBe(0);
 	});
 
 	it("canUse: basic within budget with DB read", async () => {
@@ -46,7 +40,7 @@ describe("operation-credit.service", () => {
 		expect(c.allowed).toBe(false);
 	});
 
-	it("canUse: business allows agent_build with unlimited credits (canBuild true)", async () => {
+	it("canUse: business allows agent_build with no credit cap (canBuild true)", async () => {
 		const c = await canUseOperationCredits("u1", "a1", "business", "agent_build");
 		expect(c.allowed).toBe(true);
 	});

@@ -19,13 +19,12 @@ export const OPERATION_WEIGHTS: Record<OperationCategory, OperationWeight> = {
 	agent_build: 20,
 };
 
-/** Per-tier credit budget per billing month. `null` = unlimited (still tracked in DB). */
+/** Per-tier credit budget per billing month. `null` = Custom (Enterprise contract). */
 export const CREDIT_BUDGETS: Record<PlanTier, number | null> = {
-	free: 0, // can only do passive/light — no execution credits
 	basic: 500,
 	pro: 1_500,
 	max: 4_000,
-	business: null, // "Small Business" in product copy
+	business: null,
 	enterprise: null,
 };
 

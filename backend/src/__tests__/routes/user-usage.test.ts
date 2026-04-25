@@ -3,7 +3,7 @@ import request from "supertest";
 import type { ApiKeyRequest } from "@/middleware/api-key-auth";
 
 const mockClara = jest.fn((req: ApiKeyRequest, _res: unknown, next: () => void) => {
-	req.claraUser = { userId: "u_usage", tier: "free" };
+	req.claraUser = { userId: "u_usage", tier: "basic" };
 	next();
 });
 
@@ -31,22 +31,22 @@ describe("routes GET /api/user/usage", () => {
 	beforeEach(() => {
 		jest.clearAllMocks();
 		mockClara.mockImplementation((req: ApiKeyRequest, _res: unknown, next: () => void) => {
-			req.claraUser = { userId: "u_usage", tier: "free" };
+			req.claraUser = { userId: "u_usage", tier: "basic" };
 			next();
 		});
 	});
 
-	it("returns unlimited usage (no product-facing caps)", async () => {
+	it("returns metered=false (no product-facing caps)", async () => {
 		const res = await request(app).get("/api/user/usage");
 		expect(res.status).toBe(200);
-		expect(res.body.tier).toBe("free");
-		expect(res.body.unlimited_usage).toBe(true);
-		expect(res.body.usage.unlimited).toBe(true);
+		expect(res.body.tier).toBe("basic");
+		expect(res.body.metered).toBe(false);
+		expect(res.body.usage.metered).toBe(false);
 	});
 
 	it("returns 401 when claraUser has no userId", async () => {
 		mockClara.mockImplementationOnce((req: ApiKeyRequest, _res: unknown, next: () => void) => {
-			req.claraUser = { userId: undefined as unknown as string, tier: "free" };
+			req.claraUser = { userId: undefined as unknown as string, tier: "basic" };
 			next();
 		});
 		const res = await request(app).get("/api/user/usage");

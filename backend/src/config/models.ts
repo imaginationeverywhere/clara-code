@@ -1,6 +1,6 @@
 export type ClaraModelName = "mary" | "maya" | "nikki";
 
-export type ClaraTier = "free" | "pro" | "business";
+export type ClaraTier = "base" | "pro" | "business";
 
 export interface ModelConfig {
 	name: ClaraModelName;
@@ -32,7 +32,7 @@ export const MODELS: Record<ClaraModelName, ModelConfig> = {
 		displayName: "Maya",
 		inferenceBackend: "",
 		thinking: false,
-		requiredTier: "free",
+		requiredTier: "base",
 	},
 	mary: {
 		name: "mary",
@@ -52,7 +52,7 @@ export const MODELS: Record<ClaraModelName, ModelConfig> = {
 
 export const DEFAULT_MODEL: ClaraModelName = "maya";
 
-const TIER_RANK: Record<ClaraTier, number> = { free: 0, pro: 1, business: 2 };
+const TIER_RANK: Record<ClaraTier, number> = { base: 0, pro: 1, business: 2 };
 
 export function resolveModel(requested: string | undefined, tier: ClaraTier): ModelConfig {
 	const raw = requested ?? DEFAULT_MODEL;

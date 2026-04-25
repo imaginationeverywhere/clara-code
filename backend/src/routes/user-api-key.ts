@@ -26,7 +26,7 @@ router.get("/api-key", async (req: AuthenticatedRequest, res: Response): Promise
 		});
 
 		if (!row) {
-			res.json({ prefix: null, tier: sub?.tier ?? "free" });
+			res.json({ prefix: null, tier: sub?.tier ?? "basic" });
 			return;
 		}
 
@@ -51,12 +51,11 @@ router.post("/api-key/regenerate", async (req: AuthenticatedRequest, res: Respon
 		}
 
 		const sub = await Subscription.findOne({ where: { userId: auth.userId } });
-		const plan = toPlanTier(sub?.tier);
-		if (plan === "free") {
+		if (!sub || sub.status !== "active") {
 			res.status(403).json({ error: "Active paid subscription required" });
 			return;
 		}
-		const tier = plan as ApiKeyTier;
+		const tier = toPlanTier(sub.tier) as ApiKeyTier;
 
 		await ApiKey.update({ isActive: false }, { where: { userId: auth.userId, keyHash: { [Op.ne]: null } } });
 

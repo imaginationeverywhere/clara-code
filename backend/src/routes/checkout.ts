@@ -58,8 +58,8 @@ router.post("/create-session", requireAuth(), async (req: AuthenticatedRequest, 
 				await Subscription.create({
 					userId: auth.userId,
 					stripeCustomerId: customerId,
-					tier: "free",
-					status: "active",
+					tier: "basic",
+					status: "incomplete",
 				});
 			}
 		}

@@ -69,12 +69,12 @@ describe("AbuseProtectionService", () => {
 	});
 
 	describe("PLAN_LIMITS and UNIVERSAL_INCLUSIONS", () => {
-		it("Basic is $39 with 1 configurable agent", () => {
+		it("Basic is $39 with 3 configurable agents", () => {
 			expect(PLAN_LIMITS.basic.price).toBe(39);
-			expect(PLAN_LIMITS.basic.configurableAgents).toBe(1);
+			expect(PLAN_LIMITS.basic.configurableAgents).toBe(3);
 		});
-		it("Pro is $69 with 3 agents, canBuildAgents=false", () => {
-			expect(PLAN_LIMITS.pro).toMatchObject({ price: 69, configurableAgents: 3, canBuildAgents: false });
+		it("Pro is $69 with 6 agents, canBuildAgents=false", () => {
+			expect(PLAN_LIMITS.pro).toMatchObject({ price: 69, configurableAgents: 6, canBuildAgents: false });
 		});
 		it("Max is $99 with list marketplace", () => {
 			expect(PLAN_LIMITS.max).toMatchObject({ price: 99, marketplaceTier: "list" });
@@ -82,13 +82,12 @@ describe("AbuseProtectionService", () => {
 		it("Business is $299, canBuild, publish", () => {
 			expect(PLAN_LIMITS.business).toMatchObject({ price: 299, canBuildAgents: true, marketplaceTier: "publish" });
 		});
-		it("Enterprise has null configurableAgents, skillsPerAgent, monthlyCogsHardCap", () => {
+		it("Enterprise has null configurableAgents, talentsPerAgent, monthlyCogsHardCap", () => {
 			expect(PLAN_LIMITS.enterprise.configurableAgents).toBeNull();
-			expect(PLAN_LIMITS.enterprise.skillsPerAgent).toBeNull();
+			expect(PLAN_LIMITS.enterprise.talentsPerAgent).toBeNull();
 			expect(PLAN_LIMITS.enterprise.monthlyCogsHardCap).toBeNull();
 		});
-		it("UNIVERSAL_INCLUSIONS applies to the unlimited product model", () => {
-			expect(UNIVERSAL_INCLUSIONS.unlimitedUsage).toBe(true);
+		it("UNIVERSAL_INCLUSIONS includes premium voice + custom cloning", () => {
 			expect(UNIVERSAL_INCLUSIONS.premiumVoice).toBe(true);
 			expect(UNIVERSAL_INCLUSIONS.customVoiceCloning).toBe(true);
 		});
