@@ -25,7 +25,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 - **Pricing playbooks (iteration)** — `abuse-protection`, `cogs-and-unit-economics`, `communication-costs`, `customer-facing-page`, `ip-ownership-and-ejection`, `marketplace-pricing`, `model-routing-strategy`, `product-tiers`, `thinking-tiers`, and `voice-tiers` updated in `pricing/` and `.cursor/pricing/`. See `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 - **Marketing mockup app (`mockups/site/`)** — `App` shell and `HeroSection`, `Header`, `InstallSection`, `FeaturesSection`, `PricingSection`, auth and checkout pages refreshed; `ClaraLogo` and global styles in `index.css` (dropped `clara-brand-tokens.css`). Replaced 2D/3D clara-code logos with new art direction.
 - **TypeScript base** — `tsconfig.base.json`, root `tsconfig.json`, and `packages/sdk/tsconfig.json` use `ES2023` instead of `ES2024` for `target` / `lib` to align with supported runtimes. See `packages/sdk/CHANGELOG.md` for SDK.
-- **Monorepo version** — root `package.json` `0.2.2` → **`0.2.3`** (voxtral doc merge); `0.2.3` → **`0.2.4`** (pricing and prompts; docs only); `0.2.4` → **`0.2.5`** (IP firewall, marketing voice, CLI/shim, prompt queue moves).
+- **Monorepo version** — root `package.json` `0.2.2` → **`0.2.3`** (voxtral doc merge); `0.2.3` → **`0.2.4`** (pricing and prompts; docs only); `0.2.4` → **`0.2.5`** (IP firewall, marketing voice, CLI/shim, prompt queue moves); `0.2.5` → **`0.2.6`** (marketing home + install + pricing + tokens; see **`frontend/CHANGELOG.md`**).
+- **Product prompts (April 23)** — `01-hero-section-design-fixes`, `02-install-section-design-fixes`, `03-pricing-section-visual-polish`, `04-design-tokens-and-header-polish`, and `21-website-redesign-match-claraagents` completed under `prompts/2026/April/23/3-completed/`.
 
 ### Fixed
 

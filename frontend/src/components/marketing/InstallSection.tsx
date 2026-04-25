@@ -1,20 +1,25 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { IconGithub, IconMonitor, IconTerminal } from '@/components/marketing/icons'
+import { InstallCommandCopyButton } from '@/components/marketing/InstallCommandCopyButton'
 import { MARKETING_GITHUB_REPO } from '@/lib/marketing-install-constants'
 
 const DMG_HREF = process.env.NEXT_PUBLIC_CLARA_DESKTOP_DMG_URL?.trim() ?? ''
 
 const RELEASES = 'https://github.com/imaginationeverywhere/clara-code/releases/latest'
 
-const GREYED_INSTALL_CMDS = [
-	'npm install -g clara@latest',
-	'npx clara@latest',
-	'npm i -g @clara/cli',
-] as const
-
 export function InstallSection() {
+	const [activeTab, setActiveTab] = useState<'npm' | 'pnpm' | 'brew'>('npm')
+
+	const commands = {
+		npm: 'npm install -g claracode',
+		pnpm: 'pnpm add -g claracode',
+		brew: 'brew install claracode',
+	} as const
+	const line = commands[activeTab]
+
 	return (
 		<section id="install" className="bg-bg-sunken py-24">
 			<div className="mx-auto max-w-3xl px-6 text-center">
@@ -33,30 +38,40 @@ export function InstallSection() {
 						</div>
 
 						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-bg-sunken">
-							<div className="border-b border-white/[0.06] px-5 py-4">
-								<div className="mb-3 flex flex-wrap items-center justify-between gap-2">
-									<div className="mb-0 font-mono text-[11px] uppercase tracking-wider text-white/30">Install</div>
-									<span className="inline-flex rounded border border-amber-500/25 bg-amber-500/10 px-2 py-0.5 text-[10px] font-mono text-amber-200/80">
-										Coming Soon
-									</span>
-								</div>
-								<div className="mt-1 space-y-1.5 rounded-lg bg-[#070A0F] px-4 py-3">
-									{GREYED_INSTALL_CMDS.map((c) => (
-										<div key={c} className="block font-mono text-sm text-white/25">
-											<span className="text-white/15">$</span> {c}
-										</div>
-									))}
-								</div>
-								<div className="mt-2 flex items-center justify-between">
-									<span className="font-mono text-[11px] text-white/25">Node.js 20+ required</span>
-									<Link href="/docs" className="font-mono text-[11px] text-clara hover:underline">
-										docs &rarr;
-									</Link>
+							<div className="px-5 py-4">
+								<div className="mb-0 font-mono text-[11px] uppercase tracking-wider text-white/30">Install</div>
+								<div className="mt-3">
+									<div className="mb-3 flex gap-1 border-b border-white/10">
+										{(['npm', 'pnpm', 'brew'] as const).map((tab) => (
+											<button
+												key={tab}
+												type="button"
+												onClick={() => setActiveTab(tab)}
+												className={`px-3 py-1.5 font-mono text-xs transition-colors ${
+													activeTab === tab
+														? 'border-b-2 border-[#7BC8D8] -mb-px text-[#7BC8D8]'
+														: 'text-white/40 hover:text-white/60'
+												}`}
+											>
+												{tab}
+											</button>
+										))}
+									</div>
+									<div className="flex items-center justify-between gap-3 rounded-lg bg-[#070A0F] px-4 py-3">
+										<code className="min-w-0 break-all font-mono text-sm text-white/90">{line}</code>
+										<InstallCommandCopyButton text={line} />
+									</div>
+									<p className="mt-2 text-xs text-white/30">
+										Node.js 20+ required ·{' '}
+										<Link href="/docs" className="text-[#7BC8D8] hover:underline">
+											docs →
+										</Link>
+									</p>
 								</div>
 							</div>
 
 							<div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
-								<span className="font-mono text-[11px] text-white/25">Package: clara</span>
+								<span className="font-mono text-[11px] text-white/25">Package: claracode</span>
 								<a
 									href={MARKETING_GITHUB_REPO}
 									target="_blank"

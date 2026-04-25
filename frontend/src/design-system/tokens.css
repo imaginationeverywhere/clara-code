@@ -39,7 +39,7 @@
   --clara-blue-900:  #07282E;   /* near-black blue, code comment tint */
 
   /* Aliases — the names code should use */
-  --clara-blue:          var(--clara-blue-300);   /* #7BCDD8 — THE brand color */
+  --clara-blue:          var(--clara-blue-300);   /* #7BC8D8 — THE brand color */
   --clara-blue-glow:     var(--clara-blue-200);   /* #A8DDE5 — logo glow element */
   --clara-blue-active:   var(--clara-blue-400);   /* hover/active on blue */
   --clara-blue-accent:   var(--clara-blue-600);   /* links, selected text in dark */

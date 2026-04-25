@@ -7,11 +7,14 @@ export function FeaturesSection() {
 				<div className="mb-20 text-center">
 					<p className="font-mono text-[11px] uppercase tracking-[0.2em] text-white/30">Why Clara Code</p>
 					<h2 className="mt-3 text-[32px] font-bold leading-tight text-white md:text-[40px]">
-						Built for how developers actually think.
+						Voice-first harness, real codebase context.
 					</h2>
 					<h2 className="mt-1 bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-[32px] font-bold text-transparent md:text-[40px]">
-						Not how they type.
+						Build with your AI team.
 					</h2>
+					<p className="mt-4 max-w-2xl mx-auto text-sm text-white/50">
+						Agents, skills, and voice — one Clara stack from repo to claraagents.com.
+					</p>
 				</div>
 
 				<div className="grid grid-cols-12 gap-4">

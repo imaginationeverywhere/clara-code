@@ -4,11 +4,16 @@
 
 ### Added
 
+- `InstallCommandCopyButton` — clipboard helper for the marketing install block.
 - **Clara marketing voice** — `ClaraVoiceGreeting` client component and `src/lib/clara-voice.ts` for on-site greeting TTS (cross-ref: root `CHANGELOG.md`).
 
 ### Changed
 
-- **Marketing** — `Header`, `HeroSection`, `InstallSection`, `PricingSection`, `sections/PricingCards`; `tokens.css` and `tailwind.config.ts` — design pass and copy alignment with the public site; Install section uses greyed example commands and Node 20+ (no `npx github:` beta when removed).
+- **Install** — Restored **npm / pnpm / brew** tabs with `claracode` one-liners (replacing greyed “Coming Soon” block); copy button targets the active command; footnote still requires Node 20+ and links to docs.
+- **Hero** — Headline and body aligned with `pricing/customer-facing-page.md` (AI team, 10× usage, $39 lead-in); social proof row sits directly under the primary CTAs, then the voice strip.
+- **Features** — Section lead updated for harness/team + claraagents network framing.
+- **Pricing** — Home + `/pricing` cards: Pro **$69**; “Business” tier name; feature rows use hires + voice agents/month; Enterprise: 350 hires and Custom (per contract) (no “unlimited”); CTAs “Configure your team” / “Talk to us” per same doc.
+- **Design tokens** — `tailwind.config.ts` `clara` / `syntax.jsx` and `--clara-blue` comment: **`#7BC8D8`** to match the Magic Patterns / brand spec (`tokens.css` already had `--clara-blue-300` at `#7BC8D8`).
 
 ## [Unreleased] - 2026-04-16
 

@@ -15,8 +15,8 @@ const config: Config = {
 			},
 			colors: {
 				clara: {
-					DEFAULT: "#7BCDD8",
-					teal: "#7BCDD8",
+					DEFAULT: "#7BC8D8",
+					teal: "#7BC8D8",
 					"teal-glow": "#A8DDE5",
 					"teal-accent": "#4DDDFF",
 					500: "#3B82F6",
@@ -70,7 +70,7 @@ const config: Config = {
 					type: "#4F8EF7",
 					string: "#22C55E",
 					function: "#A8DDE5",
-					jsx: "#7BCDD8",
+					jsx: "#7BC8D8",
 					attribute: "#FBBF24",
 					number: "#FB923C",
 					comment: "#4D4D4D",

@@ -140,56 +140,70 @@ export function PricingSection() {
 						price="$39"
 						priceNote="/month"
 						highlight
-						cta="Talk to Clara"
+						cta="Configure your team"
 						href="/sign-up"
 					>
-						<Feat>3 agent slots</Feat>
-						<Feat>Talk to Clara — conversation on us</Feat>
-						<Feat>Voice + project memory</Feat>
+						<Feat>3 AI hires on your team</Feat>
+						<Feat>1 new voice agent / month</Feat>
+						<Feat>Premium voice + memory</Feat>
 						<Feat>CLI access</Feat>
 					</TierCard>
 
-					<TierCard name="Pro" price="$59" priceNote="/month" highlight={false} cta="Get Pro" href="/sign-up?plan=pro">
-						<Feat>6 agent slots</Feat>
+					<TierCard
+						name="Pro"
+						price="$69"
+						priceNote="/month"
+						highlight={false}
+						cta="Configure your team"
+						href="/sign-up?plan=pro"
+					>
+						<Feat>6 AI hires on your team</Feat>
+						<Feat>3 new voice agents / month</Feat>
 						<Feat>Everything in Basic</Feat>
-						<Feat>API access</Feat>
 						<Feat>Priority support</Feat>
 					</TierCard>
 
-					<TierCard name="Max" price="$99" priceNote="/month" highlight={false} cta="Get Max" href="/sign-up?plan=max">
-						<Feat>9 agent slots</Feat>
+					<TierCard
+						name="Max"
+						price="$99"
+						priceNote="/month"
+						highlight={false}
+						cta="Configure your team"
+						href="/sign-up?plan=max"
+					>
+						<Feat>9 AI hires on your team</Feat>
+						<Feat>6 new voice agents / month</Feat>
 						<Feat>Everything in Pro</Feat>
 						<Feat>Higher throughput</Feat>
-						<Feat>Dedicated success</Feat>
 					</TierCard>
 				</div>
 
 				<div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
 					<TierCard
-						name="Small Business"
+						name="Business"
 						price="$299"
 						priceNote="/month"
 						highlight={false}
-						cta="Get Business"
+						cta="Configure your team"
 						href="/sign-up?plan=business"
 					>
-						<Feat>24 agent slots</Feat>
-						<Feat>Team workflows</Feat>
-						<Feat>Admin controls</Feat>
-						<Feat>Shared vault</Feat>
+						<Feat>24 AI hires on your team</Feat>
+						<Feat>12 new voice agents / month</Feat>
+						<Feat>Marketplace publishing + payouts</Feat>
+						<Feat>Admin controls + shared vault</Feat>
 					</TierCard>
 
 					<TierCard
 						name="Enterprise"
 						price="Contact us"
 						highlight={false}
-						cta="Contact Sales"
+						cta="Talk to us"
 						href="mailto:team@claracode.ai"
 					>
-						<Feat>360 agent slots</Feat>
-						<Feat>SSO + audit</Feat>
-						<Feat>SLA</Feat>
-						<Feat>Custom integrations</Feat>
+						<Feat>350 AI hires (per contract)</Feat>
+						<Feat>New voice agents: Custom (per contract)</Feat>
+						<Feat>SSO + audit + SLA</Feat>
+						<Feat>Dedicated support + integrations</Feat>
 					</TierCard>
 				</div>
 

@@ -45,13 +45,17 @@ export function HeroSection() {
 				</div>
 
 				<h1 className="text-[2.75rem] font-bold leading-none tracking-tight text-white md:text-[64px]">
-					<span className="block">Your voice.</span>
-					<span className="block">Your code.</span>
+					<span className="block">Your AI team.</span>
+					<span className="block">Hundreds of hours of voice.</span>
+					<span className="mt-1 block bg-gradient-to-r from-[#7C3AED] to-[#4F8EF7] bg-clip-text text-transparent">
+						10× the usage of any platform.
+					</span>
 				</h1>
 
 				<p className="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-white/55">
-					Hold the mic. Say what you want built. Clara Code transcribes, interprets, and implements — while you
-					think of the next thing.
+					Hire your first team for <span className="text-white/80">$39/month</span>. They build voice-first
+					products — websites, mobile, desktop, CLIs, and agents you can sell. Generous included voice; heavy
+					reasoning is pass-through, no markup.
 				</p>
 
 				<div className="mt-10 flex flex-wrap items-center justify-center gap-4">
@@ -64,11 +68,6 @@ export function HeroSection() {
 					>
 						Star on GitHub
 					</a>
-				</div>
-
-				<div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
-					<ClaraVoiceGreeting />
-					<span className="text-center text-xs text-white/20">No account needed to hear Clara</span>
 				</div>
 
 				<div className="mt-6 flex items-center justify-center gap-3">
@@ -85,6 +84,11 @@ export function HeroSection() {
 					<p className="text-sm text-white/50">
 						Trusted by <span className="font-medium text-white/80">2,400+ developers</span>
 					</p>
+				</div>
+
+				<div className="mt-6 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+					<ClaraVoiceGreeting />
+					<span className="text-center text-xs text-white/20">No account needed to hear Clara</span>
 				</div>
 
 				<p className="mt-4 text-[12px] text-white/25">Free forever · Open source · MIT licensed</p>
