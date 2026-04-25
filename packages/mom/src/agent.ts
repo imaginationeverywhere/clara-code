@@ -29,7 +29,7 @@ import type { ChannelInfo, SlackContext, UserInfo } from "./slack.js";
 import type { ChannelStore } from "./store.js";
 import { createMomTools, setUploadFunction } from "./tools/index.js";
 
-// Default: DeepSeek V3.2 via Hermes → Bedrock when HERMES_GATEWAY_URL is set. Fallback: Claude Sonnet.
+// Default: Hermes router (Gemma 4 27B primary on Modal; Kimi/DeepSeek/Premium fallback) when HERMES_GATEWAY_URL is set. Fallback: Claude Sonnet.
 const fallbackModel = getModel("anthropic", "claude-sonnet-4-5");
 const hermesClient = createHermesFromEnv();
 const hermesGatewayUrl = hermesClient?.baseUrl ?? "http://127.0.0.1:1";
@@ -39,7 +39,7 @@ const hermesDisplayModel = createHermesDisplayModel(hermesGatewayUrl);
 if (hermesClient) {
 	void hermesClient.ping().then((ok) => {
 		if (ok) {
-			log.logInfo("Model router: Clara Gateway (Hermes) — Bedrock DeepSeek V3.2");
+			log.logInfo("Model router: Clara Gateway (Hermes) — Gemma 4 27B primary, Kimi/DeepSeek/Premium fallback");
 		} else {
 			log.logWarning("HERMES_GATEWAY_URL set but gateway unreachable — falling back to Anthropic");
 		}

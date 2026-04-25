@@ -14,7 +14,7 @@ Clara Code runs on self-hosted open-weight models on Modal GPUs + Bedrock DeepSe
 
 | Priority | Model | Why | COGS |
 |----------|-------|-----|------|
-| 1 (default) | **Gemma 3 27B** self-hosted on Modal A100 | Fast, capable, Apache 2.0, zero licensing | ~$0.005/active-hour (amortized) |
+| 1 (default) | **Gemma 4 27B** self-hosted on Modal A100 | Fast, capable, Apache 2.0, zero licensing | ~$0.005/active-hour (amortized) |
 | 2 (complex) | **Kimi K2** self-hosted on Modal H100 | Stronger reasoning, open weights | ~$0.015/active-hour |
 | 3 (heavy reasoning) | **DeepSeek V3** on AWS Bedrock | Best $/token for serious tasks | ~$0.27/M input, ~$1.10/M output |
 | 4 (fallback premium) | **Claude / GPT-5** via Bedrock | Only when user explicitly needs the absolute best | ~$3-15/M tokens |
@@ -40,7 +40,7 @@ A typical "active hour" of vibe-code work:
 
 | Component | Typical Usage | COGS |
 |-----------|---------------|------|
-| Gemma 3 routing (default) | ~30-60 requests/hr at ~1s GPU each | $0.015-0.030 |
+| Gemma 4 routing (default) | ~30-60 requests/hr at ~1s GPU each | $0.015-0.030 |
 | Kimi K2 routing (complex tasks) | ~3-5 requests/hr at ~3s GPU each | $0.005-0.010 |
 | Bedrock DeepSeek (heavy reasoning) | ~1-3 requests/hr at ~2k output tokens each | $0.010-0.030 |
 | Whisper STT (if voice used) | ~30s GPU time/hr of voice usage | $0.010-0.015 |

@@ -20,7 +20,7 @@ This routing is **the moat**. We sell "Clara" as a single coherent intelligence.
 
 ## The Model Stable
 
-### Primary — Gemma 3 27B (Self-Hosted on Modal)
+### Primary — Gemma 4 27B (Self-Hosted on Modal)
 
 - **License:** Apache 2.0 (Google) — zero licensing cost
 - **Hardware:** Modal A100 80GB GPU, ~$4.46/hr raw, amortized across users
@@ -102,7 +102,7 @@ async function routeRequest(params: {
     return { model: "gemma_self_hosted" };
   }
 
-  // 6. Default: Gemma 3 handles it
+  // 6. Default: Gemma 4 handles it
   return { model: "gemma_self_hosted" };
 }
 ```

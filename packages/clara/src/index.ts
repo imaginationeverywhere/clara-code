@@ -2,7 +2,9 @@
  * @ie/clara — Clara Agent SDK
  *
  * A clean, opinionated entry point for building AI coding agents with Clara.
- * Powered by the Hermes model router with DeepSeek V3.2 via AWS Bedrock.
+ * Powered by the Hermes model router: Gemma 4 27B (Modal) primary, with
+ * automatic fallback to Kimi K2, DeepSeek V3, and premium models per request.
+ * The SDK does not pin a model — Hermes selects the right one per call.
  *
  * @example
  * ```typescript
@@ -36,11 +38,18 @@ export {
 // Clara defaults
 // ---------------------------------------------------------------------------
 
-/** The default model for Clara agents — DeepSeek V3.2 via AWS Bedrock */
-export const CLARA_DEFAULT_MODEL = "deepseek.v3.2";
+/**
+ * Informational hint only — the actual model is chosen per-request by the
+ * Hermes harness (Gemma 4 27B primary on Modal; fallback to Kimi K2,
+ * DeepSeek V3, premium). See `pricing/model-routing-strategy.md`.
+ */
+export const CLARA_DEFAULT_MODEL = "gemma.4";
 
-/** The default provider for Clara agents */
-export const CLARA_DEFAULT_PROVIDER = "amazon-bedrock";
+/**
+ * Informational hint only — Hermes routes self-hosted (Modal) primary, with
+ * Bedrock used only for the heavy-reasoning and premium fallbacks.
+ */
+export const CLARA_DEFAULT_PROVIDER = "hermes-router";
 
 // ---------------------------------------------------------------------------
 // createClaraAgent — simplified factory
@@ -57,7 +66,8 @@ export interface ClaraAgentOptions extends CreateAgentSessionOptions {
 /**
  * Create a Clara agent session with sensible defaults.
  *
- * Sets the Hermes default model (DeepSeek V3.2 via Bedrock), includes vault
+ * Routes through the Hermes harness (Gemma 4 27B primary on Modal; smart
+ * fallback to Kimi K2, DeepSeek V3, and premium models), includes vault
  * tools, and resolves the agent directory automatically.
  *
  * @example

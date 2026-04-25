@@ -83,7 +83,7 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --azure                   # Step 8 alt: Azure (hosting; not DevOps git)
 /pickup-prompt --cloudflare              # Step 8 alt: Cloudflare Pages/Workers (see also --cf)
 /pickup-prompt --migrate-amplify-to-cf   # Amplify → CF Workers + DNS playbook (domain in prompt; see § flag)
-/pickup-prompt --bedrock                 # AWS Bedrock + DeepSeek default for Ra Intelligence (see /setup-bedrock)
+/pickup-prompt --bedrock                 # AWS Bedrock + DeepSeek for Ra Intelligence — non-Clara Herus only (Clara Platform routes Gemma 4 first; see /setup-bedrock)
 
 # Clara Code prompt types (page / component / architecture templates)
 /pickup-prompt --privacy-policy           # Privacy Policy page template (GDPR/CCPA/COPPA-aware)
@@ -213,7 +213,7 @@ When present, the agent MUST:
 2. Read **`docs/standards/AI-MODEL-ROUTING.md`** before changing Ra Intelligence or Bedrock wiring.
 3. Keep **Cloudflare AI Gateway** and **Anthropic SDK** as documented fallbacks when Bedrock is disabled or exhausted.
 
-Use for tasks that configure **Amazon Bedrock** (DeepSeek default, fallback chain, SSM/IAM). Pair with `--backend` when the prompt also needs the backend stack standard.
+Use for tasks that configure **Amazon Bedrock** (DeepSeek default, fallback chain, SSM/IAM) for **non-Clara Herus** that use Bedrock for Ra Intelligence. Clara Platform itself routes Gemma 4 27B (Modal) first via Hermes — do not use this flag as a template for the Clara platform-wide primary; see `pricing/model-routing-strategy.md`. Pair with `--backend` when the prompt also needs the backend stack standard.
 
 ---
 

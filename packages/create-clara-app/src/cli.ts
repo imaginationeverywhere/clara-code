@@ -104,7 +104,7 @@ npm start
 Edit \`src/agent.ts\` to customize what your agent does.
 
 **Agent name:** ${agentName}
-**Default model:** DeepSeek V3.2 via AWS Bedrock (Hermes router)
+**Default model:** Hermes router — Gemma 4 27B primary (self-hosted on Modal), with smart fallback to Kimi K2, DeepSeek V3, and premium models
 
 ## Documentation
 

@@ -12,7 +12,7 @@ When **`--bedrock`** is passed to `/pickup-prompt` or `/queue-prompt`, prepend t
 
 ## Default policy
 
-- **Primary:** DeepSeek-R1 on Bedrock (`deepseek.r1-v1:0` or region-specific ID from `list-foundation-models`).
+- **Primary:** Bedrock model used by non-Clara Herus for Ra Intelligence — DeepSeek-R1 on Bedrock (`deepseek.r1-v1:0` or region-specific ID from `list-foundation-models`). Clara Platform routes Gemma 4 27B (Modal) first; Bedrock is only the heavy-reasoning fallback there.
 - **Fallback chain:** DeepSeek → Claude (Sonnet class on Bedrock) → Llama — configurable via `BEDROCK_FALLBACK_MODELS`.
 - **Complexity:** `simple` / `standard` / `bulk` / `critical` map to ordered model lists in `modelRegistry.ts`.
 
