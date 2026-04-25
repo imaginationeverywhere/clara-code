@@ -2,9 +2,9 @@
  * @ie/clara — Clara Agent SDK
  *
  * A clean, opinionated entry point for building AI coding agents with Clara.
- * Powered by the Hermes model router: Gemma 4 27B (Modal) primary, with
- * automatic fallback to Kimi K2, DeepSeek V3, and premium models per request.
- * The SDK does not pin a model — Hermes selects the right one per call.
+ * Model selection happens server-side via the Hermes router — the SDK ships
+ * with no hardcoded model defaults. Per-request routing is the single source
+ * of truth; see `pricing/model-routing-strategy.md`.
  *
  * @example
  * ```typescript
@@ -39,17 +39,19 @@ export {
 // ---------------------------------------------------------------------------
 
 /**
- * Informational hint only — the actual model is chosen per-request by the
- * Hermes harness (Gemma 4 27B primary on Modal; fallback to Kimi K2,
- * DeepSeek V3, premium). See `pricing/model-routing-strategy.md`.
+ * @deprecated Hermes routing is the single source of truth for model selection.
+ * This export remains for backwards compatibility and resolves to whatever the
+ * `CLARA_DEFAULT_MODEL` environment variable supplies, or `undefined` when unset.
+ * Consumers should rely on Hermes per-request routing rather than this hint.
  */
-export const CLARA_DEFAULT_MODEL = "gemma.4";
+export const CLARA_DEFAULT_MODEL: string | undefined = process.env.CLARA_DEFAULT_MODEL;
 
 /**
- * Informational hint only — Hermes routes self-hosted (Modal) primary, with
- * Bedrock used only for the heavy-reasoning and premium fallbacks.
+ * @deprecated Hermes routing is the single source of truth for provider selection.
+ * This export remains for backwards compatibility and resolves to whatever the
+ * `CLARA_DEFAULT_PROVIDER` environment variable supplies, or `undefined` when unset.
  */
-export const CLARA_DEFAULT_PROVIDER = "hermes-router";
+export const CLARA_DEFAULT_PROVIDER: string | undefined = process.env.CLARA_DEFAULT_PROVIDER;
 
 // ---------------------------------------------------------------------------
 // createClaraAgent — simplified factory
@@ -66,9 +68,9 @@ export interface ClaraAgentOptions extends CreateAgentSessionOptions {
 /**
  * Create a Clara agent session with sensible defaults.
  *
- * Routes through the Hermes harness (Gemma 4 27B primary on Modal; smart
- * fallback to Kimi K2, DeepSeek V3, and premium models), includes vault
- * tools, and resolves the agent directory automatically.
+ * Routes through the Hermes harness — model selection is per-request and
+ * driven server-side; this SDK does not pin a model. Includes vault tools
+ * and resolves the agent directory automatically.
  *
  * @example
  * ```typescript
