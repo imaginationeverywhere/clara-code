@@ -1,5 +1,15 @@
 # Changelog
 
+## [Unreleased] - 2026-04-25
+
+### Added
+
+- **Clara marketing voice** — `ClaraVoiceGreeting` client component and `src/lib/clara-voice.ts` for on-site greeting TTS (cross-ref: root `CHANGELOG.md`).
+
+### Changed
+
+- **Marketing** — `Header`, `HeroSection`, `InstallSection`, `PricingSection`, `sections/PricingCards`; `tokens.css` and `tailwind.config.ts` — design pass and copy alignment with the public site; Install section uses greyed example commands and Node 20+ (no `npx github:` beta when removed).
+
 ## [Unreleased] - 2026-04-16
 
 ### Fixed

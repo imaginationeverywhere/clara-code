@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Security (cross-reference)
+
+- **Backend — agent IP firewall** — Forbidden-pattern registry, voice response sanitization for `POST /api/voice/converse`, optional `SOUL_ENCRYPTION_KEY` for marketplace SOUL encryption. See `backend/CHANGELOG.md`, `backend/.env.example`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 ### Added (cross-reference)
 
 - **Clara AI pricing extensions** — `clara-ai-tier-ladder.md`, `clara-ai-business-tier-ladder.md`, `clara-ai-reseller-rates.md`, `clara-ai-vp-business-economics.md`; iteration on tier, marketplace, and voice playbooks. See `pricing/`, `.cursor/pricing/`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

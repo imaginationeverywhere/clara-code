@@ -8,6 +8,7 @@ import {
 	modelTierErrorResponse,
 	resolveModel,
 } from "@/config/models";
+import { filterConverseResponsePayload } from "@/middleware/agent-output-filter";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { voiceLimiter } from "@/middleware/rate-limit";
@@ -353,7 +354,10 @@ router.post(
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
 			}
-			res.json(response.data);
+			const uid = userId ?? "anonymous";
+			const aid = typeof voice_id === "string" && voice_id.length > 0 ? voice_id : "clara";
+			const { payload: safePayload } = filterConverseResponsePayload(response.data, uid, aid);
+			res.json(safePayload);
 		} catch (error) {
 			logger.error("[voice/converse] proxy error:", error);
 			res.status(502).json({ error: "Voice server unreachable" });

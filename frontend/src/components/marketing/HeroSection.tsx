@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { VoiceGreeting } from '@/app/(marketing)/components/VoiceGreeting'
+import { ClaraVoiceGreeting } from '@/components/marketing/ClaraVoiceGreeting'
 import { HeroPrimaryCta } from '@/components/analytics/HeroPrimaryCta'
 
 const WAVE_HEIGHTS_PX = [8, 14, 22, 28, 24, 18, 28, 20, 12, 26, 22, 16, 10, 24, 18, 12]
@@ -8,10 +8,29 @@ const WAVE_HEIGHTS_PX = [8, 14, 22, 28, 24, 18, 28, 20, 12, 26, 22, 16, 10, 24, 
 export function HeroSection() {
 	return (
 		<section className="relative overflow-hidden bg-[#0D1117] pb-20 pt-28 md:pt-36">
-			<div className="pointer-events-none absolute left-1/2 top-24 -z-0 h-[420px] w-[600px] -translate-x-1/2 bg-[#7C3AED]/15 blur-[100px]" aria-hidden />
+			{/* Dot grid */}
+			<div
+				className="pointer-events-none absolute inset-0 -z-0"
+				style={{
+					backgroundImage: `radial-gradient(circle, rgba(255,255,255,0.08) 1.5px, transparent 1.5px)`,
+					backgroundSize: '28px 28px',
+				}}
+				aria-hidden
+			/>
+			<div
+				className="pointer-events-none absolute left-1/2 top-24 -z-0 h-[420px] w-[600px] -translate-x-1/2 bg-[#7C3AED]/15 blur-[100px]"
+				aria-hidden
+			/>
+			<div
+				className="pointer-events-none absolute bottom-0 right-0 -z-0 h-[400px] w-[400px]"
+				style={{
+					background: 'radial-gradient(circle at 80% 80%, rgba(79,142,247,0.12) 0%, transparent 70%)',
+				}}
+				aria-hidden
+			/>
 			<div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
 				<div className="mb-6 inline-flex items-center rounded-full border border-[#7C3AED]/30 bg-[#7C3AED]/8 px-4 py-1.5 text-[11px] font-medium uppercase tracking-[0.15em] text-[#7C3AED]">
-					Open source · MIT licensed
+					Now in Beta
 				</div>
 
 				<div className="mx-auto mb-10 flex justify-center">
@@ -47,11 +66,31 @@ export function HeroSection() {
 					</a>
 				</div>
 
+				<div className="mt-4 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+					<ClaraVoiceGreeting />
+					<span className="text-center text-xs text-white/20">No account needed to hear Clara</span>
+				</div>
+
+				<div className="mt-6 flex items-center justify-center gap-3">
+					<div className="flex -space-x-2">
+						{[1, 2, 3, 4, 5].map((i) => (
+							<div
+								key={i}
+								className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-[#0D1117] bg-gradient-to-br from-[#7C3AED] to-[#4F8EF7] text-xs font-bold text-white"
+							>
+								{['A', 'B', 'C', 'D', 'E'][i - 1]}
+							</div>
+						))}
+					</div>
+					<p className="text-sm text-white/50">
+						Trusted by <span className="font-medium text-white/80">2,400+ developers</span>
+					</p>
+				</div>
+
 				<p className="mt-4 text-[12px] text-white/25">Free forever · Open source · MIT licensed</p>
 
 				<div className="mx-auto mt-14 max-w-md rounded-2xl border border-white/8 bg-[#0A0E14] p-6">
-					<VoiceGreeting />
-					<div className="mt-8 flex items-end justify-center gap-1">
+					<div className="flex items-end justify-center gap-1">
 						{WAVE_HEIGHTS_PX.map((h, i) => (
 							<div
 								key={i}
@@ -60,7 +99,7 @@ export function HeroSection() {
 							/>
 						))}
 					</div>
-					<p className="mt-3 font-mono text-xs text-[#10B981]">
+					<p className="mt-3 font-mono text-xs text-[#22C55E]">
 						▶ &apos;Add a loading skeleton to the dashboard&apos;
 					</p>
 				</div>

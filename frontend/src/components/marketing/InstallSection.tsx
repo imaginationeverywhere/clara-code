@@ -1,36 +1,20 @@
 'use client'
 
-import { useState } from 'react'
-import {
-	IconCheckCircle,
-	IconCopy,
-	IconGithub,
-	IconMonitor,
-	IconTerminal,
-} from '@/components/marketing/icons'
+import Link from 'next/link'
+import { IconGithub, IconMonitor, IconTerminal } from '@/components/marketing/icons'
 import { MARKETING_GITHUB_REPO } from '@/lib/marketing-install-constants'
-
-const NPM_GLOBAL = 'npm install -g clara@latest'
 
 const DMG_HREF = process.env.NEXT_PUBLIC_CLARA_DESKTOP_DMG_URL?.trim() ?? ''
 
+const RELEASES = 'https://github.com/imaginationeverywhere/clara-code/releases/latest'
+
+const GREYED_INSTALL_CMDS = [
+	'npm install -g clara@latest',
+	'npx clara@latest',
+	'npm i -g @clara/cli',
+] as const
+
 export function InstallSection() {
-	const [copied, setCopied] = useState(false)
-	const [copiedNpm, setCopiedNpm] = useState(false)
-	const betaCmd = 'npx github:imaginationeverywhere/clara-code'
-
-	const handleCopy = () => {
-		void navigator.clipboard.writeText(betaCmd)
-		setCopied(true)
-		setTimeout(() => setCopied(false), 2000)
-	}
-
-	const handleCopyNpm = () => {
-		void navigator.clipboard.writeText(NPM_GLOBAL)
-		setCopiedNpm(true)
-		setTimeout(() => setCopiedNpm(false), 2000)
-	}
-
 	return (
 		<section id="install" className="bg-bg-sunken py-24">
 			<div className="mx-auto max-w-3xl px-6 text-center">
@@ -50,57 +34,24 @@ export function InstallSection() {
 
 						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-bg-sunken">
 							<div className="border-b border-white/[0.06] px-5 py-4">
-								<div className="mb-3 font-mono text-[11px] uppercase tracking-wider text-white/30">npm (global)</div>
-								<div className="mb-2 font-mono text-sm text-white/40">
-									<span className="text-white/25"># </span>npm install -g clara@latest
-									<p className="mt-1 text-[12px] text-white/30">After install, run: clara (default voice) or clara tui (full TUI)</p>
+								<div className="mb-3 flex flex-wrap items-center justify-between gap-2">
+									<div className="mb-0 font-mono text-[11px] uppercase tracking-wider text-white/30">Install</div>
+									<span className="inline-flex rounded border border-amber-500/25 bg-amber-500/10 px-2 py-0.5 text-[10px] font-mono text-amber-200/80">
+										Coming Soon
+									</span>
+								</div>
+								<div className="mt-1 space-y-1.5 rounded-lg bg-[#070A0F] px-4 py-3">
+									{GREYED_INSTALL_CMDS.map((c) => (
+										<div key={c} className="block font-mono text-sm text-white/25">
+											<span className="text-white/15">$</span> {c}
+										</div>
+									))}
 								</div>
 								<div className="mt-2 flex items-center justify-between">
-									<span className="font-mono text-sm text-white/25">Node.js 20+ required</span>
-									<button
-										type="button"
-										onClick={handleCopyNpm}
-										className="flex shrink-0 items-center gap-1.5 font-mono text-[12px] text-white/45 transition-colors hover:text-clara"
-									>
-										{copiedNpm ? (
-											<>
-												<IconCheckCircle className="h-4 w-4 text-brand-green" />
-												<span className="text-brand-green">Copied</span>
-											</>
-										) : (
-											<>
-												<IconCopy className="h-4 w-4" />
-												Copy install
-											</>
-										)}
-									</button>
-								</div>
-							</div>
-
-							<div className="px-5 py-4">
-								<div className="mb-2 font-mono text-[11px] uppercase tracking-wider text-white/30">Beta from Git (no global)</div>
-								<div className="flex items-center justify-between">
-									<div className="font-mono text-sm">
-										<span className="text-white/25">$ </span>
-										<span className="text-brand-green">{betaCmd}</span>
-									</div>
-									<button
-										type="button"
-										onClick={handleCopy}
-										className="ml-3 flex shrink-0 items-center gap-1.5 transition-colors"
-									>
-										{copied ? (
-											<>
-												<IconCheckCircle className="h-4 w-4 text-brand-green" />
-												<span className="font-mono text-[12px] text-brand-green">Copied!</span>
-											</>
-										) : (
-											<>
-												<IconCopy className="h-4 w-4 text-white/35 hover:text-white/60" />
-												<span className="font-mono text-[12px] text-white/35 hover:text-white/60">Copy</span>
-											</>
-										)}
-									</button>
+									<span className="font-mono text-[11px] text-white/25">Node.js 20+ required</span>
+									<Link href="/docs" className="font-mono text-[11px] text-clara hover:underline">
+										docs &rarr;
+									</Link>
 								</div>
 							</div>
 
@@ -113,7 +64,7 @@ export function InstallSection() {
 									className="flex items-center gap-1 font-mono text-[11px] text-clara hover:underline"
 								>
 									<IconGithub className="h-3 w-3" />
-									Star us on GitHub →
+									Star us on GitHub &rarr;
 								</a>
 							</div>
 						</div>
@@ -128,38 +79,54 @@ export function InstallSection() {
 
 						<div className="overflow-hidden rounded-xl border border-white/[0.08] bg-bg-overlay">
 							<div className="p-5">
-								<div className="mb-4 flex items-center gap-2">
+								<div className="mb-4 flex flex-wrap items-center gap-2">
 									<span className="text-[15px] font-semibold text-white">Clara Code IDE</span>
-									{DMG_HREF ? null : (
-										<span className="rounded-full border border-brand-purple/30 bg-brand-purple/20 px-2.5 py-0.5 font-mono text-[10px] uppercase tracking-wider text-brand-purple">
-											Download soon
-										</span>
-									)}
+									<span className="font-mono text-xs text-white/30">v1.0.0 · Stable</span>
 								</div>
 
 								{DMG_HREF ? (
 									<a
 										href={DMG_HREF}
 										download
-										className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl bg-brand-purple py-3 text-sm font-semibold text-white shadow-[0_0_20px_rgba(124,58,237,0.3)] transition-colors hover:bg-brand-purple-hover"
+										className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-[#7C3AED] py-3 text-sm font-medium text-white transition-colors hover:bg-[#6D28D9]"
 									>
-										<IconMonitor className="h-4 w-4" />
-										Download for macOS (.dmg)
+										<svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+											<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+										</svg>
+										Download for macOS
 									</a>
-								) : null}
-								<a
-									href={MARKETING_GITHUB_REPO}
-									target="_blank"
-									rel="noopener noreferrer"
-									className="mt-2 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 py-2.5 text-sm font-medium text-white/80 transition-colors hover:border-white/20 hover:text-white"
-								>
-									<IconGithub className="h-4 w-4" />
-									{DMG_HREF ? 'View source' : 'View on GitHub'}
-								</a>
-								<div className="mt-2 text-center font-mono text-[11px] text-white/30">
-									{DMG_HREF
-										? 'Mount the .dmg, drag the app to Applications, then open from the dock or Spotlight'
-										: 'CI publishes a .dmg; this button appears once the public download URL is set for the build'}
+								) : (
+									<a
+										href={RELEASES}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="mt-2 flex w-full items-center justify-center gap-2 rounded-lg bg-[#7C3AED] py-3 text-sm font-medium text-white transition-colors hover:bg-[#6D28D9]"
+									>
+										<svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+											<path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+										</svg>
+										Download for macOS
+									</a>
+								)}
+								<p className="mt-1 text-center text-xs text-white/30">Universal Binary · Apple Silicon + Intel</p>
+
+								<div className="mt-4 flex gap-3">
+									{[
+										{ label: 'Linux', ext: '.AppImage', href: RELEASES },
+										{ label: 'Windows', ext: '.exe', href: RELEASES },
+										{ label: 'Source', ext: '', href: MARKETING_GITHUB_REPO },
+									].map(({ label, ext, href }) => (
+										<a
+											key={label}
+											href={href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="flex-1 rounded-lg border border-white/10 py-2 text-center text-xs text-white/40 transition-colors hover:border-white/20 hover:text-white/70"
+										>
+											{label}
+											{ext ? <span className="text-white/20"> {ext}</span> : null}
+										</a>
+									))}
 								</div>
 							</div>
 
@@ -171,7 +138,7 @@ export function InstallSection() {
 									rel="noopener noreferrer"
 									className="font-mono text-[11px] text-clara hover:underline"
 								>
-									View on GitHub →
+									View on GitHub &rarr;
 								</a>
 							</div>
 						</div>

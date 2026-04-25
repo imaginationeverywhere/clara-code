@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { Command } from "commander";
 import { registerAskCommand } from "./commands/ask.js";
 import { registerAuthCommand } from "./commands/auth.js";
@@ -8,8 +11,15 @@ import { registerHelloCommand } from "./commands/hello.js";
 import { registerTuiCommand } from "./commands/tui.js";
 import { launchVoiceConverseMode } from "./launch-voice-converse.js";
 
+const pkg = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../package.json"), "utf8")) as {
+	version: string;
+};
+
 const program = new Command();
-program.name("clara").description("Clara Code — conversational AI voice coding CLI");
+program
+	.name("clara")
+	.description("Clara Code — conversational AI voice coding CLI")
+	.version(pkg.version, "-V, --version", "print version");
 
 registerHelloCommand(program);
 registerAskCommand(program);

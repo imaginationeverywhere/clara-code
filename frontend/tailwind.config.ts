@@ -25,7 +25,7 @@ const config: Config = {
 					purple: "#7C3AED",
 					"purple-hover": "#6D28D9",
 					blue: "#4F8EF7",
-					green: "#10B981",
+					green: "#22C55E",
 				},
 				bg: {
 					base: "#0D1117",
@@ -68,7 +68,7 @@ const config: Config = {
 				syntax: {
 					keyword: "#7C3AED",
 					type: "#4F8EF7",
-					string: "#10B981",
+					string: "#22C55E",
 					function: "#A8DDE5",
 					jsx: "#7BCDD8",
 					attribute: "#FBBF24",

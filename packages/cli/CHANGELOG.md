@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- **Canonical greeting** — `lib/canonical-greeting.ts` continues to use `postVoiceConverse` + TTS; tests updated in `test/lib/canonical-greeting.test.ts` (`greet` delegates to `playCanonicalGreeting`).
+
 ### Added
 
 - **Tests (PR #03 follow-up)** — `test/lib/canonical-greeting.test.ts` covers `playCanonicalGreeting` (cache, `/voice/converse`, `/voice/respond`, `refresh` opt-in) via injectable `deps` on the greeting API.

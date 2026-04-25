@@ -73,31 +73,47 @@ describe("playCanonicalGreeting", () => {
 		assert.equal(playCalls.length, 1);
 	});
 
-	it("falls back to /voice/respond when postVoiceConverse has no audio", async () => {
+	it("uses TTS from backend when postVoiceConverse returns reply text only", async () => {
 		const fetches: string[] = [];
-		const r = await playCanonicalGreeting({
-			deps: {
-				readGreetingFromCache: async () => null,
-				writeGreetingToCache: async () => {},
-				postVoiceConverse: async () => ({ ok: true, reply_text: "hi" }),
-				playAudioFile: async () => {},
-				fetch: (async (input: string | URL) => {
-					fetches.push(String(input));
-					if (String(input).endsWith("/voice/respond")) {
-						return new Response(new Uint8Array([1, 2, 3]), {
-							status: 200,
-							headers: { "content-type": "audio/wav" },
-						});
-					}
-					return new Response("nope", { status: 404 });
-				}) as typeof globalThis.fetch,
-			},
-		});
-		assert.equal(r.ok, true);
-		assert.ok(fetches.some((u) => u.includes("voice.test.example") && u.includes("voice/respond")));
+		const origFetch = globalThis.fetch;
+		const mockFetch: typeof globalThis.fetch = async (input) => {
+			const u = typeof input === "string" ? input : (input as Request).url;
+			fetches.push(u);
+			if (u.includes("/api/voice/tts")) {
+				return new Response(new Uint8Array([1, 2, 3]), {
+					status: 200,
+					headers: { "content-type": "audio/wav" },
+				});
+			}
+			return new Response("nope", { status: 404 });
+		};
+		const prevBackend = process.env.CLARA_BACKEND_URL;
+		process.env.CLARA_BACKEND_URL = "https://api.claracode.ai";
+		globalThis.fetch = mockFetch;
+		try {
+			const r = await playCanonicalGreeting({
+				deps: {
+					readGreetingFromCache: async () => null,
+					writeGreetingToCache: async () => {},
+					postVoiceConverse: async () => ({ ok: true, reply_text: "hi" }),
+					playAudioFile: async () => {},
+					// Merged with defaultGreetingDeps: fetch is globalThis.fetch
+				},
+			});
+			assert.equal(r.ok, true);
+		} finally {
+			globalThis.fetch = origFetch;
+			if (prevBackend === undefined) {
+				delete process.env.CLARA_BACKEND_URL;
+			} else {
+				process.env.CLARA_BACKEND_URL = prevBackend;
+			}
+		}
+		assert.ok(fetches.some((u) => u.includes("api.claracode.ai") && u.includes("/api/voice/tts")));
 	});
 
-	it("returns ok=false when both postVoiceConverse and fetch fail", async () => {
+	it("returns ok=false when postVoiceConverse fails and no TTS is reached", async () => {
+		const fetches: string[] = [];
 		const r = await playCanonicalGreeting({
 			deps: {
 				readGreetingFromCache: async () => null,
@@ -105,16 +121,30 @@ describe("playCanonicalGreeting", () => {
 				postVoiceConverse: async () => ({ ok: false, error: "bad" }),
 				playAudioFile: async () => {},
 				fetch: (async (input: string | URL) => {
-					if (String(input).endsWith("/voice/respond")) {
-						throw new Error("network");
-					}
+					fetches.push(String(input));
 					return new Response("", { status: 500 });
 				}) as typeof globalThis.fetch,
 			},
 		});
 		assert.equal(r.ok, false);
-		assert.match((r as { ok: false }).message, /network error/);
-		assert.match((r as { ok: false }).message, /converse: bad/);
+		assert.match((r as { ok: false }).message, /bad/);
+		assert.equal(fetches.length, 0);
+	});
+
+	it("returns ok=false when reply text is present but TTS fetch throws", async () => {
+		const r = await playCanonicalGreeting({
+			deps: {
+				readGreetingFromCache: async () => null,
+				writeGreetingToCache: async () => {},
+				postVoiceConverse: async () => ({ ok: true, reply_text: "hi" }),
+				playAudioFile: async () => {},
+				fetch: (async () => {
+					throw new Error("network");
+				}) as typeof globalThis.fetch,
+			},
+		});
+		assert.equal(r.ok, false);
+		assert.match((r as { ok: false }).message, /TTS request failed/);
 	});
 
 	it("returns ok=false immediately when CLARA_VOICE_URL is not set", async () => {

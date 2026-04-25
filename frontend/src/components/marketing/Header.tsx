@@ -1,46 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
 import { IconGithub } from '@/components/marketing/icons'
-import { useVoiceMute } from '@/app/(marketing)/hooks/useVoiceMute'
 
 const GITHUB_REPO = 'https://github.com/imaginationeverywhere/clara-code'
 
-function SpeakerIcon({ muted }: { muted: boolean }) {
-	return (
-		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-5 w-5" aria-hidden>
-			{muted ? (
-				<>
-					<path d="M11 5 6 9H3v6h3l5 4V5z" />
-					<path d="m22 9-6 6M16 9l6 6" />
-				</>
-			) : (
-				<>
-					<path d="M11 5 6 9H3v6h3l5 4V5z" />
-					<path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a9 9 0 0 1 0 14.14" />
-				</>
-			)}
-		</svg>
-	)
-}
-
 export function Header() {
-	const [scrolled, setScrolled] = useState(false)
-	const { isMuted, toggle } = useVoiceMute()
-
-	useEffect(() => {
-		const onScroll = () => setScrolled(window.scrollY > 10)
-		window.addEventListener('scroll', onScroll, { passive: true })
-		return () => window.removeEventListener('scroll', onScroll)
-	}, [])
-
 	return (
-		<header
-			className={`fixed left-0 right-0 top-0 z-50 border-b transition-all duration-200 ${
-				scrolled ? 'border-white/[0.07] bg-bg-base/95 backdrop-blur-md' : 'border-transparent bg-transparent'
-			}`}
-		>
+		<header className="fixed left-0 right-0 top-0 z-50 border-b border-white/10 bg-[#0D1117]/85 backdrop-blur-md">
 			<div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
 				<Link href="/" className="flex items-center gap-0.5">
 					<span className="text-lg font-bold tracking-tight text-white">Clara</span>
@@ -65,17 +32,6 @@ export function Header() {
 							GitHub
 						</a>
 					</div>
-
-					<button
-						type="button"
-						onClick={toggle}
-						className="rounded-full border border-white/15 p-2 text-white/45 transition-colors hover:border-white/25 hover:text-white"
-						aria-pressed={isMuted}
-						aria-label={isMuted ? 'Unmute Clara voice' : 'Mute Clara voice'}
-						title={isMuted ? 'Unmute voice' : 'Mute voice'}
-					>
-						<SpeakerIcon muted={isMuted} />
-					</button>
 
 					<a
 						href={GITHUB_REPO}

@@ -5,8 +5,9 @@ export function registerGreetCommand(program: Command): void {
 	program
 		.command("greet")
 		.description("Request Clara's voice greeting from the API and play the audio")
-		.action(async () => {
-			const result = await playCanonicalGreeting();
+		.option("--refresh", "Bypass cache and fetch a fresh greeting")
+		.action(async (opts: { refresh?: boolean }) => {
+			const result = await playCanonicalGreeting({ refresh: Boolean(opts.refresh) });
 			if (result.ok) {
 				return;
 			}

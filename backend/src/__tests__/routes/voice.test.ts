@@ -19,7 +19,7 @@ jest.mock("axios", () => ({
 }));
 
 jest.mock("@/utils/logger", () => ({
-	logger: { error: jest.fn() },
+	logger: { error: jest.fn(), warn: jest.fn() },
 }));
 
 jest.mock("@/middleware/api-key-auth", () => ({
@@ -300,6 +300,14 @@ describe("routes /api/voice", () => {
 				expect.objectContaining({ audio_base64: "AAAA", voice_id: "clara" }),
 				expect.objectContaining({ headers: expect.objectContaining({ Authorization: "Bearer test-hermes-key" }) }),
 			);
+		});
+
+		it("200 and strips forbidden substrings from proxied text fields (IP firewall)", async () => {
+			const mockData = { transcript: "ok", response_text: "I am claude-3-opus for you", audio_base64: "Z==" };
+			(axios.post as jest.Mock).mockResolvedValueOnce({ data: mockData });
+			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA", voice_id: "clara" });
+			expect(res.status).toBe(200);
+			expect(String(res.body.response_text)).not.toMatch(/claude/i);
 		});
 
 		it("prefers VOICE_SERVER_URL and CLARA_VOICE_API_KEY when both are set", async () => {
