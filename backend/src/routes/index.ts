@@ -1,10 +1,12 @@
 import { Router } from "express";
+import agentsRoutes from "./agents";
 import checkoutRoutes from "./checkout";
 import keysRoutes from "./keys";
 import mcpRoutes from "./mcp";
 import modelsRoutes from "./models";
 import onboardingRoutes from "./onboarding";
 import registryAuthRoutes from "./registry-auth";
+import sprintsRoutes from "./sprints";
 import userApiKeyRoutes from "./user-api-key";
 import userUsageRoutes from "./user-usage";
 import voiceRoutes from "./voice";
@@ -12,7 +14,9 @@ import waitlistRoutes from "./waitlist";
 
 const router: ReturnType<typeof Router> = Router();
 
+router.use("/agents", agentsRoutes);
 router.use("/mcp", mcpRoutes);
+router.use("/sprints", sprintsRoutes);
 router.use("/checkout", checkoutRoutes);
 router.use("/onboarding", onboardingRoutes);
 router.use("/models", modelsRoutes);

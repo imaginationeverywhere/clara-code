@@ -1,4 +1,5 @@
 import { Column, DataType, Model, Table } from "sequelize-typescript";
+import type { AgentPhase } from "@/types/agent";
 
 export type AgentRole = "frontend" | "backend" | "devops";
 export type AgentModelTier = "fast" | "deep" | "high-effort";
@@ -39,4 +40,10 @@ export class Agent extends Model {
 
 	@Column({ type: DataType.BOOLEAN, allowNull: false, defaultValue: false })
 	declare isActive: boolean;
+
+	@Column({ type: DataType.STRING(20), allowNull: false, defaultValue: "builder" })
+	declare phase: AgentPhase;
+
+	@Column({ type: DataType.STRING(100), allowNull: true, field: "industry_vertical" })
+	declare industryVertical: string | null;
 }

@@ -42,3 +42,8 @@ export function toPlanTier(raw: string | undefined | null): PlanTier {
 export function tierGte(tier: PlanTier, min: PlanTier): boolean {
 	return TIER_ORDER[tier] >= TIER_ORDER[min];
 }
+
+/** Runtime (customer-facing) agents require Business or Enterprise — maps to "Small Business" in product copy. */
+export function tierCanBuildRuntimeAgents(tier: PlanTier): boolean {
+	return tier === "business" || tier === "enterprise";
+}

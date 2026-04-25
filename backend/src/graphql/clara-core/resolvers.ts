@@ -117,6 +117,8 @@ export const resolvers = {
 				voiceId: null,
 				modelTier: "fast",
 				isActive: true,
+				phase: "builder",
+				industryVertical: null,
 			});
 			return { id: row.id, name: row.name };
 		},

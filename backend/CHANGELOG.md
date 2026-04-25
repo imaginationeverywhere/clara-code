@@ -6,6 +6,7 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ### Added
 
+- **Agent-to-agent messaging, sprints, Clara scrum, builder/runtime phase** — SQL migrations `028_agent_messaging.sql` through `031_agent_phase.sql` (`agent_messages`, `sprints` / `sprint_tasks` / `standup_reports`, `user_profiles`, `agents.phase` + `industry_vertical`). Services: `agent-messaging.service.ts`, `sprint.service.ts`, `clara-scrum.service.ts`, `agent-phase.service.ts`, `agent-onboarding.service.ts`, `agent-skill.service.ts` (stub). REST: `/api/agents` (`POST /`, `POST /message`, `GET /inbox`, `GET /thread/:threadId`), `/api/sprints` (active sprint, tasks, standup, team standup, profile, velocity). `memory.service.ts` now layers phase prefix, `user_profiles`, inbox, and `[My Memory]` into `buildHistory`. Jest: `agent-messaging.service.test.ts`, `agent-phase.service.test.ts`; memory tests updated.
 - **Agent lifecycle hooks** — `src/lib/hooks.ts` (six hook types + context), `src/services/hook-bus.service.ts` (`HookBus` with platform-first ordering), `src/hooks/platform-hooks.ts` (introspection deflection + output scrub via IP firewall; PreToolUse blocks `Bash` when `deploymentId` is set). `src/server.ts` imports platform hooks at boot. `POST /api/voice/converse` runs `SessionStart`, `UserPromptSubmit` (text path), and `Stop` on assistant text; optional `deployment_id` / `agent_name` on the request body. Jest: `src/__tests__/services/hook-bus.service.test.ts`.
 - **MCP catalog and dispatch** — migration `migrations/027_mcp_connections.sql` (`mcp_servers`, `agent_mcp_connections` keyed to `agents.id`); models `McpServer`, `AgentMcpConnection`; `services/plan-limits.ts`, `mcp-credential-vault.service.ts` (AES envelope via `SOUL_ENCRYPTION_KEY`), `mcp-connection.service.ts`, `mcp-dispatcher.service.ts`; routes `src/routes/mcp.ts` mounted at `/api/mcp` (`GET /available`, `POST /connect`, `POST /register-custom`, `POST /dispatch`, `GET /:agentId/tools`); `src/seeds/mcp-servers.seed.ts` (seven curated servers, runs once when catalog empty). Jest: `src/__tests__/services/mcp-dispatcher.test.ts`. `jest.setup.js` sets `SOUL_ENCRYPTION_KEY` for tests.
 
@@ -21,4 +22,5 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ### Changed
 
+- **Package version** — `1.0.3` → **`1.1.0`** (agent messaging, sprints, scrum, builder/runtime phase APIs; see **Added** above).
 - `src/routes/voice.ts` — converse route applies `filterConverseResponsePayload` to proxied voice-server JSON.

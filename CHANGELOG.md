@@ -6,11 +6,15 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Backend — agent messaging, sprints, team standup, global profile, builder vs runtime** — SQL `028`–`031`; REST `/api/agents` and `/api/sprints`; `memory.service` layers phase, `user_profiles`, inbox, and `[My Memory]` for voice. Runtime agents gated to Business/Enterprise (`plan-limits.tierCanBuildRuntimeAgents`). **`docs/backend-rest-api.md`** summarizes routes and migrations. Prompts **`08-agent-to-agent-messaging`**, **`09-standup-and-sprint-engine`**, **`10-clara-as-scrum-master`**, **`15-builder-vs-runtime-agents`** moved to `prompts/2026/April/23/3-completed/`. See **`backend/CHANGELOG.md`**, **`docs/CHANGELOG.md`**.
+
 - **Backend — agent lifecycle hooks + MCP** — `HookBus` (`backend/src/services/hook-bus.service.ts`), six hook types (`backend/src/lib/hooks.ts`), platform hooks for introspection deflection, output scrub, and deployed-agent Bash gate (`backend/src/hooks/platform-hooks.ts`); `POST /api/voice/converse` runs hooks (optional `deployment_id` / `agent_name`). MCP: migration `backend/migrations/027_mcp_connections.sql`, models, tier helpers, encrypted per-connection credentials, `/api/mcp/*` routes, dispatcher + Hermes notes in `docs/mcp-hermes-integration.md`, curated catalog seed. **`@claracode/sdk`** — `registerHook` stub and hook types. Tests: `hook-bus.service.test.ts`, `mcp-dispatcher.test.ts`. Prompts `26-agent-lifecycle-hooks.md` and `27-mcp-tool-extension.md` completed under `prompts/2026/April/23/3-completed/`. See **`backend/CHANGELOG.md`**, **`packages/sdk/CHANGELOG.md`**, **`docs/CHANGELOG.md`**.
 
 - **Backend — agent-scoped persistent memory (voice)** — SQL migration `backend/migrations/007_user_memory.sql` (`conversation_turns`, `agent_user_memory`); Sequelize models and `memory.service.ts`; `POST /api/voice/converse` loads memory per `(user, agent_id)`, supports `text` without audio, forwards `history` to Hermes, best-effort turn persistence; `GET /api/voice/memory?agent_id=`. **CLI** — per-day `session_id` from `~/.clara` `userId` + `buildSessionId`, passes `agent_id` / `surface` via `@imaginationeverywhere/clara-voice-client`. Tests: `memory.service.test.ts`, extended `voice.test.ts`. Prompt `00-persistent-memory-foundation` completed under `prompts/2026/April/23/3-completed/`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/clara-voice-client/CHANGELOG.md`**, and **`docs/CHANGELOG.md`**.
 
 ### Changed
+
+- **Monorepo version** — root `package.json` `0.2.8` → **`0.3.0`** (backend agent platform: messaging, sprints, scrum, builder/runtime phase; see **Added** above). **`backend`** `1.0.3` → **`1.1.0`**.
 
 - **Monorepo version** — root `package.json` `0.2.7` → **`0.2.8`** (agent lifecycle hooks, MCP extension, SDK hook types; see **Added** above). **`backend`** `1.0.2` → **`1.0.3`**. **`@claracode/sdk`** `0.1.0` → **`0.1.1`**.
 

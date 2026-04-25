@@ -4,6 +4,10 @@
 
 ### Added (cross-reference)
 
+- **Backend REST — agent messaging, sprints, Clara scrum, builder/runtime phase** — `docs/backend-rest-api.md` documents `/api/agents`, `/api/sprints`, migrations `028`–`031`, and voice memory layering. Implementation: `backend/CHANGELOG.md` **\[Unreleased\]**, root `CHANGELOG.md` **\[Unreleased\]**. Prompts `08`, `09`, `10`, `15` completed under `prompts/2026/April/23/3-completed/`.
+
+### Added (cross-reference)
+
 - **Backend — agent-scoped voice memory** — `007_user_memory.sql`, `GET /api/voice/memory`, `POST /api/voice/converse` memory + `text`-only; CLI session id + `agent_id`/`surface` on the voice client. See `docs/voice-dev-stub.md`, `backend/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, `packages/clara-voice-client/CHANGELOG.md`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 
 ### Security (cross-reference)
