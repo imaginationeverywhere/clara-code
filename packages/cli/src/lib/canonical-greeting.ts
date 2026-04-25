@@ -62,12 +62,11 @@ export type PlayGreetingOptions = { refresh?: boolean; deps?: Partial<GreetingDe
  * Fetches and plays the canonical greeting (cache → /voice/converse with optional TTS, no /voice/respond).
  * Shared by `clara greet` and the default voice-converse entry.
  */
+const CLARA_VOICE_API_BASE = "https://api.claracode.ai/api";
+
 export async function playCanonicalGreeting(options?: PlayGreetingOptions): Promise<GreetingResult> {
 	const d: GreetingDeps = { ...defaultGreetingDeps(), ...options?.deps };
-	const base = process.env.CLARA_VOICE_URL?.trim();
-	if (!base) {
-		return { ok: false, message: "set CLARA_VOICE_URL to your voice service base URL" };
-	}
+	const base = process.env.CLARA_VOICE_URL?.trim() || CLARA_VOICE_API_BASE;
 
 	const fromCache = options?.refresh ? null : await d.readGreetingFromCache();
 	if (fromCache) {

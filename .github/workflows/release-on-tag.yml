@@ -1,6 +1,6 @@
-# v*.*.* → npm publish (clara + clara-voice-client) + Tauri .dmg + GitHub Release assets.
-# Distribution model: npm install -g clara@latest → first run gates on token from claracode.ai.
-# The subscription gate is authentication, not installation location (same model as Claude Code).
+# v*.*.* → npm publish (clara + clara-voice-client) + Tauri .dmg (macOS) + .AppImage (Linux) + GitHub Release assets.
+# Website production: Cloudflare Workers Builds (see deploy-pages.yml) — not duplicated in this workflow.
+# Distribution: npm install -g clara@latest → first run gates on token from claracode.ai; subscription = auth, not path.
 
 name: Release on tag
 
@@ -100,6 +100,52 @@ jobs:
         with:
           files: |
             desktop/src-tauri/target/release/bundle/dmg/*.dmg
+          fail_on_unmatched_files: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # Linux desktop build — AppImage attached to the same tag release.
+  build-desktop-linux:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Setup Node.js
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+
+      - name: Install system deps (Tauri on Linux)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libayatana-appindicator3-dev librsvg2-dev
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@1e80f3fd79adfb34ff8149ff434c7ae99f0f91d4
+        with:
+          toolchain: stable
+
+      - name: Build clara-voice-client, desktop, Tauri
+        run: |
+          set -euo pipefail
+          cd packages/clara-voice-client
+          npm install
+          npm run build
+          cd ../../desktop
+          npm ci
+          npm run build
+
+      - name: List AppImage
+        run: find desktop/src-tauri/target/release/bundle/appimage -name '*.AppImage' -print -exec ls -la {} \; 2>/dev/null || true
+
+      - name: GitHub Release (attach .AppImage)
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            desktop/src-tauri/target/release/bundle/appimage/*.AppImage
           fail_on_unmatched_files: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -9,6 +9,7 @@
 
 ### Changed
 
+- `shell/index.html`: default `clara-voice-base` is `https://api.claracode.ai/api` (matches CLI default; fresh install can greet without setting meta).
 - `tauri.conf.json` default window size and `before*Command` run `build:shell-voice` before `shell:serve` / Tauri `build`.
 - `README.md`: voice config, split layout vs voice FAB, CI for `.dmg` artifact (see root `.github/workflows/desktop-macos-dmg.yml`).
 

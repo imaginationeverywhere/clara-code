@@ -147,22 +147,23 @@ describe("playCanonicalGreeting", () => {
 		assert.match((r as { ok: false }).message, /TTS request failed/);
 	});
 
-	it("returns ok=false immediately when CLARA_VOICE_URL is not set", async () => {
+	it("uses default voice API base when CLARA_VOICE_URL is not set", async () => {
 		delete process.env.CLARA_VOICE_URL;
+		let postedBase: string | undefined;
 		const r = await playCanonicalGreeting({
 			deps: {
-				readGreetingFromCache: async () => {
-					assert.fail("readGreeting should not be called");
-				},
+				readGreetingFromCache: async () => null,
 				writeGreetingToCache: async () => {},
-				postVoiceConverse: async () => {
-					assert.fail("post should not be called");
+				postVoiceConverse: async (base) => {
+					postedBase = base;
+					return okAudio();
 				},
 				playAudioFile: async () => {},
 				fetch: globalThis.fetch,
 			},
 		});
-		assert.deepEqual(r, { ok: false, message: "set CLARA_VOICE_URL to your voice service base URL" });
+		assert.equal(postedBase, "https://api.claracode.ai/api");
+		assert.equal(r.ok, true);
 	});
 
 	it("returns ok=true when playing from converse reply even if cache write throws", async () => {

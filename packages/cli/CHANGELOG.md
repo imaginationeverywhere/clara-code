@@ -4,6 +4,8 @@
 
 ### Changed
 
+- **Default voice service URL** — `CLARA_VOICE_URL` is optional: empty/unset → `https://api.claracode.ai/api` in `voice-converse-app.tsx` and `lib/canonical-greeting.ts` so greet/converse work on fresh install without env.
+- **TUI** — `HERMES_GATEWAY_URL` → `CLARA_GATEWAY_URL`; default gateway `https://api.claracode.ai/api` when not in env or `~/.clara/config.json`. `clara tui` is voice-on by default; `--no-voice` for text-only. `lib/gateway.ts` fix text references `CLARA_GATEWAY_URL`.
 - **Canonical greeting** — `lib/canonical-greeting.ts` continues to use `postVoiceConverse` + TTS; tests updated in `test/lib/canonical-greeting.test.ts` (`greet` delegates to `playCanonicalGreeting`).
 
 ### Added

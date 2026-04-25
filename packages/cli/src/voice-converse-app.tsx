@@ -9,8 +9,10 @@ import { playCanonicalGreeting } from "./lib/canonical-greeting.js";
 import { playAudioFile } from "./lib/play-audio-file.js";
 import { startCapture, type AudioCapture } from "./lib/audio-capture.js";
 
+const CLARA_VOICE_API_BASE = "https://api.claracode.ai/api";
+
 function voiceBase(): string {
-	return process.env.CLARA_VOICE_URL?.trim() ?? "";
+	return process.env.CLARA_VOICE_URL?.trim() || CLARA_VOICE_API_BASE;
 }
 
 function voiceKey(): string | undefined {
@@ -45,11 +47,6 @@ export function VoiceConverseApp(): ReactElement {
 
 	const runTurn = useCallback(async (wav: Buffer) => {
 		const base = voiceBase();
-		if (!base) {
-			setGreet("failed");
-			setGreetErr("CLARA_VOICE_URL is not set");
-			return;
-		}
 		setBusy(true);
 		setStatus("Sending to /voice/converse…");
 		const b64 = wav.length > 0 ? wav.toString("base64") : undefined;
@@ -102,9 +99,6 @@ export function VoiceConverseApp(): ReactElement {
 				return;
 			}
 			if (!listening) {
-				if (!voiceBase()) {
-					return;
-				}
 				capRef.current = startCapture();
 				setListening(true);
 				setStatus("Listening… (Space to send to /voice/converse)");
