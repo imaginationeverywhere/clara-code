@@ -2,8 +2,11 @@ import type { Request, Response } from "express";
 import { Op } from "sequelize";
 import Stripe from "stripe";
 import { getTalentRegistryService } from "@/features/talent-registry/talent-registry-instance";
+import { isCheckoutTier } from "@/lib/stripe-prices";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
+import { syncClerkMetadata } from "@/services/clerk-sync.service";
+import { toPlanTier } from "@/services/plan-limits";
 import { gaClientIdFromUserId, sendGA4ServerEvent } from "@/utils/analytics";
 import { generateApiKey } from "@/utils/api-key";
 import { logger } from "@/utils/logger";
@@ -16,13 +19,39 @@ function getStripe(): Stripe {
 	return new Stripe(key, { apiVersion: "2023-10-16" });
 }
 
+function tierFromString(t: string | undefined): string | null {
+	if (t && isCheckoutTier(t)) {
+		return t;
+	}
+	return null;
+}
+
+async function resolveTier(stripe: Stripe, stripeSub: Stripe.Subscription): Promise<string | null> {
+	const fromMeta = tierFromString(stripeSub.metadata?.tier);
+	if (fromMeta) return fromMeta;
+	const priceItem = stripeSub.items.data[0];
+	const raw = priceItem?.price;
+	const priceId = typeof raw === "string" ? raw : raw?.id;
+	if (priceId) {
+		try {
+			const price = await stripe.prices.retrieve(priceId);
+			const c = price.metadata?.clara_tier;
+			if (c && isCheckoutTier(c)) return c;
+		} catch {
+			logger.warn("resolveTier: could not retrieve price");
+		}
+	}
+	return null;
+}
+
 async function deactivateHashedKeysForUser(userId: string): Promise<void> {
 	await ApiKey.update({ isActive: false }, { where: { userId, keyHash: { [Op.ne]: null } } });
 }
 
-async function issueSubscriptionApiKey(userId: string, tier: "pro" | "business"): Promise<void> {
+async function issueSubscriptionApiKey(userId: string, tier: string): Promise<void> {
+	if (!isCheckoutTier(tier)) return;
 	await deactivateHashedKeysForUser(userId);
-	const { hash, prefix } = generateApiKey(tier);
+	const { hash, prefix } = generateApiKey("pro");
 	await ApiKey.create({
 		userId,
 		name: "Subscription",
@@ -32,6 +61,13 @@ async function issueSubscriptionApiKey(userId: string, tier: "pro" | "business")
 		tier,
 		isActive: true,
 	});
+}
+
+function subscriptionStatusToStore(st: Stripe.Subscription.Status | string): string {
+	if (st === "active" || st === "trialing" || st === "past_due" || st === "unpaid") {
+		return st;
+	}
+	return st === "canceled" ? "canceled" : String(st);
 }
 
 export async function stripeWebhookHandler(req: Request, res: Response): Promise<void> {
@@ -78,9 +114,9 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 					break;
 				}
 				const userId = session.metadata?.clerk_user_id;
-				const tierMeta = session.metadata?.tier;
-				if (!userId || (tierMeta !== "pro" && tierMeta !== "business")) {
-					logger.warn("checkout.session.completed missing metadata");
+				const tierMeta = tierFromString(session.metadata?.tier);
+				if (!userId || !tierMeta) {
+					logger.warn("checkout.session.completed missing or invalid metadata");
 					break;
 				}
 				const subId = typeof session.subscription === "string" ? session.subscription : session.subscription?.id;
@@ -90,6 +126,8 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 					break;
 				}
 				const stripeSub = await stripe.subscriptions.retrieve(subId);
+				const statusStore = subscriptionStatusToStore(stripeSub.status);
+				const trialEnd = stripeSub.trial_end ? new Date(stripeSub.trial_end * 1000) : null;
 				const [row] = await Subscription.findOrCreate({
 					where: { userId },
 					defaults: {
@@ -97,7 +135,9 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 						stripeCustomerId: customerId,
 						stripeSubscriptionId: subId,
 						tier: tierMeta,
-						status: stripeSub.status === "active" ? "active" : stripeSub.status,
+						status: statusStore,
+						trialEndsAt: trialEnd,
+						cancelAtPeriodEnd: Boolean(stripeSub.cancel_at_period_end),
 						currentPeriodStart: stripeSub.current_period_start
 							? new Date(stripeSub.current_period_start * 1000)
 							: null,
@@ -108,18 +148,22 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 					stripeCustomerId: customerId,
 					stripeSubscriptionId: subId,
 					tier: tierMeta,
-					status: stripeSub.status === "active" ? "active" : stripeSub.status,
+					status: statusStore,
+					trialEndsAt: trialEnd,
+					cancelAtPeriodEnd: Boolean(stripeSub.cancel_at_period_end),
 					currentPeriodStart: stripeSub.current_period_start
 						? new Date(stripeSub.current_period_start * 1000)
 						: null,
 					currentPeriodEnd: stripeSub.current_period_end ? new Date(stripeSub.current_period_end * 1000) : null,
 				});
 				await issueSubscriptionApiKey(userId, tierMeta);
+				await syncClerkMetadata(userId, toPlanTier(tierMeta));
 				void sendGA4ServerEvent(gaClientIdFromUserId(userId), "purchase", {
 					currency: "USD",
 					value: (session.amount_total ?? 0) / 100,
 					items: [{ item_name: tierMeta }],
 				});
+				logger.info("subscription_activated", { userId, tier: tierMeta });
 				break;
 			}
 			case "customer.subscription.updated": {
@@ -133,27 +177,7 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 				const userId = stripeSub.metadata?.clerk_user_id;
 				if (!userId) break;
 
-				let tier: "pro" | "business" | null = null;
-
-				if (stripeSub.metadata?.tier === "pro" || stripeSub.metadata?.tier === "business") {
-					tier = stripeSub.metadata.tier as "pro" | "business";
-				} else {
-					const priceItem = stripeSub.items.data[0];
-					const rawPrice = priceItem?.price;
-					const priceId = typeof rawPrice === "string" ? rawPrice : rawPrice?.id;
-					if (priceId) {
-						try {
-							const price = await stripe.prices.retrieve(priceId);
-							const claraTier = price.metadata?.clara_tier;
-							if (claraTier === "pro" || claraTier === "business") {
-								tier = claraTier;
-							}
-						} catch {
-							logger.warn("subscription.updated could not retrieve price for tier resolution");
-						}
-					}
-				}
-
+				const tier = await resolveTier(stripe, stripeSub);
 				if (!tier) {
 					logger.warn("customer.subscription.updated: cannot resolve tier, skipping");
 					break;
@@ -162,11 +186,15 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 				const prevTier = subRow?.tier;
 				const customerId =
 					typeof stripeSub.customer === "string" ? stripeSub.customer : (stripeSub.customer?.id ?? null);
+				const statusStore = subscriptionStatusToStore(stripeSub.status);
+				const trialEnd = stripeSub.trial_end ? new Date(stripeSub.trial_end * 1000) : null;
 				const payload = {
 					stripeCustomerId: customerId,
 					stripeSubscriptionId: stripeSub.id,
 					tier,
-					status: stripeSub.status === "active" ? "active" : stripeSub.status,
+					status: statusStore,
+					trialEndsAt: trialEnd,
+					cancelAtPeriodEnd: Boolean(stripeSub.cancel_at_period_end),
 					currentPeriodStart: stripeSub.current_period_start
 						? new Date(stripeSub.current_period_start * 1000)
 						: null,
@@ -175,14 +203,12 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 				if (subRow) {
 					await subRow.update(payload);
 				} else {
-					await Subscription.create({
-						userId,
-						...payload,
-					});
+					await Subscription.create({ userId, ...payload });
 				}
 				if (prevTier !== tier) {
 					await issueSubscriptionApiKey(userId, tier);
 				}
+				await syncClerkMetadata(userId, toPlanTier(tier));
 				break;
 			}
 			case "customer.subscription.deleted": {
@@ -194,10 +220,26 @@ export async function stripeWebhookHandler(req: Request, res: Response): Promise
 				const userId = stripeSub.metadata?.clerk_user_id;
 				if (!userId) break;
 				await Subscription.update(
-					{ status: "canceled", tier: "free", stripeSubscriptionId: null },
+					{
+						status: "canceled",
+						tier: "free",
+						stripeSubscriptionId: null,
+						cancelAtPeriodEnd: false,
+						trialEndsAt: null,
+					},
 					{ where: { userId } },
 				);
 				await ApiKey.update({ isActive: false }, { where: { userId, keyHash: { [Op.ne]: null } } });
+				await syncClerkMetadata(userId, "free");
+				break;
+			}
+			case "invoice.payment_failed": {
+				const inv = event.data.object as Stripe.Invoice;
+				logger.warn("payment_failed", {
+					invoice_id: inv.id,
+					customer: inv.customer,
+					subscription: inv.subscription,
+				});
 				break;
 			}
 			default:

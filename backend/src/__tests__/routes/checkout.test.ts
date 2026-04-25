@@ -56,6 +56,11 @@ describe("POST /checkout/create-session", () => {
 		mockList.mockResolvedValue({
 			data: [
 				{
+					id: "price_basic_dyn",
+					type: "recurring",
+					metadata: { clara_tier: "basic" },
+				},
+				{
 					id: "price_pro_dyn",
 					type: "recurring",
 					metadata: { clara_tier: "pro" },
@@ -93,6 +98,7 @@ describe("POST /checkout/create-session", () => {
 		expect(mockCreateSession).toHaveBeenCalledWith(
 			expect.objectContaining({
 				line_items: [{ price: "price_pro_dyn", quantity: 1 }],
+				subscription_data: expect.objectContaining({ trial_period_days: 7 }),
 			}),
 		);
 	});

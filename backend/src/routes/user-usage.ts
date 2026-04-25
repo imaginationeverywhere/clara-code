@@ -1,8 +1,9 @@
 import { type Response, Router } from "express";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import type { ApiKeyRequest } from "@/middleware/api-key-auth";
 import { requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
-import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
+import type { VoiceTier } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 
 const router: ReturnType<typeof Router> = Router();
@@ -10,6 +11,7 @@ const router: ReturnType<typeof Router> = Router();
 router.get(
 	"/usage",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const userId = req.claraUser?.userId;
@@ -21,17 +23,10 @@ router.get(
 				return;
 			}
 
-			const { used, limit, resetDate } = await voiceUsageService.getUsage(userId, tier);
-			const unlimited = tier === "pro" || tier === "business";
-
 			res.json({
 				tier,
-				voice_exchanges: {
-					used,
-					limit: unlimited ? null : limit,
-					reset_date: resetDate,
-					unlimited,
-				},
+				unlimited_usage: true,
+				usage: { unlimited: true, note: "Clara does not show usage meters for paid work." },
 			});
 		} catch (error) {
 			logger.error("GET /api/user/usage error:", error);

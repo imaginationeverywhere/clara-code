@@ -11,10 +11,9 @@ jest.mock("@/middleware/api-key-auth", () => ({
 	requireClaraOrClerk: (req: ApiKeyRequest, res: unknown, next: () => void) => mockClara(req, res, next),
 }));
 
-const getUsage = jest.fn();
-jest.mock("@/services/voice-usage.service", () => ({
-	voiceUsageService: {
-		getUsage: (...args: unknown[]) => getUsage(...args),
+jest.mock("@/middleware/abuse-protection", () => ({
+	requireAbuseCheck: (_req: unknown, _res: unknown, next: () => void) => {
+		next();
 	},
 }));
 
@@ -29,29 +28,20 @@ app.use(express.json());
 app.use("/api/user", userUsageRoutes);
 
 describe("routes GET /api/user/usage", () => {
-	beforeEach(() => jest.clearAllMocks());
+	beforeEach(() => {
+		jest.clearAllMocks();
+		mockClara.mockImplementation((req: ApiKeyRequest, _res: unknown, next: () => void) => {
+			req.claraUser = { userId: "u_usage", tier: "free" };
+			next();
+		});
+	});
 
-	it("returns usage payload for free tier", async () => {
-		getUsage.mockResolvedValueOnce({ used: 3, limit: 100, resetDate: "2026-05-01" });
+	it("returns unlimited usage (no product-facing caps)", async () => {
 		const res = await request(app).get("/api/user/usage");
 		expect(res.status).toBe(200);
 		expect(res.body.tier).toBe("free");
-		expect(res.body.voice_exchanges.used).toBe(3);
-		expect(res.body.voice_exchanges.unlimited).toBe(false);
-		expect(res.body.voice_exchanges.limit).toBe(100);
-	});
-
-	it("returns unlimited for pro", async () => {
-		mockClara.mockImplementationOnce((req: ApiKeyRequest, _res: unknown, next: () => void) => {
-			req.claraUser = { userId: "u_usage", tier: "pro" };
-			next();
-		});
-		getUsage.mockResolvedValueOnce({ used: 10, limit: null, resetDate: "2026-05-01" });
-		const res = await request(app).get("/api/user/usage");
-		expect(res.status).toBe(200);
-		expect(res.body.tier).toBe("pro");
-		expect(res.body.voice_exchanges.unlimited).toBe(true);
-		expect(res.body.voice_exchanges.limit).toBeNull();
+		expect(res.body.unlimited_usage).toBe(true);
+		expect(res.body.usage.unlimited).toBe(true);
 	});
 
 	it("returns 401 when claraUser has no userId", async () => {
@@ -62,12 +52,5 @@ describe("routes GET /api/user/usage", () => {
 		const res = await request(app).get("/api/user/usage");
 		expect(res.status).toBe(401);
 		expect(res.body.error).toBe("Unauthorized");
-	});
-
-	it("returns 500 when service throws", async () => {
-		getUsage.mockRejectedValueOnce(new Error("db error"));
-		const res = await request(app).get("/api/user/usage");
-		expect(res.status).toBe(500);
-		expect(res.body.error).toBe("Failed to load usage");
 	});
 });

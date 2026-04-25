@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
 import { Router } from "express";
 import type { HookContext } from "@/lib/hooks";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import { mcpConnection } from "@/services/mcp-connection.service";
 import { mcpDispatcher } from "@/services/mcp-dispatcher.service";
@@ -11,7 +12,7 @@ const router: ReturnType<typeof Router> = Router();
  * Public catalog: Clara + VP-owned (filtered by min tier in service).
  * Static route — must stay before /:agentId
  */
-router.get("/available", requireClaraOrClerk, async (req: ApiKeyRequest, res): Promise<void> => {
+router.get("/available", requireClaraOrClerk, requireAbuseCheck, async (req: ApiKeyRequest, res): Promise<void> => {
 	if (!req.claraUser) {
 		res.status(401).json({ error: "Unauthorized" });
 		return;
@@ -20,7 +21,7 @@ router.get("/available", requireClaraOrClerk, async (req: ApiKeyRequest, res): P
 	res.json({ servers });
 });
 
-router.post("/connect", requireClaraOrClerk, async (req: ApiKeyRequest, res): Promise<void> => {
+router.post("/connect", requireClaraOrClerk, requireAbuseCheck, async (req: ApiKeyRequest, res): Promise<void> => {
 	if (!req.claraUser) {
 		res.status(401).json({ error: "Unauthorized" });
 		return;
@@ -62,45 +63,50 @@ router.post("/connect", requireClaraOrClerk, async (req: ApiKeyRequest, res): Pr
 	}
 });
 
-router.post("/register-custom", requireClaraOrClerk, async (req: ApiKeyRequest, res): Promise<void> => {
-	if (!req.claraUser) {
-		res.status(401).json({ error: "Unauthorized" });
-		return;
-	}
-	const b = req.body as {
-		display_name?: string;
-		description?: string;
-		endpoint_url?: string;
-		auth_scheme?: "bearer" | "oauth" | "apikey" | "vault";
-		category?: string;
-	};
-	if (typeof b.display_name !== "string" || typeof b.endpoint_url !== "string" || !b.auth_scheme) {
-		res.status(400).json({ error: "display_name, endpoint_url, and auth_scheme are required" });
-		return;
-	}
-	try {
-		const reg: Parameters<typeof mcpConnection.registerCustomMcp>[0] = {
-			userId: req.claraUser.userId,
-			tier: req.claraUser.tier,
-			displayName: b.display_name,
-			endpointUrl: b.endpoint_url,
-			authScheme: b.auth_scheme,
+router.post(
+	"/register-custom",
+	requireClaraOrClerk,
+	requireAbuseCheck,
+	async (req: ApiKeyRequest, res): Promise<void> => {
+		if (!req.claraUser) {
+			res.status(401).json({ error: "Unauthorized" });
+			return;
+		}
+		const b = req.body as {
+			display_name?: string;
+			description?: string;
+			endpoint_url?: string;
+			auth_scheme?: "bearer" | "oauth" | "apikey" | "vault";
+			category?: string;
 		};
-		if (b.description !== undefined) {
-			reg.description = b.description;
+		if (typeof b.display_name !== "string" || typeof b.endpoint_url !== "string" || !b.auth_scheme) {
+			res.status(400).json({ error: "display_name, endpoint_url, and auth_scheme are required" });
+			return;
 		}
-		if (b.category !== undefined) {
-			reg.category = b.category;
+		try {
+			const reg: Parameters<typeof mcpConnection.registerCustomMcp>[0] = {
+				userId: req.claraUser.userId,
+				tier: req.claraUser.tier,
+				displayName: b.display_name,
+				endpointUrl: b.endpoint_url,
+				authScheme: b.auth_scheme,
+			};
+			if (b.description !== undefined) {
+				reg.description = b.description;
+			}
+			if (b.category !== undefined) {
+				reg.category = b.category;
+			}
+			const server = await mcpConnection.registerCustomMcp(reg);
+			res.status(201).json({ server });
+		} catch (err) {
+			const message = err instanceof Error ? err.message : "error";
+			res.status(400).json({ error: message });
 		}
-		const server = await mcpConnection.registerCustomMcp(reg);
-		res.status(201).json({ server });
-	} catch (err) {
-		const message = err instanceof Error ? err.message : "error";
-		res.status(400).json({ error: message });
-	}
-});
+	},
+);
 
-router.post("/dispatch", requireClaraOrClerk, async (req: ApiKeyRequest, res): Promise<void> => {
+router.post("/dispatch", requireClaraOrClerk, requireAbuseCheck, async (req: ApiKeyRequest, res): Promise<void> => {
 	if (!req.claraUser) {
 		res.status(401).json({ error: "Unauthorized" });
 		return;
@@ -147,14 +153,19 @@ router.post("/dispatch", requireClaraOrClerk, async (req: ApiKeyRequest, res): P
 	}
 });
 
-router.get("/:agentId/tools", requireClaraOrClerk, async (req: ApiKeyRequest, res): Promise<void> => {
-	if (!req.claraUser) {
-		res.status(401).json({ error: "Unauthorized" });
-		return;
-	}
-	const { agentId } = req.params;
-	const tools = await mcpConnection.toolsFor(agentId);
-	res.json({ tools });
-});
+router.get(
+	"/:agentId/tools",
+	requireClaraOrClerk,
+	requireAbuseCheck,
+	async (req: ApiKeyRequest, res): Promise<void> => {
+		if (!req.claraUser) {
+			res.status(401).json({ error: "Unauthorized" });
+			return;
+		}
+		const { agentId } = req.params;
+		const tools = await mcpConnection.toolsFor(agentId);
+		res.json({ tools });
+	},
+);
 
 export default router;

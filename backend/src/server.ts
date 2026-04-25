@@ -19,12 +19,14 @@ import { createClaraCoreSubgraph } from "@/graphql/clara-core/server";
 import type { GraphQLContext } from "@/graphql/resolvers/index";
 import { resolvers } from "@/graphql/resolvers/index";
 import { typeDefs } from "@/graphql/schema/index";
+import { connectRedis } from "@/lib/redis";
 import { requireApiKey } from "@/middleware/api-key-auth";
 import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
 import { clerkWebhookHandler } from "@/routes/webhooks-clerk";
 import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
 import "@/jobs/fingerprint-scan";
+import "@/jobs/routing-distribution-daily";
 import { seedMcpCatalogIfEmpty } from "@/seeds/mcp-servers.seed";
 import { logger } from "@/utils/logger";
 
@@ -50,6 +52,10 @@ if (allowedOrigins.length === 0) {
 app.use(cors({ origin: allowedOrigins, credentials: true }));
 
 app.post("/api/webhooks/stripe", express.raw({ type: "application/json" }), (req, res): void => {
+	void stripeWebhookHandler(req, res);
+});
+
+app.post("/api/billing/webhook", express.raw({ type: "application/json" }), (req, res): void => {
 	void stripeWebhookHandler(req, res);
 });
 
@@ -110,6 +116,11 @@ export async function bootstrap(): Promise<void> {
 	);
 
 	await testConnection();
+	try {
+		await connectRedis();
+	} catch (e: unknown) {
+		logger.warn("Redis ping failed — continuing (abuse preflight may fail open if Redis is down)", e);
+	}
 	await seedMcpCatalogIfEmpty().catch((e: unknown) => logger.error("MCP seed:", e));
 
 	app.listen(PORT, () => {

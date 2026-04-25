@@ -29,15 +29,33 @@ jest.mock("@/middleware/api-key-auth", () => ({
 	},
 }));
 
-jest.mock("@/middleware/voice-limit", () => ({
-	voiceLimitMiddleware: (_req: unknown, _res: unknown, next: () => void) => {
+jest.mock("@/middleware/abuse-protection", () => ({
+	requireAbuseCheck: (_req: unknown, _res: unknown, next: () => void) => {
 		next();
 	},
 }));
 
-jest.mock("@/services/voice-usage.service", () => ({
-	voiceUsageService: {
-		incrementAfterSuccess: jest.fn().mockResolvedValue(undefined),
+jest.mock("@/services/operation-credit.service", () => ({
+	canUseOperationCredits: jest.fn().mockResolvedValue({ allowed: true, creditsRemaining: null }),
+	applyOperationCreditUsage: jest.fn().mockResolvedValue(undefined),
+}));
+
+jest.mock("@/services/voice-usage.service", () => {
+	const actual = jest.requireActual<typeof import("@/services/voice-usage.service")>("@/services/voice-usage.service");
+	return {
+		...actual,
+		voiceUsageService: {
+			...actual.voiceUsageService,
+			incrementAfterSuccess: jest.fn().mockResolvedValue(undefined),
+			getUsedCountForCurrentMonth: jest.fn().mockResolvedValue(0),
+		},
+	};
+});
+
+jest.mock("@/services/abuse-protection.service", () => ({
+	abuseProtectionService: {
+		recordUsage: jest.fn().mockResolvedValue(undefined),
+		preflight: jest.fn().mockResolvedValue({ allowed: true }),
 	},
 }));
 
@@ -66,6 +84,7 @@ jest.mock("@/services/memory.service", () => {
 				totalSessions: 0,
 				isReturningUser: false,
 				phaseContextPrefix: null,
+				talentLayer0: null,
 				inboxMessages: [],
 				userProfile: null,
 			}),
@@ -79,6 +98,7 @@ jest.mock("@/services/memory.service", () => {
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
 import { memoryService } from "@/services/memory.service";
+import { applyOperationCreditUsage, canUseOperationCredits } from "@/services/operation-credit.service";
 import { voiceUsageService } from "@/services/voice-usage.service";
 
 const app = express();
@@ -318,6 +338,8 @@ describe("routes /api/voice", () => {
 			else process.env.VOICE_SERVER_URL = prevVoiceServer;
 			if (prevConverseKey === undefined) delete process.env.CLARA_VOICE_API_KEY;
 			else process.env.CLARA_VOICE_API_KEY = prevConverseKey;
+			(voiceUsageService.getUsedCountForCurrentMonth as jest.Mock).mockResolvedValue(0);
+			(canUseOperationCredits as jest.Mock).mockResolvedValue({ allowed: true, creditsRemaining: null });
 		});
 
 		it("400 when neither audio_base64 nor text is present", async () => {
@@ -407,6 +429,27 @@ describe("routes /api/voice", () => {
 			});
 			await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
 			expect(voiceUsageService.incrementAfterSuccess).toHaveBeenCalledWith("user_voice_test", "free");
+			expect(applyOperationCreditUsage).toHaveBeenCalled();
+		});
+
+		it("402 when free tier has exhausted 100 voice exchanges", async () => {
+			(voiceUsageService.getUsedCountForCurrentMonth as jest.Mock).mockResolvedValueOnce(100);
+			const res = await request(app).post("/api/voice/converse").send({ text: "hello" });
+			expect(res.status).toBe(402);
+			expect(res.body.error).toBe("free_tier_exhausted");
+			expect(axios.post).not.toHaveBeenCalled();
+		});
+
+		it("402 when operation credits are blocked", async () => {
+			(canUseOperationCredits as jest.Mock).mockResolvedValueOnce({
+				allowed: false,
+				creditsRemaining: 0,
+				upgradeUrl: "https://claracode.ai/pricing",
+			});
+			const res = await request(app).post("/api/voice/converse").send({ text: "Build a React page" });
+			expect(res.status).toBe(402);
+			expect(res.body.error).toBe("credit_limit_reached");
+			expect(axios.post).not.toHaveBeenCalled();
 		});
 	});
 

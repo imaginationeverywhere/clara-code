@@ -33,13 +33,14 @@ describe("VoiceUsageService", () => {
 		expect(VoiceUsage.findOne).not.toHaveBeenCalled();
 	});
 
-	it("checkAndIncrement returns true for free when under limit", async () => {
-		(VoiceUsage.findOne as jest.Mock).mockResolvedValueOnce({ exchangeCount: 99 });
+	it("checkAndIncrement: free under cap allows", async () => {
+		(VoiceUsage.findOne as jest.Mock).mockResolvedValueOnce({ exchangeCount: 0 });
 		const ok = await service.checkAndIncrement("u1", "free");
 		expect(ok).toBe(true);
+		expect(VoiceUsage.findOne).toHaveBeenCalled();
 	});
 
-	it("checkAndIncrement returns false for free at 100", async () => {
+	it("checkAndIncrement: free at cap disallows", async () => {
 		(VoiceUsage.findOne as jest.Mock).mockResolvedValueOnce({ exchangeCount: 100 });
 		const ok = await service.checkAndIncrement("u1", "free");
 		expect(ok).toBe(false);
@@ -52,10 +53,16 @@ describe("VoiceUsageService", () => {
 		expect(inc).toHaveBeenCalledWith("exchangeCount", { by: 1, transaction: undefined });
 	});
 
-	it("getUsage returns unlimited shape for business", async () => {
+	it("getUsage: business reports limit null", async () => {
 		(VoiceUsage.findOne as jest.Mock).mockResolvedValueOnce({ exchangeCount: 500 });
 		const u = await service.getUsage("u1", "business");
 		expect(u.limit).toBeNull();
 		expect(u.used).toBe(500);
+	});
+
+	it("getUsage: free reports monthly cap", async () => {
+		(VoiceUsage.findOne as jest.Mock).mockResolvedValueOnce({ exchangeCount: 0 });
+		const u = await service.getUsage("u1", "free");
+		expect(u.limit).toBe(100);
 	});
 });

@@ -52,9 +52,15 @@ jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn(), warn: jest.fn(), info: jest.fn() },
 }));
 
+jest.mock("@/services/clerk-sync.service", () => ({
+	syncClerkMetadata: jest.fn().mockResolvedValue(undefined),
+}));
+
 import { getTalentRegistryService } from "@/features/talent-registry/talent-registry-instance";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
+import { syncClerkMetadata } from "@/services/clerk-sync.service";
+import { logger } from "@/utils/logger";
 
 describe("stripeWebhookHandler events", () => {
 	const origSecret = process.env.STRIPE_WEBHOOK_SECRET;
@@ -105,6 +111,8 @@ describe("stripeWebhookHandler events", () => {
 		});
 		mockRetrieve.mockResolvedValue({
 			status: "active",
+			trial_end: null,
+			cancel_at_period_end: false,
 			current_period_start: Math.floor(Date.now() / 1000),
 			current_period_end: Math.floor(Date.now() / 1000) + 1000,
 		});
@@ -117,6 +125,34 @@ describe("stripeWebhookHandler events", () => {
 		await stripeWebhookHandler(req, res);
 		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
 		expect(ApiKey.create).toHaveBeenCalled();
+	});
+
+	it("processes checkout.session.completed for basic tier and syncs Clerk", async () => {
+		mockConstructEvent.mockReturnValue({
+			type: "checkout.session.completed",
+			data: {
+				object: {
+					metadata: { clerk_user_id: "user_b", tier: "basic" },
+					subscription: "sub_2",
+					customer: "cus_2",
+				},
+			},
+		});
+		mockRetrieve.mockResolvedValue({
+			status: "trialing",
+			trial_end: Math.floor(Date.now() / 1000) + 86400 * 7,
+			cancel_at_period_end: false,
+			current_period_start: Math.floor(Date.now() / 1000),
+			current_period_end: Math.floor(Date.now() / 1000) + 1000,
+		});
+		const row = { update: jest.fn().mockResolvedValue(undefined) };
+		(Subscription.findOrCreate as jest.Mock).mockResolvedValueOnce([row, true]);
+		(ApiKey.create as jest.Mock).mockResolvedValueOnce({});
+
+		const req = makeReq(Buffer.from("{}"));
+		const res = makeRes();
+		await stripeWebhookHandler(req, res);
+		expect(syncClerkMetadata).toHaveBeenCalled();
 	});
 
 	it("processes customer.subscription.deleted", async () => {
@@ -136,6 +172,23 @@ describe("stripeWebhookHandler events", () => {
 		await stripeWebhookHandler(req, res);
 		expect(Subscription.update).toHaveBeenCalled();
 		expect((res.json as jest.Mock).mock.calls[0][0]).toEqual({ received: true });
+	});
+
+	it("logs invoice.payment_failed", async () => {
+		mockConstructEvent.mockReturnValue({
+			type: "invoice.payment_failed",
+			data: {
+				object: {
+					id: "in_1",
+					customer: "cus_1",
+					subscription: "sub_1",
+				},
+			},
+		});
+		const req = makeReq(Buffer.from("{}"));
+		const res = makeRes();
+		await stripeWebhookHandler(req, res);
+		expect((logger as unknown as { warn: jest.Mock }).warn).toHaveBeenCalled();
 	});
 
 	it("checkout.session.completed activates Developer Program when metadata.type is developer_program", async () => {

@@ -1,4 +1,5 @@
 import { type Response, Router } from "express";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Agent } from "@/models/Agent";
@@ -25,6 +26,7 @@ function pricingUrl(): string {
 router.get(
 	"/templates",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const where: { isPublic: boolean; category?: string; industryVertical?: string } = { isPublic: true };
 		const cat = typeof req.query.category === "string" ? req.query.category.trim() : "";
@@ -50,6 +52,7 @@ router.get(
 router.get(
 	"/",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -64,6 +67,7 @@ router.get(
 router.post(
 	"/configure",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -116,6 +120,7 @@ router.post(
 router.post(
 	"/",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -192,6 +197,7 @@ router.post(
 router.post(
 	"/message",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -247,6 +253,7 @@ router.post(
 router.get(
 	"/inbox",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -268,6 +275,7 @@ router.get(
 router.get(
 	"/thread/:threadId",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -284,6 +292,7 @@ router.get(
 router.delete(
 	"/:id",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {

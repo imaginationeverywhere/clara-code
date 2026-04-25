@@ -1,4 +1,5 @@
 import { type Response, Router } from "express";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { mobileNoteCapture } from "@/services/mobile-note-capture.service";
@@ -8,6 +9,7 @@ const router: ReturnType<typeof Router> = Router();
 router.post(
 	"/capture",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -46,6 +48,7 @@ router.post(
 router.get(
 	"/pending",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -60,6 +63,7 @@ router.get(
 router.post(
 	"/:id/approve",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -79,6 +83,7 @@ router.post(
 router.post(
 	"/:id/reject",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -98,6 +103,7 @@ router.post(
 router.post(
 	"/:id/shipped",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {

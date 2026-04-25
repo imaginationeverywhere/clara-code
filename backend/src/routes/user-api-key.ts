@@ -4,6 +4,7 @@ import { Op } from "sequelize";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { ApiKey } from "@/models/ApiKey";
 import { Subscription } from "@/models/Subscription";
+import { toPlanTier } from "@/services/plan-limits";
 import { type ApiKeyTier, generateApiKey } from "@/utils/api-key";
 import { logger } from "@/utils/logger";
 
@@ -50,11 +51,12 @@ router.post("/api-key/regenerate", async (req: AuthenticatedRequest, res: Respon
 		}
 
 		const sub = await Subscription.findOne({ where: { userId: auth.userId } });
-		const tier = (sub?.tier ?? "free") as ApiKeyTier;
-		if (tier !== "pro" && tier !== "business") {
-			res.status(403).json({ error: "Active Pro or Business subscription required" });
+		const plan = toPlanTier(sub?.tier);
+		if (plan === "free") {
+			res.status(403).json({ error: "Active paid subscription required" });
 			return;
 		}
+		const tier = plan as ApiKeyTier;
 
 		await ApiKey.update({ isActive: false }, { where: { userId: auth.userId, keyHash: { [Op.ne]: null } } });
 

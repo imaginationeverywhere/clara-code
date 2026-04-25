@@ -1,4 +1,5 @@
 import { type Response, Router } from "express";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { claraScrumService } from "@/services/clara-scrum.service";
@@ -10,6 +11,7 @@ const router: ReturnType<typeof Router> = Router();
 router.get(
 	"/active",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -24,6 +26,7 @@ router.get(
 router.get(
 	"/velocity",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -38,6 +41,7 @@ router.get(
 router.get(
 	"/profile",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -52,6 +56,7 @@ router.get(
 router.get(
 	"/standup/agent",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -71,6 +76,7 @@ router.get(
 router.post(
 	"/standup/team",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -92,6 +98,7 @@ router.post(
 router.post(
 	"/",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -111,6 +118,7 @@ router.post(
 router.post(
 	"/:sprintId/tasks",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -134,6 +142,7 @@ router.post(
 router.patch(
 	"/tasks/:taskId",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const { status, blocker } = req.body as { status?: string; blocker?: string };
 		if (!status) {
@@ -152,6 +161,7 @@ router.patch(
 router.post(
 	"/:sprintId/standup",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {

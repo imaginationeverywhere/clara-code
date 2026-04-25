@@ -81,6 +81,8 @@ The CLI is a thin HTTP client. It captures audio, sends it to `api.claracode.ai`
 
 This is the same model as Claude Code (`npm install -g @anthropic-ai/claude-code`), the Stripe CLI, and the Vercel CLI: the tool is open, the platform is the product. A valid subscription is required to make the API respond. Without it, the CLI is an empty shell.
 
+Billing and tier enforcement are documented in `docs/backend-rest-api.md` (`/api/checkout/create-session`, `/api/billing/*`, Stripe webhooks, harness talents, and abuse preflight on authenticated routes).
+
 See `CONTRIBUTING.md` for the full thin-client discipline rules that govern what may and may not appear in this repository's client-side code.
 
 ---

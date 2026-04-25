@@ -10,15 +10,27 @@ import {
 	resolveModel,
 } from "@/config/models";
 import type { HookContext } from "@/lib/hooks";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { filterConverseResponsePayload } from "@/middleware/agent-output-filter";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { voiceLimiter } from "@/middleware/rate-limit";
-import { voiceLimitMiddleware } from "@/middleware/voice-limit";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
+import {
+	type AbuseModelUsed,
+	abuseModelFromModelChoice,
+	abuseProtectionService,
+} from "@/services/abuse-protection.service";
+import { buildConversionPrompt } from "@/services/clara-conversion.service";
+import { hermesClient } from "@/services/hermes-client.service";
 import { hookBus } from "@/services/hook-bus.service";
+import { inferenceCache } from "@/services/inference-cache.service";
 import { type HistoryEntry, memoryService } from "@/services/memory.service";
-import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
+import { type ModelChoice, modelRouter } from "@/services/model-router.service";
+import { applyOperationCreditUsage, canUseOperationCredits } from "@/services/operation-credit.service";
+import { classifyOperation } from "@/services/operation-weights";
+import { type PlanTier, toPlanTier } from "@/services/plan-limits";
+import { FREE_MONTHLY_LIMIT, type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 import { silenceWav } from "@/utils/silence-wav";
 
@@ -44,6 +56,48 @@ function hermesApiKey(): string | undefined {
 // Modal A10G GPU scales to zero; first request after idle loads Whisper + XTTS (60–120s).
 // Give ourselves headroom so the CLI's warmup UX is what the user sees, not an axios timeout.
 const HERMES_TIMEOUT_MS = 150_000;
+
+function ttsModelUsed(m: ModelConfig | undefined): AbuseModelUsed {
+	if (!m) {
+		return "gemma";
+	}
+	if (m.name === "mary" || m.name === "nikki") {
+		return "premium";
+	}
+	return "gemma";
+}
+
+function inferConverseModel(data: unknown): {
+	modelUsed: AbuseModelUsed;
+	inputTokens: number;
+	outputTokens: number;
+	modalSeconds: number;
+	cacheHit: boolean;
+} {
+	const d = (data && typeof data === "object" ? (data as Record<string, unknown>) : {}) as Record<string, unknown>;
+	const raw = d.model_used;
+	let modelUsed: AbuseModelUsed = "gemma";
+	if (raw === "kimi" || raw === "deepseek" || raw === "premium" || raw === "gemma") {
+		modelUsed = raw;
+	}
+	return {
+		modelUsed,
+		inputTokens:
+			typeof d.bedrock_input_tokens === "number"
+				? d.bedrock_input_tokens
+				: typeof d.input_tokens === "number"
+					? d.input_tokens
+					: 0,
+		outputTokens:
+			typeof d.bedrock_output_tokens === "number"
+				? d.bedrock_output_tokens
+				: typeof d.output_tokens === "number"
+					? d.output_tokens
+					: 0,
+		modalSeconds: typeof d.modal_seconds === "number" ? d.modal_seconds : 1.2,
+		cacheHit: d.cache_hit === true,
+	};
+}
 
 function hermesHeaders(extra?: Record<string, string>): Record<string, string> {
 	const key = hermesApiKey();
@@ -73,8 +127,8 @@ function ttsBaseUrl(inferenceBackend: string): string {
 router.post(
 	"/greet",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	voiceLimiter,
-	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const { text, voice_id, model } = req.body as { text?: string; voice_id?: string; model?: string };
@@ -111,6 +165,16 @@ router.post(
 			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+				await abuseProtectionService.recordUsage({
+					userId,
+					agentId: "clara",
+					modelUsed: ttsModelUsed(resolvedModel),
+					taskType: "voice_greet",
+					bedrockInputTokens: 0,
+					bedrockOutputTokens: 0,
+					modalComputeSeconds: 0.4,
+					cacheHit: false,
+				});
 			}
 
 			res.set("Content-Type", "audio/wav");
@@ -126,8 +190,8 @@ router.post(
 router.post(
 	"/speak",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	voiceLimiter,
-	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const { text, voice_id, model } = req.body as { text?: string; voice_id?: string; model?: string };
@@ -166,6 +230,16 @@ router.post(
 			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+				await abuseProtectionService.recordUsage({
+					userId,
+					agentId: "clara",
+					modelUsed: ttsModelUsed(resolvedModel),
+					taskType: "voice_speak",
+					bedrockInputTokens: 0,
+					bedrockOutputTokens: 0,
+					modalComputeSeconds: Math.max(0.1, (text as string).length * 0.0005),
+					cacheHit: false,
+				});
 			}
 
 			res.set("Content-Type", "audio/wav");
@@ -190,6 +264,7 @@ router.post(
 router.post(
 	"/stt",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	voiceLimiter,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
@@ -200,6 +275,18 @@ router.post(
 					(typeof headerStub === "string" && headerStub.length > 0 ? headerStub : undefined) ??
 					(typeof body.stubText === "string" && body.stubText.length > 0 ? body.stubText : undefined) ??
 					"add a hello world function to this file";
+				if (req.claraUser?.userId) {
+					void abuseProtectionService.recordUsage({
+						userId: req.claraUser.userId,
+						agentId: "clara",
+						modelUsed: "gemma",
+						taskType: "voice_stt",
+						bedrockInputTokens: 0,
+						bedrockOutputTokens: 0,
+						modalComputeSeconds: 0.1,
+						cacheHit: true,
+					});
+				}
 				res.json({ transcript, stub: true });
 				return;
 			}
@@ -225,6 +312,18 @@ router.post(
 				{ timeout: HERMES_TIMEOUT_MS, headers: hermesHeaders() },
 			);
 			const data = response.data as { transcript?: string };
+			if (req.claraUser?.userId) {
+				void abuseProtectionService.recordUsage({
+					userId: req.claraUser.userId,
+					agentId: "clara",
+					modelUsed: "gemma",
+					taskType: "voice_stt",
+					bedrockInputTokens: 0,
+					bedrockOutputTokens: 0,
+					modalComputeSeconds: 0.35,
+					cacheHit: false,
+				});
+			}
 			res.json({ transcript: data.transcript ?? "", stub: false });
 		} catch (error) {
 			logger.error("Voice stt error:", error);
@@ -244,8 +343,8 @@ router.post(
 router.post(
 	"/tts",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	voiceLimiter,
-	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			const { text, voice_id } = (req.body ?? {}) as { text?: string; voice_id?: string };
@@ -255,6 +354,19 @@ router.post(
 			}
 
 			if (voiceDevStubEnabled()) {
+				const uid = req.claraUser?.userId;
+				if (uid) {
+					void abuseProtectionService.recordUsage({
+						userId: uid,
+						agentId: "clara",
+						modelUsed: "gemma",
+						taskType: "voice_tts",
+						bedrockInputTokens: 0,
+						bedrockOutputTokens: 0,
+						modalComputeSeconds: 0.05,
+						cacheHit: true,
+					});
+				}
 				res.set("Content-Type", "audio/wav");
 				res.set("x-clara-voice-stub", "1");
 				res.send(silenceWav(1));
@@ -281,6 +393,16 @@ router.post(
 			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+				await abuseProtectionService.recordUsage({
+					userId,
+					agentId: "clara",
+					modelUsed: "gemma",
+					taskType: "voice_tts",
+					bedrockInputTokens: 0,
+					bedrockOutputTokens: 0,
+					modalComputeSeconds: Math.max(0.1, text.length * 0.0005),
+					cacheHit: false,
+				});
 			}
 
 			res.set("Content-Type", "audio/wav");
@@ -309,6 +431,7 @@ function converseApiKey(): string | undefined {
 router.get(
 	"/memory",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -329,8 +452,8 @@ router.get(
 router.post(
 	"/converse",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	voiceLimiter,
-	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const body = (req.body ?? {}) as {
 			audio_base64?: string;
@@ -343,6 +466,9 @@ router.post(
 			surface?: string;
 			deployment_id?: string;
 			agent_name?: string;
+			agent_soul_md?: string;
+			explicit_premium?: boolean;
+			deepest_plugin?: boolean;
 		};
 		const {
 			audio_base64,
@@ -352,6 +478,9 @@ router.post(
 			session_id,
 			agent_id = "clara",
 			surface = "cli",
+			agent_soul_md,
+			explicit_premium,
+			deepest_plugin,
 		} = body;
 		let text: string | undefined = typeof body.text === "string" ? body.text : undefined;
 
@@ -362,19 +491,40 @@ router.post(
 			return;
 		}
 
-		const base = converseVoiceBase();
-		if (!base) {
-			res.status(503).json({ error: "Voice service is not available" });
-			return;
-		}
-		const apiKey = converseApiKey();
-		if (!apiKey) {
-			logger.error("CLARA_VOICE_API_KEY / HERMES_API_KEY is not set — refusing to proxy to voice server");
-			res.status(503).json({ error: "Voice service is not available" });
-			return;
-		}
-
 		const userId = req.claraUser?.userId;
+		const useRoutedTextInference =
+			!hasAudio &&
+			hasText &&
+			Boolean(userId) &&
+			(process.env.ENABLE_INFERENCE_ROUTER === "1" || process.env.ENABLE_INFERENCE_ROUTER === "true") &&
+			hermesClient.isConfigured();
+		const planTier: PlanTier = toPlanTier(req.claraUser?.tier);
+		const userMessageForCredits = typeof body.text === "string" ? body.text : "";
+		const opCategory = classifyOperation(userMessageForCredits);
+		if (userId) {
+			if (planTier === "free") {
+				const used = await voiceUsageService.getUsedCountForCurrentMonth(userId);
+				if (used >= FREE_MONTHLY_LIMIT) {
+					res.status(402).json({
+						error: "free_tier_exhausted",
+						message: buildConversionPrompt(used),
+						credits_remaining: 0,
+						upgrade_url: "https://claracode.ai/pricing",
+					});
+					return;
+				}
+			}
+			const creditCheck = await canUseOperationCredits(userId, agent_id, planTier, opCategory);
+			if (!creditCheck.allowed) {
+				res.status(402).json({
+					error: "credit_limit_reached",
+					message: "You've used your monthly operation credits. Upgrade to continue.",
+					credits_remaining: creditCheck.creditsRemaining,
+					upgrade_url: creditCheck.upgradeUrl,
+				});
+				return;
+			}
+		}
 		const sessionId = session_id ?? (userId ? `${userId}-${agent_id}-fallback` : "anonymous");
 		const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
 
@@ -425,9 +575,127 @@ router.post(
 			memoryHistory = memoryService.buildHistory(context);
 		}
 
+		const base = converseVoiceBase();
+		const apiKey = converseApiKey();
+		if (!useRoutedTextInference) {
+			if (!base) {
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
+			if (!apiKey) {
+				logger.error("CLARA_VOICE_API_KEY / HERMES_API_KEY is not set — refusing to proxy to voice server");
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
+		}
+
 		const includeText = typeof text === "string";
 
 		try {
+			/** Opt-in: text-only, Hermes /inference + local routing + cache. Falls back to full voice proxy on error. */
+			if (useRoutedTextInference && userId && includeText) {
+				const userMsg = text as string;
+				const soul = typeof agent_soul_md === "string" && agent_soul_md.length > 0 ? agent_soul_md : "";
+				const histForKey: unknown[] = (memoryHistory as unknown[]) ?? [];
+				const tokenEst = Math.max(
+					1,
+					Math.floor(JSON.stringify({ history: memoryHistory, user: userMsg }).length / 4),
+				);
+				try {
+					const cached = await inferenceCache.get(soul, histForKey, userMsg);
+					if (cached) {
+						const abuseM = abuseModelFromModelChoice(cached.modelUsed);
+						await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+						await applyOperationCreditUsage(userId, agent_id, planTier, opCategory);
+						await abuseProtectionService.recordUsage({
+							userId,
+							agentId: agent_id,
+							modelUsed: abuseM,
+							taskType: "voice_convo",
+							bedrockInputTokens: 0,
+							bedrockOutputTokens: 0,
+							modalComputeSeconds: 0,
+							cacheHit: true,
+						});
+						void memoryService
+							.saveTurn(userId, agent_id, sessionId, surface, "user", userMsg)
+							.then(() => memoryService.saveTurn(userId, agent_id, sessionId, surface, "assistant", cached.text))
+							.catch((err) => logger.error("[memory] background save failed:", err));
+						const { payload: safe } = filterConverseResponsePayload(
+							{ response_text: cached.text, transcript: userMsg, cached: true, routed_inference: true },
+							userId,
+							agent_id,
+						);
+						res.json(safe);
+						return;
+					}
+					const routingCtx = {
+						userId,
+						tier: planTier,
+						taskType: "voice_convo" as const,
+						inputTokenEstimate: tokenEst,
+						userHasDeepestPlugin: deepest_plugin === true,
+						explicitPremiumRequest: explicit_premium === true,
+					};
+					const selectedModel: ModelChoice = modelRouter.selectModel(routingCtx);
+					const reqBody: {
+						model: ModelChoice;
+						prompt: string;
+						history: Array<{ role: "user" | "assistant"; content: string }>;
+						maxTokens: number;
+						systemPrompt?: string;
+					} = {
+						model: selectedModel,
+						prompt: userMsg,
+						history: memoryHistory as Array<{ role: "user" | "assistant"; content: string }>,
+						maxTokens: max_tokens,
+					};
+					if (soul.length > 0) {
+						reqBody.systemPrompt = soul;
+					}
+					const inf = await hermesClient.inference(reqBody, routingCtx);
+					await inferenceCache.set(soul, histForKey, userMsg, inf);
+					const abuseOut = abuseModelFromModelChoice(inf.modelUsed);
+					await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+					await applyOperationCreditUsage(userId, agent_id, planTier, opCategory);
+					await abuseProtectionService.recordUsage({
+						userId,
+						agentId: agent_id,
+						modelUsed: abuseOut,
+						taskType: "voice_convo",
+						bedrockInputTokens: inf.inputTokens,
+						bedrockOutputTokens: inf.outputTokens,
+						modalComputeSeconds: inf.modalComputeSeconds,
+						cacheHit: false,
+					});
+					void memoryService
+						.saveTurn(userId, agent_id, sessionId, surface, "user", userMsg)
+						.then(() => memoryService.saveTurn(userId, agent_id, sessionId, surface, "assistant", inf.text))
+						.catch((err) => logger.error("[memory] background save failed:", err));
+					const { payload: safePl } = filterConverseResponsePayload(
+						{
+							response_text: inf.text,
+							transcript: userMsg,
+							routed_inference: true,
+							latency_ms: inf.latencyMs,
+						},
+						userId,
+						agent_id,
+					);
+					res.json(safePl);
+					return;
+				} catch (e) {
+					if (!base || !apiKey) {
+						throw e;
+					}
+					logger.warn("[voice/converse] routed text inference failed, falling back to full voice proxy", e);
+				}
+			}
+
+			if (!base || !apiKey) {
+				res.status(503).json({ error: "Voice service is not available" });
+				return;
+			}
 			const response = await axios.post(
 				`${base}/voice/converse`,
 				{
@@ -446,6 +714,18 @@ router.post(
 			);
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
+				await applyOperationCreditUsage(userId, agent_id, planTier, opCategory);
+				const inf = inferConverseModel(response.data);
+				void abuseProtectionService.recordUsage({
+					userId,
+					agentId: agent_id,
+					modelUsed: inf.modelUsed,
+					taskType: "voice_convo",
+					bedrockInputTokens: inf.inputTokens,
+					bedrockOutputTokens: inf.outputTokens,
+					modalComputeSeconds: inf.modalSeconds,
+					cacheHit: inf.cacheHit,
+				});
 			}
 			if (userId) {
 				const userContent = hasText ? (text ?? "") : "[audio]";

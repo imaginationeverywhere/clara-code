@@ -4,7 +4,13 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-25
 
+### Changed
+
+- **Monorepo version** — root `package.json` **`0.4.2` → `0.5.0`**. **`@clara-code/backend`** **`1.2.0` → `1.3.0`**. **`@clara/web-ui` / `frontend`** **`0.1.2` → `0.1.3`**. **`@claracode/sdk`** **`0.2.0` → `0.3.0`**. See **`backend/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**, **`packages/sdk/CHANGELOG.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**.
+
 ### Added
+
+- **Usage telemetry, abuse preflight, operation credits, harness talents, optional Hermes inference router, Stripe billing + Clerk tier sync** — SQL `038`–`041`; `requireAbuseCheck` on authenticated REST; `POST /api/billing/*` + webhook alias; `/api/harness-talents`; SDK harness helpers; frontend billing BFF. Prompts **11**, **14**, **18**, **22** completed (see `prompts/` `3-completed/`). Details: **`backend/CHANGELOG.md`** (primary), **`frontend/CHANGELOG.md`**, **`packages/sdk/CHANGELOG.md`**.
 
 - **Product prompt 14 (supersedes prior draft)** — `prompts/2026/April/23/1-not-started/14-talents-per-agent-tier-caps.md` replaces `14-skills-per-agent-and-voice-limits.md`. Scope: per-tier **Talents** attach caps, Talent Library inventory, wallet purchase; voice limits remain on tier ladder + abuse docs per pricing cross-links. See `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 

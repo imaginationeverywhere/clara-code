@@ -25,4 +25,13 @@ export class Subscription extends Model {
 
 	@Column({ type: DataType.DATE, allowNull: true })
 	declare currentPeriodEnd: Date | null;
+
+	@Column({ type: DataType.DATE, allowNull: true, field: "trial_ends_at" })
+	declare trialEndsAt: Date | null;
+
+	@Column({ type: DataType.BOOLEAN, allowNull: false, defaultValue: false, field: "cancel_at_period_end" })
+	declare cancelAtPeriodEnd: boolean;
+
+	@Column({ type: DataType.JSONB, allowNull: true, field: "enterprise_contract" })
+	declare enterpriseContract: Record<string, unknown> | null;
 }

@@ -1,10 +1,89 @@
 /**
- * Subscription tier ordering for product gates. Maps loose API tier strings
- * (from Clerk / API keys) onto a single `PlanTier` order.
- * Full PLAN_LIMITS table lives in prompt-11; this is the shared comparator for MCP, etc.
+ * Subscription tier ordering and plan limits. Maps loose API tier strings
+ * (Clerk, API keys) to `PlanTier` and exposes canonical `PLAN_LIMITS` (prompt 11).
  */
 
 export type PlanTier = "free" | "basic" | "pro" | "max" | "business" | "enterprise";
+
+export type MarketplaceTier = "none" | "list" | "publish" | "publish_white_label";
+export type MemoryScope = "personal_vault" | "team_vault" | "federated";
+
+export interface PlanConfig {
+	price: number;
+	/** null = custom / unlimited (Enterprise) */
+	configurableAgents: number | null;
+	/** null = unlimited skills per agent */
+	skillsPerAgent: number | null;
+	canBuildAgents: boolean;
+	runtimeAgentBuildsPerMonth: number | null;
+	marketplaceTier: MarketplaceTier;
+	memoryScope: MemoryScope;
+	/** null = no auto-freeze (Enterprise) */
+	monthlyCogsHardCap: number | null;
+}
+
+export const PLAN_LIMITS: Record<PlanTier, PlanConfig> = {
+	free: {
+		price: 0,
+		configurableAgents: 1,
+		skillsPerAgent: 3,
+		canBuildAgents: false,
+		runtimeAgentBuildsPerMonth: 0,
+		marketplaceTier: "none",
+		memoryScope: "personal_vault",
+		monthlyCogsHardCap: 20,
+	},
+	basic: {
+		price: 39,
+		configurableAgents: 1,
+		skillsPerAgent: 5,
+		canBuildAgents: false,
+		runtimeAgentBuildsPerMonth: 0,
+		marketplaceTier: "none",
+		memoryScope: "personal_vault",
+		monthlyCogsHardCap: 30,
+	},
+	pro: {
+		price: 69,
+		configurableAgents: 3,
+		skillsPerAgent: 7,
+		canBuildAgents: false,
+		runtimeAgentBuildsPerMonth: 0,
+		marketplaceTier: "none",
+		memoryScope: "personal_vault",
+		monthlyCogsHardCap: 50,
+	},
+	max: {
+		price: 99,
+		configurableAgents: 6,
+		skillsPerAgent: 10,
+		canBuildAgents: false,
+		runtimeAgentBuildsPerMonth: 0,
+		marketplaceTier: "list",
+		memoryScope: "personal_vault",
+		monthlyCogsHardCap: 75,
+	},
+	business: {
+		price: 299,
+		configurableAgents: 12,
+		skillsPerAgent: 15,
+		canBuildAgents: true,
+		runtimeAgentBuildsPerMonth: null,
+		marketplaceTier: "publish",
+		memoryScope: "team_vault",
+		monthlyCogsHardCap: 250,
+	},
+	enterprise: {
+		price: 4000,
+		configurableAgents: null,
+		skillsPerAgent: null,
+		canBuildAgents: true,
+		runtimeAgentBuildsPerMonth: null,
+		marketplaceTier: "publish_white_label",
+		memoryScope: "federated",
+		monthlyCogsHardCap: null,
+	},
+};
 
 export const TIER_ORDER: Record<PlanTier, number> = {
 	free: 0,
@@ -27,41 +106,38 @@ const ALIASES: Record<string, PlanTier> = {
 	enterprise: "enterprise",
 };
 
-/**
- * Coerce a subscription or API key tier string into a `PlanTier`.
- * Unknown values map to `free` so feature gates default closed when unsure.
- */
+export const UNIVERSAL_INCLUSIONS = {
+	unlimitedUsage: true,
+	premiumVoice: true,
+	customVoiceCloning: true,
+	aiThinkingQuality: "best" as const,
+} as const;
+
+/** Per-minute request ceiling (all tiers) — anti-bot, not a product cap. */
+export const RATE_LIMIT_PER_MINUTE = 120;
+
+/** Excessive “active” hours in a month → support review; does not block. */
+export const REVIEW_TRIGGER_HOURS = 300;
+
 export function toPlanTier(raw: string | undefined | null): PlanTier {
 	if (raw == null || raw.length === 0) {
 		return "free";
 	}
 	const n = raw.toLowerCase().trim();
-	return ALIASES[n] ?? (n in TIER_ORDER ? (n as PlanTier) : "free");
+	const fromAlias = ALIASES[n];
+	if (fromAlias) {
+		return fromAlias;
+	}
+	if (n in TIER_ORDER) {
+		return n as PlanTier;
+	}
+	return "free";
 }
 
 export function tierGte(tier: PlanTier, min: PlanTier): boolean {
 	return TIER_ORDER[tier] >= TIER_ORDER[min];
 }
 
-/** Runtime (customer-facing) agents require Business or Enterprise — maps to "Small Business" in product copy. */
 export function tierCanBuildRuntimeAgents(tier: PlanTier): boolean {
 	return tier === "business" || tier === "enterprise";
 }
-
-/**
- * Per-tier caps for user-configured harness agents (`/config-agent`, `user_agents` table).
- * `skillsPerAgent` of `null` means no cap.
- */
-export type PlanLimitsConfig = {
-	harnessAgentSlots: number;
-	skillsPerAgent: number | null;
-};
-
-export const PLAN_LIMITS: Record<PlanTier, PlanLimitsConfig> = {
-	free: { harnessAgentSlots: 1, skillsPerAgent: 3 },
-	basic: { harnessAgentSlots: 2, skillsPerAgent: 4 },
-	pro: { harnessAgentSlots: 4, skillsPerAgent: 6 },
-	max: { harnessAgentSlots: 6, skillsPerAgent: 8 },
-	business: { harnessAgentSlots: 10, skillsPerAgent: 12 },
-	enterprise: { harnessAgentSlots: 20, skillsPerAgent: null },
-};

@@ -1,7 +1,8 @@
 import type { Transaction } from "sequelize";
 import { VoiceUsage } from "@/models/VoiceUsage";
+import { type PlanTier, toPlanTier } from "@/services/plan-limits";
 
-export type VoiceTier = "free" | "pro" | "business";
+export type VoiceTier = string;
 
 const FREE_MONTHLY_LIMIT = 100;
 
@@ -34,21 +35,38 @@ export class VoiceUsageService {
 		return row?.exchangeCount ?? 0;
 	}
 
-	async getUsage(userId: string, tier: VoiceTier): Promise<{ used: number; limit: number | null; resetDate: string }> {
+	/**
+	 * Free tier: 100 voice exchanges / month, then `buildConversionPrompt` in API responses.
+	 * Paid tiers: no app-facing cap (`limit: null`); `used` is still recorded for product analytics.
+	 */
+	async getUsage(
+		userId: string,
+		tierRaw: VoiceTier,
+	): Promise<{
+		used: number;
+		limit: number | null;
+		resetDate: string;
+	}> {
 		const used = await this.getUsedCountForCurrentMonth(userId);
 		const resetDate = getNextResetDateKey();
-		if (tier === "pro" || tier === "business") {
-			return { used, limit: null, resetDate };
-		}
-		return { used, limit: FREE_MONTHLY_LIMIT, resetDate };
+		const plan = toPlanTier(tierRaw as string);
+		const limit: number | null = plan === "free" ? FREE_MONTHLY_LIMIT : null;
+		return { used, limit, resetDate };
 	}
 
 	/**
-	 * Pre-flight check before starting a voice exchange. Does not increment.
-	 * Returns false when a free-tier user has already reached the monthly cap.
+	 * Whether a new voice *exchange* is allowed (free: under monthly cap; paid: always true).
+	 */
+	async canAddExchange(_userId: string, _tier: VoiceTier): Promise<boolean> {
+		return this.checkAndIncrement(_userId, _tier);
+	}
+
+	/**
+	 * @deprecated use `canAddExchange`
 	 */
 	async checkAndIncrement(userId: string, tier: VoiceTier): Promise<boolean> {
-		if (tier === "pro" || tier === "business") {
+		const plan = toPlanTier(tier as string) as PlanTier;
+		if (plan !== "free") {
 			return true;
 		}
 		const used = await this.getUsedCountForCurrentMonth(userId);
@@ -56,8 +74,7 @@ export class VoiceUsageService {
 	}
 
 	/**
-	 * Records a completed successful voice exchange (increments analytics counter).
-	 * Call only after the upstream voice request succeeds.
+	 * Records a completed successful voice exchange (internal analytics; not shown as a user-facing cap).
 	 */
 	async incrementAfterSuccess(
 		userId: string,

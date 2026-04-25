@@ -16,8 +16,12 @@ This document summarizes **non-GraphQL** HTTP routes on the Clara Code API (`bac
 | `backend/migrations/035_site_owner_interactions.sql` | `site_agent_deployments`, `site_owner_instructions`, `site_owner_change_log` |
 | `backend/migrations/036_mobile_update_queue.sql` | `mobile_update_requests` — voice notes for next app release |
 | `backend/migrations/037_ejections.sql` | `ejections` — export ZIP, fingerprint, attestation metadata |
+| `backend/migrations/038_user_usage_and_usage_events.sql` | `user_usage`, `usage_events` — abuse preflight + usage telemetry |
+| `backend/migrations/039_operation_credits.sql` | `operation_credits` — weighted operation budgets per tier |
+| `backend/migrations/040_harness_talent_catalog_and_wallet.sql` | `user_wallets`, `agent_talent_catalog`, `user_talent_library`, `agent_talent_purchases`, `agent_talent_attachments` |
+| `backend/migrations/041_subscription_billing_columns.sql` | `subscriptions` trial/cancel/enterprise fields + `user_subscriptions` view |
 
-Apply with `psql $DATABASE_URL -f <file>` (or your standard migration process). Template + site-owner + ejections SQL can be reapplied via `npm run seed:templates` in `backend/` (executes 032, 034, 035, 036, 037).
+Apply with `psql $DATABASE_URL -f <file>` (or your standard migration process). Template + site-owner + ejections SQL can be reapplied via `npm run seed:templates` in `backend/` (executes 032, 034, 035, 036, 037). Harness catalog: `pnpm -C backend run seed:talents` (idempotent).
 
 ## `/api/agents`
 
@@ -81,6 +85,35 @@ Requires `EJECTION_S3_BUCKET` + AWS credentials in the API environment. Exports 
 | `POST` | `/:id/attestation` | Body: `signed_pdf_s3_key` — S3 key where the signed attestation PDF was stored. Sets `status=attested`. |
 
 Nightly (03:00 UTC) job `fingerprint-scan` runs stubbed marketplace fingerprint scanners; `Subscription` must be `active` or `trialing` for double-hosting follow-up. See `ejection.service.ts`, `fingerprint-scanners.ts`.
+
+## `/api/harness-talents`
+
+Curated first-party **Talents** (distinct from the marketplace router at `server.ts` `GET/POST /api/talents`). Clerk session or Clara API key. Enforces wallet + per-agent attach caps from `PLAN_LIMITS` / `TALENTS_PER_AGENT_BY_TIER`.
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/` | Catalog + wallet summary + library for the user. |
+| `POST` | `/acquire` | Body: `talent_id` — purchase with wallet credits. |
+| `POST` | `/attach` | Body: `talent_id`, `user_agent_id` — attach talent to a harness agent. |
+| `POST` | `/detach` | Body: `talent_id`, `user_agent_id`. |
+
+## `/api/billing` (Clerk session)
+
+Stripe Checkout and lifecycle (metadata `clara_tier` on recurring prices; no `STRIPE_PRICE_*` env vars). Webhook handler is shared with `POST /api/webhooks/stripe` and **`POST /api/billing/webhook`** (raw JSON body, `Stripe-Signature`).
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `POST` | `/checkout` | Body: `tier` (`basic` \| `pro` \| `max` \| `business`), optional `success_url`, `cancel_url`. Returns `checkout_url` / `url`. |
+| `POST` | `/cancel` | `cancel_at_period_end` on the Stripe subscription. |
+| `POST` | `/upgrade` | Body: `newTier` — proration `always_invoice`. |
+| `POST` | `/downgrade` | Body: `newTier` — `proration_behavior: none` (next invoice). |
+| `POST` | `/refund` | Trial: cancel without charge; else refund first paid period within 7 days of `current_period_start`. |
+
+Enterprise is **not** self-serve: `npm run provision:enterprise -- --user=<clerk_id> [--seats=…]` in `backend/`.
+
+## Abuse preflight and jobs
+
+Most authenticated `/api/*` routes use `requireAbuseCheck` (Redis-backed preflight; fail-open if Redis down). Nightly **02:00 UTC** job `routing-distribution-daily` aggregates `usage_events` by `model_used` (Hermes routing telemetry).
 
 ## Voice memory integration
 

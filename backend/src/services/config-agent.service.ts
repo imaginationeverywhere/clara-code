@@ -33,8 +33,9 @@ export class ConfigAgentService {
 		const existing = await UserAgent.count({
 			where: { userId: input.userId, isActive: true },
 		});
-		if (existing >= limits.harnessAgentSlots) {
-			throw new Error(`harness_limit_reached:${limits.harnessAgentSlots}`);
+		const cap = limits.configurableAgents;
+		if (cap !== null && existing >= cap) {
+			throw new Error(`harness_limit_reached:${String(cap)}`);
 		}
 
 		if (limits.skillsPerAgent !== null && input.skillIds.length > limits.skillsPerAgent) {

@@ -4,9 +4,13 @@
 
 ### Added
 
+- **Billing API route (BFF)** — `src/app/api/billing/[[...path]]/route.ts` proxies authenticated `GET`/`POST` to `NEXT_PUBLIC_BACKEND_URL/api/billing/*` (checkout, cancel, upgrade, downgrade, refund) with the Clerk session token.
+
 - **Quarterly ejection attestation** — `QuarterlyAttestation` modal + `useQuarterlyAttestation` (Clerk + `/api/ejections`); shown once per quarter when the user has any ejections. Wired into `(app)/layout.tsx`.
 
 ### Changed
+
+- **Package version** — `0.1.2` → **`0.1.3`** (billing BFF route; see **Added** above).
 
 - **Package version** — `0.1.1` → **`0.1.2`** (quarterly attestation UI; see **Added** above).
 - `InstallCommandCopyButton` — clipboard helper for the marketing install block.

@@ -1,9 +1,11 @@
 import { Agent } from "@/models/Agent";
 import { AgentUserMemory } from "@/models/AgentUserMemory";
 import { ConversationTurn } from "@/models/ConversationTurn";
+import { UserAgent } from "@/models/UserAgent";
 import { type AgentMessageView, agentMessagingService } from "@/services/agent-messaging.service";
 import { agentPhaseService } from "@/services/agent-phase.service";
 import { claraScrumService } from "@/services/clara-scrum.service";
+import { talentService } from "@/services/talent.service";
 import { logger } from "@/utils/logger";
 import { isUuidString } from "@/utils/uuid";
 
@@ -29,6 +31,7 @@ export type MemoryContext = {
 	totalSessions: number;
 	isReturningUser: boolean;
 	phaseContextPrefix: string | null;
+	talentLayer0: string | null;
 	inboxMessages: AgentMessageView[];
 	userProfile: MemoryUserProfileSlice | null;
 };
@@ -55,6 +58,7 @@ export class MemoryService {
 	async getMemoryContext(userId: string, agentId: string = "clara"): Promise<MemoryContext> {
 		try {
 			let phaseContextPrefix: string | null = null;
+			let talentLayer0: string | null = null;
 			if (isUuidString(agentId)) {
 				const agent = await Agent.findOne({ where: { userId, id: agentId } });
 				if (agent) {
@@ -62,6 +66,11 @@ export class MemoryService {
 						agent.phase,
 						agent.industryVertical ?? undefined,
 					);
+				}
+				const userAgent = await UserAgent.findOne({ where: { id: agentId, userId } });
+				if (userAgent) {
+					const t = await talentService.getTalentBlockForUserAgent(userId, userAgent.id);
+					talentLayer0 = t.length > 0 ? t : null;
 				}
 			}
 
@@ -92,6 +101,7 @@ export class MemoryService {
 				totalSessions: total,
 				isReturningUser: total > 0,
 				phaseContextPrefix,
+				talentLayer0: talentLayer0 ?? null,
 				inboxMessages: inbox,
 				userProfile: {
 					displayName: profile.displayName,
@@ -112,6 +122,7 @@ export class MemoryService {
 				totalSessions: 0,
 				isReturningUser: false,
 				phaseContextPrefix: null,
+				talentLayer0: null,
 				inboxMessages: [],
 				userProfile: null,
 			};
@@ -143,6 +154,17 @@ export class MemoryService {
 
 	buildHistory(context: MemoryContext): HistoryEntry[] {
 		const history: HistoryEntry[] = [];
+
+		if (context.talentLayer0) {
+			history.push({
+				role: "user",
+				content: `[ATTACHED TALENTS — Memory layer 0]\n${context.talentLayer0}`,
+			});
+			history.push({
+				role: "assistant",
+				content: "Understood — I will follow these domain modules in this session.",
+			});
+		}
 
 		if (context.phaseContextPrefix) {
 			history.push({ role: "user", content: context.phaseContextPrefix });

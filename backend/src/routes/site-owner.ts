@@ -1,4 +1,5 @@
 import { type Response, Router } from "express";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { requireSiteOwner } from "@/middleware/require-site-owner";
@@ -11,6 +12,7 @@ const router: ReturnType<typeof Router> = Router();
 router.get(
 	"/deployments",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const userId = req.claraUser?.userId;
 		if (!userId) {
@@ -27,6 +29,7 @@ router.get(
 router.post(
 	"/deployments/:deploymentId/instruct",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	requireSiteOwner,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const d = req.deployment;
@@ -68,6 +71,7 @@ router.post(
 router.get(
 	"/deployments/:deploymentId/instructions",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	requireSiteOwner,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const d = req.deployment;
@@ -86,6 +90,7 @@ router.get(
 router.post(
 	"/deployments/:deploymentId/revert/:instructionId",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	requireSiteOwner,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const d = req.deployment;
@@ -109,6 +114,7 @@ router.post(
 router.get(
 	"/deployments/:deploymentId/report",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	requireSiteOwner,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const d = req.deployment;

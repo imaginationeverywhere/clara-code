@@ -49,6 +49,10 @@ jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn(), warn: (...args: unknown[]) => mockWarn(...args), info: jest.fn() },
 }));
 
+jest.mock("@/services/clerk-sync.service", () => ({
+	syncClerkMetadata: jest.fn().mockResolvedValue(undefined),
+}));
+
 import { Subscription } from "@/models/Subscription";
 
 describe("customer.subscription.updated tier resolution", () => {

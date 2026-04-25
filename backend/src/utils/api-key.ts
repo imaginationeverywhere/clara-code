@@ -1,7 +1,7 @@
 import bcrypt from "bcryptjs";
 import crypto from "crypto";
 
-export type ApiKeyTier = "free" | "pro" | "business";
+export type ApiKeyTier = "free" | "basic" | "pro" | "max" | "business" | "enterprise";
 
 export function generateApiKey(tier: ApiKeyTier): {
 	key: string;

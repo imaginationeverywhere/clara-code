@@ -1,4 +1,5 @@
 import { type Response, Router } from "express";
+import { requireAbuseCheck } from "@/middleware/abuse-protection";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Ejection } from "@/models/Ejection";
@@ -9,6 +10,7 @@ const router: ReturnType<typeof Router> = Router();
 router.post(
 	"/agents/:agentId/eject",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			if (!req.claraUser) {
@@ -49,6 +51,7 @@ router.post(
 router.post(
 	"/:id/attestation",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		try {
 			if (!req.claraUser) {
@@ -76,6 +79,7 @@ router.post(
 router.get(
 	"/",
 	requireClaraOrClerk,
+	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		if (!req.claraUser) {
 			res.status(401).json({ error: "unauthorized" });

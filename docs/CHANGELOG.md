@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Added (cross-reference)
+
+- **`docs/backend-rest-api.md`** — Migrations `038`–`041`, `/api/harness-talents`, `/api/billing`, abuse preflight + `routing-distribution-daily` job. Implementation: **`backend/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**, **`packages/sdk/CHANGELOG.md`**, root **`CHANGELOG.md`**. Completed prompts **11**, **14**, **18**, **22** (see `prompts/2026/April/23/3-completed/` and `prompts/2026/April/25/3-completed/`).
+
 ### Changed (cross-reference)
 
 - **Prompt 14 (not started)** — `14-skills-per-agent-and-voice-limits.md` removed; replaced by **`14-talents-per-agent-tier-caps.md`** (Talents per agent, tier caps, Talent Library, wallet purchase flow; supersedes Skills + combined voice-limits draft). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

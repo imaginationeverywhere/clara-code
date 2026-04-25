@@ -32,6 +32,14 @@ jest.mock("@/services/clara-scrum.service", () => ({
 jest.mock("@/utils/logger", () => ({
 	logger: { error: jest.fn() },
 }));
+jest.mock("@/models/UserAgent", () => ({
+	UserAgent: { findOne: jest.fn() },
+}));
+jest.mock("@/services/talent.service", () => ({
+	talentService: {
+		getTalentBlockForUserAgent: jest.fn(async () => ""),
+	},
+}));
 
 import { AgentUserMemory } from "@/models/AgentUserMemory";
 import { ConversationTurn } from "@/models/ConversationTurn";
@@ -60,6 +68,7 @@ function emptyContext(over: Partial<MemoryContext> = {}): MemoryContext {
 		totalSessions: 0,
 		isReturningUser: false,
 		phaseContextPrefix: null,
+		talentLayer0: null,
 		inboxMessages: [],
 		userProfile: null,
 		...over,
