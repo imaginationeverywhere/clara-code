@@ -18,7 +18,7 @@ Pick how deep Clara thinks. Upgrade or downgrade anytime. Independent of voice t
 | Fast | 5,000 interactions | $0.002/interaction |
 | Balanced | 2,000 interactions | $0.01/interaction |
 | Deep | 500 interactions | $0.05/interaction |
-| Deepest | Unlimited (user pays Anthropic directly) | N/A |
+| Deepest | Pass-through (user pays Anthropic directly) | N/A |
 
 ## Per-Request Upsell
 

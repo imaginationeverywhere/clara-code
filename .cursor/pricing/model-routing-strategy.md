@@ -1,6 +1,6 @@
 # Model Routing Strategy — How Hermes Picks the Right Model
 
-> **INTERNAL ONLY.** This is the routing logic inside the Hermes harness that decides which LLM handles each user request. The strategy is what makes "unlimited usage on $39/mo" economically possible.
+> **INTERNAL ONLY.** This is the routing logic inside the Hermes harness that decides which LLM handles each user request. The strategy is what makes generous tier hour pools at $29-$59/mo economically possible.
 
 **Authoritative for:** which model serves what, when we use self-hosted vs Bedrock vs premium, per-model COGS, and the invisible fallback chain.
 
@@ -181,6 +181,6 @@ The difference is ~37×. That's the whole game.
 ## Related Files
 
 - **`pricing/cogs-and-unit-economics.md`** — tier margin math this strategy enables
-- **`pricing/customer-facing-page.md`** — the unlimited-usage story this makes possible
+- **`pricing/customer-facing-page.md`** — the generous tier hour pool story this makes possible
 - **`pricing/voice-tiers.md`** — the self-hosted voice stack (separate from LLM routing)
 - **`pricing/thinking-tiers.md`** — legacy file (thinking tiers are no longer customer-facing; keep for historical reference)

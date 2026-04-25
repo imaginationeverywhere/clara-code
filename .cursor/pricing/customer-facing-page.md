@@ -8,36 +8,40 @@
 
 ## The Pitch (Hero)
 
-> **# Configure your first AI hire for $39.**
+> **# Your AI team. Hundreds of hours of voice. 10× the usage of any platform.**
 >
-> Clara is the brain. You configure specialized agents — a frontend engineer, a backend developer, a voice agent builder — to do the work.
+> Hire your first team for $39/month. Frontend engineer. Accountant. Publicist. Whatever your gig needs — they're yours.
 >
-> No usage limits. No counters. Focus on what you're building.
+> Your team builds voice-first tools for your business — websites, mobile apps, desktop software, CLIs, and voice agents you can sell. Every plan includes generous voice hours (up to 750/month on Clara AI Elite). Heavy reasoning is compute pass-through — no markup.
 
 ---
 
-## Philosophy — Why No Usage Limits
+## Philosophy — 10× The Usage, Zero The Quota Anxiety
 
-Clara Code exists for **Vibe Professionals** — founders, builders, and creators who ship voice-first products: websites, mobile apps, desktop tools, CLIs, and AI agents.
+Clara Code exists for **Vibe Professionals** — founders, builders, and creators who gig their income with voice-first products.
 
-The #1 killer of creative flow is worrying about quotas. Clara doesn't do that. **You use Clara as much as you want.** The subscription covers the compute. We route behind the scenes to keep costs low and quality high — you never see the routing.
+The #1 killer of creative flow is worrying about quotas. Claude Code gives you 5-hour sessions. Cursor counts every request. Copilot throttles after a few hours. **Clara gives you roughly 10× that budget — hundreds of included hours per month across all our consumer tiers.**
 
-The only thing that matters to you is: **How big is your team, and what can they build?**
+How do we do it? We run open-source AI on our own infrastructure. The models are free to us (Gemma 4, DeepSeek's latest — the same models Claude Code's competitors charge you premium rates for). A Clara agent running 24/7 for a full month (≈750 hours) costs us around $23 in compute. That's how we can hand you the keys.
+
+When you need heavy reasoning on the absolute-frontier models (Claude Sonnet, GPT-5), you pay compute pass-through — no markup, no margin grab. Opt-in per request.
+
+**What you pick is how big your team is, and what they can build.**
 
 ---
 
 ## The Decision Page
 
-Every tier includes **premium voice, custom voice cloning, best-available AI**, and **unlimited usage**. What changes is how many agents work for you.
+Every tier includes **premium voice, custom voice cloning, and best-available AI**. Basic through Business include a generous pool of included voice hours and default-stack generations — sized to cover normal heavy use without quota anxiety. Enterprise terms are negotiated per contract. What changes across tiers is how big your team is and what you can build.
 
 | | **Basic** | **Pro** | **Max** | **Business** | **Enterprise** |
 |--|:-:|:-:|:-:|:-:|:-:|
 | **Monthly price** | **$39** | **$69** | **$99** | **$299** | **$4,000+** |
-| **Harness agents (team working for you)** | **3** | **6** | **9** | **24** | **350** |
-| **Build new agents / month** | 1 | 3 | 6 | 12 | Unlimited |
-| **Eject agents / month** | 1 | 3 | 6 | 12 | Unlimited |
+| **Your team size** | **3** | **6** | **9** | **24** | **350** |
+| **Build new agents / month** | 1 | 3 | 6 | 12 | Custom (per contract) |
+| **Eject agents / month** | 1 | 3 | 6 | 12 | Custom (per contract) |
 | **Best for** | Solo builder, first agent | Small team build-out | Full product team | Agency / product shop | Full-company deployment |
-| **Unlimited usage** | ✅ | ✅ | ✅ | ✅ | ✅ |
+| **Included voice hours/mo** | Generous pool (sized to cover heavy use) | Generous pool | Generous pool | Generous pool | Per contract |
 | **Premium voice + custom clones** | ✅ | ✅ | ✅ | ✅ | ✅ brand voices |
 | **Best AI thinking** | ✅ | ✅ | ✅ | ✅ | ✅ dedicated |
 | **Host agents on Clara + sell anywhere** | ✅ | ✅ | ✅ | ✅ | ✅ |
@@ -69,33 +73,33 @@ Users see the exact agents on their team with names, voices, and specialties. Th
 
 ### Basic — $39/mo — "Your first team"
 
-A team of **3 harness agents** cloned from Clara's template library — pick frontend engineer, backend developer, accountant, publicist, whatever fits your gig. They work for you. With this team you can **build your first agent** (the product you ship) at 1 new agent per month.
+Your team of **3 AI hires**. Pick who you need — frontend engineer, accountant, publicist, whatever fits your gig. You name them, give them your voice (or pick one), and put them to work. They build what you tell them to build: websites, mobile apps, CLIs, voice agents — any voice-first tool your business needs. Plus: ship **1 new voice agent per month** as a product you can sell or deploy.
 
-**What Basic is for:** Solo founders, side-project builders, barbershop owners, real estate agents, personal trainers — anyone running a one-person operation who needs a small team of AI hires to ship a website and their first custom agent.
+**What Basic is for:** Solo founders, side-project builders, barbershop owners, real estate agents, personal trainers — anyone gigging their income who needs a small team of AI hires to ship a website and start building voice agents.
 
 ### Pro — $69/mo — "Small team"
 
-**6 harness agents**, more templates to draw from, **3 new agents per month** to ship.
+Your team of **6 AI hires**. More roles covered, more projects in parallel. **3 new voice agents per month** shipped.
 
 **What Pro is for:** Freelancers shipping client work weekly. Founders building multi-project pipelines. Indie hackers with 2-3 side projects running.
 
 ### Max — $99/mo — "Full team"
 
-**9 harness agents**. Every role you'd need for a full product — frontend, backend, DevOps, mobile, QA, research, design, plus accountant and publicist if you want them. **6 new agents per month** to ship.
+Your team of **9 AI hires**. Every role you'd need for a full product — frontend, backend, DevOps, mobile, QA, research, design, plus accountant and publicist. **6 new voice agents per month** shipped.
 
-**What Max is for:** Startups shipping production. Vibe coders running at full speed. Teams of 1-3 humans with big ambitions.
+**What Max is for:** Startups shipping production. Vibe Professionals running at full speed. Teams of 1-3 humans with big ambitions.
 
 ### Business — $299/mo — "Agency scale"
 
-**24 harness agents** — full agency capacity. Configure multiple specialists per role. **12 new agents per month** to ship AND the unlock: those built agents earn you 85% of every invocation, whether a customer hired them through claraagents.com, your own website, an affiliate funnel, or anywhere else. Stripe Connect handles payouts across channels.
+Your team of **24 AI hires** — full agency capacity. Multiple specialists per role. **12 new voice agents per month**, and every voice agent you build earns you 85% of every invocation. Whether customers hire them through claraagents.com, your own website, an affiliate funnel, or anywhere else — Stripe Connect handles payouts across channels.
 
-**What Business is for:** Agencies running client work at volume. Product teams operating live platforms. Founders turning into agent developers with recurring marketplace revenue.
+**What Business is for:** Agencies running client work at volume. Product teams operating live platforms. Founders turning into agent developers with recurring revenue.
 
 ### Enterprise — $4,000+/mo — "Full-company"
 
-**350 harness agents** in configurable teams. Dedicated infrastructure. Custom brand voice cloning. SSO, audit logs, SLA, white-glove onboarding. Priority model routing. Unlimited agent builds. Full migration support if you ever need to run agents on your own infra — dedicated engineering help included.
+Your team of **350 AI hires** in configurable squads. Dedicated infrastructure. Custom brand voice cloning. SSO, audit logs, SLA, white-glove onboarding. Priority model routing. Voice agent builds, ejections, and usage are all negotiated per contract — sized to your deployment. Full migration support if you ever want to run your agents on your own infra — dedicated engineering help included.
 
-**What Enterprise is for:** Companies replacing their entire engineering org with Clara. Running Clara at scale across departments.
+**What Enterprise is for:** Companies replacing their entire engineering org with their own AI team. Running Clara at scale across departments.
 
 ---
 
@@ -104,11 +108,11 @@ A team of **3 harness agents** cloned from Clara's template library — pick fro
 **You don't watch a counter.** Clara shows you nothing about usage unless something is actually wrong (extreme abuse detection, which affects ~0.1% of users).
 
 Behind the scenes, we route your requests intelligently:
-- Most tasks → our own self-hosted open-source AI (fast, free for us to run on Modal GPUs)
-- Complex reasoning tasks → routed to premium inference silently
-- Voice (STT + TTS) → our own Modal GPUs
+- **Default stack** (Gemma 4, DeepSeek latest, other open-source SOTA) — generously included on every paid tier. We run it ourselves; the marginal cost is essentially zero.
+- **Heavy reasoning stack** (opt-in premium models — Claude Sonnet, GPT-5, etc.) — compute pass-through, zero markup. Only used when you explicitly opt in or Enterprise contracts route it by default.
+- **Voice (STT + TTS)** — our own self-hosted stack, included in every tier's hour allotment.
 
-The subscription covers all of this. We don't nickel-and-dime you per token.
+Your subscription covers the default stack + voice entirely. You only pay additional if you opt into premium reasoning.
 
 ### What's actually capped?
 
@@ -138,8 +142,8 @@ If you want to pre-pay for extended compute (team reimbursement, budget predicta
 
 ## FAQ
 
-**Q: Is it really unlimited?**
-A: Yes, within fair use. If you're coding a normal schedule (even heavy — 8-10 hrs/day), you will never hit a limit. You don't need to think about it.
+**Q: How much voice and agent time do I actually get?**
+A: A lot. Our Clara AI Personal tiers include 90 hours (Starter) up to 750 hours (Elite) per month. Clara Code builder tiers include a generous pool sized for even heavy users (8-10 hrs/day of normal work). You don't need to stare at a counter — we'll notify you before you approach any limit.
 
 **Q: What if I need more agents mid-month?**
 A: Upgrade instantly, prorated. Your existing agents stay; new ones spin up.
@@ -166,10 +170,16 @@ A: Yes. No contracts below Enterprise. 7-day full refund on any tier.
 A: No. Every tier starts billing immediately. But we stand behind the product — 7-day full refund, no questions asked.
 
 **Q: Can I take my agents and run them elsewhere?**
-A: Yes. Export any built agent from your dashboard. You'll get your SOUL.md, voice, data, and configuration. You won't get our platform (Hermes runtime, knowledge engine, skill code). Ejecting an agent does NOT cancel your subscription — many customers build on Clara and deploy to their own infrastructure while continuing to use Clara for new builds. Export caps: Basic 1/mo, Pro 3/mo, Max 6/mo, Business 12/mo, Enterprise unlimited with migration engineering support.
+A: Yes. Export any built agent from your dashboard. You'll get your SOUL.md, voice, data, and configuration. You won't get our platform (Hermes runtime, knowledge engine, skill code). Ejecting an agent does NOT cancel your subscription — many customers build on Clara and deploy to their own infrastructure while continuing to use Clara for new builds. Export caps: Basic 1/mo, Pro 3/mo, Max 6/mo, Business 12/mo. Enterprise caps are set per contract alongside migration engineering support.
 
-**Q: If I sell my agents off-platform, does Clara take a cut?**
-A: If the agent runs on Clara when a customer hires it, yes — 15% of the invocation (you keep 85%). Where the customer discovered you (claraagents.com, your site, social) doesn't matter. Stripe Connect handles payouts across channels. If you eject the agent to your own infra, Clara gets 0% because we're no longer hosting it.
+**Q: If I deploy my agent on my own website or mobile app, how does Clara make money?**
+A: Your Clara Code subscription covers building AND deploying to your own properties — no extra runtime fees. In return, every transaction your agent processes goes through a Stripe Connect gate. The customer pays a **7% platform fee** and the standard **Stripe fee (2.9% + $0.30)** on top of your listed price — both passed through to the customer, not deducted from your revenue. You keep **100%** of what you charge. If your agent doesn't process transactions (internal scheduler, lead-gen bot, back-office tool), you pay nothing beyond your subscription.
+
+**Q: What about listing my agent on the Clara AI mobile app, or letting other mobile apps embed it?**
+A: Different model for broader distribution: **Clara takes 15%, you keep 85%** of every dollar. This covers distribution, discovery, and user acquisition across the Clara Agents network. Stripe Connect handles the payout. You set the price; Clara collects from the hirer and pays you 85%.
+
+**Q: What if I eject my agent and run it on my own infrastructure?**
+A: Clara gets 0% — we're no longer hosting, so there's no fee. Ejecting does NOT cancel your subscription.
 
 ---
 

@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Clara AI pricing runbooks** — new `clara-ai-tier-ladder.md`, `clara-ai-business-tier-ladder.md`, `clara-ai-reseller-rates.md`, and `clara-ai-vp-business-economics.md` under `pricing/` with `.cursor/pricing/` mirrors.
+- **Product prompts** — `26-agent-lifecycle-hooks.md` and `27-mcp-tool-extension.md` in `prompts/2026/April/23/1-not-started/`.
 - **Pricing and platform policy docs** — `pricing/` and mirroring `.cursor/pricing/`: new `abuse-protection.md`, `cogs-and-unit-economics.md`, `customer-facing-page.md`, `ip-ownership-and-ejection.md`, `model-routing-strategy.md`. Updated `combined-examples.md`, `marketplace-pricing.md`, `voice-tiers.md`; removed `reseller-pricing.md`.
 - **MVP and product under `docs/status/`** — content relocated from `docs/auto-claude/` (removed): `MVP_*.md`, `PRODUCT_PRD.md`, `CLARA_TALENT_AGENCY*.md` now live under `docs/status/`.
 - **Product prompts (April 23)** — `prompts/2026/April/23/1-not-started/` expanded with roadmap and platform stubs (agent messaging, standup, usage limits, IP firewall, model routing, billing, ejection, etc.); `03-thin-client-non-negotiable-ip-hygiene.md` completed under `3-completed/`. Older duplicate prompt paths under April 19/21 removed in favor of the April 23 tree.
@@ -13,9 +15,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
+- **Pricing playbooks (iteration)** — `abuse-protection`, `cogs-and-unit-economics`, `communication-costs`, `customer-facing-page`, `ip-ownership-and-ejection`, `marketplace-pricing`, `model-routing-strategy`, `product-tiers`, `thinking-tiers`, and `voice-tiers` updated in `pricing/` and `.cursor/pricing/`. See `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 - **Marketing mockup app (`mockups/site/`)** — `App` shell and `HeroSection`, `Header`, `InstallSection`, `FeaturesSection`, `PricingSection`, auth and checkout pages refreshed; `ClaraLogo` and global styles in `index.css` (dropped `clara-brand-tokens.css`). Replaced 2D/3D clara-code logos with new art direction.
 - **TypeScript base** — `tsconfig.base.json`, root `tsconfig.json`, and `packages/sdk/tsconfig.json` use `ES2023` instead of `ES2024` for `target` / `lib` to align with supported runtimes. See `packages/sdk/CHANGELOG.md` for SDK.
-- **Monorepo version** — root `package.json` `0.2.2` → **`0.2.3`**.
+- **Monorepo version** — root `package.json` `0.2.2` → **`0.2.3`** (voxtral doc merge); `0.2.3` → **`0.2.4`** (pricing and prompts; docs only).
 
 ### Fixed
 

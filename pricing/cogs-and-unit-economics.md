@@ -28,7 +28,7 @@ Clara Code runs on self-hosted open-weight models on Modal GPUs + Bedrock DeepSe
 | Layer | Platform | COGS |
 |-------|----------|------|
 | STT | Whisper on Modal A10G | $0.0003/GPU-second |
-| TTS | XTTS on Modal A10G (open-source Coqui, unlimited voice cloning) | $0.0003/GPU-second |
+| TTS | XTTS on Modal A10G (open-source Coqui, supports voice cloning at scale) | $0.0003/GPU-second |
 | Gateway | Hermes on Modal | ~$0.0003/GPU-second |
 | Transport | LiveKit Cloud (optional, production only) | $0.02/min |
 
@@ -58,10 +58,10 @@ A typical "active hour" of vibe-code work:
 
 | Tier | Price | Harness Agents | Build New Agents / mo | Eject / mo | Weekly/Monthly Caps | Visible to User |
 |------|-------|----------------|------------------------|------------|---------------------|-----------------|
-| Basic | $39 | 3 | 1 | 1 | None | Unlimited |
-| Pro | $69 | 6 | 3 | 3 | None | Unlimited |
-| Max | $99 | 9 | 6 | 6 | None | Unlimited |
-| Business | $299 | 24 | 12 | 12 | None | Unlimited |
+| Basic | $39 | 3 | 1 | 1 | None | Generous pool |
+| Pro | $69 | 6 | 3 | 3 | None | Generous pool |
+| Max | $99 | 9 | 6 | 6 | None | Generous pool |
+| Business | $299 | 24 | 12 | 12 | None | Generous pool |
 | Enterprise | $4,000+ | 350 | Custom | Custom | Per contract | Per contract |
 
 **Per-invocation pricing for built agents is deferred to Phase 4** (public Clara Code launch). Current internal deployment (Phase 1-2) collects real usage data across the Heru portfolio to calibrate floor prices before public launch.
@@ -226,7 +226,7 @@ async function preflightAbuseOnly(userId: string, tier: PlanTier): Promise<{ all
 
 ## Related Files
 
-- **`pricing/customer-facing-page.md`** — what users see (unlimited + configurable agents)
+- **`pricing/customer-facing-page.md`** — what users see (tier-based hour pools + configurable agents)
 - **`pricing/abuse-protection.md`** — invisible guardrails for the 0.1% case
 - **`pricing/model-routing-strategy.md`** — how we choose Gemma/Kimi/DeepSeek per request
 - **`pricing/voice-tiers.md`** — self-hosted voice stack

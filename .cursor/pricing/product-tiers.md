@@ -6,7 +6,7 @@ What Clara can do. Each tier includes everything below it. This is the product l
 
 | What | Details |
 |------|---------|
-| Chat | Unlimited text conversations |
+| Chat | Generous included text conversations (see tier ladder) |
 | Voice | Conversational voice (Standard or Premium — selected separately) |
 | Vault | Cloud-synced memory — Clara knows you |
 | Agents | 1 personal agent |

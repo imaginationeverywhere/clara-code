@@ -9,11 +9,11 @@ Clara owns the entire voice stack. There is **NO** third-party voice provider. E
 | Layer | Platform | Notes |
 |-------|----------|-------|
 | STT | Whisper on Modal A10G GPU | Self-hosted, open-source |
-| TTS | XTTS on Modal A10G GPU | Self-hosted, open-source Coqui — clones unlimited voices from 5-sec samples |
+| TTS | XTTS on Modal A10G GPU | Self-hosted, open-source Coqui — supports voice cloning at scale from 5-sec samples |
 | Transport | LiveKit (open source, Apache 2.0) | Self-hosted on QCS1 (dev) / LiveKit Cloud $0.02/min (prod) |
 | Gateway | Hermes on Modal | Self-hosted orchestration |
 
-**Why this matters:** No per-character TTS tax, no per-minute premium provider fee, unlimited voice cloning, full control over latency and quality. Voice COGS is GPU compute on Modal, not third-party rates.
+**Why this matters:** No per-character TTS tax, no per-minute premium provider fee, voice cloning at scale, full control over latency and quality. Voice COGS is GPU compute on Modal, not third-party rates.
 
 ## Customer-Facing Tiers
 
@@ -28,7 +28,7 @@ Because we own the stack, "Premium Voice" is not a different vendor — it's a d
 
 - **Higher-quality XTTS inference settings** (more denoising steps, larger model variant)
 - **Priority GPU lane** (lower cold-start risk, faster response)
-- **Custom voice cloning** (record a 5-second sample, get your own voice — unlimited clones)
+- **Custom voice cloning** (record a 5-second sample, get your own voice — clone as many as you need)
 - **Lower latency target** (sub-300ms response time vs sub-800ms on Standard)
 
 ## Included Minutes

@@ -1,6 +1,6 @@
 # Abuse Protection — The Invisible Guardrails
 
-> **INTERNAL ONLY.** These rules fire for <0.1% of users. They are NEVER surfaced in the UI, marketing, or pricing page. The customer-facing story is "unlimited usage." These protections make that promise economically survivable.
+> **INTERNAL ONLY.** These rules fire for <0.1% of users. They are NEVER surfaced in the UI, marketing, or pricing page. The customer-facing story is "generous included hours sized to cover heavy legitimate use." These protections make that promise economically survivable.
 
 **Source of truth for:** rate limits, review triggers, hard COGS caps, bot/scraper detection.
 
@@ -8,9 +8,9 @@
 
 ## Philosophy
 
-Clara Code promises **unlimited usage** as the headline. That is real for 99.9% of users — legitimate Vibe Professionals never hit these guardrails.
+Clara Code positions tier hour pools as generously covering all legitimate use. That's real for 99.9% of users — Vibe Professionals on heavy usage never hit these guardrails.
 
-But "unlimited" can't mean "exploitable." Someone running 5 bot accounts to scrape our model outputs, or leaving a script looping 24/7, will hit these protections. Normal developers won't.
+But generous pools can't mean exploitable. Someone running 5 bot accounts to scrape our model outputs, or leaving a script looping 24/7, will hit these protections. Normal developers won't.
 
 ---
 
@@ -28,9 +28,9 @@ But "unlimited" can't mean "exploitable." Someone running 5 bot accounts to scra
 
 ### Layer 2 — Review Trigger (flag, don't block)
 
-**Trigger:** user exceeds **300 active hours/month**.
+**Trigger:** user exceeds **600 active hours/month**.
 
-**What this means:** 300 hours = 10 hrs/day × 30 days, or 14 hrs/day × 21 weekdays. No human codes that much. This indicates either (a) bot usage, (b) multi-user account sharing, or (c) a legitimate extreme-heavy user who needs Enterprise.
+**What this means:** 600 hours = 20 hrs/day × 30 days. 16 hrs/day (480 hrs/mo — a user talking to their assistant during all waking hours) is NORMAL and NOT flagged. 600+ hrs indicates (a) bot usage, (b) multi-user account sharing, or (c) sustained 24/7 automation.
 
 **Action:**
 1. Account flagged in internal ops dashboard
@@ -46,13 +46,14 @@ But "unlimited" can't mean "exploitable." Someone running 5 bot accounts to scra
 
 | Tier | Monthly Price | Hard COGS Cap | Typical Corresponds To |
 |------|---------------|----------------|------------------------|
-| Basic $39 | $39 | **$30/mo** | ~600 active hours |
-| Pro $69 | $69 | **$50/mo** | ~1,000 active hours |
-| Max $99 | $99 | **$75/mo** | ~1,500 active hours |
-| Business $299 | $299 | **$250/mo** | ~5,000 active hours |
+| Clara AI Personal $29 | $29 | **$28/mo** | ~700+ active hours (near 24/7) |
+| Clara Code Basic $39 | $39 | **$35/mo** | ~900 active hours |
+| Clara Code Pro $69 | $69 | **$60/mo** | ~1,500 active hours |
+| Clara Code Max $99 | $99 | **$90/mo** | ~2,300 active hours |
+| Clara Code Business $299 | $299 | **$280/mo** | ~7,000 active hours |
 | Enterprise | $4k+ | **Flag only, no auto-freeze** | — |
 
-**What this catches:** only accounts burning our compute at 20+ hours/day continuously. This is effectively impossible for a human.
+**What this catches:** only accounts sustaining >22 hours/day of active use. Effectively impossible for a human — 16 hrs/day is a healthy power user; 22+ hrs/day is a bot.
 
 **User experience:** account frozen. User sees:
 > "We've paused your account due to unusually high usage. This is rare — please contact support to lift the pause."
@@ -129,5 +130,5 @@ Enterprise accounts don't get auto-frozen. Reason: dedicated account management 
 
 - **`pricing/customer-facing-page.md`** — customer-facing copy (no mention of any of this)
 - **`pricing/cogs-and-unit-economics.md`** — COGS math these caps are built on
-- **`pricing/model-routing-strategy.md`** — how routing keeps COGS low enough for unlimited
+- **`pricing/model-routing-strategy.md`** — how routing keeps COGS low enough for generous tier pools
 - **`prompts/2026/April/23/1-not-started/11-usage-tracking-and-plan-limits.md`** — implementation

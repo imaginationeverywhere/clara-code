@@ -9,7 +9,7 @@ All communication providers and their costs. These are baked into the Technology
 | Email (transactional) | AWS SES | $0.10/1,000 emails | Active |
 | Email (marketing blasts) | AWS SES | $0.10/1,000 emails | Active |
 | SMS (OTP, notifications) | AWS SNS | $0.00645/text (US) | Active |
-| Push notifications | FCM (Android) / APNs (iOS) / Expo | Free, unlimited | Active |
+| Push notifications | FCM (Android) / APNs (iOS) / Expo | Free, no volume cap | Active |
 | Voice calls | Twilio | $0.014/min outbound | Active |
 | Voice customer service | Twilio Flex | Per-agent pricing | Planned (Kashea) |
 
@@ -40,7 +40,7 @@ Site owners who want to send email/SMS campaigns to their customers:
 | Growth | $99/mo | 25,000 emails + 2,500 SMS per month |
 | Scale | $199/mo | 100,000 emails + 10,000 SMS per month |
 
-Built on AWS SES (email) + AWS SNS (SMS). Push notifications unlimited on all tiers.
+Built on AWS SES (email) + AWS SNS (SMS). Push notifications included on all tiers with no volume cap.
 
 ## Compliance
 

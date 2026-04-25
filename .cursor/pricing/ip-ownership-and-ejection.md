@@ -42,7 +42,7 @@ The **platform** layer:
 | Pro | $69 | 3 | Self-service |
 | Max | $99 | 6 | Self-service |
 | Business | $299 | 12 | Self-service |
-| Enterprise | $4k+ | Unlimited | Dedicated engineer + migration playbook + on-call during cutover |
+| Enterprise | $4k+ | Custom (per contract) | Dedicated engineer + migration playbook + on-call during cutover |
 
 **Key rule**: ALL paid tiers from Basic through Business get the **same self-service experience**. No bronze/silver/gold support differentiation — that would create ops overhead without clear benefit. Enterprise gets white-glove support because their contract pays for it.
 
@@ -132,7 +132,7 @@ This is a feature sold as part of the Enterprise contract. It's why they pay $4k
 ## Customer-Facing Copy (For the Pricing Page FAQ)
 
 **Q: Can I take my agents elsewhere?**
-> Yes. Export any built agent from your dashboard. You'll get your SOUL.md, voice, data, and configuration. You won't get our platform (Hermes runtime, knowledge engine, skill code). Ejecting does NOT cancel your subscription — many customers build on Clara and deploy their agents to their own infrastructure while continuing to use Clara for new builds. Export caps: Basic 1/mo, Pro 3/mo, Max 6/mo, Business 12/mo, Enterprise unlimited with migration engineering support.
+> Yes. Export any built agent from your dashboard. You'll get your SOUL.md, voice, data, and configuration. You won't get our platform (Hermes runtime, knowledge engine, skill code). Ejecting does NOT cancel your subscription — many customers build on Clara and deploy their agents to their own infrastructure while continuing to use Clara for new builds. Export caps: Basic 1/mo, Pro 3/mo, Max 6/mo, Business 12/mo. Enterprise caps are set per contract alongside migration engineering support.
 
 **Q: If I sell my agents off-platform, does Clara take a cut?**
 > If the agent runs on Clara when a customer hires it, yes — 15% of the invocation (you keep 85%). Where the customer discovered you doesn't matter. Stripe Connect handles payouts across channels. If you eject the agent to your own infra, Clara gets 0%.

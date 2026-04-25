@@ -2,31 +2,65 @@
 
 Standalone products and revenue streams outside of Clara subscriptions.
 
-## Built-Agent Marketplace (claraagents.com)
+## Built-Agent Deployment Economics
 
-When a Vibe Professional builds an agent on Clara and lists it for hire:
+Two deployment channels, two economic models. Which applies depends on **where the agent is distributed from**, not where it runs.
 
-| Transaction Type | Who Gets What |
-|------------------|---------------|
-| Customer hires agent (invocation) | Creator 85% / Clara 15% |
-| One-time agent sale | Creator 85% / Clara 15% |
-| Subscription to agent (recurring) | Creator 85% / Clara 15% |
+### Channel A — Self-Deploy (VP's own website or mobile app)
 
-### When the 15% fee applies
+The VP's Clara Code subscription covers both BUILDING AND DEPLOYING to their own properties. No extra runtime fees. The trade-off: **mandatory Stripe Connect gate** on every transaction.
 
-The fee is tied to **where the agent runs**, NOT where the customer came from:
+| Fee | Amount | Paid By | Goes To |
+|-----|--------|---------|---------|
+| Listed price | VP sets | Customer | VP (100%) |
+| **Platform fee** | **7%** (auditor-adjustable per industry) | Customer (passed through) | Clara |
+| Processing fee | 2.9% + $0.30 | Customer (passed through) | Stripe |
 
-- ✅ Agent hosted on Clara infrastructure → 15% applies to every invocation
-- ✅ Customer found agent on claraagents.com → 15% applies (agent runs on Clara)
-- ✅ Customer found agent on creator's own website → 15% applies (agent still runs on Clara)
-- ✅ Customer found agent through affiliate funnel → 15% applies (agent still runs on Clara)
-- ❌ Agent ejected to creator's own infra → Clara gets 0%, no tracking
+Example — customer books a $35 haircut on pookey-barbers.com:
 
-**Stripe Connect** handles payouts regardless of discovery channel. Creator keeps 85% wherever the transaction happens, as long as the agent runs on Clara.
+```
+Haircut                           $35.00
+Platform fee (7%)                  $2.45   ← to Clara
+Processing fee (2.9% + $0.30)      $1.32   ← to Stripe
+─────────────────────────────────────────
+Customer pays                     $38.77
 
-### Per-invocation floor pricing — DEFERRED to Phase 4
+Pookey receives: $35.00 (100% of listed price)
+Clara receives:   $2.45
+Stripe receives:  $1.32
+```
 
-Minimum per-invocation pricing to guarantee Clara margin covers COGS will be set AFTER Phase 2 deployment across the Heru portfolio produces real usage data. Until then, built-agent pricing is set by the creator at their own risk; Clara collects 15% of whatever they charge.
+**If the agent does NOT process transactions** (internal scheduler, lead-gen bot, back-office helper) — no Stripe Connect trigger, no platform fee. The VP's subscription alone pays for everything.
+
+**Enforcement**: Clara SDK checks for a valid Stripe Connect account ID at agent init. Agents configured to process payments without the gate are rejected at deployment.
+
+### Channel B — Clara Agents Distribution (Clara AI mobile app + other mobile SDK embeds)
+
+When the VP lists the agent on the Clara AI mobile app (claraagents.com) OR allows it to be embedded in another app via the Clara SDK — Clara provides full distribution, discovery, and user acquisition. The split is higher.
+
+| Transaction | Split |
+|-------------|-------|
+| Agent hired (subscription, one-time, or per-invocation) | **Creator 85% / Clara 15%** |
+
+Stripe Connect handles payouts. Creator sets the price; Clara collects from the hirer and pays 85% to the creator.
+
+### Summary Table
+
+| Channel | Who Pays Clara | How Much |
+|---------|----------------|----------|
+| VP's own site/app (transactional) | VP's customer (passed through) | 7% per transaction |
+| VP's own site/app (no transactions) | Nobody extra (just subscription) | $0 |
+| Clara AI mobile app (distributed by Clara) | End-user hiring the agent | 15% of revenue |
+| Other mobile apps via Clara SDK (embedded) | End-user hiring the agent | 15% of revenue |
+| Agent ejected to VP's own infrastructure | Nobody | 0% |
+
+### The 7% Is Auditor-Adjustable
+
+Clara's auditors observe fraud rate, chargeback rate, compute cost, and industry risk to adjust the 7% up or down per industry or per merchant class. Starting rate is 7%; final rate is set by audit and published in each VP's merchant agreement.
+
+### Per-invocation floor pricing on Channel B — DEFERRED to Phase 4
+
+Minimum per-invocation pricing for the 15% distribution channel will be set AFTER Phase 2 deployment across the Heru portfolio produces real usage data. Until then, VPs set their own prices; Clara collects 15% of whatever they charge.
 
 ## Clara Crawl (Sesheta)
 
@@ -36,10 +70,10 @@ Web crawling API — beats Firecrawl on every metric.
 |------|-------|----------|----------|
 | **Builder** | $9/mo | 10,000 | Monthly |
 | **Pro** | $29/mo | 50,000 | Monthly |
-| **Unlimited** | $79/mo | Unlimited, no throttle | Monthly |
+| **Scale** | $79/mo | 500,000+ crawls, no throttle | Monthly |
 
 - No free tier. Card required at signup.
-- Margins: Builder 67%, Pro 48%, Unlimited 62%.
+- Margins: Builder 67%, Pro 48%, Scale 62%.
 
 ## Clara Voice Tones Marketplace
 
