@@ -1,5 +1,6 @@
 import "./load-env";
 import "reflect-metadata";
+import "@/hooks/platform-hooks";
 import { ApolloServer } from "@apollo/server";
 import { expressMiddleware } from "@apollo/server/express4";
 import { clerkMiddleware, getAuth } from "@clerk/express";
@@ -23,6 +24,7 @@ import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
 import { clerkWebhookHandler } from "@/routes/webhooks-clerk";
 import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
+import { seedMcpCatalogIfEmpty } from "@/seeds/mcp-servers.seed";
 import { logger } from "@/utils/logger";
 
 export const app: Application = express();
@@ -107,6 +109,7 @@ export async function bootstrap(): Promise<void> {
 	);
 
 	await testConnection();
+	await seedMcpCatalogIfEmpty().catch((e: unknown) => logger.error("MCP seed:", e));
 
 	app.listen(PORT, () => {
 		logger.info(`Clara Code backend running on port ${String(PORT)}`);

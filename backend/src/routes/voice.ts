@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { requireAuth } from "@clerk/express";
 import axios from "axios";
 import { type Response, Router } from "express";
@@ -8,12 +9,14 @@ import {
 	modelTierErrorResponse,
 	resolveModel,
 } from "@/config/models";
+import type { HookContext } from "@/lib/hooks";
 import { filterConverseResponsePayload } from "@/middleware/agent-output-filter";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { voiceLimiter } from "@/middleware/rate-limit";
 import { voiceLimitMiddleware } from "@/middleware/voice-limit";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
+import { hookBus } from "@/services/hook-bus.service";
 import { type HistoryEntry, memoryService } from "@/services/memory.service";
 import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
@@ -329,16 +332,7 @@ router.post(
 	voiceLimiter,
 	voiceLimitMiddleware,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
-		const {
-			audio_base64,
-			text,
-			voice_id = "clara",
-			history = [],
-			max_tokens = 300,
-			session_id,
-			agent_id = "clara",
-			surface = "cli",
-		} = (req.body ?? {}) as {
+		const body = (req.body ?? {}) as {
 			audio_base64?: string;
 			text?: string;
 			voice_id?: string;
@@ -347,7 +341,19 @@ router.post(
 			session_id?: string;
 			agent_id?: string;
 			surface?: string;
+			deployment_id?: string;
+			agent_name?: string;
 		};
+		const {
+			audio_base64,
+			voice_id = "clara",
+			history = [],
+			max_tokens = 300,
+			session_id,
+			agent_id = "clara",
+			surface = "cli",
+		} = body;
+		let text: string | undefined = typeof body.text === "string" ? body.text : undefined;
 
 		const hasAudio = typeof audio_base64 === "string" && audio_base64.length > 0;
 		const hasText = typeof text === "string";
@@ -372,6 +378,44 @@ router.post(
 		const sessionId = session_id ?? (userId ? `${userId}-${agent_id}-fallback` : "anonymous");
 		const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
 
+		const deploymentIdFromBody =
+			typeof body.deployment_id === "string" && body.deployment_id.length > 0 ? body.deployment_id : null;
+		const hookCtx: HookContext = {
+			userId: userId ?? "anonymous",
+			agentId: agent_id,
+			sessionId,
+			turnId: randomUUID(),
+			...(deploymentIdFromBody ? { deploymentId: deploymentIdFromBody } : {}),
+			tier: (req.claraUser?.tier ?? "free") as string,
+			metadata: {
+				agentName:
+					typeof body.agent_name === "string" && body.agent_name.length > 0 ? body.agent_name : "your agent",
+			},
+		};
+
+		if (userId) {
+			try {
+				await hookBus.runSessionStart({ startingSoulMd: "", initialMemory: [] }, hookCtx);
+			} catch (err) {
+				logger.error("[hooks] runSessionStart failed", err);
+			}
+		}
+
+		if (userId && typeof text === "string") {
+			const promptResult = await hookBus.runUserPromptSubmit({ rawPrompt: text, modality: "text" }, hookCtx);
+			if (promptResult.blocked) {
+				res.status(400).json({ error: promptResult.blockReason ?? "prompt_blocked" });
+				return;
+			}
+			if (promptResult.deflectionResponse) {
+				res.json({ response_text: promptResult.deflectionResponse, deflected: true, transcript: "" });
+				return;
+			}
+			if (promptResult.sanitizedPrompt !== undefined) {
+				text = promptResult.sanitizedPrompt;
+			}
+		}
+
 		let memoryHistory: HistoryEntry[] = [];
 		if (userId) {
 			const [context] = await Promise.all([
@@ -381,12 +425,14 @@ router.post(
 			memoryHistory = memoryService.buildHistory(context);
 		}
 
+		const includeText = typeof text === "string";
+
 		try {
 			const response = await axios.post(
 				`${base}/voice/converse`,
 				{
 					...(hasAudio ? { audio_base64 } : {}),
-					...(hasText ? { text } : {}),
+					...(includeText ? { text } : {}),
 					voice_id,
 					history: userId ? memoryHistory : Array.isArray(history) ? history : [],
 					max_tokens,
@@ -403,18 +449,18 @@ router.post(
 			}
 			if (userId) {
 				const userContent = hasText ? (text ?? "") : "[audio]";
-				const d = response.data as {
+				const d0 = response.data as {
 					response_text?: string;
 					reply_text?: string;
 					transcript?: string;
 				};
 				const assistantContent =
-					typeof d?.response_text === "string" && d.response_text.length > 0
-						? d.response_text
-						: typeof d?.reply_text === "string" && d.reply_text.length > 0
-							? d.reply_text
-							: typeof d?.transcript === "string" && d.transcript.length > 0
-								? d.transcript
+					typeof d0?.response_text === "string" && d0.response_text.length > 0
+						? d0.response_text
+						: typeof d0?.reply_text === "string" && d0.reply_text.length > 0
+							? d0.reply_text
+							: typeof d0?.transcript === "string" && d0.transcript.length > 0
+								? d0.transcript
 								: "";
 
 				void Promise.all([
@@ -429,7 +475,31 @@ router.post(
 
 			const uid = userId ?? "anonymous";
 			const aid = agent_id;
-			const { payload: safePayload } = filterConverseResponsePayload(response.data, uid, aid);
+
+			let payload: unknown = response.data;
+			if (userId && response.data && typeof response.data === "object" && !Array.isArray(response.data)) {
+				const o: Record<string, unknown> = { ...((response.data as object) ?? {}) };
+				const extracted =
+					typeof o.response_text === "string" && o.response_text.length > 0
+						? o.response_text
+						: typeof o.reply_text === "string" && o.reply_text.length > 0
+							? o.reply_text
+							: typeof o.transcript === "string" && o.transcript.length > 0
+								? o.transcript
+								: "";
+				if (extracted.length > 0) {
+					const stop = await hookBus.runStop({ agentResponseText: extracted, toolCallsExecuted: 0 }, hookCtx);
+					const st = stop.sanitizedResponseText ?? extracted;
+					if (typeof o.response_text === "string") {
+						o.response_text = st;
+					}
+					if (typeof o.reply_text === "string") {
+						o.reply_text = st;
+					}
+				}
+				payload = o;
+			}
+			const { payload: safePayload } = filterConverseResponsePayload(payload, uid, aid);
 			res.json(safePayload);
 		} catch (error) {
 			logger.error("[voice/converse] proxy error:", error);

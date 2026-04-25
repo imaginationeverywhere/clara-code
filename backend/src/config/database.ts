@@ -1,8 +1,10 @@
 import { Sequelize } from "sequelize-typescript";
 import { Agent } from "@/models/Agent";
+import { AgentMcpConnection } from "@/models/AgentMcpConnection";
 import { AgentUserMemory } from "@/models/AgentUserMemory";
 import { ApiKey } from "@/models/ApiKey";
 import { ConversationTurn } from "@/models/ConversationTurn";
+import { McpServer } from "@/models/McpServer";
 import { Subscription } from "@/models/Subscription";
 import { User } from "@/models/User";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
@@ -55,6 +57,8 @@ export const sequelize = new Sequelize(databaseUrl, {
 		WaitlistEntry,
 		ConversationTurn,
 		AgentUserMemory,
+		McpServer,
+		AgentMcpConnection,
 	],
 	define: {
 		underscored: true,

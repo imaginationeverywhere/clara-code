@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- **`registerHook` stub** — `src/hooks.ts` + `src/hooks-types.ts` export `HookType` / `HookHandler`; `registerHook` rejects until a server-side registration API exists. Re-exported from `src/index.ts`.
+
 ### Changed
 
 - **TypeScript** — `tsconfig.json` `lib` uses `ES2023` instead of `ES2024` to match the monorepo `tsconfig.base.json` target. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25** (cross-ref).

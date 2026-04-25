@@ -13,7 +13,7 @@
 ### Added (cross-reference)
 
 - **Clara AI pricing extensions** — `clara-ai-tier-ladder.md`, `clara-ai-business-tier-ladder.md`, `clara-ai-reseller-rates.md`, `clara-ai-vp-business-economics.md`; iteration on tier, marketplace, and voice playbooks. See `pricing/`, `.cursor/pricing/`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
-- **Prompts 26-27** — `26-agent-lifecycle-hooks.md`, `27-mcp-tool-extension.md` under `prompts/2026/April/23/1-not-started/`. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+- **Prompts 26-27 (completed)** — `26-agent-lifecycle-hooks.md`, `27-mcp-tool-extension.md` under `prompts/2026/April/23/3-completed/`. Implementation: backend hook bus + voice wiring; MCP tables, services, `/api/mcp/*`, Hermes sketch in `docs/mcp-hermes-integration.md`. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**, `backend/CHANGELOG.md`, `packages/sdk/CHANGELOG.md`.
 - **`docs/status/`** — MVP sprint, blockers, demo checklist, product PRD, and Clara talent agency docs (moved from `docs/auto-claude/`; those paths removed). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 - **Pricing and `.cursor` mirrors** — `abuse-protection.md`, `cogs-and-unit-economics.md`, `customer-facing-page.md`, `ip-ownership-and-ejection.md`, `model-routing-strategy.md` under `pricing/` and `.cursor/pricing/`; `reseller-pricing.md` removed. Cross-ref: root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 - **Prompts** — `prompts/2026/April/23/1-not-started/` (and `3-completed/`) as the active tree; April 19/21 duplicate paths removed. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

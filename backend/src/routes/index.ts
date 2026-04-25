@@ -1,6 +1,7 @@
 import { Router } from "express";
 import checkoutRoutes from "./checkout";
 import keysRoutes from "./keys";
+import mcpRoutes from "./mcp";
 import modelsRoutes from "./models";
 import onboardingRoutes from "./onboarding";
 import registryAuthRoutes from "./registry-auth";
@@ -11,6 +12,7 @@ import waitlistRoutes from "./waitlist";
 
 const router: ReturnType<typeof Router> = Router();
 
+router.use("/mcp", mcpRoutes);
 router.use("/checkout", checkoutRoutes);
 router.use("/onboarding", onboardingRoutes);
 router.use("/models", modelsRoutes);
