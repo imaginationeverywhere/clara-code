@@ -2,15 +2,22 @@ import { Sequelize } from "sequelize-typescript";
 import { Agent } from "@/models/Agent";
 import { AgentMcpConnection } from "@/models/AgentMcpConnection";
 import { AgentMessage } from "@/models/AgentMessage";
+import { AgentTemplate } from "@/models/AgentTemplate";
 import { AgentUserMemory } from "@/models/AgentUserMemory";
 import { ApiKey } from "@/models/ApiKey";
 import { ConversationTurn } from "@/models/ConversationTurn";
+import { Ejection } from "@/models/Ejection";
 import { McpServer } from "@/models/McpServer";
+import { MobileUpdateRequest } from "@/models/MobileUpdateRequest";
+import { SiteAgentDeployment } from "@/models/SiteAgentDeployment";
+import { SiteOwnerChangeLog } from "@/models/SiteOwnerChangeLog";
+import { SiteOwnerInstruction } from "@/models/SiteOwnerInstruction";
 import { Sprint } from "@/models/Sprint";
 import { SprintTask } from "@/models/SprintTask";
 import { StandupReport } from "@/models/StandupReport";
 import { Subscription } from "@/models/Subscription";
 import { User } from "@/models/User";
+import { UserAgent } from "@/models/UserAgent";
 import { UserProfile } from "@/models/UserProfile";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
 import { VoiceUsage } from "@/models/VoiceUsage";
@@ -56,6 +63,13 @@ export const sequelize = new Sequelize(databaseUrl, {
 		User,
 		ApiKey,
 		Agent,
+		AgentTemplate,
+		UserAgent,
+		Ejection,
+		SiteAgentDeployment,
+		SiteOwnerInstruction,
+		SiteOwnerChangeLog,
+		MobileUpdateRequest,
 		Subscription,
 		UserVoiceClone,
 		VoiceUsage,

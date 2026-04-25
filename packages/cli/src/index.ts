@@ -6,6 +6,7 @@ import { Command } from "commander";
 import { registerAskCommand } from "./commands/ask.js";
 import { registerAuthCommand } from "./commands/auth.js";
 import { registerConfigCommand } from "./commands/config.js";
+import { registerConfigAgentCommand } from "./commands/config-agent.js";
 import { registerGreetCommand } from "./commands/greet.js";
 import { registerHelloCommand } from "./commands/hello.js";
 import { registerTuiCommand } from "./commands/tui.js";
@@ -24,6 +25,7 @@ program
 registerHelloCommand(program);
 registerAskCommand(program);
 registerConfigCommand(program);
+registerConfigAgentCommand(program);
 registerAuthCommand(program);
 registerGreetCommand(program);
 registerTuiCommand(program);

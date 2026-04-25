@@ -1,6 +1,6 @@
 {
 	"name": "@claracode/sdk",
-	"version": "0.1.1",
+	"version": "0.2.0",
 	"description": "TypeScript client for Clara Code API (ask, stream, voice, agents)",
 	"type": "module",
 	"main": "./dist/index.js",
@@ -16,7 +16,20 @@
 				"types": "./dist/index.d.ts",
 				"default": "./dist/index.js"
 			}
+		},
+		"./react": {
+			"import": {
+				"types": "./dist/react.d.ts",
+				"default": "./dist/react.mjs"
+			},
+			"require": {
+				"types": "./dist/react.d.ts",
+				"default": "./dist/react.js"
+			}
 		}
+	},
+	"peerDependencies": {
+		"react": "^19.0.0"
 	},
 	"files": [
 		"dist",
@@ -51,7 +64,9 @@
 		"node": ">=20.0.0"
 	},
 	"devDependencies": {
+		"@types/react": "^19.0.0",
 		"@types/node": "^22.10.5",
+		"react": "^19.0.0",
 		"shx": "^0.4.0",
 		"tsup": "^8.0.0",
 		"typescript": "^5.9.2",

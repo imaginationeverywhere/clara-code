@@ -4,6 +4,11 @@
 
 ### Added
 
+- **Quarterly ejection attestation** — `QuarterlyAttestation` modal + `useQuarterlyAttestation` (Clerk + `/api/ejections`); shown once per quarter when the user has any ejections. Wired into `(app)/layout.tsx`.
+
+### Changed
+
+- **Package version** — `0.1.1` → **`0.1.2`** (quarterly attestation UI; see **Added** above).
 - `InstallCommandCopyButton` — clipboard helper for the marketing install block.
 - **Clara marketing voice** — `ClaraVoiceGreeting` client component and `src/lib/clara-voice.ts` for on-site greeting TTS (cross-ref: root `CHANGELOG.md`).
 

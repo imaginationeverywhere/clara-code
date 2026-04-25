@@ -47,3 +47,21 @@ export function tierGte(tier: PlanTier, min: PlanTier): boolean {
 export function tierCanBuildRuntimeAgents(tier: PlanTier): boolean {
 	return tier === "business" || tier === "enterprise";
 }
+
+/**
+ * Per-tier caps for user-configured harness agents (`/config-agent`, `user_agents` table).
+ * `skillsPerAgent` of `null` means no cap.
+ */
+export type PlanLimitsConfig = {
+	harnessAgentSlots: number;
+	skillsPerAgent: number | null;
+};
+
+export const PLAN_LIMITS: Record<PlanTier, PlanLimitsConfig> = {
+	free: { harnessAgentSlots: 1, skillsPerAgent: 3 },
+	basic: { harnessAgentSlots: 2, skillsPerAgent: 4 },
+	pro: { harnessAgentSlots: 4, skillsPerAgent: 6 },
+	max: { harnessAgentSlots: 6, skillsPerAgent: 8 },
+	business: { harnessAgentSlots: 10, skillsPerAgent: 12 },
+	enterprise: { harnessAgentSlots: 20, skillsPerAgent: null },
+};

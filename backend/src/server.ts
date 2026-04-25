@@ -24,6 +24,7 @@ import { withAuth } from "@/middleware/clerk-auth";
 import apiRoutes from "@/routes/index";
 import { clerkWebhookHandler } from "@/routes/webhooks-clerk";
 import { stripeWebhookHandler } from "@/routes/webhooks-stripe";
+import "@/jobs/fingerprint-scan";
 import { seedMcpCatalogIfEmpty } from "@/seeds/mcp-servers.seed";
 import { logger } from "@/utils/logger";
 

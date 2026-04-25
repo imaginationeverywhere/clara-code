@@ -4,9 +4,13 @@
 
 ### Added
 
+- **`clara config-agent` / `clara configure-agent`** — interactive template → name → voice (library or 5s `captureVoiceSample`) → skills; calls `GET /api/agents/templates` and `POST /api/agents/configure` via `lib/agents-api.ts`. `prompts` dependency. Voice doc string in `src/voice/config-agent-flow.ts` for future `/api/voice/converse` handoff.
+
 - **Per-day voice session** — `buildSessionId(userId, agentId)` in `lib/canonical-greeting.ts` (`{userId}-{agentId}-YYYY-MM-DD`); `voice-converse` app reads `userId` from `~/.clara` config, passes `agent_id`, `session_id`, and `surface` in `postVoiceConverse` and `playCanonicalGreeting` options (aligned with backend memory).
 
 ### Changed
+
+- **Package version** — `0.1.0` → **`0.1.1`** (`clara config-agent` and `agents-api`; see **Added** above).
 
 - **Default voice service URL** — `CLARA_VOICE_URL` is optional: empty/unset → `https://api.claracode.ai/api` in `voice-converse-app.tsx` and `lib/canonical-greeting.ts` so greet/converse work on fresh install without env.
 - **TUI** — `HERMES_GATEWAY_URL` → `CLARA_GATEWAY_URL`; default gateway `https://api.claracode.ai/api` when not in env or `~/.clara/config.json`. `clara tui` is voice-on by default; `--no-voice` for text-only. `lib/gateway.ts` fix text references `CLARA_GATEWAY_URL`.

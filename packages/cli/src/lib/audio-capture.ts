@@ -120,3 +120,15 @@ function realCapture(tool: "rec" | "sox"): AudioCapture {
 		},
 	};
 }
+
+/**
+ * Record for a fixed duration, then return raw audio as base64 (clone flow for `/api/agents/configure`).
+ */
+export async function captureVoiceSample(options: { durationSeconds: number }): Promise<string> {
+	const cap = startCapture();
+	await new Promise<void>((resolve) => {
+		setTimeout(resolve, options.durationSeconds * 1000);
+	});
+	const buf = await cap.stop();
+	return buf.toString("base64");
+}

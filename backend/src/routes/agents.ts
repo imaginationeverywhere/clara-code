@@ -2,10 +2,12 @@ import { type Response, Router } from "express";
 import { type ApiKeyRequest, requireClaraOrClerk } from "@/middleware/api-key-auth";
 import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Agent } from "@/models/Agent";
+import { AgentTemplate } from "@/models/AgentTemplate";
 import { agentConfigService } from "@/services/agent-config.service";
 import { agentMessagingService, type SendMessageInput } from "@/services/agent-messaging.service";
 import { agentPhaseService } from "@/services/agent-phase.service";
 import { attachSkills } from "@/services/agent-skill.service";
+import { configAgentService } from "@/services/config-agent.service";
 import { tierCanBuildRuntimeAgents, toPlanTier } from "@/services/plan-limits";
 import type { AgentPhase } from "@/types/agent";
 import { logger } from "@/utils/logger";
@@ -18,6 +20,98 @@ function pricingUrl(): string {
 	}
 	return "https://claracode.ai/pricing";
 }
+
+// Harness agents (`user_agents` table) — template → named VP team member. See `/config-agent` CLI.
+router.get(
+	"/templates",
+	requireClaraOrClerk,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const where: { isPublic: boolean; category?: string; industryVertical?: string } = { isPublic: true };
+		const cat = typeof req.query.category === "string" ? req.query.category.trim() : "";
+		if (cat.length > 0) {
+			where.category = cat;
+		}
+		const ind = typeof req.query.industry_vertical === "string" ? req.query.industry_vertical.trim() : "";
+		if (ind.length > 0) {
+			where.industryVertical = ind;
+		}
+		const templates = await AgentTemplate.findAll({
+			where,
+			order: [
+				["category", "ASC"],
+				["sortOrder", "ASC"],
+				["displayName", "ASC"],
+			],
+		});
+		res.json({ templates });
+	},
+);
+
+router.get(
+	"/",
+	requireClaraOrClerk,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const userId = req.claraUser?.userId;
+		if (!userId) {
+			res.status(401).json({ error: "Authenticated user required" });
+			return;
+		}
+		const agents = await configAgentService.listActiveAgents(userId);
+		res.json({ agents });
+	},
+);
+
+router.post(
+	"/configure",
+	requireClaraOrClerk,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const userId = req.claraUser?.userId;
+		if (!userId) {
+			res.status(401).json({ error: "Authenticated user required" });
+			return;
+		}
+		const tier = toPlanTier(req.claraUser?.tier);
+		const body = req.body as {
+			template_id?: string;
+			name?: string;
+			voice?: { source: string; voiceId?: string; audioBase64?: string };
+			skill_ids?: string[];
+			personality_tweaks?: Record<string, string>;
+		};
+		if (!body.template_id || !body.name || !body.voice) {
+			res.status(400).json({ error: "template_id, name, and voice are required" });
+			return;
+		}
+		const v = body.voice;
+		let voice: { source: "library"; voiceId: string } | { source: "clone"; audioBase64: string };
+		if (v.source === "clone" && typeof v.audioBase64 === "string") {
+			voice = { source: "clone", audioBase64: v.audioBase64 };
+		} else if (v.source === "library" && typeof v.voiceId === "string") {
+			voice = { source: "library", voiceId: v.voiceId };
+		} else {
+			res.status(400).json({ error: "invalid_voice_payload" });
+			return;
+		}
+		try {
+			const payload: Parameters<typeof configAgentService.configure>[0] = {
+				userId,
+				tier,
+				templateId: body.template_id,
+				name: body.name,
+				voice,
+				skillIds: Array.isArray(body.skill_ids) ? body.skill_ids : [],
+			};
+			if (body.personality_tweaks) {
+				payload.personalityTweaks = body.personality_tweaks;
+			}
+			const agent = await configAgentService.configure(payload);
+			res.status(201).json({ agent });
+		} catch (err) {
+			const message = err instanceof Error ? err.message : "error";
+			res.status(400).json({ error: message });
+		}
+	},
+);
 
 router.post(
 	"/",
@@ -184,6 +278,24 @@ router.get(
 		const { threadId } = req.params;
 		const messages = await agentMessagingService.getThread(userId, threadId);
 		res.json({ messages });
+	},
+);
+
+router.delete(
+	"/:id",
+	requireClaraOrClerk,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const userId = req.claraUser?.userId;
+		if (!userId) {
+			res.status(401).json({ error: "Authenticated user required" });
+			return;
+		}
+		try {
+			await configAgentService.retireAgent(userId, req.params.id);
+			res.status(204).end();
+		} catch {
+			res.status(404).json({ error: "not_found" });
+		}
 	},
 );
 

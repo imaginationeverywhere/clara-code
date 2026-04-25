@@ -4,6 +4,10 @@
 
 ### Added (cross-reference)
 
+- **Backend REST — harness agents, site owner, mobile updates, ejection** — `docs/backend-rest-api.md` now includes `/api/agents` (templates + `user_agents` + configure), `/api/site-owner/*`, `/api/mobile-updates/*`, `/api/ejections` (migrations `032`–`037`); `backend/.env.example` adds `EJECTION_S3_BUCKET`. Implementation: `backend/CHANGELOG.md`, `frontend/CHANGELOG.md` (quarterly attestation), `packages/sdk/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**. Prompts **19–20, 23–25** under `prompts/2026/April/25/3-completed/`.
+
+### Added (cross-reference)
+
 - **Backend REST — agent messaging, sprints, Clara scrum, builder/runtime phase** — `docs/backend-rest-api.md` documents `/api/agents`, `/api/sprints`, migrations `028`–`031`, and voice memory layering. Implementation: `backend/CHANGELOG.md` **\[Unreleased\]**, root `CHANGELOG.md` **\[Unreleased\]**. Prompts `08`, `09`, `10`, `15` completed under `prompts/2026/April/23/3-completed/`.
 
 ### Added (cross-reference)
