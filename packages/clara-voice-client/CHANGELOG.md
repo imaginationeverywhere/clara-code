@@ -8,6 +8,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- `ConverseRequestBody` — optional `agent_id` and `surface` (session-scoped agent + surface) for Clara backend memory routing.
+
 ### Fixed
 
 - `postVoiceConverse` maps Hermes `reply` field to `reply_text` (with existing aliases); aligns with clara-voice / Hermes gateway responses.

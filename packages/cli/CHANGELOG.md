@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Added
+
+- **Per-day voice session** — `buildSessionId(userId, agentId)` in `lib/canonical-greeting.ts` (`{userId}-{agentId}-YYYY-MM-DD`); `voice-converse` app reads `userId` from `~/.clara` config, passes `agent_id`, `session_id`, and `surface` in `postVoiceConverse` and `playCanonicalGreeting` options (aligned with backend memory).
+
 ### Changed
 
 - **Default voice service URL** — `CLARA_VOICE_URL` is optional: empty/unset → `https://api.claracode.ai/api` in `voice-converse-app.tsx` and `lib/canonical-greeting.ts` so greet/converse work on fresh install without env.

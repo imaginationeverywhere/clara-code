@@ -14,6 +14,7 @@ import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { voiceLimiter } from "@/middleware/rate-limit";
 import { voiceLimitMiddleware } from "@/middleware/voice-limit";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
+import { type HistoryEntry, memoryService } from "@/services/memory.service";
 import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
 import { logger } from "@/utils/logger";
 import { silenceWav } from "@/utils/silence-wav";
@@ -300,8 +301,26 @@ function converseApiKey(): string | undefined {
 	return hermesApiKey();
 }
 
+// GET /api/voice/memory?agent_id=clara
+// Returns memory context for (user, agent) pair. agent_id defaults to 'clara'.
+router.get(
+	"/memory",
+	requireClaraOrClerk,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const userId = req.claraUser?.userId;
+		if (!userId) {
+			res.status(401).json({ error: "Authenticated user required" });
+			return;
+		}
+		const agentId =
+			typeof req.query.agent_id === "string" && req.query.agent_id.length > 0 ? req.query.agent_id : "clara";
+		const context = await memoryService.getMemoryContext(userId, agentId);
+		res.json(context);
+	},
+);
+
 // POST /api/voice/converse — single-round-trip voice: audio in → STT → LLM → TTS → audio out
-// Request body: { audio_base64: string (required), voice_id?, history?, max_tokens? }
+// Request body: { audio_base64?, text?, voice_id?, history?, max_tokens?, session_id?, agent_id?, surface? }
 // Response: { transcript, response_text, audio_base64 } — proxied from voice server
 // Auth scheme: same as /stt — edge validates Clerk/Clara key, injects CLARA_VOICE_API_KEY server-side
 router.post(
@@ -312,18 +331,28 @@ router.post(
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
 		const {
 			audio_base64,
+			text,
 			voice_id = "clara",
 			history = [],
 			max_tokens = 300,
+			session_id,
+			agent_id = "clara",
+			surface = "cli",
 		} = (req.body ?? {}) as {
 			audio_base64?: string;
+			text?: string;
 			voice_id?: string;
 			history?: unknown[];
 			max_tokens?: number;
+			session_id?: string;
+			agent_id?: string;
+			surface?: string;
 		};
 
-		if (typeof audio_base64 !== "string" || audio_base64.length === 0) {
-			res.status(400).json({ error: "audio_base64 is required" });
+		const hasAudio = typeof audio_base64 === "string" && audio_base64.length > 0;
+		const hasText = typeof text === "string";
+		if (!hasAudio && !hasText) {
+			res.status(400).json({ error: "audio_base64 or text is required" });
 			return;
 		}
 
@@ -332,7 +361,6 @@ router.post(
 			res.status(503).json({ error: "Voice service is not available" });
 			return;
 		}
-
 		const apiKey = converseApiKey();
 		if (!apiKey) {
 			logger.error("CLARA_VOICE_API_KEY / HERMES_API_KEY is not set — refusing to proxy to voice server");
@@ -340,22 +368,67 @@ router.post(
 			return;
 		}
 
+		const userId = req.claraUser?.userId;
+		const sessionId = session_id ?? (userId ? `${userId}-${agent_id}-fallback` : "anonymous");
+		const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
+
+		let memoryHistory: HistoryEntry[] = [];
+		if (userId) {
+			const [context] = await Promise.all([
+				memoryService.getMemoryContext(userId, agent_id),
+				memoryService.touchSession(userId, agent_id, surface, sessionId),
+			]);
+			memoryHistory = memoryService.buildHistory(context);
+		}
+
 		try {
 			const response = await axios.post(
 				`${base}/voice/converse`,
-				{ audio_base64, voice_id, history, max_tokens },
+				{
+					...(hasAudio ? { audio_base64 } : {}),
+					...(hasText ? { text } : {}),
+					voice_id,
+					history: userId ? memoryHistory : Array.isArray(history) ? history : [],
+					max_tokens,
+					...(userId ? { session_id: sessionId, agent_id, surface } : {}),
+				},
 				{
 					timeout: HERMES_TIMEOUT_MS,
 					headers: { Authorization: `Bearer ${apiKey}` },
+					responseType: "json",
 				},
 			);
-			const userId = req.claraUser?.userId;
-			const usageTier = (req.claraUser?.tier ?? "free") as VoiceTier;
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
 			}
+			if (userId) {
+				const userContent = hasText ? (text ?? "") : "[audio]";
+				const d = response.data as {
+					response_text?: string;
+					reply_text?: string;
+					transcript?: string;
+				};
+				const assistantContent =
+					typeof d?.response_text === "string" && d.response_text.length > 0
+						? d.response_text
+						: typeof d?.reply_text === "string" && d.reply_text.length > 0
+							? d.reply_text
+							: typeof d?.transcript === "string" && d.transcript.length > 0
+								? d.transcript
+								: "";
+
+				void Promise.all([
+					userContent
+						? memoryService.saveTurn(userId, agent_id, sessionId, surface, "user", userContent)
+						: Promise.resolve(),
+					assistantContent
+						? memoryService.saveTurn(userId, agent_id, sessionId, surface, "assistant", assistantContent)
+						: Promise.resolve(),
+				]).catch((err) => logger.error("[memory] background save failed:", err));
+			}
+
 			const uid = userId ?? "anonymous";
-			const aid = typeof voice_id === "string" && voice_id.length > 0 ? voice_id : "clara";
+			const aid = agent_id;
 			const { payload: safePayload } = filterConverseResponsePayload(response.data, uid, aid);
 			res.json(safePayload);
 		} catch (error) {

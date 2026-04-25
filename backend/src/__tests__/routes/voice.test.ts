@@ -41,8 +41,41 @@ jest.mock("@/services/voice-usage.service", () => ({
 	},
 }));
 
+jest.mock("@/services/memory.service", () => {
+	const buildHistory = (context: {
+		summary: string | null;
+		recentTurns: { role: "user" | "assistant"; content: string }[];
+	}): { role: "user" | "assistant"; content: string }[] => {
+		const h: { role: "user" | "assistant"; content: string }[] = [];
+		if (context.summary) {
+			h.push({ role: "user", content: `[Memory] ${context.summary}` });
+			h.push({ role: "assistant", content: "Understood." });
+		}
+		h.push(...context.recentTurns);
+		return h;
+	};
+	return {
+		memoryService: {
+			getMemoryContext: jest.fn().mockResolvedValue({
+				agentId: "clara",
+				summary: null,
+				keyFacts: [],
+				recentTurns: [],
+				lastSessionAt: null,
+				lastSessionSurface: null,
+				totalSessions: 0,
+				isReturningUser: false,
+			}),
+			touchSession: jest.fn().mockResolvedValue(undefined),
+			saveTurn: jest.fn().mockResolvedValue(undefined),
+			buildHistory,
+		},
+	};
+});
+
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
+import { memoryService } from "@/services/memory.service";
 import { voiceUsageService } from "@/services/voice-usage.service";
 
 const app = express();
@@ -239,6 +272,23 @@ describe("routes /api/voice", () => {
 		});
 	});
 
+	describe("GET /api/voice/memory", () => {
+		it("200 and returns memory context for default clara", async () => {
+			const res = await request(app).get("/api/voice/memory");
+			expect(res.status).toBe(200);
+			expect(res.body).toMatchObject({ agentId: "clara" });
+			const getMemory = memoryService.getMemoryContext as jest.MockedFunction<typeof memoryService.getMemoryContext>;
+			expect(getMemory).toHaveBeenCalledWith("user_voice_test", "clara");
+		});
+
+		it("uses agent_id from query", async () => {
+			const res = await request(app).get("/api/voice/memory").query({ agent_id: "harness-uuid" });
+			expect(res.status).toBe(200);
+			const getMemory = memoryService.getMemoryContext as jest.MockedFunction<typeof memoryService.getMemoryContext>;
+			expect(getMemory).toHaveBeenCalledWith("user_voice_test", "harness-uuid");
+		});
+	});
+
 	describe("POST /api/voice/converse", () => {
 		let prevHermes: string | undefined;
 		let prevHermesKey: string | undefined;
@@ -267,10 +317,10 @@ describe("routes /api/voice", () => {
 			else process.env.CLARA_VOICE_API_KEY = prevConverseKey;
 		});
 
-		it("400 when audio_base64 is missing", async () => {
+		it("400 when neither audio_base64 nor text is present", async () => {
 			const res = await request(app).post("/api/voice/converse").send({});
 			expect(res.status).toBe(400);
-			expect(res.body.error).toMatch(/audio_base64/);
+			expect(String(res.body.error)).toMatch(/required/);
 		});
 
 		it("503 when no voice server URL is configured", async () => {
@@ -297,9 +347,26 @@ describe("routes /api/voice", () => {
 			expect(res.body.audio_base64).toBe("MP3DATA==");
 			expect(axios.post).toHaveBeenCalledWith(
 				"https://hermes.test.example/voice/converse",
-				expect.objectContaining({ audio_base64: "AAAA", voice_id: "clara" }),
+				expect.objectContaining({
+					audio_base64: "AAAA",
+					voice_id: "clara",
+					agent_id: "clara",
+					surface: "cli",
+					session_id: expect.stringContaining("user_voice_test"),
+					history: expect.any(Array),
+				}),
 				expect.objectContaining({ headers: expect.objectContaining({ Authorization: "Bearer test-hermes-key" }) }),
 			);
+		});
+
+		it("200 accepts text-only greeting (empty string)", async () => {
+			(axios.post as jest.Mock).mockResolvedValueOnce({
+				data: { reply_text: "hello", response_text: "hello" },
+			});
+			const res = await request(app)
+				.post("/api/voice/converse")
+				.send({ text: "", session_id: "s-greet", surface: "cli" });
+			expect(res.status).toBe(200);
 		});
 
 		it("200 and strips forbidden substrings from proxied text fields (IP firewall)", async () => {

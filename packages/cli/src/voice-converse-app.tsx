@@ -5,7 +5,8 @@ import { join } from "node:path";
 import { type ConverseResult, postVoiceConverse } from "@imaginationeverywhere/clara-voice-client";
 import { type Key, useInput, Box, Text, useApp } from "ink";
 import { useCallback, useEffect, useRef, useState, type ReactElement } from "react";
-import { playCanonicalGreeting } from "./lib/canonical-greeting.js";
+import { buildSessionId, playCanonicalGreeting } from "./lib/canonical-greeting.js";
+import { readClaraConfig } from "./lib/config-store.js";
 import { playAudioFile } from "./lib/play-audio-file.js";
 import { startCapture, type AudioCapture } from "./lib/audio-capture.js";
 
@@ -26,14 +27,21 @@ export function VoiceConverseApp(): ReactElement {
 	const [greetErr, setGreetErr] = useState("");
 	const [status, setStatus] = useState("Loading greeting…");
 	const [line, setLine] = useState("");
-	const sessionIdRef = useRef(randomBytes(12).toString("hex"));
+	const cfg = readClaraConfig();
+	const userId = cfg.userId?.trim() || "guest";
+	const agentId = "clara";
+	const sessionIdRef = useRef(buildSessionId(userId, agentId));
 	const capRef = useRef<AudioCapture | null>(null);
 	const [listening, setListening] = useState(false);
 	const [busy, setBusy] = useState(false);
 
 	useEffect(() => {
 		(async () => {
-			const r = await playCanonicalGreeting();
+			const r = await playCanonicalGreeting({
+				agentId,
+				sessionId: sessionIdRef.current,
+				surface: "cli",
+			});
 			if (!r.ok) {
 				setGreet("failed");
 				setGreetErr(r.message);
@@ -53,7 +61,9 @@ export function VoiceConverseApp(): ReactElement {
 		const res: ConverseResult = await postVoiceConverse(
 			base,
 			{
+				agent_id: agentId,
 				session_id: sessionIdRef.current,
+				surface: "cli",
 				audio_base64: b64,
 				mime_type: "audio/wav",
 			},

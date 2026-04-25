@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Added (cross-reference)
+
+- **Backend — agent-scoped voice memory** — `007_user_memory.sql`, `GET /api/voice/memory`, `POST /api/voice/converse` memory + `text`-only; CLI session id + `agent_id`/`surface` on the voice client. See `docs/voice-dev-stub.md`, `backend/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, `packages/clara-voice-client/CHANGELOG.md`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 ### Security (cross-reference)
 
 - **Backend — agent IP firewall** — Forbidden-pattern registry, voice response sanitization for `POST /api/voice/converse`, optional `SOUL_ENCRYPTION_KEY` for marketplace SOUL encryption. See `backend/CHANGELOG.md`, `backend/.env.example`, and root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

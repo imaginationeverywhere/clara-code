@@ -7,6 +7,10 @@ export type ConverseRequestBody = {
 	mime_type?: string;
 	text?: string;
 	session_id?: string;
+	/** Clara core agent id, or a harness agent UUID. */
+	agent_id?: string;
+	/** e.g. cli, web, desktop. */
+	surface?: string;
 	extra?: Record<string, unknown>;
 };
 

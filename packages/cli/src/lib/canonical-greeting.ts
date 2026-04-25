@@ -56,7 +56,18 @@ const defaultGreetingDeps = (): GreetingDeps => ({
 	fetch: globalThis.fetch,
 });
 
-export type PlayGreetingOptions = { refresh?: boolean; deps?: Partial<GreetingDeps> };
+export function buildSessionId(userId: string, agentId: string): string {
+	const date = new Date().toISOString().split("T")[0];
+	return `${userId}-${agentId}-${date}`;
+}
+
+export type PlayGreetingOptions = {
+	refresh?: boolean;
+	agentId?: string;
+	sessionId?: string;
+	surface?: string;
+	deps?: Partial<GreetingDeps>;
+};
 
 /**
  * Fetches and plays the canonical greeting (cache → /voice/converse with optional TTS, no /voice/respond).
@@ -84,8 +95,20 @@ export async function playCanonicalGreeting(options?: PlayGreetingOptions): Prom
 	}
 
 	const apiKey = voiceApiKey();
-	const sessionId = readClaraConfig().userId ?? "dev";
-	const converse: ConverseResult = await d.postVoiceConverse(base, { text: "", session_id: sessionId }, { apiKey });
+	const cfg = readClaraConfig();
+	const userId = cfg.userId?.trim() || "guest";
+	const agentId = options?.agentId ?? "clara";
+	const sessionId = options?.sessionId ?? buildSessionId(userId, agentId);
+	const converse: ConverseResult = await d.postVoiceConverse(
+		base,
+		{
+			text: "",
+			agent_id: agentId,
+			session_id: sessionId,
+			surface: options?.surface ?? "cli",
+		},
+		{ apiKey },
+	);
 
 	if (converse.ok && typeof converse.reply_audio_base64 === "string" && converse.reply_audio_base64.length > 0) {
 		const buf = Buffer.from(converse.reply_audio_base64, "base64");

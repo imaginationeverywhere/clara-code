@@ -4,6 +4,14 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-25
 
+### Added
+
+- **Backend — agent-scoped persistent memory (voice)** — SQL migration `backend/migrations/007_user_memory.sql` (`conversation_turns`, `agent_user_memory`); Sequelize models and `memory.service.ts`; `POST /api/voice/converse` loads memory per `(user, agent_id)`, supports `text` without audio, forwards `history` to Hermes, best-effort turn persistence; `GET /api/voice/memory?agent_id=`. **CLI** — per-day `session_id` from `~/.clara` `userId` + `buildSessionId`, passes `agent_id` / `surface` via `@imaginationeverywhere/clara-voice-client`. Tests: `memory.service.test.ts`, extended `voice.test.ts`. Prompt `00-persistent-memory-foundation` completed under `prompts/2026/April/23/3-completed/`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/clara-voice-client/CHANGELOG.md`**, and **`docs/CHANGELOG.md`**.
+
+### Changed
+
+- **Monorepo version** — root `package.json` `0.2.6` → **`0.2.7`** (agent-scoped voice memory; see **Added** above and **`docs/voice-dev-stub.md`**).
+
 ### Security
 
 - **Backend — agent IP firewall** — Server-side forbidden-pattern list (`backend/src/lib/ip-firewall.ts`), `filterConverseResponsePayload` on `POST /api/voice/converse` responses, `agentConfigService` for future SOUL/system-prompt wrapping, AES-256-CBC helpers for marketplace SOUL at rest (`SOUL_ENCRYPTION_KEY` in `backend/.env.example`). Jest coverage in `backend/src/__tests__/lib/ip-firewall.test.ts` and the voice route suite. See **`backend/CHANGELOG.md`**, **`docs/CHANGELOG.md`**, and `backend/.env.example`.

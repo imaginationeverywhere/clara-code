@@ -4,6 +4,10 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ## [Unreleased] - 2026-04-25
 
+### Added
+
+- **Agent-scoped persistent memory** — migration `migrations/007_user_memory.sql` creates `conversation_turns` and `agent_user_memory`; Sequelize models `ConversationTurn` / `AgentUserMemory`; `services/memory.service.ts` (get/save/touch, `buildHistory` for the voice proxy). `POST /api/voice/converse` accepts `text` without audio (e.g. greeting), merges `agent_id` / `session_id` / `surface`, forwards memory-backed `history` upstream, and best-effort saves turns after a successful round-trip. `GET /api/voice/memory?agent_id=` returns memory context for a user + agent pair. CLI: deterministic per-day `session_id` from config `userId` and `export buildSessionId`; greet/converse pass `agent_id: clara` and `surface: cli` through the voice client.
+
 ### Security
 
 - **Agent IP firewall (server-side)** — `src/lib/ip-firewall.ts` defines forbidden patterns (model IDs, Modal/Hermes references, internal URLs, token-like strings), `detectForbidden`, `sanitize`, `AGENT_IP_WRAPPER`, `isIntrospectionQuery`, and `deflectionResponse` for use by agent and voice flows.

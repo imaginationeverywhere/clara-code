@@ -58,6 +58,22 @@ body from Hermes.
 **Dev stub** returns a 1-second silence WAV (16-bit PCM mono, 8 kHz) with the
 header `x-clara-voice-stub: 1`.
 
+### `POST /api/voice/converse`
+
+Full voice round-trip (audio and/or text in, JSON + optional audio out). For
+authenticated users, the edge loads **agent-scoped memory** (see migration
+`backend/migrations/007_user_memory.sql`: `conversation_turns` + `agent_user_memory`)
+and forwards a built `history` to the upstream voice server. `agent_id` defaults
+to `clara`; harness agents pass a UUID. Body may include `session_id`, `surface`
+(`cli` | `web` | `desktop`), and `text` without `audio_base64` (e.g. empty-string
+greeting). At least one of `audio_base64` or `text` is required (400 if neither).
+
+### `GET /api/voice/memory?agent_id=...`
+
+Returns JSON memory context for the signed-in user and the given `agent_id`
+(default `clara`). Used for inspection and client-side debugging; not required for
+normal `converse` (memory is applied server-side automatically).
+
 ## Auth scheme (Option B)
 
 The CLI/web client sends its user token (Clerk JWT or `sk-clara-`) to this
