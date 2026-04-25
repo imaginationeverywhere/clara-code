@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Review** — `docs/review/20260425-014844-code-review.md` (UltraThink: QCS1 prompt waves, pricing documentation consistency, prompt queue). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 - **Backend + CLI — `/config-agent` harness agents** — SQL `032`–`034` (`agent_templates` ≥20 rows, `user_agents`); `GET/POST/DELETE` on `/api/agents` for template catalog and `user_agents`; `clara config-agent`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**. Prompts **`19-config-agent-command`**, **`20-agent-template-library`** → `prompts/2026/April/25/3-completed/`.
 
 - **Backend + SDK — SITE_OWNER interactions + mobile update queue** — Migrations `035`–`036` (`site_agent_deployments`, `site_owner_*`, `mobile_update_requests`); `platform-standards.service`, `require-site-owner` middleware, `/api/site-owner/*` and `/api/mobile-updates/*` routes, `buildSiteOwnerAgentSystemPrompt`, `mobile-note-capture.service` + `voice-spec-interpreter`. **`@claracode/sdk/react`**: `SiteOwnerPanel`, `useAgentNoteCapture`, `MOBILE_CAPTURE_MODE_PROMPT`. See **`backend/CHANGELOG.md`**, **`packages/sdk/CHANGELOG.md`**, **`docs/backend-rest-api.md`**. Prompts **`23-site-owner-agent-interaction`**, **`24-mobile-agent-notes-capture`** → `prompts/2026/April/25/3-completed/`.
@@ -19,6 +21,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 - **Backend — agent-scoped persistent memory (voice)** — SQL migration `backend/migrations/007_user_memory.sql` (`conversation_turns`, `agent_user_memory`); Sequelize models and `memory.service.ts`; `POST /api/voice/converse` loads memory per `(user, agent_id)`, supports `text` without audio, forwards `history` to Hermes, best-effort turn persistence; `GET /api/voice/memory?agent_id=`. **CLI** — per-day `session_id` from `~/.clara` `userId` + `buildSessionId`, passes `agent_id` / `surface` via `@imaginationeverywhere/clara-voice-client`. Tests: `memory.service.test.ts`, extended `voice.test.ts`. Prompt `00-persistent-memory-foundation` completed under `prompts/2026/April/23/3-completed/`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/clara-voice-client/CHANGELOG.md`**, and **`docs/CHANGELOG.md`**.
 
 ### Changed
+
+- **Customer-facing pricing (copy)** — `customer-facing-page.md` revised in `pricing/` and mirroring `.cursor/pricing/`. See `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
+- **Monorepo version** — root `package.json` `0.4.0` → **`0.4.1`** (docs-only: `customer-facing-page` + `docs/review/20260425-014844-code-review.md`).
 
 - **Version bump (this release)** — root **`0.3.0` → `0.4.0`**. **`@clara-code/backend`** `1.1.0` → **`1.2.0`**. **`@claracode/sdk`** `0.1.1` → **`0.2.0`**. **CLI** (`packages/cli`) `0.1.0` → **`0.1.1`**. **`@clara/web-ui` / `frontend`** `0.1.1` → **`0.1.2`**. See **Added** in this **\[Unreleased\] - 2026-04-25** block: `/config-agent`, SITE_OWNER + mobile update queue, agent ejection, quarterly attestation.
 

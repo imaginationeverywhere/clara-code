@@ -4,6 +4,14 @@
 
 ### Added (cross-reference)
 
+- **`docs/review/20260425-014844-code-review.md`** — UltraThink session review (QCS1 prompt execution, pricing doc consistency, prompt queue status, documentation-focused coverage posture). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
+### Changed (cross-reference)
+
+- **Customer-facing pricing** — `customer-facing-page.md` updated in `pricing/` and `.cursor/pricing/`. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
+### Added (cross-reference)
+
 - **Backend REST — harness agents, site owner, mobile updates, ejection** — `docs/backend-rest-api.md` now includes `/api/agents` (templates + `user_agents` + configure), `/api/site-owner/*`, `/api/mobile-updates/*`, `/api/ejections` (migrations `032`–`037`); `backend/.env.example` adds `EJECTION_S3_BUCKET`. Implementation: `backend/CHANGELOG.md`, `frontend/CHANGELOG.md` (quarterly attestation), `packages/sdk/CHANGELOG.md`, `packages/cli/CHANGELOG.md`, root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**. Prompts **19–20, 23–25** under `prompts/2026/April/25/3-completed/`.
 
 ### Added (cross-reference)

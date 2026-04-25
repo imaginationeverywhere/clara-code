@@ -58,8 +58,8 @@ Their answer maps to a suggested agent configuration:
 
 | User says... | Clara suggests | Tier |
 |--------------|----------------|------|
-| "A simple website for my business" | 1 Frontend Engineer with Next.js + Tailwind skills | Basic $39 |
-| "A booking app for my barbershop" | 1 Full-Stack Engineer with barbershop vertical skill | Basic $39 |
+| "A simple website for my business" | 1 Frontend Engineer with Next.js + Tailwind Talents | Basic $39 |
+| "A booking app for my barbershop" | 1 Full-Stack Engineer with barbershop vertical Talent | Basic $39 |
 | "An ecommerce store" | 3 agents: Frontend + Backend + Stripe integrations | Pro $69 |
 | "A SaaS with mobile app" | 6 agents: +Mobile + QA + DevOps | Max $99 |
 | "Run my business and have agents talk to customers" | 12 agents + runtime agent builder | Business $299 |
