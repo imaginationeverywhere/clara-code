@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Changed (cross-reference)
+
+- **Prompt 14 (not started)** — `14-skills-per-agent-and-voice-limits.md` removed; replaced by **`14-talents-per-agent-tier-caps.md`** (Talents per agent, tier caps, Talent Library, wallet purchase flow; supersedes Skills + combined voice-limits draft). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 ### Added (cross-reference)
 
 - **`docs/review/20260425-014844-code-review.md`** — UltraThink session review (QCS1 prompt execution, pricing doc consistency, prompt queue status, documentation-focused coverage posture). See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.

@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Product prompt 14 (supersedes prior draft)** — `prompts/2026/April/23/1-not-started/14-talents-per-agent-tier-caps.md` replaces `14-skills-per-agent-and-voice-limits.md`. Scope: per-tier **Talents** attach caps, Talent Library inventory, wallet purchase; voice limits remain on tier ladder + abuse docs per pricing cross-links. See `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
+
 - **Review** — `docs/review/20260425-014844-code-review.md` (UltraThink: QCS1 prompt waves, pricing documentation consistency, prompt queue). Cross-ref: `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 
 - **Backend + CLI — `/config-agent` harness agents** — SQL `032`–`034` (`agent_templates` ≥20 rows, `user_agents`); `GET/POST/DELETE` on `/api/agents` for template catalog and `user_agents`; `clara config-agent`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**. Prompts **`19-config-agent-command`**, **`20-agent-template-library`** → `prompts/2026/April/25/3-completed/`.
@@ -24,7 +26,7 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 - **Customer-facing pricing (copy)** — `customer-facing-page.md` revised in `pricing/` and mirroring `.cursor/pricing/`. See `docs/CHANGELOG.md` **\[Unreleased\] - 2026-04-25**.
 
-- **Monorepo version** — root `package.json` `0.4.0` → **`0.4.1`** (docs-only: `customer-facing-page` + `docs/review/20260425-014844-code-review.md`).
+- **Monorepo version** — root `package.json` `0.4.0` → **`0.4.1`** (docs-only: `customer-facing-page` + `docs/review/20260425-014844-code-review.md`); `0.4.1` → **`0.4.2`** (prompt 14 Talents/tier-caps spec; planning-only).
 
 - **Version bump (this release)** — root **`0.3.0` → `0.4.0`**. **`@clara-code/backend`** `1.1.0` → **`1.2.0`**. **`@claracode/sdk`** `0.1.1` → **`0.2.0`**. **CLI** (`packages/cli`) `0.1.0` → **`0.1.1`**. **`@clara/web-ui` / `frontend`** `0.1.1` → **`0.1.2`**. See **Added** in this **\[Unreleased\] - 2026-04-25** block: `/config-agent`, SITE_OWNER + mobile update queue, agent ejection, quarterly attestation.
 
