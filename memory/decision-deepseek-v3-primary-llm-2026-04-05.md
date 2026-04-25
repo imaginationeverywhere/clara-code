@@ -2,10 +2,20 @@
 type: decision
 date: 2026-04-05
 topic: DeepSeek V3.2 as Primary LLM for Agent Harness (Replacing Qwen3 / Haiku)
-status: approved
+status: SUPERSEDED 2026-04-25
 priority: critical
-tags: [llm, deepseek, bedrock, pricing, agent-harness, voice, business-model]
+supersededBy: decision-canonical-stack-supersedes-deepseek-primary-2026-04-25.md
+tags: [llm, deepseek, bedrock, pricing, agent-harness, voice, business-model, superseded]
 ---
+
+> **SUPERSEDED 2026-04-25** — This 2026-04-05 decision named DeepSeek V3.2 as the **primary** LLM for the agent harness. On 2026-04-25, with self-hosted Voxtral live on Modal A10G and Gemma 4 27B batched inference on Modal A100 proven in production, the canonical default routing changed to:
+>
+> - **Default (~80%):** Gemma 4 27B self-hosted on Modal A100
+> - **Reasoning (~10-15%):** Kimi K2 self-hosted on Modal H100
+> - **Heavy / long-context (~3-5%):** DeepSeek V3 on AWS Bedrock
+> - **Premium (<1%):** Claude / GPT via Bedrock — Enterprise default or explicit user opt-in
+>
+> DeepSeek V3 remains in the stable but is no longer the primary route. The numeric COGS, margin, and scale tables below reflect the **prior** architecture and should not be quoted as current. See `pricing/model-routing-strategy.md` and `pricing/cogs-and-unit-economics.md` for current truth, and `memory/decision-canonical-stack-supersedes-deepseek-primary-2026-04-25.md` for the supersession record. Original content preserved below for historical reference.
 
 # Decision: DeepSeek V3.2 on AWS Bedrock = Primary LLM for Voice Agents
 

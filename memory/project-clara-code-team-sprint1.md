@@ -1,7 +1,8 @@
 ---
 name: Clara Code Team — Sprint 1 Launch
-description: Clara Code team standing up to fork pi-mono, wire Hermes+DeepSeek, vault integration, create-clara-app bootstrapper
+description: Clara Code team standing up to fork pi-mono, wire Hermes router (Gemma 4 on Modal default, DeepSeek V3 on Bedrock for heavy/long-context only), vault integration, create-clara-app bootstrapper
 type: project
+note: 2026-04-25 — model references updated. Original sprint shipped against DeepSeek-as-primary; canonical stack is now Gemma 4 27B on Modal first. See memory/decision-canonical-stack-supersedes-deepseek-primary-2026-04-25.md.
 ---
 
 # Clara Code Team — Sprint 1
@@ -13,7 +14,7 @@ type: project
 - **GitHub repo:** `imaginationeverywhere/clara-code`
 - **Neon DB:** clara-code (develop + production branches)
 - **Foundation:** Fork of `badlogic/pi-mono` packages/coding-agent (MIT license)
-- **Model:** Bedrock DeepSeek V3.2 via Hermes router (default)
+- **Model routing (canonical 2026-04-25):** Hermes router defaults to **Gemma 4 27B on Modal A100** (~80% of requests). Kimi K2 on Modal H100 for reasoning (~10-15%). DeepSeek V3 on AWS Bedrock for heavy / long-context only (~3-5%). Claude/GPT premium <1%. See `pricing/model-routing-strategy.md`.
 
 ## Team Roles (Ruby to name from historical Black figures)
 
@@ -28,7 +29,7 @@ type: project
 ## Sprint 1 Agenda (What the team executes immediately)
 
 1. Fork `badlogic/pi-mono` → `imaginationeverywhere/clara-code`
-2. Register Hermes model router — Bedrock DeepSeek V3.2 as default provider
+2. Register Hermes model router — **Gemma 4 27B on Modal A100 as default provider** (canonical 2026-04-25); Kimi K2 on Modal H100 for reasoning routes; DeepSeek V3 on Bedrock for heavy/long-context only. See `pricing/model-routing-strategy.md`.
 3. Wire vault sync as a native tool (`~/auset-brain/` read/write)
 4. Auto-write session JSONL to `~/auset-brain/agents/<name>/sessions/` (training data pipeline starts day 1)
 5. Scaffold `npx create-clara-app` bootstrapper (creates a Clara-powered project)
