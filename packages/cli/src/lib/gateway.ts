@@ -12,7 +12,7 @@ export async function claraGateway(gatewayUrl: string, userId: string, message: 
 		return {
 			ok: false,
 			reply: "Gateway URL is not configured.",
-			fixHint: "Set HERMES_GATEWAY_URL, run `clara config set gatewayUrl <url>`, or pass --gateway.",
+			fixHint: "Set CLARA_GATEWAY_URL, run `clara config set gatewayUrl <url>`, or pass --gateway.",
 		};
 	}
 	const response = await fetch(gatewayUrl, {

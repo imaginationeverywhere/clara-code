@@ -12,7 +12,7 @@ import { readClaraCredentials } from "../lib/credentials-store.js";
 function resolveGatewayUrl(opts: { gateway?: string }): string {
 	const fromOpt = opts.gateway?.trim();
 	if (fromOpt) return fromOpt;
-	const fromEnv = process.env.HERMES_GATEWAY_URL?.trim();
+	const fromEnv = process.env.CLARA_GATEWAY_URL?.trim();
 	if (fromEnv) return fromEnv;
 	return readClaraConfig().gatewayUrl?.trim() ?? "";
 }
@@ -62,7 +62,7 @@ export function registerTuiCommand(program: Command): void {
 		.command("tui")
 		.description("Launch full-screen Clara Code TUI (Ink)")
 		.option("-u, --user <name>", "User id sent to gateway")
-		.option("-g, --gateway <url>", "Clara gateway URL (default: HERMES_GATEWAY_URL or ~/.clara/config.json)")
+		.option("-g, --gateway <url>", "Clara gateway URL (default: CLARA_GATEWAY_URL or ~/.clara/config.json)")
 		.option(
 			"-b, --backend <url>",
 			"Clara backend URL hosting /api/voice/stt and /api/voice/tts (default: CLARA_BACKEND_URL or https://api.claracode.ai)",
