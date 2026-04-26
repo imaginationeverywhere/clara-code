@@ -32,8 +32,8 @@ FROM node:20-bookworm-slim AS production
 RUN apt-get update && apt-get install -y --no-install-recommends \
     nginx \
     supervisor \
-    python3.12 \
-    python3.12-venv \
+    python3 \
+    python3-venv \
     python3-pip \
     curl \
     dumb-init \
@@ -45,7 +45,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN groupadd -r nodejs --gid 1001 && useradd -r -m -u 1001 -g nodejs -s /bin/bash nodejs
 
 # Brain Python venv (isolated from system Python)
-RUN python3.12 -m venv /opt/brain/venv
+RUN python3 -m venv /opt/brain/venv
 
 WORKDIR /app
 
