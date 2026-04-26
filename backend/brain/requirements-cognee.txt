@@ -1,0 +1,4 @@
+# Pin matches audit + Dockerfile (Python 3.12). See docs/architecture/COGNEE_FORK_AUDIT.md
+# [postgres-binary] extras pull psycopg2-binary + pgvector — required because we run
+# VECTOR_DB_PROVIDER=pgvector against Neon (LanceDB doesn't work on EFS/NFS storage).
+cognee[postgres-binary]==0.5.8
