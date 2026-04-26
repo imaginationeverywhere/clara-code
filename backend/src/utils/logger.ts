@@ -19,11 +19,17 @@ export const logger = winston.createLogger({
 	],
 });
 
-// Add file transport for production
+// Add file transport for production — write to /tmp/logs (writable by non-root container user)
 if (process.env.NODE_ENV === "production") {
+	const fs = require("fs");
+	const logsDir = "/tmp/logs";
+	if (!fs.existsSync(logsDir)) {
+		fs.mkdirSync(logsDir, { recursive: true });
+	}
+
 	logger.add(
 		new winston.transports.File({
-			filename: "logs/error.log",
+			filename: "/tmp/logs/error.log",
 			level: "error",
 			format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
 		}),
@@ -31,19 +37,8 @@ if (process.env.NODE_ENV === "production") {
 
 	logger.add(
 		new winston.transports.File({
-			filename: "logs/combined.log",
+			filename: "/tmp/logs/combined.log",
 			format: winston.format.combine(winston.format.timestamp(), winston.format.json()),
 		}),
 	);
-}
-
-// Create logs directory if it doesn't exist
-if (process.env.NODE_ENV === "production") {
-	const fs = require("fs");
-	const path = require("path");
-	const logsDir = path.join(process.cwd(), "logs");
-
-	if (!fs.existsSync(logsDir)) {
-		fs.mkdirSync(logsDir, { recursive: true });
-	}
 }
