@@ -38,6 +38,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     dumb-init \
     ca-certificates \
+    libcap2-bin \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /etc/nginx/sites-enabled/default
 
