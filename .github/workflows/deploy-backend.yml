@@ -6,6 +6,7 @@ on:
     paths:
       - 'backend/**'
       - 'Dockerfile.backend'
+      - 'Dockerfile.combined'
       - '.github/workflows/deploy-backend.yml'
   workflow_dispatch:
 
@@ -72,7 +73,7 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -f Dockerfile.backend -t $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG -t $ECR_REGISTRY/clara-code-backend:latest .
+          docker build -f Dockerfile.combined -t $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG -t $ECR_REGISTRY/clara-code-backend:latest .
           docker push $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG
           docker push $ECR_REGISTRY/clara-code-backend:latest
 
