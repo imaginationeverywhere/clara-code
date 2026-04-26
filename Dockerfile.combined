@@ -72,6 +72,11 @@ COPY backend/brain/supervisord.conf /etc/supervisor/conf.d/clara-code.conf
 # ── Logs writable for non-root user ─────────────────────────────────────────
 RUN mkdir -p /tmp/logs && chown -R nodejs:nodejs /tmp/logs /opt/brain /app
 
+# Cognee writes to DATA_DIR — point it at /tmp (always writable, Postgres is durable store anyway)
+ENV DATA_DIR=/tmp/cognee
+RUN mkdir -p /tmp/cognee/cognee_system/databases /tmp/cognee/cognee_data/databases \
+    && chown -R nodejs:nodejs /tmp/cognee
+
 # nginx needs write access to a few dirs (use /tmp pattern matching DevOps's Winston fix)
 RUN mkdir -p /tmp/nginx /var/lib/nginx/body /var/lib/nginx/proxy \
     && chown -R nodejs:nodejs /var/lib/nginx /var/log/nginx /run
