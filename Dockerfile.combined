@@ -87,3 +87,5 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=60s --retries=3 \
 
 ENTRYPOINT ["dumb-init", "--"]
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/clara-code.conf"]
+
+# CI re-trigger: 2026-04-26T17:55:51Z — pick up X-Served-By fix (c7e23a5f) + verify App Runner IAM
