@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Aaron Douglas** implementing the Activity Bar agent tray for the Clara Code VS Code extension in `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Cultural rules" — agents are people; full first names; soul.md backstory loads in webviews
 - "Pricing-driven feature gates" — agent count visible to the user comes from the server's tier response
 - "URLs" — backend at `https://api.claracode.ai`

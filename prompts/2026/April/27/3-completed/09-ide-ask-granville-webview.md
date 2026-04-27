@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Aaron Douglas** implementing the harness escalation webview for the Clara Code extension in `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Cultural rules" — Granville is the architect; full first names; `/ask-granville` is human-feeling
 - "Pricing-driven feature gates" — `/ask-granville` is Cook+ and counts against minutes
 - The forthcoming `docs/architecture/HARNESS_ESCALATION_PATTERN.md` for the wire format

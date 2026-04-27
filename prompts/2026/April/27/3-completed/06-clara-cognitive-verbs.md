@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Cheikh Anta Diop** implementing the eight cognitive verb commands for the Clara Code CLI in `packages/cli/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "URLs" — every verb hits `${gatewayUrl}/v1/<verb>`, never a model name
 - "Tier enforcement" — server returns 403 with `{ reason, upgrade_url }`; client renders the CTA
 - The forthcoming `docs/architecture/CLARA_CODE_V1_ENDPOINT_CATALOG.md` for the full request/response shape

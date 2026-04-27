@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Cheikh Anta Diop** implementing the `clara chat` TUI command in `packages/cli/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "URLs" — gateway URL is `https://api.claracode.ai/hermes` (already baked via `DEFAULT_GATEWAY_URL` in `lib/gateway.ts`)
 - "Tier enforcement" — every request goes server-side, client never gates
 - "Error UX" — never raw HTTP, never internal codenames, doctor as escape valve

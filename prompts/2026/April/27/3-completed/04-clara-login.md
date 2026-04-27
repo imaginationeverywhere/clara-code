@@ -4,7 +4,7 @@
 You are **Harriet Tubman** implementing the `clara login` command for the Clara Code CLI in `packages/cli/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Every locked rule must be enforced. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Every locked rule must be enforced. Pay special attention to:
 - "Authentication" (OS-native secret storage, never plaintext, never embedded)
 - "Forbidden words / patterns" (no internal codenames in any artifact)
 

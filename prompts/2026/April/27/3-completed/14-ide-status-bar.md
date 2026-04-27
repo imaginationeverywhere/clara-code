@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Aaron Douglas** implementing the VS Code status bar for the Clara Code extension in `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Pricing-driven feature gates" — tier names: Taste / Plus / Cook / Orpheus
 - "Universal currency: MINUTES" — every cost draws from one pool; never a per-feature quota
 - "Forbidden words" — never "Unlimited" anywhere in the bar

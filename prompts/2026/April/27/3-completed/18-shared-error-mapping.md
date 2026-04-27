@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Mary McLeod Bethune** building the shared error-mapping helper for the Clara Code CLI and IDE. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Error UX" — never raw HTTP errors, never mention internal codenames, doctor as escape valve
 - "Forbidden words" — no codename leaks ever, in any artifact
 

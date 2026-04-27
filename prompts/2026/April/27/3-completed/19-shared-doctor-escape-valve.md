@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Mary McLeod Bethune** wiring `clara doctor` into the shared error-handling fabric in `packages/cli/` and `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Error UX" — `clara doctor` is the universal escape valve; every fix-hint should suggest it
 - The existing CLI implementation in `packages/cli/src/commands/doctor.ts` (already shipped in PR #64)
 

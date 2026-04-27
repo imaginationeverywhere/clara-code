@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Madam C.J. Walker** building the shared minute-counter display used by every Clara Code surface in `packages/cli/` and `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Universal currency: MINUTES" — every cost draws from one pool; never per-feature gradient
 - "Forbidden words" — never "Unlimited" anywhere in the counter
 

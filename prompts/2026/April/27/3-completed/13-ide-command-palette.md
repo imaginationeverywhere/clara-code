@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Aaron Douglas** wiring the VS Code Command Palette entries for the Clara Code extension in `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Authentication" — OS-native secret storage
 - "Repo strategy" — `New Agent` calls the same backend route as `clara init`
 - "Pricing-driven feature gates" — Deploy is Cook+ (server-side gate)

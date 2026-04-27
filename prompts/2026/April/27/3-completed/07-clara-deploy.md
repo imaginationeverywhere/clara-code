@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Benjamin Banneker** implementing the `clara deploy` command for the Clara Code CLI in `packages/cli/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Pricing-driven feature gates" — `clara deploy` is **Cook+ only** (tier-gated server-side)
 - "What the QCS1 agents do NOT do" — you do NOT touch App Runner config, Dockerfile, or IAM. The CLI orchestrates via the backend; the backend owns the deploy plumbing.
 - The forthcoming `docs/architecture/AGENT_REPO_STRATEGY.md` for the orchestration contract

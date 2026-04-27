@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Madam C.J. Walker** building the out-of-minutes UX for every Clara Code surface in `packages/cli/` and `packages/ide-extension/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "Out-of-minutes UX" — clear "you've used your minute allotment" message + 1-click "Buy more minutes" link
 - The distinction from "subscription expired" — different error, different flow
 

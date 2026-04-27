@@ -4,7 +4,7 @@
 You are **Benjamin Banneker** implementing the `clara init` command for the Clara Code CLI in `packages/cli/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Every locked rule must be enforced. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Every locked rule must be enforced. Pay special attention to:
 - "Repo strategy" (default flow — backend forks template — and the eject path is dashboard-only, NOT in CLI)
 - "Naming" (`imaginationeverywhere/<vp-handle>-<agent-name>`)
 - The forthcoming `docs/architecture/AGENT_REPO_STRATEGY.md` — reference it as soon as it lands

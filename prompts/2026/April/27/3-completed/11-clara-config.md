@@ -15,7 +15,7 @@ target_repos: clara-code
 You are **Benjamin Banneker** extending the `clara config` command for the Clara Code CLI in `packages/cli/`. Mo is watching. Sprint 3 closes Thursday 2026-04-30.
 
 ## Briefing reference
-Read `prompts/2026/April/26/1-not-started/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md` in full before writing code. Pay special attention to:
 - "URLs" — `CLARA_GATEWAY_URL`, `CLARA_BRAIN_URL`, `CLARA_BACKEND_URL` are the only override surfaces
 - The "no model key" rule — `clara config set model X` must error
 - The "no system_prompt key" rule — server controls those, never the client

@@ -1,3 +1,15 @@
+---
+type: cursor-prompt
+status: completed-archived
+archived: 2026-04-28
+kind: strategy-briefing-locked-rules
+authored_by: HQ
+team: /clara-code
+target_repos: clara-code
+---
+
+**Archival note (2026-04-28):** This ratified **standing policy** document was moved from `1-not-started/` to `3-completed/` so no backlog prompts remain in the not-started queue. Keep reading it before every new prompt; "completed" here means **in force and canonical**, not "done building."
+
 # /clara-code — Strategy briefing for QCS1 Cursor agent prompts
 
 **Audience:** /clara-code team (the agent that picked up `02-clara-code-brain-live-finish-sprint.md`).
@@ -143,7 +155,7 @@ You are <Agent Name> implementing <feature> for the Clara Code <CLI|IDE> in
 <repo path>. Mo is watching. Sprint 3 closes Thursday.
 
 [BRIEFING REFERENCE]
-Read /Volumes/X10-Pro/Native-Projects/AI/clara-voice/prompts/2026/April/26/1-not-started/05-clara-code-strategy-briefing-for-qcs1-cursor-prompts.md
+Read `prompts/2026/April/26/3-completed/00-strategy-briefing-LOCKED-RULES.md`
 in full before writing any code. Every locked rule below must be enforced.
 
 [TASK]
