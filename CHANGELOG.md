@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
+- **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` (Clara Workbench + Talent Agency build directive) from `1-not-started/` to `3-completed/`; archival front matter and sign-off; execution streams and acceptance criteria tracked in program planning. See **`docs/CHANGELOG.md`**.
+
 - **Version bump** — monorepo **`0.6.1` → `0.6.2`** (merge of `fix/graphify-rebuild-no-op-when-missing` into `develop` with `clara login` / `clara doctor` + keytar; see **`clara` `0.2.0` → `0.2.1`** in **`packages/cli/CHANGELOG.md`**).
 
 - **Version bump** — monorepo **`0.6.0` → `0.6.1`** (parallel `ci.yml` matrix; see **CI** below and **`.github/CHANGELOG.md`**).

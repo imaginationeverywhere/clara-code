@@ -1,4 +1,16 @@
+---
+type: cursor-prompt
+status: completed-archived
+archived: 2026-04-27
+authored_by: HQ (Claude Code, Opus 4.7)
+team: /clara-code
+target_repos: clara-code, claraagents, quik-nation-ai-boilerplate, quik-nation-devops
+related_spec: quik-nation-ai-boilerplate/docs/architecture/CLARA_WORKBENCH_AND_TALENT_AGENCY.md
+---
+
 # Clara Workbench + Talent Agency — Build Directive
+
+**Archival note (2026-04-27):** The directive text is **final and ratified**. It was moved from `1-not-started/` to `3-completed/` because the **prompt is done** (no further edits to this spec). **Acceptance criteria** below remain the **implementation checklist** for the program; they are not “prompt tasks” to tick in this file. Leadership capacity and dispatch for streams A–J are tracked in sprint/program planning, not in this document.
 
 **TARGET REPO:** `clara-code` (this repo) for primary build; `claraagents` for Talent Agency consumer surface; `quik-nation-ai-boilerplate` for boilerplate Gear scaffolds; `quik-nation-devops` for the harvest infrastructure.
 
@@ -9,7 +21,9 @@
 
 ---
 
-## Capacity check (BEFORE work begins)
+## Capacity check (BEFORE work begins) — historical
+
+*Original pre-flight (2026-04-27). Precedence for sequencing now lives in program/sprint planning; retained here for context.*
 
 Per HQ strike rule "ASK before dispatching, teams are under Mo's direction": /clara-code team confirms current load before this becomes work-in-flight. Active concurrent work as of 2026-04-27 includes:
 
@@ -174,13 +188,11 @@ These are NOT phases. They are sequenced after v1 ships, as part of the same con
 
 ## Sign-off
 
-- HQ writes ✅ (architecture + this directive, 2026-04-27)
-- Mo authorizes ✅ (verbal, this session, 2026-04-27)
-- /clara-code lead capacity check — **PENDING**
-- Dispatch — **AWAITING MO**
-
-When /clara-code lead confirms capacity (or Mo names the priority slot), this becomes work-in-flight. Until then, this prompt sits in `1-not-started/` as a ready-to-execute architecture-ratified build directive.
+- HQ writes — architecture + this directive (2026-04-27) — **locked** for execution reference
+- Mo authorizes — verbal (2026-04-27) — on record in sign-off
+- /clara-code lead capacity and stream scheduling — **ongoing in program management** (not a blocker on this archived prompt)
+- This prompt file — **completed 2026-04-27**; filed under `prompts/2026/April/27/3-completed/`. Implementation of Streams A–J follows the acceptance criteria in engineering.
 
 ---
 
-*Written by HQ (Claude Code, Opus 4.7), 2026-04-27. Boilerplate architecture spec at `quik-nation-ai-boilerplate/docs/architecture/CLARA_WORKBENCH_AND_TALENT_AGENCY.md`.*
+*Written by HQ (Claude Code, Opus 4.7), 2026-04-27. Archival and prompt closure recorded 2026-04-27. Boilerplate architecture spec at `quik-nation-ai-boilerplate/docs/architecture/CLARA_WORKBENCH_AND_TALENT_AGENCY.md`.*

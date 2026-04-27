@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Changed (cross-reference)
+
+- **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` moved to `prompts/2026/April/27/3-completed/`; directive text is ratified; acceptance criteria remain the program implementation checklist (per architecture `CLARA_WORKBENCH_AND_TALENT_AGENCY.md` in the boilerplate repo). Root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
+
 ### Added (cross-reference)
 
 - **CLI — `clara login` / `clara doctor`** — Browser opens `https://claracode.ai/cli-auth?cli_port=…`; production page must `POST` JSON to `http://127.0.0.1:<port>/` with `email`, `sessionToken`, `apiKey` (see **`packages/cli/CHANGELOG.md`**). Credentials use OS keyring (**keytar**, service `clara-code`), not plaintext `~/.clara/credentials.json` (legacy file migrated once). `clara doctor` checks keyring and `GET` backend `/health`. Root **`CHANGELOG.md`**, **`packages/cli/README.md`**.
