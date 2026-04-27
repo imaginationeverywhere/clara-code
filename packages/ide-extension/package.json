@@ -28,6 +28,10 @@
 					"id": "clara.panel",
 					"name": "Clara Voice",
 					"retainContextWhenHidden": true
+				},
+				{
+					"id": "clara.agentTray",
+					"name": "Agents"
 				}
 			]
 		},
@@ -52,8 +56,44 @@
 				"title": "Clara: Explain Selection"
 			},
 			{
-				"command": "clara.setGatewayUrl",
-				"title": "Clara: Set Gateway URL (Dev)"
+				"command": "clara.doctor",
+				"title": "Clara: Doctor",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.login",
+				"title": "Clara: Login",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.newAgent",
+				"title": "Clara: New Agent",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.runDeploy",
+				"title": "Clara: Deploy (workspace folder name)",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.askInline",
+				"title": "Clara: Ask Inline (think)",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.askGranville",
+				"title": "Clara: Ask Granville",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.refreshAgents",
+				"title": "Clara: Refresh agent list",
+				"category": "Clara"
+			},
+			{
+				"command": "clara.openPricing",
+				"title": "Clara: Open pricing (upgrade)",
+				"category": "Clara"
 			}
 		],
 		"menus": {
@@ -75,6 +115,12 @@
 				"key": "ctrl+shift+e",
 				"mac": "cmd+shift+e",
 				"when": "editorHasSelection"
+			},
+			{
+				"command": "clara.askInline",
+				"key": "ctrl+l",
+				"mac": "cmd+l",
+				"when": "editorTextFocus"
 			}
 		],
 		"configuration": {

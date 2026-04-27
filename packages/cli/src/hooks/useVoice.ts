@@ -1,6 +1,7 @@
 import { useCallback, useRef, useState } from "react";
 import { type AudioCapture, startCapture } from "../lib/audio-capture.js";
 import { claraGateway, type GatewayResult } from "../lib/gateway.js";
+import { writeMinutesCache } from "../lib/minutes-cache.js";
 import { requestTranscript, type SttResult } from "../lib/stt-client.js";
 
 export type VoicePhase = "idle" | "listening" | "transcribing" | "sending";
@@ -101,7 +102,10 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 			abortRef.current = controller;
 			const start = Date.now();
 			try {
-				const result = await claraGateway(gatewayUrl, userId, text);
+				const result = await claraGateway(gatewayUrl, userId, text, { bearerToken: token });
+				if (result.minutesRemaining != null) {
+					writeMinutesCache(result.minutesRemaining);
+				}
 				onGatewayResult(result, Date.now() - start);
 			} catch (err) {
 				if ((err as Error)?.name === "AbortError") {
@@ -114,7 +118,7 @@ export function useVoice(options: UseVoiceOptions): UseVoiceReturn {
 				setPhase("idle");
 			}
 		},
-		[gatewayUrl, onError, onGatewayResult, userId],
+		[gatewayUrl, onError, onGatewayResult, userId, token],
 	);
 
 	const stopAndSend = useCallback(async (): Promise<void> => {

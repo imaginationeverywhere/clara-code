@@ -10,6 +10,7 @@ import { useVoice, type VoicePhase } from "./hooks/useVoice.js";
 import { SIX_SIDE_PROJECTS_QUESTION } from "./lib/clara-code-surface-scripts.js";
 import { patchClaraConfig, readClaraConfig } from "./lib/config-store.js";
 import { writeClaraCredentials } from "./lib/credentials-store.js";
+import { readMinutesCache } from "./lib/minutes-cache.js";
 import type { GatewayResult } from "./lib/gateway.js";
 import { createSessionLogger, type SessionLogger } from "./lib/session-log.js";
 
@@ -91,6 +92,7 @@ export function App({
 		isReturnSession ? "Continuing, or something new?" : "What are we building?",
 	);
 	const [pendingFix, setPendingFix] = useState(false);
+	const [minutesRemaining, setMinutesRemaining] = useState<number | null>(() => readMinutesCache()?.minutesRemaining ?? null);
 
 	const loggerRef = useRef<SessionLogger | null>(null);
 	if (token && !loggerRef.current) {
@@ -126,6 +128,9 @@ export function App({
 	const onGatewayResult = useCallback(
 		(result: GatewayResult, ms: number) => {
 			setLatency(ms);
+			if (result.minutesRemaining != null) {
+				setMinutesRemaining(result.minutesRemaining);
+			}
 			if (!result.ok) {
 				setPendingFix(true);
 				setInputPlaceholder("y/n");
@@ -299,6 +304,7 @@ export function App({
 				latency={latency}
 				userId={userId}
 				voiceAudioEnabled={voiceAudioEnabled}
+				minutesRemaining={minutesRemaining}
 			/>
 			{showVoiceBar && <CliVoiceBar state={phase === "listening" ? "listening" : "processing"} />}
 			<MessageFeed messages={messages} />

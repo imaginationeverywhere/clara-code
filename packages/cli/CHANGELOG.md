@@ -4,6 +4,10 @@
 
 ### Added
 
+- **`clara config` (prompt 11)** — `get` / `set` / `list` / `unset` for `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, and `apiKey` (keyring only; inference keys `model` / `system_prompt` / `temperature` / `top_p` rejected with “Server controls inference parameters.”). `lib/config-resolved.ts` centralizes gateway default (`https://api.claracode.ai/hermes`); `clara tui` uses the same resolver (replaces the old `/api` default). `apiKey` is never written to `~/.clara/config.json`.
+- **Shared HTTP error mapping (prompts 15/17/18)** — `lib/tier-lock.ts`, `lib/minutes-exhausted.ts`, `lib/http-errors.ts`; `claraGateway` maps 4xx/5xx and network errors to plain-English copy. IDE extension copies under `packages/ide-extension/src/` (same contracts; not yet wired into every command).
+- **Tests** — `test/http-errors.test.ts`, `test/config-resolved.test.ts`, `test/cognitive.test.ts` (`readCognitiveTextArg`, `runCognitive` with injectable `fetch` / `token` / `gatewayBase`). `stt-client` test expects user-facing `clara doctor` copy on non-2xx.
+
 - **`clara init <name>`** — `POST /api/agents/init` (backend) + local `git clone`; kebab-case validation; 401/403 `tier_lock` messages; `--backend` URL. `lib/agent-name.ts`, `commands/init.ts`, `lib/agents-api.postAgentInit`. Server requires `GITHUB_TOKEN` and uses GitHub "generate from template" (`GITHUB_AGENT_INIT_ORG`, `GITHUB_AGENT_TEMPLATE_OWNER`, `GITHUB_AGENT_TEMPLATE_REPO` with defaults). Tier: Business+ (`canBuildAgents`). Tests: `test/lib/agent-name.test.ts`, `test/agents-api-init.test.ts`.
 
 - **`clara login` + `clara doctor`** — Loopback HTTP server on `127.0.0.1` (random port) + `https://claracode.ai/cli-auth?cli_port=…`; callback POST body `{ email, sessionToken, apiKey }` (aliases: `session_token`, `api_key`). Credentials stored with **keytar** (`clara-code` / `default`), not `~/.clara/credentials.json` (legacy file migrated once). Hidden `clara auth login` delegates to the same flow. `lib/agents-api` uses `pickBearerToken()` (API key vs session). Tests: `test/login-loopback.test.ts`.

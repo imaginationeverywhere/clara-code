@@ -6,21 +6,13 @@ import { render } from "ink";
 import React from "react";
 import { App } from "../tui.js";
 import { resolveBackendUrl, voiceDevStubEnabled } from "../lib/backend.js";
+import { resolveClaraGatewayUrl } from "../lib/config-resolved.js";
 import { patchClaraConfig, readClaraConfig } from "../lib/config-store.js";
 import { pickBearerToken, readClaraCredentials } from "../lib/credentials-store.js";
-
-const CLARA_GATEWAY_DEFAULT = "https://api.claracode.ai/api";
+import { DEFAULT_GATEWAY_URL } from "../lib/gateway.js";
 
 function resolveGatewayUrl(opts: { gateway?: string }): string {
-	const fromOpt = opts.gateway?.trim();
-	if (fromOpt) {
-		return fromOpt;
-	}
-	const fromEnv = process.env.CLARA_GATEWAY_URL?.trim();
-	if (fromEnv) {
-		return fromEnv;
-	}
-	return readClaraConfig().gatewayUrl?.trim() || CLARA_GATEWAY_DEFAULT;
+	return resolveClaraGatewayUrl(opts.gateway).value;
 }
 
 export type LaunchTuiOptions = {
@@ -65,14 +57,18 @@ export async function launchTui(opts: LaunchTuiOptions): Promise<void> {
 	);
 }
 
-export function registerTuiCommand(program: Command): void {
+function registerTuiOrChat(program: Command, cmd: "tui" | "chat"): void {
+	const desc =
+		cmd === "tui"
+			? "Launch full-screen Clara Code TUI (Ink)"
+			: "Streaming TUI chat against the gateway (same experience as clara tui; preferred name)";
 	program
-		.command("tui")
-		.description("Launch full-screen Clara Code TUI (Ink)")
+		.command(cmd)
+		.description(desc)
 		.option("-u, --user <name>", "User id sent to gateway")
 		.option(
 			"-g, --gateway <url>",
-			`Clara gateway URL (default: CLARA_GATEWAY_URL, ~/.clara/config.json, then ${CLARA_GATEWAY_DEFAULT})`,
+			`Clara gateway URL (default: CLARA_GATEWAY_URL, ~/.clara/config.json, then ${DEFAULT_GATEWAY_URL})`,
 		)
 		.option(
 			"-b, --backend <url>",
@@ -85,4 +81,13 @@ export function registerTuiCommand(program: Command): void {
 				process.exit(1);
 			});
 		});
+}
+
+export function registerTuiCommand(program: Command): void {
+	registerTuiOrChat(program, "tui");
+}
+
+/** Canonical `clara chat` entry (prompt 10); identical to `clara tui`. */
+export function registerChatCommand(program: Command): void {
+	registerTuiOrChat(program, "chat");
 }

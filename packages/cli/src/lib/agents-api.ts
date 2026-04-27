@@ -1,5 +1,6 @@
 import { resolveBackendUrl } from "./backend.js";
 import { type ClaraCredentials, pickBearerToken, readClaraCredentials } from "./credentials-store.js";
+import { claraHttpErrorMessage } from "./http-errors.js";
 
 export type TemplateDto = {
 	id: string;
@@ -48,10 +49,11 @@ export async function fetchTemplates(): Promise<TemplateDto[]> {
 	const r = await fetch(`${apiBase()}/agents/templates`, {
 		headers: { Authorization: await authHeader() },
 	});
+	const text = await r.text();
 	if (!r.ok) {
-		throw new Error(`templates: ${r.status} ${await r.text()}`);
+		throw new Error(claraHttpErrorMessage(r.status, text));
 	}
-	const j = (await r.json()) as { templates: TemplateDto[] };
+	const j = JSON.parse(text) as { templates: TemplateDto[] };
 	return j.templates;
 }
 
@@ -141,9 +143,10 @@ export async function configureAgent(input: {
 			skill_ids: input.skillIds,
 		}),
 	});
+	const text = await r.text();
 	if (!r.ok) {
-		throw new Error(`configure: ${r.status} ${await r.text()}`);
+		throw new Error(claraHttpErrorMessage(r.status, text));
 	}
-	const j = (await r.json()) as { agent: UserAgentDto };
+	const j = JSON.parse(text) as { agent: UserAgentDto };
 	return j.agent;
 }
