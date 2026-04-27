@@ -93,9 +93,10 @@ Curated first-party **Talents** (distinct from the marketplace router at `server
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/` | Catalog + wallet summary + library for the user. |
+| `GET` | `/agent/:agentId` | Talents attached to the given harness agent. Responds **404** `agent_not_found` if `agentId` is not a `user_agents` row owned by the caller (prevents cross-tenant listing). |
 | `POST` | `/acquire` | Body: `talent_id` — purchase with wallet credits. |
-| `POST` | `/attach` | Body: `talent_id`, `user_agent_id` — attach talent to a harness agent. |
-| `POST` | `/detach` | Body: `talent_id`, `user_agent_id`. |
+| `POST` | `/attach` | Body: `agent_id`, `talent_id` — attach talent to a harness agent. |
+| `POST` | `/detach` | Body: `agent_id`, `talent_id`. |
 
 ## `/api/billing` (Clerk session)
 

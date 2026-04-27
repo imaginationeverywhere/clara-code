@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Security (cross-reference)
+
+- **`docs/backend-rest-api.md`** — `/api/harness-talents/agent/:agentId` documents the ownership check and **404**; attach/detach body fields corrected to `agent_id` / `talent_id`. Implementation: **`backend/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
 ### Added (cross-reference)
 
 - **Prompt 17 (not started)** — `17-clara-code-the-brain-customer-wrapper-and-build-gate.md` under `prompts/2026/April/26/1-not-started/`: customer-facing `/the-brain` wrapper (defaults to `brain-api.claracode.ai`, blocks `quiknation` targets) + CI grep gate for `brain-api.quiknation.com` in shipped CLI/VSIX. The prompt cites a future `docs/architecture/BRAIN_API_ACCESS_CONTROL.md` to align with platform boilerplate. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.

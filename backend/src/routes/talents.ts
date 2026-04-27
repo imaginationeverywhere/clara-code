@@ -111,7 +111,16 @@ router.get(
 	requireClaraOrClerk,
 	requireAbuseCheck,
 	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
-		const t = await talentService.listAgentTalents(req.params.agentId);
+		const userId = req.claraUser?.userId;
+		if (!userId) {
+			res.status(401).json({ error: "Authenticated user required" });
+			return;
+		}
+		const t = await talentService.listAgentTalentsForUser(userId, req.params.agentId);
+		if (t === null) {
+			res.status(404).json({ error: "agent_not_found" });
+			return;
+		}
 		res.json({ talents: t });
 	},
 );

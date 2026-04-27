@@ -225,6 +225,17 @@ export class TalentService {
 	}
 
 	/**
+	 * List Talents attached to an agent, only if the agent belongs to the user.
+	 */
+	async listAgentTalentsForUser(userId: string, agentId: string): Promise<AgentTalentCatalog[] | null> {
+		const agent = await UserAgent.findOne({ where: { id: agentId, userId } });
+		if (!agent) {
+			return null;
+		}
+		return this.listAgentTalents(agentId);
+	}
+
+	/**
 	 * Plain-text block appended at Memory Layer 0 for voice/history.
 	 */
 	async getTalentBlockForUserAgent(userId: string, userAgentId: string): Promise<string> {

@@ -4,9 +4,19 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-27
 
+### Security
+
+- **Backend — harness Talents list** — `GET /api/harness-talents/agent/:agentId` now requires the agent to belong to the authenticated user (`listAgentTalentsForUser`); otherwise **404** (fixes cross-tenant disclosure). See **`backend/CHANGELOG.md`** and **`docs/backend-rest-api.md`**.
+
+### Changed
+
+- **Version bump** — root **`0.5.0` → `0.5.1`**, **`@clara-code/backend`** **`1.3.0` → `1.3.1`**.
+
 ### Added
 
 - **Prompt queue (P0)** — `prompts/2026/April/26/1-not-started/17-clara-code-the-brain-customer-wrapper-and-build-gate.md` — implement `/the-brain-customer` (tenant brain default, no Quik Nation founder endpoint), plus a release-pipeline **grep** that fails if `brain-api.quiknation.com` appears in the shipped CLI or IDE extension `.vsix`. The prompt’s front matter references a `docs/architecture/BRAIN_API_ACCESS_CONTROL.md` spec to be aligned with the platform boilerplate. See **`docs/CHANGELOG.md`** **\[Unreleased\] - 2026-04-27**.
+
+- **Prompt queue bookkeeping** — `01-cursor-fix-clara-code-glm-union-blocks-ci.md` → `prompts/2026/April/27/3-completed/` (GLM model union already present on `main`/`develop`); `00-fix-platform-implementation-issues.md` recovered into `prompts/2026/April/27/1-not-started/` (partial work: CRITICAL \#1 only in this commit).
 
 ## [Unreleased] - 2026-04-25
 

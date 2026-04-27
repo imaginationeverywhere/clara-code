@@ -4,6 +4,10 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ## [Unreleased] - 2026-04-25
 
+### Security
+
+- **Harness Talents — `GET /api/harness-talents/agent/:agentId` ownership** — `talent.service` adds `listAgentTalentsForUser(userId, agentId)` (requires a `user_agents` row for `(id, userId)`). Route returns **404** for other users’ agent IDs; stops cross-tenant listing of attached Talents. Jest: `harness-talents.test.ts`.
+
 ### Added
 
 - **Subscription billing (Stripe + Clerk + plan enforcement)** — SQL `041_subscription_billing_columns.sql` (trial, cancel_at_period_end, `enterprise_contract`, `user_subscriptions` view, indexes). `clerk-sync.service` merges `publicMetadata.tier` from the billing DB. `lib/stripe-prices.ts` centralizes `getRecurringPriceIdForTier` (Stripe `clara_tier` metadata, no `STRIPE_PRICE_*` envs). `POST /api/billing/*` (checkout, cancel, upgrade, downgrade, refund) + `POST /api/billing/webhook` alias; checkout sessions include 7-day trial. `webhooks-stripe` handles Basic/Pro/Max/Business checkout, `subscription.updated`/`deleted`, `invoice.payment_failed`, Clerk sync + API key issuance for all paid checkout tiers. `src/scripts/provision-enterprise.ts` + `npm run provision:enterprise`. Frontend BFF: `app/api/billing/[[...path]]/route.ts`. Jest: `billing.test`, webhooks + tier-resolution (Clerk mock).
@@ -30,6 +34,8 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 - **Tests** — `src/__tests__/lib/ip-firewall.test.ts`; `src/__tests__/routes/voice.test.ts` mocks `logger.warn` and asserts filtered converse payloads.
 
 ### Changed
+
+- **Package version** — `1.3.0` → **`1.3.1`** (harness agent talent list ownership check; see **Security** above).
 
 - **Package version** — `1.2.0` → **`1.3.0`** (usage + abuse preflight, operation credits, harness talents catalog, optional inference router, Stripe billing routes + Clerk tier sync, migrations `038`–`041`; see **Added** above).
 
