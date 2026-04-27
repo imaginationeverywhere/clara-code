@@ -6,6 +6,7 @@ on:
     paths:
       - 'backend/**'
       - 'Dockerfile.backend'
+      - 'Dockerfile.combined'
       - '.github/workflows/deploy-backend.yml'
   workflow_dispatch:
 
@@ -41,6 +42,7 @@ jobs:
           docker push $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG
           docker push $ECR_REGISTRY/clara-code-backend:develop
 
+      # TODO: dev not yet migrated to App Runner — kept on ECS until dev service exists
       - name: Deploy to ECS Dev
         run: |
           aws ecs update-service \
@@ -72,14 +74,37 @@ jobs:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           IMAGE_TAG: ${{ github.sha }}
         run: |
-          docker build -f Dockerfile.backend -t $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG -t $ECR_REGISTRY/clara-code-backend:latest .
+          docker build -f Dockerfile.combined -t $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG -t $ECR_REGISTRY/clara-code-backend:latest .
           docker push $ECR_REGISTRY/clara-code-backend:$IMAGE_TAG
           docker push $ECR_REGISTRY/clara-code-backend:latest
 
-      - name: Deploy to ECS Prod
+      - name: Deploy to App Runner Prod
+        # Triggers App Runner to pull the new :latest image and redeploy.
+        # Service ARN sourced from repo Variables (vars.APPRUNNER_SERVICE_ARN_PROD)
+        # or fall back to inline ARN if var not set.
+        env:
+          APPRUNNER_ARN: ${{ vars.APPRUNNER_SERVICE_ARN_PROD || 'arn:aws:apprunner:us-east-1:727646498347:service/clara-code-prod/26ecc54fc19249fd88e0e62a5f759b15' }}
         run: |
-          aws ecs update-service \
-            --cluster ${{ vars.ECS_CLUSTER_PROD }} \
-            --service clara-code-backend-prod \
-            --force-new-deployment \
+          aws apprunner start-deployment \
+            --service-arn "$APPRUNNER_ARN" \
             --region us-east-1
+
+      - name: Wait for App Runner deployment to complete
+        env:
+          APPRUNNER_ARN: ${{ vars.APPRUNNER_SERVICE_ARN_PROD || 'arn:aws:apprunner:us-east-1:727646498347:service/clara-code-prod/26ecc54fc19249fd88e0e62a5f759b15' }}
+        run: |
+          for i in {1..60}; do
+            STATUS=$(aws apprunner describe-service \
+              --service-arn "$APPRUNNER_ARN" \
+              --region us-east-1 \
+              --query 'Service.Status' --output text)
+            echo "[$((i*10))s] App Runner status: $STATUS"
+            if [[ "$STATUS" == "RUNNING" ]]; then
+              echo "✓ deployment complete"; exit 0
+            fi
+            if [[ "$STATUS" == "OPERATION_IN_PROGRESS" ]]; then
+              sleep 10; continue
+            fi
+            echo "✗ unexpected status: $STATUS"; exit 1
+          done
+          echo "✗ timeout waiting for deployment"; exit 1

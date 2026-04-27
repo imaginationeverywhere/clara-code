@@ -108,6 +108,7 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Fixed
 
+- **IDE extension — packaged `.vsix`** — `packages/ide-extension/.gitignore` now ignores `*.vsix` so `vsce`/local packaging output is not left as an untracked binary in the worktree.
 - **Stray merge markers** — Removed `<<<<<<<` / `=======` / `>>>>>>>` blocks accidentally left in `package.json` (broke pnpm/JSON), `.claude/commands/CHANGELOG.md`, `.cursor/commands/CHANGELOG.md`, `queue-prompt.md`, and `branch-cleanup.md`. Reconciled `1.35.3` (commands bundle) with `1.35.2` (preserve remote branch named `origin` in `/branch-cleanup`); `package.json` `version` stays `0.1.4`.
 - **Backend — Clara Core subgraph** — `createClaraCoreSubgraph` in `backend/src/graphql/clara-core/server.ts` now declares an explicit `Promise<RequestHandler>` return type so `tsc` does not emit `TS2742` (inferred type depending on `@types/qs`).
 - **Backend — express `tsgo` (TS2742)** — `export const app` in `server.ts` is typed as `Application`; all `const router` route modules use `ReturnType<typeof Router>` so the root `tsgo` check does not require naming inferred types from `@types/express-serve-static-core`.
