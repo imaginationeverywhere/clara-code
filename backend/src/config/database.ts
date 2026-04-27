@@ -30,6 +30,7 @@ import { UserVoiceClone } from "@/models/UserVoiceClone";
 import { UserWallet } from "@/models/UserWallet";
 import { VoiceUsage } from "@/models/VoiceUsage";
 import { WaitlistEntry } from "@/models/WaitlistEntry";
+import { WalletTransaction } from "@/models/WalletTransaction";
 import { logger } from "@/utils/logger";
 
 const environment = process.env.NODE_ENV || "development";
@@ -99,6 +100,7 @@ export const sequelize = new Sequelize(databaseUrl, {
 		AgentTalentAttachment,
 		AgentTalentPurchase,
 		UserWallet,
+		WalletTransaction,
 	],
 	define: {
 		underscored: true,

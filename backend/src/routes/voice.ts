@@ -26,7 +26,7 @@ import { hookBus } from "@/services/hook-bus.service";
 import { inferenceCache } from "@/services/inference-cache.service";
 import { type HistoryEntry, memoryService } from "@/services/memory.service";
 import { type ModelChoice, modelRouter } from "@/services/model-router.service";
-import { applyOperationCreditUsage, canUseOperationCredits } from "@/services/operation-credit.service";
+import { refundOperationCredits, reserveOperationCredits } from "@/services/operation-credit.service";
 import { classifyOperation } from "@/services/operation-weights";
 import { type PlanTier, toPlanTier } from "@/services/plan-limits";
 import { type VoiceTier, voiceUsageService } from "@/services/voice-usage.service";
@@ -500,18 +500,27 @@ router.post(
 		const planTier: PlanTier = toPlanTier(req.claraUser?.tier);
 		const userMessageForCredits = typeof body.text === "string" ? body.text : "";
 		const opCategory = classifyOperation(userMessageForCredits);
+		let opCreditsReserved = false;
 		if (userId) {
-			const creditCheck = await canUseOperationCredits(userId, agent_id, planTier, opCategory);
-			if (!creditCheck.allowed) {
+			const cr = await reserveOperationCredits(userId, agent_id, planTier, opCategory);
+			if (!cr.ok) {
 				res.status(402).json({
 					error: "credit_limit_reached",
 					message: "You've used your monthly operation credits. Upgrade to continue.",
-					credits_remaining: creditCheck.creditsRemaining,
-					upgrade_url: creditCheck.upgradeUrl,
+					credits_remaining: cr.creditsRemaining,
+					upgrade_url: cr.upgradeUrl,
 				});
 				return;
 			}
+			opCreditsReserved = cr.didReserve;
 		}
+		const refundOpCredits = async () => {
+			if (!userId || !opCreditsReserved) {
+				return;
+			}
+			opCreditsReserved = false;
+			await refundOperationCredits(userId, agent_id, planTier, opCategory);
+		};
 		const sessionId = session_id ?? (userId ? `${userId}-${agent_id}-fallback` : "anonymous");
 		const usageTier = (req.claraUser?.tier ?? "basic") as VoiceTier;
 
@@ -541,6 +550,7 @@ router.post(
 		if (userId && typeof text === "string") {
 			const promptResult = await hookBus.runUserPromptSubmit({ rawPrompt: text, modality: "text" }, hookCtx);
 			if (promptResult.blocked) {
+				await refundOpCredits();
 				res.status(400).json({ error: promptResult.blockReason ?? "prompt_blocked" });
 				return;
 			}
@@ -566,11 +576,13 @@ router.post(
 		const apiKey = converseApiKey();
 		if (!useRoutedTextInference) {
 			if (!base) {
+				await refundOpCredits();
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
 			if (!apiKey) {
 				logger.error("CLARA_VOICE_API_KEY / HERMES_API_KEY is not set — refusing to proxy to voice server");
+				await refundOpCredits();
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
@@ -593,7 +605,6 @@ router.post(
 					if (cached) {
 						const abuseM = abuseModelFromModelChoice(cached.modelUsed);
 						await voiceUsageService.incrementAfterSuccess(userId, usageTier);
-						await applyOperationCreditUsage(userId, agent_id, planTier, opCategory);
 						await abuseProtectionService.recordUsage({
 							userId,
 							agentId: agent_id,
@@ -644,7 +655,6 @@ router.post(
 					await inferenceCache.set(soul, histForKey, userMsg, inf);
 					const abuseOut = abuseModelFromModelChoice(inf.modelUsed);
 					await voiceUsageService.incrementAfterSuccess(userId, usageTier);
-					await applyOperationCreditUsage(userId, agent_id, planTier, opCategory);
 					await abuseProtectionService.recordUsage({
 						userId,
 						agentId: agent_id,
@@ -680,6 +690,7 @@ router.post(
 			}
 
 			if (!base || !apiKey) {
+				await refundOpCredits();
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
@@ -701,7 +712,6 @@ router.post(
 			);
 			if (userId) {
 				await voiceUsageService.incrementAfterSuccess(userId, usageTier);
-				await applyOperationCreditUsage(userId, agent_id, planTier, opCategory);
 				const inf = inferConverseModel(response.data);
 				void abuseProtectionService.recordUsage({
 					userId,
@@ -770,6 +780,7 @@ router.post(
 			res.json(safePayload);
 		} catch (error) {
 			logger.error("[voice/converse] proxy error:", error);
+			await refundOpCredits();
 			res.status(502).json({ error: "Voice server unreachable" });
 		}
 	},

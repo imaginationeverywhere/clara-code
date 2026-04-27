@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Changed (cross-reference)
+
+- **`docs/backend-rest-api.md`** — Migrations `042`–`047` in the table; billing checkout no custom success/cancel URLs; mutating billing `POST` routes require `Origin`/`Referer` host match to `FRONTEND_URL`; ejection monthly cap aligned to `PLAN_LIMITS.runtimeAgentBuildsPerMonth`; `/api/harness-talents` `acquire` documents idempotency. Implementation: **`backend/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
 ### Security (cross-reference)
 
 - **`docs/backend-rest-api.md`** — `/api/harness-talents/agent/:agentId` documents the ownership check and **404**; attach/detach body fields corrected to `agent_id` / `talent_id`. Implementation: **`backend/CHANGELOG.md`**, root **`CHANGELOG.md`**.

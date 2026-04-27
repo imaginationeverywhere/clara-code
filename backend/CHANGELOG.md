@@ -8,6 +8,10 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 - **Harness Talents — `GET /api/harness-talents/agent/:agentId` ownership** — `talent.service` adds `listAgentTalentsForUser(userId, agentId)` (requires a `user_agents` row for `(id, userId)`). Route returns **404** for other users’ agent IDs; stops cross-tenant listing of attached Talents. Jest: `harness-talents.test.ts`.
 
+### Fixed
+
+- **Platform review follow-up (code review 2026-04-25)** — Wallet ledger (`wallet_transactions` + `WalletTransaction` model) with SHA-256 idempotency; `acquire`/`attach` in Sequelize transactions; `GET /api/billing/checkout` no longer accepts arbitrary `success_url`/`cancel_url` (rejects `custom_redirects_not_allowed`); billing POSTs use `Origin` host check; operation credits use `reserveOperationCredits` + `refundOperationCredits` on the voice path; ejection monthly cap reads `PLAN_LIMITS.runtimeAgentBuildsPerMonth`; `UsageEvent` persistence is awaited with Redis `dlq:usage_events` fallback; `user_usage` month rollover copies to `user_usage_history`; `classifyOperation` documents Hermes `intent_class` preference; `pricingUrl` exported from `config/models`. SQL migrations `043`–`047`. Jest: wallet/talent/voice/operation-credit/billing/abuse updates.
+
 ### Added
 
 - **Subscription billing (Stripe + Clerk + plan enforcement)** — SQL `041_subscription_billing_columns.sql` (trial, cancel_at_period_end, `enterprise_contract`, `user_subscriptions` view, indexes). `clerk-sync.service` merges `publicMetadata.tier` from the billing DB. `lib/stripe-prices.ts` centralizes `getRecurringPriceIdForTier` (Stripe `clara_tier` metadata, no `STRIPE_PRICE_*` envs). `POST /api/billing/*` (checkout, cancel, upgrade, downgrade, refund) + `POST /api/billing/webhook` alias; checkout sessions include 7-day trial. `webhooks-stripe` handles Basic/Pro/Max/Business checkout, `subscription.updated`/`deleted`, `invoice.payment_failed`, Clerk sync + API key issuance for all paid checkout tiers. `src/scripts/provision-enterprise.ts` + `npm run provision:enterprise`. Frontend BFF: `app/api/billing/[[...path]]/route.ts`. Jest: `billing.test`, webhooks + tier-resolution (Clerk mock).
@@ -34,6 +38,8 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 - **Tests** — `src/__tests__/lib/ip-firewall.test.ts`; `src/__tests__/routes/voice.test.ts` mocks `logger.warn` and asserts filtered converse payloads.
 
 ### Changed
+
+- **Package version** — `1.3.1` → **`1.3.2`** (platform review follow-up: wallet ledger, billing hardening, operation credits, abuse/voice/ejection; see **Fixed** above).
 
 - **Package version** — `1.3.0` → **`1.3.1`** (harness agent talent list ownership check; see **Security** above).
 

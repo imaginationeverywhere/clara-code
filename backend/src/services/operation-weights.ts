@@ -30,6 +30,8 @@ export const CREDIT_BUDGETS: Record<PlanTier, number | null> = {
 
 /**
  * Classify an operation by keyword/intent. Used by the voice converse route.
+ * When Hermes (or the router) provides an `intent_class` in the model response, prefer
+ * that value at the call site; this function remains a fallback for plain-text prompts.
  */
 export function classifyOperation(intent: string): OperationCategory {
 	const lower = intent.toLowerCase();

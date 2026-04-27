@@ -20,6 +20,12 @@ This document summarizes **non-GraphQL** HTTP routes on the Clara Code API (`bac
 | `backend/migrations/039_operation_credits.sql` | `operation_credits` — weighted operation budgets per tier |
 | `backend/migrations/040_harness_talent_catalog_and_wallet.sql` | `user_wallets`, `agent_talent_catalog`, `user_talent_library`, `agent_talent_purchases`, `agent_talent_attachments` |
 | `backend/migrations/041_subscription_billing_columns.sql` | `subscriptions` trial/cancel/enterprise fields + `user_subscriptions` view |
+| `backend/migrations/042_remove_free_tier.sql` | Removes legacy “free” tier product rows / constraints (see file) |
+| `backend/migrations/043_wallet_transactions.sql` | `wallet_transactions` ledger; `agent_talent_purchases.idempotency_key` (unique) |
+| `backend/migrations/044_unique_stripe_payment_talent_purchases.sql` | Partial unique index on `agent_talent_purchases(stripe_payment_id)` when set |
+| `backend/migrations/045_wallet_balance_nonneg.sql` | `user_wallets.balance_usd` CHECK (non-negative) |
+| `backend/migrations/046_default_talent_private.sql` | `agent_talent_catalog.is_public` default `FALSE` (public rows set explicitly in seed) |
+| `backend/migrations/047_user_usage_month_history.sql` | `user_usage_history` — month snapshots when the calendar month rolls |
 
 Apply with `psql $DATABASE_URL -f <file>` (or your standard migration process). Template + site-owner + ejections SQL can be reapplied via `npm run seed:templates` in `backend/` (executes 032, 034, 035, 036, 037). Harness catalog: `pnpm -C backend run seed:talents` (idempotent).
 
@@ -76,7 +82,7 @@ Register order lists **static** paths before `/:sprintId` routes.
 
 ## `/api/ejections`
 
-Requires `EJECTION_S3_BUCKET` + AWS credentials in the API environment. Exports a VP-owned `user_agent` as a **ZIP** (sanitized `soul.md`, configuration JSON, conversation history JSON, attestation text). Tier caps per calendar month: **free 0**, **basic 1**, **pro 3**, **max 6**, **business 12**, **enterprise** = custom (uncapped in code). Pre-signed download URLs are refreshed on list and create (24h).
+Requires `EJECTION_S3_BUCKET` + AWS credentials in the API environment. Exports a VP-owned `user_agent` as a **ZIP** (sanitized `soul.md`, configuration JSON, conversation history JSON, attestation text). Tier caps per calendar month follow **`PLAN_LIMITS.runtimeAgentBuildsPerMonth`** (basic 1, pro 3, max 6, business 12, enterprise uncapped; tiers without ejection: cap `0`). Pre-signed download URLs are refreshed on list and create (24h).
 
 | Method | Path | Description |
 |--------|------|-------------|
@@ -94,17 +100,19 @@ Curated first-party **Talents** (distinct from the marketplace router at `server
 |--------|------|-------------|
 | `GET` | `/` | Catalog + wallet summary + library for the user. |
 | `GET` | `/agent/:agentId` | Talents attached to the given harness agent. Responds **404** `agent_not_found` if `agentId` is not a `user_agents` row owned by the caller (prevents cross-tenant listing). |
-| `POST` | `/acquire` | Body: `talent_id` — purchase with wallet credits. |
+| `POST` | `/acquire` | Body: `talent_id`, optional `idempotency_key` — purchase with wallet credits in a single DB transaction (idempotent on repeat). |
 | `POST` | `/attach` | Body: `agent_id`, `talent_id` — attach talent to a harness agent. |
 | `POST` | `/detach` | Body: `agent_id`, `talent_id`. |
 
 ## `/api/billing` (Clerk session)
 
-Stripe Checkout and lifecycle (metadata `clara_tier` on recurring prices; no `STRIPE_PRICE_*` env vars). Webhook handler is shared with `POST /api/webhooks/stripe` and **`POST /api/billing/webhook`** (raw JSON body, `Stripe-Signature`).
+Stripe Checkout and lifecycle (metadata `clara_tier` on recurring prices; no `STRIPE_PRICE_*` env vars). **Checkout success/cancel URLs** are server-derived from `FRONTEND_URL` (body `success_url` / `cancel_url` rejected with `custom_redirects_not_allowed`). **Mutating** `POST` routes require browser **`Origin` (or `Referer`) host** to match `FRONTEND_URL` (CSRF hardening; API clients that omit `Origin` may get `403 invalid_origin`).
+
+Webhook handler is shared with `POST /api/webhooks/stripe` and **`POST /api/billing/webhook`** (raw JSON body, `Stripe-Signature`).
 
 | Method | Path | Description |
 |--------|------|-------------|
-| `POST` | `/checkout` | Body: `tier` (`basic` \| `pro` \| `max` \| `business`), optional `success_url`, `cancel_url`. Returns `checkout_url` / `url`. |
+| `POST` | `/checkout` | Body: `tier` (`basic` \| `pro` \| `max` \| `business`). Returns `checkout_url` / `url`. |
 | `POST` | `/cancel` | `cancel_at_period_end` on the Stripe subscription. |
 | `POST` | `/upgrade` | Body: `newTier` — proration `always_invoice`. |
 | `POST` | `/downgrade` | Body: `newTier` — `proration_behavior: none` (next invoice). |

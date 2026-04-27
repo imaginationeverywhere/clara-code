@@ -13,6 +13,7 @@ export type AppRedis = {
 	hincrbyfloat(key: string, field: string, increment: string | number): Promise<string>;
 	hget(key: string, field: string): Promise<string | null>;
 	exists(...keys: string[]): Promise<number>;
+	rpush(key: string, value: string): Promise<number>;
 	ping(): Promise<string | undefined>;
 	quit?(): Promise<string | undefined>;
 	disconnect?(): Promise<void>;
@@ -21,6 +22,7 @@ export type AppRedis = {
 const TTL_MS = new Map<string, number>();
 const STR = new Map<string, string>();
 const HASH = new Map<string, Map<string, string>>();
+const LISTS = new Map<string, string[]>();
 
 function isExpired(key: string): boolean {
 	const t = TTL_MS.get(key);
@@ -51,6 +53,7 @@ class MemoryRedis implements AppRedis {
 		TTL_MS.clear();
 		STR.clear();
 		HASH.clear();
+		LISTS.clear();
 	}
 
 	async quit(): Promise<string> {
@@ -144,6 +147,13 @@ class MemoryRedis implements AppRedis {
 			}
 		}
 		return c;
+	}
+
+	async rpush(key: string, value: string): Promise<number> {
+		const l = LISTS.get(key) ?? [];
+		l.push(value);
+		LISTS.set(key, l);
+		return l.length;
 	}
 }
 
