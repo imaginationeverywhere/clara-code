@@ -7,9 +7,9 @@ export type FirstRunPromptProps = {
 };
 
 /**
- * Zero-config first-run gate: shown when `~/.clara/credentials.json` is missing. The user pastes
- * a token (sk-clara-… or cc_live_…) obtained from https://claracode.ai and we hand it off to the
- * caller for persistence.
+ * First-run gate when no token is in the OS keyring (or after `clara login` migration from legacy
+ * `~/.clara/credentials.json`). The user pastes a token from https://claracode.ai; the caller
+ * persists via the keyring (same store as `clara login`).
  */
 export function FirstRunPrompt({ onSubmit, onCancel }: FirstRunPromptProps) {
 	const [value, setValue] = useState("");

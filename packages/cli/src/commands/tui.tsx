@@ -7,7 +7,7 @@ import React from "react";
 import { App } from "../tui.js";
 import { resolveBackendUrl, voiceDevStubEnabled } from "../lib/backend.js";
 import { patchClaraConfig, readClaraConfig } from "../lib/config-store.js";
-import { readClaraCredentials } from "../lib/credentials-store.js";
+import { pickBearerToken, readClaraCredentials } from "../lib/credentials-store.js";
 
 const CLARA_GATEWAY_DEFAULT = "https://api.claracode.ai/api";
 
@@ -31,7 +31,7 @@ export type LaunchTuiOptions = {
 	voice?: boolean;
 };
 
-export function launchTui(opts: LaunchTuiOptions): void {
+export async function launchTui(opts: LaunchTuiOptions): Promise<void> {
 	const cfg = readClaraConfig();
 	const userId = opts.user ?? cfg.userId ?? "dev";
 	const voiceOn = opts.voice !== false;
@@ -45,8 +45,8 @@ export function launchTui(opts: LaunchTuiOptions): void {
 		...(gatewayUrl ? { gatewayUrl } : {}),
 	});
 
-	const creds = readClaraCredentials();
-	const initialToken = creds?.token ?? null;
+	const creds = await readClaraCredentials();
+	const initialToken = creds ? pickBearerToken(creds) : null;
 
 	const __dirname = dirname(fileURLToPath(import.meta.url));
 	const pkgPath = join(__dirname, "..", "..", "package.json");
@@ -77,6 +77,9 @@ export function registerTuiCommand(program: Command): void {
 		)
 		.option("--no-voice", "Disable audio playback (text-only mode)")
 		.action((opts: LaunchTuiOptions) => {
-			launchTui(opts);
+			void launchTui(opts).catch((e: unknown) => {
+				console.error(e instanceof Error ? e.message : e);
+				process.exit(1);
+			});
 		});
 }

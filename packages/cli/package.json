@@ -1,6 +1,6 @@
 {
 	"name": "clara",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Clara Code terminal voice interface (npm install -g clara@latest)",
 	"type": "module",
 	"bin": {
@@ -27,6 +27,7 @@
 	"dependencies": {
 		"@imaginationeverywhere/clara-voice-client": "workspace:*",
 		"commander": "^13.1.0",
+		"keytar": "^7.9.0",
 		"prompts": "^2.4.2",
 		"ink": "^6.8.0",
 		"react": "^19.2.0"

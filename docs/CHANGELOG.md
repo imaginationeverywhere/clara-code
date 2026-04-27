@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Added (cross-reference)
+
+- **CLI — `clara login` / `clara doctor`** — Browser opens `https://claracode.ai/cli-auth?cli_port=…`; production page must `POST` JSON to `http://127.0.0.1:<port>/` with `email`, `sessionToken`, `apiKey` (see **`packages/cli/CHANGELOG.md`**). Credentials use OS keyring (**keytar**, service `clara-code`), not plaintext `~/.clara/credentials.json` (legacy file migrated once). `clara doctor` checks keyring and `GET` backend `/health`. Root **`CHANGELOG.md`**, **`packages/cli/README.md`**.
+
 ### Changed (cross-reference)
 
 - **`docs/backend-rest-api.md`** — Migrations `042`–`047` in the table; billing checkout no custom success/cancel URLs; mutating billing `POST` routes require `Origin`/`Referer` host match to `FRONTEND_URL`; ejection monthly cap aligned to `PLAN_LIMITS.runtimeAgentBuildsPerMonth`; `/api/harness-talents` `acquire` documents idempotency. Implementation: **`backend/CHANGELOG.md`**, root **`CHANGELOG.md`**.

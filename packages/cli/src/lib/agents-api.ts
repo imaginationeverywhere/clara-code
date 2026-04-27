@@ -1,5 +1,5 @@
 import { resolveBackendUrl } from "./backend.js";
-import { readClaraCredentials } from "./credentials-store.js";
+import { pickBearerToken, readClaraCredentials } from "./credentials-store.js";
 
 export type TemplateDto = {
 	id: string;
@@ -28,12 +28,16 @@ export type UserAgentDto = {
 	updatedAt?: string;
 };
 
-function authHeader(): string {
-	const c = readClaraCredentials();
-	if (!c?.token) {
-		throw new Error("Not authenticated. Run: clara auth login");
+async function authHeader(): Promise<string> {
+	const c = await readClaraCredentials();
+	if (!c) {
+		throw new Error("Not authenticated. Run: clara login");
 	}
-	return `Bearer ${c.token}`;
+	const bearer = pickBearerToken(c);
+	if (bearer.length === 0) {
+		throw new Error("Not authenticated. Run: clara login");
+	}
+	return `Bearer ${bearer}`;
 }
 
 function apiBase(): string {
@@ -42,7 +46,7 @@ function apiBase(): string {
 
 export async function fetchTemplates(): Promise<TemplateDto[]> {
 	const r = await fetch(`${apiBase()}/agents/templates`, {
-		headers: { Authorization: authHeader() },
+		headers: { Authorization: await authHeader() },
 	});
 	if (!r.ok) {
 		throw new Error(`templates: ${r.status} ${await r.text()}`);
@@ -60,7 +64,7 @@ export async function configureAgent(input: {
 	const r = await fetch(`${apiBase()}/agents/configure`, {
 		method: "POST",
 		headers: {
-			Authorization: authHeader(),
+			Authorization: await authHeader(),
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
