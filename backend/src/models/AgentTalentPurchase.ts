@@ -33,4 +33,7 @@ export class AgentTalentPurchase extends Model {
 
 	@Column({ type: DataType.STRING(255), allowNull: true, field: "stripe_payment_id" })
 	declare stripePaymentId: string | null;
+
+	@Column({ type: DataType.STRING(64), allowNull: true, field: "idempotency_key" })
+	declare idempotencyKey: string | null;
 }

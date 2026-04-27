@@ -1,3 +1,5 @@
+import { claraHttpErrorMessage } from "./http-errors.js";
+
 export type SttRequestOptions = {
 	backendUrl: string;
 	token: string;
@@ -47,7 +49,7 @@ export async function requestTranscript(opts: SttRequestOptions): Promise<SttRes
 	const response = await fetch(url, init);
 	const text = await response.text().catch(() => "");
 	if (!response.ok) {
-		throw new Error(`stt ${response.status}: ${text || response.statusText}`);
+		throw new Error(claraHttpErrorMessage(response.status, text));
 	}
 	let parsed: unknown;
 	try {

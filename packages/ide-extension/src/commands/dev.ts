@@ -5,7 +5,7 @@ export function registerDevCommands(context: vscode.ExtensionContext): void {
 	context.subscriptions.push(
 		vscode.commands.registerCommand("clara.setGatewayUrl", async () => {
 			const url = await vscode.window.showInputBox({
-				prompt: "Clara gateway URL (leave blank to clear stored URL; use HERMES_GATEWAY_URL if unset)",
+				prompt: "Clara gateway URL (leave blank to clear stored URL; use CLARA_GATEWAY_URL if unset)",
 				placeHolder: GATEWAY_URL_PLACEHOLDER,
 			});
 			if (url === undefined) return;

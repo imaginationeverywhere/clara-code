@@ -2,6 +2,52 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-27
+
+### Changed
+
+- **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` (Clara Workbench + Talent Agency build directive) from `1-not-started/` to `3-completed/`; archival front matter and sign-off; execution streams and acceptance criteria tracked in program planning. See **`docs/CHANGELOG.md`**.
+
+- **Version bump** — monorepo **`0.6.1` → `0.6.2`** (merge of `fix/graphify-rebuild-no-op-when-missing` into `develop` with `clara login` / `clara doctor` + keytar; see **`clara` `0.2.0` → `0.2.1`** in **`packages/cli/CHANGELOG.md`**).
+
+- **Version bump** — monorepo **`0.6.0` → `0.6.1`** (parallel `ci.yml` matrix; see **CI** below and **`.github/CHANGELOG.md`**).
+
+- **CI** — `/.github/workflows/ci.yml` splits `npm run check` and `npm test` into two parallel matrix legs (`max-parallel: 2`, `fail-fast: false`); final `ci` job aggregates success for branch rules. See **`.github/CHANGELOG.md`**.
+
+### Added
+
+- **`clara init` + `POST /api/agents/init`** — CLI `clara init <name>` validates kebab-case, calls the API, runs `git clone` into `./<name>/`. Backend creates a GitHub repo from a template (Business/Enterprise: `canBuildAgents`; **403** `tier_lock` otherwise; **503** without `GITHUB_TOKEN`). Env: `backend/.env.example`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/cli/README.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**. Monorepo **`0.5.3` → `0.6.0`**, **`@clara-code/backend` `1.3.2` → `1.4.0`**, **`clara` `0.1.2` → `0.2.0`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.
+
+### Security
+
+- **Backend — harness Talents list** — `GET /api/harness-talents/agent/:agentId` now requires the agent to belong to the authenticated user (`listAgentTalentsForUser`); otherwise **404** (fixes cross-tenant disclosure). See **`backend/CHANGELOG.md`** and **`docs/backend-rest-api.md`**.
+
+### Added
+
+- **CLI — `clara login` and `clara doctor`** — Loopback callback on `127.0.0.1` (random port) + `https://claracode.ai/cli-auth?cli_port=…`; **keytar** OS keyring storage (`clara-code` / `default`); `agents-api` uses `pickBearerToken()`; hidden `clara auth login` alias. Prompt **`04-clara-login.md`** → `prompts/2026/April/27/3-completed/`. See **`packages/cli/CHANGELOG.md`**, **`packages/cli/README.md`**, **`docs/CHANGELOG.md`**, root **`README.md`**.
+
+### Fixed
+
+- **Developer tooling — graphify** — `scripts/graphify-rebuild.sh` exits 0 when the `graphify` Python package is absent; `CLAUDE.md` and `.cursor/rules/graphify.mdc` call the script instead of inline `python3 -c` so agent sessions and fresh clones avoid `No module named 'graphify'` noise. See **`scripts/CHANGELOG.md`**, **`docs/CHANGELOG.md`**.
+
+- **Backend — platform review follow-up (wallet, billing, abuse, voice, ejection)** — SQL `043`–`047` (wallet ledger, Stripe purchase uniqueness, non-negative wallet, default private catalog, `user_usage_history`); transactional Talent acquire/attach, idempotency, billing without arbitrary checkout redirects + origin check on mutating routes; operation-credit reserve/refund on voice; ejection cap from plan limits; full details in **`backend/CHANGELOG.md`**.
+
+### Changed
+
+- **Version bump** — root **`0.5.2` → `0.5.3`** (graphify rebuild wrapper + doc/rules wiring; see **Fixed** above). **`clara` (packages/cli)** later **`0.1.2` → `0.1.3`** on the login/doctor line (`clara login` / `clara doctor` / keytar; see **Added** above).
+
+- **Version bump (prior)** — root **`0.5.1` → `0.5.2`**, **`@clara-code/backend`** **`1.3.1` → `1.3.2`**.
+
+- **Version bump (prior)** — root **`0.5.0` → `0.5.1`**, **`@clara-code/backend`** **`1.3.0` → `1.3.1`**.
+
+### Added
+
+- **Customer brain — CLI, MCP example, and ship gate** — **`clara` `0.1.1` → `0.1.2`**: `clara the-brain` (tenant default `brain-api.claracode.ai`, blocks `quiknation` targets), `packages/cli/.claude/commands/the-brain-customer.md`, `mcp-brain-customer.example.json`; `scripts/verify-customer-brain-ship.mjs` blocks founder host and founder-only command marker; **`release-on-tag.yml`** and **`clara-code-ide.yml`** run the verifier (CLI dist and VSIX). Spec: **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**. Prompt `02-clara-code-the-brain-customer-wrapper-and-build-gate.md` → `prompts/2026/April/27/3-completed/`. See **`packages/cli/CHANGELOG.md`**, **`.github/CHANGELOG.md`**, **`docs/CHANGELOG.md`** **\[Unreleased\] - 2026-04-27**.
+
+- **Prompt queue (P0)** — related planning note: `17-clara-code-the-brain-customer-wrapper-and-build-gate.md` (April 26 queue) and the newer **`02-…`** prompt completed under `prompts/2026/April/27/3-completed/`. For the delivered behavior, use the **Customer brain** item above and **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**.
+
+- **Prompt queue bookkeeping** — `01-cursor-fix-clara-code-glm-union-blocks-ci.md` → `prompts/2026/April/27/3-completed/` (GLM model union already present on `main`/`develop`); `00-fix-platform-implementation-issues.md` → `prompts/2026/April/27/3-completed/` (platform follow-up: migrations `043`–`047` + services; see **Fixed** above and **`backend/CHANGELOG.md`**).
+
 ## [Unreleased] - 2026-04-25
 
 ### Changed
@@ -155,6 +201,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 ## [Unreleased] - 2026-04-16
 
 ### Added
+
+- **Prompt archive (April 14, completed)** — `prompts/2026/April/14/3-completed/05-clerk-auth-activate.md` (Clerk middleware build-time gate, BLK-02) and `06-stripe-checkout-dynamic-pricing.md` (Stripe dynamic pricing via metadata, checkout wiring). See `docs/CHANGELOG.md`.
 
 - **Voice Coding and VRD attribution** — Root `README.md` reframed as the canonical public record for **Voice Coding** and **VRD** (Voice Requirements Document), with attribution to Amen Ra (April 2026). Added `VRD-TEMPLATE.md` plus companion drafts `linkedin-article.md` and `x-thread.md` for distribution.
 - **`/branch-cleanup`** — Replaces `/git-sweep` and `/merge-all`; `.claude/commands/branch-cleanup.md` + `.claude/scripts/branch-cleanup.sh` (mirrored under `.cursor/`). See `.claude/commands/CHANGELOG.md` and `.cursor/commands/CHANGELOG.md` **[1.35.2]**.

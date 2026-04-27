@@ -83,7 +83,7 @@ export class ModelTierError extends Error {
 	}
 }
 
-function pricingUrl(): string {
+export function pricingUrl(): string {
 	if (process.env.FRONTEND_URL) {
 		return `${process.env.FRONTEND_URL.replace(/\/$/, "")}/pricing`;
 	}

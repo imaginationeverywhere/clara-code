@@ -5,6 +5,14 @@ import type { AuthenticatedRequest } from "@/middleware/clerk-auth";
 import { Agent } from "@/models/Agent";
 import { AgentTemplate } from "@/models/AgentTemplate";
 import { agentConfigService } from "@/services/agent-config.service";
+import {
+	canTierInitAgentRepo,
+	createRepositoryFromTemplate,
+	deriveVpHandle,
+	getAgentInitConfigFromEnv,
+	resolveUserForAgentInit,
+	validateAgentNameForInit,
+} from "@/services/agent-init.service";
 import { agentMessagingService, type SendMessageInput } from "@/services/agent-messaging.service";
 import { agentPhaseService } from "@/services/agent-phase.service";
 import { attachSkills } from "@/services/agent-skill.service";
@@ -113,6 +121,82 @@ router.post(
 		} catch (err) {
 			const message = err instanceof Error ? err.message : "error";
 			res.status(400).json({ error: message });
+		}
+	},
+);
+
+/** Provision a dedicated GitHub repo for an agent from the org template (Sprint 3 `clara init`). */
+router.post(
+	"/init",
+	requireClaraOrClerk,
+	requireAbuseCheck,
+	async (req: AuthenticatedRequest & ApiKeyRequest, res: Response): Promise<void> => {
+		const claraUserId = req.claraUser?.userId;
+		if (!claraUserId) {
+			res.status(401).json({ error: "Authentication required" });
+			return;
+		}
+
+		const tier = toPlanTier(req.claraUser?.tier);
+		if (!canTierInitAgentRepo(tier)) {
+			res.status(403).json({
+				reason: "tier_lock",
+				error: "plan_limit",
+				message: "Creating a standalone agent repository requires a plan that includes agent repository builds.",
+				upgrade_url: pricingUrl(),
+			});
+			return;
+		}
+
+		const body = req.body as { name?: string };
+		const name = typeof body.name === "string" ? body.name : "";
+		const v = validateAgentNameForInit(name);
+		if (!v.valid) {
+			res.status(400).json({ error: "invalid_agent_name", message: v.message });
+			return;
+		}
+
+		const user = await resolveUserForAgentInit(claraUserId);
+		if (!user) {
+			res.status(404).json({
+				error: "user_not_found",
+				message: "User record not found. Complete account setup first.",
+			});
+			return;
+		}
+
+		const gh = getAgentInitConfigFromEnv();
+		if (!gh) {
+			res.status(503).json({
+				error: "agent_init_unavailable",
+				message: "Repository provisioning is not enabled on this server (missing GITHUB_TOKEN).",
+			});
+			return;
+		}
+
+		const handle = deriveVpHandle(user);
+		const repoName = `${handle}-${name.trim().toLowerCase()}`;
+
+		try {
+			const created = await createRepositoryFromTemplate({ config: gh, repoName });
+			res.status(201).json({
+				cloneUrl: created.cloneUrl,
+				repoUrl: created.repoUrl,
+				repository: created.fullName,
+			});
+		} catch (e) {
+			const msg = e instanceof Error ? e.message : "error";
+			if (msg === "repo_name_unavailable") {
+				res.status(409).json({
+					error: "repo_name_unavailable",
+					message: "A repository with this name may already exist. Try a different agent name.",
+				});
+				return;
+			}
+			res.status(502).json({
+				error: "provisioning_failed",
+				message: "Could not create the repository. Try again later.",
+			});
 		}
 	},
 );

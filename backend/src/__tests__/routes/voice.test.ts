@@ -36,6 +36,8 @@ jest.mock("@/middleware/abuse-protection", () => ({
 }));
 
 jest.mock("@/services/operation-credit.service", () => ({
+	reserveOperationCredits: jest.fn().mockResolvedValue({ ok: true, didReserve: true }),
+	refundOperationCredits: jest.fn().mockResolvedValue(undefined),
 	canUseOperationCredits: jest.fn().mockResolvedValue({ allowed: true, creditsRemaining: null }),
 	applyOperationCreditUsage: jest.fn().mockResolvedValue(undefined),
 }));
@@ -98,7 +100,7 @@ jest.mock("@/services/memory.service", () => {
 import axios from "axios";
 import voiceRoutes from "@/routes/voice";
 import { memoryService } from "@/services/memory.service";
-import { applyOperationCreditUsage, canUseOperationCredits } from "@/services/operation-credit.service";
+import { reserveOperationCredits } from "@/services/operation-credit.service";
 import { voiceUsageService } from "@/services/voice-usage.service";
 
 const app = express();
@@ -339,7 +341,7 @@ describe("routes /api/voice", () => {
 			if (prevConverseKey === undefined) delete process.env.CLARA_VOICE_API_KEY;
 			else process.env.CLARA_VOICE_API_KEY = prevConverseKey;
 			(voiceUsageService.getUsedCountForCurrentMonth as jest.Mock).mockResolvedValue(0);
-			(canUseOperationCredits as jest.Mock).mockResolvedValue({ allowed: true, creditsRemaining: null });
+			(reserveOperationCredits as jest.Mock).mockResolvedValue({ ok: true, didReserve: true });
 		});
 
 		it("400 when neither audio_base64 nor text is present", async () => {
@@ -429,12 +431,12 @@ describe("routes /api/voice", () => {
 			});
 			await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
 			expect(voiceUsageService.incrementAfterSuccess).toHaveBeenCalledWith("user_voice_test", "basic");
-			expect(applyOperationCreditUsage).toHaveBeenCalled();
+			expect(reserveOperationCredits).toHaveBeenCalled();
 		});
 
 		it("402 when operation credits are blocked", async () => {
-			(canUseOperationCredits as jest.Mock).mockResolvedValueOnce({
-				allowed: false,
+			(reserveOperationCredits as jest.Mock).mockResolvedValueOnce({
+				ok: false,
 				creditsRemaining: 0,
 				upgradeUrl: "https://claracode.ai/pricing",
 			});

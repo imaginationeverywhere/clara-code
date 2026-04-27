@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "clara-brain": {
+      "command": "npx",
+      "args": ["-y", "@quiknation/clara-brain-mcp"],
+      "env": {
+        "CLARA_BRAIN_URL": "https://api.claracode.ai/api/memory/query",
+        "CLARA_BRAIN_API_KEY": "${env:CLARA_BRAIN_API_KEY}",
+        "CLARA_BRAIN_TENANT": "clara-code"
+      }
+    }
+  }
+}

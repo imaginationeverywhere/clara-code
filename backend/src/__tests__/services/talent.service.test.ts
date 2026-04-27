@@ -1,3 +1,12 @@
+const mockTx = { LOCK: { UPDATE: "UPDATE" } };
+jest.mock("@/config/database", () => ({
+	sequelize: {
+		transaction: async (fn: (t: typeof mockTx) => Promise<unknown>) => fn(mockTx),
+		query: jest.fn().mockResolvedValue([{ c: 2 }]),
+	},
+}));
+
+import { sequelize } from "@/config/database";
 import { AgentTalentAttachment } from "@/models/AgentTalentAttachment";
 import { AgentTalentPurchase } from "@/models/AgentTalentPurchase";
 import { UserAgent } from "@/models/UserAgent";
@@ -9,6 +18,8 @@ jest.mock("@/utils/logger", () => ({
 }));
 
 jest.mock("@/services/wallet.service", () => ({
+	idempotencyKeyFromReference: (s: string) =>
+		require("node:crypto").createHash("sha256").update(s, "utf8").digest("hex"),
 	walletService: {
 		debit: jest.fn().mockResolvedValue(undefined),
 		creditPublisher: jest.fn().mockResolvedValue(undefined),
@@ -49,6 +60,7 @@ jest.mock("@/models/AgentTalentAttachment", () => ({
 jest.mock("@/models/AgentTalentPurchase", () => ({
 	AgentTalentPurchase: {
 		create: jest.fn().mockResolvedValue({}),
+		findOne: jest.fn().mockResolvedValue(null),
 	},
 }));
 jest.mock("@/models/UserAgent", () => ({
@@ -130,8 +142,8 @@ describe("TalentService", () => {
 			mockLibFindOne.mockResolvedValue(null);
 			mockLibCreate.mockResolvedValue({ id: "lib2" });
 			await svc.acquire(userId, "t1");
-			expect(walletService.debit).toHaveBeenCalledWith(userId, 4.99, "talent:t1:one_time");
-			expect(walletService.creditPublisher).toHaveBeenCalledWith("pub1", 4.99 * 0.85, "talent_sale:t1");
+			expect(walletService.debit).toHaveBeenCalledWith(userId, 4.99, "talent:t1:one_time", mockTx);
+			expect(walletService.creditPublisher).toHaveBeenCalledWith("pub1", 4.99 * 0.85, "talent_sale:t1", mockTx);
 			expect(AgentTalentPurchase.create).toHaveBeenCalled();
 		});
 	});
@@ -139,13 +151,13 @@ describe("TalentService", () => {
 	describe("attach", () => {
 		it("throws at tier cap (basic=5)", async () => {
 			mockCatalogFindByPk.mockResolvedValue(catalogRow({ id: "x" }));
-			mockCountAttach.mockResolvedValue(5);
+			(sequelize.query as jest.Mock).mockResolvedValueOnce([{ c: 5 }]);
 			await expect(svc.attach(userId, "basic", "ag", "x")).rejects.toThrow("talents_per_agent_cap_reached:5");
 		});
 
 		it("allows when under cap", async () => {
 			mockCatalogFindByPk.mockResolvedValue(catalogRow({ id: "scheduling" }));
-			mockCountAttach.mockResolvedValue(2);
+			(sequelize.query as jest.Mock).mockResolvedValueOnce([{ c: 2 }]);
 			await svc.attach(userId, "basic", "ag", "scheduling");
 			expect(AgentTalentAttachment.create).toHaveBeenCalled();
 		});

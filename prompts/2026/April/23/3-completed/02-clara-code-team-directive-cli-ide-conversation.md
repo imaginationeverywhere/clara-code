@@ -73,3 +73,7 @@ Save them in `clara-code/prompts/2026/April/23/1-not-started/` alongside this di
 ---
 
 **Scope rule:** Ship CLI first (lowest complexity, highest Mo-satisfaction). Then Desktop. Then Website. Then pipeline. Don't parallelize prematurely.
+
+## Status (pickup-prompt, `develop`, 2026-04-23)
+
+Directive remains the north star; surface work is tracked in feature branches (e.g. `prompt/2026-04-23/03-cli-npm-clara-converse-default`) and follow-up prompt `07-unblock-pr03-tests-and-ts.md`. This file is archived; no additional repo change required for the text alone.

@@ -1,3 +1,10 @@
+jest.mock("@/config/database", () => ({
+	sequelize: {
+		transaction: async (fn: (t: unknown) => Promise<unknown>) => fn({}),
+		query: jest.fn().mockResolvedValue(undefined),
+	},
+}));
+
 import { _resetInMemoryRedisForTests, type AppRedis, getRedis } from "@/lib/redis";
 import { UserUsage } from "@/models/UserUsage";
 import { abuseProtectionService } from "@/services/abuse-protection.service";
@@ -45,7 +52,14 @@ describe("AbuseProtectionService", () => {
 		});
 
 		it("blocks when isFrozen in user_usage (DB)", async () => {
-			(mockUserUsage.findByPk as jest.Mock).mockResolvedValueOnce({ isFrozen: true, userId: "z" });
+			const d = new Date();
+			const monthKey = `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+			(mockUserUsage.findByPk as jest.Mock).mockResolvedValue({
+				isFrozen: true,
+				userId: "z",
+				monthKey,
+				update: jest.fn().mockResolvedValue(undefined),
+			});
 			const o = await abuseProtectionService.preflight("z", "basic");
 			expect(o.allowed).toBe(false);
 			if (!o.allowed) {

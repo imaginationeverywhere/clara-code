@@ -1,5 +1,6 @@
 import { resolveBackendUrl } from "./backend.js";
-import { readClaraCredentials } from "./credentials-store.js";
+import { type ClaraCredentials, pickBearerToken, readClaraCredentials } from "./credentials-store.js";
+import { claraHttpErrorMessage } from "./http-errors.js";
 
 export type TemplateDto = {
 	id: string;
@@ -28,12 +29,16 @@ export type UserAgentDto = {
 	updatedAt?: string;
 };
 
-function authHeader(): string {
-	const c = readClaraCredentials();
-	if (!c?.token) {
-		throw new Error("Not authenticated. Run: clara auth login");
+async function authHeader(): Promise<string> {
+	const c = await readClaraCredentials();
+	if (!c) {
+		throw new Error("Not authenticated. Run: clara login");
 	}
-	return `Bearer ${c.token}`;
+	const bearer = pickBearerToken(c);
+	if (bearer.length === 0) {
+		throw new Error("Not authenticated. Run: clara login");
+	}
+	return `Bearer ${bearer}`;
 }
 
 function apiBase(): string {
@@ -42,13 +47,81 @@ function apiBase(): string {
 
 export async function fetchTemplates(): Promise<TemplateDto[]> {
 	const r = await fetch(`${apiBase()}/agents/templates`, {
-		headers: { Authorization: authHeader() },
+		headers: { Authorization: await authHeader() },
 	});
+	const text = await r.text();
 	if (!r.ok) {
-		throw new Error(`templates: ${r.status} ${await r.text()}`);
+		throw new Error(claraHttpErrorMessage(r.status, text));
 	}
-	const j = (await r.json()) as { templates: TemplateDto[] };
+	const j = JSON.parse(text) as { templates: TemplateDto[] };
 	return j.templates;
+}
+
+export type AgentInitResult = {
+	cloneUrl: string;
+	repoUrl: string;
+	repository?: string;
+};
+
+export async function postAgentInit(
+	name: string,
+	backendFlag?: string,
+	overrides?: { token?: string; fetch?: typeof fetch },
+): Promise<AgentInitResult> {
+	const { url: base } = resolveBackendUrl(backendFlag);
+	let bearer: string;
+	if (overrides?.token) {
+		bearer = overrides.token;
+	} else {
+		const c: ClaraCredentials | null = await readClaraCredentials();
+		if (!c) {
+			throw new Error("not_authenticated");
+		}
+		bearer = pickBearerToken(c);
+	}
+	if (bearer.length === 0) {
+		throw new Error("not_authenticated");
+	}
+	const fetchFn = overrides?.fetch ?? globalThis.fetch;
+	const r = await fetchFn(`${base}/api/agents/init`, {
+		method: "POST",
+		headers: {
+			Authorization: `Bearer ${bearer}`,
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ name }),
+	});
+	const text = await r.text();
+	let body: {
+		cloneUrl?: string;
+		repoUrl?: string;
+		repository?: string;
+		reason?: string;
+		message?: string;
+		upgrade_url?: string;
+		error?: string;
+	} = {};
+	try {
+		body = JSON.parse(text) as typeof body;
+	} catch {
+		// not json
+	}
+	if (r.status === 401) {
+		throw new Error("unauthorized");
+	}
+	if (r.status === 403 && body.reason === "tier_lock") {
+		const err = new Error("tier_lock") as Error & { upgradeUrl?: string };
+		err.upgradeUrl = typeof body.upgrade_url === "string" ? body.upgrade_url : undefined;
+		throw err;
+	}
+	if (!r.ok) {
+		const msg = body.message ?? body.error ?? text;
+		throw new Error(`init_failed: ${r.status} ${msg}`);
+	}
+	if (typeof body.cloneUrl !== "string" || typeof body.repoUrl !== "string") {
+		throw new Error("init_failed: bad response from server");
+	}
+	return { cloneUrl: body.cloneUrl, repoUrl: body.repoUrl, repository: body.repository };
 }
 
 export async function configureAgent(input: {
@@ -60,7 +133,7 @@ export async function configureAgent(input: {
 	const r = await fetch(`${apiBase()}/agents/configure`, {
 		method: "POST",
 		headers: {
-			Authorization: authHeader(),
+			Authorization: await authHeader(),
 			"Content-Type": "application/json",
 		},
 		body: JSON.stringify({
@@ -70,9 +143,10 @@ export async function configureAgent(input: {
 			skill_ids: input.skillIds,
 		}),
 	});
+	const text = await r.text();
 	if (!r.ok) {
-		throw new Error(`configure: ${r.status} ${await r.text()}`);
+		throw new Error(claraHttpErrorMessage(r.status, text));
 	}
-	const j = (await r.json()) as { agent: UserAgentDto };
+	const j = JSON.parse(text) as { agent: UserAgentDto };
 	return j.agent;
 }

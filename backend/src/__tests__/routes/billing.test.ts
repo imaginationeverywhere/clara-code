@@ -87,6 +87,15 @@ describe("/api/billing (mounted as /billing in test)", () => {
 		expect(ok.body.checkout_url).toContain("https://");
 	});
 
+	it("POST /checkout rejects custom success or cancel URLs (open-redirect hardening)", async () => {
+		const r = await request(app)
+			.post("/billing/checkout")
+			.set("Origin", "https://claracode.com")
+			.send({ tier: "pro", success_url: "https://evil.example/x" });
+		expect(r.status).toBe(400);
+		expect(r.body.error).toBe("custom_redirects_not_allowed");
+	});
+
 	it("POST /cancel returns 404 without subscription", async () => {
 		(Subscription.findOne as jest.Mock).mockResolvedValue(null);
 		const r = await request(app).post("/billing/cancel").send({});

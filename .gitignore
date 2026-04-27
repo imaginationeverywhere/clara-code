@@ -35,6 +35,8 @@ out.jsonl
 pi-*.html
 out.html
 packages/coding-agent/binaries/
+packages/*/*.vsix
+packages/*/*.tgz
 todo.md
 plans/
 .pi/hf-sessions/

@@ -67,7 +67,7 @@ describe("requestTranscript", () => {
 					token: "sk-clara-abc",
 					audio: Buffer.alloc(0),
 				}),
-			/stt 502/,
+			/clara doctor/,
 		);
 	});
 

@@ -1,5 +1,39 @@
 # Changelog
 
+## [Unreleased] - 2026-04-27
+
+### Changed (cross-reference)
+
+- **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` moved to `prompts/2026/April/27/3-completed/`; directive text is ratified; acceptance criteria remain the program implementation checklist (per architecture `CLARA_WORKBENCH_AND_TALENT_AGENCY.md` in the boilerplate repo). Root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
+
+### Added (cross-reference)
+
+- **CLI — `clara login` / `clara doctor`** — Browser opens `https://claracode.ai/cli-auth?cli_port=…`; production page must `POST` JSON to `http://127.0.0.1:<port>/` with `email`, `sessionToken`, `apiKey` (see **`packages/cli/CHANGELOG.md`**). Credentials use OS keyring (**keytar**, service `clara-code`), not plaintext `~/.clara/credentials.json` (legacy file migrated once). `clara doctor` checks keyring and `GET` backend `/health`. Root **`CHANGELOG.md`**, **`packages/cli/README.md`**.
+
+### Changed (cross-reference)
+
+- **GitHub Actions** — `ci.yml` parallel matrix (`check` / `test`, `max-parallel: 2`); `ci` job aggregates. Monorepo version **0.6.1** (see root **`CHANGELOG.md`**). Implementation: **`.github/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
+### Added (cross-reference)
+
+- **`docs/backend-rest-api.md`** — `POST /api/agents/init` (GitHub template provisioning, tier gate, env vars). **`packages/cli/README.md`** — `clara init` in the commands table. Implementation: **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, root **`CHANGELOG.md`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.
+
+### Changed (cross-reference)
+
+- **Graphify / agent rules** — `scripts/graphify-rebuild.sh` no-ops when the `graphify` Python module is missing (exit 0); `CLAUDE.md` and **`.cursor/rules/graphify.mdc`** invoke the script instead of a bare `python3 -c` so QCS1 and fresh clones do not log import errors. Implementation: **`scripts/graphify-rebuild.sh`**, root **`CHANGELOG.md`**.
+
+- **`docs/backend-rest-api.md`** — Migrations `042`–`047` in the table; billing checkout no custom success/cancel URLs; mutating billing `POST` routes require `Origin`/`Referer` host match to `FRONTEND_URL`; ejection monthly cap aligned to `PLAN_LIMITS.runtimeAgentBuildsPerMonth`; `/api/harness-talents` `acquire` documents idempotency. Implementation: **`backend/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
+### Security (cross-reference)
+
+- **`docs/backend-rest-api.md`** — `/api/harness-talents/agent/:agentId` documents the ownership check and **404**; attach/detach body fields corrected to `agent_id` / `talent_id`. Implementation: **`backend/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
+### Added (cross-reference)
+
+- **Architecture — tenant vs founder brain** — **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**: default customer brain host, forbidden founder endpoints, MCP/CLI ship gates, alignment with `clara the-brain` and IDE VSIX. Implementation: **`packages/cli/CHANGELOG.md`**, **`.github/CHANGELOG.md`**, `scripts/verify-customer-brain-ship.mjs`, root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
+
+- **Prompt 17 (completed)** — `02-clara-code-the-brain-customer-wrapper-and-build-gate.md` in `prompts/2026/April/27/3-completed/`: `clara the-brain`, `.claude/commands/the-brain-customer.md`, `mcp-brain-customer.example.json`, release `verify-customer-brain-ship` on CLI and VSIX (`release-on-tag.yml`, `clara-code-ide.yml`). See **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**, root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
+
 ## [Unreleased] - 2026-04-25
 
 ### Added (cross-reference)
@@ -100,6 +134,8 @@
 ## [Unreleased] - 2026-04-16
 
 ### Added
+
+- **Prompt archive (April 14)** — Completed agent prompts in `prompts/2026/April/14/3-completed/`: Clerk middleware activation (BLK-02) and Stripe checkout dynamic pricing. See root `CHANGELOG.md` **[Unreleased] - 2026-04-16**.
 
 - **Voice Coding / VRD** — Root `README.md` documents the public attribution record for Voice Coding and VRD; `VRD-TEMPLATE.md` at repo root for voice-first product specs. See root `CHANGELOG.md` **[Unreleased] - 2026-04-16**.
 

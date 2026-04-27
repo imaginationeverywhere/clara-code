@@ -1,3 +1,4 @@
+import { sequelize } from "@/config/database";
 import { type AppRedis, getRedis } from "@/lib/redis";
 import { UsageEvent } from "@/models/UsageEvent";
 import { UserUsage } from "@/models/UserUsage";
@@ -73,8 +74,54 @@ function utcHourKey(d = new Date()): string {
 }
 
 export class AbuseProtectionService {
+	/**
+	 * On calendar month change, copy the hot `user_usage` row to `user_usage_history` and reset
+	 * the current month counters on the hot row (Redis COGS path stays keyed by YYYYMM separately).
+	 */
+	private async ensureUserUsageMonthRollover(userId: string): Promise<void> {
+		const mk = monthKeyDb();
+		const row = await UserUsage.findByPk(userId);
+		if (!row || row.monthKey === mk) {
+			return;
+		}
+		try {
+			await sequelize.transaction(async (trx) => {
+				await sequelize.query(
+					`INSERT INTO user_usage_history
+            (user_id, month_key, tier, active_hours, cogs_usd, is_flagged, is_frozen, flagged_at, frozen_at, archived_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, NOW())`,
+					{
+						transaction: trx,
+						bind: [
+							row.userId,
+							row.monthKey,
+							row.tier,
+							row.activeHours,
+							row.cogsUsd,
+							row.isFlagged,
+							row.isFrozen,
+							row.flaggedAt,
+							row.frozenAt,
+						],
+					},
+				);
+				await row.update(
+					{
+						monthKey: mk,
+						activeHours: 0,
+						cogsUsd: 0,
+					},
+					{ transaction: trx },
+				);
+			});
+		} catch (e: unknown) {
+			logger.warn("user_usage month rollover failed", { userId, err: e });
+		}
+	}
+
 	async preflight(userId: string, tier: string | PlanTier): Promise<AbuseCheckResult> {
 		const t = toPlanTier(tier);
+		await this.ensureUserUsageMonthRollover(userId);
 		const frozenRow = await UserUsage.findByPk(userId);
 		if (frozenRow?.isFrozen) {
 			return { allowed: false, reason: "frozen" };
@@ -151,19 +198,36 @@ export class AbuseProtectionService {
 			void this.flagForReview(userId, monthHours);
 		}
 
-		UsageEvent.create({
-			userId,
-			agentId: agentId ?? null,
-			modelUsed,
-			taskType: taskType ?? null,
-			bedrockInputTokens,
-			bedrockOutputTokens,
-			modalComputeSeconds,
-			cogsUsd,
-			cacheHit,
-		}).catch((err: unknown) => {
+		try {
+			await UsageEvent.create({
+				userId,
+				agentId: agentId ?? null,
+				modelUsed,
+				taskType: taskType ?? null,
+				bedrockInputTokens,
+				bedrockOutputTokens,
+				modalComputeSeconds,
+				cogsUsd,
+				cacheHit,
+			});
+		} catch (err: unknown) {
 			logger.warn("usage_event persist failed", { err });
-		});
+			try {
+				const entry = JSON.stringify({
+					kind: "UsageEvent",
+					userId,
+					agentId,
+					modelUsed,
+					cogsUsd,
+					ts: Date.now(),
+					err: err instanceof Error ? err.message : String(err),
+				});
+				await r().rpush("dlq:usage_events", entry);
+				await r().expire("dlq:usage_events", 7 * 24 * 3600);
+			} catch (dlqErr: unknown) {
+				logger.error("dlq:usage_events push failed", { dlqErr });
+			}
+		}
 	}
 
 	computeCOGS(model: AbuseModelUsed, inputTokens: number, outputTokens: number, modalSeconds: number): number {

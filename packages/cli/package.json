@@ -1,11 +1,12 @@
 {
 	"name": "clara",
-	"version": "0.1.1",
+	"version": "0.2.1",
 	"description": "Clara Code terminal voice interface (npm install -g clara@latest)",
 	"type": "module",
 	"bin": {
 		"clara": "./dist/index.js"
 	},
+	"files": ["dist", ".claude", "mcp-brain-customer.example.json"],
 	"publishConfig": {
 		"access": "public"
 	},
@@ -26,6 +27,7 @@
 	"dependencies": {
 		"@imaginationeverywhere/clara-voice-client": "workspace:*",
 		"commander": "^13.1.0",
+		"keytar": "^7.9.0",
 		"prompts": "^2.4.2",
 		"ink": "^6.8.0",
 		"react": "^19.2.0"

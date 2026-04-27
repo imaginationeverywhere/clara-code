@@ -1,5 +1,17 @@
 import { OperationCredits } from "@/models/OperationCredits";
-import { applyOperationCreditUsage, canUseOperationCredits } from "@/services/operation-credit.service";
+import {
+	applyOperationCreditUsage,
+	canUseOperationCredits,
+	refundOperationCredits,
+	reserveOperationCredits,
+} from "@/services/operation-credit.service";
+
+const mockT = { LOCK: { UPDATE: "UPDATE" } };
+jest.mock("@/config/database", () => ({
+	sequelize: {
+		transaction: async (fn: (t: typeof mockT) => Promise<unknown>) => fn(mockT),
+	},
+}));
 
 jest.mock("@/models/OperationCredits", () => ({
 	OperationCredits: {
@@ -50,10 +62,19 @@ describe("operation-credit.service", () => {
 		expect(OperationCredits.findOrCreate).not.toHaveBeenCalled();
 	});
 
-	it("apply: increments for medium", async () => {
+	it("reserve: increments for medium", async () => {
 		const inc = jest.fn().mockResolvedValue(undefined);
-		(OperationCredits.findOrCreate as jest.Mock).mockResolvedValueOnce([{ increment: inc }, true]);
-		await applyOperationCreditUsage("u1", "a1", "basic", "medium");
+		(OperationCredits.findOrCreate as jest.Mock).mockResolvedValueOnce([{ creditsUsed: 0, increment: inc }, true]);
+		const r = await reserveOperationCredits("u1", "a1", "basic", "medium");
+		expect(r.ok).toBe(true);
+		if (r.ok) expect(r.didReserve).toBe(true);
 		expect(inc).toHaveBeenCalled();
+	});
+
+	it("refund: decrements after reserve", async () => {
+		const dec = jest.fn().mockResolvedValue(undefined);
+		(OperationCredits.findOne as jest.Mock).mockResolvedValueOnce({ decrement: dec, creditsUsed: 10 });
+		await refundOperationCredits("u1", "a1", "basic", "medium");
+		expect(dec).toHaveBeenCalled();
 	});
 });

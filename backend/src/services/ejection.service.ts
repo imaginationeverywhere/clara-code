@@ -10,16 +10,8 @@ import { Subscription } from "@/models/Subscription";
 import type { AttachedSkillId } from "@/models/UserAgent";
 import { UserAgent } from "@/models/UserAgent";
 import { UserVoiceClone } from "@/models/UserVoiceClone";
-import { type PlanTier, toPlanTier } from "@/services/plan-limits";
+import { PLAN_LIMITS, toPlanTier } from "@/services/plan-limits";
 import { logger } from "@/utils/logger";
-
-const EJECTION_CAPS: Record<PlanTier, number | null> = {
-	basic: 1,
-	pro: 3,
-	max: 6,
-	business: 12,
-	enterprise: null,
-};
 
 function skillNamesOnly(skills: AttachedSkillId[]): string[] {
 	return skills.map((s) => (typeof s === "string" ? s : s.name));
@@ -29,7 +21,7 @@ export class EjectionService {
 	async requestEjection(userId: string, tierRaw: string, userAgentId: string): Promise<Ejection> {
 		const tier = toPlanTier(tierRaw);
 		const monthKey = new Date().toISOString().slice(0, 7);
-		const cap = EJECTION_CAPS[tier];
+		const cap = PLAN_LIMITS[tier].runtimeAgentBuildsPerMonth;
 
 		if (tier !== "enterprise" && cap !== null) {
 			if (cap === 0) {

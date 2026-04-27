@@ -22,6 +22,7 @@ const mockAcquire = jest.fn();
 const mockAttach = jest.fn();
 const mockDetach = jest.fn();
 const mockListAgent = jest.fn();
+const mockListAgentForUser = jest.fn();
 
 jest.mock("@/services/talent.service", () => {
 	const actual = jest.requireActual<typeof import("@/services/talent.service")>("@/services/talent.service");
@@ -33,6 +34,7 @@ jest.mock("@/services/talent.service", () => {
 			attach: (...a: unknown[]) => mockAttach(...a),
 			detach: (...a: unknown[]) => mockDetach(...a),
 			listAgentTalents: (...a: unknown[]) => mockListAgent(...a),
+			listAgentTalentsForUser: (...a: unknown[]) => mockListAgentForUser(...a),
 		},
 	};
 });
@@ -73,5 +75,21 @@ describe("routes /api/harness-talents", () => {
 		expect(res.status).toBe(200);
 		expect(res.body).toEqual({ attached: true });
 		expect(mockAttach).toHaveBeenCalled();
+	});
+
+	it("GET /agent/:agentId returns 404 when the agent is not owned by the caller", async () => {
+		mockListAgentForUser.mockResolvedValue(null);
+		const res = await request(app).get("/api/harness-talents/agent/other-user-agent");
+		expect(res.status).toBe(404);
+		expect(res.body).toEqual({ error: "agent_not_found" });
+		expect(mockListAgentForUser).toHaveBeenCalledWith("u_ht", "other-user-agent");
+	});
+
+	it("GET /agent/:agentId lists talents when the agent is owned", async () => {
+		mockListAgentForUser.mockResolvedValue([{ id: "t1" }]);
+		const res = await request(app).get("/api/harness-talents/agent/a1");
+		expect(res.status).toBe(200);
+		expect(res.body.talents).toEqual([{ id: "t1" }]);
+		expect(mockListAgentForUser).toHaveBeenCalledWith("u_ht", "a1");
 	});
 });

@@ -5,11 +5,17 @@ import { fileURLToPath } from "node:url";
 import { Command } from "commander";
 import { registerAskCommand } from "./commands/ask.js";
 import { registerAuthCommand } from "./commands/auth.js";
+import { registerCognitiveCommands } from "./commands/cognitive.js";
 import { registerConfigCommand } from "./commands/config.js";
 import { registerConfigAgentCommand } from "./commands/config-agent.js";
+import { registerDeployCommand } from "./commands/deploy.js";
+import { registerDoctorCommand } from "./commands/doctor.js";
 import { registerGreetCommand } from "./commands/greet.js";
 import { registerHelloCommand } from "./commands/hello.js";
-import { registerTuiCommand } from "./commands/tui.js";
+import { registerInitCommand } from "./commands/init.js";
+import { registerLoginCommand } from "./commands/login.js";
+import { registerTheBrainCustomerCommand } from "./commands/the-brain.js";
+import { registerChatCommand, registerTuiCommand } from "./commands/tui.js";
 import { launchVoiceConverseMode } from "./launch-voice-converse.js";
 
 const pkg = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../package.json"), "utf8")) as {
@@ -26,9 +32,16 @@ registerHelloCommand(program);
 registerAskCommand(program);
 registerConfigCommand(program);
 registerConfigAgentCommand(program);
+registerCognitiveCommands(program);
+registerDeployCommand(program);
+registerInitCommand(program);
+registerLoginCommand(program);
+registerDoctorCommand(program);
 registerAuthCommand(program);
 registerGreetCommand(program);
 registerTuiCommand(program);
+registerChatCommand(program);
+registerTheBrainCustomerCommand(program);
 
 // Default: `clara` with no subcommand = greeting + `/voice/converse` loop (see
 // `prompts/.../03-cli-npm-clara-converse-default.md`). Full terminal IDE experience: `clara tui`.
