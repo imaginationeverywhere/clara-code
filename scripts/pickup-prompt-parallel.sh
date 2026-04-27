@@ -10,7 +10,7 @@
 #
 # Requires: git, gh, cursor CLI (3.x), GitHub auth, push permissions.
 
-set -euo pipefail
+set -eo pipefail
 
 MAX_PARALLEL="${1:-6}"
 DATE_PATH="${2:-$(date +%Y)/$(date +%B)/$(date +%-d)}"
@@ -103,25 +103,23 @@ Co-Authored-By: Cursor Agent <noreply@cursor.sh>" 2>/dev/null || true
 
 # Main dispatch loop
 PIDS=()
-while true; do
-  # Reap finished slots
-  NEW_PIDS=()
-  for pid in "${PIDS[@]:-}"; do
-    [ -z "$pid" ] && continue
-    if kill -0 "$pid" 2>/dev/null; then
-      NEW_PIDS+=("$pid")
-    fi
+
+reap_pids() {
+  local survivors=()
+  local pid
+  for pid in "${PIDS[@]}"; do
+    [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null && survivors+=("$pid")
   done
-  PIDS=("${NEW_PIDS[@]}")
+  PIDS=("${survivors[@]}")
+}
+
+while true; do
+  reap_pids
 
   # Wait if at capacity
   while [ "${#PIDS[@]}" -ge "$MAX_PARALLEL" ]; do
     sleep 2
-    NEW_PIDS=()
-    for pid in "${PIDS[@]}"; do
-      kill -0 "$pid" 2>/dev/null && NEW_PIDS+=("$pid")
-    done
-    PIDS=("${NEW_PIDS[@]}")
+    reap_pids
   done
 
   # Find next prompt
