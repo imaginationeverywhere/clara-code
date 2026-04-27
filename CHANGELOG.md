@@ -200,6 +200,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Prompt archive (April 14, completed)** — `prompts/2026/April/14/3-completed/05-clerk-auth-activate.md` (Clerk middleware build-time gate, BLK-02) and `06-stripe-checkout-dynamic-pricing.md` (Stripe dynamic pricing via metadata, checkout wiring). See `docs/CHANGELOG.md`.
+
 - **Voice Coding and VRD attribution** — Root `README.md` reframed as the canonical public record for **Voice Coding** and **VRD** (Voice Requirements Document), with attribution to Amen Ra (April 2026). Added `VRD-TEMPLATE.md` plus companion drafts `linkedin-article.md` and `x-thread.md` for distribution.
 - **`/branch-cleanup`** — Replaces `/git-sweep` and `/merge-all`; `.claude/commands/branch-cleanup.md` + `.claude/scripts/branch-cleanup.sh` (mirrored under `.cursor/`). See `.claude/commands/CHANGELOG.md` and `.cursor/commands/CHANGELOG.md` **[1.35.2]**.
 - **Prompt queue** — `prompts/2026/April/16/1-not-started/` — QCS1 voice, desktop, CLI, and Hermes backlog prompts.

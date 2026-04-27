@@ -36,6 +36,22 @@ export default function PrivacyPage() {
 				</section>
 
 				<section className="mt-10 space-y-4">
+					<h2 className="text-xl font-semibold text-text-primary">AI memory and query logs</h2>
+					<p>
+						When an AI agent in this service uses our shared memory system (&ldquo;Clara brain&rdquo;) to
+						retrieve context, we record the query: the natural-language question (truncated to 768 characters), the
+						agent that made the request, response timing, and result counts. We automatically delete these query
+						logs after <strong>90 days</strong>. We do not retain query text longer than that, and we do not
+						intentionally store personally identifying content beyond what the agent&rsquo;s query embedding
+						includes. Contact{" "}
+						<a href="mailto:privacy@quiknation.com" className="text-clara hover:underline">
+							privacy@quiknation.com
+						</a>{" "}
+						for related requests.
+					</p>
+				</section>
+
+				<section className="mt-10 space-y-4">
 					<h2 className="text-xl font-semibold text-text-primary">How we use it</h2>
 					<ul className="list-disc space-y-2 pl-5">
 						<li>To provide the Clara Code service (voice-first AI coding assistant).</li>
