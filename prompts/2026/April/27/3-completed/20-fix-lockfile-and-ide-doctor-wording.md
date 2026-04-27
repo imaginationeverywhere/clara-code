@@ -8,7 +8,7 @@ target_repos: clara-code
 related_pr: https://github.com/imaginationeverywhere/clara-code/pull/73
 ---
 
-**Archival note (2026-04-28):** Implemented in PR #73 (`fix/20260427-lockfile-ide-doctor`): regenerated `pnpm-lock.yaml`; `packages/ide-extension/src/http-errors.ts` uses `Clara: Doctor` for all IDE surfaces; `packages/cli/src/commands/deploy.ts` uses `reason === "tier_lock"` only. Review: `docs/review/20260427-132355-code-review.md`. If `1-not-started/20-*.md` still exists from PR #72, remove it after merge to avoid duplicate prompts.
+**Archival note (2026-04-28):** Implemented in PR #73 (`fix/20260427-lockfile-ide-doctor`): regenerated `pnpm-lock.yaml`; `packages/ide-extension/src/http-errors.ts` uses `Clara: Doctor` for all IDE surfaces; `packages/cli/src/commands/deploy.ts` uses `reason === "tier_lock"` only. Review: `docs/review/20260427-132355-code-review.md`. Duplicate `1-not-started/20-*.md` removed on `develop` (cleanup commit `40160721`).
 
 # Fix: regenerate `pnpm-lock.yaml` + replace `clara doctor` → `Clara: Doctor` in IDE error mapping
 
