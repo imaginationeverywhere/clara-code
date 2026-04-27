@@ -4,6 +4,14 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ## [Unreleased] - 2026-04-25
 
+### Added
+
+- **`POST /api/agents/init`** — `agent-init.service.ts`: validates agent name, Business+ tier (`canBuildAgents`), loads `User` (Clerk id or internal id), `deriveVpHandle` + `{handle}-{name}` repo name, GitHub template API (`GITHUB_TOKEN` + `GITHUB_AGENT_*` envs). Returns `{ cloneUrl, repoUrl, repository }` or 403 `reason: tier_lock`, 503 if GitHub not configured, 409 on name conflict.
+
+### Changed
+
+- **Package version** — `1.3.2` → **`1.4.0`** (`POST /api/agents/init` + Jest `agent-init.service.test.ts`; see **Added** above).
+
 ### Security
 
 - **Harness Talents — `GET /api/harness-talents/agent/:agentId` ownership** — `talent.service` adds `listAgentTalentsForUser(userId, agentId)` (requires a `user_agents` row for `(id, userId)`). Route returns **404** for other users’ agent IDs; stops cross-tenant listing of attached Talents. Jest: `harness-talents.test.ts`.

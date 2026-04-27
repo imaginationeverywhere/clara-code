@@ -4,6 +4,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-27
 
+### Added
+
+- **`clara init` + `POST /api/agents/init`** — CLI `clara init <name>` validates kebab-case, calls the API, runs `git clone` into `./<name>/`. Backend creates a GitHub repo from a template (Business/Enterprise: `canBuildAgents`; **403** `tier_lock` otherwise; **503** without `GITHUB_TOKEN`). Env: `backend/.env.example`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/cli/README.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**. Monorepo **`0.5.3` → `0.6.0`**, **`@clara-code/backend` `1.3.2` → `1.4.0`**, **`clara` `0.1.2` → `0.2.0`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.
+
 ### Security
 
 - **Backend — harness Talents list** — `GET /api/harness-talents/agent/:agentId` now requires the agent to belong to the authenticated user (`listAgentTalentsForUser`); otherwise **404** (fixes cross-tenant disclosure). See **`backend/CHANGELOG.md`** and **`docs/backend-rest-api.md`**.

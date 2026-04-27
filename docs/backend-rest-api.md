@@ -35,6 +35,7 @@ Apply with `psql $DATABASE_URL -f <file>` (or your standard migration process). 
 |--------|------|-------------|
 | `GET` | `/templates` | List public `agent_templates`. Optional query: `category`, `industry_vertical`. |
 | `GET` | `/` | List active `user_agents` (template-based harness team members) for the user. |
+| `POST` | `/init` | **Standalone agent repo (CLI `clara init`).** Body: `name` (kebab-case, max 32). **Business/Enterprise** only (`PLAN_LIMITS.canBuildAgents`); otherwise **403** `reason: tier_lock`. Provisions a GitHub repository from a template via `GITHUB_TOKEN` + `GITHUB_AGENT_INIT_ORG` / `GITHUB_AGENT_TEMPLATE_*` (see `backend/.env.example`); **503** if not configured. Returns `cloneUrl`, `repoUrl`, `repository`. |
 | `POST` | `/configure` | Create a `user_agent`. Body: `template_id`, `name`, `voice` (`{ source: "library", voiceId }` or `{ source: "clone", audioBase64 }`), `skill_ids[]`, optional `personality_tweaks`. Enforces `PLAN_LIMITS` harness + per-agent skill caps. |
 | `DELETE` | `/:id` | Retire a `user_agent` (`is_active = false`). |
 | `POST` | `/` | Create harness agent. Body: `name`, `soul` (or `soul_md`), optional `phase` (`builder` default), `industry_vertical`, `skills[]`. **Runtime** agents require **Business/Enterprise** tier. |

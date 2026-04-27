@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Added (cross-reference)
+
+- **`docs/backend-rest-api.md`** — `POST /api/agents/init` (GitHub template provisioning, tier gate, env vars). **`packages/cli/README.md`** — `clara init` in the commands table. Implementation: **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, root **`CHANGELOG.md`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.
+
 ### Changed (cross-reference)
 
 - **Graphify / agent rules** — `scripts/graphify-rebuild.sh` no-ops when the `graphify` Python module is missing (exit 0); `CLAUDE.md` and **`.cursor/rules/graphify.mdc`** invoke the script instead of a bare `python3 -c` so QCS1 and fresh clones do not log import errors. Implementation: **`scripts/graphify-rebuild.sh`**, root **`CHANGELOG.md`**.
