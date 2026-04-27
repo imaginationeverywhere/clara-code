@@ -6,6 +6,8 @@
 
 - **`clara init <name>`** — `POST /api/agents/init` (backend) + local `git clone`; kebab-case validation; 401/403 `tier_lock` messages; `--backend` URL. `lib/agent-name.ts`, `commands/init.ts`, `lib/agents-api.postAgentInit`. Server requires `GITHUB_TOKEN` and uses GitHub "generate from template" (`GITHUB_AGENT_INIT_ORG`, `GITHUB_AGENT_TEMPLATE_OWNER`, `GITHUB_AGENT_TEMPLATE_REPO` with defaults). Tier: Business+ (`canBuildAgents`). Tests: `test/lib/agent-name.test.ts`, `test/agents-api-init.test.ts`.
 
+- **`clara login` + `clara doctor`** — Loopback HTTP server on `127.0.0.1` (random port) + `https://claracode.ai/cli-auth?cli_port=…`; callback POST body `{ email, sessionToken, apiKey }` (aliases: `session_token`, `api_key`). Credentials stored with **keytar** (`clara-code` / `default`), not `~/.clara/credentials.json` (legacy file migrated once). Hidden `clara auth login` delegates to the same flow. `lib/agents-api` uses `pickBearerToken()` (API key vs session). Tests: `test/login-loopback.test.ts`.
+
 - **Customer brain (constitutional IP)** — `clara the-brain` subcommand (blocks `quiknation` target; default `brain-api.claracode.ai`); `.claude/commands/the-brain-customer.md` for Cursor; `mcp-brain-customer.example.json` (customer JWT + `CLARA_BRAIN_URL`); `package.json` `files` includes `.claude` and the example. Release gate: `scripts/verify-customer-brain-ship.mjs` (forbidden `brain-api.quiknation.com` and founder command marker in shipped CLI; `--vsix-only` for VSIX in `clara-code-ide.yml`). Spec: `docs/architecture/BRAIN_API_ACCESS_CONTROL.md`. Tests: `test/the-brain.test.ts`.
 
 - **`clara config-agent` / `clara configure-agent`** — interactive template → name → voice (library or 5s `captureVoiceSample`) → skills; calls `GET /api/agents/templates` and `POST /api/agents/configure` via `lib/agents-api.ts`. `prompts` dependency. Voice doc string in `src/voice/config-agent-flow.ts` for future `/api/voice/converse` handoff.
@@ -14,7 +16,7 @@
 
 ### Changed
 
-- **Package version** — `0.1.2` → **`0.2.0`** (`clara init`; see **Added** in **Unreleased** above).
+- **Package version** — `0.1.2` → **`0.2.1`** (`clara init` + `clara login` / `clara doctor` / keytar; see **Added** in **Unreleased** above).
 - **Package version** — `0.1.1` → **`0.1.2`** (`clara the-brain` customer wrapper, MCP example, release gate; see **Added** in **Unreleased** above).
 - **Package version** — `0.1.0` → **`0.1.1`** (`clara config-agent` and `agents-api`; see **Added** above).
 

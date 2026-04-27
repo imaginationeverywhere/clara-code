@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
+- **Version bump** — monorepo **`0.6.1` → `0.6.2`** (merge of `fix/graphify-rebuild-no-op-when-missing` into `develop` with `clara login` / `clara doctor` + keytar; see **`clara` `0.2.0` → `0.2.1`** in **`packages/cli/CHANGELOG.md`**).
+
 - **Version bump** — monorepo **`0.6.0` → `0.6.1`** (parallel `ci.yml` matrix; see **CI** below and **`.github/CHANGELOG.md`**).
 
 - **CI** — `/.github/workflows/ci.yml` splits `npm run check` and `npm test` into two parallel matrix legs (`max-parallel: 2`, `fail-fast: false`); final `ci` job aggregates success for branch rules. See **`.github/CHANGELOG.md`**.
@@ -18,6 +20,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 - **Backend — harness Talents list** — `GET /api/harness-talents/agent/:agentId` now requires the agent to belong to the authenticated user (`listAgentTalentsForUser`); otherwise **404** (fixes cross-tenant disclosure). See **`backend/CHANGELOG.md`** and **`docs/backend-rest-api.md`**.
 
+### Added
+
+- **CLI — `clara login` and `clara doctor`** — Loopback callback on `127.0.0.1` (random port) + `https://claracode.ai/cli-auth?cli_port=…`; **keytar** OS keyring storage (`clara-code` / `default`); `agents-api` uses `pickBearerToken()`; hidden `clara auth login` alias. Prompt **`04-clara-login.md`** → `prompts/2026/April/27/3-completed/`. See **`packages/cli/CHANGELOG.md`**, **`packages/cli/README.md`**, **`docs/CHANGELOG.md`**, root **`README.md`**.
+
 ### Fixed
 
 - **Developer tooling — graphify** — `scripts/graphify-rebuild.sh` exits 0 when the `graphify` Python package is absent; `CLAUDE.md` and `.cursor/rules/graphify.mdc` call the script instead of inline `python3 -c` so agent sessions and fresh clones avoid `No module named 'graphify'` noise. See **`scripts/CHANGELOG.md`**, **`docs/CHANGELOG.md`**.
@@ -26,7 +32,7 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
-- **Version bump** — root **`0.5.2` → `0.5.3`** (graphify rebuild wrapper + doc/rules wiring; see **Fixed** above).
+- **Version bump** — root **`0.5.2` → `0.5.3`** (graphify rebuild wrapper + doc/rules wiring; see **Fixed** above). **`clara` (packages/cli)** later **`0.1.2` → `0.1.3`** on the login/doctor line (`clara login` / `clara doctor` / keytar; see **Added** above).
 
 - **Version bump (prior)** — root **`0.5.1` → `0.5.2`**, **`@clara-code/backend`** **`1.3.1` → `1.3.2`**.
 

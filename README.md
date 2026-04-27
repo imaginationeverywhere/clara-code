@@ -77,6 +77,8 @@ https://github.com/mojaray2k/clara-code
 
 `npm install -g clara` installs the Clara Code CLI. The source is public. That is intentional and safe.
 
+**Sign-in:** run **`clara login`** to open the browser; after you authenticate, the site posts your session and API key to a local callback and the CLI stores them in the **OS keyring** (not a plaintext file in `~/.clara`). Use **`clara doctor`** to verify the keyring module, credentials presence, and backend `GET /health` reachability. See **`packages/cli/README.md`** for the command table and callback JSON contract.
+
 The CLI is a thin HTTP client. It captures audio, sends it to `api.claracode.ai`, plays back the response. The intelligence — Clara's persona, voice, model routing, culture — lives entirely server-side. Publishing the client source exposes nothing proprietary, because the proprietary layer never leaves our infrastructure.
 
 This is the same model as Claude Code (`npm install -g @anthropic-ai/claude-code`), the Stripe CLI, and the Vercel CLI: the tool is open, the platform is the product. A valid subscription is required to make the API respond. Without it, the CLI is an empty shell.

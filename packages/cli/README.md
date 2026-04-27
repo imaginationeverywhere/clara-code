@@ -12,12 +12,29 @@ npm install -g clara@latest
 
 After installation, the `clara` binary is on your `PATH`.
 
+## Auth (`clara login`)
+
+1. Run **`clara login`**. The CLI starts an HTTP server on `127.0.0.1` (random port) and opens **`https://claracode.ai/cli-auth?cli_port=<port>`** in the browser.
+2. After you complete sign-in on the site, the page must **`POST`** to `http://127.0.0.1:<port>/` with JSON:
+
+```json
+{
+  "email": "you@example.com",
+  "sessionToken": "<Clerk session JWT>",
+  "apiKey": "cc_live_… or sk-clara-…"
+}
+```
+
+(`session_token` / `api_key` are accepted as aliases.) Tokens are stored with **keytar** (macOS Keychain, Windows Credential Manager, Linux libsecret), service **`clara-code`**, account **`default`**, not in `~/.clara/credentials.json`. A legacy plaintext credentials file, if present, is migrated into the keyring and removed. **`clara auth login`** is a hidden alias of the same flow. **`clara doctor`** reports whether keytar loads, whether credentials exist, and whether `GET /health` on the resolved backend succeeds.
+
 ## Commands
 
 | Command | Description |
 |--------|-------------|
 | `clara` (no args) | Plays the canonical greeting, then Space twice for push-to-turn audio over `/voice/converse` |
 | `clara --version` | Print the CLI version |
+| `clara login` | Browser sign-in; store session + API key in the OS keyring (see **Auth** above) |
+| `clara doctor` | Check keyring, credentials, and backend `/health` |
 | `clara hello` | Play Clara's voice greeting from the API (stub) |
 | `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
 | `clara config set api-key <key>` | Store the API key in `~/.clara/config.json` |

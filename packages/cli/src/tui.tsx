@@ -189,9 +189,20 @@ export function App({
 	}, [phase, startListening, stopAndSend, token]);
 
 	const handleFirstRunSubmit = useCallback((pasted: string) => {
-		writeClaraCredentials({ token: pasted });
-		setToken(pasted);
-	}, []);
+		void (async () => {
+			try {
+				await writeClaraCredentials({ token: pasted });
+				setToken(pasted);
+			} catch (e) {
+				appendMessage({
+					id: nextId(),
+					role: "system",
+					text: `Could not save credentials: ${e instanceof Error ? e.message : String(e)}`,
+					ts: new Date(),
+				});
+			}
+		})();
+	}, [appendMessage]);
 
 	const handleFirstRunCancel = useCallback(() => {
 		exit();
