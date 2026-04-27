@@ -2,6 +2,12 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
+## [Unreleased] - 2026-04-27
+
+### Added
+
+- **Prompt queue (P0)** — `prompts/2026/April/26/1-not-started/17-clara-code-the-brain-customer-wrapper-and-build-gate.md` — implement `/the-brain-customer` (tenant brain default, no Quik Nation founder endpoint), plus a release-pipeline **grep** that fails if `brain-api.quiknation.com` appears in the shipped CLI or IDE extension `.vsix`. The prompt’s front matter references a `docs/architecture/BRAIN_API_ACCESS_CONTROL.md` spec to be aligned with the platform boilerplate. See **`docs/CHANGELOG.md`** **\[Unreleased\] - 2026-04-27**.
+
 ## [Unreleased] - 2026-04-25
 
 ### Changed
