@@ -43,6 +43,9 @@ jobs:
       - name: Build clara CLI
         run: pnpm -C packages/cli run build
 
+      - name: Verify customer brain ship gate (CLI)
+        run: node scripts/verify-customer-brain-ship.mjs
+
       - name: Publish to npm
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

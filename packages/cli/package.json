@@ -1,11 +1,12 @@
 {
 	"name": "clara",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "Clara Code terminal voice interface (npm install -g clara@latest)",
 	"type": "module",
 	"bin": {
 		"clara": "./dist/index.js"
 	},
+	"files": ["dist", ".claude", "mcp-brain-customer.example.json"],
 	"publishConfig": {
 		"access": "public"
 	},

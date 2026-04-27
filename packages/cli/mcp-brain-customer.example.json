@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "clara-brain": {
+      "command": "node",
+      "args": ["<path-to-clara-brain-mcp>/dist/index.js"],
+      "env": {
+        "CLARA_BRAIN_URL": "https://brain-api.claracode.ai/query",
+        "CLARA_TENANT_JWT": "<set at runtime; never commit>"
+      }
+    }
+  }
+}

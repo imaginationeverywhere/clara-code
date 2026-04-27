@@ -4,12 +4,15 @@
 
 ### Added
 
+- **Customer brain (constitutional IP)** — `clara the-brain` subcommand (blocks `quiknation` target; default `brain-api.claracode.ai`); `.claude/commands/the-brain-customer.md` for Cursor; `mcp-brain-customer.example.json` (customer JWT + `CLARA_BRAIN_URL`); `package.json` `files` includes `.claude` and the example. Release gate: `scripts/verify-customer-brain-ship.mjs` (forbidden `brain-api.quiknation.com` and founder command marker in shipped CLI; `--vsix-only` for VSIX in `clara-code-ide.yml`). Spec: `docs/architecture/BRAIN_API_ACCESS_CONTROL.md`. Tests: `test/the-brain.test.ts`.
+
 - **`clara config-agent` / `clara configure-agent`** — interactive template → name → voice (library or 5s `captureVoiceSample`) → skills; calls `GET /api/agents/templates` and `POST /api/agents/configure` via `lib/agents-api.ts`. `prompts` dependency. Voice doc string in `src/voice/config-agent-flow.ts` for future `/api/voice/converse` handoff.
 
 - **Per-day voice session** — `buildSessionId(userId, agentId)` in `lib/canonical-greeting.ts` (`{userId}-{agentId}-YYYY-MM-DD`); `voice-converse` app reads `userId` from `~/.clara` config, passes `agent_id`, `session_id`, and `surface` in `postVoiceConverse` and `playCanonicalGreeting` options (aligned with backend memory).
 
 ### Changed
 
+- **Package version** — `0.1.1` → **`0.1.2`** (`clara the-brain` customer wrapper, MCP example, release gate; see **Added** in **Unreleased** above).
 - **Package version** — `0.1.0` → **`0.1.1`** (`clara config-agent` and `agents-api`; see **Added** above).
 
 - **Default voice service URL** — `CLARA_VOICE_URL` is optional: empty/unset → `https://api.claracode.ai/api` in `voice-converse-app.tsx` and `lib/canonical-greeting.ts` so greet/converse work on fresh install without env.

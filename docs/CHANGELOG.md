@@ -8,7 +8,9 @@
 
 ### Added (cross-reference)
 
-- **Prompt 17 (not started)** — `17-clara-code-the-brain-customer-wrapper-and-build-gate.md` under `prompts/2026/April/26/1-not-started/`: customer-facing `/the-brain` wrapper (defaults to `brain-api.claracode.ai`, blocks `quiknation` targets) + CI grep gate for `brain-api.quiknation.com` in shipped CLI/VSIX. The prompt cites a future `docs/architecture/BRAIN_API_ACCESS_CONTROL.md` to align with platform boilerplate. See root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
+- **Architecture — tenant vs founder brain** — **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**: default customer brain host, forbidden founder endpoints, MCP/CLI ship gates, alignment with `clara the-brain` and IDE VSIX. Implementation: **`packages/cli/CHANGELOG.md`**, **`.github/CHANGELOG.md`**, `scripts/verify-customer-brain-ship.mjs`, root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
+
+- **Prompt 17 (completed)** — `02-clara-code-the-brain-customer-wrapper-and-build-gate.md` in `prompts/2026/April/27/3-completed/`: `clara the-brain`, `.claude/commands/the-brain-customer.md`, `mcp-brain-customer.example.json`, release `verify-customer-brain-ship` on CLI and VSIX (`release-on-tag.yml`, `clara-code-ide.yml`). See **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**, root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
 
 ## [Unreleased] - 2026-04-25
 

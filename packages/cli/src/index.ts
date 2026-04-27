@@ -9,6 +9,7 @@ import { registerConfigCommand } from "./commands/config.js";
 import { registerConfigAgentCommand } from "./commands/config-agent.js";
 import { registerGreetCommand } from "./commands/greet.js";
 import { registerHelloCommand } from "./commands/hello.js";
+import { registerTheBrainCustomerCommand } from "./commands/the-brain.js";
 import { registerTuiCommand } from "./commands/tui.js";
 import { launchVoiceConverseMode } from "./launch-voice-converse.js";
 
@@ -29,6 +30,7 @@ registerConfigAgentCommand(program);
 registerAuthCommand(program);
 registerGreetCommand(program);
 registerTuiCommand(program);
+registerTheBrainCustomerCommand(program);
 
 // Default: `clara` with no subcommand = greeting + `/voice/converse` loop (see
 // `prompts/.../03-cli-npm-clara-converse-default.md`). Full terminal IDE experience: `clara tui`.

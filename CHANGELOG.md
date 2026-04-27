@@ -14,7 +14,9 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
-- **Prompt queue (P0)** — `prompts/2026/April/26/1-not-started/17-clara-code-the-brain-customer-wrapper-and-build-gate.md` — implement `/the-brain-customer` (tenant brain default, no Quik Nation founder endpoint), plus a release-pipeline **grep** that fails if `brain-api.quiknation.com` appears in the shipped CLI or IDE extension `.vsix`. The prompt’s front matter references a `docs/architecture/BRAIN_API_ACCESS_CONTROL.md` spec to be aligned with the platform boilerplate. See **`docs/CHANGELOG.md`** **\[Unreleased\] - 2026-04-27**.
+- **Customer brain — CLI, MCP example, and ship gate** — **`clara` `0.1.1` → `0.1.2`**: `clara the-brain` (tenant default `brain-api.claracode.ai`, blocks `quiknation` targets), `packages/cli/.claude/commands/the-brain-customer.md`, `mcp-brain-customer.example.json`; `scripts/verify-customer-brain-ship.mjs` blocks founder host and founder-only command marker; **`release-on-tag.yml`** and **`clara-code-ide.yml`** run the verifier (CLI dist and VSIX). Spec: **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**. Prompt `02-clara-code-the-brain-customer-wrapper-and-build-gate.md` → `prompts/2026/April/27/3-completed/`. See **`packages/cli/CHANGELOG.md`**, **`.github/CHANGELOG.md`**, **`docs/CHANGELOG.md`** **\[Unreleased\] - 2026-04-27**.
+
+- **Prompt queue (P0)** — related planning note: `17-clara-code-the-brain-customer-wrapper-and-build-gate.md` (April 26 queue) and the newer **`02-…`** prompt completed under `prompts/2026/April/27/3-completed/`. For the delivered behavior, use the **Customer brain** item above and **`docs/architecture/BRAIN_API_ACCESS_CONTROL.md`**.
 
 - **Prompt queue bookkeeping** — `01-cursor-fix-clara-code-glm-union-blocks-ci.md` → `prompts/2026/April/27/3-completed/` (GLM model union already present on `main`/`develop`); `00-fix-platform-implementation-issues.md` recovered into `prompts/2026/April/27/1-not-started/` (partial work: CRITICAL \#1 only in this commit).
 
