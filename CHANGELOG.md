@@ -10,11 +10,15 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Fixed
 
+- **Developer tooling — graphify** — `scripts/graphify-rebuild.sh` exits 0 when the `graphify` Python package is absent; `CLAUDE.md` and `.cursor/rules/graphify.mdc` call the script instead of inline `python3 -c` so agent sessions and fresh clones avoid `No module named 'graphify'` noise. See **`scripts/CHANGELOG.md`**, **`docs/CHANGELOG.md`**.
+
 - **Backend — platform review follow-up (wallet, billing, abuse, voice, ejection)** — SQL `043`–`047` (wallet ledger, Stripe purchase uniqueness, non-negative wallet, default private catalog, `user_usage_history`); transactional Talent acquire/attach, idempotency, billing without arbitrary checkout redirects + origin check on mutating routes; operation-credit reserve/refund on voice; ejection cap from plan limits; full details in **`backend/CHANGELOG.md`**.
 
 ### Changed
 
-- **Version bump** — root **`0.5.1` → `0.5.2`**, **`@clara-code/backend`** **`1.3.1` → `1.3.2`**.
+- **Version bump** — root **`0.5.2` → `0.5.3`** (graphify rebuild wrapper + doc/rules wiring; see **Fixed** above).
+
+- **Version bump (prior)** — root **`0.5.1` → `0.5.2`**, **`@clara-code/backend`** **`1.3.1` → `1.3.2`**.
 
 - **Version bump (prior)** — root **`0.5.0` → `0.5.1`**, **`@clara-code/backend`** **`1.3.0` → `1.3.1`**.
 
