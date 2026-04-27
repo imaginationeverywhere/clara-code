@@ -53,6 +53,7 @@
 
 ### Fixed
 
+- **`clara deploy` (code review follow-up)** — 403 deploy responses use `reason === "tier_lock"` only for the upgrade CTA; no fuzzy substring match on the response body.
 - **PR #03 review (TypeScript)** — Removed `// @ts-nocheck` from `src/voice-converse-app.tsx`; `useInput` uses the single-character space check (`input === " "`) for Ink 6+ (no `key.space` flag on `Key`). `ConverseResult` is used in the converse round-trip.
 - **Ink upgrade (PR #4 of CLI-first MVP)** — `ink@^5.0.1` → `ink@^6.8.0`. Fixes the React 19 boot crash (`Cannot read properties of undefined (reading 'ReactCurrentOwner')`) that prevented the TUI from mounting. Verified end-to-end via `tmux new-session -d -s clara-boot -x 100 -y 30 && npx tsx src/index.ts tui` — the `FirstRunPrompt` now renders without any stack trace. React bumped `^19.0.0` → `^19.2.0` to match Ink 6's peer requirement (`react >= 19.0.0`, already resolved to 19.2.5 by the monorepo lockfile). We deliberately did **not** jump to `ink@7` because it requires Node 22 at runtime, which would break `npx claracode@latest` on any Node 20 installation — Ink 6 matches our Node 20 floor. The Node 22 / Ink 7 bump is a future task once we raise `engines.node` accordingly.
 - **`engines.node` in manifest** — `package.json` now declares `engines.node` `>=20.0.0` so npm/npx warns on incompatible Node versions before obscure runtime failures (follow-up to PR #4 code review).

@@ -70,7 +70,7 @@ export function registerDeployCommand(program: Command): void {
 					} catch {
 						// ignore
 					}
-					if (j.reason === "tier_lock" || String(text).includes("tier")) {
+					if (j.reason === "tier_lock") {
 						console.error(formatTierLockMessage(j));
 					} else {
 						console.error(claraHttpErrorMessage(r.status, text));

@@ -30,13 +30,13 @@ export function mapHttpErrorToString(status: number, bodyText: string): string {
 					: "";
 		return u
 			? `Your Clara subscription is inactive. Reactivate: ${u}`
-			: "Your Clara subscription is inactive. Run `clara doctor` for status.";
+			: "Your Clara subscription is inactive. Run `Clara: Doctor` for status.";
 	}
 	if (status === 403) {
 		if (reason === "tier_lock" && j) {
 			return formatTierLockMessage(j as TierLockPayload);
 		}
-		return "Permission denied — run `clara doctor` for status.";
+		return "Permission denied — run `Clara: Doctor` for status.";
 	}
 	if (status === 404) {
 		return "Clara couldn't find that. Check the name and try again.";
@@ -48,13 +48,13 @@ export function mapHttpErrorToString(status: number, bodyText: string): string {
 		return "Slow down for a moment — try again in a few seconds.";
 	}
 	if (status >= 500) {
-		return "Clara is coming online — run `clara doctor` for status.";
+		return "Clara is coming online — run `Clara: Doctor` for status.";
 	}
 	if (status >= 400) {
-		return "Request failed — run `clara doctor` for status.";
+		return "Request failed — run `Clara: Doctor` for status.";
 	}
-	return "Request failed — run `clara doctor` for status.";
+	return "Request failed — run `Clara: Doctor` for status.";
 }
 
 export const NETWORK_FAILURE_MESSAGE =
-	"Couldn't reach Clara. Check your connection — `clara doctor` will tell you more.";
+	"Couldn't reach Clara. Check your connection — `Clara: Doctor` will tell you more.";
