@@ -22,6 +22,7 @@ After installation, the `clara` binary is on your `PATH`.
 | `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
 | `clara config set api-key <key>` | Store the API key in `~/.clara/config.json` |
 | `clara config get api-key` | Print the stored API key (or empty line if unset) |
+| `clara init <name>` | Provisions a per-agent GitHub repo via `POST /api/agents/init`, then `git clone` into `./<name>/` (Business/Enterprise tier; requires API token) |
 | `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `Ctrl+Space` voice, `--voice` placeholder |
 
 ## Quickstart

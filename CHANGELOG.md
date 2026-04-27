@@ -4,17 +4,31 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-27
 
+### Changed
+
+- **Version bump** — monorepo **`0.6.0` → `0.6.1`** (parallel `ci.yml` matrix; see **CI** below and **`.github/CHANGELOG.md`**).
+
+- **CI** — `/.github/workflows/ci.yml` splits `npm run check` and `npm test` into two parallel matrix legs (`max-parallel: 2`, `fail-fast: false`); final `ci` job aggregates success for branch rules. See **`.github/CHANGELOG.md`**.
+
+### Added
+
+- **`clara init` + `POST /api/agents/init`** — CLI `clara init <name>` validates kebab-case, calls the API, runs `git clone` into `./<name>/`. Backend creates a GitHub repo from a template (Business/Enterprise: `canBuildAgents`; **403** `tier_lock` otherwise; **503** without `GITHUB_TOKEN`). Env: `backend/.env.example`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/cli/README.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**. Monorepo **`0.5.3` → `0.6.0`**, **`@clara-code/backend` `1.3.2` → `1.4.0`**, **`clara` `0.1.2` → `0.2.0`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.
+
 ### Security
 
 - **Backend — harness Talents list** — `GET /api/harness-talents/agent/:agentId` now requires the agent to belong to the authenticated user (`listAgentTalentsForUser`); otherwise **404** (fixes cross-tenant disclosure). See **`backend/CHANGELOG.md`** and **`docs/backend-rest-api.md`**.
 
 ### Fixed
 
+- **Developer tooling — graphify** — `scripts/graphify-rebuild.sh` exits 0 when the `graphify` Python package is absent; `CLAUDE.md` and `.cursor/rules/graphify.mdc` call the script instead of inline `python3 -c` so agent sessions and fresh clones avoid `No module named 'graphify'` noise. See **`scripts/CHANGELOG.md`**, **`docs/CHANGELOG.md`**.
+
 - **Backend — platform review follow-up (wallet, billing, abuse, voice, ejection)** — SQL `043`–`047` (wallet ledger, Stripe purchase uniqueness, non-negative wallet, default private catalog, `user_usage_history`); transactional Talent acquire/attach, idempotency, billing without arbitrary checkout redirects + origin check on mutating routes; operation-credit reserve/refund on voice; ejection cap from plan limits; full details in **`backend/CHANGELOG.md`**.
 
 ### Changed
 
-- **Version bump** — root **`0.5.1` → `0.5.2`**, **`@clara-code/backend`** **`1.3.1` → `1.3.2`**.
+- **Version bump** — root **`0.5.2` → `0.5.3`** (graphify rebuild wrapper + doc/rules wiring; see **Fixed** above).
+
+- **Version bump (prior)** — root **`0.5.1` → `0.5.2`**, **`@clara-code/backend`** **`1.3.1` → `1.3.2`**.
 
 - **Version bump (prior)** — root **`0.5.0` → `0.5.1`**, **`@clara-code/backend`** **`1.3.0` → `1.3.1`**.
 

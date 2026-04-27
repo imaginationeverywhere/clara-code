@@ -51,6 +51,64 @@ export async function fetchTemplates(): Promise<TemplateDto[]> {
 	return j.templates;
 }
 
+export type AgentInitResult = {
+	cloneUrl: string;
+	repoUrl: string;
+	repository?: string;
+};
+
+export async function postAgentInit(
+	name: string,
+	backendFlag?: string,
+	overrides?: { token?: string; fetch?: typeof fetch },
+): Promise<AgentInitResult> {
+	const { url: base } = resolveBackendUrl(backendFlag);
+	const token = overrides?.token ?? readClaraCredentials()?.token;
+	if (!token) {
+		throw new Error("not_authenticated");
+	}
+	const fetchFn = overrides?.fetch ?? globalThis.fetch;
+	const r = await fetchFn(`${base}/api/agents/init`, {
+		method: "POST",
+		headers: {
+			Authorization: `Bearer ${token}`,
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify({ name }),
+	});
+	const text = await r.text();
+	let body: {
+		cloneUrl?: string;
+		repoUrl?: string;
+		repository?: string;
+		reason?: string;
+		message?: string;
+		upgrade_url?: string;
+		error?: string;
+	} = {};
+	try {
+		body = JSON.parse(text) as typeof body;
+	} catch {
+		// not json
+	}
+	if (r.status === 401) {
+		throw new Error("unauthorized");
+	}
+	if (r.status === 403 && body.reason === "tier_lock") {
+		const err = new Error("tier_lock") as Error & { upgradeUrl?: string };
+		err.upgradeUrl = typeof body.upgrade_url === "string" ? body.upgrade_url : undefined;
+		throw err;
+	}
+	if (!r.ok) {
+		const msg = body.message ?? body.error ?? text;
+		throw new Error(`init_failed: ${r.status} ${msg}`);
+	}
+	if (typeof body.cloneUrl !== "string" || typeof body.repoUrl !== "string") {
+		throw new Error("init_failed: bad response from server");
+	}
+	return { cloneUrl: body.cloneUrl, repoUrl: body.repoUrl, repository: body.repository };
+}
+
 export async function configureAgent(input: {
 	templateId: string;
 	name: string;

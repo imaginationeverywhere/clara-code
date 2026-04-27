@@ -1,3 +1,6 @@
+# CI: shared install + build, then check vs test in parallel (max-parallel: 2).
+# Aligns with ci-cd-pipeline-standard: matrix jobs, explicit concurrency cap.
+
 name: CI
 
 on:
@@ -12,7 +15,14 @@ concurrency:
 
 jobs:
   build-check-test:
+    name: ${{ matrix.target }}
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 2
+      matrix:
+        target: [check, test]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -41,7 +51,24 @@ jobs:
         run: npm run build
 
       - name: Check
+        if: matrix.target == 'check'
         run: npm run check
 
       - name: Test
+        if: matrix.target == 'test'
         run: npm test
+
+  # Single check name for branch rules; fails if any matrix leg failed.
+  ci:
+    name: ci
+    needs: [build-check-test]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Enforce all matrix jobs succeeded
+        run: |
+          if [ "${{ needs.build-check-test.result }}" != "success" ]; then
+            echo "::error::Check or test job failed"
+            exit 1
+          fi
+          echo "All matrix jobs passed."
