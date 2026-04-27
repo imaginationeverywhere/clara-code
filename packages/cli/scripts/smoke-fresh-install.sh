@@ -58,6 +58,6 @@ rm -f "${TARBALL_ABS}"
 echo
 echo "✓ Fresh-install smoke PASSED"
 echo "  Brain-grounded answer step requires:"
-echo "  • CLARA_GATEWAY_URL set to the platform-issued production gateway"
+echo "  • Gateway middleware deployed at https://api.claracode.ai/hermes"
 echo "  • Platform corpus ingested at brain-api.claracode.ai"
-echo "  Both are sequencing deps owned by /clara-platform."
+echo "  Both are sequencing deps owned by /clara-platform — run \`clara doctor\` to check."

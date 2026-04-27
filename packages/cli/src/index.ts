@@ -3,6 +3,7 @@ import { Command } from "commander";
 import { registerAskCommand } from "./commands/ask.js";
 import { registerAuthCommand } from "./commands/auth.js";
 import { registerConfigCommand } from "./commands/config.js";
+import { registerDoctorCommand } from "./commands/doctor.js";
 import { registerGreetCommand } from "./commands/greet.js";
 import { registerHelloCommand } from "./commands/hello.js";
 import { launchTui, registerTuiCommand } from "./commands/tui.js";
@@ -16,6 +17,7 @@ registerConfigCommand(program);
 registerAuthCommand(program);
 registerGreetCommand(program);
 registerTuiCommand(program);
+registerDoctorCommand(program);
 
 // Default action: `clara` with no subcommand launches the full TUI. This keeps the `npx
 // claracode@latest` / `clara` zero-arg entry point identical to `clara tui`, which is the CLI-first
