@@ -70,7 +70,10 @@ export function registerTuiCommand(program: Command): void {
 		.command("tui")
 		.description("Launch full-screen Clara Code TUI (Ink)")
 		.option("-u, --user <name>", "User id sent to gateway")
-		.option("-g, --gateway <url>", "Clara gateway URL (default: CLARA_GATEWAY_URL or ~/.clara/config.json)")
+		.option(
+			"-g, --gateway <url>",
+			`Clara gateway URL (default: CLARA_GATEWAY_URL, ~/.clara/config.json, then ${CLARA_GATEWAY_DEFAULT})`,
+		)
 		.option(
 			"-b, --backend <url>",
 			"Clara backend URL hosting /api/voice/stt and /api/voice/tts (default: CLARA_BACKEND_URL or https://api.claracode.ai)",

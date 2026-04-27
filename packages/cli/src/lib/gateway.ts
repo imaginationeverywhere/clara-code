@@ -5,7 +5,21 @@ export type GatewayResult = {
 };
 
 /**
- * POST JSON to the Hermes / Clara gateway; returns structured text for TUI formatting (VRD §C3–C4).
+ * The permanent public URL for Clara's LLM gateway. Bakes into every CLI install so
+ * a fresh `clara` doesn't require user configuration. The middleware that backs this
+ * path ships from the Clara platform; transient 4xx/5xx before it lands is expected.
+ */
+export const DEFAULT_GATEWAY_URL = "https://api.claracode.ai/hermes";
+
+/**
+ * Stable user-facing fix-hint. Used whenever the gateway is unreachable or returns
+ * an error — never mentions internal service names.
+ */
+const COMING_ONLINE_HINT =
+	"Clara gateway is coming online. Run `clara doctor` for status, or set CLARA_GATEWAY_URL to override.";
+
+/**
+ * POST JSON to the Clara gateway; returns structured text for TUI formatting.
  */
 export async function claraGateway(gatewayUrl: string, userId: string, message: string): Promise<GatewayResult> {
 	if (!gatewayUrl || gatewayUrl.trim().length === 0) {
@@ -34,7 +48,7 @@ export async function claraGateway(gatewayUrl: string, userId: string, message: 
 		return {
 			ok: false,
 			reply: bodyText || response.statusText || `HTTP ${response.status}`,
-			fixHint: "Check gateway URL and network, then retry.",
+			fixHint: COMING_ONLINE_HINT,
 		};
 	}
 
