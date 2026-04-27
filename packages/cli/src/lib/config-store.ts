@@ -4,6 +4,8 @@ import { CLARA_CONFIG_DIR, CLARA_CONFIG_FILE } from "./paths.js";
 export type ClaraConfig = {
 	apiKey?: string;
 	gatewayUrl?: string;
+	/** Optional override; default `https://brain-api.claracode.ai`. See `lib/config-resolved.ts`. */
+	brainUrl?: string;
 	/** Clara backend base URL hosting /api/voice/{stt,tts}. See lib/backend.ts for resolution. */
 	backendUrl?: string;
 	userId?: string;
@@ -29,7 +31,9 @@ export function readClaraConfig(): ClaraConfig {
 
 export function writeClaraConfig(config: ClaraConfig): void {
 	mkdirSync(CLARA_CONFIG_DIR, { recursive: true });
-	writeFileSync(CLARA_CONFIG_FILE, `${JSON.stringify(config, null, 2)}\n`, "utf8");
+	// Never persist API keys to disk — keyring only (prompt 11 / strategy briefing).
+	const { apiKey: _drop, ...rest } = config;
+	writeFileSync(CLARA_CONFIG_FILE, `${JSON.stringify(rest, null, 2)}\n`, "utf8");
 }
 
 export function patchClaraConfig(patch: Partial<ClaraConfig>): void {

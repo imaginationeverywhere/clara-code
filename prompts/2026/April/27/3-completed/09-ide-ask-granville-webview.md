@@ -1,3 +1,14 @@
+---
+type: cursor-prompt
+status: completed-archived
+archived: 2026-04-27
+authored_by: HQ
+team: /clara-code
+target_repos: clara-code
+---
+
+**Archival note (2026-04-27):** Sprint 3 prompt work is implemented in `packages/cli` and/or `packages/ide-extension` (cognitive verbs, deploy, TUI chat, config, IDE commands, status bar, shared HTTP error mapping, minutes, tier lock). This file is archived; product parity with live backend may evolve separately.
+
 # Implement IDE harness escalation — `/ask-granville` webview with persona
 
 ## Role

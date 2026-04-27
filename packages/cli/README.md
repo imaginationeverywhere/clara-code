@@ -37,8 +37,10 @@ After installation, the `clara` binary is on your `PATH`.
 | `clara doctor` | Check keyring, credentials, and backend `/health` |
 | `clara hello` | Play Clara's voice greeting from the API (stub) |
 | `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
-| `clara config set api-key <key>` | Store the API key in `~/.clara/config.json` |
-| `clara config get api-key` | Print the stored API key (or empty line if unset) |
+| `clara config get <key>` | Print resolved `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, or `apiKey` (keyring) |
+| `clara config set <key> <value>` | Set a allowed key: URLs / `userId` in `~/.clara/config.json`; `apiKey` in the **OS keyring** (never on disk) |
+| `clara config list` | Show each key, resolved value, and source (env / config / default / keyring) |
+| `clara config unset <key>` | Remove a file-stored override or clear `apiKey` in the keyring (session token kept) |
 | `clara init <name>` | Provisions a per-agent GitHub repo via `POST /api/agents/init`, then `git clone` into `./<name>/` (Business/Enterprise tier; requires API token) |
 | `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `Ctrl+Space` voice, `--voice` placeholder |
 
@@ -46,7 +48,7 @@ After installation, the `clara` binary is on your `PATH`.
 
 ```bash
 clara --version
-clara config set api-key YOUR_API_KEY
+clara config set apiKey YOUR_API_KEY
 clara ask "What is Clara Code?"
 clara hello
 clara tui --gateway https://info-24346--hermes-gateway.modal.run
@@ -60,7 +62,7 @@ Text-first by default; optional `--voice` for future audio when the gateway supp
 - `Ctrl+M` toggle mic UI (recording placeholder; use typed input for messages)
 - `Enter` send
 
-Configuration is stored at `~/.clara/config.json`. The directory is created automatically when you run `clara config set`.
+**Gateway default** matches `clara config get gatewayUrl` when nothing is set: `https://api.claracode.ai/hermes` (override with `CLARA_GATEWAY_URL` or `clara config set gatewayUrl <url>`). The directory `~/.clara/` is created when you first write config.
 
 ## Development
 
@@ -83,11 +85,12 @@ clara --help
 
 ## Config
 
-`~/.clara/config.json`:
+`~/.clara/config.json` (no `apiKey` or inference keys in the file — `model` / `system_prompt` / `temperature` are rejected; use **`clara login`** for session, **`clara config set apiKey`** for keyring-only keys).
 
 ```json
 {
   "gatewayUrl": "https://your-gateway.example.com",
+  "brainUrl": "https://brain-api.claracode.ai",
   "userId": "your-name",
   "lastSessionDate": "2026-04-10",
   "lastProject": "my-app",
