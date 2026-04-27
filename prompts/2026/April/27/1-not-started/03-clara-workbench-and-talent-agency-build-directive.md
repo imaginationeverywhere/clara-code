@@ -51,7 +51,7 @@ Read the architecture spec first. Implementation directive below references its 
 4. **Gear scaffold pattern** — define the contract every Gear meets: `provision()`, `configure()`, `verify()`, `uninstall()`. Gears live in `clara-code/gears/<gear-name>/`.
 
 ### Stream B — v1 Gears (10 ship immediately)
-For each Gear in architecture spec §4 (Payload, PostgREST, Apollo, Refine, Clara Safe, Redash, ntfy, Mise, PersonaPlex, Voxtral):
+For each Gear in architecture spec §4 (Payload, PostgREST, Apollo, Refine, Clara Safe, Redash, ntfy, Mise, PersonaPlex, Clara Voice):
 1. Implement provisioning module conforming to Gear scaffold contract
 2. Write provisioning runbook (Markdown, lives in `clara-code/gears/<gear-name>/RUNBOOK.md`)
 3. Wire SSM secret tree where Gear needs credentials
