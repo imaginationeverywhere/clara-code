@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Changed (cross-reference)
+
+- **GitHub Actions** — `ci.yml` parallel matrix (`check` / `test`, `max-parallel: 2`); `ci` job aggregates. Monorepo version **0.6.1** (see root **`CHANGELOG.md`**). Implementation: **`.github/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
 ### Added (cross-reference)
 
 - **`docs/backend-rest-api.md`** — `POST /api/agents/init` (GitHub template provisioning, tier gate, env vars). **`packages/cli/README.md`** — `clara init` in the commands table. Implementation: **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, root **`CHANGELOG.md`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.

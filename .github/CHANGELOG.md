@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Changed
+
+- `workflows/ci.yml` — `build-check-test` uses a **matrix** (`check` | `test`) with `max-parallel: 2` so static analysis (`npm run check`) and `npm test` run in parallel after a shared `pnpm install` + `npm run build` (same runner setup as before). `fail-fast: false` so a failing test leg does not cancel the check leg and vice versa. A final job `ci` depends on the matrix and fails the workflow if any leg failed, preserving a **single** required check name for branch protection.
+
 ### Added
 
 - `workflows/desktop-macos-dmg.yml` — on push/PR to `main` or `develop` (paths: `desktop/**`, `packages/clara-voice-client/**`), macOS Tauri `npm run build`, upload `*.dmg` from `bundle/dmg` (warn if missing).

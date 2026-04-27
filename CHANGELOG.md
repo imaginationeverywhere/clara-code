@@ -4,6 +4,12 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-27
 
+### Changed
+
+- **Version bump** — monorepo **`0.6.0` → `0.6.1`** (parallel `ci.yml` matrix; see **CI** below and **`.github/CHANGELOG.md`**).
+
+- **CI** — `/.github/workflows/ci.yml` splits `npm run check` and `npm test` into two parallel matrix legs (`max-parallel: 2`, `fail-fast: false`); final `ci` job aggregates success for branch rules. See **`.github/CHANGELOG.md`**.
+
 ### Added
 
 - **`clara init` + `POST /api/agents/init`** — CLI `clara init <name>` validates kebab-case, calls the API, runs `git clone` into `./<name>/`. Backend creates a GitHub repo from a template (Business/Enterprise: `canBuildAgents`; **403** `tier_lock` otherwise; **503** without `GITHUB_TOKEN`). Env: `backend/.env.example`. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/cli/README.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**. Monorepo **`0.5.3` → `0.6.0`**, **`@clara-code/backend` `1.3.2` → `1.4.0`**, **`clara` `0.1.2` → `0.2.0`**. Prompt **`05-clara-init.md`** → `prompts/2026/April/27/3-completed/`.
