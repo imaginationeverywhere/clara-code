@@ -148,3 +148,11 @@ The catalog of (phrasing → intent → params) is in prompt 09. **It also lives
 This is the same pattern Anthropic uses to keep Claude Code's competitive moat intact. We're applying it deliberately. Every command we ship as a thin client + sealed template is a brick in the moat. Every byte of prompt content that leaks into a public binary is a brick the next competitor uses to clone us.
 
 Build accordingly.
+
+---
+
+## Archived (architecture lock — repo canon)
+
+**Canonical doc:** [`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`](../../../../../docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md) — intent wire contract, ownership split (gateway vs `clara-code`), gateway alignment checklist, engineering backlog.
+
+**Moved:** `prompts/2026/April/27/3-completed/` (2026-04-27).

@@ -4,6 +4,10 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ## [Unreleased] - 2026-04-27
 
+### Added
+
+- **Architecture — intent gateway + command IP firewall (prompt 08)** — **`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`** ratifies thin CLI/IDE client, **`POST /v1/run`** contract, gateway alignment checklist, backlog (`runIntent`, **`scripts/audit-cli-ip.sh`**). Prompt **`08`** archived under **`prompts/2026/April/27/3-completed/`**; **`1-not-started/IMPLEMENTATION-ROADMAP.md`** now covers **09–22**. See **`docs/CHANGELOG.md`**.
+
 ### Changed
 
 - **Version bump** — monorepo **`0.6.3` → `0.6.4`** — **`@clara-code/backend` `1.4.0` → `1.4.1`** (**`GET /api/v1/tier-status`**, **`POST /api/v1/run`** stub); **`clara` `0.2.1` → `0.2.2`** (doctor tier probe, optional **`CLARA_FEATURE_INTENT_DISPATCH`** intent probe, **`last-error.json`**, gateway URL resolver fixes); **`@clara/ai` `0.66.1` → `0.66.2`** (z.ai **`glm-*`** aliases + tests). Prompts **`01`**, **`02`** → `prompts/2026/April/27/3-completed/`; roadmap refreshed under **`1-not-started/IMPLEMENTATION-ROADMAP.md`**. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/ai/CHANGELOG.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**.

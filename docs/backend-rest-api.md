@@ -123,7 +123,7 @@ Enterprise is **not** self-serve: `npm run provision:enterprise -- --user=<clerk
 
 ## `/api/v1`
 
-Clerk session or Clara API key (`Authorization: Bearer`). Abuse preflight applies where middleware is attached.
+Clerk session or Clara API key (`Authorization: Bearer`). Abuse preflight applies where middleware is attached. **Architecture:** intent dispatch boundaries and gateway parity checklist — **`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`**.
 
 | Method | Path | Description |
 |--------|------|-------------|
