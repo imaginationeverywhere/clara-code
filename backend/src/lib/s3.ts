@@ -21,8 +21,6 @@ export function getEjectionBucket(): string {
 
 export async function presignGetObject(key: string, expiresInSeconds = 60 * 60 * 24): Promise<string> {
 	const cmd = new GetObjectCommand({ Bucket: getEjectionBucket(), Key: key });
-	// pnpm can duplicate @aws-sdk client type declarations; presigner is compatible at runtime.
-	// @ts-expect-error S3RequestPresigner and S3Client types from nested dependency copies
 	return getSignedUrl(getS3Client(), cmd, { expiresIn: expiresInSeconds });
 }
 
