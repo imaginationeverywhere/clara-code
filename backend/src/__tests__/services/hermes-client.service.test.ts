@@ -20,6 +20,8 @@ describe("HermesClient", () => {
 
 	beforeEach(() => {
 		Object.assign(process.env, oldEnv);
+		delete process.env.CLARA_GATEWAY_URL;
+		delete process.env.CLARA_GATEWAY_API_KEY;
 		process.env.HERMES_GATEWAY_URL = "https://hermes.test";
 		process.env.HERMES_API_KEY = "secret";
 		postSpy = jest.spyOn(axios, "post");
@@ -71,5 +73,25 @@ describe("HermesClient", () => {
 	it("426 no retry: throws", async () => {
 		postSpy.mockRejectedValue({ response: { status: 400 } });
 		await expect(client.inference({ model: "gemma_27b" as ModelChoice, prompt: "a" }, ctx)).rejects.toBeDefined();
+	});
+
+	it("prefers CLARA_GATEWAY_URL and CLARA_GATEWAY_API_KEY over HERMES_*", async () => {
+		process.env.CLARA_GATEWAY_URL = "https://clara-gw.test";
+		process.env.CLARA_GATEWAY_API_KEY = "clara-key";
+		process.env.HERMES_GATEWAY_URL = "https://hermes-ignored";
+		process.env.HERMES_API_KEY = "ignored";
+		postSpy.mockResolvedValue({
+			data: {
+				text: "x",
+				input_tokens: 0,
+				output_tokens: 0,
+				modal_compute_seconds: 0,
+				cache_hit: false,
+			},
+		});
+		await client.inference({ model: "gemma_27b" as ModelChoice, prompt: "p" }, ctx);
+		const first = postSpy.mock.calls[0] as [string, unknown, { headers: Record<string, string> }];
+		expect(first[0]).toBe("https://clara-gw.test/inference");
+		expect(first[2].headers.Authorization).toBe("Bearer clara-key");
 	});
 });

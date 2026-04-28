@@ -4,6 +4,10 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ## [Unreleased] - 2026-04-25
 
+### Changed
+
+- **Clara gateway edge env (SSM migration)** — Server-to-server voice proxy and Hermes inference client read `CLARA_GATEWAY_URL` and `CLARA_GATEWAY_API_KEY` first; `HERMES_GATEWAY_URL` and `HERMES_API_KEY` remain as deprecated fallbacks until infra renames parameters. See `src/routes/voice.ts` and `src/services/hermes-client.service.ts`.
+
 ### Added
 
 - **`POST /api/agents/init`** — `agent-init.service.ts`: validates agent name, Business+ tier (`canBuildAgents`), loads `User` (Clerk id or internal id), `deriveVpHandle` + `{handle}-{name}` repo name, GitHub template API (`GITHUB_TOKEN` + `GITHUB_AGENT_*` envs). Returns `{ cloneUrl, repoUrl, repository }` or 403 `reason: tier_lock`, 503 if GitHub not configured, 409 on name conflict.

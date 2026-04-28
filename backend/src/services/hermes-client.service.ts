@@ -2,7 +2,7 @@ import axios, { type AxiosError } from "axios";
 import { logger } from "@/utils/logger";
 import { type ModelChoice, modelRouter, type RoutingContext } from "./model-router.service";
 
-const HERMES_TIMEOUT_MS = 150_000;
+const CLARA_GATEWAY_TIMEOUT_MS = 150_000;
 
 export interface HermesRequest {
 	model: ModelChoice;
@@ -23,13 +23,14 @@ export interface HermesResponse {
 	latencyMs: number;
 }
 
+/** Prefer CLARA_*; HERMES_* is deprecated. */
 function hermesBaseUrl(): string | undefined {
-	const h = process.env.HERMES_GATEWAY_URL?.trim();
+	const h = process.env.CLARA_GATEWAY_URL?.trim() || process.env.HERMES_GATEWAY_URL?.trim();
 	return h ? h.replace(/\/$/, "") : undefined;
 }
 
 function hermesApiKey(): string | undefined {
-	const k = process.env.HERMES_API_KEY?.trim();
+	const k = process.env.CLARA_GATEWAY_API_KEY?.trim() || process.env.HERMES_API_KEY?.trim();
 	return k && k.length > 0 ? k : undefined;
 }
 
@@ -94,7 +95,7 @@ export class HermesClient {
 			},
 			{
 				headers: { Authorization: `Bearer ${key}` },
-				timeout: HERMES_TIMEOUT_MS,
+				timeout: CLARA_GATEWAY_TIMEOUT_MS,
 			},
 		);
 

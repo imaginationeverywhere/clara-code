@@ -213,6 +213,8 @@ describe("routes /api/voice", () => {
 		beforeEach(() => {
 			prevStub = process.env.CLARA_VOICE_DEV_STUB;
 			delete process.env.CLARA_VOICE_DEV_STUB;
+			delete process.env.CLARA_GATEWAY_URL;
+			delete process.env.CLARA_GATEWAY_API_KEY;
 			prevHermesKey = process.env.HERMES_API_KEY;
 			process.env.HERMES_API_KEY = "test-hermes-key";
 		});
@@ -222,7 +224,7 @@ describe("routes /api/voice", () => {
 			else process.env.HERMES_API_KEY = prevHermesKey;
 		});
 
-		it("POST /stt proxies to HERMES_GATEWAY_URL/voice/stt with Bearer HERMES_API_KEY", async () => {
+		it("POST /stt proxies to configured gateway /voice/stt with Bearer (legacy HERMES_* env)", async () => {
 			const prevHermes = process.env.HERMES_GATEWAY_URL;
 			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
 			(axios.post as jest.Mock).mockResolvedValueOnce({ data: { transcript: "real" } });
@@ -243,10 +245,36 @@ describe("routes /api/voice", () => {
 			else process.env.HERMES_GATEWAY_URL = prevHermes;
 		});
 
-		it("POST /stt 503 when HERMES_API_KEY is missing in real mode", async () => {
+		it("POST /stt prefers CLARA_GATEWAY_URL and CLARA_GATEWAY_API_KEY over HERMES_*", async () => {
+			const prevClaraU = process.env.CLARA_GATEWAY_URL;
+			const prevClaraK = process.env.CLARA_GATEWAY_API_KEY;
+			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			process.env.CLARA_GATEWAY_URL = "https://clara-gw.test.example";
+			process.env.CLARA_GATEWAY_API_KEY = "clara-edge-key";
+			process.env.HERMES_GATEWAY_URL = "https://hermes-legacy-ignored.test";
+			(axios.post as jest.Mock).mockResolvedValueOnce({ data: { transcript: "x" } });
+			const res = await request(app).post("/api/voice/stt").send({ audioBase64: "AAAA", mimeType: "audio/wav" });
+			expect(res.status).toBe(200);
+			expect(axios.post).toHaveBeenCalledWith(
+				"https://clara-gw.test.example/voice/stt",
+				expect.objectContaining({ audio_base64: "AAAA" }),
+				expect.objectContaining({
+					headers: expect.objectContaining({ Authorization: "Bearer clara-edge-key" }),
+				}),
+			);
+			if (prevClaraU === undefined) delete process.env.CLARA_GATEWAY_URL;
+			else process.env.CLARA_GATEWAY_URL = prevClaraU;
+			if (prevClaraK === undefined) delete process.env.CLARA_GATEWAY_API_KEY;
+			else process.env.CLARA_GATEWAY_API_KEY = prevClaraK;
+			if (prevHermes === undefined) delete process.env.HERMES_GATEWAY_URL;
+			else process.env.HERMES_GATEWAY_URL = prevHermes;
+		});
+
+		it("POST /stt 503 when gateway API key is missing in real mode", async () => {
 			const prevHermes = process.env.HERMES_GATEWAY_URL;
 			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
 			delete process.env.HERMES_API_KEY;
+			delete process.env.CLARA_GATEWAY_API_KEY;
 			const res = await request(app).post("/api/voice/stt").send({ audioBase64: "AAAA" });
 			expect(res.status).toBe(503);
 			expect(axios.post).not.toHaveBeenCalled();
@@ -276,19 +304,23 @@ describe("routes /api/voice", () => {
 
 		it("POST /tts 503 when no voice URL is configured", async () => {
 			const prevHermes = process.env.HERMES_GATEWAY_URL;
+			const prevClaraGw = process.env.CLARA_GATEWAY_URL;
 			const prevVoice = process.env.CLARA_VOICE_URL;
 			delete process.env.HERMES_GATEWAY_URL;
+			delete process.env.CLARA_GATEWAY_URL;
 			delete process.env.CLARA_VOICE_URL;
 			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
 			expect(res.status).toBe(503);
 			if (prevHermes !== undefined) process.env.HERMES_GATEWAY_URL = prevHermes;
+			if (prevClaraGw !== undefined) process.env.CLARA_GATEWAY_URL = prevClaraGw;
 			if (prevVoice !== undefined) process.env.CLARA_VOICE_URL = prevVoice;
 		});
 
-		it("POST /tts 503 when HERMES_API_KEY is missing in real mode", async () => {
+		it("POST /tts 503 when gateway API key is missing in real mode", async () => {
 			const prevHermes = process.env.HERMES_GATEWAY_URL;
 			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
 			delete process.env.HERMES_API_KEY;
+			delete process.env.CLARA_GATEWAY_API_KEY;
 			const res = await request(app).post("/api/voice/tts").send({ text: "hi" });
 			expect(res.status).toBe(503);
 			expect(axios.post).not.toHaveBeenCalled();
@@ -325,6 +357,8 @@ describe("routes /api/voice", () => {
 			prevHermesKey = process.env.HERMES_API_KEY;
 			prevVoiceServer = process.env.VOICE_SERVER_URL;
 			prevConverseKey = process.env.CLARA_VOICE_API_KEY;
+			delete process.env.CLARA_GATEWAY_URL;
+			delete process.env.CLARA_GATEWAY_API_KEY;
 			process.env.HERMES_GATEWAY_URL = "https://hermes.test.example";
 			process.env.HERMES_API_KEY = "test-hermes-key";
 			delete process.env.VOICE_SERVER_URL;
@@ -352,6 +386,7 @@ describe("routes /api/voice", () => {
 
 		it("503 when no voice server URL is configured", async () => {
 			delete process.env.HERMES_GATEWAY_URL;
+			delete process.env.CLARA_GATEWAY_URL;
 			delete process.env.CLARA_VOICE_URL;
 			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
 			expect(res.status).toBe(503);
@@ -359,6 +394,7 @@ describe("routes /api/voice", () => {
 
 		it("503 when no API key is configured", async () => {
 			delete process.env.HERMES_API_KEY;
+			delete process.env.CLARA_GATEWAY_API_KEY;
 			const res = await request(app).post("/api/voice/converse").send({ audio_base64: "AAAA" });
 			expect(res.status).toBe(503);
 			expect(axios.post).not.toHaveBeenCalled();
@@ -466,6 +502,7 @@ describe("routes /api/voice", () => {
 
 		it("503 when no voice server URL is configured", async () => {
 			delete process.env.HERMES_GATEWAY_URL;
+			delete process.env.CLARA_GATEWAY_URL;
 			delete process.env.VOICE_SERVER_URL;
 			delete process.env.CLARA_VOICE_URL;
 			const res = await request(app).get("/api/voice/health");

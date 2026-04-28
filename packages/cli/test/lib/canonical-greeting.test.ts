@@ -75,11 +75,14 @@ describe("playCanonicalGreeting", () => {
 
 	it("uses TTS from backend when postVoiceConverse returns reply text only", async () => {
 		const fetches: string[] = [];
+		const authHeaders: (string | null)[] = [];
 		const origFetch = globalThis.fetch;
-		const mockFetch: typeof globalThis.fetch = async (input) => {
+		const mockFetch: typeof globalThis.fetch = async (input, init) => {
 			const u = typeof input === "string" ? input : (input as Request).url;
 			fetches.push(u);
 			if (u.includes("/api/voice/tts")) {
+				const h = new Headers(init?.headers);
+				authHeaders.push(h.get("Authorization"));
 				return new Response(new Uint8Array([1, 2, 3]), {
 					status: 200,
 					headers: { "content-type": "audio/wav" },
@@ -97,6 +100,7 @@ describe("playCanonicalGreeting", () => {
 					writeGreetingToCache: async () => {},
 					postVoiceConverse: async () => ({ ok: true, reply_text: "hi" }),
 					playAudioFile: async () => {},
+					getBearerForTts: async () => "sk-clara-test",
 					// Merged with defaultGreetingDeps: fetch is globalThis.fetch
 				},
 			});
@@ -110,6 +114,24 @@ describe("playCanonicalGreeting", () => {
 			}
 		}
 		assert.ok(fetches.some((u) => u.includes("api.claracode.ai") && u.includes("/api/voice/tts")));
+		assert.ok(authHeaders.some((a) => a === "Bearer sk-clara-test"));
+	});
+
+	it("returns ok=false with login hint when TTS path has no bearer", async () => {
+		const r = await playCanonicalGreeting({
+			deps: {
+				readGreetingFromCache: async () => null,
+				writeGreetingToCache: async () => {},
+				postVoiceConverse: async () => ({ ok: true, reply_text: "hi" }),
+				playAudioFile: async () => {},
+				getBearerForTts: async () => undefined,
+				fetch: (async () => {
+					assert.fail("fetch should not run without bearer");
+				}) as typeof globalThis.fetch,
+			},
+		});
+		assert.equal(r.ok, false);
+		assert.match((r as { ok: false }).message, /clara login/);
 	});
 
 	it("returns ok=false when postVoiceConverse fails and no TTS is reached", async () => {
@@ -138,6 +160,7 @@ describe("playCanonicalGreeting", () => {
 				writeGreetingToCache: async () => {},
 				postVoiceConverse: async () => ({ ok: true, reply_text: "hi" }),
 				playAudioFile: async () => {},
+				getBearerForTts: async () => "sk-clara-test",
 				fetch: (async () => {
 					throw new Error("network");
 				}) as typeof globalThis.fetch,

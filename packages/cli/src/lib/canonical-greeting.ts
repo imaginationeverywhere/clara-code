@@ -10,6 +10,8 @@ import {
 } from "@imaginationeverywhere/clara-voice-client";
 import { resolveBackendUrl } from "./backend.js";
 import { readClaraConfig } from "./config-store.js";
+import { pickBearerToken, readClaraCredentials } from "./credentials-store.js";
+import { claraHttpErrorMessage } from "./http-errors.js";
 import { playAudioFile } from "./play-audio-file.js";
 
 function extensionForContentType(contentType: string | null): string {
@@ -46,6 +48,11 @@ export type GreetingDeps = {
 	writeGreetingToCache: typeof writeGreetingToCache;
 	playAudioFile: typeof playAudioFile;
 	fetch: typeof globalThis.fetch;
+	/**
+	 * Bearer for `POST` `/api/voice/tts` (keyring; tests may stub).
+	 * @returns non-empty string or `undefined` if not signed in.
+	 */
+	getBearerForTts: () => Promise<string | undefined>;
 };
 
 const defaultGreetingDeps = (): GreetingDeps => ({
@@ -54,6 +61,12 @@ const defaultGreetingDeps = (): GreetingDeps => ({
 	writeGreetingToCache,
 	playAudioFile,
 	fetch: globalThis.fetch,
+	getBearerForTts: async () => {
+		const c = await readClaraCredentials();
+		if (!c) return undefined;
+		const t = pickBearerToken(c);
+		return t.length > 0 ? t : undefined;
+	},
 });
 
 export function buildSessionId(userId: string, agentId: string): string {
@@ -138,11 +151,15 @@ export async function playCanonicalGreeting(options?: PlayGreetingOptions): Prom
 
 	if (converse.ok && typeof converse.reply_text === "string" && converse.reply_text.length > 0) {
 		const backend = resolveBackendUrl();
+		const bearer = await d.getBearerForTts();
+		if (!bearer) {
+			return { ok: false, message: "Sign in to continue. Run `clara login`." };
+		}
 		let ttsRes: Response;
 		try {
 			ttsRes = await d.fetch(`${backend.url}/api/voice/tts`, {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json", Authorization: `Bearer ${bearer}` },
 				body: JSON.stringify({ text: converse.reply_text }),
 				signal: AbortSignal.timeout(15_000),
 			});
@@ -152,7 +169,8 @@ export async function playCanonicalGreeting(options?: PlayGreetingOptions): Prom
 		}
 
 		if (!ttsRes.ok) {
-			return { ok: false, message: `TTS request failed: HTTP ${ttsRes.status}` };
+			const errBody = await ttsRes.text();
+			return { ok: false, message: claraHttpErrorMessage(ttsRes.status, errBody) };
 		}
 
 		const contentType = ttsRes.headers.get("content-type");

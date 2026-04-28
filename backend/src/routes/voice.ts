@@ -40,21 +40,22 @@ function voiceDevStubEnabled(): boolean {
 	return v === "1" || v === "true";
 }
 
-function hermesVoiceBase(): string | undefined {
-	const hermes = process.env.HERMES_GATEWAY_URL?.trim();
-	if (hermes) return hermes.replace(/\/$/, "");
+/** Voice STT/TTS /converse edge (server-to-server). Prefer CLARA_*; HERMES_* is deprecated. */
+function claraGatewayEdgeBase(): string | undefined {
+	const u = process.env.CLARA_GATEWAY_URL?.trim() || process.env.HERMES_GATEWAY_URL?.trim();
+	if (u) return u.replace(/\/$/, "");
 	const legacy = voiceEnvBase();
 	return legacy ? legacy.replace(/\/$/, "") : undefined;
 }
 
-function hermesApiKey(): string | undefined {
-	const k = process.env.HERMES_API_KEY?.trim();
+function claraGatewayEdgeApiKey(): string | undefined {
+	const k = process.env.CLARA_GATEWAY_API_KEY?.trim() || process.env.HERMES_API_KEY?.trim();
 	return k && k.length > 0 ? k : undefined;
 }
 
 // Modal A10G GPU scales to zero; first request after idle loads Whisper + XTTS (60–120s).
 // Give ourselves headroom so the CLI's warmup UX is what the user sees, not an axios timeout.
-const HERMES_TIMEOUT_MS = 150_000;
+const CLARA_GATEWAY_TIMEOUT_MS = 150_000;
 
 function ttsModelUsed(m: ModelConfig | undefined): AbuseModelUsed {
 	if (!m) {
@@ -98,8 +99,8 @@ function inferConverseModel(data: unknown): {
 	};
 }
 
-function hermesHeaders(extra?: Record<string, string>): Record<string, string> {
-	const key = hermesApiKey();
+function claraGatewayEdgeHeaders(extra?: Record<string, string>): Record<string, string> {
+	const key = claraGatewayEdgeApiKey();
 	return {
 		...(extra ?? {}),
 		...(key ? { Authorization: `Bearer ${key}` } : {}),
@@ -255,11 +256,11 @@ router.post(
 //
 // Auth scheme (Option B, cp-team handoff 2026-04-19):
 //   1. Edge validates Clerk JWT / sk-clara key via `requireClaraOrClerk`.
-//   2. Edge injects HERMES_API_KEY as Bearer for the Modal call. Modal never sees the user token.
+//   2. Edge injects CLARA_GATEWAY_API_KEY (or legacy HERMES_API_KEY) as Bearer for the upstream call. User token is not forwarded.
 //
 // Dev stub (CLARA_VOICE_DEV_STUB=1): returns { transcript } from
 // `x-clara-stub-text` header, body.stubText, or a default. No Modal call.
-// Real mode: proxies to HERMES_GATEWAY_URL/voice/stt (Whisper on Modal, cp-team owned).
+// Real mode: proxies to configured gateway /voice/stt.
 router.post(
 	"/stt",
 	requireClaraOrClerk,
@@ -295,20 +296,20 @@ router.post(
 				res.status(400).json({ error: "audioBase64 is required" });
 				return;
 			}
-			const base = hermesVoiceBase();
+			const base = claraGatewayEdgeBase();
 			if (!base) {
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
-			if (!hermesApiKey()) {
-				logger.error("HERMES_API_KEY is not set — refusing to proxy to Modal");
+			if (!claraGatewayEdgeApiKey()) {
+				logger.error("CLARA_GATEWAY_API_KEY (or HERMES_API_KEY) is not set — refusing to proxy to voice gateway");
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
 			const response = await axios.post(
 				`${base}/voice/stt`,
 				{ audio_base64: body.audioBase64, mime_type: body.mimeType ?? "audio/wav" },
-				{ timeout: HERMES_TIMEOUT_MS, headers: hermesHeaders() },
+				{ timeout: CLARA_GATEWAY_TIMEOUT_MS, headers: claraGatewayEdgeHeaders() },
 			);
 			const data = response.data as { transcript?: string };
 			if (req.claraUser?.userId) {
@@ -335,10 +336,10 @@ router.post(
 // Request body: { text: string, voice_id?: string }
 //
 // Auth: same Option B scheme as /stt — edge validates the user's Clerk/Clara key, then swaps in
-// HERMES_API_KEY when calling Modal.
+// CLARA_GATEWAY_API_KEY when calling the voice gateway.
 //
 // Dev stub: returns a 1-second silence WAV so callers can exercise audio plumbing.
-// Real mode: proxies to HERMES_GATEWAY_URL/voice/tts (XTTS on Modal, cp-team owned).
+// Real mode: proxies to configured gateway /voice/tts.
 router.post(
 	"/tts",
 	requireClaraOrClerk,
@@ -372,20 +373,20 @@ router.post(
 				return;
 			}
 
-			const base = hermesVoiceBase();
+			const base = claraGatewayEdgeBase();
 			if (!base) {
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
-			if (!hermesApiKey()) {
-				logger.error("HERMES_API_KEY is not set — refusing to proxy to Modal");
+			if (!claraGatewayEdgeApiKey()) {
+				logger.error("CLARA_GATEWAY_API_KEY (or HERMES_API_KEY) is not set — refusing to proxy to voice gateway");
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
 			const response = await axios.post(
 				`${base}/voice/tts`,
 				{ text, voice_id: voice_id ?? "clara" },
-				{ responseType: "arraybuffer", timeout: HERMES_TIMEOUT_MS, headers: hermesHeaders() },
+				{ responseType: "arraybuffer", timeout: CLARA_GATEWAY_TIMEOUT_MS, headers: claraGatewayEdgeHeaders() },
 			);
 
 			const userId = req.claraUser?.userId;
@@ -416,13 +417,13 @@ router.post(
 function converseVoiceBase(): string | undefined {
 	const specific = process.env.VOICE_SERVER_URL?.trim();
 	if (specific) return specific.replace(/\/$/, "");
-	return hermesVoiceBase();
+	return claraGatewayEdgeBase();
 }
 
 function converseApiKey(): string | undefined {
 	const specific = process.env.CLARA_VOICE_API_KEY?.trim();
 	if (specific && specific.length > 0) return specific;
-	return hermesApiKey();
+	return claraGatewayEdgeApiKey();
 }
 
 // GET /api/voice/memory?agent_id=clara
@@ -581,7 +582,7 @@ router.post(
 				return;
 			}
 			if (!apiKey) {
-				logger.error("CLARA_VOICE_API_KEY / HERMES_API_KEY is not set — refusing to proxy to voice server");
+				logger.error("CLARA_VOICE_API_KEY / CLARA_GATEWAY_API_KEY is not set — refusing to proxy to voice server");
 				await refundOpCredits();
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
@@ -705,7 +706,7 @@ router.post(
 					...(userId ? { session_id: sessionId, agent_id, surface } : {}),
 				},
 				{
-					timeout: HERMES_TIMEOUT_MS,
+					timeout: CLARA_GATEWAY_TIMEOUT_MS,
 					headers: { Authorization: `Bearer ${apiKey}` },
 					responseType: "json",
 				},

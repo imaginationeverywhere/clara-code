@@ -2,6 +2,10 @@
 
 ## [Unreleased]
 
+### Fixed
+
+- **Canonical greeting TTS** — `POST /api/voice/tts` includes `Authorization: Bearer` from the keyring; when no token, user sees a sign-in hint instead of an unauthenticated request. TTS error responses use shared `claraHttpErrorMessage` copy (no raw `HTTP <status>` in the message).
+
 ### Added
 
 - **`clara config` (prompt 11)** — `get` / `set` / `list` / `unset` for `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, and `apiKey` (keyring only; inference keys `model` / `system_prompt` / `temperature` / `top_p` rejected with “Server controls inference parameters.”). `lib/config-resolved.ts` centralizes gateway default (`https://api.claracode.ai/hermes`); `clara tui` uses the same resolver (replaces the old `/api` default). `apiKey` is never written to `~/.clara/config.json`.
