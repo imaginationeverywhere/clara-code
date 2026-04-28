@@ -6,6 +6,15 @@ All notable changes to the Clara Code API (`backend/`) are recorded here. Cross-
 
 ### Changed
 
+- **Package version** — **`1.4.0` → `1.4.1`** — **`GET /api/v1/tier-status`**, **`POST /api/v1/run`** stub (see **Added** below).
+
+### Added
+
+- **`GET /api/v1/tier-status`** — Authenticated (Clerk session or Clara API key); returns `{ tier, minutes_remaining: null, billing_cycle_end }` from subscription when present.
+- **`POST /api/v1/run`** — Authenticated placeholder returning **501** `intent_gateway_pending` until Hermes intent dispatch is wired.
+
+### Changed
+
 - **Clara gateway edge env (SSM migration)** — Server-to-server voice proxy and Hermes inference client read `CLARA_GATEWAY_URL` and `CLARA_GATEWAY_API_KEY` first; `HERMES_GATEWAY_URL` and `HERMES_API_KEY` remain as deprecated fallbacks until infra renames parameters. See `src/routes/voice.ts` and `src/services/hermes-client.service.ts`.
 
 ### Added

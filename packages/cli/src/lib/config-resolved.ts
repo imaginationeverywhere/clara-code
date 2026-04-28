@@ -10,22 +10,35 @@ function stripTrailingSlash(url: string): string {
 	return url.endsWith("/") ? url.slice(0, -1) : url;
 }
 
+/** Rejects empty / slash-only values so `gatewayUrl: "/"` does not yield `""` after stripping. */
+function normalizeGatewayUrlInput(raw: string | undefined): string | undefined {
+	if (raw === undefined) {
+		return undefined;
+	}
+	const t = raw.trim();
+	if (t.length === 0) {
+		return undefined;
+	}
+	const v = stripTrailingSlash(t);
+	return v.length > 0 ? v : undefined;
+}
+
 /**
  * Gateway URL: `CLARA_GATEWAY_URL` → `~/.clara/config.json` `gatewayUrl` → public default (Hermes).
  * Aligns with `DEFAULT_GATEWAY_URL` in `gateway.ts` (not the legacy TUI-only `/api` default).
  */
 export function resolveClaraGatewayUrl(override?: string): { value: string; source: ConfigValueSource } {
-	const fromFlag = override?.trim();
+	const fromFlag = normalizeGatewayUrlInput(override);
 	if (fromFlag) {
-		return { value: stripTrailingSlash(fromFlag), source: "flag" };
+		return { value: fromFlag, source: "flag" };
 	}
-	const fromEnv = process.env.CLARA_GATEWAY_URL?.trim();
+	const fromEnv = normalizeGatewayUrlInput(process.env.CLARA_GATEWAY_URL);
 	if (fromEnv) {
-		return { value: stripTrailingSlash(fromEnv), source: "env" };
+		return { value: fromEnv, source: "env" };
 	}
-	const fromCfg = readClaraConfig().gatewayUrl?.trim();
+	const fromCfg = normalizeGatewayUrlInput(readClaraConfig().gatewayUrl);
 	if (fromCfg) {
-		return { value: stripTrailingSlash(fromCfg), source: "config" };
+		return { value: fromCfg, source: "config" };
 	}
 	return { value: DEFAULT_GATEWAY_URL, source: "default" };
 }

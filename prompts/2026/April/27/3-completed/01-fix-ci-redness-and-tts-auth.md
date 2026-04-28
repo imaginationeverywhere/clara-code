@@ -106,3 +106,11 @@ if (!ttsRes.ok) {
 - Do not refactor `canonical-greeting.ts` beyond the two specific fixes (auth + error mapping)
 - Do not add new features
 - Do not extract the http-errors module to a shared package (acknowledged tech debt; future sprint)
+
+---
+
+## Archived (completed — code-side)
+
+**Directory:** `prompts/2026/April/27/3-completed/` (2026-04-27).
+
+**Land:** `packages/ai` z.ai model rows; `packages/cli` `canonical-greeting` TTS Bearer + mapped errors; `npm run check` green.

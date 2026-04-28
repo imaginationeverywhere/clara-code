@@ -14,6 +14,7 @@ import sprintsRoutes from "./sprints";
 import talentsRoutes from "./talents";
 import userApiKeyRoutes from "./user-api-key";
 import userUsageRoutes from "./user-usage";
+import v1Routes from "./v1";
 import voiceRoutes from "./voice";
 import waitlistRoutes from "./waitlist";
 
@@ -34,6 +35,7 @@ router.use("/keys", keysRoutes);
 router.use("/user", userApiKeyRoutes);
 router.use("/user", userUsageRoutes);
 router.use("/waitlist", waitlistRoutes);
+router.use("/v1", v1Routes);
 router.use("/voice", voiceRoutes);
 /** Harness `agent_talent_*` (curated catalog, library, wallet) — NOT the UUID marketplace at `server.ts` `createTalentRegistryRouter` */
 router.use("/harness-talents", talentsRoutes);

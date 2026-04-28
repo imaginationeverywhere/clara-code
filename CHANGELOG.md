@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
+- **Version bump** — monorepo **`0.6.3` → `0.6.4`** — **`@clara-code/backend` `1.4.0` → `1.4.1`** (**`GET /api/v1/tier-status`**, **`POST /api/v1/run`** stub); **`clara` `0.2.1` → `0.2.2`** (doctor tier probe, optional **`CLARA_FEATURE_INTENT_DISPATCH`** intent probe, **`last-error.json`**, gateway URL resolver fixes); **`@clara/ai` `0.66.1` → `0.66.2`** (z.ai **`glm-*`** aliases + tests). Prompts **`01`**, **`02`** → `prompts/2026/April/27/3-completed/`; roadmap refreshed under **`1-not-started/IMPLEMENTATION-ROADMAP.md`**. See **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`packages/ai/CHANGELOG.md`**, **`docs/backend-rest-api.md`**, **`docs/CHANGELOG.md`**.
+
 - **Version bump** — monorepo **`0.6.2` → `0.6.3`** (`pnpm typecheck:all` green across 18 tsconfig roots: root **`target`/`lib` ES2024**, **`frontend/`** default TS include + example paths and deps, **`packages/ai`** z.ai test ids + regenerated **`models.generated.ts`**, **`packages/cli`** `clara init` clone via **`spawn`**, Talent **`workspace:*`** **`@claracode/marketplace-sdk`**, **`mobile`** `npm run typecheck`, mockups JSX/import fixes). See **`packages/ai/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**.
 
 - **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` (Clara Workbench + Talent Agency build directive) from `1-not-started/` to `3-completed/`; archival front matter and sign-off; execution streams and acceptance criteria tracked in program planning. See **`docs/CHANGELOG.md`**.

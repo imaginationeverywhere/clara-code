@@ -17,6 +17,19 @@ export type ClaraConfig = {
 };
 
 export function readClaraConfig(): ClaraConfig {
+	/** Unit tests only: bypass disk so resolution is deterministic on developer machines. */
+	const injected = process.env.CLARA_TEST_CONFIG_JSON;
+	if (injected !== undefined) {
+		try {
+			const parsed: unknown = JSON.parse(injected);
+			if (parsed !== null && typeof parsed === "object" && !Array.isArray(parsed)) {
+				return parsed as ClaraConfig;
+			}
+		} catch {
+			// invalid JSON -> empty
+		}
+		return {};
+	}
 	try {
 		const raw = readFileSync(CLARA_CONFIG_FILE, "utf8");
 		const parsed: unknown = JSON.parse(raw);

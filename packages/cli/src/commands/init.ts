@@ -5,6 +5,7 @@ import type { Command } from "commander";
 import { validateAgentName } from "../lib/agent-name.js";
 import { postAgentInit } from "../lib/agents-api.js";
 import { pickBearerToken, readClaraCredentials } from "../lib/credentials-store.js";
+import { writeLastClaraError } from "../lib/last-error.js";
 
 const DEFAULT_PRICING = "https://claracode.ai/pricing";
 
@@ -51,18 +52,33 @@ export function registerInitCommand(program: Command): void {
 				});
 				console.log(`Created agent ${name.trim()} at ./${name.trim()} — see ${repoUrl}`);
 			} catch (e) {
+				const trimmedName = name.trim();
+				const recordMessage = (msg: string): void => {
+					try {
+						writeLastClaraError({
+							command: `clara init ${trimmedName}`,
+							message: msg,
+							at: new Date().toISOString(),
+						});
+					} catch {
+						// ignore write failures
+					}
+				};
 				if (e instanceof Error) {
 					if (e.message === "not_authenticated") {
+						recordMessage("not_authenticated");
 						console.error("Run `clara login` first.");
 						process.exitCode = 1;
 						return;
 					}
 					if (e.message === "unauthorized") {
+						recordMessage("unauthorized");
 						console.error("Run `clara login` first.");
 						process.exitCode = 1;
 						return;
 					}
 					if (e.message === "tier_lock") {
+						recordMessage("tier_lock");
 						const u = (e as Error & { upgradeUrl?: string }).upgradeUrl ?? DEFAULT_PRICING;
 						console.error("Your plan does not include standalone agent repositories yet.");
 						console.error(`See pricing: ${u}`);
@@ -70,7 +86,9 @@ export function registerInitCommand(program: Command): void {
 						return;
 					}
 				}
-				console.error(e instanceof Error ? e.message : String(e));
+				const msg = e instanceof Error ? e.message : String(e);
+				recordMessage(msg);
+				console.error(msg);
 				process.exitCode = 1;
 			}
 		});

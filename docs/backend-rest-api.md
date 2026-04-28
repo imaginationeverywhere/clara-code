@@ -121,6 +121,17 @@ Webhook handler is shared with `POST /api/webhooks/stripe` and **`POST /api/bill
 
 Enterprise is **not** self-serve: `npm run provision:enterprise -- --user=<clerk_id> [--seats=…]` in `backend/`.
 
+## `/api/v1`
+
+Clerk session or Clara API key (`Authorization: Bearer`). Abuse preflight applies where middleware is attached.
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/tier-status` | Returns `{ tier, minutes_remaining, billing_cycle_end }` for the authenticated user. `minutes_remaining` is `null` until product metering defines it. |
+| `POST` | `/run` | Intent dispatch placeholder for Hermes. Returns **501** with `intent_gateway_pending` until the gateway wires dispatch. |
+
+CLI **`clara doctor`** calls **`GET /api/v1/tier-status`** on the resolved backend base URL; optional **`POST /api/v1/run`** probe when **`CLARA_FEATURE_INTENT_DISPATCH=1`**.
+
 ## Abuse preflight and jobs
 
 Most authenticated `/api/*` routes use `requireAbuseCheck` (Redis-backed preflight; fail-open if Redis down). Nightly **02:00 UTC** job `routing-distribution-daily` aggregates `usage_events` by `model_used` (Hermes routing telemetry).

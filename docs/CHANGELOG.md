@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-27
 
+### Added (cross-reference)
+
+- **`docs/backend-rest-api.md`** — Documents **`GET /api/v1/tier-status`** and **`POST /api/v1/run`** (intent stub); CLI doctor integration noted. Implementation: **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, root **`CHANGELOG.md`**.
+
 ### Changed (cross-reference)
 
 - **Developer tooling — `pnpm typecheck:all`** — Root **`tsconfig.json`** sets **`target`**/**`lib`** to **ES2024** (Unicode regex `v` flag in **`packages/tui`**); **`frontend/`** scopes default **`tsc`** to the App Router; **`packages/cli`** `clara init` uses **`spawn`** for **`git clone`**. Implementation: root **`CHANGELOG.md`**, **`packages/ai/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**.

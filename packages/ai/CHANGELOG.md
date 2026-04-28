@@ -4,11 +4,17 @@
 
 ### Changed
 
+- **Package version** — **`0.66.1` → `0.66.2`** — z.ai catalog aliases and regenerated models (see **Added** / **Fixed** below).
+
 - Regenerated `src/models.generated.ts` from upstream model sources (tool-capable model catalog).
+
+### Added
+
+- **`zai` catalog aliases** — `glm-4.5-flash`, `glm-4.6v`, `glm-4.7-flash`, and `glm-5` entries (aligned with integration tests and Z.ai naming); same base URL and compat patterns as adjacent GLM entries.
 
 ### Fixed
 
-- **z.ai tests** — Integration tests now call `getModel("zai", …)` with ids present on the current **`MODELS.zai`** slice (`glm-4.5-air`, `glm-4.7`, `glm-5-turbo`, `glm-5.1`), replacing removed literals (`glm-4.5-flash`, `glm-5`, etc.) so root `tsc` passes after catalog regeneration.
+- **z.ai tests** — Restored test model ids (`glm-4.5-flash`, `glm-5`, etc.) against the expanded **`MODELS.zai`** slice so `getModel` typings stay consistent with Sprint prompt 01 (fix CI + model catalog).
 - OpenRouter tests: cast `meta-llama/llama-4-maverick` to `keyof typeof MODELS.openrouter` when calling `getModel` — TypeScript’s inferred second-parameter union for large catalogs omits some string literal keys (`TS2345` in `tsgo`).
 - Declared `@smithy/node-http-handler` as a direct dependency so TypeScript can resolve the Bedrock proxy and HTTP/1.1 request handler imports under strict pnpm layouts.
 - Bumped default Antigravity User-Agent version to `1.21.9` ([#2901](https://github.com/badlogic/pi-mono/pull/2901) by [@aadishv](https://github.com/aadishv))

@@ -2,12 +2,23 @@
 
 ## [Unreleased]
 
+### Changed
+
+- **Package version** — **`0.2.1` → `0.2.2`** — doctor tier status, optional intent probe (`CLARA_FEATURE_INTENT_DISPATCH`), gateway URL normalization, `last-error.json` read/write with `clara init`; see **Added** / **Fixed** below.
+
 ### Fixed
+
+- **`resolveClaraGatewayUrl`** — Env/config/flag values that trim or strip to empty (e.g. `"/"`) are ignored so the resolver never returns an empty string; falls back to `DEFAULT_GATEWAY_URL`.
+- **`readClaraConfig` tests** — Optional `CLARA_TEST_CONFIG_JSON` lets unit tests bypass `~/.clara/config.json` so gateway resolution tests are deterministic in CI and on developer machines.
 
 - **`clara init` git clone** — Use `child_process.spawn` with a `Promise` wrapper and `stdio: "inherit"` instead of `node:child_process/promises` `execFile`, so `tsc` resolves types under the repo’s Node typings (same runtime behavior).
 - **Canonical greeting TTS** — `POST /api/voice/tts` includes `Authorization: Bearer` from the keyring; when no token, user sees a sign-in hint instead of an unauthenticated request. TTS error responses use shared `claraHttpErrorMessage` copy (no raw `HTTP <status>` in the message).
 
 ### Added
+
+- **`last-error.json`** (`lib/last-error.ts`, `paths.ts`) — **`clara doctor`** surfaces **`~/.clara/last-error.json`**; **`clara init`** writes it on failure (prompt **11** partial).
+- **`fetchTierStatus`** (`lib/tier-status.ts`) — `GET /api/v1/tier-status` on the resolved backend with Bearer auth; **`clara doctor`** prints tier and billing cycle end when credentials exist.
+- **`postIntentRun`** (`lib/intent-run.ts`) — `POST /api/v1/run` with Bearer JSON body; gated for **`clara doctor`** by **`CLARA_FEATURE_INTENT_DISPATCH`** (`lib/feature-flags.ts`). When enabled, doctor reports **`intent_gateway_pending`** (501) until Hermes dispatch is live.
 
 - **`clara config` (prompt 11)** — `get` / `set` / `list` / `unset` for `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, and `apiKey` (keyring only; inference keys `model` / `system_prompt` / `temperature` / `top_p` rejected with “Server controls inference parameters.”). `lib/config-resolved.ts` centralizes gateway default (`https://api.claracode.ai/hermes`); `clara tui` uses the same resolver (replaces the old `/api` default). `apiKey` is never written to `~/.clara/config.json`.
 - **Shared HTTP error mapping (prompts 15/17/18)** — `lib/tier-lock.ts`, `lib/minutes-exhausted.ts`, `lib/http-errors.ts`; `claraGateway` maps 4xx/5xx and network errors to plain-English copy. IDE extension copies under `packages/ide-extension/src/` (same contracts; not yet wired into every command).

@@ -4,6 +4,8 @@ Published on npm as **`clara`**: voice greeting and **POST /voice/converse** loo
 
 **Env (voice default):** `CLARA_VOICE_URL` (quikvoice base), optional `CLARA_VOICE_API_KEY` (Bearer).
 
+**Feature flags:** `CLARA_FEATURE_INTENT_DISPATCH=1` (or `true`) — when set, **`clara doctor`** also probes **`POST /api/v1/run`** (Hermes intent dispatch); until that ships, expect **`intent_gateway_pending`** (501).
+
 ## Usage
 
 ```bash
@@ -25,7 +27,7 @@ After installation, the `clara` binary is on your `PATH`.
 }
 ```
 
-(`session_token` / `api_key` are accepted as aliases.) Tokens are stored with **keytar** (macOS Keychain, Windows Credential Manager, Linux libsecret), service **`clara-code`**, account **`default`**, not in `~/.clara/credentials.json`. A legacy plaintext credentials file, if present, is migrated into the keyring and removed. **`clara auth login`** is a hidden alias of the same flow. **`clara doctor`** reports whether keytar loads, whether credentials exist, and whether `GET /health` on the resolved backend succeeds.
+(`session_token` / `api_key` are accepted as aliases.) Tokens are stored with **keytar** (macOS Keychain, Windows Credential Manager, Linux libsecret), service **`clara-code`**, account **`default`**, not in `~/.clara/credentials.json`. A legacy plaintext credentials file, if present, is migrated into the keyring and removed. **`clara auth login`** is a hidden alias of the same flow. **`clara doctor`** reports whether keytar loads, whether credentials exist, whether `GET /health` on the resolved backend succeeds, **`~/.clara/last-error.json`** when written by a failed command, and (when signed in) **`GET /api/v1/tier-status`** (tier and billing cycle end).
 
 ## Commands
 
@@ -34,14 +36,14 @@ After installation, the `clara` binary is on your `PATH`.
 | `clara` (no args) | Plays the canonical greeting, then Space twice for push-to-turn audio over `/voice/converse` |
 | `clara --version` | Print the CLI version |
 | `clara login` | Browser sign-in; store session + API key in the OS keyring (see **Auth** above) |
-| `clara doctor` | Check keyring, credentials, and backend `/health` |
+| `clara doctor` | Check keyring, credentials, backend `/health`, and tier status (`/api/v1/tier-status`) when logged in; optional **`POST /api/v1/run`** probe when `CLARA_FEATURE_INTENT_DISPATCH=1` |
 | `clara hello` | Play Clara's voice greeting from the API (stub) |
 | `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
 | `clara config get <key>` | Print resolved `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, or `apiKey` (keyring) |
 | `clara config set <key> <value>` | Set a allowed key: URLs / `userId` in `~/.clara/config.json`; `apiKey` in the **OS keyring** (never on disk) |
 | `clara config list` | Show each key, resolved value, and source (env / config / default / keyring) |
 | `clara config unset <key>` | Remove a file-stored override or clear `apiKey` in the keyring (session token kept) |
-| `clara init <name>` | Provisions a per-agent GitHub repo via `POST /api/agents/init`, then `git clone` into `./<name>/` (Business/Enterprise tier; requires API token) |
+| `clara init <name>` | Provisions a per-agent GitHub repo via `POST /api/agents/init`, then `git clone` into `./<name>/` (Business/Enterprise tier; requires API token). Failures write **`~/.clara/last-error.json`** for **`clara doctor`**. |
 | `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `Ctrl+Space` voice, `--voice` placeholder |
 
 ## Quickstart

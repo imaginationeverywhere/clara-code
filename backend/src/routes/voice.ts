@@ -256,7 +256,7 @@ router.post(
 //
 // Auth scheme (Option B, cp-team handoff 2026-04-19):
 //   1. Edge validates Clerk JWT / sk-clara key via `requireClaraOrClerk`.
-//   2. Edge injects CLARA_GATEWAY_API_KEY (or legacy HERMES_API_KEY) as Bearer for the upstream call. User token is not forwarded.
+//   2. Edge injects CLARA_GATEWAY_API_KEY (legacy gateway key env supported via deprecation fallback) as Bearer for the upstream call. User token is not forwarded.
 //
 // Dev stub (CLARA_VOICE_DEV_STUB=1): returns { transcript } from
 // `x-clara-stub-text` header, body.stubText, or a default. No Modal call.
@@ -302,7 +302,7 @@ router.post(
 				return;
 			}
 			if (!claraGatewayEdgeApiKey()) {
-				logger.error("CLARA_GATEWAY_API_KEY (or HERMES_API_KEY) is not set — refusing to proxy to voice gateway");
+				logger.error("CLARA_GATEWAY_API_KEY is not set — refusing to proxy to voice gateway");
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}
@@ -379,7 +379,7 @@ router.post(
 				return;
 			}
 			if (!claraGatewayEdgeApiKey()) {
-				logger.error("CLARA_GATEWAY_API_KEY (or HERMES_API_KEY) is not set — refusing to proxy to voice gateway");
+				logger.error("CLARA_GATEWAY_API_KEY is not set — refusing to proxy to voice gateway");
 				res.status(503).json({ error: "Voice service is not available" });
 				return;
 			}

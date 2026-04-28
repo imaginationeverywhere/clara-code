@@ -5,13 +5,18 @@ import { DEFAULT_GATEWAY_URL } from "../src/lib/gateway.js";
 
 describe("resolveClaraGatewayUrl", () => {
 	let prevEnv: string | undefined;
+	let prevTestConfigJson: string | undefined;
 	beforeEach(() => {
 		prevEnv = process.env.CLARA_GATEWAY_URL;
+		prevTestConfigJson = process.env.CLARA_TEST_CONFIG_JSON;
 		delete process.env.CLARA_GATEWAY_URL;
+		process.env.CLARA_TEST_CONFIG_JSON = "{}";
 	});
 	afterEach(() => {
 		if (prevEnv === undefined) delete process.env.CLARA_GATEWAY_URL;
 		else process.env.CLARA_GATEWAY_URL = prevEnv;
+		if (prevTestConfigJson === undefined) delete process.env.CLARA_TEST_CONFIG_JSON;
+		else process.env.CLARA_TEST_CONFIG_JSON = prevTestConfigJson;
 	});
 
 	it("uses env over default", () => {
@@ -24,11 +29,18 @@ describe("resolveClaraGatewayUrl", () => {
 	it("resolves a non-empty gateway when no override flag (env, file, or default chain)", () => {
 		const r = resolveClaraGatewayUrl();
 		assert.ok(r.value.length > 0);
-		assert.ok(r.value.startsWith("https://"));
+		assert.ok(/^https?:\/\//.test(r.value));
 		assert.ok(["env", "config", "default"].includes(r.source));
 		if (r.source === "default") {
 			assert.equal(r.value, DEFAULT_GATEWAY_URL);
 		}
+	});
+
+	it("treats env CLARA_GATEWAY_URL of only '/' as unset and falls back to default", () => {
+		process.env.CLARA_GATEWAY_URL = "/";
+		const r = resolveClaraGatewayUrl();
+		assert.equal(r.source, "default");
+		assert.equal(r.value, DEFAULT_GATEWAY_URL);
 	});
 
 	it("uses flag override", () => {

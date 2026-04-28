@@ -82,3 +82,11 @@ After SSM migration is verified live, delete the deprecation fallback in a follo
 - Do not delete old SSM keys before the new ones are confirmed working
 - Do not touch `backend/src/routes/` files beyond `voice.ts` — other routes don't have HERMES leaks (verified via grep)
 - Do not change the actual gateway/Modal endpoints — only the env var names that POINT at them
+
+---
+
+## Archived (completed — code-side)
+
+**Directory:** `prompts/2026/April/27/3-completed/` (2026-04-27).
+
+**Land:** Backend prefers `CLARA_GATEWAY_URL` / `CLARA_GATEWAY_API_KEY` with `HERMES_*` fallback until infra rename; tests updated. **Ops:** SSM/App Runner migration + fallback removal remain platform-owned.
