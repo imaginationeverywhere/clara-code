@@ -2,7 +2,11 @@
 
 All notable changes to this monorepo are recorded here. Package-specific details may also appear under `packages/*/CHANGELOG.md`.
 
-## [Unreleased] - 2026-04-27
+## [Unreleased] - 2026-04-28
+
+### Fixed
+
+- **Workspace tests and TS alignment** — After syncing with `origin/develop`, resolved overlapping edits: **`pnpm-lock.yaml`** regenerated; **`packages/ai`** `models.generated.ts` refreshed by install hooks; **`packages/coding-agent`** skips find-tool tests without `fd` on `PATH` and raises **`git-update`** Vitest timeout to **120s**; **`packages/tui`** Node tests use **`waitForTuiPaint` / `settleTui`** helpers to avoid debounced-render races; **`frontend/example`** type predicates + **`@types/dom-speech-recognition`**; **`ide/clara-code`** workspace **`tsconfig.json`**; root **`tsconfig.base.json`** / **`packages/tsconfig.json`** path fixes. See **`packages/coding-agent/CHANGELOG.md`**, **`packages/tui/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**, **`ide/clara-code/CHANGELOG.md`**.
 
 ### Added
 

@@ -1,6 +1,7 @@
 import assert from "node:assert";
 import { describe, it } from "node:test";
 import { type Component, TUI } from "../src/tui.js";
+import { waitForTuiPaint } from "./tui-test-helpers.js";
 import { VirtualTerminal } from "./virtual-terminal.js";
 
 class SimpleContent implements Component {
@@ -33,8 +34,7 @@ describe("TUI overlay with short content", () => {
 
 		// Trigger render
 		tui.start();
-		await new Promise((r) => process.nextTick(r));
-		await terminal.flush();
+		await waitForTuiPaint(tui, terminal);
 
 		const viewport = terminal.getViewport();
 		const hasOverlay = viewport.some((line) => line.includes("OVERLAY"));

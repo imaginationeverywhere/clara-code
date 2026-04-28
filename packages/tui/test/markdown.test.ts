@@ -5,6 +5,7 @@ import { Chalk } from "chalk";
 import { Markdown } from "../src/components/markdown.js";
 import { type Component, TUI } from "../src/tui.js";
 import { defaultMarkdownTheme } from "./test-themes.js";
+import { waitForTuiPaint } from "./tui-test-helpers.js";
 import { VirtualTerminal } from "./virtual-terminal.js";
 
 // Force full color in CI so ANSI assertions are deterministic
@@ -592,7 +593,7 @@ describe("Markdown component", () => {
 			const component = new MarkdownWithInput(markdown);
 			tui.addChild(component);
 			tui.start();
-			await terminal.flush();
+			await waitForTuiPaint(tui, terminal);
 
 			assert.ok(component.markdownLineCount > 0);
 			const inputRow = component.markdownLineCount;
@@ -1032,7 +1033,7 @@ bar`,
 			const tui = new TUI(terminal);
 			tui.addChild(markdown);
 			tui.start();
-			await terminal.flush();
+			await waitForTuiPaint(tui, terminal);
 
 			const renderedLine = markdown.render(80)[0];
 			assert.ok(renderedLine, "Should render heading line");

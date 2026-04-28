@@ -4,6 +4,7 @@
 
 ### Fixed
 
+- **Pi Web UI example** — `example/src/main.ts` narrows the first user message with a type predicate; **`@types/dom-speech-recognition`** in devDependencies for speech typings; **`example/tsconfig.json`** path mappings align with packaged `@mariozechner/*` **`dist`** declarations and `pi-web-ui` subpaths (merge with upstream `develop`).
 - **Typecheck (`tsc` at repo root)** — Default `tsconfig.json` `include` is limited to `src/app/**` and `src/middleware.ts` so `npx tsc --noEmit` in `frontend/` matches the Next app graph (avoids typechecking legacy `src/` files that are not in the App Router build). `frontend/example` maps `@mariozechner/pi-web-ui` to `../src` and adds explicit types / `as AgentTool[]` where needed; **devDependencies** `docx-preview`, `jszip`, `pdfjs-dist`, `xlsx`, `@lmstudio/sdk`, and `ollama` support resolving optional document/model-discovery imports in that source path.
 
 ### Added

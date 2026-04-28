@@ -1,3 +1,4 @@
+import { spawnSync } from "child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "fs";
 import { tmpdir } from "os";
 import { join } from "path";
@@ -11,6 +12,9 @@ import { lsTool } from "../src/core/tools/ls.js";
 import { readTool } from "../src/core/tools/read.js";
 import { writeTool } from "../src/core/tools/write.js";
 import * as shellModule from "../src/utils/shell.js";
+
+/** Find tool tests require `fd` on PATH (auto-download can fail offline / in CI). */
+const fdAvailable = spawnSync("fd", ["--version"], { stdio: "ignore" }).status === 0;
 
 // Helper to extract text from content blocks
 function getTextOutput(result: any): string {
@@ -523,7 +527,7 @@ describe("Coding Agent Tools", () => {
 	});
 
 	describe("find tool", () => {
-		it("should include hidden files that are not gitignored", async () => {
+		it.skipIf(!fdAvailable)("should include hidden files that are not gitignored", async () => {
 			const hiddenDir = join(testDir, ".secret");
 			mkdirSync(hiddenDir);
 			writeFileSync(join(hiddenDir, "hidden.txt"), "hidden");
@@ -543,7 +547,7 @@ describe("Coding Agent Tools", () => {
 			expect(outputLines).toContain(".secret/hidden.txt");
 		});
 
-		it("should respect .gitignore", async () => {
+		it.skipIf(!fdAvailable)("should respect .gitignore", async () => {
 			writeFileSync(join(testDir, ".gitignore"), "ignored.txt\n");
 			writeFileSync(join(testDir, "ignored.txt"), "ignored");
 			writeFileSync(join(testDir, "kept.txt"), "kept");

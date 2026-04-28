@@ -8,6 +8,7 @@
 
 ### Fixed
 
+- **Node test harness** — Added `test/tui-test-helpers.ts` (`waitForTuiPaint`, `settleTui`) so tests wait for debounced first paint and post-`requestRender` frames; fixes flaky assertions when `terminal.flush()` resolved before `doRender()` (markdown overlay, differential rendering, Termux resize cases).
 - Fixed `Container.render()` stack overflow on long sessions by replacing `Array.push(...spread)` with a loop-based push, preventing `RangeError: Maximum call stack size exceeded` when child output exceeds the V8 call stack argument limit ([#2651](https://github.com/badlogic/pi-mono/issues/2651))
 
 ## [0.66.1] - 2026-04-08

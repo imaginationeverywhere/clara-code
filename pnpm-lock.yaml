@@ -349,28 +349,64 @@ importers:
       '@clerk/nextjs':
         specifier: ^7.0.12
         version: 7.0.12(next@16.2.3(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@lmstudio/sdk':
+        specifier: ^1.5.0
+        version: 1.5.0
+      '@mariozechner/mini-lit':
+        specifier: ^0.2.0
+        version: 0.2.1(lit@3.3.2)(tailwindcss@3.4.19(tsx@4.21.0)(yaml@2.8.3))
+      '@mariozechner/pi-agent-core':
+        specifier: file:../packages/agent
+        version: file:packages/agent(ws@8.20.0)(zod@3.25.76)
+      '@mariozechner/pi-ai':
+        specifier: file:../packages/ai
+        version: file:packages/ai(ws@8.20.0)(zod@3.25.76)
+      '@reduxjs/toolkit':
+        specifier: ^2.5.0
+        version: 2.11.2(react-redux@9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1))(react@19.2.5)
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
+      docx-preview:
+        specifier: ^0.3.2
+        version: 0.3.7
       graphql:
         specifier: ^16.0.0
         version: 16.13.2
+      jszip:
+        specifier: ^3.10.1
+        version: 3.10.1
+      lucide-react:
+        specifier: ^0.503.0
+        version: 0.503.0(react@19.2.5)
       next:
         specifier: 16.2.3
         version: 16.2.3(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      ollama:
+        specifier: ^0.5.11
+        version: 0.5.18
+      pdfjs-dist:
+        specifier: ^4.8.69
+        version: 4.10.38
       react:
         specifier: 19.2.5
         version: 19.2.5
       react-dom:
         specifier: 19.2.5
         version: 19.2.5(react@19.2.5)
+      react-redux:
+        specifier: ^9.2.0
+        version: 9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1)
+      redux-persist:
+        specifier: ^6.0.0
+        version: 6.0.0(react@19.2.5)(redux@5.0.1)
       tailwind-merge:
         specifier: ^2.6.0
         version: 2.6.1
+      xlsx:
+        specifier: ^0.18.5
+        version: 0.18.5
     devDependencies:
-      '@lmstudio/sdk':
-        specifier: ^1.1.0
-        version: 1.5.0
       '@opennextjs/cloudflare':
         specifier: ^1.19.1
         version: 1.19.1(next@16.2.3(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(wrangler@4.81.1)
@@ -380,6 +416,9 @@ importers:
       '@testing-library/react':
         specifier: ^16.3.2
         version: 16.3.2(@testing-library/dom@10.4.1)(@types/react-dom@19.2.3(@types/react@19.2.14))(@types/react@19.2.14)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@types/dom-speech-recognition':
+        specifier: ^0.0.9
+        version: 0.0.9
       '@types/node':
         specifier: ^22
         version: 22.19.17
@@ -392,9 +431,6 @@ importers:
       autoprefixer:
         specifier: ^10.4.20
         version: 10.4.27(postcss@8.5.9)
-      docx-preview:
-        specifier: ^0.3.5
-        version: 0.3.7
       eslint:
         specifier: ^9
         version: 9.39.4(jiti@1.21.7)
@@ -404,15 +440,6 @@ importers:
       jsdom:
         specifier: ^29.0.2
         version: 29.0.2(@noble/hashes@1.8.0)(canvas@3.2.3)
-      jszip:
-        specifier: ^3.10.1
-        version: 3.10.1
-      ollama:
-        specifier: ^0.5.11
-        version: 0.5.18
-      pdfjs-dist:
-        specifier: ^4.10.38
-        version: 4.10.38
       postcss:
         specifier: ^8.5.3
         version: 8.5.9
@@ -431,9 +458,6 @@ importers:
       wrangler:
         specifier: ^4
         version: 4.81.1
-      xlsx:
-        specifier: ^0.18.5
-        version: 0.18.5
 
   frontend/example:
     dependencies:
@@ -445,7 +469,7 @@ importers:
         version: file:packages/ai(ws@8.20.0)(zod@4.3.6)
       '@mariozechner/pi-web-ui':
         specifier: file:../
-        version: '@clara/web-ui@file:frontend(graphql-ws@6.0.8(graphql@16.13.2)(ws@8.20.0))'
+        version: '@clara/web-ui@file:frontend(@types/react@19.2.14)(graphql-ws@6.0.8(graphql@16.13.2)(ws@8.20.0))(lit@3.3.2)(redux@5.0.1)(tailwindcss@4.2.2)(ws@8.20.0)(zod@4.3.6)'
       '@tailwindcss/vite':
         specifier: ^4.1.17
         version: 4.2.2(vite@7.3.2(@types/node@24.12.2)(jiti@2.6.1)(lightningcss@1.32.0)(terser@5.46.1)(tsx@4.21.0)(yaml@2.8.3))
@@ -3024,6 +3048,10 @@ packages:
     resolution: {integrity: sha512-Nj54A7SuB/EQi8r3Gs+glFOr9wz/a9uxYFf0pCLf2DE7VmzA9O7WSejrvArna17K6auftLSdNyRRe2bIO0qezg==}
     engines: {node: '>=20.0.0'}
 
+  '@mariozechner/pi-agent-core@file:packages/agent':
+    resolution: {directory: packages/agent, type: directory}
+    engines: {node: '>=20.0.0'}
+
   '@mariozechner/pi-ai@0.30.2':
     resolution: {integrity: sha512-+8JlLRW1xMHDrgHbRxLMbJ7/LL/c2evZetKAjEEJJtOc/hbax9Dfw+7OSRiZn9oSkT0S12/qy44a76gpRpghhQ==}
     engines: {node: '>=20.0.0'}
@@ -3384,6 +3412,17 @@ packages:
     resolution: {integrity: sha512-c1Q99M5ljsIuc4YdaCwfUEXsofakb9c8+Zse2qxTadu8TalLXuAESzLvFAvNVbkmSlvlzIQOLpBCmWI9wTOt+g==}
     peerDependencies:
       '@redis/client': ^1.0.0
+
+  '@reduxjs/toolkit@2.11.2':
+    resolution: {integrity: sha512-Kd6kAHTA6/nUpp8mySPqj3en3dm0tdMIgbttnQ1xFMVpufoj+ADi8pXLBsd4xzTRHQa7t/Jv8W5UnCuW4kuWMQ==}
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18 || ^19
+      react-redux: ^7.2.1 || ^8.1.3 || ^9.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
 
   '@rollup/pluginutils@5.3.0':
     resolution: {integrity: sha512-5EdhGZtnu3V88ces7s53hhfK5KSASnJZv8Lulpc04cWO3REESroJXg73DFsOmgbU2BhwV0E20bu2IDZb3VKW4Q==}
@@ -3941,6 +3980,12 @@ packages:
   '@stablelib/base64@1.0.1':
     resolution: {integrity: sha512-1bnPQqSxSuc3Ii6MhBysoWCg58j97aUjuCSZrGSmDxNqtytIi0k8utUenAwTZN4V5mXXYGsVUI9zeBqy+jBOSQ==}
 
+  '@standard-schema/spec@1.1.0':
+    resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
+
+  '@standard-schema/utils@0.3.0':
+    resolution: {integrity: sha512-e7Mew686owMaPJVNNLs55PUvgz371nKgwsc4vxE49zsODpJEnxgxRo2y/OKrqueavXgZNMDVj3DdHFlaSAeU8g==}
+
   '@swc/helpers@0.5.15':
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
 
@@ -4155,6 +4200,9 @@ packages:
   '@types/diff@7.0.2':
     resolution: {integrity: sha512-JSWRMozjFKsGlEjiiKajUjIJVKuKdE3oVy2DNtK+fUo8q82nhFZ2CPQwicAIkXrofahDXrWJ7mjelvZphMS98Q==}
 
+  '@types/dom-speech-recognition@0.0.9':
+    resolution: {integrity: sha512-uxta75eB62f/Jex9wYTAypKKpiEZ5nOvBRj3TI4yI7JSc65y9eF/Lh9SFjCE3xACj5O5ox2d8nTQFe7Y/nJzfw==}
+
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
 
@@ -4336,6 +4384,9 @@ packages:
 
   '@types/trusted-types@2.0.7':
     resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
+  '@types/use-sync-external-store@0.0.6':
+    resolution: {integrity: sha512-zFDAD+tlpf2r4asuHEj0XH6pY6i0g5NeAHPn+15wk3BV6JA69eERFXC1gyGThDkVa1zCyKr5jox1+2LbV/AMLg==}
 
   '@types/uuid@9.0.8':
     resolution: {integrity: sha512-jg+97EGIcY9AGHJJRaaPVgetKDsrTgbRjQ5Msgjh/DQKEFl0DtyRr/VCOyD1T2R1MNeWPK/u7JoGhlDZnKBAfA==}
@@ -7221,6 +7272,9 @@ packages:
   immediate@3.0.6:
     resolution: {integrity: sha512-XXOFtyqDjNDAQxVfYxuF7g9Il/IbWmmlQg2MYKOH8ExIT1qg6xc4zyS3HaEEATgs1btfzxq15ciUiY7gjSXRGQ==}
 
+  immer@11.1.4:
+    resolution: {integrity: sha512-XREFCPo6ksxVzP4E0ekD5aMdf8WMwmdNaz6vuvxgI40UaEiu6q3p8X52aU6GdyvLY3XXX/8R7JOTXStz/nBbRw==}
+
   import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
     engines: {node: '>=6'}
@@ -8015,6 +8069,11 @@ packages:
   lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
+
+  lucide-react@0.503.0:
+    resolution: {integrity: sha512-HGGkdlPWQ0vTF8jJ5TdIqhQXZi6uh3LnNgfZ8MHiuxFfX3RZeA79r2MW2tHAZKlAVfoNE8esm3p+O6VkIvpj6w==}
+    peerDependencies:
+      react: ^16.5.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   lucide@0.544.0:
     resolution: {integrity: sha512-U5ORwr5z9Sx7bNTDFaW55RbjVdQEnAcT3vws9uz3vRT1G4XXJUDAhRZdxhFoIyHEvjmTkzzlEhjSLYM5n4mb5w==}
@@ -9082,6 +9141,18 @@ packages:
     peerDependencies:
       react: ^19.2.0
 
+  react-redux@9.2.0:
+    resolution: {integrity: sha512-ROY9fvHhwOD9ySfrF0wmvu//bKCQ6AeZZq1nJNtbDC+kk5DuSuNX/n6YWYF/SYy7bSba4D4FSz8DJeKY/S/r+g==}
+    peerDependencies:
+      '@types/react': ^18.2.25 || ^19
+      react: ^18.0 || ^19
+      redux: ^5.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      redux:
+        optional: true
+
   react@18.3.1:
     resolution: {integrity: sha512-wS+hAgJShR0KhEvPJArfuPVN1+Hz1t0Y6n5jLrGQbkb4urgPE/0Rve+1kMB1v/oWgHgm4WIcV+i7F2pTVj+2iQ==}
     engines: {node: '>=0.10.0'}
@@ -9145,6 +9216,23 @@ packages:
   redis@4.7.1:
     resolution: {integrity: sha512-S1bJDnqLftzHXHP8JsT5II/CtHWQrASX5K96REjWjlmWKrviSOLWmM7QnRLstAWsu1VBBV1ffV6DzCvxNP0UJQ==}
 
+  redux-persist@6.0.0:
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+
+  redux-thunk@3.1.0:
+    resolution: {integrity: sha512-NW2r5T6ksUKXCabzhL9z+h206HQw/NJkcLm1GPImRQ8IzfXwRGqjVhKJGauHirT0DAuyy6hjdnMZaRoAcy0Klw==}
+    peerDependencies:
+      redux: ^5.0.0
+
+  redux@5.0.1:
+    resolution: {integrity: sha512-M9/ELqF6fy8FwmkpnF0S3YKOqMyoWJ4+CS5Efg2ct3oY9daQvd/Pc71FpGZsVsbl3Cpb+IIcjBDUnnyBdQbq4w==}
+
   reflect-metadata@0.2.2:
     resolution: {integrity: sha512-urBwgfrvVP/eAyXx4hluJivBKzuEbSQs9rKWCrCkbSxNv8mxPcUZKeuoF3Uy4mJl3Lwprp6yy5/39VWigZ4K6Q==}
 
@@ -9180,6 +9268,9 @@ packages:
 
   requires-port@1.0.0:
     resolution: {integrity: sha512-KigOCHcocU3XODJxsu8i/j8T9tzT4adHiecwORRQ0ZZFcp7ahwXuRU1m+yuO90C5ZUyGeGfocHDI14M3L3yDAQ==}
+
+  reselect@5.1.1:
+    resolution: {integrity: sha512-K/BG6eIky/SBpzfHZv/dd+9JBFiS4SWV7FIujVyJRux6e45+73RaUHXLmIR1f7WOMaQ0U1km6qwklRQxpJJY0w==}
 
   resolve-cwd@3.0.0:
     resolution: {integrity: sha512-OrZaX2Mb+rJCpH/6CpSqt9xFVpN++x01XnN2ie9g6P5/3xelLAkXWVADpdz1IHD/KFfEXyE6V0U01OQ3UO2rEg==}
@@ -12588,27 +12679,50 @@ snapshots:
 
   '@clara/clara-code-surface-scripts@file:packages/clara-code-surface-scripts': {}
 
-  '@clara/web-ui@file:frontend(graphql-ws@6.0.8(graphql@16.13.2)(ws@8.20.0))':
+  '@clara/web-ui@file:frontend(@types/react@19.2.14)(graphql-ws@6.0.8(graphql@16.13.2)(ws@8.20.0))(lit@3.3.2)(redux@5.0.1)(tailwindcss@4.2.2)(ws@8.20.0)(zod@4.3.6)':
     dependencies:
       '@apollo/client': 3.14.1(@types/react@19.2.14)(graphql-ws@6.0.8(graphql@16.13.2)(ws@8.20.0))(graphql@16.13.2)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       '@clara/clara-code-surface-scripts': file:packages/clara-code-surface-scripts
       '@clerk/nextjs': 7.0.12(next@16.2.3(react-dom@19.2.5(react@19.2.5))(react@19.2.5))(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      '@lmstudio/sdk': 1.5.0
+      '@mariozechner/mini-lit': 0.2.1(lit@3.3.2)(tailwindcss@4.2.2)
+      '@mariozechner/pi-agent-core': file:packages/agent(ws@8.20.0)(zod@4.3.6)
+      '@mariozechner/pi-ai': file:packages/ai(ws@8.20.0)(zod@4.3.6)
+      '@reduxjs/toolkit': 2.11.2(react-redux@9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1))(react@19.2.5)
       clsx: 2.1.1
+      docx-preview: 0.3.7
       graphql: 16.13.2
+      jszip: 3.10.1
+      lucide-react: 0.503.0(react@19.2.5)
       next: 16.2.3(@babel/core@7.29.0)(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
+      ollama: 0.5.18
+      pdfjs-dist: 4.10.38
       react: 19.2.5
       react-dom: 19.2.5(react@19.2.5)
+      react-redux: 9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1)
+      redux-persist: 6.0.0(react@19.2.5)(redux@5.0.1)
       tailwind-merge: 2.6.1
+      xlsx: 0.18.5
     transitivePeerDependencies:
       - '@babel/core'
+      - '@modelcontextprotocol/sdk'
       - '@opentelemetry/api'
       - '@playwright/test'
       - '@types/react'
+      - aws-crt
       - babel-plugin-macros
       - babel-plugin-react-compiler
+      - bufferutil
       - graphql-ws
+      - lit
+      - redux
       - sass
       - subscriptions-transport-ws
+      - supports-color
+      - tailwindcss
+      - utf-8-validate
+      - ws
+      - zod
 
   '@clerk/backend@2.33.3(react-dom@19.2.5(react@19.2.5))(react@19.2.5)':
     dependencies:
@@ -13640,6 +13754,23 @@ snapshots:
       std-env: 3.10.0
       yoctocolors: 2.1.2
 
+  '@mariozechner/mini-lit@0.2.1(lit@3.3.2)(tailwindcss@3.4.19(tsx@4.21.0)(yaml@2.8.3))':
+    dependencies:
+      '@preact/signals-core': 1.14.1
+      class-variance-authority: 0.7.1
+      diff: 8.0.4
+      highlight.js: 11.11.1
+      html-parse-string: 0.0.9
+      katex: 0.16.45
+      lit: 3.3.2
+      lucide: 0.544.0
+      marked: 16.4.2
+      tailwind-merge: 3.5.0
+      tailwind-variants: 3.2.2(tailwind-merge@3.5.0)(tailwindcss@3.4.19(tsx@4.21.0)(yaml@2.8.3))
+      uhtml: 5.0.9
+    transitivePeerDependencies:
+      - tailwindcss
+
   '@mariozechner/mini-lit@0.2.1(lit@3.3.2)(tailwindcss@4.2.2)':
     dependencies:
       '@preact/signals-core': 1.14.1
@@ -13684,6 +13815,32 @@ snapshots:
   '@mariozechner/pi-agent-core@0.66.1(ws@8.20.0)(zod@4.3.6)':
     dependencies:
       '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@4.3.6)
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
+  '@mariozechner/pi-agent-core@file:packages/agent(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@3.25.76)
+      '@sinclair/typebox': 0.34.49
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
+  '@mariozechner/pi-agent-core@file:packages/agent(ws@8.20.0)(zod@4.3.6)':
+    dependencies:
+      '@mariozechner/pi-ai': 0.66.1(ws@8.20.0)(zod@4.3.6)
+      '@sinclair/typebox': 0.34.49
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - aws-crt
@@ -13752,6 +13909,31 @@ snapshots:
       proxy-agent: 6.5.0
       undici: 7.24.7
       zod-to-json-schema: 3.25.2(zod@4.3.6)
+    transitivePeerDependencies:
+      - '@modelcontextprotocol/sdk'
+      - aws-crt
+      - bufferutil
+      - supports-color
+      - utf-8-validate
+      - ws
+      - zod
+
+  '@mariozechner/pi-ai@file:packages/ai(ws@8.20.0)(zod@3.25.76)':
+    dependencies:
+      '@anthropic-ai/sdk': 0.73.0(zod@3.25.76)
+      '@aws-sdk/client-bedrock-runtime': 3.1027.0
+      '@google/genai': 1.49.0
+      '@mistralai/mistralai': 1.14.1
+      '@sinclair/typebox': 0.34.49
+      '@smithy/node-http-handler': 4.6.0
+      ajv: 8.18.0
+      ajv-formats: 3.0.1(ajv@8.18.0)
+      chalk: 5.6.2
+      openai: 6.26.0(ws@8.20.0)(zod@3.25.76)
+      partial-json: 0.1.7
+      proxy-agent: 6.5.0
+      undici: 7.24.7
+      zod-to-json-schema: 3.25.2(zod@3.25.76)
     transitivePeerDependencies:
       - '@modelcontextprotocol/sdk'
       - aws-crt
@@ -14173,6 +14355,18 @@ snapshots:
   '@redis/time-series@1.1.0(@redis/client@1.6.1)':
     dependencies:
       '@redis/client': 1.6.1
+
+  '@reduxjs/toolkit@2.11.2(react-redux@9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1))(react@19.2.5)':
+    dependencies:
+      '@standard-schema/spec': 1.1.0
+      '@standard-schema/utils': 0.3.0
+      immer: 11.1.4
+      redux: 5.0.1
+      redux-thunk: 3.1.0(redux@5.0.1)
+      reselect: 5.1.1
+    optionalDependencies:
+      react: 19.2.5
+      react-redux: 9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1)
 
   '@rollup/pluginutils@5.3.0(rollup@4.60.1)':
     dependencies:
@@ -14947,6 +15141,10 @@ snapshots:
 
   '@stablelib/base64@1.0.1': {}
 
+  '@standard-schema/spec@1.1.0': {}
+
+  '@standard-schema/utils@0.3.0': {}
+
   '@swc/helpers@0.5.15':
     dependencies:
       tslib: 2.8.1
@@ -15165,6 +15363,8 @@ snapshots:
 
   '@types/diff@7.0.2': {}
 
+  '@types/dom-speech-recognition@0.0.9': {}
+
   '@types/eslint-scope@3.7.7':
     dependencies:
       '@types/eslint': 9.6.1
@@ -15382,6 +15582,8 @@ snapshots:
   '@types/triple-beam@1.3.5': {}
 
   '@types/trusted-types@2.0.7': {}
+
+  '@types/use-sync-external-store@0.0.6': {}
 
   '@types/uuid@9.0.8': {}
 
@@ -19044,6 +19246,8 @@ snapshots:
 
   immediate@3.0.6: {}
 
+  immer@11.1.4: {}
+
   import-fresh@3.3.1:
     dependencies:
       parent-module: 1.0.1
@@ -20091,6 +20295,10 @@ snapshots:
 
   lru-cache@7.18.3: {}
 
+  lucide-react@0.503.0(react@19.2.5):
+    dependencies:
+      react: 19.2.5
+
   lucide@0.544.0: {}
 
   lz-string@1.5.0: {}
@@ -21103,6 +21311,15 @@ snapshots:
       react: 19.2.5
       scheduler: 0.27.0
 
+  react-redux@9.2.0(@types/react@19.2.14)(react@19.2.5)(redux@5.0.1):
+    dependencies:
+      '@types/use-sync-external-store': 0.0.6
+      react: 19.2.5
+      use-sync-external-store: 1.6.0(react@19.2.5)
+    optionalDependencies:
+      '@types/react': 19.2.14
+      redux: 5.0.1
+
   react@18.3.1:
     dependencies:
       loose-envify: 1.4.0
@@ -21186,6 +21403,18 @@ snapshots:
       '@redis/search': 1.2.0(@redis/client@1.6.1)
       '@redis/time-series': 1.1.0(@redis/client@1.6.1)
 
+  redux-persist@6.0.0(react@19.2.5)(redux@5.0.1):
+    dependencies:
+      redux: 5.0.1
+    optionalDependencies:
+      react: 19.2.5
+
+  redux-thunk@3.1.0(redux@5.0.1):
+    dependencies:
+      redux: 5.0.1
+
+  redux@5.0.1: {}
+
   reflect-metadata@0.2.2: {}
 
   reflect.getprototypeof@1.0.10:
@@ -21220,6 +21449,8 @@ snapshots:
   require-from-string@2.0.2: {}
 
   requires-port@1.0.0: {}
+
+  reselect@5.1.1: {}
 
   resolve-cwd@3.0.0:
     dependencies:
@@ -21932,6 +22163,12 @@ snapshots:
   tailwind-merge@2.6.1: {}
 
   tailwind-merge@3.5.0: {}
+
+  tailwind-variants@3.2.2(tailwind-merge@3.5.0)(tailwindcss@3.4.19(tsx@4.21.0)(yaml@2.8.3)):
+    dependencies:
+      tailwindcss: 3.4.19(tsx@4.21.0)(yaml@2.8.3)
+    optionalDependencies:
+      tailwind-merge: 3.5.0
 
   tailwind-variants@3.2.2(tailwind-merge@3.5.0)(tailwindcss@4.2.2):
     dependencies:

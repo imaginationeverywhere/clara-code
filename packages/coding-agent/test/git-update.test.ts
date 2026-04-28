@@ -51,7 +51,7 @@ function getFileContent(repoDir: string, filename: string): string {
 	return readFileSync(join(repoDir, filename), "utf-8");
 }
 
-describe("DefaultPackageManager git update", () => {
+describe("DefaultPackageManager git update", { timeout: 120_000 }, () => {
 	let tempDir: string;
 	let remoteDir: string; // Simulates the "remote" repository
 	let agentDir: string; // The agent directory where extensions are installed

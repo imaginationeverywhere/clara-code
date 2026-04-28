@@ -1,6 +1,10 @@
 # Changelog
 
-## [Unreleased] - 2026-04-27
+## [Unreleased] - 2026-04-28
+
+### Fixed (cross-reference)
+
+- **Vitest / Node tests — merge sync** — Coding-agent find/git-update suites and TUI debounced-render helpers; no API doc changes. Root **`CHANGELOG.md`** **\[Unreleased\] - 2026-04-28**; **`packages/coding-agent/CHANGELOG.md`**, **`packages/tui/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**, **`ide/clara-code/CHANGELOG.md`**.
 
 ### Added (cross-reference)
 
