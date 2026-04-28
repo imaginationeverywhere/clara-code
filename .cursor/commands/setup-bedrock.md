@@ -1,6 +1,4 @@
-# /setup-bedrock — AWS Bedrock + DeepSeek default for Ra Intelligence (non-Clara Herus)
-
-> **Scope note (read first).** This command provisions Bedrock access for non-Clara Herus that use Bedrock for Ra Intelligence (FMO, TrackIt, WCR, KLS, PGCMC, ST, S962, QCarry, QN, QCR). Clara Platform's default routing is Gemma 4 27B on Modal; Clara only uses Bedrock for the heavy-reasoning fallback (~3-5% of traffic) and the premium Claude/GPT path (<1%). If you are wiring up Clara Code itself, do not use this command as a template for the platform-wide primary; see `pricing/model-routing-strategy.md` for the canonical Hermes routing decision tree.
+# /setup-bedrock — AWS Bedrock + DeepSeek default for Ra Intelligence
 
 **Automation:** run **`scripts/setup-bedrock.sh`** from the repo root (`--dry-run` prints intended AWS CLI usage without changing AWS resources). This file is the **operator runbook**; the script covers model discovery and `.env.example` hints — it does **not** write SSM secrets without you running `aws ssm put-parameter` yourself.
 
@@ -96,5 +94,5 @@ If Bedrock returns `AccessDeniedException` or model-not-enabled, document for th
 ## Related
 
 - `/pickup-prompt --bedrock` / `/queue-prompt --bedrock` — prepend setup template for queued work.
-- `docs/technical/AI_INTEGRATION.md` — Cloudflare AI Gateway remains supplementary; Bedrock is primary for backend Ra routing when configured (non-Clara Herus only — Clara Platform routes Gemma 4 first).
+- `docs/technical/AI_INTEGRATION.md` — Cloudflare AI Gateway remains supplementary; Bedrock is primary for backend Ra routing when configured.
 - Cost: align with pass-through + hard caps per platform billing decisions.

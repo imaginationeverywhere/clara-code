@@ -83,7 +83,7 @@ Resolves today's date, finds ALL prompts in `1-not-started/`, and processes them
 /pickup-prompt --azure                   # Step 8 alt: Azure (hosting; not DevOps git)
 /pickup-prompt --cloudflare              # Step 8 alt: Cloudflare Pages/Workers (see also --cf)
 /pickup-prompt --migrate-amplify-to-cf   # Amplify → CF Workers + DNS playbook (domain in prompt; see § flag)
-/pickup-prompt --bedrock                 # AWS Bedrock + DeepSeek for Ra Intelligence — non-Clara Herus only (Clara Platform routes Gemma 4 first; see /setup-bedrock)
+/pickup-prompt --bedrock                 # AWS Bedrock + DeepSeek default for Ra Intelligence (see /setup-bedrock)
 
 # Clara Code prompt types (page / component / architecture templates)
 /pickup-prompt --privacy-policy           # Privacy Policy page template (GDPR/CCPA/COPPA-aware)
@@ -213,7 +213,7 @@ When present, the agent MUST:
 2. Read **`docs/standards/AI-MODEL-ROUTING.md`** before changing Ra Intelligence or Bedrock wiring.
 3. Keep **Cloudflare AI Gateway** and **Anthropic SDK** as documented fallbacks when Bedrock is disabled or exhausted.
 
-Use for tasks that configure **Amazon Bedrock** (DeepSeek default, fallback chain, SSM/IAM) for **non-Clara Herus** that use Bedrock for Ra Intelligence. Clara Platform itself routes Gemma 4 27B (Modal) first via Hermes — do not use this flag as a template for the Clara platform-wide primary; see `pricing/model-routing-strategy.md`. Pair with `--backend` when the prompt also needs the backend stack standard.
+Use for tasks that configure **Amazon Bedrock** (DeepSeek default, fallback chain, SSM/IAM). Pair with `--backend` when the prompt also needs the backend stack standard.
 
 ---
 
@@ -927,13 +927,14 @@ Limits processing to prompt files in `1-not-started/` whose **basename** (e.g. `
 - **Combines with** `--parallel N` and `--retry-failed`.
 - **Does not apply** to `--status`, `--requirements`, `--all`, or `--list`.
 
-```bash
-# AI-substituted from ARGUMENTS:
-FILTER_REGEX=""   # e.g. '23-00-ossie-bedrock|23-15-ossie-amplify' or leave empty
+**Note:** The actual filter logic ships inline in **Step 2**'s main loop — see lines that wire `FILTER_REGEX` into `for f in ...; do ... grep -qE "$FILTER_REGEX"`. The reference helper below is provided only as a portable utility for shell scripts that want to pull the same selector out of the loop body. **You do not need to copy it** — Step 2's inline form is the canonical implementation.
 
+```bash
+# Reference utility (NOT the canonical implementation — Step 2 is).
+# Wires FILTER_REGEX as the second argument; empty string means "first file wins".
 pick_next_prompt_file() {
   local dir="$1"
-  local pattern="$2"
+  local pattern="$2"   # extended regex; pass "" for no filtering
   local f
   for f in $(ls "${dir}"/*.md 2>/dev/null | sort); do
     [ -f "$f" ] || continue
@@ -942,6 +943,9 @@ pick_next_prompt_file() {
   done
   return 1
 }
+
+# Call site (matches Step 1b's variable names):
+# TARGET=$(pick_next_prompt_file "$PROMPT_DIR" "$FILTER_REGEX") || TARGET=""
 ```
 
 ---
@@ -1042,7 +1046,11 @@ if echo "$*" | grep -q "\-\-status"; then
 
   for entry in "${STANDARDS[@]}"; do
     IFS='|' read -r name pattern flag est_min desc <<< "$entry"
-    if eval "$pattern" 2>/dev/null | grep -q . 2>/dev/null || eval "$pattern" 2>/dev/null; then
+    # Single eval, capture output, treat "non-empty stdout" as "implemented".
+    # Avoids the prior double-eval that was both wasteful and ambiguous on
+    # commands that exit 0 with no output (which we do NOT want to count).
+    detection_output=$(eval "$pattern" 2>/dev/null || true)
+    if [ -n "$detection_output" ]; then
       DONE_NAMES+=("$name")
       DONE_TIMES+=("$est_min")
       DONE_DESCS+=("$desc")
@@ -1253,31 +1261,52 @@ If the pull fails (merge conflict, dirty worktree), stop and report before proce
 
 ### Step 1 — Resolve the prompt directory
 
+If `PROMPT_DATE` was set in Step 1b (bare `YYYY/Month/D` argument), use that path; otherwise default to today.
+
 ```bash
-YEAR=$(date +%Y)
-MONTH=$(date +%B)    # Full month name: January, February, ...
-DAY=$(date +%-d)     # Day without leading zero
+if [ -n "$PROMPT_DATE" ]; then
+  # Caller passed an explicit date like 2026/April/12
+  YEAR=$(echo "$PROMPT_DATE" | cut -d/ -f1)
+  MONTH=$(echo "$PROMPT_DATE" | cut -d/ -f2)
+  DAY=$(echo "$PROMPT_DATE" | cut -d/ -f3)
+else
+  YEAR=$(date +%Y)
+  MONTH=$(date +%B)    # Full month name: January, February, ...
+  DAY=$(date +%-d)     # Day without leading zero
+fi
 PROMPT_DIR="prompts/${YEAR}/${MONTH}/${DAY}/1-not-started"
+mkdir -p "$PROMPT_DIR"  # safe to call even if it already exists; needed for orphan recovery + backfill
 
 echo "Looking in: ${PROMPT_DIR}"
-ls "${PROMPT_DIR}" 2>/dev/null || echo "No prompts directory found at ${PROMPT_DIR}"
+ls "${PROMPT_DIR}" 2>/dev/null || echo "(empty — no prompts queued yet at ${PROMPT_DIR})"
 ```
 
-### Step 1b — Set `MAX_PARALLEL` and `RETRY_FAILED` from ARGUMENTS
+### Step 1b — Set `MAX_PARALLEL`, `RETRY_FAILED`, `BACKFILL`, `SPECIFIC_PROMPT`, and `FILTER_REGEX` from ARGUMENTS
 
-**CRITICAL: Do NOT use `$@` in bash — it is always empty when Claude/Cursor executes code blocks.**
-**Instead: read the ARGUMENTS field directly and substitute the values into the bash block below.**
+**Important nuance about `$@`:** when Claude/Cursor executes a bash code block in-chat, `$@` is empty because the AI invoked the block without passing positional args. Inside a real shell script (`./pickup-prompt.sh ...`) or `bash -c '...' "$@"` invocation, `$@` works as normal. The pattern below works in **both** cases because the AI substitutes ARGUMENTS values directly into the variables; downstream code reads from variables, not from `$@`.
 
-- If ARGUMENTS contains `--parallel N` (e.g., `--parallel 5`), substitute N for the `1` below
-- If ARGUMENTS contains `--retry-failed`, change `false` to `true` below
-- If ARGUMENTS contains `--filter 'PATTERN'`, set `FILTER_REGEX` to that pattern (empty string if absent)
-- Default: `MAX_PARALLEL=1`, `RETRY_FAILED=false`, `FILTER_REGEX=""`
+Mapping rules (AI substitutes before running):
+
+| ARGUMENTS contains… | Set… |
+|---|---|
+| `--parallel N` (e.g. `--parallel 5`) | `MAX_PARALLEL=N` |
+| `--retry-failed` | `RETRY_FAILED=true` |
+| `--backfill` | `BACKFILL=true` |
+| `--filter 'PATTERN'` | `FILTER_REGEX=PATTERN` (basename, extended regex) |
+| `<filename>.md` (bare argument, no leading `-`) | `SPECIFIC_PROMPT=<filename>.md` |
+| `YYYY/Month/D` (bare date argument) | `PROMPT_DATE=YYYY/Month/D` (overrides today's date in Step 1) |
+| nothing of the above | defaults below |
+
+Defaults: `MAX_PARALLEL=1`, `RETRY_FAILED=false`, `BACKFILL=false` (opt-in — see Step 0.6 caution), `FILTER_REGEX=""`, `SPECIFIC_PROMPT=""`, `PROMPT_DATE=""`.
 
 ```bash
 # AI MUST substitute the actual values from ARGUMENTS before running this block:
-MAX_PARALLEL=1       # ← replace with N from --parallel N (e.g. 5 if --parallel 5)
-RETRY_FAILED=false   # ← set to true if --retry-failed appears in ARGUMENTS
-FILTER_REGEX=""      # ← e.g. 23-00-ossie|23-15-ossie — extended regex on basename only
+MAX_PARALLEL=1            # ← N from --parallel N (e.g. 5)
+RETRY_FAILED=false        # ← true if --retry-failed
+BACKFILL=false            # ← true if --backfill (default OFF; see Step 0.6)
+FILTER_REGEX=""           # ← e.g. 23-00-ossie|23-15-ossie — extended regex on basename only
+SPECIFIC_PROMPT=""        # ← bare <filename>.md from ARGUMENTS, e.g. 01-cc-web-full.md
+PROMPT_DATE=""            # ← bare YYYY/Month/D from ARGUMENTS, e.g. 2026/April/12
 ```
 
 ### Step 2 — Loop: process every prompt until the queue is empty
@@ -1298,6 +1327,7 @@ if ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null | grep -q .; then
   done
   echo ""
   echo "   Moving them back to 1-not-started/ for re-execution..."
+  mkdir -p "$PROMPT_DIR"   # guarantee destination exists before mv
   mv "${IN_PROGRESS_DIR}"/*.md "$PROMPT_DIR/" 2>/dev/null
   echo "   ✅ $(echo "$ORPHANED" | wc -l | tr -d ' ') prompt(s) recovered."
   echo ""
@@ -1305,32 +1335,49 @@ if ls "${IN_PROGRESS_DIR}"/*.md 2>/dev/null | grep -q .; then
 fi
 # ─────────────────────────────────────────────────────────────────────────────
 
-# ── Step 0.6 — Backfill not-started prompts from previous dates ──────────────
-# Scan ALL past date directories under prompts/ for any 1-not-started/*.md files.
-# Moves them into today's queue so the main loop picks them up.
-# Caution: large trees may match 100+ files—preview `find ... | wc -l` before moving.
-BACKFILL_COUNT=0
-while IFS= read -r OLD_PROMPT; do
-  [ -f "$OLD_PROMPT" ] || continue
-  BASENAME=$(basename "$OLD_PROMPT")
-  DEST="$PROMPT_DIR/$BASENAME"
-  # Handle name collisions by prefixing with the source date
-  if [ -f "$DEST" ]; then
-    OLD_DATE=$(echo "$OLD_PROMPT" | grep -oE '[0-9]{4}/[A-Za-z]+/[0-9]{1,2}' | head -1)
-    SAFE_DATE=$(echo "$OLD_DATE" | tr '/' '-')
-    DEST="$PROMPT_DIR/${SAFE_DATE}-${BASENAME}"
+# ── Step 0.6 — Backfill not-started prompts from previous dates (OPT-IN) ─────
+# DEFAULT: OFF. Bulk-moving prompts from older date directories into today is
+# aggressive — it can drop a huge backlog on the wrong day, scramble ordering,
+# and break the "run THIS date's prompts only" mental model. Opt in with
+# `--backfill` ONLY when you intentionally want to pull all stale prompts forward.
+#
+# Even when enabled, this step previews the count first and logs the move.
+if [ "$BACKFILL" = true ]; then
+  CANDIDATE_COUNT=$(find "prompts" -path "*/1-not-started/*.md" \
+    ! -path "prompts/${YEAR}/${MONTH}/${DAY}/*" 2>/dev/null | wc -l | tr -d ' ')
+  if [ "${CANDIDATE_COUNT:-0}" -gt 0 ]; then
+    echo ""
+    echo "📥 --backfill: preparing to move $CANDIDATE_COUNT prompt(s) from previous dates → today's queue"
+    BACKFILL_COUNT=0
+    while IFS= read -r OLD_PROMPT; do
+      [ -f "$OLD_PROMPT" ] || continue
+      BASENAME=$(basename "$OLD_PROMPT")
+      DEST="$PROMPT_DIR/$BASENAME"
+      # Handle name collisions by prefixing with the source date
+      if [ -f "$DEST" ]; then
+        OLD_DATE=$(echo "$OLD_PROMPT" | grep -oE '[0-9]{4}/[A-Za-z]+/[0-9]{1,2}' | head -1)
+        SAFE_DATE=$(echo "$OLD_DATE" | tr '/' '-')
+        DEST="$PROMPT_DIR/${SAFE_DATE}-${BASENAME}"
+      fi
+      mkdir -p "$PROMPT_DIR"
+      mv "$OLD_PROMPT" "$DEST"
+      echo "   📥 $(basename $(dirname $(dirname $OLD_PROMPT)))/$(basename $(dirname $OLD_PROMPT))/$(basename $OLD_PROMPT) → today"
+      BACKFILL_COUNT=$((BACKFILL_COUNT + 1))
+    done < <(find "prompts" -path "*/1-not-started/*.md" \
+      ! -path "prompts/${YEAR}/${MONTH}/${DAY}/*" 2>/dev/null | sort)
+    echo ""
+    echo "📥 Backfilled $BACKFILL_COUNT prompt(s) from previous dates → today's queue"
+    echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | BACKFILL | $BACKFILL_COUNT prompts from past dates moved to ${YEAR}/${MONTH}/${DAY}/1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
+    echo ""
+  else
+    echo "✅ --backfill: no stale prompts in older date directories"
   fi
-  mv "$OLD_PROMPT" "$DEST"
-  echo "   📥 $(basename $(dirname $(dirname $OLD_PROMPT)))/$(basename $(dirname $OLD_PROMPT))/$(basename $OLD_PROMPT) → today"
-  ((BACKFILL_COUNT++))
-done < <(find "prompts" -path "*/1-not-started/*.md" \
-  ! -path "prompts/${YEAR}/${MONTH}/${DAY}/*" 2>/dev/null | sort)
-
-if [ $BACKFILL_COUNT -gt 0 ]; then
-  echo ""
-  echo "📥 Backfilled $BACKFILL_COUNT prompt(s) from previous dates → today's queue"
-  echo "$(date '+%H:%M:%S') | $(basename $(pwd)) | BACKFILL | $BACKFILL_COUNT prompts from past dates moved to ${YEAR}/${MONTH}/${DAY}/1-not-started/" >> ~/auset-brain/Swarms/live-feed.md
-  echo ""
+else
+  STALE_COUNT=$(find "prompts" -path "*/1-not-started/*.md" \
+    ! -path "prompts/${YEAR}/${MONTH}/${DAY}/*" 2>/dev/null | wc -l | tr -d ' ')
+  if [ "${STALE_COUNT:-0}" -gt 0 ]; then
+    echo "ℹ️  $STALE_COUNT prompt(s) sitting in older 1-not-started/ directories. Use --backfill to pull them into today's queue."
+  fi
 fi
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -1360,14 +1407,24 @@ if [ "${MAX_PARALLEL:-1}" -gt 1 ]; then
   # Unlock macOS keychain (required for cursor CLI)
   KEYCHAIN_PASS=$(cat ~/.agent-creds/keychain-password 2>/dev/null)
   [ -n "$KEYCHAIN_PASS" ] && security unlock-keychain -p "$KEYCHAIN_PASS" 2>/dev/null && echo "🔑 Keychain unlocked"
-  # Delegate to standalone dispatch script (handles real bash forking + PID management)
-  DISPATCH_SCRIPT=~/bin/pickup-dispatch.sh
-  if [ -f "$DISPATCH_SCRIPT" ]; then
+  # Delegate to standalone dispatch script (handles real bash forking + PID management).
+  # Resolution order (first existing wins):
+  #   1. $PICKUP_DISPATCH_SCRIPT  (explicit override)
+  #   2. .claude/scripts/pickup-dispatch.sh  (in-repo, works in fresh clones / CI)
+  #   3. ~/bin/pickup-dispatch.sh  (operator's local install, QCS1 default)
+  DISPATCH_SCRIPT=""
+  for CANDIDATE in "${PICKUP_DISPATCH_SCRIPT:-}" ".claude/scripts/pickup-dispatch.sh" "$HOME/bin/pickup-dispatch.sh"; do
+    [ -n "$CANDIDATE" ] && [ -f "$CANDIDATE" ] && { DISPATCH_SCRIPT="$CANDIDATE"; break; }
+  done
+  if [ -n "$DISPATCH_SCRIPT" ]; then
+    echo "🔧 Using dispatch script: $DISPATCH_SCRIPT"
     PICKUP_FILTER="$FILTER_REGEX" bash "$DISPATCH_SCRIPT" "$MAX_PARALLEL" "$FILTER_REGEX"
   else
-    echo "❌ pickup-dispatch.sh not found at ~/bin/"
-    echo "   Install it: copy from boilerplate .claude/scripts/pickup-dispatch.sh"
-    echo "   Or run: ssh quik-cloud 'curl -s <url> > ~/bin/pickup-dispatch.sh && chmod +x ~/bin/pickup-dispatch.sh'"
+    echo "❌ pickup-dispatch.sh not found in any of:"
+    echo "     \$PICKUP_DISPATCH_SCRIPT"
+    echo "     .claude/scripts/pickup-dispatch.sh   (preferred — ships with the repo)"
+    echo "     ~/bin/pickup-dispatch.sh             (operator install)"
+    echo "   Install: cp .claude/scripts/pickup-dispatch.sh ~/bin/  (or set PICKUP_DISPATCH_SCRIPT)"
     exit 1
   fi
 else
@@ -1437,18 +1494,32 @@ while true; do
 
   echo "🌿 Detached worktree created: $WORKTREE_PATH"
   echo "All changes happen inside the worktree — not in the main checkout."
+
+  # ── ENTER THE WORKTREE BEFORE EXECUTION (so the agent's edits land here) ──
+  # Bash cannot enforce that an LLM-driven block respects the worktree boundary.
+  # We can at least guarantee the working dir is correct on entry, and verify
+  # we're still here on exit. If the agent cd's away during prompt execution,
+  # the post-check below catches it before commit.
+  cd "$WORKTREE_PATH"
+  EXPECTED_PWD=$(pwd -P)
+  echo "📍 Working directory: $EXPECTED_PWD"
   echo ""
 
   # ── EXECUTE THE PROMPT ────────────────────────────────────────────────────
   # Read the prompt from 2-in-progress/ and follow ALL instructions in it.
-  # All file edits happen inside $WORKTREE_PATH.
+  # ALL file edits MUST happen inside $WORKTREE_PATH. If you need to read
+  # something from the main checkout, use absolute paths — do not `cd` away.
   # [Cursor agent: execute the prompt content shown above inside $WORKTREE_PATH]
+
+  # ── Worktree boundary check (post-execution) ──────────────────────────────
+  if [ "$(pwd -P)" != "$EXPECTED_PWD" ]; then
+    echo "⚠️  Working directory drifted to $(pwd -P); restoring to $EXPECTED_PWD"
+    cd "$EXPECTED_PWD"
+  fi
 
   # ── Create branch FROM the worktree (after work is done) ─────────────────
   BRANCH_NAME="prompt/${YEAR}-$(date +%m)-$(date +%d)/${PROMPT_NAME}"
   BRANCH_NAME=$(echo "$BRANCH_NAME" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9\/\-]/-/g' | sed 's/-\+/-/g')
-
-  cd "$WORKTREE_PATH"
 
   # Create the branch here (from the worktree's current state)
   git checkout -b "$BRANCH_NAME" 2>/dev/null || {
@@ -1631,8 +1702,9 @@ Step 0: git pull + delete merged prompt branches from last run
 
 ```yaml
 name: pickup-prompt
-version: 3.14.0
+version: 3.15.0
 changelog:
+  - v3.15.0: Correctness pass. (1) Fix --filter example wiring — Step 2's inline form is canonical; reference helper now shows a real call site. (2) pickup-dispatch.sh path resolves in this order: $PICKUP_DISPATCH_SCRIPT → .claude/scripts/pickup-dispatch.sh → ~/bin/pickup-dispatch.sh, so fresh clones and CI work without manual install. (3) Bare-filename and bare-date arguments now wire to SPECIFIC_PROMPT and PROMPT_DATE explicitly in Step 1b/Step 1. (4) Clarified $@ language — empty in chat-embedded blocks, normal in real scripts. (5) --status detection: single eval with output capture; "exit 0 with no output" no longer counts as implemented. (6) Backfill is now OPT-IN via --backfill (default off). When off, prints a one-line hint about stale prompts in older dates. (7) Step 0.5 orphan recovery now mkdir -p PROMPT_DIR before mv. (8) Worktree boundary: cd into $WORKTREE_PATH BEFORE execution and post-check pwd to detect drift. (9) Step 1 mkdir -p PROMPT_DIR upfront for downstream safety.
   - v3.14.0: Add --bedrock (setup template + /setup-bedrock + Ra Intelligence Bedrock module + docs/standards/AI-MODEL-ROUTING.md).
   - v3.13.0: Add --migrate-amplify-to-cf (setup template + migrate-amplify-to-cf command + AMPLIFY-TO-CLOUDFLARE-MIGRATION.md) for Amplify→Workers+DNS migrations.
   - v3.12.0: Add --filter <regex> (grep -E on prompt basename) for sequential and parallel runs; pickup-dispatch.sh accepts optional pattern as arg2 or PICKUP_FILTER env; exits when filter exhausted with non-matching files still queued.

@@ -8,12 +8,6 @@ Reloads ONLY what you need to keep working. No ceremony. No standup. No Slack ch
 
 ## Steps (DO ALL OF THESE)
 
-### 0. Platform Vitals Check (MANDATORY — HQ owns this)
-```bash
-.claude/scripts/platform-vitals.sh --quiet
-```
-If exit code is `2` (DOWN), **you MUST surface the down systems before doing anything else**. Show the full output with `.claude/scripts/platform-vitals.sh --fresh`. HQ retains ownership; delegate fix to `/devops-team` if appropriate. Do not proceed with queued work until DOWN items are triaged with Mo. Non-HQ teams: report the DOWN list to the live feed and wait for HQ direction.
-
 ### 1. Detect Team Identity
 ```bash
 echo $SWARM_TEAM
@@ -49,7 +43,6 @@ Display:
 SESSION UPDATED
 ━━━━━━━━━━━━━━━━━━━━
   Team: <team name or Headquarters>
-  Platform vitals: <OK | DEGRADED | DOWN (N systems)>
   Checkpoint loaded: ✓
   Agenda loaded: ✓
   Feed checked: ✓

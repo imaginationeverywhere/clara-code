@@ -8,13 +8,6 @@ Saves all session state to the vault so nothing is lost when you /clear. Like /s
 
 ## Steps (DO ALL OF THESE)
 
-### 0. Platform Vitals Snapshot (MANDATORY — HQ owns this)
-```bash
-.claude/scripts/platform-vitals.sh --json > /tmp/vitals-snapshot.json
-.claude/scripts/platform-vitals.sh --quiet
-```
-Capture the JSON snapshot so the post-/clear session knows platform state at save time. If exit code is `2` (DOWN), include the DOWN list in the checkpoint under a `## Platform vitals at save` section so the next session picks up the breakage, not stale optimism.
-
 ### 1. Update Session Checkpoint
 Write the current session state to `memory/session-checkpoint.md`:
 - What happened this session (bullet points)

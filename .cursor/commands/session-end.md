@@ -15,12 +15,6 @@ Every great session deserves a proper ending. Not an abrupt stop — a deliberat
 
 ## What This Command Does
 
-### 0. Platform Vitals Final Check (MANDATORY — HQ owns this)
-```bash
-.claude/scripts/platform-vitals.sh --fresh
-```
-Include the result in the session-end report. Any DOWN items carry into the next session's checkpoint — HQ is accountable for them even after the session closes. Write the DOWN list to today's daily note under `## Platform vitals at session close` so tomorrow's cold boot inherits the state.
-
 ### 1. Gather Session Context
 Review the conversation to identify:
 - **What was done** — Features built, bugs fixed, decisions made, files changed

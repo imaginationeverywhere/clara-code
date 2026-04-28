@@ -20,19 +20,6 @@ That's what this command does. It prepares the mind before the work begins.
 
 Run the startup ritual **in this order**. Prefer **`brain_query`** (MCP tool `brain_query` from server `clara-brain`) for priorities and focus — do **not** load `memory/MEMORY.md` wholesale; it is a short index only (see repo `memory/MEMORY.md`).
 
-### 0. Platform Vitals Check (MANDATORY — HQ owns this)
-
-This is a **cold boot**. Run a fresh probe, not a cached one:
-```bash
-.claude/scripts/platform-vitals.sh --fresh
-```
-Exit code meaning:
-- `0` → OK, proceed
-- `1` → DEGRADED, note warnings in session banner and proceed
-- `2` → **DOWN → HQ must triage BEFORE reading checkpoint / daily / anything else.** Surface the DOWN list to Mo, decide fix-in-place vs delegate to `/devops-team`, and do not queue other work until it's addressed. Any system DOWN is a highest-priority blocker.
-
-Non-HQ teams: if DOWN, post the list to `~/auset-brain/Swarms/live-feed.md` and wait for HQ direction — do NOT start team tasks on a down platform.
-
 ### 1. Read `memory/session-checkpoint.md`
 
 Repo-local handoff: what happened last session, pending work, decisions to preserve.

@@ -52,6 +52,8 @@ These are the exact mistakes the memory corrects. If a future version of this do
 | `S962` | site962 | `/Volumes/X10-Pro/Native-Projects/Quik-Nation/site962` |
 | `CA` | claraagents | `/Volumes/X10-Pro/Native-Projects/AI/claraagents` |
 | `CC` | clara-code | `/Volumes/X10-Pro/Native-Projects/AI/clara-code` |
+| `CSAFE` | clarasafe | `/Volumes/X10-Pro/Native-Projects/AI/clarasafe` |
+| `CP` | clara-platform-runtime | `/Volumes/X10-Pro/Native-Projects/AI/clara-platform-runtime` |
 | `PKGS` | auset-packages | `/Volumes/X10-Pro/Native-Projects/AI/auset-packages` |
 | `BP` | quik-nation-ai-boilerplate | `/Volumes/X10-Pro/Native-Projects/AI/quik-nation-ai-boilerplate` |
 
@@ -111,7 +113,9 @@ resolve_path() {
     S962)   echo "~/projects/site962" ;;
     CA)     echo "~/projects/claraagents" ;;
     CC)     echo "~/projects/clara-code" ;;
-    PKGS)   echo "~/projects/quik-nation-packages" ;;
+    CSAFE)  echo "~/projects/clarasafe" ;;
+    CP)     echo "~/projects/clara-platform-runtime" ;;
+    PKGS)   echo "~/projects/auset-packages" ;;
     BP)     echo "~/projects/quik-nation-ai-boilerplate" ;;
     *) echo "" ;;
   esac
