@@ -47,6 +47,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Audit CLI IP (founder strings)
+        if: matrix.target == 'check'
+        run: npm run audit:cli-ip
+
       - name: Build
         run: npm run build
 

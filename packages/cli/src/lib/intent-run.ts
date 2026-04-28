@@ -12,7 +12,7 @@ export function isIntentGatewayPendingBody(body: unknown): boolean {
 }
 
 /**
- * Authenticated Clara backend: intent dispatch (Hermes). Often returns 501 until the gateway is wired.
+ * Authenticated Clara backend: intent dispatch. Often returns 501 until the gateway is wired.
  */
 export async function postIntentRun(
 	body: Record<string, unknown>,

@@ -27,6 +27,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Audit CLI IP (founder strings)
+        run: node scripts/audit-cli-ip.mjs
+
       - name: Fetch base branch
         run: git fetch origin ${{ github.base_ref }}
 

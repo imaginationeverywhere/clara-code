@@ -1,5 +1,5 @@
 /**
- * Hermes `POST /api/v1/run` — optional `clara doctor` probe until dispatch ships.
+ * Clara backend `POST /api/v1/run` — optional `clara doctor` probe until dispatch ships.
  * Set `CLARA_FEATURE_INTENT_DISPATCH=1` or `true` to enable.
  */
 export function intentDispatchProbeEnabled(): boolean {

@@ -58,7 +58,7 @@ export function registerDoctorCommand(program: Command): void {
 					const { status, body } = await postIntentRun({ intent: "doctor_probe" });
 					if (status === 501 && isIntentGatewayPendingBody(body)) {
 						lines.push(
-							"info POST /api/v1/run: intent_gateway_pending (Hermes intent dispatch not enabled on this deployment)",
+							"info POST /api/v1/run: intent_gateway_pending (Clara intent dispatch not enabled on this deployment)",
 						);
 					} else if (status >= 200 && status < 300) {
 						lines.push(`ok  POST /api/v1/run returned ${String(status)}`);

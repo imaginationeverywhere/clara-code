@@ -33,9 +33,9 @@ describe("runCognitive", () => {
 		globalThis.fetch = originalFetch;
 	});
 
-	it("returns reply on 200 JSON", async () => {
+	it("returns reply on 200 JSON via unified POST /v1/run", async () => {
 		stubFetch(async (url) => {
-			assert.match(url, /\/v1\/think$/);
+			assert.match(url, /\/v1\/run$/);
 			return new Response(JSON.stringify({ reply: "ok" }), {
 				status: 200,
 				headers: { "Content-Type": "application/json" },
@@ -49,8 +49,29 @@ describe("runCognitive", () => {
 		assert.equal(r.json, false);
 	});
 
+	it("falls back to legacy /v1/think when /v1/run is unavailable", async () => {
+		stubFetch(async (url) => {
+			if (url.endsWith("/v1/run")) {
+				return new Response("", { status: 404 });
+			}
+			assert.match(url, /\/v1\/think$/);
+			return new Response(JSON.stringify({ reply: "legacy" }), {
+				status: 200,
+				headers: { "Content-Type": "application/json" },
+			});
+		});
+		const r = await runCognitive("think", { prompt: "x" }, false, {
+			token: "sk-clara-test",
+			gatewayBase: "https://gw.example",
+		});
+		assert.equal(r.reply, "legacy");
+	});
+
 	it("throws on 401 with login hint", async () => {
-		stubFetch(async () => new Response("{}", { status: 401 }));
+		stubFetch(async (url) => {
+			assert.match(url, /\/v1\/run$/);
+			return new Response("{}", { status: 401 });
+		});
 		await assert.rejects(
 			() =>
 				runCognitive("think", { prompt: "x" }, false, {
@@ -61,19 +82,22 @@ describe("runCognitive", () => {
 		);
 	});
 
-	it("throws on 403 tier_lock with upgrade CTA", async () => {
-		stubFetch(
-			async () =>
-				new Response(
-					JSON.stringify({
-						reason: "tier_lock",
-						required_tier: "Cook",
-						current_tier: "Taste",
-						upgrade_url: "https://claracode.ai/pricing",
-					}),
-					{ status: 403, headers: { "Content-Type": "application/json" } },
-				),
-		);
+	it("throws on 403 tier_lock with upgrade CTA (legacy after unified unavailable)", async () => {
+		stubFetch(async (url) => {
+			if (url.endsWith("/v1/run")) {
+				return new Response("", { status: 501 });
+			}
+			assert.match(url, /\/v1\/facts$/);
+			return new Response(
+				JSON.stringify({
+					reason: "tier_lock",
+					required_tier: "Cook",
+					current_tier: "Taste",
+					upgrade_url: "https://claracode.ai/pricing",
+				}),
+				{ status: 403, headers: { "Content-Type": "application/json" } },
+			);
+		});
 		await assert.rejects(
 			() =>
 				runCognitive("facts", { topic: "x" }, false, {

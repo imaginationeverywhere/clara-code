@@ -56,7 +56,7 @@ function noopCapture(): AudioCapture {
 }
 
 function realCapture(tool: "rec" | "sox"): AudioCapture {
-	// 16 kHz mono 16-bit PCM WAV on stdout — matches what Hermes expects.
+	// 16 kHz mono 16-bit PCM WAV on stdout — matches what the voice gateway expects.
 	const args =
 		tool === "rec"
 			? ["-q", "-r", "16000", "-c", "1", "-b", "16", "-t", "wav", "-"]

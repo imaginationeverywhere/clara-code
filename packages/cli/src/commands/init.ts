@@ -3,7 +3,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import type { Command } from "commander";
 import { validateAgentName } from "../lib/agent-name.js";
-import { postAgentInit } from "../lib/agents-api.js";
+import { postAgentInitWithUnifiedFirst } from "../lib/agents-api.js";
 import { pickBearerToken, readClaraCredentials } from "../lib/credentials-store.js";
 import { writeLastClaraError } from "../lib/last-error.js";
 
@@ -15,7 +15,8 @@ export function registerInitCommand(program: Command): void {
 		.description("Create a new agent repository from the platform template and clone it here")
 		.argument("<name>", "Agent name in kebab-case (e.g. my-first-agent)")
 		.option("--backend <url>", "Clara API base URL (overrides CLARA_BACKEND_URL and config)")
-		.action(async (name: string, opts: { backend?: string }) => {
+		.option("--gateway <url>", "Clara gateway base for unified POST /v1/run (overrides CLARA_GATEWAY_URL / config)")
+		.action(async (name: string, opts: { backend?: string; gateway?: string }) => {
 			const c = await readClaraCredentials();
 			if (!c || pickBearerToken(c).length === 0) {
 				console.error("Run `clara login` first.");
@@ -38,7 +39,9 @@ export function registerInitCommand(program: Command): void {
 			}
 
 			try {
-				const { cloneUrl, repoUrl } = await postAgentInit(name.trim(), opts.backend);
+				const { cloneUrl, repoUrl } = await postAgentInitWithUnifiedFirst(name.trim(), opts.backend, {
+					gatewayBase: opts.gateway,
+				});
 				await new Promise<void>((resolve, reject) => {
 					const child = spawn("git", ["clone", cloneUrl, dir], { stdio: "inherit" });
 					child.on("error", reject);

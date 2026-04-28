@@ -24,7 +24,7 @@ function normalizeGatewayUrlInput(raw: string | undefined): string | undefined {
 }
 
 /**
- * Gateway URL: `CLARA_GATEWAY_URL` → `~/.clara/config.json` `gatewayUrl` → public default (Hermes).
+ * Gateway URL: `CLARA_GATEWAY_URL` → `~/.clara/config.json` `gatewayUrl` → public default.
  * Aligns with `DEFAULT_GATEWAY_URL` in `gateway.ts` (not the legacy TUI-only `/api` default).
  */
 export function resolveClaraGatewayUrl(override?: string): { value: string; source: ConfigValueSource } {

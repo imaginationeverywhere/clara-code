@@ -4,6 +4,14 @@
 
 ### Changed
 
+- **`clara init`** — **`postAgentInitWithUnifiedFirst`** (`lib/agents-api.ts`): tries **`POST ${gateway}/v1/run`** with **`intent: new`**, **`params: { heru_name }`**; uses the response when it includes **`cloneUrl`**/**`repoUrl`** (camelCase or snake_case); otherwise **`POST /api/agents/init`** as before. Gateway unreachable (**NETWORK_FAILURE_MESSAGE**) falls back to the backend API.
+
+- **`clara deploy`** — **`runAgentDeployUnifiedFirst`** (`lib/agent-deploy.ts`): tries **`POST /v1/run`** with **`intent: deploy`**, **`params: { agent_name }`**; on unavailable or gateway network failure, **`POST /api/agents/:name/deploy`**. New **`--gateway`** for gateway base (same resolver chain as **`CLARA_GATEWAY_URL`** / config).
+
+- **Cognitive CLI verbs** (`think`, `analyze`, etc.) — try **`POST /v1/run`** on the Clara gateway first (`intent`, `surface: cli`, `params`, `context`); if unified dispatch is unavailable (**404** / **501** / `intent_gateway_pending`), fall back to legacy **`POST /v1/<verb>`**. Implementation: `lib/intent-dispatch.ts`; doctor/copy no longer references “Hermes” for user-facing strings.
+
+- **Removed stub commands** — **`clara hello`** and **`clara ask`** (were non-functional). Use **`clara greet`** (voice greeting) and **`clara chat`** / **`clara tui`** or cognitive verbs instead.
+
 - **Package version** — **`0.2.1` → `0.2.2`** — doctor tier status, optional intent probe (`CLARA_FEATURE_INTENT_DISPATCH`), gateway URL normalization, `last-error.json` read/write with `clara init`; see **Added** / **Fixed** below.
 
 ### Fixed
@@ -16,9 +24,11 @@
 
 ### Added
 
+- **Repo script `audit:cli-ip`** — `scripts/audit-cli-ip.mjs` (+ `scripts/audit-cli-ip.sh`) scans `packages/cli/src` (and `dist/index.js` when built) for forbidden founder brain host / marker strings (aligned with `verify-customer-brain-ship.mjs`). **CI:** `.github/workflows/ci.yml` (**check** job) and **`thin-client-gate.yml`** run it so **`main`** and **`develop`** PRs that touch client paths stay covered.
+
 - **`last-error.json`** (`lib/last-error.ts`, `paths.ts`) — **`clara doctor`** surfaces **`~/.clara/last-error.json`**; **`clara init`** writes it on failure (prompt **11** partial).
 - **`fetchTierStatus`** (`lib/tier-status.ts`) — `GET /api/v1/tier-status` on the resolved backend with Bearer auth; **`clara doctor`** prints tier and billing cycle end when credentials exist.
-- **`postIntentRun`** (`lib/intent-run.ts`) — `POST /api/v1/run` with Bearer JSON body; gated for **`clara doctor`** by **`CLARA_FEATURE_INTENT_DISPATCH`** (`lib/feature-flags.ts`). When enabled, doctor reports **`intent_gateway_pending`** (501) until Hermes dispatch is live.
+- **`postIntentRun`** (`lib/intent-run.ts`) — `POST /api/v1/run` with Bearer JSON body; gated for **`clara doctor`** by **`CLARA_FEATURE_INTENT_DISPATCH`** (`lib/feature-flags.ts`). When enabled, doctor reports **`intent_gateway_pending`** (501) until backend intent dispatch is live.
 
 - **`clara config` (prompt 11)** — `get` / `set` / `list` / `unset` for `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, and `apiKey` (keyring only; inference keys `model` / `system_prompt` / `temperature` / `top_p` rejected with “Server controls inference parameters.”). `lib/config-resolved.ts` centralizes gateway default (`https://api.claracode.ai/hermes`); `clara tui` uses the same resolver (replaces the old `/api` default). `apiKey` is never written to `~/.clara/config.json`.
 - **Shared HTTP error mapping (prompts 15/17/18)** — `lib/tier-lock.ts`, `lib/minutes-exhausted.ts`, `lib/http-errors.ts`; `claraGateway` maps 4xx/5xx and network errors to plain-English copy. IDE extension copies under `packages/ide-extension/src/` (same contracts; not yet wired into every command).

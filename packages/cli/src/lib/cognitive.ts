@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { resolveClaraGatewayUrl } from "./config-resolved.js";
 import { pickBearerToken, readClaraCredentials } from "./credentials-store.js";
 import { mapHttpError, NETWORK_FAILURE_MESSAGE } from "./http-errors.js";
+import { tryRunIntentUnified } from "./intent-dispatch.js";
 
 /**
  * Read `@path` or inline text.
@@ -28,9 +29,9 @@ export type RunCognitiveOverrides = {
 };
 
 /**
- * POST to `${gateway}/v1/<verb>` with JSON body. Uses bearer from keyring.
+ * Legacy: POST `${gateway}/v1/<verb>` with JSON body (`surface: "cli"` merged in).
  */
-export async function runCognitive(
+async function runCognitiveLegacy(
 	verb: string,
 	body: Record<string, unknown>,
 	jsonMode: boolean,
@@ -71,7 +72,6 @@ export async function runCognitive(
 	const ct = response.headers.get("content-type") ?? "";
 
 	if (ct.includes("text/event-stream") && text.length > 0) {
-		// Best-effort: show last non-empty data line
 		const lines = text.split(/\r?\n/);
 		let last = "";
 		for (const line of lines) {
@@ -107,4 +107,20 @@ export async function runCognitive(
 	}
 	const reply = String(raw);
 	return { reply, raw, json: jsonMode };
+}
+
+/**
+ * Tries **`POST /v1/run`** (unified intent dispatch), then falls back to **`POST /v1/&lt;verb&gt;`** when the gateway does not implement unified dispatch yet.
+ */
+export async function runCognitive(
+	verb: string,
+	body: Record<string, unknown>,
+	jsonMode: boolean,
+	overrides?: RunCognitiveOverrides,
+): Promise<CognitiveRunResult> {
+	const unified = await tryRunIntentUnified(verb, body, jsonMode, overrides);
+	if (unified !== null) {
+		return { reply: unified.reply, raw: unified.raw, json: jsonMode };
+	}
+	return runCognitiveLegacy(verb, body, jsonMode, overrides);
 }

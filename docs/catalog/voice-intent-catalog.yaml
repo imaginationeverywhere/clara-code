@@ -2,7 +2,7 @@
 # catalog_version bumps when wire shapes change materially.
 # See docs/catalog/README.md
 
-catalog_version: 2
+catalog_version: 3
 updated: "2026-04-27"
 
 intents:
@@ -238,6 +238,30 @@ intents:
       - "Clara, sign me in"
       - "Log in"
       - "Connect my account"
+
+  - id: greet
+    typed: "clara greet"
+    tier: taste
+    phrasings:
+      - "Clara, play the greeting"
+      - "Say hello with voice"
+      - "Play the canonical greeting"
+
+  - id: chat
+    typed: "clara chat"
+    tier: taste
+    phrasings:
+      - "Clara, open chat"
+      - "Start the streaming chat"
+      - "Open the terminal chat"
+
+  - id: config-agent
+    typed: "clara config-agent"
+    tier: cook
+    phrasings:
+      - "Clara, configure an agent"
+      - "Set up a new harness agent"
+      - "Create an agent from a template"
 
   - id: the-brain
     typed: "clara the-brain"

@@ -4,7 +4,9 @@ Published on npm as **`clara`**: voice greeting and **POST /voice/converse** loo
 
 **Env (voice default):** `CLARA_VOICE_URL` (quikvoice base), optional `CLARA_VOICE_API_KEY` (Bearer).
 
-**Feature flags:** `CLARA_FEATURE_INTENT_DISPATCH=1` (or `true`) — when set, **`clara doctor`** also probes **`POST /api/v1/run`** (Hermes intent dispatch); until that ships, expect **`intent_gateway_pending`** (501).
+**Feature flags:** `CLARA_FEATURE_INTENT_DISPATCH=1` (or `true`) — when set, **`clara doctor`** also probes **`POST /api/v1/run`** (backend intent dispatch); until that ships, expect **`intent_gateway_pending`** (501).
+
+**Gateway cognitive verbs** try **`POST /v1/run`** first (unified intent shape), then fall back to legacy **`POST /v1/<verb>`** if the gateway does not implement unified dispatch yet.
 
 ## Usage
 
@@ -37,13 +39,15 @@ After installation, the `clara` binary is on your `PATH`.
 | `clara --version` | Print the CLI version |
 | `clara login` | Browser sign-in; store session + API key in the OS keyring (see **Auth** above) |
 | `clara doctor` | Check keyring, credentials, backend `/health`, and tier status (`/api/v1/tier-status`) when logged in; optional **`POST /api/v1/run`** probe when `CLARA_FEATURE_INTENT_DISPATCH=1` |
-| `clara hello` | Play Clara's voice greeting from the API (stub) |
-| `clara ask "<question>"` | Send a question to the Clara API and print the response (stub) |
+| `clara greet` | Request Clara's voice greeting from the API and play the audio |
 | `clara config get <key>` | Print resolved `gatewayUrl`, `brainUrl`, `backendUrl`, `userId`, or `apiKey` (keyring) |
 | `clara config set <key> <value>` | Set a allowed key: URLs / `userId` in `~/.clara/config.json`; `apiKey` in the **OS keyring** (never on disk) |
 | `clara config list` | Show each key, resolved value, and source (env / config / default / keyring) |
 | `clara config unset <key>` | Remove a file-stored override or clear `apiKey` in the keyring (session token kept) |
-| `clara init <name>` | Provisions a per-agent GitHub repo via `POST /api/agents/init`, then `git clone` into `./<name>/` (Business/Enterprise tier; requires API token). Failures write **`~/.clara/last-error.json`** for **`clara doctor`**. |
+| `clara config-agent` | Interactive harness agent setup from Clara templates (`configure-agent` alias) |
+| `clara init <name>` | Create a per-agent GitHub repo: tries unified **`POST /v1/run`** (`intent: new`) first when the gateway returns **`cloneUrl`** / **`repoUrl`**, else **`POST /api/agents/init`** + **`git clone`** into `./<name>/` (Business/Enterprise tier). Options: **`--backend`**, **`--gateway`**. Failures write **`~/.clara/last-error.json`** for **`clara doctor`**. |
+| `clara deploy` | Trigger deploy: tries **`POST /v1/run`** (`intent: deploy`) first, else **`POST /api/agents/:name/deploy`** on the backend. Options: **`--backend`**, **`--gateway`** (gateway base for unified dispatch), **`--name`**. |
+| `clara chat` | Same streaming Ink experience as **`clara tui`** (preferred alias) |
 | `clara tui` | Full-screen Ink TUI: gateway chat, VRD Surface C copy, `Ctrl+Space` voice, `--voice` placeholder |
 
 ## Quickstart
@@ -51,9 +55,8 @@ After installation, the `clara` binary is on your `PATH`.
 ```bash
 clara --version
 clara config set apiKey YOUR_API_KEY
-clara ask "What is Clara Code?"
-clara hello
-clara tui --gateway https://info-24346--hermes-gateway.modal.run
+clara greet
+clara tui --gateway https://your-gateway.example.com
 ```
 
 ### TUI

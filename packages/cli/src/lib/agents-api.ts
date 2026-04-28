@@ -1,6 +1,7 @@
 import { resolveBackendUrl } from "./backend.js";
 import { type ClaraCredentials, pickBearerToken, readClaraCredentials } from "./credentials-store.js";
-import { claraHttpErrorMessage } from "./http-errors.js";
+import { claraHttpErrorMessage, NETWORK_FAILURE_MESSAGE } from "./http-errors.js";
+import { tryRunIntentUnified } from "./intent-dispatch.js";
 
 export type TemplateDto = {
 	id: string;
@@ -62,6 +63,52 @@ export type AgentInitResult = {
 	repoUrl: string;
 	repository?: string;
 };
+
+/** When unified **`POST /v1/run`** returns JSON with clone/repo URLs (camelCase or snake_case). */
+export function extractAgentInitFromUnifiedRaw(raw: unknown): AgentInitResult | null {
+	if (raw === null || typeof raw !== "object" || Array.isArray(raw)) {
+		return null;
+	}
+	const o = raw as Record<string, unknown>;
+	const cloneUrl =
+		typeof o.cloneUrl === "string" ? o.cloneUrl : typeof o.clone_url === "string" ? o.clone_url : undefined;
+	const repoUrl = typeof o.repoUrl === "string" ? o.repoUrl : typeof o.repo_url === "string" ? o.repo_url : undefined;
+	if (!cloneUrl || !repoUrl) {
+		return null;
+	}
+	const repository =
+		typeof o.repository === "string"
+			? o.repository
+			: typeof o.repository_full_name === "string"
+				? o.repository_full_name
+				: undefined;
+	return { cloneUrl, repoUrl, ...(repository ? { repository } : {}) };
+}
+
+/**
+ * Try **`POST ${gateway}/v1/run`** with intent **`new`** and `{ heru_name }`.
+ * If the gateway returns structured **`cloneUrl`** / **`repoUrl`**, use that; otherwise **`POST /api/agents/init`** on the backend (same as **`postAgentInit`**).
+ */
+export async function postAgentInitWithUnifiedFirst(
+	name: string,
+	backendFlag?: string,
+	overrides?: { token?: string; fetch?: typeof fetch; gatewayBase?: string },
+): Promise<AgentInitResult> {
+	try {
+		const u = await tryRunIntentUnified("new", { heru_name: name }, false, overrides);
+		if (u !== null) {
+			const got = extractAgentInitFromUnifiedRaw(u.raw);
+			if (got) {
+				return got;
+			}
+		}
+	} catch (e) {
+		if (!(e instanceof Error && e.message === NETWORK_FAILURE_MESSAGE)) {
+			throw e;
+		}
+	}
+	return postAgentInit(name, backendFlag, overrides);
+}
 
 export async function postAgentInit(
 	name: string,

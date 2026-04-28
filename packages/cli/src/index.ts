@@ -3,7 +3,6 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { Command } from "commander";
-import { registerAskCommand } from "./commands/ask.js";
 import { registerAuthCommand } from "./commands/auth.js";
 import { registerCognitiveCommands } from "./commands/cognitive.js";
 import { registerConfigCommand } from "./commands/config.js";
@@ -11,7 +10,6 @@ import { registerConfigAgentCommand } from "./commands/config-agent.js";
 import { registerDeployCommand } from "./commands/deploy.js";
 import { registerDoctorCommand } from "./commands/doctor.js";
 import { registerGreetCommand } from "./commands/greet.js";
-import { registerHelloCommand } from "./commands/hello.js";
 import { registerInitCommand } from "./commands/init.js";
 import { registerLoginCommand } from "./commands/login.js";
 import { registerTheBrainCustomerCommand } from "./commands/the-brain.js";
@@ -28,8 +26,6 @@ program
 	.description("Clara Code — conversational AI voice coding CLI")
 	.version(pkg.version, "-V, --version", "print version");
 
-registerHelloCommand(program);
-registerAskCommand(program);
 registerConfigCommand(program);
 registerConfigAgentCommand(program);
 registerCognitiveCommands(program);
