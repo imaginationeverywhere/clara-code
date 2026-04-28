@@ -22,6 +22,8 @@
     "check": "biome check --write --error-on-warnings . && tsgo --noEmit && pnpm -C backend run type-check && npm run check:browser-smoke && cd frontend && npm run check",
     "check:browser-smoke": "node scripts/check-browser-smoke.mjs",
     "validate": "biome check --write --error-on-warnings . && tsgo --noEmit && pnpm -r --if-present run type-check && pnpm -r --if-present run check && npm run test",
+    "typecheck:all": "bash scripts/typecheck-all.sh",
+    "db:migrate:all": "bash backend/scripts/run-migrations-all-environments.sh",
     "router:compose": "npx --yes @apollo/rover supergraph compose --config apollo-router/supergraph.yaml > apollo-router/supergraph-schema.graphql",
     "router:start": "cd apollo-router && APOLLO_ROUTER_PORT=${APOLLO_ROUTER_PORT:-4000} ./router --config router.yaml",
     "profile:tui": "node scripts/profile-coding-agent-node.mjs --mode tui",
