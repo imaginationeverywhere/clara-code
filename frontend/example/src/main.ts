@@ -1,10 +1,12 @@
 import "@mariozechner/mini-lit/dist/ThemeToggle.js";
-import { Agent, type AgentMessage } from "@mariozechner/pi-agent-core";
+import { Agent, type AgentMessage, type AgentTool } from "@mariozechner/pi-agent-core";
 import { getModel } from "@mariozechner/pi-ai";
 import {
+	type AgentInterface,
 	type AgentState,
 	ApiKeyPromptDialog,
 	AppStorage,
+	type ArtifactsPanel,
 	ChatPanel,
 	CustomProvidersStore,
 	createJavaScriptReplTool,
@@ -13,6 +15,7 @@ import {
 	ProviderKeysStore,
 	ProvidersModelsTab,
 	ProxyTab,
+	type SandboxRuntimeProvider,
 	SessionListDialog,
 	SessionsStore,
 	SettingsDialog,
@@ -71,7 +74,9 @@ let agentUnsubscribe: (() => void) | undefined;
 
 const generateTitle = (messages: AgentMessage[]): string => {
 	const firstUserMsg = messages.find((m) => m.role === "user" || m.role === "user-with-attachments");
-	if (!firstUserMsg || (firstUserMsg.role !== "user" && firstUserMsg.role !== "user-with-attachments")) return "";
+	if (!firstUserMsg) {
+		return "";
+	}
 
 	let text = "";
 	const content = firstUserMsg.content;
@@ -206,11 +211,17 @@ Feel free to use these tools when needed to provide accurate and helpful respons
 		onApiKeyRequired: async (provider: string) => {
 			return await ApiKeyPromptDialog.prompt(provider);
 		},
-		toolsFactory: (_agent, _agentInterface, _artifactsPanel, runtimeProvidersFactory) => {
+		toolsFactory: (
+			_agent: Agent,
+			_agentInterface: AgentInterface,
+			_artifactsPanel: ArtifactsPanel,
+			runtimeProvidersFactory: () => SandboxRuntimeProvider[],
+		): AgentTool[] => {
 			// Create javascript_repl tool with access to attachments + artifacts
 			const replTool = createJavaScriptReplTool();
 			replTool.runtimeProvidersFactory = runtimeProvidersFactory;
-			return [replTool];
+			// Widen to AgentTool[] — repl tool is typed with a concrete Zod object schema
+			return [replTool] as AgentTool[];
 		},
 	});
 };
@@ -264,10 +275,10 @@ const renderApp = () => {
 						children: icon(History, "sm"),
 						onClick: () => {
 							SessionListDialog.open(
-								async (sessionId) => {
+								async (sessionId: string) => {
 									await loadSession(sessionId);
 								},
-								(deletedSessionId) => {
+								(deletedSessionId: string) => {
 									// Only reload if the current session was deleted
 									if (deletedSessionId === currentSessionId) {
 										newSession();

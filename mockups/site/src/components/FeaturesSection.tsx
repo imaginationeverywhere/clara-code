@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mic, Sparkles, Code, Volume2, Keyboard } from 'lucide-react';
 export function FeaturesSection() {
   // Static heights for the waveform bars

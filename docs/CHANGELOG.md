@@ -4,6 +4,8 @@
 
 ### Changed (cross-reference)
 
+- **Developer tooling — `pnpm typecheck:all`** — Root **`tsconfig.json`** sets **`target`**/**`lib`** to **ES2024** (Unicode regex `v` flag in **`packages/tui`**); **`frontend/`** scopes default **`tsc`** to the App Router; **`packages/cli`** `clara init` uses **`spawn`** for **`git clone`**. Implementation: root **`CHANGELOG.md`**, **`packages/ai/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**.
+
 - **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` moved to `prompts/2026/April/27/3-completed/`; directive text is ratified; acceptance criteria remain the program implementation checklist (per architecture `CLARA_WORKBENCH_AND_TALENT_AGENCY.md` in the boilerplate repo). Root `CHANGELOG.md` **\[Unreleased\] - 2026-04-27**.
 
 ### Added (cross-reference)

@@ -1,4 +1,3 @@
-import React from 'react';
 type ClaraLogoProps = {
   size?: number;
   className?: string;

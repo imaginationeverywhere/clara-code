@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ArrowLeft } from 'lucide-react';
 export function TerminalDemo({ onBack }: {onBack: () => void;}) {
   const [phase, setPhase] = useState(0);

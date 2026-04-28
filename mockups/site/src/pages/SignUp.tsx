@@ -1,4 +1,4 @@
-import React, { useEffect, useState, memo } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Github, Mic, Check } from 'lucide-react';
 import { ClaraLogo } from '../components/ClaraLogo';

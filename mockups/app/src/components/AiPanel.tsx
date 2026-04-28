@@ -1,4 +1,3 @@
-import React from 'react';
 import { Mic, Check, GitCompare, Maximize2 } from 'lucide-react';
 export function AiPanel() {
   return (

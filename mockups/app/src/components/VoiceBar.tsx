@@ -1,9 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Mic, Keyboard, ArrowRight } from 'lucide-react';
 export function VoiceBar() {
   const [isVoiceMode, setIsVoiceMode] = useState(true);
   const [isListening, setIsListening] = useState(false);
-  const [transcript, setTranscript] = useState(
+  const [transcript] = useState(
     'Create a new React component for the header...'
   );
   const [inputText, setInputText] = useState('');

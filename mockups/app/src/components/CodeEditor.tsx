@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 const ACTIVE_LINE = 5;
 const DIFF_LINES = [10, 11, 12, 13, 14];

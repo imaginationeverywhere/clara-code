@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Changed
 
+- **Version bump** — monorepo **`0.6.2` → `0.6.3`** (`pnpm typecheck:all` green across 18 tsconfig roots: root **`target`/`lib` ES2024**, **`frontend/`** default TS include + example paths and deps, **`packages/ai`** z.ai test ids + regenerated **`models.generated.ts`**, **`packages/cli`** `clara init` clone via **`spawn`**, Talent **`workspace:*`** **`@claracode/marketplace-sdk`**, **`mobile`** `npm run typecheck`, mockups JSX/import fixes). See **`packages/ai/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, **`frontend/CHANGELOG.md`**.
+
 - **Prompt 03 (archived)** — `03-clara-workbench-and-talent-agency-build-directive.md` (Clara Workbench + Talent Agency build directive) from `1-not-started/` to `3-completed/`; archival front matter and sign-off; execution streams and acceptance criteria tracked in program planning. See **`docs/CHANGELOG.md`**.
 
 - **Version bump** — monorepo **`0.6.1` → `0.6.2`** (merge of `fix/graphify-rebuild-no-op-when-missing` into `develop` with `clara login` / `clara doctor` + keytar; see **`clara` `0.2.0` → `0.2.1`** in **`packages/cli/CHANGELOG.md`**).

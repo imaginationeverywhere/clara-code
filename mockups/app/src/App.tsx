@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { GitBranch, Settings, File, Play } from 'lucide-react';
 import { VoiceBar } from './components/VoiceBar';
 import { FileTree } from './components/FileTree';

@@ -9,7 +9,8 @@
 			"@mariozechner/pi-agent-core": ["../../packages/agent/dist/index.d.ts"],
 			"@mariozechner/pi-ai": ["../../packages/ai/dist/index.d.ts"],
 			"@mariozechner/pi-tui": ["../../packages/tui/dist/index.d.ts"],
-			"@mariozechner/pi-web-ui": ["../dist/index.d.ts"]
+			"@mariozechner/pi-web-ui": ["../src/index.ts"],
+			"@mariozechner/pi-web-ui/*": ["../src/*"]
 		},
 		"strict": true,
 		"skipLibCheck": true,

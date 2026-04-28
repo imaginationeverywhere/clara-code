@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Terminal,
   Monitor,
@@ -6,8 +6,7 @@ import {
   CheckCircle,
   Download,
   ExternalLink,
-  Github,
-  Apple } from
+  Github } from
 'lucide-react';
 type PackageManager = 'npm' | 'pnpm' | 'brew';
 const commands: Record<

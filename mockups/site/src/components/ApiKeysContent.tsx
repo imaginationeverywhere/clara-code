@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Info, Copy, X, Check, Key, AlertTriangle } from 'lucide-react';
+import { useState } from 'react';
+import { Info, Copy, X, Check, AlertTriangle } from 'lucide-react';
 type ModalState = 'none' | 'create' | 'reveal';
 export function ApiKeysContent() {
   const [modalState, setModalState] = useState<ModalState>('none');

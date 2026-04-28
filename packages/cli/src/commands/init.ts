@@ -1,9 +1,5 @@
-import { execFile as execFileCb } from "node:child_process";
+import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
-import { promisify } from "node:util";
-
-const execFile = promisify(execFileCb);
-
 import { join } from "node:path";
 import type { Command } from "commander";
 import { validateAgentName } from "../lib/agent-name.js";
@@ -42,7 +38,17 @@ export function registerInitCommand(program: Command): void {
 
 			try {
 				const { cloneUrl, repoUrl } = await postAgentInit(name.trim(), opts.backend);
-				await execFile("git", ["clone", cloneUrl, dir], { stdio: "inherit" });
+				await new Promise<void>((resolve, reject) => {
+					const child = spawn("git", ["clone", cloneUrl, dir], { stdio: "inherit" });
+					child.on("error", reject);
+					child.on("close", (code) => {
+						if (code === 0) {
+							resolve();
+						} else {
+							reject(new Error(`git clone exited with code ${code}`));
+						}
+					});
+				});
 				console.log(`Created agent ${name.trim()} at ./${name.trim()} — see ${repoUrl}`);
 			} catch (e) {
 				if (e instanceof Error) {

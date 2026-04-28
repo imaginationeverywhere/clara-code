@@ -4,6 +4,7 @@
 
 ### Fixed
 
+- **`clara init` git clone** — Use `child_process.spawn` with a `Promise` wrapper and `stdio: "inherit"` instead of `node:child_process/promises` `execFile`, so `tsc` resolves types under the repo’s Node typings (same runtime behavior).
 - **Canonical greeting TTS** — `POST /api/voice/tts` includes `Authorization: Bearer` from the keyring; when no token, user sees a sign-in hint instead of an unauthenticated request. TTS error responses use shared `claraHttpErrorMessage` copy (no raw `HTTP <status>` in the message).
 
 ### Added

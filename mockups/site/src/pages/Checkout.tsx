@@ -1,13 +1,11 @@
-import React, { useEffect, useState, Fragment, memo } from 'react';
+import { useEffect, useState, Fragment } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ClaraLogo } from '../components/ClaraLogo';
 import {
-  Users,
   Check,
   Lock,
   Shield,
   CreditCard,
-  Loader2,
   Calendar,
   ChevronDown,
   AlertTriangle,
@@ -408,7 +406,7 @@ export function Checkout() {
 
               <>
                   <Lock className="w-4 h-4" />
-                  Subscribe to {planDetails.name}
+                  Subscribe to {plan.name}
                 </>
               }
             </button>
@@ -456,7 +454,6 @@ const miniWaveHeights = [
 16, 12, 8, 4];
 
 export function CheckoutSuccess() {
-  const navigate = useNavigate();
   const params = new URLSearchParams(window.location.search);
   const planId = params.get('plan') || 'pro';
   const plan = plans[planId] || plans.pro;

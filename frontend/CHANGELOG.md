@@ -2,6 +2,10 @@
 
 ## [Unreleased] - 2026-04-25
 
+### Fixed
+
+- **Typecheck (`tsc` at repo root)** — Default `tsconfig.json` `include` is limited to `src/app/**` and `src/middleware.ts` so `npx tsc --noEmit` in `frontend/` matches the Next app graph (avoids typechecking legacy `src/` files that are not in the App Router build). `frontend/example` maps `@mariozechner/pi-web-ui` to `../src` and adds explicit types / `as AgentTool[]` where needed; **devDependencies** `docx-preview`, `jszip`, `pdfjs-dist`, `xlsx`, `@lmstudio/sdk`, and `ollama` support resolving optional document/model-discovery imports in that source path.
+
 ### Added
 
 - **Billing API route (BFF)** — `src/app/api/billing/[[...path]]/route.ts` proxies authenticated `GET`/`POST` to `NEXT_PUBLIC_BACKEND_URL/api/billing/*` (checkout, cancel, upgrade, downgrade, refund) with the Clerk session token.

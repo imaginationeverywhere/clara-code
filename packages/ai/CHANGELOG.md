@@ -8,6 +8,7 @@
 
 ### Fixed
 
+- **z.ai tests** — Integration tests now call `getModel("zai", …)` with ids present on the current **`MODELS.zai`** slice (`glm-4.5-air`, `glm-4.7`, `glm-5-turbo`, `glm-5.1`), replacing removed literals (`glm-4.5-flash`, `glm-5`, etc.) so root `tsc` passes after catalog regeneration.
 - OpenRouter tests: cast `meta-llama/llama-4-maverick` to `keyof typeof MODELS.openrouter` when calling `getModel` — TypeScript’s inferred second-parameter union for large catalogs omits some string literal keys (`TS2345` in `tsgo`).
 - Declared `@smithy/node-http-handler` as a direct dependency so TypeScript can resolve the Bedrock proxy and HTTP/1.1 request handler imports under strict pnpm layouts.
 - Bumped default Antigravity User-Agent version to `1.21.9` ([#2901](https://github.com/badlogic/pi-mono/pull/2901) by [@aadishv](https://github.com/aadishv))

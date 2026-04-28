@@ -87,6 +87,10 @@ Billing and tier enforcement are documented in `docs/backend-rest-api.md` (`/api
 
 See `CONTRIBUTING.md` for the full thin-client discipline rules that govern what may and may not appear in this repository's client-side code.
 
+### TypeScript checks
+
+From the repository root, run **`pnpm typecheck:all`** to execute `tsc --noEmit` in every directory that contains a `tsconfig.json` (see **`scripts/typecheck-all.sh`**). After pulling, run **`pnpm install`** so workspace links and optional package locks resolve.
+
 ---
 
 ## About the Author
