@@ -21,6 +21,7 @@
     "dev:tsc": "concurrently --names \"ai,frontend\" --prefix-colors \"cyan,green\" \"cd packages/ai && npm run dev:tsc\" \"cd frontend && npm run dev:tsc\"",
     "check": "biome check --write --error-on-warnings . && tsgo --noEmit && pnpm -C backend run type-check && npm run check:browser-smoke && cd frontend && npm run check",
     "check:browser-smoke": "node scripts/check-browser-smoke.mjs",
+    "audit:cli-intent-catalog": "node scripts/audit-cli-intent-catalog.mjs",
     "validate": "biome check --write --error-on-warnings . && tsgo --noEmit && pnpm -r --if-present run type-check && pnpm -r --if-present run check",
     "typecheck:all": "bash scripts/typecheck-all.sh",
     "db:migrate:all": "bash backend/scripts/run-migrations-all-environments.sh",

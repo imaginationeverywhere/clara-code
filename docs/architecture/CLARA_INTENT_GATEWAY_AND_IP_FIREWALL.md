@@ -134,6 +134,7 @@ Use this before declaring “intent dispatch live” for customers.
 
 ## 7. References
 
+- `docs/catalog/voice-intent-catalog.yaml` — voice + typed intent IDs, phrasings for gateway classifier (**prompt 09**)
 - `docs/backend-rest-api.md` — **`GET /api/v1/tier-status`**, **`POST /api/v1/run`**
 - `packages/cli/src/lib/http-errors.ts` — user-facing error mapping
 - `packages/cli/src/lib/gateway.ts` — default gateway base (`CLARA_GATEWAY_URL`)

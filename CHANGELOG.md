@@ -6,6 +6,8 @@ All notable changes to this monorepo are recorded here. Package-specific details
 
 ### Added
 
+- **Voice intent catalog (prompt 09)** — **`docs/catalog/voice-intent-catalog.yaml`** (machine-readable intents + phrasings for gateway sync); **`npm run audit:cli-intent-catalog`** guards against phrasing leaks into **`packages/cli/src`**. See **`docs/CHANGELOG.md`**, **`scripts/CHANGELOG.md`**. Prompt archived under **`prompts/2026/April/27/3-completed/`**; **`1-not-started/IMPLEMENTATION-ROADMAP.md`** now tracks **10–22**.
+
 - **Architecture — intent gateway + command IP firewall (prompt 08)** — **`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`** ratifies thin CLI/IDE client, **`POST /v1/run`** contract, gateway alignment checklist, backlog (`runIntent`, **`scripts/audit-cli-ip.sh`**). Prompt **`08`** archived under **`prompts/2026/April/27/3-completed/`**; **`1-not-started/IMPLEMENTATION-ROADMAP.md`** now covers **09–22**. See **`docs/CHANGELOG.md`**.
 
 ### Changed

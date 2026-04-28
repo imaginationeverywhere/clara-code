@@ -317,3 +317,15 @@ phrasings:
 - CLI binary contains ZERO references to phrasings (audit: `grep -E "(start a new|hire|brainstorm)" packages/cli/dist/index.js` returns nothing)
 - Confidence threshold tuned per intent — low-confidence routes ask for confirmation, never silently mis-route a destructive intent (e.g., never auto-route an ambiguous phrase to `deploy.backend`)
 - Every new command added in 10–22 ALSO adds its phrasings to this catalog before merge
+
+---
+
+## Archived (catalog landed in-repo)
+
+**Canonical YAML:** [`docs/catalog/voice-intent-catalog.yaml`](../../../../../docs/catalog/voice-intent-catalog.yaml) — structured intents A–G; **`typed`** for `new` reflects shipped **`clara init`** (see [`docs/catalog/README.md`](../../../../../docs/catalog/README.md)).
+
+**Audit:** [`scripts/audit-cli-intent-catalog.mjs`](../../../../../scripts/audit-cli-intent-catalog.mjs) — `npm run audit:cli-intent-catalog`.
+
+**Platform:** Gateway classifier deploy + confidence thresholds remain Hermes/clara-platform owned.
+
+**Moved:** `prompts/2026/April/27/3-completed/` (2026-04-27).

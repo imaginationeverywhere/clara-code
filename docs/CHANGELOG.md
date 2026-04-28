@@ -4,6 +4,8 @@
 
 ### Added (cross-reference)
 
+- **Voice intent catalog (prompt 09)** — **`docs/catalog/voice-intent-catalog.yaml`** (intents A–G, `typed` / `tier` / `params` / `phrasings`); **`docs/catalog/README.md`**; **`scripts/audit-cli-intent-catalog.mjs`** + root **`npm run audit:cli-intent-catalog`**. Gateway classifier sync still platform-owned. Prompt **`09`** → `prompts/2026/April/27/3-completed/`. Root **`CHANGELOG.md`**, **`scripts/CHANGELOG.md`**.
+
 - **Architecture — intent gateway + command IP firewall** — **`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`**: thin-client principle, **`POST /v1/run`** wire contract, gateway vs `clara-code` ownership, alignment checklist for Hermes/platform, engineering backlog (`runIntent`, `audit-cli-ip.sh`). Prompt **`08-clara-command-ip-firewall-architecture.md`** → `prompts/2026/April/27/3-completed/`; **`IMPLEMENTATION-ROADMAP.md`** retitled for **09–22**. Root **`CHANGELOG.md`**.
 
 - **`docs/backend-rest-api.md`** — Documents **`GET /api/v1/tier-status`** and **`POST /api/v1/run`** (intent stub); CLI doctor integration noted. Implementation: **`backend/CHANGELOG.md`**, **`packages/cli/CHANGELOG.md`**, root **`CHANGELOG.md`**.

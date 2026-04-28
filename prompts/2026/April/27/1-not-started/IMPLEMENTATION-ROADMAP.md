@@ -1,10 +1,14 @@
-# Clara prompt queue — implementation roadmap (09–22)
+# Clara prompt queue — implementation roadmap (10–22)
 
-**Phase A (prompts 01–02)** is **complete** (code-side). Source: `3-completed/01-*.md`, `02-*.md`.
+**Completed specs (reference):**
 
-**Phase B (prompt 08)** — **Architecture lock complete.** Canonical technical definition: **`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`**. Original prompt: **`3-completed/08-clara-command-ip-firewall-architecture.md`**. Platform follow-up for **02** (SSM rename, remove `HERMES_*` fallback) remains ops-owned.
+- **01–02** — `3-completed/01-*.md`, `02-*.md`
+- **08** — **`docs/architecture/CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`**
+- **09** — **`docs/catalog/voice-intent-catalog.yaml`** + **`scripts/audit-cli-intent-catalog.mjs`** (gateway classifier deploy still platform-owned)
 
-This file orders the prompts under `1-not-started/` by **dependency** and **required owning team**. Gateway implementation (**`/v1/run`**, intent registry) remains **Hermes / clara-platform**; **`clara-code`** ships thin clients + **`/api/v1/*`** stubs as documented.
+Platform follow-up for **02** (SSM rename, remove `HERMES_*` fallback) remains ops-owned.
+
+This file orders remaining prompts under `1-not-started/` by **dependency** and **team**. Gateway implementation (**`/v1/run`**, intent registry) remains **Hermes / clara-platform**.
 
 ## Status legend
 
@@ -14,13 +18,12 @@ This file orders the prompts under `1-not-started/` by **dependency** and **requ
 
 ---
 
-## Phase C — Voice + intents + doctor + bootstrap
+## Phase C — Doctor + bootstrap
 
 | Prompt | Title | Owner | Notes |
 |--------|--------|-------|--------|
-| **09** | clara-voice-intent-catalog | Product + Gateway | Server-side phrasing → intent map; pairs with **`CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`**. |
 | **11** | clara-doctor-real | Code | Scaffold + toolchain + probes + tier; partial: **`GET /api/v1/tier-status`**, optional **`POST /api/v1/run`** (feature flag), **`last-error.json`** replay. |
-| **10** | clara-new-heru-bootstrap | Code + Templates | New Heru repo scaffolding; may depend on gateway **`intent: new`**. |
+| **10** | clara-new-heru-bootstrap | Code + Templates | New Heru repo scaffolding; gateway **`intent: new`** ↔ **`clara init`** per **`voice-intent-catalog.yaml`**. |
 
 ---
 
@@ -45,14 +48,14 @@ This file orders the prompts under `1-not-started/` by **dependency** and **requ
 | **19** | clara-gear-eas-attestation | Code + Apple/EAS | Mobile/EAS pipeline. |
 | **20** | clara-gear-voice-clone | Code + Voice | Voice clone gear; overlaps backend voice routes. |
 | **21** | clara-daysha-end-to-end-smoke | QA | E2E smoke after C–E milestones. |
-| **22** | clara-existing-commands-firewall-retrofit | Code | Retrofit older commands to intent contract in **`CLARA_INTENT_GATEWAY_AND_IP_FIREWALL.md`**. |
+| **22** | clara-existing-commands-firewall-retrofit | Code | Retrofit older commands to intent contract; extend **`voice-intent-catalog.yaml`** when adding verbs. |
 
 ---
 
 ## Suggested sequencing
 
-1. **09** (intent catalog) then **22** (retrofit)  
-2. **11** (doctor) in parallel with **10** once gateway endpoints exist  
+1. **22** (retrofit toward **`/v1/run`**) when gateway dispatch is ready  
+2. **11** (doctor) in parallel with **10**  
 3. **12 → 13** then **14 → 15**  
 4. **16 → 17** → **18–20** → **21**
 
@@ -60,4 +63,4 @@ This file orders the prompts under `1-not-started/` by **dependency** and **requ
 
 ## Not done in a single PR
 
-Prompts **09–22** require **gateway (`/v1/run`, tier-status, intent templates)** and often **AWS / Clerk** access. Track each prompt as its own epic with acceptance criteria from the prompt file.
+Prompts **10–22** still require **gateway** behavior and often **AWS / Clerk** access beyond what **`clara-code`** ships.

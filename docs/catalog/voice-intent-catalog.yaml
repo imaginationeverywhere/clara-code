@@ -1,0 +1,248 @@
+# Clara voice intent catalog — source of truth for gateway classifier sync.
+# catalog_version bumps when wire shapes change materially.
+# See docs/catalog/README.md
+
+catalog_version: 2
+updated: "2026-04-27"
+
+intents:
+  # --- Section A — Heru bootstrap ---
+  - id: new
+    typed: "clara init <heru-name>"
+    tier: taste
+    params:
+      - name: heru_name
+        type: string
+        required: true
+        extract_pattern: "called <heru_name> | named <heru_name> | for <heru_name>"
+    phrasings:
+      - "Clara, start a new agent called <name>"
+      - "Make a new agent for <name>"
+      - "Create a Heru named <name>"
+      - "Spin up a new project called <name>"
+      - "I want to start building <name>"
+      - "Bootstrap a new agent for <name>"
+
+  - id: doctor
+    typed: "clara doctor"
+    tier: taste
+    phrasings:
+      - "Clara, run a doctor check"
+      - "Is everything healthy?"
+      - "Check if my setup is good"
+      - "Run diagnostics"
+      - "What's broken?"
+      - "Verify my install"
+
+  # --- Section B — Auth + frontend ---
+  - id: wire-auth
+    typed: "clara wire-auth --clerk"
+    tier: plus
+    params:
+      - name: provider
+        type: string
+        required: true
+        enum: ["clerk"]
+    phrasings:
+      - "Clara, wire up authentication"
+      - "Add Clerk to this project"
+      - "Set up sign-in"
+      - "Wire auth with Clerk"
+      - "Add login to my agent"
+      - "Connect Clerk auth"
+
+  - id: deploy.frontend
+    typed: "clara deploy frontend [--target cloudflare|amplify]"
+    tier: cook
+    params:
+      - name: target
+        type: string
+        enum: ["cloudflare", "amplify"]
+        default: "cloudflare"
+    phrasings:
+      - "Clara, deploy the frontend"
+      - "Ship the website"
+      - "Deploy to Cloudflare"
+      - "Deploy frontend to Amplify"
+      - "Push the site live"
+      - "Get the frontend running"
+
+  # --- Section C — Backend + brain ---
+  - id: deploy.backend
+    typed: "clara deploy backend"
+    tier: cook
+    phrasings:
+      - "Clara, deploy the backend"
+      - "Ship the server"
+      - "Deploy the API"
+      - "Push the backend live"
+      - "Get the backend running"
+
+  - id: provision-brain
+    typed: "clara provision-brain"
+    tier: cook
+    phrasings:
+      - "Clara, provision the brain"
+      - "Set up memory for this agent"
+      - "Stand up the brain"
+      - "Create the agent's memory"
+      - "Provision per-agent memory"
+
+  - id: verify-brain
+    typed: "clara verify-brain"
+    tier: taste
+    phrasings:
+      - "Clara, check the brain"
+      - "Test the brain"
+      - "Is the brain working?"
+      - "Run a brain query test"
+      - "Verify memory works"
+
+  # --- Section D — Talents ---
+  - id: attach-talent
+    typed: "clara attach-talent <talent-name>"
+    tier: plus
+    params:
+      - name: talent_name
+        type: string
+        required: true
+    phrasings:
+      - "Clara, attach the <name> talent"
+      - "Hire <name>"
+      - "Add <name> to my team"
+      - "Bring in <name>"
+      - "Install the <name> talent"
+
+  - id: talent.new
+    typed: "clara talent new <name>"
+    tier: cook
+    params:
+      - name: talent_name
+        type: string
+        required: true
+    phrasings:
+      - "Clara, create a new talent called <name>"
+      - "Author a talent named <name>"
+      - "I want to make a talent called <name>"
+      - "Start a new talent <name>"
+
+  # --- Section E — Gears ---
+  - id: gear.add
+    typed: "clara gear add <gear-name>"
+    tier: plus
+    params:
+      - name: gear_name
+        type: string
+        required: true
+        enum: ["email-receiver-cf", "eas-attestation", "voice-clone"]
+    phrasings:
+      - "Clara, add the <name> gear"
+      - "Install the <name> gear"
+      - "Equip <name>"
+      - "Add <name> to this project"
+      - "Hook up <name>"
+
+  # --- Section F — Cognitive verbs ---
+  - id: analyze
+    typed: "clara analyze <text|@file>"
+    tier: taste
+    phrasings:
+      - "Clara, analyze this"
+      - "Take a look at this"
+      - "What do you think of this"
+      - "Run analysis on <topic>"
+
+  - id: think
+    typed: "clara think <prompt>"
+    tier: taste
+    phrasings:
+      - "Clara, think about <topic>"
+      - "Reason through <topic>"
+      - "What's your take on <topic>"
+
+  - id: critically-think
+    typed: "clara critically-think <prompt>"
+    tier: taste
+    phrasings:
+      - "Clara, push back on this"
+      - "Critically think about <topic>"
+      - "Devil's advocate this"
+
+  - id: creative-thinking
+    typed: "clara creative-thinking <prompt>"
+    tier: taste
+    phrasings:
+      - "Clara, brainstorm <topic>"
+      - "Get creative with <topic>"
+      - "What are some ideas for <topic>"
+
+  - id: truth
+    typed: "clara truth <claim>"
+    tier: taste
+    phrasings:
+      - "Clara, give me the truth"
+      - "What's actually true about <claim>"
+      - "Be straight with me about <topic>"
+
+  - id: facts
+    typed: "clara facts <topic>"
+    tier: taste
+    phrasings:
+      - "Clara, just the facts"
+      - "What do we know about <topic>"
+      - "Pull facts on <topic>"
+
+  - id: save
+    typed: "clara save <key> <value>"
+    tier: taste
+    phrasings:
+      - "Clara, remember that <statement>"
+      - "Save this: <statement>"
+      - "Note that <fact>"
+
+  - id: remember
+    typed: "clara remember <key>"
+    tier: taste
+    phrasings:
+      - "Clara, what did I tell you about <topic>"
+      - "Remember anything about <topic>"
+      - "Recall <topic>"
+
+  # --- Section G — Operations ---
+  - id: deploy.smoke
+    typed: "clara smoke"
+    tier: plus
+    phrasings:
+      - "Clara, run the smoke test"
+      - "Test everything"
+      - "End-to-end smoke"
+
+  - id: config.get
+    typed: "clara config get <key>"
+    tier: taste
+    phrasings:
+      - "Clara, what's my <key>"
+      - "Show config for <key>"
+
+  - id: config.set
+    typed: "clara config set <key> <value>"
+    tier: taste
+    phrasings:
+      - "Clara, set <key> to <value>"
+      - "Configure <key> as <value>"
+
+  - id: login
+    typed: "clara login"
+    tier: taste
+    phrasings:
+      - "Clara, sign me in"
+      - "Log in"
+      - "Connect my account"
+
+  - id: the-brain
+    typed: "clara the-brain"
+    tier: taste
+    phrasings:
+      - "Clara, ask the brain"
+      - "Query memory"
+      - "What does the brain know about <topic>"
